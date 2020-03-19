@@ -1,0 +1,994 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "family": 0,
+      "name": "Container",
+      "nameCN": "容器组件",
+      "lever": 4.2,
+      "childCount": 1,
+      "info": "用于容纳单个孩子的Stateless组件。集成了若干个S28t的功能，如内外边距、形变、装饰、约束等...",
+      "image": "assets/images/widgets/Container.png"
+    },
+    {
+      "id": 2,
+      "family": 0,
+      "name": "Text",
+      "nameCN": "文字组件",
+      "lever": 4.5,
+      "childCount": 0,
+      "info": "用于显示文字的Stateless组件。拥有的属性非常多，足够满足你的使用需求,核心样式由TextStyle对象控制。",
+      "image": "assets/images/widgets/Text.png"
+    },
+    {
+      "id": 3,
+      "family": 0,
+      "name": "Card",
+      "nameCN": "卡片组件",
+      "lever": 2.0,
+      "childCount": 1,
+      "info": " 用于将单个组件卡片化的Stateless组件。使其具有投影效果，可加外边距，也可以自定义卡片形状。",
+      "image": "assets/images/widgets/Card.png"
+    },
+    {
+      "id": 4,
+      "family": 0,
+      "name": "FlutterLogo",
+      "lever": 1.0,
+      "childCount": 0,
+      "nameCN": "Flutter图标",
+      "info": "用于展示Flutter图标的Stateless组件。可定义颜色、尺寸等信息，是一个非常简单的组件。",
+      "image": "assets/images/widgets/FlutterLogo.png"
+    },
+    {
+      "id": 5,
+      "family": 0,
+      "name": "Banner",
+      "lever": 1.6,
+      "childCount": 1,
+      "nameCN": "角标组件",
+      "info": "用于角标显示的Stateless组件。可容纳一个子组件,可选择方位添加角标及信息文字，可设置颜色。",
+      "image": "assets/images/widgets/Banner.png"
+    },
+    {
+      "id": 6,
+      "family": 0,
+      "name": "Icon",
+      "lever": 2.0,
+      "childCount": 0,
+      "nameCN": "图标组件",
+      "info": "用于图标显示的Stateless组件。可指定图标资源、大小、颜色。",
+      "image": "assets/images/widgets/Icon.png"
+    },
+    {
+      "id": 7,
+      "family": 0,
+      "name": "ImageIcon",
+      "nameCN": "容器",
+      "childCount": 0,
+      "lever": 1.0,
+      "info": "用于将一个图片变为纯色的Stateless组件。可指定大小、颜色。",
+      "image": "assets/images/widgets/ImageIcon.png"
+    },
+    {
+      "id": 8,
+      "family": 0,
+      "name": "FadeInImage",
+      "nameCN": "淡入图片",
+      "childCount": 0,
+      "lever": 3.6,
+      "info": "透明渐变地加载一张图片。可指定占位图片、进退的动画曲线、时间、宽高、fit类型、对齐方式、重复方式等。",
+      "image": "assets/images/widgets/FadeInImage.png"
+    },
+    {
+      "id": 9,
+      "family": 0,
+      "name": "CircleAvatar",
+      "nameCN": "圆形组件",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "可将一张图片变成圆形，并且中间可以放置一个组件。可指定半径、前景色、背景色等。",
+      "image": "assets/images/widgets/CircleAvatar.png"
+    },
+    {
+      "id": 10,
+      "family": 0,
+      "name": "Visibility",
+      "nameCN": "显隐组件",
+      "childCount": 1,
+      "lever": 3.0,
+      "info": "控制一个组件显示或隐藏,可设置隐藏后的占位组件。与其功能相似的由OffStage组件。",
+      "image": "assets/images/widgets/Visibility.png"
+    },
+    {
+      "id": 11,
+      "family": 0,
+      "name": "Chip",
+      "nameCN": "小条组件",
+      "childCount": 3,
+      "lever": 3.5,
+      "info": "一个横向的圆边小条，可以包含左中右三个组件。可以指定颜色、阴影色和点击事件。",
+      "image": "assets/images/widgets/Chip.png"
+    },
+    {
+      "id": 12,
+      "family": 0,
+      "name": "ChoiceChip",
+      "nameCN": "选择小条",
+      "childCount": 3,
+      "lever": 3.3,
+      "info": "和Chip组件类似的样式，有一些选择的属性。可以指定选中时的颜色、阴影色和选择事件。",
+      "image": "assets/images/widgets/ChoiceChip.png"
+    },
+    {
+      "id": 13,
+      "family": 0,
+      "name": "ActionChip",
+      "nameCN": "事件小条",
+      "childCount": 3,
+      "lever": 2.2,
+      "info": "和Chip组件类似的样式，有一些点击的属性。可以指定点击时的阴影深、点击事件。",
+      "image": "assets/images/widgets/ActionChip.png"
+    },
+    {
+      "id": 14,
+      "family": 0,
+      "name": "InputChip",
+      "nameCN": "综合小条",
+      "childCount": 3,
+      "lever": 4.2,
+      "info": "和Chip组件类似的样式，集成了点击、删除、选择事件为一体。注意:点击事件和选择事件不能同时存在。",
+      "image": "assets/images/widgets/InputChip.png"
+    },
+    {
+      "id": 15,
+      "family": 0,
+      "name": "FilterChip",
+      "nameCN": "过滤小条",
+      "childCount": 3,
+      "lever": 4.0,
+      "info": "和Chip组件类似的样式，具有选中与否的属性和选中事件。当选中时左侧组件上层会被✔️遮罩。",
+      "image": "assets/images/widgets/FilterChip.png"
+    },
+    {
+      "id": 16,
+      "family": 0,
+      "name": "ListTile",
+      "nameCN": "列表瓦片",
+      "childCount": 4,
+      "lever": 3.5,
+      "info": "Flutter提供的一个通用列表条目结构，为左中右结构。相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/ListTile.png"
+    },
+    {
+      "id": 17,
+      "family": 0,
+      "name": "CheckboxListTile",
+      "nameCN": "复选瓦片",
+      "childCount": 3,
+      "lever": 3.0,
+      "info": "Flutter提供的一个通用列表条目结构，为左中结构,尾部是一个CheckBox。相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/CheckBoxListTile.png"
+    },
+    {
+      "id": 18,
+      "family": 0,
+      "name": "SwitchListTile",
+      "nameCN": "切钮瓦片",
+      "childCount": 3,
+      "lever": 3.8,
+      "info": "Flutter提供的一个通用列表条目结构，为左中结构,尾部是一个Switch。相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/SwitchListTile.png"
+    },
+    {
+      "id": 19,
+      "family": 0,
+      "name": "RadioListTile",
+      "nameCN": "选钮瓦片",
+      "childCount": 3,
+      "lever": 3.8,
+      "info": "Flutter提供的一个通用列表条目结构，为中右结构,尾部是一个Radio。相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/RadioListTile.png"
+    },
+    {
+      "id": 20,
+      "family": 0,
+      "name": "GridTileBar",
+      "nameCN": "网格瓦片头",
+      "childCount": 4,
+      "lever": 3.0,
+      "info": "Flutter提供的一个通用头结构，为左中右结构。相应位置可插入组件，可以很方便地应对特定的条目，相比ListTile而言，属性较少。",
+      "image": "assets/images/widgets/GridTileBar.png"
+    },
+    {
+      "id": 21,
+      "family": 0,
+      "name": "GridTile",
+      "nameCN": "网格瓦片",
+      "childCount": 4,
+      "lever": 3.0,
+      "info": "Flutter提供的一个通用列表条目结构，可指定头、尾、子组件，常用与网格列表。",
+      "image": "assets/images/widgets/GridTile.png"
+    },
+    {
+      "id": 22,
+      "family": 0,
+      "name": "UserAccountsDrawerHeader",
+      "nameCN": "展示头",
+      "childCount": 4,
+      "lever": 3.8,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 23,
+      "family": 0,
+      "name": "MaterialButton",
+      "nameCN": "材料按钮",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 24,
+      "family": 1,
+      "name": "CupertinoButton",
+      "nameCN": "ios按钮",
+      "childCount": 1,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 25,
+      "family": 0,
+      "name": "FlatButton",
+      "nameCN": "平按钮",
+      "childCount": 1,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 26,
+      "family": 0,
+      "name": "RaisedButton",
+      "nameCN": "浮起按钮",
+      "childCount": 1,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 27,
+      "family": 0,
+      "name": "OutlineButton",
+      "nameCN": "线框按钮",
+      "childCount": 1,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 28,
+      "family": 0,
+      "name": "FloatingActionButton",
+      "nameCN": "浮动按钮",
+      "childCount": 1,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 29,
+      "family": 0,
+      "name": "ButtonBar",
+      "nameCN": "按钮栏",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 30,
+      "family": 0,
+      "name": "IconButton",
+      "nameCN": "图标按钮",
+      "childCount": 1,
+      "lever": 2.0,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 31,
+      "family": 0,
+      "name": "BackButton",
+      "nameCN": "返回按钮",
+      "childCount": 1,
+      "lever": 1.3,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 32,
+      "family": 0,
+      "name": "CloseButton",
+      "nameCN": "关闭按钮",
+      "childCount": 0,
+      "lever": 1.0,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 33,
+      "family": 0,
+      "name": "ToggleButtons",
+      "nameCN": "切换按钮组",
+      "childCount": 0,
+      "lever": 4.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 34,
+      "family": 0,
+      "name": "Divider",
+      "nameCN": "水平分割线",
+      "childCount": 0,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 35,
+      "family": 0,
+      "name": "VerticalDivider",
+      "nameCN": "竖直分割线",
+      "childCount": 0,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 36,
+      "family": 0,
+      "name": "Placeholder",
+      "nameCN": "占位组件",
+      "childCount": 0,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 37,
+      "family": 0,
+      "name": "GridPager",
+      "nameCN": "网格线组件",
+      "childCount": 0,
+      "lever": 2.5,
+      "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 38,
+      "family": 1,
+      "name": "Image",
+      "nameCN": "图片组件",
+      "childCount": 0,
+      "lever": 2.5,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 39,
+      "family": 1,
+      "name": "Checkbox",
+      "nameCN": "复选框",
+      "childCount": 0,
+      "lever": 2.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 40,
+      "family": 1,
+      "name": "Switch",
+      "nameCN": "切钮",
+      "childCount": 0,
+      "lever": 3.0,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 41,
+      "family": 1,
+      "name": "CupertinoSwitch",
+      "nameCN": "iOS切钮",
+      "childCount": 0,
+      "lever": 3.0,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 42,
+      "family": 1,
+      "name": "Slider",
+      "nameCN": "滑块",
+      "childCount": 0,
+      "lever": 3.0,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 43,
+      "family": 1,
+      "name": "CupertinoSlider",
+      "nameCN": "iOS滑块",
+      "childCount": 0,
+      "lever": 3.0,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 44,
+      "family": 1,
+      "name": "RangeSlider",
+      "nameCN": "范围滑块",
+      "childCount": 0,
+      "lever": 3.0,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 45,
+      "family": 1,
+      "name": "Radio",
+      "nameCN": "选钮",
+      "childCount": 0,
+      "lever": 3.0,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 46,
+      "family": 1,
+      "name": "CircularProgressIndicator",
+      "nameCN": "圆形进度",
+      "childCount": 0,
+      "lever": 2.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 47,
+      "family": 1,
+      "name": "LinearProgressIndicator",
+      "nameCN": "水平进度",
+      "childCount": 0,
+      "lever": 2.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 48,
+      "family": 1,
+      "name": "CupertinoActivityIndicator",
+      "nameCN": "iOS指示器",
+      "childCount": 0,
+      "lever": 2.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 49,
+      "family": 1,
+      "name": "RefreshIndicator",
+      "nameCN": "刷新指示器",
+      "childCount": 0,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 50,
+      "family": 1,
+      "name": "Tooltip",
+      "nameCN": "提示工具",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 51,
+      "family": 1,
+      "name": "ExpandIcon",
+      "nameCN": "展开图标",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 52,
+      "family": 1,
+      "name": "ExpansionTile",
+      "nameCN": "展开瓦片",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 53,
+      "family": 1,
+      "name": "SelectableText",
+      "nameCN": "可选择文字",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 54,
+      "family": 1,
+      "name": "TextField",
+      "nameCN": "输入框",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 55,
+      "family": 1,
+      "name": "DropdownButton",
+      "nameCN": "下拉按钮",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 56,
+      "family": 1,
+      "name": "PopupMenuButton",
+      "nameCN": "菜单按钮",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 57,
+      "family": 1,
+      "name": "AppBar",
+      "nameCN": "应用头栏",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 58,
+      "family": 1,
+      "name": "TabBar",
+      "nameCN": "标签栏",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 59,
+      "family": 1,
+      "name": "TabBarView",
+      "nameCN": "标签页",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 60,
+      "family": 1,
+      "name": "BottomNavigationBar",
+      "nameCN": "底部导航",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 61,
+      "family": 1,
+      "name": "BottomAppBar",
+      "nameCN": "底部导航",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 62,
+      "family": 1,
+      "name": "CupertinoNavigationBar",
+      "nameCN": "iOS导航",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 63,
+      "family": 1,
+      "name": "CupertinoTabBar",
+      "nameCN": "iOS页签",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 64,
+      "family": 1,
+      "name": "Scaffold",
+      "nameCN": "脚手架",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 65,
+      "family": 1,
+      "name": "MaterialApp",
+      "nameCN": "脚手架",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "用于显示一张图片，可以从文件、内存、网络、资源里加载。可以指定适应方式、样式、颜色混合模式、重复模式等",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 66,
+      "family": 2,
+      "name": "ClipOval",
+      "nameCN": "椭圆裁剪",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "将一个组件以宽高为长轴和短轴进行椭圆裁切。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 67,
+      "family": 2,
+      "name": "ClipRect",
+      "nameCN": "矩形裁剪",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "将一个组件进行矩形裁切。可借助SizedBox、Align、AspectRadio等限定组件进行定域。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 68,
+      "family": 2,
+      "name": "ClipRRect",
+      "nameCN": "圆角矩形裁剪",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "将一个组件进行圆角矩形裁剪。指定borderRadius作为边角半径。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 69,
+      "family": 2,
+      "name": "ClipPath",
+      "nameCN": "路径裁剪",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "将一个组件按指定路径进行裁剪。可以自定义路径形状，是一个很灵活的裁剪组件。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 70,
+      "family": 2,
+      "name": "DecoratedBox",
+      "nameCN": "装饰盒",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "将一个组件按进行装饰。核心属性为decoration可设置边线、渐变、阴影、背景图等。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 71,
+      "family": 2,
+      "name": "Offstage",
+      "nameCN": "装饰盒",
+      "childCount": 1,
+      "lever": 3.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 72,
+      "family": 2,
+      "name": "RotatedBox",
+      "nameCN": "旋转盒",
+      "childCount": 1,
+      "lever": 1.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 73,
+      "family": 2,
+      "name": "Opacity",
+      "nameCN": "透明化",
+      "childCount": 1,
+      "lever": 1.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 74,
+      "family": 2,
+      "name": "Padding",
+      "nameCN": "边距组件",
+      "childCount": 1,
+      "lever": 1.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 75,
+      "family": 2,
+      "name": "Baseline",
+      "nameCN": "基线组件",
+      "childCount": 1,
+      "lever": 1.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 76,
+      "family": 2,
+      "name": "SizedBox",
+      "nameCN": "定尺寸盒",
+      "childCount": 1,
+      "lever": 1.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 77,
+      "family": 2,
+      "name": "AspectRatio",
+      "nameCN": "比例盒",
+      "childCount": 1,
+      "lever": 1.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 78,
+      "family": 2,
+      "name": "Transform",
+      "nameCN": "变换",
+      "childCount": 1,
+      "lever": 1.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 79,
+      "family": 2,
+      "name": "LimitedBox",
+      "nameCN": "限制盒",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 80,
+      "family": 2,
+      "name": "ConstrainedBox",
+      "nameCN": "约束盒",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 81,
+      "family": 2,
+      "name": "UnconstrainedBox",
+      "nameCN": "约束盒",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 82,
+      "family": 2,
+      "name": "FractionallySizedBox",
+      "nameCN": "分率盒",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 83,
+      "family": 2,
+      "name": "OverflowBox",
+      "nameCN": "溢出盒",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 84,
+      "family": 2,
+      "name": "SizedOverflowBox",
+      "nameCN": "尺寸溢出盒",
+      "childCount": 1,
+      "lever": 2.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 85,
+      "family": 2,
+      "name": "Align",
+      "nameCN": "对齐组件",
+      "childCount": 1,
+      "lever": 4.8,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 86,
+      "family": 2,
+      "name": "Center",
+      "nameCN": "居中组件",
+      "childCount": 1,
+      "lever": 1.5,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 87,
+      "family": 2,
+      "name": "FittedBox",
+      "nameCN": "适应盒",
+      "childCount": 1,
+      "lever": 1.5,
+      "info": "更改一个组件的消失与否。offstage属性为true表示隐藏。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 88,
+      "family": 2,
+      "name": "ColorFiltered",
+      "nameCN": "滤色器",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 89,
+      "family": 2,
+      "name": "FadeTransition",
+      "nameCN": "透明变换",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 90,
+      "family": 1,
+      "name": "RotationTransition",
+      "nameCN": "旋转变换",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 91,
+      "family": 1,
+      "name": "ScaleTransition",
+      "nameCN": "缩放变换",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 92,
+      "family": 1,
+      "name": "SizeTransition",
+      "nameCN": "尺寸变换",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 93,
+      "family": 1,
+      "name": "PositionedTransition",
+      "nameCN": "位置变换",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 94,
+      "family": 3,
+      "name": "Flex",
+      "nameCN": "弹性布局",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 95,
+      "family": 3,
+      "name": "Row",
+      "nameCN": "行布局",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 96,
+      "family": 3,
+      "name": "Column",
+      "nameCN": "列布局",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 97,
+      "family": 3,
+      "name": "Stack",
+      "nameCN": "堆叠布局",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 98,
+      "family": 3,
+      "name": "Wrap",
+      "nameCN": "包裹布局",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    },
+    {
+      "id": 99,
+      "family": 3,
+      "name": "Flow",
+      "nameCN": "流动布局",
+      "childCount": 1,
+      "lever": 3.5,
+      "info": "将一个组件与一个颜色进行叠合。主要是29种BlendMode类型。",
+      "image": "assets/images/widgets/UserAccountsDrawerHeader.png"
+    }
+  ]
+}
