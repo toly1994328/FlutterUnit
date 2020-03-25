@@ -43,25 +43,25 @@ class _NavPageState extends State<NavPage> {
           MePage(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        //底部栏
-        items: Cons.ICONS_MAP.keys
-            .map((key) => BottomNavigationBarItem(
-                //生成条目
-                title: Text(
-                  key,
-                ), //标题
-                icon: Icon(Cons.ICONS_MAP[key]), //图标
-                backgroundColor: Colors.blue))
-            .toList(), //背景色
-        currentIndex: _position, //激活位置
-        onTap: (position) {
-          _controller.jumpToPage(position); //点击时通过控制器切换PageView页面
-          setState(() {
-            _position = position; //更新索引位
-          });
-        },
-      ),
+//      bottomNavigationBar: BottomNavigationBar(
+//        //底部栏
+//        items: Cons.ICONS_MAP.keys
+//            .map((key) => BottomNavigationBarItem(
+//                //生成条目
+//                title: Text(
+//                  key,
+//                ), //标题
+//                icon: Icon(Cons.ICONS_MAP[key]), //图标
+//                backgroundColor: Colors.blue))
+//            .toList(), //背景色
+//        currentIndex: _position, //激活位置
+//        onTap: (position) {
+//          _controller.jumpToPage(position); //点击时通过控制器切换PageView页面
+//          setState(() {
+//            _position = position; //更新索引位
+//          });
+//        },
+//      ),
     );
   }
 }

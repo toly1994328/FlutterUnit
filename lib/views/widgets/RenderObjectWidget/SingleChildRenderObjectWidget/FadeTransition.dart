@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 //      "priority": 1,
 //      "subtitle":
 //          "【child】 : 孩子组件   【Widget】\n"
-//          "【opacity】 : 是否消失   【Animation<double>】",
+//          "【opacity】 : 动画   【Animation<double>】",
 //    }
 class CustomFadeTransition extends StatefulWidget {
   @override

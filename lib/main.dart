@@ -6,6 +6,7 @@ import 'package:flutter_unit/views/unit_splash.dart';
 import 'package:flutter_unit/views/widgets/StatefulWidget/Checkbox.dart';
 
 import 'blocs/detail/detail_bloc.dart';
+import 'blocs/global/global_bloc.dart';
 import 'blocs/widgets/widget_bloc.dart';
 import 'blocs/widgets/widget_event.dart';
 
@@ -20,19 +21,23 @@ void main() async {
 
 class BlocWrapper extends StatelessWidget {
   final Widget child;
+
   BlocWrapper({this.child});
+
   final repository = WidgetMeRepository();
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(//使用MultiBlocProvider包裹
         providers: [
-          //Bloc提供器
+      //Bloc提供器
       BlocProvider<WidgetBloc>(
-          create: (_) => WidgetBloc(repository: repository)..add(LoadWidget())),
+          create: (_) => WidgetBloc(repository: repository)
+            ..add(LoadWidget(WidgetFamily.statelessWidget))),
 
       BlocProvider<DetailBloc>(
           create: (_) => DetailBloc(repository: repository)),
+      BlocProvider<GlobalBloc>(create: (_) => GlobalBloc()),
     ], child: child);
   }
 }
@@ -46,7 +51,8 @@ class FlutterApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:UnitSplash() ,
+      home: NavPage()
+//      UnitSplash(),
     );
   }
 }

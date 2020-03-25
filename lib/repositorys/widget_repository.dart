@@ -1,5 +1,6 @@
 
 
+import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
@@ -8,7 +9,7 @@ import 'package:flutter_unit/model/widget_model.dart';
 
 abstract class WidgetRepository {
 
-  Future<List<WidgetModel>> loadWidgets();
+  Future<List<WidgetModel>> loadWidgets(WidgetFamily family);
   Future<List<NodeModel>> loadNode(WidgetModel widgetModel);
 
 }

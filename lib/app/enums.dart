@@ -7,7 +7,7 @@ enum WidgetFamily {
   statefulWidget,
   singleChildRenderObjectWidget,
   multiChildRenderObjectWidget,
+  sliver,
   proxyWidget,//4
-  preferredSizeWidget,//5
-  other,//6
+  other,//5
 }

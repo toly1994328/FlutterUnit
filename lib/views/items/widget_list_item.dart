@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
+import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/style/shape/coupon_shape_border.dart';
 import 'package:flutter_unit/app/style/shape/hole_shape.dart';
 import 'package:flutter_unit/components/circle_image.dart';
+import 'package:flutter_unit/components/circle_text.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
 class WidgetListItem extends StatelessWidget {
   final WidgetModel data;
 
   WidgetListItem({this.data});
+
+  final List<int> colors = Cons.tabColors;
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +21,28 @@ class WidgetListItem extends StatelessWidget {
           shape: CouponShapeBorder(
               hasLine: false, edgeRadius: 25, lineRate: 0.23)),
       child: Container(
-        color: Color(0x441194F6),
-        height: 100,
-        padding: EdgeInsets.all(10),
+        color: Color(colors[data.family.index]).withAlpha(66),
+        height: 95,
+        padding: EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 5),
         child: Row(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: Hero(
                 tag: "hero_widget_image_${data.name}",
-                child: CircleImage(
-                  image: data.image,
-                  size: 70,
-                ),
+                child: data.image == null
+                    ? Material(
+                  color: Colors.transparent,
+                      child: CircleText(
+                          text: data.name,
+                          size: 60,
+                  color: invColor,
+                        ),
+                    )
+                    : CircleImage(
+                        image: data.image,
+                        size: 60,
+                      ),
               ),
             ),
             Expanded(
@@ -45,42 +58,57 @@ class WidgetListItem extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle() => Expanded(
-        child: Row(
-          children: <Widget>[
-            SizedBox(width: 10),
-            LimitedBox(
-              maxWidth: 130,
-              child: Text(data.name,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
-            ),
-            SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                data.nameCN,
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
-            ),
-            StarScore(
-              star: Star(size: 15, fillColor: Colors.blue),
-              score: data.lever,
-            ),
-          ],
-        ),
-      );
+  Color get invColor {
+    return Color(colors[data.family.index]);
+  }
 
-  Widget _buildSummary() => Padding(
-        padding: const EdgeInsets.only(left: 10, bottom: 10, top: 5),
-        child: Container(
-          constraints: BoxConstraints(maxWidth: 250),
-          child: Text(
-            //尾部摘要
-            data.info,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: Colors.white, fontSize: 12),
+  Widget _buildTitle() {
+    return Expanded(
+      child: Row(
+        children: <Widget>[
+          SizedBox(width: 10),
+          LimitedBox(
+            maxWidth: 150,
+            child: Text(data.name,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(color: Colors.white, offset: Offset(.3, .3))
+                    ])),
           ),
+          Spacer(),
+          StarScore(
+            star: Star(emptyColor: Colors.white, size: 15, fillColor: invColor),
+            score: data.lever,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSummary() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, bottom: 10, top: 5),
+      child: Container(
+        constraints: BoxConstraints(maxWidth: 250),
+        child: Text(
+          //尾部摘要
+          data.info,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+              color: Colors.grey[600],
+
+//              color: Color.fromARGB(color.alpha, 255 - color.red,
+//                  255 - color.green, 255 - color.blue),
+//                Color()
+//                    .withBlue(66),
+              fontSize: 14,
+              shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
         ),
-      );
+      ),
+    );
+  }
 }

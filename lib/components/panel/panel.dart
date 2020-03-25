@@ -39,29 +39,10 @@ class NodePanel extends StatefulWidget {
 class _NodePanelState extends State<NodePanel>
     with SingleTickerProviderStateMixin {
   bool _showCode = false;
-  AnimationController _ctrl;
-  double _sizeFactor = 0;
-  Animation<double> _expend;
 
-  @override
-  void initState() {
-    _ctrl =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300))
-          ..addListener(() {
-            setState(() {
-              _sizeFactor = (_showCode ? (1 - _expend.value) : _expend.value);
-            });
-          })
-          ..addStatusListener((s) {
-            if (s == AnimationStatus.completed) {
-              setState(() {
-                _showCode = !_showCode;
-              });
-            }
-          });
-    _expend = Tween(begin: 0.0, end: 1.0).animate(_ctrl);
-    super.initState();
-  }
+  var _crossFadeState = CrossFadeState.showFirst;
+
+  bool get isFirst=> _crossFadeState == CrossFadeState.showFirst;
 
   @override
   Widget build(BuildContext context) {
@@ -92,9 +73,8 @@ class _NodePanelState extends State<NodePanel>
                   child: Icon(Icons.code,color: Colors.orange,),
                   onTap: () {
                     setState(() {
-//                      _showCode = !_showCode;
-                      _ctrl.reset();
-                      _ctrl.forward();
+                      _crossFadeState= _showCode?CrossFadeState.showFirst:CrossFadeState.showSecond;
+                      _showCode=!_showCode;
                     });
                   },
                 ),
@@ -123,23 +103,21 @@ class _NodePanelState extends State<NodePanel>
     );
   }
 
-  Widget _buildCode(BuildContext context) =>
-    ClipRect(
-      child: Align(
-        alignment: Alignment.center,
-        heightFactor: _sizeFactor,
-        child: ScaleTransition(
-          scale: Tween(begin: 0.5,end: 1.0).animate(_ctrl),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Panel(
-              child: CodeWidget(
-                code: widget.code,
-              ),
-            ),
-          ),
+  Widget _buildCode(BuildContext context) =>AnimatedCrossFade(
+    firstCurve: Curves.easeInCirc,
+    secondCurve: Curves.easeInToLinear,
+//    sizeCurve: Curves.slowMiddle,
+    firstChild: Container(),
+    secondChild: Container(
+      width: MediaQuery.of(context).size.width,
+      child: Panel(
+        child: CodeWidget(
+          code: widget.code,
         ),
       ),
-    );
+    ),
+    duration: Duration(milliseconds: 500),
+    crossFadeState: _crossFadeState,
+  );
 
 }

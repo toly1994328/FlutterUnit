@@ -26,9 +26,10 @@ class HoleShapeBorder extends ShapeBorder {
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
     var path = Path();
-    path.addRRect(RRect.fromRectAndRadius(rect, Radius.circular(10)));
+    path.addRect(rect);
+//    path.addRRect(RRect.fromRectAndRadius(rect, Radius.circular(10)));
 
-
+print(rect);
     var w = rect.width;
     var h = rect.height;
     var offsetXY = Offset( offset.dx*w,offset.dy*h);

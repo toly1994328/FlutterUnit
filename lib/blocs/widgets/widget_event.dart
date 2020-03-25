@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/database/po/widget_po.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
@@ -13,7 +14,12 @@ abstract class WidgetEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadWidget extends WidgetEvent {}
+class LoadWidget extends WidgetEvent {
+  final WidgetFamily family;
+
+  LoadWidget(this.family);
+
+}
 
 class SeeWidgetDetail extends WidgetEvent {
   final WidgetModel widgetModel;

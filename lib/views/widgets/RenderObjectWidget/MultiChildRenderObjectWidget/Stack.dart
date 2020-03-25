@@ -55,7 +55,7 @@ class CustomStack extends StatelessWidget {
 
 //    {
 //      "widgetId": 97,
-//      "name": 'Stack和Positioned结合使用基本使用',
+//      "name": 'Stack和Positioned结合使用',
 //      "priority": 2,
 //      "subtitle":
 //          "Positioned组件只能用与Stack中，可以指定左上右下的距离对某个组件进行位置精确安放。",

@@ -30,7 +30,8 @@ class CircleImage extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.all(3),
-        child: CircleAvatar(
+        child:
+        CircleAvatar(
           backgroundImage: image,
         ),
       ),

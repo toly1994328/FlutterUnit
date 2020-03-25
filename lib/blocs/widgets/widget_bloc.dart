@@ -24,13 +24,13 @@ class WidgetBloc extends Bloc<WidgetEvent, WidgetState> {
   @override
   Stream<WidgetState> mapEventToState(WidgetEvent event) async* {
     if (event is LoadWidget) {
-      yield* _mapLoadWidgetToState();
+      yield* _mapLoadWidgetToState(event.family);
     }
   }
 
-  Stream<WidgetState> _mapLoadWidgetToState() async* {
+  Stream<WidgetState> _mapLoadWidgetToState(WidgetFamily family) async* {
     try {
-      final widgets = await this.repository.loadWidgets();
+      final widgets = await this.repository.loadWidgets(family);
       yield WidgetsLoaded(
         widgets,
       );

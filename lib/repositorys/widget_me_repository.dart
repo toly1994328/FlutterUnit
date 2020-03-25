@@ -4,6 +4,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/database/node_dao.dart';
 import 'package:flutter_unit/database/po/widget_po.dart';
 import 'package:flutter_unit/database/widget_dao.dart';
@@ -19,12 +20,13 @@ class WidgetMeRepository implements WidgetRepository {
 
 
   @override
-  Future<List<WidgetModel>> loadWidgets() async {
+  Future<List<WidgetModel>> loadWidgets(WidgetFamily family) async {
     var jsonStr = await rootBundle.loadString('assets/data/widget.json');
     var widgets = (json.decode(jsonStr)["items"] as List)
         .map((item) => WidgetPo.fromJson(item))
         .toList();
-    return widgets.map(WidgetModel.fromPo).toList();
+    var where = widgets.map(WidgetModel.fromPo).where((e)=>e.family==family).toList();
+    return where;
   }
 
   @override

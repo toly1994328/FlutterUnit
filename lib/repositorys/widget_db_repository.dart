@@ -1,6 +1,7 @@
 
 
 
+import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/database/node_dao.dart';
 import 'package:flutter_unit/database/po/widget_po.dart';
 import 'package:flutter_unit/database/widget_dao.dart';
@@ -22,7 +23,7 @@ class WidgetDbRepository implements WidgetRepository {
   }
 
   @override
-  Future<List<WidgetModel>> loadWidgets() async {
+  Future<List<WidgetModel>> loadWidgets(WidgetFamily family) async {
     var data = await _widgetDao.queryAll();
     var widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();

@@ -18,10 +18,10 @@ class Convert {
       case 3:
         return WidgetFamily.multiChildRenderObjectWidget;
       case 4:
+        return WidgetFamily.sliver;
+      case 5:
         return WidgetFamily.proxyWidget;
-      case 5:
-        return WidgetFamily.preferredSizeWidget;
-      case 5:
+      case 6:
         return WidgetFamily.other;
       default:
         return WidgetFamily.statelessWidget;

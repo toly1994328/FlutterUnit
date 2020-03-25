@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
+import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
 import 'package:flutter_unit/blocs/detail/detail_state.dart';
+import 'package:flutter_unit/components/circle_text.dart';
 import 'package:flutter_unit/components/panel/panel.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
@@ -14,7 +16,16 @@ class WidgetDetailPage extends StatelessWidget {
     return BlocBuilder<DetailBloc, DetailState>(builder: (context, state) {
       if (state is DetailWithData) {
         return Scaffold(
-          appBar: AppBar(title: Text(state.widgetModel.name)),
+          appBar: AppBar(
+            backgroundColor: Color(colors[state.widgetModel.family.index]),
+            title: Text(state.widgetModel.name),
+            actions: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Icon(Icons.star_border),
+              )
+            ],
+          ),
           body: SingleChildScrollView(
             child: Container(
               child: Column(
@@ -37,6 +48,8 @@ class WidgetDetailPage extends StatelessWidget {
     });
   }
 
+  final List<int> colors = Cons.tabColors;
+
   // 构建上部左侧介绍
   Widget _buildLeft(WidgetModel model) => Expanded(
         child: Column(
@@ -46,7 +59,7 @@ class WidgetDetailPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20.0, left: 20),
               child: Text(
-                model.name,
+                model.nameCN,
                 style: TextStyle(
                     fontSize: 20,
                     color: Color(0xff1EBBFD),
@@ -73,7 +86,7 @@ class WidgetDetailPage extends StatelessWidget {
                   tag: "hero_widget_image_${model.name}",
                   child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
-                      child: Image(image: model.image))),
+                      child: model.image==null?Image.asset('assets/images/caver.jpeg'): Image(image: model.image))),
             ),
           ),
           StarScore(

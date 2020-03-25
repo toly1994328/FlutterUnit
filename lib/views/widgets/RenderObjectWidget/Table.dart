@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
-class TablePage extends StatelessWidget {
+//    {
+//      "widgetId": 110,
+//      "name": 'Flexible基本使用',
+//      "priority": 1,
+//      "subtitle":
+//          "【children】 : 组件列表   【List<Widget>】\n"
+//          "【columnWidths】 : 列宽   【Map<int, TableColumnWidth>】\n"
+//          "【defaultColumnWidth】 : 默认列宽  【TableColumnWidth】\n"
+//          "【border】 : 边线   【TableBorder】\n"
+//          "【textDirection】 : 文字方向   【TextDirection】\n"
+//          "【defaultVerticalAlignment】 : 单元格竖直方向对齐模式   【TableCellVerticalAlignment】",
+//    }
+class CustomTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-
     var title = _ItemBean("单位称", "量纲", "单位", "单位名称", "单位符号");
     var m = _ItemBean("长度", "L", "1m", "米", "m");
     var kg = _ItemBean("质量", "M", "1Kg", "千克", "Kg");
@@ -16,39 +26,45 @@ class TablePage extends StatelessWidget {
 
     var data = <_ItemBean>[title, m, kg, s, a, k, mol, cd];
 
-    return Table(
-      columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(80.0),
-        1: FixedColumnWidth(80.0),
-        2: FixedColumnWidth(80.0),
-        3: FixedColumnWidth(80.0),
-        4: FixedColumnWidth(80.0),
-      },
-      defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-      border: TableBorder.all(
-          color: Colors.orangeAccent, width: 2.0, style: BorderStyle.solid),
-      children: data
-          .map((item) =>
-          TableRow(children: <Widget>[
-            Center(child: Text(item.name,style: TextStyle(color: Colors.blue),)),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: Text(item.symbol)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: Text(item.unitSymbol)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: Text(item.unitName)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(child: Text(item.unit)),
-            ),
-          ]))
-          .toList(),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Table(
+        columnWidths: const <int, TableColumnWidth>{
+          0: FixedColumnWidth(80.0),
+          1: FixedColumnWidth(80.0),
+          2: FixedColumnWidth(80.0),
+          3: FixedColumnWidth(80.0),
+          4: FixedColumnWidth(80.0),
+        },
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        border: TableBorder.all(
+            color: Colors.orangeAccent, width: 1.0, style: BorderStyle.solid),
+        children: data
+            .map((item) => TableRow(children: <Widget>[
+                  Center(
+                      child: Text(
+                    item.name,
+                    style: TextStyle(color: Colors.blue),
+                  )),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: Text(item.symbol)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: Text(item.unitSymbol)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: Text(item.unitName)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: Text(item.unit)),
+                  ),
+                ]))
+            .toList(),
+      ),
     );
   }
 }
