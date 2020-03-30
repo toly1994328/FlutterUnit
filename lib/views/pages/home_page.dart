@@ -16,6 +16,7 @@ import 'package:flutter_unit/views/widgets/StatelessWidget/stateless_unit.dart';
 import '../home/home_left_drawer.dart';
 import '../home/home_light_drawer.dart';
 import '../../app/res/cons.dart';
+import 'home_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -46,19 +47,8 @@ class _HomePageState extends State<HomePage> {
         length: Cons.TABS.length, //标签个数
         child: BlocBuilder<GlobalBloc, GlobalState>(
             builder: (_, state) => Scaffold(
-                  floatingActionButtonLocation:
-                      FloatingActionButtonLocation.centerFloat,
-                  floatingActionButton: FloatingActionButton(
-                    backgroundColor:
-                        state is GlobalColorState ? state.color : Colors.blue,
-                    shape: StarBorder(),
-                    child: Icon(Icons.search),
-                    onPressed: () {},
-                  ),
                   appBar: TolyAppBar(
-                    preferredSize: Size.fromHeight(state is AppBarHeightState
-                        ? state.height
-                        : kToolbarHeight * 2 - 20),
+                    preferredSize: Size.fromHeight(state.height),
                     onItemClick: (index, e) {
                       if (_ctrl.hasClients) _ctrl.jumpTo(0);
                       BlocProvider.of<GlobalBloc>(context)
@@ -70,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                   body: Stack(
                     children: <Widget>[BackGround(), _buildContent(context)],
                   ),
-                  drawer: HomeLeftDrawer(),
+                  drawer: HomeDrawer(),
                   //左滑页
                   endDrawer: HomeRightDrawer(), //右滑页
                 )));

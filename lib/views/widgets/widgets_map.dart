@@ -1,13 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/widgets/StatefulWidget/stateful_unit.dart';
 
 import 'ProxyWidget/Flexible.dart';
+import 'ProxyWidget/InheritedWidget/MediaQuery.dart';
 import 'ProxyWidget/Positioned.dart';
 import 'ProxyWidget/Spacer.dart';
 import 'RenderObjectWidget/MultiChildRenderObjectWidget/Column.dart';
 import 'ProxyWidget/Expended.dart';
+import 'RenderObjectWidget/MultiChildRenderObjectWidget/IndexedStack.dart';
 import 'RenderObjectWidget/MultiChildRenderObjectWidget/Row.dart';
 import 'RenderObjectWidget/SingleChildRenderObjectWidget/Center.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/CustomPaint/CustomPaint.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/CustomPaint/colck_page/colck_page.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/CustomPaint/paper.dart';
 import 'RenderObjectWidget/render_object_widget.dart';
 import 'StatefulWidget/AnimatedCrossFade.dart';
 import 'StatefulWidget/AnimatedList.dart';
@@ -18,8 +24,12 @@ import 'StatefulWidget/AnimatedWidget/DefaultTextStyleTransition.dart';
 import 'StatefulWidget/AnimatedWidget/RelativePositionedTransition.dart';
 import 'StatefulWidget/AnimatedWidget/SlideTransition.dart';
 import 'StatefulWidget/DataTable.dart';
+import 'StatefulWidget/Dismissible.dart';
 import 'StatefulWidget/DragTarget.dart';
 import 'StatefulWidget/Draggable.dart';
+import 'StatefulWidget/ExpansionPanelList.dart';
+import 'StatefulWidget/FutureBuilder.dart';
+import 'StatefulWidget/Hero.dart';
 import 'StatefulWidget/ImplicitlyAnimatedWidget/AnimatedAlign.dart';
 import 'StatefulWidget/ImplicitlyAnimatedWidget/AnimatedContainer.dart';
 import 'StatefulWidget/ImplicitlyAnimatedWidget/AnimatedDefaultTextStyle.dart';
@@ -27,12 +37,41 @@ import 'StatefulWidget/ImplicitlyAnimatedWidget/AnimatedOpacity.dart';
 import 'StatefulWidget/ImplicitlyAnimatedWidget/AnimatedPadding.dart';
 import 'StatefulWidget/ImplicitlyAnimatedWidget/AnimatedPositioned.dart';
 import 'StatefulWidget/ImplicitlyAnimatedWidget/AnimatedPositionedDirectional.dart';
+import 'StatefulWidget/Ink.dart';
+import 'StatefulWidget/InkResponse.dart';
+import 'StatefulWidget/InkWell.dart';
+import 'StatefulWidget/LicensePage.dart';
+import 'StatefulWidget/ListWheelScrollView.dart';
 import 'StatefulWidget/LongPressDraggable.dart';
+import 'StatefulWidget/Material.dart';
+import 'StatefulWidget/PageView.dart';
 import 'StatefulWidget/PopupMenuButton.dart';
+import 'StatefulWidget/PopupMenuDivider.dart';
+import 'StatefulWidget/RawChip.dart';
+import 'StatefulWidget/RawMaterialButton.dart';
+import 'StatefulWidget/ReorderableListView.dart';
+import 'StatefulWidget/Scrollable.dart';
+import 'StatefulWidget/StreamBuilder.dart';
+import 'StatefulWidget/TableRowInkWell.dart';
 import 'StatefulWidget/indicator/LinearProgressIndicator.dart';
+import 'StatefulWidget/nav/CupertinoApp.dart';
+import 'StatefulWidget/nav/CupertinoPageScaffold.dart';
+import 'StatefulWidget/nav/CupertinoTabScaffold.dart';
 import 'StatefulWidget/nav/MaterialApp.dart';
 import 'StatefulWidget/nav/Scaffold.dart';
 import 'StatefulWidget/nav/TabBarView.dart';
+import 'StatelessWidget/CupertinoTheme.dart';
+import 'StatelessWidget/Drawer.dart';
+import 'StatelessWidget/DrawerHeader.dart';
+import 'StatelessWidget/GestureDetector.dart';
+import 'StatelessWidget/GirdView.dart';
+import 'StatelessWidget/ListView.dart';
+import 'StatelessWidget/Listener.dart';
+import 'StatelessWidget/PositionedDirectional.dart';
+import 'StatelessWidget/SingleChildScrollView.dart';
+import 'StatelessWidget/Tab.dart';
+import 'StatelessWidget/Theme.dart';
+import 'StatelessWidget/WillPopScope.dart';
 import 'StatelessWidget/dialog/AboutDialog.dart';
 import 'StatelessWidget/dialog/AlertDialog.dart';
 import 'StatelessWidget/AnimatedIcon.dart';
@@ -40,6 +79,8 @@ import 'StatelessWidget/dialog/BottomSheet.dart';
 import 'StatelessWidget/dialog/CupertinoActionSheet.dart';
 import 'StatelessWidget/dialog/CupertinoActionSheetAction.dart';
 import 'StatelessWidget/dialog/CupertinoAlertDialog.dart';
+import 'StatelessWidget/dialog/CupertinoContextMenu.dart';
+import 'StatelessWidget/dialog/CupertinoContextMenuAction.dart';
 import 'StatelessWidget/dialog/CupertinoDatePicker.dart';
 import 'StatelessWidget/dialog/CupertinoPicker.dart';
 import 'StatelessWidget/dialog/CupertinoTimerPicker.dart';
@@ -678,7 +719,167 @@ class WidgetsMap {
         ];
       case "CupertinoContextMenu":
         return [
-          CustomBottomSheet(),
+          CustomCupertinoContextMenu(),
+        ];
+      case "CupertinoContextMenuAction":
+        return [
+          CustomCupertinoContextMenuAction(),
+        ];
+      case "LicensePage":
+        return [
+          CustomLicensePage(),
+        ];
+      case "GestureDetector":
+        return [
+          CustomGestureDetector(),
+          TapGestureDetector(),
+          PanGestureDetector(),
+        ];
+      case "Listener":
+        return [
+          CustomListener(),
+        ];
+      case "Tab":
+        return [
+          CustomTab(),
+        ];
+      case "InkResponse":
+        return [
+          CustomInkResponse(),
+          ColorInkResponse(),
+        ];
+      case "InkWell":
+        return [
+          CustomInkWell(),
+          ColorInkWell(),
+        ];
+      case "TableRowInkWell":
+        return [
+          CustomTableRowInkWell(),
+        ];
+      case "Ink":
+        return [
+          CustomInk(),
+          InkImage(),
+        ];
+      case "RawChip":
+        return [
+          PressRawChip(),
+          SelectRawChip(),
+        ];
+      case "Drawer":
+        return [
+          CustomDrawer(),
+        ];
+      case "DrawerHeader":
+        return [
+          CustomDrawerHeader(),
+        ];
+      case "CupertinoApp":
+        return [
+          CustomCupertinoApp(),
+        ];
+      case "CupertinoPageScaffold":
+        return [
+          CustomCupertinoPageScaffold(),
+        ];
+      case "CupertinoTabScaffold":
+        return [
+          CustomCupertinoTabScaffold(),
+        ];
+      case "PositionedDirectional":
+        return [
+          CustomPositionedDirectional(),
+        ];
+      case "Material":
+        return [
+          CustomMaterial(),
+          ShapeMaterial(),
+        ];
+      case "IndexedStack":
+        return [
+          CustomIndexedStack(),
+        ];
+      case "ListView":
+        return [
+          CustomListView(),
+          HorizontalListView(),
+          BuilderListView(),
+          SeparatedListView(),
+        ];
+      case "GridView":
+        return [
+          CustomGridView(),
+          HorizontalGridView(),
+          ExtentGridView(),
+          BuilderGridView()
+        ];
+      case "SingleChildScrollView":
+        return [
+          CustomSingleChildScrollView(),
+          DirectionSingleChildScrollView(),
+        ];
+      case "PageView":
+        return [
+          CustomPageView(),
+          DirectionPageView(),
+          CtrlPageView(),
+        ];
+      case "CustomPaint":
+        return [
+          ClockPage(),
+          PlayBezier3Page(),
+        ];
+      case "MediaQuery":
+        return [
+          CustomMediaQuery(),
+        ];
+      case "Theme":
+        return [TextThemeDemo(), CustomTheme()];
+      case "CupertinoTheme":
+        return [TextCupertinoTheme(), CustomCupertinoTheme()];
+      case "WillPopScope":
+        return [
+          CustomWillPopScope(),
+        ];
+      case "Hero":
+        return [
+          CustomHero(),
+        ];
+      case "FutureBuilder":
+        return [
+          CustomFutureBuilder(),
+        ];
+      case "StreamBuilder":
+        return [
+          CustomStreamBuilder(),
+        ];
+      case "PopupMenuDivider":
+        return [
+          CustomPopupMenuDivider(),
+        ];
+      case "RawMaterialButton":
+        return [
+          CustomRawMaterialButton(),
+          ShapeRawMaterialButton(),
+        ];
+      case "Dismissible":
+        return [
+          CustomDismissible(),
+          DirectionDismissible(),
+        ];
+      case "ReorderableListView":
+        return [
+          CustomReorderableListView(),
+          DirectionReorderableListView(),
+        ];
+      case "ExpansionPanelList":
+        return [
+          CustomExpansionPanelList(),
+        ];
+      case "ListWheelScrollView":
+        return [
+          CustomListWheelScrollView(),
         ];
     }
   }

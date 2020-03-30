@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 
+/// create by 张风捷特烈 on 2020-03-26
+/// contact me by email 1981462002@qq.com
+/// 说明: 
+
 //    {
-//      "widgetId": 110,
-//      "name": 'Table基本使用',
+//      "widgetId": 151,
+//      "name": 'TableRowInkWell基本事件',
 //      "priority": 1,
 //      "subtitle":
-//          "【children】 : 组件列表   【List<Widget>】\n"
-//          "【columnWidths】 : 列宽   【Map<int, TableColumnWidth>】\n"
-//          "【defaultColumnWidth】 : 默认列宽  【TableColumnWidth】\n"
-//          "【border】 : 边线   【TableBorder】\n"
-//          "【textDirection】 : 文字方向   【TextDirection】\n"
-//          "【defaultVerticalAlignment】 : 单元格竖直方向对齐模式   【TableCellVerticalAlignment】",
+//          "【child】 : 子组件   【Widget】\n"
+//          "【onTap】 : 点击事件   【Function()】\n"
+//          "【onDoubleTap】 : 双击事件   【Function()】\n"
+//          "【onLongPress】 : 长按事件   【Function()】\n"
+//          "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】",
 //    }
-class CustomTable extends StatelessWidget {
+class CustomTableRowInkWell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var title = _ItemBean("单位称", "量纲", "单位", "单位名称", "单位符号");
@@ -41,28 +44,34 @@ class CustomTable extends StatelessWidget {
             color: Colors.orangeAccent, width: 1.0, style: BorderStyle.solid),
         children: data
             .map((item) => TableRow(children: <Widget>[
-                  Center(
-                      child: Text(
-                    item.name,
-                    style: TextStyle(color: Colors.blue),
-                  )),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Text(item.symbol)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Text(item.unitSymbol)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Text(item.unitName)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Text(item.unit)),
-                  ),
-                ]))
+          TableRowInkWell(
+            onTap: () => print('onTap'),
+            onDoubleTap: () => print('onDoubleTap'),
+            onLongPress: () => print('onLongPress'),
+            onHighlightChanged: (v) => print('onHighlightChanged:$v'),
+            child: Center(
+                child: Text(
+                  item.name,
+                  style: TextStyle(color: Colors.blue),
+                )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.symbol)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.unitSymbol)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.unitName)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.unit)),
+          ),
+        ]))
             .toList(),
       ),
     );
@@ -78,3 +87,4 @@ class _ItemBean {
 
   _ItemBean(this.name, this.symbol, this.unit, this.unitName, this.unitSymbol);
 }
+

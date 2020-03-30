@@ -42,14 +42,15 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 //    SystemChrome.setSystemUIOverlayStyle(
 //        SystemUiOverlayStyle(statusBarColor: Colors.blue));
     SystemUiOverlayStyle systemUiOverlayStyle =
-    SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle(
+//      systemNavigationBarColor: Colors.transparent,
+        statusBarColor: Colors.transparent
+    );
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-//    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-//    .then((v){
-//      setState(() {
-//
-//      });
-//    });
+//    SystemChrome.setEnabledSystemUIOverlays([]);
+
+
+
     _controller =
         AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
           ..addListener(() => setState(() {

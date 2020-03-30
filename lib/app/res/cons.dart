@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/style/TolyIcon.dart';
 
 class Cons {
   static const TABS = <String>[
@@ -10,9 +11,9 @@ class Cons {
   static const MENU_INFO = <String>["关于", "帮助", "问题反馈"]; //菜单栏
   static const ICONS_MAP = {
     //底栏图标
-    "图鉴": Icons.home, "创造": Icons.toys,
-    "喜欢": Icons.favorite, "手册": Icons.class_,
-    "我的": Icons.account_circle,
+    "图鉴": TolyIcon.icon_widgit, "收藏": TolyIcon.icon_star,
+//    "喜欢": Icons.favorite, "手册": Icons.class_,
+//    "我的": Icons.account_circle,
   };
 
   static const rainbow = <int>[

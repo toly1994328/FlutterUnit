@@ -3,34 +3,34 @@ import 'dart:math';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/utils/color_utils.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局信息的bloc
 
 class GlobalState extends Equatable {
-  const GlobalState();
-
-  @override
-  List<Object> get props => [];
-}
-
-class GlobalColorState extends GlobalState {
+  final double height;
   final Color color;
 
-  const GlobalColorState(this.color);
+  const GlobalState({this.height, this.color});
 
   @override
-  List<Object> get props => [color];
-}
+  List<Object> get props => [height,color];
 
-class AppBarHeightState extends GlobalState {
-  final double height;
-
-  const AppBarHeightState(this.height);
+  GlobalState copyWith({
+    Color color,
+    double height,
+  }) =>
+      GlobalState(
+        color: color ?? this.color,
+        height: height ?? this.height,
+      );
 
   @override
-  List<Object> get props => [height];
+  String toString() {
+    return 'GlobalState{height: $height, color: $color}';
+  }
 }
 
 abstract class GlobalEvent extends Equatable {
@@ -60,7 +60,8 @@ class UpdateAppBarHeight extends GlobalEvent {
 
 class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
   @override
-  GlobalState get initialState => GlobalColorState(Colors.blue);
+  GlobalState get initialState =>
+      GlobalState(color: Colors.blue, height: kToolbarHeight * 2 - 20);
 
   @override
   Stream<GlobalState> mapEventToState(GlobalEvent event) async* {
@@ -68,11 +69,11 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
       yield* _mapLoadWidgetToState(event.color);
     }
     if (event is UpdateAppBarHeight) {
-      yield AppBarHeightState(event.height);
+      yield state.copyWith(height: event.height);
     }
   }
 
   Stream<GlobalState> _mapLoadWidgetToState(Color color) async* {
-    yield GlobalColorState(color);
+    yield state.copyWith(color: color);
   }
 }

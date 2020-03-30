@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/views/pages/nav_page.dart';
+import 'package:flutter_unit/views/pages/unit_navigation.dart';
 import 'package:flutter_unit/views/widgets/StatefulWidget/nav/Scaffold.dart';
 
 /// create by 张风捷特烈 on 2020-03-17
@@ -13,7 +13,7 @@ import 'package:flutter_unit/views/widgets/StatefulWidget/nav/Scaffold.dart';
 //      "priority": 1,
 //      "subtitle":
 //          "【theme】 : 主题   【ThemeData】\n"
-//          "【title】 : 底部组件   【任务栏标题】\n"
+//          "【title】 : 任务栏标题   【String】\n"
 //          "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
 //          "【home】 : 主页   【Widget】"
 //    }

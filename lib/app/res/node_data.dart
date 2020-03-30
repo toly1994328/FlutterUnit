@@ -4627,7 +4627,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
       "name": 'MaterialApp基本用法',
       "priority": 1,
       "subtitle": "【theme】 : 主题   【ThemeData】\n"
-          "【title】 : 底部组件   【任务栏标题】\n"
+          "【title】 : 任务栏标题   【String】\n"
           "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
           "【home】 : 主页   【Widget】",
       "code": """class CustomMaterialApp extends StatelessWidget {
@@ -4642,7 +4642,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: NavPage(),
+        home: CustomScaffold(),
       ),
     );
   }
@@ -8167,7 +8167,7 @@ class _CustomSpacerState extends State<CustomSpacer> {
     {
       "widgetId": 108,
       "name": 'Positioned基本使用',
-      "priority": 2,
+      "priority": 1,
       "subtitle": "【child】 : 组件   【Widget】\n"
           "【top】 : 到父顶距离   【double】\n"
           "【right】 : 到父右距离   【double】\n"
@@ -8312,7 +8312,7 @@ class _CustomFlexibleState extends State<CustomFlexible> {
   "Table": [
     {
       "widgetId": 110,
-      "name": 'Flexible基本使用',
+      "name": 'Table基本使用',
       "priority": 1,
       "subtitle": "【children】 : 组件列表   【List<Widget>】\n"
           "【columnWidths】 : 列宽   【Map<int, TableColumnWidth>】\n"
@@ -10499,11 +10499,11 @@ class _CustomSnackBarState extends State<CustomSnackBar> {
     },
   ],
   "BottomSheet": [
-    {"widgetId": 142,
+    {
+      "widgetId": 142,
       "name": 'BottomSheet基本使用',
       "priority": 1,
-      "subtitle":
-      "【builder】 : 组件构造器   【WidgetBuilder】\n"
+      "subtitle": "【builder】 : 组件构造器   【WidgetBuilder】\n"
           "【backgroundColor】 : 背景色   【Color】\n"
           "【elevation】 : 影深   【double】\n"
           "【shape】 : 形状   【ShapeBorder】\n"
@@ -10549,10 +10549,3257 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                   topLeft: Radius.circular(40),
                 )),
           )));
-}"""},
+}"""
+    },
   ],
   "CupertinoContextMenu": [
-    {"code": """"""},
+    {
+      "widgetId": 143,
+      "name": 'CupertinoContextMenu基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【actions】 : 行为组件集   【List<Widget>】\n"
+          "【previewBuilder】 : 动画构造器  【ContextMenuPreviewBuilder】",
+      "code": """class CustomCupertinoContextMenu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: _buildCupertinoContextMenu(context),
+    );
+  }
+
+  final info= ['保存图片','立刻呼叫','添加到收藏夹'];
+
+  Widget _buildCupertinoContextMenu(context) => Container(
+    decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage('assets/images/sabar_bar.jpg'),
+            fit: BoxFit.cover),
+        borderRadius: BorderRadius.all(Radius.circular(50))),
+    width: 100,
+    height: 100,
+    child: CupertinoContextMenu(
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/sabar_bar.jpg'),
+                    fit: BoxFit.cover),
+                borderRadius: BorderRadius.all(Radius.circular(50))),
+          ),
+          actions: info.map((e)=>CupertinoContextMenuAction(
+            child: Center(child: Text(e)),
+            onPressed: () => Navigator.pop(context),
+          )).toList())
+  );
+}"""
+    },
+  ],
+  "CupertinoContextMenuAction": [
+    {
+      "widgetId": 144,
+      "name": 'CupertinoContextMenuAction基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【isDefaultAction】 : 是否默认选中  【bool】\n"
+          "【trailingIcon】 : 尾部  【bool】\n"
+          "【onPressed】 : 点击事件  【Function()】",
+      "code":
+          """class CustomCupertinoContextMenuAction extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          width: 200,
+          margin: EdgeInsets.all(5),
+          child: CupertinoContextMenuAction(
+              trailingIcon: CupertinoIcons.settings,
+              isDefaultAction: true,
+              onPressed: () => DialogAbout.show(context),
+              child: Text('张风捷特烈')),
+        ),
+        Container(
+          width: 200,
+          margin: EdgeInsets.all(5),
+          child: CupertinoContextMenuAction(
+              trailingIcon: CupertinoIcons.home,
+              isDefaultAction: false,
+              onPressed: () => DialogAbout.show(context),
+              child: Text('百里·巫缨')),
+        ),
+      ],
+    );
+  }
+}"""
+    },
+  ],
+  "LicensePage": [
+    {
+      "widgetId": 145,
+      "name": 'LicensePage基本使用',
+      "priority": 1,
+      "subtitle": "【applicationIcon】 : 左上图标   【Widget】\n"
+          "【applicationVersion】 : 版本号  【String】\n"
+          "【applicationName】 : 应用名  【String】\n"
+          "【applicationLegalese】 : 应用律术   【String】",
+      "code": """class CustomLicensePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 400,
+      child: LicensePage(
+        applicationIcon: FlutterLogo(),
+        applicationVersion: 'v0.0.1',
+        applicationName: 'Flutter Unit',
+        applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "GestureDetector": [
+    {
+      "widgetId": 146,
+      "name": 'GestureDetector基本事件',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onTap】 : 点击事件   【Function()】\n"
+          "【onDoubleTap】 : 双击事件   【Function()】\n"
+          "【onLongPress】 : 长按事件   【Function()】",
+      "code": """class CustomGestureDetector extends StatefulWidget {
+  @override
+  _CustomGestureDetectorState createState() => _CustomGestureDetectorState();
+}
+
+class _CustomGestureDetectorState extends State<CustomGestureDetector> {
+  var _info = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => setState(() => _info = 'onTap'),
+      onDoubleTap: () => setState(() => _info = 'onDoubleTap'),
+      onLongPress: () => setState(() => _info = 'onLongPress'),
+      child: Container(
+        alignment: Alignment.center,
+        width: 300,
+        height: 300 * 0.618,
+        color: Colors.grey.withAlpha(33),
+        child: Text(
+          _info,
+          style: TextStyle(fontSize: 18, color: Colors.blue),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 146,
+      "name": 'GestureDetector详情信息',
+      "priority": 2,
+      "subtitle": "【onTapDown】 : 按下回调   【Function(TapDownDetails)】\n"
+          "【onTapUp】 : 子组件   【Function(TapUpDetails)】\n"
+          "【onTapCancel】 : 点击取消   【Function()】",
+      "code": """class TapGestureDetector extends StatefulWidget {
+  @override
+  _TapGestureDetectorState createState() => _TapGestureDetectorState();
+}
+
+class _TapGestureDetectorState extends State<TapGestureDetector> {
+  var _info = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (detail) => setState(() => _info =
+          'onTapDown:\n相对落点:\${detail.localPosition}\n绝对落点:\${detail.globalPosition}'),
+      onTapUp: (detail) => setState(() => _info =
+          'onTapUp:\n相对落点:\${detail.localPosition}\n绝对落点:\${detail.globalPosition}'),
+      onTapCancel: () => setState(() => _info = 'onTapCancel'),
+      child: Container(
+        alignment: Alignment.center,
+        width: 300,
+        height: 300 * 0.618,
+        color: Colors.grey.withAlpha(33),
+        child: Text(
+          _info,
+          style: TextStyle(fontSize: 18, color: Colors.blue),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 146,
+      "name": 'GestureDetector的Pan事件',
+      "priority": 3,
+      "subtitle": "【onPanDown】 : 按下回调   【Function(DragDownDetails)】\n"
+          "【onPanEnd】 : 拖动结束   【Function(DragEndDetails)】\n"
+          "【onPanStart】 : 开始拖动   【Function(DragStartDetails)】\n"
+          "【onPanUpdate】 : 拖动更新   【Function(TapUpDetails)】\n"
+          "【onPanCancel】 : 拖动取消   【Function()】",
+      "code": """class PanGestureDetector extends StatefulWidget {
+  @override
+  _PanGestureDetectorState createState() => _PanGestureDetectorState();
+}
+
+class _PanGestureDetectorState extends State<PanGestureDetector> {
+  var _info = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onPanDown: (detail) => setState(() => _info =
+          'onPanDown:\n相对落点:\${detail.localPosition}\n绝对落点:\${detail.globalPosition}'),
+      onPanEnd: (detail) => setState(() => _info =
+          'onPanEnd:\n初速度:\${detail.primaryVelocity}\n最终速度:\${detail.velocity}'),
+      onPanUpdate: (detail) => setState(() => _info =
+          'onPanUpdate:\n相对落点:\${detail.localPosition}\n绝对落点:\${detail.globalPosition}'),
+      onPanStart: (detail) => setState(() => _info =
+          'onPanStart:\n相对落点:\${detail.localPosition}\n绝对落点:\${detail.globalPosition}'),
+      onPanCancel: () => setState(() => _info = 'onTapCancel'),
+      child: SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          width: 300,
+          height: 300 * 0.618,
+          color: Colors.grey.withAlpha(33),
+          child: Text(
+            _info,
+            style: TextStyle(fontSize: 18, color: Colors.blue),
+          ),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "Listener": [
+    {
+      "widgetId": 147,
+      "name": 'Listener基本事件',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onPointerDown】 : 按下事件   【Function(PointerDownEvent)】\n"
+          "【onPointerMove】 : 移动事件   【Function(PointerMoveEvent)】\n"
+          "【onPointerMove】 : 抬起事件   【Function(PointerUpEvent)】\n"
+          "【onPointerCancel】 : 抬起事件   【Function(PointerUpEvent)】",
+      "code": """class CustomListener extends StatefulWidget {
+  @override
+  _CustomListenerState createState() => _CustomListenerState();
+}
+
+class _CustomListenerState extends State<CustomListener> {
+  var _info = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Listener(
+      onPointerDown: (detail) => setState(() => _info = detail.toString()),
+      onPointerMove: (detail) => setState(() => _info = detail.toString()),
+      onPointerUp: (detail) => setState(() => _info = detail.toString()),
+      onPointerCancel: (detail) => setState(() => _info = detail.toString()),
+
+      child: Container(
+        alignment: Alignment.center,
+        width: 300,
+        height: 300 * 0.618,
+        color: Colors.grey.withAlpha(33),
+        child: Text(
+          _info,
+          style: TextStyle(fontSize: 16, color: Colors.blue),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "Tab": [
+    {
+      "widgetId": 148,
+      "name": 'Tab基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【text】 : 文字   【String】\n"
+          "【icon】 : 下方组件  【Widgit】\n"
+          "    text和child不能同时存在",
+      "code": """class CustomTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Tab(
+            icon:Icon( Icons.add,color: Colors.blue,),
+            child: Text('添加'),
+          ),
+          Tab(
+            icon:Icon( Icons.close,color: Colors.red,),
+            text: '删除',
+          ),
+          Tab(
+            icon:Icon( Icons.refresh,color: Colors.green),
+            text: '更新',
+          ),
+        ],
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "InkResponse": [
+    {
+      "widgetId": 149,
+      "name": 'InkResponse基本事件',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onTap】 : 点击事件   【Function()】\n"
+          "【onDoubleTap】 : 双击事件   【Function()】\n"
+          "【onTapCancel】 : 点击取消   【Function()】\n"
+          "【onLongPress】 : 长按事件   【Function()】",
+      "code": """class CustomInkResponse extends StatefulWidget {
+  @override
+  _CustomInkResponseState createState() => _CustomInkResponseState();
+}
+
+class _CustomInkResponseState extends State<CustomInkResponse> {
+  var _info = 'Push';
+  @override
+  Widget build(BuildContext context) {
+    return InkResponse(
+      onTap: () => setState(() => _info = 'onTap'),
+      onDoubleTap: () => setState(() => _info = 'onDoubleTap'),
+      onLongPress: () => setState(() => _info = 'onLongPress'),
+      onTapCancel: () => setState(() => _info = 'onTapCancel'),
+      child: Container(
+        alignment: Alignment.center,
+        width: 200,
+        height: 100,
+        child: Text(_info),
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 149,
+      "name": 'InkResponse其他属性',
+      "priority": 2,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】\n"
+          "【highlightColor】 : 高亮色   【Color】\n"
+          "【splashColor】 : 水波纹色   【Color】\n"
+          "【radius】 : 水波半径   【double】",
+      "code": """class ColorInkResponse extends StatefulWidget {
+  @override
+  _ColorInkResponseState createState() => _ColorInkResponseState();
+}
+
+class _ColorInkResponseState extends State<ColorInkResponse> {
+  var _info = 'Push';
+  @override
+  Widget build(BuildContext context) {
+    return InkResponse(
+      onTap: () => {},
+      splashColor: Colors.blueAccent,
+      highlightColor: Colors.orange,
+      onHighlightChanged: (v)=> setState(() => _info = 'onHighlightChanged:\$v'),
+      radius: 50,
+      child: Container(
+        alignment: Alignment.center,
+        width: 200,
+        height: 100,
+        child: Text(_info),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "InkWell": [
+    {
+      "widgetId": 150,
+      "name": 'InkWell基本事件',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onTap】 : 点击事件   【Function()】\n"
+          "【onDoubleTap】 : 双击事件   【Function()】\n"
+          "【onTapCancel】 : 点击取消   【Function()】\n"
+          "【onLongPress】 : 长按事件   【Function()】",
+      "code": """class CustomInkWell extends StatefulWidget {
+  @override
+  _CustomInkWellState createState() => _CustomInkWellState();
+}
+
+class _CustomInkWellState extends State<CustomInkWell> {
+  var _info = 'Push';
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => setState(() => _info = 'onTap'),
+      onDoubleTap: () => setState(() => _info = 'onDoubleTap'),
+      onLongPress: () => setState(() => _info = 'onLongPress'),
+      onTapCancel: () => setState(() => _info = 'onTapCancel'),
+      child: Container(
+        alignment: Alignment.center,
+        width: 120,
+        height: 50,
+        child: Text(_info),
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 150,
+      "name": 'InkWell其他属性',
+      "priority": 2,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】\n"
+          "【highlightColor】 : 高亮色   【Color】\n"
+          "【splashColor】 : 水波纹色   【Color】\n"
+          "【radius】 : 水波半径   【double】",
+      "code": """class ColorInkWell extends StatefulWidget {
+  @override
+  _ColorInkWellState createState() => _ColorInkWellState();
+}
+
+class _ColorInkWellState extends State<ColorInkWell> {
+  var _info = 'Push';
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => {},
+      splashColor: Colors.blueAccent,
+      highlightColor: Colors.orange,
+      onHighlightChanged: (v) =>
+          setState(() => _info = 'onHighlightChanged:\$v'),
+      radius: 50,
+      child: Container(
+        alignment: Alignment.center,
+        width: 180,
+        height: 50,
+        child: Text(_info),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "TableRowInkWell": [
+    {
+      "widgetId": 151,
+      "name": 'TableRowInkWell基本事件',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onTap】 : 点击事件   【Function()】\n"
+          "【onDoubleTap】 : 双击事件   【Function()】\n"
+          "【onLongPress】 : 长按事件   【Function()】\n"
+          "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】",
+      "code": """class CustomTableRowInkWell extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var title = _ItemBean("单位称", "量纲", "单位", "单位名称", "单位符号");
+    var m = _ItemBean("长度", "L", "1m", "米", "m");
+    var kg = _ItemBean("质量", "M", "1Kg", "千克", "Kg");
+    var s = _ItemBean("时间", "T", "1s", "秒", "s");
+    var a = _ItemBean("安培", "Ι", "1A", "安培", "A");
+    var k = _ItemBean("热力学温度", "θ", "1K", "开尔文", "K");
+    var mol = _ItemBean("物质的量", "N", "1mol", "摩尔", "mol");
+    var cd = _ItemBean("发光强度", "J", "1cd", "坎德拉", "cd");
+
+    var data = <_ItemBean>[title, m, kg, s, a, k, mol, cd];
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Table(
+        columnWidths: const <int, TableColumnWidth>{
+          0: FixedColumnWidth(80.0),
+          1: FixedColumnWidth(80.0),
+          2: FixedColumnWidth(80.0),
+          3: FixedColumnWidth(80.0),
+          4: FixedColumnWidth(80.0),
+        },
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        border: TableBorder.all(
+            color: Colors.orangeAccent, width: 1.0, style: BorderStyle.solid),
+        children: data
+            .map((item) => TableRow(children: <Widget>[
+          TableRowInkWell(
+            onTap: () => print('onTap'),
+            onDoubleTap: () => print('onDoubleTap'),
+            onLongPress: () => print('onLongPress'),
+            onHighlightChanged: (v) => print('onHighlightChanged:\$v'),
+            child: Center(
+                child: Text(
+                  item.name,
+                  style: TextStyle(color: Colors.blue),
+                )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.symbol)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.unitSymbol)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.unitName)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text(item.unit)),
+          ),
+        ]))
+            .toList(),
+      ),
+    );
+  }
+}
+
+class _ItemBean {
+  String name;
+  String symbol;
+  String unit;
+  String unitName;
+  String unitSymbol;
+
+  _ItemBean(this.name, this.symbol, this.unit, this.unitName, this.unitSymbol);
+}"""
+    },
+  ],
+  "Ink": [
+    {
+      "widgetId": 152,
+      "name": 'Ink基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【padding】 : 内边距   【EdgeInsetsGeometry】\n"
+          "【decoration】 : 装饰   【Decoration】\n"
+          "【width】 : 宽   【double】\n"
+          "【height】 : 高   【double】\n"
+          "【color】 : 颜色   【Color】",
+      "code": """class CustomInk extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.orangeAccent,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Ink(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                color: Colors.yellow,
+              borderRadius: BorderRadius.all(Radius.circular(20))
+            ),
+
+            width: 200.0,
+            height: 100.0,
+            child: InkWell(
+                onTap: () {
+                },
+                child: Center(
+                  child: Text('Hello'),
+                )),
+          ),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 152,
+      "name": 'Ink.image图片水波纹',
+      "priority": 2,
+      "subtitle": "    其中属性与Image组件一致，详见Image组件",
+      "code": """class InkImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.grey[800],
+      child: Center(
+        child: Ink.image(
+          image: AssetImage('assets/images/sabar.jpg'),
+          fit: BoxFit.cover,
+          width: 300.0,
+          height: 200.0,
+          child: InkWell(
+              onTap: () {},
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text('Chaos',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w900, color: Colors.black)),
+                ),
+              )),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "RawChip": [
+    {
+      "widgetId": 153,
+      "name": 'RawChip点击效果',
+      "priority": 1,
+      "subtitle": "【label】: 中间组件   【Widget】\n"
+          "【padding】 : 内边距   【EdgeInsetsGeometry】\n"
+          "【labelPadding】 : label边距   【EdgeInsetsGeometry】\n"
+          "【shadowColor】: 阴影色   【Color】\n"
+          "【avatar】: 左侧组件   【Widget】\n"
+          "【elevation】: 影深   【double】\n"
+          "【pressElevation】: 点击时影深   【double】\n"
+          "【onPressed】 : 点击事件  【Function()】",
+      "code": """class PressRawChip extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: RawChip(
+        padding: EdgeInsets.all(5),
+        labelPadding: EdgeInsets.all(3),
+        label: Text('张风捷特烈'),
+        avatar: Image.asset("assets/images/icon_head.png"),
+        elevation: 3,
+        pressElevation: 5,
+        shadowColor: Colors.orangeAccent,
+        onPressed: () => DialogAbout.show(context),
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 153,
+      "name": 'RawChip选中和删除效果',
+      "priority": 2,
+      "subtitle": "【selected】: 是否选中   【bool】\n"
+          "【deleteIconColor】: 尾部图标色   【Color】\n"
+          "【selectedColor】: 选中色   【Color】\n"
+          "【deleteIcon】: 尾部组件   【Widget】\n"
+          "【onSelected】: 选中事件   【Function(bool)】\n"
+          "【onDeleted】 : 尾部事件  【Function()】",
+      "code": """class SelectRawChip extends StatefulWidget {
+  @override
+  _SelectRawChipState createState() => _SelectRawChipState();
+}
+
+class _SelectRawChipState extends State<SelectRawChip> {
+  bool _selected = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: RawChip(
+        selected: _selected,
+        padding: EdgeInsets.all(5),
+        labelPadding: EdgeInsets.all(3),
+        deleteIconColor: Colors.red,
+        selectedColor: Colors.orangeAccent.withAlpha(44),
+        label: Text('张风捷特烈'),
+        avatar: Image.asset("assets/images/icon_head.png"),
+        elevation: 3,
+        pressElevation: 5,
+        shadowColor: Colors.orangeAccent,
+        onSelected: (v)=> setState(() => _selected=v),
+        onDeleted: () => DialogAbout.show(context),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "Drawer": [
+    {
+      "widgetId": 154,
+      "name": 'Drawer基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【elevation】 : 影深  【double】",
+      "code": """class CustomDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 400,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Unit'),
+        ),
+        drawer: Drawer(
+          elevation: 3,
+          child: _buildChild(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildChild() => ListView(
+        padding: EdgeInsets.zero,
+        children: const <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/caver.jpeg'),
+                  fit: BoxFit.cover),
+            ),
+            child: Text(
+              '张风捷特烈',
+              style: TextStyle(fontSize: 24, color: Colors.white, shadows: [
+                Shadow(color: Colors.black, offset: Offset(1, 1), blurRadius: 3)
+              ]),
+            ),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.star,
+              color: Colors.blue,
+            ),
+            title: Text('我的收藏'),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.palette,
+              color: Colors.orangeAccent,
+            ),
+            title: Text('我的绘画'),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.insert_drive_file,
+              color: Colors.green,
+            ),
+            title: Text('我的文件'),
+          ),
+        ],
+      );
+}"""
+    },
+  ],
+  "DrawerHeader": [
+    {
+      "widgetId": 155,
+      "name": 'DrawerHeader基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【decoration】 : 装饰   【Decoration】\n"
+          "【margin】 : 外边距   【EdgeInsetsGeometry】\n"
+          "【padding】 : 内边距   【EdgeInsetsGeometry】",
+      "code": """class CustomDrawerHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 400,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Unit'),
+        ),
+        drawer: Drawer(
+          elevation: 3,
+          child: _buildChild(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildChild() => ListView(
+    padding: EdgeInsets.zero,
+    children: <Widget>[
+      _buildHeader(),
+      ListTile(
+        leading: Icon(
+          Icons.star,
+          color: Colors.blue,
+        ),
+        title: Text('我的收藏'),
+      ),
+      ListTile(
+        leading: Icon(
+          Icons.palette,
+          color: Colors.orangeAccent,
+        ),
+        title: Text('我的绘画'),
+      ),
+      ListTile(
+        leading: Icon(
+          Icons.insert_drive_file,
+          color: Colors.green,
+        ),
+        title: Text('我的文件'),
+      ),
+    ],
+  );
+
+  Widget _buildHeader() {
+    return DrawerHeader(
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.only(left: 20,top: 15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+            topLeft:Radius.circular(40),
+            topRight:Radius.circular(40)
+        ),
+        image: DecorationImage(
+            image: AssetImage('assets/images/caver.jpeg'),
+            fit: BoxFit.cover),
+      ),
+      child: Text(
+        '张风捷特烈',
+        style: TextStyle(fontSize: 24, color: Colors.white, shadows: [
+          Shadow(color: Colors.black, offset: Offset(1, 1), blurRadius: 3)
+        ]),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "CupertinoApp": [
+    {
+      "widgetId": 156,
+      "name": 'CupertinoApp基本用法',
+      "priority": 1,
+      "subtitle": "【theme】 : 主题   【ThemeData】\n"
+          "【title】 : 任务栏标题   【String】\n"
+          "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
+          "【home】 : 主页   【Widget】",
+      "code": """class CustomCupertinoApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height - 200,
+      child: CupertinoApp(
+        title: 'Flutter Demo',
+        theme: CupertinoThemeData(
+          primaryColor: CupertinoColors.white,
+        ),
+        home: CupertinoPageScaffold(
+          navigationBar: CupertinoNavigationBar(
+            leading: Icon(
+              CupertinoIcons.reply,
+              color: CupertinoColors.black,
+            ),
+            trailing: Icon(
+              CupertinoIcons.share,
+              color: CupertinoColors.black,
+            ),
+            middle: Text('Flutter Unit'),
+          ),
+          backgroundColor: CupertinoColors.systemBackground,
+          child: Center(
+            child: Text('Hello, World!'),
+          ),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "CupertinoPageScaffold": [
+    {
+      "widgetId": 157,
+      "name": 'CupertinoPageScaffold基本用法',
+      "priority": 1,
+      "subtitle": "【child】 : 内容   【Widget】\n"
+          "【backgroundColor】 : 背景色   【Color】\n"
+          "【navigationBar】 : 头部   【ObstructingPreferredSizeWidget】",
+      "code": """class CustomCupertinoPageScaffold extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height - 200,
+      child: CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          leading: Icon(CupertinoIcons.back),
+          trailing: Icon(CupertinoIcons.share),
+          middle: Text('Flutter Unit'),
+        ),
+        backgroundColor: CupertinoColors.white,
+        child: Center(
+          child: Text('Hello, World!'),
+        ),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "CupertinoTabScaffold": [
+    {
+      "widgetId": 158,
+      "name": 'CupertinoTabScaffold基本用法',
+      "priority": 1,
+      "subtitle": "【tabBar】 : 页签条   【CupertinoTabBar】\n"
+          "【backgroundColor】 : 背景色   【Color】\n"
+          "【controller】 : 控制器   【CupertinoTabController】\n"
+          "【tabBuilder】 : 页面构造器   【IndexedWidgetBuilder】",
+      "code": """class CustomCupertinoTabScaffold extends StatefulWidget {
+  @override
+  _CustomCupertinoTabScaffoldState createState() =>
+      _CustomCupertinoTabScaffoldState();
+}
+
+class _CustomCupertinoTabScaffoldState
+    extends State<CustomCupertinoTabScaffold> {
+  var _position = 0;
+  final iconsMap = {
+    //底栏图标
+    "图鉴": Icons.home, "动态": Icons.toys,
+    "喜欢": Icons.favorite, "手册": Icons.class_,
+    "我的": Icons.account_circle,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height - 300,
+      child: CupertinoTabScaffold(
+          backgroundColor: Colors.grey.withAlpha(11),
+          tabBar: _buildTabBar(),
+          tabBuilder: (_, index) => _buildContent(index)),
+    );
+  }
+
+  CupertinoTabBar _buildTabBar() => CupertinoTabBar(
+        currentIndex: _position,
+        onTap: (value) => setState(() => _position = value),
+        items: iconsMap.keys
+            .map((e) => BottomNavigationBarItem(
+                  icon: Icon(
+                    iconsMap[e],
+                  ),
+                  title: Text(e),
+                ))
+            .toList(),
+        activeColor: Colors.blue,
+        inactiveColor: Color(0xff333333),
+        backgroundColor: Color(0xfff1f1f1),
+        iconSize: 25.0,
+      );
+
+  _buildContent(int index) => Container(
+      alignment: Alignment.center,
+      child: Text(iconsMap.keys.toList()[index]),
+    );
+}"""
+    },
+  ],
+  "PositionedDirectional": [
+    {
+      "widgetId": 159,
+      "name": 'PositionedDirectional基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 组件   【Widget】\n"
+          "【top】 : 到父顶距离   【double】\n"
+          "【end】 : 到父右距离   【double】\n"
+          "【start】 : 到父左距离   【double】\n"
+          "【bottom】 : 到父底距离   【double】",
+      "code": """class CustomPositionedDirectional extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var yellowBox = Container(
+      color: Colors.yellow,
+      height: 100,
+      width: 100,
+    );
+
+    var redBox = Container(
+      color: Colors.red,
+      height: 90,
+      width: 90,
+    );
+
+    var greenBox = Container(
+      color: Colors.green,
+      height: 80,
+      width: 80,
+    );
+
+    var cyanBox = Container(
+      color: Colors.cyanAccent,
+      height: 70,
+      width: 70,
+    );
+
+    return Container(
+        width: 200,
+        height: 120,
+        color: Colors.grey.withAlpha(33),
+        child: Stack(
+          children: <Widget>[
+            yellowBox,
+            redBox,
+            PositionedDirectional(top: 20, start: 20, child: greenBox),
+            PositionedDirectional(
+              child: cyanBox,
+              bottom: 10,
+              end: 10,
+            )
+          ],
+        ));
+  }
+}"""
+    },
+  ],
+  "Material": [
+    {
+      "widgetId": 160,
+      "name": 'Material基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【type】 : 类型   【MaterialType】\n"
+          "【elevation】 : 影深   【double】\n"
+          "【shadowColor】 : 阴影颜色   【Color】\n"
+          "【color】 : 颜色   【Color】",
+      "code": """class CustomMaterial extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        spacing: 10,
+        runSpacing: 10,
+        children: MaterialType.values.map((e) => _buildMaterial(e)).toList());
+  }
+
+  Material _buildMaterial(MaterialType type) => Material(
+        shadowColor: Colors.blue,
+        type: type,
+        color: Colors.orange,
+        elevation: 3,
+        child: Container(
+          alignment: Alignment.center,
+          width: 100,
+          height: 60,
+          child: Text(
+            type.toString().split('.')[1],
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      );
+}"""
+    },
+    {
+      "widgetId": 160,
+      "name": 'Material的shape属性',
+      "priority": 2,
+      "subtitle": "【shape】 : 形状   【ShapeBorder】\n"
+          "【type】 : 类型   【MaterialType】",
+      "code": """class ShapeMaterial extends StatelessWidget {
+  
+  final shapeMap = {
+    'BorderDirectional': BorderDirectional(
+        top: BorderSide(
+          color: Colors.white,
+        ),
+        start: BorderSide(color: Colors.black, width: 15),
+        bottom: BorderSide(
+          color: Colors.white,
+        )),
+    'Border': Border(
+      top: BorderSide(width: 5.0, color: Color(0xFFFFDFDFDF)),
+      left: BorderSide(width: 5.0, color: Color(0xFFFFDFDFDF)),
+      right: BorderSide(width: 5.0, color: Color(0xFFFF7F7F7F)),
+      bottom: BorderSide(width: 5.0, color: Color(0xFFFF7F7F7F)),
+    ),
+    'Circle': CircleBorder(
+      side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+    ),
+    'RoundedRectangleBorder': RoundedRectangleBorder(
+        side: BorderSide(width: 1.0, color: Colors.black),
+        borderRadius: BorderRadius.all(Radius.circular(15))),
+    'ContinuousRectangleBorder': ContinuousRectangleBorder(
+      side: BorderSide.none,
+      borderRadius: BorderRadius.circular(40.0),
+    )
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        spacing: 10,
+        runSpacing: 10,
+        children: shapeMap.keys.map((e) => _buildMaterial(e)).toList());
+  }
+
+  Material _buildMaterial(String type) => Material(
+        shadowColor: Colors.blue,
+        shape: shapeMap[type],
+        color: Colors.orange,
+        elevation: 3,
+        textStyle: TextStyle(color: Colors.white),
+        child: Container(
+          alignment: Alignment.center,
+          width: 300,
+          height: 60,
+          child: Text(
+            type,
+          ),
+        ),
+      );
+}"""
+    },
+  ],
+  "IndexedStack": [
+    {
+      "widgetId": 161,
+      "name": 'IndexedStack基本使用',
+      "priority": 1,
+      "subtitle": "【children】 : 子组件列表   【Lis<Widget>】\n"
+          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
+          "【index】 : 当前显示所有  【Function()】",
+      "code": """class CustomIndexedStack extends StatefulWidget {
+  @override
+  _CustomIndexedStackState createState() => _CustomIndexedStackState();
+}
+
+class _CustomIndexedStackState extends State<CustomIndexedStack> {
+  var _index = 1;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        _buildSwitch(),
+        Container(
+          width: 200,
+          height: 100,
+          color: Colors.grey.withAlpha(33),
+          child: IndexedStack(
+            index: _index,
+            children: <Widget>[
+              Container(
+                color: Colors.red,
+                width: 80,
+                height: 80,
+              ),
+              Positioned(
+                bottom: 10,
+                right: 10,
+                child: Container(
+                  color: Colors.blue,
+                  width: 80,
+                  height: 80,
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSwitch() => Switch(
+        value: _index == 0,
+        onChanged: (v) => setState(() => _index = v ? 0 : 1),
+      );
+}"""
+    },
+  ],
+  "ListView": [
+    {
+      "widgetId": 162,
+      "name": 'ListView基本使用',
+      "priority": 1,
+      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
+          "【padding】 : 点击事件  【EdgeInsetsGeometry】",
+      "code": """class CustomListView extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 5),
+        children: data
+            .map((color) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 50,
+                  color: color,
+                  child: Text(
+                    colorString(color),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ))
+            .toList(),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 162,
+      "name": 'ListView横向滑动',
+      "priority": 2,
+      "subtitle": "【scrollDirection】 : 滑动方向   【Axis】\n"
+          "【reverse】 : 是否反向滑动   【bool】\n"
+          "【shrinkWrap】 : 无边界时是否包裹  【bool】",
+      "code": """class HorizontalListView extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ListView(
+        reverse: true,
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        children: data
+            .map((color) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 50,
+                  color: color,
+                  child: Text(
+                    colorString(color),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ))
+            .toList(),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 162,
+      "name": 'ListView.builder构造',
+      "priority": 3,
+      "subtitle": "【itemCount】 : 条目个数   【int】\n"
+          "【itemBuilder】 : 条目构造器   【IndexedWidgetBuilder】",
+      "code": """class BuilderListView extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) => _buildItem(data[index]),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+
+  Widget _buildItem(Color color) => Container(
+        alignment: Alignment.center,
+        width: 100,
+        height: 50,
+        color: color,
+        child: Text(
+          colorString(color),
+          style: TextStyle(color: Colors.white, shadows: [
+            Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+          ]),
+        ),
+      );
+}"""
+    },
+    {
+      "widgetId": 162,
+      "name": 'ListView.separated构造',
+      "priority": 3,
+      "subtitle": "【separatorBuilder】 : 条目构造器   【IndexedWidgetBuilder】",
+      "code": """class SeparatedListView extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ListView.separated(
+        separatorBuilder: (context, index) => Divider(
+          thickness: 1,
+          height: 1,
+          color: Colors.orange,
+        ),
+        itemCount: data.length,
+        itemBuilder: (context, index) => _buildItem(data[index]),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+
+  Widget _buildItem(Color color) => Container(
+        alignment: Alignment.center,
+        width: 100,
+        height: 50,
+        color: color,
+        child: Text(
+          colorString(color),
+          style: TextStyle(color: Colors.white, shadows: [
+            Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+          ]),
+        ),
+      );
+}"""
+    },
+  ],
+  "GridView": [
+    {
+      "widgetId": 163,
+      "name": 'GridView.count构造',
+      "priority": 1,
+      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
+          "【crossAxisCount】 : 主轴一行box数量  【int】\n"
+          "【mainAxisSpacing】 : 主轴每行间距  【double】\n"
+          "【crossAxisSpacing】 : 交叉轴每行间距  【double】\n"
+          "【childAspectRatio】 : box主长/交叉轴长  【double】\n"
+          "【crossAxisCount】 : 主轴一行数量  【int】",
+      "code": """class CustomGridView extends StatelessWidget {
+  final data = List.generate(128, (i) => Color(0xFFFF00FF - 2*i));
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: GridView.count(
+        crossAxisCount: 4,
+        mainAxisSpacing: 2,
+        crossAxisSpacing: 2,
+        childAspectRatio: 1/0.618,
+        children: data
+            .map((color) => _buildItem(color))
+            .toList(),
+      ),
+    );
+  }
+
+  Container _buildItem(Color color) => Container(
+                alignment: Alignment.center,
+                width: 100,
+                height: 30,
+                color: color,
+                child: Text(
+                  colorString(color),
+                  style: TextStyle(color: Colors.white, shadows: [
+                    Shadow(
+                        color: Colors.black,
+                        offset: Offset(.5, .5),
+                        blurRadius: 2)
+                  ]),
+                ),
+              );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 163,
+      "name": 'GridView滑动方向',
+      "priority": 2,
+      "subtitle": "【scrollDirection】 : 滑动方向   【Axis】\n"
+          "【reverse】 : 是否反向滑动   【bool】\n"
+          "【shrinkWrap】 : 无边界时是否包裹  【bool】",
+      "code": """class HorizontalGridView extends StatelessWidget {
+  final data = List.generate(128, (i) => Color(0xFF00FFFF - 2*i));
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: GridView.count(
+        scrollDirection: Axis.horizontal,
+        reverse: true,
+        crossAxisCount: 4,
+        mainAxisSpacing: 2,
+        crossAxisSpacing: 2,
+        childAspectRatio: 0.618,
+        children: data
+            .map((color) => _buildItem(color))
+            .toList(),
+      ),
+    );
+  }
+
+  Container _buildItem(Color color) => Container(
+    alignment: Alignment.center,
+    width: 100,
+    height: 30,
+    color: color,
+    child: Text(
+      colorString(color),
+      style: TextStyle(color: Colors.white, shadows: [
+        Shadow(
+            color: Colors.black,
+            offset: Offset(.5, .5),
+            blurRadius: 2)
+      ]),
+    ),
+  );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 163,
+      "name": 'GridView.extent构造',
+      "priority": 3,
+      "subtitle": "【maxCrossAxisExtent】 : box轴向长度   【double】\n"
+          "【reverse】 : 是否反向滑动   【bool】\n"
+          "【shrinkWrap】 : 无边界时是否包裹  【bool】",
+      "code": """class ExtentGridView extends StatelessWidget {
+  final data = List.generate(128, (i) => Color(0xFF00FFFF - 2*i));
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: GridView.extent(
+        scrollDirection: Axis.horizontal,
+        maxCrossAxisExtent: 80.0,
+        mainAxisSpacing: 2,
+        crossAxisSpacing: 2,
+        childAspectRatio: 0.618,
+        children: data
+            .map((color) => _buildItem(color))
+            .toList(),
+      ),
+    );
+  }
+
+  Container _buildItem(Color color) => Container(
+    alignment: Alignment.center,
+    width: 100,
+    height: 30,
+    color: color,
+    child: Text(
+      colorString(color),
+      style: TextStyle(color: Colors.white, shadows: [
+        Shadow(
+            color: Colors.black,
+            offset: Offset(.5, .5),
+            blurRadius: 2)
+      ]),
+    ),
+  );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 163,
+      "name": 'GridView.builder构造',
+      "priority": 4,
+      "subtitle": "【itemCount】 : 条目数量   【int】\n"
+          "【gridDelegate】 : 网格代理   【SliverGridDelegate】\n"
+          "【itemBuilder】 : 条目构造器  【IndexedWidgetBuilder】",
+      "code": """class BuilderGridView extends StatelessWidget {
+  final data = List.generate(128, (i) => Color(0xFF33FFF - 2*i));
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: GridView.builder(
+        itemCount: data.length,
+        scrollDirection: Axis.vertical,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(//网格代理：定交叉轴数目
+          crossAxisCount: 4,//条目个数
+          mainAxisSpacing: 5,//主轴间距
+          crossAxisSpacing: 5,//交叉轴间距
+          childAspectRatio:1/0.618),
+        itemBuilder: (_, int position)=> _buildItem(data[position])
+      ),
+    );
+  }
+
+  Container _buildItem(Color color) => Container(
+    alignment: Alignment.center,
+    width: 100,
+    height: 30,
+    color: color,
+    child: Text(
+      colorString(color),
+      style: TextStyle(color: Colors.white, shadows: [
+        Shadow(
+            color: Colors.black,
+            offset: Offset(.5, .5),
+            blurRadius: 2)
+      ]),
+    ),
+  );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "SingleChildScrollView": [
+    {
+      "widgetId": 164,
+      "name": 'SingleChildScrollView基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【padding】 : 点击事件  【EdgeInsetsGeometry】",
+      "code": """class CustomSingleChildScrollView extends StatelessWidget {
+  final data = <Color>[
+    Colors.blue[50],
+    Colors.blue[100],
+    Colors.blue[200],
+    Colors.blue[300],
+    Colors.blue[400],
+    Colors.blue[500],
+    Colors.blue[600],
+    Colors.blue[700],
+    Colors.blue[800],
+    Colors.blue[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          children: data
+              .map((color) => Container(
+            alignment: Alignment.center,
+            height: 50,
+            color: color,
+            child: Text(
+              colorString(color),
+              style: TextStyle(color: Colors.white, shadows: [
+                Shadow(
+                    color: Colors.black,
+                    offset: Offset(.5, .5),
+                    blurRadius: 2)
+              ]),
+            ),
+          ))
+              .toList(),
+        ),
+
+      ),
+    );
+  }
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 164,
+      "name": 'SingleChildScrollView滑动方向',
+      "priority": 2,
+      "subtitle": "【scrollDirection】 : 滑动方向   【Axis】\n"
+          "【reverse】 : 是否反向   【Axis】",
+      "code": """class DirectionSingleChildScrollView extends StatelessWidget {
+  final data = <Color>[
+    Colors.blue[50],
+    Colors.blue[100],
+    Colors.blue[200],
+    Colors.blue[300],
+    Colors.blue[400],
+    Colors.blue[500],
+    Colors.blue[600],
+    Colors.blue[700],
+    Colors.blue[800],
+    Colors.blue[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        reverse: true,
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Row(
+          children: data
+              .map((color) => Container(
+            alignment: Alignment.center,
+            width: 90,
+            color: color,
+            child: Text(
+              colorString(color),
+              style: TextStyle(color: Colors.white, shadows: [
+                Shadow(
+                    color: Colors.black,
+                    offset: Offset(.5, .5),
+                    blurRadius: 2)
+              ]),
+            ),
+          ))
+              .toList(),
+        ),
+
+      ),
+    );
+  }
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "PageView": [
+    {
+      "widgetId": 165,
+      "name": 'PageView基本使用',
+      "priority": 1,
+      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
+          "【onPageChanged】 : 点击事件  【ValueChanged<int>】",
+      "code": """class CustomPageView extends StatelessWidget {
+  final data = <Color>[
+    Colors.green[50],
+    Colors.green[100],
+    Colors.green[200],
+    Colors.green[300],
+    Colors.green[400],
+    Colors.green[500],
+    Colors.green[600],
+    Colors.green[700],
+    Colors.green[800],
+    Colors.green[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      child: PageView(
+        onPageChanged: (position){
+          print(position);
+        },
+        children: data
+            .map((color) => Container(
+          alignment: Alignment.center,
+          width: 90,
+          color: color,
+          child: Text(
+            colorString(color),
+            style: TextStyle(color: Colors.white,
+                fontSize:24,shadows: [
+              Shadow(
+                  color: Colors.black,
+                  offset: Offset(.5, .5),
+                  blurRadius: 2)
+            ]),
+          ),
+        ))
+            .toList(),
+      ),
+    );
+  }
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 165,
+      "name": 'PageView滑动方向',
+      "priority": 2,
+      "subtitle": "【scrollDirection】 : 滑动方向   【Axis】\n"
+          "【reverse】 : 是否反向  【bool】",
+      "code": """class DirectionPageView extends StatelessWidget {
+  final data = <Color>[
+    Colors.orange[50],
+    Colors.orange[100],
+    Colors.orange[200],
+    Colors.orange[300],
+    Colors.orange[400],
+    Colors.orange[500],
+    Colors.orange[600],
+    Colors.orange[700],
+    Colors.orange[800],
+    Colors.orange[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      child: PageView(
+        scrollDirection: Axis.vertical,
+        reverse: true,
+        onPageChanged: (position) {
+          print(position);
+        },
+        children: data
+            .map((color) =>
+            Container(
+              alignment: Alignment.center,
+              width: 90,
+              color: color,
+              child: Text(
+                colorString(color),
+                style: TextStyle(color: Colors.white,
+                    fontSize: 24, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+              ),
+            ))
+            .toList(),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 165,
+      "name": 'PageView滑动方向',
+      "priority": 3,
+      "subtitle": "【controller】 : 页面控制器   【PageController】",
+      "code": """class CtrlPageView extends StatefulWidget {
+  @override
+  _CtrlPageViewState createState() => _CtrlPageViewState();
+}
+
+class _CtrlPageViewState extends State<CtrlPageView> {
+  final data = <Color>[
+    Colors.orange[50],
+    Colors.orange[100],
+    Colors.orange[200],
+    Colors.orange[300],
+    Colors.orange[400],
+    Colors.orange[500],
+    Colors.orange[600],
+    Colors.orange[700],
+    Colors.orange[800],
+    Colors.orange[900],
+  ];
+
+  PageController _controller;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _controller=PageController(
+      viewportFraction: 0.8,
+      initialPage: (data.length/2).round()
+    );
+
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      child: PageView(
+        controller: _controller,
+        onPageChanged: (position) {
+          print(position);
+        },
+        children: data
+            .map((color) =>
+            Container(
+              alignment: Alignment.center,
+              width: 90,
+              color: color,
+              child: Text(
+                colorString(color),
+                style: TextStyle(color: Colors.white,
+                    fontSize: 24, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+              ),
+            ))
+            .toList(),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "CustomPaint": [
+    {
+      "widgetId": 166,
+      "name": 'CustomPaint绘线图形',
+      "priority": 1,
+      "subtitle": "【painter】 : 绘画器   【CustomPainter】",
+      "code": """class ClockPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 100,
+      child:CustomPaint(//使用CustomPaint盛放画布
+        painter: ClockPainter(),
+      ),
+    )
+    ;
+  }
+}
+
+class ClockPainter extends CustomPainter {
+  Paint _paint;
+  var _radius = 3.0; //小球半径
+  Path _path = Path(); //画笔对象
+  ClockPainter () {
+    _paint = Paint()..color= Color(0xff45d0fd)..isAntiAlias=true;
+    _path.addOval(Rect.fromCircle(radius: _radius, center: Offset(0, 0))); //小球路径
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.translate(size.width/2-65*2, 0);
+    renderDigit(1, canvas);//渲染数字
+    canvas.translate(65, 0);//平移画布
+    renderDigit(9, canvas);
+    canvas.translate(65, 0); renderDigit(9, canvas);
+    canvas.translate(65, 0); renderDigit(4, canvas);
+  }
+  //渲染数字  num  ：要显示的数字   canvas ：画布
+  void renderDigit(int num, Canvas canvas) {
+    if (num > 10) {  return; }
+    for (int i = 0; i < digit[num].length; i++) {
+      for (int j = 0; j < digit[num][j].length; j++) {
+        if (digit[num][i][j] == 1) {
+          canvas.save();
+          double rX = j * 2 * (_radius + 1) + (_radius + 1); //第(i，j)个点圆心横坐标
+          double rY = i * 2 * (_radius + 1) + (_radius + 1); //第(i，j)个点圆心纵坐标
+          canvas.translate(rX, rY);
+          canvas.drawPath(_path, _paint);
+          canvas.restore();
+        }
+      }
+    }
+  }
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate)=>false;
+}"""
+    },
+    {
+      "widgetId": 166,
+      "name": 'CustomPaint绘线贝塞尔曲线',
+      "priority": 2,
+      "subtitle": "    Flutter也支持贝塞尔曲线等复杂绘制。",
+      "code": """class PlayBezier3Page extends StatefulWidget {
+  @override
+  _PlayBezier3PageState createState() => _PlayBezier3PageState();
+}
+
+class _PlayBezier3PageState extends State<PlayBezier3Page> {
+  List<Offset> _pos = <Offset>[];
+  int selectPos;
+
+  @override
+  void initState() {
+    _initPoints();
+    super.initState();
+  }
+
+  void _initPoints() {
+    _pos = List<Offset>();
+    _pos.add(Offset(0, 0));
+    _pos.add(Offset(60, -60));
+    _pos.add(Offset(-90, -90));
+    _pos.add(Offset(-120, -40));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+        height: 200,
+        width: MediaQuery.of(context).size.width,
+        child: CustomPaint(
+          painter: BezierPainter(pos: _pos, selectPos: selectPos),
+        ),
+
+    );
+  }
+}
+
+class BezierPainter extends CustomPainter {
+  Paint _gridPaint;
+  Path _gridPath;
+
+  Paint _mainPaint;
+  Path _mainPath;
+  int selectPos;
+  Paint _helpPaint;
+
+  List<Offset> pos;
+
+  BezierPainter({this.pos, this.selectPos}) {
+    _gridPaint = Paint()..style = PaintingStyle.stroke;
+    _gridPath = Path();
+
+    _mainPaint = Paint()
+      ..color = Colors.orange
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2;
+    _mainPath = Path();
+
+    _helpPaint = Paint()
+      ..color = Colors.purple
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2
+      ..strokeCap = StrokeCap.round;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.clipRect(Offset.zero & size);
+    canvas.translate(size.width / 2, size.height / 2);
+    _drawGrid(canvas, size); //绘制格线
+    _drawAxis(canvas, size); //绘制轴线
+
+      _mainPath.moveTo(pos[0].dx, pos[0].dy);
+      _mainPath.cubicTo(pos[1].dx, pos[1].dy, pos[2].dx, pos[2].dy, pos[3].dx, pos[3].dy);
+      canvas.drawPath(_mainPath, _mainPaint);
+      _drawHelp(canvas);
+      _drawSelectPos(canvas);
+
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+
+  void _drawGrid(Canvas canvas, Size size) {
+    _gridPaint
+      ..color = Colors.grey
+      ..strokeWidth = 0.5;
+    _gridPath = _buildGridPath(_gridPath, size);
+    canvas.drawPath(_buildGridPath(_gridPath, size), _gridPaint);
+
+    canvas.save();
+    canvas.scale(1, -1); //沿x轴镜像
+    canvas.drawPath(_gridPath, _gridPaint);
+    canvas.restore();
+
+    canvas.save();
+    canvas.scale(-1, 1); //沿y轴镜像
+    canvas.drawPath(_gridPath, _gridPaint);
+    canvas.restore();
+
+    canvas.save();
+    canvas.scale(-1, -1); //沿原点镜像
+    canvas.drawPath(_gridPath, _gridPaint);
+    canvas.restore();
+  }
+
+  void _drawAxis(Canvas canvas, Size size) {
+    canvas.drawPoints(
+        PointMode.lines,
+        [
+          Offset(-size.width / 2, 0),
+          Offset(size.width / 2, 0),
+          Offset(0, -size.height / 2),
+          Offset(0, size.height / 2),
+          Offset(0, size.height / 2),
+          Offset(0 - 7.0, size.height / 2 - 10),
+          Offset(0, size.height / 2),
+          Offset(0 + 7.0, size.height / 2 - 10),
+          Offset(size.width / 2, 0),
+          Offset(size.width / 2 - 10, 7),
+          Offset(size.width / 2, 0),
+          Offset(size.width / 2 - 10, -7),
+        ],
+        _gridPaint
+          ..color = Colors.blue
+          ..strokeWidth = 1.5);
+  }
+
+  Path _buildGridPath(Path path, Size size, {step = 20.0}) {
+    for (int i = 0; i < size.height / 2 / step; i++) {
+      path.moveTo(0, step * i);
+      path.relativeLineTo(size.width / 2, 0);
+    }
+    for (int i = 0; i < size.width / 2 / step; i++) {
+      path.moveTo(step * i, 0);
+      path.relativeLineTo(
+        0,
+        size.height / 2,
+      );
+    }
+    return path;
+  }
+
+  void _drawHelp(Canvas canvas) {
+    canvas.drawPoints(PointMode.lines, pos, _helpPaint..strokeWidth = 1);
+    canvas.drawPoints(PointMode.points, pos, _helpPaint..strokeWidth = 8);
+  }
+
+  void _drawSelectPos(Canvas canvas) {
+    if (selectPos == null) return;
+    canvas.drawCircle(
+        pos[selectPos],
+        10,
+        _helpPaint
+          ..color = Colors.green
+          ..strokeWidth = 2);
+  }
+}"""
+    },
+  ],
+  "MediaQuery": [
+    {
+      "widgetId": 167,
+      "name": 'MediaQuery获取数据信息',
+      "priority": 1,
+      "subtitle": "MediaQuery.of(context)可以获取MediaQueryData",
+      "code": """class CustomMediaQuery extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var queryData = MediaQuery.of(context);
+    var data = {
+      "size": queryData.size,
+      "devicePixelRatio": queryData.devicePixelRatio.toStringAsFixed(1),
+      "textScaleFactor": queryData.textScaleFactor.toStringAsFixed(1),
+      "platformBrightness": queryData.platformBrightness,
+      "padding": queryData.padding,
+      "viewInsets": queryData.viewInsets,
+      "systemGestureInsets": queryData.padding,
+      "viewPadding": queryData.padding,
+      "physicalDepth": queryData.padding,
+      "alwaysUse24HourFormat": queryData.padding,
+      "accessibleNavigation": queryData.alwaysUse24HourFormat,
+      "invertColors": queryData.invertColors,
+      "highContrast": queryData.highContrast,
+      "disableAnimations": queryData.disableAnimations,
+      "boldText": queryData.boldText,
+    };
+
+    return Container(
+      height: 200,
+      child: ListView(
+        children: data.keys.map((e) => buildItem(e, data)).toList(),
+      ),
+    );
+  }
+
+  Widget buildItem(String e, Map<String, Object> data) => Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  e,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  data[e].toString(),
+                  style: TextStyle(fontSize: 16, color: Colors.orange),
+                )
+              ],
+            ),
+          ),
+          Divider(
+            height: 1,
+          )
+        ],
+      );
+}"""
+    },
+  ],
+  "Theme": [
+    {
+      "widgetId": 168,
+      "name": '文字样式-ThemeData#TextTheme',
+      "priority": 1,
+      "subtitle": "",
+      "code": """class TextThemeDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var queryData = Theme.of(context).textTheme;
+    var styles = {
+      "headline: ": queryData.headline,
+      "title: ": queryData.title,
+      "subhead: ": queryData.subhead,
+      "subtitle: ": queryData.body1,
+      "body2: ": queryData.body2,
+      "button: ": queryData.button,
+      "overline: ": queryData.overline,
+      "subtitle: ": queryData.subtitle,
+      "button: ": queryData.caption,
+      "display1: ": queryData.display1,
+      "display2: ": queryData.display2,
+      "display3: ": queryData.display3,
+      "display4: ": queryData.display4,
+    };
+
+    return Container(
+      child: Column(
+        children: styles.keys.map((e) => buildItem(e, styles[e])).toList(),
+      ),
+    );
+  }
+
+  Widget buildItem(String e, TextStyle style) => Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  e,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "@toly",
+                  style: style,
+                )
+              ],
+            ),
+          ),
+          Divider(
+            height: 1,
+          )
+        ],
+      );
+}"""
+    },
+    {
+      "widgetId": 168,
+      "name": 'ThemeData的toString',
+      "priority": 2,
+      "subtitle": "",
+      "code": """class CustomTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var queryData = Theme.of(context);
+    return Container(
+      child: Text(queryData.toString(),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+          )),
+    );
+  }
+}"""
+    },
+  ],
+  "CupertinoTheme": [
+    {
+      "widgetId": 168,
+      "name": '文字样式-TextTheme',
+      "priority": 1,
+      "subtitle": "",
+      "code": """class TextCupertinoTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var queryData = CupertinoTheme.of(context).textTheme;
+    var styles = {
+      "tabLabelTextStyle: ": queryData.tabLabelTextStyle,
+      "actionTextStyle: ": queryData.actionTextStyle,
+      "navActionTextStyle: ": queryData.navActionTextStyle,
+      "textStyle: ": queryData.textStyle,
+      "navTitleTextStyle: ": queryData.navTitleTextStyle,
+      "pickerTextStyle: ": queryData.pickerTextStyle,
+      "dateTimePickerTextStyle: ": queryData.dateTimePickerTextStyle,
+      "navLargeTitleTextStyle: ": queryData.navLargeTitleTextStyle,
+    };
+
+    return Container(
+      child: Column(
+        children: styles.keys.map((e) => buildItem(e, styles[e])).toList(),
+      ),
+    );
+  }
+
+  Widget buildItem(String e, TextStyle style) => Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  e,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "@toly",
+                  style: style,
+                )
+              ],
+            ),
+          ),
+          Divider(
+            height: 1,
+          )
+        ],
+      );
+}"""
+    },
+    {
+      "widgetId": 168,
+      "name": 'CupertinoThemeData的toString',
+      "priority": 2,
+      "subtitle": "",
+      "code": """class CustomCupertinoTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var queryData = CupertinoTheme.of(context);
+    return Container(
+      child: Text(queryData.toString(),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+          )),
+    );
+  }
+}"""
+    },
+  ],
+  "WillPopScope": [
+    {
+      "widgetId": 170,
+      "name": 'WillPopScope使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onWillPop】 : 返回回调  【WillPopCallback】",
+      "code": """class CustomWillPopScope extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: WillPopScope(child: (BackButton()),
+          onWillPop: ()=>_willPop(context)),
+    );
+  }
+
+  Future<bool> _willPop(context) async{
+    return await showDialog(
+      context: context,
+      builder: (context) =>  AlertDialog(
+        shape:  RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+        title:  Text('提示'),
+        content:  Text('你确定要离开此页吗?'),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child:  Text('确定'),
+          ),
+           FlatButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child:  Text('取消'),
+          ),
+
+        ],
+      ),
+    ) ?? false;
+
+  }
+}"""
+    },
+  ],
+  "Hero": [
+    {
+      "widgetId": 171,
+      "name": 'Hero基本使用',
+      "priority": 1,
+      "subtitle": "【tag】 : 标签   【String】\n",
+      "code": """class CustomHero extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var hero = Hero(
+      //----定义一个Hero,并添加tag标签,此中组件共享
+      tag: 'user-head',
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(30)),
+        child: Image.asset(
+          "assets/images/icon_head.png",
+          width: 60,
+          height: 60,
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+
+    var container = Container(
+      alignment: Alignment(-0.8, -0.8),
+      child: hero,
+      width: 250,
+      height: 250 * 0.618,
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+        Colors.red.withAlpha(99),
+        Colors.yellow.withAlpha(189),
+        Colors.green.withAlpha(88),
+        Colors.blue.withAlpha(230)
+      ])),
+    );
+
+    return GestureDetector(
+      child: Card(elevation: 5, child: container),
+      onTap: () => Navigator.push(
+        context,
+        Bottom2TopRouter(child: TargetPage(), duration_ms: 1000),
+      ),
+    );
+  }
+  
+}
+
+class TargetPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var hero = Hero(
+      //----定义一个Hero,为其添加标签，两个标签相同，则可以共享
+      tag: 'user-head',
+      child: Padding(
+        padding: EdgeInsets.all(6.0),
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          backgroundImage: AssetImage(
+            "assets/images/icon_head.png",
+          ),
+        ),
+      ),
+    );
+
+    var touch = InkWell(
+      onTap: () {
+        Navigator.of(context).pop();
+      },
+      child: hero,
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        actions: <Widget>[touch],
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+          Colors.red.withAlpha(99),
+          Colors.yellow.withAlpha(189),
+          Colors.green.withAlpha(88),
+          Colors.blue.withAlpha(230)
+        ])),
+      ),
+    );
+  }
+}
+
+//下--->上
+class Bottom2TopRouter<T> extends PageRouteBuilder<T> {
+  final Widget child;
+  final int duration_ms;
+  final Curve curve;
+
+  Bottom2TopRouter(
+      {this.child, this.duration_ms = 500, this.curve = Curves.fastOutSlowIn})
+      : super(
+            transitionDuration: Duration(milliseconds: duration_ms),
+            pageBuilder: (ctx, a1, a2) {
+              return child;
+            },
+            transitionsBuilder: (
+              ctx,
+              a1,
+              a2,
+              Widget child,
+            ) {
+              return SlideTransition(
+                  position: Tween<Offset>(
+                    begin: Offset(0.0, 1.0),
+                    end: Offset(0.0, 0.0),
+                  ).animate(CurvedAnimation(parent: a1, curve: curve)),
+                  child: child);
+            });
+}"""
+    },
+  ],
+  "FutureBuilder": [
+    {
+      "widgetId": 172,
+      "name": 'FutureBuilder基本使用',
+      "priority": 1,
+      "subtitle": "【builder】 : 子组件   【AsyncWidgetBuilder<T>】\n"
+          "【initialData】 : 初始数据   【T】\n"
+          "【future】 : 异步任务  【Future<T>】",
+      "code": """class CustomFutureBuilder extends StatelessWidget {
+
+  final FutureBuilder futureBuilder = FutureBuilder(
+    initialData: 'Load',
+      future: loadData(),
+      builder: (ctx, snap) {
+        if (snap.connectionState == ConnectionState.done) {
+          return Text(snap.data);
+        }
+        if (snap.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        }
+        if (snap.hasError) {
+          return Text('Error');
+        }
+        return Container();
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: futureBuilder,
+    );
+  }
+
+  static Future<String> loadData() async {
+    await Future.delayed(Duration(seconds: 2));
+    return 'LoadeSuccess';
+  }
+}"""
+    },
+  ],
+  "StreamBuilder": [
+    {
+      "widgetId": 173,
+      "name": 'StreamBuilder基本使用',
+      "priority": 1,
+      "subtitle": "【stream】 : 子组件   【Stream<T>】\n"
+          "【initialData】 : 初始数据   【T】\n"
+          "【builder】 : 点击事件  【AsyncWidgetBuilder<T>】",
+      "code": """class CustomStreamBuilder extends StatefulWidget {
+  @override
+  _CustomStreamBuilderState createState() => _CustomStreamBuilderState();
+}
+
+class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
+  CountGenerator _generator = CountGenerator()..increment();
+
+  @override
+  void dispose() {
+    _generator.dispose(); //关闭控制器
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          FlatButton(
+            color: Colors.blue,
+            shape: CircleBorder(
+              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            ),
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+            onPressed: () async {
+              await _generator.increment();
+            },
+          ),
+          _buildStreamBuilder(),
+          FlatButton(
+            color: Colors.blue,
+            shape: CircleBorder(
+              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            ),
+            child: Icon(
+              Icons.remove,
+              color: Colors.white,
+            ),
+            onPressed: () async {
+              await _generator.minus();
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStreamBuilder() => StreamBuilder<int>(
+      stream: _generator.state,
+      builder: (BuildContext context, AsyncSnapshot snap) {
+        print(snap);
+        if (snap.connectionState == ConnectionState.done) {
+          return Text('Done');
+        }
+        if (snap.connectionState == ConnectionState.active) {
+          return Text(
+            snap.data.toString(),
+            style: Theme.of(context).textTheme.display1,
+          );
+        }
+        if (snap.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        }
+        if (snap.hasError) {
+          return Text('Error');
+        }
+        return Container();
+      });
+}
+
+class CountGenerator {
+  int _count = 0; //计数器数据
+  final StreamController<int> _controller = StreamController(); //控制器
+
+  Stream<int> get state => _controller.stream; //获取状态流
+  int get count => _count; //获取计数器数据
+
+  void dispose() {//关闭控制器
+    _controller.close();
+  }
+
+  Future<void> increment() async {//增加记数方法
+    _controller.add(++_count);
+  }
+
+  Future<void> minus() async {//增加记数方法
+    _controller.add(--_count);
+  }
+}"""
+    },
+  ],
+  "PopupMenuDivider": [
+    {
+      "widgetId": 174,
+      "name": 'PopupMenuDivider基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【height】 : 高度  【double】",
+      "code": """class CustomPopupMenuDivider extends StatelessWidget {
+  final map = {
+    "关于": Icons.info_outline,
+    "帮助": Icons.help_outline,
+    "问题反馈": Icons.add_comment,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          _buildPopupMenuButton(context),
+          PopupMenuDivider(),
+        ],
+      ),
+    );
+  }
+
+  PopupMenuButton<String> _buildPopupMenuButton(BuildContext context) {
+    return PopupMenuButton<String>(
+          itemBuilder: (context) => [
+            ...buildItems().sublist(0, 2),
+            PopupMenuDivider(),
+            ...buildItems().sublist(2, 3)
+          ],
+          offset: Offset(0, 50),
+          color: Color(0xffF4FFFA),
+          elevation: 1,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+            topRight: Radius.circular(5),
+            bottomLeft: Radius.circular(5),
+          )),
+          onSelected: (e) {
+            print(e);
+            if (e == '关于') {
+              DialogAbout.show(context);
+            }
+          },
+          onCanceled: () => print('onCanceled'),
+        );
+  }
+
+  List<PopupMenuItem<String>> buildItems() {
+    return map.keys
+        .toList()
+        .map((e) => PopupMenuItem<String>(
+            value: e,
+            child: Wrap(
+              spacing: 10,
+              children: <Widget>[
+                Icon(
+                  map[e],
+                  color: Colors.blue,
+                ),
+                Text(e),
+              ],
+            )))
+        .toList();
+  }
+}"""
+    },
+  ],
+  "RawMaterialButton": [
+    {
+      "widgetId": 175,
+      "name": 'RawMaterialButton基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【elevation】 : 影深   【double】\n"
+          "【fillColor】 : 填充色   【Color】\n"
+          "【splashColor】 : 水波纹色   【Color】\n"
+          "【textStyle】 : 文字样式   【TextStyle】\n"
+          "【onLongPress】 : 长按事件   【Function()】\n"
+          "【onPressed】 : 点击事件  【Function()】",
+      "code": """class CustomRawMaterialButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Wrap(
+        spacing: 20,
+        children: <Widget>[
+          RawMaterialButton(
+            elevation: 2,
+            fillColor: Colors.green,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            onLongPress: ()=>print('onLongPress'),
+            child: Icon(Icons.remove),
+            onPressed: ()=>print('onPressed'),
+          ),
+          RawMaterialButton(
+            elevation: 2,
+            fillColor: Colors.blue,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            onLongPress: ()=>print('onLongPress'),
+            child: Text('Push'),
+            onPressed: ()=>print('onPressed'),
+          ),
+          RawMaterialButton(
+            elevation: 2,
+            fillColor: Colors.red,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            onLongPress: ()=>print('onLongPress'),
+            child: Icon(Icons.add),
+            onPressed: ()=>print('onPressed'),
+          ),
+
+        ],
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 175,
+      "name": 'RawMaterialButton基本使用',
+      "priority": 2,
+      "subtitle": "【highlightElevation】 : 高亮影深   【double】\n"
+          "【shape】 : 形状   【ShapeBorder】",
+      "code": """class ShapeRawMaterialButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Wrap(
+        spacing: 20,
+        children: <Widget>[
+          RawMaterialButton(
+            elevation: 2,
+            shape:  CircleBorder(
+              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            ),
+            fillColor: Colors.green,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            onLongPress: ()=>print('onLongPress'),
+            child: Icon(Icons.remove),
+            onPressed: ()=>print('onPressed'),
+          ),
+          RawMaterialButton(
+            shape:RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15))),
+            elevation: 0,
+            highlightElevation: 0,
+            fillColor: Colors.blue,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            onLongPress: ()=>print('onLongPress'),
+            child: Text('Push'),
+            onPressed: ()=>print('onPressed'),
+          ),
+          RawMaterialButton(
+            elevation: 2,
+            shape:  CircleBorder(
+              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            ),
+            fillColor: Colors.red,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            onLongPress: ()=>print('onLongPress'),
+            child: Icon(Icons.add),
+            onPressed: ()=>print('onPressed'),
+          ),
+
+        ],
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "Dismissible": [
+    {
+      "widgetId": 176,
+      "name": 'Dismissible基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【background】 : 左底  【Widget】\n"
+          "【secondaryBackground】 : 右底  【Widget】\n"
+          "【key】 : 键  【Key】\n"
+          "【confirmDismiss】 : 确认回调  【DismissDirectionCallback】\n"
+          "【onDismissed】 : 消失回调  【DismissDirectionCallback】\n",
+      "code": """class CustomDismissible extends StatefulWidget {
+  @override
+  _CustomDismissibleState createState() => _CustomDismissibleState();
+}
+
+class _CustomDismissibleState extends State<CustomDismissible> {
+  var data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 5),
+        children: data.map((color) => _buildItem(color)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildItem(Color color) {
+    return Dismissible(
+      background: Container(
+        color: Colors.green,
+        alignment: Alignment(-0.9, 0),
+        child: Icon(
+          Icons.check,
+          color: Colors.white,
+        ),
+      ),
+      secondaryBackground: Container(
+        alignment: Alignment(0.9, 0),
+        child: Icon(
+          Icons.close,
+          color: Colors.white,
+        ),
+        color: Colors.red,
+      ),
+      key: ValueKey(color),
+      onDismissed: (d) {
+        data.remove(color);
+      },
+      confirmDismiss: (e) async {
+        if (e == DismissDirection.endToStart) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      child: Container(
+        alignment: Alignment.center,
+        height: 50,
+        color: color,
+        child: Text(
+          colorString(color),
+          style: TextStyle(color: Colors.white, shadows: [
+            Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+          ]),
+        ),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 176,
+      "name": 'Dismissible基本使用',
+      "priority": 2,
+      "subtitle": "【direction】 : 方向   【DismissDirection】\n"
+          "【crossAxisEndOffset】 : 偏移  【double】\n",
+      "code": """class DirectionDismissible extends StatefulWidget {
+  @override
+  _CustomDirectionDismissibleState createState() => _CustomDirectionDismissibleState();
+}
+
+class _CustomDirectionDismissibleState extends State<DirectionDismissible> {
+  var data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  var info = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.symmetric(horizontal: 5),
+        children: data.map((color) => _buildItem(color)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildItem(Color color) {
+    return Dismissible(
+      direction: DismissDirection.vertical,
+      background: Container(
+        color: Colors.green,
+        alignment: Alignment( 0,-0.9,),
+        child: Icon(
+          Icons.check,
+          color: Colors.white,
+        ),
+      ),
+      crossAxisEndOffset: 0.5,
+      secondaryBackground: Container(
+        alignment: Alignment( 0,0.9,),
+        child: Icon(
+          Icons.close,
+          color: Colors.white,
+        ),
+        color: Colors.red,
+      ),
+      key: ValueKey(color),
+      onDismissed: (d) {
+        data.remove(color);
+      },
+      confirmDismiss: (e) async {
+        print(e);
+        if (e == DismissDirection.up) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      child: Container(
+        alignment: Alignment.center,
+        width: 80,
+        color: color,
+        child: Text(
+          colorString(color),
+          style: TextStyle(color: Colors.white, shadows: [
+            Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+          ]),
+        ),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "ReorderableListView": [
+    {
+      "widgetId": 177,
+      "name": 'ReorderableListView基本使用',
+      "priority": 1,
+      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
+          "【header】 : 头部组件   【Widget】\n"
+          "【padding】 : 内边距   【EdgeInsets】\n"
+          "【onReorder】 : 调换时回调  【ReorderCallback】",
+      "code": """class CustomReorderableListView extends StatefulWidget {
+  @override
+  _CustomReorderableListViewState createState() => _CustomReorderableListViewState();
+}
+
+class _CustomReorderableListViewState extends State<CustomReorderableListView> {
+  var data = <Color>[
+    Colors.yellow[50],
+    Colors.yellow[100],
+    Colors.yellow[200],
+    Colors.yellow[300],
+    Colors.yellow[400],
+    Colors.yellow[500],
+    Colors.yellow[600],
+    Colors.yellow[700],
+    Colors.yellow[800],
+    Colors.yellow[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 250,
+      child: ReorderableListView(
+        padding: EdgeInsets.all(10),
+        header: Container(
+          color: Colors.blue,
+          alignment: Alignment.center,
+            height: 50,
+            child: Text('长按拖拽进行换位',style: TextStyle(color: Colors.white),)),
+        onReorder: _handleReorder,
+        children: data.map((color) => _buildItem(color)).toList(),
+      ),
+    );
+  }
+
+  void _handleReorder(int oldIndex, int newIndex) {
+    if (oldIndex < newIndex) {
+      newIndex -= 1;
+    }
+
+    setState(() {
+      final element = data.removeAt(oldIndex);
+      data.insert(newIndex, element);
+    });
+
+  }
+
+  Widget _buildItem(Color color) {
+    return Container(
+      key: ValueKey(color)  ,
+      alignment: Alignment.center,
+      height: 50,
+      color: color,
+      child: Text(
+        colorString(color),
+        style: TextStyle(color: Colors.white, shadows: [
+          Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+        ]),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+    {
+      "widgetId": 177,
+      "name": 'ReorderableListView滑动方向',
+      "priority": 2,
+      "subtitle": "【scrollDirection】 : 滑动方向   【Axis】\n"
+          "【reverse】 : 是否反向  【bool】",
+      "code": """class DirectionReorderableListView extends StatefulWidget {
+  @override
+  _DirectionReorderableListViewState createState() => _DirectionReorderableListViewState();
+}
+
+class _DirectionReorderableListViewState extends State<DirectionReorderableListView> {
+  var data = <Color>[
+    Colors.yellow[50],
+    Colors.yellow[100],
+    Colors.yellow[200],
+    Colors.yellow[300],
+    Colors.yellow[400],
+    Colors.yellow[500],
+    Colors.yellow[600],
+    Colors.yellow[700],
+    Colors.yellow[800],
+    Colors.yellow[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ReorderableListView(
+        scrollDirection: Axis.horizontal,
+        reverse: false,
+        onReorder: _handleReorder,
+        children: data.map((color) => _buildItem(color)).toList(),
+      ),
+    );
+  }
+
+  void _handleReorder(int oldIndex, int newIndex) {
+    if (oldIndex < newIndex) {
+      newIndex -= 1;
+    }
+
+    setState(() {
+      final element = data.removeAt(oldIndex);
+      data.insert(newIndex, element);
+    });
+
+  }
+
+  Widget _buildItem(Color color) {
+    return Container(
+      key: ValueKey(color)  ,
+      alignment: Alignment.center,
+      width: 80,
+      color: color,
+      child: Text(
+        colorString(color),
+        style: TextStyle(color: Colors.white, shadows: [
+          Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+        ]),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "ExpansionPanelList": [
+    {
+      "widgetId": 178,
+      "name": 'ExpansionPanelList基本使用',
+      "priority": 1,
+      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
+          "【animationDuration】 : 动画时长   【Duration】\n"
+          "【expansionCallback】 : 展开回调   【List<Widget>】\n"
+          "【onPressed】 : 点击事件  【Function()】",
+      "code": """class CustomExpansionPanelList extends StatefulWidget {
+  @override
+  _CustomExpansionPanelListState createState() =>
+      _CustomExpansionPanelListState();
+}
+
+class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
+  var data = <Color>[
+    Colors.red[50],
+    Colors.red[100],
+    Colors.red[200],
+    Colors.red[300],
+    Colors.red[400],
+    Colors.red[500],
+    Colors.red[600],
+    Colors.red[700],
+    Colors.red[800],
+    Colors.red[900],
+  ];
+  int _position = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      child: ExpansionPanelList(
+        children: data.map((color) => _buildItem(color)).toList(),
+        animationDuration: Duration(milliseconds: 200),
+        expansionCallback: (index, open) {
+          setState(() => _position=open?-1:index);
+        },
+      ),
+    );
+  }
+
+  ExpansionPanel _buildItem(Color color) {
+    return ExpansionPanel(
+        isExpanded: data.indexOf(color) == _position,
+        canTapOnHeader: true,
+        headerBuilder: (ctx, index) => Center(
+              child: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: <Widget>[
+                  Container(
+                    height: 30,
+                    width: 30,
+                    decoration:
+                        BoxDecoration(color: color, shape: BoxShape.circle),
+                  ),
+                  Container(
+                    width: 120,
+                    alignment: Alignment.center,
+                    height: 50,
+                    child: Text(
+                      colorString(color),
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+        body: Container(
+          alignment: Alignment.center,
+          height: 50,
+          color: color,
+          child: Text(
+            colorString(color),
+            style: TextStyle(color: Colors.white, shadows: [
+              Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+            ]),
+          ),
+        ));
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "ListWheelScrollView": [
+    {"widgetId": 179,
+      "name": 'ListWheelScrollView基本使用',
+      "priority": 1,
+      "subtitle":
+      "【children】 : 子组件列表   【List<Widget>】\n"
+          "【perspective】 : 透视度   【double】\n"
+          "【itemExtent】 : item高   【EdgeInsets】\n"
+          "【onSelectedItemChanged】 : 选中回调  【ValueChanged<int> 】",
+      "code": """class CustomListWheelScrollView extends StatelessWidget {
+  var data = <Color>[
+    Colors.orange[50],
+    Colors.orange[100],
+    Colors.orange[200],
+    Colors.orange[300],
+    Colors.orange[400],
+    Colors.orange[500],
+    Colors.orange[600],
+    Colors.orange[700],
+    Colors.orange[800],
+    Colors.orange[900],
+  ];
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      width: 300,
+      child: ListWheelScrollView(
+        perspective: 0.006,
+        itemExtent: 50,
+        onSelectedItemChanged: (index){
+          print('onSelectedItemChanged:\$index');
+        },
+        children: data.map((color) => _buildItem(color)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildItem(Color color) {
+    return Container(
+      key: ValueKey(color)  ,
+      alignment: Alignment.center,
+      height: 50,
+      color: color,
+      child: Text(
+        colorString(color),
+        style: TextStyle(color: Colors.white, shadows: [
+          Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+        ]),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""},
   ],  "x": [
     {"code": """"""},
   ],

@@ -29,10 +29,10 @@ class MyIcon extends StatelessWidget {
       spacing: 20,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        TolyIcon.icon_weichat,
-        TolyIcon.icon_go,
-        TolyIcon.icon_pc,
-        TolyIcon.icon_file
+        TolyIcon.icon_search,
+        TolyIcon.icon_star,
+        TolyIcon.icon_widgit,
+        TolyIcon.icon_star_ok
       ]
           .map((e) => Icon(
                 e,

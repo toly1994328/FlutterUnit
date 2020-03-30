@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/enums.dart';
+import 'package:flutter_unit/blocs/search/search_bloc.dart';
 import 'package:flutter_unit/repositorys/widget_me_repository.dart';
 import 'package:flutter_unit/views/unit_splash.dart';
 import 'package:flutter_unit/views/widgets/StatefulWidget/Checkbox.dart';
@@ -11,7 +12,7 @@ import 'blocs/widgets/widget_bloc.dart';
 import 'blocs/widgets/widget_event.dart';
 
 import 'app/router.dart';
-import 'views/pages/nav_page.dart';
+import 'views/pages/unit_navigation.dart';
 
 void main() async {
 //    await Initial.init();
@@ -38,6 +39,7 @@ class BlocWrapper extends StatelessWidget {
       BlocProvider<DetailBloc>(
           create: (_) => DetailBloc(repository: repository)),
       BlocProvider<GlobalBloc>(create: (_) => GlobalBloc()),
+      BlocProvider<SearchBloc>(create: (_) => SearchBloc()),
     ], child: child);
   }
 }
@@ -51,8 +53,9 @@ class FlutterApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NavPage()
-//      UnitSplash(),
+      home:
+//      NavPage()
+          UnitNavigation(),
     );
   }
 }
