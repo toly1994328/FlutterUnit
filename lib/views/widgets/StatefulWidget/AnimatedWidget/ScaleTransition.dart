@@ -19,10 +19,7 @@ class _CustomScaleTransitionState extends State<CustomScaleTransition>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 2))
-      ..addListener(() {
-        print(_ctrl.value);
-      });
+    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 2));
     _ctrl.forward();
     super.initState();
   }

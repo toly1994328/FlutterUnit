@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 //          "【content】 : 内容组件  【Widget】\n"
 //          "【actions】 : 顶部文字样式  【List<Widget>】",
 //    }
-class CustomCupertinoDialog extends StatelessWidget {
+class CustomCupertinoAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

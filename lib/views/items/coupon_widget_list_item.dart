@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/style/shape/coupon_shape_border.dart';
-import 'package:flutter_unit/app/style/shape/hole_shape.dart';
 import 'package:flutter_unit/components/circle_image.dart';
 import 'package:flutter_unit/components/circle_text.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
-class WidgetListItem extends StatelessWidget {
+class CouponWidgetListItem extends StatelessWidget {
   final WidgetModel data;
 
-  WidgetListItem({this.data});
+  CouponWidgetListItem({this.data});
 
   final List<int> colors = Cons.tabColors;
 
@@ -19,11 +18,11 @@ class WidgetListItem extends StatelessWidget {
     return ClipPath(
       clipper: ShapeBorderClipper(
           shape: CouponShapeBorder(
-              hasLine: false, edgeRadius: 25, lineRate: 0.23)),
+              hasLine: false, edgeRadius: 25, lineRate: 0.20)),
       child: Container(
         color: Color(colors[data.family.index]).withAlpha(66),
         height: 95,
-        padding: EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 5),
+        padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
         child: Row(
           children: <Widget>[
             Padding(
@@ -67,18 +66,16 @@ class WidgetListItem extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(width: 10),
-          LimitedBox(
-            maxWidth: 150,
-            child: Text(data.name,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    shadows: [
-                      Shadow(color: Colors.white, offset: Offset(.3, .3))
-                    ])),
-          ),
-          Spacer(),
+           Expanded(
+             child: Text(data.name,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      shadows: [
+                        Shadow(color: Colors.white, offset: Offset(.3, .3))
+                      ])),
+           ),
           StarScore(
             star: Star(emptyColor: Colors.white, size: 15, fillColor: invColor),
             score: data.lever,
@@ -92,7 +89,6 @@ class WidgetListItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10, bottom: 10, top: 5),
       child: Container(
-        constraints: BoxConstraints(maxWidth: 250),
         child: Text(
           //尾部摘要
           data.info,
@@ -100,11 +96,6 @@ class WidgetListItem extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
               color: Colors.grey[600],
-
-//              color: Color.fromARGB(color.alpha, 255 - color.red,
-//                  255 - color.green, 255 - color.blue),
-//                Color()
-//                    .withBlue(66),
               fontSize: 14,
               shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
         ),

@@ -23,6 +23,7 @@ class FlutterDb {
      family INTEGER NOT NULL,
      lever FLOAT(2) NOT NULL,
      image VARCHAR(128) NOT NULL,
+     linkWidget TEXT DEFAULT '',
      info VARCHAR(256) NOT NULL
      );"""; //建表语句
 

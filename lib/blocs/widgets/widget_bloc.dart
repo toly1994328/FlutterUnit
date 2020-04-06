@@ -34,7 +34,8 @@ class WidgetBloc extends Bloc<WidgetEvent, WidgetState> {
       yield WidgetsLoaded(
         widgets,
       );
-    } catch (_) {
+    } catch (err) {
+      print(err);
       yield WidgetsLoadFailed();
     }
   }

@@ -1726,6 +1726,62 @@ class LongPressMaterialButton extends StatelessWidget {
   }
 }"""
     },
+    {
+      "widgetId": 23,
+      "priority": 3,
+      "name": "MaterialButton的自定义形状",
+      "subtitle":
+      "【shape】: 形状   【ShapeBorder】",
+      "code": """class ShapeMaterialButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 20,
+      children: <Widget>[
+        Container(
+          width: 40,
+          height: 40,
+          child: MaterialButton(
+              padding: EdgeInsets.all(0),
+              textColor: Color(0xffFfffff),
+              elevation: 3,
+              color: Colors.blue,
+              highlightColor: Color(0xffF88B0A),
+              splashColor: Colors.red,
+              child: Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+              shape: CircleBorder(
+                side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+              ),
+              onLongPress: () => DialogAbout.show(context),
+              onPressed: () => DialogAbout.show(context)),
+        ),
+        Container(
+          width: 100,
+          height: 40,
+          child: MaterialButton(
+              padding: EdgeInsets.all(0),
+              textColor: Color(0xffFfffff),
+              elevation: 3,
+              color: Colors.blue,
+              highlightColor: Color(0xffF88B0A),
+              splashColor: Colors.red,
+              child: Icon(
+                Icons.remove,
+                color: Colors.white,
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15))),
+              onLongPress: () => DialogAbout.show(context),
+              onPressed: () => DialogAbout.show(context)),
+        ),
+      ],
+    );
+  }
+}"""
+    },
   ],
   "CupertinoButton": [
     {
@@ -2641,7 +2697,21 @@ class _FitImageState extends State<FitImage> {
       "widgetId": 38,
       "name": '图片实现局部放大',
       "priority": 6,
-      "subtitle": "【centerSlice】 : 保留的区域   【Rect】"
+      "subtitle": "【centerSlice】 : 保留的区域   【Rect】", "code": """class CenterSliceImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 80,
+      child: Image.asset(
+        "assets/images/right_chat.png",
+        centerSlice: Rect.fromLTRB(9, 27, 60, 27 + 1.0),
+        fit: BoxFit.fill,
+      ),
+    );
+  }
+}
+""",
     },
   ],
   "Checkbox": [
@@ -2717,7 +2787,7 @@ class _TristateCheckBokState extends State<TristateCheckBok> {
   "Switch": [
     {
       "widgetId": 40,
-      "name": 'Switch基础语法',
+      "name": 'Switch基础用法',
       "priority": 1,
       "subtitle": "【inactiveThumbColor】 : 未选中小圈颜色   【Color】\n"
           "【inactiveTrackColor】 : 未选中滑槽颜色   【Color】\n"
@@ -2937,7 +3007,7 @@ class _CustomCupertinoSliderState extends State<CustomCupertinoSlider> {
             min: 0.0,
             max: 360.0,
             activeColor: Colors.green,
-            thumbColor: Colors.orange,
+            thumbColor: Colors.white,
             onChangeStart: (value) {
               print('开始滑动:\$value');
             },
@@ -3046,8 +3116,7 @@ class _CustomRadioState extends State<CustomRadio> {
       "subtitle": "【value】 : 进度   【double】\n"
           "【backgroundColor】 : 背景色   【Color】\n"
           "【valueColor】 : 进度颜色   【Animation<Color>】\n"
-          "【strokeWidth】 : 线宽   【double】\n"
-          "    value为null时会不停旋转",
+          "【strokeWidth】 : 线宽   【double】",
       "code": """class CustomCircularProgressIndicator extends StatefulWidget {
   @override
   _CustomCircularProgressIndicatorState createState() =>
@@ -3432,7 +3501,7 @@ class _AlignSelectableTextState extends State<AlignSelectableText> {
   "TextField": [
     {
       "widgetId": 54,
-      "name": 'TextField基本语法',
+      "name": 'TextField基本用法',
       "priority": 1,
       "subtitle": "【controller】 : 控制器   【TextEditingController】\n"
           "【style】 : 文字样式   【TextStyle】\n"
@@ -3489,7 +3558,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     },
     {
       "widgetId": 54,
-      "name": 'TextField基本语法',
+      "name": 'TextField基本用法',
       "priority": 2,
       "subtitle": "【minLines】 : 最小行数   【int】\n"
           "【maxLines】 : 最大行数   【int】\n"
@@ -3617,7 +3686,7 @@ class _CursorTextFieldState extends State<CursorTextField> {
   "DropdownButton": [
     {
       "widgetId": 55,
-      "name": 'DropdownButton基本语法',
+      "name": 'DropdownButton基本用法',
       "priority": 1,
       "subtitle": "【value】 : 当前值   【T】\n"
           "【items】 : 下拉选框   【List<DropdownMenuItem<T>>】\n"
@@ -3671,7 +3740,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
     },
     {
       "widgetId": 55,
-      "name": 'DropdownButton基本语法',
+      "name": 'DropdownButton基本用法',
       "priority": 2,
       "subtitle": "【isDense】 : 是否紧排   【bool】\n"
           "【iconSize】 : 图标大小   【double】\n"
@@ -3683,7 +3752,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
 }
 
 class _StyleDropDownButtonState extends State<StyleDropDownButton> {
-  Color _color;
+  Color _color = Colors.red;
   final _colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
   final _info = ["红色", "黄色", "蓝色", "绿色"];
 
@@ -3731,7 +3800,6 @@ class _StyleDropDownButtonState extends State<StyleDropDownButton> {
           "【color】 : 背景颜色   【Color】\n"
           "【shape】 : 形状   【ShapeBorder】\n"
           "【elevation】 : 影深   【double】\n"
-          "【showCursor】 : 是否显示光标   【bool】\n"
           "【onCanceled】 : 取消事件   【Function()】\n"
           "【onSelected】 : 选择事件   【Function(T)】",
       "code":
@@ -4020,7 +4088,7 @@ class _NSTabBarState extends State<NoShadowTabBarDemo>
   ],
   "TabBarView": [
     {
-      "widgetId": 58,
+      "widgetId": 59,
       "name": 'TabBarView需要与TabBar联用',
       "priority": 1,
       "subtitle": "【controller】 : 控制器   【TabController】\n"
@@ -4271,7 +4339,7 @@ class _BottomNavigationBarWithPageViewState
               title: Text(
                 key,
               ),
-              icon: Icon(Cons.ICONS_MAP[key]),
+              icon: Icon(iconsMap[key]),
               backgroundColor: _colors[_position]))
           .toList(),
     );
@@ -6429,10 +6497,7 @@ class _CustomScaleTransitionState extends State<CustomScaleTransition>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 2))
-      ..addListener(() {
-        print(_ctrl.value);
-      });
+    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 2));
     _ctrl.forward();
     super.initState();
   }
@@ -6484,10 +6549,7 @@ class _CustomSizeTransitionState extends State<CustomSizeTransition>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1))
-      ..addListener(() {
-        print(_ctrl.value);
-      });
+    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1));
     _ctrl.forward();
     super.initState();
   }
@@ -7648,11 +7710,122 @@ class _CurveAnimatedCrossFadeState extends State<CurveAnimatedCrossFade> {
     },
   ],
   "RichText": [
-    {"code": """"""},
+    {"widgetId": 101,
+      "name": 'RichText基本使用',
+      "priority": 1,
+      "subtitle":
+      "【text】 : 文字   【TextSpan】",
+      "code": """class CustomRichText extends StatelessWidget {
+  final str =
+      "        发光强度简称光强，国际单位是（坎德拉）简写cd。"
+      "1cd是指光源在指定方向的单位立体角内发出的光通量。"
+      "光源辐射是均匀时，则光强为I=F/Ω，Ω为立体角，单位为球面度（sr）,F为光通量，"
+      "单位是流明，对于点光源由I=F/4π 。光亮度是表示发光面明亮程度的，"
+      "指发光表面在指定方向的发光强度与垂直且指定方向的发光面的面积之比，"
+      "单位是坎德拉/平方米。对于一个漫散射面，尽管各个方向的光强和光通量不同，"
+      "但各个方向的亮度都是相等的。电视机的荧光屏就是近似于这样的漫散射面，"
+      "所以从各个方向上观看图像，都有相同的亮度感。";
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: RichText(
+          text: TextSpan(
+              children: str
+                  .split("")
+                  .map((str) => TextSpan(
+                      text: str,
+                      style: TextStyle(
+                          fontSize: 14, color: ColorUtils.randomColor())))
+                  .toList())),
+    );
+  }
+}"""},
   ],
   "DataTable": [
-    {"code": """"""},
-    {"code": """"""},
+    {"widgetId": 102,
+      "name": 'DataTable基本使用',
+      "priority": 1,
+      "subtitle":
+      "【columns】 : 列   【List<DataColumn>】\n"
+          "【rows】 : 行  【List<DataRow>】",
+      "code": """class CustomDataTable extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DataTable(columns: [
+      DataColumn(label: Text('id')),
+      DataColumn(label: Text('名称')),
+      DataColumn(label: Text('类型')),
+      DataColumn(label: Text('子数目')),
+    ], rows: [
+      DataRow(cells: [
+        DataCell(Text('101')),
+        DataCell(Text('DataTable')),
+        DataCell(Text('StatelessWidget')),
+        DataCell(Text('n')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('1')),
+        DataCell(Text('Container')),
+        DataCell(Text('StatelessWidget')),
+        DataCell(Text('1')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('98')),
+        DataCell(Text('Wrap')),
+        DataCell(Text('MultiChildRenderObjectWidget')),
+        DataCell(Text('n')),
+      ]),
+    ]);
+  }
+}"""},
+    {"widgetId": 102,
+      "name": 'DataTable的sort',
+      "priority": 1,
+      "subtitle":
+      "【sortColumnIndex】 : 列号   【int】\n"
+          "【sortAscending】 : 是否顺序  【bool】",
+      "code": """class SortDataTable extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DataTable(
+        sortColumnIndex: 0, 
+        sortAscending: true, 
+        columns: [
+      DataColumn(
+          label: Text('id'),
+          numeric: false,
+          onSort: (int columnIndex, bool ascending) {
+            print('\$columnIndex----\$ascending');
+          }),
+      DataColumn(label: Text('名称')),
+      DataColumn(label: Text('类型')),
+      DataColumn(label: Text('子数目')),
+    ], rows: [
+      DataRow(cells: [
+        DataCell(Text('101')),
+        DataCell(Text('DataTable')),
+        DataCell(Text('StatelessWidget')),
+        DataCell(Text('n')),
+      ]),
+      DataRow(selected: true, cells: [
+        DataCell(Text('1')),
+        DataCell(Text('Container'), showEditIcon: true,onTap: (){
+
+        }),
+        DataCell(Text('StatelessWidget')),
+        DataCell(Text('1')),
+      ]),
+      DataRow(cells: [
+        DataCell(Text('98')),
+        DataCell(Text('Wrap')),
+        DataCell(Text('MultiChildRenderObjectWidget')),
+        DataCell(Text('n')),
+      ]),
+    ]);
+  }
+}"""},
   ],
   "Draggable": [
     {
@@ -8733,28 +8906,64 @@ class _CustomAnimatedSwitcherState extends State<CustomAnimatedSwitcher> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      child: Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
         children: <Widget>[
-          AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
-            transitionBuilder: (Widget child, Animation<double> animation) =>
-                ScaleTransition(
-                    child: RotationTransition(turns: animation, child: child),
-                    scale: animation),
-            child: Text(
-              '\$_count',
-              key: ValueKey<int>(_count),
-              style: Theme.of(context).textTheme.display3,
-            ),
-          ),
-          RaisedButton(
-            child: const Text('Increment'),
-            onPressed: () => setState(() => _count += 1),
-          ),
+          _buildMinusBtn(),
+          SizedBox(width:80,child: _buildAnimatedSwitcher(context)),
+          _buildAddBtn()
         ],
       ),
     );
   }
+
+  Widget _buildAnimatedSwitcher(BuildContext context) =>
+      AnimatedSwitcher(
+          duration: const Duration(milliseconds: 400),
+          transitionBuilder: (Widget child, Animation<double> animation) =>
+              ScaleTransition(
+                  child: RotationTransition(turns: animation, child: child),
+                  scale: animation),
+          child: Text(
+            '\$_count',
+            key: ValueKey<int>(_count),
+            style: Theme.of(context).textTheme.display3,
+          ),
+        );
+
+  Widget _buildMinusBtn() {
+   return MaterialButton(
+        padding: EdgeInsets.all(0),
+        textColor: Color(0xffFfffff),
+        elevation: 3,
+        color: Colors.red,
+        highlightColor: Color(0xffF88B0A),
+        splashColor: Colors.red,
+        child: Icon(
+          Icons.remove,
+          color: Colors.white,
+        ),
+       shape: CircleBorder(
+         side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+       ),
+        onPressed: () => setState(() => _count -= 1));
+  }
+
+  Widget _buildAddBtn() => MaterialButton(
+        padding: EdgeInsets.all(0),
+        textColor: Color(0xffFfffff),
+        elevation: 3,
+        color: Colors.blue,
+        highlightColor: Color(0xffF88B0A),
+        splashColor: Colors.red,
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+        shape: CircleBorder(
+          side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+        ),
+        onPressed: () => setState(() => _count += 1));
 }"""
     },
   ],
@@ -9061,6 +9270,7 @@ class _CustomAnimatedPaddingState extends State<CustomAnimatedPadding> {
       "priority": 1,
       "subtitle": "【child】 : 孩子组件   【Widget】\n"
           "【duration】 : 动画时长   【Duration】\n"
+          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
           "【onEnd】 : 动画结束回调   【Function()】\n"
           "【curve】 : 动画曲线   【Duration】\n"
           "【padding】 : 内边距   【EdgeInsetsGeometry】",
@@ -9560,7 +9770,7 @@ class _CustomAnimatedIconState extends State<CustomAnimatedIcon>
             showDialog(context: context, builder: (ctx) => _buildDialog());
           },
           child: Text(
-            'Just Show It!',
+            'Just Show It !',
             style: TextStyle(color: Colors.white),
           ),
 
@@ -9593,7 +9803,7 @@ class DeleteDialog extends StatelessWidget {
 
   Widget _buildContent() {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(15.0),
       child: Text(
         '    Hi toly! If you push the conform buttom ,'
         ' You will lose this file. Are you sure wand to do that?',
@@ -9605,18 +9815,18 @@ class DeleteDialog extends StatelessWidget {
 
   Widget _buildFooter(context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15.0, top: 10),
+      padding: const EdgeInsets.only(bottom: 15.0, top: 10,left: 10,right: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
             alignment: Alignment.center,
             height: 40,
-            width: 120,
+            width: 100,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(30)),
                 color: Color(0xff73D1EE)),
-            child: Text('Yes, Delete',
+            child: Text('Yes',
                 style: TextStyle(color: Colors.white, fontSize: 16)),
           ),
           InkWell(
@@ -9624,7 +9834,7 @@ class DeleteDialog extends StatelessWidget {
             child: Container(
               alignment: Alignment.center,
               height: 40,
-              width: 120,
+              width: 100,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   color: Colors.orangeAccent),
@@ -9963,7 +10173,7 @@ class DeleteDialog extends StatelessWidget {
   "AboutDialog": [
     {
       "widgetId": 130,
-      "name": 'Dialog基本使用',
+      "name": 'AboutDialog基本使用',
       "priority": 1,
       "subtitle": "【applicationIcon】 : 左上图标   【Widget】\n"
           "【applicationVersion】 : 版本号  【String】\n"
@@ -10039,6 +10249,7 @@ class DeleteDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         _buildRaisedButton(context),
         _buildCupertinoActionSheet(context),
@@ -10047,19 +10258,22 @@ class DeleteDialog extends StatelessWidget {
   }
 
   Widget _buildCupertinoActionSheet(BuildContext context) =>
-      CupertinoActionSheet(
-        title: Text("Please chose a language"),
-        message: Text('the language you use in this application.'),
-        cancelButton: CupertinoActionSheetAction(
-            onPressed: () => Navigator.pop(context), child: Text("Cancel")),
-        actions: <Widget>[
-          CupertinoActionSheetAction(
-              onPressed: () => Navigator.pop(context), child: Text('Dart')),
-          CupertinoActionSheetAction(
-              onPressed: () => Navigator.pop(context), child: Text('Java')),
-          CupertinoActionSheetAction(
-              onPressed: () => Navigator.pop(context), child: Text('Kotlin')),
-        ],
+      Container(
+        alignment: Alignment.bottomCenter,
+        child: CupertinoActionSheet(
+          title: Text("Please chose a language"),
+          message: Text('the language you use in this application.'),
+          cancelButton: CupertinoActionSheetAction(
+              onPressed: () => Navigator.pop(context), child: Text("Cancel")),
+          actions: <Widget>[
+            CupertinoActionSheetAction(
+                onPressed: () => Navigator.pop(context), child: Text('Dart')),
+            CupertinoActionSheetAction(
+                onPressed: () => Navigator.pop(context), child: Text('Java')),
+            CupertinoActionSheetAction(
+                onPressed: () => Navigator.pop(context), child: Text('Kotlin')),
+          ],
+        ),
       );
 
   Widget _buildRaisedButton(BuildContext context) => RaisedButton(
@@ -10788,7 +11002,7 @@ class _PanGestureDetectorState extends State<PanGestureDetector> {
           "【onPointerDown】 : 按下事件   【Function(PointerDownEvent)】\n"
           "【onPointerMove】 : 移动事件   【Function(PointerMoveEvent)】\n"
           "【onPointerMove】 : 抬起事件   【Function(PointerUpEvent)】\n"
-          "【onPointerCancel】 : 抬起事件   【Function(PointerUpEvent)】",
+          "【onPointerCancel】 : 取消事件   【Function(PointerUpEvent)】",
       "code": """class CustomListener extends StatefulWidget {
   @override
   _CustomListenerState createState() => _CustomListenerState();
@@ -11600,8 +11814,7 @@ class _CustomCupertinoTabScaffoldState
       "widgetId": 160,
       "name": 'Material的shape属性',
       "priority": 2,
-      "subtitle": "【shape】 : 形状   【ShapeBorder】\n"
-          "【type】 : 类型   【MaterialType】",
+      "subtitle": "【shape】 : 形状   【ShapeBorder】",
       "code": """class ShapeMaterial extends StatelessWidget {
   
   final shapeMap = {
@@ -11664,7 +11877,7 @@ class _CustomCupertinoTabScaffoldState
       "priority": 1,
       "subtitle": "【children】 : 子组件列表   【Lis<Widget>】\n"
           "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
-          "【index】 : 当前显示所有  【Function()】",
+          "【index】 : 当前显示组件  【int】",
       "code": """class CustomIndexedStack extends StatefulWidget {
   @override
   _CustomIndexedStackState createState() => _CustomIndexedStackState();
@@ -13152,7 +13365,7 @@ class CountGenerator {
       "widgetId": 174,
       "name": 'PopupMenuDivider基本使用',
       "priority": 1,
-      "subtitle": "【child】 : 子组件   【Widget】\n"
+      "subtitle":
           "【height】 : 高度  【double】",
       "code": """class CustomPopupMenuDivider extends StatelessWidget {
   final map = {
@@ -13743,15 +13956,20 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
     },
   ],
   "ListWheelScrollView": [
-    {"widgetId": 179,
+    {
+      "widgetId": 179,
       "name": 'ListWheelScrollView基本使用',
       "priority": 1,
-      "subtitle":
-      "【children】 : 子组件列表   【List<Widget>】\n"
+      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
           "【perspective】 : 透视度   【double】\n"
           "【itemExtent】 : item高   【EdgeInsets】\n"
           "【onSelectedItemChanged】 : 选中回调  【ValueChanged<int> 】",
-      "code": """class CustomListWheelScrollView extends StatelessWidget {
+      "code": """class CustomListWheelScrollView extends StatefulWidget {
+  @override
+  _CustomListWheelScrollViewState createState() => _CustomListWheelScrollViewState();
+}
+
+class _CustomListWheelScrollViewState extends State<CustomListWheelScrollView> {
   var data = <Color>[
     Colors.orange[50],
     Colors.orange[100],
@@ -13765,22 +13983,39 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
     Colors.orange[900],
   ];
 
+  Color _color = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      width: 300,
-      child: ListWheelScrollView(
-        perspective: 0.006,
-        itemExtent: 50,
-        onSelectedItemChanged: (index){
-          print('onSelectedItemChanged:\$index');
-        },
-        children: data.map((color) => _buildItem(color)).toList(),
-      ),
+    return Column(
+      children: <Widget>[
+        _buildCircle(),
+        Container(
+          height: 150,
+          width: 300,
+          child: ListWheelScrollView(
+            perspective: 0.006,
+            itemExtent: 50,
+            onSelectedItemChanged: (index){
+              print('onSelectedItemChanged:\$index');
+              setState(() => _color=data[index]);
+            },
+            children: data.map((color) => _buildItem(color)).toList(),
+          ),
+        ),
+      ],
     );
   }
+
+  Widget _buildCircle() => Container(
+        margin: EdgeInsets.only(bottom: 5),
+        width: 30,
+        height: 30,
+        decoration: BoxDecoration(
+          color: _color,
+          shape: BoxShape.circle
+        ),
+      );
 
   Widget _buildItem(Color color) {
     return Container(
@@ -13799,47 +14034,2048 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
 
   String colorString(Color color) =>
       "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "ScrollConfiguration": [
+    {
+      "widgetId": 180,
+      "name": 'ScrollConfiguration基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【behavior】 : 滑动行为  【ScrollBehavior】\n"
+          "    可以使用ScrollConfiguration让ListView无蓝色阴影",
+      "code": """class CustomScrollConfiguration extends StatelessWidget {
+  final data = <Color>[
+    Colors.cyan[50],
+    Colors.cyan[100],
+    Colors.cyan[200],
+    Colors.cyan[300],
+    Colors.cyan[400],
+    Colors.cyan[500],
+    Colors.cyan[600],
+    Colors.cyan[700],
+    Colors.cyan[800],
+    Colors.cyan[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ScrollConfiguration(
+          behavior: NoScrollBehavior(), child: _buildListView()),
+    );
+  }
+
+  Widget _buildListView() => ListView(
+        padding: EdgeInsets.symmetric(horizontal: 5),
+        children: data
+            .map((color) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 50,
+                  color: color,
+                  child: Text(
+                    colorString(color),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ))
+            .toList(),
+      );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}
+
+class NoScrollBehavior extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+          BuildContext context, Widget child, AxisDirection axisDirection) =>
+      child;
+}"""
+    },
+  ],
+  "DropdownButtonHideUnderline": [
+    {
+      "widgetId": 181,
+      "name": 'DropDownButtonHideUnderline使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n",
+      "code":
+          """class CustomDropDownButtonHideUnderline extends StatefulWidget {
+  @override
+  _CustomDropDownButtonHideUnderlineState createState() =>
+      _CustomDropDownButtonHideUnderlineState();
+}
+
+class _CustomDropDownButtonHideUnderlineState
+    extends State<CustomDropDownButtonHideUnderline> {
+  Color _color = Colors.red;
+  final _colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
+  final _info = ["红色", "黄色", "蓝色", "绿色"];
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          width: 50,
+          height: 50,
+          color: _color,
+        ),
+        DropdownButtonHideUnderline(
+          child: DropdownButton<Color>(
+              value: _color,
+              elevation: 1,
+              icon: Icon(
+                Icons.expand_more,
+                size: 20,
+                color: _color,
+              ),
+              items: _buildItems(),
+              onChanged: (v) => setState(() => _color = v)),
+        ),
+      ],
+    );
+  }
+
+  List<DropdownMenuItem<Color>> _buildItems() => _colors
+      .map((e) => DropdownMenuItem<Color>(
+          value: e,
+          child: Text(
+            _info[_colors.indexOf(e)],
+            style: TextStyle(color: e),
+          )))
+      .toList();
+}"""
+    },
+  ],
+  "Overlay": [
+    {
+      "widgetId": 182,
+      "name": 'Overlay基本使用',
+      "priority": 1,
+      "subtitle": "    Overlay.of(context).insert插入全局组件",
+      "code": """bool show = false;
+Offset offset = Offset(200, 200);
+
+final double radius = 60;
+var entry = OverlayEntry(
+    builder: (context) => Stack(
+          children: <Widget>[
+            Positioned(
+              left: offset.dx,
+              top: offset.dy,
+              child: _buildFloating(),
+            ),
+          ],
+        ));
+
+///绘制悬浮控件
+_buildFloating() => GestureDetector(
+      onPanDown: (details) {
+        offset = details.globalPosition - Offset(radius / 2, radius / 2);
+        entry.markNeedsBuild();
+      },
+      onPanUpdate: (DragUpdateDetails details) {
+        offset = offset + details.delta;
+        entry.markNeedsBuild();
+      },
+      onLongPress: hideFloating,
+      child: Material(
+        color: Colors.transparent,
+        child: Container(
+          height: radius,
+          width: radius,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+                image: AssetImage('assets/images/icon_head.png')),
+          ),
+        ),
+      ));
+
+showFloating(BuildContext context) {
+  if (!show) {
+    Overlay.of(context).insert(entry);
+    show = true;
+  }
+}
+
+hideFloating() {
+  if (show) {
+    entry.remove();
+    show = false;
+  }
+}
+
+class CustomOverlay extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      children: <Widget>[
+        Container(
+          height: 50,
+          child: RawMaterialButton(
+            elevation: 2,
+            shape: CircleBorder(
+              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            ),
+            fillColor: Colors.blue,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            child: Icon(Icons.add),
+            onPressed: ()=>showFloating(context),
+          ),
+        ),
+        Container(
+          height: 50,
+          child: RawMaterialButton(
+            elevation: 2,
+            shape: CircleBorder(
+              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            ),
+            fillColor: Colors.red,
+            splashColor: Colors.orange,
+            textStyle: TextStyle(color: Colors.white),
+            child: Icon(Icons.remove),
+            onPressed: hideFloating,
+          ),
+        ),
+      ],
+    );
+  }
+}"""
+    },
+  ],
+  "CustomScrollView": [
+    {
+      "widgetId": 183,
+      "name": 'CustomScrollView基本使用',
+      "priority": 1,
+      "subtitle": "【slivers】 : 子组件列表   【List<Widget>】\n"
+          "【reverse】 : 是否反向   【bool】\n"
+          "【scrollDirection】 : 滑动方向   【Axis】\n"
+          "【controller】 : 控制器   【ScrollController】",
+      "code": """class CustomScrollViewDemo extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: CustomScrollView(
+        anchor: 0,
+        scrollDirection: Axis.vertical,
+        reverse: false,
+        slivers: <Widget>[_buildSliverAppBar(), _buildSliverFixedExtentList()],
+      ),
+    );
+  }
+
+  Widget _buildSliverFixedExtentList() => SliverFixedExtentList(
+        itemExtent: 60,
+        delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 50,
+                  color: data[index],
+                  child: Text(
+                    colorString(data[index]),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ),
+            childCount: data.length),
+      );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+
+  _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: Container(
+          margin: EdgeInsets.all(10),
+          child: Image.asset('assets/images/icon_head.png')),
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        title: Text(
+          '张风捷特烈',
+          style: TextStyle(color: Colors.black, //标题
+              shadows: [
+                Shadow(color: Colors.blue, offset: Offset(1, 1), blurRadius: 2)
+              ]),
+        ),
+        background: Image.asset(
+          "assets/images/caver.jpeg", fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "SliverAppBar": [
+    {
+      "widgetId": 184,
+      "name": 'SliverAppBar基本使用',
+      "priority": 1,
+      "subtitle": "【leading】 : 左侧组件   【Widget】\n"
+          "【title】 : 中间组件   【Widget】\n"
+          "【actions】 : 尾部组件列表   【List<Widget>】\n"
+          "【floating】 : 是否浮动   【bool】\n"
+          "【pinned】 : 是否顶部停留   【bool】\n"
+          "【snap】 : 是否半收展   【bool】\n"
+          "【bottom】 : 底部组件   【PreferredSizeWidget】\n"
+          "【expandedHeight】 : 延展高度   【double】\n"
+          "【elevation】 : 影深   【double】\n"
+          "【flexibleSpace】 : 延展空间   【FlexibleSpaceBar】\n"
+          "【backgroundColor】 : 背景色   【Color】\n"
+          "【controller】 : 控制器   【ScrollController】\n"
+          "   snap为true时必需floating为true",
+      "code": """class SliverAppBarDemo extends StatefulWidget {
+  @override
+  _SliverAppBarDemoState createState() => _SliverAppBarDemoState();
+}
+
+class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
+  bool _floating = false;
+  bool _pinned = false;
+  bool _snap = false;
+
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        _buildTool(),
+        Container(
+          height: 300,
+          child: CustomScrollView(
+            slivers: <Widget>[
+              _buildSliverAppBar(),
+              _buildSliverFixedExtentList()
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSliverAppBar() {
+    print(_floating);
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 5,
+      floating: _floating,
+      pinned: _pinned,
+      snap: _snap,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(//伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
+        )
+      ];
+
+  Widget _buildSliverFixedExtentList() => SliverFixedExtentList(
+        itemExtent: 60,
+        delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 50,
+                  color: data[index],
+                  child: Text(
+                    colorString(data[index]),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ),
+            childCount: data.length),
+      );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+
+  Widget _buildTool() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Wrap(
+          direction: Axis.vertical,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: <Widget>[
+            Text('floating'),
+            Switch(
+                value: _floating,
+                onChanged: (v) {
+                  if(_snap&&!v){
+                    _snap =false;
+                  }
+                  setState(() => _floating = v);
+                }),
+          ],
+        ),
+        Wrap(
+          direction: Axis.vertical,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: <Widget>[
+            Text('pinned'),
+            Switch(
+                value: _pinned,
+                onChanged: (v) => setState(() => _pinned = v)),
+          ],
+        )       ,Wrap(
+          direction: Axis.vertical,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: <Widget>[
+            Text('snap'),
+            Switch(
+                value: _snap,
+                onChanged: (v) {
+                  if(_floating){
+                    setState(() => _snap = v);
+                  }
+
+                }),
+          ],
+        )
+      ],
+    );
+  }
+}"""
+    },
+  ],
+  "SliverList": [
+    {
+      "widgetId": 185,
+      "name": 'SliverList基本使用',
+      "priority": 1,
+      "subtitle": "【delegate】 : 孩子代理   【SliverChildDelegate】",
+      "code": """class SliverListDemo extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: CustomScrollView(
+        slivers: <Widget>[_buildSliverAppBar(), _buildSliverList()],
+      ),
+    );
+  }
+
+  Widget _buildSliverList() => SliverList(
+        delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 60,
+                  color: data[index],
+                  child: Text(
+                    colorString(data[index]),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ),
+            childCount: data.length),
+      );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 5,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
+        )
+      ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "SliverFixedExtentList": [
+    {
+      "widgetId": 186,
+      "name": 'SliverFixedExtentList基本使用',
+      "priority": 1,
+      "subtitle": "【itemExtent】 : 主轴方向强迫长度   【double】\n"
+          "【delegate】 : 孩子代理   【SliverChildDelegate】",
+      "code": """class SliverFixedExtentListDemo extends StatelessWidget {
+  final data = <Color>[
+    Colors.orange[50],
+    Colors.orange[100],
+    Colors.orange[200],
+    Colors.orange[300],
+    Colors.orange[400],
+    Colors.orange[500],
+    Colors.orange[600],
+    Colors.orange[700],
+    Colors.orange[800],
+    Colors.orange[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: CustomScrollView(
+        slivers: <Widget>[_buildSliverAppBar(), _buildSliverList()],
+      ),
+    );
+  }
+
+  Widget _buildSliverList() => SliverFixedExtentList(
+        itemExtent: 50,
+        delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 60,
+                  color: data[index],
+                  child: Text(
+                    colorString(data[index]),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ),
+            childCount: data.length),
+      );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 5,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
+        )
+      ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "SliverFillViewport": [
+    {
+      "widgetId": 186,
+      "name": 'SliverFixedExtentList基本使用',
+      "priority": 1,
+      "subtitle": "【viewportFraction】 : 视口分率   【double】\n"
+          "【delegate】 : 孩子代理   【SliverChildDelegate】",
+      "code": """class SliverFillViewportDemo extends StatefulWidget {
+  @override
+  _SliverFillViewportDemoState createState() => _SliverFillViewportDemoState();
+}
+
+class _SliverFillViewportDemoState extends State<SliverFillViewportDemo> {
+  final data = <Color>[
+    Colors.orange[50],
+    Colors.orange[100],
+    Colors.orange[200],
+    Colors.orange[300],
+    Colors.orange[400],
+    Colors.orange[500],
+    Colors.orange[600],
+    Colors.orange[700],
+    Colors.orange[800],
+    Colors.orange[900],
+  ];
+  var _viewportFraction = 1.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        _buildTool(),
+        Container(
+          height: 300,
+          child: CustomScrollView(
+            slivers: <Widget>[_buildSliverAppBar(), _buildSliverList()],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSliverList() => SliverFillViewport(
+        viewportFraction: _viewportFraction,
+        delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 60,
+                  color: data[index],
+                  child: Text(
+                    colorString(data[index]),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ),
+            childCount: data.length),
+      );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 5,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
+        )
+      ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+
+  _buildTool() {
+    return Slider(
+        value: _viewportFraction,
+        min: 0.01,
+        divisions: 20,
+        label: _viewportFraction.toStringAsFixed(1),
+        max: 2.0,
+        onChanged: (v) => setState(() => _viewportFraction = v));
+  }
+}"""
+    },
+  ],
+  "SliverGird": [
+    {
+      "widgetId": 188,
+      "name": 'SliverList基本使用',
+      "priority": 1,
+      "subtitle": "SliverGrid.count 指定轴向数量构造\n"
+          "SliverGrid.extent 指定轴向长度构造\n"
+          "属性特征同GridView,可详见之\n",
+      "code": """class SliverGirdDemo extends StatelessWidget {
+  final data = List.generate(128, (i) => Color(0xFF6600FF - 2*i));
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: CustomScrollView(
+        slivers: <Widget>[_buildSliverAppBar(), _buildSliverList()],
+      ),
+    );
+  }
+
+  Widget _buildSliverList() =>
+      SliverGrid.extent(
+        childAspectRatio: 1 / 0.618,
+        maxCrossAxisExtent: 180,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
+        children: data
+            .map((e) => Container(
+          alignment: Alignment.center,
+          width: 100,
+          height: 60,
+          color: e,
+          child: Text(
+            colorString(e),
+            style: TextStyle(color: Colors.white, shadows: [
+              Shadow(
+                  color: Colors.black,
+                  offset: Offset(.5, .5),
+                  blurRadius: 2)
+            ]),
+          ),
+        ))
+            .toList(),
+      );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 5,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
+        )
+      ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "SliverToBoxAdapter": [
+    {
+      "widgetId": 189,
+      "name": 'SliverToBoxAdapter基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】",
+      "code": """class SliverToBoxAdapterDemo extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: CustomScrollView(
+        slivers: <Widget>[
+          _buildSliverAppBar(),
+          _buildCommonWidget(),
+          _buildSliverList()
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCommonWidget() => SliverToBoxAdapter(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          color: Colors.grey.withAlpha(22),
+          child: ListTile(
+            leading: Image.asset("assets/images/icon_head.png"),
+            title: Text("以梦为马"),
+            subtitle: Text("海子"),
+            selected: true,
+            contentPadding: EdgeInsets.all(5),
+            trailing: Icon(Icons.more_vert),
+          ),
+        ),
+      );
+
+  Widget _buildSliverList() => SliverList(
+        delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 60,
+                  color: data[index],
+                  child: Text(
+                    colorString(data[index]),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ),
+            childCount: data.length),
+      );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 2,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
+        )
+      ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "SliverPersistentHeader": [
+    {
+      "widgetId": 190,
+      "name": 'SliverPersistentHeader基本使用',
+      "priority": 1,
+      "subtitle": "【delegate】 : 代理   【SliverPersistentHeaderDelegate】\n"
+          "【floating】 : 是否浮动   【bool】\n"
+          "【pinned】 : 是否顶部停留   【bool】",
+      "code": """class SliverPersistentHeaderDemo extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 500,
+      child: CustomScrollView(
+        slivers: <Widget>[
+          _buildSliverAppBar(),
+          _buildPersistentHeader('袅缈岁月，青丝银发',Color(0xffe7fcc9)),
+          _buildCommonWidget(),
+          _buildPersistentHeader('以梦为马，不负韶华',Color(0xffcca4ff)),
+          _buildSliverList()
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCommonWidget() => SliverToBoxAdapter(
+    child: Container(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      color: Colors.grey.withAlpha(22),
+      child: ListTile(
+        leading: Image.asset("assets/images/icon_head.png"),
+        title: Text("以梦为马"),
+        subtitle: Text("海子"),
+        selected: true,
+        contentPadding: EdgeInsets.all(5),
+        trailing: Icon(Icons.more_vert),
+      ),
+    ),
+  );
+  Widget _buildPersistentHeader(String text,Color color) => SliverPersistentHeader(
+    pinned: true,
+    delegate: _SliverDelegate(
+        minHeight: 40.0,
+        maxHeight: 100.0,
+        child: Container(
+          color: color,
+          child: Center(
+            child: Text(text, style: TextStyle(
+                fontSize: 18,
+                shadows: [Shadow(color: Colors.white, offset: Offset(1, 1))]),
+          ),
+        )),
+  ));
+
+  Widget _buildSliverList() => SliverList(
+    delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+          alignment: Alignment.center,
+          width: 100,
+          height: 60,
+          color: data[index],
+          child: Text(
+            colorString(data[index]),
+            style: TextStyle(color: Colors.white, shadows: [
+              Shadow(
+                  color: Colors.black,
+                  offset: Offset(.5, .5),
+                  blurRadius: 2)
+            ]),
+          ),
+        ),
+        childCount: data.length),
+  );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 2,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+    IconButton(
+      onPressed: () {},
+      icon: Icon(
+        Icons.star_border,
+        color: Colors.white,
+      ),
+    )
+  ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}
+
+
+class _SliverDelegate extends SliverPersistentHeaderDelegate {
+  _SliverDelegate({
+    @required this.minHeight,
+    @required this.maxHeight,
+    @required this.child,
+  });
+
+  final double minHeight; //最小高度
+  final double maxHeight; //最大高度
+  final Widget child; //孩子
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  double get maxExtent => max(maxHeight, minHeight);
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return new SizedBox.expand(child: child);
+  }
+
+  @override //是否需要重建
+  bool shouldRebuild(_SliverDelegate oldDelegate) {
+    return maxHeight != oldDelegate.maxHeight ||
+        minHeight != oldDelegate.minHeight ||
+        child != oldDelegate.child;
+  }
+}"""
+    },
+  ],
+  "SliverPadding": [
+    {
+      "widgetId": 191,
+      "name": 'SliverPadding基本使用',
+      "priority": 1,
+      "subtitle": "【sliver】 : 子组件   【Widget】\n"
+          "【padding】 : 内边距  【EdgeInsetsGeometry】",
+      "code": """class SliverPaddingDemo extends StatelessWidget {
+  final data = List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: CustomScrollView(
+        slivers: <Widget>[_buildSliverAppBar(), SliverPadding(
+            padding: EdgeInsets.only(top: 10),
+            sliver
+            : _buildSliverGrid())],
+      ),
+    );
+  }
+
+  Widget _buildSliverGrid() => SliverGrid.extent(
+    childAspectRatio: 1 / 0.618,
+    maxCrossAxisExtent: 180,
+    crossAxisSpacing: 5,
+    mainAxisSpacing: 5,
+    children: data
+        .map((e) => Container(
+      alignment: Alignment.center,
+      width: 100,
+      height: 60,
+      color: e,
+      child: Text(
+        colorString(e),
+        style: TextStyle(color: Colors.white, shadows: [
+          Shadow(
+              color: Colors.black,
+              offset: Offset(.5, .5),
+              blurRadius: 2)
+        ]),
+      ),
+    ))
+        .toList(),
+  );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 5,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+    IconButton(
+      onPressed: () {},
+      icon: Icon(
+        Icons.star_border,
+        color: Colors.white,
+      ),
+    )
+  ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "SliverOpacity": [
+    {
+      "widgetId": 192,
+      "name": 'SliverOpacity基本使用',
+      "priority": 1,
+      "subtitle": "【opacity】 : 透明度   【double】\n"
+          "【sliver】 : 子组件  【Function()】",
+      "code": """class SliverOpacityDemo extends StatelessWidget {
+  final data = List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      child: CustomScrollView(
+        slivers: <Widget>[
+          _buildSliverAppBar(),
+          SliverPadding(
+              padding: EdgeInsets.only(top: 10),
+              sliver: SliverOpacity(opacity: 0.2, sliver: _buildSliverGrid()))
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSliverGrid() => SliverGrid.extent(
+        childAspectRatio: 1 / 0.618,
+        maxCrossAxisExtent: 180,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
+        children: data
+            .map((e) => Container(
+                  alignment: Alignment.center,
+                  width: 100,
+                  height: 60,
+                  color: e,
+                  child: Text(
+                    colorString(e),
+                    style: TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ))
+            .toList(),
+      );
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      title: Text('张风捷特烈'),
+      actions: _buildActions(),
+      elevation: 5,
+      pinned: true,
+      backgroundColor: Colors.orange,
+      flexibleSpace: FlexibleSpaceBar(
+        //伸展处布局
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
+        )
+      ];
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "AboutListTile": [
+    {
+      "widgetId": 193,
+      "name": 'AboutListTile基本使用',
+      "priority": 1,
+      "subtitle": "【icon】 : 左图标   【Widget】\n"
+          "【applicationIcon】 : 左上图标   【Widget】\n"
+          "【applicationVersion】 : 版本号  【String】\n"
+          "【applicationName】 : 应用名  【String】\n"
+          "【applicationLegalese】 : 应用律术   【String】\n"
+          "【aboutBoxChildren】 : 弹框内容组件   【List<Widget>】",
+      "code": """class AboutListTileDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AboutListTile(
+      icon: Icon(Icons.info),
+      applicationIcon: FlutterLogo(),
+      applicationName: 'Flutter Unit',
+      applicationVersion: 'v0.0.1',
+      applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
+      aboutBoxChildren: [
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text(
+            '      FlutterUnit是【张风捷特烈】的开源项目，'
+            '收录Flutter的200+组件，并附加详细介绍以及操作交互，'
+            '希望帮助广大编程爱好者入门Flutter。'
+            '更多知识可以关注掘金账号、公众号【编程之王】。',
+            style: TextStyle(color: Color(0xff999999), fontSize: 16),
+            textAlign: TextAlign.justify,
+          ),
+        ),
+      ],
+    );
+  }
+}"""
+    },
+  ],
+  "Scrollbar": [
+    {
+      "widgetId": 194,
+      "name": 'Scrollbar基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【controller】 : 控制器  【ScrollController】",
+      "code": """class CustomScrollbar extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: Scrollbar(
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          children: data
+              .map((color) => Container(
+            alignment: Alignment.center,
+            width: 100,
+            height: 50,
+            color: color,
+            child: Text(
+              colorString(color),
+              style: TextStyle(color: Colors.white, shadows: [
+                Shadow(
+                    color: Colors.black,
+                    offset: Offset(.5, .5),
+                    blurRadius: 2)
+              ]),
+            ),
+          ))
+              .toList(),
+        ),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "CupertinoScrollbar": [
+    {
+      "widgetId": 195,
+      "name": 'CupertinoScrollbar基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【controller】 : 控制器  【ScrollController】",
+      "code": """class CustomCupertinoScrollbar extends StatelessWidget {
+  final data = <Color>[
+    Colors.purple[50],
+    Colors.purple[100],
+    Colors.purple[200],
+    Colors.purple[300],
+    Colors.purple[400],
+    Colors.purple[500],
+    Colors.purple[600],
+    Colors.purple[700],
+    Colors.purple[800],
+    Colors.purple[900],
+  ];
+  
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: CupertinoScrollbar(
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          children: data
+              .map((color) => Container(
+            alignment: Alignment.center,
+            width: 100,
+            height: 50,
+            color: color,
+            child: Text(
+              colorString(color),
+              style: TextStyle(color: Colors.white, shadows: [
+                Shadow(
+                    color: Colors.black,
+                    offset: Offset(.5, .5),
+                    blurRadius: 2)
+              ]),
+            ),
+          ))
+              .toList(),
+        ),
+      ),
+    );
+  }
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "FlexibleSpaceBar": [
+    {
+      "widgetId": 196,
+      "name": 'SliverAppBar基本使用',
+      "priority": 1,
+      "subtitle": "【title】 : 标题组件   【Widget】\n"
+          "【titlePadding】 : 标题间距   【EdgeInsetsGeometry】\n"
+          "【collapseMode】 : 折叠模式   【CollapseMode】\n"
+          "【stretchModes】 : 延伸模式   【List<StretchMode>】\n"
+          "【background】 : 背景组件   【Widget】\n"
+          "【centerTitle】 : 是否居中   【bool】",
+      "code": """class FlexibleSpaceBarDemo extends StatelessWidget {
+
+  final data = <Color>[
+    Colors.blue[50],
+    Colors.blue[100],
+    Colors.blue[200],
+    Colors.blue[300],
+    Colors.blue[400],
+    Colors.blue[500],
+    Colors.blue[600],
+    Colors.blue[700],
+    Colors.blue[800],
+    Colors.blue[900],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return
+        Container(
+          height: 300,
+          child: CustomScrollView(
+            slivers: <Widget>[
+              _buildSliverAppBar(),
+              _buildSliverFixedExtentList()
+            ],
+          ),
+    );
+  }
+
+  Widget _buildSliverAppBar() {
+    return SliverAppBar(
+      expandedHeight: 190.0,
+      leading: _buildLeading(),
+      actions: _buildActions(),
+      pinned: true,
+      backgroundColor: Colors.blue,
+      flexibleSpace: FlexibleSpaceBar(//伸展处布局
+        centerTitle: false,
+        title: Text('张风捷特烈',style: TextStyle(shadows: [
+          Shadow(color: Colors.blue, offset: Offset(1, 1), blurRadius: 2)
+        ]),),
+        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        collapseMode: CollapseMode.parallax, //视差效果
+        stretchModes: [StretchMode.blurBackground,StretchMode.zoomBackground],
+        background: Image.asset(
+          "assets/images/caver.jpeg",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLeading() => Container(
+      margin: EdgeInsets.all(10),
+      child: Image.asset('assets/images/icon_head.png'));
+
+  List<Widget> _buildActions() => <Widget>[
+    IconButton(
+      onPressed: () {},
+      icon: Icon(
+        Icons.star_border,
+        color: Colors.white,
+      ),
+    )
+  ];
+
+  Widget _buildSliverFixedExtentList() => SliverFixedExtentList(
+    itemExtent: 60,
+    delegate: SliverChildBuilderDelegate(
+            (_, int index) => Container(
+          alignment: Alignment.center,
+          width: 100,
+          height: 50,
+          color: data[index],
+          child: Text(
+            colorString(data[index]),
+            style: TextStyle(color: Colors.white, shadows: [
+              Shadow(
+                  color: Colors.black,
+                  offset: Offset(.5, .5),
+                  blurRadius: 2)
+            ]),
+          ),
+        ),
+        childCount: data.length),
+  );
+
+  String colorString(Color color) =>
+      "#\${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
+}"""
+    },
+  ],
+  "ErrorWidget": [
+    {
+      "widgetId": 197,
+      "name": 'ErrorWidget基本使用',
+      "priority": 1,
+      "subtitle": "入参 : 显示信息   【Object】",
+      "code": """class ErrorWidgetDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: ErrorWidget(
+          'I am Error ErrorWidget\n'
+              'But now, there has no error.'
+      ),
+    );
+  }
+}"""
+    },
+  ],
+  "Form": [
+    {
+      "widgetId": 198,
+      "name": 'Form基本使用',
+      "priority": 1,
+      "subtitle": "【child】 : 子组件   【Widget】\n"
+          "【onChanged】 : 表单变化回调   【VoidCallback】\n"
+          "【onWillPop】 : 返回回调  【WillPopCallback】",
+      "code": """class CustomForm extends StatefulWidget {
+  @override
+  _CustomFormState createState() => _CustomFormState();
+}
+
+class _CustomFormState extends State<CustomForm> {
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Form(
+        onWillPop: () => _willPop(context),
+        key: _formKey,
+        onChanged: () {
+          print('Form---onChanged');
+        },
+        child:
+            Stack(
+              alignment: Alignment.centerRight,
+              children: <Widget>[
+                Container(
+                  width: 350,
+                  child: UnconstrainedBox(
+                    child: Container(
+                      width: 200,
+                      height: 70,
+                      child: TextFormField(
+                        style: TextStyle(textBaseline: TextBaseline.alphabetic),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'username',
+                        ),
+                        validator: _validateUsername,
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                    top: 0, right: 0, child: _buildSubmitButton(context)),
+              ],
+        ),
+      ),
+    );
+  }
+
+  String _validateUsername(value) {
+    if (value.isEmpty) {
+      return '用户名不能为空';
+    }
+    return null;
+  }
+
+  RaisedButton _buildSubmitButton(BuildContext context) {
+    return RaisedButton(
+      color: Colors.blue,
+      shape: CircleBorder(
+        side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+      ),
+      onPressed: _onSubmit,
+      child: Icon(
+        Icons.check,
+        color: Colors.white,
+      ),
+    );
+  }
+
+  _onSubmit(){
+    if (_formKey.currentState.validate()) {
+      Navigator.of(context).pop();
+    }
+  }
+
+  Future<bool> _willPop(context) async {
+    return await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            title: Text('提示'),
+            content: Text('你确定要离开此页吗?'),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                child: Text('确定'),
+              ),
+              FlatButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: Text('取消'),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+}"""
+    },
+  ],
+  "TextFormField": [
+    {
+      "widgetId": 199,
+      "name": 'TextFormField基本使用',
+      "priority": 1,
+      "subtitle": "    基本属性和TextField一致，详见之\n"
+          "【validator】 : 验证函数   【FormFieldValidator<String> 】\n"
+          "【onFieldSubmitted】 : 提交回调   【ValueChanged<String>】\n"
+          "【onSaved】 : 表单save时回调  【FormFieldSetter<String>】",
+      "code": """class CustomTextFormField extends StatefulWidget {
+  @override
+  _CustomTextFormFieldState createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Form(
+        key: _formKey,
+        child:
+        Stack(
+          alignment: Alignment.centerRight,
+          children: <Widget>[
+            Container(
+              width: 350,
+              child: UnconstrainedBox(
+                child: Container(
+                  width: 200,
+                  height: 70,
+                  child: TextFormField(
+                    style: TextStyle(textBaseline: TextBaseline.alphabetic),
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'username',
+                    ),
+                    validator: _validateUsername,
+                    onFieldSubmitted: _onFieldSubmitted,
+                    onSaved: _onSaved,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+                top: 0, right: 0, child: _buildSubmitButton(context)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _validateUsername(value) {
+    if (value.isEmpty) {
+      return '用户名不能为空';
+    }
+    return null;
+  }
+  _onSaved(value){
+    print('onSaved:'+value);
+  }
+
+  void _onFieldSubmitted(value) {
+    print('onFieldSubmitted:'+value);
+  }
+
+  RaisedButton _buildSubmitButton(BuildContext context) {
+    return RaisedButton(
+      color: Colors.blue,
+      shape: CircleBorder(
+        side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+      ),
+      onPressed: _onSubmit,
+      child: Icon(
+        Icons.check,
+        color: Colors.white,
+      ),
+    );
+  }
+
+  _onSubmit(){
+    _formKey.currentState.save();
+    if (_formKey.currentState.validate()) {
+      FocusScope.of(context).requestFocus(FocusNode());
+    }
+  }
+}"""
+    },
+  ],
+  "Stepper": [
+    {
+      "widgetId": 200,
+      "name": 'Stepper基本使用',
+      "priority": 1,
+      "subtitle": "【steps】 : 步骤列表   【List<Step>】\n"
+          "【currentStep】 : 当前步骤   【double】\n"
+          "【onStepTapped】 : 点击回调   【ValueChanged<int>】\n"
+          "【onStepCancel】 : 上一步回调  【VoidCallback】\n"
+          "【controlsBuilder】 : 控制器构造  【ControlsWidgetBuilder】",
+      "code": """class StepperDemo extends StatefulWidget {
+  @override
+  _StepperDemoState createState() => _StepperDemoState();
+}
+
+class _StepperDemoState extends State<StepperDemo> {
+  int _position = 0;
+
+  final stepsData = {
+    "填写表单":'请按表单填写个人信息。',
+    "邮箱校验":'已将邮件发送至您的邮箱，请按照相关指示对您的账号进行邮箱校验。',
+    "注册完成":'恭喜您，注册完成！',
+  };
+
+  final steps = [
+    Step(
+      title: Text("填写表单"),
+      content: Container(height: 60, child: Text("请按表单填写个人信息")),
+    ),
+    Step(title: Text("邮箱校验"), content: Text("请对您的账号进行邮箱校验")),
+    Step(title: Text("注册完成"), content: Text("恭喜您，注册完成")),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: Stepper(
+          type:StepperType.horizontal,
+          currentStep: _position,
+          onStepTapped: (index) {
+            setState(() {
+              _position = index;
+            });
+          },
+          onStepContinue: () {
+            setState(() {
+              if (_position < 2) {
+                _position++;
+              }
+            });
+          },
+          onStepCancel: () {
+            if (_position > 0) {
+              setState(() {
+                _position--;
+              });
+            }
+          },
+          controlsBuilder: (_,
+              {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
+            return Row(
+              children: <Widget>[
+                RaisedButton(
+                  color: Colors.blue,
+                  shape: CircleBorder(
+                    side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+                  ),
+                  onPressed: onStepContinue,
+                  child: Icon(
+                    Icons.check,
+                    color: Colors.white,
+                  ),
+                ),
+                RaisedButton(
+                  color: Colors.red,
+                  shape: CircleBorder(
+                    side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+                  ),
+                  onPressed: onStepCancel,
+                  child: Icon(
+                    Icons.keyboard_backspace,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            );
+          },
+          steps: stepsData.keys.map((e){
+            bool isActive = stepsData.keys.toList().indexOf(e) ==_position;
+            return Step(
+            title: Text(e,style: TextStyle(color: isActive?Colors.blue:Colors.black),),
+            isActive: isActive,
+            state: _getState(stepsData.keys.toList().indexOf(e)),
+            content: Container(height: 60, child: Text(stepsData[e])),
+          );
+          }).toList()),
+    );
+  }
+  _getState(index){
+    if(_position==index) return StepState.editing;
+    if(_position>index) return StepState.complete;
+    return StepState.indexed;
+  }
+}"""
+    },
+    {
+      "widgetId": 200,
+      "name": 'Stepper的方向',
+      "priority": 2,
+      "subtitle": "【type】 : 方向   【StepperType】",
+      "code": """class VerticalStepper extends StatefulWidget {
+  @override
+  _VerticalStepperState createState() => _VerticalStepperState();
+}
+
+class _VerticalStepperState extends State<VerticalStepper> {
+  int _position = 0;
+
+  final stepsData = {
+    "填写表单":'请按表单填写个人信息。',
+    "邮箱校验":'已将邮件发送至您的邮箱，请按照相关指示对您的账号进行邮箱校验。',
+    "注册完成":'恭喜您，注册完成！',
+  };
+
+  final steps = [
+    Step(
+      title: Text("填写表单"),
+      content: Container(height: 60, child: Text("请按表单填写个人信息")),
+    ),
+    Step(title: Text("邮箱校验"), content: Text("请对您的账号进行邮箱校验")),
+    Step(title: Text("注册完成"), content: Text("恭喜您，注册完成")),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Stepper(
+          type:StepperType.vertical,
+          currentStep: _position,
+          onStepTapped: (index) {
+            setState(() {
+              _position = index;
+            });
+          },
+          onStepContinue: () {
+            setState(() {
+              if (_position < 2) {
+                _position++;
+              }
+            });
+          },
+          onStepCancel: () {
+            if (_position > 0) {
+              setState(() {
+                _position--;
+              });
+            }
+          },
+          controlsBuilder: (_,
+              {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
+            return Row(
+              children: <Widget>[
+                RaisedButton(
+                  color: Colors.blue,
+                  shape: CircleBorder(
+                    side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+                  ),
+                  onPressed: onStepContinue,
+                  child: Icon(
+                    Icons.check,
+                    color: Colors.white,
+                  ),
+                ),
+                RaisedButton(
+                  color: Colors.red,
+                  shape: CircleBorder(
+                    side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+                  ),
+                  onPressed: onStepCancel,
+                  child: Icon(
+                    Icons.keyboard_backspace,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            );
+          },
+          steps: stepsData.keys.map((e){
+            bool isActive = stepsData.keys.toList().indexOf(e) ==_position;
+            return Step(
+              title: Text(e,style: TextStyle(color: isActive?Colors.blue:Colors.black),),
+              isActive: isActive,
+              state: _getState(stepsData.keys.toList().indexOf(e)),
+              content: Container(height: 60, child: Text(stepsData[e])),
+            );
+          }).toList()),
+    );
+  }
+  _getState(index){
+    if(_position==index) return StepState.editing;
+    if(_position>index) return StepState.complete;
+    return StepState.indexed;
+  }
+}"""
+    },
+  ],
+  "AnimatedSize": [
+    {"widgetId": 201,
+      "name": 'AnimatedAlign基本使用',
+      "priority": 1,
+      "subtitle":
+      "【child】 : 孩子组件   【Widget】\n"
+          "【duration】 : 动画时长   【Duration】\n"
+          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
+          "【curve】 : 动画曲线   【Duration】\n"
+          "【vsync】 : vsync   【TickerProvider】",
+      "code": """class CustomAnimatedSize extends StatefulWidget {
+  @override
+  _CustomAnimatedSizeState createState() => _CustomAnimatedSizeState();
+}
+
+class _CustomAnimatedSizeState extends State<CustomAnimatedSize>
+    with SingleTickerProviderStateMixin {
+  final double start = 100;
+  final double end = 200;
+
+  double _width;
+
+  @override
+  void initState() {
+    _width = start;
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        _buildSwitch(),
+        Container(
+          color: Colors.grey.withAlpha(22),
+          width: 200,
+          height: 100,
+          alignment: Alignment.center,
+          child: AnimatedSize(
+            vsync: this,
+            duration: Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
+            alignment: Alignment(0, 0),
+            child: Container(
+              height: 40,
+              width: _width,
+              alignment: Alignment.center,
+              color: Colors.blue,
+              child: Text(
+                '张风捷特烈',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSwitch() => Switch(
+      value: _width == end,
+      onChanged: (v) {
+        setState(() {
+          _width = v ? end : start;
+        });
+      });
 }"""},
-  ],  "x": [
-    {"code": """"""},
   ],
 };
-
-//  "ExpansionTile": [
-//    {
-//      "widgetId": 52,
-//      "name": 'ExpansionTile基本使用',
-//      "priority": 1,
-//      "subtitle": "【children】 : 展开内容   【List<Widget>】\n"
-//          "【leading】 : 头左组件   【Widget】\n"
-//          "【title】 : 头中组件   【Widget】\n"
-//          "【trailing】 : 头尾组件   【Widget】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【onExpansionChanged】 : 折叠事件   【Function(bool)】\n"
-//          "【initiallyExpanded】 : 是否初始时展开   【bool】",
-//      "code": """class CustomExpansionTile extends StatefulWidget {
-//  @override
-//  _CustomExpansionTileState createState() => _CustomExpansionTileState();
-//}
-//
-//class _CustomExpansionTileState extends State<CustomExpansionTile> {
-//
-//  @override
-//  Widget build(BuildContext context) {
-//
-//    return ExpansionTile(
-//      leading: Icon(Icons.star),
-//      title: Text("选择语言"),
-//      backgroundColor: Colors.grey.withAlpha(6),
-//      onExpansionChanged: (value){
-//        print('\$value');
-//      },
-//      initiallyExpanded: false,
-//      children: <Widget>[
-//        CustomRadioListTile()
-//      ],
-//    );
-//  }
-//}"""
-//    }
-//  ],

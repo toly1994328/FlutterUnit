@@ -9,8 +9,8 @@ class WidgetDao {
     final db = await FlutterDb.db.database;
     String addSql = //插入数据
         "INSERT INTO "
-        "widget(id,name,nameCN,childCount,family,lever,image,info) "
-        "VALUES (?,?,?,?,?,?,?,?);";
+        "widget(id,name,nameCN,childCount,family,lever,image,linkWidget,info) "
+        "VALUES (?,?,?,?,?,?,?,?,?);";
     return await db.transaction((tran) async => await tran.rawInsert(addSql, [
           widget.id,
           widget.name,
@@ -19,6 +19,7 @@ class WidgetDao {
           widget.family,
           widget.lever,
           widget.image,
+          widget.linkWidget,
           widget.info
         ]));
   }

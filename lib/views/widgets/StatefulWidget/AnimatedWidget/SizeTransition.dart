@@ -21,10 +21,7 @@ class _CustomSizeTransitionState extends State<CustomSizeTransition>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1))
-      ..addListener(() {
-        print(_ctrl.value);
-      });
+    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1));
     _ctrl.forward();
     super.initState();
   }

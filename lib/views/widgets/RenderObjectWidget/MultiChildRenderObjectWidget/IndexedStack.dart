@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 //      "subtitle":
 //          "【children】 : 子组件列表   【Lis<Widget>】\n"
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
-//          "【index】 : 当前显示所有  【Function()】",
+//          "【index】 : 当前显示组件  【int】",
 //    }
 class CustomIndexedStack extends StatefulWidget {
   @override

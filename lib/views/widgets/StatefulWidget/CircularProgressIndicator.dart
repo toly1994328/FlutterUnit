@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //          "【value】 : 进度   【double】\n"
 //          "【backgroundColor】 : 背景色   【Color】\n"
 //          "【valueColor】 : 进度颜色   【Animation<Color>】\n"
-//          "【strokeWidth】 : 线宽   【double】\n"
-//          "    value为null时会不停旋转",
+//          "【strokeWidth】 : 线宽   【double】",
 //    }
 class CustomCircularProgressIndicator extends StatefulWidget {
   @override

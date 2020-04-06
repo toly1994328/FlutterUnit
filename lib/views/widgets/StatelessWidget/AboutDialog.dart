@@ -8,7 +8,7 @@ import 'package:flutter_unit/views/unit_splash.dart';
 ///
 //    {
 //      "widgetId": 130,
-//      "name": 'Dialog基本使用',
+//      "name": 'AboutDialog基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【applicationIcon】 : 左上图标   【Widget】\n"

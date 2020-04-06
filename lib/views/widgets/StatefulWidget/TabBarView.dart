@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //    {
-//      "widgetId": 58,
+//      "widgetId": 59,
 //      "name": 'TabBarView需要与TabBar联用',
 //      "priority": 1,
 //      "subtitle":

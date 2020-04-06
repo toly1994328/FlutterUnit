@@ -36,7 +36,7 @@ class _CustomCupertinoSliderState extends State<CustomCupertinoSlider> {
             min: 0.0,
             max: 360.0,
             activeColor: Colors.green,
-            thumbColor: Colors.orange,
+            thumbColor: Colors.white,
             onChangeStart: (value) {
               print('开始滑动:$value');
             },

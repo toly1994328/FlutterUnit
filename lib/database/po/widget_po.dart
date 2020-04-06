@@ -12,6 +12,7 @@ class WidgetPo extends Equatable {
   final double lever;
   final String image;
   final String info;
+  final String linkWidget;
 
   const WidgetPo(
       {this.id,
@@ -20,6 +21,7 @@ class WidgetPo extends Equatable {
       this.childCount,
       this.family,
       this.lever,
+      this.linkWidget,
       this.image,
       this.info});
 
@@ -30,8 +32,9 @@ class WidgetPo extends Equatable {
         nameCN: map["nameCN"],
         family: map["family"],
         childCount: map["childCount"],
-        lever: map["lever"],
+        lever: map["lever"].toDouble(),
         image: map["image"],
+        linkWidget: map["linkWidget"],
         info: map["info"]);
   }
 

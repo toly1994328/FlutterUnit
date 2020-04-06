@@ -36,7 +36,7 @@ class CustomMediaQuery extends StatelessWidget {
 
     return Container(
       height: 200,
-      color: Colors.grey.withAlpha(33),
+      color: Colors.grey.withAlpha(11),
       child:ListView(
           children: data.keys.map((e) => buildItem(e, data)).toList(),
       ),

@@ -18,6 +18,7 @@ class CustomCupertinoActionSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         _buildRaisedButton(context),
         _buildCupertinoActionSheet(context),
@@ -26,19 +27,22 @@ class CustomCupertinoActionSheet extends StatelessWidget {
   }
 
   Widget _buildCupertinoActionSheet(BuildContext context) =>
-      CupertinoActionSheet(
-        title: Text("Please chose a language"),
-        message: Text('the language you use in this application.'),
-        cancelButton: CupertinoActionSheetAction(
-            onPressed: () => Navigator.pop(context), child: Text("Cancel")),
-        actions: <Widget>[
-          CupertinoActionSheetAction(
-              onPressed: () => Navigator.pop(context), child: Text('Dart')),
-          CupertinoActionSheetAction(
-              onPressed: () => Navigator.pop(context), child: Text('Java')),
-          CupertinoActionSheetAction(
-              onPressed: () => Navigator.pop(context), child: Text('Kotlin')),
-        ],
+      Container(
+        alignment: Alignment.bottomCenter,
+        child: CupertinoActionSheet(
+          title: Text("Please chose a language"),
+          message: Text('the language you use in this application.'),
+          cancelButton: CupertinoActionSheetAction(
+              onPressed: () => Navigator.pop(context), child: Text("Cancel")),
+          actions: <Widget>[
+            CupertinoActionSheetAction(
+                onPressed: () => Navigator.pop(context), child: Text('Dart')),
+            CupertinoActionSheetAction(
+                onPressed: () => Navigator.pop(context), child: Text('Java')),
+            CupertinoActionSheetAction(
+                onPressed: () => Navigator.pop(context), child: Text('Kotlin')),
+          ],
+        ),
       );
 
   Widget _buildRaisedButton(BuildContext context) => RaisedButton(

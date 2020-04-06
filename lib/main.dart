@@ -6,6 +6,7 @@ import 'package:flutter_unit/repositorys/widget_me_repository.dart';
 import 'package:flutter_unit/views/unit_splash.dart';
 import 'package:flutter_unit/views/widgets/StatefulWidget/Checkbox.dart';
 
+import 'app/initial.dart';
 import 'blocs/detail/detail_bloc.dart';
 import 'blocs/global/global_bloc.dart';
 import 'blocs/widgets/widget_bloc.dart';
@@ -16,7 +17,12 @@ import 'views/pages/unit_navigation.dart';
 
 void main() async {
 //    await Initial.init();
-  runApp(BlocWrapper(child: FlutterApp()));
+//  runApp(BlocWrapper(
+//      child: ColorFiltered(
+//          colorFilter: ColorFilter.mode(Colors.white, BlendMode.color),
+//          child: FlutterApp())));
+  runApp(BlocWrapper(
+      child: FlutterApp()));
 //  runApp(FlutterApp());
 }
 
@@ -48,15 +54,16 @@ class FlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      onGenerateRoute: Router.generateRoute,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:
+        title: 'Flutter Demo',
+        onGenerateRoute: Router.generateRoute,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home:
 //      NavPage()
-          UnitNavigation(),
-    );
+            UnitSplash()
+//          UnitNavigation(),
+        );
   }
 }
 //NavPage()

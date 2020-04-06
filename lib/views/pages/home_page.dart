@@ -11,11 +11,9 @@ import 'package:flutter_unit/blocs/widgets/widget_event.dart';
 import 'package:flutter_unit/blocs/widgets/widget_state.dart';
 import 'package:flutter_unit/components/toly_app_bar.dart';
 import 'package:flutter_unit/views/empty_page.dart';
-import 'package:flutter_unit/views/items/widget_list_item.dart';
-import 'package:flutter_unit/views/widgets/StatelessWidget/stateless_unit.dart';
-import '../home/home_left_drawer.dart';
+import 'package:flutter_unit/views/items/coupon_widget_list_item.dart';
+import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
 import '../home/home_light_drawer.dart';
-import '../../app/res/cons.dart';
 import 'home_drawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,7 +23,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ScrollController _ctrl;
-  double _y = 0;
   double limitY = 35;
 
   @override
@@ -42,10 +39,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        //标签控制器
-        length: Cons.TABS.length, //标签个数
-        child: BlocBuilder<GlobalBloc, GlobalState>(
+    return BlocBuilder<GlobalBloc, GlobalState>(
             builder: (_, state) => Scaffold(
                   appBar: TolyAppBar(
                     preferredSize: Size.fromHeight(state.height),
@@ -63,13 +57,13 @@ class _HomePageState extends State<HomePage> {
                   drawer: HomeDrawer(),
                   //左滑页
                   endDrawer: HomeRightDrawer(), //右滑页
-                )));
+                ));
   }
 
   Widget _buildContent(BuildContext context) =>
       BlocBuilder<WidgetBloc, WidgetState>(builder: (_, state) {
         if (state is WidgetsLoaded) {
-          var items = state.widgets.reversed.toList();
+          var items = state.widgets;
           if (items.isEmpty) return EmptyPage();
           return ListView.separated(
               controller: _ctrl,
@@ -81,12 +75,15 @@ class _HomePageState extends State<HomePage> {
                               .add(ToWidgetDetail(items[index]));
                           Navigator.pushNamed(context, Router.widget_detail);
                         },
-                        child: WidgetListItem(
+                        child: TechnoWidgetListItem(
                           data: items[index],
                         )),
                   ),
               separatorBuilder: (_, index) => Container(),
               itemCount: items.length);
+        }
+        if(state is WidgetsLoadFailed){
+          return Container(child: Text('加载数据异常'),);
         }
         return Container();
       });

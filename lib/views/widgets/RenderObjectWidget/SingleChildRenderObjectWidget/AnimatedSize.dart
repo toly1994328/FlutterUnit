@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-23
+/// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
 /// 说明:
+
 //    {
-//      "widgetId": 120,
+//      "widgetId": 201,
 //      "name": 'AnimatedAlign基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【child】 : 孩子组件   【Widget】\n"
 //          "【duration】 : 动画时长   【Duration】\n"
-//          "【onEnd】 : 动画结束回调   【Function()】\n"
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
 //          "【curve】 : 动画曲线   【Duration】\n"
-//          "【padding】 : 内边距   【EdgeInsetsGeometry】",
+//          "【vsync】 : vsync   【TickerProvider】",
 //    }
-class CustomAnimatedAlign extends StatefulWidget {
+
+class CustomAnimatedSize extends StatefulWidget {
   @override
-  _CustomAnimatedAlignState createState() => _CustomAnimatedAlignState();
+  _CustomAnimatedSizeState createState() => _CustomAnimatedSizeState();
 }
 
-class _CustomAnimatedAlignState extends State<CustomAnimatedAlign> {
-  final Alignment start = Alignment(0, 0);
-  final Alignment end = Alignment.bottomRight;
+class _CustomAnimatedSizeState extends State<CustomAnimatedSize>
+    with SingleTickerProviderStateMixin {
+  final double start = 100;
+  final double end = 200;
 
-  Alignment _alignment;
+  double _width;
 
   @override
   void initState() {
-    _alignment = start;
+    _width = start;
     super.initState();
   }
 
@@ -41,14 +43,15 @@ class _CustomAnimatedAlignState extends State<CustomAnimatedAlign> {
           color: Colors.grey.withAlpha(22),
           width: 200,
           height: 100,
-          child: AnimatedAlign(
+          alignment: Alignment.center,
+          child: AnimatedSize(
+            vsync: this,
             duration: Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
-            alignment: _alignment,
-            onEnd: () => print('End'),
+            alignment: Alignment(0, 0),
             child: Container(
               height: 40,
-              width: 80,
+              width: _width,
               alignment: Alignment.center,
               color: Colors.blue,
               child: Text(
@@ -63,10 +66,10 @@ class _CustomAnimatedAlignState extends State<CustomAnimatedAlign> {
   }
 
   Widget _buildSwitch() => Switch(
-          value: _alignment == end,
-          onChanged: (v) {
-            setState(() {
-              _alignment = v ? end : start;
-            });
-          });
+      value: _width == end,
+      onChanged: (v) {
+        setState(() {
+          _width = v ? end : start;
+        });
+      });
 }

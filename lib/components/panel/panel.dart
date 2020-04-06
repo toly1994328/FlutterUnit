@@ -106,7 +106,6 @@ class _NodePanelState extends State<NodePanel>
   Widget _buildCode(BuildContext context) =>AnimatedCrossFade(
     firstCurve: Curves.easeInCirc,
     secondCurve: Curves.easeInToLinear,
-//    sizeCurve: Curves.slowMiddle,
     firstChild: Container(),
     secondChild: Container(
       width: MediaQuery.of(context).size.width,

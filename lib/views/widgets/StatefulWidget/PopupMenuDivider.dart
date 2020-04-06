@@ -9,7 +9,6 @@ import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 //      "name": 'PopupMenuDivider基本使用',
 //      "priority": 1,
 //      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
 //          "【height】 : 高度  【double】",
 //    }
 class CustomPopupMenuDivider extends StatelessWidget {

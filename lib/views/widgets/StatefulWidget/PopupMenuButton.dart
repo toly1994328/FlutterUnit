@@ -15,7 +15,6 @@ import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 //          "【color】 : 背景颜色   【Color】\n"
 //          "【shape】 : 形状   【ShapeBorder】\n"
 //          "【elevation】 : 影深   【double】\n"
-//          "【showCursor】 : 是否显示光标   【bool】\n"
 //          "【onCanceled】 : 取消事件   【Function()】\n"
 //          "【onSelected】 : 选择事件   【Function(T)】",
 //    }

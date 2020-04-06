@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/views/widgets/StatelessWidget/button/FloatingActionButton.dart';
+import 'package:flutter_unit/views/widgets/StatelessWidget/FloatingActionButton.dart';
 import 'act_page.dart';
 import 'home_page.dart';
 import 'love_page.dart';

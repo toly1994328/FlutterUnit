@@ -180,7 +180,6 @@ class _BottomNavigationBarWithPageViewState
       elevation: 1,
       type: BottomNavigationBarType.shifting,
       fixedColor: Colors.white,
-      backgroundColor: Colors.white,
       iconSize: 25,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
       showUnselectedLabels: false,
@@ -190,7 +189,7 @@ class _BottomNavigationBarWithPageViewState
               title: Text(
                 key,
               ),
-              icon: Icon(Cons.ICONS_MAP[key]),
+              icon: Icon(iconsMap[key]),
               backgroundColor: _colors[_position]))
           .toList(),
     );

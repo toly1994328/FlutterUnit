@@ -78,7 +78,7 @@ class DeleteDialog extends StatelessWidget {
 
   Widget _buildContent() {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(15.0),
       child: Text(
         '    Hi toly! If you push the conform buttom ,'
         ' You will lose this file. Are you sure wand to do that?',
@@ -90,18 +90,18 @@ class DeleteDialog extends StatelessWidget {
 
   Widget _buildFooter(context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15.0, top: 10),
+      padding: const EdgeInsets.only(bottom: 15.0, top: 10,left: 10,right: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
             alignment: Alignment.center,
             height: 40,
-            width: 120,
+            width: 100,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(30)),
                 color: Color(0xff73D1EE)),
-            child: Text('Yes, Delete',
+            child: Text('Yes',
                 style: TextStyle(color: Colors.white, fontSize: 16)),
           ),
           InkWell(
@@ -109,7 +109,7 @@ class DeleteDialog extends StatelessWidget {
             child: Container(
               alignment: Alignment.center,
               height: 40,
-              width: 120,
+              width: 100,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   color: Colors.orangeAccent),

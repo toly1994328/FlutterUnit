@@ -4,7 +4,6 @@ import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
 import 'package:flutter_unit/blocs/detail/detail_state.dart';
-import 'package:flutter_unit/components/circle_text.dart';
 import 'package:flutter_unit/components/panel/panel.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
@@ -53,7 +52,6 @@ class WidgetDetailPage extends StatelessWidget {
   // 构建上部左侧介绍
   Widget _buildLeft(WidgetModel model) => Expanded(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(

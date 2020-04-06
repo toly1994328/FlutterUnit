@@ -76,7 +76,7 @@ class StyleDropDownButton extends StatefulWidget {
 }
 
 class _StyleDropDownButtonState extends State<StyleDropDownButton> {
-  Color _color;
+  Color _color = Colors.red ;
   final _colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
   final _info = ["红色", "黄色", "蓝色", "绿色"];
 

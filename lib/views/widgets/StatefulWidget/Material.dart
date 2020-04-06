@@ -45,8 +45,7 @@ class CustomMaterial extends StatelessWidget {
 //      "name": 'Material的shape属性',
 //      "priority": 2,
 //      "subtitle":
-//          "【shape】 : 形状   【ShapeBorder】\n"
-//          "【type】 : 类型   【MaterialType】",
+//          "【shape】 : 形状   【ShapeBorder】\n",
 //    }
 class ShapeMaterial extends StatelessWidget {
 

@@ -29,26 +29,26 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 5),
-        children: data
-            .map((color) => Container(
-                  alignment: Alignment.center,
-                  width: 100,
-                  height: 50,
-                  color: color,
-                  child: Text(
-                    colorString(color),
-                    style: TextStyle(color: Colors.white, shadows: [
-                      Shadow(
-                          color: Colors.black,
-                          offset: Offset(.5, .5),
-                          blurRadius: 2)
-                    ]),
-                  ),
-                ))
-            .toList(),
-      ),
+      child:  ListView(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          children: data
+              .map((color) => Container(
+                    alignment: Alignment.center,
+                    width: 100,
+                    height: 50,
+                    color: color,
+                    child: Text(
+                      colorString(color),
+                      style: TextStyle(color: Colors.white, shadows: [
+                        Shadow(
+                            color: Colors.black,
+                            offset: Offset(.5, .5),
+                            blurRadius: 2)
+                      ]),
+                    ),
+                  ))
+              .toList(),
+        ),
     );
   }
 

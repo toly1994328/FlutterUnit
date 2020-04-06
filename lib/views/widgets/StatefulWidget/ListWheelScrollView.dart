@@ -13,7 +13,12 @@ import 'package:flutter/material.dart';
 //          "【itemExtent】 : item高   【EdgeInsets】\n"
 //          "【onSelectedItemChanged】 : 选中回调  【ValueChanged<int> 】",
 //    }
-class CustomListWheelScrollView extends StatelessWidget {
+class CustomListWheelScrollView extends StatefulWidget {
+  @override
+  _CustomListWheelScrollViewState createState() => _CustomListWheelScrollViewState();
+}
+
+class _CustomListWheelScrollViewState extends State<CustomListWheelScrollView> {
   var data = <Color>[
     Colors.orange[50],
     Colors.orange[100],
@@ -27,22 +32,39 @@ class CustomListWheelScrollView extends StatelessWidget {
     Colors.orange[900],
   ];
 
+  Color _color = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      width: 300,
-      child: ListWheelScrollView(
-        perspective: 0.006,
-        itemExtent: 50,
-        onSelectedItemChanged: (index){
-          print('onSelectedItemChanged:$index');
-        },
-        children: data.map((color) => _buildItem(color)).toList(),
-      ),
+    return Column(
+      children: <Widget>[
+        _buildCircle(),
+        Container(
+          height: 150,
+          width: 300,
+          child: ListWheelScrollView(
+            perspective: 0.006,
+            itemExtent: 50,
+            onSelectedItemChanged: (index){
+              print('onSelectedItemChanged:$index');
+              setState(() => _color=data[index]);
+            },
+            children: data.map((color) => _buildItem(color)).toList(),
+          ),
+        ),
+      ],
     );
   }
+
+  Widget _buildCircle() => Container(
+        margin: EdgeInsets.only(bottom: 5),
+        width: 30,
+        height: 30,
+        decoration: BoxDecoration(
+          color: _color,
+          shape: BoxShape.circle
+        ),
+      );
 
   Widget _buildItem(Color color) {
     return Container(

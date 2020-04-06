@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 //          "【onPointerDown】 : 按下事件   【Function(PointerDownEvent)】\n"
 //          "【onPointerMove】 : 移动事件   【Function(PointerMoveEvent)】\n"
 //          "【onPointerMove】 : 抬起事件   【Function(PointerUpEvent)】\n"
-//          "【onPointerCancel】 : 抬起事件   【Function(PointerUpEvent)】",
+//          "【onPointerCancel】 : 取消事件   【Function(PointerUpEvent)】",
 //    }
 
 class CustomListener extends StatefulWidget {
