@@ -4,8 +4,16 @@ import 'package:flutter/widgets.dart';
 class TolyIcon {
 
     TolyIcon._();
+static const IconData icon_background = const IconData( 0xe60a, fontFamily: "TolyIcon");
+static const IconData icon_code = const IconData( 0xe70b, fontFamily: "TolyIcon");
+static const IconData icon_item = const IconData( 0xe66f, fontFamily: "TolyIcon");
+static const IconData icon_kafei = const IconData( 0xe6aa, fontFamily: "TolyIcon");
+static const IconData icon_tag = const IconData( 0xe6e7, fontFamily: "TolyIcon");
+static const IconData icon_them = const IconData( 0xe6c2, fontFamily: "TolyIcon");
+static const IconData icon_bug = const IconData( 0xe7af, fontFamily: "TolyIcon");
+static const IconData icon_layout = const IconData( 0xe631, fontFamily: "TolyIcon");
+static const IconData icon_sound = const IconData( 0xe606, fontFamily: "TolyIcon");
 static const IconData icon_search = const IconData( 0xe604, fontFamily: "TolyIcon");
-static const IconData icon_widgit = const IconData( 0xe758, fontFamily: "TolyIcon");
 static const IconData icon_star_ok = const IconData( 0xe6ae, fontFamily: "TolyIcon");
 static const IconData icon_star = const IconData( 0xe609, fontFamily: "TolyIcon");
 static const IconData icon_star_add = const IconData( 0xe68e, fontFamily: "TolyIcon");

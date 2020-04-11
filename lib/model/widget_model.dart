@@ -20,7 +20,9 @@ class WidgetModel extends Equatable {
   final String name;
   final String nameCN;
   final WidgetFamily family;
+  final bool collected;
   final WidgetType type;
+  final List<int> links;
   final double lever;
   final ImageProvider image;
   final String info;
@@ -32,13 +34,15 @@ class WidgetModel extends Equatable {
       this.name,
       this.nameCN,
       this.family,
+      this.collected,
+        this.links,
       this.type,
       this.lever,
       this.image,
       this.info});
 
   @override
-  List<Object> get props => [name, nameCN, family, type, lever, image, info];
+  List<Object> get props => [id];
 
   static WidgetModel fromPo(WidgetPo po) {
     return WidgetModel(
@@ -48,11 +52,30 @@ class WidgetModel extends Equatable {
       family: Convert.toFamily(po.family),
       image: convertImage(po.image),
       lever: po.lever,
+      collected: po.collected == 1,
       info: po.info,
+      links: formatLinkTo(po.linkWidget),
     );
   }
 
   static convertImage(String image) {
     return image.isEmpty ? null : AssetImage(image);
   }
+
+  @override
+  String toString() {
+    return 'WidgetModel{id: $id, name: $name,collected: $collected}';
+  }
+
+  static List<int> formatLinkTo(String links) {
+    if(links.isEmpty){
+      return [];
+    }
+    if(!links.contains(',')){
+      return [int.parse(links)];
+    }
+    return links.split(',').map<int>((e)=>int.parse(e)).toList();
+  }
+
+
 }

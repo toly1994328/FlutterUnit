@@ -33,4 +33,31 @@ class WidgetMeRepository implements WidgetRepository {
   Future<List<NodeModel>> loadNode(WidgetModel widgetModel) async{
     return nodeData[widgetModel.name].map((e)=>NodeModel.fromJson(e)).toList();
   }
+
+  @override
+  Future<List<WidgetModel>> searchWidgets(SearchArgs args) {
+    return null;
+  }
+
+  @override
+  Future<List<WidgetModel>> loadWidget(List<int> ids) async{
+    var jsonStr = await rootBundle.loadString('assets/data/widget.json');
+    var widgets = (json.decode(jsonStr)["items"] as List)
+        .map((item) => WidgetPo.fromJson(item))
+        .toList();
+    var where = widgets.map(WidgetModel.fromPo).where((e)=>ids.contains(e.id)).toList();
+    return where;
+  }
+
+  @override
+  Future<List<WidgetModel>> loadCollectWidgets() async{
+    // TODO: implement loadCollectWidgets
+    return [];
+  }
+
+  @override
+  Future<void> toggleCollect(int id) {
+    // TODO: implement setCollect
+    return null;
+  }
 }

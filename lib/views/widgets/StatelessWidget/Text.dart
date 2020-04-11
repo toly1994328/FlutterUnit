@@ -5,7 +5,7 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var style = TextStyle(
-      color: Colors.red,
+      color: Colors.blue,
       fontSize: 20,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.italic,
@@ -33,7 +33,7 @@ class DecorationText extends StatelessWidget {
           decorationStyle: TextDecorationStyle.wavy,
           decorationColor: Colors.blue,
           fontStyle: FontStyle.italic,
-          fontFamily: "Menlo",
+          fontFamily: "DancingScript",
           letterSpacing: 10),
     );
   }

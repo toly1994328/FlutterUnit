@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/multi_shower.dart';
 //    {
 //      "widgetId": 98,
 //      "name": 'Wrap的基础用法',
@@ -24,7 +23,7 @@ class DirectionWrap extends StatelessWidget {
               child: _buildItem(mode)),
           Text(mode.toString().split('.')[1])
         ]))
-            .toList());;
+            .toList());
   }
   final yellowBox = Container(
     color: Colors.yellow,

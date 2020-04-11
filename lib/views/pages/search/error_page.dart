@@ -5,8 +5,9 @@ class ErrorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Container(
-      alignment: FractionalOffset.center,
+    return  Container(
+      height: 300,
+      alignment: Alignment.center,
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,6 +25,6 @@ class ErrorPage extends StatelessWidget {
           )
         ],
       ),
-    ),);
+    );
   }
 }

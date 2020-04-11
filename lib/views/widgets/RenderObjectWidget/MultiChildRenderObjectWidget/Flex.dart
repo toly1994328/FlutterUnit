@@ -1,9 +1,276 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/multi_shower.dart';
+
+
+
 //    {
 //      "widgetId": 94,
-//      "name": 'Flex基本使用',
+//      "name": 'Flex的排布方向基本使用',
+//      "priority": 1,
+//      "subtitle":
+//          "【children】 : 组件列表   【List<Widget>】\n"
+//          "【direction】 : 方向   【Axis】",
+//    }
+class DirectionFlex extends StatelessWidget {
+
+ final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+ final blueBox= Container(
+    color: Colors.blue,
+   height: 20,
+   width: 30,
+  );
+
+ final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        children: Axis.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
+  }
+
+  _buildItem(mode) => Flex(
+    direction: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}
+
+//    {
+//      "widgetId": 94,
+//      "name": 'Flex主轴对齐方式',
+//      "priority": 2,
+//      "subtitle":
+//          "【mainAxisAlignment】 : 主轴对齐   【MainAxisAlignment】",
+//    }
+class MainAxisAlignmentFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      runSpacing: 5,
+        children: MainAxisAlignment.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
+  }
+
+  _buildItem(mode) => Flex(
+    direction: Axis.horizontal,
+    mainAxisAlignment: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}
+
+
+//    {
+//      "widgetId": 94,
+//      "name": 'Flex交叉轴对齐方式',
+//      "priority": 3,
+//      "subtitle":
+//          "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】",
+//    }
+class CrossAxisAlignmentFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        runSpacing: 5,
+        children: CrossAxisAlignment.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
+  }
+
+  _buildItem(mode) => Flex(
+    direction: Axis.horizontal,
+    crossAxisAlignment: mode,
+    textBaseline: TextBaseline.alphabetic,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}
+//    {
+//      "widgetId": 94,
+//      "name": 'Flex垂直方向顺序',
+//      "priority": 4,
+//      "subtitle":
+//          "【verticalDirection】 : 垂直方向顺序   【VerticalDirection】",
+//    }
+class VerticalDirectionFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        runSpacing: 5,
+        children: VerticalDirection.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
+  }
+
+  _buildItem(mode) => Flex(
+    direction: Axis.vertical,
+    verticalDirection: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}
+//    {
+//      "widgetId": 94,
+//      "name": 'Flex水平方向顺序',
+//      "priority": 5,
+//      "subtitle":
+//          "【textDirection】 : 水平方向顺序   【TextDirection】",
+//    }
+class TextDirectionFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        runSpacing: 5,
+        children: TextDirection.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
+  }
+
+  _buildItem(mode) => Flex(
+    direction: Axis.horizontal,
+    textDirection: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}
+
+
+//    {
+//      "widgetId": 94,
+//      "name": 'Flex主轴对齐方式',
 //      "priority": 1,
 //      "subtitle":
 //          "【children】 : 组件列表   【List<Widget>】\n"
@@ -14,12 +281,12 @@ import 'package:flutter_unit/components/multi_shower.dart';
 //          "【verticalDirection】 : 竖直方向   【VerticalDirection】\n"
 //          "【mainAxisSize】 : 主轴尺寸   【MainAxisSize】",
 //    }
-class CustomFlex extends StatefulWidget {
+class PlayFlex extends StatefulWidget {
   @override
-  _CustomFlexState createState() => _CustomFlexState();
+  _PlayFlexState createState() => _PlayFlexState();
 }
 
-class _CustomFlexState extends State<CustomFlex> {
+class _PlayFlexState extends State<PlayFlex> {
   final redBox = Container(
     color: Colors.red,
     height: 50,

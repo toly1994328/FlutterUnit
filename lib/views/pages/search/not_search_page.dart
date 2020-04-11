@@ -5,8 +5,9 @@ class NotSearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Container(
-      alignment: FractionalOffset.center,
+    return  Container(
+      height: 300,
+      alignment: Alignment.center,
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -15,7 +16,7 @@ class NotSearchPage extends StatelessWidget {
            Container(
             padding:  EdgeInsets.only(top: 16.0),
             child:  Text(
-              "哥们，搜点啥...，≧◔◡◔≦",
+              "哥们，搜点啥...≧◔◡◔≦",
               style:  TextStyle(
                 fontSize: 20,
                 color: Colors.blue,
@@ -24,6 +25,6 @@ class NotSearchPage extends StatelessWidget {
           )
         ],
       ),
-    ),);
+   );
   }
 }

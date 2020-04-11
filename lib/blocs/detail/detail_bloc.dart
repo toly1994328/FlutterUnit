@@ -20,7 +20,7 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
 
   @override
   Stream<DetailState> mapEventToState(DetailEvent event) async* {
-    if (event is ToWidgetDetail) {
+    if (event is FetchWidgetDetail) {
       yield* _mapLoadWidgetToState(event.widgetModel);
     }
   }
@@ -29,8 +29,9 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
       WidgetModel widgetModel) async* {
     try {
       final nodes = await this.repository.loadNode(widgetModel);
+      final links = await this.repository.loadWidget(widgetModel.links);
       yield DetailWithData(
-          widgetModel: widgetModel, nodes: nodes);
+          widgetModel: widgetModel, nodes: nodes,links: links);
     } catch (_) {
       yield DetailFailed();
     }

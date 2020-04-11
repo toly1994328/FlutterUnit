@@ -1,3 +1,4 @@
+import 'package:flutter_unit/app/enums.dart';
 
 import 'po/widget_po.dart';
 
@@ -9,13 +10,13 @@ class WidgetDao {
     final db = await FlutterDb.db.database;
     String addSql = //插入数据
         "INSERT INTO "
-        "widget(id,name,nameCN,childCount,family,lever,image,linkWidget,info) "
+        "widget(id,name,nameCN,collected,family,lever,image,linkWidget,info) "
         "VALUES (?,?,?,?,?,?,?,?,?);";
     return await db.transaction((tran) async => await tran.rawInsert(addSql, [
           widget.id,
           widget.name,
           widget.nameCN,
-          widget.childCount,
+          widget.collected,
           widget.family,
           widget.lever,
           widget.image,
@@ -25,11 +26,57 @@ class WidgetDao {
   }
 
   Future<List<Map<String, dynamic>>> queryAll() async {
-    //插入方法
     final db = await FlutterDb.db.database;
     return await db.rawQuery("SELECT * "
         "FROM widget");
-//    var list = data.map((e)=>WidgetPo.fromJson(e)).toList();
-//    return list;
   }
+
+  Future<List<Map<String, dynamic>>> queryByFamily(WidgetFamily family) async {
+    final db = await FlutterDb.db.database;
+    return await db.rawQuery(
+        "SELECT * "
+        "FROM widget WHERE family = ?",
+        [family.index]);
+  }
+
+  Future<List<Map<String, dynamic>>> queryByIds(List<int> ids) async {
+    final db = await FlutterDb.db.database;
+
+    var sql = "SELECT * "
+        "FROM widget WHERE id in (${'?,' * (ids.length - 1)}?) ";
+
+    return await db.rawQuery(sql, [...ids]);
+  }
+
+  Future<List<Map<String, dynamic>>> search(SearchArgs arguments) async {
+    final db = await FlutterDb.db.database;
+    return await db.rawQuery(
+        "SELECT * "
+        "FROM widget WHERE name like ? AND lever IN(?,?,?,?,?) ORDER BY lever DESC",
+        ["%${arguments.name}%", ...arguments.stars]);
+  }
+
+  Future<List<Map<String, dynamic>>> toggleCollect(int id) async {
+    final db = await FlutterDb.db.database;
+    var data = await db.rawQuery('SELECT collected FROM widget WHERE id = ?', [id]);
+    var collected = data.toList()[0]['collected']==1;
+    print('collected:$collected');
+    return await db.rawQuery(
+        "UPDATE widget SET collected = ? "
+        "WHERE id = ?",
+        [collected ? 0 : 1, id]);
+  }
+
+  Future<List<Map<String, dynamic>>> queryCollect() async {
+    final db = await FlutterDb.db.database;
+    return await db.rawQuery("SELECT * "
+        "FROM widget WHERE collected = 1 ORDER BY family,lever DESC");
+  }
+}
+
+class SearchArgs {
+  final String name;
+  final List<int> stars;
+
+  const SearchArgs({this.name = '', this.stars = const [-1, -1, -1, -1, -1]});
 }

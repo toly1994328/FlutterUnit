@@ -109,6 +109,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   image:
     dependency: transitive
     description:
@@ -179,6 +184,34 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.23.1"
+  shared_preferences:
+    dependency: "direct main"
+    description:
+      name: shared_preferences
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.5.6+3"
+  shared_preferences_macos:
+    dependency: transitive
+    description:
+      name: shared_preferences_macos
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1+6"
+  shared_preferences_platform_interface:
+    dependency: transitive
+    description:
+      name: shared_preferences_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.3"
+  shared_preferences_web:
+    dependency: transitive
+    description:
+      name: shared_preferences_web
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.2+4"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -277,4 +310,4 @@ packages:
     version: "3.5.0"
 sdks:
   dart: ">=2.7.0 <3.0.0"
-  flutter: ">=1.12.1 <2.0.0"
+  flutter: ">=1.12.13+hotfix.4 <2.0.0"

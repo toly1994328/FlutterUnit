@@ -59,22 +59,44 @@ class TextCupertinoTheme extends StatelessWidget {
 }
 
 //    {
-//      "widgetId": 168,
-//      "name": 'CupertinoThemeData的toString',
+//      "widgetId": 169,
+//      "name": 'CupertinoThemeData的使用',
 //      "priority": 2,
 //      "subtitle":
-//          "",
+//          "和Theme一样可以通过指定的属性，让它们在后代中共享，不过属性较少。注意如果需要使用主题，不能在当前的context中获取。",
 //    }
+
 class CustomCupertinoTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var queryData = CupertinoTheme.of(context);
-    return Container(
-      child: Text(queryData.toString(),
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-          )),
-    );
+    return CupertinoTheme(
+        data: CupertinoThemeData(
+           primaryColor: Colors.blue,
+               primaryContrastingColor: Colors.green
+        ),
+          child: _ChildUseTheme());
+  }
+}
+
+class _ChildUseTheme extends StatelessWidget {
+  const _ChildUseTheme({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: <Widget>[
+        Container(
+              width: 50,
+              height: 50,
+              color: CupertinoTheme.of(context).primaryContrastingColor,
+            ),
+          Container(
+              width: 150,
+              child: Slider(value: 0.8, onChanged: (v) => {})),
+          Container(  width: 150,child: Divider(color:CupertinoTheme.of(context).primaryContrastingColor,thickness: 1,))
+        ]);
   }
 }

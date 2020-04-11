@@ -5,69 +5,25 @@
 import 'package:flutter/material.dart';
 import 'package:string_scanner/string_scanner.dart';
 
+import 'highlighter_style.dart';
+
 /// final SyntaxHighlighterStyle style = SyntaxHighlighterStyle.lightThemeStyle();
 /// DartSyntaxHighlighter(style).format(source)
 
-class SyntaxHighlighterStyle {//句法高亮样式
-  SyntaxHighlighterStyle({//构造函数
-    this.baseStyle,//基础样式
-    this.numberStyle,//数字的样式
-    this.commentStyle,//注释样式
-    this.keywordStyle,//关键字样式
-    this.stringStyle,//字符串样式
-    this.punctuationStyle,//标点符号样式
-    this.classStyle,
-    this.constantStyle
-  });
 
-  static SyntaxHighlighterStyle lightThemeStyle() {
-    return SyntaxHighlighterStyle(
-        baseStyle: const TextStyle(color: Color(0xFF000000)),//黑色
-        numberStyle: const TextStyle(color: Color(0xFF1565C0)),
-        commentStyle: const TextStyle(color: Color(0xFF9E9E9E)),
-        keywordStyle: const TextStyle(color: Color(0xFF9C27B0)),
-        stringStyle: const TextStyle(color: Color(0xFF43A047)),
-        punctuationStyle: const TextStyle(color: Color(0xFF000000)),
-        classStyle: const TextStyle(color: Color(0xFF512DA8)),
-        constantStyle: const TextStyle(color: Color(0xFF795548))
-    );
-  }
-
-  static SyntaxHighlighterStyle darkThemeStyle() {
-    return SyntaxHighlighterStyle(
-        baseStyle: const TextStyle(color: Color(0xFFFFFFFF)),
-        numberStyle: const TextStyle(color: Color(0xFF1565C0)),
-        commentStyle: const TextStyle(color: Color(0xFF9E9E9E)),
-        keywordStyle: const TextStyle(color: Color(0xFF80CBC4)),
-        stringStyle: const TextStyle(color: Color(0xFF009688)),
-        punctuationStyle: const TextStyle(color: Color(0xFFFFFFFF)),
-        classStyle: const TextStyle(color: Color(0xFF009688)),
-        constantStyle: const TextStyle(color: Color(0xFF795548))
-    );
-  }
-
-  final TextStyle baseStyle;
-  final TextStyle numberStyle;
-  final TextStyle commentStyle;
-  final TextStyle keywordStyle;
-  final TextStyle stringStyle;
-  final TextStyle punctuationStyle;
-  final TextStyle classStyle;
-  final TextStyle constantStyle;
-}
 
 abstract class Highlighter { // ignore: one_member_abstracts
   TextSpan format(String src);
 }
 
 //暗黑模式下的高亮样式
-class DartSyntaxHighlighter extends Highlighter {
-  DartSyntaxHighlighter([this._style]) {
+class DartHighlighter extends Highlighter {
+  DartHighlighter([this._style]) {
     _spans = <_HighlightSpan>[];
-    _style ??= SyntaxHighlighterStyle.darkThemeStyle();
+    _style ??= HighlighterStyle.fromColors(HighlighterStyle.lightColor);
   }
 
-  SyntaxHighlighterStyle _style;
+  HighlighterStyle _style;
 
   static const List<String> _keywords = <String>[
     'abstract', 'as', 'assert', 'async', 'await', 'break', 'case', 'catch',
@@ -339,7 +295,7 @@ class _HighlightSpan {
     return src.substring(start, end);
   }
 
-  TextStyle textStyle(SyntaxHighlighterStyle style) {
+  TextStyle textStyle(HighlighterStyle style) {
     if (type == _HighlightType.number)
       return style.numberStyle;
     else if (type == _HighlightType.comment)

@@ -31,7 +31,7 @@ class MyIcon extends StatelessWidget {
       children: [
         TolyIcon.icon_search,
         TolyIcon.icon_star,
-        TolyIcon.icon_widgit,
+        TolyIcon.icon_layout,
         TolyIcon.icon_star_ok
       ]
           .map((e) => Icon(

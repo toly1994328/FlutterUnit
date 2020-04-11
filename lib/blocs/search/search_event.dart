@@ -1,10 +1,12 @@
 
 
+import 'package:flutter_unit/database/widget_dao.dart';
+
 abstract class SearchEvent{//事件基
   const SearchEvent();
 }
 
 class EventTextChanged extends SearchEvent {
-  final String arg;//参数
-  const EventTextChanged(this.arg);
+  final SearchArgs args;//参数
+  const EventTextChanged({this.args});
 }

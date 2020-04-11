@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/blocs/search/search_bloc.dart';
 import 'package:flutter_unit/blocs/search/search_event.dart';
+import 'package:flutter_unit/database/widget_dao.dart';
 
 
 class AppSearchBar extends StatefulWidget {
+
+
   @override
   _AppSearchBarState createState() => _AppSearchBarState();
 }
@@ -33,11 +36,11 @@ class _AppSearchBarState extends State<AppSearchBar> {
               hintStyle: TextStyle(fontSize: 14)//提示样式
           ),
           onChanged: (str) => BlocProvider.of<SearchBloc>(context)
-              .add(EventTextChanged(str)),
+              .add(EventTextChanged(args:SearchArgs(name: str,stars: [1,2,3,4,5]))),
 
           onSubmitted: (str) {//提交后
             FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
-            _controller.clear();
+//            _controller.clear();
           },
         ));
 

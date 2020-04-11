@@ -454,7 +454,11 @@ class WidgetsMap {
         ];
       case "Flex":
         return [
-          CustomFlex(),
+          DirectionFlex(),
+          MainAxisAlignmentFlex(),
+          CrossAxisAlignmentFlex(),
+          VerticalDirectionFlex(),
+          TextDirectionFlex(),
         ];
       case "Row":
         return [

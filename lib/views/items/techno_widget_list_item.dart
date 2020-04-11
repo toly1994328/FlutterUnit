@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/style/TolyIcon.dart';
 import 'package:flutter_unit/app/style/shape/coupon_shape_border.dart';
 import 'package:flutter_unit/app/style/shape/techno_shape.dart';
 import 'package:flutter_unit/components/circle_image.dart';
@@ -13,86 +14,86 @@ class TechnoWidgetListItem extends StatelessWidget {
 
   TechnoWidgetListItem({this.data});
 
-
   @override
   Widget build(BuildContext context) {
-    return  Material(
+    return Material(
       color: itemColor.withAlpha(66),
-      shape: TechnoShapeBorder(
-        color: itemColor
-      ),
+      shape: TechnoShapeBorder(color: itemColor),
       child: Container(
-          height: 95,
-          padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
-          child: Row(
-            children: <Widget>[
-              Wrap(
-                spacing: 5,
-                direction: Axis.vertical,
-                alignment: WrapAlignment.center,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: <Widget>[
-                  _buildLeading(),
-                  StarScore(
-                    star: Star(emptyColor: Colors.white, size: 12, fillColor: itemColor),
-                    score: data.lever,
-                  )
-                ],
+        height: 95,
+        padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+        child: Row(
+          children: <Widget>[
+            Wrap(
+              spacing: 5,
+              direction: Axis.vertical,
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: <Widget>[
+                _buildLeading(),
+                StarScore(
+                  star: Star(
+                      emptyColor: Colors.white, size: 12, fillColor: itemColor),
+                  score: data.lever,
+                )
+              ],
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[_buildTitle(), _buildSummary()],
               ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[_buildTitle(), _buildSummary()],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildLeading() => Padding(
-            padding: const EdgeInsets.only(left: 5,right: 5),
-            child: Hero(
-              tag: "hero_widget_image_${data.name}",
-              child: data.image == null
-                  ? Material(
-                color: Colors.transparent,
-                    child: CircleText(
-                        text: data.name,
-                        size: 60,
-                color: itemColor,
-                      ),
-                  )
-                  : CircleImage(
-                      image: data.image,
-                      size: 55,
-                    ),
-            ),
-          );
+        padding: const EdgeInsets.only(left: 5, right: 5),
+        child: Hero(
+          tag: "hero_widget_image_${data.name}",
+          child: data.image == null
+              ? Material(
+                  color: Colors.transparent,
+                  child: CircleText(
+                    text: data.name,
+                    size: 60,
+                    color: itemColor,
+                  ),
+                )
+              : CircleImage(
+                  image: data.image,
+                  size: 55,
+                ),
+        ),
+      );
 
   Color get itemColor => Color(Cons.tabColors[data.family.index]);
 
   Widget _buildTitle() {
-    return  Row(
-        children: <Widget>[
-          SizedBox(width: 10),Text(data.name,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    shadows: [
-                      Shadow(color: Colors.white, offset: Offset(.3, .3))
-                    ])),
-        ],
+    return Row(
+      children: <Widget>[
+        SizedBox(width: 10),
+        Expanded(
+          child: Text(data.name,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  shadows: [
+                    Shadow(color: Colors.white, offset: Offset(.3, .3))
+                  ])),
+        ),
+      ],
     );
   }
 
   Widget _buildSummary() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, bottom: 10, top: 5),
-      child: Container(
+    return  Container(
+      padding: EdgeInsets.only(left: 10),
         child: Text(
           //尾部摘要
           data.info,
@@ -103,7 +104,6 @@ class TechnoWidgetListItem extends StatelessWidget {
               fontSize: 14,
               shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
         ),
-      ),
     );
   }
 }

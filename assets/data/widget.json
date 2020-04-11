@@ -64,7 +64,7 @@
       "id": 7,
       "family": 0,
       "name": "ImageIcon",
-      "linkWidget": "7,30,125",
+      "linkWidget": "6,30,125",
       "nameCN": "容器",
       "lever": 1,
       "info": "用于将一个图片变为纯色的组件。可指定大小、颜色。",
@@ -75,7 +75,7 @@
       "family": 0,
       "name": "FadeInImage",
       "nameCN": "淡入图片",
-      "linkWidget": "7,30,125",
+      "linkWidget": "38",
       "lever": 2,
       "info": "透明渐变地加载一张图片。可指定占位图片、进退的动画曲线、时间、宽高、fit类型、对齐方式、重复方式等。",
       "image": "assets/images/widgets/FadeInImage.png"
@@ -295,7 +295,7 @@
       "family": 0,
       "name": "IconButton",
       "nameCN": "图标按钮",
-      "linkWidget": "",
+      "linkWidget": "6",
       "lever": 2,
       "info": "可点击的图标按钮，可指定图标信息、内边距、大小、颜色等，接收点击事件。",
       "image": ""
@@ -304,6 +304,7 @@
       "id": 31,
       "family": 0,
       "name": "BackButton",
+      "nameCN": "返回按钮",
       "linkWidget": "30",
       "lever": 1,
       "info": "一个具有返回功能的IconButton,返回图标不可更改。在iOS和Android中表现不同",
@@ -694,7 +695,7 @@
       "family": 2,
       "name": "DecoratedBox",
       "nameCN": "装饰盒",
-      "linkWidget": "",
+      "linkWidget": "1",
       "lever": 3,
       "info": "可容纳一个子组件，可将其进行装饰。核心属性为decoration,可设置边线、渐变、阴影、背景图等。",
       "image": ""
@@ -703,7 +704,7 @@
       "id": 71,
       "family": 2,
       "name": "Offstage",
-      "nameCN": "装饰盒",
+      "nameCN": "消失组件",
       "linkWidget": "10",
       "lever": 3,
       "info": "可容纳一个子组件，可更改其的消失与否。offstage属性为true表示隐藏。",
@@ -794,7 +795,7 @@
       "family": 2,
       "name": "ConstrainedBox",
       "nameCN": "约束盒",
-      "linkWidget": "79,81",
+      "linkWidget": "1,79,81",
       "lever": 3,
       "info": "可容纳一个子组件，通过指定最大、最小宽高,来限定子组件容身区域。",
       "image": ""
@@ -844,7 +845,7 @@
       "family": 2,
       "name": "Align",
       "nameCN": "对齐组件",
-      "linkWidget": "86,111,120",
+      "linkWidget": "1,86,111,120",
       "lever": 5,
       "info": "可容纳一个子组件，可以通过alignment让子组件，定位在父组件宽高的任何指定分率出。",
       "image": ""
@@ -1674,7 +1675,7 @@
       "family": 0,
       "name": "Theme",
       "nameCN": "主题",
-      "linkWidget": "169",
+      "linkWidget": "65,169",
       "lever": 4,
       "info": "可通过Theme.of获取ThemeData对象。也可以指定主题应用于Theme的后代组件。",
       "image": ""
@@ -1684,7 +1685,7 @@
       "family": 0,
       "name": "CupertinoTheme",
       "nameCN": "iOS主题",
-      "linkWidget": "168",
+      "linkWidget": "156,168",
       "lever": 3,
       "info": "可通过CupertinoTheme.of获取CupertinoThemeData对象。也可以指定主题应用于CupertinoTheme的后代组件。",
       "image": ""

@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/multi_shower.dart';
-
 //    {
 //      "widgetId": 95,
 //      "name": 'Row基本使用',

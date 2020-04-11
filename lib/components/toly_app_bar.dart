@@ -47,7 +47,6 @@ class _TolyAppBarState extends State<TolyAppBar>
 
     return Container(
       alignment: Alignment.center,
-//      color: Color(colors[nextIndex]).withAlpha(33),
       child: Flow(
           delegate: TolyAppBarDelegate(
               _selectIndex, factor, widget.preferredSize.height),
@@ -113,7 +112,6 @@ class TolyAppBarDelegate extends FlowDelegate {
   void paintChildren(FlowPaintingContext context) {
     double ox = 0;
     double obx = 0;
-//    var size = context.size;
 
     for (int i = 0; i < context.childCount / 2; i++) {
       var cSize = context.getChildSize(i);
@@ -130,12 +128,8 @@ class TolyAppBarDelegate extends FlowDelegate {
     for (int i = (context.childCount / 2).floor();
         i < context.childCount;
         i++) {
-      var cSize = context.getChildSize(i);
       if (i - (context.childCount / 2).floor() == selectIndex) {
         obx += context.getChildSize(0).width;
-//        context.paintChild(i,
-//            transform: Matrix4.translationValues(ox, 20.0 * factor - 20, 0.0));
-//        ox += cSize.width;
       } else {
         context.paintChild(i,
             transform: Matrix4.translationValues(
@@ -148,51 +142,5 @@ class TolyAppBarDelegate extends FlowDelegate {
   @override
   bool shouldRepaint(FlowDelegate oldDelegate) {
     return true;
-  }
-}
-
-class _DrawShape extends ShapeBorder {
-  final double itemWidth;
-  final int selectedIndex;
-  final Size preferredSize;
-  final List<int> colors;
-
-  Paint _paint;
-
-  _DrawShape(
-      {this.itemWidth, this.selectedIndex, this.colors, this.preferredSize}) {
-    _paint = Paint();
-  }
-
-  @override
-  EdgeInsetsGeometry get dimensions => null;
-
-  @override
-  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    return null;
-  }
-
-  @override
-  Path getOuterPath(Rect rect, {TextDirection textDirection}) {
-    return null;
-  }
-
-  @override
-  void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
-    print(rect);
-    for (int i = 0; i < 7; i++) {
-      if (i != selectedIndex) {
-        canvas.save();
-        canvas.translate(itemWidth * i, 0);
-        canvas.drawCircle(Offset(itemWidth / 2, preferredSize.height + 10), 6,
-            _paint..color = Color(colors[i]));
-        canvas.restore();
-      }
-    }
-  }
-
-  @override
-  ShapeBorder scale(double t) {
-    return null;
   }
 }

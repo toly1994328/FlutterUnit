@@ -5,9 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/components/colorful_text.dart';
-import 'package:flutter_unit/components/flutter_text.dart';
-
+//import 'package:flutter_unit/components/colorful_text.dart';
 /// create by 张风捷特烈 on 2020-03-07
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -31,8 +29,8 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   Animation _bouncAnim;
   bool _animEnd = false;
 
-  final Widget flutter = ColorfulText("Flutter");
-  final Widget unit = ColorfulText(" Unit");
+//  final Widget flutter = ColorfulText("Flutter");
+//  final Widget unit = ColorfulText(" Unit");
 
   @override
   void initState() {
@@ -121,22 +119,44 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
               child: AnimatedOpacity(
                   duration: Duration(milliseconds: 300),
                   opacity: _animEnd ? 1.0 : 0.0,
-                  child: flutter),
+                  child: Text('Flutter',style: TextStyle(
+                    fontSize: 45,
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(
+                        //阴影
+                        color: Colors.grey,
+                        offset: Offset(1.0, 1.0), blurRadius: 1.0,
+                      )
+                    ],
+                  ),)),
             ),
             Positioned(
-              top: winH / 1.4 * (0.4 * _bouncAnim.value + 0.6),
+              top: winH / 1.4 * (0.2 * _bouncAnim.value + 0.8),
               left: winW * 0.55,
               child: AnimatedOpacity(
                   duration: Duration(milliseconds: 300),
                   opacity: _animEnd ? 1.0 : 0.0,
-                  child: unit),
+                  child: Text('Unit',style: TextStyle(
+                    fontSize: 45,
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(
+                        //阴影
+                        color: Colors.grey,
+                        offset: Offset(1.0, 1.0), blurRadius: 1.0,
+                      )
+                    ],
+                  ),)),
             ),
             Positioned(
               bottom: 30,
               right: 30,
               child: AnimatedOpacity(
                   duration: Duration(milliseconds: 300),
-                  opacity: _animEnd ? 1.0 : 0.0,
+                  opacity: _animEnd ? 1.0: 0.0,
                   child: Text("Power By 张风捷特烈",
                       style: TextStyle(
                           color: Colors.grey,

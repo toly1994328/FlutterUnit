@@ -19,7 +19,7 @@ class FlutterDb {
      id INTEGER PRIMARY KEY AUTOINCREMENT,
      name VARCHAR(64) NOT NULL UNIQUE,
      nameCN VARCHAR(12) NOT NULL,
-     childCount INTEGER NOT NULL DEFAULT 0,
+     collected INTEGER DEFAULT 0,
      family INTEGER NOT NULL,
      lever FLOAT(2) NOT NULL,
      image VARCHAR(128) NOT NULL,
@@ -37,6 +37,20 @@ class FlutterDb {
      code TEXT NOT NULL
      );"""; //建表语句
 
+  static const String sql_create_category = """
+ CREATE TABLE IF NOT EXISTS category(
+     id INTEGER PRIMARY KEY AUTOINCREMENT,
+     name VARCHAR(64) NOT NULL,
+     info VARCHAR(128)
+     );"""; //建表语句
+
+  static const String sql_create_category_widget = """
+ CREATE TABLE IF NOT EXISTS category_widget(
+     id INTEGER PRIMARY KEY AUTOINCREMENT,
+     widgetId  INTEGER NOT NULL,
+     categoryId INTEGER NOT NULL
+     );"""; //建表语句
+
   Future<Database> initDB() async {
     //初始化数据库
     WidgetsFlutterBinding.ensureInitialized(); //初始化绑定
@@ -51,6 +65,8 @@ class FlutterDb {
         print("数据库-------onCreate");
         await db.execute(sql_create_widget);
         await db.execute(sql_create_node);
+        await db.execute(sql_create_category);
+        await db.execute(sql_create_category_widget);
       },
     );
   }

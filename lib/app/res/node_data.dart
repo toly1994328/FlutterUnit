@@ -2,94 +2,110 @@ const nodeData = {
   "Container": [
     {
       "widgetId": 1,
-      "name": '可以在区域中放入一个子组件',
+      "name": '可用于显示一个指定宽高的区域',
       "priority": 1,
-      "subtitle": "【padding】 : 内边距   【EdgeInsetsGeometry】\n"
-          "【margin】: 外边距   【EdgeInsetsGeometry】\n"
-          "【child】: 子组件    【Widget】",
-      "code": """class ContainerAlignment extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return Container(
-          alignment: Alignment.bottomRight,
-          width: 200,
-          height: 200 * 0.618,
-          color: Colors.grey.withAlpha(88),
-          child: Icon(
-            Icons.android,
-            color: Colors.green,
-          ),
-        );
-      }
-    }"""
+      "subtitle": "【width】 : 宽   【int】\n"
+          "【高】: 外边距   【int】\n"
+          "【color】: 子组件    【Color】",
+      "code": """class CustomContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.topLeft,
+      width: 200,
+      height: 200 * 0.618,
+      color: Colors.red.withAlpha(88),
+    );
+  }
+}"""
     },
     {
       "widgetId": 1,
-      "name": '可对子组件进行对齐定位',
+      "name": '可以在区域中放入一个子组件',
       "priority": 2,
-      "subtitle": "【alignment】 : 对齐定位   【AlignmentGeometry】",
-      "code": """class ContainerDecoration extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        var stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0]
-        return Container(
-          //容器
-          alignment: Alignment.center,
-          width: 200,
-          height: 200 * 0.618,
-          margin: EdgeInsets.all(20),
-          padding: EdgeInsets.all(20),
-          decoration: BoxDecoration(
-    //添加渐变色
-    gradient: LinearGradient(
-        stops: stops,
-        colors: Cons.rainbow.map((e) => Color(e)).toList()),
-    borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(50),
-        bottomRight: Radius.circular(50)),
-    boxShadow: [
-      BoxShadow(
-          color: Colors.grey,
-          offset: Offset(1, 1),
-          blurRadius: 10,
-          spreadRadius: 1),
-    ]),
-          child: Text(
-            "Container",
-            style: TextStyle(fontSize: 20),
-          ),
-        );
-      }
-    }"""
+      "subtitle": "【padding】 : 内边距   【EdgeInsetsGeometry】\n"
+          "【margin】: 外边距   【EdgeInsetsGeometry】\n"
+          "【child】: 子组件    【Widget】",
+      "code": """class ContainerWithChild extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.topLeft,
+      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(10),
+      width: 200,
+      height: 200 * 0.618,
+      color: Colors.grey.withAlpha(88),
+      child: Icon(Icons.android),
+    );
+  }
+}}"""
     },
     {
       "widgetId": 1,
       "name": '可对子组件进行对齐定位',
       "priority": 3,
+      "subtitle": "【alignment】 : 对齐定位   【AlignmentGeometry】",
+      "code": """class ContainerAlignment extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.bottomRight,
+      width: 200,
+      height: 200 * 0.618,
+      color: Colors.grey.withAlpha(88),
+      child: Icon(
+        Icons.android,
+        color: Colors.green,
+      ),
+    );
+  }
+}"""
+    },
+    {
+      "widgetId": 1,
+      "name": '可对子组件进行装饰',
+      "priority": 4,
       "subtitle":
           "【decoration】 : 装饰   【Decoration】\n 可装饰: 边线、圆弧、颜色、渐变色、阴影、图片等内容",
-      "code": """class ContainerTransform extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return Container(
-          //容器
-          alignment: Alignment.center,
-          color: Colors.cyanAccent,
-          width: 150,
-          height: 150 * 0.618,
-          transform: Matrix4.skew(-pi / 10, 0),
-          child: Text(
-            "Container",
-            style: TextStyle(fontSize: 20),
-          ),
-        );
-      }
-    }"""
+      "code": """class ContainerDecoration extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
+    return Container(
+      //容器
+      alignment: Alignment.center,
+      width: 200,
+      height: 200 * 0.618,
+      margin: EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        //添加渐变色
+          gradient: LinearGradient(
+              stops: stops,
+              colors: Cons.rainbow.map((e) => Color(e)).toList()),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              bottomRight: Radius.circular(50)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey,
+                offset: Offset(1, 1),
+                blurRadius: 10,
+                spreadRadius: 1),
+          ]),
+      child: Text(
+        "Container",
+        style: TextStyle(fontSize: 20),
+      ),
+    );
+  }
+}"""
     },
     {
       "widgetId": 1,
       "name": 'Container还具有变换性',
-      "priority": 4,
+      "priority": 5,
       "subtitle": "【transform】 : 变换矩阵   【Matrix4】\n 基于Matrix4的矩阵变换，变换详情见线性代数",
       "code": """class ContainerTransform extends StatelessWidget {
   @override
@@ -112,7 +128,7 @@ const nodeData = {
     {
       "widgetId": 1,
       "name": 'Container的约束性',
-      "priority": 5,
+      "priority": 6,
       "subtitle":
           "【constraints】 : 约束   【BoxConstraints】\n 会约束该区域的尺寸，不会小于指定的最小宽高，也不会大于指定的最大宽高。",
       "code": """class ContainerConstraints extends StatelessWidget {
@@ -147,7 +163,7 @@ const nodeData = {
   @override
   Widget build(BuildContext context) {
     var style = TextStyle(
-      color: Colors.red,
+      color: Colors.blue,
       fontSize: 20,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.italic,
@@ -213,7 +229,7 @@ const nodeData = {
           decorationStyle: TextDecorationStyle.wavy,
           decorationColor: Colors.blue,
           fontStyle: FontStyle.italic,
-          fontFamily: "Menlo",
+          fontFamily: "DancingScript",
           letterSpacing: 10),
     );
   }
@@ -5891,7 +5907,7 @@ class _CustomUnConstrainedBoxState extends State<CustomUnConstrainedBox> {
   ],
   "FractionallySizedBox": [
     {
-      "widgetId": 81,
+      "widgetId": 82,
       "name": 'FractionallySizedBox基本使用',
       "priority": 1,
       "subtitle": "【child】 : 孩子组件   【Widget】\n"
@@ -6597,7 +6613,7 @@ class _CustomSizeTransitionState extends State<CustomSizeTransition>
   ],
   "PositionedTransition": [
     {
-      "widgetId": 92,
+      "widgetId": 93,
       "name": 'PositionedTransition基本使用',
       "priority": 1,
       "subtitle": "【child】 : 孩子组件   【Widget】\n"
@@ -6662,194 +6678,262 @@ class _CustomPositionedTransitionState extends State<CustomPositionedTransition>
   "Flex": [
     {
       "widgetId": 94,
-      "name": 'Flex基本使用',
+      "name": 'Flex的排布方向',
       "priority": 1,
-      "subtitle": "【children】 : 组件列表   【List<Widget>】\n"
-          "【direction】 : 方向   【Axis】\n"
-          "【mainAxisAlignment】 : 主轴对齐   【MainAxisAlignment】\n"
-          "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】\n"
-          "【textBaseline】 : 文字基线   【TextBaseline】\n"
-          "【verticalDirection】 : 竖直方向   【VerticalDirection】\n"
-          "【mainAxisSize】 : 主轴尺寸   【MainAxisSize】",
-      "code": """class CustomFlex extends StatefulWidget {
-  @override
-  _CustomFlexState createState() => _CustomFlexState();
-}
+      "subtitle":
+      "【children】 : 组件列表   【List<Widget>】\n"
+          "【direction】 : 方向   【Axis】",
+      "code": """class DirectionFlex extends StatelessWidget {
 
-class _CustomFlexState extends State<CustomFlex> {
-  final redBox = Container(
+ final  redBox= Container(
     color: Colors.red,
-    height: 50,
-    width: 50,
-  );
-  final blueBox = Container(
-    color: Colors.blue,
-    width: 60,
-    height: 60,
-  );
-  final yellowBox = Container(
-    color: Colors.yellow,
-    height: 10,
-    width: 10,
-  );
-  final greenBox = Container(
-    color: Colors.green,
     height: 30,
+    width: 40,
+  );
+
+ final blueBox= Container(
+    color: Colors.blue,
+   height: 20,
+   width: 30,
+  );
+
+ final greenBox= Container(
+    color: Colors.green,
+    height: 20,
     width: 20,
   );
-  var _direction = Axis.horizontal;
-  var _mainAxisAlignment = MainAxisAlignment.start;
-  var _crossAxisAlignment = CrossAxisAlignment.center;
-  var _verticalDirection = VerticalDirection.up;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        _buildDirectionSelector(),
-        _buildMainAxisAlignmentSelector(),
-        _buildCrossAxisAlignmentSelector(),
-        _buildVerticalDirectionSelector(),
-        Container(
-          width: 300,
-          height: 300 * 0.618,
-          color: Colors.grey.withAlpha(33),
-          child: Flex(
-            textBaseline: TextBaseline.alphabetic,
-            direction: _direction,
-            mainAxisAlignment: _mainAxisAlignment,
-            crossAxisAlignment: _crossAxisAlignment,
-            verticalDirection: _verticalDirection,
-            children: <Widget>[redBox, blueBox, yellowBox, greenBox],
-          ),
-        ),
-      ],
-    );
+    return Wrap(
+        children: Axis.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 100,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
   }
 
-  Widget _buildDirectionSelector() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            "direction",
-            style: TextStyle(
-                fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
-          ),
-          DropdownButton<Axis>(
-              elevation: 1,
-              underline: Container(),
-              value: _direction,
-              items: Axis.values
-                  .map((e) => DropdownMenuItem<Axis>(
-                        value: e,
-                        child: Text(e.toString()),
-                      ))
-                  .toList(),
-              onChanged: (e) {
-                setState(() {
-                  _direction = e;
-                });
-              }),
-        ],
-      ),
-    );
+  _buildItem(mode) => Flex(
+    direction: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}"""
+    },
+    {
+      "widgetId": 94,
+      "name": 'Flex主轴对齐方式',
+      "priority": 2,
+      "subtitle":
+      "【mainAxisAlignment】 : 主轴对齐   【MainAxisAlignment】",
+      "code": """class MainAxisAlignmentFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      runSpacing: 5,
+        children: MainAxisAlignment.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 100,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
   }
 
-  Widget _buildMainAxisAlignmentSelector() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            "mainAxisAlignment",
-            style: TextStyle(
-                fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
-          ),
-          DropdownButton<MainAxisAlignment>(
-              elevation: 1,
-              underline: Container(),
-              value: _mainAxisAlignment,
-              items: MainAxisAlignment.values
-                  .map((e) => DropdownMenuItem<MainAxisAlignment>(
-                        value: e,
-                        child: Text(e.toString().split('.')[1]),
-                      ))
-                  .toList(),
-              onChanged: (e) {
-                setState(() {
-                  _mainAxisAlignment = e;
-                });
-              }),
-        ],
-      ),
-    );
+  _buildItem(mode) => Flex(
+    direction: Axis.horizontal,
+    mainAxisAlignment: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}"""
+    },
+    {
+      "widgetId": 94,
+      "name": 'Flex交叉轴对齐方式',
+      "priority": 3,
+      "subtitle":
+          "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】",
+      "code": """class CrossAxisAlignmentFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        runSpacing: 5,
+        children: CrossAxisAlignment.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
   }
 
-  Widget _buildCrossAxisAlignmentSelector() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            "crossAxisAlignment",
-            style: TextStyle(
-                fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
-          ),
-          DropdownButton<CrossAxisAlignment>(
-              elevation: 1,
-              underline: Container(),
-              value: _crossAxisAlignment,
-              items: CrossAxisAlignment.values
-                  .map((e) => DropdownMenuItem<CrossAxisAlignment>(
-                        value: e,
-                        child: Text(e.toString().split('.')[1]),
-                      ))
-                  .toList(),
-              onChanged: (e) {
-                setState(() {
-                  _crossAxisAlignment = e;
-                });
-              }),
-        ],
-      ),
-    );
+  _buildItem(mode) => Flex(
+    direction: Axis.horizontal,
+    crossAxisAlignment: mode,
+    textBaseline: TextBaseline.alphabetic,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}"""
+    },
+    {
+      "widgetId": 94,
+      "name": 'Flex垂直方向顺序',
+      "priority": 4,
+      "subtitle":
+          "【verticalDirection】 : 垂直方向顺序   【VerticalDirection】",
+      "code": """class VerticalDirectionFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        runSpacing: 5,
+        children: VerticalDirection.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
   }
 
-  Widget _buildVerticalDirectionSelector() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            "MainAxisSize",
-            style: TextStyle(
-                fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
-          ),
-          DropdownButton<VerticalDirection>(
-              elevation: 1,
-              underline: Container(),
-              value: _verticalDirection,
-              items: VerticalDirection.values
-                  .map((e) => DropdownMenuItem<VerticalDirection>(
-                        value: e,
-                        child: Text(e.toString().split('.')[1]),
-                      ))
-                  .toList(),
-              onChanged: (e) {
-                setState(() {
-                  _verticalDirection = e;
-                });
-              }),
-        ],
-      ),
-    );
+  _buildItem(mode) => Flex(
+    direction: Axis.vertical,
+    verticalDirection: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
+}"""
+    },
+    {
+      "widgetId": 94,
+      "name": 'Flex水平方向顺序',
+      "priority": 5,
+      "subtitle":
+          "【textDirection】 : 水平方向顺序   【TextDirection】",
+      "code": """class TextDirectionFlex extends StatelessWidget {
+
+  final  redBox= Container(
+    color: Colors.red,
+    height: 30,
+    width: 40,
+  );
+
+  final blueBox= Container(
+    color: Colors.blue,
+    height: 20,
+    width: 30,
+  );
+
+  final greenBox= Container(
+    color: Colors.green,
+    height: 20,
+    width: 20,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        runSpacing: 5,
+        children: TextDirection.values
+            .map((mode) => Column(children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(5),
+              width: 160,
+              height: 80,
+              color: Colors.grey.withAlpha(33),
+              child: _buildItem(mode)),
+          Text(mode.toString().split('.')[1])
+        ]))
+            .toList());
   }
+
+  _buildItem(mode) => Flex(
+    direction: Axis.horizontal,
+    textDirection: mode,
+    children: <Widget>[
+      blueBox, redBox, greenBox
+    ],
+  );
 }"""
     },
   ],
@@ -6898,7 +6982,7 @@ class _CustomFlexState extends State<CustomFlex> {
   ],
   "Column": [
     {
-      "widgetId": 95,
+      "widgetId": 96,
       "name": 'Column基本使用',
       "priority": 1,
       "subtitle": "【children】 : 组件列表   【List<Widget>】\n"
@@ -8749,7 +8833,7 @@ class _CustomDecoratedBoxTransitionState
   ],
   "DefaultTextStyleTransition": [
     {
-      "widgetId": 113,
+      "widgetId": 114,
       "name": 'DefaultTextStyleTransition基本使用',
       "priority": 1,
       "subtitle": "【child】 : 孩子组件   【Widget】\n"
@@ -10081,7 +10165,7 @@ class DeleteDialog extends StatelessWidget {
   ],
   "CupertinoAlertDialog": [
     {
-      "widgetId": 130,
+      "widgetId": 129,
       "name": 'CupertinoAlertDialog基本使用',
       "priority": 1,
       "subtitle": "【title】 : 顶部组件   【Widget】\n"
@@ -12910,7 +12994,8 @@ class BezierPainter extends CustomPainter {
       "widgetId": 168,
       "name": '文字样式-ThemeData#TextTheme',
       "priority": 1,
-      "subtitle": "",
+      "subtitle":
+      "后代组件可以通过ThemeData.of获取主题的数据进行使用。",
       "code": """class TextThemeDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12965,30 +13050,50 @@ class BezierPainter extends CustomPainter {
     },
     {
       "widgetId": 168,
-      "name": 'ThemeData的toString',
+      "name": 'Theme的用法',
       "priority": 2,
-      "subtitle": "",
+      "subtitle":
+      "使用Theme,可以指定非常多的属性作为主题,这些属性将应用于所有的后代组件，如指定字体、滑块、卡片、文字、分割线、按钮等属性。注意如果需要使用主题，不能在当前的context中获取。",
       "code": """class CustomTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var queryData = Theme.of(context);
-    return Container(
-      child: Text(queryData.toString(),
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-          )),
-    );
+    return Theme(
+        data: ThemeData(
+            cardTheme: CardTheme(color: Colors.red, elevation: 4),
+            dividerTheme: DividerThemeData(
+              color: Colors.blue,
+              thickness: 2
+            ),
+            sliderTheme: SliderThemeData(
+              thumbColor: Colors.red,
+              activeTrackColor: Colors.green,
+              inactiveTrackColor: Colors.grey,
+            )),
+        child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: <Widget>[
+          Card(
+            child: Container(
+              width: 50,
+              height: 50,
+              color: Colors.transparent,
+            ),
+          ),
+          Container(
+              width: 150,
+              child: Slider(value: 0.8, onChanged: (v) => {})),
+              Container(  width: 150,child: Divider())
+        ]));
   }
 }"""
     },
   ],
   "CupertinoTheme": [
     {
-      "widgetId": 168,
+      "widgetId": 169,
       "name": '文字样式-TextTheme',
       "priority": 1,
-      "subtitle": "",
+      "subtitle": "后代组件可以通过CupertinoTheme.of获取主题的数据进行使用。",
       "code": """class TextCupertinoTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13037,21 +13142,43 @@ class BezierPainter extends CustomPainter {
 }"""
     },
     {
-      "widgetId": 168,
-      "name": 'CupertinoThemeData的toString',
+      "widgetId": 169,
+      "name": 'CupertinoThemeData的使用',
       "priority": 2,
-      "subtitle": "",
+      "subtitle":
+      "和Theme一样可以通过指定的属性，让它们在后代中共享，不过属性较少。注意如果需要使用主题，不能在当前的context中获取。",
       "code": """class CustomCupertinoTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var queryData = CupertinoTheme.of(context);
-    return Container(
-      child: Text(queryData.toString(),
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-          )),
-    );
+    return CupertinoTheme(
+        data: CupertinoThemeData(
+           primaryColor: Colors.blue,
+               primaryContrastingColor: Colors.green
+        ),
+          child: _ChildUseTheme());
+  }
+}
+
+class _ChildUseTheme extends StatelessWidget {
+  const _ChildUseTheme({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: <Widget>[
+        Container(
+              width: 50,
+              height: 50,
+              color: CupertinoTheme.of(context).primaryContrastingColor,
+            ),
+          Container(
+              width: 150,
+              child: Slider(value: 0.8, onChanged: (v) => {})),
+          Container(  width: 150,child: Divider(color:CupertinoTheme.of(context).primaryContrastingColor,thickness: 1,))
+        ]);
   }
 }"""
     },
@@ -14695,8 +14822,8 @@ class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
   ],
   "SliverFillViewport": [
     {
-      "widgetId": 186,
-      "name": 'SliverFixedExtentList基本使用',
+      "widgetId": 187,
+      "name": 'SliverFillViewport基本使用',
       "priority": 1,
       "subtitle": "【viewportFraction】 : 视口分率   【double】\n"
           "【delegate】 : 孩子代理   【SliverChildDelegate】",

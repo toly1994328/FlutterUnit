@@ -7,7 +7,7 @@ class WidgetPo extends Equatable {
   final int id;
   final String name;
   final String nameCN;
-  final int childCount;
+  final int collected;
   final int family;
   final double lever;
   final String image;
@@ -18,7 +18,7 @@ class WidgetPo extends Equatable {
       {this.id,
       this.name,
       this.nameCN,
-      this.childCount,
+      this.collected,
       this.family,
       this.lever,
       this.linkWidget,
@@ -31,7 +31,7 @@ class WidgetPo extends Equatable {
         name: map['name'],
         nameCN: map["nameCN"],
         family: map["family"],
-        childCount: map["childCount"],
+        collected: map["collected"]??0,
         lever: map["lever"].toDouble(),
         image: map["image"],
         linkWidget: map["linkWidget"],
@@ -40,10 +40,10 @@ class WidgetPo extends Equatable {
 
   @override
   String toString() {
-    return 'WidgetPo{id: $id, name: $name, nameCN: $nameCN, childCount: $childCount, family: $family, lever: $lever, image: $image, info: $info}';
+    return 'WidgetPo{id: $id, name: $name, nameCN: $nameCN, collected: $collected, family: $family, lever: $lever, image: $image, info: $info}';
   }
 
   @override
   List<Object> get props =>
-      [id, name, nameCN, childCount, family, lever, image, info];
+      [id, name, nameCN, collected, family, lever, image, info];
 }

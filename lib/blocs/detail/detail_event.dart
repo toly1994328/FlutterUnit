@@ -13,10 +13,10 @@ abstract class DetailEvent extends Equatable {
 }
 
 
-class ToWidgetDetail extends DetailEvent {
+class FetchWidgetDetail extends DetailEvent {
   final WidgetModel widgetModel;
 
-  const ToWidgetDetail(this.widgetModel);
+  const FetchWidgetDetail(this.widgetModel);
 
   @override
   List<Object> get props => [widgetModel];
