@@ -5,6 +5,7 @@ import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/code/code_panel.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
+import 'package:share/share.dart';
 import 'package:toggle_rotate/toggle_rotate.dart';
 
 import '../permanent/feedback_widget.dart';
@@ -62,15 +63,16 @@ class _WidgetNodePanelState extends State<WidgetNodePanel>
                 mode: FeedMode.fade,
                 a: 0.4,
                 onPressed: () async {
-                  await Clipboard.setData(ClipboardData(text: widget.code));
-                  Toast.toast(context, '复制成功!');
+//                  await Clipboard.setData(ClipboardData(text: widget.code));
+//                  Toast.toast(context, '复制成功!');
+                  Share.share(widget.code);
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(
                     right: 10,
                   ),
                   child: Icon(
-                    Icons.content_copy,
+                    TolyIcon.icon_share,
                     size: 20,
                     color: Theme.of(context).primaryColor,
                   ),

@@ -79,12 +79,21 @@ class HomeDrawer extends StatelessWidget {
                     ),
                     ListTile(
                       leading: Icon(
-                        TolyIcon.icon_kafei,
+                        Icons.info,
                         color: Theme.of(context).primaryColor,
                       ),
                       title: Text('关于应用'),
                       trailing: _nextIcon(context),
-                      onTap: () {},
+                      onTap: () => Navigator.of(context).pushNamed(Router.about_app),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        TolyIcon.icon_kafei,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      title: Text('联系本王'),
+                      trailing: _nextIcon(context),
+                      onTap: () => Navigator.of(context).pushNamed(Router.about_me),
                     ),
                   ],
                 ),
@@ -116,9 +125,7 @@ class HomeDrawer extends StatelessWidget {
             ),
             title: Text('绘画集录'),
             trailing: _nextIcon(context),
-            onTap: () {
-              Navigator.of(context).pushNamed(Router.paint);
-            },
+            onTap: () => Navigator.of(context).pushNamed(Router.paint),
           ),
           ListTile(
             leading: Icon(

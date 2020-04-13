@@ -28,6 +28,8 @@ dependencies:
   toggle_rotate: ^0.0.5
   flutter_star: ^0.1.2 # 星星组件
   shared_preferences: ^0.5.6+3 # xml 固化
+  url_launcher: ^5.4.2 # url
+  share: ^0.6.3+6
 dev_dependencies:
   flutter_test:
     sdk: flutter

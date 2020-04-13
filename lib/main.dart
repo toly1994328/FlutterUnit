@@ -5,7 +5,7 @@ import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/search/search_bloc.dart';
 import 'package:flutter_unit/repositorys/widget_db_repository.dart';
 import 'package:flutter_unit/storage/app_storage.dart';
-import 'package:flutter_unit/views/splash/unit_splash.dart';
+import 'package:flutter_unit/views/pages/splash/unit_splash.dart';
 
 //import 'tools/initial.dart';
 import 'blocs/collect/collect_bloc.dart';
@@ -31,6 +31,7 @@ final storage = AppStorage();
 
 class BlocWrapper extends StatelessWidget {
   final Widget child;
+
   BlocWrapper({this.child});
 
   final repository = WidgetDbRepository(storage);

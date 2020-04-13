@@ -3,12 +3,8 @@ import 'package:flutter_unit/app/style/TolyIcon.dart';
 import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
 class Cons {
-  static const TABS = <String>[
-    "Stateless",
-    "Statefule",
-    "Single",
-    "Multi",
-  ]; //标题列表
+  static String version = 'V1.0.0';
+
   static const MENU_INFO = <String>["关于", "帮助", "问题反馈"]; //菜单栏
   static const ICONS_MAP = {
     //底栏图标
@@ -26,7 +22,6 @@ class Cons {
     0xff0000FF,
     0xff8B00FF
   ];
-  static const rainbowInfo = <String>["红色", "橙色", "黄色", "绿色", "青色", "蓝色", "紫色"];
 
   static const tabColors = [
     0xff44D1FD,

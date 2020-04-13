@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/pages/about/about_me_page.dart';
+import 'package:flutter_unit/views/pages/about/about_app_page.dart';
+import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/font_setting.dart';
 import 'package:flutter_unit/views/pages/setting/item_style_setting.dart';
@@ -9,7 +12,6 @@ import 'package:flutter_unit/views/pages/collect_page.dart';
 import 'package:flutter_unit/views/pages/detail/widget_detail_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/paint_unit_page.dart';
-import 'package:flutter_unit/views/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/setting_page.dart';
 import 'package:flutter_unit/views/pages/navigation/unit_navigation.dart';
 
@@ -34,6 +36,8 @@ class Router {
   static const String bug = 'BugUnitPage';
   static const String paint = 'PaintUnitPage';
   static const String layout = 'LayoutUnitPage';
+  static const String about_me = 'AboutMePage';
+  static const String about_app = 'AboutAppPage';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -66,6 +70,10 @@ class Router {
         return Right2LeftRouter(child: PaintUnitPage());
       case layout:
         return Right2LeftRouter(child: LayoutUnitPage());
+      case about_app:
+        return Right2LeftRouter(child: AboutAppPage());
+      case about_me:
+        return Right2LeftRouter(child: AboutMePage());
 
       default:
         return MaterialPageRoute(

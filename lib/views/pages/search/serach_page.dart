@@ -19,7 +19,8 @@ import 'package:flutter_unit/views/pages/search/loading_page.dart';
 import 'package:flutter_unit/views/pages/search/not_search_page.dart';
 import 'package:flutter_unit/views/pages/search/start_filter.dart';
 
-import '../pages/common/empty_page.dart';
+import 'empty_page.dart';
+
 
 class SearchPage extends StatefulWidget {
   @override
