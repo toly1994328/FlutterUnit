@@ -12,10 +12,14 @@ class CouponShapeBorder extends ShapeBorder {
   final bool dash;
   final bool hasLine;
   final Color color;
+  final bool hasTopHole;
+  final bool hasBottomHole;
   final double edgeRadius;
 
   CouponShapeBorder(
       {this.holeCount = 6,
+        this.hasTopHole =true,
+        this.hasBottomHole =false,
       this.lineRate = 0.718,
       this.dash = true,
       this.hasLine = true,
@@ -40,14 +44,20 @@ class CouponShapeBorder extends ShapeBorder {
     path.addRect(rect);
 
     _formHoldLeft(path, d);
+
     _formHoldRight(path, w, d);
     if (hasLine) {
       _formHoleTop(path, rect, d);
       _formHoleBottom(path, rect, d);
     }
     if(edgeRadius!=null){
-      _formHoleTop(path, rect, edgeRadius);
-//      _formHoleBottom(path, rect, edgeRadius);
+      if(hasTopHole){
+        _formHoleTop(path, rect, edgeRadius);
+      }
+      if(hasBottomHole){
+        _formHoleBottom(path, rect, edgeRadius);
+      }
+
     }
     path.fillType = PathFillType.evenOdd;
 

@@ -2,75 +2,84 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/app/style/TolyIcon.dart';
-import 'package:flutter_unit/app/style/shape/coupon_shape_border.dart';
 import 'package:flutter_unit/app/style/shape/techno_shape.dart';
-import 'package:flutter_unit/components/circle_image.dart';
-import 'package:flutter_unit/components/circle_text.dart';
+import 'package:flutter_unit/components/permanent/circle_image.dart';
+import 'package:flutter_unit/components/permanent/circle_text.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
 class CollectWidgetListItem extends StatelessWidget {
   final WidgetModel data;
-
-  CollectWidgetListItem({this.data});
+  final Function(WidgetModel) onDelectItemClick;
+  CollectWidgetListItem({this.data,this.onDelectItemClick});
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: itemColor.withAlpha(66),
-      shape: TechnoShapeBorder(color: itemColor),
-      child: Container(
-        height: 95,
-        padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
-        child: Row(
-          children: <Widget>[
-            Wrap(
-              spacing: 5,
-              direction: Axis.vertical,
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
+    return Stack(
+      children: <Widget>[
+        Material(
+          color: itemColor.withAlpha(66),
+          shape: TechnoShapeBorder(color: itemColor),
+          child: Container(
+            height: 95,
+            padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+            child: Row(
               children: <Widget>[
                 _buildLeading(),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      _buildTitle(),
+                      _buildSummary(),
+                      StarScore(
+                        star: Star(
+                            emptyColor: Colors.white,
+                            size: 12,
+                            fillColor: itemColor),
+                        score: data.lever,
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  _buildTitle(),
-                  _buildSummary(),
-                  StarScore(
-                    star: Star(
-                        emptyColor: Colors.white,
-                        size: 12,
-                        fillColor: itemColor),
-                    score: data.lever,
-                  )
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+        Positioned(
+            bottom: 10,
+            right: 10,
+            child: FeedbackWidget(
+              onPressed: (){
+                if(onDelectItemClick!=null){
+                  onDelectItemClick(data);
+                }
+              },
+              child: Icon(
+                CupertinoIcons.delete_solid,
+                color: Colors.red,
+              ),
+            ))
+      ],
     );
   }
 
   Widget _buildLeading() => Padding(
         padding: const EdgeInsets.only(left: 5, right: 5),
         child: data.image == null
-              ? Material(
-                  color: Colors.transparent,
-                  child: CircleText(
-                    text: data.name,
-                    size: 60,
-                    color: itemColor,
-                  ),
-                )
-              : CircleImage(
-                  image: data.image,
+            ? Material(
+                color: Colors.transparent,
+                child: CircleText(
+                  text: data.name,
                   size: 60,
+                  color: itemColor,
                 ),
+              )
+            : CircleImage(
+                image: data.image,
+                size: 60,
+              ),
       );
 
   Color get itemColor => Color(Cons.tabColors[data.family.index]);

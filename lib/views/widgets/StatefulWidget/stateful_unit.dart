@@ -31,7 +31,7 @@ export 'AnimatedWidget/DecoratedBoxTransition.dart';
 export 'AnimatedWidget/DefaultTextStyleTransition.dart';
 export 'AnimatedWidget/RelativePositionedTransition.dart';
 export 'CupertinoScrollbar.dart';
-export 'DataTable.dart';
+export '../StatelessWidget/DataTable.dart';
 export 'Dismissible.dart';
 export 'DragTarget.dart';
 export 'Draggable.dart';

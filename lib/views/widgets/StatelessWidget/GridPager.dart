@@ -1,25 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/panel/panel.dart';
-import 'package:flutter_unit/model/node.dart';
-
-class GridPagerPage extends StatelessWidget {
-  final List<Node> nodes;
-
-  GridPagerPage({this.nodes});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-        children: nodes
-            .map((node) => NodePanel(
-                  text: node.name,
-                  subText: node.subtitle,
-                  code: node.code,
-                  show: node.widget,
-                ))
-            .toList());
-  }
-}
 
 class CustomGridPage extends StatelessWidget {
   @override

@@ -1,6 +1,7 @@
 
 
 
+import 'package:flutter_unit/app/app_storage.dart';
 import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/database/node_dao.dart';
 import 'package:flutter_unit/database/po/widget_po.dart';
@@ -14,12 +15,14 @@ import 'package:flutter_unit/repositorys/widget_repository.dart';
 /// 说明 : Widget数据仓库
 
 class WidgetDbRepository implements WidgetRepository {
+  AppStorage storage;
+
   WidgetDao _widgetDao;
   NodeDao _nodeDao;
 
   WidgetDbRepository() {
-    _widgetDao = WidgetDao();
-    _nodeDao = NodeDao();
+    _widgetDao = WidgetDao(storage);
+    _nodeDao = NodeDao(storage);
   }
 
   @override
@@ -34,7 +37,6 @@ class WidgetDbRepository implements WidgetRepository {
     var data = await _widgetDao.queryCollect();
     var widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
     var list = widgets.map(WidgetModel.fromPo).toList();
-    print(list);
     return list;
   }
 

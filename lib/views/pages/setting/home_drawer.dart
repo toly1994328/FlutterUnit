@@ -6,6 +6,8 @@ import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/blocs/global/global_state.dart';
+import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
+import 'package:flutter_unit/blocs/widgets/home_state.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -21,13 +23,13 @@ class HomeDrawer extends StatelessWidget {
   }
 
   Widget _buildChild(BuildContext context) =>
-      BlocBuilder<GlobalBloc, GlobalState>(
+      BlocBuilder<HomeBloc,HomeState>(
           builder: (_, state) => Container(
-                color: state.color.withAlpha(33),
+                color: state.homeColor.withAlpha(33),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: <Widget>[
-                    _buildDrawerHeader(state),
+                    _buildDrawerHeader(state.homeColor),
                     ListTile(
                       leading: Icon(
                         TolyIcon.icon_them,
@@ -135,7 +137,7 @@ class HomeDrawer extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
             trailing: _nextIcon(context),
-            title: Text('bug 集录'),
+            title: Text('bug/feature 集录'),
             onTap: () {
               Navigator.of(context).pushNamed(Router.bug);
             },
@@ -143,7 +145,7 @@ class HomeDrawer extends StatelessWidget {
         ],
       );
 
-  Widget _buildDrawerHeader(GlobalState state) => DrawerHeader(
+  Widget _buildDrawerHeader(Color color) => DrawerHeader(
         padding: EdgeInsets.only(top: 10, left: 15),
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -179,7 +181,7 @@ class HomeDrawer extends StatelessWidget {
               'The Unity Of Flutter, The Unity Of Coder.',
               style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
                 Shadow(
-                    color: state.color, offset: Offset(.5, .5), blurRadius: 1)
+                    color: color, offset: Offset(.5, .5), blurRadius: 1)
               ]),
             ),
             SizedBox(
@@ -189,7 +191,7 @@ class HomeDrawer extends StatelessWidget {
               'Flutter的联合，编程者的联合。',
               style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
                 Shadow(
-                    color: state.color, offset: Offset(.5, .5), blurRadius: 1)
+                    color: color, offset: Offset(.5, .5), blurRadius: 1)
               ]),
             ),
             SizedBox(

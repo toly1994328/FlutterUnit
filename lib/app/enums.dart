@@ -8,6 +8,6 @@ enum WidgetFamily {
   singleChildRenderObjectWidget,
   multiChildRenderObjectWidget,
   sliver,
-  proxyWidget,//4
-  other,//5
+  proxyWidget,
+  other,
 }

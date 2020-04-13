@@ -1,5 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'ProxyWidget/InheritedWidget/ButtonTheme.dart';
+import 'ProxyWidget/InheritedWidget/DefaultTextStyle.dart';
+import 'ProxyWidget/InheritedWidget/DividerTheme.dart';
+import 'ProxyWidget/InheritedWidget/IconTheme.dart';
+import 'ProxyWidget/InheritedWidget/SliderTheme.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/ShaderMask.dart';
 import 'StatefulWidget/stateful_unit.dart';
 import 'StatelessWidget/stateless_unit.dart';
 
@@ -8,7 +14,7 @@ import 'ProxyWidget/Flexible.dart';
 import 'ProxyWidget/InheritedWidget/MediaQuery.dart';
 import 'ProxyWidget/InheritedWidget/ScrollConfiguration.dart';
 import 'ProxyWidget/Positioned.dart';
-import 'ProxyWidget/Spacer.dart';
+import 'StatelessWidget/Spacer.dart';
 import 'RenderObjectWidget/ErrorWidget.dart';
 import 'RenderObjectWidget/MultiChildRenderObjectWidget/Column.dart';
 import 'ProxyWidget/Expended.dart';
@@ -30,8 +36,6 @@ import 'Sliver/SliverOpacity.dart';
 import 'Sliver/SliverPadding.dart';
 import 'Sliver/SliverPersistentHeader.dart';
 import 'Sliver/SliverToBoxAdapter.dart';
-
-
 
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
@@ -491,6 +495,7 @@ class WidgetsMap {
       case "RichText":
         return [
           CustomRichText(),
+          RichTextWithWidget(),
         ];
       case "DataTable":
         return [
@@ -517,7 +522,8 @@ class WidgetsMap {
         ];
       case "Spacer":
         return [
-          CustomSpacer(),
+          OneSpacer(),
+          ManySpacer(),
         ];
       case "Positioned":
         return [
@@ -907,6 +913,32 @@ class WidgetsMap {
       case "AnimatedSize":
         return [
           CustomAnimatedSize(),
+        ];
+      case "ShaderMask":
+        return [
+          RadialShaderMask(),
+          LinearShaderMask(),
+        ];
+      case "DefaultTextStyle":
+        return [
+          DefaultTextStyleDemo(),
+        ];
+      case "IconTheme":
+        return [
+          IconThemeDemo(),
+        ];
+      case "ButtonTheme":
+        return [
+          ButtonThemeDemo(),
+        ];
+      case "DividerTheme":
+        return [
+          DividerThemeDemo(),
+        ];
+      case "SliderTheme":
+        return [
+          SliderThemeDemo(),
+          DIYSliderTheme(),
         ];
     }
   }

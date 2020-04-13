@@ -26,9 +26,8 @@ class EventSetCollectData extends CollectEvent {
 
 class ToggleCollectEvent extends CollectEvent {
   final int id;
-  final bool isCollect;
 
-  ToggleCollectEvent({this.id,this.isCollect});
+  ToggleCollectEvent({this.id});
 
   @override
   // TODO: implement props

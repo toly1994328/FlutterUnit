@@ -16,7 +16,7 @@
       "name": "Text",
       "nameCN": "文字组件",
       "lever": 5,
-      "linkWidget": "101",
+      "linkWidget": "101,324",
       "info": "用于显示文字的组件。拥有的属性非常多，足够满足你的使用需求,核心样式由style属性控制。",
       "image": "assets/images/widgets/Text.png"
     },
@@ -225,7 +225,7 @@
       "family": 0,
       "name": "MaterialButton",
       "nameCN": "材料按钮",
-      "linkWidget": "25,26,27,154",
+      "linkWidget": "25,26,27,326,175",
       "lever": 4,
       "info": "基于RawMaterialButton实现的通用Material按钮。可盛放一个子组件,能定义颜色、形状等表现,可接收点击和长按事件。",
       "image": ""
@@ -245,7 +245,7 @@
       "family": 0,
       "name": "FlatButton",
       "nameCN": "平按钮",
-      "linkWidget": "24,26,27,154",
+      "linkWidget": "24,26,27,175",
       "lever": 3,
       "info": "无阴影的平按钮，基于MaterialButton实现，所有属性和MaterialButton类似。",
       "image": ""
@@ -255,7 +255,7 @@
       "family": 0,
       "name": "RaisedButton",
       "nameCN": "浮起按钮",
-      "linkWidget": "24,25,27,154",
+      "linkWidget": "24,25,27,175",
       "lever": 3,
       "info": "有阴影的浮起按钮，基于MaterialButton实现，所有属性和MaterialButton类似。",
       "image": ""
@@ -265,7 +265,7 @@
       "family": 0,
       "name": "OutlineButton",
       "nameCN": "线框按钮",
-      "linkWidget": "23,24,25,154",
+      "linkWidget": "23,24,25,175",
       "lever": 3,
       "info": "边框样式按钮，基于MaterialButton实现，所有属性和MaterialButton类似。",
       "image": ""
@@ -335,7 +335,7 @@
       "family": 0,
       "name": "Divider",
       "nameCN": "水平分割线",
-      "linkWidget": "35",
+      "linkWidget": "35,329",
       "lever": 2,
       "info": "水平分割线，可指定颜色、高度、粗细、左右边距信息，常用与列表的item分割线。",
       "image": ""
@@ -345,7 +345,7 @@
       "family": 0,
       "name": "VerticalDivider",
       "nameCN": "竖直分割线",
-      "linkWidget": "34",
+      "linkWidget": "34,329",
       "lever": 2,
       "info": "竖直分割线，可指定颜色、宽度、粗细、上下边距信息，常用与列表的item分割线。",
       "image": ""
@@ -415,7 +415,7 @@
       "family": 1,
       "name": "Slider",
       "nameCN": "滑块",
-      "linkWidget": "43,44",
+      "linkWidget": "43,44,331",
       "lever": 4,
       "info": "滑块组件，可以在指定的最大值和最小值之间拖动选择。可指定颜色、分段数及显示的标签，接收进度变化回调。",
       "image": ""
@@ -866,7 +866,7 @@
       "name": "FittedBox",
       "nameCN": "适应盒",
       "linkWidget": "38",
-      "lever": 1.5,
+      "lever": 4,
       "info": "可容纳一个子组件，使用fit属性决定子组件区域相当于父组件的适应模式，拥有对齐属性alignment。",
       "image": ""
     },
@@ -875,7 +875,7 @@
       "family": 2,
       "name": "ColorFiltered",
       "nameCN": "滤色器",
-      "linkWidget": "",
+      "linkWidget": "277,38",
       "lever": 5,
       "info": "可容纳一个子组件，可以并将组件按照29中叠色模式和任意组件混合，强大到我不知道该说什么好。app一键全灰了解一下。",
       "image": ""
@@ -966,7 +966,7 @@
       "name": "Stack",
       "nameCN": "堆叠布局",
       "linkWidget": "94,95,161",
-      "lever":5,
+      "lever": 5,
       "info": "可容纳多个组件,以堆叠的方式摆放子组件，后者居上。拥有alignment属性，可与Positioned组件联合使用，精确定位。",
       "image": ""
     },
@@ -1067,7 +1067,7 @@
       "nameCN": "空间组件",
       "linkWidget": "94",
       "lever": 3,
-      "info": "只能用于Row、Column和Flex布局中,可利用剩余空间进行占位，没有子组件。",
+      "info": "只能用于Row、Column和Flex布局中,可利用剩余空间进行占位，使用flex属性可以给多个Spacer按比例分配空间。",
       "image": ""
     },
     {
@@ -1135,7 +1135,7 @@
       "family": 1,
       "name": "DefaultTextStyleTransition",
       "nameCN": "文字样式变换",
-      "linkWidget": "124",
+      "linkWidget": "124,324",
       "lever": 3,
       "info": "AnimatedWidget的子类,使用TextStyle类型的动画器让文字组件在两个TextStyle对象之间进行过渡动画。",
       "image": ""
@@ -1235,7 +1235,7 @@
       "family": 1,
       "name": "AnimatedDefaultTextStyle",
       "nameCN": "容器动画",
-      "linkWidget": "114",
+      "linkWidget": "114,324",
       "lever": 3,
       "info": "能让子文字组件进行TextStyle(文字样式)动画，可指定时长和曲线，有动画结束事件。",
       "image": ""
@@ -2004,10 +2004,70 @@
       "id": 201,
       "family": 1,
       "name": "AnimatedSize",
-      "nameCN": "ios菜单按钮",
+      "nameCN": "尺寸动画",
       "linkWidget": "92",
       "lever": 3,
       "info": "子组件大小发生变化是，进行动画渐变，可指定时长、对齐方式、曲线、vsync等属性。",
+      "image": ""
+    },
+    {
+      "id": 277,
+      "family": 2,
+      "name": "ShaderMask",
+      "nameCN": "着色器遮罩",
+      "linkWidget": "88,38",
+      "lever": 4,
+      "info": "可容纳一个孩子，并通过着色器来对孩子进行着色，可指定混色模式。通常用于组件渐变色处理。",
+      "image": ""
+    },
+    {
+      "id": 324,
+      "family": 5,
+      "name": "DefaultTextStyle",
+      "nameCN": "默认字体样式",
+      "linkWidget": "2,114,124",
+      "lever": 3,
+      "info": "可容纳一个孩子，为后代的文字指定默认样式。常用于多个相同文字的样式统一，避免一一设置。",
+      "image": ""
+    },
+    {
+      "id": 325,
+      "family": 5,
+      "name": "IconTheme",
+      "nameCN": "图标样式",
+      "linkWidget": "6",
+      "lever": 3,
+      "info": "可容纳一个孩子，为后代的图标指定默认样式。常用于多个相同图标的样式统一，避免一一设置。",
+      "image": ""
+    },
+    {
+      "id": 326,
+      "family": 5,
+      "name": "ButtonTheme",
+      "nameCN": "按钮样式",
+      "linkWidget": "23,25,26,27",
+      "lever": 3,
+      "info": "可容纳一个孩子，为后代的按钮指定默认样式。常用于多个相同按钮的样式统一，避免一一设置。",
+      "image": ""
+    },
+    {
+      "id": 329,
+      "family": 5,
+      "name": "DividerTheme",
+      "nameCN": "分割线样式",
+      "linkWidget": "34,35",
+      "lever": 3,
+      "info": "可容纳一个孩子，为后代的分割线指定默认样式。常用于分割线的样式统一，避免一一设置。",
+      "image": ""
+    },
+    {
+      "id": 331,
+      "family": 5,
+      "name": "SliderTheme",
+      "nameCN": "分割线样式",
+      "linkWidget": "42",
+      "lever": 3,
+      "info": "可容纳一个孩子，为后代的Slider指定默认样式。常用于Slider的样式统一，避免一一设置，也可以对Slider进行样式定制。",
       "image": ""
     }
   ]

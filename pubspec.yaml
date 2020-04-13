@@ -28,7 +28,6 @@ dependencies:
   toggle_rotate: ^0.0.5
   flutter_star: ^0.1.2 # 星星组件
   shared_preferences: ^0.5.6+3 # xml 固化
-  flutter_circle_color_picker: ^0.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -49,6 +48,7 @@ flutter:
     - assets/images/head_icon/
     - assets/images/widgets/
     - assets/data/widget.json
+    - assets/flutter.db
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

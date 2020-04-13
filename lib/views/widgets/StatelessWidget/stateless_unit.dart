@@ -34,7 +34,6 @@ export 'TabBar.dart';
 export 'GridPager.dart';
 
 export 'Placeholder.dart';
-export 'Spacer.dart';
 export 'UserAccountsDrawerHeader.dart';
 export 'VerticalDivider.dart';
 

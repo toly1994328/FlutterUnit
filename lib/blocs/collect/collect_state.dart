@@ -6,12 +6,11 @@ import 'package:flutter_unit/model/widget_model.dart';
 /// 说明: 
 
 class CollectState extends Equatable {
-  final bool collect;
   final List<WidgetModel> widgets;
 
-  CollectState({this.collect,this.widgets});
+  CollectState({this.widgets});
 
   @override
   // TODO: implement props
-  List<Object> get props => [collect,widgets];
+  List<Object> get props => [widgets];
 }

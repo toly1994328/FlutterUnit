@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/style/TolyIcon.dart';
-import 'package:flutter_unit/components/code/highlighter_style.dart';
+import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
 class Cons {
   static const TABS = <String>[
@@ -62,6 +62,7 @@ class Cons {
     HighlighterStyle.fromColors(HighlighterStyle.lightColor):"捷特白 - Power By 张风捷特烈",
     HighlighterStyle.fromColors(HighlighterStyle.zenburn):"zenburn - Power By 张风捷特烈",
     HighlighterStyle.fromColors(HighlighterStyle.mf):"mf - Power By MF",
+    HighlighterStyle.fromColors(HighlighterStyle.solarized):"cst - Power By cst",
   };
 
 

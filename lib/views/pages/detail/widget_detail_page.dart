@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/style/TolyIcon.dart';
+import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/collect/collect_state.dart';
@@ -10,10 +11,9 @@ import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
 import 'package:flutter_unit/blocs/detail/detail_event.dart';
 import 'package:flutter_unit/blocs/detail/detail_state.dart';
 import 'package:flutter_unit/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/blocs/widgets/widget_bloc.dart';
-import 'package:flutter_unit/blocs/widgets/widget_event.dart';
-import 'package:flutter_unit/components/feedback_widget.dart';
-import 'package:flutter_unit/components/panel/panel.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/panel.dart';
+import 'package:flutter_unit/components/project/widget_node_panel.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/widgets/widgets_map.dart';
@@ -24,87 +24,86 @@ class WidgetDetailPage extends StatefulWidget {
 }
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
-  List<WidgetModel> stack;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<DetailBloc, DetailState>(builder: (context, state) {
+    return BlocBuilder<DetailBloc, DetailState>(builder: (_, state) {
       if (state is DetailWithData) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Color(colors[state.widgetModel.family.index]),
             title: Text(state.widgetModel.name),
             actions: <Widget>[
-              FeedbackWidget(
-                onPressed: () async {
-                  BlocProvider.of<CollectBloc>(context).add(ToggleCollectEvent(
-                      id: state.widgetModel.id,
-                      isCollect: !state.widgetModel.collected));
-//                    BlocProvider.of<WidgetBloc>(context)
-//                        .add(LoadWidget(state.widgetModel.family));
-                },
-                child: BlocBuilder<CollectBloc, CollectState>(builder: (_, s) {
-//                  print(s.widgets.contains(state.widgetModel));
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: Icon(
-                      s.widgets.contains(state.widgetModel)
-                          ? TolyIcon.icon_star_ok
-                          : TolyIcon.icon_star_add,
-                      size: 25,
-                    ),
-                  );
-                }),
-              )
+              buildCollectButton(state.widgetModel, context),
             ],
           ),
           body: SingleChildScrollView(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      _buildLeft(state.widgetModel),
-                      _buildRight(state.widgetModel),
-                    ],
-                  ),
-                  Divider(),
-                  Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15, right: 5),
-                        child: Icon(
-                          Icons.link,
-                          color: Colors.blue,
-                        ),
+              child: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    _buildLeft(state.widgetModel),
+                    _buildRight(state.widgetModel),
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15, right: 5),
+                      child: Icon(
+                        Icons.link,
+                        color: Colors.blue,
                       ),
-                      Text(
-                        '相关组件',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                    ],
-                  ),
-                  _buildLinkTo(
-                    context,
-                    state.links,
-                  ),
-                  Divider(),
-                  _buildNodes(state.nodes, state.widgetModel.name)
-                ],
-              ),
+                    ),
+                    Text(
+                      '相关组件',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                  ],
+                ),
+                _buildLinkTo(
+                  context,
+                  state.links,
+                ),
+                Divider(),
+                _buildNodes(state.nodes, state.widgetModel.name)
+              ],
             ),
-          ),
+          )),
         );
       }
       return Container();
     });
+  }
+
+  Widget buildCollectButton(WidgetModel model, BuildContext context) {
+    //监听 CollectBloc 伺机弹出toast
+    return BlocListener<CollectBloc, CollectState>(
+        listener: (ctx, st) {
+          bool collected = st.widgets.contains(model);
+          Toast.toast(
+              ctx,
+              collected
+                  ? "收藏【${model.name}】组件成功!"
+                  : "已取消【${model.name}】组件收藏!");
+        },
+        child: FeedbackWidget(
+          onPressed: () => BlocProvider.of<CollectBloc>(context)
+              .add(ToggleCollectEvent(id: model.id)),
+          child: BlocBuilder<CollectBloc, CollectState>(builder: (_, s) {
+            return Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: Icon(
+                s.widgets.contains(model)
+                    ? TolyIcon.icon_star_ok
+                    : TolyIcon.icon_star_add,
+                size: 25,
+              ),
+            );
+          }),
+        ));
   }
 
   final List<int> colors = Cons.tabColors;
@@ -158,18 +157,19 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     var globalState = BlocProvider.of<GlobalBloc>(context).state;
 
     return Column(
-      children: nodes
-          .asMap()
-          .keys
-          .map((i) => NodePanel(
-                codeStyle: Cons.codeThemeSupport.keys.toList()[globalState.codeStyleIndex],
-                codeFamily: 'Inconsolata',
-                text: nodes[i].name,
-                subText: nodes[i].subtitle,
-                code: nodes[i].code,
-                show: WidgetsMap.map(name)[i],
-              ))
-          .toList());
+        children: nodes
+            .asMap()
+            .keys
+            .map((i) => WidgetNodePanel(
+                  codeStyle: Cons.codeThemeSupport.keys
+                      .toList()[globalState.codeStyleIndex],
+                  codeFamily: 'Inconsolata',
+                  text: nodes[i].name,
+                  subText: nodes[i].subtitle,
+                  code: nodes[i].code,
+                  show: WidgetsMap.map(name)[i],
+                ))
+            .toList());
   }
 
   _buildLinkTo(BuildContext context, List<WidgetModel> links) {
@@ -192,9 +192,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                       BlocProvider.of<DetailBloc>(context)
                           .add(FetchWidgetDetail(e));
                     },
-                    elevation: 3,
-                    shadowColor: Color(colors[e.family.index]),
-                    backgroundColor: Colors.blue,
+                    elevation: 2,
+                    shadowColor: Colors.orange,
+                    backgroundColor: Theme.of(context).primaryColor,
                     labelStyle: TextStyle(fontSize: 12, color: Colors.white),
                     label: Text('${e.name}'),
                   ))

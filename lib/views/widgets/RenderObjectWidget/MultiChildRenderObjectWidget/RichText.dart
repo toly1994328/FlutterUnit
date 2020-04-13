@@ -6,11 +6,11 @@ import 'package:flutter_unit/app/utils/color_utils.dart';
 //      "name": 'RichText基本使用',
 //      "priority": 1,
 //      "subtitle":
-//          "【text】 : 文字   【TextSpan】",
+//          "【text】 : 文字   【TextSpan】\n"
+//          "    其他属性与Text相同,详见之。",
 //    }
 class CustomRichText extends StatelessWidget {
-  final str =
-      "        发光强度简称光强，国际单位是（坎德拉）简写cd。"
+  final str = "        发光强度简称光强，国际单位是（坎德拉）简写cd。"
       "1cd是指光源在指定方向的单位立体角内发出的光通量。"
       "光源辐射是均匀时，则光强为I=F/Ω，Ω为立体角，单位为球面度（sr）,F为光通量，"
       "单位是流明，对于点光源由I=F/4π 。光亮度是表示发光面明亮程度的，"
@@ -22,7 +22,10 @@ class CustomRichText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(
+        left: 10.0,
+        right: 10,
+      ),
       child: RichText(
           text: TextSpan(
               children: str
@@ -32,6 +35,59 @@ class CustomRichText extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 14, color: ColorUtils.randomColor())))
                   .toList())),
+    );
+  }
+}
+
+//    {
+//      "widgetId": 101,
+//      "name": 'RichText包含其他组件',
+//      "priority": 2,
+//      "subtitle":
+//          "使用WidgetSpan来承载普通组件，作为RichText的内容",
+//    }
+class RichTextWithWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        text: 'hello ',
+        style: TextStyle(color: Colors.black, fontSize: 18),
+        children: <InlineSpan>[
+          WidgetSpan(
+              child: Image.asset(
+                'assets/images/icon_head.png',
+                width: 30,
+              ),
+              alignment: PlaceholderAlignment.baseline,
+              baseline: TextBaseline.ideographic),
+          TextSpan(
+            text: ' , welcome to ',
+            style: TextStyle(color: Colors.blue, fontSize: 18),
+          ),
+          WidgetSpan(
+              child: FlutterLogo(),
+              alignment: PlaceholderAlignment.baseline,
+              baseline: TextBaseline.ideographic),
+          TextSpan(
+            text: ' .\n',
+          ),
+          TextSpan(
+            text: 'focus me on ',
+            style: TextStyle(color: Colors.orange, fontSize: 16),
+          ),
+          TextSpan(
+            text: 'https://github.com/toly1994328',
+            style: TextStyle(
+                color: Colors.blue,
+                fontSize: 18,
+                decoration: TextDecoration.underline),
+          ),
+          TextSpan(
+            text: ' .\n',
+          ),
+        ],
+      ),
     );
   }
 }

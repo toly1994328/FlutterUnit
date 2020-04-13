@@ -3,15 +3,15 @@ import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/font_setting.dart';
 import 'package:flutter_unit/views/pages/setting/item_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/theme_color_setting.dart';
-import 'package:flutter_unit/views/pages/unit/attr_unit_page.dart';
-import 'package:flutter_unit/views/pages/unit/bug_unit_page.dart';
+import 'package:flutter_unit/views/pages/unit_todo/attr_unit_page.dart';
+import 'package:flutter_unit/views/pages/unit_todo/bug_unit_page.dart';
 import 'package:flutter_unit/views/pages/collect_page.dart';
 import 'package:flutter_unit/views/pages/detail/widget_detail_page.dart';
-import 'package:flutter_unit/views/pages/unit/layout_unit_page.dart';
-import 'package:flutter_unit/views/pages/unit/paint_unit_page.dart';
-import 'package:flutter_unit/views/pages/serach_page.dart';
+import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
+import 'package:flutter_unit/views/pages/unit_todo/paint_unit_page.dart';
+import 'package:flutter_unit/views/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/setting_page.dart';
-import 'package:flutter_unit/views/pages/unit_navigation.dart';
+import 'package:flutter_unit/views/pages/navigation/unit_navigation.dart';
 
 import 'router_utils.dart';
 

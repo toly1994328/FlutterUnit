@@ -1,11 +1,7 @@
-import 'dart:math';
-
-import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/app_storage.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/sp.dart';
-import 'package:flutter_unit/app/utils/color_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'global_event.dart';
@@ -19,23 +15,14 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
   @override
   GlobalState get initialState => GlobalState();
 
-  SharedPreferences _sp;
+  AppStorage storage = AppStorage();
 
-  Future<SharedPreferences> get sp async {
-    _sp = _sp ?? await SharedPreferences.getInstance();
-    return _sp;
-  }
+  Future<SharedPreferences> get sp => storage.sp;
 
   @override
   Stream<GlobalState> mapEventToState(GlobalEvent event) async* {
     if (event is EventInitApp) {
-      yield* _initGlobalState();
-    }
-    if (event is EventSwitchHomeColor) {
-      yield state.copyWith(color: event.color);
-    }
-    if (event is UpdateAppBarHeight) {
-      yield state.copyWith(height: event.height);
+      yield await storage.initApp();
     }
 
     if (event is EventSwitchFontFamily) {
@@ -60,31 +47,14 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
     }
 
     if (event is EventSwitchCoderTheme) {
-      await sp..setInt(SP.themeColorIndex, event.codeStyleIndex); //固化数据
+      await sp
+        ..setInt(SP.codeStyleIndex, event.codeStyleIndex); //固化数据
       yield state.copyWith(codeStyleIndex: event.codeStyleIndex);
     }
     if (event is EventChangeItemStyle) {
-      await sp..setInt(SP.itemStyleIndex, event.index); //固化数据
+      await sp
+        ..setInt(SP.itemStyleIndex, event.index); //固化数据
       yield state.copyWith(itemStyleIndex: event.index);
     }
-  }
-
-  // 初始化 App 固化的配置数据
-  Stream<GlobalState> _initGlobalState() async* {
-    var prefs = await sp;
-    var showBg = prefs.getBool(SP.showBackground) ?? true;
-    var themeIndex = prefs.getInt(SP.themeColorIndex) ?? 4;
-    var fontIndex = prefs.getInt(SP.fontFamily) ?? 1;
-    var codeIndex = prefs.getInt(SP.codeStyleIndex) ?? 0;
-    var itemStyleIndex = prefs.getInt(SP.itemStyleIndex) ?? 0;
-
-    yield GlobalState(
-        showBackGround: showBg,
-        themeColor: Cons.themeColorSupport.keys.toList()[themeIndex],
-        fontFamily: Cons.fontFamilySupport[fontIndex],
-        height: kToolbarHeight * 2 - 20,
-        color: Color(Cons.tabColors[0]),
-        itemStyleIndex: itemStyleIndex,
-        codeStyleIndex: codeIndex);
   }
 }

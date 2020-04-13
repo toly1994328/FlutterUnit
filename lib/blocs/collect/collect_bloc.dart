@@ -19,7 +19,7 @@ class CollectBloc extends Bloc<CollectEvent, CollectState> {
   CollectBloc({@required this.repository});
 
   @override
-  CollectState get initialState => CollectState(collect: false,widgets: []); //初始状态
+  CollectState get initialState => CollectState(widgets: []); //初始状态
 
   @override
   Stream<CollectState> mapEventToState(
@@ -28,11 +28,11 @@ class CollectBloc extends Bloc<CollectEvent, CollectState> {
     if (event is ToggleCollectEvent) {
       await repository.toggleCollect(event.id);
       final widgets = await repository.loadCollectWidgets();
-      yield CollectState(collect: !state.collect,widgets: widgets);
+      yield CollectState(widgets: widgets);
     }
     if( event is EventSetCollectData){
       final widgets = await repository.loadCollectWidgets();
-      yield CollectState(collect: state.collect,widgets: widgets);
+      yield CollectState(widgets: widgets);
     }
   }
 }

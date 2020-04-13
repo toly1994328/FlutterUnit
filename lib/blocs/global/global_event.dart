@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/blocs/global/global_state.dart';
-import 'package:flutter_unit/components/code/highlighter_style.dart';
+import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
 abstract class GlobalEvent extends Equatable {
   const GlobalEvent();
@@ -10,22 +10,11 @@ abstract class GlobalEvent extends Equatable {
   List<Object> get props => [];
 }
 
-
 class EventInitApp extends GlobalEvent {
   const EventInitApp();
   @override
   List<Object> get props => [];
 }
-
-class EventSwitchHomeColor extends GlobalEvent {
-  final Color color;
-
-  const EventSwitchHomeColor(this.color);
-
-  @override
-  List<Object> get props => [color];
-}
-
 
 class EventSwitchFontFamily extends GlobalEvent {
   final String family;
@@ -70,13 +59,4 @@ class EventChangeItemStyle extends GlobalEvent {
 
   @override
   List<Object> get props => [index];
-}
-
-class UpdateAppBarHeight extends GlobalEvent {
-  final double height;
-
-  const UpdateAppBarHeight(this.height);
-
-  @override
-  List<Object> get props => [height];
 }

@@ -84,6 +84,7 @@ class _CustomFlexibleState extends State<CustomFlexible> {
             onChanged: (v) => setState(() => _loose = v)),
         Expanded(
           child: Slider(
+            divisions: 10,
               min: 100,
               max: 350,
               value: _width,

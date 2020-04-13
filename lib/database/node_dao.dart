@@ -1,11 +1,16 @@
+import 'package:flutter_unit/app/app_storage.dart';
+
 import 'po/node_po.dart';
 
-import 'flutter_db.dart';
-
 class NodeDao {
+
+  final  AppStorage storage;
+
+  NodeDao(this.storage);
+
   Future<int> insert(NodePo widget) async {
     //插入方法
-    final db = await FlutterDb.db.database;
+    final db = await storage.db;
     String addSql = //插入数据
         "INSERT INTO "
         "node(widgetId,name,priority,subtitle,code) "
@@ -21,14 +26,14 @@ class NodeDao {
 
   Future<List<Map<String, dynamic>>> queryAll() async {
     //插入方法
-    final db = await FlutterDb.db.database;
+    final db = await storage.db;
     return await db.rawQuery("SELECT * "
         "FROM node");
   }
 
   //根据 id 查询组件 node
   Future<List<Map<String, dynamic>>> queryById(int id) async {
-    final db = await FlutterDb.db.database;
+    final db = await storage.db;
     return await db.rawQuery(
         "SELECT name,subtitle,code "
         "FROM node "

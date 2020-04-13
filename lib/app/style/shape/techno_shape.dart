@@ -62,20 +62,11 @@ class TechnoShapeBorder extends ShapeBorder {
       ..relativeLineTo(-rect.width * innerRate * 2, 0)
       ..relativeLineTo(-spanWidth * 2, spanWidth)
       ..close();
-
-//    innerLinePath
-//      ..moveTo(rect.width / 2, 0)
-//      ..relativeLineTo(rect.width * innerRate, 0)
-//      ..relativeLineTo(-spanWidth * 2, spanWidth)
-//      ..relativeLineTo(-rect.width * innerRate * 2, 0)
-//      ..relativeLineTo(-spanWidth * 2, -spanWidth)
-//      ..close();
     return Path.combine(PathOperation.difference, outLinePath, innerLinePath);
   }
 
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
-//
     canvas.drawPath(
         Path.combine(PathOperation.difference, outLinePath, innerLinePath),
         _paint..style = PaintingStyle.stroke);

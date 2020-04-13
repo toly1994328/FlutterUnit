@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/utils/pather.dart';
-import 'package:flutter_unit/components/panel/panel.dart';
+import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 class CustomMaterialButton extends StatelessWidget {
