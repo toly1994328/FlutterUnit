@@ -4,6 +4,7 @@ import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/search/search_bloc.dart';
 import 'package:flutter_unit/repositorys/widget_db_repository.dart';
+import 'package:flutter_unit/storage/app_storage.dart';
 import 'package:flutter_unit/views/splash/unit_splash.dart';
 
 //import 'tools/initial.dart';
@@ -26,12 +27,13 @@ void main() async {
   runApp(BlocWrapper(child: FlutterApp()));
 }
 
+final storage = AppStorage();
+
 class BlocWrapper extends StatelessWidget {
   final Widget child;
-
   BlocWrapper({this.child});
 
-  final repository = WidgetDbRepository();
+  final repository = WidgetDbRepository(storage);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class BlocWrapper extends StatelessWidget {
         providers: [
       //Bloc提供器
       BlocProvider<GlobalBloc>(
-          create: (_) => GlobalBloc()..add(EventInitApp())),
+          create: (_) => GlobalBloc(storage)..add(EventInitApp())),
       BlocProvider<HomeBloc>(
           create: (_) => HomeBloc(repository: repository)
             ..add(EventTabTap(WidgetFamily.statelessWidget))),

@@ -10,7 +10,7 @@ import 'package:flutter_unit/blocs/search/search_bloc.dart';
 import 'package:flutter_unit/blocs/search/search_event.dart';
 import 'package:flutter_unit/blocs/search/search_state.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/database/widget_dao.dart';
+import 'package:flutter_unit/storage/widget_dao.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
 import 'package:flutter_unit/views/pages/search/app_search_bar.dart';

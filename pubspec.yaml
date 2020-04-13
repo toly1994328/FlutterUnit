@@ -47,7 +47,7 @@ flutter:
     - assets/images/
     - assets/images/head_icon/
     - assets/images/widgets/
-    - assets/data/widget.json
+  #  - assets/data/widget.json
     - assets/flutter.db
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -13,7 +13,7 @@ import 'package:flutter_unit/views/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/setting_page.dart';
 import 'package:flutter_unit/views/pages/navigation/unit_navigation.dart';
 
-import 'router_utils.dart';
+import 'utils/router_utils.dart';
 
 class Router {
   static const String detail = 'detail';

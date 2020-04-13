@@ -22,7 +22,7 @@ class CollectWidgetListItem extends StatelessWidget {
           shape: TechnoShapeBorder(color: itemColor),
           child: Container(
             height: 95,
-            padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+            padding: EdgeInsets.only(top: 10, left: 5, right: 10, bottom: 5),
             child: Row(
               children: <Widget>[
                 _buildLeading(),
@@ -48,8 +48,8 @@ class CollectWidgetListItem extends StatelessWidget {
           ),
         ),
         Positioned(
-            bottom: 10,
-            right: 10,
+            bottom: 5,
+            right: 5,
             child: FeedbackWidget(
               onPressed: (){
                 if(onDelectItemClick!=null){
@@ -72,13 +72,13 @@ class CollectWidgetListItem extends StatelessWidget {
                 color: Colors.transparent,
                 child: CircleText(
                   text: data.name,
-                  size: 60,
+                  size: 50,
                   color: itemColor,
                 ),
               )
             : CircleImage(
                 image: data.image,
-                size: 60,
+                size: 50,
               ),
       );
 
@@ -104,7 +104,7 @@ class CollectWidgetListItem extends StatelessWidget {
 
   Widget _buildSummary() {
     return Padding(
-      padding: const EdgeInsets.only(left: 0, bottom: 10, top: 5),
+      padding: const EdgeInsets.only(left: 5, bottom: 10, top: 5),
       child: Container(
         child: Text(
           data.nameCN,

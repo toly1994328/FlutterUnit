@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/app_storage.dart';
+import 'package:flutter_unit/storage/app_storage.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/sp.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,7 +15,10 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
   @override
   GlobalState get initialState => GlobalState();
 
-  AppStorage storage = AppStorage();
+ final AppStorage storage ;
+
+
+  GlobalBloc(this.storage);
 
   Future<SharedPreferences> get sp => storage.sp;
 

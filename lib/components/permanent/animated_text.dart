@@ -26,6 +26,7 @@ class AnimatedTextState extends State<AnimatedText>
 
   int curIndex = 0;
 
+
   @override
   void initState()  {
     super.initState();

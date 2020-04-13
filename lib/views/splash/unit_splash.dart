@@ -94,12 +94,14 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       ],
     );
 
-    return GestureDetector(
-      onTap: () {
-        _controller.reset();
-        _controller.forward();
-      },
-      child: Scaffold(
+    return
+//      GestureDetector(
+//      onTap: () {
+//        _controller.reset();
+//        _controller.forward();
+//      },
+//      child:
+      Scaffold(
         body: Stack(
           alignment: Alignment.center,
           children: <Widget>[
@@ -137,7 +139,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             buildPower(),
           ],
         ),
-      ),
+//      ),
     );
   }
 

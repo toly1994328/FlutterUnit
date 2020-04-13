@@ -1,11 +1,11 @@
 
 
 
-import 'package:flutter_unit/app/app_storage.dart';
+import 'package:flutter_unit/storage/app_storage.dart';
 import 'package:flutter_unit/app/enums.dart';
-import 'package:flutter_unit/database/node_dao.dart';
-import 'package:flutter_unit/database/po/widget_po.dart';
-import 'package:flutter_unit/database/widget_dao.dart';
+import 'package:flutter_unit/storage/node_dao.dart';
+import 'package:flutter_unit/storage/po/widget_po.dart';
+import 'package:flutter_unit/storage/widget_dao.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/repositorys/widget_repository.dart';
@@ -15,12 +15,13 @@ import 'package:flutter_unit/repositorys/widget_repository.dart';
 /// 说明 : Widget数据仓库
 
 class WidgetDbRepository implements WidgetRepository {
-  AppStorage storage;
+ final AppStorage storage;
 
   WidgetDao _widgetDao;
   NodeDao _nodeDao;
 
-  WidgetDbRepository() {
+
+  WidgetDbRepository(this.storage){
     _widgetDao = WidgetDao(storage);
     _nodeDao = NodeDao(storage);
   }

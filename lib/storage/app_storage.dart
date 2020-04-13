@@ -23,14 +23,14 @@ class AppStorage {
   }
 
   Future<Database> get db async {
-    _database = _database ?? await SharedPreferences.getInstance();
+    _database = _database ?? await initDb();
     return _database;
   }
 
   // 初始化 App 固化的配置数据
   Future<GlobalState> initApp() async {
     var prefs = await sp;
-    await initDb();
+    _database = await initDb();
     var showBg = prefs.getBool(SP.showBackground) ?? true;
     var themeIndex = prefs.getInt(SP.themeColorIndex) ?? 4;
     var fontIndex = prefs.getInt(SP.fontFamily) ?? 1;
@@ -63,6 +63,6 @@ class AppStorage {
     } else {
       print("Opening existing database");
     }
-    return await openDatabase(dbPath, readOnly: true);
+    return await openDatabase(dbPath, readOnly: false);
   }
 }
