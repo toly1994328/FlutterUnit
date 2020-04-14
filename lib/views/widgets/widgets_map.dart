@@ -56,8 +56,8 @@ class WidgetsMap {
       case "Text":
         return [
           CustomText(),
-          DecorationText(),
           ShadowText(),
+          DecorationText(),
           TextAlignText(),
           TextDirectionText(),
           SoftWrapText()

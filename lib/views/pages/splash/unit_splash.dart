@@ -57,13 +57,13 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             }
           });
     _secondController =
-        AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
+        AnimationController(duration: Duration(milliseconds: 600), vsync: this)
           ..addListener(() => setState(() {
                 return _secondFactor = _curveAnim2.value;
               }))
           ..addStatusListener((s) {
             if (s == AnimationStatus.completed) {
-              Navigator.of(context).pushReplacementNamed(Router.nav);
+          Navigator.of(context).pushReplacementNamed(Router.nav);
             }
           });
     _curveAnim =
@@ -81,6 +81,35 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     var winH = MediaQuery.of(context).size.height;
     var winW = MediaQuery.of(context).size.width;
 
+    return
+//      GestureDetector(
+//      onTap: () {
+//        _controller.reset();
+//        _controller.forward();
+//      },
+//      child:
+        Scaffold(
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          buildLogo(Colors.blue),
+          Container(
+            width: winW,
+            height: winH,
+            child: CustomPaint(
+              painter: UnitPainter(factor: _factor),
+            ),
+          ),
+          buildText(winH, winW),
+          buildHead(),
+          buildPower(),
+        ],
+      ),
+//      ),
+    );
+  }
+
+  Positioned buildText(double winH, double winW) {
     final shadowStyle = TextStyle(
       fontSize: 45,
       color: Theme.of(context).primaryColor,
@@ -94,60 +123,43 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       ],
     );
 
-    return
-//      GestureDetector(
-//      onTap: () {
-//        _controller.reset();
-//        _controller.forward();
-//      },
-//      child:
-      Scaffold(
-        body: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            buildLogo(Colors.blue),
-            Container(
-              width: winW,
-              height: winH,
-              child: CustomPaint(
-                painter: UnitPainter(factor: _factor),
-              ),
-            ),
-            Positioned(
-              top: winH / 1.4,
-              left: winW * 0.18 * (_secondFactor * 1.5 - 0.5),
-              child: AnimatedOpacity(
-                  duration: Duration(milliseconds: 300),
-                  opacity: _animEnd ? 1.0 : 0.0,
+    return Positioned(
+      top: winH / 1.55,
+      child: Container(
+        height: 150,
+        width: winW,
+        child: AlignTransition(
+          alignment:
+              AlignmentTween(begin: Alignment(-1, 0), end: Alignment.center)
+                  .animate(_secondController),
+          child: AnimatedOpacity(
+              duration: Duration(milliseconds: 300),
+              opacity: _animEnd ? 1.0 : 0.0,
+              child: ShaderMask(
+                  shaderCallback: _buildShader,
                   child: Text(
-                    'Flutter',
+                    'Flutter Unit',
                     style: shadowStyle,
-                  )),
-            ),
-            buildHead(),
-            Positioned(
-              top: winH / 1.4 * (0.1 * _bouncAnim.value + 0.9),
-              left: winW * 0.55,
-              child: AnimatedOpacity(
-                  duration: Duration(milliseconds: 300),
-                  opacity: _animEnd ? 1.0 : 0.0,
-                  child: Text(
-                    'Unit',
-                    style: shadowStyle,
-                  )),
-            ),
-            buildPower(),
-          ],
+                  ))),
         ),
-//      ),
+      ),
     );
   }
+
+  final colors = [Colors.red, Colors.yellow, Colors.blue];
+
+  Shader _buildShader(Rect bounds) => RadialGradient(
+          center: Alignment.topLeft,
+          radius: 1.0,
+          tileMode: TileMode.mirror,
+          colors: colors)
+      .createShader(bounds);
 
   Widget buildLogo(Color primaryColor) {
     return SlideTransition(
       position: Tween<Offset>(
         begin: Offset(0, 0),
-        end: Offset(0, -4),
+        end: Offset(0, -1.5),
       ).animate(_controller),
       child: RotationTransition(
           turns: _controller,
@@ -155,9 +167,15 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             scale: Tween(begin: 2.0, end: 1.0).animate(_controller),
             child: FadeTransition(
                 opacity: _controller,
-                child: FlutterLogo(
-                  colors: primaryColor,
-                  size: 45,
+                child: Container(
+                  height:120,
+                  child: FlutterLogo(
+                    colors: primaryColor,
+                    style: _animEnd
+                        ? FlutterLogoStyle.horizontal
+                        : FlutterLogoStyle.markOnly,
+                    size: _animEnd ? 150 : 45,
+                  ),
                 )),
           )),
     );

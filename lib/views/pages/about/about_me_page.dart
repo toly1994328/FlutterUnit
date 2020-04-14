@@ -21,7 +21,7 @@ class AboutMePage extends StatelessWidget {
               Column(
                 children: <Widget>[
                   Container(
-                    height: 200,
+                    height: 180,
                     width: MediaQuery.of(context).size.width,
                     margin: EdgeInsets.only(bottom: 50),
                     child: Image.asset(
@@ -111,28 +111,26 @@ class AboutMePage extends StatelessWidget {
           '张风捷特烈',
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 20),
         Text(
           'The King Of Coder. 「编程之王」',
           style: TextStyle(fontSize: 16),
         ),
-        SizedBox(height: 16),
+        SizedBox(height: 10),
         Text(
           '海的彼岸有我未曾见证的风采。',
           style: TextStyle(fontSize: 16),
         ),
         Divider(
-          height: 20,
+          height: 18,
         ),
-        Row(
-          children: <Widget>[
+
             Text(
-              '编程技术交流圣地-Flutter群，愿青梅煮酒，与君共话。',
+                  '微信群: 编程技术交流圣地-【Flutter群】\n'
+                  '愿青梅煮酒，与君天涯共话。',
               style: TextStyle(color: Colors.grey),
             ),
-          ],
-        ),
-        SizedBox(height: 16),
+        SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[

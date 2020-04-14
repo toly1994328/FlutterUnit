@@ -45,6 +45,7 @@ class AppStorage {
         codeStyleIndex: codeIndex);
   }
 
+  // 初始化数据库
   Future<Database> initDb() async {
     var databasesPath = await getDatabasesPath();
     var dbPath = path.join(databasesPath, "flutter.db");

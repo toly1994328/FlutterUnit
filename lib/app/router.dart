@@ -49,8 +49,7 @@ class Router {
       case collect:
         return Right2LeftRouter(child: CollectPage());
       case nav:
-        return NoAnimRouter(child: UnitNavigation());
-
+        return Left2RightRouter(child: UnitNavigation());
       case setting:
         return Right2LeftRouter(child: SettingPage());
       case font_setting:

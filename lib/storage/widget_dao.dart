@@ -41,7 +41,7 @@ class WidgetDao {
     final db = await storage.db;
     return await db.rawQuery(
         "SELECT * "
-        "FROM widget WHERE family = ?",
+        "FROM widget WHERE family = ? ORDER BY lever DESC",
         [family.index]);
   }
 

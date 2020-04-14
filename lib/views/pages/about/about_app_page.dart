@@ -151,12 +151,12 @@ class AboutAppPage extends StatelessWidget {
               'Flutter Unit',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Text(
               'The Unity Of Flutter, The Unity Of Coder.',
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 10),
             Text(
               'Flutter的联合，编程者的联合。',
               style: TextStyle(fontSize: 16),
@@ -183,7 +183,7 @@ class AboutAppPage extends StatelessWidget {
                     '○  对一些重要的组件提供操作体验。\n'
                     '○  link to功能，查看组件时可以切换到相关组件。\n'
                     '○  组件收藏和取消收藏功能。\n'
-                    '○  主题设置，字体设置，代码风格等全局状态管理。\n'
+                    '○  主题、字体设置，代码风格等全局状态管理。\n'
                     '○  搜索功能和组件星级分类。',
             ),
             Divider(
@@ -191,9 +191,9 @@ class AboutAppPage extends StatelessWidget {
             ),
             InfoPanel(
               title: 'Flutter Unit 2.0 计划',
-              info:    'Flutter Unit 2.0 尚在计划之中，如果说1.0是我单枪匹马，'
+              info:    'Flutter Unit 2.0 尚在计划之中，如果说1.0是本王单枪匹马，'
                   '那2.0将是Flutter爱好者的共同努力。后面陆续会发布一些征集方案，'
-                  '包括属性、布局、绘制、bug、要点集录等。我想让Unit 成为一个Flutter的圣地，纯粹而强大,期待与你的共同携手。',
+                  '包括属性、布局、绘制、bug、要点集录等。吾想让Unit 成为一个Flutter的圣地，纯粹而强大,期待与你的共同携手。',
             )
           ],
         ),
@@ -227,6 +227,7 @@ class InfoPanel extends StatelessWidget {
           child: Text(
             '$info',
             style: TextStyle(color: Colors.grey,
+                fontSize: 13,
                 shadows: [
                   Shadow(
                       color: Colors.white,

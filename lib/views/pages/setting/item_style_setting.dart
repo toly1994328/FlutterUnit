@@ -58,7 +58,7 @@ class ItemStyleSettingPage extends StatelessWidget {
                 duration: Duration(milliseconds: 200),
                 onPressed: () {
                   BlocProvider.of<GlobalBloc>(context)
-                      .add(EventSwitchCoderTheme(i));
+                      .add(EventChangeItemStyle(i));
                 },
                 child: Stack(
                   children: <Widget>[
