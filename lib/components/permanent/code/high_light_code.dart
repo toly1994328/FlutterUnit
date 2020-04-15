@@ -10,18 +10,14 @@ import 'highlighter_style.dart';
 /// final SyntaxHighlighterStyle style = SyntaxHighlighterStyle.lightThemeStyle();
 /// DartSyntaxHighlighter(style).format(source)
 
-
-
 abstract class Highlighter { // ignore: one_member_abstracts
   TextSpan format(String src);
 }
 
 //暗黑模式下的高亮样式
 class DartHighlighter extends Highlighter {
-  DartHighlighter([this._style]) {
-    _spans = <_HighlightSpan>[];
-    _style ??= HighlighterStyle.fromColors(HighlighterStyle.lightColor);
-  }
+  DartHighlighter([HighlighterStyle style]) :
+    this._style = style ?? HighlighterStyle.fromColors(HighlighterStyle.lightColor);
 
   HighlighterStyle _style;
 
@@ -39,32 +35,25 @@ class DartHighlighter extends Highlighter {
     'int', 'double', 'num', 'bool'
   ];
 
-  String _src;
-  StringScanner _scanner;
-
-  List<_HighlightSpan> _spans;
-
   @override
   TextSpan format(String src) {
-    _src = src;
-    _scanner = StringScanner(_src);
-
-    if (_generateSpans()) {
+    List<_HighlightSpan> _spans = _generateSpans(src);
+    if (_spans != null) {
       // Successfully parsed the code
       final List<TextSpan> formattedText = <TextSpan>[];
       int currentPosition = 0;
 
       for (_HighlightSpan span in _spans) {
         if (currentPosition != span.start)
-          formattedText.add(TextSpan(text: _src.substring(currentPosition, span.start)));
+          formattedText.add(TextSpan(text: src.substring(currentPosition, span.start)));
 
-        formattedText.add(TextSpan(style: span.textStyle(_style), text: span.textForSpan(_src)));
+        formattedText.add(TextSpan(style: span.textStyle(_style), text: span.textForSpan(src)));
 
         currentPosition = span.end;
       }
 
-      if (currentPosition != _src.length)
-        formattedText.add(TextSpan(text: _src.substring(currentPosition, _src.length)));
+      if (currentPosition != src.length)
+        formattedText.add(TextSpan(text: src.substring(currentPosition, src.length)));
 
       return TextSpan(style: _style.baseStyle, children: formattedText);
     } else {
@@ -73,7 +62,9 @@ class DartHighlighter extends Highlighter {
     }
   }
 
-  bool _generateSpans() {
+  static List<_HighlightSpan> _generateSpans(String src) {
+    StringScanner _scanner = StringScanner(src);
+    List<_HighlightSpan> _spans = [];
     int lastLoopPosition = _scanner.position;
 
     while (!_scanner.isDone) {
@@ -100,7 +91,7 @@ class DartHighlighter extends Highlighter {
           endComment = _scanner.lastMatch.end - 1;
         } else {
           eof = true;
-          endComment = _src.length;
+          endComment = src.length;
         }
 
         _spans.add(_HighlightSpan(
@@ -244,29 +235,31 @@ class DartHighlighter extends Highlighter {
       // Check if this loop did anything
       if (lastLoopPosition == _scanner.position) {
         // Failed to parse this file, abort gracefully
-        return false;
+        return null;
       }
       lastLoopPosition = _scanner.position;
     }
 
-    _simplify();
-    return true;
+    _simplify(_spans);
+    return _spans;
   }
 
-  void _simplify() {
-    for (int i = _spans.length - 2; i >= 0; i -= 1) {
-      if (_spans[i].type == _spans[i + 1].type && _spans[i].end == _spans[i + 1].start) {
-        _spans[i] = _HighlightSpan(
-            _spans[i].type,
-            _spans[i].start,
-            _spans[i + 1].end
+  static void _simplify(List<_HighlightSpan> spans) {
+    for (int i = spans.length - 2; i >= 0; i -= 1) {
+      var span = spans[i];
+      var span2 = spans[i + 1];
+      if (span.type == span2.type && span.end == span2.start) {
+        spans[i] = _HighlightSpan(
+            span.type,
+            span.start,
+            span2.end
         );
-        _spans.removeAt(i + 1);
+        spans.removeAt(i + 1);
       }
     }
   }
 
-  bool _firstLetterIsUpperCase(String str) {
+  static bool _firstLetterIsUpperCase(String str) {
     if (str.isNotEmpty) {
       final String first = str.substring(0, 1);
       return first == first.toUpperCase();
