@@ -33,7 +33,7 @@ class GlobalState extends Equatable {
         themeColor: themeColor ?? this.themeColor,
         showBackGround: showBackGround ?? this.showBackGround,
         codeStyleIndex: codeStyleIndex ?? this.codeStyleIndex,
-        itemStyleIndex: codeStyleIndex ?? this.itemStyleIndex,
+        itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
       );
 
   @override

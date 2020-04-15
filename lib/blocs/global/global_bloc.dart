@@ -57,6 +57,7 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
     if (event is EventChangeItemStyle) {
       await sp
         ..setInt(SP.itemStyleIndex, event.index); //固化数据
+      print('EventChangeItemStyle+${event.index}');
       yield state.copyWith(itemStyleIndex: event.index);
     }
   }
