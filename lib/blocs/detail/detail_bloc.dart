@@ -23,6 +23,9 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
     if (event is FetchWidgetDetail) {
       yield* _mapLoadWidgetToState(event.widgetModel);
     }
+    if(event is ResetDetailState){
+      yield DetailEmpty();
+    }
   }
 
   Stream<DetailState> _mapLoadWidgetToState(

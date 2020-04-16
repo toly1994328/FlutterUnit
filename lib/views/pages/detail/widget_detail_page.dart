@@ -25,53 +25,67 @@ class WidgetDetailPage extends StatefulWidget {
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
   @override
+  void deactivate() {
+    BlocProvider.of<DetailBloc>(context).add(ResetDetailState());
+    super.deactivate();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<DetailBloc, DetailState>(builder: (_, state) {
       if (state is DetailWithData) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(state.widgetModel.name),
-            actions: <Widget>[
-              buildCollectButton(state.widgetModel, context),
-            ],
-          ),
-          body: SingleChildScrollView(
-              child: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    _buildLeft(state.widgetModel),
-                    _buildRight(state.widgetModel),
-                  ],
-                ),
-                Divider(),
-                Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15, right: 5),
-                      child: Icon(
-                        Icons.link,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    Text(
-                      '相关组件',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                  ],
-                ),
-                _buildLinkTo(
-                  context,
-                  state.links,
-                ),
-                Divider(),
-                _buildNodes(state.nodes, state.widgetModel.name)
+        return WillPopScope(
+          onWillPop: () async {
+//            Future.delayed(Duration(milliseconds: 500)).then((v){
+//              BlocProvider.of<DetailBloc>(context).add(ResetDetailState());
+//            });
+            return true;
+          },
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text(state.widgetModel.name),
+              actions: <Widget>[
+                buildCollectButton(state.widgetModel, context),
               ],
             ),
-          )),
+            body: SingleChildScrollView(
+                child: Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      _buildLeft(state.widgetModel),
+                      _buildRight(state.widgetModel),
+                    ],
+                  ),
+                  Divider(),
+                  Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15, right: 5),
+                        child: Icon(
+                          Icons.link,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      Text(
+                        '相关组件',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                  _buildLinkTo(
+                    context,
+                    state.links,
+                  ),
+                  Divider(),
+                  _buildNodes(state.nodes, state.widgetModel.name)
+                ],
+              ),
+            )),
+          ),
         );
       }
       return Container();
@@ -83,11 +97,8 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     return BlocListener<CollectBloc, CollectState>(
         listener: (ctx, st) {
           bool collected = st.widgets.contains(model);
-          Toast.toast(
-              ctx,
-              collected
-                  ? "收藏【${model.name}】组件成功!"
-                  : "已取消【${model.name}】组件收藏!");
+          Toast.toast(ctx,
+              collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!");
         },
         child: FeedbackWidget(
           onPressed: () => BlocProvider.of<CollectBloc>(context)
@@ -138,7 +149,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Hero(
-                  tag: "hero_widget_image_${model.name}",
+                  tag: "hero_widget_image_${model.id}",
                   child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       child: model.image == null

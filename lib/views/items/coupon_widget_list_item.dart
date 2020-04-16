@@ -41,7 +41,7 @@ class CouponWidgetListItem extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Hero(
-                    tag: "hero_widget_image_${data.nameCN}",
+                    tag: "hero_widget_image_${data.id}",
                     child: data.image == null
                         ? Material(
                             color: Colors.transparent,

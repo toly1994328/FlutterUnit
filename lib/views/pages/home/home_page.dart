@@ -6,11 +6,10 @@ import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
 import 'package:flutter_unit/blocs/detail/detail_event.dart';
 import 'package:flutter_unit/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/blocs/global/global_event.dart';
-import 'package:flutter_unit/blocs/global/global_state.dart';
 import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
 import 'package:flutter_unit/blocs/widgets/home_event.dart';
 import 'package:flutter_unit/blocs/widgets/home_state.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/pages/common/empty_page.dart';
 import 'package:flutter_unit/views/items/coupon_widget_list_item.dart';
@@ -61,8 +60,9 @@ class _HomePageState extends State<HomePage> {
           controller: _ctrl,
           itemBuilder: (_, index) => Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                child: GestureDetector(
-                    onTap: () => _toDetailPage(items[index]),
+                child: FeedbackWidget(
+                  duration: Duration(milliseconds: 200),
+                    onPressed: () => _toDetailPage(items[index]),
                     child: _mapItemByType(items[index])),
               ),
           itemCount: items.length);
@@ -117,8 +117,9 @@ class _HomePageState extends State<HomePage> {
         .add(EventTabTap(Convert.toFamily(index)));
   }
 
-  _toDetailPage(WidgetModel model) {
+  _toDetailPage(WidgetModel model) async{
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
+    await Future.delayed(Duration(milliseconds: 200));
     Navigator.pushNamed(context, Router.widget_detail);
   }
 }

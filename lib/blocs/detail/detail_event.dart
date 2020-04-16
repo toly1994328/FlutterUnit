@@ -26,3 +26,8 @@ class FetchWidgetDetail extends DetailEvent {
     return 'SeeWidgetDetail{widgetModel: $widgetModel}';
   }
 }
+
+
+class ResetDetailState extends DetailEvent {
+
+}

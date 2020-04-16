@@ -516,7 +516,7 @@ class WidgetsMap {
         return [
           CustomLongPressDraggable(),
         ];
-      case "Expended":
+      case "Expanded":
         return [
           CustomExpended(),
         ];
