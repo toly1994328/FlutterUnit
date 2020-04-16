@@ -36,20 +36,20 @@ class ItemStyleSettingPage extends StatelessWidget {
   }
 
   final items = [
-    TechnoWidgetListItem(data: getContainer()),
-    CouponWidgetListItem(data: getContainer()),
-    CouponWidgetListItem(hasTopHole:false,data: getContainer()),
-    CouponWidgetListItem(hasTopHole:true,hasBottomHole:true,data: getContainer()),
+    TechnoWidgetListItem(data: getContainer(1)),
+    CouponWidgetListItem(data: getContainer(2)),
+    CouponWidgetListItem(hasTopHole:false,data: getContainer(3)),
+    CouponWidgetListItem(hasTopHole:true,hasBottomHole:true,data: getContainer(4)),
   ];
 
- static WidgetModel getContainer()=> WidgetModel(
+  static WidgetModel getContainer(int tempID)=> WidgetModel(
+      id:tempID,
       name: 'Container',
       nameCN: Random().nextDouble().toString(),
       lever: 5,
       family: WidgetFamily.statelessWidget,
-      info: '用于容纳单个子组件的容器组件。集成了若干个单子组件的功能，如内外边距、形变、装饰、约束等...');
-
-
+      info: '用于容纳单个子组件的容器组件。集成了若干个单子组件的功能，如内外边距、形变、装饰、约束等...'
+  );
 
   Widget _buildFontCell(BuildContext context, int index) {
     return ListView.builder(
