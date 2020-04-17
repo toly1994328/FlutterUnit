@@ -5,9 +5,7 @@
 ### FlutterUnit apk 下载体验:
 
 
-
-![](https://user-gold-cdn.xitu.io/2020/4/16/17182551c57d6ebb?w=300&h=390&f=png&s=22366)
-
+![](https://user-gold-cdn.xitu.io/2020/4/17/1718718571499768?w=300&h=390&f=png&s=22153)
 
 ---
 
@@ -38,8 +36,6 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 |------|------------|------------|
 | ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c3f21476fc5?w=1080&h=2340&f=jpeg&s=67728)| ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c44a1cfa94c?w=1080&h=2340&f=jpeg&s=92664)|    ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c4a7cd90126?w=1080&h=2340&f=jpeg&s=114306) |
 |  ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c5171d0373f?w=1080&h=2340&f=jpeg&s=159437)  | ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c56ce136676?w=1080&h=2340&f=jpeg&s=87311)       |![](https://user-gold-cdn.xitu.io/2020/4/14/17175c61623c6462?w=1080&h=2340&f=jpeg&s=108215)|
-| ![](https://user-gold-cdn.xitu.io/2020/4/14/171775f429e77628?w=1080&h=2340&f=png&s=350811)  | ![](https://user-gold-cdn.xitu.io/2020/4/14/17175d050c8ebdac?w=1080&h=2340&f=jpeg&s=116274)      |![](https://user-gold-cdn.xitu.io/2020/4/14/17175d09ac9ebd06?w=1080&h=2340&f=jpeg&s=103820)|
-
 
 
 
@@ -54,7 +50,6 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 | . | . | . |
 |------|------------|------------|
 | ![](https://user-gold-cdn.xitu.io/2020/4/14/17175df98f83e05c?w=362&h=724&f=gif&s=1061771)| ![](https://user-gold-cdn.xitu.io/2020/4/14/17175dcce9022ddc?w=362&h=724&f=gif&s=232124)|   ![](https://user-gold-cdn.xitu.io/2020/4/14/17175de9b348a26a?w=362&h=724&f=gif&s=946647)|
-|  ![](https://user-gold-cdn.xitu.io/2020/4/14/17175e07aeb7c5db?w=362&h=724&f=gif&s=934471) | ![](https://user-gold-cdn.xitu.io/2020/4/14/17175e14f00bacd6?w=362&h=724&f=gif&s=2032439)      |![](https://user-gold-cdn.xitu.io/2020/4/14/17175e2353306a37)|
 
 ---
 
@@ -90,8 +85,6 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 | . | . | . |
 |------|------------|------------|
 | ![](https://user-gold-cdn.xitu.io/2020/4/14/171760c51633383d?w=1080&h=2340&f=jpeg&s=94977)| ![](https://user-gold-cdn.xitu.io/2020/4/14/171760cbc7d0ddba?w=1080&h=2340&f=jpeg&s=89001) |    ![](https://user-gold-cdn.xitu.io/2020/4/14/171760b8c24c188f?w=1080&h=2340&f=jpeg&s=168263) |
-| ![](https://user-gold-cdn.xitu.io/2020/4/14/171760e274f4bbd4?w=1080&h=2340&f=jpeg&s=165793) | ![](https://user-gold-cdn.xitu.io/2020/4/14/171760e5a8ef180d?w=1080&h=2340&f=jpeg&s=167091)     |![](https://user-gold-cdn.xitu.io/2020/4/14/171760fd8bb60a8f?w=1080&h=2340&f=png&s=1105286)|
-
 
 
 
@@ -126,9 +119,6 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 | . | . |
 |------|------------|
 |![](https://user-gold-cdn.xitu.io/2020/4/14/1717628b5fe1591c?w=1080&h=759&f=png&s=105023)| ![](https://user-gold-cdn.xitu.io/2020/4/14/1717629001ade9b0?w=1080&h=773&f=png&s=102672)|
-![](https://user-gold-cdn.xitu.io/2020/4/14/17176298797c49a7?w=1080&h=769&f=png&s=93521) |![](https://user-gold-cdn.xitu.io/2020/4/14/171762a2e5534237?w=1080&h=753&f=png&s=122928)|
-![](https://user-gold-cdn.xitu.io/2020/4/14/171762a5db361ce9?w=1080&h=759&f=png&s=106838)|![](https://user-gold-cdn.xitu.io/2020/4/14/171762aad1c14ce7?w=1080&h=756&f=png&s=94480)|
-
 
 ---
 
@@ -172,19 +162,29 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 
 
 
----
-
-### 四、FlutterUnit 2.0 展望
-
-> 后面将是一些集录，需要更多的Flutter爱好者参与，计划方案将陆续发布。
-
-| . | . |
-|------|------------|
-|![](https://user-gold-cdn.xitu.io/2020/4/14/171777f2cf762719?w=1080&h=2340&f=png&s=407929)| ![](https://user-gold-cdn.xitu.io/2020/4/14/1717799a14c22a11?w=1080&h=2340&f=png&s=448164) |
-![](https://user-gold-cdn.xitu.io/2020/4/14/1717799eb0f01c6f?w=1080&h=2340&f=png&s=431993) |![](https://user-gold-cdn.xitu.io/2020/4/14/171779a42e429ce1?w=1080&h=2340&f=png&s=393176)|
-
 
 ---
 
 
-> 最后，欢迎[Star和关注FlutterUnit](https://github.com/toly1994328/FlutterUnit) 的发展，让我们一起携手，成为Unit一员。
+###  Flutter Unit  Bug - Feature
+
+ - `2020-4-16`
+
+```
+fixed "     修改样式无法点击的问题。
+fixed "     一些已知文案的错误。
+fixed "     hero动画闪现不同步问题。
+```
+
+---
+
+ - `2020-4-17`
+
+```
+fixed "     进入收藏页，再回到首页，顶部显示不同步的问题。
+fixed "     主页item双击黑屏问题。
+
+
+feature "   支持详情页【相关链接的栈管理】,
+        "   即: 点击多个链接，不直接返回主页.
+```

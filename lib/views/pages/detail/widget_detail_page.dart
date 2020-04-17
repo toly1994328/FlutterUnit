@@ -52,7 +52,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         _models.removeLast();
         if(_models.length>0){
           setState(() {
-
+            BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(_models.last));
           });
           return false;
         }else{
@@ -181,8 +181,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           children: links
               .map((e) => ActionChip(
                     onPressed: () {
-                      BlocProvider.of<DetailBloc>(context)
-                          .add(FetchWidgetDetail(e));
+                      BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(e));
                       setState(() {
                         _models.add(e);
                       });
