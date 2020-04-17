@@ -6,6 +6,7 @@ import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/collect/collect_state.dart';
 import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
 import 'package:flutter_unit/blocs/detail/detail_event.dart';
+import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/items/collect_widget_list_item.dart';
 
@@ -24,6 +25,7 @@ class CollectPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: BlocProvider.of<HomeBloc>(context).state.homeColor,
         title: Text('收藏集'),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.add,size: 30,), onPressed: (){

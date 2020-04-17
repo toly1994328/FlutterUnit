@@ -4,8 +4,6 @@ import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
-import 'package:flutter_unit/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/blocs/global/global_state.dart';
 import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
 import 'package:flutter_unit/blocs/widgets/home_state.dart';
 import 'package:flutter_unit/views/pages/navigation/unit_bottom_bar.dart';
@@ -36,19 +34,14 @@ class _UnitNavigationState extends State<UnitNavigation> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
-        builder: (_, state) =>
-            Scaffold(
+        builder: (_, state) => Scaffold(
             drawer: HomeDrawer(),
             //左滑页
             endDrawer: HomeDrawer(),
             //右滑页
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
-            floatingActionButton: FloatingActionButton(
-              backgroundColor: state.homeColor,
-              child: Icon(Icons.search),
-              onPressed: () => Navigator.of(context).pushNamed(Router.search),
-            ),
+            floatingActionButton: _buildSearchButton(state.homeColor),
             body: PageView(
               physics: NeverScrollableScrollPhysics(),
               //使用PageView实现页面的切换
@@ -61,9 +54,16 @@ class _UnitNavigationState extends State<UnitNavigation> {
             bottomNavigationBar: UnitBottomBar(
                 color: state.homeColor,
                 itemData: Cons.ICONS_MAP,
-                onItemClick: _onTapNav)
-            )
-    );
+                onItemClick: _onTapNav)));
+  }
+
+  Widget _buildSearchButton(Color color) {
+    return Builder(
+        builder: (context) => FloatingActionButton(
+              backgroundColor: color,
+              child: Icon(Icons.search),
+          onPressed: () => Navigator.of(context).pushNamed(Router.search),
+            ));
   }
 
   _onTapNav(int index) {
@@ -74,4 +74,3 @@ class _UnitNavigationState extends State<UnitNavigation> {
     }
   }
 }
-

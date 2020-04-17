@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 class UnitBottomBar extends StatefulWidget {
   final Color color;
@@ -11,8 +11,8 @@ class UnitBottomBar extends StatefulWidget {
 
   UnitBottomBar(
       {this.color = Colors.blue,
-        @required this.itemData,
-        @required this.onItemClick});
+      @required this.itemData,
+      @required this.onItemClick});
 
   @override
   _UnitBottomBarState createState() => _UnitBottomBarState();
@@ -30,24 +30,20 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
         color: widget.color,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: widget.itemData.keys
-              .map((e) => _buildChild(info.indexOf(e), widget.color))
+          children: info
+              .map((e) => _buildChild(context, info.indexOf(e), widget.color))
               .toList(),
         ));
   }
 
   List<String> get info => widget.itemData.keys.toList();
 
-  Widget _buildChild(int i, Color color) {
+  Widget _buildChild(BuildContext context, int i, Color color) {
     var active = i == _position;
     bool left = i == 0;
     return GestureDetector(
-      onTap: () => setState(() {
-        _position = i;
-        if (widget.onItemClick != null) {
-          widget.onItemClick(_position);
-        }
-      }),
+      onTap: () => _tapTab(i),
+      onLongPress: () => _onLongPress(context, i),
       child: Material(
         elevation: 2,
         shape: RoundedRectangleBorder(
@@ -73,5 +69,23 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
             )),
       ),
     );
+  }
+
+  _tapTab(int i) {
+    setState(() {
+      _position = i;
+      if (widget.onItemClick != null) {
+        widget.onItemClick(_position);
+      }
+    });
+  }
+
+  _onLongPress(BuildContext context, int i) {
+    if (i == 0) {
+      Scaffold.of(context).openDrawer();
+    }
+    if (i == 1) {
+      Scaffold.of(context).openEndDrawer();
+    }
   }
 }
