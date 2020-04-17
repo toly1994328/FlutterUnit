@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/convert.dart';
+import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
 import 'package:flutter_unit/blocs/detail/detail_event.dart';
@@ -36,8 +37,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
+
     return Scaffold(
         appBar: TolyAppBar(
+          selectIndex: Cons.tabColors.indexOf(color.value),
           preferredSize: Size.fromHeight(_height),
           onItemClick: _switchTab,
         ),
@@ -119,7 +123,6 @@ class _HomePageState extends State<HomePage> {
 
   _toDetailPage(WidgetModel model) async{
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-    await Future.delayed(Duration(milliseconds: 200));
-    Navigator.pushNamed(context, Router.widget_detail);
+    Navigator.pushNamed(context, Router.widget_detail,arguments: model);
   }
 }

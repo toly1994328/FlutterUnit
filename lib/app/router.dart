@@ -43,7 +43,7 @@ class Router {
     switch (settings.name) {
       //根据名称跳转相应页面
       case widget_detail:
-        return Right2LeftRouter(child: WidgetDetailPage());
+        return Right2LeftRouter(child: WidgetDetailPage(model: settings.arguments,));
       case search:
         return Right2LeftRouter(child: SearchPage());
       case collect:

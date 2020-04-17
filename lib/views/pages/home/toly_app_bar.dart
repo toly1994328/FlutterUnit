@@ -10,7 +10,8 @@ class TolyAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   final Size preferredSize;
 
-  TolyAppBar({this.onItemClick, this.preferredSize,});
+  final int selectIndex;
+  TolyAppBar({this.onItemClick, this.preferredSize,this.selectIndex=0});
 }
 
 class _TolyAppBarState extends State<TolyAppBar>
@@ -24,6 +25,8 @@ class _TolyAppBarState extends State<TolyAppBar>
 
   AnimationController _controller;
 
+
+
   @override
   void initState() {
     _controller =
@@ -34,7 +37,7 @@ class _TolyAppBarState extends State<TolyAppBar>
               setState(() {});
             }
           });
-
+    _selectIndex=widget.selectIndex;
     super.initState();
   }
 

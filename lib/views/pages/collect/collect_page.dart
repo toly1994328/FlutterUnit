@@ -56,6 +56,6 @@ class CollectPage extends StatelessWidget {
 
   _toDetailPage(BuildContext context, WidgetModel model) {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-    Navigator.pushNamed(context, Router.widget_detail);
+    Navigator.pushNamed(context, Router.widget_detail,arguments: model);
   }
 }

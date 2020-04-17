@@ -130,7 +130,6 @@ class _SearchPageState extends State<SearchPage> {
 
   _toDetailPage(WidgetModel model) {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-//    BlocProvider.of<CollectBloc>(context).add(EventSetCollect(collect:model.collected));
-    Navigator.pushNamed(context, Router.widget_detail);
+    Navigator.pushNamed(context, Router.widget_detail,arguments: model);
   }
 }
