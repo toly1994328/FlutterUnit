@@ -58,12 +58,12 @@ class _UnitNavigationState extends State<UnitNavigation> {
   }
 
   Widget _buildSearchButton(Color color) {
-    return Builder(
-        builder: (context) => FloatingActionButton(
-              backgroundColor: color,
-              child: Icon(Icons.search),
-          onPressed: () => Navigator.of(context).pushNamed(Router.search),
-            ));
+    return FloatingActionButton(
+      elevation: 2,
+      backgroundColor: color,
+      child: Icon(Icons.search),
+      onPressed: () => Navigator.of(context).pushNamed(Router.search),
+    );
   }
 
   _onTapNav(int index) {
