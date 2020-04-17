@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-17
 /// contact me by email 1981462002@qq.com
-/// 说明:
+/// 说明: 收藏对象
 
 class CollectModel {
   final String name;
