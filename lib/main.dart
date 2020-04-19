@@ -17,6 +17,7 @@ import 'blocs/widgets/home_bloc.dart';
 import 'blocs/widgets/home_event.dart';
 
 import 'app/router.dart';
+import 'tools/widget_me_repository.dart';
 
 void main() async {
 //    await Initial.init();
@@ -35,6 +36,7 @@ class BlocWrapper extends StatelessWidget {
   BlocWrapper({this.child});
 
   final repository = WidgetDbRepository(storage);
+//  final repository = WidgetMeRepository();
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/widgets/StatelessWidget/RadioListTile.dart';
+
 //    {
 //      "widgetId": 52,
 //      "name": 'ExpansionTile基本使用',
@@ -19,21 +20,17 @@ class CustomExpansionTile extends StatefulWidget {
 }
 
 class _CustomExpansionTileState extends State<CustomExpansionTile> {
-
   @override
   Widget build(BuildContext context) {
-
     return ExpansionTile(
       leading: Icon(Icons.star),
       title: Text("选择语言"),
       backgroundColor: Colors.grey.withAlpha(6),
-      onExpansionChanged: (value){
+      onExpansionChanged: (value) {
         print('$value');
       },
       initiallyExpanded: false,
-      children: <Widget>[
-        CustomRadioListTile()
-      ],
+      children: <Widget>[CustomRadioListTile()],
     );
   }
 }

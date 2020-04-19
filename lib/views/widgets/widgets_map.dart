@@ -5,6 +5,10 @@ import 'ProxyWidget/InheritedWidget/DefaultTextStyle.dart';
 import 'ProxyWidget/InheritedWidget/DividerTheme.dart';
 import 'ProxyWidget/InheritedWidget/IconTheme.dart';
 import 'ProxyWidget/InheritedWidget/SliderTheme.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/AbsorbPointer.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/BackdropFilter.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/IgnorePointer.dart';
+import 'RenderObjectWidget/SingleChildRenderObjectWidget/LayoutBuilder.dart';
 import 'RenderObjectWidget/SingleChildRenderObjectWidget/ShaderMask.dart';
 import 'StatefulWidget/stateful_unit.dart';
 import 'StatelessWidget/stateless_unit.dart';
@@ -939,6 +943,24 @@ class WidgetsMap {
         return [
           SliderThemeDemo(),
           DIYSliderTheme(),
+        ];
+      case "LayoutBuilder":
+        return [
+          CustomLayoutBuilder(),
+          FitByLayoutBuilder(),
+          SimpleExpandableText(),
+        ];
+      case "IgnorePointer":
+        return [
+          CustomIgnorePointer(),
+        ];
+      case "AbsorbPointer":
+        return [
+          CustomAbsorbPointer(),
+        ];
+      case "BackdropFilter":
+        return [
+          CustomBackdropFilter(),
         ];
     }
   }

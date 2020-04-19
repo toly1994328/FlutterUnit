@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/dialogs/dialog_about.dart';
+
+/// create by 张风捷特烈 on 2020-04-19
+/// contact me by email 1981462002@qq.com
+/// 说明:
+
+//    {
+//      "widgetId": 292,
+//      "name": 'IgnorePointer基本使用',
+//      "priority": 1,
+//      "subtitle":
+//          "【child】 : 孩子组件   【Widget】\n"
+//          "【ignoring】 : 是否忽视事件   【bool】\n"
+//          "如下,Switch选中时ignoring为true，按钮事件将被锁定，无法点击。",
+//    }
+
+class CustomIgnorePointer extends StatefulWidget {
+  @override
+  _CustomIgnorePointerState createState() => _CustomIgnorePointerState();
+}
+
+class _CustomIgnorePointerState extends State<CustomIgnorePointer> {
+  bool _ignore = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: (){
+              print('IgnorePointer');
+            },
+            child: IgnorePointer(
+              ignoring: _ignore,
+              child: _buildButton(),
+            ),
+          ),
+          _buildSwitch(),
+          Text(!_ignore ? '允许点击' : '点击已锁定')
+        ],
+      ),
+    );
+  }
+
+  Widget _buildButton() => RaisedButton(
+      color: Theme.of(context).primaryColor,
+      child: Text(
+        'To About',
+        style: TextStyle(color: Colors.white),
+      ),
+      onPressed: () => DialogAbout.show(context));
+
+  _buildSwitch() => Switch(
+      value: _ignore,
+      onChanged: (v) {
+        setState(() {
+          _ignore = v;
+        });
+      });
+}
