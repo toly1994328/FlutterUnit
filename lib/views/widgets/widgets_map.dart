@@ -21,7 +21,7 @@ import 'ProxyWidget/Positioned.dart';
 import 'StatelessWidget/Spacer.dart';
 import 'RenderObjectWidget/ErrorWidget.dart';
 import 'RenderObjectWidget/MultiChildRenderObjectWidget/Column.dart';
-import 'ProxyWidget/Expended.dart';
+import 'ProxyWidget/Expanded.dart';
 import 'RenderObjectWidget/MultiChildRenderObjectWidget/IndexedStack.dart';
 import 'RenderObjectWidget/MultiChildRenderObjectWidget/Row.dart';
 import 'RenderObjectWidget/SingleChildRenderObjectWidget/AnimatedSize.dart';

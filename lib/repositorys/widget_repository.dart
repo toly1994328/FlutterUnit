@@ -1,7 +1,8 @@
 
 
 import 'package:flutter_unit/app/enums.dart';
-import 'package:flutter_unit/storage/widget_dao.dart';
+import 'package:flutter_unit/model/collect_model.dart';
+import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
@@ -19,6 +20,12 @@ abstract class WidgetRepository {
   Future<List<NodeModel>> loadNode(WidgetModel widgetModel);
 
   Future<void> toggleCollect(int id);
+
   Future<List<WidgetModel>> loadCollectWidgets();
+
+
+  Future<List<CollectModel>> loadCollects();
+
+
 
 }

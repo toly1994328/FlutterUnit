@@ -14,6 +14,10 @@ import 'package:flutter_unit/blocs/widgets/home_state.dart';
 /// 说明:
 
 class HomeDrawer extends StatelessWidget {
+  final Color color;
+
+  HomeDrawer({this.color});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -22,82 +26,80 @@ class HomeDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildChild(BuildContext context) =>
-      BlocBuilder<HomeBloc,HomeState>(
-          builder: (_, state) => Container(
-                color: state.homeColor.withAlpha(33),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: <Widget>[
-                    _buildDrawerHeader(state.homeColor),
-                    ListTile(
-                      leading: Icon(
-                        TolyIcon.icon_them,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      trailing: _nextIcon(context),
-                      title: Text('我的主题'),
-                      onTap: () {
-                        Navigator.of(context).pushNamed(Router.setting);
-                      },
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        TolyIcon.icon_star,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      title: Text('我的收藏'),
-                      trailing: _nextIcon(context),
-                      onTap: () {
-                        Navigator.of(context).pushNamed(Router.collect);
-                      },
-                    ),
-                    Divider(
-                      height: 1,
-                    ),
-                    _buildFlutterUnit(context),
-                    ListTile(
-                      leading: Icon(
-                        TolyIcon.icon_code,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      title: Text('Dart 手册'),
-                      trailing: _nextIcon(context),
-                      onTap: () {},
-                    ),
-                    Divider(
-                      height: 1,
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        TolyIcon.icon_layout,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      title: Text('数据统计'),
-                      trailing: _nextIcon(context),
-                      onTap: () {},
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.info,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      title: Text('关于应用'),
-                      trailing: _nextIcon(context),
-                      onTap: () => Navigator.of(context).pushNamed(Router.about_app),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        TolyIcon.icon_kafei,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      title: Text('联系本王'),
-                      trailing: _nextIcon(context),
-                      onTap: () => Navigator.of(context).pushNamed(Router.about_me),
-                    ),
-                  ],
-                ),
-              ));
+  Widget _buildChild(BuildContext context) => Container(
+        color: color.withAlpha(33),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            _buildDrawerHeader(color),
+            ListTile(
+              leading: Icon(
+                TolyIcon.icon_them,
+                color: Theme.of(context).primaryColor,
+              ),
+              trailing: _nextIcon(context),
+              title: Text('我的主题'),
+              onTap: () {
+                Navigator.of(context).pushNamed(Router.setting);
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                TolyIcon.icon_star,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text('我的收藏'),
+              trailing: _nextIcon(context),
+              onTap: () {
+                Navigator.of(context).pushNamed(Router.collect);
+              },
+            ),
+            Divider(
+              height: 1,
+            ),
+            _buildFlutterUnit(context),
+            ListTile(
+              leading: Icon(
+                TolyIcon.icon_code,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text('Dart 手册'),
+              trailing: _nextIcon(context),
+              onTap: () {},
+            ),
+            Divider(
+              height: 1,
+            ),
+            ListTile(
+              leading: Icon(
+                TolyIcon.icon_layout,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text('数据统计'),
+              trailing: _nextIcon(context),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.info,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text('关于应用'),
+              trailing: _nextIcon(context),
+              onTap: () => Navigator.of(context).pushNamed(Router.about_app),
+            ),
+            ListTile(
+              leading: Icon(
+                TolyIcon.icon_kafei,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text('联系本王'),
+              trailing: _nextIcon(context),
+              onTap: () => Navigator.of(context).pushNamed(Router.about_me),
+            ),
+          ],
+        ),
+      );
 
   Widget _buildFlutterUnit(BuildContext context) => ExpansionTile(
         backgroundColor: Colors.white70,
@@ -187,8 +189,7 @@ class HomeDrawer extends StatelessWidget {
             Text(
               'The Unity Of Flutter, The Unity Of Coder.',
               style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                Shadow(
-                    color: color, offset: Offset(.5, .5), blurRadius: 1)
+                Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
               ]),
             ),
             SizedBox(
@@ -197,8 +198,7 @@ class HomeDrawer extends StatelessWidget {
             Text(
               'Flutter的联合，编程者的联合。',
               style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                Shadow(
-                    color: color, offset: Offset(.5, .5), blurRadius: 1)
+                Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
               ]),
             ),
             SizedBox(

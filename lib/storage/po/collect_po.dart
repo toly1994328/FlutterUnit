@@ -19,7 +19,7 @@ import 'package:equatable/equatable.dart';
 class CollectPo extends Equatable {
   final int id;
   final String name;
-  final int color;
+  final String color;
   final String info;
   final DateTime created;
   final DateTime updated;
@@ -33,10 +33,10 @@ class CollectPo extends Equatable {
         id: map['id'],
         name: map['name'],
         color: map["color"],
-        created: map["created"],
+        created: DateTime.parse(map["created"]),
         image: map["image"],
         priority: map["priority"],
-        updated: map["updated"],
+        updated: DateTime.parse(map["updated"]),
         info: map["info"]);
   }
 

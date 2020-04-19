@@ -10,7 +10,7 @@ import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/items/collect_widget_list_item.dart';
 
-class CollectPage extends StatelessWidget {
+class DefaultCollectPage extends StatelessWidget {
   final gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
     mainAxisSpacing: 10,
@@ -26,24 +26,21 @@ class CollectPage extends StatelessWidget {
         title: Text('收藏集'),
         actions: <Widget>[_buildAddActionBuilder(context)],
       ),
-      body:Container(color: Colors.purpleAccent,)
-
-//      BlocBuilder<CollectBloc, CollectState>(builder: (_, state) {
-//        return GridView.builder(
-//          padding: EdgeInsets.all(10),
-//          itemCount: state.widgets.length,
-//          itemBuilder: (_, index) => Container(
-//            child: GestureDetector(
-//                onTap: () => _toDetailPage(context, state.widgets[index]),
-//                child: CollectWidgetListItem(
-//                  data: state.widgets[index],
-//                  onDelectItemClick: (model) => _deleteCollect(context, model),
-//                )),
-//          ),
-//          gridDelegate: gridDelegate,
-//        );
-//      }
-//      ),
+      body: BlocBuilder<CollectBloc, CollectState>(builder: (_, state) {
+        return GridView.builder(
+          padding: EdgeInsets.all(10),
+          itemCount: state.widgets.length,
+          itemBuilder: (_, index) => Container(
+            child: GestureDetector(
+                onTap: () => _toDetailPage(context, state.widgets[index]),
+                child: CollectWidgetListItem(
+                  data: state.widgets[index],
+                  onDelectItemClick: (model) => _deleteCollect(context, model),
+                )),
+          ),
+          gridDelegate: gridDelegate,
+        );
+      }),
     );
   }
 

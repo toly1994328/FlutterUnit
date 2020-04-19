@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
+import 'package:flutter_unit/views/pages/collect/default_collect_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/font_setting.dart';
@@ -47,7 +48,7 @@ class Router {
       case search:
         return Right2LeftRouter(child: SearchPage());
       case collect:
-        return Right2LeftRouter(child: CollectPage());
+        return Right2LeftRouter(child: DefaultCollectPage());
       case nav:
         return Left2RightRouter(child: UnitNavigation());
       case setting:

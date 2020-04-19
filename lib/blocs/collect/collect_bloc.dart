@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/storage/widget_dao.dart';
+import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/repositorys/widget_repository.dart';
 
 import 'collect_event.dart';
@@ -28,10 +28,13 @@ class CollectBloc extends Bloc<CollectEvent, CollectState> {
     if (event is ToggleCollectEvent) {
       await repository.toggleCollect(event.id);
       final widgets = await repository.loadCollectWidgets();
+
       yield CollectState(widgets: widgets);
     }
     if( event is EventSetCollectData){
       final widgets = await repository.loadCollectWidgets();
+      final collect = await repository.loadCollects();
+      print(collect);
       yield CollectState(widgets: widgets);
     }
   }

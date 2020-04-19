@@ -40,20 +40,20 @@ class _HomePageState extends State<HomePage> {
     var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
 
     return Scaffold(
-        appBar: TolyAppBar(
-          selectIndex: Cons.tabColors.indexOf(color.value),
-          preferredSize: Size.fromHeight(_height),
-          onItemClick: _switchTab,
-        ),
-        body: Stack(
-          children: <Widget>[
-            if (BlocProvider.of<GlobalBloc>(context).state.showBackGround)
-              Background(),
-            BlocBuilder<HomeBloc, HomeState>(
-                builder: (_, state) => _buildContent(state))
-          ],
-        ),
-      );
+      appBar: TolyAppBar(
+        selectIndex: Cons.tabColors.indexOf(color.value),
+        preferredSize: Size.fromHeight(_height),
+        onItemClick: _switchTab,
+      ),
+      body: Stack(
+        children: <Widget>[
+          if (BlocProvider.of<GlobalBloc>(context).state.showBackGround)
+            Background(),
+          BlocBuilder<HomeBloc, HomeState>(
+              builder: (_, state) => _buildContent(state))
+        ],
+      ),
+    );
   }
 
   Widget _buildContent(HomeState state) {
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           itemBuilder: (_, index) => Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
                 child: FeedbackWidget(
-                  duration: Duration(milliseconds: 200),
+                    duration: Duration(milliseconds: 200),
                     onPressed: () => _toDetailPage(items[index]),
                     child: _mapItemByType(items[index])),
               ),
@@ -92,15 +92,15 @@ class _HomePageState extends State<HomePage> {
         );
       case 2:
         return CouponWidgetListItem(
-          hasTopHole:false,
+          hasTopHole: false,
           data: model,
         );
       case 3:
         return CouponWidgetListItem(
-          hasTopHole:true,hasBottomHole:true,
+          hasTopHole: true,
+          hasBottomHole: true,
           data: model,
         );
-
     }
     return TechnoWidgetListItem(
       data: model,
@@ -121,8 +121,8 @@ class _HomePageState extends State<HomePage> {
         .add(EventTabTap(Convert.toFamily(index)));
   }
 
-  _toDetailPage(WidgetModel model) async{
+  _toDetailPage(WidgetModel model) async {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-    Navigator.pushNamed(context, Router.widget_detail,arguments: model);
+    Navigator.pushNamed(context, Router.widget_detail, arguments: model);
   }
 }

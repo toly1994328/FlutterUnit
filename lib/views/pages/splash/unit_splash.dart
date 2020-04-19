@@ -68,8 +68,6 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
           });
     _curveAnim =
         CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
-    _bouncAnim =
-        CurvedAnimation(parent: _secondController, curve: Curves.bounceOut);
     _curveAnim2 =
         CurvedAnimation(parent: _secondController, curve: Curves.fastOutSlowIn);
     _controller.forward();

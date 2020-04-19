@@ -6,6 +6,8 @@ import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
 import 'package:flutter_unit/blocs/widgets/home_state.dart';
+import 'package:flutter_unit/views/pages/collect/default_collect_page.dart';
+import 'package:flutter_unit/views/pages/collect/home_right_drawer.dart';
 import 'package:flutter_unit/views/pages/navigation/unit_bottom_bar.dart';
 import '../collect/collect_page.dart';
 import '../home/home_page.dart';
@@ -35,9 +37,9 @@ class _UnitNavigationState extends State<UnitNavigation> {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
         builder: (_, state) => Scaffold(
-            drawer: HomeDrawer(),
+            drawer: HomeDrawer(color:state.homeColor),
             //左滑页
-            endDrawer: HomeDrawer(),
+            endDrawer: HoneRightDrawer(color: state.homeColor,),
             //右滑页
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
@@ -48,7 +50,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
               controller: _controller,
               children: <Widget>[
                 HomePage(),
-                CollectPage(),
+                DefaultCollectPage(),
               ],
             ),
             bottomNavigationBar: UnitBottomBar(
