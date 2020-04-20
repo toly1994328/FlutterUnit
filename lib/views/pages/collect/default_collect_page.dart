@@ -23,7 +23,6 @@ class DefaultCollectPage extends StatelessWidget {
   final _tabs = ['默认收藏', '收藏集录'];
 
 
-
   @override
   Widget build(BuildContext context) {
    var _topContext = context;
