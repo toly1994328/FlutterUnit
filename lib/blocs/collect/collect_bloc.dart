@@ -28,13 +28,10 @@ class CollectBloc extends Bloc<CollectEvent, CollectState> {
     if (event is ToggleCollectEvent) {
       await repository.toggleCollect(event.id);
       final widgets = await repository.loadCollectWidgets();
-
       yield CollectState(widgets: widgets);
     }
     if( event is EventSetCollectData){
       final widgets = await repository.loadCollectWidgets();
-      final collect = await repository.loadCollects();
-      print(collect);
       yield CollectState(widgets: widgets);
     }
   }
