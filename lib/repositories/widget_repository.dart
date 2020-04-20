@@ -22,6 +22,7 @@ abstract class WidgetRepository {
   Future<void> toggleCollect(int id);
 
   Future<List<WidgetModel>> loadCollectWidgets();
+  Future<bool> collected(int id);
 
 
   Future<List<CollectModel>> loadCollects();

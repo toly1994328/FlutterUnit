@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
-import 'package:flutter_unit/repositorys/widget_repository.dart';
+import 'package:flutter_unit/repositories/widget_repository.dart';
 
 import 'collect_event.dart';
 import 'collect_state.dart';

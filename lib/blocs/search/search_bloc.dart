@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/repositorys/widget_repository.dart';
+import 'package:flutter_unit/repositories/widget_repository.dart';
 
 import 'search_event.dart';
 import 'search_state.dart';

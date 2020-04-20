@@ -78,6 +78,18 @@ class WidgetDao {
     return await db.rawQuery("SELECT * "
         "FROM widget WHERE collected = 1 ORDER BY family,lever DESC");
   }
+
+ Future<bool> collected(int id) async {
+   final db = await storage.db;
+   var data = await db.rawQuery("SELECT collected "
+       "FROM widget WHERE id = ?");
+
+   if(data.length>0){
+     return data[0]['collected'] == 1;
+   }
+   return false;
+ }
+
 }
 
 class SearchArgs {
