@@ -75,7 +75,6 @@ class WidgetDbRepository implements WidgetRepository {
   Future<List<CollectModel>> loadCollects() async {
     var data = await _collectDao.queryAll();
     var collects = data.map((e) => CollectPo.fromJson(e)).toList();
-    print(collects);
     return null;
   }
 

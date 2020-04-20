@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CircleImage extends StatelessWidget {
   CircleImage(
       {Key key,
+        this.borderSize =3,
       @required this.image,
       this.size = 70,
       this.shadowColor,
@@ -12,6 +13,7 @@ class CircleImage extends StatelessWidget {
   final double size; //大小
   final Color shadowColor; //阴影颜色
   final Color roundColor; //边框颜色
+  final double borderSize;
   @override
   Widget build(BuildContext context) {
     var headIcon = Container(
@@ -29,7 +31,7 @@ class CircleImage extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.all(3),
+        padding: EdgeInsets.all(borderSize),
         child:
         CircleAvatar(
           backgroundImage: image,
