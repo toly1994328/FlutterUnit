@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
-import 'package:flutter_unit/views/pages/collect/default_collect_page.dart';
+import 'package:flutter_unit/views/pages/collect/collect_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/font_setting.dart';
@@ -9,7 +9,7 @@ import 'package:flutter_unit/views/pages/setting/item_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/theme_color_setting.dart';
 import 'package:flutter_unit/views/pages/unit_todo/attr_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/bug_unit_page.dart';
-import 'package:flutter_unit/views/pages/collect/collect_page.dart';
+import 'package:flutter_unit/views/pages/collect/category_page.dart';
 import 'package:flutter_unit/views/pages/detail/widget_detail_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/paint_unit_page.dart';
@@ -48,7 +48,7 @@ class Router {
       case search:
         return Right2LeftRouter(child: SearchPage());
       case collect:
-        return Right2LeftRouter(child: DefaultCollectPage());
+        return Right2LeftRouter(child: CollectPage());
       case nav:
         return Left2RightRouter(child: UnitNavigation());
       case setting:

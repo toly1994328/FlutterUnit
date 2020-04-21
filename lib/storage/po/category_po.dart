@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 /// 说明:
 
 //  static const String sql_create_collect = """
-// CREATE TABLE IF NOT EXISTS category_widget(
+// CREATE TABLE IF NOT EXISTS category(
 //     id INTEGER PRIMARY KEY AUTOINCREMENT,
 //     name VARCHAR(64) NOT NULL,
 //     color VARCHAR(9) DEFAULT '#FF2196F3',
@@ -16,7 +16,7 @@ import 'package:equatable/equatable.dart';
 //     image VARCHAR(128) NULL image DEFAULT ''
 //     );"""; //建表语句
 
-class CollectPo extends Equatable {
+class CategoryPo extends Equatable {
   final int id;
   final String name;
   final String color;
@@ -26,10 +26,18 @@ class CollectPo extends Equatable {
   final String image;
   final int priority;
 
-  const CollectPo({this.id, this.name, this.color, this.created, this.updated,this.priority,this.info,this.image});
+  const CategoryPo(
+      {this.id,
+      this.name,
+      this.color = '#FFF2F2F2',
+      this.created,
+      this.updated,
+      this.priority = 0,
+      this.info = '这里什么都没有...',
+      this.image = ''});
 
-  factory CollectPo.fromJson(Map<String, dynamic> map) {
-    return CollectPo(
+  factory CategoryPo.fromJson(Map<String, dynamic> map) {
+    return CategoryPo(
         id: map['id'],
         name: map['name'],
         color: map["color"],
@@ -40,7 +48,6 @@ class CollectPo extends Equatable {
         info: map["info"]);
   }
 
-
   @override
   String toString() {
     return 'CollectPo{id: $id, name: $name, color: $color, info: $info, created: $created, updated: $updated, image: $image, priority: $priority}';
@@ -48,5 +55,5 @@ class CollectPo extends Equatable {
 
   @override
   List<Object> get props =>
-      [id, name, color, created, image, info,updated,priority];
+      [id, name, color, created, image, info, updated, priority];
 }

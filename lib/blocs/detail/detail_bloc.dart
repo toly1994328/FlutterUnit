@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/repositories/widget_repository.dart';
+import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 
 import 'detail_event.dart';
 import 'detail_state.dart';

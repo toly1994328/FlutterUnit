@@ -30,6 +30,7 @@ dependencies:
   shared_preferences: ^0.5.6+3 # xml 固化
   url_launcher: ^5.4.2 # url
   share: ^0.6.3+6
+  intl: ^0.16.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
