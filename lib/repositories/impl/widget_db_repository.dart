@@ -1,14 +1,13 @@
-import 'package:flutter_unit/model/collect_model.dart';
+
 import 'package:flutter_unit/storage/app_storage.dart';
 import 'package:flutter_unit/app/enums.dart';
-import 'package:flutter_unit/storage/dao/collect_dao.dart';
 import 'package:flutter_unit/storage/dao/node_dao.dart';
-import 'package:flutter_unit/storage/po/collect_po.dart';
+
 import 'package:flutter_unit/storage/po/widget_po.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/repositories/widget_repository.dart';
+import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
 /// contact me by email 1981462002@qq.com
@@ -19,12 +18,10 @@ class WidgetDbRepository implements WidgetRepository {
 
   WidgetDao _widgetDao;
   NodeDao _nodeDao;
-  CollectDao _collectDao;
 
   WidgetDbRepository(this.storage) {
     _widgetDao = WidgetDao(storage);
     _nodeDao = NodeDao(storage);
-    _collectDao = CollectDao(storage);
   }
 
   @override
@@ -71,12 +68,6 @@ class WidgetDbRepository implements WidgetRepository {
     return _widgetDao.toggleCollect(id);
   }
 
-  @override
-  Future<List<CollectModel>> loadCollects() async {
-    var data = await _collectDao.queryAll();
-    var collects = data.map((e) => CollectPo.fromJson(e)).toList();
-    return null;
-  }
 
   @override
   Future<bool> collected(int id) async{

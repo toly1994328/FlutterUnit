@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/repositories/widget_repository.dart';
+import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 
 import 'home_event.dart';
 import 'home_state.dart';

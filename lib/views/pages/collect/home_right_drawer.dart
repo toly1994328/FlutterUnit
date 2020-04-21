@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/style/unit_color.dart';
 import 'package:flutter_unit/app/style/unit_text_style.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
+import 'package:flutter_unit/app/utils/color_utils.dart';
+import 'package:flutter_unit/blocs/category/category_bloc.dart';
+import 'package:flutter_unit/blocs/category/category_event.dart';
+import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
+import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/project/color_chooser.dart';
 import 'package:flutter_unit/views/pages/collect/InputButton.dart';
 import 'package:flutter_unit/views/pages/collect/edit_panel.dart';
 
-class HoneRightDrawer extends StatelessWidget {
+class HoneRightDrawer extends StatefulWidget {
   final Color color;
 
   HoneRightDrawer({this.color});
+
+  @override
+  _HoneRightDrawerState createState() => _HoneRightDrawerState();
+}
+
+class _HoneRightDrawerState extends State<HoneRightDrawer> {
+  String name;
+  String color;
+  String info;
 
   @override
   Widget build(BuildContext context) {
@@ -21,25 +36,33 @@ class HoneRightDrawer extends StatelessWidget {
   }
 
   Widget _buildChild(BuildContext context) => Container(
-        color: color.withAlpha(33),
+        color: widget.color.withAlpha(33),
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
-          _buildDrawerHeader(color),
+          _buildDrawerHeader(widget.color),
           _buildTitle(context),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
             child: InputButton(
               config: InputButtonConfig(hint: '收藏集名称', iconData: Icons.check),
-              onSubmit: (str){
+              onSubmit: (str) {
+                name = str;
+                if(name.isNotEmpty){
+                  BlocProvider.of<CategoryBloc>(context)
+                      .add(EventAddCategory(name: name, info: info, color: color));
+                }
+
                 Navigator.of(context).pop();
-                Toast.toast(context, '收藏集功能正在开发中...',duration: Duration(seconds: 1));
+//                Toast.toast(context, '收藏集功能正在开发中...',
+//                    duration: Duration(seconds: 1));
               },
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
             child: EditPanel(
+              submitClear: false,
               hint: '收藏集简介...',
-
+              onChange: (v) => info = v,
             ),
           ),
           Container(
@@ -48,7 +71,7 @@ class HoneRightDrawer extends StatelessWidget {
             child: ColorChooser(
               defaultIndex: 0,
               colors: UnitColor.collectColorSupport,
-              onChecked: (v) {},
+              onChecked: (v) => color = ColorUtils.colorString(v),
             ),
           ),
         ]),

@@ -34,6 +34,8 @@ class ClockPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    print(size);
+    canvas.clipRect(Offset.zero & size);
     canvas.translate(size.width/2-65*2, 0);
     renderDigit(1, canvas);//渲染数字
     canvas.translate(65, 0);//平移画布
@@ -58,5 +60,5 @@ class ClockPainter extends CustomPainter {
     }
   }
   @override
-  bool shouldRepaint(CustomPainter oldDelegate)=>false;
+  bool shouldRepaint(CustomPainter oldDelegate)=> false;
 }

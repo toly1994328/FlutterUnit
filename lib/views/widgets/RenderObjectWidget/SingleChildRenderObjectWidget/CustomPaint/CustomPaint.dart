@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-28
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 //    {
 //      "widgetId": 166,
@@ -35,6 +35,7 @@ class _PlayBezier3PageState extends State<PlayBezier3Page> {
     _pos.add(Offset(-90, -90));
     _pos.add(Offset(-120, -40));
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +94,7 @@ class BezierPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 
   void _drawGrid(Canvas canvas, Size size) {
     _gridPaint

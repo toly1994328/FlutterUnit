@@ -46,14 +46,12 @@ class HomeDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                TolyIcon.icon_star,
+                TolyIcon.icon_layout,
                 color: Theme.of(context).primaryColor,
               ),
-              title: Text('我的收藏'),
+              title: Text('数据统计'),
               trailing: _nextIcon(context),
-              onTap: () {
-                Navigator.of(context).pushNamed(Router.collect);
-              },
+              onTap: () {},
             ),
             Divider(
               height: 1,
@@ -70,15 +68,6 @@ class HomeDrawer extends StatelessWidget {
             ),
             Divider(
               height: 1,
-            ),
-            ListTile(
-              leading: Icon(
-                TolyIcon.icon_layout,
-                color: Theme.of(context).primaryColor,
-              ),
-              title: Text('数据统计'),
-              trailing: _nextIcon(context),
-              onTap: () {},
             ),
             ListTile(
               leading: Icon(

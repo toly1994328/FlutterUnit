@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
-import 'package:flutter_unit/repositories/widget_repository.dart';
+import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 
 import 'collect_event.dart';
 import 'collect_state.dart';
@@ -25,6 +25,7 @@ class CollectBloc extends Bloc<CollectEvent, CollectState> {
   Stream<CollectState> mapEventToState(
     CollectEvent event,
   ) async* {
+    print('CollectState');
     if (event is ToggleCollectEvent) {
       await repository.toggleCollect(event.id);
       final widgets = await repository.loadCollectWidgets();
