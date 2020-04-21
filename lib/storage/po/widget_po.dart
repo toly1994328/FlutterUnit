@@ -1,6 +1,8 @@
-//persistent object 持久层对象，
-// 用于与数据库中记录对用的对象
 
+/// create by 张风捷特烈 on 2020-03-04
+/// contact me by email 1981462002@qq.com
+/// 说明: 组件信息-数据库-数据模型
+///
 import 'package:equatable/equatable.dart';
 
 class WidgetPo extends Equatable {
