@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
+import 'package:flutter_unit/views/pages/collect/category_show.dart';
 import 'package:flutter_unit/views/pages/collect/collect_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
@@ -32,6 +33,9 @@ class Router {
   static const String theme_color_setting = 'ThemeColorSettingPage';
   static const String code_style_setting = 'CodeStyleSettingPage';
   static const String item_style_setting = 'ItemStyleSettingPage';
+
+
+  static const String category_show = 'CategoryShow';
 
   static const String attr = 'AttrUnitPage';
   static const String bug = 'BugUnitPage';
@@ -74,6 +78,9 @@ class Router {
         return Right2LeftRouter(child: AboutAppPage());
       case about_me:
         return Right2LeftRouter(child: AboutMePage());
+
+        case category_show:
+        return Right2LeftRouter(child: CategoryShow(model: settings.arguments,));
 
       default:
         return MaterialPageRoute(

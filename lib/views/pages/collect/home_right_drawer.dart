@@ -10,19 +10,20 @@ import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/project/color_chooser.dart';
+import 'package:flutter_unit/views/common/unit_drawer_header.dart';
 import 'package:flutter_unit/views/pages/collect/InputButton.dart';
 import 'package:flutter_unit/views/pages/collect/edit_panel.dart';
 
-class HoneRightDrawer extends StatefulWidget {
+class HomeRightDrawer extends StatefulWidget {
   final Color color;
 
-  HoneRightDrawer({this.color});
+  HomeRightDrawer({this.color});
 
   @override
-  _HoneRightDrawerState createState() => _HoneRightDrawerState();
+  _HomeRightDrawerState createState() => _HomeRightDrawerState();
 }
 
-class _HoneRightDrawerState extends State<HoneRightDrawer> {
+class _HomeRightDrawerState extends State<HomeRightDrawer> {
   String name;
   String color;
   String info;
@@ -38,7 +39,7 @@ class _HoneRightDrawerState extends State<HoneRightDrawer> {
   Widget _buildChild(BuildContext context) => Container(
         color: widget.color.withAlpha(33),
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
-          _buildDrawerHeader(widget.color),
+          UnitDrawerHeader(color:widget.color),
           _buildTitle(context),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
@@ -75,79 +76,6 @@ class _HoneRightDrawerState extends State<HoneRightDrawer> {
             ),
           ),
         ]),
-      );
-
-  Widget _buildDrawerHeader(Color color) => DrawerHeader(
-        padding: EdgeInsets.only(top: 10, left: 15),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/wy_300x200_filter.jpg'),
-              fit: BoxFit.cover),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Wrap(
-              spacing: 10,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: <Widget>[
-                FlutterLogo(
-                  colors: Colors.orange,
-                  size: 35,
-                ),
-                Text(
-                  'Flutter Unit',
-                  style: TextStyle(fontSize: 24, color: Colors.white, shadows: [
-                    Shadow(
-                        color: Colors.black,
-                        offset: Offset(1, 1),
-                        blurRadius: 3)
-                  ]),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Text(
-              'The Unity Of Flutter, The Unity Of Coder.',
-              style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
-              ]),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              'Flutter的联合，编程者的联合。',
-              style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
-              ]),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: <Widget>[
-                Spacer(
-                  flex: 5,
-                ),
-                Text(
-                  '—— 张风捷特烈',
-                  style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                    Shadow(
-                        color: Colors.orangeAccent,
-                        offset: Offset(.5, .5),
-                        blurRadius: 1)
-                  ]),
-                ),
-                Spacer(
-                  flex: 1,
-                ),
-              ],
-            ),
-          ],
-        ),
       );
 
   Widget _buildTitle(BuildContext context) {

@@ -35,7 +35,7 @@ class CategoryModel extends Equatable{
       info: po.info,
       createDate: DateFormat('yyyy-MM-dd HH:mm').format(po.created),
       imageCover: po.image,
-      count: 10,
+      count: po.count,
       color: ColorUtils.parse(po.color),
     );
   }
@@ -50,4 +50,11 @@ class CategoryModel extends Equatable{
     count,
     color,
   ];
+
+  @override
+  String toString() {
+    return 'CategoryModel{id: $id, name: $name, info: $info, createDate: $createDate, imageCover: $imageCover, count: $count, color: $color}';
+  }
+
+
 }

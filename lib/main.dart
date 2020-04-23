@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/blocs/category_widget/category_widget_bloc.dart';
 import 'package:flutter_unit/storage/app_storage.dart';
 import 'package:flutter_unit/views/pages/splash/unit_splash.dart';
 
@@ -56,10 +55,9 @@ class BlocWrapper extends StatelessWidget {
 
       BlocProvider<DetailBloc>(
           create: (_) => DetailBloc(repository: repository)),
-
-      BlocProvider<CategoryBloc>(create: (_) {
-        return CategoryBloc(repository: categoryRepo)..add(EventLoadCategory());
-      } ),
+      BlocProvider<CategoryBloc>(
+          create: (_) =>
+              CategoryBloc(repository: categoryRepo)..add(EventLoadCategory())),
 
       BlocProvider<CollectBloc>(
           create: (_) =>
@@ -75,19 +73,23 @@ class FlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
-      return MaterialApp(
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          onGenerateRoute: Router.generateRoute,
-          theme: ThemeData(
-            primarySwatch: state.themeColor,
-            fontFamily: state.fontFamily,
-          ),
-          home:
+      return BlocProvider<CategoryWidgetBloc>(
+        create: (_) => CategoryWidgetBloc(
+            categoryBloc: BlocProvider.of<CategoryBloc>(context)),
+        child: MaterialApp(
+            title: 'Flutter Demo',
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: Router.generateRoute,
+            theme: ThemeData(
+              primarySwatch: state.themeColor,
+              fontFamily: state.fontFamily,
+            ),
+            home:
 //      NavPage()
-              UnitSplash()
+                UnitSplash()
 //          UnitNavigation(),
-          );
+            ),
+      );
     });
   }
 }

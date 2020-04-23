@@ -8,7 +8,7 @@ import 'package:flutter_unit/storage/po/category_po.dart';
 
 abstract class CategoryRepository {
 
-  Future<void> toggleCategory(int id);
+  Future<void> toggleCategory(int categoryId, int widgetId);
 
   Future<bool> check(int categoryId,int widgetId);
 
@@ -20,5 +20,8 @@ abstract class CategoryRepository {
   Future<bool> addCategory(CategoryPo categoryPo);
 
   Future<void> deleteCategory(int id);
+  Future<List<int>> getCategoryByWidget(int widgetId);
+
+
 
 }

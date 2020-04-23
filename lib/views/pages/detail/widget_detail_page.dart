@@ -17,6 +17,7 @@ import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:flutter_unit/components/project/widget_node_panel.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
+import 'package:flutter_unit/views/pages/detail/category_end_drawer.dart';
 import 'package:flutter_unit/views/widgets/widgets_map.dart';
 
 class WidgetDetailPage extends StatefulWidget {
@@ -29,9 +30,8 @@ class WidgetDetailPage extends StatefulWidget {
 }
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
-  WidgetModel _model;
-
-  List<WidgetModel> _models=[];
+  List<WidgetModel> _models = [];
+  bool openBottom = false;
 
   @override
   void deactivate() {
@@ -48,26 +48,35 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async{
+      onWillPop: () async {
         _models.removeLast();
-        if(_models.length>0){
+        if (_models.length > 0) {
           setState(() {
-            BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(_models.last));
+            BlocProvider.of<DetailBloc>(context)
+                .add(FetchWidgetDetail(_models.last));
           });
           return false;
-        }else{
+        } else {
           return true;
         }
       },
       child: Scaffold(
+        endDrawer: CategoryEndDrawer(widget: _models.last,),
           appBar: AppBar(
             title: Text(_models.last.name),
             actions: <Widget>[
-              IconButton(icon:Icon( Icons.home), onPressed: (){
-                  Navigator.of(context).pop();
-              }),
-              buildCollectButton(_models.last, context),
-
+              Builder(builder: (ctx)=>GestureDetector(
+                  onLongPress: (){
+                    Scaffold.of(ctx).openEndDrawer();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Icon(Icons.home),
+                  ),
+                  onTap: () {
+                    Navigator.of(ctx).pop();
+                  })),
+              _buildCollectButton(_models.last, context),
             ],
           ),
           body: SingleChildScrollView(
@@ -118,13 +127,21 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     );
   }
 
-  Widget buildCollectButton(WidgetModel model, BuildContext context) {
+  Widget _buildCollectButton(WidgetModel model, BuildContext context) {
     //监听 CollectBloc 伺机弹出toast
     return BlocListener<CollectBloc, CollectState>(
         listener: (ctx, st) {
           bool collected = st.widgets.contains(model);
-          Toast.toast(ctx,
-              collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!");
+          var msg =
+              collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
+
+          Toast.toast(ctx, msg,
+            duration: Duration(milliseconds: collected?1500:600),
+            action: collected
+                ? SnackBarAction(
+                textColor: Colors.white, label: '收藏夹管理', onPressed: () {
+                  Scaffold.of(ctx).openEndDrawer();
+            }): null,);
         },
         child: FeedbackWidget(
           onPressed: () => BlocProvider.of<CollectBloc>(context)
@@ -181,7 +198,8 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           children: links
               .map((e) => ActionChip(
                     onPressed: () {
-                      BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(e));
+                      BlocProvider.of<DetailBloc>(context)
+                          .add(FetchWidgetDetail(e));
                       setState(() {
                         _models.add(e);
                       });

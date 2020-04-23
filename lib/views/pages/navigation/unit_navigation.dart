@@ -11,7 +11,7 @@ import 'package:flutter_unit/views/pages/collect/home_right_drawer.dart';
 import 'package:flutter_unit/views/pages/navigation/unit_bottom_bar.dart';
 import '../collect/category_page.dart';
 import '../home/home_page.dart';
-import '../setting/home_drawer.dart';
+import '../home/home_drawer.dart';
 
 class UnitNavigation extends StatefulWidget {
   @override
@@ -39,7 +39,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
         builder: (_, state) => Scaffold(
             drawer: HomeDrawer(color:state.homeColor),
             //左滑页
-            endDrawer: HoneRightDrawer(color: state.homeColor,),
+            endDrawer: HomeRightDrawer(color: state.homeColor,),
             //右滑页
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,

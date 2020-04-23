@@ -43,6 +43,10 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
       await repository.deleteCategory(event.id);
       add(EventLoadCategory());
     }
+    if (event is EventToggleWidget) {
+      await repository.toggleCategory(event.categoryId,event.widgetId);
+      add(EventLoadCategory());
+    }
 
     if (event is EventAddCategory) {
       var categoryPo = CategoryPo(
@@ -61,6 +65,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
         yield AddCategoryFailed();
       }
     }
+
 
 //    if (event is EventAddCategory) {
 //      var collectPo = CategoryPo(

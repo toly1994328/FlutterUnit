@@ -24,6 +24,7 @@ class CategoryPo extends Equatable {
   final DateTime created;
   final DateTime updated;
   final String image;
+  final int count;
   final int priority;
 
   const CategoryPo(
@@ -32,6 +33,7 @@ class CategoryPo extends Equatable {
       this.color = '#FFF2F2F2',
       this.created,
       this.updated,
+        this.count = 0,
       this.priority = 0,
       this.info = '这里什么都没有...',
       this.image = ''});
@@ -44,16 +46,18 @@ class CategoryPo extends Equatable {
         created: DateTime.parse(map["created"]),
         image: map["image"],
         priority: map["priority"],
+        count: map["count"],
         updated: DateTime.parse(map["updated"]),
         info: map["info"]);
   }
 
+
   @override
   String toString() {
-    return 'CollectPo{id: $id, name: $name, color: $color, info: $info, created: $created, updated: $updated, image: $image, priority: $priority}';
+    return 'CategoryPo{id: $id, name: $name, color: $color, info: $info, created: $created, updated: $updated, image: $image, count: $count, priority: $priority}';
   }
 
   @override
   List<Object> get props =>
-      [id, name, color, created, image, info, updated, priority];
+      [id, name, color, created, image, info, updated, priority,count];
 }
