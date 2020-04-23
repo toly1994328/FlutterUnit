@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/style/unit_color.dart';
-import 'package:flutter_unit/app/utils/color_utils.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
-import 'package:flutter_unit/blocs/category/category_event.dart';
 import 'package:flutter_unit/blocs/category/category_state.dart';
 import 'package:flutter_unit/blocs/category_widget/category_widget_bloc.dart';
 import 'package:flutter_unit/blocs/category_widget/category_widget_event.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
-import 'package:flutter_unit/components/project/color_chooser.dart';
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/repositories/itf/category_repository.dart';
 import 'package:flutter_unit/views/common/unit_drawer_header.dart';
-import 'package:flutter_unit/views/pages/collect/InputButton.dart';
-import 'package:flutter_unit/views/pages/collect/edit_panel.dart';
+
 
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com

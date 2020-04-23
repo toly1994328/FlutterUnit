@@ -66,7 +66,6 @@ class WidgetDao {
     final db = await storage.db;
     var data = await db.rawQuery('SELECT collected FROM widget WHERE id = ?', [id]);
     var collected = data.toList()[0]['collected']==1;
-    print('collected:$collected');
     return await db.rawQuery(
         "UPDATE widget SET collected = ? "
         "WHERE id = ?",
