@@ -13,50 +13,56 @@ import 'package:flutter_unit/storage/po/widget_po.dart';
 class CategoryDbRepository implements CategoryRepository {
   final AppStorage storage;
 
-  CategoryDao _collectDao;
+  CategoryDao _categoryDao;
 
   CategoryDbRepository(this.storage) {
-    _collectDao = CategoryDao(storage);
+    _categoryDao = CategoryDao(storage);
   }
 
   @override
   Future<bool> addCategory(CategoryPo categoryPo) async {
-    var success = await _collectDao.insert(categoryPo);
+    var success = await _categoryDao.insert(categoryPo);
     return success != -1;
   }
 
   @override
   Future<bool> check(int categoryId, int widgetId) async {
-    return await _collectDao.existWidgetInCollect(categoryId, widgetId);
+    return await _categoryDao.existWidgetInCollect(categoryId, widgetId);
   }
 
   @override
   Future<void> deleteCategory(int id) async {
-    await _collectDao.deleteCollect(id);
+    await _categoryDao.deleteCollect(id);
   }
 
   @override
   Future<List<CategoryModel>> loadCategories() async {
-    var data = await _collectDao.queryAll();
+    var data = await _categoryDao.queryAll();
     var collects = data.map((e) => CategoryPo.fromJson(e)).toList();
     return collects.map(CategoryModel.fromPo).toList();
   }
 
   @override
   Future<List<WidgetModel>> loadCategoryWidgets({int categoryId = 0}) async {
-    var rawData = await _collectDao.loadCollectWidgets(categoryId);
+    var rawData = await _categoryDao.loadCollectWidgets(categoryId);
     var widgets = rawData.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();
   }
 
   @override
   Future<void> toggleCategory(int categoryId, int widgetId) async {
-    return await _collectDao.toggleCollect( categoryId,  widgetId);
+    return await _categoryDao.toggleCollect( categoryId,  widgetId);
   }
 
   @override
   Future<List<int>> getCategoryByWidget(int widgetId) async {
-    return await _collectDao.categoryWidgetIds(widgetId);
+    return await _categoryDao.categoryWidgetIds(widgetId);
+  }
+
+  @override
+  Future<bool> updateCategory(CategoryPo categoryPo) async{
+    var success = await _categoryDao.update(categoryPo);
+    return success != -1;
   }
 
 //

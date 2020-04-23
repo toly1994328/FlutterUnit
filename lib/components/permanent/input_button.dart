@@ -10,8 +10,10 @@ class InputButtonConfig {
   final Widget front; //前面图标
   final bool submitClear; //是否提交清空
 
+
   const InputButtonConfig(
       {this.height = 36,
+
       this.iconData = Icons.add,
       this.fontSize = 14,
       this.submitClear = true,
@@ -24,11 +26,13 @@ class InputButton extends StatefulWidget {
   final ValueChanged<String> onChanged;
   final VoidCallback onTap;
   final InputButtonConfig config;
+  final String defaultText;
 
   InputButton(
       {Key key,
       this.onSubmit,
       this.onChanged,
+        this.defaultText,
       this.onTap,
       this.config = const InputButtonConfig()})
       : super(key: key);
@@ -38,24 +42,31 @@ class InputButton extends StatefulWidget {
 }
 
 class _InputButtonState extends State<InputButton> {
-  var _text = "";
   var _height;
   var _fontSize;
   var _radius;
 
+   TextEditingController _controller;
+
   @override
   void initState() {
+    super.initState();
     _height = widget.config.height;
     _fontSize = widget.config.fontSize;
     _radius = Radius.circular(_height / 3.6);
+    _controller = TextEditingController(text: widget.defaultText??'');
+  }
 
-    super.initState();
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     var textField = TextField(
-      controller: TextEditingController(text: _text),
+      controller: _controller,
       maxLines: 1,
       style: TextStyle(
           fontSize: _fontSize,
@@ -79,8 +90,7 @@ class _InputButtonState extends State<InputButton> {
         ),
       ),
       onChanged: (str) {
-        _text = str;
-        if (widget.onChanged != null) widget.onChanged(_text);
+        if (widget.onChanged != null) widget.onChanged(str);
       },
       onTap: widget.onTap,
     );
@@ -92,10 +102,10 @@ class _InputButtonState extends State<InputButton> {
       padding: EdgeInsets.zero,
       onPressed: () {
         FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
-        if (widget.onSubmit != null) widget.onSubmit(_text);
+        if (widget.onSubmit != null) widget.onSubmit(_controller.text);
         if (widget.config.submitClear) {
           setState(() {
-            _text = "";
+            _controller.clear();
           });
         }
       },

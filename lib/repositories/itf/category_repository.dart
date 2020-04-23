@@ -18,6 +18,7 @@ abstract class CategoryRepository {
   Future<List<CategoryModel>> loadCategories();
 
   Future<bool> addCategory(CategoryPo categoryPo);
+  Future<bool> updateCategory(CategoryPo categoryPo);
 
   Future<void> deleteCategory(int id);
   Future<List<int>> getCategoryByWidget(int widgetId);

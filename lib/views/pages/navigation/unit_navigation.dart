@@ -6,10 +6,9 @@ import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
 import 'package:flutter_unit/blocs/widgets/home_state.dart';
-import 'package:flutter_unit/views/pages/collect/collect_page.dart';
-import 'package:flutter_unit/views/pages/collect/home_right_drawer.dart';
+import 'package:flutter_unit/views/pages/category/collect_page.dart';
+import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
 import 'package:flutter_unit/views/pages/navigation/unit_bottom_bar.dart';
-import '../collect/category_page.dart';
 import '../home/home_page.dart';
 import '../home/home_drawer.dart';
 

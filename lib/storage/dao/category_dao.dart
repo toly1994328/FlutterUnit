@@ -44,6 +44,27 @@ class CategoryDao {
         ]));
   }
 
+  Future<int> update(CategoryPo widget) async {
+    //插入方法
+    final db = await _db;
+    String updateSql = //插入数据
+        "UPDATE category SET name=? , color=? ,info=?, priority=?,image=?,updated=? "
+        "WHERE id = ?";
+
+    return await db.transaction((tran) async =>
+    await tran.rawUpdate(updateSql, [
+      widget.name,
+      widget.color,
+      widget.info,
+      widget.priority,
+      widget.image,
+      widget.updated.toIso8601String(),
+      widget.id,
+    ]));
+  }
+
+
+
   Future<int> addWidget(int categoryId,int widgetId,) async {
     final db = await _db;
     String addSql = //插入数据

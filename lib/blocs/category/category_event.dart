@@ -44,3 +44,17 @@ class EventAddCategory extends CategoryEvent{
   @override
   List<Object> get props => [name,info,color];
 }
+
+class EventUpdateCategory extends CategoryEvent {
+  final int id;
+  final String name;
+  final String info;
+  final String color;
+  final int  priority;
+  final String image;
+
+  EventUpdateCategory({@required this.name, this.info, this.color,this.priority,this.image,this.id});
+
+  @override
+  List<Object> get props => [name, info, color,priority,image,id];
+}

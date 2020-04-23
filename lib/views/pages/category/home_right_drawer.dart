@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/style/unit_color.dart';
-import 'package:flutter_unit/app/style/unit_text_style.dart';
-import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
 import 'package:flutter_unit/blocs/category/category_event.dart';
-import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
-import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/project/color_chooser.dart';
 import 'package:flutter_unit/views/common/unit_drawer_header.dart';
-import 'package:flutter_unit/views/pages/collect/InputButton.dart';
-import 'package:flutter_unit/views/pages/collect/edit_panel.dart';
+import 'package:flutter_unit/components/permanent/input_button.dart';
+import 'package:flutter_unit/components/permanent/edit_panel.dart';
+
+import 'edit_category_panel.dart';
 
 class HomeRightDrawer extends StatefulWidget {
   final Color color;
@@ -41,40 +39,7 @@ class _HomeRightDrawerState extends State<HomeRightDrawer> {
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
           UnitDrawerHeader(color:widget.color),
           _buildTitle(context),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-            child: InputButton(
-              config: InputButtonConfig(hint: '收藏集名称', iconData: Icons.check),
-              onSubmit: (str) {
-                name = str;
-                if(name.isNotEmpty){
-                  BlocProvider.of<CategoryBloc>(context)
-                      .add(EventAddCategory(name: name, info: info, color: color));
-                }
-
-                Navigator.of(context).pop();
-//                Toast.toast(context, '收藏集功能正在开发中...',
-//                    duration: Duration(seconds: 1));
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-            child: EditPanel(
-              submitClear: false,
-              hint: '收藏集简介...',
-              onChange: (v) => info = v,
-            ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            child: ColorChooser(
-              defaultIndex: 0,
-              colors: UnitColor.collectColorSupport,
-              onChecked: (v) => color = ColorUtils.colorString(v),
-            ),
-          ),
+          EditCategoryPanel()
         ]),
       );
 
@@ -108,3 +73,54 @@ class _HomeRightDrawerState extends State<HomeRightDrawer> {
     );
   }
 }
+
+//class EditCategoryPanel extends StatefulWidget {
+//  @override
+//  _EditCategoryPanelState createState() => _EditCategoryPanelState();
+//}
+//
+//class _EditCategoryPanelState extends State<EditCategoryPanel> {
+//  String name;
+//  String color;
+//  String info;
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    return Column(
+//      children: <Widget>[
+//        Padding(
+//          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+//          child: InputButton(
+//            config: InputButtonConfig(hint: '收藏集名称', iconData: Icons.check),
+//            onSubmit: (str) {
+//              name = str;
+//              if(name.isNotEmpty){
+//                BlocProvider.of<CategoryBloc>(context)
+//                    .add(EventAddCategory(name: name, info: info, color: color));
+//              }
+//              Navigator.of(context).pop();
+//            },
+//          ),
+//        ),
+//        Padding(
+//          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+//          child: EditPanel(
+//            submitClear: false,
+//            hint: '收藏集简介...',
+//            onChange: (v) => info = v,
+//          ),
+//        ),
+//        Container(
+//          alignment: Alignment.center,
+//          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+//          child: ColorChooser(
+//            defaultIndex: 0,
+//            colors: UnitColor.collectColorSupport,
+//            onChecked: (v) => color = ColorUtils.colorString(v),
+//          ),
+//        ),
+//      ],
+//    );
+//  }
+//}
+

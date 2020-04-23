@@ -29,8 +29,7 @@ class CollectPage extends StatelessWidget {
   Widget build(BuildContext context) {
    var _topContext = context;
     return Scaffold(
-        backgroundColor:
-            BlocProvider.of<HomeBloc>(context).state.homeColor.withAlpha(11),
+        backgroundColor: BlocProvider.of<HomeBloc>(context).state.homeColor.withAlpha(11),
         body: DefaultTabController(
           length: _tabs.length, // This is the number of tabs.
           child: NestedScrollView(
