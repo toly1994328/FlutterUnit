@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/widgets/StatefulWidget/AnimatedWidget/SlideTransition.dart';
 import 'ProxyWidget/InheritedWidget/ButtonTheme.dart';
 import 'ProxyWidget/InheritedWidget/DefaultTextStyle.dart';
 import 'ProxyWidget/InheritedWidget/DividerTheme.dart';
@@ -544,6 +545,10 @@ class WidgetsMap {
       case "AlignTransition":
         return [
           CustomAlignTransition(),
+        ];
+      case "SlideTransition":
+        return [
+          CustomSlideTransition(),
         ];
       case "DecoratedBoxTransition":
         return [

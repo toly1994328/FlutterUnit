@@ -4,6 +4,8 @@ import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
 import 'package:flutter_unit/blocs/category/category_event.dart';
 import 'package:flutter_unit/blocs/category/category_state.dart';
+import 'package:flutter_unit/blocs/category_widget/category_widget_bloc.dart';
+import 'package:flutter_unit/blocs/category_widget/category_widget_event.dart';
 import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
 import 'package:flutter_unit/blocs/collect/collect_event.dart';
 import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
@@ -69,7 +71,7 @@ class CategoryPage extends StatelessWidget {
   }
 
   _toDetailPage(BuildContext context, CategoryModel model) {
-//    BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-//    Navigator.pushNamed(context, Router.widget_detail, arguments: model);
+    BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id));
+    Navigator.pushNamed(context, Router.category_show, arguments: model);
   }
 }

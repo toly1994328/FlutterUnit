@@ -45,7 +45,7 @@ class CircleText extends StatelessWidget {
               color: backgroundColor??Color(0xffD8F5FF),
             ),
             child: Text(
-              text.substring(0, 2),
+              text.length>2?text.substring(0, 2):text,
               style: TextStyle(
                 fontSize: fontSize,
                 color: color,

@@ -15,6 +15,16 @@ class EventLoadCategory extends CategoryEvent{
   List<Object> get props => [];
 }
 
+class EventToggleWidget extends CategoryEvent{
+  final int widgetId;
+  final int categoryId;
+
+  EventToggleWidget({this.widgetId, this.categoryId});
+
+  @override
+  List<Object> get props => [widgetId,categoryId];
+}
+
 class EventDeleteCategory extends CategoryEvent{
   final int id;
 

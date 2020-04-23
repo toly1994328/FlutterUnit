@@ -22,7 +22,7 @@ class CollectPage extends StatelessWidget {
     childAspectRatio: 1 / 0.5,
   );
 
-  final _tabs = ['默认收藏', '收藏集录'];
+  final _tabs = ['收藏集录','默认收藏', ];
 
 
   @override
@@ -47,11 +47,11 @@ class CollectPage extends StatelessWidget {
               padding: EdgeInsets.only(top: 150-30.0-10),
               child: TabBarView(
                 children: <Widget>[
+                  CategoryPage(),
                   BlocBuilder<CollectBloc, CollectState>(
                       builder: (_, state) => CustomScrollView(
                             slivers: <Widget>[_buildContent(context, state)],
                           )),
-                  CategoryPage()
                 ],
               ),
             ),

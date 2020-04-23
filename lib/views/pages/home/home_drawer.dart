@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/app/style/TolyIcon.dart';
-import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
-import 'package:flutter_unit/blocs/collect/collect_event.dart';
-import 'package:flutter_unit/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/blocs/global/global_state.dart';
-import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
-import 'package:flutter_unit/blocs/widgets/home_state.dart';
 import 'package:flutter_unit/components/flutter/no_div_expansion_tile.dart';
+import 'package:flutter_unit/views/common/unit_drawer_header.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -26,13 +20,12 @@ class HomeDrawer extends StatelessWidget {
       child: _buildChild(context),
     );
   }
-
   Widget _buildChild(BuildContext context) => Container(
         color: color.withAlpha(33),
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            _buildDrawerHeader(color),
+            UnitDrawerHeader(color:color),
             ListTile(
               leading: Icon(
                 TolyIcon.icon_them,
@@ -145,78 +138,6 @@ class HomeDrawer extends StatelessWidget {
         ],
       );
 
-  Widget _buildDrawerHeader(Color color) => DrawerHeader(
-        padding: EdgeInsets.only(top: 10, left: 15),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/wy_300x200_filter.jpg'),
-              fit: BoxFit.cover),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Wrap(
-              spacing: 10,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: <Widget>[
-                FlutterLogo(
-                  colors: Colors.orange,
-                  size: 35,
-                ),
-                Text(
-                  'Flutter Unit',
-                  style: TextStyle(fontSize: 24, color: Colors.white, shadows: [
-                    Shadow(
-                        color: Colors.black,
-                        offset: Offset(1, 1),
-                        blurRadius: 3)
-                  ]),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Text(
-              'The Unity Of Flutter, The Unity Of Coder.',
-              style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
-              ]),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              'Flutter的联合，编程者的联合。',
-              style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
-              ]),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: <Widget>[
-                Spacer(
-                  flex: 5,
-                ),
-                Text(
-                  '—— 张风捷特烈',
-                  style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-                    Shadow(
-                        color: Colors.orangeAccent,
-                        offset: Offset(.5, .5),
-                        blurRadius: 1)
-                  ]),
-                ),
-                Spacer(
-                  flex: 1,
-                ),
-              ],
-            ),
-          ],
-        ),
-      );
 
   Widget _nextIcon(BuildContext context) =>
       Icon(Icons.chevron_right, color: Theme.of(context).primaryColor);
