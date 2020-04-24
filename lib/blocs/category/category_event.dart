@@ -18,7 +18,6 @@ class EventLoadCategory extends CategoryEvent{
 class EventToggleWidget extends CategoryEvent{
   final int widgetId;
   final int categoryId;
-
   EventToggleWidget({this.widgetId, this.categoryId});
 
   @override
