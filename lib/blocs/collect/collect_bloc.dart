@@ -11,8 +11,6 @@ import 'collect_state.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-
-
 class CollectBloc extends Bloc<CollectEvent, CollectState> {
   final WidgetRepository repository;
 

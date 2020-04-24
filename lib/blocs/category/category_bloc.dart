@@ -15,9 +15,7 @@ import 'category_state.dart';
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   final CategoryRepository repository;
 
-  CategoryBloc({@required this.repository}) {
-    print('CategoryBloc');
-  }
+  CategoryBloc({@required this.repository});
 
   @override
   CategoryState get initialState => CategoryEmptyState(); //初始状态
