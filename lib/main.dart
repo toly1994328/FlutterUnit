@@ -77,7 +77,7 @@ class FlutterApp extends StatelessWidget {
         create: (_) => CategoryWidgetBloc(
             categoryBloc: BlocProvider.of<CategoryBloc>(context)),
         child: MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Flutter Unit',
             debugShowCheckedModeBanner: false,
             onGenerateRoute: Router.generateRoute,
             theme: ThemeData(
@@ -85,9 +85,7 @@ class FlutterApp extends StatelessWidget {
               fontFamily: state.fontFamily,
             ),
             home:
-//      NavPage()
                 UnitSplash()
-//          UnitNavigation(),
             ),
       );
     });

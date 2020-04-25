@@ -6,13 +6,11 @@ import 'package:flutter_unit/blocs/category/category_event.dart';
 import 'package:flutter_unit/blocs/category/category_state.dart';
 import 'package:flutter_unit/blocs/category_widget/category_widget_bloc.dart';
 import 'package:flutter_unit/blocs/category_widget/category_widget_event.dart';
-import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/views/dialogs/delete_category_dialog.dart';
 import 'package:flutter_unit/views/items/category_list_item.dart';
-import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
 
 import 'edit_category_panel.dart';
 
