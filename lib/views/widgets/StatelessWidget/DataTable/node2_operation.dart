@@ -1,47 +1,8 @@
-import 'package:flutter/material.dart';
 
-/// create by 张风捷特烈 on 2020-03-21
+
+/// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 102,
-//      "name": 'DataTable基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【columns】 : 列   【List<DataColumn>】\n"
-//          "【rows】 : 行  【List<DataRow>】",
-//    }
-class _Bean {
-  final int id;
-  final String name;
-  final String type;
-
-  _Bean(this.id, this.name, this.type);
-}
-
-class CustomDataTable extends StatelessWidget {
-  final data = [
-    _Bean(101, 'DataTable', 'StatelessWidget'),
-    _Bean(44, 'RangeSlider', 'StatefulWidget'),
-    _Bean(2, 'Text', 'StatelessWidget'),
-    _Bean(1, 'Image', 'StatefulWidget'),
-  ];
-
-  final columns = ['id', '名称', '类型'];
-
-  @override
-  Widget build(BuildContext context) {
-    return DataTable(
-        columns: columns.map((e) => DataColumn(label: Text(e))).toList(),
-        rows: data
-            .map((e) => DataRow(cells: [
-                  DataCell(Text('${e.id}')),
-                  DataCell(Text('${e.name}')),
-                  DataCell(Text('${e.type}')),
-                ]))
-            .toList());
-  }
-}
+/// 说明: 
 
 //    {
 //      "widgetId": 102,
@@ -52,6 +13,8 @@ class CustomDataTable extends StatelessWidget {
 //          "【columnSpacing】 : 列间距   【double】\n"
 //          "【sortAscending】 : 是否顺序  【bool】",
 //    }
+
+import 'package:flutter/material.dart';
 
 class _BeanOp {
   final int id;
@@ -104,15 +67,15 @@ class _SortDataTableState extends State<SortDataTable> {
         ],
         rows: data
             .map((e) => DataRow(selected: false, cells: [
-                  DataCell(Checkbox(
-                    value: e.select,
-                    onChanged: (v) => _onSelectOne(v, e),
-                  )),
-                  DataCell(Text('${e.id}')),
-                  DataCell(Text('${e.name}'),
-                      showEditIcon: true, onTap: () {}),
-                  DataCell(Text('${e.type}')),
-                ]))
+          DataCell(Checkbox(
+            value: e.select,
+            onChanged: (v) => _onSelectOne(v, e),
+          )),
+          DataCell(Text('${e.id}')),
+          DataCell(Text('${e.name}'),
+              showEditIcon: true, onTap: () {}),
+          DataCell(Text('${e.type}')),
+        ]))
             .toList());
   }
 
@@ -120,7 +83,7 @@ class _SortDataTableState extends State<SortDataTable> {
     setState(() {
       _sortAscending = ascending;
       data.sort(
-          (a, b) => ascending ? a.id.compareTo(b.id) : b.id.compareTo(a.id));
+              (a, b) => ascending ? a.id.compareTo(b.id) : b.id.compareTo(a.id));
     });
   }
 
