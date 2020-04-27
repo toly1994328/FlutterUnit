@@ -1,34 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/widgets/StatefulWidget/AnimatedWidget/SlideTransition.dart';
-import 'ProxyWidget/InheritedWidget/ButtonTheme.dart';
-import 'ProxyWidget/InheritedWidget/DefaultTextStyle.dart';
-import 'ProxyWidget/InheritedWidget/DividerTheme.dart';
-import 'ProxyWidget/InheritedWidget/IconTheme.dart';
-import 'ProxyWidget/InheritedWidget/SliderTheme.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/AbsorbPointer.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/BackdropFilter.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/IgnorePointer.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/LayoutBuilder.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/ShaderMask.dart';
-import 'StatefulWidget/stateful_unit.dart';
-import 'StatelessWidget/stateless_unit.dart';
+import 'package:flutter_unit/views/widgets/StatefulWidget/SlideTransition.dart';
 
-import 'ProxyWidget/DropdownButtonHideUnderline.dart';
-import 'ProxyWidget/Flexible.dart';
-import 'ProxyWidget/InheritedWidget/MediaQuery.dart';
-import 'ProxyWidget/InheritedWidget/ScrollConfiguration.dart';
-import 'ProxyWidget/Positioned.dart';
-import 'RenderObjectWidget/ErrorWidget.dart';
-import 'RenderObjectWidget/MultiChildRenderObjectWidget/Column.dart';
-import 'ProxyWidget/Expanded.dart';
-import 'RenderObjectWidget/MultiChildRenderObjectWidget/IndexedStack.dart';
-import 'RenderObjectWidget/MultiChildRenderObjectWidget/Row.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/AnimatedSize.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/Center.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/CustomPaint/CustomPaint.dart';
-import 'RenderObjectWidget/SingleChildRenderObjectWidget/CustomPaint/colck_page/colck_page.dart';
-import 'RenderObjectWidget/render_object_widget.dart';
+
+
+import 'stateful_unit.dart';
+import 'stateless_unit.dart';
+import 'render_object_unit.dart';
+import 'proxy_unit.dart';
+
+
+import 'other/ErrorWidget.dart';
+
 import 'Sliver/CustomScrollView.dart';
 import 'Sliver/FlexibleSpaceBar.dart';
 import 'Sliver/SliverAppBar.dart';

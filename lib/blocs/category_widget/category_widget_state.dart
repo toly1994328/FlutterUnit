@@ -27,6 +27,3 @@ class CategoryWidgetEmptyState extends CategoryWidgetState{
 }
 
 
-class AddCategoryFailed extends CategoryWidgetState{
-
-}

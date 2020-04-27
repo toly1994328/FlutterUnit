@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
-import 'package:flutter_unit/blocs/collect/collect_event.dart';
-import 'package:flutter_unit/blocs/widgets/home_bloc.dart';
-import 'package:flutter_unit/blocs/widgets/home_state.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/views/app/navigation/unit_bottom_bar.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
 import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
-import 'package:flutter_unit/views/pages/navigation/unit_bottom_bar.dart';
-import '../home/home_page.dart';
-import '../home/home_drawer.dart';
+import 'package:flutter_unit/views/pages/home/home_drawer.dart';
+import 'package:flutter_unit/views/pages/home/home_page.dart';
+
 
 class UnitNavigation extends StatefulWidget {
   @override

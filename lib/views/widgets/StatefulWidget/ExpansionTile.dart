@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/widgets/StatelessWidget/stateless_unit.dart';
+import 'package:flutter_unit/views/widgets/stateless_unit.dart';
 
 //    {
 //      "widgetId": 52,
