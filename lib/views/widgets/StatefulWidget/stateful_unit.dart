@@ -8,6 +8,9 @@ export 'CupertinoDatePicker/node1_base.dart';
 export 'CupertinoPicker/node1_base.dart';
 export 'CupertinoTimerPicker/node_base.dart';
 
+export 'MonthPicker/node1_base.dart';
+export 'YearPicker/node1_base.dart';
+export 'WillPopScope/node1_base.dart';
 
 export 'AppBar.dart';
 export 'BottomAppBar.dart';
