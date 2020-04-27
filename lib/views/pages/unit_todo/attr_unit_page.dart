@@ -12,7 +12,7 @@ import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/items/collect_widget_list_item.dart';
 import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
 
-import '../common/empty_page.dart';
+import '../../common/empty_page.dart';
 
 class AttrUnitPage extends StatelessWidget {
   final info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/app/navigation/unit_navigation.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/category/category_show.dart';
@@ -10,12 +11,12 @@ import 'package:flutter_unit/views/pages/setting/item_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/theme_color_setting.dart';
 import 'package:flutter_unit/views/pages/unit_todo/attr_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/bug_unit_page.dart';
-import 'package:flutter_unit/views/pages/category/category_page.dart';
+
 import 'package:flutter_unit/views/pages/detail/widget_detail_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/paint_unit_page.dart';
 import 'package:flutter_unit/views/pages/setting/setting_page.dart';
-import 'package:flutter_unit/views/pages/navigation/unit_navigation.dart';
+
 
 import 'utils/router_utils.dart';
 

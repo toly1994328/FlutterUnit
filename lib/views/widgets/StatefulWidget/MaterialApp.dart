@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/views/pages/navigation/unit_navigation.dart';
 import 'package:flutter_unit/views/widgets/StatefulWidget/Scaffold.dart';
 
 /// create by 张风捷特烈 on 2020-03-17
