@@ -51,18 +51,16 @@ class AppStorage {
     var dbPath = path.join(databasesPath, "flutter.db");
     var exists = await databaseExists(dbPath);
     if (!exists) {
-      print("Creating new copy from asset");
       try {
         await Directory(path.dirname(dbPath)).create(recursive: true);
+        print("========= assets ======拷贝完成====");
       } catch (_) {}
-
       ByteData data = await rootBundle.load(path.join("assets", "flutter.db"));
       List<int> bytes =
       data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes, flush: true);
-
     } else {
-      print("Opening existing database");
+      print("========= 数据库 ======已存在====");
     }
     return await openDatabase(dbPath, readOnly: false);
   }
