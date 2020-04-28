@@ -14,64 +14,77 @@ class CouponWidgetListItem extends StatelessWidget {
   final WidgetModel data;
   final bool hasTopHole;
   final bool hasBottomHole;
+  final bool isClip;
 
   CouponWidgetListItem(
-      {this.data, this.hasTopHole = true, this.hasBottomHole = false});
+      {this.data,
+      this.hasTopHole = true,
+      this.hasBottomHole = false,
+      this.isClip = true});
 
   final List<int> colors = Cons.tabColors;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        ClipPath(
-          clipper: ShapeBorderClipper(
-              shape: CouponShapeBorder(
-                  hasTopHole: hasTopHole,
-                  hasBottomHole: hasBottomHole,
-                  hasLine: false,
-                  edgeRadius: 25,
-                  lineRate: 0.20)),
-          child: Container(
-            color: Color(colors[data.family.index]).withAlpha(66),
-            height: 95,
-            padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
-            child: Row(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Hero(
-                    tag: "hero_widget_image_${data.id}",
-                    child: data.image == null
-                        ? Material(
-                            color: Colors.transparent,
-                            child: CircleText(
-                              text: data.name,
-                              size: 60,
-                              color: invColor,
-                            ),
-                          )
-                        : CircleImage(
-                            image: data.image,
-                            size: 60,
-                          ),
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[_buildTitle(), _buildSummary()],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        _buildCollectTag(Theme.of(context).primaryColor)
-      ],
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+      child: Stack(
+        children: <Widget>[
+          isClip
+              ? ClipPath(
+                  clipper: ShapeBorderClipper(
+                      shape: CouponShapeBorder(
+                          hasTopHole: hasTopHole,
+                          hasBottomHole: hasBottomHole,
+                          hasLine: false,
+                          edgeRadius: 25,
+                          lineRate: 0.20)),
+                  child: buildContent(),
+                )
+              : buildContent(),
+          _buildCollectTag(Theme.of(context).primaryColor)
+        ],
+      ),
     );
   }
+
+  Widget buildContent() => Container(
+        color: Color(colors[data.family.index]).withAlpha(66),
+        height: 95,
+        padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+        child: Row(
+          children: <Widget>[
+            buildLeading(),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[_buildTitle(), _buildSummary()],
+              ),
+            ),
+          ],
+        ),
+      );
+
+  Widget buildLeading() => Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Hero(
+          tag: "hero_widget_image_${data.id}",
+          child: data.image == null
+              ? Material(
+                  color: Colors.transparent,
+                  child: CircleText(
+                    text: data.name,
+                    size: 60,
+                    color: invColor,
+                  ),
+                )
+              : CircleImage(
+                  image: data.image,
+                  size: 60,
+                ),
+        ),
+      );
 
   Color get invColor {
     return Color(colors[data.family.index]);
@@ -80,18 +93,18 @@ class CouponWidgetListItem extends StatelessWidget {
   Widget _buildCollectTag(Color color) {
     return Positioned(
         top: 0,
-        left: 20,
+        right: 40,
         child: BlocBuilder<CollectBloc, CollectState>(builder: (_, s) {
           var show = s.widgets.contains(data);
           return Opacity(
             opacity: show ? 1.0 : 0.0,
             child: SizedOverflowBox(
               alignment: Alignment.bottomCenter,
-              size: Size(0, 30 - 8.0),
+              size: Size(0, 20 - 6.0),
               child: Tag(
                 color: color,
-                shadowHeight: 8.0,
-                size: Size(20, 30),
+                shadowHeight: 6.0,
+                size: Size(15, 20),
               ),
             ),
           );
