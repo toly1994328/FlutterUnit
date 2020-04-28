@@ -7,6 +7,17 @@
 
 ![](https://user-gold-cdn.xitu.io/2020/4/24/171a9911d22d34a8?w=300&h=390&f=png&s=22765)
 
+> 当前Flutter 版本
+
+```
+a1@toly ~ % flutter --version
+Flutter 1.12.13+hotfix.8 • channel stable •
+https://github.com/flutter/flutter.git
+Framework • revision 0b8abb4724 (3 months ago) • 2020-02-11 11:44:36 -0800
+Engine • revision e1e6ced81d
+Tools • Dart 2.7.0
+```
+
 ---
 
 
