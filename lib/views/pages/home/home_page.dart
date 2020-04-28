@@ -9,6 +9,7 @@ import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
 import 'package:flutter_unit/views/items/coupon_widget_list_item.dart';
+import 'package:flutter_unit/views/items/home_item_support.dart';
 import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
 import 'package:flutter_unit/views/pages/home/toly_app_bar.dart';
 
@@ -57,13 +58,10 @@ class _HomePageState extends State<HomePage> {
       if (items.isEmpty) return EmptyPage();
       return ListView.builder(
           controller: _ctrl,
-          itemBuilder: (_, index) => Container(
-                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                child: FeedbackWidget(
+          itemBuilder: (_, index) =>  FeedbackWidget(
                     duration: Duration(milliseconds: 200),
                     onPressed: () => _toDetailPage(items[index]),
                     child: _mapItemByType(items[index])),
-              ),
           itemCount: items.length);
     }
     if (state is WidgetsLoadFailed) {
@@ -76,30 +74,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _mapItemByType(WidgetModel model) {
     var index = BlocProvider.of<GlobalBloc>(context).state.itemStyleIndex;
-    switch (index) {
-      case 0:
-        return TechnoWidgetListItem(
-          data: model,
-        );
-      case 1:
-        return CouponWidgetListItem(
-          data: model,
-        );
-      case 2:
-        return CouponWidgetListItem(
-          hasTopHole: false,
-          data: model,
-        );
-      case 3:
-        return CouponWidgetListItem(
-          hasTopHole: true,
-          hasBottomHole: true,
-          data: model,
-        );
-    }
-    return TechnoWidgetListItem(
-      data: model,
-    );
+    return HomeItemSupport.get(model, index);
   }
 
   _updateAppBarHeight() {

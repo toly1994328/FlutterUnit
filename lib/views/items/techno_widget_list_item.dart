@@ -13,50 +13,58 @@ import 'package:flutter_unit/model/widget_model.dart';
 
 class TechnoWidgetListItem extends StatelessWidget {
   final WidgetModel data;
-
-  TechnoWidgetListItem({this.data});
+  final bool isClip ;
+  TechnoWidgetListItem({
+    this.data,
+    this.isClip = true
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Material(
-          color: itemColor.withAlpha(66),
-          shape: TechnoShapeBorder(color: itemColor),
-          child: Container(
-            height: 95,
-            padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
-            child: Row(
-              children: <Widget>[
-                Wrap(
-                  spacing: 5,
-                  direction: Axis.vertical,
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: <Widget>[
-                    _buildLeading(),
-                    StarScore(
-                      star: Star(
-                          emptyColor: Colors.white,
-                          size: 12,
-                          fillColor: itemColor),
-                      score: data.lever,
-                    )
-                  ],
-                ),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[_buildTitle(), _buildSummary()],
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+      child: Stack(
+        children: <Widget>[
+          Material(
+            color: itemColor.withAlpha(66),
+            shape: isClip?TechnoShapeBorder(color: itemColor):null,
+            child: Container(
+              height: 95,
+              padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+              child: Row(
+                children: <Widget>[
+                  Wrap(
+                    spacing: 5,
+                    direction: Axis.vertical,
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: <Widget>[
+                      Hero(
+                          tag: "hero_widget_image_${data.id}",
+                          child: _buildLeading()),
+                      StarScore(
+                        star: Star(
+                            emptyColor: Colors.white,
+                            size: 12,
+                            fillColor: itemColor),
+                        score: data.lever,
+                      )
+                    ],
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[_buildTitle(), _buildSummary()],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        _buildCollectTag(Theme.of(context).primaryColor)
-      ],
+          _buildCollectTag(Theme.of(context).primaryColor)
+        ],
+      ),
     );
   }
 
@@ -83,22 +91,19 @@ class TechnoWidgetListItem extends StatelessWidget {
 
   Widget _buildLeading() => Padding(
         padding: const EdgeInsets.only(left: 5, right: 5),
-        child: Hero(
-          tag: "hero_widget_image_${data.id}",
-          child: data.image == null
-              ? Material(
-                  color: Colors.transparent,
-                  child: CircleText(
-                    text: data.name,
-                    size: 60,
-                    color: itemColor,
-                  ),
-                )
-              : CircleImage(
-                  image: data.image,
-                  size: 55,
+        child: data.image == null
+            ? Material(
+                color: Colors.transparent,
+                child: CircleText(
+                  text: data.name,
+                  size: 60,
+                  color: itemColor,
                 ),
-        ),
+              )
+            : CircleImage(
+                image: data.image,
+                size: 55,
+              ),
       );
 
   Color get itemColor => Color(Cons.tabColors[data.family.index]);

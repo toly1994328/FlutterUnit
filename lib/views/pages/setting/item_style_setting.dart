@@ -2,20 +2,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/enums.dart';
-import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/blocs/global/global_event.dart';
 import 'package:flutter_unit/blocs/global/global_state.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/views/items/coupon_widget_list_item.dart';
-import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
+import 'package:flutter_unit/views/items/home_item_support.dart';
+
 
 /// create by 张风捷特烈 on 2020-04-10
 /// contact me by email 1981462002@qq.com
-/// 说明:
+/// 说明: item样式切换支持
 
 class ItemStyleSettingPage extends StatelessWidget {
   @override
@@ -31,28 +28,12 @@ class ItemStyleSettingPage extends StatelessWidget {
     );
   }
 
-  final items = [
-    TechnoWidgetListItem(data: getContainer()),
-    CouponWidgetListItem(data: getContainer()),
-    CouponWidgetListItem(hasTopHole: false, data: getContainer()),
-    CouponWidgetListItem(
-        hasTopHole: true, hasBottomHole: true, data: getContainer()),
-  ];
-
-  static WidgetModel getContainer() => WidgetModel(
-      id: Random().nextInt(10000),
-      name: 'Container',
-      nameCN: "",
-      lever: 5,
-      family: WidgetFamily.statelessWidget,
-      info: '用于容纳单个子组件的容器组件。集成了若干个单子组件的功能，如内外边距、形变、装饰、约束等...');
+  get items=> HomeItemSupport.itemSimples();
 
   Widget _buildFontCell(BuildContext context, int index) {
     return ListView.builder(
         itemCount: items.length,
-        itemBuilder: (_, i) => Padding(
-            padding: EdgeInsets.only(left: 20, top: 20, right: 20),
-            child: FeedbackWidget(
+        itemBuilder: (_, i) => FeedbackWidget(
                 a: 0.95,
                 duration: Duration(milliseconds: 200),
                 onPressed: () {
@@ -64,7 +45,7 @@ class ItemStyleSettingPage extends StatelessWidget {
                     items[i],
                     if (index == i)
                       Positioned(
-                        left: 15,
+                        left: 25,
                         top: 15,
                         child: Circle(
                           color: Theme.of(context).primaryColor,
@@ -77,6 +58,6 @@ class ItemStyleSettingPage extends StatelessWidget {
                         ),
                       )
                   ],
-                ))));
+                )));
   }
 }
