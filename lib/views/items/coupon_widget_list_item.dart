@@ -27,7 +27,7 @@ class CouponWidgetListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       child: Stack(
         children: <Widget>[
           isClip
@@ -51,7 +51,7 @@ class CouponWidgetListItem extends StatelessWidget {
   Widget buildContent() => Container(
         color: Color(colors[data.family.index]).withAlpha(66),
         height: 95,
-        padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+        padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
         child: Row(
           children: <Widget>[
             buildLeading(),
@@ -100,11 +100,11 @@ class CouponWidgetListItem extends StatelessWidget {
             opacity: show ? 1.0 : 0.0,
             child: SizedOverflowBox(
               alignment: Alignment.bottomCenter,
-              size: Size(0, 20 - 6.0),
+              size: const Size(0, 20 - 6.0),
               child: Tag(
                 color: color,
                 shadowHeight: 6.0,
-                size: Size(15, 20),
+                size: const Size(15, 20),
               ),
             ),
           );
@@ -115,11 +115,11 @@ class CouponWidgetListItem extends StatelessWidget {
     return Expanded(
       child: Row(
         children: <Widget>[
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Expanded(
             child: Text(data.name,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
                     shadows: [
@@ -144,10 +144,9 @@ class CouponWidgetListItem extends StatelessWidget {
           data.info,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-              color: Colors.grey[600],
-              fontSize: 14,
-              shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
+          style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: [
+            const Shadow(color: Colors.white, offset: const Offset(.5, .5))
+          ]),
         ),
       ),
     );

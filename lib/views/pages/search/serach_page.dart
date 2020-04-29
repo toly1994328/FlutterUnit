@@ -15,7 +15,7 @@ import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
 import 'package:flutter_unit/views/pages/search/app_search_bar.dart';
 import 'package:flutter_unit/views/pages/search/error_page.dart';
-import 'package:flutter_unit/views/pages/search/loading_page.dart';
+import 'package:flutter_unit/views/common/loading_page.dart';
 import 'package:flutter_unit/views/pages/search/not_search_page.dart';
 import 'package:flutter_unit/views/pages/search/start_filter.dart';
 

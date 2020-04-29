@@ -34,12 +34,6 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   bool openBottom = false;
 
   @override
-  void deactivate() {
-    BlocProvider.of<DetailBloc>(context).add(ResetDetailState());
-    super.deactivate();
-  }
-
-  @override
   void initState() {
     _models.add(widget.model);
     super.initState();
@@ -47,6 +41,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    print('build---_WidgetDetailPageState---');
     return WillPopScope(
       onWillPop: () async {
         _models.removeLast();
@@ -88,6 +83,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                     model: _models.last,
                   ),
                   BlocBuilder<DetailBloc, DetailState>(builder: (_, state) {
+                    print('build---${state.runtimeType}---');
                     if (state is DetailWithData) {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +130,6 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           bool collected = st.widgets.contains(model);
           var msg =
               collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
-
           Toast.toast(ctx, msg,
             duration: Duration(milliseconds: collected?1500:600),
             action: collected
@@ -164,7 +159,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
   Widget _buildNodes(List<NodeModel> nodes, String name) {
     var globalState = BlocProvider.of<GlobalBloc>(context).state;
-
+    print('build---_buildNodes---${widget.model}');
     return Column(
         children: nodes
             .asMap()

@@ -25,7 +25,7 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
   Widget build(BuildContext context) {
     return BottomAppBar(
         elevation: 0,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         color: widget.color,
         child: Row(
@@ -38,28 +38,27 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
 
   List<String> get info => widget.itemData.keys.toList();
 
+  final borderTR = const BorderRadius.only(topRight: Radius.circular(10));
+  final borderTL = const BorderRadius.only(topLeft: Radius.circular(10));
+  final paddingTR = const EdgeInsets.only(top: 2, right: 2);
+  final paddingTL = const EdgeInsets.only(top: 2, left: 2);
+
   Widget _buildChild(BuildContext context, int i, Color color) {
     var active = i == _position;
     bool left = i == 0;
+
     return GestureDetector(
       onTap: () => _tapTab(i),
       onLongPress: () => _onLongPress(context, i),
       child: Material(
         elevation: 2,
-        shape: RoundedRectangleBorder(
-            borderRadius: left
-                ? BorderRadius.only(topRight: Radius.circular(10))
-                : BorderRadius.only(topLeft: Radius.circular(10))),
+        shape: RoundedRectangleBorder(borderRadius: left ? borderTR : borderTL),
         child: Container(
-            margin: left
-                ? EdgeInsets.only(top: 2, right: 2)
-                : EdgeInsets.only(top: 2, left: 2),
+            margin: left ? paddingTR : paddingTL,
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: color.withAlpha(88),
-                borderRadius: left
-                    ? BorderRadius.only(topRight: Radius.circular(10))
-                    : BorderRadius.only(topLeft: Radius.circular(10))),
+                borderRadius: left ? borderTR : borderTL),
             height: 45,
             width: 100,
             child: Icon(

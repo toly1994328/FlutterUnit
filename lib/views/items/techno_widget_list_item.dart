@@ -13,24 +13,23 @@ import 'package:flutter_unit/model/widget_model.dart';
 
 class TechnoWidgetListItem extends StatelessWidget {
   final WidgetModel data;
-  final bool isClip ;
-  TechnoWidgetListItem({
-    this.data,
-    this.isClip = true
-  });
+  final bool isClip;
+
+  TechnoWidgetListItem({this.data, this.isClip = true});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       child: Stack(
         children: <Widget>[
           Material(
             color: itemColor.withAlpha(66),
-            shape: isClip?TechnoShapeBorder(color: itemColor):null,
+            shape: isClip ? TechnoShapeBorder(color: itemColor) : null,
             child: Container(
               height: 95,
-              padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+              padding: const EdgeInsets.only(
+                  top: 10, left: 10, right: 10, bottom: 5),
               child: Row(
                 children: <Widget>[
                   Wrap(
@@ -76,13 +75,13 @@ class TechnoWidgetListItem extends StatelessWidget {
           var show = s.widgets.contains(data);
           return Opacity(
             opacity: show ? 1.0 : 0.0,
-            child: SizedOverflowBox(
+            child:  SizedOverflowBox(
               alignment: Alignment.bottomCenter,
-              size: Size(0, 30 - 8.0),
-              child: Tag(
+              size: const Size(0, 30 - 8.0),
+              child:  Tag(
                 color: color,
                 shadowHeight: 8.0,
-                size: Size(20, 30),
+                size: const Size(20, 30),
               ),
             ),
           );
@@ -111,11 +110,11 @@ class TechnoWidgetListItem extends StatelessWidget {
   Widget _buildTitle() {
     return Row(
       children: <Widget>[
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         Expanded(
           child: Text(data.name,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   shadows: [
@@ -128,16 +127,15 @@ class TechnoWidgetListItem extends StatelessWidget {
 
   Widget _buildSummary() {
     return Container(
-      padding: EdgeInsets.only(left: 10),
+      padding: const EdgeInsets.only(left: 10),
       child: Text(
         //尾部摘要
         data.info,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 14,
-            shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
+        style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: [
+          const Shadow(color: Colors.white, offset: const Offset(.5, .5))
+        ]),
       ),
     );
   }

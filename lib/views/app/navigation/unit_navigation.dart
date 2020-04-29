@@ -42,7 +42,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
                 FloatingActionButtonLocation.centerDocked,
             floatingActionButton: _buildSearchButton(state.homeColor),
             body: PageView(
-              physics: NeverScrollableScrollPhysics(),
+              physics:const NeverScrollableScrollPhysics(),
               //使用PageView实现页面的切换
               controller: _controller,
               children: <Widget>[
@@ -60,14 +60,14 @@ class _UnitNavigationState extends State<UnitNavigation> {
     return FloatingActionButton(
       elevation: 2,
       backgroundColor: color,
-      child: Icon(Icons.search),
+      child: const Icon(Icons.search),
       onPressed: () => Navigator.of(context).pushNamed(Router.search),
     );
   }
 
   _onTapNav(int index) {
     _controller.animateToPage(index,
-        duration: Duration(milliseconds: 200), curve: Curves.linear);
+        duration:const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 1) {
       BlocProvider.of<CollectBloc>(context).add(EventSetCollectData());
     }

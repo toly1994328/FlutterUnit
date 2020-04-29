@@ -8,9 +8,7 @@ import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
-import 'package:flutter_unit/views/items/coupon_widget_list_item.dart';
 import 'package:flutter_unit/views/items/home_item_support.dart';
-import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
 import 'package:flutter_unit/views/pages/home/toly_app_bar.dart';
 
 import 'background.dart';
@@ -34,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
-
+    var showBg = BlocProvider.of<GlobalBloc>(context).state.showBackGround;
     return Scaffold(
       appBar: TolyAppBar(
         selectIndex: Cons.tabColors.indexOf(color.value),
@@ -43,25 +41,20 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Stack(
         children: <Widget>[
-          if (BlocProvider.of<GlobalBloc>(context).state.showBackGround)
-            Background(),
-          BlocBuilder<HomeBloc, HomeState>(
-              builder: (_, state) => _buildContent(state))
+          if (showBg) Background(),
+          BlocBuilder<HomeBloc, HomeState>(builder: _buildContent)
         ],
       ),
     );
   }
 
-  Widget _buildContent(HomeState state) {
+  Widget _buildContent(BuildContext context, HomeState state) {
     if (state is WidgetsLoaded) {
       var items = state.widgets;
       if (items.isEmpty) return EmptyPage();
       return ListView.builder(
           controller: _ctrl,
-          itemBuilder: (_, index) =>  FeedbackWidget(
-                    duration: Duration(milliseconds: 200),
-                    onPressed: () => _toDetailPage(items[index]),
-                    child: _mapItemByType(items[index])),
+          itemBuilder: (_, index) => _buildHomeItem(items[index]),
           itemCount: items.length);
     }
     if (state is WidgetsLoadFailed) {
@@ -72,10 +65,14 @@ class _HomePageState extends State<HomePage> {
     return Container();
   }
 
-  Widget _mapItemByType(WidgetModel model) {
-    var index = BlocProvider.of<GlobalBloc>(context).state.itemStyleIndex;
-    return HomeItemSupport.get(model, index);
-  }
+  Widget _buildHomeItem(
+    WidgetModel model,
+  ) =>
+      FeedbackWidget(
+          duration: const Duration(milliseconds: 200),
+          onPressed: () => _toDetailPage(model),
+          child: HomeItemSupport.get(model,
+              BlocProvider.of<GlobalBloc>(context).state.itemStyleIndex));
 
   _updateAppBarHeight() {
     if (_ctrl.offset < _limitY * 4) {

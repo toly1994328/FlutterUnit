@@ -8,11 +8,11 @@ class Background extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/sabar.jpg'),
+                image: const AssetImage('assets/images/sabar.jpg'),
                 fit: BoxFit.cover),
-            borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(400),
-                topLeft: Radius.circular(400))),
+            borderRadius: const BorderRadius.only(
+                bottomRight: const Radius.circular(400),
+                topLeft: const Radius.circular(400))),
       ),
     );
   }
