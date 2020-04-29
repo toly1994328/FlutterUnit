@@ -6,7 +6,7 @@ class Circle extends StatelessWidget {
   final bool showShadow;
   final Widget child;
 
-  Circle({this.color=Colors.blue, this.radius=6,this.showShadow=true,this.child});
+  const Circle({this.color=Colors.blue, this.radius=6,this.showShadow=true,this.child});
 
   @override
   Widget build(BuildContext context) {

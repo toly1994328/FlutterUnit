@@ -11,7 +11,8 @@ import 'package:flutter_unit/model/widget_model.dart';
 class CollectWidgetListItem extends StatelessWidget {
   final WidgetModel data;
   final Function(WidgetModel) onDelectItemClick;
-  CollectWidgetListItem({this.data,this.onDelectItemClick});
+
+  CollectWidgetListItem({this.data, this.onDelectItemClick});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,8 @@ class CollectWidgetListItem extends StatelessWidget {
           shape: TechnoShapeBorder(color: itemColor),
           child: Container(
             height: 95,
-            padding: EdgeInsets.only(top: 10, left: 5, right: 10, bottom: 5),
+            padding:
+                const EdgeInsets.only(top: 10, left: 5, right: 10, bottom: 5),
             child: Row(
               children: <Widget>[
                 _buildLeading(),
@@ -51,12 +53,12 @@ class CollectWidgetListItem extends StatelessWidget {
             bottom: 5,
             right: 5,
             child: FeedbackWidget(
-              onPressed: (){
-                if(onDelectItemClick!=null){
+              onPressed: () {
+                if (onDelectItemClick != null) {
                   onDelectItemClick(data);
                 }
               },
-              child: Icon(
+              child: const Icon(
                 CupertinoIcons.delete_solid,
                 color: Colors.red,
               ),
@@ -91,11 +93,12 @@ class CollectWidgetListItem extends StatelessWidget {
         Expanded(
           child: Text(data.name,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   shadows: [
-                    Shadow(color: Colors.white, offset: Offset(.3, .3))
+                    const Shadow(
+                        color: Colors.white, offset: const Offset(.3, .3))
                   ])),
         ),
       ],
@@ -113,7 +116,7 @@ class CollectWidgetListItem extends StatelessWidget {
           style: TextStyle(
               color: Colors.grey[600],
               fontSize: 14,
-              shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
+              shadows: [const Shadow(color: Colors.white, offset: const Offset(.5, .5))]),
         ),
       ),
     );

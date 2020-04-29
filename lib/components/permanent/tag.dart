@@ -6,7 +6,7 @@ class Tag extends StatelessWidget {
   final double tranRate;
   final Color color;
 
-  Tag({this.size = const Size(100, 150),this.shadowHeight=9.0,this.tranRate=0.25,this.color=Colors.red});
+  const Tag({this.size = const Size(100, 150),this.shadowHeight=9.0,this.tranRate=0.25,this.color=Colors.red});
 
   @override
   Widget build(BuildContext context) {

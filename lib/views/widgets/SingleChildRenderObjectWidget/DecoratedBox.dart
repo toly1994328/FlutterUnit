@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/cons.dart';
 
 //    {
 //      "widgetId": 70,

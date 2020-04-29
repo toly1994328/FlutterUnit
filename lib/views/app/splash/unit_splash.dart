@@ -24,24 +24,14 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
   AnimationController _secondController;
   double _factor;
-  double _secondFactor = 0.0;
   Animation _curveAnim;
-  Animation _curveAnim2;
-  Animation _bouncAnim;
+
   bool _animEnd = false;
 
   @override
   void initState() {
-//    SystemUiOverlayStyle systemUiOverlayStyle =
-//    SystemUiOverlayStyle(statusBarColor: Colors.red);
-//    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-//    SystemChrome.setSystemUIOverlayStyle(
-//        SystemUiOverlayStyle(statusBarColor: Colors.blue));
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
-//      systemNavigationBarColor: Colors.transparent,
-        statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-//    SystemChrome.setEnabledSystemUIOverlays([]);
 
     _controller =
         AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
@@ -58,9 +48,6 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
           });
     _secondController =
         AnimationController(duration: Duration(milliseconds: 600), vsync: this)
-          ..addListener(() => setState(() {
-                return _secondFactor = _curveAnim2.value;
-              }))
           ..addStatusListener((s) {
             if (s == AnimationStatus.completed) {
           Navigator.of(context).pushReplacementNamed(Router.nav);
@@ -68,8 +55,6 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
           });
     _curveAnim =
         CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
-    _curveAnim2 =
-        CurvedAnimation(parent: _secondController, curve: Curves.fastOutSlowIn);
     _controller.forward();
     super.initState();
   }
@@ -79,14 +64,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     var winH = MediaQuery.of(context).size.height;
     var winW = MediaQuery.of(context).size.width;
 
-    return
-//      GestureDetector(
-//      onTap: () {
-//        _controller.reset();
-//        _controller.forward();
-//      },
-//      child:
-        Scaffold(
+    return Scaffold(
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
@@ -103,7 +81,6 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
           buildPower(),
         ],
       ),
-//      ),
     );
   }
 
@@ -113,8 +90,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       color: Theme.of(context).primaryColor,
       fontWeight: FontWeight.bold,
       shadows: [
-        Shadow(
-          //阴影
+        const Shadow(
           color: Colors.grey,
           offset: Offset(1.0, 1.0), blurRadius: 1.0,
         )
@@ -131,7 +107,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
               AlignmentTween(begin: Alignment(-1, 0), end: Alignment.center)
                   .animate(_secondController),
           child: AnimatedOpacity(
-              duration: Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 300),
               opacity: _animEnd ? 1.0 : 0.0,
               child: ShaderMask(
                   shaderCallback: _buildShader,
@@ -156,8 +132,8 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   Widget buildLogo(Color primaryColor) {
     return SlideTransition(
       position: Tween<Offset>(
-        begin: Offset(0, 0),
-        end: Offset(0, -1.5),
+        begin:const Offset(0, 0),
+        end:const Offset(0, -1.5),
       ).animate(_controller),
       child: RotationTransition(
           turns: _controller,
@@ -179,27 +155,24 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     );
   }
 
-  Widget buildHead() {
-    return SlideTransition(
+  Widget buildHead() => SlideTransition(
         position: Tween<Offset>(
-          end: Offset(0, 0),
-          begin: Offset(0, -5),
+          end:const Offset(0, 0),
+          begin:const Offset(0, -5),
         ).animate(_controller),
         child: Container(
           height: 45,
           width: 45,
           child: Image.asset('assets/images/icon_head.png'),
         ));
-  }
 
-  Widget buildPower() {
-    return Positioned(
+  Widget buildPower() => Positioned(
       bottom: 30,
       right: 30,
       child: AnimatedOpacity(
-          duration: Duration(milliseconds: 300),
+          duration:const Duration(milliseconds: 300),
           opacity: _animEnd ? 1.0 : 0.0,
-          child: Text("Power By 张风捷特烈",
+          child:const Text("Power By 张风捷特烈",
               style: TextStyle(
                   color: Colors.grey,
                   shadows: [
@@ -210,5 +183,4 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
                   ],
                   fontSize: 16))),
     );
-  }
 }

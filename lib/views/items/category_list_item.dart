@@ -19,13 +19,13 @@ class CategoryListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shadowColor: data.color.withAlpha(88),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 2,
       child: Container(
         child: _buildChild(context),
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
 
-        decoration: BoxDecoration(
+        decoration:const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
@@ -39,7 +39,7 @@ class CategoryListItem extends StatelessWidget {
     return Column(
       children: <Widget>[
         _buildTitle(themeColor),
-        Divider(),
+        const Divider(),
         Expanded(
             child: Stack(
               fit: StackFit.expand,
@@ -50,7 +50,7 @@ class CategoryListItem extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.grey,
                           shadows: [
-                            Shadow(color: themeColor, offset: Offset(.2,.2),blurRadius: .5)
+                            Shadow(color: themeColor, offset:const Offset(.2,.2),blurRadius: .5)
                           ])),
                 ),
                   Positioned(
@@ -72,7 +72,7 @@ class CategoryListItem extends StatelessWidget {
                   )
               ],
             )),
-        Divider(),
+        const Divider(),
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: Text(
@@ -107,7 +107,7 @@ class CategoryListItem extends StatelessWidget {
                 onDeleteItemClick(data);
               }
             },
-            child: Icon(
+            child: const Icon(
               CupertinoIcons.delete_solid,
               color: Colors.red,
             ),
@@ -115,58 +115,4 @@ class CategoryListItem extends StatelessWidget {
       ],
     );
   }
-
-//  Widget _buildLeading() => Padding(
-//        padding: const EdgeInsets.only(left: 5, right: 5),
-//        child: data.image == null
-//            ? Material(
-//                color: Colors.transparent,
-//                child: CircleText(
-//                  text: data.name,
-//                  size: 50,
-//                  color: itemColor,
-//                ),
-//              )
-//            : CircleImage(
-//                image: data.image,
-//                size: 50,
-//              ),
-//      );
-//
-//  Color get itemColor => Color(Cons.tabColors[data.family.index]);
-//
-//  Widget _buildTitle() {
-//    return Row(
-//      children: <Widget>[
-////        SizedBox(width: 10),
-//        Expanded(
-//          child: Text(data.name,
-//              overflow: TextOverflow.ellipsis,
-//              style: TextStyle(
-//                  fontSize: 17,
-//                  fontWeight: FontWeight.bold,
-//                  shadows: [
-//                    Shadow(color: Colors.white, offset: Offset(.3, .3))
-//                  ])),
-//        ),
-//      ],
-//    );
-//  }
-//
-//  Widget _buildSummary() {
-//    return Padding(
-//      padding: const EdgeInsets.only(left: 5, bottom: 10, top: 5),
-//      child: Container(
-//        child: Text(
-//          data.nameCN,
-//          maxLines: 2,
-//          overflow: TextOverflow.ellipsis,
-//          style: TextStyle(
-//              color: Colors.grey[600],
-//              fontSize: 14,
-//              shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
-//        ),
-//      ),
-//    );
-//  }
 }
