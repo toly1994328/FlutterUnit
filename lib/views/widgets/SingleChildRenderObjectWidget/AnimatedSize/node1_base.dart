@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 //    {
 //      "widgetId": 201,
-//      "name": 'AnimatedAlign基本使用',
+//      "name": 'AnimatedSize基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【child】 : 孩子组件   【Widget】\n"

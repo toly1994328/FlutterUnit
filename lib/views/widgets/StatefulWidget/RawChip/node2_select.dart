@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -40,7 +39,7 @@ class _SelectRawChipState extends State<SelectRawChip> {
         pressElevation: 5,
         shadowColor: Colors.orangeAccent,
         onSelected: (v)=> setState(() => _selected=v),
-        onDeleted: () => DialogAbout.show(context),
+        onDeleted: () =>  Navigator.of(context).pushNamed('AboutMePage'),
       ),
     );
   }

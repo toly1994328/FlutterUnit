@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/utils/color_utils.dart';
+import '../../../../app/utils/color_utils.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
 //    {
 //      "widgetId": 88,
-//      "name": 'FittedBox基本使用',
+//      "name": 'ColorFiltered基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【child】 : 孩子组件   【Widget】\n"

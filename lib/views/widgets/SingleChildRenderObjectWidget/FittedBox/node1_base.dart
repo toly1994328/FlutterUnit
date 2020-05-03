@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -21,6 +21,16 @@ class CustomFittedBox extends StatefulWidget {
 class _CustomFittedBoxState extends State<CustomFittedBox> {
   double _childW = 20;
   double _childH = 30;
+
+  final  rainbow = <int>[
+    0xffff0000,
+    0xffFF7F00,
+    0xffFFFF00,
+    0xff00FF00,
+    0xff00FFFF,
+    0xff0000FF,
+    0xff8B00FF
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +69,7 @@ class _CustomFittedBoxState extends State<CustomFittedBox> {
             //添加渐变色
             gradient: LinearGradient(
                 stops: <double>[0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0],
-                colors: Cons.rainbow.map((e) => Color(e)).toList()),
+                colors: rainbow.map((e) => Color(e)).toList()),
           ),
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
@@ -35,8 +34,8 @@ class ShapeMaterialButton extends StatelessWidget {
               shape: CircleBorder(
                 side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
               ),
-              onLongPress: () => DialogAbout.show(context),
-              onPressed: () => DialogAbout.show(context)),
+              onLongPress: () =>  Navigator.of(context).pushNamed('AboutMePage'),
+              onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage')),
         ),
         Container(
           width: 100,
@@ -54,8 +53,8 @@ class ShapeMaterialButton extends StatelessWidget {
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(15))),
-              onLongPress: () => DialogAbout.show(context),
-              onPressed: () => DialogAbout.show(context)),
+              onLongPress: () =>  Navigator.of(context).pushNamed('AboutMePage'),
+              onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage')),
         ),
       ],
     );

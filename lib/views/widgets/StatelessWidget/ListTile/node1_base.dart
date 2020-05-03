@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
@@ -28,7 +27,7 @@ class CustomListTile extends StatelessWidget {
         subtitle: Text("海子"),
         contentPadding: EdgeInsets.all(5),
         trailing: Icon(Icons.more_vert),
-        onLongPress: () => DialogAbout.show(context),
+        onLongPress: () => Navigator.of(context).pushNamed('AboutMePage'),
       ),
     );
   }

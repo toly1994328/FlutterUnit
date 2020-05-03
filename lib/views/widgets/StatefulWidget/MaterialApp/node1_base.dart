@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/views/widgets/StatefulWidget/Scaffold/node1_base.dart';
+import '../../../../app/router.dart';
+import '../../StatefulWidget/Scaffold/node1_base.dart';
 
 /// create by 张风捷特烈 on 2020-03-17
 /// contact me by email 1981462002@qq.com
@@ -14,7 +14,7 @@ import 'package:flutter_unit/views/widgets/StatefulWidget/Scaffold/node1_base.da
 //          "【theme】 : 主题   【ThemeData】\n"
 //          "【title】 : 任务栏标题   【String】\n"
 //          "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
-//          "【home】 : 主页   【Widget】"
+//          "【home】 : 主页   【Widget】",
 //    }
 class CustomMaterialApp extends StatelessWidget {
   @override

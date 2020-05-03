@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 ///    {
 //      "widgetId": 40,
-//      "name": 'Switch基础语法',
+//      "name": 'Switch基础用法',
 //      "priority": 1,
 //      "subtitle":
 //          "【inactiveThumbColor】 : 未选中小圈颜色   【Color】\n"

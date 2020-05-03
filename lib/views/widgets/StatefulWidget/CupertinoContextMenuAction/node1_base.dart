@@ -13,7 +13,6 @@
 //    }
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 class CustomCupertinoContextMenuAction extends StatelessWidget {
   @override
@@ -26,7 +25,7 @@ class CustomCupertinoContextMenuAction extends StatelessWidget {
           child: CupertinoContextMenuAction(
               trailingIcon: CupertinoIcons.settings,
               isDefaultAction: true,
-              onPressed: () => DialogAbout.show(context),
+              onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'),
               child: Text('张风捷特烈')),
         ),
         Container(
@@ -35,7 +34,7 @@ class CustomCupertinoContextMenuAction extends StatelessWidget {
           child: CupertinoContextMenuAction(
               trailingIcon: CupertinoIcons.home,
               isDefaultAction: false,
-              onPressed: () => DialogAbout.show(context),
+              onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'),
               child: Text('百里·巫缨')),
         ),
       ],

@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 //          "【message】 : 消息内容   【String】\n"
 //          "【showDuration】 : 展示时间   【Duration】\n"
 //          "【waitDuration】 : 悬浮出现时间   【Duration】\n"
-//          "【child】 : 孩子   【Widget】"
+//          "【child】 : 孩子   【Widget】",
 //    }
 class CustomTooltip extends StatelessWidget {
   @override

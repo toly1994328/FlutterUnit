@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 //    {
 //      "widgetId": 94,
-//      "name": 'Flex的排布方向基本使用',
+//      "name": 'Flex的排布方向',
 //      "priority": 1,
 //      "subtitle":
 //          "【children】 : 组件列表   【List<Widget>】\n"

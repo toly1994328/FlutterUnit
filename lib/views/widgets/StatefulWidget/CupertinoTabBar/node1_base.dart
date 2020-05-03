@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 /// 说明:
 //    {
 //      "widgetId": 63,
-//      "name": 'CupertinoNavigationBar基本用法',
+//      "name": 'CupertinoTabBar基本用法',
 //      "priority": 1,
 //      "subtitle":
 //          "【currentIndex】 : 当前激活索引   【Widget】\n"
 //          "【items】 : 条目组件   【Widget】\n"
-//          "【trailing】 : 尾部组件   【Widget】\n"
 //          "【backgroundColor】 : 背景色   【Color】\n"
 //          "【inactiveColor】 : 非激活色   【Color】\n"
 //          "【activeColor】 : 激活色   【Color】\n"

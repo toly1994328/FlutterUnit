@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 //    {
 //      "widgetId": 55,
-//      "name": 'DropdownButton基本语法',
+//      "name": 'DropdownButton基本用法',
 //      "priority": 1,
 //      "subtitle":
 //      "【value】 : 当前值   【T】\n"

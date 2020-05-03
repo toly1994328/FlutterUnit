@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 //      "priority": 2,
 //      "subtitle":
 //          "【inactiveThumbImage】 : 未选中小圈图片   【ImageProvider】\n"
-//          "【activeThumbImage】 : 选中时滑槽颜色   【ImageProvider】"
+//          "【activeThumbImage】 : 选中时滑槽颜色   【ImageProvider】",
 //    }
 class ImageSwitch extends StatefulWidget {
   @override

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
 //    {
-//      "widgetId": 292,
+//      "widgetId": 295,
 //      "name": 'AbsorbPointer基本使用',
 //      "priority": 1,
 //      "subtitle":
@@ -51,7 +50,7 @@ class _CustomAbsorbPointerState extends State<CustomAbsorbPointer> {
         'To About',
         style: TextStyle(color: Colors.white),
       ),
-      onPressed: () => DialogAbout.show(context));
+      onPressed: () => Navigator.of(context).pushNamed('AboutMePage'));
 
   _buildSwitch() => Switch(
       value: _absorbing,

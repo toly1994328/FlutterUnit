@@ -7,6 +7,8 @@ export '../StatelessWidget/AlertDialog/node1_base.dart';
 export '../StatelessWidget/AnimatedIcon/node1_base.dart';
 export '../StatelessWidget/Card/node1_base.dart';
 export '../StatelessWidget/Card/node2_shape.dart';
+export '../StatelessWidget/PreferredSize/node1_base.dart';
+export '../StatelessWidget/PreferredSize/node2_adapter.dart';
 
 export '../StatelessWidget/CheckboxListTile/node1_base.dart';
 export '../StatelessWidget/CheckboxListTile/node2_select.dart';
@@ -95,6 +97,7 @@ export '../StatelessWidget/VerticalDivider/node2_height.dart';
 
 export '../StatelessWidget/BackButton/node1_base.dart';
 export '../StatelessWidget/ButtonBar/node1_base.dart';
+export '../StatelessWidget/ButtonBar/node2_padding.dart';
 export '../StatelessWidget/CloseButton/node1_base.dart';
 
 export '../StatelessWidget/FlatButton/node1_base.dart';

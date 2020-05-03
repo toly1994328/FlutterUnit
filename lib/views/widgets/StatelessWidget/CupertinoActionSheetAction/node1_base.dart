@@ -3,7 +3,7 @@
 /// 说明:
 //    {
 //      "widgetId": 132,
-//      "name": 'CupertinoActionSheet基本使用',
+//      "name": 'CupertinoActionSheetAction基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【child】 : 子组件   【Widget】\n"
@@ -13,7 +13,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
+import '../../../dialogs/dialog_about.dart';
 
 class CustomCupertinoActionSheetAction extends StatelessWidget {
   @override

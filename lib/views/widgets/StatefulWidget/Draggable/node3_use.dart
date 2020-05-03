@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 //      "name": 'Draggable其他使用',
 //      "priority": 3,
 //      "subtitle":
-//          "可以根据拖拽来处理一些事件。如删除、查询、弹框等"
+//          "可以根据拖拽来处理一些事件。如删除、查询、弹框等",
 //    }
 
 class DeleteDraggable extends StatefulWidget {

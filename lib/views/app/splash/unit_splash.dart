@@ -22,7 +22,6 @@ class UnitSplash extends StatefulWidget {
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
-  AnimationController _secondController;
   double _factor;
   Animation _curveAnim;
 
@@ -42,15 +41,10 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             if (s == AnimationStatus.completed) {
               setState(() {
                 _animEnd = true;
-                _secondController.forward();
+                Future.delayed(Duration(milliseconds: 600)).then((e){
+                  Navigator.of(context).pushReplacementNamed(Router.nav);
+                });
               });
-            }
-          });
-    _secondController =
-        AnimationController(duration: Duration(milliseconds: 600), vsync: this)
-          ..addStatusListener((s) {
-            if (s == AnimationStatus.completed) {
-          Navigator.of(context).pushReplacementNamed(Router.nav);
             }
           });
     _curveAnim =
@@ -98,36 +92,19 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     );
 
     return Positioned(
-      top: winH / 1.55,
-      child: Container(
-        height: 150,
-        width: winW,
-        child: AlignTransition(
-          alignment:
-              AlignmentTween(begin: Alignment(-1, 0), end: Alignment.center)
-                  .animate(_secondController),
-          child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 300),
+      top: winH / 1.4,
+      child:AnimatedOpacity(
+              duration: const Duration(milliseconds: 400),
               opacity: _animEnd ? 1.0 : 0.0,
-              child: ShaderMask(
-                  shaderCallback: _buildShader,
-                  child: Text(
-                    'Flutter Unit',
-                    style: shadowStyle,
-                  ))),
-        ),
-      ),
+              child: Text(
+                'Flutter Unit',
+                style: shadowStyle,
+              )),
     );
   }
 
   final colors = [Colors.red, Colors.yellow, Colors.blue];
 
-  Shader _buildShader(Rect bounds) => RadialGradient(
-          center: Alignment.topLeft,
-          radius: 1.0,
-          tileMode: TileMode.mirror,
-          colors: colors)
-      .createShader(bounds);
 
   Widget buildLogo(Color primaryColor) {
     return SlideTransition(

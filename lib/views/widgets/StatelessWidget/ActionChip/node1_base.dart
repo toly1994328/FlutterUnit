@@ -15,7 +15,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
+import '../../../dialogs/dialog_about.dart';
 
 
 class CustomActionChip extends StatelessWidget {

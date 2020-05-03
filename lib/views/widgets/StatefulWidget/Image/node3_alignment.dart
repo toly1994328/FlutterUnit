@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 //      "priority": 3,
 //      "subtitle":
 //          "【alignment】 : 颜色   【AlignmentGeometry】\n"
-//          "    常用Alignment类的九个静态常量，但也可定制位置"
+//          "    常用Alignment类的九个静态常量，但也可定制位置",
 //    },
 
 class AlignmentImage extends StatelessWidget {
