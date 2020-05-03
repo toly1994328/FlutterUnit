@@ -4,8 +4,8 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'unit_paint.dart';
 import 'package:flutter_unit/app/router.dart';
+import 'unit_paint.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
 /// contact me by email 1981462002@qq.com
@@ -22,6 +22,7 @@ class UnitSplash extends StatefulWidget {
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
+  AnimationController _secondController;
   double _factor;
   Animation _curveAnim;
 
@@ -29,24 +30,26 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle systemUiOverlayStyle =
+    SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
     _controller =
-        AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
-          ..addListener(() => setState(() {
-                return _factor = _curveAnim.value;
-              }))
-          ..addStatusListener((s) {
-            if (s == AnimationStatus.completed) {
-              setState(() {
-                _animEnd = true;
-                Future.delayed(Duration(milliseconds: 600)).then((e){
-                  Navigator.of(context).pushReplacementNamed(Router.nav);
-                });
-              });
-            }
+    AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
+      ..addListener(() => setState(() {
+        return _factor = _curveAnim.value;
+      }))
+      ..addStatusListener((s) {
+        if (s == AnimationStatus.completed) {
+          setState(() {
+            _animEnd = true;
+            Future.delayed(Duration(milliseconds: 600)).then((e){
+              Navigator.of(context).pushReplacementNamed(Router.nav);
+            });
           });
+        }
+      });
+
     _curveAnim =
         CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
     _controller.forward();
@@ -86,31 +89,31 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       shadows: [
         const Shadow(
           color: Colors.grey,
-          offset: Offset(1.0, 1.0), blurRadius: 1.0,
+          offset: Offset(1.0, 1.0),
+          blurRadius: 1.0,
         )
       ],
     );
 
     return Positioned(
       top: winH / 1.4,
-      child:AnimatedOpacity(
-              duration: const Duration(milliseconds: 400),
-              opacity: _animEnd ? 1.0 : 0.0,
-              child: Text(
-                'Flutter Unit',
-                style: shadowStyle,
-              )),
+      child: AnimatedOpacity(
+          duration: const Duration(milliseconds: 600),
+          opacity: _animEnd ? 1.0 : 0.0,
+          child: Text(
+            'Flutter Unit',
+            style: shadowStyle,
+          )),
     );
   }
 
   final colors = [Colors.red, Colors.yellow, Colors.blue];
 
-
   Widget buildLogo(Color primaryColor) {
     return SlideTransition(
       position: Tween<Offset>(
-        begin:const Offset(0, 0),
-        end:const Offset(0, -1.5),
+        begin: const Offset(0, 0),
+        end: const Offset(0, -1.5),
       ).animate(_controller),
       child: RotationTransition(
           turns: _controller,
@@ -119,13 +122,10 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             child: FadeTransition(
                 opacity: _controller,
                 child: Container(
-                  height:120,
+                  height: 120,
                   child: FlutterLogo(
                     colors: primaryColor,
-                    style: _animEnd
-                        ? FlutterLogoStyle.horizontal
-                        : FlutterLogoStyle.markOnly,
-                    size: _animEnd ? 150 : 45,
+                    size: 60,
                   ),
                 )),
           )),
@@ -133,31 +133,31 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   }
 
   Widget buildHead() => SlideTransition(
-        position: Tween<Offset>(
-          end:const Offset(0, 0),
-          begin:const Offset(0, -5),
-        ).animate(_controller),
-        child: Container(
-          height: 45,
-          width: 45,
-          child: Image.asset('assets/images/icon_head.png'),
-        ));
+      position: Tween<Offset>(
+        end: const Offset(0, 0),
+        begin: const Offset(0, -5),
+      ).animate(_controller),
+      child: Container(
+        height: 45,
+        width: 45,
+        child: Image.asset('assets/images/icon_head.png'),
+      ));
 
   Widget buildPower() => Positioned(
-      bottom: 30,
-      right: 30,
-      child: AnimatedOpacity(
-          duration:const Duration(milliseconds: 300),
-          opacity: _animEnd ? 1.0 : 0.0,
-          child:const Text("Power By 张风捷特烈",
-              style: TextStyle(
-                  color: Colors.grey,
-                  shadows: [
-                    Shadow(
-                        color: Colors.black,
-                        blurRadius: 1,
-                        offset: Offset(0.3, 0.3))
-                  ],
-                  fontSize: 16))),
-    );
+    bottom: 30,
+    right: 30,
+    child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 300),
+        opacity: _animEnd ? 1.0 : 0.0,
+        child: const Text("Power By 张风捷特烈",
+            style: TextStyle(
+                color: Colors.grey,
+                shadows: [
+                  Shadow(
+                      color: Colors.black,
+                      blurRadius: 1,
+                      offset: Offset(0.3, 0.3))
+                ],
+                fontSize: 16))),
+  );
 }
