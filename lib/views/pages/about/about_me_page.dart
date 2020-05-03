@@ -43,16 +43,18 @@ class AboutMePage extends StatelessWidget {
             ],
           ),
           Expanded(
-            child: Container(
-              margin: EdgeInsets.all(24),
-              child: Stack(children: <Widget>[
-                Positioned(
-                  right: 10,
-                  top: 0,
-                  child: _buildLinkIcon(),
-                ),
-                _buildInfo()
-              ]),
+            child: SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.all(24),
+                child: Stack(children: <Widget>[
+                  Positioned(
+                    right: 10,
+                    top: 0,
+                    child: _buildLinkIcon(),
+                  ),
+                  _buildInfo()
+                ]),
+              ),
             ),
           ),
         ],
@@ -125,11 +127,11 @@ class AboutMePage extends StatelessWidget {
           height: 18,
         ),
 
-            Text(
-                  '微信群: 编程技术交流圣地-【Flutter群】\n'
-                  '愿青梅煮酒，与君天涯共话。',
-              style: TextStyle(color: Colors.grey),
-            ),
+        Text(
+          '微信群: 编程技术交流圣地-【Flutter群】\n'
+              '愿青梅煮酒，与君天涯共话。',
+          style: TextStyle(color: Colors.grey),
+        ),
         SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
