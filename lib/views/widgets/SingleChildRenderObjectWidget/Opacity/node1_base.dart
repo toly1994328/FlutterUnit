@@ -25,10 +25,10 @@ class _CustomOpacityState extends State<CustomOpacity> {
       children: <Widget>[_buildSlider(), _buildOpacity()],
     );
   }
-
+  // 创建Opacity
   Widget _buildOpacity() => Opacity(
         opacity: _opacity,
-        child: Image.asset(
+        child: Image.asset(// 图片
           'assets/images/icon_head.png',
           width: 100,
         ),

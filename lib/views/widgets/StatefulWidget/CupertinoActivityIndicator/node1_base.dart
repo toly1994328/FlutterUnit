@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 //      "priority": 1,
 //      "subtitle":
 //          "【animating】 : 是否loading动画   【bool】\n"
-//          "【radius】 : 半径   【double】"
+//          "【radius】 : 半径   【double】",
 //    }
 class CustomCupertinoActivityIndicator extends StatelessWidget {
 

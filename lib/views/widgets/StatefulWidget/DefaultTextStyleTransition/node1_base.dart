@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
-//      "widgetId": 113,
+//      "widgetId": 114,
 //      "name": 'DefaultTextStyleTransition基本使用',
 //      "priority": 1,
 //      "subtitle":

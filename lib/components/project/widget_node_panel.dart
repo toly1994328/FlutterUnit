@@ -130,12 +130,12 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
           width: MediaQuery.of(context).size.width,
           child: CodeWidget(
             fontFamily: widget.codeFamily,
-            code: widget.code,
+            code: isFirst?'':widget.code,
             style: widget.codeStyle ??
                 HighlighterStyle.fromColors(HighlighterStyle.lightColor),
           ),
         ),
-        duration: Duration(milliseconds: 500),
+        duration: Duration(milliseconds: 200),
         crossFadeState: _crossFadeState,
       );
 

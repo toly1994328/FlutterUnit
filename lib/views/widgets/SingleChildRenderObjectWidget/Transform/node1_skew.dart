@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:math' as prefix0;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

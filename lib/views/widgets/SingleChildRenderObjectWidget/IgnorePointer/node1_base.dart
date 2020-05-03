@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
@@ -51,7 +50,7 @@ class _CustomIgnorePointerState extends State<CustomIgnorePointer> {
         'To About',
         style: TextStyle(color: Colors.white),
       ),
-      onPressed: () => DialogAbout.show(context));
+      onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'));
 
   _buildSwitch() => Switch(
       value: _ignore,

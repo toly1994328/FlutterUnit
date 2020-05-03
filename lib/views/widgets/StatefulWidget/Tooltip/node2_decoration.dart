@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 //      "priority": 2,
 //      "subtitle":
 //          "【decoration】 : 装饰对象 【Decoration】\n"
-//          "【textStyle】 : 文字样式   【double】"
+//          "【textStyle】 : 文字样式   【double】",
 //    }
 class DecorationTooltip extends StatelessWidget {
   @override

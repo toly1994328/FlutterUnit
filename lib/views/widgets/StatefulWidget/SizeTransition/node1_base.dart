@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 /// 说明:
 //    {
 //      "widgetId": 92,
-//      "name": 'FadeTransition基本使用',
+//      "name": 'SizeTransition基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【child】 : 孩子组件   【Widget】\n"

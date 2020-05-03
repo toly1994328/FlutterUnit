@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 //          "【value】 : 是否选中   【double】\n"
 //          "【checkColor】: 选中时✔️gou颜色 【Color】\n"
 //          "【activeColor】: 选中时框内颜色 【Color】\n"
-//          "【onChanged】: 状态改变事件 【Function(bool)】\n"
+//          "【onChanged】: 状态改变事件 【Function(bool)】\n",
 //    }
 
 class CustomCheckbox extends StatefulWidget {

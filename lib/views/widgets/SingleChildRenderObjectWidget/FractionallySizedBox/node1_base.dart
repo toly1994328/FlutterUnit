@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// 说明:
 
 //    {
-//      "widgetId": 81,
+//      "widgetId": 82,
 //      "name": 'FractionallySizedBox基本使用',
 //      "priority": 1,
 //      "subtitle":

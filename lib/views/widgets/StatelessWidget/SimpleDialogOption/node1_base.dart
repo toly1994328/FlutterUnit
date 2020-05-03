@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
@@ -25,7 +23,7 @@ class CustomSimpleDialogOption extends StatelessWidget {
           margin: EdgeInsets.all(5),
           color: Colors.grey.withAlpha(33),
           child: SimpleDialogOption(
-              onPressed: () => DialogAbout.show(context),
+              onPressed: () => Navigator.of(context).pushNamed('AboutMePage'),
               child: Text('张风捷特烈')),
         ),
         Container(
@@ -35,7 +33,7 @@ class CustomSimpleDialogOption extends StatelessWidget {
           color: Colors.grey.withAlpha(33),
           margin: EdgeInsets.all(5),
           child: SimpleDialogOption(
-              onPressed: () => DialogAbout.show(context),
+              onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'),
               child: Text('百里·巫缨')),
         ),
       ],

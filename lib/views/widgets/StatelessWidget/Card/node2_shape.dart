@@ -14,7 +14,7 @@
 //    }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/utils/pather.dart';
+import '../../../../app/utils/pather.dart';
 
 class ShapeCard extends StatelessWidget {
   @override

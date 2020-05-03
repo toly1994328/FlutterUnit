@@ -332,7 +332,12 @@ class WidgetsMap {
         ];
       case "DecoratedBox":
         return [
-          CustomDecoratedBox(),
+          BoxDecorationDemo(),
+          ShapeImageDemo(),
+          BorderDemo(),
+          ShapeDecorationDemo(),
+          UnderlineTabIndicatorDemo(),
+          FlutterLogoDecorationDemo(),
         ];
       case "Offstage":
         return [
@@ -348,7 +353,9 @@ class WidgetsMap {
         ];
       case "Padding":
         return [
-          CustomPadding(),
+          PaddingAll(),
+          PaddingOnly(),
+          PaddingSymmetric(),
         ];
       case "Baseline":
         return [
@@ -662,6 +669,11 @@ class WidgetsMap {
       case "Tab":
         return [
           CustomTab(),
+        ];
+        case "PreferredSize":
+        return [
+          CustomPreferredSize(),
+          AdapterPreferredSize(),
         ];
       case "InkResponse":
         return [

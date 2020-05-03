@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/flutter/no_shadow_tab_bar.dart';
+
+import 'no_shadow_tab_bar.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com

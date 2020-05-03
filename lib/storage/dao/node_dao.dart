@@ -37,7 +37,7 @@ class NodeDao {
     return await db.rawQuery(
         "SELECT name,subtitle,code "
         "FROM node "
-        "WHERE widgetId = ?",
+        "WHERE widgetId = ? ORDER BY priority",
         [id]);
   }
 }

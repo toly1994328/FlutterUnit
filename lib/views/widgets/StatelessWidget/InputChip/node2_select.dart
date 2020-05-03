@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 
 
@@ -35,7 +34,7 @@ class _SelectInputChipState extends State<SelectInputChip> {
       selectedShadowColor: Colors.blue,
       shadowColor: Colors.orangeAccent,
       elevation: 3,
-      onDeleted: () => DialogAbout.show(context),
+      onDeleted: () =>  Navigator.of(context).pushNamed('AboutMePage'),
       onSelected: (bool value) {
         setState(() {
           _select = value;

@@ -2,10 +2,10 @@
 [![GitHub stars](https://img.shields.io/github/stars/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/network)
 [![GitHub license](https://img.shields.io/github/license/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/blob/master/LICENSE)
+
 ### FlutterUnit apk 下载体验:
 
-
-![](https://user-gold-cdn.xitu.io/2020/4/24/171a9911d22d34a8?w=300&h=390&f=png&s=22765)
+![](https://toly1994328.gitee.io/photo/ewm/flutter_unit_ewm.png)
 
 > 当前Flutter 版本
 
@@ -17,6 +17,10 @@ Framework • revision 0b8abb4724 (3 months ago) • 2020-02-11 11:44:36 -0800
 Engine • revision e1e6ced81d
 Tools • Dart 2.7.0
 ```
+
+#### Flutter Unit 周边
+
+- 🔥 [Flutter Unit 更新记录 ](http://blog.toly1994.com/FlutterUnit_update.html)
 
 ---
 

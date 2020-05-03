@@ -3,12 +3,11 @@
 /// 说明: 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/utils/color_utils.dart';
 
 /// 说明:
 //    {
 //      "widgetId": 196,
-//      "name": 'SliverAppBar基本使用',
+//      "name": 'FlexibleSpaceBar基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【title】 : 标题组件   【Widget】\n"

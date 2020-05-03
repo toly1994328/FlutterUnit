@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 //          "【cursorColor】 : 光标颜色   【Color】\n"
 //          "【cursorWidth】 : 光标宽度   【double】\n"
 //          "【showCursor】 : 是否显示光标   【bool】\n"
-//          "【autofocus】 : 自动聚焦   【bool】"
+//          "【autofocus】 : 自动聚焦   【bool】",
 //    }
 class CustomSelectableText extends StatelessWidget {
   final text = "        始臣之解牛之时，所见无非牛者。三年之后，未尝见全牛也。方今之时，"

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
@@ -35,7 +34,7 @@ class _PressInputChipState extends State<PressInputChip> {
         selectedShadowColor: Colors.blue,
         shadowColor: Colors.orangeAccent,
         elevation: 3,
-        onPressed: () => DialogAbout.show(context),
+        onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'),
         onDeleted: () => setState(() => _delete = !_delete));
   }
 }

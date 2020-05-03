@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 //      "priority": 4,
 //      "subtitle":
 //          "【color】 : 颜色   【Color】\n"
-//          "【colorBlendMode】: 混合模式*29 【BlendMode】"
+//          "【colorBlendMode】: 混合模式*29 【BlendMode】",
 //    },
 
 class BlendModeImage extends StatelessWidget {
