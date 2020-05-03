@@ -46,6 +46,9 @@ class WidgetDao {
   }
 
   Future<List<Map<String, dynamic>>> queryByIds(List<int> ids) async {
+    if (ids.length == 0) {
+      return [];
+    }
     final db = await storage.db;
 
     var sql = "SELECT * "
