@@ -3,9 +3,16 @@
 [![GitHub forks](https://img.shields.io/github/forks/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/network)
 [![GitHub license](https://img.shields.io/github/license/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/blob/master/LICENSE)
 
-### FlutterUnit apk 下载体验:
+### FlutterUnit 下载体验:
 
-![](https://toly1994328.gitee.io/photo/ewm/flutter_unit_ewm.png)
+
+| FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | Github仓库地址 | 
+|------|------------|------------|
+|![](http://photo.toly1994.com/ewm$flutter_unit.png)|![](http://photo.toly1994.com/ewm$flutter_unit_mac.png)| ![](http://photo.toly1994.com/ewm$flutter_unit_github.png)|     
+
+-- ✨ [Flutter Unit mac版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)
+
+---
 
 > 当前Flutter 版本
 
@@ -22,6 +29,7 @@ Tools • Dart 2.7.0
 
 - 🔥 [Flutter Unit 更新记录 ](http://blog.toly1994.com/FlutterUnit_update.html)
 
+
 ---
 
 
@@ -31,7 +39,7 @@ Tools • Dart 2.7.0
 
 > Flutter源码中的可用的组件一共350个左右，纷繁复杂，也没有明确的分类标准
 FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。并`根据个人感觉进行评星 `
-`目前收录组件211个`，每个都有至少一个演示展现和代码展示。
+`目前收录组件213个`，每个都有至少一个演示展现和代码展示。
 
 | . | . | . |
 |------|------------|------------|
@@ -43,7 +51,7 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 
 #### 2. 组件详情页
 
-> `207个组件`全部都有详情页。对于重要的组件会详细展现
+> `213个组件`全部都有详情页。对于重要的组件会详细展现
 一般都会有某个演示对应的组件和属性,尽量做到细致，如果有需要补充，欢迎联系我。
 `最重要的是: 所有的演示展现都是Flutter的组件形成的，而非图片，这就意味着可操作性更高。`
 
