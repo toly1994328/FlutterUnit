@@ -9,7 +9,12 @@ import 'package:flutter_unit/views/items/collect_widget_list_item.dart';
 
 import 'category_page.dart';
 
-class CollectPage extends StatelessWidget {
+class CollectPage extends StatefulWidget {
+  @override
+  _CollectPageState createState() => _CollectPageState();
+}
+
+class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClientMixin{
   final gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
     mainAxisSpacing: 10,
@@ -19,9 +24,10 @@ class CollectPage extends StatelessWidget {
 
   final _tabs = ['收藏集录','默认收藏', ];
 
-
   @override
   Widget build(BuildContext context) {
+    print('-------CollectPage-------build-------');
+
    var _topContext = context;
     return Scaffold(
         backgroundColor: BlocProvider.of<HomeBloc>(context).state.homeColor.withAlpha(11),
@@ -43,9 +49,12 @@ class CollectPage extends StatelessWidget {
                 children: <Widget>[
                   CategoryPage(),
                   BlocBuilder<CollectBloc, CollectState>(
-                      builder: (_, state) => CustomScrollView(
+                      builder: (_, state) {
+//                        print('-------BlocBuilder-------build-------');
+                        return CustomScrollView(
                             slivers: <Widget>[_buildContent(context, state)],
-                          )),
+                          );
+                      }),
                 ],
               ),
             ),
@@ -136,4 +145,8 @@ class CollectPage extends StatelessWidget {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, Router.widget_detail, arguments: model);
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

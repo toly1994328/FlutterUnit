@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin{
   ScrollController _ctrl;
   double _limitY = 35;
   double _height = kToolbarHeight * 2 - 20;
@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print('-------HomePage-------build-------');
     var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
     var showBg = BlocProvider.of<GlobalBloc>(context).state.showBackGround;
     return Scaffold(
@@ -92,4 +93,8 @@ class _HomePageState extends State<HomePage> {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, Router.widget_detail, arguments: model);
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
