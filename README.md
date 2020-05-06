@@ -27,7 +27,7 @@ Tools • Dart 2.7.0
 
 #### Flutter Unit 周边
 
-- 🔥 [Flutter Unit 更新记录 ](http://blog.toly1994.com/FlutterUnit_update.html)
+- 🔥 [Flutter Unit 更新记录 ](http://king.toly1994.com/FlutterUnit_update.html)
 
 
 ---

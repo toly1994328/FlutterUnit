@@ -36,16 +36,14 @@ class _PlayBezier3PageState extends State<PlayBezier3Page> {
     _pos.add(Offset(-120, -40));
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return  Container(
-        height: 200,
-        width: MediaQuery.of(context).size.width,
-        child: CustomPaint(
-          painter: BezierPainter(pos: _pos, selectPos: selectPos),
-        ),
-
+    return Container(
+      height: 200,
+      width: MediaQuery.of(context).size.width,
+      child: CustomPaint(
+        painter: BezierPainter(pos: _pos, selectPos: selectPos),
+      ),
     );
   }
 }
@@ -85,12 +83,12 @@ class BezierPainter extends CustomPainter {
     _drawGrid(canvas, size); //绘制格线
     _drawAxis(canvas, size); //绘制轴线
 
-      _mainPath.moveTo(pos[0].dx, pos[0].dy);
-      _mainPath.cubicTo(pos[1].dx, pos[1].dy, pos[2].dx, pos[2].dy, pos[3].dx, pos[3].dy);
-      canvas.drawPath(_mainPath, _mainPaint);
-      _drawHelp(canvas);
-      _drawSelectPos(canvas);
-
+    _mainPath.moveTo(pos[0].dx, pos[0].dy);
+    _mainPath.cubicTo(
+        pos[1].dx, pos[1].dy, pos[2].dx, pos[2].dy, pos[3].dx, pos[3].dy);
+    canvas.drawPath(_mainPath, _mainPaint);
+    _drawHelp(canvas);
+    _drawSelectPos(canvas);
   }
 
   @override
