@@ -739,6 +739,10 @@ class WidgetsMap {
           BuilderListView(),
           SeparatedListView(),
         ];
+      case "Builder":
+        return [
+          BuilderDemo(),
+        ];
       case "GridView":
         return [
           CustomGridView(),

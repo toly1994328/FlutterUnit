@@ -31,9 +31,7 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
 
   @override
   Widget build(BuildContext context) {
-    print('-------HomePage-------build-------');
     var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
-    var showBg = BlocProvider.of<GlobalBloc>(context).state.showBackGround;
     return Scaffold(
       appBar: TolyAppBar(
         selectIndex: Cons.tabColors.indexOf(color.value),
@@ -42,7 +40,12 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
       ),
       body: Stack(
         children: <Widget>[
-          if (showBg) Background(),
+          BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
+            if (state.showBackGround) {
+              return Background();
+            }
+            return Container();
+          }),
           BlocBuilder<HomeBloc, HomeState>(builder: _buildContent)
         ],
       ),
@@ -69,11 +72,16 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
   Widget _buildHomeItem(
     WidgetModel model,
   ) =>
-      FeedbackWidget(
-          duration: const Duration(milliseconds: 200),
-          onPressed: () => _toDetailPage(model),
-          child: HomeItemSupport.get(model,
-              BlocProvider.of<GlobalBloc>(context).state.itemStyleIndex));
+      BlocBuilder<GlobalBloc, GlobalState>(
+        condition: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
+        builder: (_, state) {
+          return
+            FeedbackWidget(
+                duration: const Duration(milliseconds: 200),
+                onPressed: () => _toDetailPage(model),
+                child: HomeItemSupport.get(model, state.itemStyleIndex));
+        },
+      );
 
   _updateAppBarHeight() {
     if (_ctrl.offset < _limitY * 4) {
