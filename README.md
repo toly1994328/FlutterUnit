@@ -18,11 +18,10 @@
 
 ```
 a1@toly ~ % flutter --version
-Flutter 1.12.13+hotfix.8 • channel stable •
-https://github.com/flutter/flutter.git
-Framework • revision 0b8abb4724 (3 months ago) • 2020-02-11 11:44:36 -0800
-Engine • revision e1e6ced81d
-Tools • Dart 2.7.0
+Flutter 1.17.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision e6b34c2b5c (5 days ago) • 2020-05-02 11:39:18 -0700
+Engine • revision 540786dd51
+Tools • Dart 2.8.1
 ```
 
 #### Flutter Unit 周边
