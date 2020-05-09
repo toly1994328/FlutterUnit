@@ -31,7 +31,8 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
 
   @override
   Widget build(BuildContext context) {
-    var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
+    var color = context.bloc<HomeBloc>().state.homeColor;
+//    var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
     return Scaffold(
       appBar: TolyAppBar(
         selectIndex: Cons.tabColors.indexOf(color.value),
