@@ -8,7 +8,7 @@
 
 | FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | Github仓库地址 | 
 |------|------------|------------|
-|![](http://photo.toly1994.com/ewm$flutter_unit.apk.png)|![](http://photo.toly1994.com/ewm$flutter_unit_mac.png)| ![](http://photo.toly1994.com/ewm$flutter_unit_github.png)|     
+| ![](http://photo.toly1994.com/ewm$flutter_unit.apk.png)|![](http://photo.toly1994.com/ewm$flutter_unit_mac.png)| ![](http://photo.toly1994.com/ewm$flutter_unit_github.png)|     
 
 - Android下载链接: http://photo.toly1994.com/release/FlutterUnit.apk
 - Mac下载链接: http://photo.toly1994.com/release$24flutter_unit_mac.zip
