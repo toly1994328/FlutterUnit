@@ -31,8 +31,8 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     var color = context.bloc<HomeBloc>().state.homeColor;
-//    var color = BlocProvider.of<HomeBloc>(context).state.homeColor;
     return Scaffold(
       appBar: TolyAppBar(
         selectIndex: Cons.tabColors.indexOf(color.value),
@@ -41,16 +41,18 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
       ),
       body: Stack(
         children: <Widget>[
-          BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
-            if (state.showBackGround) {
-              return Background();
-            }
-            return Container();
-          }),
+          BlocBuilder<GlobalBloc, GlobalState>(builder: _buildBackground),
           BlocBuilder<HomeBloc, HomeState>(builder: _buildContent)
         ],
       ),
     );
+  }
+
+  Widget _buildBackground(BuildContext context, GlobalState state) {
+    if (state.showBackGround) {
+      return Background();
+    }
+    return Container();
   }
 
   Widget _buildContent(BuildContext context, HomeState state) {
@@ -70,14 +72,11 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
     return Container();
   }
 
-  Widget _buildHomeItem(
-    WidgetModel model,
-  ) =>
+  Widget _buildHomeItem(WidgetModel model) =>
       BlocBuilder<GlobalBloc, GlobalState>(
         condition: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (_, state) {
-          return
-            FeedbackWidget(
+          return FeedbackWidget(
                 duration: const Duration(milliseconds: 200),
                 onPressed: () => _toDetailPage(model),
                 child: HomeItemSupport.get(model, state.itemStyleIndex));
@@ -104,6 +103,6 @@ class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
+
 }

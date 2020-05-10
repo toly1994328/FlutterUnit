@@ -2,16 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/app/style/TolyIcon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
-import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
-import 'package:flutter_unit/blocs/collect/collect_event.dart';
-import 'package:flutter_unit/blocs/collect/collect_state.dart';
-import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
-import 'package:flutter_unit/blocs/detail/detail_event.dart';
-import 'package:flutter_unit/blocs/detail/detail_state.dart';
-import 'package:flutter_unit/blocs/global/global_bloc.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:flutter_unit/components/project/widget_node_panel.dart';
@@ -31,7 +24,6 @@ class WidgetDetailPage extends StatefulWidget {
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
   List<WidgetModel> _models = [];
-  bool openBottom = false;
 
   @override
   void initState() {
@@ -41,87 +33,41 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('build---_WidgetDetailPageState---');
-    return WillPopScope(
-      onWillPop: () async {
-        _models.removeLast();
-        if (_models.length > 0) {
-          setState(() {
-            BlocProvider.of<DetailBloc>(context)
-                .add(FetchWidgetDetail(_models.last));
-          });
-          return false;
-        } else {
-          return true;
-        }
-      },
-      child: Scaffold(
-        endDrawer: CategoryEndDrawer(widget: _models.last,),
-          appBar: AppBar(
-            title: Text(_models.last.name),
-            actions: <Widget>[
-              Builder(builder: (ctx)=>GestureDetector(
-                  onLongPress: (){
-                    Scaffold.of(ctx).openEndDrawer();
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Icon(Icons.home),
-                  ),
-                  onTap: () {
-                    Navigator.of(ctx).pop();
-                  })),
-              _buildCollectButton(_models.last, context),
-            ],
-          ),
-          body: SingleChildScrollView(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  WidgetDetailTitle(
-                    model: _models.last,
-                  ),
-                  BlocBuilder<DetailBloc, DetailState>(builder: (_, state) {
-                    print('build---${state.runtimeType}---');
-                    if (state is DetailWithData) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 15, right: 5),
-                                child: Icon(
-                                  Icons.link,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                              Text(
-                                '相关组件',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 16),
-                              ),
-                            ],
-                          ),
-                          _buildLinkTo(
-                            context,
-                            state.links,
-                          ),
-                          Divider(),
-                          _buildNodes(state.nodes, state.widgetModel.name)
-                        ],
-                      );
-                    }
-                    return Container();
-                  })
-                ],
-              ),
-            ),
-          )),
+    return Scaffold(
+      endDrawer: CategoryEndDrawer(widget: _models.last),
+      appBar: AppBar(
+        title: Text(_models.last.name),
+        actions: <Widget>[
+          _buildToHome(),
+          _buildCollectButton(_models.last, context),
+        ],
+      ),
+      body: Builder(builder: _buildContent),
     );
   }
+
+  Widget _buildContent(BuildContext context) => WillPopScope(
+      onWillPop: () => _whenPop(context),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            WidgetDetailTitle(
+              model: _models.last,
+            ),
+            BlocBuilder<DetailBloc, DetailState>(builder: _buildDetail)
+          ],
+        ),
+      ));
+
+  Widget _buildToHome() => Builder(
+      builder: (ctx) => GestureDetector(
+          onLongPress: () => Scaffold.of(ctx).openEndDrawer(),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Icon(Icons.home),
+          ),
+          onTap: () => Navigator.of(ctx).pop()));
 
   Widget _buildCollectButton(WidgetModel model, BuildContext context) {
     //监听 CollectBloc 伺机弹出toast
@@ -130,36 +76,42 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           bool collected = st.widgets.contains(model);
           var msg =
               collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
-          Toast.toast(ctx, msg,
-            duration: Duration(milliseconds: collected?1500:600),
-            action: collected
-                ? SnackBarAction(
-                textColor: Colors.white, label: '收藏夹管理', onPressed: () {
-                  Scaffold.of(ctx).openEndDrawer();
-            }): null,);
+          _showToast(ctx, msg, collected);
         },
         child: FeedbackWidget(
           onPressed: () => BlocProvider.of<CollectBloc>(context)
               .add(ToggleCollectEvent(id: model.id)),
-          child: BlocBuilder<CollectBloc, CollectState>(builder: (_, s) {
-            return Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: Icon(
-                s.widgets.contains(model)
-                    ? TolyIcon.icon_star_ok
-                    : TolyIcon.icon_star_add,
-                size: 25,
-              ),
-            );
-          }),
+          child: BlocBuilder<CollectBloc, CollectState>(
+              builder: (_, s) => Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: Icon(
+                      s.widgets.contains(model)
+                          ? TolyIcon.icon_star_ok
+                          : TolyIcon.icon_star_add,
+                      size: 25,
+                    ),
+                  )),
         ));
+  }
+
+  _showToast(BuildContext ctx, String msg, bool collected) {
+    Toast.toast(
+      ctx,
+      msg,
+      duration: Duration(milliseconds: collected ? 1500 : 600),
+      action: collected
+          ? SnackBarAction(
+              textColor: Colors.white,
+              label: '收藏夹管理',
+              onPressed: () => Scaffold.of(ctx).openEndDrawer())
+          : null,
+    );
   }
 
   final List<int> colors = Cons.tabColors;
 
   Widget _buildNodes(List<NodeModel> nodes, String name) {
     var globalState = BlocProvider.of<GlobalBloc>(context).state;
-    print('build---_buildNodes---${widget.model}');
     return Column(
         children: nodes
             .asMap()
@@ -174,6 +126,52 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                   show: WidgetsMap.map(name)[i],
                 ))
             .toList());
+  }
+
+  Future<bool> _whenPop(BuildContext context) async {
+    if (Scaffold.of(context).isEndDrawerOpen) return true;
+    _models.removeLast();
+    if (_models.length > 0) {
+      setState(() {
+        BlocProvider.of<DetailBloc>(context)
+            .add(FetchWidgetDetail(_models.last));
+      });
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  Widget _buildDetail(BuildContext context, DetailState state) {
+    if (state is DetailWithData) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(left: 15, right: 5),
+                child: Icon(
+                  Icons.link,
+                  color: Colors.blue,
+                ),
+              ),
+              const Text(
+                '相关组件',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+            ],
+          ),
+          _buildLinkTo(
+            context,
+            state.links,
+          ),
+          Divider(),
+          _buildNodes(state.nodes, state.widgetModel.name)
+        ],
+      );
+    }
+    return Container();
   }
 
   _buildLinkTo(BuildContext context, List<WidgetModel> links) {

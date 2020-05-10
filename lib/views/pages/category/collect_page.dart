@@ -26,8 +26,6 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
 
   @override
   Widget build(BuildContext context) {
-    print('-------CollectPage-------build-------');
-
    var _topContext = context;
     return Scaffold(
         backgroundColor: BlocProvider.of<HomeBloc>(context).state.homeColor.withAlpha(11),
@@ -50,7 +48,6 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
                   CategoryPage(),
                   BlocBuilder<CollectBloc, CollectState>(
                       builder: (_, state) {
-//                        print('-------BlocBuilder-------build-------');
                         return CustomScrollView(
                             slivers: <Widget>[_buildContent(context, state)],
                           );

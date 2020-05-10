@@ -34,16 +34,13 @@ class _UnitNavigationState extends State<UnitNavigation> {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
         builder: (_, state) => Scaffold(
-            drawer: HomeDrawer(color:state.homeColor),
-            //左滑页
-            endDrawer: HomeRightDrawer(color: state.homeColor,),
-            //右滑页
+            drawer: HomeDrawer(color:state.homeColor), //左滑页
+            endDrawer: HomeRightDrawer(color: state.homeColor), //右滑页
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
             floatingActionButton: _buildSearchButton(state.homeColor),
             body: PageView(
-              physics:const NeverScrollableScrollPhysics(),
-              //使用PageView实现页面的切换
+              physics: const NeverScrollableScrollPhysics(),
               controller: _controller,
               children: <Widget>[
                 HomePage(),

@@ -22,7 +22,6 @@ class ItemStyleSettingPage extends StatelessWidget {
         title: Text('item样式设置'),
       ),
       body: BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
-        print('EventChangeItemStyle${state.itemStyleIndex}');
         return _buildFontCell(context, state.itemStyleIndex);
       }),
     );

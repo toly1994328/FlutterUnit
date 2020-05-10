@@ -99,7 +99,6 @@ class CategoryDao {
             "ON c.id = cw.categoryId GROUP BY c.id "
             "ORDER BY priority DESC,created DESC",
         []);
-    print(data);
     return data;
   }
 

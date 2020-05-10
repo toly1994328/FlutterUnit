@@ -17,7 +17,7 @@ import 'package:flutter_unit/views/pages/search/app_search_bar.dart';
 import 'package:flutter_unit/views/pages/search/error_page.dart';
 import 'package:flutter_unit/views/common/loading_page.dart';
 import 'package:flutter_unit/views/pages/search/not_search_page.dart';
-import 'package:flutter_unit/views/pages/search/start_filter.dart';
+import 'package:flutter_unit/components/permanent/multi_chip_filter.dart';
 
 import 'empty_page.dart';
 
@@ -41,7 +41,7 @@ class _SearchPageState extends State<SearchPage> {
           slivers: <Widget>[
               _buildSliverAppBar(),
             SliverToBoxAdapter(child: _buildStarFilter()),
-            BlocBuilder<SearchBloc, SearchState>(builder: (_, state) => _buildBodyByState(state))
+            BlocBuilder<SearchBloc, SearchState>(builder:_buildBodyByState)
           ],
         ),
       ),
@@ -98,7 +98,7 @@ class _SearchPageState extends State<SearchPage> {
         ],
       );
 
-  Widget _buildBodyByState(SearchState state) {
+  Widget _buildBodyByState(BuildContext context,SearchState state) {
     if (state is SearchStateNoSearch) return SliverToBoxAdapter(child: NotSearchPage(),);
     if (state is SearchStateLoading) return SliverToBoxAdapter(child: LoadingPage());
     if (state is SearchStateError) return SliverToBoxAdapter(child: ErrorPage());
