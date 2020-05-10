@@ -20,67 +20,21 @@ class HomeDrawer extends StatelessWidget {
       child: _buildChild(context),
     );
   }
+
   Widget _buildChild(BuildContext context) => Container(
         color: color.withAlpha(33),
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            UnitDrawerHeader(color:color),
-            ListTile(
-              leading: Icon(
-                TolyIcon.icon_them,
-                color: Theme.of(context).primaryColor,
-              ),
-              trailing: _nextIcon(context),
-              title: Text('我的主题'),
-              onTap: () {
-                Navigator.of(context).pushNamed(Router.setting);
-              },
-            ),
-
-            ListTile(
-              leading: Icon(
-                TolyIcon.icon_layout,
-                color: Theme.of(context).primaryColor,
-              ),
-              title: Text('数据统计'),
-              trailing: _nextIcon(context),
-              onTap: () {},
-            ),
-            Divider(
-              height: 1,
-            ),
+            UnitDrawerHeader(color: color),
+            _buildItem(context,TolyIcon.icon_them,'我的主题',Router.setting),
+            _buildItem(context,TolyIcon.icon_layout,'数据统计',null),
+            Divider(height: 1),
             _buildFlutterUnit(context),
-            ListTile(
-              leading: Icon(
-                TolyIcon.icon_code,
-                color: Theme.of(context).primaryColor,
-              ),
-              title: Text('Dart 手册'),
-              trailing: _nextIcon(context),
-              onTap: () {},
-            ),
-            Divider(
-              height: 1,
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.info,
-                color: Theme.of(context).primaryColor,
-              ),
-              title: Text('关于应用'),
-              trailing: _nextIcon(context),
-              onTap: () => Navigator.of(context).pushNamed(Router.about_app),
-            ),
-            ListTile(
-              leading: Icon(
-                TolyIcon.icon_kafei,
-                color: Theme.of(context).primaryColor,
-              ),
-              title: Text('联系本王'),
-              trailing: _nextIcon(context),
-              onTap: () => Navigator.of(context).pushNamed(Router.about_me),
-            ),
+            _buildItem(context,TolyIcon.icon_code,'Dart 手册',null),
+            Divider(height: 1),
+            _buildItem(context, Icons.info,'关于应用',Router.about_app),
+            _buildItem(context, TolyIcon.icon_kafei,'联系本王',Router.about_me),
           ],
         ),
       );
@@ -93,52 +47,21 @@ class HomeDrawer extends StatelessWidget {
         ),
         title: Text('Flutter 集录'),
         children: <Widget>[
-          ListTile(
-            leading: Icon(
-              TolyIcon.icon_tag,
-              color: Theme.of(context).primaryColor,
-            ),
-            title: Text('属性集录'),
-            trailing: _nextIcon(context),
-            onTap: () {
-              Navigator.of(context).pushNamed(Router.attr);
-            },
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.palette,
-              color: Theme.of(context).primaryColor,
-            ),
-            title: Text('绘画集录'),
-            trailing: _nextIcon(context),
-            onTap: () => Navigator.of(context).pushNamed(Router.paint),
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.widgets,
-              color: Theme.of(context).primaryColor,
-            ),
-            title: Text('布局集录'),
-            trailing: _nextIcon(context),
-            onTap: () {
-              Navigator.of(context).pushNamed(Router.layout);
-            },
-          ),
-          ListTile(
-            leading: Icon(
-              TolyIcon.icon_bug,
-              color: Theme.of(context).primaryColor,
-            ),
-            trailing: _nextIcon(context),
-            title: Text('bug/feature 集录'),
-            onTap: () {
-              Navigator.of(context).pushNamed(Router.bug);
-            },
-          ),
+          _buildItem(context, TolyIcon.icon_tag,'属性集录',Router.attr),
+          _buildItem(context, Icons.palette,'绘画集录',Router.paint),
+          _buildItem(context, Icons.widgets,'布局集录',Router.layout),
+          _buildItem(context, TolyIcon.icon_bug,'bug/feature 集录',Router.bug),
         ],
       );
 
-
-  Widget _nextIcon(BuildContext context) =>
-      Icon(Icons.chevron_right, color: Theme.of(context).primaryColor);
+  Widget _buildItem(
+      BuildContext context, IconData icon, String title, String linkTo) =>
+      ListTile(
+        leading: Icon(icon,
+          color: Theme.of(context).primaryColor,
+        ),
+        title: Text(title),
+        trailing: Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
+        onTap: () => linkTo??Navigator.of(context).pushNamed(linkTo),
+      );
 }

@@ -99,7 +99,7 @@ class AboutAppPage extends StatelessWidget {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
-      debugPrint('Could not launch $url');
+
     }
   }
 

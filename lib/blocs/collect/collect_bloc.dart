@@ -23,7 +23,6 @@ class CollectBloc extends Bloc<CollectEvent, CollectState> {
   Stream<CollectState> mapEventToState(
     CollectEvent event,
   ) async* {
-    print('CollectState');
     if (event is ToggleCollectEvent) {
       await repository.toggleCollect(event.id);
       final widgets = await repository.loadCollectWidgets();

@@ -16,8 +16,6 @@ class UnitPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-
-
     canvas.translate(
         size.width / 2 - width * 0.5, size.height / 2 - width * 0.5);
 
@@ -28,7 +26,6 @@ class UnitPainter extends CustomPainter {
     canvas.restore();
 
     canvas.save();
-
     canvas.translate(
         size.width / 2 * (1 - factor), -size.width / 2 * (1 - factor));
     drawColor2(canvas);

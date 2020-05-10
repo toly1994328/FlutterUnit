@@ -22,7 +22,6 @@ class UnitSplash extends StatefulWidget {
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
-  AnimationController _secondController;
   double _factor;
   Animation _curveAnim;
 
@@ -31,29 +30,34 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   @override
   void initState() {
     SystemUiOverlayStyle systemUiOverlayStyle =
-    SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
     _controller =
-    AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
-      ..addListener(() => setState(() {
-        return _factor = _curveAnim.value;
-      }))
-      ..addStatusListener((s) {
-        if (s == AnimationStatus.completed) {
-          setState(() {
-            _animEnd = true;
-            Future.delayed(Duration(milliseconds: 600)).then((e){
-              Navigator.of(context).pushReplacementNamed(Router.nav);
-            });
-          });
-        }
-      });
+        AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
+          ..addListener(_listenAnimation)
+          ..addStatusListener(_listenStatus)
+          ..forward();
 
-    _curveAnim =
-        CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
-    _controller.forward();
+    _curveAnim = CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
     super.initState();
+  }
+
+  void _listenAnimation() {
+    setState(() {
+      return _factor = _curveAnim.value;
+    });
+  }
+
+  void _listenStatus(AnimationStatus status) {
+    if (status == AnimationStatus.completed) {
+      setState(() {
+        _animEnd = true;
+        Future.delayed(Duration(milliseconds: 500)).then((e) {
+          Navigator.of(context).pushReplacementNamed(Router.nav);
+        });
+      });
+    }
   }
 
   @override
@@ -65,7 +69,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          buildLogo(Colors.blue),
+          _buildLogo(Colors.blue),
           Container(
             width: winW,
             height: winH,
@@ -73,15 +77,15 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
               painter: UnitPainter(factor: _factor),
             ),
           ),
-          buildText(winH, winW),
-          buildHead(),
-          buildPower(),
+          _buildText(winH, winW),
+          _buildHead(),
+          _buildPower(),
         ],
       ),
     );
   }
 
-  Positioned buildText(double winH, double winW) {
+  Widget _buildText(double winH, double winW) {
     final shadowStyle = TextStyle(
       fontSize: 45,
       color: Theme.of(context).primaryColor,
@@ -109,7 +113,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   final colors = [Colors.red, Colors.yellow, Colors.blue];
 
-  Widget buildLogo(Color primaryColor) {
+  Widget _buildLogo(Color primaryColor) {
     return SlideTransition(
       position: Tween<Offset>(
         begin: const Offset(0, 0),
@@ -132,7 +136,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     );
   }
 
-  Widget buildHead() => SlideTransition(
+  Widget _buildHead() => SlideTransition(
       position: Tween<Offset>(
         end: const Offset(0, 0),
         begin: const Offset(0, -5),
@@ -143,21 +147,21 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
         child: Image.asset('assets/images/icon_head.png'),
       ));
 
-  Widget buildPower() => Positioned(
-    bottom: 30,
-    right: 30,
-    child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 300),
-        opacity: _animEnd ? 1.0 : 0.0,
-        child: const Text("Power By 张风捷特烈",
-            style: TextStyle(
-                color: Colors.grey,
-                shadows: [
-                  Shadow(
-                      color: Colors.black,
-                      blurRadius: 1,
-                      offset: Offset(0.3, 0.3))
-                ],
-                fontSize: 16))),
-  );
+  Widget _buildPower() => Positioned(
+        bottom: 30,
+        right: 30,
+        child: AnimatedOpacity(
+            duration: const Duration(milliseconds: 300),
+            opacity: _animEnd ? 1.0 : 0.0,
+            child: const Text("Power By 张风捷特烈",
+                style: TextStyle(
+                    color: Colors.grey,
+                    shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          blurRadius: 1,
+                          offset: Offset(0.3, 0.3))
+                    ],
+                    fontSize: 16))),
+      );
 }
