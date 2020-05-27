@@ -6,7 +6,7 @@ import 'package:flutter_unit/views/app/splash/unit_splash.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 class FlutterApp extends StatelessWidget {
   @override
@@ -16,6 +16,8 @@ class FlutterApp extends StatelessWidget {
         create: (_) => CategoryWidgetBloc(
             categoryBloc: BlocProvider.of<CategoryBloc>(context)),
         child: MaterialApp(
+//            debugShowMaterialGrid: true,
+//            showPerformanceOverlay: true,
             title: 'Flutter Unit',
             debugShowCheckedModeBanner: false,
             onGenerateRoute: Router.generateRoute,
