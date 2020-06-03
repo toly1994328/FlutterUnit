@@ -18,6 +18,9 @@ class FlutterApp extends StatelessWidget {
         child: MaterialApp(
 //            debugShowMaterialGrid: true,
 //            showPerformanceOverlay: true,
+//            showSemanticsDebugger: true,
+//            checkerboardOffscreenLayers:true,
+//            checkerboardRasterCacheImages:true,
             title: 'Flutter Unit',
             debugShowCheckedModeBanner: false,
             onGenerateRoute: Router.generateRoute,
