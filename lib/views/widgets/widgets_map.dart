@@ -655,6 +655,9 @@ class WidgetsMap {
       case "LicensePage":
         return [
           CustomLicensePage(),
+        ];      case "Builder":
+        return [
+          BuilderDemo(),
         ];
       case "GestureDetector":
         return [
@@ -738,10 +741,6 @@ class WidgetsMap {
           HorizontalListView(),
           BuilderListView(),
           SeparatedListView(),
-        ];
-      case "Builder":
-        return [
-          BuilderDemo(),
         ];
       case "GridView":
         return [
@@ -949,6 +948,11 @@ class WidgetsMap {
       case "BackdropFilter":
         return [
           CustomBackdropFilter(),
+        ];
+      case "CustomSingleChildLayout":
+        return [
+          CustomSingleChildLayoutDemo(),
+          OffSetWidgetDemo(),
         ];
     }
   }
