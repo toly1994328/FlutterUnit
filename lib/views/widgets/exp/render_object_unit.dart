@@ -21,7 +21,7 @@ export '../MultiChildRenderObjectWidget/Wrap/node5_verticalDirection.dart';
 export '../MultiChildRenderObjectWidget/Column/node1_base.dart';
 export '../MultiChildRenderObjectWidget/IndexedStack/node1_base.dart';
 export '../MultiChildRenderObjectWidget/Row/node1_base.dart';
-
+export '../MultiChildRenderObjectWidget/CustomMultiChildLayout/node1_base.dart';
 
 export '../SingleChildRenderObjectWidget/Align/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Align/node2_other.dart';
