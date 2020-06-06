@@ -229,6 +229,14 @@ class WidgetsMap {
         return [
           CustomRadio(),
         ];
+      case "CustomMultiChildLayout":
+        return [
+          CustomMultiChildLayoutDemo(),
+        ];
+      case "LayoutId":
+        return [
+          LayoutIdDemo(),
+        ];
       case "CircularProgressIndicator":
         return [
           CustomCircularProgressIndicator(),
