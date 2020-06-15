@@ -10,9 +10,9 @@ import 'package:flutter_unit/model/widget_model.dart';
 
 class CollectWidgetListItem extends StatelessWidget {
   final WidgetModel data;
-  final Function(WidgetModel) onDelectItemClick;
+  final Function(WidgetModel) onDeleteItemClick;
 
-  CollectWidgetListItem({this.data, this.onDelectItemClick});
+  CollectWidgetListItem({this.data, this.onDeleteItemClick});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,7 @@ class CollectWidgetListItem extends StatelessWidget {
         Material(
           color: itemColor.withAlpha(66),
           shape: TechnoShapeBorder(color: itemColor),
-          child: Container(
-            height: 95,
-            padding:
-                const EdgeInsets.only(top: 10, left: 5, right: 10, bottom: 5),
-            child: Row(
+          child:  Row(
               children: <Widget>[
                 _buildLeading(),
                 Expanded(
@@ -46,7 +42,6 @@ class CollectWidgetListItem extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
           ),
         ),
         Positioned(
@@ -54,8 +49,8 @@ class CollectWidgetListItem extends StatelessWidget {
             right: 5,
             child: FeedbackWidget(
               onPressed: () {
-                if (onDelectItemClick != null) {
-                  onDelectItemClick(data);
+                if (onDeleteItemClick != null) {
+                  onDeleteItemClick(data);
                 }
               },
               child: const Icon(
@@ -86,10 +81,8 @@ class CollectWidgetListItem extends StatelessWidget {
 
   Color get itemColor => Color(Cons.tabColors[data.family.index]);
 
-  Widget _buildTitle() {
-    return Row(
+  Widget _buildTitle() => Row(
       children: <Widget>[
-//        SizedBox(width: 10),
         Expanded(
           child: Text(data.name,
               overflow: TextOverflow.ellipsis,
@@ -103,11 +96,9 @@ class CollectWidgetListItem extends StatelessWidget {
         ),
       ],
     );
-  }
 
-  Widget _buildSummary() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 5, bottom: 10, top: 5),
+  Widget _buildSummary() => Padding(
+      padding: const EdgeInsets.only(left: 5, bottom: 5, top: 5),
       child: Container(
         child: Text(
           data.nameCN,
@@ -120,5 +111,4 @@ class CollectWidgetListItem extends StatelessWidget {
         ),
       ),
     );
-  }
 }

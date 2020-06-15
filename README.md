@@ -13,16 +13,15 @@
 
 - Android下载链接: http://photo.toly1994.com/release/FlutterUnit.apk
 - Mac下载链接: http://photo.toly1994.com/release$flutter_unit_mac.zip
-
 - ✨ [Flutter Unit mac版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)
 
 ---
 
 #### Flutter Unit 周边
 
-- 🔥 [Flutter Unit 更新记录 ](http://king.toly1994.com/FlutterUnit_update.html)
 - 🔥 [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - 🔥 [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
+- 🔥 [Flutter Unit 更新记录 ](http://king.toly1994.com/FlutterUnit_update.html)
 
 ---
 
