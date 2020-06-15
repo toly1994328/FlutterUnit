@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/app/navigation/unit_navigation.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
-import 'package:flutter_unit/views/pages/category/category_show.dart';
+import 'package:flutter_unit/views/pages/category/category_detail.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
