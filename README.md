@@ -9,10 +9,10 @@
 
 | FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | Github仓库地址 | 
 |------|------------|------------|
-|![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](https://user-gold-cdn.xitu.io/2020/5/4/171e051a0d2cbf37?w=300&h=390&f=png&s=24001)| ![](https://user-gold-cdn.xitu.io/2020/5/4/171e051a0cd9efd7?w=300&h=390&f=png&s=7596)|   
+|![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitGithub)|   
 
 - Android下载链接: http://toly1994.com/file/FlutterUnit.apk
-- Mac下载链接: http://photo.toly1994.com/release$flutter_unit_mac.zip
+- Mac下载链接: http://toly1994.com/file/flutter_unit_mac.zip
 - ✨ [Flutter Unit mac版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)
 
 ---
