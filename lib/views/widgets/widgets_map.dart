@@ -168,7 +168,18 @@ class WidgetsMap {
           ColorToggleButtons(),
           ProToggleButtons(),
         ];
-
+      case "NestedScrollView":
+        return [
+          NestedScrollViewDemo(),
+        ];
+        case "SliverOverlapAbsorber":
+        return [
+          SliverOverlapAbsorberDemo(),
+        ];
+      case "SliverOverlapInjector":
+        return [
+          SliverOverlapInjectorDemo(),
+        ];
       case "Divider":
         return [
           CustomDivider(),
