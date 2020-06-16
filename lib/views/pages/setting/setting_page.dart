@@ -14,7 +14,7 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('主题设置'),
+        title: Text('应用设置'),
       ),
       body: ListView(
         children: <Widget>[
@@ -59,6 +59,15 @@ class SettingPage extends StatelessWidget {
           ),
           Divider(),
           _buildShowBg(context),
+          ListTile(
+            leading: Icon(
+              Icons.info,
+              color: Theme.of(context).primaryColor,
+            ),
+            title: Text('版本信息'),
+            trailing: _nextIcon(context),
+            onTap: () => Navigator.of(context).pushNamed(Router.version_info),
+          ),
         ],
       ),
     );

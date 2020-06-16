@@ -112,21 +112,6 @@ class AboutAppPage extends StatelessWidget {
           child: Wrap(
             spacing: 20,
             children: <Widget>[
-//              FeedbackWidget(
-//                  onPressed: () => _launchURL(
-//                      "https://juejin.im/user/5b42c0656fb9a04fe727eb37"),
-//                  child: Wrap(
-//                    direction: Axis.vertical,
-//                    crossAxisAlignment: WrapCrossAlignment.center,
-//                    children: <Widget>[
-//                      Icon(
-//                        TolyIcon.icon_juejin,
-//                        size: 35,
-//                        color: Colors.blue,
-//                      ),
-//                      Text('掘金')
-//                    ],
-//                  )),
               FeedbackWidget(
                   onPressed: () =>
                       _launchURL("https://github.com/toly1994328/FlutterUnit"),
