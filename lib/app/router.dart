@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/app/navigation/unit_navigation.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
+import 'package:flutter_unit/views/pages/about/version_info.dart';
 import 'package:flutter_unit/views/pages/category/category_detail.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
@@ -34,6 +35,7 @@ class Router {
   static const String theme_color_setting = 'ThemeColorSettingPage';
   static const String code_style_setting = 'CodeStyleSettingPage';
   static const String item_style_setting = 'ItemStyleSettingPage';
+  static const String version_info = 'VersionInfo';
 
 
   static const String category_show = 'CategoryShow';
@@ -66,6 +68,8 @@ class Router {
         return Right2LeftRouter(child: CodeStyleSettingPage());
       case item_style_setting:
         return Right2LeftRouter(child: ItemStyleSettingPage());
+        case version_info:
+        return Right2LeftRouter(child: VersionInfo());
 
       case attr:
         return Right2LeftRouter(child: AttrUnitPage());

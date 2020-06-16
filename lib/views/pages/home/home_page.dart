@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>  with AutomaticKeepAliveClientMixin{
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
   ScrollController _ctrl;
   double _limitY = 35;
   double _height = kToolbarHeight * 2 - 20;

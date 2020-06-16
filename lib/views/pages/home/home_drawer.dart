@@ -27,7 +27,7 @@ class HomeDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UnitDrawerHeader(color: color),
-            _buildItem(context, TolyIcon.icon_them, '我的主题', Router.setting),
+            _buildItem(context, TolyIcon.icon_them, '应用设置', Router.setting),
             _buildItem(context, TolyIcon.icon_layout, '数据统计', null),
             Divider(height: 1),
             _buildFlutterUnit(context),
