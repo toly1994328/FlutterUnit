@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 import 'category_page.dart';
 import 'default_collect_page.dart';
@@ -53,9 +55,14 @@ class _CollectPageState extends State<CollectPage>
     return SliverAppBar(
       leading: Container(
           margin: EdgeInsets.all(10),
-          child: CircleImage(
-            image: AssetImage('assets/images/icon_head.png'),
-            borderSize: 1.5,
+          child: FeedbackWidget(
+            onPressed: (){
+              Navigator.of(context).pushNamed(Router.login);
+            },
+            child: CircleImage(
+              image: AssetImage('assets/images/icon_head.png'),
+              borderSize: 1.5,
+            ),
           )),
       backgroundColor: BlocProvider.of<HomeBloc>(context).state.homeColor,
       actions: <Widget>[_buildAddActionBuilder(context)],

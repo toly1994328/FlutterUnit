@@ -50,7 +50,7 @@ class HomeDrawer extends StatelessWidget {
           _buildItem(context, TolyIcon.icon_tag, '属性集录', Router.attr),
           _buildItem(context, Icons.palette, '绘画集录', Router.paint),
           _buildItem(context, Icons.widgets, '布局集录', Router.layout),
-          _buildItem(context, TolyIcon.icon_bug, 'bug/feature 集录', Router.bug),
+          _buildItem(context, TolyIcon.icon_bug, '要点集录', Router.bug),
         ],
       );
 

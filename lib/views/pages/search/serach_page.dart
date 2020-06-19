@@ -110,7 +110,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget _buildSliverList(List<WidgetModel> models) => SliverList(
         delegate: SliverChildBuilderDelegate(
             (_, int index) => Container(
-                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+//                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: InkWell(
                     onTap: () => _toDetailPage(models[index]),
                     child: TechnoWidgetListItem(

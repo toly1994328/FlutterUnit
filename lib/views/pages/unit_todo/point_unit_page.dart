@@ -1,12 +1,14 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/components/permanent/animated_text.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 
 class BugUnitPage extends StatelessWidget {
-  final info = '【Flutter异常集录】是Unit项目计划的第二阶段的功能之一。'
+  final info = '【Flutter要点集录】是Unit项目计划的第二阶段的功能之一。'
       '将收录Flutter的常见异常及解决方案，也可以是Flutter中的特点或注意点，'
       '以供学习参考。本集录将支持异常/特色征集，愿开发者共同集录。';
 
@@ -14,7 +16,7 @@ class BugUnitPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('bug/feature 集录'),
+        title: Text('要点集录'),
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -23,9 +25,14 @@ class BugUnitPage extends StatelessWidget {
             top: 50,
             child: Column(
               children: <Widget>[
-                CircleImage(
-                  image: AssetImage('assets/images/icon_head.png'),
-                  size: 80,
+                FeedbackWidget(
+                  onPressed: (){
+                    Navigator.of(context).pushNamed(Router.issues_point);
+                  },
+                  child: CircleImage(
+                    image: AssetImage('assets/images/icon_head.png'),
+                    size: 80,
+                  ),
                 ),
                 SizedBox(height: 10,),
                 Text(

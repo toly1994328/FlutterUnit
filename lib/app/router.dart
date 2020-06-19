@@ -5,19 +5,20 @@ import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/about/version_info.dart';
 import 'package:flutter_unit/views/pages/category/category_detail.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
+import 'package:flutter_unit/views/pages/issues/main.dart';
+import 'package:flutter_unit/views/pages/login/login_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/font_setting.dart';
 import 'package:flutter_unit/views/pages/setting/item_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/theme_color_setting.dart';
 import 'package:flutter_unit/views/pages/unit_todo/attr_unit_page.dart';
-import 'package:flutter_unit/views/pages/unit_todo/bug_unit_page.dart';
+import 'package:flutter_unit/views/pages/unit_todo/point_unit_page.dart';
 
 import 'package:flutter_unit/views/pages/detail/widget_detail_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/paint_unit_page.dart';
 import 'package:flutter_unit/views/pages/setting/setting_page.dart';
-
 
 import 'utils/router_utils.dart';
 
@@ -36,9 +37,10 @@ class Router {
   static const String code_style_setting = 'CodeStyleSettingPage';
   static const String item_style_setting = 'ItemStyleSettingPage';
   static const String version_info = 'VersionInfo';
-
+  static const String login = 'login';
 
   static const String category_show = 'CategoryShow';
+  static const String issues_point = 'IssuesPointPage';
 
   static const String attr = 'AttrUnitPage';
   static const String bug = 'BugUnitPage';
@@ -51,7 +53,10 @@ class Router {
     switch (settings.name) {
       //根据名称跳转相应页面
       case widget_detail:
-        return Right2LeftRouter(child: WidgetDetailPage(model: settings.arguments,));
+        return Right2LeftRouter(
+            child: WidgetDetailPage(
+          model: settings.arguments,
+        ));
       case search:
         return Right2LeftRouter(child: SearchPage());
       case collect:
@@ -68,8 +73,14 @@ class Router {
         return Right2LeftRouter(child: CodeStyleSettingPage());
       case item_style_setting:
         return Right2LeftRouter(child: ItemStyleSettingPage());
-        case version_info:
+
+      case version_info:
         return Right2LeftRouter(child: VersionInfo());
+      case issues_point:
+        return Right2LeftRouter(child: IssuesPointPage());
+
+      case login:
+        return Right2LeftRouter(child: LoginPage());
 
       case attr:
         return Right2LeftRouter(child: AttrUnitPage());
@@ -84,8 +95,11 @@ class Router {
       case about_me:
         return Right2LeftRouter(child: AboutMePage());
 
-        case category_show:
-        return Right2LeftRouter(child: CategoryShow(model: settings.arguments,));
+      case category_show:
+        return Right2LeftRouter(
+            child: CategoryShow(
+          model: settings.arguments,
+        ));
 
       default:
         return MaterialPageRoute(
