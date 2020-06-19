@@ -13,16 +13,6 @@ class Cons {
 //    "我的": Icons.account_circle,
   };
 
-  static const rainbow = <int>[
-    0xffff0000,
-    0xffFF7F00,
-    0xffFFFF00,
-    0xff00FF00,
-    0xff00FFFF,
-    0xff0000FF,
-    0xff8B00FF
-  ];
-
   static const tabColors = [
     0xff44D1FD,
     0xffFD4F43,
@@ -32,6 +22,7 @@ class Cons {
     0xFF00F1F1,
     0xFFDBD83F
   ];
+
   static const tabs = <String>[
     'Stles',
     'Stful',
