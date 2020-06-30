@@ -59,6 +59,9 @@ class SettingPage extends StatelessWidget {
           ),
           Divider(),
           _buildShowBg(context),
+          Divider(),
+          _buildShowOver(context),
+          Divider(),
           ListTile(
             leading: Icon(
               Icons.info,
@@ -87,6 +90,21 @@ class SettingPage extends StatelessWidget {
                       .add(EventSwitchShowBg(show));
                 },
               ));
+
+  Widget _buildShowOver(BuildContext context) =>
+      BlocBuilder<GlobalBloc, GlobalState>(
+          builder: (_, state) => SwitchListTile(
+            value: state.showPerformanceOverlay,
+            secondary: Icon(
+              TolyIcon.icon_show,
+              color: Theme.of(context).primaryColor,
+            ),
+            title: Text('显示性能浮层'),
+            onChanged: (show) {
+              BlocProvider.of<GlobalBloc>(context)
+                  .add(EventSwitchShowOver(show));
+            },
+          ));
 
   Widget _nextIcon(BuildContext context) =>
       Icon(Icons.chevron_right, color: Theme.of(context).primaryColor);

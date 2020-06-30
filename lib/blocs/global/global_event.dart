@@ -50,6 +50,15 @@ class EventSwitchShowBg extends GlobalEvent {
   List<Object> get props => [show];
 }
 
+class EventSwitchShowOver extends GlobalEvent {
+  final bool show;
+
+  const EventSwitchShowOver(this.show);
+
+  @override
+  List<Object> get props => [show];
+}
+
 class EventChangeItemStyle extends GlobalEvent {
   final int index;
 

@@ -48,6 +48,9 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
         ..setBool(SP.showBackground, event.show); //固化数据
       yield state.copyWith(showBackGround: event.show);
     }
+    if (event is EventSwitchShowOver) {
+      yield state.copyWith(showPerformanceOverlay: event.show);
+    }
 
     if (event is EventSwitchCoderTheme) {
       await sp
