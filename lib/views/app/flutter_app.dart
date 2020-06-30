@@ -17,7 +17,7 @@ class FlutterApp extends StatelessWidget {
             categoryBloc: BlocProvider.of<CategoryBloc>(context)),
         child: MaterialApp(
 //            debugShowMaterialGrid: true,
-//            showPerformanceOverlay: true,
+            showPerformanceOverlay: state.showPerformanceOverlay,
 //            showSemanticsDebugger: true,
 //            checkerboardOffscreenLayers:true,
 //            checkerboardRasterCacheImages:true,

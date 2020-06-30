@@ -7,6 +7,7 @@ class GlobalState extends Equatable {
   final bool showBackGround;
   final int codeStyleIndex;
   final int itemStyleIndex;
+  final bool showPerformanceOverlay;
 
   const GlobalState({
     this.fontFamily = 'ComicNeue',
@@ -14,11 +15,12 @@ class GlobalState extends Equatable {
     this.showBackGround = true,
     this.codeStyleIndex,
     this.itemStyleIndex,
+    this.showPerformanceOverlay=false,
   });
 
   @override
   List<Object> get props =>
-      [ fontFamily, themeColor, showBackGround, codeStyleIndex,itemStyleIndex];
+      [ fontFamily, themeColor, showBackGround, codeStyleIndex,itemStyleIndex,showPerformanceOverlay];
 
   GlobalState copyWith({
     double height,
@@ -27,6 +29,7 @@ class GlobalState extends Equatable {
     bool showBackGround,
     int codeStyleIndex,
     int itemStyleIndex,
+    bool showPerformanceOverlay,
   }) =>
       GlobalState(
         fontFamily: fontFamily ?? this.fontFamily,
@@ -34,12 +37,11 @@ class GlobalState extends Equatable {
         showBackGround: showBackGround ?? this.showBackGround,
         codeStyleIndex: codeStyleIndex ?? this.codeStyleIndex,
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
+        showPerformanceOverlay: showPerformanceOverlay ?? this.showPerformanceOverlay,
       );
 
   @override
   String toString() {
-    return 'GlobalState{ fontFamily: $fontFamily, themeColor: $themeColor, showBackGround: $showBackGround, codeStyleIndex: $codeStyleIndex, itemStyleIndex: $itemStyleIndex}';
+    return 'GlobalState{fontFamily: $fontFamily, themeColor: $themeColor, showBackGround: $showBackGround, codeStyleIndex: $codeStyleIndex, itemStyleIndex: $itemStyleIndex, showPerformanceOverlay: $showPerformanceOverlay}';
   }
-
-
 }

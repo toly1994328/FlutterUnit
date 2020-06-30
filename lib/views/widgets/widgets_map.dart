@@ -7,8 +7,6 @@ import 'exp/proxy_unit.dart';
 import 'exp/other_unit.dart';
 import 'exp/sliver_unit.dart';
 
-
-
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -24,6 +22,11 @@ class WidgetsMap {
           ContainerDecoration(),
           ContainerTransform(),
           ContainerConstraints()
+        ];
+      case "CupertinoSegmentedControl":
+        return [
+          CupertinoSegmentedControlDemo(),
+          CupertinoSegmentedControlColor()
         ];
       case "Text":
         return [
@@ -172,7 +175,7 @@ class WidgetsMap {
         return [
           NestedScrollViewDemo(),
         ];
-        case "SliverOverlapAbsorber":
+      case "SliverOverlapAbsorber":
         return [
           SliverOverlapAbsorberDemo(),
         ];
@@ -674,7 +677,8 @@ class WidgetsMap {
       case "LicensePage":
         return [
           CustomLicensePage(),
-        ];      case "Builder":
+        ];
+      case "Builder":
         return [
           BuilderDemo(),
         ];
@@ -692,7 +696,7 @@ class WidgetsMap {
         return [
           CustomTab(),
         ];
-        case "PreferredSize":
+      case "PreferredSize":
         return [
           CustomPreferredSize(),
           AdapterPreferredSize(),
