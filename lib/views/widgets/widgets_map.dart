@@ -949,6 +949,10 @@ class WidgetsMap {
         return [
           DividerThemeDemo(),
         ];
+      case "Navigator":
+        return [
+          NavigatorDemo(),
+        ];
       case "SliderTheme":
         return [
           SliderThemeDemo(),
