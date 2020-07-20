@@ -32,6 +32,7 @@ export '../StatefulWidget/CupertinoSegmentedControl/node1_base.dart';
 export '../StatefulWidget/CupertinoSegmentedControl/node2_color.dart';
 export '../StatefulWidget/Navigator/node1_base.dart';
 
+
 export '../StatefulWidget/Image/node1_base.dart';
 export '../StatefulWidget/Image/node2_fit.dart';
 export '../StatefulWidget/Image/node3_alignment.dart';
