@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 //    {
 //      "widgetId": 298,
-//      "name": '可用于显示一个指定宽高的区域',
+//      "name": 'IntrinsicHeight基本使用',
 //      "priority": 1,
 //      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "如示例:左侧高可变动，中间高固定,右侧高取前两者的最高值。",

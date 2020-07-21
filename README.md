@@ -7,12 +7,14 @@
 
 
 
-| FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | Github仓库地址 | 
+| FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | FlutterUnit win版 下载 | 
 |------|------------|------------|
-|![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitGithub.png)|   
+|![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitWin.png)|   
 
 - Android下载链接: http://toly1994.com/file/FlutterUnit.apk
 - Mac下载链接: http://toly1994.com/file/flutter_unit_mac.zip
+- Win下载链接: http://toly1994.com/file/FlutterUnitWin.zip
+
 - ✨ [Flutter Unit mac版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)
 
 ---
@@ -187,55 +189,3 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 |------|------------|------------|
 |![](https://user-gold-cdn.xitu.io/2020/4/14/171777c67ed0c205?w=1080&h=2340&f=png&s=1272888)|![](https://user-gold-cdn.xitu.io/2020/4/14/171777c8ccfce16b?w=1080&h=2340&f=png&s=1105006)|     ![](https://user-gold-cdn.xitu.io/2020/4/14/171777caed85b26a?w=1080&h=2340&f=png&s=1190414)
 |
-
-
-
-
----
-
-
-###  Flutter Unit  Bug - Feature
-
- - `2020-4-16`
-
-```
-fixed "     修改样式无法点击的问题。
-fixed "     一些已知文案的错误。
-fixed "     hero动画闪现不同步问题。
-```
-
----
-
- - `2020-4-17`
-
-```
-fixed "     进入收藏页，再回到首页，顶部显示不同步的问题。
-fixed "     主页item双击黑屏问题。
-
-
-feature "   支持详情页【相关链接的栈管理】,
-        "   即: 点击多个链接，不直接返回主页.
-```
-
----
-
- - `2020-4-18`
-
-```
-feature "   小彩蛋: 【长按】底部栏【最左侧按钮】,打开左边菜单栏
-        "   【长按】底部栏【最右侧按钮】,打开右边菜单栏
-
-fixed "     收藏集的AppBar背景色同主页选中色。
-```
-
----
-
-
- - `2020-4-19`
-
-```
-optimize "   添加收录【LayoutBuilder】组件
-optimize "   添加收录【IgnorePointer】组件
-optimize "   添加收录【AbsorbPointer】组件
-optimize "   添加收录【BackdropFilter】组件
-```
