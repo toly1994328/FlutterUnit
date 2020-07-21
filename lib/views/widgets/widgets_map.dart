@@ -51,6 +51,10 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
+      case "NavigationToolbar":
+        return [
+          NavigationToolbarDemo(),
+        ];
       case "Icon":
         return [
           CustomIcon(),
@@ -87,6 +91,12 @@ class WidgetsMap {
         return [PressInputChip(), SelectInputChip()];
       case "FilterChip":
         return [CustomFilterChip()];
+      case "IntrinsicHeight":
+        return [IntrinsicHeightDemo()];
+      case "IntrinsicWidth":
+        return [IntrinsicWidthDemo()];
+      case "ChipTheme":
+        return [ChipThemeDemo()];
       case "ListTile":
         return [CustomListTile(), SelectListTile(), DenseListTile()];
       case "CheckboxListTile":

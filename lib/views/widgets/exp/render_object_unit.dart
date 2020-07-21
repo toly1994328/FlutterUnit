@@ -77,3 +77,5 @@ export '../SingleChildRenderObjectWidget/LayoutBuilder/node2_fit.dart';
 export '../SingleChildRenderObjectWidget/LayoutBuilder/node3_expend.dart';
 export '../SingleChildRenderObjectWidget/ShaderMask/node1_radial.dart';
 export '../SingleChildRenderObjectWidget/ShaderMask/node2_linear.dart';
+export '../SingleChildRenderObjectWidget/IntrinsicHeight/node1_base.dart';
+export '../SingleChildRenderObjectWidget/IntrinsicWidth/node1_base.dart';
