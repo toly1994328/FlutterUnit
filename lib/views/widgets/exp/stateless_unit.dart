@@ -32,6 +32,7 @@ export '../StatelessWidget/MaterialBanner/node2_two_btn.dart';
 export '../StatelessWidget/DataTable/node1_base.dart';
 export '../StatelessWidget/DataTable/node2_operation.dart';
 export '../StatelessWidget/OrientationBuilder/node1_base.dart';
+export '../StatelessWidget/Title/node1_base.dart';
 
 export '../StatelessWidget/CupertinoTheme/node1_base.dart';
 export '../StatelessWidget/CupertinoTheme/node2_use.dart';

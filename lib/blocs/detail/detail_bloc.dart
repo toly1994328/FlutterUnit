@@ -16,7 +16,7 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
   DetailBloc({@required this.repository});
 
   @override
-  DetailState get initialState => DetailEmpty();
+  DetailState get initialState => DetailLoading();
 
   @override
   Stream<DetailState> mapEventToState(DetailEvent event) async* {
@@ -24,17 +24,22 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
       yield* _mapLoadWidgetToState(event.widgetModel);
     }
     if(event is ResetDetailState){
-      yield DetailEmpty();
+      yield DetailLoading();
     }
   }
 
   Stream<DetailState> _mapLoadWidgetToState(
       WidgetModel widgetModel) async* {
+    yield DetailLoading();
     try {
       final nodes = await this.repository.loadNode(widgetModel);
       final links = await this.repository.loadWidget(widgetModel.links);
-      yield DetailWithData(
-          widgetModel: widgetModel, nodes: nodes,links: links);
+      if(nodes.isEmpty){
+        yield DetailEmpty();
+      }else{
+        yield DetailWithData(widgetModel: widgetModel, nodes: nodes,links: links);
+      }
+
     } catch (_) {
       yield DetailFailed();
     }
