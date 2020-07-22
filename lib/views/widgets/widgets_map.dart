@@ -55,6 +55,20 @@ class WidgetsMap {
         return [
           NavigationToolbarDemo(),
         ];
+      case "CupertinoTextField":
+        return [
+          CupertinoTextFieldDemo(),
+          CupertinoTextFieldStyle(),
+        ];
+      case "MaterialBanner":
+        return [
+          MaterialBannerDemo(),
+          MaterialBannerDemoTwo(),
+        ];
+      case "OrientationBuilder":
+        return [
+          OrientationBuilderDemo(),
+        ];
       case "Icon":
         return [
           CustomIcon(),
@@ -85,6 +99,8 @@ class WidgetsMap {
         ];
       case "ChoiceChip":
         return [CustomChoiceChip()];
+      case "ValueListenableBuilder":
+        return [ValueListenableBuilderDemo()];
       case "ActionChip":
         return [CustomActionChip()];
       case "InputChip":
