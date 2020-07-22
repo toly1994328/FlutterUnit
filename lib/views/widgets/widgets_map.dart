@@ -51,6 +51,15 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
+
+      case "Title":
+        return [
+          TitleDemo(),
+        ];
+      case "ToggleButtonsTheme":
+        return [
+          ToggleButtonsThemeDemo(),
+        ];
       case "NavigationToolbar":
         return [
           NavigationToolbarDemo(),
@@ -99,10 +108,16 @@ class WidgetsMap {
         ];
       case "ChoiceChip":
         return [CustomChoiceChip()];
+      case "ListTileTheme":
+        return [ListTileThemeDemo()];
       case "ValueListenableBuilder":
         return [ValueListenableBuilderDemo()];
       case "ActionChip":
         return [CustomActionChip()];
+      case "MaterialBannerTheme":
+        return [MaterialBannerThemeDemo()];
+      case "PopupMenuTheme":
+        return [PopupMenuThemeDemo()];
       case "InputChip":
         return [PressInputChip(), SelectInputChip()];
       case "FilterChip":

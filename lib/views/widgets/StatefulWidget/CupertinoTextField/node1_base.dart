@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// 说明: 245 CupertinoTextField 1 Cupertino风格的输入框,属性和TextField类似,可指定控制器、文字样式、装饰线、行数限制、游标样式等。接收输入变化、完成输入等事件。
 //    {
 //      "widgetId": 245,
-//      "name": 'CupertinoTextField基础使用',
+//      "name": "CupertinoTextField基础使用",
 //      "priority": 1,
 //      "subtitle": "【placeholder】 : 提示文字   【String】\n"
 //          "【showCursor】 : 是否显示游标   【bool】\n"

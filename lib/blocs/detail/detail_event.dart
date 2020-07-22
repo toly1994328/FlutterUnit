@@ -23,7 +23,7 @@ class FetchWidgetDetail extends DetailEvent {
 
   @override
   String toString() {
-    return 'SeeWidgetDetail{widgetModel: $widgetModel}';
+    return 'FetchWidgetDetail{widgetModel: $widgetModel}';
   }
 }
 
