@@ -51,7 +51,26 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
-
+      case "FractionalTranslation":
+        return [
+          FractionalTranslationDemo(),
+        ];
+      case "MouseRegion":
+        return [
+          MouseRegionDemo(),
+        ];
+      case "TabPageSelector":
+        return [
+          TabPageSelectorDemo(),
+        ];
+      case "CupertinoNavigationBarBackButton":
+        return [
+          CupertinoNavigationBarBackButtonDemo(),
+        ];
+      case "TabPageSelectorIndicator":
+        return [
+          TabPageSelectorIndicatorDemo(),
+        ];
       case "Title":
         return [
           TitleDemo(),

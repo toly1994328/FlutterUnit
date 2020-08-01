@@ -29,6 +29,7 @@ export '../SingleChildRenderObjectWidget/CustomSingleChildLayout/node1_base.dart
 export '../SingleChildRenderObjectWidget/CustomSingleChildLayout/node2_offset.dart';
 
 export '../SingleChildRenderObjectWidget/ConstrainedBox/node1_base.dart';
+export '../SingleChildRenderObjectWidget/FractionalTranslation/node1_base.dart';
 export '../SingleChildRenderObjectWidget/ColorFiltered/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Baseline/node1_base.dart';
 export '../SingleChildRenderObjectWidget/DecoratedBox/node1_base.dart';

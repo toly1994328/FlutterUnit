@@ -33,6 +33,10 @@ export '../StatelessWidget/DataTable/node1_base.dart';
 export '../StatelessWidget/DataTable/node2_operation.dart';
 export '../StatelessWidget/OrientationBuilder/node1_base.dart';
 export '../StatelessWidget/Title/node1_base.dart';
+export '../StatelessWidget/TabPageSelector/node1_base.dart';
+export '../StatelessWidget/TabPageSelectorIndicator/node1_base.dart';
+export '../StatelessWidget/TabPageSelectorIndicator/node1_base.dart';
+export '../StatelessWidget/CupertinoNavigationBarBackButton/node1_base.dart';
 
 export '../StatelessWidget/CupertinoTheme/node1_base.dart';
 export '../StatelessWidget/CupertinoTheme/node2_use.dart';
