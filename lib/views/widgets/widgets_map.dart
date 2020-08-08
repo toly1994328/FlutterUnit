@@ -51,6 +51,30 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
+      case "Viewport":
+        return [
+          ViewportDemo(),
+        ];
+      case "InputDecorator":
+        return [
+          InputDecoratorDemo(),
+        ];
+      case "Scrollable":
+        return [
+          ScrollableDemo(),
+        ];
+      case "EditableText":
+        return [
+          EditableTextDemo(),
+        ];
+      case "PhysicalShape":
+        return [
+          PhysicalShapeDemo(),
+        ];
+      case "ListBody":
+        return [
+          ListBodyDemo(),
+        ];
       case "FractionalTranslation":
         return [
           FractionalTranslationDemo(),

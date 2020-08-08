@@ -52,7 +52,7 @@ class _MouseRegionDemoState extends State<MouseRegionDemo> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('You have entered or exited this box this many times:'),
+              Text('你的鼠标移入移除信息:'),
               Text(
                 '$_enterCounter Entries\n$_exitCounter Exits',
                 style: Theme.of(context).textTheme.headline4,
