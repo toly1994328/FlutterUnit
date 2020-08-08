@@ -54,6 +54,7 @@ export '../StatefulWidget/CupertinoTextField/node1_base.dart';
 export '../StatefulWidget/CupertinoTextField/node2_style.dart';
 export '../StatefulWidget/ValueListenableBuilder/node1_base.dart';
 export '../StatefulWidget/MouseRegion/node1_base.dart';
+export '../StatefulWidget/Scrollable/node1_base.dart';
 
 export '../StatefulWidget/DropdownButton/node1_base.dart';
 export '../StatefulWidget/DropdownButton/node2_style.dart';
@@ -134,3 +135,5 @@ export '../StatefulWidget/CupertinoTabScaffold/node1_base.dart';
 export '../StatefulWidget/MaterialApp/node1_base.dart';
 export '../StatefulWidget/Scaffold/node1_base.dart';
 export '../StatefulWidget/TabBarView/node1_base.dart';
+export '../StatefulWidget/InputDecorator/node1_base.dart';
+export '../StatefulWidget/EditableText/node1_base.dart';

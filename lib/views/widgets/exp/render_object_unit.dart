@@ -22,6 +22,8 @@ export '../MultiChildRenderObjectWidget/Column/node1_base.dart';
 export '../MultiChildRenderObjectWidget/IndexedStack/node1_base.dart';
 export '../MultiChildRenderObjectWidget/Row/node1_base.dart';
 export '../MultiChildRenderObjectWidget/CustomMultiChildLayout/node1_base.dart';
+export '../MultiChildRenderObjectWidget/Viewport/node1_base.dart';
+export '../MultiChildRenderObjectWidget/ListBody/node1_base.dart';
 
 export '../SingleChildRenderObjectWidget/Align/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Align/node2_other.dart';
@@ -80,3 +82,4 @@ export '../SingleChildRenderObjectWidget/ShaderMask/node1_radial.dart';
 export '../SingleChildRenderObjectWidget/ShaderMask/node2_linear.dart';
 export '../SingleChildRenderObjectWidget/IntrinsicHeight/node1_base.dart';
 export '../SingleChildRenderObjectWidget/IntrinsicWidth/node1_base.dart';
+export '../SingleChildRenderObjectWidget/PhysicalShape/node1_base.dart';
