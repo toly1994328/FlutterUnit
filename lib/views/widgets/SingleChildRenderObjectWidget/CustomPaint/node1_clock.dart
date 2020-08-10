@@ -15,8 +15,10 @@ class ClockPage extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 100,
-      child:CustomPaint(//使用CustomPaint盛放画布
-          painter: ClockPainter(),
+      child:RepaintBoundary(
+        child: CustomPaint(//使用CustomPaint盛放画布
+            painter: ClockPainter(),
+        ),
       ),
     )
     ;
