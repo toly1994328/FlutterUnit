@@ -42,8 +42,10 @@ class _PlayBezier3PageState extends State<PlayBezier3Page> {
     return  Container(
         height: 200,
         width: MediaQuery.of(context).size.width,
-        child: CustomPaint(
-          painter: BezierPainter(pos: _pos, selectPos: selectPos),
+        child: RepaintBoundary(
+          child: CustomPaint(
+            painter: BezierPainter(pos: _pos, selectPos: selectPos),
+          ),
         ),
 
     );
