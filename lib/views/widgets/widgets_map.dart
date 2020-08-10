@@ -134,6 +134,12 @@ class WidgetsMap {
         return [
           CustomFadeInImage(),
         ];
+        case "InteractiveViewer":
+        return [
+          InteractiveViewerDemo(),
+          InteractiveViewerDemo2(),
+          InteractiveViewerDemo3(),
+        ];
       case "CircleAvatar":
         return [
           CustomCircleAvatar(),
