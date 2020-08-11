@@ -7,3 +7,5 @@ library other_unit.dart;
 
 export '../Other/ErrorWidget/node1_base.dart';
 export '../Other/Table/node1_base.dart';
+export '../Other/RawImage/node1_base.dart';
+export '../Other/PerformanceOverlay/node1_base.dart';

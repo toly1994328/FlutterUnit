@@ -29,6 +29,8 @@ export '../SingleChildRenderObjectWidget/Align/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Align/node2_other.dart';
 export '../SingleChildRenderObjectWidget/CustomSingleChildLayout/node1_base.dart';
 export '../SingleChildRenderObjectWidget/CustomSingleChildLayout/node2_offset.dart';
+export '../SingleChildRenderObjectWidget/RepaintBoundary/node1_base.dart';
+export '../SingleChildRenderObjectWidget/RepaintBoundary/node2_save.dart';
 
 export '../SingleChildRenderObjectWidget/ConstrainedBox/node1_base.dart';
 export '../SingleChildRenderObjectWidget/FractionalTranslation/node1_base.dart';
