@@ -57,7 +57,7 @@ class _CollectPageState extends State<CollectPage>
           margin: EdgeInsets.all(10),
           child: FeedbackWidget(
             onPressed: (){
-              Navigator.of(context).pushNamed(Router.login);
+              Navigator.of(context).pushNamed(UnitRouter.login);
             },
             child: CircleImage(
               image: AssetImage('assets/images/icon_head.png'),

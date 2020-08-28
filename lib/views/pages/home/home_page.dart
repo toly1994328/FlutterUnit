@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
 
   _toDetailPage(WidgetModel model) async {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-    Navigator.pushNamed(context, Router.widget_detail, arguments: model);
+    Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
   }
 
   @override

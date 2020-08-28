@@ -73,7 +73,7 @@ class VersionInfo extends StatelessWidget {
             ListTile(
               title: Text('应用详情',style: labelStyle,),
               trailing: _nextIcon(context),
-              onTap: () => Navigator.of(context).pushNamed(Router.about_app),
+              onTap: () => Navigator.of(context).pushNamed(UnitRouter.about_app),
             ),
             Divider(height: 1,indent: 10),
             ListTile(
