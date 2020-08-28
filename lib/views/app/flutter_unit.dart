@@ -8,7 +8,7 @@ import 'package:flutter_unit/views/app/splash/unit_splash.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-class FlutterApp extends StatelessWidget {
+class FlutterUnit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
