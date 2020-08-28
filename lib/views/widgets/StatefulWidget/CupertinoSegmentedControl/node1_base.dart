@@ -7,11 +7,11 @@ import 'package:flutter/material.dart';
 ///
 //    {
 //      "widgetId": 262,
-//      "name": '基本使用',
+//      "name": 'iOS页签基本使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【children】 : 组件Map   【Map<T, Widget>】\n"
-//          "【onValueChanged】 : 最小值   【ValueChanged<T>】\n"
+//          "【onValueChanged】 : 值改变回调   【ValueChanged<T>】\n"
 //          "【groupValue】 : 选中值   【T】\n"
 //          "【padding】 : 内边距   【EdgeInsetsGeometry】",
 //    }

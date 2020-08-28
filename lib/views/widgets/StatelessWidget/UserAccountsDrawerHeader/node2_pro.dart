@@ -53,7 +53,7 @@ class ProUAGHP extends StatelessWidget {
           ),
         ),
         otherAccountsPictures: <Widget>[
-          FlutterLogo(colors: Colors.green),
+          FlutterLogo(textColor: Colors.green),
         ],
         onDetailsPressed: () {
 

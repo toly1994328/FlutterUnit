@@ -38,7 +38,7 @@ class CustomBanner extends StatelessWidget {
                 color: data[e],
                 child: Padding(
                     padding: EdgeInsets.all(20),
-                    child: FlutterLogo(colors: Colors.blue,
+                    child: FlutterLogo(textColor: Colors.blue,
                       style: FlutterLogoStyle.horizontal,)),
               ),
             )).toList());

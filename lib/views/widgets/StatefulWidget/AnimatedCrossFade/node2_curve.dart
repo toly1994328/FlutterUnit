@@ -37,7 +37,7 @@ class _CurveAnimatedCrossFadeState extends State<CurveAnimatedCrossFade> {
               width: 200,
               height: 80,
               color: Colors.orange  ,
-              child: FlutterLogo(colors: Colors.blue,size: 50,),
+              child: FlutterLogo(textColor: Colors.blue,size: 50,),
             ),
             secondChild: Container(
               width: 200,
@@ -46,7 +46,8 @@ class _CurveAnimatedCrossFadeState extends State<CurveAnimatedCrossFade> {
               color: Colors.blue,
               child: FlutterLogo(
                 textColor: Colors.white,
-                colors: Colors.orange,size: 100,style: FlutterLogoStyle.stacked,),
+//                colors: Colors.orange,
+                size: 100,style: FlutterLogoStyle.stacked,),
             ),
             duration: Duration(milliseconds: 1000),
             crossFadeState: _crossFadeState,

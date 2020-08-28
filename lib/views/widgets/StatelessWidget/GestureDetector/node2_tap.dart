@@ -9,9 +9,9 @@ import 'package:flutter/material.dart';
 //      "name": 'GestureDetector详情信息',
 //      "priority": 2,
 //      "subtitle":
-//          "【onTapDown】 : 按下回调   【Function(TapDownDetails)】\n"
-//          "【onTapUp】 : 子组件   【Function(TapUpDetails)】\n"
-//          "【onTapCancel】 : 点击取消   【Function()】",
+//          "【onTapDown】 : 按下回调   【GestureTapDownCallback】\n"
+//          "【onTapUp】 : 点击抬起回调   【GestureTapUpCallback】\n"
+//          "【onTapCancel】 : 点击取消   【GestureTapCancelCallback】",
 //    }
 class TapGestureDetector extends StatefulWidget {
   @override

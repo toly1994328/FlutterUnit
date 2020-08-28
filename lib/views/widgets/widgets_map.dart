@@ -59,10 +59,32 @@ class WidgetsMap {
         return [
           InputDecoratorDemo(),
         ];
+      case "WidgetInspector":
+        return [
+          WidgetInspectorDemo(),
+        ];
+      case "PageStorage":
+        return [
+          PageStorageDemo(),
+        ];      case "NotificationListener":
+        return [
+          NotificationListenerDemo(),
+          NotificationListenerUpdate()
+        ];
+
       case "Scrollable":
         return [
           ScrollableDemo(),
         ];
+      case "CupertinoSlidingSegmentedControl":
+        return [
+          CupertinoSlidingSegmentedControlDemo(),
+        ];
+      case "WidgetsApp":
+        return [
+          WidgetsAppDemo(),
+        ];
+
       case "EditableText":
         return [
           EditableTextDemo(),
@@ -449,7 +471,7 @@ class WidgetsMap {
         ];
       case "MaterialApp":
         return [
-          CustomMaterialApp(),
+          MaterialAppDemo(),
         ];
       case "ClipOval":
         return [

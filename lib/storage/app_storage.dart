@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -9,6 +8,7 @@ import 'package:flutter_unit/blocs/global/global_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as path;
+
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -50,15 +50,25 @@ class AppStorage {
     var databasesPath = await getDatabasesPath();
     var dbPath = path.join(databasesPath, "flutter.db");
     var exists = await databaseExists(dbPath);
-    if (!exists) {
-      try {
+    const isPro = bool.fromEnvironment('dart.vm.product'); //是否release模式
+
+    if (!isPro) {
+      if(!exists){
         await Directory(path.dirname(dbPath)).create(recursive: true);
-        print("========= assets ======拷贝完成====");
-      } catch (_) {}
+      }
       ByteData data = await rootBundle.load(path.join("assets", "flutter.db"));
-      List<int> bytes =
-      data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes, flush: true);
+      print("==== debug ===== assets ======拷贝完成====");
+      return await openDatabase(dbPath, readOnly: false);
+    }
+
+    if (!exists) {
+        await Directory(path.dirname(dbPath)).create(recursive: true);
+      ByteData data = await rootBundle.load(path.join("assets", "flutter.db"));
+      List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      await File(dbPath).writeAsBytes(bytes, flush: true);
+        print("==== release ===== assets ======拷贝完成====");
     } else {
       print("========= 数据库 ======已存在====");
     }
