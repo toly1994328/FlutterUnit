@@ -26,7 +26,7 @@ class CustomFlutterLogo extends StatelessWidget {
       children: data.keys
           .map((e) => FlutterLogo(
         size: data[e],
-        colors: e,
+        textColor: e,
       ))
           .toList(),
     );

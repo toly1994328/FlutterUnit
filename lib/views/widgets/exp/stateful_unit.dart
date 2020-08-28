@@ -140,3 +140,6 @@ export '../StatefulWidget/Scaffold/node1_base.dart';
 export '../StatefulWidget/TabBarView/node1_base.dart';
 export '../StatefulWidget/InputDecorator/node1_base.dart';
 export '../StatefulWidget/EditableText/node1_base.dart';
+export '../StatefulWidget/CupertinoSlidingSegmentedControl/node1_base.dart';
+export '../StatefulWidget/WidgetsApp/node1_base.dart' hide HomePage;
+export '../StatefulWidget/WidgetInspector/node1_base.dart' hide HomePage;

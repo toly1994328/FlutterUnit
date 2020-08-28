@@ -1,33 +1,26 @@
 import 'package:flutter/material.dart';
-import '../../../../app/router.dart';
-import '../../StatefulWidget/Scaffold/node1_base.dart';
 
-/// create by 张风捷特烈 on 2020-03-17
+/// create by 张风捷特烈 on 2020/8/16
 /// contact me by email 1981462002@qq.com
-/// 说明:
-
+/// 说明: 236 WidgetsApp 集合一个应用程序需要的部件,如路由、语言、一些调试开关等。也是实现MaterialApp和CupertinoApp的核心组件。
 //    {
-//      "widgetId": 65,
-//      "name": 'MaterialApp基本用法',
+//      "widgetId": 236,
+//      "name": "WidgetsApp基本使用",
 //      "priority": 1,
-//      "subtitle":
-//          "【theme】 : 主题   【ThemeData】\n"
-//          "【title】 : 任务栏标题   【String】\n"
-//          "【debugShowCheckedModeBanner】 : 开启角标   【bool】\n"
-//          "【showPerformanceOverlay】 : 开启性能浮层   【bool】\n"
-//          "【debugShowMaterialGrid】 : 开启网格   【bool】\n"
-//          "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
-//          "【home】 : 主页   【Widget】",
+//      "subtitle": "【pageRouteBuilder】 : *路由构造器   【PageRouteFactory】\n"
+//          "【color】: *颜色    【Color】\n"
+//          "【debugShowWidgetInspector】: 是否显示z组件查看器   【bool】\n"
+//          "其他属性基本上同MaterialApp,详见之。",
 //    }
-class MaterialAppDemo extends StatefulWidget {
+class WidgetsAppDemo extends StatefulWidget {
   @override
   _WidgetsAppDemoState createState() => _WidgetsAppDemoState();
 }
 
-class _WidgetsAppDemoState extends State<MaterialAppDemo> {
+class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
   var _debugShowCheckedModeBanner = false;
+  var _debugShowWidgetInspector = false;
   var _showPerformanceOverlay = false;
-  var _debugShowMaterialGrid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +30,15 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
         _buildSwitchers(),
         Container(
           height: 250,
-          child: MaterialApp(
+          child: WidgetsApp(
+            color: Colors.blue,
             debugShowCheckedModeBanner: _debugShowCheckedModeBanner,
             showPerformanceOverlay: _showPerformanceOverlay,
-            debugShowMaterialGrid: _debugShowMaterialGrid,
+            debugShowWidgetInspector: _debugShowWidgetInspector,
+            pageRouteBuilder:
+                <T>(RouteSettings settings, WidgetBuilder builder) {
+              return MaterialPageRoute<T>(settings: settings, builder: builder);
+            },
             home: HomePage(),
           ),
         ),
@@ -83,14 +81,14 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
           Column(
             children: [
               Switch(
-                value: _debugShowMaterialGrid,
+                value: _debugShowWidgetInspector,
                 onChanged: (v) {
                   setState(() {
-                    _debugShowMaterialGrid = v;
+                    _debugShowWidgetInspector = v;
                   });
                 },
               ),
-              Text('开启网格')
+              Text('检查器')
             ],
           )
         ],

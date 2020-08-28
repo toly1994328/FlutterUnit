@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 //    {
 //      "widgetId": 70,
 //      "name": 'FlutterLogoDecoration装饰',
@@ -15,8 +15,9 @@ class FlutterLogoDecorationDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: FlutterLogoDecoration(
-          darkColor: Colors.orange,
-          lightColor: Colors.deepPurpleAccent,
+//          darkColor: Colors.orange,
+//          lightColor: Colors.deepPurpleAccent,
+          margin: EdgeInsets.all(8),
           style: FlutterLogoStyle.stacked),
       child: SizedBox(
         width: 100,

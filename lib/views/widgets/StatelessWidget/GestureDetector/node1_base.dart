@@ -15,8 +15,8 @@ import 'package:flutter/material.dart';
 //      "subtitle":
 //          "【child】 : 子组件   【Widget】\n"
 //          "【onTap】 : 点击事件   【Function()】\n"
-//          "【onDoubleTap】 : 双击事件   【Function()】\n"
-//          "【onLongPress】 : 长按事件   【Function()】",
+//          "【onDoubleTap】 : 双击事件   【GestureTapCallback】\n"
+//          "【onLongPress】 : 长按事件   【GestureLongPressCallback】",
 //    }
 
 class CustomGestureDetector extends StatefulWidget {

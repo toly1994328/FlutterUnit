@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 //      "priority": 5,
 //      "name": "文字方向与最大行数",
 //      "subtitle": "【maxLines】 : 最大行数  【int】\n"
-//          "【【textDirection】 : 文字方向  【TextDirection】\n"
+//          "【textDirection】 : 文字方向  【TextDirection】\n"
 //          "下面依次是:rtl、ltr ",
 //    }
 class TextDirectionText extends StatelessWidget {

@@ -37,7 +37,7 @@ class _CustomAnimatedCrossFadeState extends State<CustomAnimatedCrossFade> {
               width: 200,
               height: 150,
               color: Colors.orange,
-              child: FlutterLogo(colors: Colors.blue, size: 100,),
+              child: FlutterLogo(textColor: Colors.blue, size: 100,),
             ),
             secondChild: Container(
               width: 200,
@@ -46,7 +46,7 @@ class _CustomAnimatedCrossFadeState extends State<CustomAnimatedCrossFade> {
               color: Colors.blue,
               child: FlutterLogo(
                 textColor: Colors.white,
-                colors: Colors.orange,
+//                colors: Colors.orange,
                 size: 100,
                 style: FlutterLogoStyle.stacked,),
             ),

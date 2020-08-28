@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 //      "priority": 1,
 //      "subtitle":
 //          "【children】 : 子组件列表   【List<Widget>】\n"
-//          "【padding】 : 点击事件  【EdgeInsetsGeometry】",
+//          "【padding】 : 内边距  【EdgeInsetsGeometry】",
 //    }
 class CustomListView extends StatelessWidget {
   final data = <Color>[

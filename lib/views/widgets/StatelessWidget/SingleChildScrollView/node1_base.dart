@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 //      "priority": 1,
 //      "subtitle":
 //          "【child】 : 子组件   【Widget】\n"
-//          "【padding】 : 点击事件  【EdgeInsetsGeometry】",
+//          "【padding】 : 内边距  【EdgeInsetsGeometry】",
 //    }
 class CustomSingleChildScrollView extends StatelessWidget {
   final data = <Color>[
