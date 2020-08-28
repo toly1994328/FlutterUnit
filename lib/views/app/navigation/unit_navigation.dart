@@ -58,7 +58,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
       elevation: 2,
       backgroundColor: color,
       child: const Icon(Icons.search),
-      onPressed: () => Navigator.of(context).pushNamed(Router.search),
+      onPressed: () => Navigator.of(context).pushNamed(UnitRouter.search),
     );
   }
 

@@ -54,7 +54,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       setState(() {
         _animEnd = true;
         Future.delayed(Duration(milliseconds: 500)).then((e) {
-          Navigator.of(context).pushReplacementNamed(Router.nav);
+          Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
         });
       });
     }
@@ -128,7 +128,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
                 child: Container(
                   height: 120,
                   child: FlutterLogo(
-                    colors: primaryColor,
+//                    colors: primaryColor,
                     size: 60,
                   ),
                 )),

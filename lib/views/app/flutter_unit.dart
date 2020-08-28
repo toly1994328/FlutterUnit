@@ -23,7 +23,7 @@ class FlutterUnit extends StatelessWidget {
 //            checkerboardRasterCacheImages:true,
             title: 'Flutter Unit',
             debugShowCheckedModeBanner: false,
-            onGenerateRoute: Router.generateRoute,
+            onGenerateRoute: UnitRouter.generateRoute,
             theme: ThemeData(
               primarySwatch: state.themeColor,
               fontFamily: state.fontFamily,

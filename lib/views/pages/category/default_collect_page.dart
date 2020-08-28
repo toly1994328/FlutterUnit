@@ -58,7 +58,7 @@ class DefaultCollectPage extends StatelessWidget {
 
   _toDetailPage(BuildContext context, WidgetModel model) {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-    Navigator.pushNamed(context, Router.widget_detail, arguments: model);
+    Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
   }
 
 }

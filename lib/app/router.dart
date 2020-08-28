@@ -22,7 +22,7 @@ import 'package:flutter_unit/views/pages/setting/setting_page.dart';
 
 import 'utils/router_utils.dart';
 
-class Router {
+class UnitRouter {
   static const String detail = 'detail';
   static const String home = '/';
   static const String logo = 'logo';
