@@ -1,6 +1,6 @@
 
 #### Flutter Unit 周边
-- 🔥 [《Flutter之旅》源码下载地址 ](https://github.com/toly1994328/FlutterUnit/files/5144713/FlutterJourney.Source.zip)
+- 🔥 [《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
 - 🔥  [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
 - 🔥  [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - 🔥  [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
