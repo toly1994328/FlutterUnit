@@ -1,4 +1,10 @@
 
+#### Flutter Unit 周边
+- 🔥 [《Flutter之旅》源码 ](https://github.com/toly1994328/FlutterUnit/files/5144713/FlutterJourney.Source.zip)
+- 🔥 [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
+- 🔥 [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
+- 🔥 [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
+
 [![GitHub stars](https://img.shields.io/github/stars/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/network)
 [![GitHub license](https://img.shields.io/github/license/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/blob/master/LICENSE)
@@ -16,14 +22,6 @@
 - Win下载链接: http://toly1994.com/file/FlutterUnitWin.zip
 
 - ✨ [Flutter Unit mac版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)
-
----
-
-#### Flutter Unit 周边
-
-- 🔥 [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
-- 🔥 [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
-- 🔥 [Flutter Unit 更新记录 ](http://king.toly1994.com/FlutterUnit_update.html)
 
 ---
 

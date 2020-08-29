@@ -93,8 +93,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
 
   _switchTab(int index, Color color) {
     if (_ctrl.hasClients) _ctrl.jumpTo(0);
-    BlocProvider.of<HomeBloc>(context)
-        .add(EventTabTap(Convert.toFamily(index)));
+    BlocProvider.of<HomeBloc>(context).add(EventTabTap(Convert.toFamily(index)));
   }
 
   _toDetailPage(WidgetModel model) async {
