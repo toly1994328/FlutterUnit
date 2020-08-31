@@ -18,7 +18,7 @@
 |![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitWin.png)|   
 
 
-| 平台类型 下载地址 | 项目分支地址  | 相关文章 | 
+| 平台类型 | 下载地址 | 项目分支地址  | 相关文章 | 
 |------|------------|------|------------|
 | Android版 | http://toly1994.com/file/flutter_unit_mac.zip |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《【FlutterUnit 食用指南】 开源篇》](https://juejin.im/post/6844904147045597191)|
 | iOS版 | 暂未提供，可自己下载项目运行 |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《【FlutterUnit 食用指南】 开源篇》](https://juejin.im/post/6844904147045597191)|
