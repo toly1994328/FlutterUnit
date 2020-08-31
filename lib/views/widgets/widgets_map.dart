@@ -66,15 +66,25 @@ class WidgetsMap {
       case "PageStorage":
         return [
           PageStorageDemo(),
-        ];      case "NotificationListener":
-        return [
-          NotificationListenerDemo(),
-          NotificationListenerUpdate()
         ];
+      case "NotificationListener":
+        return [NotificationListenerDemo(), NotificationListenerUpdate()];
 
       case "Scrollable":
         return [
           ScrollableDemo(),
+        ];
+      case "PhysicalModel":
+        return [
+          PhysicalModelDemo(),
+        ];
+      case "Directionality":
+        return [
+          DirectionalityDemo(),
+        ];
+      case "AnimatedTheme":
+        return [
+          AnimatedThemeDemo(),
         ];
       case "CupertinoSlidingSegmentedControl":
         return [
@@ -1112,6 +1122,10 @@ class WidgetsMap {
       case "BackdropFilter":
         return [
           CustomBackdropFilter(),
+        ];
+      case "AnimatedPhysicalModel":
+        return [
+          AnimatedPhysicalModelDemo(),
         ];
       case "CustomSingleChildLayout":
         return [

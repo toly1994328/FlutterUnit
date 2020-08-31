@@ -143,3 +143,5 @@ export '../StatefulWidget/EditableText/node1_base.dart';
 export '../StatefulWidget/CupertinoSlidingSegmentedControl/node1_base.dart';
 export '../StatefulWidget/WidgetsApp/node1_base.dart' hide HomePage;
 export '../StatefulWidget/WidgetInspector/node1_base.dart' hide HomePage;
+export '../StatefulWidget/AnimatedTheme/node1_base.dart';
+export '../StatefulWidget/AnimatedPhysicalModel/node1_base.dart';

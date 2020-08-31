@@ -5,13 +5,13 @@
 - 🔥  [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - 🔥  [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
 
-[![GitHub stars](https://img.shields.io/github/stars/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/network)
-[![GitHub license](https://img.shields.io/github/license/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/blob/master/LICENSE)
+
 
 ### FlutterUnit 下载体验:
 
-
+[![GitHub stars](https://img.shields.io/github/stars/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/network)
+[![GitHub license](https://img.shields.io/github/license/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/blob/master/LICENSE)
 
 | FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | FlutterUnit win版 下载 | 
 |------|------------|------------|
@@ -40,11 +40,11 @@ Tools • Dart 2.9.0
 
 ### 一、组件的展示页面
 
-#### 1. `210+组件收录`
+#### 1. `260+组件收录`
 
 > Flutter源码中的可用的组件一共350个左右，纷繁复杂，也没有明确的分类标准
 FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。并`根据个人感觉进行评星 `
-`目前收录组件213个`，每个都有至少一个演示展现和代码展示。
+`目前收录组件260个`，每个都有至少一个演示展现和代码展示。
 
 | . | . | . |
 |------|------------|------------|
@@ -167,13 +167,19 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 
 ---
 
-#### 2.搜藏功能
+#### 2.收藏功能
 
-> 搜藏页做得比较简陋，后面打算做收藏夹，可以自己创建的那种。
-
-| . | . | . |
+| 添加收藏集 | 修改收藏集 | 删除收藏集 |
 |------|------------|------------|
-|![](https://user-gold-cdn.xitu.io/2020/4/14/17177668aa7fd135?w=1080&h=2340&f=png&s=640245)|![](https://user-gold-cdn.xitu.io/2020/4/14/17177665c53256b4?w=1080&h=2340&f=png&s=797902)|     ![](https://user-gold-cdn.xitu.io/2020/4/14/1717765ec688731c?w=1080&h=2340&f=png&s=272421)|
+| ![](https://user-gold-cdn.xitu.io/2020/4/23/171a7baf50b2d9f5?w=288&h=576&f=gif&s=447423)  | ![](https://user-gold-cdn.xitu.io/2020/4/23/171a7be9b43874ce?w=288&h=576&f=gif&s=881222)    | ![](https://user-gold-cdn.xitu.io/2020/4/23/171a7bfec06a2bb8?w=288&h=576&f=gif&s=837022)       | 
+
+| 长按左菜单滑页 | 长按右菜单滑页 | 详情内长按展示收藏菜单 |
+|------|------------|------------|
+| ![](https://user-gold-cdn.xitu.io/2020/4/24/171a7c73230f803d?w=288&h=576&f=gif&s=563981) |![](https://user-gold-cdn.xitu.io/2020/4/24/171a7c7cb0780bc6?w=288&h=576&f=gif&s=628105)        | ![](https://user-gold-cdn.xitu.io/2020/4/23/171a7a6fa57e3c6f?w=288&h=576&f=gif&s=448572)       |
+
+| 删除与数据同步 | 组件加入收藏集 | 收藏集支持多选 |
+|------|------------|------------|
+| ![](https://user-gold-cdn.xitu.io/2020/4/23/171a76fd06702dda?w=288&h=576&f=gif&s=885232)  | ![](https://user-gold-cdn.xitu.io/2020/4/23/171a773c1bfd5153?w=288&h=576&f=gif&s=887426)        | ![](https://user-gold-cdn.xitu.io/2020/4/23/171a7c36021a18f9?w=288&h=576&f=gif&s=714061)   |
 
 > `FlutterUnit 1.0 `目前基本就是这么多功能，可以在Github中下载打包后的apk玩玩
 希望能对你的Flutter学习有所帮助。
