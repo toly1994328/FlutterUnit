@@ -116,6 +116,5 @@ class _CollectPageState extends State<CollectPage>
       onPressed: () => Scaffold.of(context).openEndDrawer());
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }

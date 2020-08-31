@@ -29,13 +29,11 @@ class BlocWrapper extends StatelessWidget {
           create: (_) => GlobalBloc(storage)..add(EventInitApp())),
 
       BlocProvider<HomeBloc>(
-          create: (_) => HomeBloc(repository: repository)
-            ..add(EventTabTap(WidgetFamily.statelessWidget))),
+          create: (_) => HomeBloc(repository: repository)..add(EventTabTap(WidgetFamily.statelessWidget))),
 
-      BlocProvider<DetailBloc>(
-          create: (_) => DetailBloc(repository: repository)),
+      BlocProvider<DetailBloc>(create: (_) => DetailBloc(repository: repository)),
+
       BlocProvider<CategoryBloc>(
-//          lazy: false,
           create: (_) =>
               CategoryBloc(repository: categoryRepo)..add(EventLoadCategory())),
 

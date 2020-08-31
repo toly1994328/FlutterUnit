@@ -33,7 +33,7 @@ dependencies:
   intl: ^0.16.1
   path_provider: ^1.6.11
   connectivity: ^0.4.8+6 #网络状态
-  flutter_spinkit: ^4.1.2+1 #loading
+#  flutter_spinkit: ^4.1.2+1 #loading
   dio: ^3.0.9 #dio
 dev_dependencies:
   flutter_test:

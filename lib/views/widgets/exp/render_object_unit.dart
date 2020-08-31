@@ -33,6 +33,7 @@ export '../SingleChildRenderObjectWidget/RepaintBoundary/node1_base.dart';
 export '../SingleChildRenderObjectWidget/RepaintBoundary/node2_save.dart';
 
 export '../SingleChildRenderObjectWidget/ConstrainedBox/node1_base.dart';
+export '../SingleChildRenderObjectWidget/PhysicalModel/node1_base.dart';
 export '../SingleChildRenderObjectWidget/FractionalTranslation/node1_base.dart';
 export '../SingleChildRenderObjectWidget/ColorFiltered/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Baseline/node1_base.dart';

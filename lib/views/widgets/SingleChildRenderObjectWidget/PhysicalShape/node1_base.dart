@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// 说明: 279 PhysicalShape 物理形状 可以让子组件按照路径进行剪裁,并且可以指定背景色、影深、阴影颜色、剪切行为。
 //    {
 //      "widgetId": 279,
-//      "name": "返回按钮基本使用",
+//      "name": "PhysicalShape基本使用",
 //      "priority": 1,
 //      "subtitle": "【clipper】 : 裁剪器   【CustomClipper<Path>】\n"
 //          "【clipBehavior】 : 裁剪行为   【Clip】\n"

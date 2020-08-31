@@ -8,7 +8,6 @@ import 'package:flutter/cupertino.dart';
 /// 说明:
 
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_unit/app/api/github/issues_api.dart';
 import 'package:flutter_unit/app/style/TolyIcon.dart';
 import 'package:flutter_unit/app/utils/convert_man.dart';
@@ -17,22 +16,10 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/model/github/issue.dart';
 import 'package:flutter_unit/model/github/repository.dart';
 
-
 class IssuesPointPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-//          appBar: AppBar(
-//            title: Text("Flutter Unit Point"),
-//          ),
-        body: IssuesPointContent()
-//    ListView(
-//              children: <Widget>[
-//                RepoWidget(),
-//                IssuesPointContent(),
-//              ],
-//            ),
-        );
+    return Scaffold(body: IssuesPointContent());
   }
 }
 
@@ -46,7 +33,6 @@ class RepoWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 56 + 24.0, bottom: 5),
       padding: EdgeInsets.all(10),
-//      alignment: Alignment.bottomCenter,
       decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(color: Colors.grey, offset: Offset(0, .5), blurRadius: 3)
@@ -66,10 +52,14 @@ class RepoWidget extends StatelessWidget {
                 repository.fullName,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
+              SizedBox(width: 10,),
               WrapColor(
-                child:Text(
+                child: Text(
                   repository.license.spdxId,
-                  style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 12),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 12),
                 ),
               ),
               Spacer(),
@@ -102,10 +92,10 @@ class RepoWidget extends StatelessWidget {
                     Text(repository.stargazersCount.toString()),
                   ]),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical:8.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   "|",
-                  style: TextStyle(fontSize: 20,color: Colors.blue),
+                  style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),
               ),
               Wrap(
@@ -113,14 +103,16 @@ class RepoWidget extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Icon(TolyIcon.icon_show),
-                    SizedBox(width: 5,),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(repository.subscribersCount.toString()),
                   ]),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical:8.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   "|",
-                  style: TextStyle(fontSize: 20,color: Colors.blue),
+                  style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),
               ),
               Wrap(
@@ -131,10 +123,10 @@ class RepoWidget extends StatelessWidget {
                     Text(repository.forksCount.toString()),
                   ]),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical:8.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   "|",
-                  style: TextStyle(fontSize: 20,color: Colors.blue),
+                  style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),
               ),
               Wrap(
@@ -142,7 +134,9 @@ class RepoWidget extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Icon(TolyIcon.icon_issues),
-                    SizedBox(width: 5,),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(repository.openIssuesCount.toString()),
                   ]),
             ],
@@ -175,9 +169,10 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
       content = SliverPadding(
         padding: EdgeInsets.only(top: 40),
         sliver: SliverToBoxAdapter(
-          child: SpinKitWave(
-            color: Colors.blue,
-          )
+          child: Container(),
+//          child: SpinKitWave(
+//            color: Colors.blue,
+//          )
         ),
       );
     } else {
@@ -382,7 +377,10 @@ class IssueItem extends StatelessWidget {
               Spacer(),
               WrapColor(
                   color: Colors.greenAccent,
-                  child: Text(issue.commentNum.toString(),style: TextStyle(color: Colors.white),)),
+                  child: Text(
+                    issue.commentNum.toString(),
+                    style: TextStyle(color: Colors.white),
+                  )),
               SizedBox(
                 width: 5,
               ),
@@ -408,7 +406,11 @@ class IssueItem extends StatelessWidget {
         SizedBox(
           width: 10,
         ),
-        WrapColor(child: Text("#${issue.number}",style: TextStyle(color: Colors.white),)),
+        WrapColor(
+            child: Text(
+          "#${issue.number}",
+          style: TextStyle(color: Colors.white),
+        )),
         SizedBox(
           width: 10,
         ),

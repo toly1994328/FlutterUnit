@@ -12,7 +12,7 @@ class LoginFrom extends StatefulWidget {
 
 class _LoginFromState extends State<LoginFrom> {
   final _usernameController = TextEditingController(text: 'toly1994328');
-  final _passwordController = TextEditingController(text: '@#1994328zfjtl');
+  final _passwordController = TextEditingController(text: '');
 
   bool _showPwd = false;
 
@@ -22,7 +22,7 @@ class _LoginFromState extends State<LoginFrom> {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Text("FlutterUnit 登录",style: TextStyle(fontSize: 25),),
-        SizedBox(height: 10,),
+        SizedBox(height: 5,),
         Text("请使用github用户名登录",style: TextStyle(color: Colors.grey),),
         SizedBox(height:20,),
         buildUsernameInput(),
@@ -71,7 +71,7 @@ class _LoginFromState extends State<LoginFrom> {
   }
 
   Widget _buildBtn() => Container(
-    margin: EdgeInsets.only(top: 10, left: 10, right: 10,bottom: 10),
+    margin: EdgeInsets.only(top: 10, left: 10, right: 10,bottom: 0),
     height: 40,
     width: MediaQuery.of(context).size.width,
     child:
@@ -110,7 +110,7 @@ class _LoginFromState extends State<LoginFrom> {
                 ),
               ),
               Container(
-                height: 30.0,
+                height: 20.0,
                 width: 1.0,
                 color: Colors.grey.withOpacity(0.5),
                 margin: const EdgeInsets.only(left: 00.0, right: 10.0),
