@@ -17,17 +17,14 @@
 |------|------------|------------|
 |![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitWin.png)|   
 
-- 【Android版FlutterUnit】: http://toly1994.com/file/FlutterUnit.apk
-- 【iOS版FlutterUnit - 自己下载项目运行】: https://github.com/toly1994328/FlutterUnit
-- 【MacOS版FlutterUnit】: http://toly1994.com/file/flutter_unit_mac.zip
-- 【Windows版FlutterUnit】: http://toly1994.com/file/FlutterUnitWin.zip
-- 【Web版FlutterUnit】: http://toly1994328.gitee.io/flutter_web
 
-| 项目分支地址  | 相关文章 | 
-|------|------------|
-|[flutter_unit_mac](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)| [《FlutterUnit mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
-| [Flutter Unit windows版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_windows) | [《FlutterUnit win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
-| [Flutter Unit Web版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《FlutterUnit web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
+平台类型 下载地址 | 项目分支地址  | 相关文章 | 
+|------|------------|------|------------|
+Android版 | http://toly1994.com/file/flutter_unit_mac.zip |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《【FlutterUnit 食用指南】 开源篇》](https://juejin.im/post/6844904147045597191)|
+iOS版 | 暂未提供，可自己下载项目运行 |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《【FlutterUnit 食用指南】 开源篇》](https://juejin.im/post/6844904147045597191)|
+MacOS版 | http://toly1994.com/file/flutter_unit_mac.zip |[flutter_unit_mac](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)| [《FlutterUnit mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
+http://toly1994.com/file/FlutterUnitWin.zip  | [flutter_unit_windows](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_windows) | [《FlutterUnit win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
+http://toly1994328.gitee.io/flutter_web | [ flutter_unit_web ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《FlutterUnit web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
 
 ---
 
