@@ -17,11 +17,17 @@
 |------|------------|------------|
 |![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitWin.png)|   
 
-- Android下载链接: http://toly1994.com/file/FlutterUnit.apk
-- Mac下载链接: http://toly1994.com/file/flutter_unit_mac.zip
-- Win下载链接: http://toly1994.com/file/FlutterUnitWin.zip
+- 【Android版FlutterUnit】: http://toly1994.com/file/FlutterUnit.apk
+- 【iOS版FlutterUnit - 自己下载项目运行】: https://github.com/toly1994328/FlutterUnit
+- 【MacOS版FlutterUnit】: http://toly1994.com/file/flutter_unit_mac.zip
+- 【Windows版FlutterUnit】: http://toly1994.com/file/FlutterUnitWin.zip
+- 【Web版FlutterUnit】: http://toly1994328.gitee.io/flutter_web
 
-- ✨ [Flutter Unit mac版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)
+| 项目分支地址  | 相关文章 | 
+|------|------------|
+|[flutter_unit_mac](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_mac)| [《FlutterUnit mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
+| [Flutter Unit windows版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_windows) | [《FlutterUnit win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
+| [Flutter Unit Web版支持 ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《FlutterUnit web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
 
 ---
 
