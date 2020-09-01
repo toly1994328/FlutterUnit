@@ -86,7 +86,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
   Drawer _buildLeftDrawer() => Drawer(
         elevation: 1,
         child: Image.asset(
-          'assets/images/sabar.jpg',
+          'assets/images/sabar.webp',
           fit: BoxFit.cover,
         ),
       );

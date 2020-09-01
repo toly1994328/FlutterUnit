@@ -27,7 +27,7 @@ class CustomCupertinoContextMenu extends StatelessWidget {
   Widget _buildCupertinoContextMenu(context) => Container(
     decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/sabar_bar.jpg'),
+            image: AssetImage('assets/images/sabar_bar.webp'),
             fit: BoxFit.cover),
         borderRadius: BorderRadius.all(Radius.circular(50))),
     width: 100,
@@ -36,7 +36,7 @@ class CustomCupertinoContextMenu extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/images/sabar_bar.jpg'),
+                    image: AssetImage('assets/images/sabar_bar.webp'),
                     fit: BoxFit.cover),
                 borderRadius: BorderRadius.all(Radius.circular(50))),
           ),

@@ -22,14 +22,14 @@ class CustomClipOval extends StatelessWidget {
         ClipOval(
 
           child: Image.asset(
-            "assets/images/wy_300x200.jpg",
+            "assets/images/wy_300x200.webp",
             width: 150,
             height: 100,
           ),
         ),
         ClipOval(
           child: Image.asset(
-            "assets/images/wy_300x200.jpg",
+            "assets/images/wy_300x200.webp",
             width: 100,
             height: 100,
             fit: BoxFit.cover,

@@ -31,8 +31,8 @@ class _FitImageState extends State<FitImage> {
           color: Colors.grey.withAlpha(88),
           child: Image(
               image: AssetImage(!_smallImage
-                  ? "assets/images/wy_300x200.jpg"
-                  : "assets/images/wy_30x20.jpg"),
+                  ? "assets/images/wy_300x200.webp"
+                  : "assets/images/wy_30x20.webp"),
               fit: mode)),
       Text(mode.toString().split(".")[1])
     ]))

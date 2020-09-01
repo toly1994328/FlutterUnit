@@ -62,7 +62,7 @@ class _RotateTransformState extends State<RotateTransform> {
           width: 100,
           height: 100,
           child: Image.asset(
-            'assets/images/wy_300x200.jpg',
+            'assets/images/wy_300x200.webp',
             fit: BoxFit.cover,
           )),
     );

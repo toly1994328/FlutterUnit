@@ -16,8 +16,8 @@ class BurstFlow extends StatefulWidget {
   static final data = List.generate(
       16,
       (index) => index.isEven
-          ? "assets/images/icon_head.png"
-          : "assets/images/wy_300x200.jpg");
+          ? "assets/images/icon_head.webp"
+          : "assets/images/wy_300x200.webp");
   static final show = Container(
       width: 300,
       height: 300,
@@ -27,7 +27,7 @@ class BurstFlow extends StatefulWidget {
               .map((e) => CircleAvatar(backgroundImage: AssetImage(e)))
               .toList(),
           menu: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/icon_head.png'),
+            backgroundImage: AssetImage('assets/images/icon_head.webp'),
           )));
 
   final List<Widget> children;

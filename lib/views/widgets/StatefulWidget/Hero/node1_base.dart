@@ -21,7 +21,7 @@ class CustomHero extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(30)),
         child: Image.asset(
-          "assets/images/icon_head.png",
+          "assets/images/icon_head.webp",
           width: 60,
           height: 60,
           fit: BoxFit.cover,
@@ -65,7 +65,7 @@ class TargetPage extends StatelessWidget {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           backgroundImage: AssetImage(
-            "assets/images/icon_head.png",
+            "assets/images/icon_head.webp",
           ),
         ),
       ),

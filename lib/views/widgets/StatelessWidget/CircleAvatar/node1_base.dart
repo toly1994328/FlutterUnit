@@ -21,7 +21,7 @@ class CustomCircleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 50,
-      backgroundImage: AssetImage("assets/images/wy_200x300.jpg"),
+      backgroundImage: AssetImage("assets/images/wy_200x300.webp"),
       foregroundColor: Colors.white,
       child: Icon(
         Icons.check,

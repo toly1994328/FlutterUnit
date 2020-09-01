@@ -20,7 +20,7 @@ class ShapeImageDemo extends StatelessWidget {
           image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                'assets/images/wy_200x300.jpg',
+                'assets/images/wy_200x300.webp',
               ))),
       child: SizedBox(
         height: 80,

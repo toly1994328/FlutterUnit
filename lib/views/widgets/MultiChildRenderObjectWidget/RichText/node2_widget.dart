@@ -19,7 +19,7 @@ class RichTextWithWidget extends StatelessWidget {
         children: <InlineSpan>[
           WidgetSpan(
               child: Image.asset(
-                'assets/images/icon_head.png',
+                'assets/images/icon_head.webp',
                 width: 30,
               ),
               alignment: PlaceholderAlignment.baseline,

@@ -62,7 +62,7 @@ class FlexibleSpaceBarDemo extends StatelessWidget {
         collapseMode: CollapseMode.parallax, //视差效果
         stretchModes: [StretchMode.blurBackground,StretchMode.zoomBackground],
         background: Image.asset(
-          "assets/images/caver.jpeg",
+          "assets/images/caver.webp",
           fit: BoxFit.cover,
         ),
       ),
@@ -71,7 +71,7 @@ class FlexibleSpaceBarDemo extends StatelessWidget {
 
   Widget _buildLeading() => Container(
       margin: EdgeInsets.all(10),
-      child: Image.asset('assets/images/icon_head.png'));
+      child: Image.asset('assets/images/icon_head.webp'));
 
   List<Widget> _buildActions() => <Widget>[
     IconButton(

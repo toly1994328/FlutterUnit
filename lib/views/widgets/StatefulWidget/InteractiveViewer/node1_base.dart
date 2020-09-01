@@ -34,7 +34,7 @@ class InteractiveViewerDemo extends StatelessWidget {
         panEnabled: true,
         scaleEnabled: true,
         child: Container(
-          child: Image.asset('assets/images/caver.jpeg'),
+          child: Image.asset('assets/images/caver.webp'),
         ),
         onInteractionStart: _onInteractionStart,
         onInteractionUpdate: _onInteractionUpdate,

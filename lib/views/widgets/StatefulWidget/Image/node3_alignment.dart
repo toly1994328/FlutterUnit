@@ -35,7 +35,7 @@ class AlignmentImage extends StatelessWidget {
           height: 60,
           color: Colors.grey.withAlpha(88),
           child: Image(
-            image: AssetImage("assets/images/wy_30x20.jpg"),
+            image: AssetImage("assets/images/wy_30x20.webp"),
             alignment: alignment,
           )),
       Text(alignment.toString())

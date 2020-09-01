@@ -24,7 +24,7 @@ class RadialShaderMask extends StatelessWidget {
         ShaderMask(
           shaderCallback: _buildShader,
           child: Image.asset(
-            'assets/images/icon_head.png',
+            'assets/images/icon_head.webp',
             height: 70,
             width: 70,
           ),

@@ -26,7 +26,7 @@ class CustomCupertinoNavigationBar extends StatelessWidget {
       ),
       middle: Text("风雪雅舍"),
       trailing: Image.asset(
-        "assets/images/icon_head.png",
+        "assets/images/icon_head.webp",
         width: 25.0,
         height: 25.0,
       ),

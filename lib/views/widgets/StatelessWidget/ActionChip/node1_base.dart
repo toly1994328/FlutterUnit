@@ -26,7 +26,7 @@ class CustomActionChip extends StatelessWidget {
       labelPadding: EdgeInsets.all(3),
       label: Text("This is a ActionChip."),
       backgroundColor: Colors.grey.withAlpha(66),
-      avatar: Image.asset("assets/images/icon_head.png"),
+      avatar: Image.asset("assets/images/icon_head.webp"),
       shadowColor: Colors.orangeAccent,
       elevation: 3,
       pressElevation: 5,

@@ -16,8 +16,8 @@ class CircleFlow extends StatelessWidget {
   final data = List.generate(
       16,
       (index) => index.isEven
-          ? "assets/images/icon_head.png"
-          : "assets/images/wy_300x200.jpg");
+          ? "assets/images/icon_head.webp"
+          : "assets/images/wy_300x200.webp");
 
   @override
   Widget build(BuildContext context) {

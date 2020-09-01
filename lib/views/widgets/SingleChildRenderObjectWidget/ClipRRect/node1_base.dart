@@ -19,7 +19,7 @@ class CustomClipRRect extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.all(Radius.elliptical(35, 30)),
       child: Image.asset(
-        "assets/images/wy_300x200.jpg",
+        "assets/images/wy_300x200.webp",
         width: 150,
         height: 100,
       ),

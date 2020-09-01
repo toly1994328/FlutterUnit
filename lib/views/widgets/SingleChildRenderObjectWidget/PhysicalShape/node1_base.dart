@@ -26,7 +26,7 @@ class PhysicalShapeDemo extends StatelessWidget {
           shadowColor: Colors.orange,
           elevation: 3,
           child: Image.asset(
-            'assets/images/caver.jpeg',
+            'assets/images/caver.webp',
             fit: BoxFit.cover,
           ),
           clipBehavior: Clip.hardEdge,

@@ -25,7 +25,7 @@ class CustomImageIcon extends StatelessWidget {
       spacing: 10,
       children: data.keys
           .map((e) => ImageIcon(
-                AssetImage("assets/images/leaf.png"),
+                AssetImage("assets/images/leaf.webp"),
                 color: e,
                 size: data[e],
               ))

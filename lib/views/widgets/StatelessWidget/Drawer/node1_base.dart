@@ -35,7 +35,7 @@ class CustomDrawer extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/caver.jpeg'),
+                  image: AssetImage('assets/images/caver.webp'),
                   fit: BoxFit.cover),
             ),
             child: Text(

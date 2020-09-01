@@ -51,7 +51,7 @@ class VersionInfo extends StatelessWidget {
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 10,
       children: <Widget>[
-        CircleImage(image: AssetImage("assets/images/icon_head.png"),size: 80,),
+        CircleImage(image: AssetImage("assets/images/icon_head.webp"),size: 80,),
         Text('Flutter Unit',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         Text('Version ${Cons.version}'),
       ],

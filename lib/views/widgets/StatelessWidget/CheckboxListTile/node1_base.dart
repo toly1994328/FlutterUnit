@@ -33,7 +33,7 @@ class _CustomCheckBoxListTileState extends State<CustomCheckBoxListTile> {
         value: _selected,
         checkColor: Colors.yellow,
         activeColor: Colors.orangeAccent,
-        secondary: Image.asset("assets/images/icon_head.png"),
+        secondary: Image.asset("assets/images/icon_head.webp"),
         title: Text("张风捷特烈"),
         subtitle: Text("@万花过尽知无物"),
         onChanged: (v) => setState(() => _selected = !_selected),

@@ -29,7 +29,7 @@ class _CustomOpacityState extends State<CustomOpacity> {
   Widget _buildOpacity() => Opacity(
         opacity: _opacity,
         child: Image.asset(// 图片
-          'assets/images/icon_head.png',
+          'assets/images/icon_head.webp',
           width: 100,
         ),
       );

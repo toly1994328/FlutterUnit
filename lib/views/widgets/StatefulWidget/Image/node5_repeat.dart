@@ -24,7 +24,7 @@ class RepeatImage extends StatelessWidget {
             height: 60,
             color: Colors.red,
             child: Image(
-                image: AssetImage("assets/images/wy_30x20.jpg"),
+                image: AssetImage("assets/images/wy_30x20.webp"),
                 repeat: mode)),
         Text(mode.toString().split(".")[1])
       ]))

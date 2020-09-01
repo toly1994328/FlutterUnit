@@ -23,7 +23,7 @@ class BorderDemo extends StatelessWidget {
         height: 80,
         width: 100,
         child: Image.asset(
-          'assets/images/wy_200x300.jpg',
+          'assets/images/wy_200x300.webp',
           fit: BoxFit.cover,
         ),
       ),

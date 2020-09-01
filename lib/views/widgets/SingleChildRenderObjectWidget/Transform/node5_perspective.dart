@@ -41,7 +41,7 @@ class _R3C2State extends State<R3C2> {
               width: 100,
               height: 100,
               child: Image.asset(
-                'assets/images/wy_300x200.jpg',
+                'assets/images/wy_300x200.webp',
                 fit: BoxFit.cover,
               )),
         ),

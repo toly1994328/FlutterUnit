@@ -29,7 +29,7 @@ class _SelectInputChipState extends State<SelectInputChip> {
       labelPadding: EdgeInsets.all(3),
       label: Text("This is a InputChip."),
       backgroundColor: Colors.grey.withAlpha(66),
-      avatar: Image.asset("assets/images/icon_head.png"),
+      avatar: Image.asset("assets/images/icon_head.webp"),
       selectedColor: Colors.orangeAccent.withAlpha(88),
       selectedShadowColor: Colors.blue,
       shadowColor: Colors.orangeAccent,

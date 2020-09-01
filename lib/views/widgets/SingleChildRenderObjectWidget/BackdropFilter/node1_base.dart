@@ -58,7 +58,7 @@ class _CustomBackdropFilterState extends State<CustomBackdropFilter> {
           height: 150,
           width: 150,
           child: Image.asset(
-            'assets/images/sabar.jpg',
+            'assets/images/sabar.webp',
             fit: BoxFit.cover,
           ),
         ),
@@ -66,7 +66,7 @@ class _CustomBackdropFilterState extends State<CustomBackdropFilter> {
           height: 150,
           width: 150,
           child: Image.asset(
-            'assets/images/wy_200x300.jpg',
+            'assets/images/wy_200x300.webp',
             fit: BoxFit.cover,
           ),
         ),

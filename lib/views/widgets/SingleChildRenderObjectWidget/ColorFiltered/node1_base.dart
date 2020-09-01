@@ -51,7 +51,7 @@ class _CustomColorFilteredState extends State<CustomColorFiltered> {
         width: 58,
         height: 58,
         child: ColorFiltered(
-            child: Image(image: AssetImage("assets/images/icon_head.png")),
+            child: Image(image: AssetImage("assets/images/icon_head.webp")),
             colorFilter: ColorFilter.mode(_color, m)),
       );
 

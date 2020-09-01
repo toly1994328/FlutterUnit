@@ -24,7 +24,7 @@ class ShapeDecorationDemo extends StatelessWidget {
           image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                'assets/images/wy_200x300.jpg',
+                'assets/images/wy_200x300.webp',
               )),
           shape: CircleBorder(
             side: BorderSide(width: 1.0, color: Colors.orangeAccent),

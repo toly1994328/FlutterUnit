@@ -55,7 +55,7 @@ class _SkewTransformState extends State<SkewTransform> {
           width: 100,
           height: 100,
           child: Image.asset(
-            'assets/images/wy_300x200.jpg',
+            'assets/images/wy_300x200.webp',
             fit: BoxFit.cover,
           )),
     );

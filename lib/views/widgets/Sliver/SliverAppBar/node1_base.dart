@@ -79,7 +79,7 @@ class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
         titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
         collapseMode: CollapseMode.parallax, //视差效果
         background: Image.asset(
-          "assets/images/caver.jpeg",
+          "assets/images/caver.webp",
           fit: BoxFit.cover,
         ),
       ),
@@ -88,7 +88,7 @@ class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
 
   Widget _buildLeading() => Container(
       margin: EdgeInsets.all(10),
-      child: Image.asset('assets/images/icon_head.png'));
+      child: Image.asset('assets/images/icon_head.webp'));
 
   List<Widget> _buildActions() => <Widget>[
         IconButton(

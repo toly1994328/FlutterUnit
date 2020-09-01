@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
 //    }
 
 class LoadImage extends StatelessWidget {
-  final assetsImagePath = "assets/images/icon_head.png";
+  final assetsImagePath = "assets/images/icon_head.webp";
   final assetsGif = "assets/images/pica.gif";
   final netImageUrl = "https://user-gold-cdn.xitu.io"
       "/2019/7/24/16c225e78234ec26?"

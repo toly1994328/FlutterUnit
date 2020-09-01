@@ -24,7 +24,7 @@ class DivisionsGridPage extends StatelessWidget {
             divisions: 4,
             subdivisions: 4,
             child: Image.asset(
-              "assets/images/wy_300x200.jpg",
+              "assets/images/wy_300x200.webp",
               fit: BoxFit.cover,
             )));
   }

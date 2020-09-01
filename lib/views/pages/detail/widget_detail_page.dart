@@ -265,7 +265,7 @@ class WidgetDetailTitle extends StatelessWidget {
                   child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       child: model.image == null
-                          ? Image.asset('assets/images/caver.jpeg')
+                          ? Image.asset('assets/images/caver.webp')
                           : Image(image: model.image))),
             ),
           ),

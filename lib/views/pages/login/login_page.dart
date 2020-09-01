@@ -73,7 +73,7 @@ class LoginPage extends StatelessWidget {
 
   Widget arcBackground() {
     return ArcBackground(
-      image: AssetImage("assets/images/caver.jpeg"),
+      image: AssetImage("assets/images/caver.webp"),
       child: Padding(
         padding: const EdgeInsets.all(50.0),
         child: Container(

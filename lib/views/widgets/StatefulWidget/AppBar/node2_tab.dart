@@ -41,7 +41,7 @@ class _TabAppBarState extends State<TabAppBar>
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    "assets/images/sabar.jpg",
+                    "assets/images/sabar.webp",
                   ),
                   fit: BoxFit.cover)),
           child: _buildAppBar(),

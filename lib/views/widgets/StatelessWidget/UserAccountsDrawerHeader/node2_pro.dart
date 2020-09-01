@@ -49,7 +49,7 @@ class ProUAGHP extends StatelessWidget {
         currentAccountPicture: Container(
           padding: const EdgeInsets.all(15.0),
           child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/icon_head.png"),
+            backgroundImage: AssetImage("assets/images/icon_head.webp"),
           ),
         ),
         otherAccountsPictures: <Widget>[
@@ -61,7 +61,7 @@ class ProUAGHP extends StatelessWidget {
         arrowColor: Colors.white,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/caver.jpeg")),
+              image: AssetImage("assets/images/caver.webp")),
         ),
       ),
     );

@@ -29,7 +29,7 @@ class AboutAppPage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.only(bottom: 50),
                       child: Image.asset(
-                        'assets/images/sabar.jpg',
+                        'assets/images/sabar.webp',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -42,7 +42,7 @@ class AboutAppPage extends StatelessWidget {
                     child: CircleImage(
                       size: 100,
                       shadowColor: Theme.of(context).primaryColor,
-                      image: AssetImage('assets/images/icon_head.png'),
+                      image: AssetImage('assets/images/icon_head.webp'),
                     )),
               ],
             ),

@@ -60,7 +60,7 @@ class _CollectPageState extends State<CollectPage>
               Navigator.of(context).pushNamed(UnitRouter.login);
             },
             child: CircleImage(
-              image: AssetImage('assets/images/icon_head.png'),
+              image: AssetImage('assets/images/icon_head.webp'),
               borderSize: 1.5,
             ),
           )),
@@ -80,7 +80,7 @@ class _CollectPageState extends State<CollectPage>
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax, //视差效果
         background: Image.asset(
-          "assets/images/caver.jpeg",
+          "assets/images/caver.webp",
           fit: BoxFit.cover,
         ),
       ),
