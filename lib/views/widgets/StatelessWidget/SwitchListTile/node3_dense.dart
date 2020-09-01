@@ -28,7 +28,7 @@ class _DenseSwitchListTileState extends State<DenseSwitchListTile> {
         dense: true,
         selected: _value,
         activeColor: Colors.orangeAccent,
-        secondary: Image.asset("assets/images/icon_head.png"),
+        secondary: Image.asset("assets/images/icon_head.webp"),
         title: Text("张风捷特烈"),
         subtitle: Text("@万花过尽知无物"),
         onChanged: (v) => setState(() => _value = !_value),

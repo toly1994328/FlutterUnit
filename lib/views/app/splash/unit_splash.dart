@@ -142,7 +142,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       child: Container(
         height: 45,
         width: 45,
-        child: Image.asset('assets/images/icon_head.png'),
+        child: Image.asset('assets/images/icon_head.webp'),
       ));
 
   Widget _buildPower() => Positioned(

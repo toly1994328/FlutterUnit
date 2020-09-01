@@ -16,7 +16,7 @@ class UnitDrawerHeader extends StatelessWidget {
       padding: EdgeInsets.only(top: 10, left: 15),
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/wy_300x200_filter.jpg'),
+            image: AssetImage('assets/images/wy_300x200_filter.webp'),
             fit: BoxFit.cover),
       ),
       child: Column(

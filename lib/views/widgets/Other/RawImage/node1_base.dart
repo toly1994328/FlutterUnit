@@ -29,7 +29,7 @@ class _RawImageDemoState extends State<RawImageDemo> {
   @override
   void initState() {
     super.initState();
-    _loadImageFromAssets('assets/images/icon_head.png');
+    _loadImageFromAssets('assets/images/icon_head.webp');
   }
 
   @override

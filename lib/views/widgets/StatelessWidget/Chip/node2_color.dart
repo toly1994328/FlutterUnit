@@ -20,7 +20,7 @@ class ColorOfChip extends StatelessWidget {
       spacing: 20,
       children: <Widget>[
         Chip(
-          avatar: Image.asset("assets/images/icon_head.png"),
+          avatar: Image.asset("assets/images/icon_head.webp"),
           label: Text("张风捷特烈"),
           padding: EdgeInsets.all(5),
           labelPadding: EdgeInsets.all(5),
@@ -29,7 +29,7 @@ class ColorOfChip extends StatelessWidget {
           elevation: 3,
         ),
         Chip(
-          avatar: Image.asset("assets/images/icon_head.png"),
+          avatar: Image.asset("assets/images/icon_head.webp"),
           label: Text("张风捷特烈"),
           padding: EdgeInsets.all(5),
           labelPadding: EdgeInsets.all(5),

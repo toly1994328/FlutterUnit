@@ -25,7 +25,7 @@ class CustomGridTile extends StatelessWidget {
             color: Colors.red,
           ),
           leading: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/wy_200x300.jpg"),
+            backgroundImage: AssetImage("assets/images/wy_200x300.webp"),
           ),
           title: Text("百里·巫缨"),
           subtitle: Text("倾国必倾城"),
@@ -33,7 +33,7 @@ class CustomGridTile extends StatelessWidget {
         child: Opacity(
           opacity: 0.5,
           child: Image.asset(
-            "assets/images/sabar.jpg",
+            "assets/images/sabar.webp",
             fit: BoxFit.cover,
           ),
         ),

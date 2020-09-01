@@ -30,7 +30,7 @@ class BugUnitPage extends StatelessWidget {
                     Navigator.of(context).pushNamed(UnitRouter.issues_point);
                   },
                   child: CircleImage(
-                    image: AssetImage('assets/images/icon_head.png'),
+                    image: AssetImage('assets/images/icon_head.webp'),
                     size: 80,
                   ),
                 ),

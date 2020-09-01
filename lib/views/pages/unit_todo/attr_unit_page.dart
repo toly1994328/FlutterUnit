@@ -21,7 +21,7 @@ class AttrUnitPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 CircleImage(
-                  image: AssetImage('assets/images/icon_head.png'),
+                  image: AssetImage('assets/images/icon_head.webp'),
                   size: 80,
                 ),
                 SizedBox(height: 10,),

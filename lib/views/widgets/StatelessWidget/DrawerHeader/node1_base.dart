@@ -70,7 +70,7 @@ class CustomDrawerHeader extends StatelessWidget {
             topRight:Radius.circular(40)
         ),
         image: DecorationImage(
-            image: AssetImage('assets/images/caver.jpeg'),
+            image: AssetImage('assets/images/caver.webp'),
             fit: BoxFit.cover),
       ),
       child: Text(

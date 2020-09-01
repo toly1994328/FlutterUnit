@@ -22,7 +22,7 @@ class CustomGridPage extends StatelessWidget {
             color: Colors.red,
             interval: 50,
             child: Image.asset(
-              "assets/images/wy_300x200.jpg",
+              "assets/images/wy_300x200.webp",
               fit: BoxFit.cover,
             )));
   }

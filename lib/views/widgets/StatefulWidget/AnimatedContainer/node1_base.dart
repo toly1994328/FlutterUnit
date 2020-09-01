@@ -32,11 +32,11 @@ class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
   final Decoration startDecoration = BoxDecoration(
       color: Colors.blue,
       image: DecorationImage(
-          image: AssetImage('assets/images/wy_200x300.jpg'), fit: BoxFit.cover),
+          image: AssetImage('assets/images/wy_200x300.webp'), fit: BoxFit.cover),
       borderRadius: BorderRadius.all(Radius.circular(20)));
   final Decoration endDecoration = BoxDecoration(
       image: DecorationImage(
-          image: AssetImage('assets/images/wy_200x300.jpg'), fit: BoxFit.cover),
+          image: AssetImage('assets/images/wy_200x300.webp'), fit: BoxFit.cover),
       color: Colors.orange,
       borderRadius: BorderRadius.all(Radius.circular(50)));
 

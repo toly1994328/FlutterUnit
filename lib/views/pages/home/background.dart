@@ -8,7 +8,7 @@ class Background extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: const AssetImage('assets/images/sabar.jpg'),
+                image: const AssetImage('assets/images/sabar.webp'),
                 fit: BoxFit.cover),
             borderRadius: const BorderRadius.only(
                 bottomRight: const Radius.circular(400),

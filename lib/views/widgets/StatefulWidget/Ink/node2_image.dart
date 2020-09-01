@@ -18,7 +18,7 @@ class InkImage extends StatelessWidget {
       color: Colors.grey[800],
       child: Center(
         child: Ink.image(
-          image: AssetImage('assets/images/sabar.jpg'),
+          image: AssetImage('assets/images/sabar.webp'),
           fit: BoxFit.cover,
           width: 300.0,
           height: 200.0,

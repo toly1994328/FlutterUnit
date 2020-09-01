@@ -19,10 +19,10 @@ class ImageSwitch extends StatefulWidget {
 
 class _ImageSwitchState extends State<ImageSwitch> {
   final imgs = [
-    "assets/images/head_icon/icon_5.jpg",
-    "assets/images/head_icon/icon_6.jpg",
-    "assets/images/head_icon/icon_7.jpg",
-    "assets/images/head_icon/icon_8.jpg"];
+    "assets/images/head_icon/icon_5.webp",
+    "assets/images/head_icon/icon_6.webp",
+    "assets/images/head_icon/icon_7.webp",
+    "assets/images/head_icon/icon_8.webp"];
   bool _checked = false;
 
   @override

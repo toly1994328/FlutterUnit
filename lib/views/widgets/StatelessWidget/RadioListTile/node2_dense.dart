@@ -34,11 +34,11 @@ class DenseRadioListTile extends StatefulWidget {
 class _DenseRadioListTileState extends State<DenseRadioListTile> {
   final Map<ItemType, ItemBean> languages = {
     ItemType.java:
-    ItemBean("Java", "曾经世界上最流行的语言", "assets/images/java.jpeg"),
+    ItemBean("Java", "曾经世界上最流行的语言", "assets/images/java.webp"),
     ItemType.kotlin:
-    ItemBean("Kotlin", "未来世界上最流行的语言", "assets/images/kotlin.jpg"),
+    ItemBean("Kotlin", "未来世界上最流行的语言", "assets/images/kotlin.webp"),
     ItemType.dart:
-    ItemBean("Dart", "世界上最优雅的语言", "assets/images/dart.jpg"),
+    ItemBean("Dart", "世界上最优雅的语言", "assets/images/dart.webp"),
   };
   var _type = ItemType.java;
 

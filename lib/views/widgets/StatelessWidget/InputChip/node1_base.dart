@@ -29,7 +29,7 @@ class _PressInputChipState extends State<PressInputChip> {
             "This is a InputChip." :
             "You are clicked delete icon."),
         backgroundColor: Colors.grey.withAlpha(66),
-        avatar: Image.asset("assets/images/icon_head.png"),
+        avatar: Image.asset("assets/images/icon_head.webp"),
         selectedColor: Colors.orangeAccent.withAlpha(88),
         selectedShadowColor: Colors.blue,
         shadowColor: Colors.orangeAccent,

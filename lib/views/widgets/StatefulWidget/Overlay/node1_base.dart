@@ -84,7 +84,7 @@ _buildFloating() => GestureDetector(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-              image: AssetImage('assets/images/icon_head.png')),
+              image: AssetImage('assets/images/icon_head.webp')),
         ),
       ),
     ));

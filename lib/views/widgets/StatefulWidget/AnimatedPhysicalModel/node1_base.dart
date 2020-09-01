@@ -41,7 +41,7 @@ class _AnimatedPhysicalModelDemoState extends State<AnimatedPhysicalModelDemo> {
             shadowColor: flag?Colors.orange:Colors.purple,
             elevation: flag?10:5,
             child: Image.asset(
-              'assets/images/caver.jpeg',
+              'assets/images/caver.webp',
               fit: BoxFit.cover,
             ),
             borderRadius: BorderRadius.all(Radius.circular(flag? 10:75)),
