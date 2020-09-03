@@ -4,8 +4,9 @@ import 'package:path/path.dart' as path;
 
 main() async{
   var fontName ='TolyIcon';
+  var fileName ='toly_icon';
   var resDir="assets/iconfont";//资源文件夹
-  var outFile='lib/app/style/$fontName.dart';//输出文件地址
+  var outFile='lib/app/res/$fileName.dart';//输出文件地址
 
   var result = """import 'package:flutter/widgets.dart';
 //Power By 张风捷特烈--- Generated file. Do not edit.

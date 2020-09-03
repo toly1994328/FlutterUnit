@@ -5,7 +5,8 @@ import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/about/version_info.dart';
 import 'package:flutter_unit/views/pages/category/category_detail.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
-import 'package:flutter_unit/views/pages/issues/main.dart';
+import 'package:flutter_unit/views/pages/issues/issues_detail.dart';
+import 'package:flutter_unit/views/pages/issues/point_page.dart';
 import 'package:flutter_unit/views/pages/login/login_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
@@ -30,6 +31,8 @@ class UnitRouter {
   static const String nav = 'nav';
   static const String widget_detail = 'WidgetDetail';
   static const String collect = 'CollectPage';
+  static const String point = 'IssuesPointPage';
+  static const String point_detail = 'IssuesDetailPage';
 
   static const String setting = 'SettingPage';
   static const String font_setting = 'FountSettingPage';
@@ -94,6 +97,9 @@ class UnitRouter {
         return Right2LeftRouter(child: AboutAppPage());
       case about_me:
         return Right2LeftRouter(child: AboutMePage());
+
+      case point_detail:
+        return Right2LeftRouter(child: IssuesDetailPage());
 
       case category_show:
         return Right2LeftRouter(

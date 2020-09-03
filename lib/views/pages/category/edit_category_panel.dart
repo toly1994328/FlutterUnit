@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/style/unit_color.dart';
+import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
 import 'package:flutter_unit/blocs/category/category_event.dart';

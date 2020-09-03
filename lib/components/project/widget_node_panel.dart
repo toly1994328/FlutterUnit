@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_unit/app/style/TolyIcon.dart';
+import 'package:flutter_unit/app/res/toly_icon.dart';
 
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/code/code_widget.dart';

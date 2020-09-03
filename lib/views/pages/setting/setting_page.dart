@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/app/style/TolyIcon.dart';
+import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/blocs/global/global_event.dart';
 import 'package:flutter_unit/blocs/global/global_state.dart';
