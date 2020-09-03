@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/blocs/point/point_bloc.dart';
+import 'package:flutter_unit/blocs/point_comment/point_comment_bloc.dart';
 import 'package:flutter_unit/repositories/impl/catagory_db_repository.dart';
 import 'package:flutter_unit/repositories/impl/widget_db_repository.dart';
 import 'package:flutter_unit/storage/app_storage.dart';
@@ -29,9 +31,11 @@ class BlocWrapper extends StatelessWidget {
           create: (_) => GlobalBloc(storage)..add(EventInitApp())),
 
       BlocProvider<HomeBloc>(
-          create: (_) => HomeBloc(repository: repository)..add(EventTabTap(WidgetFamily.statelessWidget))),
+          create: (_) => HomeBloc(repository: repository)
+            ..add(EventTabTap(WidgetFamily.statelessWidget))),
 
-      BlocProvider<DetailBloc>(create: (_) => DetailBloc(repository: repository)),
+      BlocProvider<DetailBloc>(
+          create: (_) => DetailBloc(repository: repository)),
 
       BlocProvider<CategoryBloc>(
           create: (_) =>
@@ -43,6 +47,8 @@ class BlocWrapper extends StatelessWidget {
 
       BlocProvider<SearchBloc>(
           create: (_) => SearchBloc(repository: repository)),
+      BlocProvider<PointBloc>(create: (_) => PointBloc()),
+      BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
     ], child: child);
   }
 }

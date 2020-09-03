@@ -1,43 +1,46 @@
-import 'package:flutter_unit/app/utils/http/http_util.dart';
-import 'package:flutter_unit/app/utils/http/rep_result.dart';
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
+import 'package:flutter_unit/model/github/IssueComment.dart';
 import 'package:flutter_unit/model/github/issue.dart';
+import 'package:flutter_unit/model/github/repository.dart';
 
 /// create by 张风捷特烈 on 2020/6/17
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
+
+const kBaseUrl= 'http://119.45.173.197:8080/api/v1';
+
 class IssuesApi {
-  static getIssues({
-    String username="toly1994328",
-    String repository="FlutterUnit",
-    String sort = 'created',
-    String direction = 'desc',
-    int page = 0,
-    int pageSize = 10,
-    String state = 'all',
-    String labels = "all",
-  }) async {
-    var url = "/repos/$username/$repository/issues";
 
-    var param = {
-      "state": state,
-      "sort": sort,
-      "direction": direction,
-      "labels": labels,
-      "page": page,
-      "per_page": pageSize,
-    };
 
-    var res = await HttpUtil.getInstance().get(url, param: param);
+  static var dio = Dio(
+    BaseOptions(
+      baseUrl: kBaseUrl
+    )
+  );
 
-    if (res != null && res.status) {
-      var data = res.data as List;
-
-      if (data == null) {
-        return RepResult(null, false, -1);
-      }
-
-      return RepResult(data.map(Issue.fromJson).toList(), true, 1);
-    }
+  static Future<Repository> getRepoFlutterUnit() async{
+    var rep = await dio.get('/repository/name/FlutterUnit');
+    var repoStr = rep.data['repositoryData'];
+    return Repository.fromJson(json.decode(repoStr));
   }
+
+  static Future<List<Issue>> getIssues() async {
+    var res = (await dio.get('/point')).data as List;
+    return res.map((e)=>Issue.fromJson(json.decode(e['pointData']))).toList();
+  }
+
+  static Future<List<IssueComment>> getIssuesComment(int pointId) async {
+    var res = (await dio.get('/pointComment/$pointId')).data as List;
+    return res.map((e)=>IssueComment.fromJson(json.decode(e['pointCommentData']))).toList();
+  }
+}
+
+main() async{
+ var rep =  await IssuesApi.getRepoFlutterUnit();
+ var i =  await IssuesApi.getIssues();
+ print(rep);
+ print(i);
 }
