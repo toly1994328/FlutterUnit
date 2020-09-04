@@ -1,6 +1,6 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/api/github/issues_api.dart';
+import 'package:flutter_unit/app/api/issues_api.dart';
 import 'package:flutter_unit/blocs/point/point_state.dart';
 
 
@@ -8,7 +8,7 @@ import 'point_comment_event.dart';
 import 'point_comment_state.dart';
 
 
-/// create by 张风捷特烈 on 2020-03-03
+/// create by 张风捷特烈 on 2020-09-03
 /// contact me by email 1981462002@qq.com
 /// 说明:
 

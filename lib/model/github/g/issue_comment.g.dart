@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../IssueComment.dart';
+part of '../issue_comment.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
