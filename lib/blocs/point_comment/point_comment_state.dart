@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_unit/model/github/IssueComment.dart';
+import 'package:flutter_unit/model/github/issue_comment.dart';
 import 'package:flutter_unit/model/github/issue.dart';
 
 /// create by 张风捷特烈 on 2020/9/3

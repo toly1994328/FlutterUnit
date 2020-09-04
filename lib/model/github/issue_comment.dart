@@ -1,6 +1,6 @@
 import 'package:flutter_unit/model/github/github_user.dart';
 
-part 'g/IssueComment.g.dart';
+part 'g/issue_comment.g.dart';
 
 
 class IssueComment{

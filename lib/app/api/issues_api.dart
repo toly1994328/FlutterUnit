@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_unit/model/github/IssueComment.dart';
+import 'package:flutter_unit/model/github/issue_comment.dart';
 import 'package:flutter_unit/model/github/issue.dart';
 import 'package:flutter_unit/model/github/repository.dart';
 
@@ -13,7 +13,6 @@ import 'package:flutter_unit/model/github/repository.dart';
 const kBaseUrl= 'http://119.45.173.197:8080/api/v1';
 
 class IssuesApi {
-
 
   static var dio = Dio(
     BaseOptions(
@@ -38,9 +37,3 @@ class IssuesApi {
   }
 }
 
-main() async{
- var rep =  await IssuesApi.getRepoFlutterUnit();
- var i =  await IssuesApi.getIssues();
- print(rep);
- print(i);
-}

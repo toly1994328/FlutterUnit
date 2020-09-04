@@ -7,7 +7,7 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/color_wrapper.dart';
 import 'package:flutter_unit/components/permanent/markdown/markdown_widget.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
-import 'package:flutter_unit/model/github/IssueComment.dart';
+import 'package:flutter_unit/model/github/issue_comment.dart';
 import 'package:flutter_unit/model/github/issue.dart';
 
 /// create by 张风捷特烈 on 2020/9/3
