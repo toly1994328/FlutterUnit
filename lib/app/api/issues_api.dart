@@ -22,17 +22,17 @@ class IssuesApi {
 
   static Future<Repository> getRepoFlutterUnit() async{
     var rep = await dio.get('/repository/name/FlutterUnit');
-    var repoStr = rep.data['repositoryData'];
+    var repoStr = rep.data['data']['repositoryData'];
     return Repository.fromJson(json.decode(repoStr));
   }
 
   static Future<List<Issue>> getIssues() async {
-    var res = (await dio.get('/point')).data as List;
+    var res = (await dio.get('/point')).data['data'] as List;
     return res.map((e)=>Issue.fromJson(json.decode(e['pointData']))).toList();
   }
 
   static Future<List<IssueComment>> getIssuesComment(int pointId) async {
-    var res = (await dio.get('/pointComment/$pointId')).data as List;
+    var res = (await dio.get('/pointComment/$pointId')).data['data'] as List;
     return res.map((e)=>IssueComment.fromJson(json.decode(e['pointCommentData']))).toList();
   }
 }
