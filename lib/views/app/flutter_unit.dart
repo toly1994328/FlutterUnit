@@ -12,10 +12,7 @@ class FlutterUnit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
-      return BlocProvider<CategoryWidgetBloc>(
-        create: (_) => CategoryWidgetBloc(
-            categoryBloc: BlocProvider.of<CategoryBloc>(context)),
-        child: MaterialApp(
+      return MaterialApp(
 //            debugShowMaterialGrid: true,
             showPerformanceOverlay: state.showPerformanceOverlay,
 //            showSemanticsDebugger: true,
@@ -28,7 +25,7 @@ class FlutterUnit extends StatelessWidget {
               primarySwatch: state.themeColor,
               fontFamily: state.fontFamily,
             ),
-            home: UnitSplash()),
+            home: UnitSplash(),
       );
     });
   }
