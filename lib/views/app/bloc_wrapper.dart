@@ -14,14 +14,20 @@ import 'package:flutter_unit/storage/app_storage.dart';
 
 final storage = AppStorage();
 
-class BlocWrapper extends StatelessWidget {
+class BlocWrapper extends StatefulWidget {
   final Widget child;
 
   BlocWrapper({this.child});
 
-  final repository = WidgetDbRepository(storage);
-  final categoryRepo = CategoryDbRepository(storage);
+  @override
+  _BlocWrapperState createState() => _BlocWrapperState();
+}
 
+class _BlocWrapperState extends State<BlocWrapper> {
+  final repository = WidgetDbRepository(storage);
+  
+  final categoryBloc = CategoryBloc(repository: CategoryDbRepository(storage));
+  
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(//使用MultiBlocProvider包裹
@@ -38,17 +44,26 @@ class BlocWrapper extends StatelessWidget {
           create: (_) => DetailBloc(repository: repository)),
 
       BlocProvider<CategoryBloc>(
-          create: (_) =>
-              CategoryBloc(repository: categoryRepo)..add(EventLoadCategory())),
+          create: (_) => categoryBloc..add(EventLoadCategory())),
 
       BlocProvider<CollectBloc>(
           create: (_) =>
               CollectBloc(repository: repository)..add(EventSetCollectData())),
 
+          BlocProvider<CategoryWidgetBloc>(
+              create: (_) =>
+              CategoryWidgetBloc(categoryBloc: categoryBloc)),
+      
       BlocProvider<SearchBloc>(
           create: (_) => SearchBloc(repository: repository)),
       BlocProvider<PointBloc>(create: (_) => PointBloc()),
       BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
-    ], child: child);
+    ], child: widget.child);
+  }
+  
+  @override
+  void dispose() {
+    categoryBloc.close();
+    super.dispose();
   }
 }
