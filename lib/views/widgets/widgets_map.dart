@@ -55,6 +55,10 @@ class WidgetsMap {
         return [
           ViewportDemo(),
         ];
+      case "SliverPrototypeExtentList":
+        return [
+          SliverPrototypeExtentListDemo(),
+        ];
       case "InputDecorator":
         return [
           InputDecoratorDemo(),
