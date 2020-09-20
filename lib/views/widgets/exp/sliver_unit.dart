@@ -17,3 +17,4 @@ export '../Sliver/SliverPersistentHeader/node1_base.dart';
 export '../Sliver/SliverToBoxAdapter/node1_base.dart';
 export '../Sliver/SliverOverlapAbsorber/node1_base.dart';
 export '../Sliver/SliverOverlapInjector/node1_base.dart';
+export '../Sliver/SliverPrototypeExtentList/node1_base.dart';
