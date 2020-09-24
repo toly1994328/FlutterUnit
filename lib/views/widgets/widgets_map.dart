@@ -51,6 +51,26 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
+      case "CupertinoSliverNavigationBar":
+        return [
+          CupertinoSliverNavigationBarDemo(),
+        ];
+      case "CupertinoSliverRefreshControl":
+        return [
+          CupertinoSliverRefreshControlDemo(),
+        ];
+      case "SliverAnimatedList":
+        return [
+          SliverAnimatedListDemo(),
+        ];
+      case "SliverFillRemaining":
+        return [
+          SliverFillRemainingDemo(),
+        ];
+      case "SliverIgnorePointer":
+        return [
+          SliverIgnorePointerDemo(),
+        ];
       case "Viewport":
         return [
           ViewportDemo(),
