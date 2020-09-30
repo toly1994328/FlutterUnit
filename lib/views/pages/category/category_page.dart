@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/blocs/category/category_bloc.dart';
-import 'package:flutter_unit/blocs/category/category_event.dart';
-import 'package:flutter_unit/blocs/category/category_state.dart';
-import 'package:flutter_unit/blocs/category_widget/category_widget_bloc.dart';
-import 'package:flutter_unit/blocs/category_widget/category_widget_event.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 
 import 'package:flutter_unit/model/category_model.dart';

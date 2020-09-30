@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
-//import 'package:santclient/app/global/SantIcon.dart';
-//import 'package:santclient/app/router/router.dart';
-//import 'package:santclient/bloc/authentic/bloc.dart';
-//import 'package:santclient/bloc/authentic/state.dart';
-//import 'package:santclient/bloc/bloc.dart';
-//import 'package:santclient/components/persistent/shape/arc_clipper.dart';
-//import 'package:santclient/components/project/error_msg.dart';
-//import 'package:santclient/components/project/loading_view.dart';
 
 import 'arc_clipper.dart';
 import 'login_form.dart';

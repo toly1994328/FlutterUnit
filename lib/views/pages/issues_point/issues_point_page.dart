@@ -1,26 +1,19 @@
-import 'dart:convert';
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
-
-/// create by 张风捷特烈 on 2020/6/17
-/// contact me by email 1981462002@qq.com
-/// 说明:
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_unit/app/api/issues_api.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/blocs/point/point_bloc.dart';
-import 'package:flutter_unit/blocs/point/point_event.dart';
-import 'package:flutter_unit/blocs/point/point_state.dart';
-import 'package:flutter_unit/blocs/point_comment/point_comment_bloc.dart';
-import 'package:flutter_unit/blocs/point_comment/point_comment_event.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/model/github/repository.dart';
 
 import 'issue_item.dart';
 import 'repo_widget.dart';
+
+/// create by 张风捷特烈 on 2020/6/17
+/// contact me by email 1981462002@qq.com
+/// 说明:
 
 class IssuesPointPage extends StatelessWidget {
   @override
@@ -42,7 +35,6 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
     super.initState();
     _loadRepo();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -76,8 +68,9 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
       return SliverList(
           delegate: SliverChildBuilderDelegate(
               (ctx, int index) => GestureDetector(
-                  onTap: (){
-                    BlocProvider.of<PointCommentBloc>(ctx).add(EventLoadPointComment(issues[index]));
+                  onTap: () {
+                    BlocProvider.of<PointCommentBloc>(ctx)
+                        .add(EventLoadPointComment(issues[index]));
                     Navigator.pushNamed(ctx, UnitRouter.point_detail);
                   },
                   child: IssueItem(issue: issues[index])),
