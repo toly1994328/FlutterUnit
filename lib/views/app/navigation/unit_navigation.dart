@@ -9,6 +9,9 @@ import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
 import 'package:flutter_unit/views/pages/home/home_drawer.dart';
 import 'package:flutter_unit/views/pages/home/home_page.dart';
 
+/// create by 张风捷特烈 on 2020-04-11
+/// contact me by email 1981462002@qq.com
+/// 说明: 主题结构 左右滑页 + 底部导航栏
 
 class UnitNavigation extends StatefulWidget {
   @override

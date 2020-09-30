@@ -3,17 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/router.dart';
-import 'package:flutter_unit/blocs/category_widget/category_widget_bloc.dart';
-import 'package:flutter_unit/blocs/category_widget/category_widget_event.dart';
-import 'package:flutter_unit/blocs/category_widget/category_widget_state.dart';
-import 'package:flutter_unit/blocs/detail/detail_bloc.dart';
-import 'package:flutter_unit/blocs/detail/detail_event.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/circle_text.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
 
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com

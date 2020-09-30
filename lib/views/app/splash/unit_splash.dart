@@ -126,7 +126,6 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
                 child: Container(
                   height: 120,
                   child: FlutterLogo(
-//                    colors: primaryColor,
                     size: 60,
                   ),
                 )),
