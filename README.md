@@ -32,10 +32,10 @@
 
 ```
 a1@toly ~ % flutter --version
-Flutter 1.20.4 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision fba99f6cf9 (2 weeks ago) • 2020-09-14 15:32:52 -0700
-Engine • revision d1bc06f032
-Tools • Dart 2.9.2
+Flutter 1.22.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision d408d302e2 (5 days ago) • 2020-09-29 11:49:17 -0700
+Engine • revision 5babba6c4d
+Tools • Dart 2.10.0
 ```
 
 ---
