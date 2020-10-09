@@ -42,6 +42,21 @@ class WidgetsMap {
           CustomCard(),
           ShapeCard(),
         ];
+      case "ElevatedButton":
+        return [
+          ElevatedButtonDemo(),
+          ElevatedButtonStyleDemo(),
+        ];
+      case "TextButton":
+        return [
+          TextButtonDemo(),
+          TextButtonStyleDemo(),
+        ];
+      case "OutlinedButton":
+        return [
+          OutlinedButtonDemo(),
+          OutlinedButtonStyleDemo(),
+        ];
       case "FlutterLogo":
         return [
           CustomFlutterLogo(),

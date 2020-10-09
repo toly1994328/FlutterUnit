@@ -48,7 +48,7 @@ class CustomStack extends StatelessWidget {
         textDirection: TextDirection.rtl,
         fit: StackFit.loose,
         alignment: Alignment.topRight,
-        // overflow: Overflow.clip, // 1.22.0-10.0.pre.251被去除
+        // overflow: Overflow.clip, // 1.22.0 被去除
         children: <Widget>[yellowBox, redBox, greenBox, cyanBox],
       ),
     );
