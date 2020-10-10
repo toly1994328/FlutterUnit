@@ -3,11 +3,23 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class JoyDivision extends StatelessWidget {
+class JoyDivision extends StatefulWidget {
+  @override
+  _JoyDivisionState createState() => _JoyDivisionState();
+}
+
+class _JoyDivisionState extends State<JoyDivision> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: JoyDivisionPainter(),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: JoyDivisionPainter(),
+      ),
     );
   }
 }
@@ -55,8 +67,6 @@ class JoyDivisionPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(JoyDivisionPainter oldDelegate) => false;
-
-  @override
-  bool shouldRebuildSemantics(JoyDivisionPainter oldDelegate) => false;
+  bool shouldRepaint(JoyDivisionPainter oldDelegate) => true;
+  
 }

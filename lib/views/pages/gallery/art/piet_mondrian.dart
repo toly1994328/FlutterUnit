@@ -12,8 +12,15 @@ class PietMondrian extends StatefulWidget {
 class _PietMondrianState extends State<PietMondrian> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: PietMondrianPainnter(),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: PietMondrianPainnter(),
+      ),
     );
   }
 }
@@ -164,8 +171,6 @@ class PietMondrianPainnter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(PietMondrianPainnter oldDelegate) => false;
+  bool shouldRepaint(PietMondrianPainnter oldDelegate) => true;
 
-  @override
-  bool shouldRebuildSemantics(PietMondrianPainnter oldDelegate) => false;
 }

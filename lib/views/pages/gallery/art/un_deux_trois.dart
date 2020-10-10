@@ -2,11 +2,23 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class UnDeuxTrois extends StatelessWidget {
+class UnDeuxTrois extends StatefulWidget {
+  @override
+  _UnDeuxTroisState createState() => _UnDeuxTroisState();
+}
+
+class _UnDeuxTroisState extends State<UnDeuxTrois> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: UnDeuxTroisPainter(),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: UnDeuxTroisPainter(),
+      ),
     );
   }
 }
@@ -59,8 +71,6 @@ class UnDeuxTroisPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(UnDeuxTroisPainter oldDelegate) => false;
+  bool shouldRepaint(UnDeuxTroisPainter oldDelegate) => true;
 
-  @override
-  bool shouldRebuildSemantics(UnDeuxTroisPainter oldDelegate) => false;
 }

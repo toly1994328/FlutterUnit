@@ -4,11 +4,23 @@ import 'package:flutter/material.dart';
 
 import '../colors.dart';
 
-class HypnoticSquares extends StatelessWidget {
+class HypnoticSquares extends StatefulWidget {
+  @override
+  _HypnoticSquaresState createState() => _HypnoticSquaresState();
+}
+
+class _HypnoticSquaresState extends State<HypnoticSquares> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: HypnoticSquaresPainter(),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: HypnoticSquaresPainter(),
+      ),
     );
   }
 }
@@ -85,8 +97,5 @@ class HypnoticSquaresPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(HypnoticSquaresPainter oldDelegate) => false;
-
-  @override
-  bool shouldRebuildSemantics(HypnoticSquaresPainter oldDelegate) => false;
+  bool shouldRepaint(HypnoticSquaresPainter oldDelegate) => true;
 }

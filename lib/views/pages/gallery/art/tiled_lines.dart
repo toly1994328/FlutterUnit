@@ -1,11 +1,23 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class TiledLines extends StatelessWidget {
+class TiledLines extends StatefulWidget {
+  @override
+  _TiledLinesState createState() => _TiledLinesState();
+}
+
+class _TiledLinesState extends State<TiledLines> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: TiledLinesPainter(20),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: TiledLinesPainter(20),
+      ),
     );
   }
 }
@@ -52,5 +64,5 @@ class TiledLinesPainter extends CustomPainter {
     }
   }
 
-  bool shouldRepaint(TiledLinesPainter oldDelegate) => false;
+  bool shouldRepaint(TiledLinesPainter oldDelegate) => true;
 }
