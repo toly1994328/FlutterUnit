@@ -2,11 +2,23 @@ import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 
-class CubicDisarray extends StatelessWidget {
+class CubicDisarray extends StatefulWidget {
+  @override
+  _CubicDisarrayState createState() => _CubicDisarrayState();
+}
+
+class _CubicDisarrayState extends State<CubicDisarray> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: CubicDisarrayPainter(),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: CubicDisarrayPainter(),
+      ),
     );
   }
 }
@@ -61,8 +73,6 @@ class CubicDisarrayPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CubicDisarrayPainter oldDelegate) => false;
+  bool shouldRepaint(CubicDisarrayPainter oldDelegate) => true;
 
-  @override
-  bool shouldRebuildSemantics(CubicDisarrayPainter oldDelegate) => false;
 }

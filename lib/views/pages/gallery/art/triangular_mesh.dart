@@ -8,11 +8,23 @@ class Point {
   double y;
 }
 
-class TriangularMesh extends StatelessWidget {
+class TriangularMesh extends StatefulWidget {
+  @override
+  _TriangularMeshState createState() => _TriangularMeshState();
+}
+
+class _TriangularMeshState extends State<TriangularMesh> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: TriangularMeshPainter(),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: TriangularMeshPainter(),
+      ),
     );
   }
 }
@@ -82,5 +94,5 @@ class TriangularMeshPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(TriangularMeshPainter oldDelegate) => false;
+  bool shouldRepaint(TriangularMeshPainter oldDelegate) => true;
 }

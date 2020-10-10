@@ -9,11 +9,23 @@ class Circle {
   Color color;
 }
 
-class CirclePacking extends StatelessWidget {
+class CirclePacking extends StatefulWidget {
+  @override
+  _CirclePackingState createState() => _CirclePackingState();
+}
+
+class _CirclePackingState extends State<CirclePacking> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: CirclePackingPainter(),
+    return GestureDetector(
+      onTap: (){
+        setState(() {
+
+        });
+      },
+      child: CustomPaint(
+        painter: CirclePackingPainter(),
+      ),
     );
   }
 }
@@ -109,6 +121,4 @@ class CirclePackingPainter extends CustomPainter {
   @override
   bool shouldRepaint(CirclePackingPainter oldDelegate) => true;
 
-  @override
-  bool shouldRebuildSemantics(CirclePackingPainter oldDelegate) => false;
 }
