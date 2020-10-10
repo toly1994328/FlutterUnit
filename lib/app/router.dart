@@ -5,6 +5,7 @@ import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/about/version_info.dart';
 import 'package:flutter_unit/views/pages/category/category_detail.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
+import 'package:flutter_unit/views/pages/gallery/gallery_page.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_detail.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_point_page.dart';
 import 'package:flutter_unit/views/pages/login/login_page.dart';
@@ -47,7 +48,7 @@ class UnitRouter {
 
   static const String attr = 'AttrUnitPage';
   static const String bug = 'BugUnitPage';
-  static const String paint = 'PaintUnitPage';
+  static const String galley = 'GalleryPage';
   static const String layout = 'LayoutUnitPage';
   static const String about_me = 'AboutMePage';
   static const String about_app = 'AboutAppPage';
@@ -89,8 +90,8 @@ class UnitRouter {
         return Right2LeftRouter(child: AttrUnitPage());
       case bug:
         return Right2LeftRouter(child: BugUnitPage());
-      case paint:
-        return Right2LeftRouter(child: PaintUnitPage());
+      case galley:
+        return Right2LeftRouter(child: GalleryPage());
       case layout:
         return Right2LeftRouter(child: LayoutUnitPage());
       case about_app:
