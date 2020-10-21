@@ -38,7 +38,7 @@ class TechnoShapeBorder extends ShapeBorder {
 
   @override
   Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    var path = Path();
+    Path path = Path();
     path.addRRect(RRect.fromRectAndRadius(rect, Radius.circular(5)));
     return path;
   }

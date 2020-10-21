@@ -44,7 +44,7 @@ class _DraggablePageState extends State<DraggablePage> {
   }
 
   List<Widget> _buildColors() {
-    var colors = [
+    List<Color> colors = [
       Colors.red,
       Colors.yellow,
       Colors.blue,

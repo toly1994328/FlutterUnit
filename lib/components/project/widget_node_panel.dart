@@ -36,7 +36,7 @@ class WidgetNodePanel extends StatefulWidget {
 }
 
 class _WidgetNodePanelState extends State<WidgetNodePanel> {
-  var _crossFadeState = CrossFadeState.showFirst;
+  CrossFadeState _crossFadeState = CrossFadeState.showFirst;
 
   bool get isFirst => _crossFadeState == CrossFadeState.showFirst;
 

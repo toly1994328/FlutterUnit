@@ -83,7 +83,7 @@ class CategoryDao {
     String sql = //插入数据
         "SELECT COUNT(name) as count FROM category "
         "WHERE name = ?";
-    var rawData = await db.rawQuery(sql, [name]);
+    List<Map<String, dynamic>> rawData = await db.rawQuery(sql, [name]);
     if (rawData.length > 0) {
       return rawData[0]['count'] > 0;
     }
@@ -92,7 +92,7 @@ class CategoryDao {
 
   Future<List<Map<String, dynamic>>> queryAll() async {
     final db = await _db;
-    var data = await db.rawQuery(
+    List<Map<String, dynamic>> data = await db.rawQuery(
         "SELECT c.id,c.name,c.info,c.color,c.image,c.created,c.updated,c.priority,COUNT(cw.categoryId) as `count`"
             "FROM category AS c "
             "LEFT JOIN category_widget AS cw "
@@ -104,7 +104,7 @@ class CategoryDao {
 
   Future<List<int>> categoryWidgetIds(int id) async {
     final db = await _db;
-    var data = await db.rawQuery(
+    List<Map<String, dynamic>> data = await db.rawQuery(
         "SELECT categoryId FROM `category_widget`"
             "WHERE widgetId = ?",
         [id]);
@@ -143,7 +143,7 @@ class CategoryDao {
     String sql = //插入数据
         "SELECT COUNT(id) as count FROM category_widget "
         "WHERE categoryId = ? AND widgetId = ?";
-    var rawData = await db.rawQuery(sql, [categoryId, widgetId]);
+    List<Map<String, dynamic>> rawData = await db.rawQuery(sql, [categoryId, widgetId]);
     if (rawData.length > 0) {
       return rawData[0]['count'] > 0;
     }

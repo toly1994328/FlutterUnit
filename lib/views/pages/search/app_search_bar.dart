@@ -12,7 +12,7 @@ class AppSearchBar extends StatefulWidget {
 }
 
 class _AppSearchBarState extends State<AppSearchBar> {
-  var _controller=TextEditingController();//文本控制器
+  TextEditingController _controller=TextEditingController();//文本控制器
 
   @override
   Widget build(BuildContext context) => Container(

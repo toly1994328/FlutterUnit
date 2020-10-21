@@ -11,7 +11,7 @@ class PictureFrame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size.shortestSide;
+    double size = MediaQuery.of(context).size.shortestSide;
     return Container(
       width: size,
       height: size,
@@ -46,7 +46,7 @@ class FramePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 10;
     canvas.drawPath(path, myPaint);
-    var shadowPath = Path()..addRect(Rect.fromPoints(Offset.zero, Offset(size.width,size.height)));
+    Path shadowPath = Path()..addRect(Rect.fromPoints(Offset.zero, Offset(size.width,size.height)));
     // canvas.drawShadow(shadowPath, Colors.grey, 1, false);
 
     canvas.save();

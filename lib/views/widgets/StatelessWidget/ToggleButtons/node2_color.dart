@@ -22,7 +22,7 @@ class ColorToggleButtons extends StatefulWidget {
 }
 
 class _ColorToggleButtonsState extends State<ColorToggleButtons> {
-  var _isSelected = [true, false, false];
+  List<bool> _isSelected = [true, false, false];
   @override
   Widget build(BuildContext context) {
     return ToggleButtons(

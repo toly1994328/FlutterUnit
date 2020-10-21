@@ -19,7 +19,7 @@ class CustomRadio extends StatefulWidget {
 }
 
 class _CustomRadioState extends State<CustomRadio> {
-  var data = <double>[1, 2, 3, 4, 5];
+  List<double> data = <double>[1, 2, 3, 4, 5];
   double _value = 1;
 
   @override

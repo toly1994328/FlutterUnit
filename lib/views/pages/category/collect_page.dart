@@ -25,7 +25,7 @@ class _CollectPageState extends State<CollectPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    var _topContext = context;
+    BuildContext _topContext = context;
     return Scaffold(
         backgroundColor:
             BlocProvider.of<HomeBloc>(context).state.homeColor.withAlpha(11),

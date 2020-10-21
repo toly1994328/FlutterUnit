@@ -42,9 +42,9 @@ class InputButton extends StatefulWidget {
 }
 
 class _InputButtonState extends State<InputButton> {
-  var _height;
-  var _fontSize;
-  var _radius;
+  double _height;
+  double _fontSize;
+  Radius _radius;
 
    TextEditingController _controller;
 
@@ -65,7 +65,7 @@ class _InputButtonState extends State<InputButton> {
 
   @override
   Widget build(BuildContext context) {
-    var textField = TextField(
+    Widget textField = TextField(
       controller: _controller,
       maxLines: 1,
       style: TextStyle(
@@ -94,7 +94,7 @@ class _InputButtonState extends State<InputButton> {
       },
       onTap: widget.onTap,
     );
-    var btn = RaisedButton(
+    Widget btn = RaisedButton(
 
       elevation: 0,
       child: Icon(widget.config.iconData,color: Theme.of(context).primaryColor,),
@@ -110,7 +110,7 @@ class _InputButtonState extends State<InputButton> {
         }
       },
     );
-    var inputBtn = Row(
+    Widget inputBtn = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Expanded(

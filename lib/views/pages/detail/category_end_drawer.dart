@@ -140,7 +140,7 @@ class _CategoryInfoState extends State<CategoryInfo> {
   CategoryRepository get repository => BlocProvider.of<CategoryBloc>(context).repository;
 
   List<CategoryModel> get categories {
-    var state = BlocProvider.of<CategoryBloc>(context).state;
+    CategoryState state = BlocProvider.of<CategoryBloc>(context).state;
     if (state is CategoryLoadedState) {
       _categories = state.categories;
     }

@@ -16,7 +16,7 @@ class CustomFlutterLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var data = {
+    Map<Color, double> data = {
       Colors.blue:50.0,
       Colors.red:60.0,
       Colors.green:70.0,

@@ -77,8 +77,8 @@ class HypnoticSquaresPainter extends CustomPainter {
     double tileStep = (canvasSize - offset * 2) / 6;
     double startSize = tileStep;
 
-    for (var x = offset; x < canvasSize - offset; x += tileStep) {
-      for (var y = offset; y < canvasSize - offset; y += tileStep) {
+    for (double x = offset; x < canvasSize - offset; x += tileStep) {
+      for (double y = offset; y < canvasSize - offset; y += tileStep) {
         startSteps = 2.0 + random.nextInt(10);
         double xDirection = directions[random.nextInt(directions.length)];
         double yDirection = directions[random.nextInt(directions.length)];

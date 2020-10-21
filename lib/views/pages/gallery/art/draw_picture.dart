@@ -75,7 +75,7 @@ class PaperPainter extends CustomPainter {
 
   void _drawLine(Size size, Canvas canvas) {
       _paint..color = Color(0xFFF0F0F0);
-    var step = 10.0;
+    double step = 10.0;
     for (int i = 1; i <= size.height / step; i++) {
       canvas.drawLine(Offset(step * i, 0), Offset(0, step * i), _paint);
       canvas.drawLine(

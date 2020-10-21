@@ -29,13 +29,13 @@ class AppStorage {
 
   // 初始化 App 固化的配置数据
   Future<GlobalState> initApp() async {
-    var prefs = await sp;
+    SharedPreferences prefs = await sp;
     _database = await initDb();
-    var showBg = prefs.getBool(SP.showBackground) ?? true;
-    var themeIndex = prefs.getInt(SP.themeColorIndex) ?? 4;
-    var fontIndex = prefs.getInt(SP.fontFamily) ?? 1;
-    var codeIndex = prefs.getInt(SP.codeStyleIndex) ?? 0;
-    var itemStyleIndex = prefs.getInt(SP.itemStyleIndex) ?? 0;
+    bool showBg = prefs.getBool(SP.showBackground) ?? true;
+    int themeIndex = prefs.getInt(SP.themeColorIndex) ?? 4;
+    int fontIndex = prefs.getInt(SP.fontFamily) ?? 1;
+    int codeIndex = prefs.getInt(SP.codeStyleIndex) ?? 0;
+    int itemStyleIndex = prefs.getInt(SP.itemStyleIndex) ?? 0;
 
     return GlobalState(
         showBackGround: showBg,
@@ -47,9 +47,9 @@ class AppStorage {
 
   // 初始化数据库
   Future<Database> initDb() async {
-    var databasesPath = await getDatabasesPath();
-    var dbPath = path.join(databasesPath, "flutter.db");
-    var exists = await databaseExists(dbPath);
+    String databasesPath = await getDatabasesPath();
+    String dbPath = path.join(databasesPath, "flutter.db");
+    bool exists = await databaseExists(dbPath);
     const isPro = bool.fromEnvironment('dart.vm.product'); //是否release模式
 
     if (!isPro) {

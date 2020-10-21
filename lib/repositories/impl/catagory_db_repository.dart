@@ -21,7 +21,7 @@ class CategoryDbRepository implements CategoryRepository {
 
   @override
   Future<bool> addCategory(CategoryPo categoryPo) async {
-    var success = await _categoryDao.insert(categoryPo);
+    int success = await _categoryDao.insert(categoryPo);
     return success != -1;
   }
 
@@ -37,15 +37,15 @@ class CategoryDbRepository implements CategoryRepository {
 
   @override
   Future<List<CategoryModel>> loadCategories() async {
-    var data = await _categoryDao.queryAll();
-    var collects = data.map((e) => CategoryPo.fromJson(e)).toList();
+    List<Map<String, dynamic>> data = await _categoryDao.queryAll();
+    List<CategoryPo> collects = data.map((e) => CategoryPo.fromJson(e)).toList();
     return collects.map(CategoryModel.fromPo).toList();
   }
 
   @override
   Future<List<WidgetModel>> loadCategoryWidgets({int categoryId = 0}) async {
-    var rawData = await _categoryDao.loadCollectWidgets(categoryId);
-    var widgets = rawData.map((e) => WidgetPo.fromJson(e)).toList();
+    List<Map<String, dynamic>> rawData = await _categoryDao.loadCollectWidgets(categoryId);
+    List<WidgetPo> widgets = rawData.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();
   }
 
@@ -61,7 +61,7 @@ class CategoryDbRepository implements CategoryRepository {
 
   @override
   Future<bool> updateCategory(CategoryPo categoryPo) async{
-    var success = await _categoryDao.update(categoryPo);
+    int success = await _categoryDao.update(categoryPo);
     return success != -1;
   }
 

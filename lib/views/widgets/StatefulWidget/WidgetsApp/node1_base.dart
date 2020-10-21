@@ -18,9 +18,9 @@ class WidgetsAppDemo extends StatefulWidget {
 }
 
 class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
-  var _debugShowCheckedModeBanner = false;
-  var _debugShowWidgetInspector = false;
-  var _showPerformanceOverlay = false;
+  bool _debugShowCheckedModeBanner = false;
+  bool _debugShowWidgetInspector = false;
+  bool _showPerformanceOverlay = false;
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +103,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _count = 0;
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {

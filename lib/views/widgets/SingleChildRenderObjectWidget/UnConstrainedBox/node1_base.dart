@@ -18,7 +18,7 @@ class CustomUnConstrainedBox extends StatefulWidget {
 }
 
 class _CustomUnConstrainedBoxState extends State<CustomUnConstrainedBox> {
-  var _value = false;
+  bool _value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _CustomUnConstrainedBoxState extends State<CustomUnConstrainedBox> {
   }
 
   Widget _buildUnconstrainedBox() {
-    var child = Container(
+    Widget child = Container(
       color: Colors.cyanAccent,
       width: 60,
       height: 60,

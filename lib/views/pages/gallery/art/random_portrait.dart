@@ -37,61 +37,64 @@ class _RandomPortraitState extends State<RandomPortrait> {
         onTap: () {
           setState(() {});
         },
-        child: CustomPaint(painter: PaperPainter(positions)));
+        child: CustomPaint(
+            painter: PortraitPainter(positions, blockCount: blockCount)));
   }
 
-  void _initPosition() async {
+  void _initPosition() {
     positions.clear();
     int randomCount = 2 + random.nextInt(blockCount * blockCount ~/ 2 - 2);
 
-    var flag = blockCount ~/ 2 + 1;
+    final int axis = blockCount ~/ 2;
 
     for (int i = 0; i < randomCount; i++) {
-      int randomX = random.nextInt(flag);
+      int randomX = random.nextInt(axis + 1);
       int randomY = random.nextInt(blockCount);
-      var position = Position(randomX, randomY);
+      final Position position = Position(randomX, randomY);
       positions.add(position);
     }
     for (int i = 0; i < positions.length; i++) {
       if (positions[i].x < blockCount ~/ 2) {
-        positions
-            .add(Position(2 * flag - (positions[i].x + 1) - 1, positions[i].y));
+        positions.add(Position(2 * axis - positions[i].x, positions[i].y));
       }
     }
   }
 }
 
-class PaperPainter extends CustomPainter {
+class PortraitPainter extends CustomPainter {
   Paint _paint;
 
-  final double strokeWidth = 0.5;
-  final Color color = Colors.blue;
-  final int blockCount = 9;
-
+  final int blockCount;
+  final Color color;
   final List<Position> positions;
 
-  PaperPainter(this.positions) : _paint = Paint()..color = Colors.blue;
+  final pd = 20.0;
+
+  PortraitPainter(this.positions,
+      {this.blockCount = 9, this.color = Colors.blue})
+      : _paint = Paint()..color = color;
 
   @override
   void paint(Canvas canvas, Size size) {
     canvas.clipRect(
         Rect.fromPoints(Offset.zero, Offset(size.width, size.height)));
 
-    var pd = 20.0;
+    final double perW = (size.width - pd * 2) / (blockCount);
+    final double perH = (size.height - pd * 2) / (blockCount);
 
-    var dW = (size.width-pd*2) / (blockCount);
-    var dH = (size.height-pd*2) / (blockCount);
     canvas.translate(pd, pd);
     positions.forEach((element) {
-      _drawBlock(dW.floor(), dH.floor(), canvas, element);
+      _drawBlock(perW, perH, canvas, element);
     });
   }
 
-  void _drawBlock(int dW, int dH, Canvas canvas, Position position) {
+  void _drawBlock(double dW, double dH, Canvas canvas, Position position) {
     canvas.drawRect(
-        Rect.fromLTWH(position.x * dW*1.0, position.y * dH*1.0, dW*1.0, dH*1.0), _paint);
+        Rect.fromLTWH(position.x * dW.floor() * 1.0,
+            position.y * dH.floor() * 1.0, dW.floor() * 1.0, dH.floor() * 1.0),
+        _paint);
   }
 
   @override
-  bool shouldRepaint(PaperPainter oldDelegate) => true;
+  bool shouldRepaint(PortraitPainter oldDelegate) => true;
 }

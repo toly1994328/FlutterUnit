@@ -23,7 +23,7 @@ class ReplacementVisibility extends StatelessWidget {
   }
 
   _buildVisibility(bool visible) {
-    var box = Container(
+    Widget box = Container(
       height: 30,
       width: 30,
       color: Colors.blue,

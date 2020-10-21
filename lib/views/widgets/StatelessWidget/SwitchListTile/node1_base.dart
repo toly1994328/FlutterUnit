@@ -22,7 +22,7 @@ class CustomSwitchListTile extends StatefulWidget {
 }
 
 class _CustomSwitchListTileState extends State<CustomSwitchListTile> {
-  var _value=false;
+  bool _value=false;
 
   @override
   Widget build(BuildContext context) {

@@ -43,7 +43,7 @@ class _CustomLongPressDraggableState extends State<CustomLongPressDraggable> {
   }
 
   List<Widget> _buildColors() {
-    var colors = [
+    List<Color>  colors = [
       Colors.red,
       Colors.yellow,
       Colors.blue,

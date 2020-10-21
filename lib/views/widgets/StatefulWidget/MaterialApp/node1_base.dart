@@ -25,9 +25,9 @@ class MaterialAppDemo extends StatefulWidget {
 }
 
 class _WidgetsAppDemoState extends State<MaterialAppDemo> {
-  var _debugShowCheckedModeBanner = false;
-  var _showPerformanceOverlay = false;
-  var _debugShowMaterialGrid = false;
+  bool _debugShowCheckedModeBanner = false;
+  bool _showPerformanceOverlay = false;
+  bool _debugShowMaterialGrid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +105,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _count = 0;
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {

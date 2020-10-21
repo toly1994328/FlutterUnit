@@ -20,11 +20,11 @@ class CustomConstrainedBox extends StatefulWidget {
 }
 
 class _CustomConstrainedBoxState extends State<CustomConstrainedBox> {
-  var _text = '';
+  String _text = '';
 
   @override
   Widget build(BuildContext context) {
-    var child = Container(
+    Widget child = Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 40,
@@ -32,7 +32,7 @@ class _CustomConstrainedBoxState extends State<CustomConstrainedBox> {
       child: Text("Static"),
     );
 
-    var box = ConstrainedBox(
+    Widget box = ConstrainedBox(
       constraints: BoxConstraints(
         minHeight: 50,
         minWidth: 20,

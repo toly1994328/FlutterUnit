@@ -10,30 +10,30 @@ class PlayFlex extends StatefulWidget {
 }
 
 class _PlayFlexState extends State<PlayFlex> {
-  final redBox = Container(
+  final Widget redBox = Container(
     color: Colors.red,
     height: 50,
     width: 50,
   );
-  final blueBox = Container(
+  final Widget blueBox = Container(
     color: Colors.blue,
     width: 60,
     height: 60,
   );
-  final yellowBox = Container(
+  final Widget yellowBox = Container(
     color: Colors.yellow,
     height: 10,
     width: 10,
   );
-  final greenBox = Container(
+  final Widget greenBox = Container(
     color: Colors.green,
     height: 30,
     width: 20,
   );
-  var _direction = Axis.horizontal;
-  var _mainAxisAlignment = MainAxisAlignment.start;
-  var _crossAxisAlignment = CrossAxisAlignment.center;
-  var _verticalDirection = VerticalDirection.up;
+  Axis _direction = Axis.horizontal;
+  MainAxisAlignment _mainAxisAlignment = MainAxisAlignment.start;
+  CrossAxisAlignment _crossAxisAlignment = CrossAxisAlignment.center;
+  VerticalDirection _verticalDirection = VerticalDirection.up;
 
   @override
   Widget build(BuildContext context) {

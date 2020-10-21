@@ -17,7 +17,7 @@ class DenseCheckBoxListTile extends StatefulWidget {
 }
 
 class _DenseCheckBoxListTileState extends State<DenseCheckBoxListTile> {
-  var _selected = false;
+  bool _selected = false;
 
   @override
   Widget build(BuildContext context) {

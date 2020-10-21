@@ -74,7 +74,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     return BlocListener<CollectBloc, CollectState>(
         listener: (ctx, st) {
           bool collected = st.widgets.contains(model);
-          var msg = collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
+          String msg = collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
           _showToast(ctx, msg, collected);
         },
         child: FeedbackWidget(
@@ -109,7 +109,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   final List<int> colors = Cons.tabColors;
 
   Widget _buildNodes(List<NodeModel> nodes, String name) {
-    var globalState = BlocProvider.of<GlobalBloc>(context).state;
+    GlobalState globalState = BlocProvider.of<GlobalBloc>(context).state;
     return Column(
         children: nodes
             .asMap()

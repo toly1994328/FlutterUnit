@@ -16,7 +16,7 @@ class CircleImage extends StatelessWidget {
   final double borderSize;
   @override
   Widget build(BuildContext context) {
-    var headIcon = Container(
+    Widget headIcon = Container(
       width: size,
       height: size,
       decoration: BoxDecoration(

@@ -45,8 +45,8 @@ class CubicDisarrayPainter extends CustomPainter {
     double offset = 20.0;
     double canvasSize = size.width - offset;
 
-    for (var i = squareSize; i <= canvasSize - squareSize; i += squareSize) {
-      for (var j = squareSize; j <= canvasSize; j += squareSize) {
+    for (double i = squareSize; i <= canvasSize - squareSize; i += squareSize) {
+      for (double j = squareSize; j <= canvasSize; j += squareSize) {
         double plusOrMinus = Random().nextBool() ? -1 : 1;
         double rotateAmt = j /
             canvasSize *
@@ -57,7 +57,7 @@ class CubicDisarrayPainter extends CustomPainter {
             rotateMultiplier;
 
         plusOrMinus = Random().nextBool() ? -1 : 1;
-        var translateAmt = j /
+        double translateAmt = j /
             canvasSize *
             plusOrMinus *
             Random().nextDouble() *

@@ -72,7 +72,7 @@ class TechnoWidgetListItem extends StatelessWidget {
         top: 0,
         right: 40,
         child: BlocBuilder<CollectBloc, CollectState>(builder: (_, s) {
-          var show = s.widgets.contains(data);
+          bool show = s.widgets.contains(data);
           return Opacity(
             opacity: show ? 1.0 : 0.0,
             child:  SizedOverflowBox(

@@ -16,7 +16,7 @@ class DenseSwitchListTile extends StatefulWidget {
 }
 
 class _DenseSwitchListTileState extends State<DenseSwitchListTile> {
-  var _value=false;
+  bool _value=false;
 
   @override
   Widget build(BuildContext context) {

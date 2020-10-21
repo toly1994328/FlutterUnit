@@ -15,8 +15,8 @@ import 'package:flutter/material.dart';
 class CustomMediaQuery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var queryData = MediaQuery.of(context);
-    var data = {
+    MediaQueryData queryData = MediaQuery.of(context);
+    Map<String, Object> data = {
       "size": queryData.size,
       "devicePixelRatio": queryData.devicePixelRatio.toStringAsFixed(1),
       "textScaleFactor": queryData.textScaleFactor.toStringAsFixed(1),

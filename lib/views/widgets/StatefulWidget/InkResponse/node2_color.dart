@@ -22,7 +22,7 @@ class ColorInkResponse extends StatefulWidget {
 }
 
 class _ColorInkResponseState extends State<ColorInkResponse> {
-  var _info = 'Push';
+  String _info = 'Push';
 
   @override
   Widget build(BuildContext context) {

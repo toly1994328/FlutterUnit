@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    var color = context.bloc<HomeBloc>().state.homeColor;
+    Color color = context.bloc<HomeBloc>().state.homeColor;
     return Scaffold(
       appBar: TolyAppBar(
         selectIndex: Cons.tabColors.indexOf(color.value),
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
 
   Widget _buildContent(BuildContext context, HomeState state) {
     if (state is WidgetsLoaded) {
-      var items = state.widgets;
+      List<WidgetModel> items = state.widgets;
       if (items.isEmpty) return EmptyPage();
       return ListView.builder(
           controller: _ctrl,
