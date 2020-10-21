@@ -113,7 +113,7 @@ class _SearchPageState extends State<SearchPage> {
       );
 
   _doSelectStart(List<int> select) {
-    var temp = select.map((e)=>e+1).toList();
+    List<int> temp = select.map((e)=>e+1).toList();
     if (temp.length < 5) {
       temp.addAll(List.generate(5 - temp.length, (e) => -1));
     }

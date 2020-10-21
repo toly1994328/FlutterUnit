@@ -15,7 +15,7 @@ class MarkdownWidget extends StatelessWidget {
 
   MarkdownWidget({this.markdownData = "", this.style = kWhite});
 
-  _getCommonSheet(BuildContext context, Color codeBackground) {
+  MarkdownStyleSheet  _getCommonSheet(BuildContext context, Color codeBackground) {
     MarkdownStyleSheet markdownStyleSheet = MarkdownStyleSheet.fromTheme(Theme.of(context));
     return markdownStyleSheet.copyWith(
             codeblockDecoration: new BoxDecoration(
@@ -47,7 +47,7 @@ class MarkdownWidget extends StatelessWidget {
     );
   }
 
-  _getStyleSheetWhite(BuildContext context) {
+  MarkdownStyleSheet _getStyleSheetWhite(BuildContext context) {
     return _getCommonSheet(context, Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
       p: UnitTextStyle.smallText,
       h1: UnitTextStyle.largeLargeText,
@@ -90,7 +90,7 @@ class MarkdownWidget extends StatelessWidget {
   }
 
   _getStyle(BuildContext context) {
-    var styleSheet = _getStyleSheetWhite(context);
+    MarkdownStyleSheet styleSheet = _getStyleSheetWhite(context);
     switch (style) {
       case kDarkLight:
         styleSheet = _getStyleSheetDark(context);

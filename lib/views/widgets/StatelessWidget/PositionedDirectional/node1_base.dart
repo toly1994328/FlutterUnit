@@ -18,25 +18,25 @@ import 'package:flutter/material.dart';
 class CustomPositionedDirectional extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var yellowBox = Container(
+    Widget yellowBox = Container(
       color: Colors.yellow,
       height: 100,
       width: 100,
     );
 
-    var redBox = Container(
+    Widget redBox = Container(
       color: Colors.red,
       height: 90,
       width: 90,
     );
 
-    var greenBox = Container(
+    Widget greenBox = Container(
       color: Colors.green,
       height: 80,
       width: 80,
     );
 
-    var cyanBox = Container(
+    Widget cyanBox = Container(
       color: Colors.cyanAccent,
       height: 70,
       width: 70,

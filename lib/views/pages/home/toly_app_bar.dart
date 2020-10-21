@@ -125,7 +125,7 @@ class TolyAppBarDelegate extends FlowDelegate {
     double obx = 0;
 
     for (int i = 0; i < context.childCount / 2; i++) {
-      var cSize = context.getChildSize(i);
+      Size cSize = context.getChildSize(i);
       if (i == selectIndex) {
         context.paintChild(i,
             transform: Matrix4.translationValues(ox, 20.0 * factor - 20, 0.0));

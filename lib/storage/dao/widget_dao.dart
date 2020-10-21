@@ -51,7 +51,7 @@ class WidgetDao {
     }
     final db = await storage.db;
 
-    var sql = "SELECT * "
+    String sql = "SELECT * "
         "FROM widget WHERE id in (${'?,' * (ids.length - 1)}?) ";
 
     return await db.rawQuery(sql, [...ids]);
@@ -67,8 +67,8 @@ class WidgetDao {
 
   Future<List<Map<String, dynamic>>> toggleCollect(int id) async {
     final db = await storage.db;
-    var data = await db.rawQuery('SELECT collected FROM widget WHERE id = ?', [id]);
-    var collected = data.toList()[0]['collected']==1;
+    List<Map<String, dynamic>> data = await db.rawQuery('SELECT collected FROM widget WHERE id = ?', [id]);
+    bool collected = data.toList()[0]['collected']==1;
     return await db.rawQuery(
         "UPDATE widget SET collected = ? "
         "WHERE id = ?",
@@ -83,7 +83,7 @@ class WidgetDao {
 
  Future<bool> collected(int id) async {
    final db = await storage.db;
-   var data = await db.rawQuery("SELECT collected "
+   List<Map<String, dynamic>> data = await db.rawQuery("SELECT collected "
        "FROM widget WHERE id = ?");
 
    if(data.length>0){

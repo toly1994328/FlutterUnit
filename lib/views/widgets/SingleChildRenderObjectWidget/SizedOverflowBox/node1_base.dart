@@ -24,7 +24,7 @@ class _CustomSizedOverflowBoxState extends State<CustomSizedOverflowBox> {
 
   @override
   Widget build(BuildContext context) {
-    var box = SizedOverflowBox(
+    Widget box = SizedOverflowBox(
       alignment: Alignment.bottomRight,
       size: Size(_x, _y),
       child: Container(width: 30, height: 50, color: Colors.orange),

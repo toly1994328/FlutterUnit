@@ -19,7 +19,7 @@ class TapGestureDetector extends StatefulWidget {
 }
 
 class _TapGestureDetectorState extends State<TapGestureDetector> {
-  var _info = '';
+  String _info = '';
 
   @override
   Widget build(BuildContext context) {

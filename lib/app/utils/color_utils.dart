@@ -4,23 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'random_provider.dart';
 
-//Color randomColor(){/// 用来返回一个随机色
-//var random=Random();
-//var a = random.nextInt(256);//透明度值
-//var r = random.nextInt(256);//红值
-//var g = random.nextInt(256);//绿值
-//var b = random.nextInt(256);//蓝值
-//return Color.fromARGB(a, r, g, b);//生成argb模式的颜色
-//}
 
-//Color randomColor(int limitA){
-//  var random=Random();
-//  var a = limitA+random.nextInt(256-limitA);//透明度值
-//  var r = random.nextInt(256);//红值
-//  var g = random.nextInt(256);//绿值
-//  var b = random.nextInt(256);//蓝值
-//  return Color.fromARGB(a, r, g, b);//生成argb模式的颜色
-//}
 
 class ColorUtils {
   static Color randomColor({
@@ -29,11 +13,11 @@ class ColorUtils {
     int limitG = 0,
     int limitB = 0,
   }) {
-    var random = RandomProvider.random;
-    var a = limitA + random.nextInt(256 - limitA); //透明度值
-    var r = limitR + random.nextInt(256 - limitR); //红值
-    var g = limitG + random.nextInt(256 - limitG); //绿值
-    var b = limitB + random.nextInt(256 - limitB); //蓝值
+    Random random = RandomProvider.random;
+    int a = limitA + random.nextInt(256 - limitA); //透明度值
+    int r = limitR + random.nextInt(256 - limitR); //红值
+    int g = limitG + random.nextInt(256 - limitG); //绿值
+    int b = limitB + random.nextInt(256 - limitB); //蓝值
     return Color.fromARGB(a, r, g, b); //生成argb模式的颜色
   }
 
@@ -46,7 +30,7 @@ class ColorUtils {
   ///
   static Color parse(String code) {
     Color result =Colors.red;
-    var value = 0 ;
+    int value = 0 ;
     if (code.contains("#")) {
       try {
         value = int.parse(code.substring(1), radix: 16);

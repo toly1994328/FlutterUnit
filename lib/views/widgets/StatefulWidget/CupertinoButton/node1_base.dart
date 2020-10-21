@@ -19,7 +19,7 @@ import 'package:flutter/material.dart';
 class CustomCupertinoButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var data = {
+    Map<Color, double> data = {
       CupertinoColors.activeBlue:4.0,
       Colors.blue:6.0,
       CupertinoColors.activeOrange:8.0,

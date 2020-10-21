@@ -25,10 +25,10 @@ class CustomAnimatedPositionedDirectional extends StatefulWidget {
 
 class _CustomAnimatedPositionedDirectionalState
     extends State<CustomAnimatedPositionedDirectional> {
-  final startTop = 0.0;
-  final endTop = 30.0;
+  final double startTop = 0.0;
+  final double endTop = 30.0;
 
-  var _top = 0.0;
+  double _top = 0.0;
 
   @override
   void initState() {

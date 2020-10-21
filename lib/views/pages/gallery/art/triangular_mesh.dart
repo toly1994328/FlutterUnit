@@ -82,7 +82,7 @@ class TriangularMeshPainter extends CustomPainter {
     for (int y = 0; y < lines.length - 1; y++) {
       odd = !odd;
       dotLine = [];
-      for (var i = 0; i < lines[y].length; i++) {
+      for (int i = 0; i < lines[y].length; i++) {
         dotLine.add(odd ? lines[y][i] : lines[y + 1][i]);
         dotLine.add(odd ? lines[y + 1][i] : lines[y][i]);
       }

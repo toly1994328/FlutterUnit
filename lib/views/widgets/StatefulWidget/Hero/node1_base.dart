@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 class CustomHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var hero = Hero(
+    Widget hero = Hero(
       //----定义一个Hero,并添加tag标签,此中组件共享
       tag: 'user-head',
       child: ClipRRect(
@@ -29,7 +29,7 @@ class CustomHero extends StatelessWidget {
       ),
     );
 
-    var container = Container(
+    Widget container = Container(
       alignment: Alignment(-0.8, -0.8),
       child: hero,
       width: 250,
@@ -57,7 +57,7 @@ class CustomHero extends StatelessWidget {
 class TargetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var hero = Hero(
+    Widget hero = Hero(
       //----定义一个Hero,为其添加标签，两个标签相同，则可以共享
       tag: 'user-head',
       child: Padding(
@@ -71,7 +71,7 @@ class TargetPage extends StatelessWidget {
       ),
     );
 
-    var touch = InkWell(
+    Widget touch = InkWell(
       onTap: () {
         Navigator.of(context).pop();
       },

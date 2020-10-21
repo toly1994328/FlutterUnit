@@ -39,7 +39,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     }
 
     if (event is EventAddCategory) {
-      var categoryPo = CategoryPo(
+      CategoryPo categoryPo = CategoryPo(
           name: event.name,
           color: event.color ??
               ColorUtils.colorString(UnitColor.collectColorSupport[0]),
@@ -58,7 +58,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     }
 
     if (event is EventUpdateCategory) {
-      var categoryPo = CategoryPo(
+      CategoryPo categoryPo = CategoryPo(
           id: event.id,
           name: event.name,
           priority: event.priority ?? 0,

@@ -40,7 +40,7 @@ class _DenseRadioListTileState extends State<DenseRadioListTile> {
     ItemType.dart:
     ItemBean("Dart", "世界上最优雅的语言", "assets/images/dart.webp"),
   };
-  var _type = ItemType.java;
+  ItemType _type = ItemType.java;
 
   @override
   Widget build(BuildContext context) {

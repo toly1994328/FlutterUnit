@@ -42,7 +42,7 @@ class CirclePackingPainter extends CustomPainter {
     Circle circle;
     bool circleSafeToDraw = false;
 
-    for (var i = 0; i < createCircleAttemps; i++) {
+    for (int i = 0; i < createCircleAttemps; i++) {
       circle = Circle()
         ..radius = minRaidus
         ..center = Point(
@@ -63,7 +63,7 @@ class CirclePackingPainter extends CustomPainter {
       return;
     }
 
-    for (var i = minRaidus; i < maxRaidus; i++) {
+    for (double i = minRaidus; i < maxRaidus; i++) {
       circle.radius = i;
       if (_doesHaveACollision(circle, size)) {
         circle.radius--;
@@ -88,7 +88,7 @@ class CirclePackingPainter extends CustomPainter {
   }
 
   bool _doesHaveACollision(Circle circle, Size size) {
-    for (var i = 0; i < circles.length; i++) {
+    for (int i = 0; i < circles.length; i++) {
       Circle otherCircle = circles[i];
       double r2 = circle.radius + otherCircle.radius;
 
@@ -112,7 +112,7 @@ class CirclePackingPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    for (var i = 0; i < totalCircles; i++) {
+    for (int i = 0; i < totalCircles; i++) {
       _createCircles(canvas, size);
       _drawCircles(canvas);
     }

@@ -20,7 +20,7 @@ class CustomExpansionPanelList extends StatefulWidget {
 }
 
 class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
-  var data = <Color>[
+  List<Color> data = [
     Colors.red[50],
     Colors.red[100],
     Colors.red[200],

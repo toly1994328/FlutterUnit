@@ -9,7 +9,7 @@ class DialogAbout extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    var title = Row(
+    Widget title = Row(
       //标题
       children: <Widget>[
         Image.asset(
@@ -27,7 +27,7 @@ class DialogAbout extends StatelessWidget {
         )
       ],
     );
-    var content = Column(
+    Widget content = Column(
         //内容
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[

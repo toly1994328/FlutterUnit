@@ -53,7 +53,7 @@ bool show = false;
 Offset offset = Offset(200, 200);
 
 final double radius = 60;
-var entry = OverlayEntry(
+OverlayEntry entry = OverlayEntry(
     builder: (context) => Stack(
       children: <Widget>[
         Positioned(

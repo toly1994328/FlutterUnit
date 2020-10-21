@@ -44,9 +44,8 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
   final paddingTL = const EdgeInsets.only(top: 2, left: 2);
 
   Widget _buildChild(BuildContext context, int i, Color color) {
-    var active = i == _position;
-    bool left = i == 0;
-
+    final bool active = i == _position;
+    final bool left = i == 0;
 
     return GestureDetector(
       onTap: () => _tapTab(i),
@@ -88,5 +87,4 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
       Scaffold.of(context).openEndDrawer();
     }
   }
-
 }

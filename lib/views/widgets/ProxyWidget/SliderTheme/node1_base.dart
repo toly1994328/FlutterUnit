@@ -21,7 +21,7 @@ class SliderThemeDemo extends StatefulWidget {
 }
 
 class _SliderThemeDemoState extends State<SliderThemeDemo> {
-  var _bliss = 0.5;
+  double _bliss = 0.5;
 
   @override
   Widget build(BuildContext context) {

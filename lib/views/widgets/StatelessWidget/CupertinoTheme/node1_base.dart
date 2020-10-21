@@ -15,8 +15,8 @@ import 'package:flutter/material.dart';
 class TextCupertinoTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var queryData = CupertinoTheme.of(context).textTheme;
-    var styles = {
+    CupertinoTextThemeData queryData = CupertinoTheme.of(context).textTheme;
+    Map<String, TextStyle> styles = {
       "tabLabelTextStyle: ": queryData.tabLabelTextStyle,
       "actionTextStyle: ": queryData.actionTextStyle,
       "navActionTextStyle: ": queryData.navActionTextStyle,

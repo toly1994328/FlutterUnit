@@ -35,12 +35,12 @@ class CouponShapeBorder extends ShapeBorder {
 
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
-    var w = rect.width;
-    var h = rect.height;
+    double w = rect.width;
+    double h = rect.height;
 
-    var d = h / (1 + 2 * holeCount);
+    double d = h / (1 + 2 * holeCount);
 
-    var path = Path();
+    Path path = Path();
     path.addRect(rect);
 
     _formHoldLeft(path, d);
@@ -84,20 +84,20 @@ class CouponShapeBorder extends ShapeBorder {
 
   _formHoldLeft(Path path, double d) {
     for (int i = 0; i < holeCount; i++) {
-      var left = -d / 2;
-      var top = 0.0 + d + 2 * d * (i);
-      var right = left + d;
-      var bottom = top + d;
+      double left = -d / 2;
+      double top = 0.0 + d + 2 * d * (i);
+      double right = left + d;
+      double bottom = top + d;
       path.addArc(Rect.fromLTRB(left, top, right, bottom), -pi / 2, pi);
     }
   }
 
   _formHoldRight(Path path, double w, double d) {
     for (int i = 0; i < holeCount; i++) {
-      var left = -d / 2 + w;
-      var top = 0.0 + d + 2 * d * (i);
-      var right = left + d;
-      var bottom = top + d;
+      double left = -d / 2 + w;
+      double top = 0.0 + d + 2 * d * (i);
+      double right = left + d;
+      double bottom = top + d;
       path.addArc(Rect.fromLTRB(left, top, right, bottom), pi / 2, pi);
     }
   }
@@ -105,12 +105,12 @@ class CouponShapeBorder extends ShapeBorder {
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
     if(!hasLine) return;
-    var paint = Paint()
+    Paint paint = Paint()
       ..color = color
       ..strokeWidth = 1.5
       ..style = PaintingStyle.stroke
       ..strokeJoin = StrokeJoin.round;
-    var d = rect.height / (1 + 2 * holeCount);
+    double d = rect.height / (1 + 2 * holeCount);
     if (dash) {
       _drawDashLine(canvas, Offset(lineRate * rect.width, d / 2),
           rect.height / 16, rect.height - 13, paint);
@@ -122,9 +122,9 @@ class CouponShapeBorder extends ShapeBorder {
 
   _drawDashLine(
       Canvas canvas, Offset start, double count, double length, Paint paint) {
-    var step = length / count / 2;
+    double step = length / count / 2;
     for (int i = 0; i < count; i++) {
-      var offset = start + Offset(0, 2 * step * i);
+      Offset offset = start + Offset(0, 2 * step * i);
       canvas.drawLine(offset, offset + Offset(0, step), paint);
     }
   }

@@ -29,14 +29,14 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
     }
 
     if (event is EventSwitchFontFamily) {
-      var familyIndex = Cons.fontFamilySupport.indexOf(event.family);
+      int familyIndex = Cons.fontFamilySupport.indexOf(event.family);
       await sp
         ..setInt(SP.fontFamily, familyIndex); //固化数据
       yield state.copyWith(fontFamily: event.family);
     }
 
     if (event is EventSwitchThemeColor) {
-      var themeIndex =
+      int themeIndex =
           Cons.themeColorSupport.keys.toList().indexOf(event.color);
       await sp
         ..setInt(SP.themeColorIndex, themeIndex); //固化数据

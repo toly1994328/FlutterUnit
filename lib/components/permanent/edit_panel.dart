@@ -32,7 +32,7 @@ class EditPanel extends StatefulWidget {
 }
 
 class _EditPanelState extends State<EditPanel> {
-  var _radius; //边角半径
+  Radius _radius; //边角半径
 
   TextEditingController _controller;
 
@@ -51,7 +51,7 @@ class _EditPanelState extends State<EditPanel> {
 
   @override
   Widget build(BuildContext context) {
-    var panel = TextField(
+    Widget panel = TextField(
       controller: _controller,
       //输入控制器
       keyboardType: TextInputType.text,

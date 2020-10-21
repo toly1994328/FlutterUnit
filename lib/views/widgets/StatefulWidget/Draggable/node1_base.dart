@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 class CustomDraggable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var axis = [null, Axis.vertical, Axis.horizontal];
+    List<Axis> axis = [null, Axis.vertical, Axis.horizontal];
     return Wrap(
         spacing: 30,
         children: axis

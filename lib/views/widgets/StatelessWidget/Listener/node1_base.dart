@@ -22,7 +22,7 @@ class CustomListener extends StatefulWidget {
 }
 
 class _CustomListenerState extends State<CustomListener> {
-  var _info = '';
+  String _info = '';
 
   @override
   Widget build(BuildContext context) {

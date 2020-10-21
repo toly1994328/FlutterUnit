@@ -18,11 +18,11 @@ class CustomLimitedBox extends StatefulWidget {
 }
 
 class _CustomLimitedBoxState extends State<CustomLimitedBox> {
-  var _text = '';
+  String _text = '';
 
   @override
   Widget build(BuildContext context) {
-    var child = Container(
+    Widget child = Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 50,
@@ -30,7 +30,7 @@ class _CustomLimitedBoxState extends State<CustomLimitedBox> {
       child: Text("Static"),
     );
 
-    var box = LimitedBox(
+    Widget box = LimitedBox(
       maxHeight: 60,
       maxWidth: 100,
       child: Container(color: Colors.orange, child: Text(_text)),

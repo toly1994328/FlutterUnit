@@ -26,16 +26,16 @@ class CustomScaffold extends StatefulWidget {
 
 // AppBar 默认的实例,有状态
 class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
-  final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
-  var _position = 0;
-  final iconsMap = {
+  final List<String> tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
+  int _position = 0;
+  final Map<String, IconData> iconsMap = {
     "图鉴": Icons.home,
     "动态": Icons.toys,
     "喜欢": Icons.favorite,
     "手册": Icons.class_,
     "我的": Icons.account_circle,
   };
-  final _colors = [
+  final List<Color> _colors = [
     Colors.blue,
     Colors.red,
     Colors.yellow,

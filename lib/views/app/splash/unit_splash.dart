@@ -60,8 +60,8 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    var winH = MediaQuery.of(context).size.height;
-    var winW = MediaQuery.of(context).size.width;
+    final double winH = MediaQuery.of(context).size.height;
+    final double winW = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: Stack(

@@ -6,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_unit/app/api/issues_api.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/model/github/issue.dart';
 import 'package:flutter_unit/model/github/repository.dart';
 
 import 'issue_item.dart';
@@ -64,7 +65,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
     }
 
     if (state is PointLoaded) {
-      var issues = state.issues;
+      List<Issue> issues = state.issues;
       return SliverList(
           delegate: SliverChildBuilderDelegate(
               (ctx, int index) => GestureDetector(
@@ -134,7 +135,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
   }
 
   void _loadRepo() async {
-    var result = await IssuesApi.getRepoFlutterUnit();
+    final Repository result = await IssuesApi.getRepoFlutterUnit();
     setState(() {
       if (result != null) {
         _repository = result;

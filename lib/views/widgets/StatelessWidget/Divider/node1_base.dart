@@ -16,11 +16,11 @@ import 'package:flutter/material.dart';
 class CustomDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var dataColor = [
+    List<Color> dataColor = [
       Colors.red, Colors.yellow,
       Colors.blue, Colors.green];
-    var dataThickness = [1.0, 2.0, 4.0, 6.0];
-    var data = Map.fromIterables(dataColor, dataThickness);
+    List<double> dataThickness = [1.0, 2.0, 4.0, 6.0];
+    Map<Color, double> data = Map.fromIterables(dataColor, dataThickness);
     return Column(
       children: dataColor
           .map((e) => Divider(

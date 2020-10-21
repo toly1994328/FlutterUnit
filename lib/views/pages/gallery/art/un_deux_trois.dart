@@ -42,7 +42,7 @@ class UnDeuxTroisPainter extends CustomPainter {
       ..strokeWidth = 4
       ..strokeCap = StrokeCap.round;
 
-    for (var i = 0; i < positions.length; i++) {
+    for (int i = 0; i < positions.length; i++) {
       Offset p1 = Offset(positions[i] * width, 0);
       Offset p2 = Offset(positions[i] * width, height);
       canvas.drawLine(p1, p2, paint);
@@ -57,8 +57,8 @@ class UnDeuxTroisPainter extends CustomPainter {
     double step = 30;
     double aThirdOfHeight = size.height / 3;
 
-    for (var y = step; y < height - step; y += step) {
-      for (var x = step; x < width - step; x += step) {
+    for (double y = step; y < height - step; y += step) {
+      for (double x = step; x < width - step; x += step) {
         if (y < aThirdOfHeight) {
           _draw(x, y, step, step, [0.5], canvas);
         } else if (y < aThirdOfHeight * 2) {

@@ -20,7 +20,7 @@ import 'package:flutter/material.dart';
 class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var style = TextStyle(
+    TextStyle style = TextStyle(
       color: Colors.blue,
       fontSize: 20,
       fontWeight: FontWeight.bold,

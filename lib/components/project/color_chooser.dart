@@ -35,8 +35,8 @@ class _ColorChooserState extends State<ColorChooser> {
 
   @override
   Widget build(BuildContext context) {
-    var li = <Widget>[];
-    for (var i = 0; i < widget.colors.length; i++) {
+    List<Widget> li = [];
+    for (int i = 0; i < widget.colors.length; i++) {
       li.add(FeedbackWidget(
         a: 0.8,
           onPressed: () {
@@ -93,8 +93,8 @@ class _IconChooserState extends State<IconChooser> {
 
   @override
   Widget build(BuildContext context) {
-    var li = <Widget>[];
-    for (var i = 0; i < widget.icons.length; i++) {
+    List<Widget> li = <Widget>[];
+    for (int i = 0; i < widget.icons.length; i++) {
       li.add(GestureDetector(
           onTap: () {
             _checkLi[_perPosition] = false;
@@ -113,8 +113,8 @@ class _IconChooserState extends State<IconChooser> {
   }
 
   buildIcon({bool checked, IconData icon}) {
-    var defaultColor = Colors.black26;
-    var activeColor = Colors.blue;
+    Color defaultColor = Colors.black26;
+    Color activeColor = Colors.blue;
     return Icon(
       icon,
       color: checked ? activeColor : defaultColor,

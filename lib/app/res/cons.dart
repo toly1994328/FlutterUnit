@@ -42,7 +42,7 @@ class Cons {
     'Neucha'
   ];
 
-  static var codeThemeSupport = <HighlighterStyle, String>{
+  static Map<HighlighterStyle, String> codeThemeSupport = <HighlighterStyle, String>{
     HighlighterStyle.fromColors(HighlighterStyle.gitHub):"GitHub - Power By 张风捷特烈",
     HighlighterStyle.fromColors(HighlighterStyle.darkColor):"捷特黑 - Power By 张风捷特烈",
     HighlighterStyle.fromColors(HighlighterStyle.lightColor):"捷特白 - Power By 张风捷特烈",

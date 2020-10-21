@@ -33,7 +33,7 @@ class FeedbackWidget extends StatefulWidget {
 class _FeedBackState extends State<FeedbackWidget>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
-  var rate = 1.0;
+  double rate = 1.0;
 
   @override
   void initState() {

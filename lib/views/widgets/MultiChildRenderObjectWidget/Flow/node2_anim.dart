@@ -90,14 +90,14 @@ class _BurstFlowDelegate extends FlowDelegate {
   @override //绘制孩子的方法
   void paintChildren(FlowPaintingContext context) {
     double radius = context.size.shortestSide / 2;
-    var count = context.childCount - 1;
-    var perRad = 2 * pi / count;
+    int count = context.childCount - 1;
+    double perRad = 2 * pi / count;
     for (int i = 0; i < count; i++) {
       print(i);
-      var cSizeX = context.getChildSize(i).width / 2;
-      var cSizeY = context.getChildSize(i).height / 2;
-      var offsetX = rad * (radius - cSizeX) * cos(i * perRad) + radius;
-      var offsetY = rad * (radius - cSizeY) * sin(i * perRad) + radius;
+      double cSizeX = context.getChildSize(i).width / 2;
+      double cSizeY = context.getChildSize(i).height / 2;
+      double offsetX = rad * (radius - cSizeX) * cos(i * perRad) + radius;
+      double offsetY = rad * (radius - cSizeY) * sin(i * perRad) + radius;
       context.paintChild(i,
           transform: Matrix4.translationValues(
               offsetX - cSizeX, offsetY - cSizeY, 0.0));

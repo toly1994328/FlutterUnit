@@ -46,10 +46,10 @@ class RepaintBoundarySave extends StatelessWidget {
         side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
       ),
       onPressed: () async {
-        var bits = await _widget2Image(_globalKey);
-        var dir = await getApplicationSupportDirectory();
-        var file = File(dir.path + "/save_img.png");
-        var f = await file.writeAsBytes(bits);
+        Uint8List bits = await _widget2Image(_globalKey);
+        Directory dir = await getApplicationSupportDirectory();
+        File file = File(dir.path + "/save_img.png");
+        File f = await file.writeAsBytes(bits);
         Scaffold.of(context).showSnackBar(SnackBar(
           backgroundColor: Theme.of(context).primaryColor,
           content: Text('保存成功后! 路径为:${f.path}'),
@@ -61,7 +61,7 @@ class RepaintBoundarySave extends StatelessWidget {
     //获得 ui.image
     ui.Image img = await boundary.toImage();
     //获取图片字节
-    var byteData = await img.toByteData(format: ui.ImageByteFormat.png);
+    ByteData byteData = await img.toByteData(format: ui.ImageByteFormat.png);
     Uint8List bits = byteData.buffer.asUint8List();
     return bits;
   }

@@ -51,11 +51,11 @@ class JoyDivisionPainter extends CustomPainter {
       // ..strokeCap=StrokeCap.round
       ..isAntiAlias = true;
 
-    for (var i = 5; i < lines.length; i++) {
+    for (int i = 5; i < lines.length; i++) {
       Point p1 = lines[i][0];
       Path path = Path()..moveTo(p1.x, p1.y);
 
-      for (var j = 0; j < lines[i].length - 2; j++) {
+      for (int j = 0; j < lines[i].length - 2; j++) {
         double xc = (lines[i][j].x + lines[i][j + 1].x) / 2;
         double yc = (lines[i][j].y + lines[i][j + 1].y) / 2;
 

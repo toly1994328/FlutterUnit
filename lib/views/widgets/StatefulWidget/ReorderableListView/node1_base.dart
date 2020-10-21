@@ -19,7 +19,7 @@ class CustomReorderableListView extends StatefulWidget {
 }
 
 class _CustomReorderableListViewState extends State<CustomReorderableListView> {
-  var data = <Color>[
+  List<Color> data = [
     Colors.yellow[50],
     Colors.yellow[100],
     Colors.yellow[200],
