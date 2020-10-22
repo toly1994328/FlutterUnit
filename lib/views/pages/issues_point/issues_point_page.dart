@@ -70,8 +70,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
           delegate: SliverChildBuilderDelegate(
               (ctx, int index) => GestureDetector(
                   onTap: () {
-                    BlocProvider.of<PointCommentBloc>(ctx)
-                        .add(EventLoadPointComment(issues[index]));
+                    BlocProvider.of<PointCommentBloc>(ctx).add(EventLoadPointComment(issues[index]));
                     Navigator.pushNamed(ctx, UnitRouter.point_detail);
                   },
                   child: IssueItem(issue: issues[index])),
