@@ -4,23 +4,33 @@ import 'package:flutter/material.dart';
 
 class PictureFrame extends StatelessWidget {
   final Widget child;
+  final double width;
+  final double height;
+  final Color color;
+  final EdgeInsetsGeometry marge;
 
   const PictureFrame({
     this.child,
+    this.width,
+    this.height,
+    this.color= Colors.transparent,
+    this.marge
   });
 
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.shortestSide;
     return Container(
-      width: size,
-      height: size,
-      padding: EdgeInsets.all(20),
+      alignment: Alignment.center,
+      width: width ?? size,
+      height: height ?? size,
+      padding: marge??EdgeInsets.all(20),
       child: CustomPaint(
         painter: FramePainter(),
-        child:  Container(
+        child: Container(
           margin: EdgeInsets.all(14),
           decoration: BoxDecoration(
+            color: color,
             border: Border.all(
               color: Colors.black12,
               width: 1,
@@ -36,7 +46,6 @@ class PictureFrame extends StatelessWidget {
 class FramePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    print(size);
     Path path = Path()
       ..relativeLineTo(0, size.height)
       ..relativeLineTo(size.width, 0)
@@ -46,26 +55,27 @@ class FramePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 10;
     canvas.drawPath(path, myPaint);
-    Path shadowPath = Path()..addRect(Rect.fromPoints(Offset.zero, Offset(size.width,size.height)));
+    Path shadowPath = Path()
+      ..addRect(Rect.fromPoints(Offset.zero, Offset(size.width, size.height)));
     // canvas.drawShadow(shadowPath, Colors.grey, 1, false);
 
     canvas.save();
-    canvas.translate(size.width/2, size.height/2);
-    canvas.scale(-1,1);
-    canvas.translate(-size.width/2, -size.height/2);
+    canvas.translate(size.width / 2, size.height / 2);
+    canvas.scale(-1, 1);
+    canvas.translate(-size.width / 2, -size.height / 2);
     drawCorner(myPaint, canvas);
     canvas.restore();
 
     canvas.save();
-    canvas.translate(size.width/2, size.height/2);
-    canvas.scale(1,-1);
-    canvas.translate(-size.width/2, -size.height/2);
+    canvas.translate(size.width / 2, size.height / 2);
+    canvas.scale(1, -1);
+    canvas.translate(-size.width / 2, -size.height / 2);
     drawCorner(myPaint, canvas);
     canvas.restore();
 
     canvas.save();
     canvas.translate(size.width, size.height);
-    canvas.scale(-1,-1);
+    canvas.scale(-1, -1);
     drawCorner(myPaint, canvas);
     canvas.restore();
     drawCorner(myPaint, canvas);
@@ -73,15 +83,20 @@ class FramePainter extends CustomPainter {
   }
 
   void drawCorner(Paint myPaint, Canvas canvas) {
-    myPaint..style = PaintingStyle.fill..color=Colors.white..strokeCap=StrokeCap.butt;
-    canvas.drawPoints(PointMode.polygon, [
-      Offset(0,0),
-      Offset(18,0),
-      Offset(0,18),
-      Offset(0,0),
-    ], myPaint);
-    canvas.drawCircle(Offset(8,8), 3, myPaint..color=Colors.black);
-
+    myPaint
+      ..style = PaintingStyle.fill
+      ..color = Colors.white
+      ..strokeCap = StrokeCap.butt;
+    canvas.drawPoints(
+        PointMode.polygon,
+        [
+          Offset(0, 0),
+          Offset(18, 0),
+          Offset(0, 18),
+          Offset(0, 0),
+        ],
+        myPaint);
+    canvas.drawCircle(Offset(8, 8), 3, myPaint..color = Colors.black);
   }
 
   @override

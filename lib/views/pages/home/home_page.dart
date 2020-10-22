@@ -6,6 +6,7 @@ import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
 import 'package:flutter_unit/views/items/home_item_support.dart';
@@ -25,8 +26,12 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
 
   @override
   void initState() {
-    _ctrl = ScrollController()..addListener(_updateAppBarHeight);
     super.initState();
+    _ctrl = ScrollController()..addListener(_updateAppBarHeight);
+
+    WidgetsBinding.instance.addPostFrameCallback((callback){
+      OverlayToolWrapper.of(context).showFloating();
+    });
   }
 
   @override

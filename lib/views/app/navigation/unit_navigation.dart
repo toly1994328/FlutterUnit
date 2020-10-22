@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/views/app/navigation/unit_bottom_bar.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
 import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
@@ -36,13 +37,16 @@ class _UnitNavigationState extends State<UnitNavigation> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
-        builder: (_, state) => Scaffold(
-            drawer: HomeDrawer(color:state.homeColor), //左滑页
-            endDrawer: HomeRightDrawer(color: state.homeColor), //右滑页
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerDocked,
-            floatingActionButton: _buildSearchButton(state.homeColor),
-            body: PageView(
+      builder: (_, state) => Scaffold(
+          drawer: HomeDrawer(color: state.homeColor),
+          //左滑页
+          endDrawer: HomeRightDrawer(color: state.homeColor),
+          //右滑页
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: _buildSearchButton(state.homeColor),
+          body: wrapOverlayTool(
+            child: PageView(
               physics: const NeverScrollableScrollPhysics(),
               controller: _controller,
               children: <Widget>[
@@ -50,10 +54,20 @@ class _UnitNavigationState extends State<UnitNavigation> {
                 CollectPage(),
               ],
             ),
-            bottomNavigationBar: UnitBottomBar(
-                color: state.homeColor,
-                itemData: Cons.ICONS_MAP,
-                onItemClick: _onTapNav)));
+          ),
+          bottomNavigationBar: UnitBottomBar(
+              color: state.homeColor,
+              itemData: Cons.ICONS_MAP,
+              onItemClick: _onTapNav)),
+    );
+  }
+
+  // OverlayToolWrapper 在此 添加 因为Builder外层: 因为需要 Scaffold 的上下文，打开左右滑页
+  Widget wrapOverlayTool({Widget child}) {
+    return Builder(
+        builder: (ctx) => OverlayToolWrapper(
+              child: child,
+            ));
   }
 
   Widget _buildSearchButton(Color color) {
@@ -67,7 +81,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   _onTapNav(int index) {
     _controller.animateToPage(index,
-        duration:const Duration(milliseconds: 200), curve: Curves.linear);
+        duration: const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 1) {
       BlocProvider.of<CollectBloc>(context).add(EventSetCollectData());
     }
