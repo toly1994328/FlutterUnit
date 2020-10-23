@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
     super.initState();
     _ctrl = ScrollController()..addListener(_updateAppBarHeight);
 
+    print("------_HomePageState----initState-----");
     WidgetsBinding.instance.addPostFrameCallback((callback){
       OverlayToolWrapper.of(context).showFloating();
     });
