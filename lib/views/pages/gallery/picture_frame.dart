@@ -7,24 +7,26 @@ class PictureFrame extends StatelessWidget {
   final double width;
   final double height;
   final Color color;
+  final Alignment alignment;
   final EdgeInsetsGeometry marge;
 
-  const PictureFrame({
-    this.child,
-    this.width,
-    this.height,
-    this.color= Colors.transparent,
-    this.marge
-  });
+  const PictureFrame(
+      {this.child,
+      this.width,
+      this.height,
+      this.alignment,
+      this.color = Colors.transparent,
+      this.marge});
 
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.shortestSide;
+    print('-------$size----------$width------$height---');
     return Container(
-      alignment: Alignment.center,
+      alignment: alignment,
       width: width ?? size,
       height: height ?? size,
-      padding: marge??EdgeInsets.all(20),
+      padding: marge ?? EdgeInsets.all(20),
       child: CustomPaint(
         painter: FramePainter(),
         child: Container(

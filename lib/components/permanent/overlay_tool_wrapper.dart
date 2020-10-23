@@ -55,7 +55,12 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   void initState() {
     super.initState();
 
+    print("------OverlayToolWrapperState----initState-----");
+
     WidgetsBinding.instance.addPostFrameCallback((callback) {
+
+      print("------OverlayToolWrapperState----addPostFrameCallback-----");
+
       var px = MediaQuery.of(context).size.width - (outWidth);
       var py = 120.0;
       offset = Offset(px, py);
@@ -81,6 +86,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   }
 
   void _listenAnimate() {
+    print('-----_listenAnimate-----${_ctrl.value}-----------');
     var px = MediaQuery.of(context).size.width - (outWidth);
     offset = Offset(px - (_ctrl.value), offset.dy);
     entry.markNeedsBuild();
@@ -102,15 +108,28 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
                 onPanUpdate: (DragUpdateDetails details) {
                   // offset = offset + details.delta;
                   double y = details.globalPosition.dy;
+                  double x = details.globalPosition.dx;
                   if (y < 50) {
                     y = 50;
+                  }
+                  var px = MediaQuery.of(context).size.width - (outWidth);
+
+                  if(x<px -(width - outWidth)){
+                    x= px -(width - outWidth);
+                    out=true;
+                  }
+
+                  if(x>px){
+                    out=false;
+
+                    x= px;
                   }
 
                   if (y > MediaQuery.of(context).size.height - 50) {
                     y = MediaQuery.of(context).size.height - 50;
                   }
 
-                  offset = Offset(offset.dx, y - boxHeight/2);
+                  offset = Offset(x, y - boxHeight/2);
                   entry.markNeedsBuild();
                 },
                 child: Container(
@@ -119,10 +138,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
                   padding: EdgeInsets.all(4),
                   child: Image.asset('assets/images/icon_head.webp'),
                   decoration: BoxDecoration(
-                      // image: DecorationImage(
-                      //   fit: BoxFit.cover,
-                      //   image: AssetImage("assets/images/sworld.png")
-                      // ),
                       color: Theme.of(context).primaryColor,
                       boxShadow: [
                         BoxShadow(
@@ -134,23 +149,12 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
                       ],
                       borderRadius:
                           BorderRadius.all(Radius.circular(outWidth / 2))),
-                  // decoration: BoxDecoration(
-                  //     color: Colors.transparent,
-                  //     border:
-                  //     Border(right: BorderSide(color: Colors.white))),
                 )),
             PictureFrame(
+              alignment: Alignment.center,
               marge: EdgeInsets.only(left: 8),
               height: boxHeight,
-              // color: Theme.of(context).primaryColor.withAlpha(88),
               width: width - outWidth + 15,
-              // decoration: BoxDecoration(
-              //     // color: Colors.blue,
-              //   image:DecorationImage(
-              //     fit: BoxFit.fill,
-              //     image: AssetImage('assets/images/sworld.png')
-              //   )
-              // ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Wrap(
@@ -211,16 +215,21 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   }
 
   void open() {
-    print('==open=======$out====');
+    print('==open=======$out===${_ctrl.status}========${_ctrl.value}=========');
     if (out) return;
-    _ctrl.forward();
+    // _ctrl.forward();
+    var px = MediaQuery.of(context).size.width - (outWidth);
+    offset = Offset(px -(width - outWidth), offset.dy);
+    entry.markNeedsBuild();
     out = true;
   }
 
   void close() {
-    print('==close=======$out====');
+    print('==close=======$out===${_ctrl.status}========${_ctrl.value}=========');
     if (!out) return;
-    _ctrl.reverse();
+    var px = MediaQuery.of(context).size.width - (outWidth);
+    offset = Offset(px , offset.dy);
+    entry.markNeedsBuild();
     out = false;
   }
 
@@ -251,6 +260,8 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
 
   @override
   Widget build(BuildContext context) {
+    print("------OverlayToolWrapperState----build-----");
+
     return widget.child;
   }
 }

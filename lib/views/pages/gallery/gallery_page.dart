@@ -113,7 +113,7 @@ class _GalleryPageState extends State<GalleryPage> {
 
   _buildTitle() {
     return Container(
-      height: 120,
+      height: 80,
     );
   }
 }
@@ -141,6 +141,8 @@ class FrameShower extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           PictureFrame(
+            width:  MediaQuery.of(context).size.shortestSide,
+            height:  MediaQuery.of(context).size.shortestSide,
             child: content,
           ),
           Text(
