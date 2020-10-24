@@ -21,7 +21,6 @@ class PictureFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.shortestSide;
-    print('-------$size----------$width------$height---');
     return Container(
       alignment: alignment,
       width: width ?? size,

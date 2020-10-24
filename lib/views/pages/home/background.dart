@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Background extends StatelessWidget {
+class BackgroundShower extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Opacity(

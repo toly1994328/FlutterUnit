@@ -215,7 +215,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   }
 
   void open() {
-    print('==open=======$out===${_ctrl.status}========${_ctrl.value}=========');
     if (out) return;
     // _ctrl.forward();
     var px = MediaQuery.of(context).size.width - (outWidth);
@@ -225,7 +224,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   }
 
   void close() {
-    print('==close=======$out===${_ctrl.status}========${_ctrl.value}=========');
     if (!out) return;
     var px = MediaQuery.of(context).size.width - (outWidth);
     offset = Offset(px , offset.dy);
@@ -260,8 +258,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
 
   @override
   Widget build(BuildContext context) {
-    print("------OverlayToolWrapperState----build-----");
-
     return widget.child;
   }
 }

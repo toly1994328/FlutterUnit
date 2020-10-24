@@ -20,8 +20,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc({@required this.repository});
 
   @override
-  HomeState get initialState => WidgetsLoading(
-      homeColor: Color(Cons.tabColors[0]));
+  HomeState get initialState => WidgetsLoading();
+
+  Color get activeHomeColor {
+
+    if (state is WidgetsLoaded) {
+      return Color(Cons.tabColors[(state as WidgetsLoaded).activeFamily.index]);
+    }
+    return Color(Cons.tabColors[0]);
+  }
 
   @override
   Stream<HomeState> mapEventToState(HomeEvent event) async* {
@@ -31,11 +38,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   Stream<HomeState> _mapLoadWidgetToState(WidgetFamily family) async* {
+    yield WidgetsLoading();
     try {
       final widgets = await this.repository.loadWidgets(family);
-      yield WidgetsLoaded(
-          widgets: widgets,
-          homeColor: Color(Cons.tabColors[family.index]));
+      yield WidgetsLoaded(widgets: widgets, activeFamily: family);
     } catch (err) {
       print(err);
       yield WidgetsLoadFailed();

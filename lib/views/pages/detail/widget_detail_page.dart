@@ -23,23 +23,23 @@ class WidgetDetailPage extends StatefulWidget {
 }
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
-  List<WidgetModel> _models = [];
+  List<WidgetModel> _modelStack = [];
 
   @override
   void initState() {
-    _models.add(widget.model);
+    _modelStack.add(widget.model);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: CategoryEndDrawer(widget: _models.last),
+      endDrawer: CategoryEndDrawer(widget: _modelStack.last),
       appBar: AppBar(
-        title: Text(_models.last.name),
+        title: Text(_modelStack.last.name),
         actions: <Widget>[
           _buildToHome(),
-          _buildCollectButton(_models.last, context),
+          _buildCollectButton(_modelStack.last, context),
         ],
       ),
       body: Builder(builder: _buildContent),
@@ -53,7 +53,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             WidgetDetailTitle(
-              model: _models.last,
+              model: _modelStack.last,
             ),
             BlocBuilder<DetailBloc, DetailState>(builder: _buildDetail)
           ],
@@ -74,11 +74,13 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     return BlocListener<CollectBloc, CollectState>(
         listener: (ctx, st) {
           bool collected = st.widgets.contains(model);
-          String msg = collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
+          String msg =
+              collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
           _showToast(ctx, msg, collected);
         },
         child: FeedbackWidget(
-          onPressed: () => BlocProvider.of<CollectBloc>(context).add(ToggleCollectEvent(id: model.id)),
+          onPressed: () => BlocProvider.of<CollectBloc>(context)
+              .add(ToggleCollectEvent(id: model.id)),
           child: BlocBuilder<CollectBloc, CollectState>(
               builder: (_, s) => Padding(
                     padding: const EdgeInsets.only(right: 20.0),
@@ -128,10 +130,11 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
   Future<bool> _whenPop(BuildContext context) async {
     if (Scaffold.of(context).isEndDrawerOpen) return true;
-    _models.removeLast();
-    if (_models.length > 0) {
+
+    _modelStack.removeLast();
+    if (_modelStack.length > 0) {
       setState(() {
-        BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(_models.last));
+        BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(_modelStack.last));
       });
       return false;
     } else {
@@ -189,9 +192,10 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           children: links
               .map((e) => ActionChip(
                     onPressed: () {
-                      BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(e));
+                      BlocProvider.of<DetailBloc>(context)
+                          .add(FetchWidgetDetail(e));
                       setState(() {
-                        _models.add(e);
+                        _modelStack.add(e);
                       });
                     },
                     elevation: 2,

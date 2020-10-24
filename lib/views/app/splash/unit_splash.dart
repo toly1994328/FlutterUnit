@@ -27,8 +27,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    SystemUiOverlayStyle systemUiOverlayStyle =
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
     _controller =

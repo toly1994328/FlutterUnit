@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/loading/planet_loading.dart';
 import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
+import 'package:flutter_unit/views/common/loading_page.dart';
 import 'package:flutter_unit/views/items/home_item_support.dart';
 import 'package:flutter_unit/views/pages/home/toly_app_bar.dart';
 
@@ -19,7 +22,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
+class _HomePageState extends State<HomePage>
+    with AutomaticKeepAliveClientMixin {
   ScrollController _ctrl;
   double _limitY = 35;
   double _height = kToolbarHeight * 2 - 20;
@@ -29,8 +33,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
     super.initState();
     _ctrl = ScrollController()..addListener(_updateAppBarHeight);
 
-    print("------_HomePageState----initState-----");
-    WidgetsBinding.instance.addPostFrameCallback((callback){
+    WidgetsBinding.instance.addPostFrameCallback((callback) {
       OverlayToolWrapper.of(context).showFloating();
     });
   }
@@ -38,10 +41,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    Color color = context.bloc<HomeBloc>().state.homeColor;
+
     return Scaffold(
       appBar: TolyAppBar(
-        selectIndex: Cons.tabColors.indexOf(color.value),
         preferredSize: Size.fromHeight(_height),
         onItemClick: _switchTab,
       ),
@@ -56,12 +58,19 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
 
   Widget _buildBackground(BuildContext context, GlobalState state) {
     if (state.showBackGround) {
-      return Background();
+      return BackgroundShower();
     }
     return Container();
   }
 
   Widget _buildContent(BuildContext context, HomeState state) {
+
+    if(state is WidgetsLoading){
+      return Center(
+        child: PlateLoading(),
+      );
+    }
+
     if (state is WidgetsLoaded) {
       List<WidgetModel> items = state.widgets;
       if (items.isEmpty) return EmptyPage();
@@ -83,9 +92,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
         condition: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (_, state) {
           return FeedbackWidget(
-                duration: const Duration(milliseconds: 200),
-                onPressed: () => _toDetailPage(model),
-                child: HomeItemSupport.get(model, state.itemStyleIndex));
+              duration: const Duration(milliseconds: 200),
+              onPressed: () => _toDetailPage(model),
+              child: HomeItemSupport.get(model, state.itemStyleIndex));
         },
       );
 
@@ -102,12 +111,11 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
     BlocProvider.of<HomeBloc>(context).add(EventTabTap(Convert.toFamily(index)));
   }
 
-  _toDetailPage(WidgetModel model) async {
+  _toDetailPage(WidgetModel model){
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
   }
 
   @override
   bool get wantKeepAlive => true;
-
 }

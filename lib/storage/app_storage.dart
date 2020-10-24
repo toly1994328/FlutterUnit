@@ -11,7 +11,7 @@ import 'package:path/path.dart' as path;
 
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
-/// 说明:
+/// 说明: 本地存储访问对象,用于读取配置数据，及初始化Database和SharedPreferences
 
 class AppStorage {
   SharedPreferences _sp;
@@ -31,6 +31,7 @@ class AppStorage {
   Future<GlobalState> initApp() async {
     SharedPreferences prefs = await sp;
     _database = await initDb();
+
     bool showBg = prefs.getBool(SP.showBackground) ?? true;
     int themeIndex = prefs.getInt(SP.themeColorIndex) ?? 4;
     int fontIndex = prefs.getInt(SP.fontFamily) ?? 1;
@@ -53,22 +54,24 @@ class AppStorage {
     const isPro = bool.fromEnvironment('dart.vm.product'); //是否release模式
 
     if (!isPro) {
-      if(!exists){
+      if (!exists) {
         await Directory(path.dirname(dbPath)).create(recursive: true);
       }
       ByteData data = await rootBundle.load(path.join("assets", "flutter.db"));
-      List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes, flush: true);
       print("==== debug ===== assets ======拷贝完成====");
       return await openDatabase(dbPath, readOnly: false);
     }
 
     if (!exists) {
-        await Directory(path.dirname(dbPath)).create(recursive: true);
+      await Directory(path.dirname(dbPath)).create(recursive: true);
       ByteData data = await rootBundle.load(path.join("assets", "flutter.db"));
-      List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes, flush: true);
-        print("==== release ===== assets ======拷贝完成====");
+      print("==== release ===== assets ======拷贝完成====");
     } else {
       print("========= 数据库 ======已存在====");
     }

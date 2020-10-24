@@ -23,9 +23,9 @@ class BlocWrapper extends StatefulWidget {
 
 class _BlocWrapperState extends State<BlocWrapper> {
   final repository = WidgetDbRepository(storage);
-  
+
   final categoryBloc = CategoryBloc(repository: CategoryDbRepository(storage));
-  
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(//使用MultiBlocProvider包裹
@@ -48,17 +48,16 @@ class _BlocWrapperState extends State<BlocWrapper> {
           create: (_) =>
               CollectBloc(repository: repository)..add(EventSetCollectData())),
 
-          BlocProvider<CategoryWidgetBloc>(
-              create: (_) =>
-              CategoryWidgetBloc(categoryBloc: categoryBloc)),
-      
+      BlocProvider<CategoryWidgetBloc>(
+          create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
+
       BlocProvider<SearchBloc>(
           create: (_) => SearchBloc(repository: repository)),
       BlocProvider<PointBloc>(create: (_) => PointBloc()),
       BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
     ], child: widget.child);
   }
-  
+
   @override
   void dispose() {
     categoryBloc.close();
