@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/blocs/point/point_bloc.dart';
 import 'package:flutter_unit/blocs/point/point_event.dart';
 import 'package:flutter_unit/components/flutter/no_div_expansion_tile.dart';
@@ -12,9 +13,6 @@ import 'package:flutter_unit/views/common/unit_drawer_header.dart';
 /// 说明:
 
 class HomeDrawer extends StatelessWidget {
-  final Color color;
-
-  HomeDrawer({this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,11 @@ class HomeDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildChild(BuildContext context) => Container(
+  Widget _buildChild(BuildContext context) {
+
+    final Color color = BlocProvider.of<HomeBloc>(context).activeHomeColor;
+
+    return Container(
         color: color.withAlpha(33),
         child: ListView(
           padding: EdgeInsets.zero,
@@ -41,6 +43,7 @@ class HomeDrawer extends StatelessWidget {
           ],
         ),
       );
+  }
 
   Widget _buildFlutterUnit(BuildContext context) => NoBorderExpansionTile(
         backgroundColor: Colors.white70,

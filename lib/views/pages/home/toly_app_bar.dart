@@ -10,9 +10,9 @@ class TolyAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   final Size preferredSize;
 
-  final int selectIndex;
+  final int defaultIndex;
 
-  TolyAppBar({this.onItemClick, this.preferredSize, this.selectIndex = 0});
+  TolyAppBar({this.onItemClick, this.preferredSize, this.defaultIndex = 0});
 }
 
 const _kBorderRadius = BorderRadius.only(
@@ -40,7 +40,7 @@ class _TolyAppBarState extends State<TolyAppBar>
         duration: const Duration(milliseconds: 300), vsync: this)
       ..addListener(_render)
       ..addStatusListener(_listenStatus);
-    _selectIndex = widget.selectIndex;
+    _selectIndex = widget.defaultIndex;
     super.initState();
   }
 
@@ -56,14 +56,16 @@ class _TolyAppBarState extends State<TolyAppBar>
 
   int get nextIndex => (_selectIndex + 1) % colors.length;
 
+  bool clicked = false;
+
   @override
   Widget build(BuildContext context) {
     _width = MediaQuery.of(context).size.width / colors.length;
     return Container(
       alignment: Alignment.center,
       child: Flow(
-          delegate: TolyAppBarDelegate(
-              _selectIndex, _controller.value, widget.preferredSize.height),
+          delegate: TolyAppBarDelegate(_selectIndex,
+              clicked ? _controller.value : 1, widget.preferredSize.height),
           children: [
             ...colors
                 .map((e) => GestureDetector(
@@ -96,6 +98,8 @@ class _TolyAppBarState extends State<TolyAppBar>
       );
 
   _onTap(int color) {
+    if (_selectIndex == colors.indexOf(color)) return;
+    clicked = true;
     setState(() {
       _controller.reset();
       _controller.forward();
@@ -121,6 +125,7 @@ class TolyAppBarDelegate extends FlowDelegate {
 
   @override
   void paintChildren(FlowPaintingContext context) {
+
     double ox = 0;
     double obx = 0;
 

@@ -10,18 +10,19 @@ abstract class GlobalEvent extends Equatable {
 
 class EventInitApp extends GlobalEvent {
   const EventInitApp();
+
   @override
   List<Object> get props => [];
 }
 
 class EventSwitchFontFamily extends GlobalEvent {
   final String family;
+
   const EventSwitchFontFamily(this.family);
 
   @override
   List<Object> get props => [family];
 }
-
 
 class EventSwitchThemeColor extends GlobalEvent {
   final MaterialColor color;

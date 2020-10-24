@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/views/common/unit_drawer_header.dart';
 
 import 'edit_category_panel.dart';
 
 class HomeRightDrawer extends StatefulWidget {
-  final Color color;
-
-  HomeRightDrawer({this.color});
 
   @override
   _HomeRightDrawerState createState() => _HomeRightDrawerState();
@@ -26,14 +25,18 @@ class _HomeRightDrawerState extends State<HomeRightDrawer> {
     );
   }
 
-  Widget _buildChild(BuildContext context) => Container(
-        color: widget.color.withAlpha(33),
+  Widget _buildChild(BuildContext context) {
+    final Color color =  BlocProvider.of<HomeBloc>(context).activeHomeColor;
+
+    return Container(
+        color: color.withAlpha(33),
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
-          UnitDrawerHeader(color:widget.color),
+          UnitDrawerHeader(color:color),
           _buildTitle(context),
           EditCategoryPanel()
         ]),
       );
+  }
 
   Widget _buildTitle(BuildContext context) {
     return Padding(

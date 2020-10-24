@@ -28,7 +28,7 @@ class _CollectPageState extends State<CollectPage>
     BuildContext _topContext = context;
     return Scaffold(
         backgroundColor:
-            BlocProvider.of<HomeBloc>(context).state.homeColor.withAlpha(11),
+            BlocProvider.of<HomeBloc>(context).activeHomeColor.withAlpha(11),
         body: DefaultTabController(
           length: _tabs.length, // This is the number of tabs.
           child: NestedScrollView(
@@ -64,7 +64,7 @@ class _CollectPageState extends State<CollectPage>
               borderSize: 1.5,
             ),
           )),
-      backgroundColor: BlocProvider.of<HomeBloc>(context).state.homeColor,
+      backgroundColor: BlocProvider.of<HomeBloc>(context).activeHomeColor,
       actions: <Widget>[_buildAddActionBuilder(context)],
       title: Text(
         '收藏集 CollectUnit',
