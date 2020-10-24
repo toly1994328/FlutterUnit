@@ -1,17 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/permanent/loading/planet_loading.dart';
 import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
+
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
-import 'package:flutter_unit/views/common/loading_page.dart';
 import 'package:flutter_unit/views/items/home_item_support.dart';
 import 'package:flutter_unit/views/pages/home/toly_app_bar.dart';
 
@@ -22,16 +22,11 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with AutomaticKeepAliveClientMixin {
-  ScrollController _ctrl;
-  double _limitY = 35;
-  double _height = kToolbarHeight * 2 - 20;
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
 
   @override
   void initState() {
     super.initState();
-    _ctrl = ScrollController()..addListener(_updateAppBarHeight);
 
     WidgetsBinding.instance.addPostFrameCallback((callback) {
       OverlayToolWrapper.of(context).showFloating();
@@ -43,18 +38,37 @@ class _HomePageState extends State<HomePage>
     super.build(context);
 
     return Scaffold(
-      appBar: TolyAppBar(
-        preferredSize: Size.fromHeight(_height),
-        onItemClick: _switchTab,
-      ),
-      body: Stack(
+        body: BlocBuilder<HomeBloc, HomeState>(builder: (ctx, state) {
+      return Stack(
         children: <Widget>[
           BlocBuilder<GlobalBloc, GlobalState>(builder: _buildBackground),
-          BlocBuilder<HomeBloc, HomeState>(builder: _buildContent)
+          CustomScrollView(
+            slivers: <Widget>[
+              _buildPersistentHeader(),
+              _buildContent(ctx, state),
+            ],
+          ),
         ],
-      ),
-    );
+      );
+    }));
   }
+
+  Widget _buildPersistentHeader() => SliverPersistentHeader(
+      pinned: true,
+      delegate: FlexHeaderDelegate(
+          minHeight: 25 + 56.0,
+          maxHeight: 120.0,
+          childBuilder: (offset, max, min) {
+            double dy = max - 25 - offset;
+
+            if (dy < min - 25) {
+              dy = min - 25;
+            }
+            return TolyAppBar(
+              maxHeight: dy,
+              onItemClick: _switchTab,
+            );
+          }));
 
   Widget _buildBackground(BuildContext context, GlobalState state) {
     if (state.showBackGround) {
@@ -64,24 +78,33 @@ class _HomePageState extends State<HomePage>
   }
 
   Widget _buildContent(BuildContext context, HomeState state) {
-
-    if(state is WidgetsLoading){
-      return Center(
-        child: PlateLoading(),
+    if (state is WidgetsLoading) {
+      // return SliverToBoxAdapter(
+      //   child: Center(
+      //     child: PlateLoading(),
+      //   ),
+      // );
+      //
+      return SliverToBoxAdapter(
+        child: Container(),
       );
     }
 
     if (state is WidgetsLoaded) {
       List<WidgetModel> items = state.widgets;
       if (items.isEmpty) return EmptyPage();
-      return ListView.builder(
-          controller: _ctrl,
-          itemBuilder: (_, index) => _buildHomeItem(items[index]),
-          itemCount: items.length);
+      return SliverList(
+        delegate: SliverChildBuilderDelegate(
+            (_, int index) => _buildHomeItem(items[index]),
+            childCount: items.length),
+      );
     }
+    
     if (state is WidgetsLoadFailed) {
-      return Container(
-        child: Text('加载数据异常'),
+      return SliverToBoxAdapter(
+        child: Container(
+          child: Text('加载数据异常'),
+        ),
       );
     }
     return Container();
@@ -98,24 +121,48 @@ class _HomePageState extends State<HomePage>
         },
       );
 
-  _updateAppBarHeight() {
-    if (_ctrl.offset < _limitY * 4) {
-      setState(() {
-        _height = kToolbarHeight * 2 - 20 - _ctrl.offset / 4;
-      });
-    }
-  }
-
   _switchTab(int index, Color color) {
-    if (_ctrl.hasClients) _ctrl.jumpTo(0);
-    BlocProvider.of<HomeBloc>(context).add(EventTabTap(Convert.toFamily(index)));
+
+    BlocProvider.of<HomeBloc>(context)
+        .add(EventTabTap(Convert.toFamily(index)));
   }
 
-  _toDetailPage(WidgetModel model){
+  _toDetailPage(WidgetModel model) {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
   }
 
   @override
   bool get wantKeepAlive => true;
+}
+
+class FlexHeaderDelegate extends SliverPersistentHeaderDelegate {
+  FlexHeaderDelegate({
+    @required this.minHeight,
+    @required this.maxHeight,
+    @required this.childBuilder,
+  });
+
+  final double minHeight; //最小高度
+  final double maxHeight; //最大高度
+  final Widget Function(double offset, double max, double min)
+      childBuilder; //最大高度
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  double get maxExtent => max(maxHeight, minHeight);
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return childBuilder(shrinkOffset, maxHeight, minHeight);
+  }
+
+  @override //是否需要重建
+  bool shouldRebuild(FlexHeaderDelegate oldDelegate) {
+    return maxHeight != oldDelegate.maxHeight ||
+        minHeight != oldDelegate.minHeight;
+  }
 }

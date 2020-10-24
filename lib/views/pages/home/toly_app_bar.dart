@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 
-class TolyAppBar extends StatefulWidget implements PreferredSizeWidget {
+class TolyAppBar extends StatefulWidget {
+  final double maxHeight;
   final Function(int, Color) onItemClick;
 
   @override
   _TolyAppBarState createState() => _TolyAppBarState();
 
-  final Size preferredSize;
-
   final int defaultIndex;
 
-  TolyAppBar({this.onItemClick, this.preferredSize, this.defaultIndex = 0});
+  TolyAppBar({this.maxHeight, this.onItemClick, this.defaultIndex = 0});
 }
 
 const _kBorderRadius = BorderRadius.only(
@@ -29,8 +28,26 @@ class _TolyAppBarState extends State<TolyAppBar>
   double _width = 0;
   int _selectIndex = 0;
 
-  List<int> colors = Cons.tabColors;
-  List info = Cons.tabs;
+  static const List<int> colors = [
+    0xff44D1FD,
+    0xffFD4F43,
+    0xffB375FF,
+    0xFF4CAF50,
+    0xFFFF9800,
+    0xFF00F1F1,
+    0xFFDBD83F
+  ];
+
+  static const List<String> info = [
+    'Stles',
+    'Stful',
+    'Scrow',
+    'Mcrow',
+    'Sliver',
+    'Proxy',
+    'Other'
+  ];
+
 
   AnimationController _controller;
 
@@ -64,38 +81,38 @@ class _TolyAppBarState extends State<TolyAppBar>
     return Container(
       alignment: Alignment.center,
       child: Flow(
-          delegate: TolyAppBarDelegate(_selectIndex,
-              clicked ? _controller.value : 1, widget.preferredSize.height),
+          delegate: TolyAppBarDelegate(
+              _selectIndex, clicked ? _controller.value : 1, widget.maxHeight),
           children: [
             ...colors
                 .map((e) => GestureDetector(
-                    onTap: () => _onTap(e), child: _buildChild(e)))
+                onTap: () => _onTap(e), child: _buildChild(e)))
                 .toList(),
             ...colors.map((e) => Circle(
-                  color: Color(e),
-                  radius: 6,
-                ))
+              color: Color(e),
+              radius: 6,
+            ))
           ]),
     );
   }
 
   Widget _buildChild(int color) => Container(
-        alignment: const Alignment(0, 0.4),
-        decoration: BoxDecoration(boxShadow: [
-          BoxShadow(
-              color: _selectIndex == colors.indexOf(color)
-                  ? Colors.transparent
-                  : Color(colors[_selectIndex]),
-              offset: Offset(1, 1),
-              blurRadius: 2)
-        ], color: Color(color), borderRadius: _kBorderRadius),
-        height: widget.preferredSize.height + 20,
-        width: _width,
-        child: Text(
-          info[colors.indexOf(color)],
-          style: _kTabTextStyle,
-        ),
-      );
+    alignment: const Alignment(0, 0.4),
+    decoration: BoxDecoration(boxShadow: [
+      BoxShadow(
+          color: _selectIndex == colors.indexOf(color)
+              ? Colors.transparent
+              : Color(colors[_selectIndex]),
+          offset: Offset(1, 1),
+          blurRadius: 2)
+    ], color: Color(color), borderRadius: _kBorderRadius),
+    height: widget.maxHeight + 20,
+    width: _width,
+    child: Text(
+      info[colors.indexOf(color)],
+      style: _kTabTextStyle,
+    ),
+  );
 
   _onTap(int color) {
     if (_selectIndex == colors.indexOf(color)) return;
@@ -125,7 +142,6 @@ class TolyAppBarDelegate extends FlowDelegate {
 
   @override
   void paintChildren(FlowPaintingContext context) {
-
     double ox = 0;
     double obx = 0;
 
@@ -141,9 +157,8 @@ class TolyAppBarDelegate extends FlowDelegate {
         ox += cSize.width;
       }
     }
-    for (int i = (context.childCount / 2).floor();
-        i < context.childCount;
-        i++) {
+
+    for (int i = (context.childCount / 2).floor(); i < context.childCount; i++) {
       if (i - (context.childCount / 2).floor() == selectIndex) {
         obx += context.getChildSize(0).width;
       } else {
