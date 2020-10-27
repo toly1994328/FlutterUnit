@@ -17,13 +17,11 @@ import 'package:flutter/material.dart';
 class HeightVerticalDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<Color> dataColor = [
+    var dataColor = [
       Colors.red, Colors.yellow,
       Colors.blue, Colors.green];
-    List<double> dataThickness = [10.0, 20.0, 30.0, 40.0];
-
-    Map<Color,double> data = Map.fromIterables(dataColor, dataThickness);
-
+    var dataThickness = [10.0, 20.0, 30.0, 40.0];
+    var data = Map.fromIterables(dataColor, dataThickness);
     return Container(
       height: 150,
       child: Row(

@@ -21,11 +21,11 @@ class CustomOverflowBox extends StatefulWidget {
 }
 
 class _CustomOverflowBoxState extends State<CustomOverflowBox> {
-  String _text = '';
+  var _text = '';
 
   @override
   Widget build(BuildContext context) {
-    Widget box = OverflowBox(
+    var box = OverflowBox(
       alignment: Alignment.center,
       minHeight: 50,
       minWidth: 50,

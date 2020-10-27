@@ -27,15 +27,15 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  int _position = 0;
+  var _position = 0;
   BottomNavigationBarType _type = BottomNavigationBarType.shifting;
-  final Map<String, IconData> iconsMap = {
+  final iconsMap = {
     //底栏图标
     "图鉴": Icons.home, "动态": Icons.toys,
     "喜欢": Icons.favorite, "手册": Icons.class_,
     "我的": Icons.account_circle,
   };
-  final List<Color> _colors = [
+  final _colors = [
     Colors.red,
     Colors.yellow,
     Colors.blue,

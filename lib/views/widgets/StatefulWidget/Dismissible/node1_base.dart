@@ -23,7 +23,7 @@ class CustomDismissible extends StatefulWidget {
 }
 
 class _CustomDismissibleState extends State<CustomDismissible> {
-  List<Color> data = [
+  var data = <Color>[
     Colors.purple[50],
     Colors.purple[100],
     Colors.purple[200],

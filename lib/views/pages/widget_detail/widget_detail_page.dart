@@ -10,7 +10,7 @@ import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:flutter_unit/components/project/widget_node_panel.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/views/pages/detail/category_end_drawer.dart';
+import 'package:flutter_unit/views/pages/widget_detail/category_end_drawer.dart';
 import 'package:flutter_unit/views/widgets/widgets_map.dart';
 
 class WidgetDetailPage extends StatefulWidget {

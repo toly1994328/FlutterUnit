@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
 class CustomFAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Map<Color, IconData> data = {
+    var data = {
       Colors.red: Icons.add,
       Colors.blue: Icons.bluetooth,
       Colors.green: Icons.android,

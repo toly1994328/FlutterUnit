@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 class AlignmentImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<Alignment> alignment = [
+    var alignment = [
       Alignment.center,
       Alignment.centerLeft,
       Alignment.centerRight,
@@ -26,7 +26,7 @@ class AlignmentImage extends StatelessWidget {
       Alignment.bottomLeft,
       Alignment.bottomRight
     ]; //测试数组
-    List<Widget> imgLi = alignment
+    var imgLi = alignment
         .map((alignment) => //生成子Widget列表
     Column(children: <Widget>[
       Container(
@@ -41,6 +41,7 @@ class AlignmentImage extends StatelessWidget {
       Text(alignment.toString())
     ]))
         .toList();
-    return Wrap(children: imgLi);
+    var imageAlignment = Wrap(children: imgLi);
+    return imageAlignment;
   }
 }

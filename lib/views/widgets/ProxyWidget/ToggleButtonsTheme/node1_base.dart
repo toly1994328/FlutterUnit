@@ -35,7 +35,7 @@ class _ToggleButtonsSimple extends StatefulWidget {
 }
 
 class _ToggleButtonsSimpleState extends State<_ToggleButtonsSimple> {
-  List<bool> _isSelected = [true, false, false];
+  var _isSelected = [true, false, false];
 
   @override
   Widget build(BuildContext context) {

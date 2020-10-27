@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'no_shadow_tab_bar.dart';
-
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 //    {
 //      "widgetId": 58,
-//      "name": '通过修改源码可实现无水波纹',
+//      "name": '通过设置Theme可实现无水波纹',
 //      "priority": 1,
 //      "subtitle":
-//          "详见:components/flutter/no_shadow_tab_bar.dart",
+//          "将Theme关于水波纹的颜色设置为透明即可。",
 //    }
 class NoShadowTabBarDemo extends StatefulWidget {
   @override
@@ -37,20 +35,26 @@ class _NSTabBarState extends State<NoShadowTabBarDemo>
 
   @override
   Widget build(BuildContext context) {
-    return NoShadowTabBar(
-      onTap: (tab) {
-        print(tab);
-      },
-      labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      unselectedLabelStyle: TextStyle(fontSize: 16),
-      isScrollable: true,
-      controller: _tabController,
-      labelColor: Colors.blue,
-      indicatorWeight: 3,
-      indicatorPadding: EdgeInsets.symmetric(horizontal: 10),
-      unselectedLabelColor: Colors.grey,
-      indicatorColor: Colors.orangeAccent,
-      tabs: tabs.map((e) => Tab(text: e)).toList(),
+    return Theme(
+      data: Theme.of(context).copyWith(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+      ),
+      child: TabBar(
+        onTap: (tab) {
+          print(tab);
+        },
+        labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        unselectedLabelStyle: TextStyle(fontSize: 16),
+        isScrollable: true,
+        controller: _tabController,
+        labelColor: Colors.blue,
+        indicatorWeight: 3,
+        indicatorPadding: EdgeInsets.symmetric(horizontal: 10),
+        unselectedLabelColor: Colors.grey,
+        indicatorColor: Colors.orangeAccent,
+        tabs: tabs.map((e) => Tab(text: e)).toList(),
+      ),
     );
   }
 }

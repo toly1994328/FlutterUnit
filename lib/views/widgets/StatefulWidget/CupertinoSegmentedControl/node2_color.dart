@@ -23,7 +23,7 @@ class CupertinoSegmentedControlColor extends StatefulWidget {
 
 class _CupertinoSegmentedControlColorState
     extends State<CupertinoSegmentedControlColor> {
-  int _value = 1;
+  var _value = 1;
 
   @override
   Widget build(BuildContext context) {

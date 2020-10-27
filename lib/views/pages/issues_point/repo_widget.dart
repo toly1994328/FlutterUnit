@@ -17,8 +17,9 @@ class RepoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 56 + 24.0, bottom: 5),
-      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.only(top: 56 + 32.0, bottom: 5),
+      padding: EdgeInsets.only(top:20,right: 10,left: 10),
+      // padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(color: Colors.grey, offset: Offset(0, .5), blurRadius: 3)
@@ -64,9 +65,6 @@ class RepoWidget extends StatelessWidget {
             ),
           ),
           Divider(),
-          Wrap(
-            children: <Widget>[],
-          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[

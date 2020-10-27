@@ -17,14 +17,14 @@ class BottomNavigationBarWithPageView extends StatefulWidget {
 
 class _BottomNavigationBarWithPageViewState
     extends State<BottomNavigationBarWithPageView> {
-  int _position = 0;
-  final Map<String, IconData> iconsMap = {
+  var _position = 0;
+  final iconsMap = {
     //底栏图标
     "图鉴": Icons.home, "动态": Icons.toys,
     "喜欢": Icons.favorite, "手册": Icons.class_,
     "我的": Icons.account_circle,
   };
-  final List<Color> _colors = [
+  final _colors = [
     Colors.red,
     Colors.yellow,
     Colors.blue,

@@ -17,7 +17,7 @@ class SliverFillViewportDemo extends StatefulWidget {
 }
 
 class _SliverFillViewportDemoState extends State<SliverFillViewportDemo> {
-  final List<Color> data = [
+  final data = <Color>[
     Colors.orange[50],
     Colors.orange[100],
     Colors.orange[200],
@@ -29,7 +29,7 @@ class _SliverFillViewportDemoState extends State<SliverFillViewportDemo> {
     Colors.orange[800],
     Colors.orange[900],
   ];
-  double _viewportFraction = 0.5;
+  var _viewportFraction = 0.5;
 
   @override
   Widget build(BuildContext context) {

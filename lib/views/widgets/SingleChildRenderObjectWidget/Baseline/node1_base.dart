@@ -23,13 +23,13 @@ class _CustomBaselineState extends State<CustomBaseline> {
   @override
   Widget build(BuildContext context) {
 
-    Widget childBox = Text(
+    var childBox = Text(
       '你好,Flutter',
       style: TextStyle(fontSize: 20,fontFamily: "Menlo"),
     );
 
 
-    Widget baseline = Baseline(
+    var baseline = Baseline(
         child: childBox,
         baseline: _baseline,
         baselineType: TextBaseline.alphabetic

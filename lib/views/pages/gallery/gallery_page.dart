@@ -26,8 +26,12 @@ class _GalleryPageState extends State<GalleryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Flutter 绘制集录"),
+      ),
         body: Column(children: [
-      _buildTitle(),
+      // _buildTitle(),
       Expanded(
         child: Container(
           // color: Colors.lightBlueAccent,
@@ -38,7 +42,7 @@ class _GalleryPageState extends State<GalleryPage> {
                     title: "The Chaos",
                     author: "张风捷特烈",
                     info:
-                    "    本样例介绍如何进行图片的绘制。通过加载图片并将图片资源绘制到指定的区域。在上层绘制一批45°倾角的栅格线,可以练习基本的绘制。",
+                        "    本样例介绍如何进行图片的绘制。通过加载图片并将图片资源绘制到指定的区域。在上层绘制一批45°倾角的栅格线,可以练习基本的绘制。",
                     content: DrawPicture()),
                 FrameShower(
                     title: "Random Portrait",
@@ -107,13 +111,25 @@ class _GalleryPageState extends State<GalleryPage> {
           ),
         ),
       ),
-      _buildTitle()
     ]));
   }
 
   _buildTitle() {
     return Container(
-      height: 80,
+      height: 70,
+      padding: const EdgeInsets.only(top: 8.0),
+      color: Colors.blue,
+      child: Row(
+        children: [
+          BackButton(
+            color: Colors.white,
+          ),
+          Spacer(),
+          Text('Flutter绘制集录'),
+          Spacer(),
+
+        ],
+      ),
     );
   }
 }
@@ -141,8 +157,8 @@ class FrameShower extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           PictureFrame(
-            width:  MediaQuery.of(context).size.shortestSide,
-            height:  MediaQuery.of(context).size.shortestSide,
+            width: MediaQuery.of(context).size.shortestSide,
+            height: MediaQuery.of(context).size.shortestSide,
             child: content,
           ),
           Text(

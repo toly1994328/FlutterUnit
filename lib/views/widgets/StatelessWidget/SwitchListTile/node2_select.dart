@@ -18,7 +18,7 @@ class SelectSwitchListTile extends StatefulWidget {
 }
 
 class _SelectSwitchListTileState extends State<SelectSwitchListTile> {
-  bool _value=false;
+  var _value=false;
 
   @override
   Widget build(BuildContext context) {

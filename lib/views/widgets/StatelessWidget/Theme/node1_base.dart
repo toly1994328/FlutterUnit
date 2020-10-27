@@ -13,8 +13,8 @@ import 'package:flutter/material.dart';
 class TextThemeDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    TextTheme queryData = Theme.of(context).textTheme;
-    Map<String, TextStyle> styles = {
+    var queryData = Theme.of(context).textTheme;
+    var styles = {
       "headline: ": queryData.headline,
       "title: ": queryData.title,
       "subhead: ": queryData.subhead,

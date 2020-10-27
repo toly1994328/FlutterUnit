@@ -19,7 +19,7 @@ class CustomListWheelScrollView extends StatefulWidget {
 }
 
 class _CustomListWheelScrollViewState extends State<CustomListWheelScrollView> {
-  List<Color>  data = [
+  var data = <Color>[
     Colors.orange[50],
     Colors.orange[100],
     Colors.orange[200],

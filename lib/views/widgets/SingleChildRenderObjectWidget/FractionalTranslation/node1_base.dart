@@ -19,8 +19,8 @@ class FractionalTranslationDemo extends StatefulWidget {
 }
 
 class _FractionalTranslationDemoState extends State<FractionalTranslationDemo> {
-  double dx = 0.0;
-  double dy = 0.0;
+  var dx = 0.0;
+  var dy = 0.0;
 
   @override
   Widget build(BuildContext context) {

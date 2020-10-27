@@ -16,11 +16,11 @@ class CustomAspectRatio extends StatefulWidget {
 }
 
 class _CustomAspectRatioState extends State<CustomAspectRatio> {
-  double _ratio = 0.75;
+  var _ratio = 0.75;
 
   @override
   Widget build(BuildContext context) {
-    Widget child = Container(
+    var child = Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 50,
@@ -28,7 +28,7 @@ class _CustomAspectRatioState extends State<CustomAspectRatio> {
       child: Text("Static"),
     );
 
-    Widget box = AspectRatio(
+    var box = AspectRatio(
       aspectRatio: _ratio,
       child: Container(
           color: Colors.orange,

@@ -21,7 +21,7 @@ class _CustomOffstageState extends State<CustomOffstage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget radBox = Container(
+    var radBox = Container(
       height: 50,
       width: 60,
       color: Colors.red,

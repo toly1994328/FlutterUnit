@@ -22,7 +22,7 @@ class CustomAnimatedCrossFade extends StatefulWidget {
 }
 
 class _CustomAnimatedCrossFadeState extends State<CustomAnimatedCrossFade> {
-  CrossFadeState _crossFadeState = CrossFadeState.showFirst;
+  var _crossFadeState = CrossFadeState.showFirst;
 
   bool get isFirst => _crossFadeState == CrossFadeState.showFirst;
 

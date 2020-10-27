@@ -22,7 +22,7 @@ class CustomInkResponse extends StatefulWidget {
 }
 
 class _CustomInkResponseState extends State<CustomInkResponse> {
-  String _info = 'Push';
+  var _info = 'Push';
 
   @override
   Widget build(BuildContext context) {
