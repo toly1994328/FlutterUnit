@@ -41,7 +41,7 @@ class _CustomDragTargetState extends State<CustomDragTarget> {
   }
 
   List<Widget> _buildColors() {
-    List<Color> colors = [
+    var colors = [
       Colors.red,
       Colors.yellow,
       Colors.blue,

@@ -25,7 +25,7 @@ class CustomGestureDetector extends StatefulWidget {
 }
 
 class _CustomGestureDetectorState extends State<CustomGestureDetector> {
-  String _info = '';
+  var _info = '';
 
   @override
   Widget build(BuildContext context) {

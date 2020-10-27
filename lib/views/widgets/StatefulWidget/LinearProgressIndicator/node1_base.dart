@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -21,7 +20,7 @@ class CustomLinearProgressIndicator extends StatefulWidget {
 
 class _CustomLinearProgressIndicatorState
     extends State<CustomLinearProgressIndicator> {
-  List<double> data = [0.2, 0.4, 0.6, 0.8, null];
+  var data = <double>[0.2, 0.4, 0.6, 0.8, null];
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +28,14 @@ class _CustomLinearProgressIndicatorState
       spacing: 10,
       children: data
           .map((e) => Container(
-                width: 50,
-                height: 3,
-                child: LinearProgressIndicator(
-                  value: e,
-                  backgroundColor: Colors.grey.withAlpha(33),
-                  valueColor: AlwaysStoppedAnimation(Colors.orange),
-                ),
-              ))
+        width: 50,
+        height: 3,
+        child:LinearProgressIndicator(
+          value: e,
+          backgroundColor: Colors.grey.withAlpha(33),
+          valueColor: AlwaysStoppedAnimation(Colors.orange),
+        ),
+      ))
           .toList(),
     );
   }

@@ -36,7 +36,7 @@ class SortDataTable extends StatefulWidget {
 }
 
 class _SortDataTableState extends State<SortDataTable> {
-  List<_BeanOp> data = [
+  var data = [
     _BeanOp(101, 'DataTable', 'StatelessWidget', false),
     _BeanOp(44, 'RangeSlider', 'StatefulWidget', false),
     _BeanOp(2, 'Text', 'StatelessWidget', false),
@@ -44,7 +44,7 @@ class _SortDataTableState extends State<SortDataTable> {
   ];
 
   bool _sortAscending = false;
-  List<_BeanOp> selectData = [];
+  var selectData = <_BeanOp>[];
 
   @override
   Widget build(BuildContext context) {

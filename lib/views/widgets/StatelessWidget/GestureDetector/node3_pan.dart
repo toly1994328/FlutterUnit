@@ -21,7 +21,7 @@ class PanGestureDetector extends StatefulWidget {
 }
 
 class _PanGestureDetectorState extends State<PanGestureDetector> {
-  String _info = '';
+  var _info = '';
 
   @override
   Widget build(BuildContext context) {

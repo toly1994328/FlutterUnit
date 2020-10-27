@@ -17,7 +17,7 @@ class CustomOpacity extends StatefulWidget {
 }
 
 class _CustomOpacityState extends State<CustomOpacity> {
-  double _opacity = 0.2;
+  var _opacity = 0.2;
 
   @override
   Widget build(BuildContext context) {

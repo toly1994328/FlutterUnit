@@ -74,15 +74,15 @@ class CornerCustomMultiChildLayout extends MultiChildLayoutDelegate{
       positionChild(CornerType.topLeft, Offset.zero.translate(padding.left, padding.top));
     }
     if (hasChild(CornerType.topRight)) {
-      Size childSize = layoutChild(CornerType.topRight, BoxConstraints.loose(size));
+      var childSize = layoutChild(CornerType.topRight, BoxConstraints.loose(size));
       positionChild(CornerType.topRight, Offset(size.width-childSize.width,0).translate(-padding.right, padding.top));
     }
     if (hasChild(CornerType.bottomLeft)) {
-      Size childSize = layoutChild(CornerType.bottomLeft, BoxConstraints.loose(size));
+      var childSize = layoutChild(CornerType.bottomLeft, BoxConstraints.loose(size));
       positionChild(CornerType.bottomLeft, Offset(0,size.height-childSize.height).translate(padding.left, -padding.bottom));
     }
     if (hasChild(CornerType.bottomRight)) {
-      Size childSize = layoutChild(CornerType.bottomRight, BoxConstraints.loose(size));
+      var childSize = layoutChild(CornerType.bottomRight, BoxConstraints.loose(size));
       positionChild(CornerType.bottomRight, Offset(size.width-childSize.width,size.height-childSize.height).translate(-padding.right, -padding.bottom));
     }
   }

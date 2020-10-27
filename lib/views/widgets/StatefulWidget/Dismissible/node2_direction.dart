@@ -20,7 +20,7 @@ class DirectionDismissible extends StatefulWidget {
 }
 
 class _CustomDirectionDismissibleState extends State<DirectionDismissible> {
-  List<Color> data = [
+  var data = <Color>[
     Colors.purple[50],
     Colors.purple[100],
     Colors.purple[200],

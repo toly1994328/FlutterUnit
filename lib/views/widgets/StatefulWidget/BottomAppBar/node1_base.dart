@@ -21,15 +21,15 @@ class CustomBottomAppBar extends StatefulWidget {
 }
 
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
-  int _position = 0;
-  FloatingActionButtonLocation _location = FloatingActionButtonLocation.centerDocked;
-  final Map<String, IconData> iconsMap = {
+  var _position = 0;
+  var _location = FloatingActionButtonLocation.centerDocked;
+  final iconsMap = {
     "图鉴": Icons.home,
     "动态": Icons.toys,
     "喜欢": Icons.favorite,
     "手册": Icons.class_,
   };
-  Color activeColor = Colors.blue.withAlpha(240);
+  var activeColor = Colors.blue.withAlpha(240);
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   bool get isCenter => _location == FloatingActionButtonLocation.centerDocked;
 
   Widget _buildChild(int i) {
-    final bool active = i == _position;
+    var active = i == _position;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(

@@ -22,7 +22,7 @@ class ColorInkWell extends StatefulWidget {
 }
 
 class _ColorInkWellState extends State<ColorInkWell> {
-  String _info = 'Push';
+  var _info = 'Push';
 
   @override
   Widget build(BuildContext context) {

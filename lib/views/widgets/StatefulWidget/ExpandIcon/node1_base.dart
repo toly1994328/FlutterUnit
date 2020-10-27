@@ -20,7 +20,7 @@ class CustomExpandIcon extends StatefulWidget {
 }
 
 class _CustomExpandIconState extends State<CustomExpandIcon> {
-  bool _closed = true;
+  var _closed = true;
 
   @override
   Widget build(BuildContext context) {

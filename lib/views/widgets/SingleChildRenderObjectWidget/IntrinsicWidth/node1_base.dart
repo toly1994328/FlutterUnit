@@ -19,7 +19,7 @@ class IntrinsicWidthDemo extends StatefulWidget {
 }
 
 class _IntrinsicWidthDemoState extends State<IntrinsicWidthDemo> {
-  double _height =120.0;
+  var _height =120.0;
 
   @override
   Widget build(BuildContext context) {

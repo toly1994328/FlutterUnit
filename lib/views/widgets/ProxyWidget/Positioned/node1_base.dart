@@ -18,25 +18,25 @@ import 'package:flutter/material.dart';
 class CustomPositioned extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget yellowBox = Container(
+    var yellowBox = Container(
       color: Colors.yellow,
       height: 100,
       width: 100,
     );
 
-    Widget redBox = Container(
+    var redBox = Container(
       color: Colors.red,
       height: 90,
       width: 90,
     );
 
-    Widget greenBox = Container(
+    var greenBox = Container(
       color: Colors.green,
       height: 80,
       width: 80,
     );
 
-    Widget cyanBox = Container(
+    var cyanBox = Container(
       color: Colors.cyanAccent,
       height: 70,
       width: 70,

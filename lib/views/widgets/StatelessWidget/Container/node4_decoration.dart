@@ -26,7 +26,7 @@ class ContainerDecoration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<double> stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
+    var stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
     return Container(//容器
       alignment: Alignment.center,
       width: 200,

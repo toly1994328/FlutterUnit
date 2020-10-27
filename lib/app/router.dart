@@ -17,9 +17,8 @@ import 'package:flutter_unit/views/pages/setting/theme_color_setting.dart';
 import 'package:flutter_unit/views/pages/unit_todo/attr_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/point_unit_page.dart';
 
-import 'package:flutter_unit/views/pages/detail/widget_detail_page.dart';
+import 'package:flutter_unit/views/pages/widget_detail/widget_detail_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
-import 'package:flutter_unit/views/pages/unit_todo/paint_unit_page.dart';
 import 'package:flutter_unit/views/pages/setting/setting_page.dart';
 
 import 'utils/router_utils.dart';

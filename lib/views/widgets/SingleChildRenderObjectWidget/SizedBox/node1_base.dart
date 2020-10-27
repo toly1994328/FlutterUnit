@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 class CustomSizedBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget child = Container(
+    var child = Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 50,
@@ -23,7 +23,7 @@ class CustomSizedBox extends StatelessWidget {
       child: Text("Static"),
     );
 
-    Widget box = SizedBox(
+    var box = SizedBox(
       width: 80,
       height: 40,
       child: Container(

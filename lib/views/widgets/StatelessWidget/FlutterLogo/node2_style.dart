@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 class FlutterLogoWithText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Map<FlutterLogoStyle, Color> data = {
+    var data = {
       FlutterLogoStyle.horizontal:Colors.blue,
       FlutterLogoStyle.markOnly:Colors.red,
       FlutterLogoStyle.stacked:Colors.green,

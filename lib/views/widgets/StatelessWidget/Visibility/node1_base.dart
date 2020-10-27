@@ -24,7 +24,7 @@ class CustomVisibility extends StatelessWidget {
   }
 
   _buildVisibility(bool visible) {
-    Widget box = Container(
+    var box = Container(
       height: 30,
       width: 30,
       color: Colors.blue,

@@ -22,7 +22,7 @@ class CustomCheckBoxListTile extends StatefulWidget {
 }
 
 class _CustomCheckBoxListTileState extends State<CustomCheckBoxListTile> {
-  bool _selected = false;
+  var _selected = false;
 
   @override
   Widget build(BuildContext context) {

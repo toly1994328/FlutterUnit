@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 class CustomImageIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Map<Color, double> data = {
+    var data = {
       Colors.blue: 50.0,
       Colors.red: 60.0,
       Colors.green: 70.0,

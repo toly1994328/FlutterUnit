@@ -17,7 +17,7 @@ class ProToggleButtons extends StatefulWidget {
 }
 
 class _ProToggleButtonsState extends State<ProToggleButtons> {
-  List<bool> _isSelected = [false, false, false];
+  var _isSelected = [false, false, false];
   @override
   Widget build(BuildContext context) {
     return ToggleButtons(

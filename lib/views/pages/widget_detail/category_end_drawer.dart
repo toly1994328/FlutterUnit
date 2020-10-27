@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
@@ -8,15 +9,10 @@ import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/repositories/itf/category_repository.dart';
 import 'package:flutter_unit/views/common/unit_drawer_header.dart';
 
-
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-const _kTextShadowStyle= TextStyle(color: Colors.grey, shadows: [
-Shadow(
-color: Colors.white, offset: Offset(.5, .5), blurRadius: .5)
-]);
 
 class CategoryEndDrawer extends StatelessWidget {
   final WidgetModel widget;
@@ -28,31 +24,32 @@ class CategoryEndDrawer extends StatelessWidget {
     return Drawer(
       child: Container(
           child: ListView(padding: EdgeInsets.zero, children: <Widget>[
-            UnitDrawerHeader(color: Theme.of(context).primaryColor),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: <Widget>[
-                  Circle(color: widget.color,),
-                  SizedBox(width: 10,),
-                  Text(widget.name)
-                ],
+        UnitDrawerHeader(color: Theme.of(context).primaryColor),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            children: <Widget>[
+              Circle(
+                color: widget.color,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: Panel(
-                child: Text(
-                    widget.info,
-                    style:_kTextShadowStyle
-                ),
+              SizedBox(
+                width: 10,
               ),
-            ),
-            Divider(),
-            _buildTitle(context),
-            Divider(),
-            CategoryInfo(widget.id)
-          ])),
+              Text(widget.name)
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Panel(
+            child: Text(widget.info, style: TextStyleUnit.shadowTextStyle),
+          ),
+        ),
+        Divider(),
+        _buildTitle(context),
+        Divider(),
+        CategoryInfo(widget.id)
+      ])),
     );
   }
 
@@ -91,6 +88,7 @@ class CategoryInfo extends StatefulWidget {
   final int id;
 
   CategoryInfo(this.id);
+
   @override
   _CategoryInfoState createState() => _CategoryInfoState();
 }
@@ -120,7 +118,7 @@ class _CategoryInfoState extends State<CategoryInfo> {
   Widget _buildItem(CategoryModel category) {
     bool inHere = categoryIds.contains(category.id);
     return FilterChip(
-      backgroundColor: Theme.of(context).primaryColor.withAlpha(33),
+        backgroundColor: Theme.of(context).primaryColor.withAlpha(33),
         selectedColor: Colors.orange.withAlpha(120),
         shadowColor: Theme.of(context).primaryColor,
         elevation: 1,
@@ -133,11 +131,13 @@ class _CategoryInfoState extends State<CategoryInfo> {
         onSelected: (v) async {
           await repository.toggleCategory(category.id, widget.id);
           _loadCategoryIds();
-          BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(category.id));
+          BlocProvider.of<CategoryWidgetBloc>(context)
+              .add(EventLoadCategoryWidget(category.id));
         });
   }
 
-  CategoryRepository get repository => BlocProvider.of<CategoryBloc>(context).repository;
+  CategoryRepository get repository =>
+      BlocProvider.of<CategoryBloc>(context).repository;
 
   List<CategoryModel> get categories {
     CategoryState state = BlocProvider.of<CategoryBloc>(context).state;
@@ -149,7 +149,6 @@ class _CategoryInfoState extends State<CategoryInfo> {
 
   void _loadCategoryIds() async {
     categoryIds = await repository.getCategoryByWidget(widget.id);
-    if(mounted)
-    setState(() {});
+    if (mounted) setState(() {});
   }
 }

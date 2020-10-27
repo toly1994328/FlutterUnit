@@ -40,14 +40,14 @@ class _CircleFlowDelegate extends FlowDelegate {
   void paintChildren(FlowPaintingContext context) {
     double radius = context.size.shortestSide / 2;
     print(context.getChildSize(0));
-    int count = context.childCount;
-    double perRad = 2 * pi / count;
+    var count = context.childCount;
+    var perRad = 2 * pi / count;
     for (int i = 0; i < count; i++) {
-      double cSizeX = context.getChildSize(i).width / 2;
-      double cSizeY = context.getChildSize(i).height / 2;
+      var cSizeX = context.getChildSize(i).width / 2;
+      var cSizeY = context.getChildSize(i).height / 2;
 
-      double offsetX = (radius - cSizeX) * cos(i * perRad) + radius;
-      double offsetY = (radius - cSizeY) * sin(i * perRad) + radius;
+      var offsetX = (radius - cSizeX) * cos(i * perRad) + radius;
+      var offsetY = (radius - cSizeY) * sin(i * perRad) + radius;
       context.paintChild(i,
           transform: Matrix4.translationValues(
               offsetX - cSizeX, offsetY - cSizeY, 0.0));

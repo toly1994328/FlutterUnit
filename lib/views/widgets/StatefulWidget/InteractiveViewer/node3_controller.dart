@@ -119,7 +119,7 @@ class _InteractiveViewerDemo3State extends State<InteractiveViewerDemo3>
         onPressed: _animateResetInitialize);
   }
 
-  double _x = 0.0;
+  var _x = 0.0;
 
   Widget _buildButton2() {
     return MaterialButton(
@@ -132,7 +132,7 @@ class _InteractiveViewerDemo3State extends State<InteractiveViewerDemo3>
           side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
         ),
         onPressed: () {
-          Matrix4 temp = _transformationController.value.clone();
+          var temp = _transformationController.value.clone();
           temp.translate(_x - 4);
           _transformationController.value = temp;
         });
@@ -149,7 +149,7 @@ class _InteractiveViewerDemo3State extends State<InteractiveViewerDemo3>
           side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
         ),
         onPressed: () {
-          Matrix4 temp = _transformationController.value.clone();
+          var temp = _transformationController.value.clone();
           temp.translate(_x + 4);
           _transformationController.value = temp;
         });

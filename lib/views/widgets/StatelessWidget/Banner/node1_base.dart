@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
 class CustomBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Map<BannerLocation, Color> data = {
+    var data = {
       BannerLocation.topStart: Colors.red,
       BannerLocation.topEnd: Colors.blue,
       BannerLocation.bottomStart: Colors.green,

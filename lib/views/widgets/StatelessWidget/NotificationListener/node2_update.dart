@@ -21,7 +21,7 @@ class _NotificationListenerUpdateState
     extends State<NotificationListenerUpdate> {
   final data = List<String>.generate(30, (i) => '第${i + 1}条');
 
-  String _info = '';
+  var _info = '';
 
   @override
   Widget build(BuildContext context) {

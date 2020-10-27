@@ -21,7 +21,7 @@ class _FitImageState extends State<FitImage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> imageLi = BoxFit.values
+    var imageLi = BoxFit.values
         .toList()
         .map((mode) => Column(children: <Widget>[
       Container(

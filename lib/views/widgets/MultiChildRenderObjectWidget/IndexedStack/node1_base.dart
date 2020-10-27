@@ -19,7 +19,7 @@ class CustomIndexedStack extends StatefulWidget {
 }
 
 class _CustomIndexedStackState extends State<CustomIndexedStack> {
-  int _index = 1;
+  var _index = 1;
 
   @override
   Widget build(BuildContext context) {

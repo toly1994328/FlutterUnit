@@ -21,7 +21,7 @@ class _AlignSelectableTextState extends State<AlignSelectableText> {
       "The [SelectableText] widget displays a string of text with a single style."
       "The string might break across multiple lines or might all be displayed on"
       "the same line depending on the layout constraints.";
-  TextAlign _textAlign = TextAlign.left;
+  var _textAlign = TextAlign.left;
 
   @override
   Widget build(BuildContext context) {

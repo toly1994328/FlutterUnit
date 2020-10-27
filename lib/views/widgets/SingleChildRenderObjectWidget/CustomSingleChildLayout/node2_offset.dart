@@ -98,10 +98,10 @@ class _OffSetDelegate extends SingleChildLayoutDelegate {
 
   @override
   Offset getPositionForChild(Size size, Size childSize) {
-    double w = size.width;
-    double h = size.height;
-    double wc = childSize.width;
-    double hc = childSize.height;
+    var w = size.width;
+    var h = size.height;
+    var wc = childSize.width;
+    var hc = childSize.height;
 
     switch (direction) {
       case Direction.topLeft:

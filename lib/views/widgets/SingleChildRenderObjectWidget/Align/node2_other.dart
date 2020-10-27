@@ -44,11 +44,11 @@ class SinLayout extends StatefulWidget {
 }
 
 class _SinLayoutState extends State<SinLayout> {
-  double _x = 0.0; //Alignment坐标系上的x坐标
+  var _x = 0.0; //Alignment坐标系上的x坐标
 
   @override
   Widget build(BuildContext context) {
-    Widget item = Container(
+    var item = Container(
       width: 300,
       height: 120,
       color: Colors.black.withAlpha(10),
@@ -60,7 +60,7 @@ class _SinLayoutState extends State<SinLayout> {
       ),
     );
 
-    Widget slider = Slider(
+    var slider = Slider(
         max: 180,
         min: -180,
         divisions: 360,

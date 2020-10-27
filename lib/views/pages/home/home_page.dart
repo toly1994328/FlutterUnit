@@ -22,8 +22,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
-
+class _HomePageState extends State<HomePage>
+    with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
     super.initState();
@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             childCount: items.length),
       );
     }
-    
+
     if (state is WidgetsLoadFailed) {
       return SliverToBoxAdapter(
         child: Container(
@@ -122,7 +122,6 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
       );
 
   _switchTab(int index, Color color) {
-
     BlocProvider.of<HomeBloc>(context)
         .add(EventTabTap(Convert.toFamily(index)));
   }

@@ -19,7 +19,7 @@ class CurveAnimatedCrossFade extends StatefulWidget {
 }
 
 class _CurveAnimatedCrossFadeState extends State<CurveAnimatedCrossFade> {
-  CrossFadeState _crossFadeState = CrossFadeState.showFirst;
+  var _crossFadeState = CrossFadeState.showFirst;
 
   bool get isFirst=> _crossFadeState == CrossFadeState.showFirst;
 

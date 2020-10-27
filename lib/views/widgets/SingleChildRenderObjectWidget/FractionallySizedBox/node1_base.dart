@@ -21,12 +21,12 @@ class CustomFractionallySizedBox extends StatefulWidget {
 
 class _CustomFractionallySizedBoxState
     extends State<CustomFractionallySizedBox> {
-  double _hf = 0.5;
-  double _wf = 0.4;
+  var _hf = 0.5;
+  var _wf = 0.4;
 
   @override
   Widget build(BuildContext context) {
-    Widget box = FractionallySizedBox(
+    var box = FractionallySizedBox(
       widthFactor: _wf,
       heightFactor: _hf,
       alignment: Alignment.center,

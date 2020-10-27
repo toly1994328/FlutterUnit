@@ -23,8 +23,8 @@ class CustomCupertinoTabBar extends StatefulWidget {
 }
 
 class _CustomCupertinoTabBarState extends State<CustomCupertinoTabBar> {
-  int _position = 0;
-  final Map<String, IconData> iconsMap = {
+  var _position = 0;
+  final iconsMap = {
     //底栏图标
     "图鉴": Icons.home, "动态": Icons.toys,
     "喜欢": Icons.favorite, "手册": Icons.class_,

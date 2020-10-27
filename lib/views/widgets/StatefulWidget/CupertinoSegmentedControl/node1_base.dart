@@ -23,7 +23,7 @@ class CupertinoSegmentedControlDemo extends StatefulWidget {
 
 class _CupertinoSegmentedControlDemoState
     extends State<CupertinoSegmentedControlDemo> {
-  int _value = 1;
+  var _value = 1;
 
   @override
   Widget build(BuildContext context) {

@@ -23,8 +23,8 @@ class CupertinoTextFieldDemo extends StatefulWidget {
 }
 
 class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
-  String _value = '';
-  Color _color =Colors.black;
+  var _value = '';
+  var _color =Colors.black;
 
   @override
   Widget build(BuildContext context) {
