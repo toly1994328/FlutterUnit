@@ -7,7 +7,6 @@ import 'package:flutter_unit/components/permanent/loading/planet_loading.dart';
 
 class LoadingShower extends StatelessWidget {
 
-
   @override
   Widget build(BuildContext context) {
     return PlateLoading();

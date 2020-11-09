@@ -11,6 +11,7 @@ import 'art/random_portrait.dart';
 import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
+import 'draw_path.dart';
 import 'picture_frame.dart';
 
 /// create by 张风捷特烈 on 2020/10/10
@@ -44,6 +45,12 @@ class _GalleryPageState extends State<GalleryPage> {
                     info:
                         "    本样例介绍如何进行图片的绘制。通过加载图片并将图片资源绘制到指定的区域。在上层绘制一批45°倾角的栅格线,可以练习基本的绘制。",
                     content: DrawPicture()),
+                FrameShower(
+                    title: "Draw Curve",
+                    author: "张风捷特烈",
+                    info:
+                        "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
+                    content: DrawPath()),
                 FrameShower(
                     title: "Random Portrait",
                     author: "张风捷特烈",
