@@ -4,7 +4,7 @@
 - 🔥  [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
 - 🔥  [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - 🔥  [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
-- 🔥  [《Flutter绘制指南》 ](https://juejin.im/book/6844733827265331214)
+- 🔥  [掘金 -《Flutter绘制指南》- 3.28元 ](https://juejin.im/book/6844733827265331214)
 
 
 
