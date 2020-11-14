@@ -5,6 +5,7 @@ export '../StatelessWidget/AboutListTile/node1_base.dart';
 export '../StatelessWidget/ActionChip/node1_base.dart';
 export '../StatelessWidget/AlertDialog/node1_base.dart';
 export '../StatelessWidget/AnimatedIcon/node1_base.dart';
+export '../StatelessWidget/CheckedModeBanner/node1_base.dart';
 export '../StatelessWidget/Card/node1_base.dart';
 export '../StatelessWidget/Card/node2_shape.dart';
 export '../StatelessWidget/PreferredSize/node1_base.dart';
@@ -12,6 +13,7 @@ export '../StatelessWidget/PreferredSize/node2_adapter.dart';
 export '../StatelessWidget/Builder/node1_base.dart';
 export '../StatelessWidget/NavigationToolbar/node1_base.dart';
 export '../StatelessWidget/CupertinoDialogAction/node1_base.dart';
+export '../StatelessWidget/DraggableScrollableActuator/node1_base.dart';
 
 export '../StatelessWidget/CheckboxListTile/node1_base.dart';
 export '../StatelessWidget/CheckboxListTile/node2_select.dart';

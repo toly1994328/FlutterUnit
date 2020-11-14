@@ -32,6 +32,10 @@ export '../SingleChildRenderObjectWidget/CustomSingleChildLayout/node2_offset.da
 export '../SingleChildRenderObjectWidget/RepaintBoundary/node1_base.dart';
 export '../SingleChildRenderObjectWidget/RepaintBoundary/node2_save.dart';
 
+export '../SingleChildRenderObjectWidget/AnnotatedRegion/node1_base.dart';
+export '../SingleChildRenderObjectWidget/CupertinoTextSelectionToolbar/node1_base.dart';
+export '../SingleChildRenderObjectWidget/SizeChangedLayoutNotifier/node1_base.dart';
+
 export '../SingleChildRenderObjectWidget/ConstrainedBox/node1_base.dart';
 export '../SingleChildRenderObjectWidget/PhysicalModel/node1_base.dart';
 export '../SingleChildRenderObjectWidget/FractionalTranslation/node1_base.dart';

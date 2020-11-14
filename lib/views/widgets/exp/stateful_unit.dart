@@ -145,6 +145,12 @@ export '../StatefulWidget/WidgetsApp/node1_base.dart' hide HomePage;
 export '../StatefulWidget/WidgetInspector/node1_base.dart' hide HomePage;
 export '../StatefulWidget/AnimatedTheme/node1_base.dart';
 export '../StatefulWidget/AnimatedPhysicalModel/node1_base.dart';
+export '../StatefulWidget/DefaultTabController/node1_base.dart';
+export '../StatefulWidget/GlowingOverscrollIndicator/node1_base.dart';
+export '../StatefulWidget/DraggableScrollableSheet/node1_base.dart';
+export '../StatefulWidget/DrawerController/node1_base.dart';
+export '../StatefulWidget/MergeableMaterial/node1_base.dart';
+export '../StatefulWidget/CupertinoTabView/node1_base.dart' hide HomePage;
 
 export '../StatefulWidget/TextButton/node1_base.dart';
 export '../StatefulWidget/TextButton/node2_style.dart';

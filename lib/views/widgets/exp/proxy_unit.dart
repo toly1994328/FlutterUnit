@@ -26,3 +26,4 @@ export '../ProxyWidget/ToggleButtonsTheme/node1_base.dart';
 export '../ProxyWidget/ButtonBarTheme/node1_base.dart';
 export '../ProxyWidget/TooltipTheme/node1_base.dart';
 export '../ProxyWidget/Directionality/node1_base.dart';
+export '../ProxyWidget/TableCell/node1_base.dart';
