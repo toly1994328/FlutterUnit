@@ -29,50 +29,50 @@ class MarkdownWidget extends StatelessWidget {
                 color: UnitColor.subTextColor,
                 border: new Border.all(
                     color: UnitColor.subTextColor, width: 0.3)),
-            blockquote: TextStyleUnit.smallTextWhite);
+            blockquote: TStyleUnit.smallTextWhite);
   }
 
   _getStyleSheetDark(BuildContext context) {
     return _getCommonSheet(context, Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
-      p: TextStyleUnit.smallTextWhite,
-      h1: TextStyleUnit.largeLargeTextWhite,
-      h2: TextStyleUnit.largeTextWhiteBold,
-      h3: TextStyleUnit.normalTextMitWhiteBold,
-      h4: TextStyleUnit.middleTextWhite,
-      h5: TextStyleUnit.smallTextWhite,
-      h6: TextStyleUnit.smallTextWhite,
+      p: TStyleUnit.smallTextWhite,
+      h1: TStyleUnit.largeLargeTextWhite,
+      h2: TStyleUnit.largeTextWhiteBold,
+      h3: TStyleUnit.normalTextMitWhiteBold,
+      h4: TStyleUnit.middleTextWhite,
+      h5: TStyleUnit.smallTextWhite,
+      h6: TStyleUnit.smallTextWhite,
       em: const TextStyle(fontStyle: FontStyle.italic),
-      strong: TextStyleUnit.middleTextWhiteBold,
-      code: TextStyleUnit.smallSubText,
+      strong: TStyleUnit.middleTextWhiteBold,
+      code: TStyleUnit.smallSubText,
     );
   }
 
   MarkdownStyleSheet _getStyleSheetWhite(BuildContext context) {
     return _getCommonSheet(context, Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
-      p: TextStyleUnit.smallText,
-      h1: TextStyleUnit.largeLargeText,
-      h2: TextStyleUnit.largeTextBold,
-      h3: TextStyleUnit.normalTextBold,
-      h4: TextStyleUnit.middleText,
-      h5: TextStyleUnit.smallText,
-      h6: TextStyleUnit.smallText,
-      strong: TextStyleUnit.middleTextBold,
-      code: TextStyleUnit.smallSubText,
+      p: TStyleUnit.smallText,
+      h1: TStyleUnit.largeLargeText,
+      h2: TStyleUnit.largeTextBold,
+      h3: TStyleUnit.normalTextBold,
+      h4: TStyleUnit.middleText,
+      h5: TStyleUnit.smallText,
+      h6: TStyleUnit.smallText,
+      strong: TStyleUnit.middleTextBold,
+      code: TStyleUnit.smallSubText,
     );
   }
 
   _getStyleSheetTheme(BuildContext context) {
     return _getCommonSheet(context, Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
-      p: TextStyleUnit.smallTextWhite,
-      h1: TextStyleUnit.largeLargeTextWhite,
-      h2: TextStyleUnit.largeTextWhiteBold,
-      h3: TextStyleUnit.normalTextMitWhiteBold,
-      h4: TextStyleUnit.middleTextWhite,
-      h5: TextStyleUnit.smallTextWhite,
-      h6: TextStyleUnit.smallTextWhite,
+      p: TStyleUnit.smallTextWhite,
+      h1: TStyleUnit.largeLargeTextWhite,
+      h2: TStyleUnit.largeTextWhiteBold,
+      h3: TStyleUnit.normalTextMitWhiteBold,
+      h4: TStyleUnit.middleTextWhite,
+      h5: TStyleUnit.smallTextWhite,
+      h6: TStyleUnit.smallTextWhite,
       em: const TextStyle(fontStyle: FontStyle.italic),
-      strong: TextStyleUnit.middleTextWhiteBold,
-      code: TextStyleUnit.smallSubText,
+      strong: TStyleUnit.middleTextWhiteBold,
+      code: TStyleUnit.smallSubText,
     );
   }
 

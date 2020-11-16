@@ -7,21 +7,21 @@ import 'package:flutter_unit/model/widget_model.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 主页状态类
 
-abstract class HomeState extends Equatable {
-  const HomeState();
+abstract class WidgetsState extends Equatable {
+  const WidgetsState();
 
   @override
   List<Object> get props => [];
 }
 
-class WidgetsLoading extends HomeState {
+class WidgetsLoading extends WidgetsState {
   const WidgetsLoading();
 
   @override
   List<Object> get props => [];
 }
 
-class WidgetsLoaded extends HomeState {
+class WidgetsLoaded extends WidgetsState {
   final List<WidgetModel> widgets;
   final WidgetFamily activeFamily;
 
@@ -37,7 +37,7 @@ class WidgetsLoaded extends HomeState {
   }
 }
 
-class WidgetsLoadFailed extends HomeState {
+class WidgetsLoadFailed extends WidgetsState {
   const WidgetsLoadFailed();
 
   @override

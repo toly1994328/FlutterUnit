@@ -9,13 +9,13 @@ import 'package:flutter_unit/model/widget_model.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 
-abstract class HomeEvent extends Equatable {
-  const HomeEvent();
+abstract class WidgetsEvent extends Equatable {
+  const WidgetsEvent();
   @override
   List<Object> get props => [];
 }
 
-class EventTabTap extends HomeEvent {
+class EventTabTap extends WidgetsEvent {
   final WidgetFamily family;
 
   EventTabTap(this.family);

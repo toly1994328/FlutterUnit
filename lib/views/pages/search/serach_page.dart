@@ -6,7 +6,7 @@ import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
+import 'package:flutter_unit/views/items/widget/techno_widget_list_item.dart';
 import 'package:flutter_unit/views/pages/search/app_search_bar.dart';
 import 'package:flutter_unit/views/pages/search/error_page.dart';
 import 'package:flutter_unit/views/common/loading_page.dart';
@@ -88,7 +88,8 @@ class _SearchPageState extends State<SearchPage> {
             ),
             onChange: _doSelectStart,
           ),
-          Divider()
+          Divider(),
+          SizedBox(height: 10,)
         ],
       );
 
