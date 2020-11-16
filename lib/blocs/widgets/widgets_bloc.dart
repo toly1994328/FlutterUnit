@@ -7,20 +7,20 @@ import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 
-import 'home_event.dart';
-import 'home_state.dart';
+import 'widgets_event.dart';
+import 'widgets_state.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-class HomeBloc extends Bloc<HomeEvent, HomeState> {
+class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   final WidgetRepository repository;
 
-  HomeBloc({@required this.repository});
+  WidgetsBloc({@required this.repository});
 
   @override
-  HomeState get initialState => WidgetsLoading();
+  WidgetsState get initialState => WidgetsLoading();
 
   Color get activeHomeColor {
 
@@ -31,13 +31,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   @override
-  Stream<HomeState> mapEventToState(HomeEvent event) async* {
+  Stream<WidgetsState> mapEventToState(WidgetsEvent event) async* {
     if (event is EventTabTap) {
       yield* _mapLoadWidgetToState(event.family);
     }
   }
 
-  Stream<HomeState> _mapLoadWidgetToState(WidgetFamily family) async* {
+  Stream<WidgetsState> _mapLoadWidgetToState(WidgetFamily family) async* {
     yield WidgetsLoading();
     try {
       final widgets = await this.repository.loadWidgets(family);

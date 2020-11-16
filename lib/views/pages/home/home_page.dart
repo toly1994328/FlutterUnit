@@ -9,10 +9,11 @@ import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
+import 'package:flutter_unit/components/project/loading_shower.dart';
 
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
-import 'package:flutter_unit/views/items/home_item_support.dart';
+import 'package:flutter_unit/views/items/widget/home_item_support.dart';
 import 'package:flutter_unit/views/pages/home/toly_app_bar.dart';
 
 import 'background.dart';
@@ -28,9 +29,8 @@ class _HomePageState extends State<HomePage>
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((callback) {
-      OverlayToolWrapper.of(context).showFloating();
-    });
+    WidgetsBinding.instance.addPostFrameCallback(
+        (_) => OverlayToolWrapper.of(context).showFloating());
   }
 
   @override
@@ -38,19 +38,18 @@ class _HomePageState extends State<HomePage>
     super.build(context);
 
     return Scaffold(
-        body: BlocBuilder<HomeBloc, HomeState>(builder: (ctx, state) {
-      return Stack(
-        children: <Widget>[
-          BlocBuilder<GlobalBloc, GlobalState>(builder: _buildBackground),
-          CustomScrollView(
-            slivers: <Widget>[
-              _buildPersistentHeader(),
-              _buildContent(ctx, state),
-            ],
-          ),
-        ],
-      );
-    }));
+        body: Stack(
+      children: <Widget>[
+        BlocBuilder<GlobalBloc, GlobalState>(builder: _buildBackground),
+        BlocBuilder<WidgetsBloc, WidgetsState>(
+            builder: (_, state) => CustomScrollView(
+                  slivers: <Widget>[
+                    _buildPersistentHeader(),
+                    _buildContent(state),
+                  ],
+                ))
+      ],
+    ));
   }
 
   Widget _buildPersistentHeader() => SliverPersistentHeader(
@@ -60,7 +59,6 @@ class _HomePageState extends State<HomePage>
           maxHeight: 120.0,
           childBuilder: (offset, max, min) {
             double dy = max - 25 - offset;
-
             if (dy < min - 25) {
               dy = min - 25;
             }
@@ -77,16 +75,10 @@ class _HomePageState extends State<HomePage>
     return Container();
   }
 
-  Widget _buildContent(BuildContext context, HomeState state) {
+  Widget _buildContent(WidgetsState state) {
     if (state is WidgetsLoading) {
-      // return SliverToBoxAdapter(
-      //   child: Center(
-      //     child: PlateLoading(),
-      //   ),
-      // );
-      //
-      return SliverToBoxAdapter(
-        child: Container(),
+      return SliverFillRemaining(
+        child: LoadingShower(),
       );
     }
 
@@ -115,6 +107,7 @@ class _HomePageState extends State<HomePage>
         condition: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (_, state) {
           return FeedbackWidget(
+              a: 0.95,
               duration: const Duration(milliseconds: 200),
               onPressed: () => _toDetailPage(model),
               child: HomeItemSupport.get(model, state.itemStyleIndex));
@@ -122,7 +115,7 @@ class _HomePageState extends State<HomePage>
       );
 
   _switchTab(int index, Color color) {
-    BlocProvider.of<HomeBloc>(context)
+    BlocProvider.of<WidgetsBloc>(context)
         .add(EventTabTap(Convert.toFamily(index)));
   }
 

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/model/widget_model.dart';
+import 'package:flutter_unit/views/items/widget/simple_widget_list_item.dart';
 
 import 'coupon_widget_list_item.dart';
 import 'techno_widget_list_item.dart';
@@ -17,29 +18,29 @@ class HomeItemSupport {
     int index,
   ) {
     switch (index) {
-      case 0:
-        return TechnoWidgetListItem(data: model);
       case 1:
-        return TechnoWidgetListItem(data: model, isClip: false);
+        return TechnoWidgetListItem(data: model);
       case 2:
-        return CouponWidgetListItem(data: model);
+        return SimpleWidgetListItem(data: model);
       case 3:
-        return CouponWidgetListItem(hasTopHole: false, data: model);
+        return CouponWidgetListItem(data: model);
       case 4:
+        return CouponWidgetListItem(hasTopHole: false, data: model);
+      case 5:
         return CouponWidgetListItem(
             hasTopHole: true, hasBottomHole: true, data: model);
-      case 5:
+      case 6:
         return CouponWidgetListItem(isClip: false, data: model);
     }
     return TechnoWidgetListItem(data: model);
   }
 
   static List<Widget> itemSimples() => [
-        TechnoWidgetListItem(data: getContainer()),
-        TechnoWidgetListItem(
-          data: getContainer(),
-          isClip: false,
+        Container(
+          height: 10,
         ),
+        TechnoWidgetListItem(data: getContainer()),
+        SimpleWidgetListItem(data: getContainer()),
         CouponWidgetListItem(data: getContainer()),
         CouponWidgetListItem(hasTopHole: false, data: getContainer()),
         CouponWidgetListItem(

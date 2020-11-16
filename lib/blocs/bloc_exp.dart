@@ -24,9 +24,9 @@ export 'global/global_bloc.dart';
 export 'global/global_state.dart';
 export 'global/global_event.dart';
 
-export 'home/home_bloc.dart';
-export 'home/home_state.dart';
-export 'home/home_event.dart';
+export 'widgets/widgets_bloc.dart';
+export 'widgets/widgets_state.dart';
+export 'widgets/widgets_event.dart';
 
 
 

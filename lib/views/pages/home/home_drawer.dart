@@ -24,7 +24,7 @@ class HomeDrawer extends StatelessWidget {
 
   Widget _buildChild(BuildContext context) {
 
-    final Color color = BlocProvider.of<HomeBloc>(context).activeHomeColor;
+    final Color color = BlocProvider.of<WidgetsBloc>(context).activeHomeColor;
 
     return Container(
         color: color.withAlpha(33),

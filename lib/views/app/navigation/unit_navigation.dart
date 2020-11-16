@@ -38,10 +38,10 @@ class _UnitNavigationState extends State<UnitNavigation> {
   Widget build(BuildContext context) {
 
 
-    return BlocBuilder<HomeBloc, HomeState>(
+    return BlocBuilder<WidgetsBloc, WidgetsState>(
       builder: (_, state) {
 
-        final Color color =  BlocProvider.of<HomeBloc>(context).activeHomeColor;
+        final Color color =  BlocProvider.of<WidgetsBloc>(context).activeHomeColor;
 
 
         return Scaffold(

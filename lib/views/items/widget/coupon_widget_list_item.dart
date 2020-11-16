@@ -27,7 +27,8 @@ class CouponWidgetListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+      margin: const EdgeInsets.only(bottom: 10,top:2,left: 10,right: 10),
+
       child: Stack(
         children: <Widget>[
           isClip

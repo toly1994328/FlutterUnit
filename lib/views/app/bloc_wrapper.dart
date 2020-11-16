@@ -34,8 +34,8 @@ class _BlocWrapperState extends State<BlocWrapper> {
       BlocProvider<GlobalBloc>(
           create: (_) => GlobalBloc(storage)..add(EventInitApp())),
 
-      BlocProvider<HomeBloc>(
-          create: (_) => HomeBloc(repository: repository)
+      BlocProvider<WidgetsBloc>(
+          create: (_) => WidgetsBloc(repository: repository)
             ..add(EventTabTap(WidgetFamily.statelessWidget))),
 
       BlocProvider<DetailBloc>(

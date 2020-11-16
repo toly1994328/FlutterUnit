@@ -1,64 +1,68 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_star/flutter_star.dart';
+import 'package:flutter_star/star.dart';
+import 'package:flutter_star/star_score.dart';
 import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/app/res/style/shape/techno_shape.dart';
-import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
-import 'package:flutter_unit/blocs/collect/collect_state.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/circle_text.dart';
 import 'package:flutter_unit/components/permanent/tag.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
-class TechnoWidgetListItem extends StatelessWidget {
-  final WidgetModel data;
-  final bool isClip;
+/// create by 张风捷特烈 on 2020/11/17
+/// contact me by email 1981462002@qq.com
+/// 说明:
 
-  TechnoWidgetListItem({this.data, this.isClip = true});
+class SimpleWidgetListItem extends StatelessWidget {
+  final WidgetModel data;
+
+  SimpleWidgetListItem({
+    this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+
+      decoration: BoxDecoration(
+          color: itemColor.withAlpha(66),
+        borderRadius: BorderRadius.circular(6)
+      ),
+      margin: const EdgeInsets.only(bottom: 10,top:2,left: 10,right: 10),
       child: Stack(
         children: <Widget>[
-          Material(
-            color: itemColor.withAlpha(66),
-            shape: isClip ? TechnoShapeBorder(color: itemColor) : null,
-            child: Container(
-              height: 95,
-              padding: const EdgeInsets.only(
-                  top: 10, left: 10, right: 10, bottom: 5),
-              child: Row(
-                children: <Widget>[
-                  Wrap(
-                    spacing: 5,
-                    direction: Axis.vertical,
-                    alignment: WrapAlignment.center,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: <Widget>[
-                      Hero(
-                          tag: "hero_widget_image_${data.id}",
-                          child: _buildLeading()),
-                      StarScore(
-                        star: Star(
-                            emptyColor: Colors.white,
-                            size: 12,
-                            fillColor: itemColor),
-                        score: data.lever,
-                      )
-                    ],
+          Container(
+            height: 95,
+            padding:
+                const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+            child: Row(
+              children: <Widget>[
+                Wrap(
+                  spacing: 5,
+                  direction: Axis.vertical,
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: <Widget>[
+                    Hero(
+                        tag: "hero_widget_image_${data.id}",
+                        child: _buildLeading()),
+                    StarScore(
+                      star: Star(
+                          emptyColor: Colors.white,
+                          size: 12,
+                          fillColor: itemColor),
+                      score: data.lever,
+                    )
+                  ],
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[_buildTitle(), _buildSummary()],
                   ),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[_buildTitle(), _buildSummary()],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           _buildCollectTag(Theme.of(context).primaryColor)
@@ -75,10 +79,10 @@ class TechnoWidgetListItem extends StatelessWidget {
           bool show = s.widgets.contains(data);
           return Opacity(
             opacity: show ? 1.0 : 0.0,
-            child:  SizedOverflowBox(
+            child: SizedOverflowBox(
               alignment: Alignment.bottomCenter,
               size: const Size(0, 30 - 8.0),
-              child:  Tag(
+              child: Tag(
                 color: color,
                 shadowHeight: 8.0,
                 size: const Size(20, 30),
