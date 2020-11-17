@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 class TechnoShapeBorder extends ShapeBorder {
   final Path outLinePath = Path();
   final Paint _paint = Paint();
-  final Path innerLinePath = Path();
   final Path innerLinePathTop = Path();
   final Color color;
 
@@ -45,30 +44,30 @@ class TechnoShapeBorder extends ShapeBorder {
 
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+    double width = rect.width;
+
     outLinePath
       ..moveTo(cornerWidth, 0)
-      ..lineTo(rect.width - cornerWidth, 0)
-      ..lineTo(rect.width, cornerWidth)
-      ..lineTo(rect.width, rect.height - cornerWidth)
-      ..lineTo(rect.width - cornerWidth, rect.height)
-      ..lineTo(cornerWidth, rect.height)
+      ..relativeLineTo(width - cornerWidth*2, 0)
+      ..relativeLineTo(cornerWidth, cornerWidth)
+      ..relativeLineTo(0,rect.height - cornerWidth*2)
+      ..relativeLineTo( - cornerWidth, cornerWidth)
+      ..relativeLineTo(-((width-innerRate*2*width)/2-cornerWidth-2*spanWidth), 0)
+      ..relativeLineTo(-spanWidth*2, -spanWidth)
+      ..relativeLineTo(-rect.width * innerRate * 2, 0)
+      ..relativeLineTo(-spanWidth * 2, spanWidth)
+      ..relativeLineTo(-((width-innerRate*2*width)/2-cornerWidth-2*spanWidth), 0)
       ..lineTo(0, rect.height - cornerWidth)
       ..lineTo(0, cornerWidth)
       ..close();
-    innerLinePath
-      ..moveTo(rect.width / 2, rect.height)
-      ..relativeLineTo(rect.width * innerRate, 0)
-      ..relativeLineTo(-spanWidth * 2, -spanWidth)
-      ..relativeLineTo(-rect.width * innerRate * 2, 0)
-      ..relativeLineTo(-spanWidth * 2, spanWidth)
-      ..close();
-    return Path.combine(PathOperation.difference, outLinePath, innerLinePath);
+
+    return outLinePath;
   }
 
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
     canvas.drawPath(
-        Path.combine(PathOperation.difference, outLinePath, innerLinePath),
+        outLinePath,
         _paint..style = PaintingStyle.stroke);
 
     innerLinePathTop
@@ -78,7 +77,7 @@ class TechnoShapeBorder extends ShapeBorder {
       ..relativeLineTo(-rect.width * innerRate * 2, 0)
       ..relativeLineTo(-spanWidth * 2, -spanWidth)
       ..close();
-    canvas.drawPath(innerLinePathTop, _paint..style = PaintingStyle.fill);
+    canvas.drawPath(innerLinePathTop.shift(Offset(spanWidth*2,0)), _paint..style = PaintingStyle.fill);
   }
 
   @override
