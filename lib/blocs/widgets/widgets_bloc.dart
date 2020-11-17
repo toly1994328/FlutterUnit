@@ -44,7 +44,7 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
       yield WidgetsLoaded(widgets: widgets, activeFamily: family);
     } catch (err) {
       print(err);
-      yield WidgetsLoadFailed();
+      yield WidgetsLoadFailed(err.toString());
     }
   }
 }

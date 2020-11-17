@@ -9,7 +9,9 @@ import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
-import 'package:flutter_unit/components/project/loading_shower.dart';
+import 'package:flutter_unit/components/project/default/empty_shower.dart';
+import 'package:flutter_unit/components/project/default/error_shower.dart';
+import 'package:flutter_unit/components/project/default/loading_shower.dart';
 
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
@@ -84,7 +86,12 @@ class _HomePageState extends State<HomePage>
 
     if (state is WidgetsLoaded) {
       List<WidgetModel> items = state.widgets;
-      if (items.isEmpty) return EmptyPage();
+      if (items.isEmpty)
+        return SliverFillRemaining(
+          child: EmptyShower(
+            message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",
+          ),
+        );
       return SliverList(
         delegate: SliverChildBuilderDelegate(
             (_, int index) => _buildHomeItem(items[index]),
@@ -93,11 +100,10 @@ class _HomePageState extends State<HomePage>
     }
 
     if (state is WidgetsLoadFailed) {
-      return SliverToBoxAdapter(
-        child: Container(
-          child: Text('加载数据异常'),
-        ),
-      );
+      return SliverFillRemaining(
+          child: ErrorShower(
+        error: "数据加载异常:\n${state.error}",
+      ));
     }
     return Container();
   }
