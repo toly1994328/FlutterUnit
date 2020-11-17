@@ -12,6 +12,9 @@ class ColorUnit{
   static const Color input_hit_text_color = Color(0xff939EA7);
   static const Color head_text_color = Color(0xff666666);
 
+  // 缺省相关
 
+  static const Color error_color = Colors.red;
+  static const Color warning_color = Colors.orangeAccent;
 
 }

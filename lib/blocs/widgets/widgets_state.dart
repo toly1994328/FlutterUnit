@@ -38,8 +38,11 @@ class WidgetsLoaded extends WidgetsState {
 }
 
 class WidgetsLoadFailed extends WidgetsState {
-  const WidgetsLoadFailed();
+  final String error;
+
+
+  const WidgetsLoadFailed(this.error);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [error];
 }

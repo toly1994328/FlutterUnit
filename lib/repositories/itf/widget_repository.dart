@@ -1,5 +1,3 @@
-
-
 import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/model/node_model.dart';
@@ -9,12 +7,12 @@ import 'package:flutter_unit/model/widget_model.dart';
 /// contact me by email 1981462002@qq.com
 
 abstract class WidgetRepository {
-
   Future<List<WidgetModel>> loadWidgets(WidgetFamily family);
 
   Future<List<WidgetModel>> loadWidget(List<int> ids);
 
   Future<List<WidgetModel>> searchWidgets(SearchArgs args);
+
   Future<List<NodeModel>> loadNode(WidgetModel widgetModel);
 
   Future<void> toggleCollect(int id);

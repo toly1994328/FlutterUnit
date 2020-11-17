@@ -13,7 +13,7 @@ import 'package:flutter_unit/views/common/loading_page.dart';
 import 'package:flutter_unit/views/pages/search/not_search_page.dart';
 import 'package:flutter_unit/components/permanent/multi_chip_filter.dart';
 
-import 'empty_page.dart';
+import '../../../components/project/default/empty_shower.dart';
 
 
 class SearchPage extends StatefulWidget {
@@ -98,7 +98,7 @@ class _SearchPageState extends State<SearchPage> {
     if (state is SearchStateLoading) return SliverToBoxAdapter(child: LoadingPage());
     if (state is SearchStateError) return SliverToBoxAdapter(child: ErrorPage());
     if (state is SearchStateSuccess) return _buildSliverList(state.result);
-    if (state is SearchStateEmpty) return SliverToBoxAdapter(child: EmptyPage());
+    if (state is SearchStateEmpty) return SliverToBoxAdapter(child: EmptyShower(message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",));
     return NotSearchPage();
   }
 
