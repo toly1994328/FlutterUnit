@@ -126,23 +126,26 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
                   offset = Offset(x, y - boxHeight / 2);
                   entry.markNeedsBuild();
                 },
-                child: Container(
-                  width: outWidth,
-                  height: outWidth,
-                  padding: EdgeInsets.all(4),
-                  child: Image.asset('assets/images/icon_head.webp'),
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      boxShadow: [
-                        BoxShadow(
-                            color:
-                                Theme.of(context).primaryColor.withAlpha(128),
-                            offset: Offset(.5, .5),
-                            spreadRadius: .5,
-                            blurRadius: .5)
-                      ],
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(outWidth / 2))),
+                child: Opacity(
+                  opacity: 0.7,
+                  child: Container(
+                    width: outWidth,
+                    height: outWidth,
+                    padding: EdgeInsets.all(4),
+                    child: Image.asset('assets/images/icon_head.webp'),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        boxShadow: [
+                          BoxShadow(
+                              color:
+                                  Theme.of(context).primaryColor.withAlpha(128),
+                              offset: Offset(.5, .5),
+                              spreadRadius: .5,
+                              blurRadius: .5)
+                        ],
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(outWidth / 2))),
+                  ),
                 )),
             PictureFrame(
               alignment: Alignment.center,
