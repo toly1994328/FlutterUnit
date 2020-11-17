@@ -7,6 +7,9 @@ import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/views/pages/gallery/picture_frame.dart';
 
+import 'burst_flow.dart';
+import 'color_wrapper.dart';
+
 /// create by 张风捷特烈 on 2020/10/21
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -56,8 +59,8 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((callback) {
-      var px = MediaQuery.of(context).size.width - (outWidth);
-      var py = 120.0;
+      var px = MediaQuery.of(context).size.width - 100;
+      var py = 40.0;
       offset = Offset(px, py);
 
       _ctrl = AnimationController(
@@ -86,112 +89,143 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     entry.markNeedsBuild();
   }
 
-  ///绘制悬浮控件
-  _buildFloating() => Material(
-        color: Colors.transparent,
-        child: Row(
-          children: [
-            GestureDetector(
-                onTap: () async {
-                  if (out) {
-                    close();
-                  } else {
-                    open();
-                  }
-                },
-                onPanUpdate: (DragUpdateDetails details) {
-                  // offset = offset + details.delta;
-                  double y = details.globalPosition.dy;
-                  double x = details.globalPosition.dx;
-                  if (y < 50) {
-                    y = 50;
-                  }
-                  var px = MediaQuery.of(context).size.width - (outWidth);
+  final double circleRadius = 80;
+  final double menuSize = 36;
 
-                  if (x < px - (width - outWidth)) {
-                    x = px - (width - outWidth);
-                    out = true;
-                  }
+  GlobalKey<BurstFlowState> burstFlowKey = GlobalKey<BurstFlowState>();
 
-                  if (x > px) {
-                    out = false;
+  _buildFloating() {
+    Color wrapColor = Colors.blue.withOpacity(0.6);
 
-                    x = px;
-                  }
+    bool left = offset.dx < 100;
+    print('-----left----${offset.dx}----');
 
-                  if (y > MediaQuery.of(context).size.height - 50) {
-                    y = MediaQuery.of(context).size.height - 50;
-                  }
+    return Container(
+      width: circleRadius * 2,
+      height: circleRadius * 2,
+      alignment: Alignment.center,
+      child: IconTheme(
+        data: IconTheme.of(context).copyWith(color: Colors.white, size: 18),
+        child: BurstFlow(
+          key:burstFlowKey,
+            startAngle: !left ? 90.0 + 15 : -90 + 15.0,
+            swapAngle: !left ? 180.0 - 15 * 2 : 180.0 - 15 * 2.0,
+            menu: GestureDetector(
+              onPanEnd: (details) {
+                double y = offset.dy;
+                double x = offset.dx;
 
-                  offset = Offset(x, y - boxHeight / 2);
-                  entry.markNeedsBuild();
-                },
-                child: Opacity(
-                  opacity: 0.7,
+                if (offset.dx >
+                    MediaQuery.of(context).size.width / 2 - circleRadius) {
+                  x = MediaQuery.of(context).size.width -
+                      menuSize / 2 -
+                      circleRadius;
+                } else {
+                  x = menuSize / 2 - circleRadius;
+                }
+
+                offset = Offset(x, y);
+                entry.markNeedsBuild();
+              },
+              onPanUpdate: (DragUpdateDetails details) {
+                double y = details.globalPosition.dy - circleRadius;
+                double x = details.globalPosition.dx - circleRadius;
+                if (x < menuSize / 2 - circleRadius) {
+                  x = menuSize / 2 - circleRadius;
+                }
+
+                if (y < menuSize / 2 - circleRadius) {
+                  y = menuSize / 2 - circleRadius;
+                }
+
+                if (x >
+                    MediaQuery.of(context).size.width -
+                        menuSize / 2 -
+                        circleRadius) {
+                  x = MediaQuery.of(context).size.width -
+                      menuSize / 2 -
+                      circleRadius;
+                }
+
+                if (y >
+                    MediaQuery.of(context).size.height -
+                        menuSize / 2 -
+                        circleRadius) {
+                  y = MediaQuery.of(context).size.height -
+                      menuSize / 2 -
+                      circleRadius;
+                }
+                offset = Offset(x, y);
+                entry.markNeedsBuild();
+              },
+              child: Opacity(
+                opacity: 0.9,
+                child: Container(
+                  width: menuSize,
+                  height: menuSize,
+                  padding: EdgeInsets.all(1.5),
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(menuSize / 2)),
+
                   child: Container(
-                    width: outWidth,
-                    height: outWidth,
-                    padding: EdgeInsets.all(4),
-                    child: Image.asset('assets/images/icon_head.webp'),
                     decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        boxShadow: [
-                          BoxShadow(
-                              color:
-                                  Theme.of(context).primaryColor.withAlpha(128),
-                              offset: Offset(.5, .5),
-                              spreadRadius: .5,
-                              blurRadius: .5)
-                        ],
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(outWidth / 2))),
+                        color: Colors.blue,
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/icon_head.webp')),
+                        borderRadius: BorderRadius.circular(menuSize / 2)),
                   ),
-                )),
-            PictureFrame(
-              alignment: Alignment.center,
-              marge: EdgeInsets.only(left: 8),
-              height: boxHeight,
-              width: width - outWidth + 15,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: [
-                    buildItem(TolyIcon.icon_bug, () {
-                      BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
-                      Navigator.of(context).pushNamed(UnitRouter.point);
-                    }),
-                    buildItem(Icons.palette, () {
-                      Navigator.of(context).pushNamed(UnitRouter.galley);
-                    }),
-                    buildItem(Icons.widgets, () {
-                      // Navigator.of(context).pushNamed(UnitRouter.galley);
-                    }),
-                    buildItem(TolyIcon.icon_tag, () {
-                      // Navigator.of(context).pushNamed(UnitRouter.galley);
-                    }),
-                    buildItem(Icons.arrow_forward_outlined, () {
-                      Scaffold.of(context).openDrawer();
-                    }),
-                    buildItem(Icons.settings, () {
-                      Navigator.of(context).pushNamed(UnitRouter.setting);
-                    }),
-                    buildItem(Icons.arrow_back, () {
-                      Scaffold.of(context).openEndDrawer();
-                    }),
-                    buildItem(Icons.close, () {
-                      if (Navigator.of(context).canPop()) {
-                        Navigator.of(context).pop();
-                      }
-                    }),
-                  ],
                 ),
               ),
             ),
-          ],
-        ),
-      );
+            children: [
+              FeedbackWidget(
+                  onPressed: () {
+                    if (Navigator.of(context).canPop()) {
+                      Navigator.of(context).pop();
+
+
+                    }
+                    burstFlowKey.currentState.toggle();
+                  },
+                  child: Circled(color: wrapColor, child: Icon(Icons.close))),
+              FeedbackWidget(
+                  onPressed: () {
+                    BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
+                    Navigator.of(context).pushNamed(UnitRouter.point);
+                    burstFlowKey.currentState.toggle();
+
+                  },
+                  child: Circled(
+                      color: wrapColor,
+                      radius: 15,
+                      child: Icon(TolyIcon.icon_bug))),
+              FeedbackWidget(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(UnitRouter.galley);
+                    burstFlowKey.currentState.toggle();
+
+                  },
+                  child: Circled(
+                      color: wrapColor,
+                      radius: 15,
+                      child: Icon(Icons.palette))),
+              FeedbackWidget(
+                  onPressed: () {
+                    burstFlowKey.currentState.toggle();
+                  },
+                  child: Circled(color: wrapColor, child: Icon(Icons.widgets))),
+              FeedbackWidget(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(UnitRouter.setting);
+                    burstFlowKey.currentState.toggle();
+
+                  },
+                  child: Circled(color: wrapColor, child: Icon(Icons.settings))),
+            ]),
+      ),
+    );
+  }
 
   Widget buildItem(IconData icon, Function onPress) {
     return FeedbackWidget(
