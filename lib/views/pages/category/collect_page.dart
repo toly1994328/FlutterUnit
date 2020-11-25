@@ -41,7 +41,7 @@ class _CollectPageState extends State<CollectPage>
                     sliver: _buildAppBar(_topContext, innerBoxIsScrolled)),
               ];
             },
-            body:  TabBarView(
+            body: TabBarView(
               children: <Widget>[
                 CategoryPage(),
                 DefaultCollectPage(),

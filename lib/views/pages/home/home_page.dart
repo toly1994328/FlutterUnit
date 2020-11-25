@@ -12,6 +12,7 @@ import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/components/project/default/empty_shower.dart';
 import 'package:flutter_unit/components/project/default/error_shower.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
+import 'package:flutter_unit/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/common/empty_page.dart';
@@ -40,6 +41,7 @@ class _HomePageState extends State<HomePage>
     super.build(context);
 
     return Scaffold(
+      extendBody: true,
         body: Stack(
       children: <Widget>[
         BlocBuilder<GlobalBloc, GlobalState>(builder: _buildBackground),
@@ -48,6 +50,9 @@ class _HomePageState extends State<HomePage>
                   slivers: <Widget>[
                     _buildPersistentHeader(),
                     _buildContent(state),
+                    SliverToBoxAdapter(
+                      child: NoMoreWidget(),
+                    )
                   ],
                 ))
       ],
@@ -57,7 +62,7 @@ class _HomePageState extends State<HomePage>
   Widget _buildPersistentHeader() => SliverPersistentHeader(
       pinned: true,
       delegate: FlexHeaderDelegate(
-          minHeight: 25 + 56.0,
+          minHeight: 35 + 56.0,
           maxHeight: 120.0,
           childBuilder: (offset, max, min) {
             double dy = max - 25 - offset;
