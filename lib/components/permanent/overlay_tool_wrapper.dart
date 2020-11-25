@@ -58,17 +58,15 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   void initState() {
     super.initState();
 
+    _ctrl = AnimationController(
+      duration: Duration(milliseconds: 400),
+      vsync: this,
+    )..addListener(_listenAnimate);
+
     WidgetsBinding.instance.addPostFrameCallback((callback) {
       var px = MediaQuery.of(context).size.width - 100;
-      var py = 40.0;
+      var py = 250.0;
       offset = Offset(px, py);
-
-      _ctrl = AnimationController(
-          duration: Duration(milliseconds: 400),
-          vsync: this,
-          lowerBound: 0,
-          upperBound: width - outWidth)
-        ..addListener(_listenAnimate);
 
       entry = OverlayEntry(
           builder: (context) => Stack(
@@ -83,12 +81,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     });
   }
 
-  void _listenAnimate() {
-    var px = MediaQuery.of(context).size.width - (outWidth);
-    offset = Offset(px - (_ctrl.value), offset.dy);
-    entry.markNeedsBuild();
-  }
-
   final double circleRadius = 80;
   final double menuSize = 36;
 
@@ -98,76 +90,31 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     Color wrapColor = Colors.blue.withOpacity(0.6);
 
     bool left = offset.dx < 100;
-    print('-----left----${offset.dx}----');
 
     return Container(
       width: circleRadius * 2,
       height: circleRadius * 2,
       alignment: Alignment.center,
+      // color: Colors.orangeAccent,
       child: IconTheme(
         data: IconTheme.of(context).copyWith(color: Colors.white, size: 18),
         child: BurstFlow(
-          key:burstFlowKey,
+            key: burstFlowKey,
             startAngle: !left ? 90.0 + 15 : -90 + 15.0,
             swapAngle: !left ? 180.0 - 15 * 2 : 180.0 - 15 * 2.0,
             menu: GestureDetector(
-              onPanEnd: (details) {
-                double y = offset.dy;
-                double x = offset.dx;
-
-                if (offset.dx >
-                    MediaQuery.of(context).size.width / 2 - circleRadius) {
-                  x = MediaQuery.of(context).size.width -
-                      menuSize / 2 -
-                      circleRadius;
-                } else {
-                  x = menuSize / 2 - circleRadius;
-                }
-
-                offset = Offset(x, y);
-                entry.markNeedsBuild();
-              },
-              onPanUpdate: (DragUpdateDetails details) {
-                double y = details.globalPosition.dy - circleRadius;
-                double x = details.globalPosition.dx - circleRadius;
-                if (x < menuSize / 2 - circleRadius) {
-                  x = menuSize / 2 - circleRadius;
-                }
-
-                if (y < menuSize / 2 - circleRadius) {
-                  y = menuSize / 2 - circleRadius;
-                }
-
-                if (x >
-                    MediaQuery.of(context).size.width -
-                        menuSize / 2 -
-                        circleRadius) {
-                  x = MediaQuery.of(context).size.width -
-                      menuSize / 2 -
-                      circleRadius;
-                }
-
-                if (y >
-                    MediaQuery.of(context).size.height -
-                        menuSize / 2 -
-                        circleRadius) {
-                  y = MediaQuery.of(context).size.height -
-                      menuSize / 2 -
-                      circleRadius;
-                }
-                offset = Offset(x, y);
-                entry.markNeedsBuild();
-              },
+              onPanEnd: _onPanEnd,
+              onPanDown: _onPanDown,
+              onPanUpdate: _updatePosition,
               child: Opacity(
                 opacity: 0.9,
                 child: Container(
                   width: menuSize,
                   height: menuSize,
-                  padding: EdgeInsets.all(1.5),
+                  padding: EdgeInsets.all(2),
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(menuSize / 2)),
-
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.blue,
@@ -178,100 +125,117 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
                 ),
               ),
             ),
-            children: [
-              FeedbackWidget(
-                  onPressed: () {
-                    if (Navigator.of(context).canPop()) {
-                      Navigator.of(context).pop();
-
-
-                    }
-                    burstFlowKey.currentState.toggle();
-                  },
-                  child: Circled(color: wrapColor, child: Icon(Icons.close))),
-              FeedbackWidget(
-                  onPressed: () {
-                    BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
-                    Navigator.of(context).pushNamed(UnitRouter.point);
-                    burstFlowKey.currentState.toggle();
-
-                  },
-                  child: Circled(
-                      color: wrapColor,
-                      radius: 15,
-                      child: Icon(TolyIcon.icon_bug))),
-              FeedbackWidget(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(UnitRouter.galley);
-                    burstFlowKey.currentState.toggle();
-
-                  },
-                  child: Circled(
-                      color: wrapColor,
-                      radius: 15,
-                      child: Icon(Icons.palette))),
-              FeedbackWidget(
-                  onPressed: () {
-                    burstFlowKey.currentState.toggle();
-                  },
-                  child: Circled(color: wrapColor, child: Icon(Icons.widgets))),
-              FeedbackWidget(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(UnitRouter.setting);
-                    burstFlowKey.currentState.toggle();
-
-                  },
-                  child: Circled(color: wrapColor, child: Icon(Icons.settings))),
-            ]),
+            children: _buildMenuItems(wrapColor)),
       ),
     );
   }
 
-  Widget buildItem(IconData icon, Function onPress) {
-    return FeedbackWidget(
-      onPressed: () {
-        onPress();
-        close();
-      },
-      child: Circle(
-        radius: 12,
-        color: Theme.of(context).primaryColor,
-        child: Icon(
-          icon,
-          size: 15,
-          color: Colors.white,
-        ),
-      ),
-    );
+  // 构建 菜单 item
+  List<Widget> _buildMenuItems(Color wrapColor) => [
+        FeedbackWidget(
+            onPressed: _doClose,
+            child: Circled(color: wrapColor, child: Icon(Icons.close))),
+        FeedbackWidget(
+            onPressed: _toPoint,
+            child: Circled(
+                color: wrapColor, radius: 15, child: Icon(TolyIcon.icon_bug))),
+        FeedbackWidget(
+            onPressed: _toGalley,
+            child: Circled(
+                color: wrapColor, radius: 15, child: Icon(Icons.palette))),
+        FeedbackWidget(
+            onPressed: _toWidget,
+            child: Circled(color: wrapColor, child: Icon(Icons.widgets))),
+        FeedbackWidget(
+            onPressed: _toSetting,
+            child: Circled(color: wrapColor, child: Icon(Icons.settings))),
+      ];
+
+  // 处理 菜单 item 点击事件
+  void _toSetting() {
+    Navigator.of(context).pushNamed(UnitRouter.setting);
+    burstFlowKey.currentState.toggle();
   }
 
-  void open() {
-    if (out) return;
-    // _ctrl.forward();
-    var px = MediaQuery.of(context).size.width - (outWidth);
-    offset = Offset(px - (width - outWidth), offset.dy);
-    entry.markNeedsBuild();
-    out = true;
+  void _toWidget() {
+    burstFlowKey.currentState.toggle();
   }
 
-  void close() {
-    if (!out) return;
-    var px = MediaQuery.of(context).size.width - (outWidth);
+  void _toGalley() {
+    Navigator.of(context).pushNamed(UnitRouter.galley);
+    burstFlowKey.currentState.toggle();
+  }
+
+  void _toPoint() {
+    BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
+    Navigator.of(context).pushNamed(UnitRouter.point);
+    burstFlowKey.currentState.toggle();
+  }
+
+  void _doClose() {
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+    }
+    burstFlowKey.currentState.toggle();
+  }
+
+  double endx;
+
+  void _onPanEnd(details) {
+    endx = offset.dx;
+    _ctrl.reset();
+    _ctrl.forward();
+
+    // offset = Offset(x, y);
+    // entry.markNeedsBuild();
+  }
+
+  void _listenAnimate() {
+    // var px = MediaQuery.of(context).size.width - (outWidth);
+    // offset = Offset(px - (_ctrl.value), offset.dy);
+    double px;
+    // print(offset.dx);
+    if (offset.dx > MediaQuery.of(context).size.width / 2 - circleRadius) {
+
+      double begin = endx;
+      double end = MediaQuery.of(context).size.width -
+          menuSize / 2 -
+          circleRadius;
+      double t =  _ctrl.value;
+      px = begin + (end - begin) * t; // x = menuSize / 2 - circleRadius;
+
+    } else {
+    double begin = endx;
+    double end = menuSize / 2 - circleRadius;
+    double t =  _ctrl.value;
+    px = begin + (end - begin) * t; // x = menuSize / 2 - circleRadius;
+    }
+
     offset = Offset(px, offset.dy);
     entry.markNeedsBuild();
-    out = false;
   }
 
-  // void toggle() {
-  //   print('=====$out============');
-  //   if (out) {
-  //     _ctrl.reverse();
-  //   } else {
-  //     _ctrl.forward();
-  //   }
-  //   out = !out;
-  //   // entry.markNeedsBuild();
-  // }
+  void _updatePosition(DragUpdateDetails details) {
+    double y = details.globalPosition.dy - circleRadius;
+    double x = details.globalPosition.dx - circleRadius;
+    if (x < menuSize / 2 - circleRadius) {
+      x = menuSize / 2 - circleRadius;
+    }
+
+    if (y < menuSize / 2 - circleRadius) {
+      y = menuSize / 2 - circleRadius;
+    }
+
+    if (x > MediaQuery.of(context).size.width - menuSize / 2 - circleRadius) {
+      x = MediaQuery.of(context).size.width - menuSize / 2 - circleRadius;
+    }
+
+    if (y > MediaQuery.of(context).size.height - menuSize / 2 - circleRadius) {
+      y = MediaQuery.of(context).size.height - menuSize / 2 - circleRadius;
+    }
+    offset = Offset(x, y);
+    entry.markNeedsBuild();
+  }
 
   showFloating() {
     if (!show) {
@@ -280,6 +244,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     }
   }
 
+  //
   hideFloating() {
     if (show) {
       entry.remove();
@@ -291,4 +256,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   Widget build(BuildContext context) {
     return widget.child;
   }
+
+  void _onPanDown(DragDownDetails details) {}
 }

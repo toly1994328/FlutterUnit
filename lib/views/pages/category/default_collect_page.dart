@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/components/project/no_more_widget.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/items/collect_widget_list_item.dart';
 
@@ -27,14 +28,18 @@ class DefaultCollectPage extends StatelessWidget {
               SliverOverlapInjector(
                 handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
               ),
-              _buildContent(context, state)],
+              _buildContent(context, state),
+              SliverToBoxAdapter(
+                child: NoMoreWidget(),
+              )
+            ],
           );
         });
   }
 
   Widget _buildContent(BuildContext context, CollectState state) {
     return SliverPadding(
-      padding: EdgeInsets.only(top:10, left: 10, right: 10, bottom: 40),
+      padding: EdgeInsets.only(top:10, left: 10, right: 10, bottom: 0),
       sliver: SliverGrid(
           delegate: SliverChildBuilderDelegate(
                   (_, index) => Container(

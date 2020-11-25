@@ -36,36 +36,34 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return BlocBuilder<WidgetsBloc, WidgetsState>(
       builder: (_, state) {
-
-        final Color color =  BlocProvider.of<WidgetsBloc>(context).activeHomeColor;
-
+        final Color color =
+            BlocProvider.of<WidgetsBloc>(context).activeHomeColor;
 
         return Scaffold(
-          drawer: HomeDrawer(),
-          //左滑页
-          endDrawer: HomeRightDrawer(),
-          //右滑页
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: _buildSearchButton(color),
-          body: wrapOverlayTool(
-            child: PageView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: _controller,
-              children: <Widget>[
-                HomePage(),
-                CollectPage(),
-              ],
+            extendBody: true,
+            drawer: HomeDrawer(),
+            //左滑页
+            endDrawer: HomeRightDrawer(),
+            //右滑页
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            floatingActionButton: _buildSearchButton(color),
+            body: wrapOverlayTool(
+              child:  PageView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: _controller,
+                  children: <Widget>[
+                   HomePage(),
+                    CollectPage(),
+                  ],
+              ),
             ),
-          ),
-          bottomNavigationBar: UnitBottomBar(
-              color: color,
-              itemData: Cons.ICONS_MAP,
-              onItemClick: _onTapNav));
+            bottomNavigationBar: UnitBottomBar(
+                color: color,
+                itemData: Cons.ICONS_MAP,
+                onItemClick: _onTapNav));
       },
     );
   }
@@ -88,7 +86,8 @@ class _UnitNavigationState extends State<UnitNavigation> {
   }
 
   _onTapNav(int index) {
-    _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    _controller.animateToPage(index,
+        duration: const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 1) {
       BlocProvider.of<CollectBloc>(context).add(EventSetCollectData());
     }

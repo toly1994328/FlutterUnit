@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
+import 'package:flutter_unit/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/views/dialogs/delete_category_dialog.dart';
@@ -28,7 +29,11 @@ class CategoryPage extends StatelessWidget {
             SliverOverlapInjector(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
             ),
-            _buildContent(context, state)],
+            _buildContent(context, state),
+            SliverToBoxAdapter(
+              child: NoMoreWidget(),
+            )
+          ],
         );
       }
       return Container();
@@ -37,7 +42,7 @@ class CategoryPage extends StatelessWidget {
 
   _buildContent(BuildContext context, CategoryLoadedState state) {
     return SliverPadding(
-      padding: EdgeInsets.only(top:10, left: 10, right: 10, bottom: 40),
+      padding: EdgeInsets.only(top:10, left: 10, right: 10, bottom: 0),
       sliver: SliverGrid(
           delegate: SliverChildBuilderDelegate(
                   (_, index) => Container(
