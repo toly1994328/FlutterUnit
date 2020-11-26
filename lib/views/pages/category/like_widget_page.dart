@@ -10,9 +10,9 @@ import 'package:flutter_unit/views/items/collect_widget_list_item.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 
-class DefaultCollectPage extends StatelessWidget {
+class LikeWidgetPage extends StatelessWidget {
 
-  final gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
+  final SliverGridDelegate gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
     mainAxisSpacing: 10,
     crossAxisSpacing: 10,
@@ -21,7 +21,7 @@ class DefaultCollectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  BlocBuilder<CollectBloc, CollectState>(
+    return  BlocBuilder<LikeWidgetBloc, LikeWidgetState>(
         builder: (ctx, state) {
           return CustomScrollView(
             slivers: <Widget>[
@@ -37,7 +37,7 @@ class DefaultCollectPage extends StatelessWidget {
         });
   }
 
-  Widget _buildContent(BuildContext context, CollectState state) {
+  Widget _buildContent(BuildContext context, LikeWidgetState state) {
     return SliverPadding(
       padding: EdgeInsets.only(top:10, left: 10, right: 10, bottom: 0),
       sliver: SliverGrid(
@@ -58,8 +58,8 @@ class DefaultCollectPage extends StatelessWidget {
   }
 
   _deleteCollect(BuildContext context, WidgetModel model) =>
-      BlocProvider.of<CollectBloc>(context)
-          .add(ToggleCollectEvent(id: model.id));
+      BlocProvider.of<LikeWidgetBloc>(context)
+          .add(ToggleLikeWidgetEvent(id: model.id));
 
   _toDetailPage(BuildContext context, WidgetModel model) {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));

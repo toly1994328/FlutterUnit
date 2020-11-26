@@ -75,7 +75,7 @@ class SimpleWidgetListItem extends StatelessWidget {
     return Positioned(
         top: 0,
         right: 40,
-        child: BlocBuilder<CollectBloc, CollectState>(builder: (_, s) {
+        child: BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (_, s) {
           bool show = s.widgets.contains(data);
           return Opacity(
             opacity: show ? 1.0 : 0.0,

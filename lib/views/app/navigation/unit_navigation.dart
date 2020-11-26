@@ -89,7 +89,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
     _controller.animateToPage(index,
         duration: const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 1) {
-      BlocProvider.of<CollectBloc>(context).add(EventSetCollectData());
+      BlocProvider.of<LikeWidgetBloc>(context).add(EventSetCollectData());
     }
   }
 }
