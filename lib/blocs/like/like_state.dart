@@ -5,10 +5,10 @@ import 'package:flutter_unit/model/widget_model.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 
 
-class CollectState extends Equatable {
+class LikeWidgetState extends Equatable {
   final List<WidgetModel> widgets;
 
-  CollectState({this.widgets});
+  LikeWidgetState({this.widgets});
 
   @override
   // TODO: implement props

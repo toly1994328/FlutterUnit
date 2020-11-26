@@ -46,8 +46,8 @@ class _BlocWrapperState extends State<BlocWrapper> {
           BlocProvider<CategoryBloc>(
               create: (_) => categoryBloc..add(EventLoadCategory())),
 
-          BlocProvider<CollectBloc>(
-              create: (_) => CollectBloc(repository: repository)
+          BlocProvider<LikeWidgetBloc>(
+              create: (_) => LikeWidgetBloc(repository: repository)
                 ..add(EventSetCollectData())),
 
           BlocProvider<CategoryWidgetBloc>(

@@ -7,7 +7,7 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 import 'category_page.dart';
-import 'default_collect_page.dart';
+import 'like_widget_page.dart';
 
 class CollectPage extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _CollectPageState extends State<CollectPage>
 
   final _tabs = [
     '收藏集录',
-    '默认收藏',
+    '珍藏组件',
   ];
 
   @override
@@ -44,7 +44,7 @@ class _CollectPageState extends State<CollectPage>
             body: TabBarView(
               children: <Widget>[
                 CategoryPage(),
-                DefaultCollectPage(),
+                LikeWidgetPage(),
               ],
             ),
           ),

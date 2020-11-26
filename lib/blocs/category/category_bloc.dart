@@ -41,8 +41,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     if (event is EventAddCategory) {
       CategoryPo categoryPo = CategoryPo(
           name: event.name,
-          color: event.color ??
-              ColorUtils.colorString(UnitColor.collectColorSupport[0]),
+          color: event.color ?? ColorUtils.colorString(UnitColor.collectColorSupport[0]),
           info: event.info ?? '这里什么都没有...',
           created: DateTime.now(),
           updated: DateTime.now());

@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/style/shape/coupon_shape_border.dart';
-import 'package:flutter_unit/blocs/collect/collect_bloc.dart';
-import 'package:flutter_unit/blocs/collect/collect_state.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/circle_text.dart';
 import 'package:flutter_unit/components/permanent/tag.dart';
@@ -95,7 +94,7 @@ class CouponWidgetListItem extends StatelessWidget {
     return Positioned(
         top: 0,
         right: 40,
-        child: BlocBuilder<CollectBloc, CollectState>(builder: (_, s) {
+        child: BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (_, s) {
           bool show = s.widgets.contains(data);
           return Opacity(
             opacity: show ? 1.0 : 0.0,
