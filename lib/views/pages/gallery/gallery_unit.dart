@@ -1,5 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
 
 /// create by 张风捷特烈 on 2020/11/28
 /// contact me by email 1981462002@qq.com
@@ -22,16 +27,15 @@ class _GalleryUnitState extends State<GalleryUnit> {
   void initState() {
     super.initState();
     _position = _position + _firstOffset;
-    factor.value = ((_position - _firstOffset + 1) % 5) / 5 == 0
-        ? 1
-        : ((_position - _firstOffset + 1) % 5) / 5;
+
+    double value = ((_position - _firstOffset + 1) % 5) / 5;
+    factor.value = value == 0 ? 1 : value;
     _ctrl = PageController(
       viewportFraction: 0.9,
       initialPage: _position,
     )..addListener(() {
-        factor.value = ((_position - _firstOffset + 1) % 5) / 5 == 0
-            ? 1
-            : ((_position - _firstOffset + 1) % 5) / 5;
+        double value = ((_position - _firstOffset + 1) % 5) / 5;
+        factor.value = value == 0 ? 1 : value;
       });
   }
 
@@ -41,9 +45,9 @@ class _GalleryUnitState extends State<GalleryUnit> {
     _ctrl.dispose();
   }
 
-  Color get color => Colors.red;
+  Color get color => BlocProvider.of<WidgetsBloc>(context).state.color;
 
-  Color get nextColor => Colors.blue;
+  Color get nextColor => BlocProvider.of<WidgetsBloc>(context).state.nextColor;
 
   @override
   Widget build(BuildContext context) {
@@ -76,65 +80,59 @@ class _GalleryUnitState extends State<GalleryUnit> {
     );
   }
 
+  final jsonStr = """
+[
+  {
+    "image":"assets/images/anim_draw.webp",
+    "name":"基础绘制"
+  },
+    {
+    "image":"assets/images/draw_bg3.webp",
+    "name":"动画绘制"
+  },
+    {
+    "image":"assets/images/base_draw.webp",
+        "name":"手势绘制"
+  },
+    {
+    "image":"assets/images/draw_bg4.webp",
+    "name":"趣味绘制"
+  },
+    {
+    "image":"assets/images/caver.webp",
+    "name":"艺术画廊"
+  }
+]
+""";
+
   Widget _buildTitle(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
+      alignment: Alignment(0, 0.3),
       height: MediaQuery.of(context).size.height * 0.25,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            TolyIcon.kujialeqiyezhan_tiaosepan,
-            color: Colors.white,
-            size: 45,
+          FlutterLogo(
+            size: 40,
           ),
           SizedBox(
-            width: 20,
+            width: 10,
           ),
           Text(
             "绘制集录",
-            style: TextStyle(fontSize: 30, color: Colors.white),
+            style: TextStyle(fontSize: 26, color: Colors.white),
           ),
         ],
       ),
     );
   }
 
-  
-  final List<Widget> testWidgets = [
-    Container(
-        decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ))),
-    Container(
-        decoration: BoxDecoration(
-            color: Colors.yellow,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ))),
-    Container(
-        decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ))),
-    Container(
-        decoration: BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ))),
-    Container(
-        decoration: BoxDecoration(
-            color: Colors.orange,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ))),
-  ];
-  
   Widget _buildContent() {
+    final List<Widget> widgets = (json.decode(jsonStr) as List)
+        .map((e) => GalleryCardItem(
+              galleryInfo: GalleryInfo.fromJson(e),
+            ))
+        .toList();
 
     return Container(
         padding: EdgeInsets.only(bottom: 80, top: 40),
@@ -161,9 +159,9 @@ class _GalleryUnitState extends State<GalleryUnit> {
                           transform: Matrix4.diagonal3Values(1.0, value, 1.0),
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: testWidgets[fixPosition(
-                                index, _firstOffset, testWidgets.length)],
+                            padding: const EdgeInsets.all(6.0),
+                            child: widgets[fixPosition(
+                                index, _firstOffset, widgets.length)],
                           ),
                         ),
                       );
@@ -173,7 +171,6 @@ class _GalleryUnitState extends State<GalleryUnit> {
                 onPageChanged: (index) {
                   setState(() => _position = index);
                 },
-                // children: children2[fixPosition(realPos, initPos, children2.length)],
               ),
             ),
             _buildDiver(),
@@ -182,24 +179,25 @@ class _GalleryUnitState extends State<GalleryUnit> {
   }
 
   Widget _buildDiver() => Container(
-            margin: EdgeInsets.only(bottom: 12, left: 48, right: 48, top: 10),
-            height: 2,
-            child: ValueListenableBuilder(
-              valueListenable: factor,
-              builder: (context, value, widget) {
-                return LinearProgressIndicator(
-                  value: factor.value,
-                  valueColor: AlwaysStoppedAnimation(
-                    Color.lerp(
-                      color,
-                      nextColor,
-                      factor.value,
-                    ),
-                  ),
-                );
-              },
-            ),
-          );
+        margin: EdgeInsets.only(bottom: 12, left: 48, right: 48, top: 10),
+        height: 2,
+        child: ValueListenableBuilder(
+          valueListenable: factor,
+          builder: (context, value, widget) {
+            return LinearProgressIndicator(
+              backgroundColor: Colors.black,
+              value: factor.value,
+              valueColor: AlwaysStoppedAnimation(
+                Color.lerp(
+                  color,
+                  nextColor,
+                  factor.value,
+                ),
+              ),
+            );
+          },
+        ),
+      );
 
   int fixPosition(int realPos, int initPos, int length) {
     final int offset = realPos - initPos;
