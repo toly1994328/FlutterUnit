@@ -61,6 +61,7 @@ class _FeedBackState extends State<FeedbackWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onLongPress: widget.onLongPressed,
       onTap: () {
         _controller.forward();

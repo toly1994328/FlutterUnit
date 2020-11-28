@@ -23,4 +23,14 @@ class SizeUnit {
 
   // 大文字大小
   static const double big_text_size = 22;
+
+  //底栏图标大小
+  static const double default_bottom_nav_icon = 24;
+  static const double active_bottom_nav_icon = 29;
+
+  //底栏高
+  static const double bottom_nav_height = 50;
+  static const double bottom_nav_right_width = 120;
+
+
 }

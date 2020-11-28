@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/views/pages/app/navigation/unit_bottom_bar.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
 import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
-import 'package:flutter_unit/views/pages/gallery/gallery_page.dart';
 import 'package:flutter_unit/views/pages/gallery/gallery_unit.dart';
 import 'package:flutter_unit/views/pages/me/me_page.dart';
 import 'package:flutter_unit/views/pages/widget_home/home_drawer.dart';
@@ -85,12 +83,10 @@ class _UnitNavigationState extends State<UnitNavigation> {
       BlocBuilder<WidgetsBloc, WidgetsState>(
           builder: (_, state) => UnitBottomBar(
               color: state.color,
-              itemData: Cons.ICONS_MAP,
               onItemClick: _onTapBottomNav));
 
   // 点击底部按钮事件，切换页面
   _onTapBottomNav(int index) {
-    print('----_onTapBottomNav-----');
     _controller.animateToPage(index,
         duration: const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 2) {
