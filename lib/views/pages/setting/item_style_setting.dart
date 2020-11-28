@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/views/items/widget/home_item_support.dart';
+import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
 
 
 /// create by 张风捷特烈 on 2020-04-10

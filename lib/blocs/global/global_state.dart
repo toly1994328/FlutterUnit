@@ -57,8 +57,7 @@ class GlobalState extends Equatable {
         showBackGround: showBackGround ?? this.showBackGround,
         codeStyleIndex: codeStyleIndex ?? this.codeStyleIndex,
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
-        showPerformanceOverlay:
-            showPerformanceOverlay ?? this.showPerformanceOverlay,
+        showPerformanceOverlay: showPerformanceOverlay ?? this.showPerformanceOverlay,
       );
 
   @override

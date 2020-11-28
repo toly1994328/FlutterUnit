@@ -75,7 +75,6 @@ class PaperPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-
     canvas.translate(size.width / 2, size.height / 2);
 
     Paint paint = Paint()

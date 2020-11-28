@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/router.dart';
+import 'package:flutter_unit/app/unit_router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/blocs/point/point_bloc.dart';
 import 'package:flutter_unit/blocs/point/point_event.dart';
 import 'package:flutter_unit/components/flutter/no_div_expansion_tile.dart';
-import 'package:flutter_unit/views/common/unit_drawer_header.dart';
+import 'package:flutter_unit/components/project/unit_drawer_header.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -24,7 +24,7 @@ class HomeDrawer extends StatelessWidget {
 
   Widget _buildChild(BuildContext context) {
 
-    final Color color = BlocProvider.of<WidgetsBloc>(context).activeHomeColor;
+    final Color color = BlocProvider.of<WidgetsBloc>(context).state.color;
 
     return Container(
         color: color.withAlpha(33),

@@ -12,21 +12,14 @@ import 'widgets_state.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
 /// contact me by email 1981462002@qq.com
-/// 说明:
+/// 说明: 处理主页 Widget 列表加载逻辑
 
 class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   final WidgetRepository repository;
 
-  WidgetsBloc({@required this.repository}):super(WidgetsLoading());
+  WidgetsBloc({@required this.repository}):super(WidgetsLoading(WidgetFamily.statelessWidget));
 
 
-  Color get activeHomeColor {
-
-    if (state is WidgetsLoaded) {
-      return Color(Cons.tabColors[(state as WidgetsLoaded).activeFamily.index]);
-    }
-    return Color(Cons.tabColors[0]);
-  }
 
   @override
   Stream<WidgetsState> mapEventToState(WidgetsEvent event) async* {
@@ -36,13 +29,13 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   }
 
   Stream<WidgetsState> _mapLoadWidgetToState(WidgetFamily family) async* {
-    yield WidgetsLoading();
+    yield WidgetsLoading(family);
     try {
       final widgets = await this.repository.loadWidgets(family);
-      yield WidgetsLoaded(widgets: widgets, activeFamily: family);
+      yield WidgetsLoaded(family, widgets: widgets);
     } catch (err) {
       print(err);
-      yield WidgetsLoadFailed(err.toString());
+      yield WidgetsLoadFailed(family,err.toString());
     }
   }
 }

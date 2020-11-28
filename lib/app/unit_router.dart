@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/app/navigation/unit_navigation.dart';
+import 'package:flutter_unit/views/pages/app/navigation/unit_navigation.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/about/version_info.dart';
@@ -24,12 +24,14 @@ import 'package:flutter_unit/views/pages/setting/setting_page.dart';
 import 'utils/router_utils.dart';
 
 class UnitRouter {
+
+  static const String widget_detail = '/widget_detail';
+
   static const String detail = 'detail';
-  static const String home = '/';
   static const String logo = 'logo';
   static const String search = 'search';
   static const String nav = 'nav';
-  static const String widget_detail = 'WidgetDetail';
+
   static const String collect = 'CollectPage';
   static const String point = 'IssuesPointPage';
   static const String point_detail = 'IssuesDetailPage';
@@ -54,18 +56,20 @@ class UnitRouter {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      //根据名称跳转相应页面
+      //
+      case nav:
+        return Left2RightRouter(child: UnitNavigation());
+
+      // 组件详情页
       case widget_detail:
         return Right2LeftRouter(
-            child: WidgetDetailPage(
-          model: settings.arguments,
-        ));
+            child: WidgetDetailPage(model: settings.arguments));
+
       case search:
         return Right2LeftRouter(child: SearchPage());
       case collect:
         return Right2LeftRouter(child: CollectPage());
-      case nav:
-        return Left2RightRouter(child: UnitNavigation());
+
       case setting:
         return Right2LeftRouter(child: SettingPage());
       case font_setting:

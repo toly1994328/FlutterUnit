@@ -14,8 +14,3 @@ List<Color> colors = [
   Color(0xff050f2c),
 ];
 
-// Color(0xff2E93fA)
-// Color(0xff66DA26)
-// Color(0xff546E7A)
-// Color(0xffE91E63)
-// Color(0xffFF9800)

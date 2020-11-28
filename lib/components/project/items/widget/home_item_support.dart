@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/enums.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/views/items/widget/simple_widget_list_item.dart';
+import 'package:flutter_unit/components/project/items/widget/simple_widget_list_item.dart';
 
 import 'coupon_widget_list_item.dart';
 import 'techno_widget_list_item.dart';

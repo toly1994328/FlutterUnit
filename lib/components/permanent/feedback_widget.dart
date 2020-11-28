@@ -17,6 +17,7 @@ class FeedbackWidget extends StatefulWidget {
   final FeedMode mode;
   final Duration duration;
   final Function() onPressed;
+  final Function() onLongPressed;
   final a;
 
   FeedbackWidget(
@@ -24,7 +25,9 @@ class FeedbackWidget extends StatefulWidget {
       this.mode = FeedMode.scale,
       this.a = 0.9,
       this.duration = const Duration(milliseconds: 150),
-      @required this.onPressed});
+      @required this.onPressed, this.onLongPressed
+
+      });
 
   @override
   _FeedBackState createState() => _FeedBackState();
@@ -58,6 +61,7 @@ class _FeedBackState extends State<FeedbackWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onLongPress: widget.onLongPressed,
       onTap: () {
         _controller.forward();
         if(widget.onPressed!=null){
