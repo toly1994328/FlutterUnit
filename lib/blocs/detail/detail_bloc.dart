@@ -13,10 +13,8 @@ import 'detail_state.dart';
 class DetailBloc extends Bloc<DetailEvent, DetailState> {
   final WidgetRepository repository;
 
-  DetailBloc({@required this.repository});
+  DetailBloc({@required this.repository}):super(DetailLoading());
 
-  @override
-  DetailState get initialState => DetailLoading();
 
   @override
   Stream<DetailState> mapEventToState(DetailEvent event) async* {

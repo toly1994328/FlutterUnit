@@ -6,29 +6,25 @@ import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 import 'search_event.dart';
 import 'search_state.dart';
 import 'package:bloc/bloc.dart';
-import 'package:rxdart/rxdart.dart';
-
+import 'package:flutter_unit/app/utils/stream_ext/ext.dart';
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final WidgetRepository repository;
 
-  SearchBloc({@required this.repository});
-  @override
-  SearchState get initialState => SearchStateNoSearch();//初始状态
+  SearchBloc({@required this.repository}):super(SearchStateNoSearch());
 
 
   @override
-  Stream<SearchState> transformEvents(
-      Stream<SearchEvent> events,
-      Stream<SearchState> Function(SearchEvent event) next,) {
-    return super.transformEvents(events
-        .debounceTime(Duration(milliseconds: 500),),
-      next,
-    );
+  Stream<Transition<SearchEvent, SearchState>> transformEvents(
+      Stream<SearchEvent> events, TransitionFunction<SearchEvent, SearchState> transitionFn) {
+      return super.transformEvents(events
+          .debounceTime(Duration(milliseconds: 500),),
+        transitionFn,
+      );
   }
 
   @override
   Stream<SearchState> mapEventToState(SearchEvent event,) async* {
-    if (event is EventTextChanged) {
+    if (event is SearchWidgetEvent) {
       if (event.args.name.isEmpty&&event.args.stars.every((e)=>e==-1)) {
         yield SearchStateNoSearch();
       } else {
@@ -36,7 +32,6 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         try {
           final results = await repository.searchWidgets(event.args);
            yield results.length==0?SearchStateEmpty():SearchStateSuccess(results);
-          print('mapEventToState');
         } catch (error) {
           print(error);
           yield  SearchStateError();

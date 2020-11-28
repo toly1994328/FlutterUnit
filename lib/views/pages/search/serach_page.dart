@@ -28,7 +28,7 @@ class _SearchPageState extends State<SearchPage> {
       body: WillPopScope(
         onWillPop: () async {
           //返回时 情空搜索
-          BlocProvider.of<SearchBloc>(context).add(EventTextChanged(args: SearchArgs()));
+          BlocProvider.of<SearchBloc>(context).add(SearchWidgetEvent(args: SearchArgs()));
           return true;
         },
         child: CustomScrollView(
@@ -119,7 +119,7 @@ class _SearchPageState extends State<SearchPage> {
       temp.addAll(List.generate(5 - temp.length, (e) => -1));
     }
     BlocProvider.of<SearchBloc>(context)
-        .add(EventTextChanged(args: SearchArgs(name: '', stars: temp)));
+        .add(SearchWidgetEvent(args: SearchArgs(name: '', stars: temp)));
   }
 
   _toDetailPage(WidgetModel model) {

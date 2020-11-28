@@ -12,12 +12,10 @@ import 'global_state.dart';
 /// 说明: 全局信息的bloc
 
 class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
-  @override
-  GlobalState get initialState => GlobalState();
 
   final AppStorage storage;
 
-  GlobalBloc(this.storage);
+  GlobalBloc(this.storage):super(GlobalState());
 
   Future<SharedPreferences> get sp => storage.sp;
 

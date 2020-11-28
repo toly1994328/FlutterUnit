@@ -14,10 +14,8 @@ import 'like_state.dart';
 class LikeWidgetBloc extends Bloc<LikeWidgetEvent, LikeWidgetState> {
   final WidgetRepository repository;
 
-  LikeWidgetBloc({@required this.repository});
+  LikeWidgetBloc({@required this.repository}):super(LikeWidgetState(widgets: []));
 
-  @override
-  LikeWidgetState get initialState => LikeWidgetState(widgets: []); //初始状态
 
   @override
   Stream<LikeWidgetState> mapEventToState(
