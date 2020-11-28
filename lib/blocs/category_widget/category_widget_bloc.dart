@@ -15,12 +15,10 @@ class CategoryWidgetBloc
     extends Bloc<CategoryWidgetEvent, CategoryWidgetState> {
   final CategoryBloc categoryBloc;
 
-  CategoryWidgetBloc({@required this.categoryBloc});
+  CategoryWidgetBloc({@required this.categoryBloc})
+      : super(CategoryWidgetEmptyState());
 
   CategoryRepository get repository => categoryBloc.repository;
-
-  @override
-  CategoryWidgetState get initialState => CategoryWidgetEmptyState(); //初始状态
 
   @override
   Stream<CategoryWidgetState> mapEventToState(

@@ -17,10 +17,8 @@ import 'widgets_state.dart';
 class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   final WidgetRepository repository;
 
-  WidgetsBloc({@required this.repository});
+  WidgetsBloc({@required this.repository}):super(WidgetsLoading());
 
-  @override
-  WidgetsState get initialState => WidgetsLoading();
 
   Color get activeHomeColor {
 

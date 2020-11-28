@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage>
 
   Widget _buildHomeItem(WidgetModel model) =>
       BlocBuilder<GlobalBloc, GlobalState>(
-        condition: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
+        buildWhen: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (_, state) {
           return FeedbackWidget(
               a: 0.95,
