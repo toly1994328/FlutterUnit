@@ -57,8 +57,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
               create: (_) => SearchBloc(repository: repository)),
           BlocProvider<PointBloc>(create: (_) => PointBloc()),
           BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
-        ],
-        child:widget.child);
+        ], child: widget.child);
   }
 
   @override

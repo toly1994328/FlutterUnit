@@ -27,7 +27,6 @@ class UnitDrawerHeader extends StatelessWidget {
             crossAxisAlignment: WrapCrossAlignment.center,
             children: <Widget>[
               FlutterLogo(
-//                colors: Colors.orange,
                 size: 35,
               ),
               Text(

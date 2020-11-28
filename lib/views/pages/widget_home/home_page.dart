@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
 
-import 'package:flutter_unit/app/router.dart';
+import 'package:flutter_unit/app/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
@@ -15,9 +15,8 @@ import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/views/common/empty_page.dart';
-import 'package:flutter_unit/views/items/widget/home_item_support.dart';
-import 'package:flutter_unit/views/pages/home/toly_app_bar.dart';
+import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
+import 'package:flutter_unit/views/pages/widget_home/toly_app_bar.dart';
 
 import 'background.dart';
 
@@ -41,7 +40,6 @@ class _HomePageState extends State<HomePage>
     super.build(context);
 
     return Scaffold(
-      extendBody: true,
         body: Stack(
       children: <Widget>[
         BlocBuilder<GlobalBloc, GlobalState>(builder: _buildBackground),

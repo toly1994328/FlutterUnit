@@ -9,12 +9,13 @@ class UnitPainter extends CustomPainter {
   double width;
   double factor;
   Color color;
+
   Path _path1 = Path();
   Path _path2 = Path();
   Path _path3 = Path();
   Path _path4 = Path();
 
-  UnitPainter({this.width = 200.0, this.factor,this.color=Colors.blue}) {
+  UnitPainter({this.width = 200.0, this.factor, this.color = Colors.blue}) {
     _paint = Paint();
   }
 

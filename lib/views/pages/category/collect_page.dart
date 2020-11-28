@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/router.dart';
+import 'package:flutter_unit/app/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
@@ -28,7 +28,7 @@ class _CollectPageState extends State<CollectPage>
     BuildContext _topContext = context;
     return Scaffold(
         backgroundColor:
-            BlocProvider.of<WidgetsBloc>(context).activeHomeColor.withAlpha(11),
+            BlocProvider.of<WidgetsBloc>(context).state.color.withAlpha(11),
         body: DefaultTabController(
           length: _tabs.length, // This is the number of tabs.
           child: NestedScrollView(
@@ -64,7 +64,7 @@ class _CollectPageState extends State<CollectPage>
               borderSize: 1.5,
             ),
           )),
-      backgroundColor: BlocProvider.of<WidgetsBloc>(context).activeHomeColor,
+      backgroundColor: BlocProvider.of<WidgetsBloc>(context).state.color,
       actions: <Widget>[_buildAddActionBuilder(context)],
       title: Text(
         '收藏集 CollectUnit',

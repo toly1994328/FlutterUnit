@@ -1,35 +1,40 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/enums.dart';
+import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
 /// contact me by email 1981462002@qq.com
-/// 说明: 主页状态类
+/// 说明: 主页 Widget 列表 状态类
 
 abstract class WidgetsState extends Equatable {
-  const WidgetsState();
+  final WidgetFamily activeFamily;
+
+  const WidgetsState(this.activeFamily);
+
+  Color get color => Color(Cons.tabColors[activeFamily.index]);
+  Color get nextColor => Color(Cons.tabColors[(activeFamily.index+1)%Cons.tabColors.length]);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [activeFamily];
 }
 
 class WidgetsLoading extends WidgetsState {
-  const WidgetsLoading();
+  WidgetsLoading(WidgetFamily activeFamily) : super(activeFamily);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [activeFamily];
 }
 
 class WidgetsLoaded extends WidgetsState {
   final List<WidgetModel> widgets;
-  final WidgetFamily activeFamily;
 
-  const WidgetsLoaded(
-      {this.activeFamily, this.widgets = const []});
+  WidgetsLoaded(WidgetFamily activeFamily, {this.widgets = const []})
+      : super(activeFamily);
 
   @override
-  List<Object> get props => [activeFamily, widgets];
+  List<Object> get props => [activeFamily,widgets];
 
   @override
   String toString() {
@@ -40,9 +45,9 @@ class WidgetsLoaded extends WidgetsState {
 class WidgetsLoadFailed extends WidgetsState {
   final String error;
 
-
-  const WidgetsLoadFailed(this.error);
+  const WidgetsLoadFailed(WidgetFamily activeFamily, this.error)
+      : super(activeFamily);
 
   @override
-  List<Object> get props => [error];
+  List<Object> get props => [activeFamily,error];
 }
