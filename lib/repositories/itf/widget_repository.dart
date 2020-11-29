@@ -1,4 +1,4 @@
-import 'package:flutter_unit/app/enums.dart';
+import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/style/shape/techno_shape.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/circle_text.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/circle_text.dart';
+import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
 class CollectWidgetListItem extends StatelessWidget {

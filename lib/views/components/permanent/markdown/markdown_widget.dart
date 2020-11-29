@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/app/res/style/unit_color.dart';
-import 'package:flutter_unit/components/permanent/markdown/syntax_high_lighter.dart';
+import 'package:flutter_unit/views/components/permanent/markdown/syntax_high_lighter.dart';
 
 
 class MarkdownWidget extends StatelessWidget {

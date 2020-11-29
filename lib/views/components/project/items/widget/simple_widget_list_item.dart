@@ -4,9 +4,9 @@ import 'package:flutter_star/star.dart';
 import 'package:flutter_star/star_score.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/circle_text.dart';
-import 'package:flutter_unit/components/permanent/tag.dart';
+import 'package:flutter_unit/views/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/circle_text.dart';
+import 'package:flutter_unit/views/components/permanent/tag.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
 /// create by 张风捷特烈 on 2020/11/17

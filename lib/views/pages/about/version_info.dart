@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/app/unit_router.dart';
+import 'package:flutter_unit/app/res/str_unit.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/style/behavior/no_scroll_behavior.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// create by 张风捷特烈 on 2020/6/16
@@ -53,7 +54,7 @@ class VersionInfo extends StatelessWidget {
       children: <Widget>[
         CircleImage(image: AssetImage("assets/images/icon_head.webp"),size: 80,),
         Text('Flutter Unit',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        Text('Version ${Cons.version}'),
+        Text('Version ${StrUnit.version}'),
       ],
     );
   }

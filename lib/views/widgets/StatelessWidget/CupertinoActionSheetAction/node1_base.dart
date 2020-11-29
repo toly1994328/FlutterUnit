@@ -13,7 +13,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../../components/project/dialogs/dialog_about.dart';
+import '../../../components/project/dialogs/dialog_about.dart';
 
 class CustomCupertinoActionSheetAction extends StatelessWidget {
   @override

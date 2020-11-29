@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/enums.dart';
+import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
+import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/repositories/impl/catagory_db_repository.dart';
 import 'package:flutter_unit/repositories/impl/widget_db_repository.dart';
+import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 import 'package:flutter_unit/storage/app_storage.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
@@ -23,7 +24,7 @@ class BlocWrapper extends StatefulWidget {
 }
 
 class _BlocWrapperState extends State<BlocWrapper> {
-  final repository = WidgetDbRepository(storage);
+  final WidgetRepository repository = WidgetDbRepository(storage);
 
   final categoryBloc = CategoryBloc(repository: CategoryDbRepository(storage));
 

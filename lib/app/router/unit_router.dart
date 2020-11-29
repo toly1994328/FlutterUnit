@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/pages/app/navigation/unit_navigation.dart';
+import 'package:flutter_unit/views/pages/app/unit_navigation.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/about/version_info.dart';
@@ -21,14 +21,13 @@ import 'package:flutter_unit/views/pages/widget_detail/widget_detail_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/views/pages/setting/setting_page.dart';
 
-import 'utils/router_utils.dart';
+import 'router_utils.dart';
 
 class UnitRouter {
 
   static const String widget_detail = '/widget_detail';
 
   static const String detail = 'detail';
-  static const String logo = 'logo';
   static const String search = 'search';
   static const String nav = 'nav';
 
@@ -83,9 +82,9 @@ class UnitRouter {
 
       case version_info:
         return Right2LeftRouter(child: VersionInfo());
+
       case issues_point:
         return Right2LeftRouter(child: IssuesPointPage());
-
       case login:
         return Right2LeftRouter(child: LoginPage());
 

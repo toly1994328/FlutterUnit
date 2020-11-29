@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/unit_router.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 
 import 'category_page.dart';
 import 'like_widget_page.dart';
@@ -14,8 +14,7 @@ class CollectPage extends StatefulWidget {
   _CollectPageState createState() => _CollectPageState();
 }
 
-class _CollectPageState extends State<CollectPage>
-    with AutomaticKeepAliveClientMixin {
+class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClientMixin {
 
   final _tabs = [
     '收藏集录',
@@ -25,27 +24,30 @@ class _CollectPageState extends State<CollectPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+
     BuildContext _topContext = context;
     return Scaffold(
-        backgroundColor:
-            BlocProvider.of<WidgetsBloc>(context).state.color.withAlpha(11),
-        body: DefaultTabController(
-          length: _tabs.length, // This is the number of tabs.
-          child: NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverOverlapAbsorber(
-                    handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
-                        context),
-                    sliver: _buildAppBar(_topContext, innerBoxIsScrolled)),
-              ];
-            },
-            body: TabBarView(
-              children: <Widget>[
-                CategoryPage(),
-                LikeWidgetPage(),
-              ],
+        backgroundColor: Colors.white,
+        body: Container(
+          color: BlocProvider.of<WidgetsBloc>(context).state.color.withAlpha(11),
+          child: DefaultTabController(
+            length: _tabs.length, // This is the number of tabs.
+            child: NestedScrollView(
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                return <Widget>[
+                  SliverOverlapAbsorber(
+                      handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
+                          context),
+                      sliver: _buildAppBar(_topContext, innerBoxIsScrolled)),
+                ];
+              },
+              body: TabBarView(
+                children: <Widget>[
+                  CategoryPage(),
+                  LikeWidgetPage(),
+                ],
+              ),
             ),
           ),
         ));

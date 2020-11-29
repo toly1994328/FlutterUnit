@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
 
-import 'package:flutter_unit/app/unit_router.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/permanent/overlay_tool_wrapper.dart';
-import 'package:flutter_unit/components/project/default/empty_shower.dart';
-import 'package:flutter_unit/components/project/default/error_shower.dart';
-import 'package:flutter_unit/components/project/default/loading_shower.dart';
-import 'package:flutter_unit/components/project/no_more_widget.dart';
+import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
+import 'package:flutter_unit/views/components/project/default/empty_shower.dart';
+import 'package:flutter_unit/views/components/project/default/error_shower.dart';
+import 'package:flutter_unit/views/components/project/default/loading_shower.dart';
+import 'package:flutter_unit/views/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
+import 'package:flutter_unit/views/components/project/items/widget/home_item_support.dart';
 import 'package:flutter_unit/views/pages/widget_home/toly_app_bar.dart';
 
 import 'background.dart';

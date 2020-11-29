@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/app/enums.dart';
+import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/storage/po/widget_po.dart';
 
