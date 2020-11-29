@@ -1,7 +1,7 @@
 name: flutter_unit
 description: A new Flutter application.
 
-version: 1.1.0+1
+version: 1.4.0
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -21,7 +21,6 @@ dependencies:
 
   toggle_rotate: ^0.0.5
   flutter_star: ^0.1.2 # 星星组件
-
   url_launcher: ^5.4.2 # url
   share: ^0.6.3+6 # 文字分享
   intl: ^0.16.1
@@ -29,11 +28,11 @@ dependencies:
   connectivity: ^0.4.8+6 #网络状态
   flutter_spinkit: ^4.1.2+1 # loading
   flutter_markdown: ^0.4.4 # markdown
-  dio: ^3.0.9 #dio
+  dio: ^3.0.9 # 网络请求
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 flutter:
   uses-material-design: true

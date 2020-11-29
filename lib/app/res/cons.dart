@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
-import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
+import 'package:flutter_unit/views/components/permanent/code/highlighter_style.dart';
 
 class Cons {
   static String version = 'V1.1.1';
 
   static const MENU_INFO = <String>["关于", "帮助", "问题反馈"]; //菜单栏
-  static const ICONS_MAP = {
-    //底栏图标
-    "图鉴": TolyIcon.icon_layout, "收藏": TolyIcon.icon_star,
-//    "喜欢": Icons.favorite, "手册": Icons.class_,
-//    "我的": Icons.account_circle,
-  };
+
 
   static const tabColors = [
     0xff44D1FD,

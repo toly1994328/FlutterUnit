@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/unit_router.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/project/default/loading_shower.dart';
+import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/components/project/items/widget/techno_widget_list_item.dart';
+import 'package:flutter_unit/views/components/project/items/widget/techno_widget_list_item.dart';
 import 'package:flutter_unit/views/pages/search/app_search_bar.dart';
 import 'package:flutter_unit/views/pages/search/error_page.dart';
 import 'package:flutter_unit/views/pages/search/not_search_page.dart';
-import 'package:flutter_unit/components/permanent/multi_chip_filter.dart';
+import 'package:flutter_unit/views/components/permanent/multi_chip_filter.dart';
 
-import '../../../components/project/default/empty_shower.dart';
+import '../../components/project/default/empty_shower.dart';
 
 
 class SearchPage extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/permanent/animated_text.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/animated_text.dart';
+import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 
 class AttrUnitPage extends StatelessWidget {
   final info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'

@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/edit_panel.dart';
-import 'package:flutter_unit/components/permanent/input_button.dart';
-import 'package:flutter_unit/components/project/color_chooser.dart';
+import 'package:flutter_unit/views/components/permanent/edit_panel.dart';
+import 'package:flutter_unit/views/components/permanent/input_button.dart';
+import 'package:flutter_unit/views/components/project/color_chooser.dart';
 import 'package:flutter_unit/model/category_model.dart';
 
 /// create by 张风捷特烈 on 2020-04-23

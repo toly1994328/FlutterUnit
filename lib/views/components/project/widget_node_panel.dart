@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_unit/app/res/toly_icon.dart';
 
-import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/permanent/code/code_widget.dart';
-import 'package:flutter_unit/components/permanent/panel.dart';
+import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/permanent/code/code_widget.dart';
+import 'package:flutter_unit/views/components/permanent/panel.dart';
 import 'package:share/share.dart';
 import 'package:toggle_rotate/toggle_rotate.dart';
 
 import '../permanent/feedback_widget.dart';
-import '../permanent/code/highlighter_style.dart';
+import 'package:flutter_unit/views/components/permanent/code/highlighter_style.dart';
 
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com
