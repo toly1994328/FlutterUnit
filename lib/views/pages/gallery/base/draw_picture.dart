@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+import 'package:flutter/services.dart';
+
 /// create by 张风捷特烈 on 2020/10/10
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -22,32 +24,22 @@ class _DrawPictureState extends State<DrawPicture> {
   }
 
   void _loadImage() async {
-    _image = await loadImageByProvider(AssetImage('assets/images/sabar.webp'));
-    setState(() {
-
-    });
+    _image = await loadImageFromAssets('assets/images/sabar.webp');
+    setState(() {});
   }
 
-  //通过ImageProvider读取Image
-  Future<ui.Image> loadImageByProvider(
-    ImageProvider provider, {
-    ImageConfiguration config = ImageConfiguration.empty,
-  }) async {
-    Completer<ui.Image> completer = Completer<ui.Image>(); //完成的回调
-    ImageStreamListener listener;
-    ImageStream stream = provider.resolve(config); //获取图片流
-    listener = ImageStreamListener((ImageInfo frame, bool sync) {//监听
-      final ui.Image image = frame.image;
-      completer.complete(image); //完成
-      stream.removeListener(listener); //移除监听
-    });
-    stream.addListener(listener); //添加监听
-    return completer.future; //返回
+  //读取 assets 中的图片
+  Future<ui.Image> loadImageFromAssets(String path) async {
+    ByteData data = await rootBundle.load(path);
+    List<int> bytes =
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    return decodeImageFromList(bytes);
   }
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(painter: PaperPainter(_image));
+    double size = MediaQuery.of(context).size.shortestSide;
+    return CustomPaint(size: Size(size, size), painter: PaperPainter(_image));
   }
 }
 
@@ -62,19 +54,18 @@ class PaperPainter extends CustomPainter {
   PaperPainter(this.image) {
     _paint = Paint()
       ..filterQuality = FilterQuality.high
-    ..color=Colors.black.withAlpha(180)
-    ;
+      ..color = Colors.black.withAlpha(180);
   }
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.clipRect(Rect.fromPoints(Offset.zero, Offset(size.width, size.height)));
+    canvas.clipRect(Offset.zero & size);
     _drawImage(canvas, size);
     _drawLine(size, canvas);
   }
 
   void _drawLine(Size size, Canvas canvas) {
-      _paint..color = Color(0xFFF0F0F0);
+    _paint..color = Color(0xFFF0F0F0);
     double step = 10.0;
     for (int i = 1; i <= size.height / step; i++) {
       canvas.drawLine(Offset(step * i, 0), Offset(0, step * i), _paint);
@@ -84,7 +75,6 @@ class PaperPainter extends CustomPainter {
   }
 
   void _drawImage(Canvas canvas, Size size) {
-
     if (image != null) {
       canvas.drawImageRect(
           image,
@@ -98,5 +88,5 @@ class PaperPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(PaperPainter oldDelegate) => oldDelegate.image!=image;
+  bool shouldRepaint(PaperPainter oldDelegate) => oldDelegate.image != image;
 }

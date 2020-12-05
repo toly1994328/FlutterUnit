@@ -18,19 +18,15 @@ import 'picture_frame.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-class GalleryPage extends StatefulWidget {
+class Gallery extends StatefulWidget {
   @override
-  _GalleryPageState createState() => _GalleryPageState();
+  _GalleryState createState() => _GalleryState();
 }
 
-class _GalleryPageState extends State<GalleryPage> {
+class _GalleryState extends State<Gallery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Flutter 绘制集录"),
-      ),
         body: Column(children: [
       // _buildTitle(),
       Expanded(
@@ -120,25 +116,6 @@ class _GalleryPageState extends State<GalleryPage> {
       ),
     ]));
   }
-
-  _buildTitle() {
-    return Container(
-      height: 70,
-      padding: const EdgeInsets.only(top: 8.0),
-      color: Colors.blue,
-      child: Row(
-        children: [
-          BackButton(
-            color: Colors.white,
-          ),
-          Spacer(),
-          Text('Flutter绘制集录'),
-          Spacer(),
-
-        ],
-      ),
-    );
-  }
 }
 
 class FrameShower extends StatelessWidget {
@@ -159,22 +136,22 @@ class FrameShower extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          SizedBox(height: 15,),
+          Text(
+            title,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
           PictureFrame(
             width: MediaQuery.of(context).size.shortestSide,
             height: MediaQuery.of(context).size.shortestSide,
             child: content,
           ),
-          Text(
-            title,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 10,
-          ),
+
           Container(
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: Row(
