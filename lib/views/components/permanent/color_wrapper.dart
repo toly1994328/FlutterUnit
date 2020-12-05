@@ -12,7 +12,7 @@ class WrapColor extends StatelessWidget {
 
   WrapColor(
       {this.child,
-      this.color = Colors.blue,
+      this.color,
       this.radius = 5,
       this.padding =
           const EdgeInsets.only(left: 4, right: 4, top: 0, bottom: 0)});
@@ -20,10 +20,11 @@ class WrapColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       child: child,
       padding: padding,
       decoration: BoxDecoration(
-          color: color,
+          color: color??Theme.of(context).primaryColor,
           borderRadius: BorderRadius.all(Radius.circular(radius))),
     );
   }

@@ -2,9 +2,14 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/res/str_unit.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/views/components/project/items/gallery/gallery_card_item.dart';
+import 'package:flutter_unit/views/pages/gallery/gallery_factory.dart';
+
+import 'gallery_detail_page.dart';
 
 /// create by 张风捷特烈 on 2020/11/28
 /// contact me by email 1981462002@qq.com
@@ -34,8 +39,8 @@ class _GalleryUnitState extends State<GalleryUnit> {
       viewportFraction: 0.9,
       initialPage: _position,
     )..addListener(() {
-        double value = ((_position - _firstOffset + 1) % 5) / 5;
-        factor.value = value == 0 ? 1 : value;
+        double value2 = (_ctrl.page - _firstOffset + 1) % 5 / 5;
+        factor.value = value2 == 0 ? 1 : value2;
       });
   }
 
@@ -80,31 +85,6 @@ class _GalleryUnitState extends State<GalleryUnit> {
     );
   }
 
-  final jsonStr = """
-[
-  {
-    "image":"assets/images/anim_draw.webp",
-    "name":"基础绘制"
-  },
-    {
-    "image":"assets/images/draw_bg3.webp",
-    "name":"动画绘制"
-  },
-    {
-    "image":"assets/images/base_draw.webp",
-        "name":"手势绘制"
-  },
-    {
-    "image":"assets/images/draw_bg4.webp",
-    "name":"趣味绘制"
-  },
-    {
-    "image":"assets/images/caver.webp",
-    "name":"艺术画廊"
-  }
-]
-""";
-
   Widget _buildTitle(BuildContext context) {
     return Container(
       alignment: Alignment(0, 0.3),
@@ -128,11 +108,26 @@ class _GalleryUnitState extends State<GalleryUnit> {
   }
 
   Widget _buildContent() {
-    final List<Widget> widgets = (json.decode(jsonStr) as List)
-        .map((e) => GalleryCardItem(
-              galleryInfo: GalleryInfo.fromJson(e),
-            ))
-        .toList();
+    final List<Widget> widgets =
+        (json.decode(StrUnit.galleryInfo) as List).map((e) {
+      GalleryInfo info = GalleryInfo.fromJson(e);
+      List<Widget> children = GalleryFactory.getGalleryByName(info.type);
+
+      return FeedbackWidget(
+        a: 0.95,
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (ctx) => GalleryDetailPage(
+                    galleryInfo: info,
+                    children: children,
+                  )));
+        },
+        child: GalleryCardItem(
+          galleryInfo: info,
+          count: children.length,
+        ),
+      );
+    }).toList();
 
     return Container(
         padding: EdgeInsets.only(bottom: 80, top: 40),
@@ -160,7 +155,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
                           alignment: Alignment.center,
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
-                            child: widgets[fixPosition(
+                            child: widgets[_fixPosition(
                                 index, _firstOffset, widgets.length)],
                           ),
                         ),
@@ -199,7 +194,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
         ),
       );
 
-  int fixPosition(int realPos, int initPos, int length) {
+  int _fixPosition(int realPos, int initPos, int length) {
     final int offset = realPos - initPos;
     int result = offset % length;
     return result < 0 ? length + result : result;

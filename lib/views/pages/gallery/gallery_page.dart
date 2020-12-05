@@ -11,7 +11,7 @@ import 'base/random_portrait.dart';
 import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
-import 'base/draw_path.dart';
+import 'anim/draw_path.dart';
 import 'picture_frame.dart';
 
 /// create by 张风捷特烈 on 2020/10/10
