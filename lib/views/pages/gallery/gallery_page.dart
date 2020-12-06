@@ -120,25 +120,6 @@ class _GalleryPageState extends State<GalleryPage> {
       ),
     ]));
   }
-
-  _buildTitle() {
-    return Container(
-      height: 70,
-      padding: const EdgeInsets.only(top: 8.0),
-      color: Colors.blue,
-      child: Row(
-        children: [
-          BackButton(
-            color: Colors.white,
-          ),
-          Spacer(),
-          Text('Flutter绘制集录'),
-          Spacer(),
-
-        ],
-      ),
-    );
-  }
 }
 
 class FrameShower extends StatelessWidget {

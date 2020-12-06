@@ -24,7 +24,6 @@ class GalleryDetailPage extends StatefulWidget {
 }
 
 class _GalleryDetailPageState extends State<GalleryDetailPage> {
-  // List<Widget> items;
   PageController _ctrl;
   final ValueNotifier<int> _currentIndex = ValueNotifier<int>(0);
 
@@ -56,7 +55,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
                     image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(widget.galleryInfo.image)),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10),
                     )),
@@ -66,75 +65,9 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
                     Expanded(
                       child: Row(
                         children: [
-                          Container(
-                            width: 80,
-                            height: 40,
-                            alignment: Alignment.centerRight,
-                            decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.3),
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(20),
-                                  bottomRight: Radius.circular(20),
-                                )),
-                            padding: EdgeInsets.only(right: 5 / 2),
-                            child: FeedbackWidget(
-                              onPressed: () {
-                                if (widget.children.length > 0) {
-                                  _ctrl.animateToPage(
-                                      (_currentIndex.value - 1) %
-                                          widget.children.length,
-                                      duration: Duration(milliseconds: 500),
-                                      curve: Curves.linear);
-                                }
-                              },
-                              child: Container(
-                                width: 35,
-                                height: 35,
-                                decoration: BoxDecoration(
-                                    color: Theme.of(context)
-                                        .primaryColor
-                                        .withOpacity(0.6),
-                                    shape: BoxShape.circle),
-                                child: Icon(Icons.navigate_before,
-                                    color: Colors.white),
-                              ),
-                              // height: 60,
-                            ),
-                          ),
-                          Expanded(child: Container()),
-                          Container(
-                              width: 80,
-                              height: 40,
-                              alignment: Alignment.centerLeft,
-                              padding: EdgeInsets.only(left: 5 / 2),
-                              decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.3),
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(20),
-                                    topLeft: Radius.circular(20),
-                                  )),
-                              child: FeedbackWidget(
-                                  onPressed: () {
-                                    if (widget.children.length > 0) {
-                                      _ctrl.animateToPage(
-                                          (_currentIndex.value + 1) %
-                                              widget.children.length,
-                                          duration: Duration(milliseconds: 500),
-                                          curve: Curves.linear);
-                                    }
-                                  },
-                                  child: Container(
-                                    width: 35,
-                                    height: 35,
-                                    decoration: BoxDecoration(
-                                        color: Theme.of(context)
-                                            .primaryColor
-                                            .withOpacity(0.6),
-                                        shape: BoxShape.circle),
-                                    child: Icon(Icons.navigate_next,
-                                        color: Colors.white),
-                                    // height: 60,
-                                  )))
+                          _buildPrevBtn(context),
+                          Spacer(),
+                          _buildNextBtn(context)
                         ],
                       ),
                     )
@@ -156,49 +89,102 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
     );
   }
 
+  Widget _buildPrevBtn(BuildContext context) {
+    return Container(
+      width: 80,
+      height: 40,
+      alignment: Alignment.centerRight,
+      decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.3),
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          )),
+      padding: EdgeInsets.only(right: 5 / 2),
+      child: FeedbackWidget(
+        onPressed: () {
+          if (widget.children.length > 0) {
+            _ctrl.animateToPage(
+                (_currentIndex.value - 1) % widget.children.length,
+                duration: Duration(milliseconds: 500),
+                curve: Curves.linear);
+          }
+        },
+        child: Container(
+          width: 35,
+          height: 35,
+          decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor.withOpacity(0.6),
+              shape: BoxShape.circle),
+          child: Icon(Icons.navigate_before, color: Colors.white),
+        ),
+        // height: 60,
+      ),
+    );
+  }
+
+  Widget _buildNextBtn(BuildContext context) {
+    return Container(
+        width: 80,
+        height: 40,
+        alignment: Alignment.centerLeft,
+        padding: EdgeInsets.only(left: 5 / 2),
+        decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.3),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              topLeft: Radius.circular(20),
+            )),
+        child: FeedbackWidget(
+            onPressed: () {
+              if (widget.children.length > 0) {
+                _ctrl.animateToPage(
+                    (_currentIndex.value + 1) % widget.children.length,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.linear);
+              }
+            },
+            child: Container(
+              width: 35,
+              height: 35,
+              decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor.withOpacity(0.6),
+                  shape: BoxShape.circle),
+              child: Icon(Icons.navigate_next, color: Colors.white),
+              // height: 60,
+            )));
+  }
+
   bool get isFirst => _currentIndex.value == 0;
 
   bool get isEnd => _currentIndex.value == widget.children.length - 1;
 
   Widget buildTitle(BuildContext context) {
-    return
-      // Panel(
-      // color: Theme.of(context).primaryColor.withOpacity(0.2),
-      // child: Padding(
-      //   padding:
-      //       const EdgeInsets.only(top: 20, bottom: 10, left: 20, right: 10),
-      //   child:
-
-        Container(
-          // color: Theme.of(context).primaryColor.withOpacity(0.2),
-          padding:
-          const EdgeInsets.only(top: 46, bottom: 10, left: 20, right: 10),
-          // height: 100,
-          child: Row(
-            children: [
-              Text(
-                widget.galleryInfo.name,
-                style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    shadows: [
-                      Shadow(
-                          color: Theme.of(context).primaryColor,
-                          offset: const Offset(.2, .2),
-                          blurRadius: .5)
-                    ]),
-              ),
-              Spacer(),
-              ValueListenableBuilder<int>(
-                valueListenable: _currentIndex,
-                builder: _buildIndicatorText,
-              )
-            ],
-      //   ),
-      // ),
-    ),
-        );
+    return Container(
+      padding: const EdgeInsets.only(top: 46, bottom: 10, left: 20, right: 10),
+      child: Row(
+        children: [
+          Text(
+            widget.galleryInfo.name,
+            style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                shadows: [
+                  Shadow(
+                      color: Theme.of(context).primaryColor,
+                      offset: const Offset(.2, .2),
+                      blurRadius: .5)
+                ]),
+          ),
+          Spacer(),
+          ValueListenableBuilder<int>(
+            valueListenable: _currentIndex,
+            builder: _buildIndicatorText,
+          )
+        ],
+      ),
+    );
   }
 
   Widget _buildIndicatorText(BuildContext context, int value, Widget child) {
