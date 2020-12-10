@@ -15,7 +15,7 @@ class FlutterUnit extends StatelessWidget {
     return BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
       return MaterialApp(
 //            debugShowMaterialGrid: true,
-            showPerformanceOverlay: true,
+            showPerformanceOverlay: state.showPerformanceOverlay,
 //            showSemanticsDebugger: true,
 //            checkerboardOffscreenLayers:true,
 //            checkerboardRasterCacheImages:true,
