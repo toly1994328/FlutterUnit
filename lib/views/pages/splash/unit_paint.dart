@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class UnitPainter extends CustomPainter {
   Paint _paint;
   double width;
-  double factor;
+  Animation repaint;
   Color color;
 
   Path _path1 = Path();
@@ -15,12 +15,17 @@ class UnitPainter extends CustomPainter {
   Path _path3 = Path();
   Path _path4 = Path();
 
-  UnitPainter({this.width = 200.0, this.factor, this.color = Colors.blue}) {
+  UnitPainter({this.width = 200.0, this.repaint, this.color = Colors.blue}):super(repaint: repaint) {
     _paint = Paint();
   }
 
   @override
   void paint(Canvas canvas, Size size) {
+    _path1.reset();
+    _path2.reset();
+    _path3.reset();
+    _path4.reset();
+    var factor = repaint.value;
     canvas.translate(
         size.width / 2 - width * 0.5, size.height / 2 - width * 0.5);
 
@@ -50,11 +55,12 @@ class UnitPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
+  bool shouldRepaint(UnitPainter oldDelegate) {
+    return oldDelegate.repaint!=repaint;
   }
 
   void drawColor1(Canvas canvas) {
+    var factor = repaint.value;
     _path1.moveTo(0, 0);
     _path1.lineTo(width * 0.618 * factor - 1, 0);
     _path1.lineTo(width * 0.5 - 1, width * 0.5 - 1);
@@ -64,6 +70,7 @@ class UnitPainter extends CustomPainter {
   }
 
   void drawColor2(Canvas canvas) {
+    var factor = repaint.value;
     _path2.moveTo(width * 0.618 * factor, 0);
     _path2.lineTo(width, 0);
     _path2.lineTo(width, width * 0.618 * factor);
@@ -73,6 +80,7 @@ class UnitPainter extends CustomPainter {
   }
 
   void drawColor3(Canvas canvas) {
+    var factor = repaint.value;
     _path3.moveTo(width * 0.5 + 1, width * 0.5 + 1);
     _path3.lineTo(width, width * 0.618 * factor + 1);
     _path3.lineTo(width, width);
@@ -81,6 +89,7 @@ class UnitPainter extends CustomPainter {
   }
 
   void drawColor4(Canvas canvas) {
+    var factor = repaint.value;
     _path4.moveTo(0, width * (1 - 0.618) * factor);
     _path4.lineTo(width * 0.5, width * 0.5);
     _path4.lineTo(width * (1 - 0.618) * factor, width);

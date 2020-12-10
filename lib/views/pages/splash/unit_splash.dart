@@ -20,31 +20,32 @@ class UnitSplash extends StatefulWidget {
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
-  double _factor;
+  // double _factor;
   Animation _curveAnim;
 
   bool _animEnd = false;
 
   @override
   void initState() {
+    super.initState();
+
     SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
     _controller =
         AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
-          ..addListener(_listenAnimation)
-          ..addStatusListener(_listenStatus)
-          ..forward();
+          ..addStatusListener(_listenStatus)..forward();
 
     _curveAnim = CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
-    super.initState();
+
   }
 
-  void _listenAnimation() {
-    setState(() {
-      return _factor = _curveAnim.value;
-    });
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
+
 
   void _listenStatus(AnimationStatus status) {
     if (status == AnimationStatus.completed) {
@@ -71,7 +72,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             width: winW,
             height: winH,
             child: CustomPaint(
-              painter: UnitPainter(factor: _factor),
+              painter: UnitPainter(repaint: _curveAnim),
             ),
           ),
           _buildText(winH, winW),
