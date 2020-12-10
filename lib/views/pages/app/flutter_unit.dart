@@ -4,6 +4,7 @@ import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/views/pages/splash/unit_splash.dart';
 
+
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
 /// 说明: 主程序
@@ -14,7 +15,7 @@ class FlutterUnit extends StatelessWidget {
     return BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
       return MaterialApp(
 //            debugShowMaterialGrid: true,
-            showPerformanceOverlay: state.showPerformanceOverlay,
+            showPerformanceOverlay: true,
 //            showSemanticsDebugger: true,
 //            checkerboardOffscreenLayers:true,
 //            checkerboardRasterCacheImages:true,
