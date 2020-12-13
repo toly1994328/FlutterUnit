@@ -23,10 +23,11 @@ class _AppSearchBarState extends State<AppSearchBar> {
           controller: _controller,
           maxLines: 1,
           decoration: InputDecoration(//输入框装饰
+
               filled: true,//填满
               fillColor: Colors.white,//白色
               prefixIcon:  Icon(Icons.search),//前标
-              contentPadding: EdgeInsets.only(top: 0),//调整文字边距
+              // contentPadding: EdgeInsets.only(right: 0),//调整文字边距
               border: UnderlineInputBorder(
                 borderSide: BorderSide.none,//去边线
                 borderRadius: BorderRadius.all(Radius.circular(15)),

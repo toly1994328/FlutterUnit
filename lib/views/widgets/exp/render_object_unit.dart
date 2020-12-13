@@ -35,6 +35,7 @@ export '../SingleChildRenderObjectWidget/RepaintBoundary/node2_save.dart';
 export '../SingleChildRenderObjectWidget/AnnotatedRegion/node1_base.dart';
 export '../SingleChildRenderObjectWidget/CupertinoTextSelectionToolbar/node1_base.dart';
 export '../SingleChildRenderObjectWidget/SizeChangedLayoutNotifier/node1_base.dart';
+export '../SingleChildRenderObjectWidget/ColoredBox/node1_base.dart';
 
 export '../SingleChildRenderObjectWidget/ConstrainedBox/node1_base.dart';
 export '../SingleChildRenderObjectWidget/PhysicalModel/node1_base.dart';
