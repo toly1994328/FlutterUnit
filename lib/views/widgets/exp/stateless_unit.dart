@@ -31,6 +31,7 @@ export '../StatelessWidget/Container/node5_transform.dart';
 export '../StatelessWidget/Container/node6_constraints.dart';
 export '../StatelessWidget/MaterialBanner/node1_one_btn.dart';
 export '../StatelessWidget/MaterialBanner/node2_two_btn.dart';
+export '../StatelessWidget/SafeArea/node1_base.dart';
 
 export '../StatelessWidget/DataTable/node1_base.dart';
 export '../StatelessWidget/DataTable/node2_operation.dart';

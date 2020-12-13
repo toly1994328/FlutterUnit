@@ -98,6 +98,26 @@ class WidgetsMap {
         return [
           InputDecoratorDemo(),
         ];
+      case "ColoredBox":
+        return [
+          ColoredBoxDemo(),
+        ];
+      case "StatefulBuilder":
+        return [
+          StatefulBuilderDemo(),
+        ];
+      case "RawKeyboardListener":
+        return [
+          RawKeyboardListenerDemo(),
+        ];
+      case "RawGestureDetector":
+        return [
+          RawGestureDetectorDemo(),
+        ];
+      case "SafeArea":
+        return [
+          SafeAreaDemo(),
+        ];
       case "WidgetInspector":
         return [
           WidgetInspectorDemo(),
