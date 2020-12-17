@@ -7,9 +7,7 @@ import 'exp/proxy_unit.dart';
 import 'exp/other_unit.dart';
 import 'exp/sliver_unit.dart';
 
-/// create by 张风捷特烈 on 2020-03-04
-/// contact me by email 1981462002@qq.com
-/// 说明:
+/// AUTO CREATED BY [张风捷特烈] , DON'T MODIFY!
 
 class WidgetsMap {
   static List<Widget> map(String name) {
@@ -90,6 +88,13 @@ class WidgetsMap {
         return [
           ViewportDemo(),
         ];
+      case "CupertinoPopupSurface":
+        return [
+          CupertinoPopupSurfaceDemo(),
+        ];      case "RenderObjectToWidgetAdapter":
+        return [
+          RenderObjectToWidgetAdapterDemo(),
+        ];
       case "SliverPrototypeExtentList":
         return [
           SliverPrototypeExtentListDemo(),
@@ -117,6 +122,14 @@ class WidgetsMap {
       case "SafeArea":
         return [
           SafeAreaDemo(),
+        ];
+      case "AnimatedBuilder":
+        return [
+          AnimatedBuilderDemo(),
+        ];
+      case "TweenAnimationBuilder":
+        return [
+          TweenAnimationBuilderDemo(),
         ];
       case "WidgetInspector":
         return [

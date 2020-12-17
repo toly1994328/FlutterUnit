@@ -77,6 +77,8 @@ export '../StatefulWidget/CupertinoScrollbar/node1_base.dart';
 export '../StatefulWidget/RawGestureDetector/node1_base.dart';
 
 export '../StatefulWidget/Dismissible/node1_base.dart';
+export '../StatefulWidget/AnimatedBuilder/node1_base.dart';
+export '../StatefulWidget/TweenAnimationBuilder/node1_base.dart';
 export '../StatefulWidget/RawKeyboardListener/node1_base.dart';
 export '../StatefulWidget/Dismissible/node2_direction.dart';
 
