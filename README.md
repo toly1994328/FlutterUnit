@@ -9,14 +9,6 @@
 
 ### FlutterUnit 下载体验:
 
-[![GitHub stars](https://img.shields.io/github/stars/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/network)
-[![GitHub license](https://img.shields.io/github/license/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/blob/master/LICENSE)
-
-| FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | FlutterUnit win版 下载 | 
-|------|------------|------------|
-|![](http://toly1994.com/file/ewm/FlutterUnit_1.3.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitWin.png)|   
-
 
 | 平台类型 | 下载地址 | 项目分支地址  | 相关文章 | 
 |------|------------|------|------------|
