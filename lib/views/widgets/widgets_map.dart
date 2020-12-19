@@ -64,6 +64,41 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
+      case "AutomaticKeepAlive":
+        return [
+          AutomaticKeepAliveDemo(),
+        ];
+      case "KeepAlive":
+        return [
+          KeepAliveDemo(),
+        ];
+      case "ListWheelViewport":
+        return [
+          ListWheelViewportDemo(),
+          ListWheelViewportDemo2(),
+          ListWheelViewportDemo3(),
+          ListWheelViewportDemo4(),
+        ];
+      case "InheritedTheme":
+        return [
+          InheritedThemeDemo(),
+        ];
+      case "ScrollView":
+        return [
+          ScrollViewDemo(),
+        ];
+      case "SliverWithKeepAliveWidget":
+        return [
+          SliverWithKeepAliveWidgetDemo(),
+        ];
+      case "BoxScrollView":
+        return [
+          BoxScrollViewDemo(),
+        ];
+      case "CupertinoUserInterfaceLevel":
+        return [
+          CupertinoUserInterfaceLevelDemo(),
+        ];
       case "CupertinoSliverNavigationBar":
         return [
           CupertinoSliverNavigationBarDemo(),
@@ -91,7 +126,8 @@ class WidgetsMap {
       case "CupertinoPopupSurface":
         return [
           CupertinoPopupSurfaceDemo(),
-        ];      case "RenderObjectToWidgetAdapter":
+        ];
+      case "RenderObjectToWidgetAdapter":
         return [
           RenderObjectToWidgetAdapterDemo(),
         ];
