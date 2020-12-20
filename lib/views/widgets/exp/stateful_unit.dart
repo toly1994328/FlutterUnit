@@ -78,8 +78,11 @@ export '../StatefulWidget/RawGestureDetector/node1_base.dart';
 
 export '../StatefulWidget/Dismissible/node1_base.dart';
 export '../StatefulWidget/AutomaticKeepAlive/node1_base.dart';
+export '../StatefulWidget/AnimatedModalBarrier/node1_base.dart';
+export '../StatefulWidget/FormField/node1_base.dart';
 export '../StatefulWidget/AnimatedBuilder/node1_base.dart';
 export '../StatefulWidget/TweenAnimationBuilder/node1_base.dart';
+export '../StatefulWidget/PaginatedDataTable/node1_base.dart';
 export '../StatefulWidget/RawKeyboardListener/node1_base.dart';
 export '../StatefulWidget/Dismissible/node2_direction.dart';
 
@@ -100,6 +103,7 @@ export '../StatefulWidget/AnimatedPositioned/node1_base.dart';
 export '../StatefulWidget/AnimatedPositionedDirectional/node1_base.dart';
 
 export '../StatefulWidget/ExpansionPanelList/node1_base.dart';
+export '../StatefulWidget/DropdownButtonFormField/node1_base.dart';
 
 export '../StatefulWidget/Ink/node1_base.dart';
 export '../StatefulWidget/Ink/node2_image.dart';

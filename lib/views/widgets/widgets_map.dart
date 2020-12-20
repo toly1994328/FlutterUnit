@@ -83,6 +83,34 @@ class WidgetsMap {
         return [
           InheritedThemeDemo(),
         ];
+      case "ModalBarrier":
+        return [
+          ModalBarrierDemo(),
+        ];
+      case "AnimatedModalBarrier":
+        return [
+          AnimatedModalBarrierDemo(),
+        ];
+      case "DefaultAssetBundle":
+        return [
+          DefaultAssetBundleDemo(),
+        ];
+      case "DropdownButtonFormField":
+        return [
+          DropdownButtonFormFieldDemo(),
+        ];
+      case "FormField":
+        return [
+          FormFieldDemo(),
+        ];
+      case "PaginatedDataTable":
+        return [
+          PaginatedDataTableDemo(),
+        ];
+      case "InheritedWidget":
+        return [
+          InheritedWidgetDemo(),
+        ];
       case "ScrollView":
         return [
           ScrollViewDemo(),

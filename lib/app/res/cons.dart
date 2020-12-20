@@ -3,7 +3,6 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/views/components/permanent/code/highlighter_style.dart';
 
 class Cons {
-  static String version = 'V1.1.1';
 
   static const MENU_INFO = <String>["关于", "帮助", "问题反馈"]; //菜单栏
 

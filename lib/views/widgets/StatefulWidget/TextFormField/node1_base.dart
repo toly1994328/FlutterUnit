@@ -23,37 +23,23 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Form(
-        key: _formKey,
-        child:
-        Stack(
-          alignment: Alignment.centerRight,
-          children: <Widget>[
-            Container(
-              width: 350,
-              child: UnconstrainedBox(
-                child: Container(
-                  width: 200,
-                  height: 70,
-                  child: TextFormField(
-                    style: TextStyle(textBaseline: TextBaseline.alphabetic),
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'username',
-                    ),
-                    validator: _validateUsername,
-                    onFieldSubmitted: _onFieldSubmitted,
-                    onSaved: _onSaved,
-                  ),
-                ),
-              ),
+    return Row(
+      children: <Widget>[
+        SizedBox(width: 40),
+        Expanded(
+          child: TextFormField(
+            style: TextStyle(textBaseline: TextBaseline.alphabetic),
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'username',
             ),
-            Positioned(
-                top: 0, right: 0, child: _buildSubmitButton(context)),
-          ],
+            validator: _validateUsername,
+            onFieldSubmitted: _onFieldSubmitted,
+            onSaved: _onSaved,
+          ),
         ),
-      ),
+        _buildSubmitButton(context),
+      ],
     );
   }
 

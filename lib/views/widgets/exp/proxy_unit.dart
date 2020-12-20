@@ -30,3 +30,5 @@ export '../ProxyWidget/TableCell/node1_base.dart';
 export '../ProxyWidget/KeepAlive/node1_base.dart';
 export '../ProxyWidget/CupertinoUserInterfaceLevel/node1_base.dart';
 export '../ProxyWidget/InheritedTheme/node1_base.dart';
+export '../ProxyWidget/DefaultAssetBundle/node1_base.dart';
+export '../ProxyWidget/InheritedWidget/node1_base.dart';
