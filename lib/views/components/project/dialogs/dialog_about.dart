@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/res/str_unit.dart';
 
 class DialogAbout extends StatelessWidget {
   static show(BuildContext context){
@@ -40,7 +41,7 @@ class DialogAbout extends StatelessWidget {
             height: 20,
           ),
           Text(
-            "Flutter Unit ${Cons.version}",
+            "Flutter Unit ${StrUnit.version}",
           ),
         ]);
     return AlertDialog(title: title, content: content, actions: <Widget>[

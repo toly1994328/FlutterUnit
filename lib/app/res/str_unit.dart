@@ -5,7 +5,7 @@
 class StrUnit {
 
   // 小文字大小
-  static const String  version = 'V1.4.0';
+  static const String  version = 'V1.5.0';
 
   static const String galleryInfo = """
 [
