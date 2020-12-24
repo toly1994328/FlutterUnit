@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/views/common/unit_drawer_header.dart';
+import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/project/unit_drawer_header.dart';
 
 import 'edit_category_panel.dart';
 
@@ -26,7 +26,7 @@ class _HomeRightDrawerState extends State<HomeRightDrawer> {
   }
 
   Widget _buildChild(BuildContext context) {
-    final Color color =  BlocProvider.of<HomeBloc>(context).activeHomeColor;
+    final Color color =  BlocProvider.of<WidgetsBloc>(context).state.color;
 
     return Container(
         color: color.withAlpha(33),

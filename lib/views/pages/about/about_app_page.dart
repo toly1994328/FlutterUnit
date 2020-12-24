@@ -5,10 +5,10 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/permanent/panel.dart';
+import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/permanent/panel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutAppPage extends StatelessWidget {
@@ -162,9 +162,9 @@ class AboutAppPage extends StatelessWidget {
             InfoPanel(
                 title: 'Flutter Unit 1.0',
                 info:    'Flutter Unit 1.0 核心计划是收录widget，即widget集录。'
-                    '目前收录组件204个，均可在app中进行查看。'
+                    '目前收录组件 283 个，均可在 app 中进行查看。'
                     '项目中提供widget图鉴文件可供下载参考。功能主要如下:\n'
-                    '○  200+的Flutter 组件收录和详情介绍。\n'
+                    '○  280+的 Flutter 组件收录和详情介绍。\n'
                     '○  对一些重要的组件提供操作体验。\n'
                     '○  link to功能，查看组件时可以切换到相关组件。\n'
                     '○  组件收藏和取消收藏功能。\n'

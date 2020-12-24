@@ -1,21 +1,13 @@
 
 #### Flutter Unit 周边
-- 🔥 [《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
+- 🔥  [实体书 - 《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
+- 🔥  [掘金小册 -《Flutter绘制指南》](https://juejin.im/book/6844733827265331214)
 - 🔥  [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
 - 🔥  [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - 🔥  [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
 
 
-
-### FlutterUnit 下载体验:
-
-[![GitHub stars](https://img.shields.io/github/stars/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/network)
-[![GitHub license](https://img.shields.io/github/license/toly1994328/FlutterUnit)](https://github.com/toly1994328/FlutterUnit/blob/master/LICENSE)
-
-| FlutterUnit.apk 下载  | FlutterUnit mac版 下载 | FlutterUnit win版 下载 | 
-|------|------------|------------|
-|![](http://toly1994.com/file/ewm/FlutterUnit.png)|![](http://toly1994.com/file/ewm/FlutterUnitMac.png)| ![](http://toly1994.com/file/ewm/FlutterUnitWin.png)|   
+### FlutterUnit 下载体验: 复制链接，在浏览器下载~
 
 
 | 平台类型 | 下载地址 | 项目分支地址  | 相关文章 | 
@@ -32,10 +24,10 @@
 
 ```
 a1@toly ~ % flutter --version
-Flutter 1.22.0 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision d408d302e2 (5 days ago) • 2020-09-29 11:49:17 -0700
-Engine • revision 5babba6c4d
-Tools • Dart 2.10.0
+Flutter 1.22.4 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 1aafb3a8b9 (4 days ago) • 2020-11-13 09:59:28 -0800
+Engine • revision 2c956a31c0
+Tools • Dart 2.10.4
 ```
 
 ---
@@ -43,11 +35,11 @@ Tools • Dart 2.10.0
 
 ### 一、组件的展示页面
 
-#### 1. `260+组件收录`
+#### 1. `300+组件收录`
 
 > Flutter源码中的可用的组件一共350个左右，纷繁复杂，也没有明确的分类标准
 FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。并`根据个人感觉进行评星 `
-`目前收录组件260个`，每个都有至少一个演示展现和代码展示。
+`目前收录组件306个`，每个都有至少一个演示展现和代码展示。
 
 | . | . | . |
 |------|------------|------------|

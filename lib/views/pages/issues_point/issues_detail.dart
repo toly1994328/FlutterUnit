@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/convert_man.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/color_wrapper.dart';
-import 'package:flutter_unit/components/permanent/markdown/markdown_widget.dart';
-import 'package:flutter_unit/components/permanent/panel.dart';
+import 'package:flutter_unit/views/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/color_wrapper.dart';
+import 'package:flutter_unit/views/components/permanent/markdown/markdown_widget.dart';
+import 'package:flutter_unit/views/components/permanent/panel.dart';
 import 'package:flutter_unit/model/github/issue_comment.dart';
 import 'package:flutter_unit/model/github/issue.dart';
 

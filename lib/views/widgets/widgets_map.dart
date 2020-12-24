@@ -7,9 +7,7 @@ import 'exp/proxy_unit.dart';
 import 'exp/other_unit.dart';
 import 'exp/sliver_unit.dart';
 
-/// create by 张风捷特烈 on 2020-03-04
-/// contact me by email 1981462002@qq.com
-/// 说明:
+/// AUTO CREATED BY [张风捷特烈] , DON'T MODIFY!
 
 class WidgetsMap {
   static List<Widget> map(String name) {
@@ -66,6 +64,69 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
+      case "AutomaticKeepAlive":
+        return [
+          AutomaticKeepAliveDemo(),
+        ];
+      case "KeepAlive":
+        return [
+          KeepAliveDemo(),
+        ];
+      case "ListWheelViewport":
+        return [
+          ListWheelViewportDemo(),
+          ListWheelViewportDemo2(),
+          ListWheelViewportDemo3(),
+          ListWheelViewportDemo4(),
+        ];
+      case "InheritedTheme":
+        return [
+          InheritedThemeDemo(),
+        ];
+      case "ModalBarrier":
+        return [
+          ModalBarrierDemo(),
+        ];
+      case "AnimatedModalBarrier":
+        return [
+          AnimatedModalBarrierDemo(),
+        ];
+      case "DefaultAssetBundle":
+        return [
+          DefaultAssetBundleDemo(),
+        ];
+      case "DropdownButtonFormField":
+        return [
+          DropdownButtonFormFieldDemo(),
+        ];
+      case "FormField":
+        return [
+          FormFieldDemo(),
+        ];
+      case "PaginatedDataTable":
+        return [
+          PaginatedDataTableDemo(),
+        ];
+      case "InheritedWidget":
+        return [
+          InheritedWidgetDemo(),
+        ];
+      case "ScrollView":
+        return [
+          ScrollViewDemo(),
+        ];
+      case "SliverWithKeepAliveWidget":
+        return [
+          SliverWithKeepAliveWidgetDemo(),
+        ];
+      case "BoxScrollView":
+        return [
+          BoxScrollViewDemo(),
+        ];
+      case "CupertinoUserInterfaceLevel":
+        return [
+          CupertinoUserInterfaceLevelDemo(),
+        ];
       case "CupertinoSliverNavigationBar":
         return [
           CupertinoSliverNavigationBarDemo(),
@@ -90,6 +151,14 @@ class WidgetsMap {
         return [
           ViewportDemo(),
         ];
+      case "CupertinoPopupSurface":
+        return [
+          CupertinoPopupSurfaceDemo(),
+        ];
+      case "RenderObjectToWidgetAdapter":
+        return [
+          RenderObjectToWidgetAdapterDemo(),
+        ];
       case "SliverPrototypeExtentList":
         return [
           SliverPrototypeExtentListDemo(),
@@ -97,6 +166,34 @@ class WidgetsMap {
       case "InputDecorator":
         return [
           InputDecoratorDemo(),
+        ];
+      case "ColoredBox":
+        return [
+          ColoredBoxDemo(),
+        ];
+      case "StatefulBuilder":
+        return [
+          StatefulBuilderDemo(),
+        ];
+      case "RawKeyboardListener":
+        return [
+          RawKeyboardListenerDemo(),
+        ];
+      case "RawGestureDetector":
+        return [
+          RawGestureDetectorDemo(),
+        ];
+      case "SafeArea":
+        return [
+          SafeAreaDemo(),
+        ];
+      case "AnimatedBuilder":
+        return [
+          AnimatedBuilderDemo(),
+        ];
+      case "TweenAnimationBuilder":
+        return [
+          TweenAnimationBuilderDemo(),
         ];
       case "WidgetInspector":
         return [
@@ -132,6 +229,10 @@ class WidgetsMap {
       case "WidgetsApp":
         return [
           WidgetsAppDemo(),
+        ];
+      case "TableCell":
+        return [
+          TableCellDemo(),
         ];
 
       case "EditableText":
@@ -234,6 +335,10 @@ class WidgetsMap {
       case "CircleAvatar":
         return [
           CustomCircleAvatar(),
+        ];
+      case "SliverLayoutBuilder":
+        return [
+          SliverLayoutBuilderDemo(),
         ];
       case "Visibility":
         return [
@@ -465,6 +570,51 @@ class WidgetsMap {
       case "ExpansionTile":
         return [
           CustomExpansionTile(),
+        ];
+
+      case "AnnotatedRegion":
+        return [
+          AnnotatedRegionDemo(),
+        ];
+      case "CheckedModeBanner":
+        return [
+          CheckedModeBannerDemo(),
+        ];
+      case "DefaultTabController":
+        return [
+          DefaultTabControllerDemo(),
+        ];
+      case "CupertinoTabView":
+        return [
+          CupertinoTabViewDemo(),
+        ];
+      case "CupertinoTextSelectionToolbar":
+        return [
+          CupertinoTextSelectionToolbarDemo(),
+        ];
+      case "DraggableScrollableActuator":
+        return [
+          DraggableScrollableActuatorDemo(),
+        ];
+      case "GlowingOverscrollIndicator":
+        return [
+          GlowingOverscrollIndicatorDemo(),
+        ];
+      case "DraggableScrollableSheet":
+        return [
+          DraggableScrollableSheetDemo(),
+        ];
+      case "DrawerController":
+        return [
+          DrawerControllerDemo(),
+        ];
+      case "MergeableMaterial":
+        return [
+          MergeableMaterialDemo(),
+        ];
+      case "SizeChangedLayoutNotifier":
+        return [
+          SizeChangedLayoutNotifierDemo(),
         ];
       case "SelectableText":
         return [
@@ -948,8 +1098,8 @@ class WidgetsMap {
         return [
           CustomListView(),
           HorizontalListView(),
-          BuilderListView(),
           SeparatedListView(),
+          BuilderListView(),
         ];
       case "GridView":
         return [

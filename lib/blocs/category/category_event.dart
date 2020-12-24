@@ -33,6 +33,7 @@ class EventDeleteCategory extends CategoryEvent{
   List<Object> get props => [id];
 }
 
+
 class EventAddCategory extends CategoryEvent{
   final String name;
   final String info;

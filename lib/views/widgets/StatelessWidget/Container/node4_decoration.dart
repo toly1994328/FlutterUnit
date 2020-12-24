@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 
 class ContainerDecoration extends StatelessWidget {
 
-  static const rainbow = <int>[
+  final List<int> rainbow = [
     0xffff0000,
     0xffFF7F00,
     0xffFFFF00,
@@ -23,10 +23,10 @@ class ContainerDecoration extends StatelessWidget {
     0xff0000FF,
     0xff8B00FF
   ];
-
+ final List<double> stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
   @override
   Widget build(BuildContext context) {
-    var stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
+
     return Container(//容器
       alignment: Alignment.center,
       width: 200,

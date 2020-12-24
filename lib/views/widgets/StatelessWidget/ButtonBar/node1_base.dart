@@ -10,7 +10,7 @@
 //    }
 
 import 'package:flutter/material.dart';
-import '../../../dialogs/dialog_about.dart';
+import '../../../components/project/dialogs/dialog_about.dart';
 
 
 class CustomButtonBar extends StatelessWidget {

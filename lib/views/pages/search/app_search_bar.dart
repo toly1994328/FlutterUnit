@@ -23,10 +23,11 @@ class _AppSearchBarState extends State<AppSearchBar> {
           controller: _controller,
           maxLines: 1,
           decoration: InputDecoration(//输入框装饰
+
               filled: true,//填满
               fillColor: Colors.white,//白色
               prefixIcon:  Icon(Icons.search),//前标
-              contentPadding: EdgeInsets.only(top: 0),//调整文字边距
+              // contentPadding: EdgeInsets.only(right: 0),//调整文字边距
               border: UnderlineInputBorder(
                 borderSide: BorderSide.none,//去边线
                 borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -35,7 +36,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
               hintStyle: TextStyle(fontSize: 14)//提示样式
           ),
           onChanged: (str) => BlocProvider.of<SearchBloc>(context)
-              .add(EventTextChanged(args:SearchArgs(name: str,stars: [1,2,3,4,5]))),
+              .add(SearchWidgetEvent(args:SearchArgs(name: str,stars: [1,2,3,4,5]))),
 
           onSubmitted: (str) {//提交后
             FocusScope.of(context).requestFocus(FocusNode()); //收起键盘

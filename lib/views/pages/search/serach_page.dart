@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/router.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/views/items/techno_widget_list_item.dart';
+import 'package:flutter_unit/views/components/project/items/widget/techno_widget_list_item.dart';
 import 'package:flutter_unit/views/pages/search/app_search_bar.dart';
 import 'package:flutter_unit/views/pages/search/error_page.dart';
-import 'package:flutter_unit/views/common/loading_page.dart';
 import 'package:flutter_unit/views/pages/search/not_search_page.dart';
-import 'package:flutter_unit/components/permanent/multi_chip_filter.dart';
+import 'package:flutter_unit/views/components/permanent/multi_chip_filter.dart';
 
-import 'empty_page.dart';
+import '../../components/project/default/empty_shower.dart';
 
 
 class SearchPage extends StatefulWidget {
@@ -28,7 +28,7 @@ class _SearchPageState extends State<SearchPage> {
       body: WillPopScope(
         onWillPop: () async {
           //返回时 情空搜索
-          BlocProvider.of<SearchBloc>(context).add(EventTextChanged(args: SearchArgs()));
+          BlocProvider.of<SearchBloc>(context).add(SearchWidgetEvent(args: SearchArgs()));
           return true;
         },
         child: CustomScrollView(
@@ -88,16 +88,17 @@ class _SearchPageState extends State<SearchPage> {
             ),
             onChange: _doSelectStart,
           ),
-          Divider()
+          Divider(),
+          SizedBox(height: 10,)
         ],
       );
 
   Widget _buildBodyByState(BuildContext context,SearchState state) {
     if (state is SearchStateNoSearch) return SliverToBoxAdapter(child: NotSearchPage(),);
-    if (state is SearchStateLoading) return SliverToBoxAdapter(child: LoadingPage());
+    if (state is SearchStateLoading) return SliverToBoxAdapter(child: LoadingShower());
     if (state is SearchStateError) return SliverToBoxAdapter(child: ErrorPage());
     if (state is SearchStateSuccess) return _buildSliverList(state.result);
-    if (state is SearchStateEmpty) return SliverToBoxAdapter(child: EmptyPage());
+    if (state is SearchStateEmpty) return SliverToBoxAdapter(child: EmptyShower(message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",));
     return NotSearchPage();
   }
 
@@ -118,7 +119,7 @@ class _SearchPageState extends State<SearchPage> {
       temp.addAll(List.generate(5 - temp.length, (e) => -1));
     }
     BlocProvider.of<SearchBloc>(context)
-        .add(EventTextChanged(args: SearchArgs(name: '', stars: temp)));
+        .add(SearchWidgetEvent(args: SearchArgs(name: '', stars: temp)));
   }
 
   _toDetailPage(WidgetModel model) {

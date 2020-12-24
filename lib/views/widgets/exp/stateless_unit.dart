@@ -5,6 +5,7 @@ export '../StatelessWidget/AboutListTile/node1_base.dart';
 export '../StatelessWidget/ActionChip/node1_base.dart';
 export '../StatelessWidget/AlertDialog/node1_base.dart';
 export '../StatelessWidget/AnimatedIcon/node1_base.dart';
+export '../StatelessWidget/CheckedModeBanner/node1_base.dart';
 export '../StatelessWidget/Card/node1_base.dart';
 export '../StatelessWidget/Card/node2_shape.dart';
 export '../StatelessWidget/PreferredSize/node1_base.dart';
@@ -12,6 +13,7 @@ export '../StatelessWidget/PreferredSize/node2_adapter.dart';
 export '../StatelessWidget/Builder/node1_base.dart';
 export '../StatelessWidget/NavigationToolbar/node1_base.dart';
 export '../StatelessWidget/CupertinoDialogAction/node1_base.dart';
+export '../StatelessWidget/DraggableScrollableActuator/node1_base.dart';
 
 export '../StatelessWidget/CheckboxListTile/node1_base.dart';
 export '../StatelessWidget/CheckboxListTile/node2_select.dart';
@@ -29,6 +31,7 @@ export '../StatelessWidget/Container/node5_transform.dart';
 export '../StatelessWidget/Container/node6_constraints.dart';
 export '../StatelessWidget/MaterialBanner/node1_one_btn.dart';
 export '../StatelessWidget/MaterialBanner/node2_two_btn.dart';
+export '../StatelessWidget/SafeArea/node1_base.dart';
 
 export '../StatelessWidget/DataTable/node1_base.dart';
 export '../StatelessWidget/DataTable/node2_operation.dart';
@@ -42,9 +45,13 @@ export '../StatelessWidget/CupertinoNavigationBarBackButton/node1_base.dart';
 export '../StatelessWidget/CupertinoTheme/node1_base.dart';
 export '../StatelessWidget/CupertinoTheme/node2_use.dart';
 
+export '../StatelessWidget/CupertinoPopupSurface/node1_base.dart';
 export '../StatelessWidget/Divider/node1_base.dart';
 export '../StatelessWidget/Divider/node2_height.dart';
 
+export '../StatelessWidget/ScrollView/node1_base.dart';
+export '../StatelessWidget/ModalBarrier/node1_base.dart';
+export '../StatelessWidget/BoxScrollView/node1_base.dart';
 export '../StatelessWidget/FloatingActionButton/node1_base.dart';
 export '../StatelessWidget/FloatingActionButton/node2_mini.dart';
 export '../StatelessWidget/FloatingActionButton/node3_shape.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'unit_color.dart';
 
 ///文本样式
-class TextStyleUnit {
+class TStyleUnit {
   static const lagerTextSize = 30.0;
   static const bigTextSize = 23.0;
   static const normalTextSize = 18.0;

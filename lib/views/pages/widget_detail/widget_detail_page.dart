@@ -5,9 +5,9 @@ import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/permanent/panel.dart';
-import 'package:flutter_unit/components/project/widget_node_panel.dart';
+import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/permanent/panel.dart';
+import 'package:flutter_unit/views/components/project/widget_node_panel.dart';
 import 'package:flutter_unit/model/node_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/pages/widget_detail/category_end_drawer.dart';
@@ -71,7 +71,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
   Widget _buildCollectButton(WidgetModel model, BuildContext context) {
     //监听 CollectBloc 伺机弹出toast
-    return BlocListener<CollectBloc, CollectState>(
+    return BlocListener<LikeWidgetBloc, LikeWidgetState>(
         listener: (ctx, st) {
           bool collected = st.widgets.contains(model);
           String msg =
@@ -79,9 +79,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           _showToast(ctx, msg, collected);
         },
         child: FeedbackWidget(
-          onPressed: () => BlocProvider.of<CollectBloc>(context)
-              .add(ToggleCollectEvent(id: model.id)),
-          child: BlocBuilder<CollectBloc, CollectState>(
+          onPressed: () => BlocProvider.of<LikeWidgetBloc>(context)
+              .add(ToggleLikeWidgetEvent(id: model.id)),
+          child: BlocBuilder<LikeWidgetBloc, LikeWidgetState>(
               builder: (_, s) => Padding(
                     padding: const EdgeInsets.only(right: 20.0),
                     child: Icon(

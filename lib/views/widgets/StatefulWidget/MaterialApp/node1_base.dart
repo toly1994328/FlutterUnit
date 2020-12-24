@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../app/router.dart';
-import '../../StatefulWidget/Scaffold/node1_base.dart';
 
 /// create by 张风捷特烈 on 2020-03-17
 /// contact me by email 1981462002@qq.com

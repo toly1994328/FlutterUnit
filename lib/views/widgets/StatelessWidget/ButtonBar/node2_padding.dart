@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import '../../../dialogs/dialog_about.dart';
+import '../../../components/project/dialogs/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com

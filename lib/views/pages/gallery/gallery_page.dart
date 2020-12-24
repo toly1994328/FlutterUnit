@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 import 'art/circle_packing.dart';
 import 'art/cubic_disarray.dart';
-import 'art/draw_picture.dart';
+import 'base/draw_picture.dart';
 import 'art/hypnotic_squares.dart';
 import 'art/joy_division.dart';
 import 'art/piet_mondrian.dart';
-import 'art/random_portrait.dart';
+import 'base/random_portrait.dart';
 import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
-import 'draw_path.dart';
+import 'anim/draw_path.dart';
 import 'picture_frame.dart';
 
 /// create by 张风捷特烈 on 2020/10/10
@@ -119,25 +119,6 @@ class _GalleryPageState extends State<GalleryPage> {
         ),
       ),
     ]));
-  }
-
-  _buildTitle() {
-    return Container(
-      height: 70,
-      padding: const EdgeInsets.only(top: 8.0),
-      color: Colors.blue,
-      child: Row(
-        children: [
-          BackButton(
-            color: Colors.white,
-          ),
-          Spacer(),
-          Text('Flutter绘制集录'),
-          Spacer(),
-
-        ],
-      ),
-    );
   }
 }
 

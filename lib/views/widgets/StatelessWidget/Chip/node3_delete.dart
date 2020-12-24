@@ -13,7 +13,7 @@
 //          "【onDeleted】: 右侧组件点击事件   【Function】",
 //    }
 import 'package:flutter/material.dart';
-import '../../../dialogs/dialog_about.dart';
+import '../../../components/project/dialogs/dialog_about.dart';
 
 class DeleteOfChip extends StatelessWidget {
   @override

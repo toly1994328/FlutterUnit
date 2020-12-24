@@ -1,5 +1,5 @@
 import 'package:flutter_unit/storage/app_storage.dart';
-import 'package:flutter_unit/app/enums.dart';
+import 'package:flutter_unit/model/enums.dart';
 
 import '../po/widget_po.dart';
 

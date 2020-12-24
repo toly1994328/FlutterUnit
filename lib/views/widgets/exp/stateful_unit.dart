@@ -41,12 +41,14 @@ export '../StatefulWidget/Image/node3_alignment.dart';
 export '../StatefulWidget/Image/node4_colorBlendMode.dart';
 export '../StatefulWidget/Image/node5_repeat.dart';
 export '../StatefulWidget/Image/node6_centerSlice.dart';
+export '../StatefulWidget/Image/node6_centerSlice.dart';
 
 export '../StatefulWidget/RangeSlider/node1_base.dart';
 export '../StatefulWidget/Slider/node1_base.dart';
 export '../StatefulWidget/Slider/node2_lable.dart';
 export '../StatefulWidget/Switch/node1_base.dart';
 export '../StatefulWidget/Switch/node2_image.dart';
+export '../StatefulWidget/StatefulBuilder/node1_base.dart';
 export '../StatefulWidget/TextField/node3_decoration.dart';
 export '../StatefulWidget/RefreshIndicator/node1_base.dart';
 export '../StatefulWidget/SelectableText/node1_base.dart';
@@ -72,8 +74,16 @@ export '../StatefulWidget/DecoratedBoxTransition/node1_base.dart';
 export '../StatefulWidget/DefaultTextStyleTransition/node1_base.dart';
 export '../StatefulWidget/RelativePositionedTransition/node1_base.dart';
 export '../StatefulWidget/CupertinoScrollbar/node1_base.dart';
+export '../StatefulWidget/RawGestureDetector/node1_base.dart';
 
 export '../StatefulWidget/Dismissible/node1_base.dart';
+export '../StatefulWidget/AutomaticKeepAlive/node1_base.dart';
+export '../StatefulWidget/AnimatedModalBarrier/node1_base.dart';
+export '../StatefulWidget/FormField/node1_base.dart';
+export '../StatefulWidget/AnimatedBuilder/node1_base.dart';
+export '../StatefulWidget/TweenAnimationBuilder/node1_base.dart';
+export '../StatefulWidget/PaginatedDataTable/node1_base.dart';
+export '../StatefulWidget/RawKeyboardListener/node1_base.dart';
 export '../StatefulWidget/Dismissible/node2_direction.dart';
 
 export '../StatefulWidget/DragTarget/node1_base.dart';
@@ -93,6 +103,7 @@ export '../StatefulWidget/AnimatedPositioned/node1_base.dart';
 export '../StatefulWidget/AnimatedPositionedDirectional/node1_base.dart';
 
 export '../StatefulWidget/ExpansionPanelList/node1_base.dart';
+export '../StatefulWidget/DropdownButtonFormField/node1_base.dart';
 
 export '../StatefulWidget/Ink/node1_base.dart';
 export '../StatefulWidget/Ink/node2_image.dart';
@@ -145,6 +156,12 @@ export '../StatefulWidget/WidgetsApp/node1_base.dart' hide HomePage;
 export '../StatefulWidget/WidgetInspector/node1_base.dart' hide HomePage;
 export '../StatefulWidget/AnimatedTheme/node1_base.dart';
 export '../StatefulWidget/AnimatedPhysicalModel/node1_base.dart';
+export '../StatefulWidget/DefaultTabController/node1_base.dart';
+export '../StatefulWidget/GlowingOverscrollIndicator/node1_base.dart';
+export '../StatefulWidget/DraggableScrollableSheet/node1_base.dart';
+export '../StatefulWidget/DrawerController/node1_base.dart';
+export '../StatefulWidget/MergeableMaterial/node1_base.dart';
+export '../StatefulWidget/CupertinoTabView/node1_base.dart' hide HomePage;
 
 export '../StatefulWidget/TextButton/node1_base.dart';
 export '../StatefulWidget/TextButton/node2_style.dart';

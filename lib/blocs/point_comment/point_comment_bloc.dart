@@ -14,8 +14,9 @@ import 'point_comment_state.dart';
 
 class PointCommentBloc extends Bloc<PointCommentEvent, PointCommentState> {
 
-  @override
-  PointCommentState get initialState => PointCommentInitial();
+  PointCommentBloc() : super(PointCommentInitial());
+
+
 
   @override
   Stream<PointCommentState> mapEventToState(PointCommentEvent event) async* {

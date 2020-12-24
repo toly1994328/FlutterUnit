@@ -12,9 +12,8 @@ import 'point_event.dart';
 /// 说明:
 
 class PointBloc extends Bloc<PointEvent, PointState> {
+  PointBloc() : super(PointLoading());
 
-  @override
-  PointState get initialState => PointLoading();
 
   @override
   Stream<PointState> mapEventToState(PointEvent event) async* {

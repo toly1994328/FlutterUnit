@@ -6,7 +6,7 @@ abstract class SearchEvent{//事件基
   const SearchEvent();
 }
 
-class EventTextChanged extends SearchEvent {
+class SearchWidgetEvent extends SearchEvent {
   final SearchArgs args;//参数
-  const EventTextChanged({this.args});
+  const SearchWidgetEvent({this.args});
 }
