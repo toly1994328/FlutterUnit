@@ -92,6 +92,8 @@ export '../StatefulWidget/Draggable/node2_data.dart';
 export '../StatefulWidget/Draggable/node3_use.dart';
 
 export '../StatefulWidget/Form/node1_base.dart';
+export '../StatefulWidget/StatusTransitionWidget/node1_base.dart';
+export '../StatefulWidget/UniqueWidget/node1_base.dart';
 export '../StatefulWidget/FutureBuilder/node1_base.dart';
 export '../StatefulWidget/Hero/node1_base.dart';
 export '../StatefulWidget/AnimatedAlign/node1_base.dart';

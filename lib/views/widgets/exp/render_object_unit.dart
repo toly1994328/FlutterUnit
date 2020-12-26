@@ -24,6 +24,8 @@ export '../MultiChildRenderObjectWidget/Row/node1_base.dart';
 export '../MultiChildRenderObjectWidget/CustomMultiChildLayout/node1_base.dart';
 export '../MultiChildRenderObjectWidget/Viewport/node1_base.dart';
 export '../MultiChildRenderObjectWidget/ListBody/node1_base.dart';
+export '../MultiChildRenderObjectWidget/ShrinkWrappingViewport/node1_base.dart';
+export '../MultiChildRenderObjectWidget/NestedScrollViewViewport/node1_base.dart';
 
 export '../SingleChildRenderObjectWidget/Align/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Align/node2_other.dart';
