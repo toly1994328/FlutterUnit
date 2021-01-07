@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage>
           return FeedbackWidget(
               a: 0.95,
               duration: const Duration(milliseconds: 200),
-              onPressed: () => _toDetailPage(model),
+              onEnd: () => _toDetailPage(model),
               child: HomeItemSupport.get(model, state.itemStyleIndex));
         },
       );
