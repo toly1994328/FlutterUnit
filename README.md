@@ -24,9 +24,9 @@
 
 ```
 a1@toly ~ % flutter --version
-Flutter 1.22.4 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 1aafb3a8b9 (4 days ago) • 2020-11-13 09:59:28 -0800
-Engine • revision 2c956a31c0
+Flutter 1.22.5 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 7891006299 (4 weeks ago) • 2020-12-10 11:54:40 -0800
+Engine • revision ae90085a84
 Tools • Dart 2.10.4
 ```
 
