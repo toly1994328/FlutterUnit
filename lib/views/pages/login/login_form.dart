@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 
 
@@ -24,7 +25,7 @@ class _LoginFromState extends State<LoginFrom> {
       children: <Widget>[
         Text("FlutterUnit 登录",style: TextStyle(fontSize: 25),),
         SizedBox(height: 5,),
-        Text("请使用github用户名登录",style: TextStyle(color: Colors.grey),),
+        Text("更多精彩，更多体验 ~",style: TextStyle(color: Colors.grey),),
         SizedBox(height:20,),
         buildUsernameInput(),
         Stack(
@@ -45,17 +46,23 @@ class _LoginFromState extends State<LoginFrom> {
               style: TextStyle(color: Color(0xff444444), fontSize: 14),
             ),
             Spacer(),
-            Text(
-              "如何注册?",
-              style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 14,
-                  decoration: TextDecoration.underline),
+            FeedbackWidget(
+              onEnd: (){
+                Navigator.of(context).pushNamed(UnitRouter.register);
+              },
+              child: Text(
+                "用户注册",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 14,
+                    decoration: TextDecoration.underline),
+              ),
             )
           ],
         ),
         _buildBtn(),
-        buildOtherLogin()
+        buildOtherLogin(),
+        const Spacer(flex: 4),
       ],
     );
   }
@@ -82,7 +89,7 @@ class _LoginFromState extends State<LoginFrom> {
           borderRadius: BorderRadius.all(Radius.circular(20))),
       color: Colors.blue,
       onPressed: _doLogIn,
-      child: Text("登   录",
+      child: Text("进入 Unit 世界",
           style: TextStyle(color: Colors.white, fontSize: 18)),
     ),
   );
