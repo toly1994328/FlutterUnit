@@ -9,6 +9,7 @@ import 'package:flutter_unit/views/pages/gallery/gallery_page.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_detail.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_point_page.dart';
 import 'package:flutter_unit/views/pages/login/login_page.dart';
+import 'package:flutter_unit/views/pages/register/register_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
 import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
 import 'package:flutter_unit/views/pages/setting/font_setting.dart';
@@ -24,7 +25,6 @@ import 'package:flutter_unit/views/pages/setting/setting_page.dart';
 import 'router_utils.dart';
 
 class UnitRouter {
-
   static const String widget_detail = '/widget_detail';
 
   static const String detail = 'detail';
@@ -52,6 +52,7 @@ class UnitRouter {
   static const String layout = 'LayoutUnitPage';
   static const String about_me = 'AboutMePage';
   static const String about_app = 'AboutAppPage';
+  static const String register = 'register';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -83,10 +84,16 @@ class UnitRouter {
       case version_info:
         return Right2LeftRouter(child: VersionInfo());
 
+      case version_info:
+        return Right2LeftRouter(child: VersionInfo());
+
       case issues_point:
         return Right2LeftRouter(child: IssuesPointPage());
       case login:
         return Right2LeftRouter(child: LoginPage());
+
+      case register:
+        return Right2LeftRouter(child: RegisterPage());
 
       case attr:
         return Right2LeftRouter(child: AttrUnitPage());
