@@ -20,6 +20,12 @@ class RegisterLoading extends RegisterState {
   List<Object> get props => [];
 }
 
+class RegisterNone extends RegisterState {
+  @override
+  List<Object> get props => [];
+}
+
+
 class RegisterError extends RegisterState {
   final String message;
 

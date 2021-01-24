@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/blocs/authentic/bloc.dart';
+import 'package:flutter_unit/blocs/authentic/state.dart';
+import 'package:flutter_unit/blocs/login/bloc.dart';
+import 'package:flutter_unit/blocs/login/state.dart';
 import 'package:flutter_unit/views/pages/register/arc_clipper.dart';
 
 import 'login_form.dart';
@@ -12,18 +17,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size winSize = MediaQuery.of(context).size;
 
-    return
-
-//      BlocListener<AuthenticBloc, AuthenticState>(
-//      listener: (context, state) {
-//        if (state is AuthSuccess) {
-//          Navigator.of(context).pushReplacementNamed(Router.nav);
-//        }
-//      },
-//      child:
-
-        Scaffold(
-            body: SingleChildScrollView(
+    return Scaffold(
+        body: SingleChildScrollView(
       child: Wrap(children: [
         UnitArcBackground(height: winSize.height * 0.32),
         Container(
@@ -31,37 +26,13 @@ class LoginPage extends StatelessWidget {
             height: winSize.height * 0.68,
             width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
-            child:
-//
-//          BlocBuilder<LoginBloc, LoginState>(
-//            builder: (_, state) {
-//              return
-
-                Stack(
+            child: Stack(
               alignment: Alignment.center,
               children: [
                 LoginFrom(),
-//                  if (state is LoginFailure)
-//                    Positioned(
-//                        bottom: 0,
-//                        child: ErrorMsg(
-//                          error: state.error,
-//                        )),
-//                  if (state is LoginLoading)
-//                    LoadingView(
-//                      text: "登录中...",
-//                    )
               ],
-            )
-//              );
-//            },
-//          ),
-//        )
-//      ]
-            )
-      ]
-//        ),
-          ),
+            ))
+      ]),
     ));
   }
 }

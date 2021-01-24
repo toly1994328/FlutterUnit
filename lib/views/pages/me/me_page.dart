@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
+import 'package:flutter_unit/blocs/authentic/bloc.dart';
+import 'package:flutter_unit/blocs/authentic/state.dart';
+import 'package:flutter_unit/blocs/login/bloc.dart';
+import 'package:flutter_unit/blocs/login/state.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 
@@ -30,10 +35,10 @@ class MePage extends StatelessWidget {
               bottom: 0,
               left: 40,
               child: FeedbackWidget(
-                onEnd: (){
+                onEnd: () {
                   Navigator.of(context).pushNamed(UnitRouter.login);
                 },
-                child:  CircleImage(
+                child: CircleImage(
                   size: 80,
                   shadowColor: Theme.of(context).primaryColor.withAlpha(33),
                   image: AssetImage("assets/images/icon_head.webp"),
@@ -41,19 +46,28 @@ class MePage extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 0,
-              right: 20,
-              child: Text(
-                '张风捷特烈',
-                style: TextStyle(
-                    fontSize: 18, color: Theme.of(context).primaryColor),
-              ),
-            )
+                bottom: 0,
+                right: 20,
+                child: BlocBuilder<AuthenticBloc, AuthenticState>(
+                  builder: _buildByState,
+                ))
           ],
         ),
-
         Expanded(child: MePageItem())
       ],
     ));
+  }
+
+  Widget _buildByState(BuildContext context, AuthenticState state) {
+    if (state is AuthSuccess) {
+      return Text(
+        state.user.username,
+        style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
+      );
+    }
+    return Text(
+      '张风捷特烈',
+      style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
+    );
   }
 }

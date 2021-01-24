@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 /// 说明:
 
 class CountDownWidget extends StatefulWidget {
-  final VoidCallback onPress;
+  final Function(BuildContext context) onPress;
 
   CountDownWidget({Key key, this.onPress}) : super(key: key);
 
@@ -23,19 +23,27 @@ class _CountDownWidgetState extends State<CountDownWidget> {
   @override
   void initState() {
     super.initState();
+  }
 
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: startTimer?null:() {
-          timer = Timer.periodic(Duration(seconds: 1), _update);
-          setState(() {
-            startTimer = true;
-          });
-        },
-        child: Text(startTimer?'$count 秒后重试':'获取验证码'));
+        onPressed: startTimer
+            ? null
+            : () {
+                timer = Timer.periodic(Duration(seconds: 1), _update);
+                setState(() {
+                  startTimer = true;
+                });
+                widget.onPress(context);
+              },
+        child: Text(startTimer ? '$count 秒后重试' : '获取验证码'));
   }
 
   void _update(Timer timer) {
@@ -43,7 +51,7 @@ class _CountDownWidgetState extends State<CountDownWidget> {
     if (count == 0) {
       timer.cancel();
       startTimer = false;
-      count=5;
+      count = 60;
     }
     setState(() {});
   }

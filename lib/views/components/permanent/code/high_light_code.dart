@@ -7,6 +7,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/components/permanent/code/language/language.dart';
 import 'package:string_scanner/string_scanner.dart';
 
 import 'highlighter_style.dart';
@@ -16,31 +17,20 @@ import 'highlighter_style.dart';
 
 
 abstract class Highlighter { // ignore: one_member_abstracts
+  Language language;
   TextSpan format(String src);
 }
 
 //暗黑模式下的高亮样式
-class DartHighlighter extends Highlighter {
-  DartHighlighter([this._style]) {
+class CodeHighlighter extends Highlighter {
+  CodeHighlighter({Language language,HighlighterStyle style}) {
     _spans = <_HighlightSpan>[];
-    _style ??= HighlighterStyle.fromColors(HighlighterStyle.lightColor);
+    language =this.language;
+    _style = style??HighlighterStyle.fromColors(HighlighterStyle.lightColor);
   }
 
   HighlighterStyle _style;
 
-  static const List<String> _keywords = <String>[
-    'abstract', 'as', 'assert', 'async', 'await', 'break', 'case', 'catch',
-    'class', 'const', 'continue', 'default', 'deferred', 'do', 'dynamic', 'else',
-    'enum', 'export', 'external', 'extends', 'factory', 'false', 'final',
-    'finally', 'for', 'get', 'if', 'implements', 'import', 'in', 'is', 'library',
-    'new', 'null', 'operator', 'part', 'rethrow', 'return', 'set', 'static',
-    'super', 'switch', 'sync', 'this', 'throw', 'true', 'try', 'typedef', 'var',
-    'void', 'while', 'with', 'yield'
-  ];
-
-  static const List<String> _builtInTypes = <String>[
-    'int', 'double', 'num', 'bool'
-  ];
 
   String _src;
   StringScanner _scanner;
@@ -226,9 +216,9 @@ class DartHighlighter extends Highlighter {
         if (word.startsWith('_'))
           word = word.substring(1);
 
-        if (_keywords.contains(word))
+        if (language.containsKeywords(word))
           type = _HighlightType.keyword;
-        else if (_builtInTypes.contains(word))
+        else if (language.containsInTypes(word))
           type = _HighlightType.keyword;
         else if (_firstLetterIsUpperCase(word))
           type = _HighlightType.klass;
