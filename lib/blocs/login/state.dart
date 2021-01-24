@@ -2,49 +2,53 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/model/user.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
 /// contact me by email 1981462002@qq.com
 /// 说明: 主页 Widget 列表 状态类
 
-abstract class RegisterState extends Equatable {
-  const RegisterState();
+abstract class LoginState extends Equatable {
+  const LoginState();
 
   @override
   List<Object> get props => [];
 }
 
-class RegisterLoading extends RegisterState {
+class LoginLoading extends LoginState {
   @override
   List<Object> get props => [];
 }
 
-class RegisterNone extends RegisterState {
-  @override
-  List<Object> get props => [];
-}
-
-
-class RegisterError extends RegisterState {
+class LoginError extends LoginState {
   final String message;
 
-  const RegisterError(this.message);
+  const LoginError(this.message);
 
   @override
   List<Object> get props => [message];
 
   @override
   String toString() {
-    return 'RegisterError{message: $message}';
+    return 'LoginError{message: $message}';
   }
 }
 
-class RegisterSuccess extends RegisterState {
-  final String username;
+class LoginSuccess extends LoginState {
+  final User user;
 
-  const RegisterSuccess(this.username);
+  const LoginSuccess(this.user);
 
   @override
-  List<Object> get props => [username];
+  List<Object> get props => [user];
+}
+
+class LoginNone extends LoginState {
+
+
+  const LoginNone();
+
+  @override
+  List<Object> get props => [];
 }

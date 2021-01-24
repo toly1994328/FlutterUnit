@@ -1,11 +1,13 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
+import 'package:flutter_unit/app/utils/Toast.dart';
+import 'package:flutter_unit/blocs/login/bloc.dart';
+import 'package:flutter_unit/blocs/login/event.dart';
+import 'package:flutter_unit/blocs/login/state.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-
-
 
 class LoginFrom extends StatefulWidget {
   @override
@@ -23,19 +25,28 @@ class _LoginFromState extends State<LoginFrom> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Text("FlutterUnit 登录",style: TextStyle(fontSize: 25),),
-        SizedBox(height: 5,),
-        Text("更多精彩，更多体验 ~",style: TextStyle(color: Colors.grey),),
-        SizedBox(height:20,),
+        Text(
+          "FlutterUnit 登录",
+          style: TextStyle(fontSize: 25),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          "更多精彩，更多体验 ~",
+          style: TextStyle(color: Colors.grey),
+        ),
+        SizedBox(
+          height: 20,
+        ),
         buildUsernameInput(),
         Stack(
-          alignment: Alignment(.8,0),
+          alignment: Alignment(.8, 0),
           children: [
             buildPasswordInput(),
             FeedbackWidget(
-                onPressed: ()=> setState(() => _showPwd=!_showPwd),
-                child: Icon(_showPwd?TolyIcon.icon_show:TolyIcon.icon_hide)
-            )
+                onPressed: () => setState(() => _showPwd = !_showPwd),
+                child: Icon(_showPwd ? TolyIcon.icon_show : TolyIcon.icon_hide))
           ],
         ),
         Row(
@@ -47,8 +58,8 @@ class _LoginFromState extends State<LoginFrom> {
             ),
             Spacer(),
             FeedbackWidget(
-              onEnd: (){
-                Navigator.of(context).pushNamed(UnitRouter.register);
+              onEnd: () {
+                Navigator.of(context).pushReplacementNamed(UnitRouter.register);
               },
               child: Text(
                 "用户注册",
@@ -60,7 +71,10 @@ class _LoginFromState extends State<LoginFrom> {
             )
           ],
         ),
-        _buildBtn(),
+        BlocConsumer<LoginBloc, LoginState>(
+          listener: _listenLoginState,
+          builder: _buildBtnByState,
+        ),
         buildOtherLogin(),
         const Spacer(flex: 4),
       ],
@@ -68,33 +82,17 @@ class _LoginFromState extends State<LoginFrom> {
   }
 
   void _doLogIn() {
+    print(
+        '---用户名:${_usernameController.text}------密码：${_passwordController.text}---');
+    String username = _usernameController.text;
+    String password = _passwordController.text;
 
-    print('---用户名:${_usernameController.text}------密码：${_passwordController.text}---');
+    if (!_preValidate(username, password)) return;
 
-//    BlocProvider.of<LoginBloc>(context).add(
-//      EventLogin(
-//          username: _usernameController.text,
-//          password: _passwordController.text),
-//    );
+    BlocProvider.of<LoginBloc>(context).add(DoLogin(username:username, password: password));
   }
 
-  Widget _buildBtn() => Container(
-    margin: EdgeInsets.only(top: 10, left: 10, right: 10,bottom: 0),
-    height: 40,
-    width: MediaQuery.of(context).size.width,
-    child:
-    RaisedButton(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20))),
-      color: Colors.blue,
-      onPressed: _doLogIn,
-      child: Text("进入 Unit 世界",
-          style: TextStyle(color: Colors.white, fontSize: 18)),
-    ),
-  );
-
-  Widget buildUsernameInput(){
+  Widget buildUsernameInput() {
     return Column(
       children: [
         Container(
@@ -105,13 +103,11 @@ class _LoginFromState extends State<LoginFrom> {
             ),
             borderRadius: BorderRadius.circular(15.0),
           ),
-          margin:
-          const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+          margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
           child: Row(
             children: <Widget>[
               Padding(
-                padding:
-                EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
                 child: Icon(
                   Icons.person_outline,
                   color: Colors.grey,
@@ -140,7 +136,7 @@ class _LoginFromState extends State<LoginFrom> {
     );
   }
 
-  Widget buildPasswordInput(){
+  Widget buildPasswordInput() {
     return Column(
       children: [
         Container(
@@ -151,13 +147,11 @@ class _LoginFromState extends State<LoginFrom> {
             ),
             borderRadius: BorderRadius.circular(15.0),
           ),
-          margin:
-          const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+          margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
           child: Row(
             children: <Widget>[
               Padding(
-                padding:
-                EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
                 child: Icon(
                   Icons.lock_outline,
                   color: Colors.grey,
@@ -186,25 +180,88 @@ class _LoginFromState extends State<LoginFrom> {
       ],
     );
   }
-  Widget buildOtherLogin(){
+
+  Widget buildOtherLogin() {
     return Wrap(
       alignment: WrapAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top:30.0),
+          padding: const EdgeInsets.only(top: 30.0),
           child: Row(
             children: [
-              Expanded(child: Divider(height: 20,)),
+              Expanded(
+                  child: Divider(
+                height: 20,
+              )),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('第三方登录',style: TextStyle(color: Colors.grey),),
+                child: Text(
+                  '第三方登录',
+                  style: TextStyle(color: Colors.grey),
+                ),
               ),
-              Expanded(child: Divider(height: 20,)),
+              Expanded(
+                  child: Divider(
+                height: 20,
+              )),
             ],
           ),
         ),
-        Icon(TolyIcon.icon_github,color: Colors.black, size: 30,)
+        Icon(
+          TolyIcon.icon_github,
+          color: Colors.black,
+          size: 30,
+        )
       ],
     );
+  }
+
+  Widget _buildBtnByState(BuildContext context, LoginState state) {
+    if(state is LoginLoading){
+      return Container(
+          margin: EdgeInsets.only(top: 10, bottom: 0),
+          height: 40,
+          width: 40,
+          child: RaisedButton(
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            color: Colors.blue.withOpacity(0.7),
+            onPressed: _doLogIn,
+            child: CupertinoActivityIndicator(),
+          ));
+    }
+    return Container(
+        margin: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
+        height: 40,
+        width: MediaQuery.of(context).size.width,
+        child: RaisedButton(
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20))),
+          color: Colors.blue,
+          onPressed: _doLogIn,
+          child: Text("进入 Unit 世界",
+              style: TextStyle(color: Colors.white, fontSize: 18)),
+        ));
+  }
+
+  void _listenLoginState(BuildContext context, LoginState state) {
+    if (state is LoginSuccess) {
+      Navigator.of(context).pop();
+    }
+    if (state is LoginError) {
+      Toast.toast(context, '登录失败 : ${state.message}!',
+          color: Colors.red, duration: Duration(seconds: 2));
+    }
+  }
+
+  bool _preValidate(String username, String password) {
+    if (username.isEmpty || password.isEmpty) {
+      Toast.toast(context, '登录失败 : 用户名和密码不能为空!',
+          color: Colors.orange, duration: Duration(seconds: 2));
+      return false;
+    }
+    return true;
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/blocs/authentic/bloc.dart';
+import 'package:flutter_unit/blocs/login/bloc.dart';
+import 'package:flutter_unit/blocs/register/bloc.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
@@ -27,6 +30,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
   final WidgetRepository repository = WidgetDbRepository(storage);
 
   final categoryBloc = CategoryBloc(repository: CategoryDbRepository(storage));
+  final authBloc = AuthenticBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +55,10 @@ class _BlocWrapperState extends State<BlocWrapper> {
               create: (_) => LikeWidgetBloc(repository: repository)
                 ..add(EventSetCollectData())),
 
+          BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
+          BlocProvider<LoginBloc>(
+              create: (_) => LoginBloc(authenticBloc: authBloc)),
+          BlocProvider<AuthenticBloc>(create: (_) => authBloc),
           BlocProvider<CategoryWidgetBloc>(
               create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
 
@@ -64,6 +72,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
   @override
   void dispose() {
     categoryBloc.close();
+    authBloc.close();
     super.dispose();
   }
 }

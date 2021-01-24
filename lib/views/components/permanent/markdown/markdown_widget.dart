@@ -18,16 +18,16 @@ class MarkdownWidget extends StatelessWidget {
   MarkdownStyleSheet  _getCommonSheet(BuildContext context, Color codeBackground) {
     MarkdownStyleSheet markdownStyleSheet = MarkdownStyleSheet.fromTheme(Theme.of(context));
     return markdownStyleSheet.copyWith(
-            codeblockDecoration: new BoxDecoration(
+            codeblockDecoration:  BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(4.0)),
                 color: codeBackground,
-                border: new Border.all(
+                border:  Border.all(
                     color: UnitColor.subTextColor, width: 0.3)))
         .copyWith(
-            blockquoteDecoration: new BoxDecoration(
+            blockquoteDecoration:  BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(4.0)),
                 color: UnitColor.subTextColor,
-                border: new Border.all(
+                border:  Border.all(
                     color: UnitColor.subTextColor, width: 0.3)),
             blockquote: TStyleUnit.smallTextWhite);
   }
@@ -104,9 +104,9 @@ class MarkdownWidget extends StatelessWidget {
 
   _getMarkDownData(String markdownData) {
     ///优化图片显示
-    RegExp exp = new RegExp(r'!\[.*\]\((.+)\)');
-    RegExp expImg = new RegExp("<img.*?(?:>|\/>)");
-    RegExp expSrc = new RegExp("src=[\'\"]?([^\'\"]*)[\'\"]?");
+    RegExp exp =  RegExp(r'!\[.*\]\((.+)\)');
+    RegExp expImg =  RegExp("<img.*?(?:>|\/>)");
+    RegExp expSrc =  RegExp("src=[\'\"]?([^\'\"]*)[\'\"]?");
 
     String mdDataCode = markdownData;
     try {
@@ -119,7 +119,7 @@ class MarkdownWidget extends StatelessWidget {
             if (!match.contains(".svg") && match.contains("http")) {
               ///增加点击
               String src = match
-                  .replaceAll(new RegExp(r'!\[.*\]\('), "")
+                  .replaceAll( RegExp(r'!\[.*\]\('), "")
                   .replaceAll(")", "");
               String actionMatch = "[$match]($src)";
               match = actionMatch;
@@ -164,9 +164,9 @@ class MarkdownWidget extends StatelessWidget {
       color: _getBackgroundColor(context),
       padding: EdgeInsets.all(5.0),
       child: SingleChildScrollView(
-        child: new MarkdownBody(
+        child:  MarkdownBody(
           styleSheet: _getStyle(context),
-          syntaxHighlighter: new GSYHighlighter(),
+          syntaxHighlighter:  Highlighter(),
           data: _getMarkDownData(markdownData),
           onTapLink: (String source) {
 //            CommonUtils.launchUrl(context, source);
@@ -177,11 +177,11 @@ class MarkdownWidget extends StatelessWidget {
   }
 }
 
-class GSYHighlighter extends SyntaxHighlighter {
+class Highlighter extends SyntaxHighlighter {
   @override
   TextSpan format(String source) {
     String showSource = source.replaceAll("&lt;", "<");
     showSource = showSource.replaceAll("&gt;", ">");
-    return new DartSyntaxHighlighter().format(showSource);
+    return  DartSyntaxHighlighter().format(showSource);
   }
 }
