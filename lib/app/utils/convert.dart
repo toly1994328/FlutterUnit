@@ -1,5 +1,4 @@
 import 'package:flutter_unit/model/enums.dart';
-import 'package:flutter_unit/views/pages/gallery/gallery.dart';
 import 'package:flutter_unit/views/pages/gallery/gallery_factory.dart';
 
 /// create by 张风捷特烈 on 2020-03-07

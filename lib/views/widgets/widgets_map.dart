@@ -1340,6 +1340,7 @@ class WidgetsMap {
           CustomSingleChildLayoutDemo(),
           OffSetWidgetDemo(),
         ];
+      default: return [];
     }
   }
 }
