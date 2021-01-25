@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/blocs/authentic/bloc.dart';
-import 'package:flutter_unit/blocs/authentic/state.dart';
-import 'package:flutter_unit/blocs/login/bloc.dart';
-import 'package:flutter_unit/blocs/login/state.dart';
 import 'package:flutter_unit/views/pages/register/arc_clipper.dart';
-
 import 'login_form.dart';
 
 /// create by 张风捷特烈 on 2020/4/24

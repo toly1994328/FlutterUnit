@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/color_unit.dart';
 import 'package:flutter_unit/app/res/style_unit.dart';
 
 /// create by 张风捷特烈 on 2020/11/17

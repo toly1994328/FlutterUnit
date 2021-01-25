@@ -1,7 +1,6 @@
-import 'package:equatable/equatable.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/storage/dao/widget_dao.dart';
 import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 
 import 'like_event.dart';

@@ -1,10 +1,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter_unit/app/res/path_unit.dart';
-import 'package:flutter_unit/app/utils/http_utils/response_interceptor.dart';
 
 import 'logs_interceptor.dart';
-import 'result_bean.dart';
 import 'token_interceptor.dart';
 
 const int _kReceiveTimeout = 5000;

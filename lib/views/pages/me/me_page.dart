@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/authentic/bloc.dart';
 import 'package:flutter_unit/blocs/authentic/state.dart';
-import 'package:flutter_unit/blocs/login/bloc.dart';
-import 'package:flutter_unit/blocs/login/state.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 

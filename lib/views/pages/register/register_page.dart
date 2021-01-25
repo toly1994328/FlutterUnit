@@ -7,7 +7,6 @@ import 'package:flutter_unit/blocs/authentic/bloc.dart';
 import 'package:flutter_unit/blocs/authentic/state.dart';
 import 'package:flutter_unit/blocs/login/bloc.dart';
 import 'package:flutter_unit/blocs/login/event.dart';
-import 'package:flutter_unit/blocs/login/state.dart';
 import 'package:flutter_unit/blocs/register/bloc.dart';
 import 'package:flutter_unit/blocs/register/event.dart';
 import 'package:flutter_unit/blocs/register/state.dart';

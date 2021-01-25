@@ -15,7 +15,7 @@ class LogsInterceptors extends InterceptorsWrapper {
   @override
   onResponse(Response response)async {
     if (response != null) {
-      var responseStr = response.toString();
+      // var responseStr = response.toString();
     }
 
     return response; // continue
