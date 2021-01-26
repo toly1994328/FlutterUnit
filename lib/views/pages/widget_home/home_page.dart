@@ -16,6 +16,7 @@ import 'package:flutter_unit/views/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/components/project/items/widget/home_item_support.dart';
+import 'package:flutter_unit/views/pages/app/flutter_unit.dart';
 import 'package:flutter_unit/views/pages/widget_home/toly_app_bar.dart';
 
 import 'background.dart';
@@ -30,7 +31,6 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-
     WidgetsBinding.instance.addPostFrameCallback(
         (_) => OverlayToolWrapper.of(context).showFloating());
   }
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage>
           return FeedbackWidget(
               a: 0.95,
               duration: const Duration(milliseconds: 200),
-              onPressed: () => _toDetailPage(model),
+              onEnd: () => _toDetailPage(model),
               child: HomeItemSupport.get(model, state.itemStyleIndex));
         },
       );

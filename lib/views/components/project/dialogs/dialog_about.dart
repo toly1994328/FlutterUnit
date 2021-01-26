@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
 
 class DialogAbout extends StatelessWidget {

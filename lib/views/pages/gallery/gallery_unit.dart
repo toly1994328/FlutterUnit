@@ -38,47 +38,51 @@ class _GalleryUnitState extends State<GalleryUnit> {
       viewportFraction: 0.9,
       initialPage: _position,
     )..addListener(() {
-        double value2 = (_ctrl.page - _firstOffset + 1) % 5 / 5;
-        factor.value = value2 == 0 ? 1 : value2;
+        double value = (_ctrl.page - _firstOffset + 1) % 5 / 5;
+        factor.value = value == 0 ? 1 : value;
       });
   }
 
   @override
   void dispose() {
-    super.dispose();
     _ctrl.dispose();
+    factor.dispose();
+    super.dispose();
   }
 
   Color get color => BlocProvider.of<WidgetsBloc>(context).state.color;
 
   Color get nextColor => BlocProvider.of<WidgetsBloc>(context).state.nextColor;
 
+  BoxDecoration get boxDecoration => BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(40), topRight: Radius.circular(40)));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ValueListenableBuilder(
+        child: Column(
+          //使用 child 属性优化
+          children: [
+            _buildTitle(context),
+            Expanded(
+                child: Container(
+              margin: const EdgeInsets.only(left: 8, right: 8),
+              child: _buildContent(),
+              decoration: boxDecoration,
+            ))
+          ],
+        ),
         valueListenable: factor,
-        builder: (_, value, __) => Container(
+        builder: (_, value, child) => Container(
           color: Color.lerp(
             color,
             nextColor,
             value,
           ),
-          child: Column(
-            children: [
-              _buildTitle(context),
-              Expanded(
-                  child: Container(
-                child: _buildContent(),
-                margin: EdgeInsets.only(left: 8, right: 8),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40))),
-              ))
-            ],
-          ),
+          child: child,
         ),
       ),
     );
@@ -129,7 +133,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
     }).toList();
 
     return Container(
-        padding: EdgeInsets.only(bottom: 80, top: 40),
+        padding: const EdgeInsets.only(bottom: 80, top: 40),
         child: Column(
           children: [
             Expanded(
@@ -137,39 +141,44 @@ class _GalleryUnitState extends State<GalleryUnit> {
                 controller: _ctrl,
                 itemBuilder: (_, index) {
                   return AnimatedBuilder(
+                    child: Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: widgets[
+                          _fixPosition(index, _firstOffset, widgets.length)],
+                    ),
                     animation: _ctrl,
-                    builder: (context, child) {
-                      double value;
-                      if (_ctrl.position.haveDimensions) {
-                        value = _ctrl.page - index;
-                      } else {
-                        value = (_position - index).toDouble();
-                      }
-                      value = (1 - ((value.abs()) * .5)).clamp(0, 1).toDouble();
-                      value = Curves.easeOut.transform(value);
-
-                      return Center(
-                        child: Transform(
-                          transform: Matrix4.diagonal3Values(1.0, value, 1.0),
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: widgets[_fixPosition(
-                                index, _firstOffset, widgets.length)],
-                          ),
-                        ),
-                      );
-                    },
+                    builder: (context, child) =>
+                        _buildAnimItemByIndex(context, child, index),
                   );
                 },
                 onPageChanged: (index) {
-                  setState(() => _position = index);
+                  _position = index;
                 },
               ),
             ),
             _buildDiver(),
           ],
         ));
+  }
+
+  Widget _buildAnimItemByIndex(BuildContext context, Widget child, int index) {
+    double value;
+    if (_ctrl.position.haveDimensions) {
+      value = _ctrl.page - index;
+    } else {
+      value = (_position - index).toDouble();
+    }
+    value = (1 - ((value.abs()) * .5)).clamp(0, 1).toDouble();
+    value = Curves.easeOut.transform(value);
+
+    return Transform(
+      transform: Matrix4.diagonal3Values(1.0, value, 1.0),
+      alignment: Alignment.center,
+      child: Padding(
+        padding: const EdgeInsets.all(6.0),
+        child: child,
+      ),
+    );
   }
 
   Widget _buildDiver() => Container(

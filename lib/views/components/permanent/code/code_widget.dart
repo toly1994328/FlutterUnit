@@ -4,6 +4,7 @@
 /// 说明: 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/components/permanent/code/language/dart_languge.dart';
 
 import 'high_light_code.dart';
 import 'highlighter_style.dart';
@@ -28,7 +29,11 @@ class CodeWidget extends StatelessWidget {
         _codeWidget = RichText(
           text: TextSpan(
             style: TextStyle(fontSize: fontSize,fontFamily: fontFamily),
-            children: <TextSpan>[DartHighlighter(style).format(code)],
+            children: <TextSpan>[
+              CodeHighlighter(
+                style: style,
+                language: const DartLanguage()
+            ).format(code)],
           ),
         );
       } catch (err) {

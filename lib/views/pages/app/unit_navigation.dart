@@ -15,6 +15,7 @@ import 'package:flutter_unit/views/pages/widget_home/home_page.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 主题结构 左右滑页 + 底部导航栏
 
+
 class UnitNavigation extends StatefulWidget {
   @override
   _UnitNavigationState createState() => _UnitNavigationState();
@@ -26,6 +27,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   // 禁止 PageView 滑动
   final ScrollPhysics neverScroll = const NeverScrollableScrollPhysics();
+
 
   @override
   void dispose() {
@@ -78,8 +80,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   // 由于 bottomNavigationBar 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
-  BlocBuilder<WidgetsBloc, WidgetsState> _buildBottomNav(
-          BuildContext context) =>
+  BlocBuilder<WidgetsBloc, WidgetsState> _buildBottomNav(BuildContext context) =>
       BlocBuilder<WidgetsBloc, WidgetsState>(
           builder: (_, state) => UnitBottomBar(
               color: state.color,
@@ -87,8 +88,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   // 点击底部按钮事件，切换页面
   _onTapBottomNav(int index) {
-    _controller.animateToPage(index,
-        duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 2) {
       BlocProvider.of<LikeWidgetBloc>(context).add(EventSetCollectData());
     }

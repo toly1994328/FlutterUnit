@@ -64,9 +64,28 @@ class WidgetsMap {
         return [
           CustomBanner(),
         ];
+      case "UniqueWidget":
+        return [
+          UniqueWidgetDemo(),
+        ];
+      case "ShrinkWrappingViewport":
+        return [
+          ShrinkWrappingViewportDemo(),
+        ];      case "NestedScrollViewViewport":
+        return [
+          NestedScrollViewViewportDemo(),
+        ];
+      case "ParentDataWidget":
+        return [
+          ParentDataWidgetDemo(),
+        ];
       case "AutomaticKeepAlive":
         return [
           AutomaticKeepAliveDemo(),
+        ];
+      case "StatusTransitionWidget":
+        return [
+          StatusTransitionWidgetDemo(),
         ];
       case "KeepAlive":
         return [
@@ -1321,6 +1340,7 @@ class WidgetsMap {
           CustomSingleChildLayoutDemo(),
           OffSetWidgetDemo(),
         ];
+      default: return [];
     }
   }
 }
