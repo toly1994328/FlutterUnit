@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage>
 
   Widget _buildContent(WidgetsState state) {
     if (state is WidgetsLoading) {
-      return SliverFillRemaining(
+      return const SliverFillRemaining(
         child: LoadingShower(),
       );
     }
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage>
     if (state is WidgetsLoaded) {
       List<WidgetModel> items = state.widgets;
       if (items.isEmpty)
-        return SliverFillRemaining(
+        return const SliverFillRemaining(
           child: EmptyShower(
             message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",
           ),

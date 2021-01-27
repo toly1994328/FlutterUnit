@@ -51,7 +51,7 @@ class HomeDrawer extends StatelessWidget {
           Icons.extension,
           color: Theme.of(context).primaryColor,
         ),
-        title: Text('Flutter 集录'),
+        title: const Text('Flutter 集录'),
         children: <Widget>[
           _buildItem(context, TolyIcon.icon_tag, '属性集录', UnitRouter.attr),
           _buildItem(context, Icons.palette, '绘画集录', UnitRouter.galley),

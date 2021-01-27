@@ -8,6 +8,8 @@ import 'package:flutter_unit/views/components/permanent/loading/planet_loading.d
 /// 说明:  默认 加载视图
 
 class LoadingShower extends StatelessWidget {
+ const LoadingShower({Key key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,4 +29,6 @@ class LoadingShower extends StatelessWidget {
       ),
     );
   }
+
+
 }

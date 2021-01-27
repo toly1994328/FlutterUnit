@@ -13,7 +13,6 @@ import 'package:flutter_unit/views/components/project/unit_drawer_header.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-
 class CategoryEndDrawer extends StatelessWidget {
   final WidgetModel widget;
 
@@ -32,7 +31,7 @@ class CategoryEndDrawer extends StatelessWidget {
               Circle(
                 color: widget.color,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(widget.name)
@@ -64,8 +63,8 @@ class CategoryEndDrawer extends StatelessWidget {
             color: Theme.of(context).primaryColor,
             radius: 5,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
             child: Text(
               '当前组件收藏情况',
               style: TextStyle(fontSize: 16, shadows: [

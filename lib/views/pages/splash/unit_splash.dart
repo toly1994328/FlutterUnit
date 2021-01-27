@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,7 +19,6 @@ class UnitSplash extends StatefulWidget {
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
-  // double _factor;
   Animation _curveAnim;
 
   bool _animEnd = false;
@@ -29,15 +27,17 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle systemUiOverlayStyle =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
-    _controller =
-        AnimationController(duration: Duration(milliseconds: 1000), vsync: this)
-          ..addStatusListener(_listenStatus)..forward();
+    _controller = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this)
+      ..addStatusListener(_listenStatus)
+      ..forward();
 
-    _curveAnim = CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
-
+    _curveAnim =
+        CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
   }
 
   @override
@@ -46,12 +46,11 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     super.dispose();
   }
 
-
   void _listenStatus(AnimationStatus status) {
     if (status == AnimationStatus.completed) {
       setState(() {
         _animEnd = true;
-        Future.delayed(Duration(milliseconds: 500)).then((e) {
+        Future.delayed(const Duration(milliseconds: 500)).then((e) {
           Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
         });
       });
@@ -125,7 +124,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
                 opacity: _controller,
                 child: Container(
                   height: 120,
-                  child: FlutterLogo(
+                  child: const FlutterLogo(
                     size: 60,
                   ),
                 )),
