@@ -8,7 +8,7 @@ import 'package:flutter_unit/app/res/style_unit.dart';
 class EmptyShower extends StatelessWidget {
   final String message;
 
-  EmptyShower({Key key, this.message = "数据为空"}) : super(key: key);
+  const EmptyShower({Key key, this.message = "数据为空"}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
