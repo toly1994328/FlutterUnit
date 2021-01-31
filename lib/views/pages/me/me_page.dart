@@ -5,6 +5,7 @@ import 'package:flutter_unit/blocs/authentic/bloc.dart';
 import 'package:flutter_unit/blocs/authentic/state.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/project/wrapper/honour_wrapper.dart';
 
 import 'page_item.dart';
 
@@ -45,7 +46,7 @@ class MePage extends StatelessWidget {
             ),
             Positioned(
                 bottom: 0,
-                right: 20,
+                right: 30,
                 child: BlocBuilder<AuthenticBloc, AuthenticState>(
                   builder: _buildByState,
                 ))
@@ -58,6 +59,10 @@ class MePage extends StatelessWidget {
 
   Widget _buildByState(BuildContext context, AuthenticState state) {
     if (state is AuthSuccess) {
+      if (state.user.isHonour) {
+        return HonourWrapper(username: state.user.username);
+      }
+
       return Text(
         state.user.username,
         style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
