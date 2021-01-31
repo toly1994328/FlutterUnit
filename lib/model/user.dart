@@ -29,6 +29,8 @@ class User extends Equatable{
     );
   }
 
+  bool get isHonour => roles.contains('honour');
+
   @override
   List<Object> get props => [username,email,roles,userId];
 }
