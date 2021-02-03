@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/blocs/authentic/bloc.dart';
-import 'package:flutter_unit/blocs/login/bloc.dart';
-import 'package:flutter_unit/blocs/register/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/repositories/impl/catagory_db_repository.dart';

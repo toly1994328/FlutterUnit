@@ -14,11 +14,12 @@ import 'package:equatable/equatable.dart';
 
 class User extends Equatable{
   final String username;
+  final String userAvatar;
   final String email;
   final String roles;
   final int userId;
 
-  const User({this.username, this.email, this.roles, this.userId});
+  const User({this.username, this.email, this.roles, this.userId,this.userAvatar});
 
   factory User.fromJson(Map<String, dynamic> map) {
     return User(
@@ -26,11 +27,12 @@ class User extends Equatable{
       email: map['email'],
       roles: map['roles'],
       userId: map['userId'],
+      userAvatar: map['userAvatar'],
     );
   }
 
   bool get isHonour => roles.contains('honour');
 
   @override
-  List<Object> get props => [username,email,roles,userId];
+  List<Object> get props => [username,email,roles,userId,userAvatar];
 }

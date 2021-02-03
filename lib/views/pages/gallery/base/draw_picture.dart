@@ -25,7 +25,7 @@ class _DrawPictureState extends State<DrawPicture> {
 
   void _loadImage() async {
     _image = await loadImageFromAssets('assets/images/sabar.webp');
-    setState(() {});
+    if (mounted) setState(() {});
   }
 
   //读取 assets 中的图片
@@ -51,11 +51,10 @@ class PaperPainter extends CustomPainter {
 
   final ui.Image image;
 
-  PaperPainter(this.image) {
-    _paint = Paint()
-      ..filterQuality = FilterQuality.high
-      ..color = Colors.black.withAlpha(180);
-  }
+  PaperPainter(this.image)
+      : _paint = Paint()
+          ..filterQuality = FilterQuality.high
+          ..color = Colors.black.withAlpha(180);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -65,7 +64,7 @@ class PaperPainter extends CustomPainter {
   }
 
   void _drawLine(Size size, Canvas canvas) {
-    _paint..color = Color(0xFFF0F0F0);
+    _paint..color = const Color(0xFFF0F0F0);
     double step = 10.0;
     for (int i = 1; i <= size.height / step; i++) {
       canvas.drawLine(Offset(step * i, 0), Offset(0, step * i), _paint);

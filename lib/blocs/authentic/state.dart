@@ -1,6 +1,6 @@
 
 import 'package:equatable/equatable.dart';
-import 'package:flutter_unit/model/user.dart';
+import 'package:flutter_unit/user_system/model/user.dart';
 
 
 

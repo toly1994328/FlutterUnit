@@ -5,11 +5,11 @@ import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/blocs/authentic/bloc.dart';
 import 'package:flutter_unit/blocs/authentic/state.dart';
-import 'package:flutter_unit/blocs/login/bloc.dart';
-import 'package:flutter_unit/blocs/login/event.dart';
-import 'package:flutter_unit/blocs/register/bloc.dart';
-import 'package:flutter_unit/blocs/register/event.dart';
-import 'package:flutter_unit/blocs/register/state.dart';
+import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/login/event.dart';
+import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/register/event.dart';
+import 'package:flutter_unit/user_system/bloc/register/state.dart';
 import 'package:flutter_unit/views/components/permanent/icon_input.dart';
 
 import 'arc_clipper.dart';
