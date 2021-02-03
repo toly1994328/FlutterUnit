@@ -1,7 +1,7 @@
 import 'package:flutter_unit/app/res/path_unit.dart';
 import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
-import 'package:flutter_unit/model/user.dart';
+import 'package:flutter_unit/user_system/model/user.dart';
 
 /// create by 张风捷特烈 on 2021/1/17
 /// contact me by email 1981462002@qq.com

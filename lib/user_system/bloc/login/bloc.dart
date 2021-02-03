@@ -4,7 +4,7 @@ import 'package:flutter_unit/app/api/user_api.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/blocs/authentic/bloc.dart';
 import 'package:flutter_unit/blocs/authentic/event.dart';
-import 'package:flutter_unit/model/user.dart';
+import 'package:flutter_unit/user_system/model/user.dart';
 
 import 'event.dart';
 import 'state.dart';

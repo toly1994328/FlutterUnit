@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
@@ -13,7 +15,7 @@ import 'page_item.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-class MePage extends StatelessWidget {
+class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,15 +35,8 @@ class MePage extends StatelessWidget {
             Positioned(
               bottom: 0,
               left: 40,
-              child: FeedbackWidget(
-                onEnd: () {
-                  Navigator.of(context).pushNamed(UnitRouter.login);
-                },
-                child: CircleImage(
-                  size: 80,
-                  shadowColor: Theme.of(context).primaryColor.withAlpha(33),
-                  image: AssetImage("assets/images/icon_head.webp"),
-                ),
+              child: BlocBuilder<AuthenticBloc, AuthenticState>(
+                builder: _buildAvatarByState,
               ),
             ),
             Positioned(
@@ -71,6 +66,31 @@ class MePage extends StatelessWidget {
     return Text(
       '张风捷特烈',
       style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
+    );
+  }
+
+  Widget _buildAvatarByState(BuildContext context, AuthenticState state) {
+    if (state is AuthSuccess) {
+      return FeedbackWidget(
+        onEnd: () {
+          // Navigator.of(context).pushNamed(UnitRouter.login);
+        },
+        child: CircleImage(
+          size: 80,
+          shadowColor: Theme.of(context).primaryColor.withAlpha(33),
+          image: NetworkImage(state.user.userAvatar),
+        ),
+      );
+    }
+    return FeedbackWidget(
+      onEnd: () {
+        Navigator.of(context).pushNamed(UnitRouter.login);
+      },
+      child: CircleImage(
+        size: 80,
+        shadowColor: Theme.of(context).primaryColor.withAlpha(33),
+        image: AssetImage("assets/images/icon_head.webp"),
+      ),
     );
   }
 }
