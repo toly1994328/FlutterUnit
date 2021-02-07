@@ -1,7 +1,7 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/pages/gallery/utils/coordinate.dart';
+import '../../utils/coordinate.dart';
 import 'touch_info.dart';
 
 /// create by 张风捷特烈 on 2020/5/1

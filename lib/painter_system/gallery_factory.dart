@@ -10,6 +10,7 @@ import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
 import 'anim/draw_path.dart';
+import 'base/clock_widget.dart';
 import 'base/draw_path_fun.dart';
 import 'base/draw_grid_axis.dart';
 import 'base/draw_picture.dart';
@@ -52,7 +53,12 @@ class GalleryFactory {
               author: "张风捷特烈",
               info:
                   "    本样例介绍绘制矩形及随机数处理。通过点位集合确定矩形位置信息，将其绘制出来。可以练习对数据的控制力。",
-              content: RandomPortrait()),
+              content: RandomPortrait()),          FrameShower(
+              title: "简单时钟",
+              author: "张风捷特烈",
+              info:
+                  "    本样例通过时钟的绘制，练习 Flutter 中旋转刻度类型的绘制技巧，并通过动画使表盘指针转动。",
+              content: ClockWidget()),
         ];
       case GalleryType.anim:
         return [

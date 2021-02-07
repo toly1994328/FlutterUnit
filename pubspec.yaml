@@ -58,6 +58,9 @@ flutter:
     - family: ComicNeue #字体名
       fonts:
         - asset: assets/fonts/ComicNeue-Regular.ttf
+    - family: CHOPS
+      fonts:
+        - asset: assets/fonts/CHOPS.TTF
     - family: TolyIcon
       fonts:
         - asset: assets/iconfont/iconfont.ttf
