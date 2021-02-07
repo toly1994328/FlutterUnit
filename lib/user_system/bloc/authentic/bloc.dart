@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
-import 'package:flutter_unit/blocs/authentic/state.dart';
+
 
 import 'event.dart';
+import 'state.dart';
 
 class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
   AuthenticBloc() : super(AuthInitial());

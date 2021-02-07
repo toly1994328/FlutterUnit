@@ -6,7 +6,7 @@ import 'package:flutter_unit/app/res/str_unit.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/views/components/project/items/gallery/gallery_card_item.dart';
-import 'package:flutter_unit/views/pages/gallery/gallery_factory.dart';
+import 'package:flutter_unit/painter_system/gallery_factory.dart';
 
 import 'gallery_detail_page.dart';
 
@@ -91,7 +91,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
   Widget _buildTitle(BuildContext context) {
     return Container(
       alignment: Alignment(0, 0.3),
-      height: MediaQuery.of(context).size.height * 0.25,
+      height: MediaQuery.of(context).size.height * 0.2,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

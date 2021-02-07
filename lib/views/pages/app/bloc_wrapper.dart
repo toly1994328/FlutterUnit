@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/blocs/authentic/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 import 'package:flutter_unit/model/enums.dart';

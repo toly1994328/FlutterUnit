@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:flutter_unit/views/components/permanent/color_wrapper.dart';
-import 'package:flutter_unit/views/pages/gallery/gallery_factory.dart';
+import 'package:flutter_unit/painter_system/gallery_factory.dart';
 
 /// create by 张风捷特烈 on 2020/11/28
 /// contact me by email 1981462002@qq.com
