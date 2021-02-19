@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/style/behavior/no_scroll_behavior.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// create by 张风捷特烈 on 2020/6/16
@@ -88,7 +91,7 @@ class VersionInfo extends StatelessWidget {
             ListTile(
               title: Text('检查数据库新版本',style: labelStyle),
               trailing: _nextIcon(context),
-              onTap: () {
+              onTap: () async{
 
               },
             ),

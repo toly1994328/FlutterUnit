@@ -24,10 +24,10 @@
 
 ```
 a1@toly ~ % flutter --version
-Flutter 1.22.5 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 7891006299 (4 weeks ago) • 2020-12-10 11:54:40 -0800
-Engine • revision ae90085a84
-Tools • Dart 2.10.4
+Flutter 1.22.6 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 9b2d32b605 (4 weeks ago) • 2021-01-22 14:36:39 -0800
+Engine • revision 2f0af37152
+Tools • Dart 2.10.5
 ```
 
 ---

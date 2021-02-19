@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
@@ -8,11 +9,12 @@ import 'package:flutter_unit/views/components/project/items/collect_widget_list_
 
 /// create by 张风捷特烈 on 2020/6/16
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 class LikeWidgetPage extends StatelessWidget {
 
-  final SliverGridDelegate gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
+  final SliverGridDelegate gridDelegate =
+      const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
     mainAxisSpacing: 10,
     crossAxisSpacing: 10,
@@ -21,37 +23,36 @@ class LikeWidgetPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  BlocBuilder<LikeWidgetBloc, LikeWidgetState>(
-        builder: (ctx, state) {
-          return CustomScrollView(
-            slivers: <Widget>[
-              SliverOverlapInjector(
-                handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
-              ),
-              _buildContent(context, state),
-              SliverToBoxAdapter(
-                child: NoMoreWidget(),
-              )
-            ],
-          );
-        });
+    return BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (ctx, state) {
+      return CustomScrollView(
+        slivers: <Widget>[
+          SliverOverlapInjector(
+            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
+          ),
+          _buildContent(context, state),
+          SliverToBoxAdapter(
+            child: NoMoreWidget(),
+          )
+        ],
+      );
+    });
   }
 
   Widget _buildContent(BuildContext context, LikeWidgetState state) {
     return SliverPadding(
-      padding: EdgeInsets.only(top:10, left: 10, right: 10, bottom: 0),
+      padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
       sliver: SliverGrid(
           delegate: SliverChildBuilderDelegate(
-                  (_, index) => Container(
-                child: GestureDetector(
-                    onTap: () =>
-                        _toDetailPage(context, state.widgets[index]),
-                    child: CollectWidgetListItem(
-                      data: state.widgets[index],
-                      onDeleteItemClick: (model) =>
-                          _deleteCollect(context, model),
-                    )),
-              ),
+              (_, index) => Container(
+                    child: GestureDetector(
+                        onTap: () =>
+                            _toDetailPage(context, state.widgets[index]),
+                        child: CollectWidgetListItem(
+                          data: state.widgets[index],
+                          onDeleteItemClick: (model) =>
+                              _deleteCollect(context, model),
+                        )),
+                  ),
               childCount: state.widgets.length),
           gridDelegate: gridDelegate),
     );
@@ -65,5 +66,4 @@ class LikeWidgetPage extends StatelessWidget {
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
   }
-
 }
