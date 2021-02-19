@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 收藏夹展示数据模型
 
-class CategoryModel extends Equatable{
+class CategoryModel extends Equatable {
   final int id;
   final String name;
   final String info;
@@ -19,12 +19,12 @@ class CategoryModel extends Equatable{
 
   CategoryModel(
       {this.name,
-        this.id,
-        this.info,
-        this.createDate,
-        this.imageCover,
-        this.count,
-        this.color});
+      this.id,
+      this.info,
+      this.createDate,
+      this.imageCover,
+      this.count,
+      this.color});
 
   bool get canDelete => id > 1;
 
@@ -42,19 +42,27 @@ class CategoryModel extends Equatable{
 
   @override
   List<Object> get props => [
-    id,
-    name,
-    info,
-    createDate,
-    imageCover,
-    count,
-    color,
-  ];
+        id,
+        name,
+        info,
+        createDate,
+        imageCover,
+        count,
+        color,
+      ];
 
   @override
   String toString() {
     return 'CategoryModel{id: $id, name: $name, info: $info, createDate: $createDate, imageCover: $imageCover, count: $count, color: $color}';
   }
 
-
+  Map toJson() => {
+      "id": this.id,
+      "name": this.name,
+      "info": this.info,
+      "createDate": this.createDate,
+      "imageCover": this.imageCover,
+      "count": this.count,
+      "color": this.color.value,
+    };
 }

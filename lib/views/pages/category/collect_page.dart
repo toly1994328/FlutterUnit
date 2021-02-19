@@ -1,10 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/model/category_model.dart';
+import 'package:flutter_unit/repositories/itf/category_repository.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'category_page.dart';
 import 'like_widget_page.dart';
@@ -67,7 +72,7 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
             ),
           )),
       backgroundColor: BlocProvider.of<WidgetsBloc>(context).state.color,
-      actions: <Widget>[_buildAddActionBuilder(context)],
+      actions: <Widget>[_buildSyncAction(context),_buildAddAction(context)],
       title: Text(
         '收藏集 CollectUnit',
         style: TextStyle(
@@ -110,12 +115,25 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
     );
   }
 
-  Widget _buildAddActionBuilder(BuildContext context) => IconButton(
+  Widget _buildAddAction(BuildContext context) => IconButton(
       icon: Icon(
         Icons.add,
         size: 30,
       ),
       onPressed: () => Scaffold.of(context).openEndDrawer());
+
+  Widget _buildSyncAction(BuildContext context) => IconButton(
+      icon: Icon(
+        Icons.cloud_upload_outlined,
+        size: 25,
+      ),
+      onPressed: () async{
+       final dir = await getDownloadsDirectory();
+        // CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
+        // List<CategoryModel> loadCategories = await rep.loadCategories();
+        // String json1= jsonEncode(loadCategories);
+        // print(json1);
+      });
 
   @override
   bool get wantKeepAlive => true;

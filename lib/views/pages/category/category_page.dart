@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
@@ -29,6 +30,7 @@ class CategoryPage extends StatelessWidget {
             SliverOverlapInjector(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
             ),
+
             _buildContent(context, state),
             SliverToBoxAdapter(
               child: NoMoreWidget(),
