@@ -9,7 +9,6 @@ import 'package:flutter_unit/user_system/model/user.dart';
 
 class UserApi {
   static Future<ResultBean<bool>> register({String email, String code}) async {
-    HttpUtil.getInstance().client.get(PathUnit.register);
 
     var result = await HttpUtil.getInstance().client.post(PathUnit.register,
         data: {"email": email, "activeCode": code}).catchError((err) {
