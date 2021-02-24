@@ -63,28 +63,24 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
           TolyIcon.upload,
           size: 28,
         ),
-        onPressed: () async {
-          CategoryRepository rep =
-              BlocProvider.of<CategoryBloc>(context).repository;
-          List<CategoryTo> loadCategories = await rep.loadCategoryData();
-          String json = jsonEncode(loadCategories);
-          setState(() {
-            state = AsyncType.loading;
-          });
+        onPressed: _doUploadCategoryData);
+  }
 
-          ResultBean<bool> result = await CategoryApi.uploadCategoryData(json);
+  void _doUploadCategoryData() async{
+    CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
+    List<CategoryTo> loadCategories = await rep.loadCategoryData();
+    String json = jsonEncode(loadCategories);
 
-          if (result.status) {
-            setState(() {
-              state = AsyncType.success;
-            });
-            _toDefault();
-          } else {
-            setState(() {
-              state = AsyncType.error;
-            });
-          }
-        });
+    setState(() => state = AsyncType.loading);
+
+    ResultBean<bool> result = await CategoryApi.uploadCategoryData(json);
+    if (result.status) {
+      setState(() => state = AsyncType.success);
+      _toDefault();
+    } else {
+      setState(() => state = AsyncType.error);
+      _toDefault();
+    }
   }
 
   Widget _buildSuccess() {

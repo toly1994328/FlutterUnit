@@ -23,6 +23,8 @@ class CategoryApi {
 
     return ResultBean.error('请求错误');
   }
+
+
   static Future<ResultBean<String>> getCategoryData() async {
     var result = await HttpUtil.getInstance()
         .client
@@ -31,9 +33,17 @@ class CategoryApi {
       return ResultBean.error('请求错误: ${err.toString()}');
     });
 
-    if (result.data != null && result.data['data']!=null) {
-      var dataStr = result.data['data']['data'];
-      return ResultBean.ok<String>(dataStr);
+
+    // 获取的数据非空且 status = true
+    if (result.data != null && result.data['status']) {
+      // 说明有数据
+      if(result.data['data']!=null){
+        var dataStr = result.data['data']['data'];
+        return ResultBean.ok<String>(dataStr);
+      }else{
+        return ResultBean.ok<String>(null);
+      }
+
     }
 
     return ResultBean.error('请求错误');
