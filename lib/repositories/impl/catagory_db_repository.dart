@@ -103,9 +103,6 @@ class CategoryDbRepository implements CategoryRepository {
         List<dynamic> widgetIds = dataMap[i]["widgetIds"];
         await addCategory(po);
         await _categoryDao.addWidgets(po.id, widgetIds);
-        // for (int j = 0; j < widgetIds.length; j++) {
-        //   await _categoryDao.addWidget(po.id, widgetIds[j]);
-        // }
       }
       return true;
     } catch (e) {

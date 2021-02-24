@@ -64,31 +64,36 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
           TolyIcon.download,
           size: 28,
         ),
-        onPressed: () async {
-          setState(() {
-            state = AsyncType.loading;
-          });
+        onPressed: _doSync);
+  }
 
-          ResultBean<String> result = await CategoryApi.getCategoryData();
+  void _doSync() async {
+    setState(() => state = AsyncType.loading);
+    ResultBean<String> result = await CategoryApi.getCategoryData();
 
-          CategoryRepository repository = BlocProvider.of<CategoryBloc>(context).repository;
-
-          await repository.syncCategoryByData(result.data);
-
-          BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
-
-          if (result.status) {
-            setState(() {
-              state = AsyncType.success;
-            });
-            _toDefault();
-          } else {
-            setState(() {
-              state = AsyncType.error;
-            });
-            _toDefault();
-          }
-        });
+    if (result.status) {
+      // 说明请求成功
+      if (result.data != null) {
+        //说明有后台备份数据，进行同步操作
+        CategoryRepository repository =
+            BlocProvider.of<CategoryBloc>(context).repository;
+        await repository.syncCategoryByData(result.data);
+        BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
+      } else {
+        // 说明还没有后台数据，
+        // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。
+        CategoryRepository rep =
+            BlocProvider.of<CategoryBloc>(context).repository;
+        List<CategoryTo> loadCategories = await rep.loadCategoryData();
+        String json = jsonEncode(loadCategories);
+        await CategoryApi.uploadCategoryData(json);
+      }
+      setState(() => state = AsyncType.success);
+      _toDefault();
+    } else {
+      setState(() => state = AsyncType.error);
+      _toDefault();
+    }
   }
 
   Widget _buildSuccess() => const Icon(
