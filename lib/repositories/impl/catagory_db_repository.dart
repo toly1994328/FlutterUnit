@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
@@ -69,7 +70,6 @@ class CategoryDbRepository implements CategoryRepository {
     return success != -1;
   }
 
-
   @override
   Future<List<CategoryTo>> loadCategoryData() async {
     List<Map<String, dynamic>> data = await _categoryDao.queryAll();
@@ -82,7 +82,8 @@ class CategoryDbRepository implements CategoryRepository {
 
     for (int i = 0; i < data.length; i++) {
       List<int> ids = await _categoryDao.loadCollectWidgetIds(data[i]['id']);
-      collects.add(CategoryTo(widgetIds: ids, model: CategoryModel.fromPo(CategoryPo.fromJson(data[i]))));
+      collects
+          .add(CategoryTo(widgetIds: ids, model: CategoryPo.fromJson(data[i])));
 
       if (i == data.length - 1) {
         completer.complete(collects);
@@ -92,4 +93,24 @@ class CategoryDbRepository implements CategoryRepository {
     return completer.future;
   }
 
+  @override
+  Future<bool> syncCategoryByData(String data) async {
+    try {
+      await _categoryDao.clear();
+      List<dynamic> dataMap = json.decode(data);
+      for (int i = 0; i < dataMap.length; i++) {
+        CategoryPo po = CategoryPo.fromNetJson(dataMap[i]["model"]);
+        List<dynamic> widgetIds = dataMap[i]["widgetIds"];
+        await addCategory(po);
+        await _categoryDao.addWidgets(po.id, widgetIds);
+        // for (int j = 0; j < widgetIds.length; j++) {
+        //   await _categoryDao.addWidget(po.id, widgetIds[j]);
+        // }
+      }
+      return true;
+    } catch (e) {
+      print(e);
+      return false;
+    }
+  }
 }

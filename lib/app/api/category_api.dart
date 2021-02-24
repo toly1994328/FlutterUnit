@@ -7,9 +7,9 @@ import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 /// 说明:
 
 class CategoryApi {
-  static Future<ResultBean<bool>> uploadCategoryData(String data) async {
-    HttpUtil.getInstance().client.get(PathUnit.register);
 
+
+  static Future<ResultBean<bool>> uploadCategoryData(String data) async {
     var result = await HttpUtil.getInstance()
         .client
         .post(PathUnit.categoryDataSync, data: data)
@@ -23,4 +23,20 @@ class CategoryApi {
 
     return ResultBean.error('请求错误');
   }
+  static Future<ResultBean<String>> getCategoryData() async {
+    var result = await HttpUtil.getInstance()
+        .client
+        .get(PathUnit.categoryData)
+        .catchError((err) {
+      return ResultBean.error('请求错误: ${err.toString()}');
+    });
+
+    if (result.data != null && result.data['data']!=null) {
+      var dataStr = result.data['data']['data'];
+      return ResultBean.ok<String>(dataStr);
+    }
+
+    return ResultBean.error('请求错误');
+  }
+
 }
