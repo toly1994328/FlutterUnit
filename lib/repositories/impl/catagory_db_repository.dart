@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/repositories/itf/category_repository.dart';
@@ -38,20 +40,22 @@ class CategoryDbRepository implements CategoryRepository {
   @override
   Future<List<CategoryModel>> loadCategories() async {
     List<Map<String, dynamic>> data = await _categoryDao.queryAll();
-    List<CategoryPo> collects = data.map((e) => CategoryPo.fromJson(e)).toList();
+    List<CategoryPo> collects =
+        data.map((e) => CategoryPo.fromJson(e)).toList();
     return collects.map(CategoryModel.fromPo).toList();
   }
 
   @override
   Future<List<WidgetModel>> loadCategoryWidgets({int categoryId = 0}) async {
-    List<Map<String, dynamic>> rawData = await _categoryDao.loadCollectWidgets(categoryId);
+    List<Map<String, dynamic>> rawData =
+        await _categoryDao.loadCollectWidgets(categoryId);
     List<WidgetPo> widgets = rawData.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();
   }
 
   @override
   Future<void> toggleCategory(int categoryId, int widgetId) async {
-    return await _categoryDao.toggleCollect( categoryId,  widgetId);
+    return await _categoryDao.toggleCollect(categoryId, widgetId);
   }
 
   @override
@@ -60,21 +64,32 @@ class CategoryDbRepository implements CategoryRepository {
   }
 
   @override
-  Future<bool> updateCategory(CategoryPo categoryPo) async{
+  Future<bool> updateCategory(CategoryPo categoryPo) async {
     int success = await _categoryDao.update(categoryPo);
     return success != -1;
   }
 
-//
-//  @override
-//  Future<List<WidgetModel>> loadCollectWidgets({int collectId = 0}) async {
-//
-//
-//
-//  }
-//
-//  @override
-//  Future<bool> checkCollected(int collectId, int widgetId) async {
-//
-//  }
+
+  @override
+  Future<List<CategoryTo>> loadCategoryData() async {
+    List<Map<String, dynamic>> data = await _categoryDao.queryAll();
+    Completer<List<CategoryTo>> completer = Completer();
+    List<CategoryTo> collects = [];
+
+    if (data.length == 0) {
+      completer.complete([]);
+    }
+
+    for (int i = 0; i < data.length; i++) {
+      List<int> ids = await _categoryDao.loadCollectWidgetIds(data[i]['id']);
+      collects.add(CategoryTo(widgetIds: ids, model: CategoryModel.fromPo(CategoryPo.fromJson(data[i]))));
+
+      if (i == data.length - 1) {
+        completer.complete(collects);
+      }
+    }
+
+    return completer.future;
+  }
+
 }

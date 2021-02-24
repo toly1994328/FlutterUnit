@@ -171,6 +171,16 @@ class CategoryDao {
 
     final db = await _db;
     return await db.rawQuery(querySql,[categoryId]);
+  }
 
+  Future<List<int>> loadCollectWidgetIds(int categoryId) async{
+    String querySql = //插入数据
+        "SELECT id FROM widget "
+        "WHERE id IN (SELECT widgetId FROM category_widget WHERE categoryId = ?) "
+        "ORDER BY lever DESC";
+
+    final db = await _db;
+    var data = await db.rawQuery(querySql,[categoryId]);
+    return data.map<int>((e) => e["id"]).toList();
   }
 }

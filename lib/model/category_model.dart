@@ -66,3 +66,17 @@ class CategoryModel extends Equatable {
       "color": this.color.value,
     };
 }
+
+
+// 收藏集的 To 对象，用与上传/同步 收藏集
+class CategoryTo{
+  final CategoryModel model;
+  final List<int> widgetIds;
+
+  CategoryTo({this.model, this.widgetIds});
+
+  Map toJson() => {
+    "model": this.model,
+    "widgetIds": this.widgetIds,
+  };
+}

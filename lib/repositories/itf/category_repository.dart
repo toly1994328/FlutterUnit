@@ -19,6 +19,9 @@ abstract class CategoryRepository {
   // 获取所有收藏集
   Future<List<CategoryModel>> loadCategories();
 
+  // 获取 所有收藏集 及 收藏集对应的组件 id 列表
+  Future<List<CategoryTo>> loadCategoryData();
+
   //添加收藏集
   Future<bool> addCategory(CategoryPo categoryPo);
 
