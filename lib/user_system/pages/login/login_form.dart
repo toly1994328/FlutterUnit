@@ -16,7 +16,7 @@ class LoginFrom extends StatefulWidget {
 
 class _LoginFromState extends State<LoginFrom> {
   final _usernameController = TextEditingController(text: '张风捷特烈');
-  final _passwordController = TextEditingController(text: '');
+  final _passwordController = TextEditingController(text: '111111');
 
   bool _showPwd = false;
 

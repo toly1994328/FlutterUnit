@@ -9,13 +9,12 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/model/category_model.dart';
-import 'package:flutter_unit/repositories/itf/category_repository.dart';
 import 'package:flutter_unit/user_system/component/authentic_widget.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:flutter_unit/views/pages/category/sync/upload_button.dart';
 
+import 'sync/async_button.dart';
 import 'category_page.dart';
 import 'like_widget_page.dart';
 
@@ -75,8 +74,13 @@ class _CollectPageState extends State<CollectPage>
           )),
       backgroundColor: BlocProvider.of<WidgetsBloc>(context).state.color,
       actions: <Widget>[
-        AuthenticWidget.just(SyncCategoryButton()),
-        AuthenticWidget.just(_buildLoadAction(context)),
+        SizedBox(
+            width: 32,
+            child: AuthenticWidget.just(UploadCategoryButton())),
+        // SizedBox(width: 5,),
+        SizedBox(
+            width: 32,
+            child: AuthenticWidget.just(SyncCategoryButton())),
         _buildAddAction(context)
       ],
       title: Text(
@@ -128,117 +132,11 @@ class _CollectPageState extends State<CollectPage>
       ),
       onPressed: () => Scaffold.of(context).openEndDrawer());
 
-  Widget _buildLoadAction(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8.0),
-      child: FeedbackWidget(
-          child: Icon(
-            TolyIcon.download,
-            size: 28,
-          ),
-          onPressed: () async {
-            final dir = await getExternalStorageDirectory();
-            CategoryRepository rep =
-                BlocProvider.of<CategoryBloc>(context).repository;
-            List<CategoryTo> loadCategories = await rep.loadCategoryData();
-            String json1 = jsonEncode(loadCategories);
-            loadCategories.forEach((element) {
-              print("${element.model.name} - ${element.widgetIds} ");
-            });
-            print(json1);
-            File backFile = File(dir.path + "/back.txt");
-            backFile.writeAsString(json1);
-          }),
-    );
-  }
 
   @override
   bool get wantKeepAlive => true;
 }
 
-class SyncCategoryButton extends StatefulWidget {
-  @override
-  _SyncCategoryButtonState createState() => _SyncCategoryButtonState();
-}
 
-enum AsyncType { loading, error, none, success }
 
-class _SyncCategoryButtonState extends State<SyncCategoryButton> {
-  AsyncType state = AsyncType.none;
 
-  @override
-  Widget build(BuildContext context) {
-    Widget result;
-    switch (state) {
-      case AsyncType.loading:
-        result = _buildLoading();
-        break;
-      case AsyncType.error:
-        result = _buildError();
-        break;
-      case AsyncType.none:
-        result = _buildDefault();
-        break;
-      case AsyncType.success:
-        result = _buildSuccess();
-        break;
-    }
-    return result;
-  }
-
-  Widget _buildLoading() {
-    return const CupertinoActivityIndicator();
-  }
-
-  Widget _buildError() {
-    return const Icon(
-      TolyIcon.error,
-      size: 28,
-      color: Colors.green,
-    );
-  }
-
-  Widget _buildDefault() {
-    return FeedbackWidget(
-        child: const Icon(
-          TolyIcon.upload,
-          size: 28,
-        ),
-        onPressed: () async {
-          CategoryRepository rep =
-              BlocProvider.of<CategoryBloc>(context).repository;
-          List<CategoryTo> loadCategories = await rep.loadCategoryData();
-          String json = jsonEncode(loadCategories);
-          setState(() {
-            state = AsyncType.loading;
-          });
-          ResultBean<bool> result = await CategoryApi.uploadCategoryData(json);
-
-          if (result.status) {
-            setState(() {
-              state = AsyncType.success;
-            });
-            _toDefault();
-          } else {
-            setState(() {
-              state = AsyncType.error;
-            });
-          }
-        });
-  }
-
-  Widget _buildSuccess() {
-    return const Icon(
-      TolyIcon.upload_success,
-      size: 25,
-      color: Colors.green,
-    );
-  }
-
-  void _toDefault() async {
-    await Future.delayed(const Duration(milliseconds: 800));
-    setState(() {
-      state = AsyncType.none;
-    });
-  }
-}

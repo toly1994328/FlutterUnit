@@ -55,22 +55,12 @@ class CategoryModel extends Equatable {
   String toString() {
     return 'CategoryModel{id: $id, name: $name, info: $info, createDate: $createDate, imageCover: $imageCover, count: $count, color: $color}';
   }
-
-  Map toJson() => {
-      "id": this.id,
-      "name": this.name,
-      "info": this.info,
-      "createDate": this.createDate,
-      "imageCover": this.imageCover,
-      "count": this.count,
-      "color": this.color.value,
-    };
 }
 
 
 // 收藏集的 To 对象，用与上传/同步 收藏集
 class CategoryTo{
-  final CategoryModel model;
+  final CategoryPo model;
   final List<int> widgetIds;
 
   CategoryTo({this.model, this.widgetIds});

@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter_unit/model/category_model.dart';
 
 /// create by 张风捷特烈 on 2020-04-17
 /// contact me by email 1981462002@qq.com
@@ -51,6 +52,30 @@ class CategoryPo extends Equatable {
         info: map["info"]);
   }
 
+  factory CategoryPo.fromNetJson(Map<String, dynamic> map) {
+    return CategoryPo(
+        id: map['id'],
+        name: map['name'],
+        color: map["color"],
+        created: DateTime.fromMillisecondsSinceEpoch(map["created"]),
+        image: map["image"],
+        priority: map["priority"],
+        count: map["count"],
+        updated: DateTime.fromMillisecondsSinceEpoch(map["updated"]),
+        info: map["info"]);
+  }
+
+  Map toJson() => {
+    "id": this.id,
+    "name": this.name,
+    "info": this.info,
+    "created": this.created.millisecondsSinceEpoch,
+    "updated": this.updated.millisecondsSinceEpoch,
+    "image": this.image,
+    "count": this.count,
+    "color": this.color,
+    "priority": this.priority,
+  };
 
   @override
   String toString() {

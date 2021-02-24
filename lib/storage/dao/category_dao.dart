@@ -26,21 +26,22 @@ class CategoryDao {
   Future<Database> get _db async =>await storage.db;
 
 
-  Future<int> insert(CategoryPo widget) async {
+  Future<int> insert(CategoryPo category) async {
     //插入方法
     final db = await _db;
     String addSql = //插入数据
         "INSERT INTO "
-        "category(name,color,info,priority,image,created,updated) "
-        "VALUES (?,?,?,?,?,?,?);";
+        "category(id,name,color,info,priority,image,created,updated) "
+        "VALUES (?,?,?,?,?,?,?,?);";
     return await db.transaction((tran) async => await tran.rawInsert(addSql, [
-          widget.name,
-          widget.color,
-          widget.info,
-          widget.priority,
-          widget.image,
-          widget.created.toIso8601String(),
-          widget.updated.toIso8601String(),
+      category.id,
+          category.name,
+          category.color,
+          category.info,
+          category.priority,
+          category.image,
+          category.created.toIso8601String(),
+          category.updated.toIso8601String(),
         ]));
   }
 
@@ -77,6 +78,25 @@ class CategoryDao {
     ]));
   }
 
+  Future<int> addWidgets(int categoryId,List<dynamic> widgetIds) async {
+    final db = await _db;
+    String addSql = //插入数据
+        "INSERT INTO "
+        "category_widget(widgetId,categoryId) VALUES ";
+
+    String args = '';
+
+    for(int i=0;i< widgetIds.length;i++){
+      args+= "(${widgetIds[i]},$categoryId)";
+      if(i==widgetIds.length-1){
+        args+=";";
+      }else{
+        args+=",";
+      }
+    }
+    addSql += args;
+    return await db.transaction((tran) async => await tran.rawInsert(addSql));
+  }
 
   Future<bool> existByName(String name) async {
     final db = await _db;
@@ -123,6 +143,16 @@ class CategoryDao {
         "DELETE FROM category "
             "WHERE id = ?",
         [id]);
+  }
+
+  Future<void> clear() async {
+    final db = await _db;
+    await db.execute(
+        "DELETE FROM category_widget "
+            "WHERE categoryId >0");
+    return await db.execute(
+        "DELETE FROM category "
+            "WHERE id > 0");
   }
 
   Future<int> removeWidget(int categoryId, int widgetId) async {
