@@ -13,7 +13,7 @@ class Panel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: child,
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: color ?? Color(0xffF6F8FA),
           borderRadius: BorderRadius.all(Radius.circular(radius))),

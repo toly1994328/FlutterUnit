@@ -11,6 +11,7 @@ import 'package:flutter_unit/views/components/project/dialogs/delete_category_di
 import 'package:flutter_unit/views/components/project/items/category_list_item.dart';
 
 import 'edit_category_panel.dart';
+import 'empty_category.dart';
 
 class CategoryPage extends StatelessWidget {
 
@@ -30,7 +31,6 @@ class CategoryPage extends StatelessWidget {
             SliverOverlapInjector(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
             ),
-
             _buildContent(context, state),
             SliverToBoxAdapter(
               child: NoMoreWidget(),
@@ -38,7 +38,7 @@ class CategoryPage extends StatelessWidget {
           ],
         );
       }
-      return Container();
+      return EmptyCategory();
     });
   }
 
@@ -123,8 +123,7 @@ class CategoryPage extends StatelessWidget {
   }
 
   _toDetailPage(BuildContext context, CategoryModel model) {
-    BlocProvider.of<CategoryWidgetBloc>(context)
-        .add(EventLoadCategoryWidget(model.id));
+    BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id));
     Navigator.pushNamed(context, UnitRouter.category_show, arguments: model);
   }
 
