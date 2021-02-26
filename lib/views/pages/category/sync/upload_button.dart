@@ -67,13 +67,17 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
   }
 
   void _doUploadCategoryData() async{
-    CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
-    List<CategoryTo> loadCategories = await rep.loadCategoryData();
-    String json = jsonEncode(loadCategories);
-
     setState(() => state = AsyncType.loading);
 
-    ResultBean<bool> result = await CategoryApi.uploadCategoryData(json);
+    CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
+    List<CategoryTo> loadCategories = await rep.loadCategoryData();
+    List<dynamic> likeData = await rep.loadLikesData();
+
+    String json = jsonEncode(loadCategories);
+    String likeJson = jsonEncode(likeData);
+
+    ResultBean<bool> result = await CategoryApi.uploadCategoryData(data: json,likeData: likeJson);
+
     if (result.status) {
       setState(() => state = AsyncType.success);
       _toDefault();

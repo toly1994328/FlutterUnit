@@ -32,7 +32,7 @@ class WidgetDbRepository implements WidgetRepository {
   }
 
   @override
-  Future<List<WidgetModel>> loadCollectWidgets() async {
+  Future<List<WidgetModel>> loadLikeWidgets() async {
     List<Map<String, dynamic>> data = await _widgetDao.queryCollect();
     List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
     List<WidgetModel> list = widgets.map(WidgetModel.fromPo).toList();
@@ -62,7 +62,7 @@ class WidgetDbRepository implements WidgetRepository {
   }
 
   @override
-  Future<void> toggleCollect(
+  Future<void> toggleLike(
     int id,
   ) {
     return _widgetDao.toggleCollect(id);

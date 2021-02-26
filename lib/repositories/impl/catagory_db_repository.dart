@@ -73,6 +73,7 @@ class CategoryDbRepository implements CategoryRepository {
   @override
   Future<List<CategoryTo>> loadCategoryData() async {
     List<Map<String, dynamic>> data = await _categoryDao.queryAll();
+
     Completer<List<CategoryTo>> completer = Completer();
     List<CategoryTo> collects = [];
 
@@ -82,8 +83,9 @@ class CategoryDbRepository implements CategoryRepository {
 
     for (int i = 0; i < data.length; i++) {
       List<int> ids = await _categoryDao.loadCollectWidgetIds(data[i]['id']);
-      collects
-          .add(CategoryTo(widgetIds: ids, model: CategoryPo.fromJson(data[i])));
+      collects.add(CategoryTo(
+          widgetIds: ids,
+          model: CategoryPo.fromJson(data[i])));
 
       if (i == data.length - 1) {
         completer.complete(collects);
@@ -94,7 +96,36 @@ class CategoryDbRepository implements CategoryRepository {
   }
 
   @override
-  Future<bool> syncCategoryByData(String data) async {
+  Future<List<dynamic>> loadLikesData() async {
+
+    final db = await storage.db;
+    var likes = await db.rawQuery("SELECT id "
+        "FROM widget WHERE collected = 1 ORDER BY family,lever DESC");
+    var likesData = likes.map((e) => e['id']).toList();
+
+    return likesData;
+  }
+
+
+  Future<void> _setLikes(List<dynamic> ids) async {
+    if(ids.isEmpty) return;
+    final db = await storage.db;
+    String sql = 'UPDATE widget SET collected = 1 WHERE ';
+    for(int i=0;i<ids.length;i++){
+     if(i==0){
+       sql += 'id = ${ids[i]} ';
+     }else{
+       sql += 'OR id = ${ids[i]} ';
+     }
+    }
+
+    await db.rawUpdate(sql, );
+    List<Map<String, dynamic>> data = await db.rawQuery('SELECT id FROM widget WHERE collected = 1', []);
+    print(data);
+  }
+
+  @override
+  Future<bool> syncCategoryByData(String data,String likeData) async {
     try {
       await _categoryDao.clear();
       List<dynamic> dataMap = json.decode(data);
@@ -102,8 +133,11 @@ class CategoryDbRepository implements CategoryRepository {
         CategoryPo po = CategoryPo.fromNetJson(dataMap[i]["model"]);
         List<dynamic> widgetIds = dataMap[i]["widgetIds"];
         await addCategory(po);
-        await _categoryDao.addWidgets(po.id, widgetIds);
+        if(widgetIds.isNotEmpty){
+          await _categoryDao.addWidgets(po.id, widgetIds);
+        }
       }
+      await _setLikes(json.decode(likeData));
       return true;
     } catch (e) {
       print(e);

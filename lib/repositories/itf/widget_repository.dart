@@ -15,9 +15,9 @@ abstract class WidgetRepository {
 
   Future<List<NodeModel>> loadNode(WidgetModel widgetModel);
 
-  Future<void> toggleCollect(int id);
+  Future<void> toggleLike(int id);
 
-  Future<List<WidgetModel>> loadCollectWidgets();
+  Future<List<WidgetModel>> loadLikeWidgets();
 
   Future<bool> collected(int id);
 }

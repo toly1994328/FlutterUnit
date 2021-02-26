@@ -6,7 +6,7 @@ import 'package:equatable/equatable.dart';
 
 abstract class LikeWidgetEvent extends Equatable {}
 
-class EventSetCollectData extends LikeWidgetEvent {
+class EventLoadLikeData extends LikeWidgetEvent {
   List<Object> get props => [];
 }
 

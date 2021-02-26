@@ -226,7 +226,7 @@ class _LoginFromState extends State<LoginFrom> {
             elevation: 0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20))),
-            color: Colors.blue.withOpacity(0.7),
+            color: Colors.blue.withOpacity(0.4),
             onPressed: _doLogIn,
             child: CupertinoActivityIndicator(),
           ));

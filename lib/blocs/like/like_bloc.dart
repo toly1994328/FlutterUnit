@@ -21,12 +21,12 @@ class LikeWidgetBloc extends Bloc<LikeWidgetEvent, LikeWidgetState> {
     LikeWidgetEvent event,
   ) async* {
     if (event is ToggleLikeWidgetEvent) {
-      await repository.toggleCollect(event.id);
-      final widgets = await repository.loadCollectWidgets();
+      await repository.toggleLike(event.id);
+      final widgets = await repository.loadLikeWidgets();
       yield LikeWidgetState(widgets: widgets);
     }
-    if( event is EventSetCollectData){
-      final widgets = await repository.loadCollectWidgets();
+    if( event is EventLoadLikeData){
+      final widgets = await repository.loadLikeWidgets();
       yield LikeWidgetState(widgets: widgets);
     }
   }

@@ -7,13 +7,11 @@ import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 /// 说明:
 
 class CategoryApi {
-
-
-  static Future<ResultBean<bool>> uploadCategoryData(String data) async {
-    var result = await HttpUtil.getInstance()
-        .client
-        .post(PathUnit.categoryDataSync, data: data)
-        .catchError((err) {
+  static Future<ResultBean<bool>> uploadCategoryData(
+      {String data, String likeData}) async {
+    var result = await HttpUtil.getInstance().client.post(
+        PathUnit.categoryDataSync,
+        data: {"data": data, "likeData": likeData}).catchError((err) {
       return ResultBean.error('请求错误: ${err.toString()}');
     });
 
@@ -24,8 +22,7 @@ class CategoryApi {
     return ResultBean.error('请求错误');
   }
 
-
-  static Future<ResultBean<String>> getCategoryData() async {
+  static Future<ResultBean<CategoryData>> getCategoryData() async {
     var result = await HttpUtil.getInstance()
         .client
         .get(PathUnit.categoryData)
@@ -33,20 +30,33 @@ class CategoryApi {
       return ResultBean.error('请求错误: ${err.toString()}');
     });
 
-
     // 获取的数据非空且 status = true
     if (result.data != null && result.data['status']) {
       // 说明有数据
-      if(result.data['data']!=null){
-        var dataStr = result.data['data']['data'];
-        return ResultBean.ok<String>(dataStr);
-      }else{
-        return ResultBean.ok<String>(null);
+      if (result.data['data'] != null) {
+        return ResultBean.ok<CategoryData>(CategoryData.fromJson(result.data['data']));
+      } else {
+        return ResultBean.ok<CategoryData>(null);
       }
-
     }
 
     return ResultBean.error('请求错误');
   }
+}
 
+class CategoryData{
+  final int categoryDataId;
+  final int userId;
+  final String data;
+  final String likeData;
+
+  CategoryData({this.categoryDataId, this.userId, this.data, this.likeData});
+
+  factory CategoryData.fromJson(Map<String, dynamic> map) {
+    return CategoryData(
+        categoryDataId: map['categoryDataId'],
+        userId: map["userId"],
+        likeData: map["likeData"],
+        data: map["data"]);
+  }
 }

@@ -79,7 +79,8 @@ class UserPage extends StatelessWidget {
         child: CircleImage(
           size: 80,
           shadowColor: Theme.of(context).primaryColor.withAlpha(33),
-          image: NetworkImage(state.user.userAvatar),
+          // image: NetworkImage(state.user.userAvatar),
+          image: AssetImage("assets/images/icon_head.webp"),
         ),
       );
     }

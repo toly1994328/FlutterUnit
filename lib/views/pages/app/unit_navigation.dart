@@ -90,7 +90,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
   _onTapBottomNav(int index) {
     _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 2) {
-      BlocProvider.of<LikeWidgetBloc>(context).add(EventSetCollectData());
+      BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
     }
   }
 }
