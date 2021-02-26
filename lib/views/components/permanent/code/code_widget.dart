@@ -4,7 +4,7 @@
 /// 说明: 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/components/permanent/code/language/dart_languge.dart';
+import 'language/dart_languge.dart';
 
 import 'high_light_code.dart';
 import 'highlighter_style.dart';
@@ -37,6 +37,7 @@ class CodeWidget extends StatelessWidget {
           ),
         );
       } catch (err) {
+        print(err);
         _codeWidget = Text(code);
       }
       body = SingleChildScrollView(

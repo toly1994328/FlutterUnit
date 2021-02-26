@@ -20,11 +20,12 @@ import 'category_state.dart';
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   final CategoryRepository repository;
 
-  CategoryBloc({@required this.repository}) : super(const CategoryEmptyState());
+  CategoryBloc({@required this.repository}) : super(const CategoryLoadingState());
 
   @override
   Stream<CategoryState> mapEventToState(CategoryEvent event) async* {
     if (event is EventLoadCategory) {
+      yield const CategoryLoadingState();
       // 使用 repository 加载 收藏集数据
       final category = await repository.loadCategories();
       yield category.isEmpty

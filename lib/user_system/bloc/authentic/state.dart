@@ -34,4 +34,6 @@ class AuthSuccess extends AuthenticState {
   }
 }
 
-class AuthLoading extends AuthenticState {}
+class AuthLoading extends AuthenticState {
+
+}
