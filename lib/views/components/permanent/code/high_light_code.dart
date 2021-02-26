@@ -7,6 +7,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/components/permanent/code/language/dart_languge.dart';
 import 'package:flutter_unit/views/components/permanent/code/language/language.dart';
 import 'package:string_scanner/string_scanner.dart';
 
@@ -23,9 +24,9 @@ abstract class Highlighter { // ignore: one_member_abstracts
 
 //暗黑模式下的高亮样式
 class CodeHighlighter extends Highlighter {
-  CodeHighlighter({Language language,HighlighterStyle style}) {
+  CodeHighlighter({Language language= const DartLanguage(),HighlighterStyle style}) {
     _spans = <_HighlightSpan>[];
-    language =this.language;
+    this.language =language;
     _style = style??HighlighterStyle.fromColors(HighlighterStyle.lightColor);
   }
 
@@ -43,11 +44,13 @@ class CodeHighlighter extends Highlighter {
     _scanner = StringScanner(_src);
 
     if (_generateSpans()) {
+
       // Successfully parsed the code
       final List<TextSpan> formattedText = <TextSpan>[];
       int currentPosition = 0;
 
       for (_HighlightSpan span in _spans) {
+
         if (currentPosition != span.start)
           formattedText.add(TextSpan(text: _src.substring(currentPosition, span.start)));
 
@@ -61,6 +64,7 @@ class CodeHighlighter extends Highlighter {
 
       return TextSpan(style: _style.baseStyle, children: formattedText);
     } else {
+
       // Parsing failed, return with only basic formatting
       return TextSpan(style: _style.baseStyle, text: src);
     }
@@ -70,6 +74,7 @@ class CodeHighlighter extends Highlighter {
     int lastLoopPosition = _scanner.position;
 
     while (!_scanner.isDone) {
+
       // Skip White space
       _scanner.scan(RegExp(r'\s+'));
 
@@ -102,9 +107,7 @@ class CodeHighlighter extends Highlighter {
             endComment
         ));
 
-        if (eof)
-          break;
-
+        if (eof) break;
         continue;
       }
 
@@ -211,8 +214,8 @@ class CodeHighlighter extends Highlighter {
       // Words
       if (_scanner.scan(RegExp(r'\w+'))) {
         _HighlightType type;
-
         String word = _scanner.lastMatch[0];
+
         if (word.startsWith('_'))
           word = word.substring(1);
 
@@ -233,7 +236,6 @@ class CodeHighlighter extends Highlighter {
           ));
         }
       }
-
       // Check if this loop did anything
       if (lastLoopPosition == _scanner.position) {
         // Failed to parse this file, abort gracefully

@@ -14,7 +14,12 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
       child: Wrap(children: [
-        UnitArcBackground(height: winSize.height * 0.32),
+        Stack(children:[
+          UnitArcBackground(height: winSize.height * 0.32),
+          Positioned(
+              top: 20,
+              child: BackButton(color: Colors.white)),
+        ]),
         Container(
             // color: Colors.green,
             height: winSize.height * 0.68,

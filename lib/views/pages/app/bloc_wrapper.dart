@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/authentic/event.dart';
 import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 import 'package:flutter_unit/model/enums.dart';
@@ -29,7 +30,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
   final WidgetRepository repository = WidgetDbRepository(storage);
 
   final categoryBloc = CategoryBloc(repository: CategoryDbRepository(storage));
-  final authBloc = AuthenticBloc();
+  final authBloc = AuthenticBloc()..add(AppStarted());
 
   @override
   Widget build(BuildContext context) {

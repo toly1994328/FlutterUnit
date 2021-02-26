@@ -20,6 +20,13 @@ class CategoryLoadedState extends CategoryState {
   List<Object> get props => [categories];
 }
 
+class CategoryLoadingState extends CategoryState {
+  const CategoryLoadingState();
+
+  List<Object> get props => [];
+}
+
+
 class CategoryEmptyState extends CategoryState {
   const CategoryEmptyState();
 

@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class LocalStorage {
 
   static String tokenKey= "token_key";
+  static String userKey= "user_key";
 
   static SharedPreferences _sp;
 

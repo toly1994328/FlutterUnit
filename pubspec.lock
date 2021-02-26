@@ -170,6 +170,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.16.1"
+  jwt_decoder:
+    dependency: "direct main"
+    description:
+      name: jwt_decoder
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.4"
   markdown:
     dependency: transitive
     description:

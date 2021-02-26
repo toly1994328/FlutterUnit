@@ -28,6 +28,23 @@ class _RegisterPageState extends State<RegisterPage> {
   final _emailCtrl = TextEditingController(text: '1981462002@qq.com');
   final _codeCtrl = TextEditingController(text: '');
 
+  ValueNotifier<bool> _enableRegister= ValueNotifier<bool>(false);
+
+  bool get enable => _emailCtrl.text.isNotEmpty && _codeCtrl.text.isNotEmpty;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailCtrl.addListener(() {
+      _enableRegister.value = enable;
+    });
+
+    _codeCtrl.addListener(() {
+      _enableRegister.value = enable;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     Size winSize = MediaQuery.of(context).size;
@@ -35,7 +52,12 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
         body: SingleChildScrollView(
       child: Wrap(children: [
-        UnitArcBackground(height: winSize.height * 0.32),
+        Stack(children:[
+          UnitArcBackground(height: winSize.height * 0.32),
+          Positioned(
+              top: 20,
+              child: BackButton(color: Colors.white)),
+        ]),
         Container(
             width: winSize.width,
             height: winSize.height * 0.68,
@@ -148,14 +170,20 @@ class _RegisterPageState extends State<RegisterPage> {
     String info = enable ? '注册中...' : '开启 Unit 新世界';
     return BlocListener<AuthenticBloc, AuthenticState>(
         listener: _listenerLogin,
-        child: RaisedButton(
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20))),
-            color: Colors.blue,
-            onPressed: enable ? null : _doRegister,
-            child: Text(info,
-                style: TextStyle(color: Colors.white, fontSize: 18))));
+        child: ValueListenableBuilder(
+          valueListenable: _enableRegister,
+          builder: (ctx,value,child){
+            return RaisedButton(
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                color: Colors.blue,
+                disabledColor: Colors.blue.withOpacity(0.6),
+                onPressed: (enable||!value) ? null : _doRegister,
+                child: Text(info,
+                    style: TextStyle(color: Colors.white, fontSize: 18)));
+          },
+        ));
   }
 
   void _listener(BuildContext context, RegisterState state) {

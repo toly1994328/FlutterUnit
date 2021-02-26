@@ -19,11 +19,15 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       ResultBean<bool> result =
           await UserApi.register(email: event.email, code: event.code);
 
-      // 注册成功
-      if (result.data) {
-        yield RegisterSuccess(event.email);
+      if(result.data == null){
+        yield RegisterError('注册失败');
       }else{
-        yield RegisterError(result.msg);
+        if (result.data) {
+          // 注册成功
+          yield RegisterSuccess(event.email);
+        }else{
+          yield RegisterError(result.msg);
+        }
       }
     }
   }

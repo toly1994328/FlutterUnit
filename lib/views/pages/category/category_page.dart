@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/views/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/category_model.dart';
@@ -25,6 +26,7 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CategoryBloc, CategoryState>(builder: (ctx, state) {
+      print(state);
       if (state is CategoryLoadedState) {
         return CustomScrollView(
           slivers: <Widget>[
@@ -38,6 +40,7 @@ class CategoryPage extends StatelessWidget {
           ],
         );
       }
+      if(state is CategoryLoadingState) return LoadingShower();
       return EmptyCategory();
     });
   }
