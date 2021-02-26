@@ -5,6 +5,7 @@ import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/about/version_info.dart';
 import 'package:flutter_unit/views/pages/category/category_detail.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
+import 'package:flutter_unit/views/pages/data_manage/data_manage_page.dart';
 import 'package:flutter_unit/views/pages/gallery/gallery_page.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_detail.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_point_page.dart';
@@ -54,6 +55,8 @@ class UnitRouter {
   static const String about_app = 'AboutAppPage';
   static const String register = 'register';
 
+  static const String data_manage = 'DataManagePage';
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       //
@@ -72,6 +75,8 @@ class UnitRouter {
 
       case setting:
         return Right2LeftRouter(child: SettingPage());
+      case data_manage:
+        return Right2LeftRouter(child: DataManagePage());
       case font_setting:
         return Right2LeftRouter(child: FontSettingPage());
       case theme_color_setting:

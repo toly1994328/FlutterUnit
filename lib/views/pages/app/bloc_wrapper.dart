@@ -53,7 +53,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
 
           BlocProvider<LikeWidgetBloc>(
               create: (_) => LikeWidgetBloc(repository: repository)
-                ..add(EventSetCollectData())),
+                ..add(EventLoadLikeData())),
 
           BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
           BlocProvider<LoginBloc>(

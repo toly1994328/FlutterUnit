@@ -27,7 +27,7 @@ class MePageItem extends StatelessWidget {
             height: 10,
           ),
           _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
-          _buildItem(context, TolyIcon.icon_layout, '数据统计', null),
+          _buildItem(context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
           _buildItem(context, TolyIcon.icon_collect, '我的收藏', UnitRouter.collect),
           Divider(
             height: 1,

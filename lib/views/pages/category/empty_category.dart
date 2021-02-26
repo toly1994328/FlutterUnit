@@ -58,7 +58,6 @@ class EmptyCategory extends StatelessWidget {
     List<int> bytes =
     data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     await File(dbPath).writeAsBytes(bytes, flush: true);
-    print("==== debug ===== assets ======拷贝完成====");
     BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
   }
 }

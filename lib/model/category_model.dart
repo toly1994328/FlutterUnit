@@ -62,11 +62,13 @@ class CategoryModel extends Equatable {
 class CategoryTo{
   final CategoryPo model;
   final List<int> widgetIds;
+  final List<dynamic> likesData;
 
-  CategoryTo({this.model, this.widgetIds});
+  CategoryTo({this.model, this.widgetIds,this.likesData});
 
   Map toJson() => {
     "model": this.model,
     "widgetIds": this.widgetIds,
+    "likesData":this.likesData
   };
 }

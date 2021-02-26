@@ -10,6 +10,7 @@ import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/repositories/itf/category_repository.dart';
+import 'package:flutter_unit/repositories/itf/widget_repository.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 
 /// create by 张风捷特烈 on 2021/2/24
@@ -69,7 +70,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
 
   void _doSync() async {
     setState(() => state = AsyncType.loading);
-    ResultBean<String> result = await CategoryApi.getCategoryData();
+    ResultBean<CategoryData> result = await CategoryApi.getCategoryData();
 
     if (result.status) {
       // 说明请求成功
@@ -77,16 +78,19 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
         //说明有后台备份数据，进行同步操作
         CategoryRepository repository =
             BlocProvider.of<CategoryBloc>(context).repository;
-        await repository.syncCategoryByData(result.data);
+        await repository.syncCategoryByData(result.data.data,result.data.likeData);
         BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
+        BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
       } else {
         // 说明还没有后台数据，
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。
-        CategoryRepository rep =
-            BlocProvider.of<CategoryBloc>(context).repository;
+        CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
         List<CategoryTo> loadCategories = await rep.loadCategoryData();
+        List<dynamic> likeData = await rep.loadLikesData();
+
         String json = jsonEncode(loadCategories);
-        await CategoryApi.uploadCategoryData(json);
+        String likeJson = jsonEncode(likeData);
+        await CategoryApi.uploadCategoryData(data: json,likeData: likeJson);
       }
       setState(() => state = AsyncType.success);
       _toDefault();

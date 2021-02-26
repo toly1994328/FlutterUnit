@@ -33,7 +33,7 @@ class HomeDrawer extends StatelessWidget {
           children: <Widget>[
             UnitDrawerHeader(color: color),
             _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
-            _buildItem(context, TolyIcon.icon_layout, '数据统计', null),
+            _buildItem(context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
             Divider(height: 1),
             _buildFlutterUnit(context),
             _buildItem(context, TolyIcon.icon_code, 'Dart 手册', null),
