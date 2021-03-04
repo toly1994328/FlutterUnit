@@ -13,6 +13,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="FlutterUnit"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/logo">
         <activity
             android:name=".MainActivity"
