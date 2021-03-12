@@ -16,7 +16,6 @@ import 'package:flutter_unit/views/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/components/project/items/widget/home_item_support.dart';
-import 'package:flutter_unit/views/pages/app/flutter_unit.dart';
 import 'package:flutter_unit/views/pages/widget_home/toly_app_bar.dart';
 
 import 'background.dart';

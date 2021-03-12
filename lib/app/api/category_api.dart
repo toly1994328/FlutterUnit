@@ -23,6 +23,7 @@ class CategoryApi {
   }
 
   static Future<ResultBean<CategoryData>> getCategoryData() async {
+
     var result = await HttpUtil.getInstance()
         .client
         .get(PathUnit.categoryData)
