@@ -1,11 +1,8 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/api/category_api.dart';
 import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
-import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/repositories/itf/category_repository.dart';
 import 'package:flutter_unit/storage/po/category_po.dart';

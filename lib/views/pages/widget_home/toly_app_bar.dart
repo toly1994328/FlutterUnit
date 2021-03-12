@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/views/components/permanent/circle.dart';
 
 class TolyAppBar extends StatefulWidget {
