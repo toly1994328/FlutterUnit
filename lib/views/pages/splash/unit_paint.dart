@@ -6,17 +6,18 @@ import 'package:flutter/material.dart';
 
 class UnitPainter extends CustomPainter {
   Paint _paint;
-  double width;
-  Animation repaint;
-  Color color;
+  final double width;
+  Animation<double> _curveAnim;
+  final Color color;
 
-  Path _path1 = Path();
-  Path _path2 = Path();
-  Path _path3 = Path();
-  Path _path4 = Path();
+  final Path _path1 = Path();
+  final Path _path2 = Path();
+  final Path _path3 = Path();
+  final Path _path4 = Path();
 
-  UnitPainter({this.width = 200.0, this.repaint, this.color = Colors.blue}):super(repaint: repaint) {
+  UnitPainter({this.width = 200.0, this.color = Colors.blue,Animation repaint}):super(repaint: repaint) {
     _paint = Paint();
+    _curveAnim= CurvedAnimation(parent: repaint, curve: Curves.fastOutSlowIn);
   }
 
   @override
@@ -25,7 +26,7 @@ class UnitPainter extends CustomPainter {
     _path2.reset();
     _path3.reset();
     _path4.reset();
-    var factor = repaint.value;
+    var factor = _curveAnim.value;
     canvas.translate(
         size.width / 2 - width * 0.5, size.height / 2 - width * 0.5);
 
@@ -56,11 +57,14 @@ class UnitPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(UnitPainter oldDelegate) {
-    return oldDelegate.repaint!=repaint;
+    return
+      oldDelegate.color!=color||
+      oldDelegate.width!=width||
+      oldDelegate._curveAnim!=_curveAnim;
   }
 
   void drawColor1(Canvas canvas) {
-    var factor = repaint.value;
+    double factor = _curveAnim.value;
     _path1.moveTo(0, 0);
     _path1.lineTo(width * 0.618 * factor - 1, 0);
     _path1.lineTo(width * 0.5 - 1, width * 0.5 - 1);
@@ -70,7 +74,7 @@ class UnitPainter extends CustomPainter {
   }
 
   void drawColor2(Canvas canvas) {
-    var factor = repaint.value;
+    double factor = _curveAnim.value;
     _path2.moveTo(width * 0.618 * factor, 0);
     _path2.lineTo(width, 0);
     _path2.lineTo(width, width * 0.618 * factor);
@@ -80,7 +84,7 @@ class UnitPainter extends CustomPainter {
   }
 
   void drawColor3(Canvas canvas) {
-    var factor = repaint.value;
+    double factor = _curveAnim.value;
     _path3.moveTo(width * 0.5 + 1, width * 0.5 + 1);
     _path3.lineTo(width, width * 0.618 * factor + 1);
     _path3.lineTo(width, width);
@@ -89,7 +93,7 @@ class UnitPainter extends CustomPainter {
   }
 
   void drawColor4(Canvas canvas) {
-    var factor = repaint.value;
+    double factor = _curveAnim.value;
     _path4.moveTo(0, width * (1 - 0.618) * factor);
     _path4.lineTo(width * 0.5, width * 0.5);
     _path4.lineTo(width * (1 - 0.618) * factor, width);
