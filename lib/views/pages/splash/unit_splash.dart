@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_unit/app/res/str_unit.dart';
+import 'package:flutter_unit/app/res/style/gap_unit.dart';
+import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
+import 'package:flutter_unit/views/pages/splash/splash_bottom.dart';
 import 'unit_paint.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
@@ -9,35 +13,29 @@ import 'unit_paint.dart';
 /// 说明: app 闪屏页
 
 class UnitSplash extends StatefulWidget {
-  final double size;
-
-  UnitSplash({this.size = 200});
-
   @override
   _UnitSplashState createState() => _UnitSplashState();
 }
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
-  Animation _curveAnim;
-
   bool _animEnd = false;
+
+  final Duration animTime = const Duration(milliseconds: 1000);
+  final Duration delayTime = const Duration(milliseconds: 500);
+  final Duration fadeInTime = const Duration(milliseconds: 600);
 
   @override
   void initState() {
     super.initState();
 
     SystemUiOverlayStyle systemUiOverlayStyle =
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
-    _controller = AnimationController(
-        duration: const Duration(milliseconds: 1000), vsync: this)
+    _controller = AnimationController(duration: animTime, vsync: this)
       ..addStatusListener(_listenStatus)
       ..forward();
-
-    _curveAnim =
-        CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
   }
 
   @override
@@ -50,7 +48,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     if (status == AnimationStatus.completed) {
       setState(() {
         _animEnd = true;
-        Future.delayed(const Duration(milliseconds: 500)).then((e) {
+        Future.delayed(delayTime).then((e) {
           Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
         });
       });
@@ -66,23 +64,25 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          _buildLogo(Colors.blue),
+          _buildFlutterLogo(),
           Container(
             width: winW,
             height: winH,
             child: CustomPaint(
-              painter: UnitPainter(repaint: _curveAnim),
+              painter: UnitPainter(repaint: _controller),
             ),
           ),
-          _buildText(winH, winW),
+          _buildFlutterUnitText(winH, winW),
           _buildHead(),
-          _buildPower(),
+          Positioned(
+              bottom: 20,
+              child: SplashBottom())
         ],
       ),
     );
   }
 
-  Widget _buildText(double winH, double winW) {
+  Widget _buildFlutterUnitText(double winH, double winW) {
     final shadowStyle = TextStyle(
       fontSize: 45,
       color: Theme.of(context).primaryColor,
@@ -99,18 +99,16 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     return Positioned(
       top: winH / 1.4,
       child: AnimatedOpacity(
-          duration: const Duration(milliseconds: 600),
+          duration: fadeInTime,
           opacity: _animEnd ? 1.0 : 0.0,
           child: Text(
-            'Flutter Unit',
+            StrUnit.appName,
             style: shadowStyle,
           )),
     );
   }
 
-  final colors = [Colors.red, Colors.yellow, Colors.blue];
-
-  Widget _buildLogo(Color primaryColor) {
+  Widget _buildFlutterLogo() {
     return SlideTransition(
       position: Tween<Offset>(
         begin: const Offset(0, 0),
@@ -142,22 +140,4 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
         width: 45,
         child: Image.asset('assets/images/icon_head.webp'),
       ));
-
-  Widget _buildPower() => Positioned(
-        bottom: 30,
-        right: 30,
-        child: AnimatedOpacity(
-            duration: const Duration(milliseconds: 300),
-            opacity: _animEnd ? 1.0 : 0.0,
-            child: const Text("Power By 张风捷特烈",
-                style: TextStyle(
-                    color: Colors.grey,
-                    shadows: [
-                      Shadow(
-                          color: Colors.black,
-                          blurRadius: 1,
-                          offset: Offset(0.3, 0.3))
-                    ],
-                    fontSize: 16))),
-      );
 }
