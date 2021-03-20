@@ -65,7 +65,7 @@ class IssueItem extends StatelessWidget {
     return Row(
       children: <Widget>[
         CircleImage(
-          image: NetworkImage(issue.user.avatar_url),
+          image: NetworkImage(issue.user.avatarUrl),
           size: 40,
           borderSize: 2,
         ),

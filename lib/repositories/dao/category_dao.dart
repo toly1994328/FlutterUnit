@@ -2,7 +2,7 @@
 import 'package:sqflite/sqflite.dart';
 
 import '../app_storage.dart';
-import '../po/category_po.dart';
+import '../bean/category_po.dart';
 
 
 //"""

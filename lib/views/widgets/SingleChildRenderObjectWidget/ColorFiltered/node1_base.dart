@@ -44,7 +44,6 @@ class _CustomColorFilteredState extends State<CustomColorFiltered> {
         ]),
       ],
     );
-    ;
   }
 
   Widget _buildChild(m) => Container(

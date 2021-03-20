@@ -29,7 +29,7 @@ class _PlayBezier3PageState extends State<PlayBezier3Page> {
   }
 
   void _initPoints() {
-    _pos = List<Offset>();
+    _pos = [];
     _pos.add(Offset(0, 0));
     _pos.add(Offset(60, -60));
     _pos.add(Offset(-90, -90));

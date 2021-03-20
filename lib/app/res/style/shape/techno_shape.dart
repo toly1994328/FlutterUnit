@@ -81,7 +81,6 @@ class TechnoShapeBorder extends ShapeBorder {
 
   @override
   ShapeBorder scale(double t) {
-    // TODO: implement scale
     return null;
   }
 }

@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
-import 'package:flutter_unit/storage/dao/local_storage.dart';
+import 'package:flutter_unit/repositories/dao/local_storage.dart';
 import 'package:flutter_unit/user_system/model/user.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 

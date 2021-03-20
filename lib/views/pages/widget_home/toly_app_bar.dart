@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/views/components/permanent/circle.dart';
 
+
 class TolyAppBar extends StatefulWidget {
   final double maxHeight;
-  final Function(int, Color) onItemClick;
+  final Function(int) onItemClick;
 
   @override
   _TolyAppBarState createState() => _TolyAppBarState();
@@ -52,12 +53,12 @@ class _TolyAppBarState extends State<TolyAppBar>
 
   @override
   void initState() {
+    super.initState();
     _controller = AnimationController(
         duration: const Duration(milliseconds: 300), vsync: this)
       ..addListener(_render)
       ..addStatusListener(_listenStatus);
     _selectIndex = widget.defaultIndex;
-    super.initState();
   }
 
   void _render() {
@@ -102,7 +103,7 @@ class _TolyAppBarState extends State<TolyAppBar>
           color: _selectIndex == colors.indexOf(color)
               ? Colors.transparent
               : Color(colors[_selectIndex]),
-          offset: Offset(1, 1),
+          offset: const Offset(1, 1),
           blurRadius: 2)
     ], color: Color(color), borderRadius: _kBorderRadius),
     height: widget.maxHeight + 20,
@@ -113,7 +114,7 @@ class _TolyAppBarState extends State<TolyAppBar>
     ),
   );
 
-  _onTap(int color) {
+  void _onTap(int color) {
     if (_selectIndex == colors.indexOf(color)) return;
     clicked = true;
     setState(() {
@@ -121,7 +122,7 @@ class _TolyAppBarState extends State<TolyAppBar>
       _controller.forward();
       _selectIndex = colors.indexOf(color);
       if (widget.onItemClick != null)
-        widget.onItemClick(_selectIndex, Color(color));
+        widget.onItemClick(_selectIndex);
     });
   }
 

@@ -9,43 +9,45 @@ import 'package:flutter_unit/user_system/model/user.dart';
 
 class UserApi {
   static Future<ResultBean<bool>> register({String email, String code}) async {
+    String errorMsg = "";
 
     var result = await HttpUtil.getInstance().client.post(PathUnit.register,
         data: {"email": email, "activeCode": code}).catchError((err) {
-      return ResultBean.error('请求错误: ${err.toString()}');
+      errorMsg = err.toString();
     });
 
     if (result.data != null) {
       return ResultBean.fromData<bool>(result.data);
     }
 
-    return ResultBean.error('请求错误');
+    return ResultBean.error('请求错误: $errorMsg');
   }
 
-  static Future<ResultBean<User>> login({String username, String password}) async {
+  static Future<ResultBean<User>> login(
+      {String username, String password}) async {
+    String errorMsg = "";
 
     var result = await HttpUtil.getInstance().client.post(PathUnit.login,
         data: {"username": username, "password": password}).catchError((err) {
-      return ResultBean.error('请求错误: ${err.toString()}');
+      errorMsg = err.toString();
     });
 
     if (result.data != null) {
-      if(result.data['status']){
+      if (result.data['status']) {
         return ResultBean<User>(
           msg: result.data['msg'],
           data: User.fromJson(result.data['data']),
           status: result.data['status'],
         );
-      }else{
+      } else {
         return ResultBean<User>(
           msg: result.data['msg'],
           data: null,
           status: false,
         );
       }
-
     }
 
-    return ResultBean.error('请求错误');
+    return ResultBean.error('请求错误: $errorMsg');
   }
 }

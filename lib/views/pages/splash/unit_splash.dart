@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
-import 'package:flutter_unit/app/res/style/gap_unit.dart';
-import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/views/pages/splash/splash_bottom.dart';
 import 'unit_paint.dart';
@@ -75,7 +73,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
           _buildFlutterUnitText(winH, winW),
           _buildHead(),
           Positioned(
-              bottom: 20,
+              bottom: 15,
               child: SplashBottom())
         ],
       ),

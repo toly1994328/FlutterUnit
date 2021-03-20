@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
-import 'package:flutter_unit/storage/po/category_po.dart';
+import 'package:flutter_unit/repositories/bean/category_po.dart';
 import 'package:intl/intl.dart';
 
 /// create by 张风捷特烈 on 2020-04-21

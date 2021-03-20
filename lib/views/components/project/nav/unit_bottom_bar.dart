@@ -7,13 +7,23 @@ import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 自定义底部导航栏
 
+typedef IndexTapCallback = void Function(int);
+typedef IndexLongTapCallback = void Function(BuildContext, int);
+
 class UnitBottomBar extends StatefulWidget {
   final Color color;
-  final Function(int) onItemClick;
 
-  UnitBottomBar(
-      {this.color = Colors.blue,
-      @required this.onItemClick});
+  // item 点击事件
+  final IndexTapCallback onItemTap;
+
+  // item 长按事件
+  final IndexLongTapCallback onItemLongTap;
+
+  UnitBottomBar({
+    this.color = Colors.blue,
+    @required this.onItemTap,
+    this.onItemLongTap,
+  });
 
   @override
   _UnitBottomBarState createState() => _UnitBottomBarState();
@@ -76,8 +86,8 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
                       height: SizeUnit.bottom_nav_height,
                       child: Icon(
                         TolyIcon.icon_layout,
-                        size: iconSize(0),
-                        color: iconColor(0),
+                        size: getIconSizeByPosition(0),
+                        color: getIconColorByPosition(0),
                       )),
                 ),
               ),
@@ -89,8 +99,8 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
                       padding: paddingR,
                       child: Icon(
                         TolyIcon.dingzhi1,
-                        size: iconSize(1),
-                        color: iconColor(1),
+                        size: getIconSizeByPosition(1),
+                        color: getIconColorByPosition(1),
                       )),
                 ),
               ),
@@ -119,22 +129,22 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
                       height: SizeUnit.bottom_nav_height,
                       child: Icon(
                         TolyIcon.icon_collect,
-                        size: iconSize(2),
-                        color: iconColor(2),
+                        size: getIconSizeByPosition(2),
+                        color: getIconColorByPosition(2),
                       )),
                 ),
               ),
               Expanded(
                 child: FeedbackWidget(
                   onPressed: () => _updateIndex(3),
-                  onLongPressed: () => _onLongPress(context, 1),
+                  onLongPressed: () => _onLongPress(context, 3),
                   child: Container(
                       padding: paddingR,
                       height: SizeUnit.bottom_nav_height,
                       child: Icon(
                         TolyIcon.yonghu,
-                        size: iconSize(3),
-                        color: iconColor(3),
+                        size: getIconSizeByPosition(3),
+                        color: getIconColorByPosition(3),
                       )),
                 ),
               ),
@@ -143,26 +153,25 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
         ),
       );
 
-  double iconSize(int position) => _position == position
+  double getIconSizeByPosition(int position) => _position == position
       ? SizeUnit.active_bottom_nav_icon
       : SizeUnit.default_bottom_nav_icon;
 
-  Color iconColor(int position) =>
+  Color getIconColorByPosition(int position) =>
       _position == position ? widget.color : Colors.white;
 
   void _updateIndex(int index) {
     setState(() {
       _position = index;
-      widget.onItemClick(_position);
+      if (widget.onItemTap != null) {
+        widget.onItemTap(_position);
+      }
     });
   }
-}
 
-_onLongPress(BuildContext context, int i) {
-  if (i == 0) {
-    Scaffold.of(context).openDrawer();
-  }
-  if (i == 1) {
-    Scaffold.of(context).openEndDrawer();
+  void _onLongPress(BuildContext context, int index) {
+    if (widget.onItemLongTap != null) {
+      widget.onItemLongTap(context, index);
+    }
   }
 }

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/style/gap_unit.dart';
 import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 
 class SplashBottom extends StatefulWidget {
@@ -33,18 +32,14 @@ class _SplashBottomState extends State<SplashBottom> {
     return AnimatedOpacity(
         duration: animTime,
         opacity: _animStart ? 1.0 : 0.0,
-        child: Row(
-          children: [
-            Image.asset(logoPath, height: 20, width: 20),
-            GapUnit.W5,
-            Wrap(
+        child: Wrap(
               direction: Axis.vertical,
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                const Text("张风捷特烈技术支持", style: TStyleUnit.splashShadows),
-                const Text("@编程之王 2021", style: TStyleUnit.splashShadows),
+                const Text("Power By 张风捷特烈", style: TStyleUnit.splashShadows),
+                const Text("· 2021 ·  @编程之王 ", style: TStyleUnit.splashShadows),
               ],
-            ),
-          ],
         ));
   }
 }
