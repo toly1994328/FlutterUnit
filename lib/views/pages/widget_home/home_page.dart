@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage>
         },
       );
 
-  _switchTab(int index, Color color) {
+  _switchTab(int index) {
     BlocProvider.of<WidgetsBloc>(context)
         .add(EventTabTap(Convert.toFamily(index)));
   }

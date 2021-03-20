@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/storage/dao/widget_dao.dart';
+import 'package:flutter_unit/repositories/dao/widget_dao.dart';
 
 
 class AppSearchBar extends StatefulWidget {

@@ -4,30 +4,30 @@ import 'package:flutter_unit/model/github/github_user.dart';
 part 'g/issue.g.dart';
 
 class Issue extends Equatable {
-  int id;
-  int number;
-  String title;
-  String state;
-  bool locked;
+  final int id;
+  final int number;
+  final String title;
+  final String state;
+  final bool locked;
 
-  int commentNum;
+  final int commentNum;
 
-  DateTime createdAt;
+  final DateTime createdAt;
 
-  DateTime updatedAt;
+  final  DateTime updatedAt;
 
-  DateTime closedAt;
-  String body;
+  final DateTime closedAt;
+  final String body;
 
-  String bodyHtml;
+  final String bodyHtml;
 
-  GithubUser user;
+  final  GithubUser user;
 
-  String repoUrl;
+  final String repoUrl;
 
-  String htmlUrl;
+  final String htmlUrl;
 
-  GithubUser closeBy;
+ final GithubUser closeBy;
 
   Issue(
     this.id,

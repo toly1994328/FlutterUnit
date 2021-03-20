@@ -8,22 +8,22 @@ class GithubUser {
   GithubUser(
       this.login,
       this.id,
-      this.node_id,
-      this.avatar_url,
-      this.gravatar_id,
+      this.nodeId,
+      this.avatarUrl,
+      this.gravatarId,
       this.url,
-      this.html_url,
-      this.followers_url,
-      this.following_url,
-      this.gists_url,
-      this.starred_url,
-      this.subscriptions_url,
-      this.organizations_url,
-      this.repos_url,
-      this.events_url,
-      this.received_events_url,
+      this.htmlUrl,
+      this.followersUrl,
+      this.followingUrl,
+      this.gistsUrl,
+      this.starredUrl,
+      this.subscriptionsUrl,
+      this.organizationsUrl,
+      this.reposUrl,
+      this.eventsUrl,
+      this.receivedEventsUrl,
       this.type,
-      this.site_admin,
+      this.siteAdmin,
       this.name,
       this.company,
       this.blog,
@@ -31,37 +31,37 @@ class GithubUser {
       this.email,
       this.starred,
       this.bio,
-      this.public_repos,
-      this.public_gists,
+      this.publicRepos,
+      this.publicGists,
       this.followers,
       this.following,
-      this.created_at,
-      this.updated_at,
-      this.private_gists,
-      this.total_private_repos,
-      this.owned_private_repos,
-      this.disk_usage,
+      this.createdAt,
+      this.updatedAt,
+      this.privateGists,
+      this.totalPrivateRepos,
+      this.ownedPrivateRepos,
+      this.diskUsage,
       this.collaborators,
-      this.two_factor_authentication);
+      this.twoFactorAuthentication);
 
   String login;
   int id;
-  String node_id;
-  String avatar_url;
-  String gravatar_id;
+  String nodeId;
+  String avatarUrl;
+  String gravatarId;
   String url;
-  String html_url;
-  String followers_url;
-  String following_url;
-  String gists_url;
-  String starred_url;
-  String subscriptions_url;
-  String organizations_url;
-  String repos_url;
-  String events_url;
-  String received_events_url;
+  String htmlUrl;
+  String followersUrl;
+  String followingUrl;
+  String gistsUrl;
+  String starredUrl;
+  String subscriptionsUrl;
+  String organizationsUrl;
+  String reposUrl;
+  String eventsUrl;
+  String receivedEventsUrl;
   String type;
-  bool site_admin;
+  bool siteAdmin;
   String name;
   String company;
   String blog;
@@ -69,18 +69,18 @@ class GithubUser {
   String email;
   String starred;
   String bio;
-  int public_repos;
-  int public_gists;
+  int publicRepos;
+  int publicGists;
   int followers;
   int following;
-  DateTime created_at;
-  DateTime updated_at;
-  int private_gists;
-  int total_private_repos;
-  int owned_private_repos;
-  int disk_usage;
+  DateTime createdAt;
+  DateTime updatedAt;
+  int privateGists;
+  int totalPrivateRepos;
+  int ownedPrivateRepos;
+  int diskUsage;
   int collaborators;
-  bool two_factor_authentication;
+  bool twoFactorAuthentication;
 
 
   factory GithubUser.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

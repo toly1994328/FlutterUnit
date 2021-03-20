@@ -1,7 +1,8 @@
-import 'package:flutter_unit/storage/app_storage.dart';
+
 import 'package:flutter_unit/model/enums.dart';
 
-import '../po/widget_po.dart';
+import '../app_storage.dart';
+import '../bean/widget_po.dart';
 
 
 class WidgetDao {

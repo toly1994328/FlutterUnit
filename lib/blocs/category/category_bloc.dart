@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
 import 'package:flutter_unit/model/category_model.dart';
-import 'package:flutter_unit/repositories/itf/category_repository.dart';
-import 'package:flutter_unit/storage/po/category_po.dart';
+import 'package:flutter_unit/repositories/bean/category_po.dart';
+import 'package:flutter_unit/repositories/rep/category_repository.dart';
 
 import 'category_event.dart';
 import 'category_state.dart';

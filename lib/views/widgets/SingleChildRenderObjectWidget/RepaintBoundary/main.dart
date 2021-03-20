@@ -3,8 +3,6 @@
 /// 说明:
 
 import 'package:flutter/material.dart';
-
-import 'node1_base.dart';
 import 'node2_save.dart';
 
 
