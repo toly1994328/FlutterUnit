@@ -1,11 +1,16 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/user_system/component/authentic_widget.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/pages/category/sync/upload_button.dart';
 
+import 'sync/async_button.dart';
 import 'category_page.dart';
 import 'like_widget_page.dart';
 
@@ -14,8 +19,8 @@ class CollectPage extends StatefulWidget {
   _CollectPageState createState() => _CollectPageState();
 }
 
-class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClientMixin {
-
+class _CollectPageState extends State<CollectPage>
+    with AutomaticKeepAliveClientMixin {
   final _tabs = [
     '收藏集录',
     '珍藏组件',
@@ -24,24 +29,21 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
     BuildContext _topContext = context;
     return Scaffold(
         backgroundColor: Colors.white,
         body: Container(
-          color: BlocProvider.of<WidgetsBloc>(context).state.color.withAlpha(11),
+          color:
+              BlocProvider.of<WidgetsBloc>(context).state.color.withAlpha(11),
           child: DefaultTabController(
             length: _tabs.length, // This is the number of tabs.
             child: NestedScrollView(
-              headerSliverBuilder:
-                  (BuildContext context, bool innerBoxIsScrolled) {
-                return <Widget>[
-                  SliverOverlapAbsorber(
-                      handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
-                          context),
-                      sliver: _buildAppBar(_topContext, innerBoxIsScrolled)),
-                ];
-              },
+              headerSliverBuilder: (context, innerBoxIsScrolled) => <Widget>[
+                SliverOverlapAbsorber(
+                    handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
+                        context),
+                    sliver: _buildAppBar(_topContext, innerBoxIsScrolled)),
+              ],
               body: TabBarView(
                 children: <Widget>[
                   CategoryPage(),
@@ -58,7 +60,7 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
       leading: Container(
           margin: EdgeInsets.all(10),
           child: FeedbackWidget(
-            onPressed: (){
+            onPressed: () {
               Navigator.of(context).pushNamed(UnitRouter.login);
             },
             child: CircleImage(
@@ -67,7 +69,16 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
             ),
           )),
       backgroundColor: BlocProvider.of<WidgetsBloc>(context).state.color,
-      actions: <Widget>[_buildAddActionBuilder(context)],
+      actions: <Widget>[
+        SizedBox(
+            width: 32,
+            child: AuthenticWidget.just(UploadCategoryButton())),
+        // SizedBox(width: 5,),
+        SizedBox(
+            width: 32,
+            child: AuthenticWidget.just(SyncCategoryButton())),
+        _buildAddAction(context)
+      ],
       title: Text(
         '收藏集 CollectUnit',
         style: TextStyle(
@@ -110,13 +121,18 @@ class _CollectPageState extends State<CollectPage> with AutomaticKeepAliveClient
     );
   }
 
-  Widget _buildAddActionBuilder(BuildContext context) => IconButton(
-      icon: Icon(
+  Widget _buildAddAction(BuildContext context) => IconButton(
+      icon: const Icon(
         Icons.add,
         size: 30,
       ),
       onPressed: () => Scaffold.of(context).openEndDrawer());
 
+
   @override
   bool get wantKeepAlive => true;
 }
+
+
+
+

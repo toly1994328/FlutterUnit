@@ -14,7 +14,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.5.0-nullsafety.1"
+    version: "2.5.0"
   bloc:
     dependency: transitive
     description:
@@ -28,35 +28,35 @@ packages:
       name: boolean_selector
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.0-nullsafety.1"
+    version: "2.1.0"
   characters:
     dependency: transitive
     description:
       name: characters
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0-nullsafety.3"
+    version: "1.1.0"
   charcode:
     dependency: transitive
     description:
       name: charcode
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0-nullsafety.1"
+    version: "1.2.0"
   clock:
     dependency: transitive
     description:
       name: clock
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0-nullsafety.1"
+    version: "1.1.0"
   collection:
     dependency: transitive
     description:
       name: collection
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.15.0-nullsafety.3"
+    version: "1.15.0"
   connectivity:
     dependency: "direct main"
     description:
@@ -105,7 +105,7 @@ packages:
       name: fake_async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0-nullsafety.1"
+    version: "1.2.0"
   file:
     dependency: transitive
     description:
@@ -170,6 +170,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.16.1"
+  js:
+    dependency: transitive
+    description:
+      name: js
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.3"
+  jwt_decoder:
+    dependency: "direct main"
+    description:
+      name: jwt_decoder
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.4"
   markdown:
     dependency: transitive
     description:
@@ -183,14 +197,14 @@ packages:
       name: matcher
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.12.10-nullsafety.1"
+    version: "0.12.10"
   meta:
     dependency: transitive
     description:
       name: meta
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.3.0-nullsafety.3"
+    version: "1.3.0"
   nested:
     dependency: transitive
     description:
@@ -204,7 +218,7 @@ packages:
       name: path
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.8.0-nullsafety.1"
+    version: "1.8.0"
   path_provider:
     dependency: "direct main"
     description:
@@ -307,7 +321,7 @@ packages:
       name: source_span
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.8.0-nullsafety.2"
+    version: "1.8.0"
   sqflite:
     dependency: "direct main"
     description:
@@ -328,21 +342,21 @@ packages:
       name: stack_trace
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.10.0-nullsafety.1"
+    version: "1.10.0"
   stream_channel:
     dependency: transitive
     description:
       name: stream_channel
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.0-nullsafety.1"
+    version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:
       name: string_scanner
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0-nullsafety.1"
+    version: "1.1.0"
   synchronized:
     dependency: transitive
     description:
@@ -356,14 +370,14 @@ packages:
       name: term_glyph
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0-nullsafety.1"
+    version: "1.2.0"
   test_api:
     dependency: transitive
     description:
       name: test_api
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.2.19-nullsafety.2"
+    version: "0.2.19"
   toggle_rotate:
     dependency: "direct main"
     description:
@@ -377,7 +391,7 @@ packages:
       name: typed_data
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.3.0-nullsafety.3"
+    version: "1.3.0"
   url_launcher:
     dependency: "direct main"
     description:
@@ -412,7 +426,7 @@ packages:
       name: vector_math
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.0-nullsafety.3"
+    version: "2.1.0"
   xdg_directories:
     dependency: transitive
     description:
@@ -421,5 +435,5 @@ packages:
     source: hosted
     version: "0.1.0"
 sdks:
-  dart: ">=2.10.0-110 <2.11.0"
-  flutter: ">=1.17.0 <2.0.0"
+  dart: ">=2.12.0-0.0 <3.0.0"
+  flutter: ">=1.17.0"

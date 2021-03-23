@@ -1,14 +1,14 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
-import 'package:flutter_unit/storage/po/category_po.dart';
+import 'package:flutter_unit/repositories/bean/category_po.dart';
 import 'package:intl/intl.dart';
 
 /// create by 张风捷特烈 on 2020-04-21
 /// contact me by email 1981462002@qq.com
 /// 说明: 收藏夹展示数据模型
 
-class CategoryModel extends Equatable{
+class CategoryModel extends Equatable {
   final int id;
   final String name;
   final String info;
@@ -19,12 +19,12 @@ class CategoryModel extends Equatable{
 
   CategoryModel(
       {this.name,
-        this.id,
-        this.info,
-        this.createDate,
-        this.imageCover,
-        this.count,
-        this.color});
+      this.id,
+      this.info,
+      this.createDate,
+      this.imageCover,
+      this.count,
+      this.color});
 
   bool get canDelete => id > 1;
 
@@ -42,19 +42,33 @@ class CategoryModel extends Equatable{
 
   @override
   List<Object> get props => [
-    id,
-    name,
-    info,
-    createDate,
-    imageCover,
-    count,
-    color,
-  ];
+        id,
+        name,
+        info,
+        createDate,
+        imageCover,
+        count,
+        color,
+      ];
 
   @override
   String toString() {
     return 'CategoryModel{id: $id, name: $name, info: $info, createDate: $createDate, imageCover: $imageCover, count: $count, color: $color}';
   }
+}
 
 
+// 收藏集的 To 对象，用与上传/同步 收藏集
+class CategoryTo{
+  final CategoryPo model;
+  final List<int> widgetIds;
+  final List<dynamic> likesData;
+
+  CategoryTo({this.model, this.widgetIds,this.likesData});
+
+  Map toJson() => {
+    "model": this.model,
+    "widgetIds": this.widgetIds,
+    "likesData":this.likesData
+  };
 }

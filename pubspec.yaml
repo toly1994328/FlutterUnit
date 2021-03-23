@@ -1,7 +1,7 @@
 name: flutter_unit
 description: A new Flutter application.
 
-version: 1.4.0
+version: 1.5.0
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -18,7 +18,7 @@ dependencies:
 
   sqflite: ^1.2.1 # 数据库
   shared_preferences: ^0.5.6+3 # xml 固化
-
+  jwt_decoder: ^1.0.3 # jwt 解析
   toggle_rotate: ^0.0.5
   flutter_star: ^0.1.2 # 星星组件
   url_launcher: ^5.4.2 # url
@@ -58,6 +58,9 @@ flutter:
     - family: ComicNeue #字体名
       fonts:
         - asset: assets/fonts/ComicNeue-Regular.ttf
+    - family: CHOPS
+      fonts:
+        - asset: assets/fonts/CHOPS.TTF
     - family: TolyIcon
       fonts:
         - asset: assets/iconfont/iconfont.ttf

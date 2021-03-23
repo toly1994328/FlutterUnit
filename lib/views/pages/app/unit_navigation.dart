@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/views/components/project/nav/unit_bottom_bar.dart';
 import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
-import 'package:flutter_unit/views/pages/app/unit_bottom_bar.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
 import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
-import 'package:flutter_unit/views/pages/gallery/gallery_unit.dart';
-import 'package:flutter_unit/views/pages/me/me_page.dart';
+import 'package:flutter_unit/painter_system/gallery_unit.dart';
+import 'package:flutter_unit/views/pages/user/user_page.dart';
 import 'package:flutter_unit/views/pages/widget_home/home_drawer.dart';
 import 'package:flutter_unit/views/pages/widget_home/home_page.dart';
 
@@ -52,7 +52,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
               HomePage(),
               GalleryUnit(),
               CollectPage(),
-              MePage(),
+              UserPage(),
             ],
           ),
         ),
@@ -80,17 +80,30 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   // 由于 bottomNavigationBar 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
-  BlocBuilder<WidgetsBloc, WidgetsState> _buildBottomNav(BuildContext context) =>
+  Widget _buildBottomNav(BuildContext context) =>
       BlocBuilder<WidgetsBloc, WidgetsState>(
           builder: (_, state) => UnitBottomBar(
               color: state.color,
-              onItemClick: _onTapBottomNav));
+              onItemTap: _onTapBottomNav,
+              onItemLongTap: _onItemLongTap,
+
+          ));
 
   // 点击底部按钮事件，切换页面
   _onTapBottomNav(int index) {
     _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
     if (index == 2) {
-      BlocProvider.of<LikeWidgetBloc>(context).add(EventSetCollectData());
+      BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
+    }
+  }
+
+  // 两侧
+  void _onItemLongTap(BuildContext context , int index) {
+    if (index == 0) {
+      Scaffold.of(context).openDrawer();
+    }
+    if (index == 3) {
+      Scaffold.of(context).openEndDrawer();
     }
   }
 }

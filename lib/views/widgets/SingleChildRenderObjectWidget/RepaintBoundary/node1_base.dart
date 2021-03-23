@@ -39,7 +39,7 @@ class _TempPlayBezier3PageState extends State<TempPlayBezier3Page> {
   }
 
   void _initPoints() {
-    _pos = List<Offset>();
+    _pos = [];
     _pos.add(Offset(0, 0));
     _pos.add(Offset(60, -60));
     _pos.add(Offset(-90, -90));

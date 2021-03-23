@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'art/circle_packing.dart';
-import 'art/cubic_disarray.dart';
-import 'base/draw_picture.dart';
-import 'art/hypnotic_squares.dart';
-import 'art/joy_division.dart';
-import 'art/piet_mondrian.dart';
-import 'base/random_portrait.dart';
-import 'art/tiled_lines.dart';
-import 'art/triangular_mesh.dart';
-import 'art/un_deux_trois.dart';
-import 'anim/draw_path.dart';
-import 'picture_frame.dart';
+import 'package:flutter_unit/painter_system/art/circle_packing.dart';
+import 'package:flutter_unit/painter_system/art/cubic_disarray.dart';
+import 'package:flutter_unit/painter_system/base/draw_picture.dart';
+import 'package:flutter_unit/painter_system/art/hypnotic_squares.dart';
+import 'package:flutter_unit/painter_system/art/joy_division.dart';
+import 'package:flutter_unit/painter_system/art/piet_mondrian.dart';
+import 'package:flutter_unit/painter_system/base/random_portrait.dart';
+import 'package:flutter_unit/painter_system/art/tiled_lines.dart';
+import 'package:flutter_unit/painter_system/art/triangular_mesh.dart';
+import 'package:flutter_unit/painter_system/art/un_deux_trois.dart';
+import 'package:flutter_unit/painter_system/anim/draw_path.dart';
+import 'package:flutter_unit/painter_system/picture_frame.dart';
 
 /// create by 张风捷特烈 on 2020/10/10
 /// contact me by email 1981462002@qq.com

@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/views/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/views/components/project/no_more_widget.dart';
 
 import 'package:flutter_unit/model/category_model.dart';
@@ -10,6 +12,7 @@ import 'package:flutter_unit/views/components/project/dialogs/delete_category_di
 import 'package:flutter_unit/views/components/project/items/category_list_item.dart';
 
 import 'edit_category_panel.dart';
+import 'empty_category.dart';
 
 class CategoryPage extends StatelessWidget {
 
@@ -23,6 +26,7 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CategoryBloc, CategoryState>(builder: (ctx, state) {
+      print(state);
       if (state is CategoryLoadedState) {
         return CustomScrollView(
           slivers: <Widget>[
@@ -36,7 +40,8 @@ class CategoryPage extends StatelessWidget {
           ],
         );
       }
-      return Container();
+      if(state is CategoryLoadingState) return LoadingShower();
+      return EmptyCategory();
     });
   }
 
@@ -121,8 +126,7 @@ class CategoryPage extends StatelessWidget {
   }
 
   _toDetailPage(BuildContext context, CategoryModel model) {
-    BlocProvider.of<CategoryWidgetBloc>(context)
-        .add(EventLoadCategoryWidget(model.id));
+    BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id));
     Navigator.pushNamed(context, UnitRouter.category_show, arguments: model);
   }
 

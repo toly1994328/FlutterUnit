@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/blocs/authentic/bloc.dart';
-import 'package:flutter_unit/blocs/login/bloc.dart';
-import 'package:flutter_unit/blocs/register/bloc.dart';
+import 'package:flutter_unit/repositories/app_storage.dart';
+import 'package:flutter_unit/repositories/rep/impl/catagory_db_repository.dart';
+import 'package:flutter_unit/repositories/rep/impl/widget_db_repository.dart';
+import 'package:flutter_unit/repositories/rep/widget_repository.dart';
+import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/authentic/event.dart';
+import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
+import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/repositories/impl/catagory_db_repository.dart';
-import 'package:flutter_unit/repositories/impl/widget_db_repository.dart';
-import 'package:flutter_unit/repositories/itf/widget_repository.dart';
-import 'package:flutter_unit/storage/app_storage.dart';
+
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
 /// 说明: Bloc提供器包裹层
 
-final storage = AppStorage();
+final AppStorage storage = AppStorage();
 
 class BlocWrapper extends StatefulWidget {
   final Widget child;
@@ -29,7 +31,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
   final WidgetRepository repository = WidgetDbRepository(storage);
 
   final categoryBloc = CategoryBloc(repository: CategoryDbRepository(storage));
-  final authBloc = AuthenticBloc();
+  final authBloc = AuthenticBloc()..add(const AppStarted());
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
         providers: [
           //Bloc提供器
           BlocProvider<GlobalBloc>(
-              create: (_) => GlobalBloc(storage)..add(EventInitApp())),
+              create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
 
           BlocProvider<WidgetsBloc>(
               create: (_) => WidgetsBloc(repository: repository)
@@ -52,18 +54,23 @@ class _BlocWrapperState extends State<BlocWrapper> {
 
           BlocProvider<LikeWidgetBloc>(
               create: (_) => LikeWidgetBloc(repository: repository)
-                ..add(EventSetCollectData())),
+                ..add(EventLoadLikeData())),
 
           BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
+
           BlocProvider<LoginBloc>(
               create: (_) => LoginBloc(authenticBloc: authBloc)),
+
           BlocProvider<AuthenticBloc>(create: (_) => authBloc),
+
           BlocProvider<CategoryWidgetBloc>(
               create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
 
           BlocProvider<SearchBloc>(
               create: (_) => SearchBloc(repository: repository)),
+
           BlocProvider<PointBloc>(create: (_) => PointBloc()),
+
           BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
         ], child: widget.child);
   }

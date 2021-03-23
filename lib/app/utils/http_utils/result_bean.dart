@@ -25,4 +25,12 @@ class ResultBean<T> {
       status: false,
     );
   }
+
+  static ResultBean<T> ok<T>(T data) {
+    return ResultBean(
+      msg: '请求成功',
+      data: data,
+      status: true,
+    );
+  }
 }

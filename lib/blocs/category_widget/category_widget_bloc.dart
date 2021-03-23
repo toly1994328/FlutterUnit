@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
 import 'package:flutter_unit/blocs/category/category_event.dart';
-import 'package:flutter_unit/repositories/itf/category_repository.dart';
+import 'package:flutter_unit/repositories/rep/category_repository.dart';
 
 import 'category_widget_event.dart';
 import 'category_widget_state.dart';

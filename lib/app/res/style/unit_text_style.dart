@@ -16,6 +16,16 @@ class TStyleUnit {
     fontSize: minTextSize,
   );
 
+  static const splashShadows = TextStyle(
+      color: Colors.grey,
+      shadows: [
+        Shadow(
+            color: Colors.black,
+            blurRadius: 1,
+            offset: Offset(0.1, 0.1))
+      ],
+      fontSize: 12);
+
   static const smallTextWhite = TextStyle(
     color: UnitColor.textColorWhite,
     fontSize: smallTextSize,

@@ -80,7 +80,7 @@ class IssueTitle extends StatelessWidget {
               color: Colors.blue.withAlpha(22),
               child: ListTile(
                 dense: true,
-                leading: CircleImage(size:40,borderSize:1,image: NetworkImage(issue.user.avatar_url),),
+                leading: CircleImage(size:40,borderSize:1,image: NetworkImage(issue.user.avatarUrl),),
                 title: Text(issue.user.login),
                 subtitle:Row(
                   children: [
@@ -127,7 +127,7 @@ class IssueCommentWidget extends StatelessWidget {
             color: Colors.blue.withAlpha(22),
             child: ListTile(
               dense: true,
-              leading: CircleImage(size:40,borderSize:1,image: NetworkImage(comment.user.avatar_url),),
+              leading: CircleImage(size:40,borderSize:1,image: NetworkImage(comment.user.avatarUrl),),
               title: Text(comment.user.login),
               subtitle:Row(
                 children: [
