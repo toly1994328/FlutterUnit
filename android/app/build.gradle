@@ -65,6 +65,14 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.release
+            //开启混淆
+            minifyEnabled true
+            //开启资源压缩
+            shrinkResources true
+            //开启zip对齐
+            zipAlignEnabled true
+            //如果开启混淆,记得在混淆文件中添加混淆规则
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
