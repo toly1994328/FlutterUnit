@@ -162,13 +162,13 @@ class MarkdownWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: _getBackgroundColor(context),
-      padding: EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(5.0),
       child: SingleChildScrollView(
         child:  MarkdownBody(
           styleSheet: _getStyle(context),
           syntaxHighlighter:  Highlighter(),
           data: _getMarkDownData(markdownData),
-          onTapLink: (String source) {
+          onTapLink: (String text, String href, String title) {
 //            CommonUtils.launchUrl(context, source);
           },
         ),

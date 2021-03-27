@@ -11,24 +11,24 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.2
 
-  flutter_bloc: ^6.1.1 # 状态管理
-  equatable: ^1.2.5 # 相等辅助
+  flutter_bloc: ^7.0.0 # 状态管理
+  equatable: ^2.0.0 # 相等辅助
 
-  sqflite: ^1.2.1 # 数据库
-  shared_preferences: ^0.5.6+3 # xml 固化
-  jwt_decoder: ^1.0.3 # jwt 解析
+  sqflite: ^2.0.0+3 # 数据库
+  shared_preferences: ^2.0.5 # xml 固化
+  jwt_decoder: ^2.0.1 # jwt 解析
   toggle_rotate: ^0.0.5
   flutter_star: ^0.1.2 # 星星组件
-  url_launcher: ^5.4.2 # url
-  share: ^0.6.3+6 # 文字分享
-  intl: ^0.16.1
-  path_provider: ^1.6.11 # 路径
-  connectivity: ^0.4.8+6 #网络状态
-  flutter_spinkit: ^4.1.2+1 # loading
-  flutter_markdown: ^0.4.4 # markdown
-  dio: ^3.0.9 # 网络请求
+  url_launcher: ^6.0.3 # url
+  share: ^2.0.1 # 文字分享
+  intl: ^0.17.0
+  path_provider: ^2.0.1 # 路径
+  connectivity: ^3.0.3 #网络状态
+  flutter_spinkit: ^5.0.0 # loading
+  flutter_markdown: ^0.6.1 # markdown
+  dio: ^3.0.10 # 网络请求
 
 dev_dependencies:
   flutter_test:

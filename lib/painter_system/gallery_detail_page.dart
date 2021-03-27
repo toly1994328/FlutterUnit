@@ -81,13 +81,15 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
               child: PageView(
                 controller: _ctrl,
                 children: widget.children,
-                onPageChanged: (int index) {
-                  _currentIndex.value = index;
-                },
+                onPageChanged: _onPageChanged,
               ))
         ],
       ),
     );
+  }
+
+  void _onPageChanged(int index) {
+    _currentIndex.value = index;
   }
 
   Widget buildTopBar(BuildContext context) {
