@@ -33,6 +33,8 @@ export '../SingleChildRenderObjectWidget/CustomSingleChildLayout/node1_base.dart
 export '../SingleChildRenderObjectWidget/CustomSingleChildLayout/node2_offset.dart';
 export '../SingleChildRenderObjectWidget/RepaintBoundary/node1_base.dart';
 export '../SingleChildRenderObjectWidget/RepaintBoundary/node2_save.dart';
+export '../SingleChildRenderObjectWidget/CompositedTransformTarget/node1_base.dart';
+export '../SingleChildRenderObjectWidget/CompositedTransformFollower/node1_base.dart';
 
 export '../SingleChildRenderObjectWidget/AnnotatedRegion/node1_base.dart';
 export '../SingleChildRenderObjectWidget/CupertinoTextSelectionToolbar/node1_base.dart';
