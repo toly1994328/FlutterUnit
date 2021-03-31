@@ -33,11 +33,25 @@ class WidgetPo extends Equatable {
         name: map['name'],
         nameCN: map["nameCN"],
         family: map["family"],
-        collected: map["collected"]??0,
+        collected: map["collected"] ?? 0,
         lever: map["lever"].toDouble(),
         image: map["image"],
         linkWidget: map["linkWidget"],
         info: map["info"]);
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": this.id,
+      "name": this.name,
+      "nameCN": this.nameCN,
+      "family": this.family,
+      "collected": this.collected,
+      "lever": this.lever,
+      "image": this.image,
+      "linkWidget": this.linkWidget,
+      "info": this.info
+    };
   }
 
   @override

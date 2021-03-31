@@ -75,6 +75,7 @@ class AppStorage {
     } else {
       print("========= 数据库 ======已存在====");
     }
-    return await openDatabase(dbPath, readOnly: false);
+    _database = await openDatabase(dbPath, readOnly: false);
+    return _database;
   }
 }
