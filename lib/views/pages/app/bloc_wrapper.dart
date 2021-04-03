@@ -40,22 +40,18 @@ class _BlocWrapperState extends State<BlocWrapper> {
         //使用MultiBlocProvider包裹
         providers: [
           //Bloc提供器
-          BlocProvider<GlobalBloc>(
-              create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
+          BlocProvider<GlobalBloc>(create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
 
-          BlocProvider<WidgetsBloc>(
-              create: (_) => WidgetsBloc(repository: repository)
-                ..add(EventTabTap(WidgetFamily.statelessWidget))),
+          BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
 
           BlocProvider<DetailBloc>(
               create: (_) => DetailBloc(repository: repository)),
 
           BlocProvider<CategoryBloc>(
-              create: (_) => categoryBloc..add(EventLoadCategory())),
+              create: (_) => categoryBloc),
 
           BlocProvider<LikeWidgetBloc>(
-              create: (_) => LikeWidgetBloc(repository: repository)
-                ..add(EventLoadLikeData())),
+              create: (_) => LikeWidgetBloc(repository: repository)),
 
           BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
 

@@ -21,7 +21,6 @@ abstract class CategoryRepository {
 
   // 获取 所有收藏集 及 收藏集对应的组件 id 列表
   Future<List<CategoryTo>> loadCategoryData();
-  Future<List<dynamic>> loadLikesData();
 
   // 根据 Category 数据 同步 收藏集
   Future<bool> syncCategoryByData(String data,String likeData);

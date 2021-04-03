@@ -9,6 +9,7 @@ import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
 import 'package:flutter_unit/model/category_model.dart';
+import 'package:flutter_unit/repositories/local_db.dart';
 import 'package:flutter_unit/repositories/rep/category_repository.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 
@@ -75,8 +76,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
       // 说明请求成功
       if (result.data != null) {
         //说明有后台备份数据，进行同步操作
-        CategoryRepository repository =
-            BlocProvider.of<CategoryBloc>(context).repository;
+        CategoryRepository repository = BlocProvider.of<CategoryBloc>(context).repository;
         await repository.syncCategoryByData(result.data.data,result.data.likeData);
         BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
         BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
@@ -85,7 +85,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。
         CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
         List<CategoryTo> loadCategories = await rep.loadCategoryData();
-        List<dynamic> likeData = await rep.loadLikesData();
+        List<int> likeData = await LocalDb.instance.likeDao.likeWidgetIds();
 
         String json = jsonEncode(loadCategories);
         String likeJson = jsonEncode(likeData);

@@ -10,10 +10,11 @@ import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/model/category_model.dart';
+import 'package:flutter_unit/repositories/local_db.dart';
 import 'package:flutter_unit/repositories/rep/category_repository.dart';
 import 'package:flutter_unit/user_system/component/authentic_widget.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as path;
+import 'package:sqflite/sqflite.dart';
 
 /// create by 张风捷特烈 on 2021/2/26
 /// contact me by email 1981462002@qq.com
@@ -82,7 +83,8 @@ class DataManagePage extends StatelessWidget {
   void _doUploadCategoryData(BuildContext context) async {
     CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
     List<CategoryTo> loadCategories = await rep.loadCategoryData();
-    List<dynamic> likeData = await rep.loadLikesData();
+
+    List<int> likeData = await LocalDb.instance.likeDao.likeWidgetIds();
 
     String json = jsonEncode(loadCategories);
     String likeJson = jsonEncode(likeData);
@@ -116,7 +118,7 @@ class DataManagePage extends StatelessWidget {
         CategoryRepository rep =
             BlocProvider.of<CategoryBloc>(context).repository;
         List<CategoryTo> loadCategories = await rep.loadCategoryData();
-        List<dynamic> likeData = await rep.loadLikesData();
+        List<int> likeData = await LocalDb.instance.likeDao.likeWidgetIds();
 
         String json = jsonEncode(loadCategories);
         String likeJson = jsonEncode(likeData);
