@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
+import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/views/pages/splash/splash_bottom.dart';
+
 import 'unit_paint.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
@@ -58,24 +62,25 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     final double winH = MediaQuery.of(context).size.height;
     final double winW = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-      body: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          _buildFlutterLogo(),
-          Container(
-            width: winW,
-            height: winH,
-            child: CustomPaint(
-              painter: UnitPainter(repaint: _controller),
+    return BlocListener<GlobalBloc, GlobalState>(
+      listener: _listenStart,
+      child: Scaffold(
+        body: Stack(
+          alignment: Alignment.center,
+          children: <Widget>[
+            _buildFlutterLogo(),
+            Container(
+              width: winW,
+              height: winH,
+              child: CustomPaint(
+                painter: UnitPainter(repaint: _controller),
+              ),
             ),
-          ),
-          _buildFlutterUnitText(winH, winW),
-          _buildHead(),
-          Positioned(
-              bottom: 15,
-              child: SplashBottom())
-        ],
+            _buildFlutterUnitText(winH, winW),
+            _buildHead(),
+            Positioned(bottom: 15, child: SplashBottom())
+          ],
+        ),
       ),
     );
   }
@@ -138,4 +143,11 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
         width: 45,
         child: Image.asset('assets/images/icon_head.webp'),
       ));
+
+  // 监听资源加载完毕，启动，触发事件
+  void _listenStart(BuildContext context, GlobalState state) {
+      BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(WidgetFamily.statelessWidget));
+      BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
+      BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
+  }
 }

@@ -10,8 +10,6 @@ import 'package:flutter_unit/repositories/local_db.dart';
 import 'package:flutter_unit/repositories/rep/category_repository.dart';
 import 'package:sqflite/sqflite.dart';
 
-import '../../app_start.dart';
-
 
 
 
@@ -100,32 +98,6 @@ class CategoryDbRepository implements CategoryRepository {
   }
 
   @override
-  Future<List<dynamic>> loadLikesData() async {
-    var likes = await db.rawQuery("SELECT id "
-        "FROM widget WHERE collected = 1 ORDER BY family,lever DESC");
-    var likesData = likes.map((e) => e['id']).toList();
-
-    return likesData;
-  }
-
-
-  Future<void> _setLikes(List<dynamic> ids) async {
-    if(ids.isEmpty) return;
-    String sql = 'UPDATE widget SET collected = 1 WHERE ';
-    for(int i=0;i<ids.length;i++){
-     if(i==0){
-       sql += 'id = ${ids[i]} ';
-     }else{
-       sql += 'OR id = ${ids[i]} ';
-     }
-    }
-
-    await db.rawUpdate(sql, );
-    List<Map<String, dynamic>> data = await db.rawQuery('SELECT id FROM widget WHERE collected = 1', []);
-    print(data);
-  }
-
-  @override
   Future<bool> syncCategoryByData(String data,String likeData) async {
     try {
       await _categoryDao.clear();
@@ -134,11 +106,14 @@ class CategoryDbRepository implements CategoryRepository {
         CategoryPo po = CategoryPo.fromNetJson(dataMap[i]["model"]);
         List<dynamic> widgetIds = dataMap[i]["widgetIds"];
         await addCategory(po);
-        if(widgetIds.isNotEmpty){
+        if (widgetIds.isNotEmpty) {
           await _categoryDao.addWidgets(po.id, widgetIds);
         }
       }
-      await _setLikes(json.decode(likeData));
+      List<int> likeWidgets = json.decode(likeData);
+      for (int i = 0; i < likeWidgets.length; i++) {
+        await LocalDb.instance.likeDao.like(likeWidgets[i]);
+      }
       return true;
     } catch (e) {
       print(e);

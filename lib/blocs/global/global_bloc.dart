@@ -22,7 +22,7 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
 
   @override
   Stream<GlobalState> mapEventToState(GlobalEvent event) async* {
-    // 程序初始化事件处理: 使用AppStorage进行初始化
+    // 程序初始化事件处理: 使用 AppStorage 进行初始化
     if (event is EventInitApp) {
       yield await storage.initApp();
     }
