@@ -110,7 +110,7 @@ class CategoryDbRepository implements CategoryRepository {
           await _categoryDao.addWidgets(po.id, widgetIds);
         }
       }
-      List<int> likeWidgets = json.decode(likeData);
+      List<int> likeWidgets = (json.decode(likeData) as List).map<int>((e) => e).toList();
       for (int i = 0; i < likeWidgets.length; i++) {
         await LocalDb.instance.likeDao.like(likeWidgets[i]);
       }
