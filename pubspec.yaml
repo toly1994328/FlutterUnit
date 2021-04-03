@@ -1,7 +1,7 @@
 name: flutter_unit
 description: A new Flutter application.
 
-version: 1.5.0
+version: 1.5.1
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -41,6 +41,7 @@ flutter:
     - assets/images/head_icon/
     - assets/images/widgets/
     - assets/flutter.db
+    - assets/version.json
 
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源
     - family: IndieFlower #字体名

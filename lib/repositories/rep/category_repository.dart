@@ -26,7 +26,6 @@ abstract class CategoryRepository {
   // 根据 Category 数据 同步 收藏集
   Future<bool> syncCategoryByData(String data,String likeData);
 
-
   //添加收藏集
   Future<bool> addCategory(CategoryPo categoryPo);
 

@@ -8,6 +8,7 @@ class LocalStorage {
 
   static String tokenKey= "token_key";
   static String userKey= "user_key";
+  static String dbVersionKey= "db_version_key";
 
   static SharedPreferences _sp;
 
@@ -25,6 +26,14 @@ class LocalStorage {
 
   static dynamic get(String key) async {
     return (await sp).get(key);
+  }
+
+  static Future<bool> saveInt(String key, int value) async {
+    return (await sp).setInt(key, value);
+  }
+
+  static Future<int> getInt(String key) async {
+    return (await sp).getInt(key);
   }
 
   static Future<bool> remove(String key) async {

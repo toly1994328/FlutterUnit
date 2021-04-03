@@ -3,8 +3,10 @@ import 'dart:convert';
 import 'dart:io';
 
 
-import 'package:flutter_unit/repositories/app_storage.dart';
+import 'package:flutter_unit/repositories/app_start.dart';
 import 'package:flutter_unit/repositories/bean/widget_po.dart';
+import 'package:flutter_unit/repositories/dao/like_dao.dart';
+import 'package:flutter_unit/repositories/local_db.dart';
 import 'package:flutter_unit/repositories/dao/node_dao.dart';
 import 'package:flutter_unit/repositories/dao/widget_dao.dart';
 import 'package:flutter_unit/model/enums.dart';
@@ -20,15 +22,10 @@ import 'package:path_provider/path_provider.dart';
 /// 说明 : Widget数据仓库
 
 class WidgetDbRepository implements WidgetRepository {
-  final AppStorage storage;
 
-  WidgetDao _widgetDao;
-  NodeDao _nodeDao;
-
-  WidgetDbRepository(this.storage) {
-    _widgetDao = WidgetDao(storage);
-    _nodeDao = NodeDao(storage);
-  }
+  WidgetDao get _widgetDao => LocalDb.instance.widgetDao;
+  NodeDao get _nodeDao => LocalDb.instance.nodeDao;
+  LikeDao get _likeDao => LocalDb.instance.likeDao;
 
   @override
   Future<List<WidgetModel>> loadWidgets(WidgetFamily family) async {
@@ -39,10 +36,10 @@ class WidgetDbRepository implements WidgetRepository {
 
   @override
   Future<List<WidgetModel>> loadLikeWidgets() async {
-    List<Map<String, dynamic>> data = await _widgetDao.queryCollect();
+    List<int> likeIds = await _likeDao.likeWidgetIds();
+    List<Map<String, dynamic>> data = await _widgetDao.queryByIds(likeIds);
     List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-    List<WidgetModel> list = widgets.map(WidgetModel.fromPo).toList();
-    return list;
+    return widgets.map(WidgetModel.fromPo).toList();
   }
 
   @override
@@ -71,12 +68,12 @@ class WidgetDbRepository implements WidgetRepository {
   Future<void> toggleLike(
     int id,
   ) {
-    return _widgetDao.toggleCollect(id);
+    return _likeDao.toggleCollect(id);
   }
 
 
   @override
-  Future<bool> collected(int id) async{
-    return  await _widgetDao.collected(id);
+  Future<void> collected(int id) async{
+    return  await _likeDao.like(id);
   }
 }
