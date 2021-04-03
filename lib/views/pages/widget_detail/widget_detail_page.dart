@@ -203,7 +203,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                     elevation: 2,
                     shadowColor: Colors.orange,
                     backgroundColor: Theme.of(context).primaryColor,
-                    labelStyle: const TextStyle(fontSize: 12, color: Colors.white),
+                    labelStyle: TextStyle(fontSize: 12, color: Colors.white,
+                      decoration: (e.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
+                      decorationThickness: 2,),
                     label: Text('${e.name}'),
                   ))
               .toList(),
@@ -245,6 +247,8 @@ class WidgetDetailTitle extends StatelessWidget {
                 model.nameCN,
                 style: TextStyle(
                     fontSize: 20,
+                    decoration: (model.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
+                    decorationThickness: 2,
                     color: Color(0xff1EBBFD),
                     fontWeight: FontWeight.bold),
               ),

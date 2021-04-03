@@ -25,7 +25,7 @@ class WidgetModel extends Equatable {
   final String name;
   final String nameCN;
   final WidgetFamily family;
-  final bool collected;
+  final bool deprecated;
   final WidgetType type;
   final List<int> links;
   final double lever;
@@ -39,7 +39,7 @@ class WidgetModel extends Equatable {
       this.name,
       this.nameCN,
       this.family,
-      this.collected,
+      this.deprecated,
         this.links,
       this.type,
       this.lever,
@@ -55,21 +55,23 @@ class WidgetModel extends Equatable {
       name: po.name,
       nameCN: po.nameCN,
       family: Convert.toFamily(po.family),
-      image: convertImage(po.image),
+      image: convertImage(po.name),
       lever: po.lever,
-      collected: po.collected == 1,
+      deprecated: po.deprecated == 1,
       info: po.info,
       links: formatLinkTo(po.linkWidget),
     );
   }
 
-  static convertImage(String image) {
-    return image.isEmpty ? null : AssetImage(image);
+  static convertImage(String name) {
+    // return image.isEmpty ? null : AssetImage(image);
+    return null;
   }
+
 
   @override
   String toString() {
-    return 'WidgetModel{id: $id, name: $name,collected: $collected}';
+    return 'WidgetModel{id: $id, name: $name, nameCN: $nameCN, family: $family, deprecated: $deprecated, type: $type, links: $links, lever: $lever, image: $image, info: $info}';
   }
 
   static List<int> formatLinkTo(String links) {
@@ -81,6 +83,4 @@ class WidgetModel extends Equatable {
     }
     return links.split(',').map<int>((e)=>int.parse(e)).toList();
   }
-
-
 }
