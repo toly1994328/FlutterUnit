@@ -33,3 +33,4 @@ export '../ProxyWidget/InheritedTheme/node1_base.dart';
 export '../ProxyWidget/DefaultAssetBundle/node1_base.dart';
 export '../ProxyWidget/InheritedWidget/node1_base.dart';
 export '../ProxyWidget/ParentDataWidget/node1_base.dart';
+export '../ProxyWidget/PrimaryScrollController/node1_base.dart';

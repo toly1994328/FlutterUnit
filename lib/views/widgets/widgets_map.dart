@@ -33,6 +33,18 @@ class WidgetsMap {
       case "CompositedTransformFollower":
         return [
           const CompositedTransformFollowerDemo(),
+        ];      case "PrimaryScrollController":
+        return [
+           PrimaryScrollControllerDemo(),
+        ];case "CupertinoFullscreenDialogTransition":
+        return [
+          CupertinoFullscreenDialogTransitionDemo(),
+        ];case "CupertinoPageTransition":
+        return [
+          CupertinoPageTransitionDemo(),
+        ];case "HtmlElementView":
+        return [
+          HtmlElementViewDemo(),
         ];
       case "Text":
         return [

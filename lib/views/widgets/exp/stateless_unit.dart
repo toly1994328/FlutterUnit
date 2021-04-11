@@ -33,6 +33,10 @@ export '../StatelessWidget/MaterialBanner/node1_one_btn.dart';
 export '../StatelessWidget/MaterialBanner/node2_two_btn.dart';
 export '../StatelessWidget/SafeArea/node1_base.dart';
 
+export '../StatelessWidget/CupertinoFullscreenDialogTransition/node1_base.dart';
+export '../StatelessWidget/CupertinoPageTransition/node1_base.dart';
+export '../StatelessWidget/HtmlElementView/node1_base.dart';
+
 export '../StatelessWidget/DataTable/node1_base.dart';
 export '../StatelessWidget/DataTable/node2_operation.dart';
 export '../StatelessWidget/OrientationBuilder/node1_base.dart';
