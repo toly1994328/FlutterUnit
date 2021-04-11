@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
@@ -11,9 +14,6 @@
 //          "【actions】 : 行为组件集   【List<Widget>】\n"
 //          "【previewBuilder】 : 动画构造器  【ContextMenuPreviewBuilder】",
 //    }
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
 class CustomCupertinoContextMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
