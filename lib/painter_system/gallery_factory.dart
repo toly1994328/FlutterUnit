@@ -14,7 +14,8 @@ import 'base/clock_widget.dart';
 import 'base/draw_path_fun.dart';
 import 'base/draw_grid_axis.dart';
 import 'base/draw_picture.dart';
-import 'base/random_portrait.dart';
+import 'fun/random_portrait.dart';
+import 'fun/stemp/stamp_paper.dart';
 import 'gallery.dart';
 
 /// create by 张风捷特烈 on 2020/12/5
@@ -82,6 +83,12 @@ class GalleryFactory {
               info:
                   "    本样例介绍绘制矩形及随机数处理。通过点位集合确定矩形位置信息，将其绘制出来。其中对点的随机生成和对称处理能让你练习对数据的控制力。",
               content: RandomPortrait()),
+          FrameShower(
+              title: "井字棋",
+              author: "张风捷特烈",
+              info:
+                  "    本例通过井字棋的绘制与逻辑校验，集合了手势、绘制、动画、校验等重要的技能，是一个非常好的联系案例。",
+              content: StampPaper()),
         ];
       case GalleryType.art:
         return [

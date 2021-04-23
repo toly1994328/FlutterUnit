@@ -7,7 +7,7 @@ import 'base/draw_picture.dart';
 import 'art/hypnotic_squares.dart';
 import 'art/joy_division.dart';
 import 'art/piet_mondrian.dart';
-import 'base/random_portrait.dart';
+import 'fun/random_portrait.dart';
 import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
