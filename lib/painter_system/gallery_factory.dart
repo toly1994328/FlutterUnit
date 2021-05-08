@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/painter_system/anim/spring_widget.dart';
 
 import 'anim/bezier3_player/bezier3_palyer.dart';
+import 'anim/draw_path.dart';
 import 'art/circle_packing.dart';
 import 'art/cubic_disarray.dart';
 import 'art/hypnotic_squares.dart';
@@ -9,10 +11,9 @@ import 'art/piet_mondrian.dart';
 import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
-import 'anim/draw_path.dart';
 import 'base/clock_widget.dart';
-import 'base/draw_path_fun.dart';
 import 'base/draw_grid_axis.dart';
+import 'base/draw_path_fun.dart';
 import 'base/draw_picture.dart';
 import 'fun/random_portrait.dart';
 import 'fun/stemp/stamp_paper.dart';
@@ -64,10 +65,21 @@ class GalleryFactory {
       case GalleryType.anim:
         return [
           FrameShower(
+              title: "手势弹簧",
+              author: "张风捷特烈",
+              info: "    本样例介绍如何绘制弹簧，通过触点竖直拖拽拉伸、压缩，放手时进行恢复动画，是一个很好的综合小案例。",
+              content: const SpringWidget()),
+          FrameShower(
+              title: "Draw Curve",
+              author: "张风捷特烈",
+              info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
+              content: DrawPath()),
+          FrameShower(
               title: "Bezier3 演示 (双击清除)",
               author: "张风捷特烈",
               info: "    本样例介绍如何绘制三次贝塞尔曲线，通过触点判断某点是否激活，据此控制点的位置达到拖动控制效果。",
-              content: Bezier3Player()),          FrameShower(
+              content: Bezier3Player()),
+          FrameShower(
               title: "Draw Curve",
               author: "张风捷特烈",
               info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
