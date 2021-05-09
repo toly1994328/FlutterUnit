@@ -8,6 +8,7 @@ import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/views/pages/splash/splash_bottom.dart';
 
+import 'flutter_unit_text.dart';
 import 'unit_paint.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
@@ -21,7 +22,8 @@ class UnitSplash extends StatefulWidget {
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   AnimationController _controller;
-  bool _animEnd = false;
+
+  ValueNotifier<bool> _animEnd = ValueNotifier<bool>(false);
 
   final Duration animTime = const Duration(milliseconds: 1000);
   final Duration delayTime = const Duration(milliseconds: 500);
@@ -38,6 +40,10 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     _controller = AnimationController(duration: animTime, vsync: this)
       ..addStatusListener(_listenStatus)
       ..forward();
+
+    Future.delayed(delayTime).then((e) {
+      _animEnd.value = true;
+    });
   }
 
   @override
@@ -48,11 +54,8 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   void _listenStatus(AnimationStatus status) {
     if (status == AnimationStatus.completed) {
-      setState(() {
-        _animEnd = true;
-        Future.delayed(delayTime).then((e) {
-          Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
-        });
+      Future.delayed(delayTime).then((e) {
+        Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
       });
     }
   }
@@ -86,28 +89,18 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   }
 
   Widget _buildFlutterUnitText(double winH, double winW) {
-    final shadowStyle = TextStyle(
-      fontSize: 45,
-      color: Theme.of(context).primaryColor,
-      fontWeight: FontWeight.bold,
-      shadows: [
-        const Shadow(
-          color: Colors.grey,
-          offset: Offset(1.0, 1.0),
-          blurRadius: 1.0,
-        )
-      ],
-    );
 
     return Positioned(
       top: winH / 1.4,
-      child: AnimatedOpacity(
-          duration: fadeInTime,
-          opacity: _animEnd ? 1.0 : 0.0,
-          child: Text(
-            StrUnit.appName,
-            style: shadowStyle,
-          )),
+      child: ValueListenableBuilder(
+        valueListenable: _animEnd,
+        builder: (_, value, __) => value
+            ? FlutterUnitText(
+                text: StrUnit.appName,
+                color: Theme.of(context).primaryColor,
+              )
+            : SizedBox(),
+      ),
     );
   }
 
