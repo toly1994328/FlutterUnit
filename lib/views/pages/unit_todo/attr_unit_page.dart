@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/components/permanent/animated_text.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
+import 'package:flutter_unit/views/components/permanent/text_typer.dart';
 
 class AttrUnitPage extends StatelessWidget {
   final info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'
@@ -42,10 +42,8 @@ class AttrUnitPage extends StatelessWidget {
             child: ShaderMask(
               shaderCallback: (rect) =>
                   _buildShader(rect, Theme.of(context).primaryColor),
-              child: AnimatedText(
-                info,
-                0,
-                durationInMilliseconds: 10000,
+              child: TextTyper(
+                text:info,
                 textStyle: TextStyle(
                   shadows: [
                     Shadow(
