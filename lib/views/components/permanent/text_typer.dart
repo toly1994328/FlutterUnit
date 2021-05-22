@@ -52,12 +52,9 @@ class _TextTyperState extends State<TextTyper> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 300,
-      child: AnimatedBuilder(
+    return  AnimatedBuilder(
         animation: data,
         builder: _buildByAnim,
-      ),
     );
   }
 
