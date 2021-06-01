@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/sp.dart';
-import 'package:flutter_unit/repositories/app_storage.dart';
+import 'package:flutter_unit/repositories/app_start.dart';
+import 'package:flutter_unit/repositories/local_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'global_event.dart';
@@ -13,15 +14,15 @@ import 'global_state.dart';
 
 class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
 
-  final AppStorage storage;
+  final AppStart storage;
 
   GlobalBloc(this.storage):super(GlobalState());
 
-  Future<SharedPreferences> get sp => storage.sp;
+  Future<SharedPreferences> get sp => LocalStorage.sp;
 
   @override
   Stream<GlobalState> mapEventToState(GlobalEvent event) async* {
-    // 程序初始化事件处理: 使用AppStorage进行初始化
+    // 程序初始化事件处理: 使用 AppStorage 进行初始化
     if (event is EventInitApp) {
       yield await storage.initApp();
     }
@@ -29,8 +30,7 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
     // 切换字体事件处理 : 固化索引 + 产出新状态
     if (event is EventSwitchFontFamily) {
       int familyIndex = Cons.fontFamilySupport.indexOf(event.family);
-      await sp
-        ..setInt(SP.fontFamily, familyIndex);
+      await sp..setInt(SP.fontFamily, familyIndex);
       yield state.copyWith(fontFamily: event.family);
     }
 

@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/views/components/permanent/animated_text.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/views/components/permanent/text_typer.dart';
 
 
 class BugUnitPage extends StatelessWidget {
@@ -52,10 +52,8 @@ class BugUnitPage extends StatelessWidget {
             child: ShaderMask(
               shaderCallback: (rect) =>
                   _buildShader(rect, Theme.of(context).primaryColor),
-              child: AnimatedText(
-                info,
-                0,
-                durationInMilliseconds: 10000,
+              child: TextTyper(
+                text:info,
                 textStyle: TextStyle(
                   shadows: [
                     Shadow(

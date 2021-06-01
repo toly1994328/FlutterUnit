@@ -8,6 +8,7 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/blocs/category/category_bloc.dart';
 import 'package:flutter_unit/model/category_model.dart';
+import 'package:flutter_unit/repositories/local_db.dart';
 import 'package:flutter_unit/repositories/rep/category_repository.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 
@@ -71,7 +72,8 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
 
     CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
     List<CategoryTo> loadCategories = await rep.loadCategoryData();
-    List<dynamic> likeData = await rep.loadLikesData();
+    List<int> likeData = await LocalDb.instance.likeDao.likeWidgetIds();
+
 
     String json = jsonEncode(loadCategories);
     String likeJson = jsonEncode(likeData);

@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/views/components/permanent/circle.dart';
 import 'package:flutter_unit/views/components/project/default/loading_shower.dart';
-import 'package:flutter_unit/views/components/project/no_more_widget.dart';
-
-import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/views/components/project/dialogs/delete_category_dialog.dart';
 import 'package:flutter_unit/views/components/project/items/category_list_item.dart';
+import 'package:flutter_unit/views/components/project/no_more_widget.dart';
 
 import 'edit_category_panel.dart';
 import 'empty_category.dart';
@@ -26,7 +25,6 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CategoryBloc, CategoryState>(builder: (ctx, state) {
-      print(state);
       if (state is CategoryLoadedState) {
         return CustomScrollView(
           slivers: <Widget>[
@@ -47,18 +45,21 @@ class CategoryPage extends StatelessWidget {
 
   _buildContent(BuildContext context, CategoryLoadedState state) {
     return SliverPadding(
-      padding: EdgeInsets.only(top:10, left: 10, right: 10, bottom: 0),
+      padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
       sliver: SliverGrid(
           delegate: SliverChildBuilderDelegate(
-                  (_, index) => Container(
-                child: GestureDetector(
-                    onTap: () => _toDetailPage(context, state.categories[index]),
-                    child:  CategoryListItem(
-                      data: state.categories[index],
-                      onDeleteItemClick: (model) => _deleteCollect(context, model),
-                      onEditItemClick: (model) => _editCollect(context, model),
-                    )),
-              ),
+              (_, index) => Container(
+                    child: GestureDetector(
+                        onTap: () =>
+                            _toDetailPage(context, state.categories[index]),
+                        child: CategoryListItem(
+                          data: state.categories[index],
+                          onDeleteItemClick: (model) =>
+                              _deleteCollect(context, model),
+                          onEditItemClick: (model) =>
+                              _editCollect(context, model),
+                        )),
+                  ),
               childCount: state.categories.length),
           gridDelegate: gridDelegate),
     );

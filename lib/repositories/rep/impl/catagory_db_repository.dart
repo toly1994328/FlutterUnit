@@ -6,12 +6,9 @@ import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/repositories/bean/category_po.dart';
 import 'package:flutter_unit/repositories/bean/widget_po.dart';
 import 'package:flutter_unit/repositories/dao/category_dao.dart';
+import 'package:flutter_unit/repositories/local_db.dart';
 import 'package:flutter_unit/repositories/rep/category_repository.dart';
-
-import '../../app_storage.dart';
-
-
-
+import 'package:sqflite/sqflite.dart';
 
 
 /// create by 张风捷特烈 on 2020-04-21
@@ -19,13 +16,10 @@ import '../../app_storage.dart';
 /// 说明:
 
 class CategoryDbRepository implements CategoryRepository {
-  final AppStorage storage;
 
-  CategoryDao _categoryDao;
+  CategoryDao get _categoryDao => LocalDb.instance.categoryDao;
 
-  CategoryDbRepository(this.storage) {
-    _categoryDao = CategoryDao(storage);
-  }
+  Database get db => LocalDb.instance.db;
 
   @override
   Future<bool> addCategory(CategoryPo categoryPo) async {
@@ -101,35 +95,6 @@ class CategoryDbRepository implements CategoryRepository {
   }
 
   @override
-  Future<List<dynamic>> loadLikesData() async {
-
-    final db = await storage.db;
-    var likes = await db.rawQuery("SELECT id "
-        "FROM widget WHERE collected = 1 ORDER BY family,lever DESC");
-    var likesData = likes.map((e) => e['id']).toList();
-
-    return likesData;
-  }
-
-
-  Future<void> _setLikes(List<dynamic> ids) async {
-    if(ids.isEmpty) return;
-    final db = await storage.db;
-    String sql = 'UPDATE widget SET collected = 1 WHERE ';
-    for(int i=0;i<ids.length;i++){
-     if(i==0){
-       sql += 'id = ${ids[i]} ';
-     }else{
-       sql += 'OR id = ${ids[i]} ';
-     }
-    }
-
-    await db.rawUpdate(sql, );
-    List<Map<String, dynamic>> data = await db.rawQuery('SELECT id FROM widget WHERE collected = 1', []);
-    print(data);
-  }
-
-  @override
   Future<bool> syncCategoryByData(String data,String likeData) async {
     try {
       await _categoryDao.clear();
@@ -138,11 +103,14 @@ class CategoryDbRepository implements CategoryRepository {
         CategoryPo po = CategoryPo.fromNetJson(dataMap[i]["model"]);
         List<dynamic> widgetIds = dataMap[i]["widgetIds"];
         await addCategory(po);
-        if(widgetIds.isNotEmpty){
+        if (widgetIds.isNotEmpty) {
           await _categoryDao.addWidgets(po.id, widgetIds);
         }
       }
-      await _setLikes(json.decode(likeData));
+      List<int> likeWidgets = (json.decode(likeData) as List).map<int>((e) => e).toList();
+      for (int i = 0; i < likeWidgets.length; i++) {
+        await LocalDb.instance.likeDao.like(likeWidgets[i]);
+      }
       return true;
     } catch (e) {
       print(e);

@@ -5,11 +5,11 @@ import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/model/node_model.dart';
+import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/views/components/permanent/panel.dart';
 import 'package:flutter_unit/views/components/project/widget_node_panel.dart';
-import 'package:flutter_unit/model/node_model.dart';
-import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/pages/widget_detail/category_end_drawer.dart';
 import 'package:flutter_unit/views/widgets/widgets_map.dart';
 
@@ -31,6 +31,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     super.initState();
   }
 
+  // 获取当前的 组件数据模型
+  WidgetModel get currentWidgetModel => _modelStack.last;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +42,11 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         title: Text(_modelStack.last.name),
         actions: <Widget>[
           _buildToHome(),
-          _buildCollectButton(_modelStack.last, context),
+          FeedbackWidget(
+            onPressed: () => _toggleLikeState(context),
+            child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
+                listener: _listenLikeStateChange, builder: _buildByLikeState),
+          )
         ],
       ),
       body: Builder(builder: _buildContent),
@@ -63,52 +70,49 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   Widget _buildToHome() => Builder(
       builder: (ctx) => GestureDetector(
           onLongPress: () => Scaffold.of(ctx).openEndDrawer(),
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
+          child: const Padding(
+            padding: EdgeInsets.all(15.0),
             child: Icon(Icons.home),
           ),
           onTap: () => Navigator.of(ctx).pop()));
 
-  Widget _buildCollectButton(WidgetModel model, BuildContext context) {
-    //监听 CollectBloc 伺机弹出toast
-    return BlocListener<LikeWidgetBloc, LikeWidgetState>(
-        listener: (ctx, st) {
-          bool collected = st.widgets.contains(model);
-          String msg =
-              collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
-          _showToast(ctx, msg, collected);
-        },
-        child: FeedbackWidget(
-          onPressed: () => BlocProvider.of<LikeWidgetBloc>(context)
-              .add(ToggleLikeWidgetEvent(id: model.id)),
-          child: BlocBuilder<LikeWidgetBloc, LikeWidgetState>(
-              builder: (_, s) => Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: Icon(
-                      s.widgets.contains(model)
-                          ? TolyIcon.icon_star_ok
-                          : TolyIcon.icon_star_add,
-                      size: 25,
-                    ),
-                  )),
-        ));
-  }
+  // 监听 LikeWidgetBloc 伺机弹出 toast
+  void _listenLikeStateChange(BuildContext context, LikeWidgetState state) {
+    bool collected = state.widgets.contains(currentWidgetModel);
+    String msg = collected
+        ? "收藏【${currentWidgetModel.name}】组件成功!"
+        : "已取消【${currentWidgetModel.name}】组件收藏!";
 
-  _showToast(BuildContext ctx, String msg, bool collected) {
     Toast.toast(
-      ctx,
+      context,
       msg,
       duration: Duration(milliseconds: collected ? 1500 : 600),
       action: collected
           ? SnackBarAction(
               textColor: Colors.white,
               label: '收藏夹管理',
-              onPressed: () => Scaffold.of(ctx).openEndDrawer())
+              onPressed: () => Scaffold.of(context).openEndDrawer())
           : null,
     );
   }
 
-  final List<int> colors = Cons.tabColors;
+  // 根据 [LikeWidgetState ] 构建图标
+  Widget _buildByLikeState(BuildContext context, LikeWidgetState state) {
+    bool liked = state.widgets.contains(currentWidgetModel);
+    return Padding(
+      padding: const EdgeInsets.only(right: 20.0),
+      child: Icon(
+        liked ? TolyIcon.icon_star_ok : TolyIcon.icon_star_add,
+        size: 25,
+      ),
+    );
+  }
+
+
+  void _toggleLikeState(BuildContext context) {
+    BlocProvider.of<LikeWidgetBloc>(context)
+        .add(ToggleLikeWidgetEvent(id: currentWidgetModel.id));
+  }
 
   Widget _buildNodes(List<NodeModel> nodes, String name) {
     GlobalState globalState = BlocProvider.of<GlobalBloc>(context).state;
@@ -130,7 +134,6 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
   Future<bool> _whenPop(BuildContext context) async {
     if (Scaffold.of(context).isEndDrawerOpen) return true;
-
     _modelStack.removeLast();
     if (_modelStack.length > 0) {
       setState(() {
@@ -167,7 +170,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
             context,
             state.links,
           ),
-          Divider(),
+          const Divider(),
           _buildNodes(state.nodes, state.widgetModel.name)
         ],
       );
@@ -192,8 +195,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           children: links
               .map((e) => ActionChip(
                     onPressed: () {
-                      BlocProvider.of<DetailBloc>(context)
-                          .add(FetchWidgetDetail(e));
+                      BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(e));
                       setState(() {
                         _modelStack.add(e);
                       });
@@ -201,7 +203,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                     elevation: 2,
                     shadowColor: Colors.orange,
                     backgroundColor: Theme.of(context).primaryColor,
-                    labelStyle: TextStyle(fontSize: 12, color: Colors.white),
+                    labelStyle: TextStyle(fontSize: 12, color: Colors.white,
+                      decoration: (e.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
+                      decorationThickness: 2,),
                     label: Text('${e.name}'),
                   ))
               .toList(),
@@ -228,12 +232,10 @@ class WidgetDetailTitle extends StatelessWidget {
             _buildRight(model),
           ],
         ),
-        Divider(),
+        const Divider(),
       ],
     ));
   }
-
-  final List<int> colors = Cons.tabColors;
 
   Widget _buildLeft(WidgetModel model) => Expanded(
         child: Column(
@@ -245,6 +247,8 @@ class WidgetDetailTitle extends StatelessWidget {
                 model.nameCN,
                 style: TextStyle(
                     fontSize: 20,
+                    decoration: (model.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
+                    decorationThickness: 2,
                     color: Color(0xff1EBBFD),
                     fontWeight: FontWeight.bold),
               ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'exp/other_unit.dart';
+import 'exp/proxy_unit.dart';
+import 'exp/render_object_unit.dart';
+import 'exp/sliver_unit.dart';
 import 'exp/stateful_unit.dart';
 import 'exp/stateless_unit.dart';
-import 'exp/render_object_unit.dart';
-import 'exp/proxy_unit.dart';
-import 'exp/other_unit.dart';
-import 'exp/sliver_unit.dart';
 
 /// AUTO CREATED BY [张风捷特烈] , DON'T MODIFY!
 
@@ -25,6 +25,26 @@ class WidgetsMap {
         return [
           CupertinoSegmentedControlDemo(),
           CupertinoSegmentedControlColor()
+        ];
+      case "CompositedTransformTarget":
+        return [
+          const CompositedTransformTargetDemo(),
+        ];
+      case "CompositedTransformFollower":
+        return [
+          const CompositedTransformFollowerDemo(),
+        ];      case "PrimaryScrollController":
+        return [
+           PrimaryScrollControllerDemo(),
+        ];case "CupertinoFullscreenDialogTransition":
+        return [
+          CupertinoFullscreenDialogTransitionDemo(),
+        ];case "CupertinoPageTransition":
+        return [
+          CupertinoPageTransitionDemo(),
+        ];case "HtmlElementView":
+        return [
+          HtmlElementViewDemo(),
         ];
       case "Text":
         return [

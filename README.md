@@ -1,7 +1,8 @@
 
 #### Flutter Unit 周边
 - 🔥  [实体书 - 《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
-- 🔥  [掘金小册 -《Flutter绘制指南》](https://juejin.im/book/6844733827265331214)
+- 🔥  [掘金小册 -《Flutter 绘制指南 - 妙笔生花》](https://juejin.im/book/6844733827265331214)
+- 🔥  [掘金小册 -《Flutter 手势探索 - 执掌天下》](https://juejin.cn/book/6896378716427911181)
 - 🔥  [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
 - 🔥  [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - 🔥  [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
@@ -23,10 +24,10 @@
 > 当前Flutter 版本
 
 ```
-Flutter 2.0.1 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision c5a4b4029c (7 days ago) • 2021-03-04 09:47:48 -0800
-Engine • revision 40441def69
-Tools • Dart 2.12.0
+Flutter 2.2.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision b22742018b (7 days ago) • 2021-05-14 19:12:57 -0700
+Engine • revision a9d88a4d18
+Tools • Dart 2.13.0
 ```
 
 ---

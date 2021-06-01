@@ -31,86 +31,103 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
   @override
   void dispose() {
     _ctrl.dispose();
+    _currentIndex.dispose();
     super.dispose();
   }
+
+  // 按钮颜色
+  Color get btnColor => Theme.of(context).primaryColor.withOpacity(0.6);
+
+  bool get isFirst => _currentIndex.value == 0;
+
+  bool get isEnd => _currentIndex.value == widget.children.length - 1;
+
+  // 顶部 bar 圆角装饰
+  BoxDecoration get topBoxDecoration => BoxDecoration(
+      image: DecorationImage(
+          fit: BoxFit.cover, image: AssetImage(widget.galleryInfo.image)),
+      borderRadius: const BorderRadius.only(
+        bottomLeft: Radius.circular(10),
+        bottomRight: Radius.circular(10),
+      ));
+
+  // 上一页按钮外层包裹装饰
+  BoxDecoration get prevWrapDecoration => BoxDecoration(
+      color: Colors.white.withOpacity(0.3),
+      borderRadius: const BorderRadius.only(
+        topRight: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+      ));
+
+  // 下一页按钮外层包裹装饰
+  BoxDecoration get nextWrapDecoration => BoxDecoration(
+      color: Colors.white.withOpacity(0.3),
+      borderRadius: const BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        topLeft: Radius.circular(20),
+      ));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          Hero(
-            tag: widget.galleryInfo.name,
-            child: Material(
-              color: Colors.transparent,
-              child: Container(
-                alignment: Alignment.topLeft,
-                height: MediaQuery.of(context).size.height * 0.21,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(widget.galleryInfo.image)),
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                    )),
-                child: Column(
-                  children: [
-                    buildTitle(context),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          _buildPrevBtn(context),
-                          Spacer(),
-                          _buildNextBtn(context)
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
+          Expanded(
+            flex: 20,
+            child: buildTopBar(context),
           ),
           Expanded(
+              flex: 80,
               child: PageView(
-            controller: _ctrl,
-            children: widget.children,
-            onPageChanged: (int index) {
-              _currentIndex.value = index;
-            },
-          ))
+                controller: _ctrl,
+                children: widget.children,
+                onPageChanged: _onPageChanged,
+              ))
         ],
       ),
     );
   }
 
-  Widget _buildPrevBtn(BuildContext context) {
+  void _onPageChanged(int index) {
+    _currentIndex.value = index;
+  }
+
+  Widget buildTopBar(BuildContext context) {
+    return Hero(
+      tag: widget.galleryInfo.name,
+      child: Material(
+        color: Colors.transparent,
+        child: Container(
+          alignment: Alignment.topLeft,
+          decoration: topBoxDecoration,
+          child: Column(
+            children: [
+              buildTitle(context),
+              Expanded(
+                child: Row(
+                  children: [_buildPrevBtn(), Spacer(), _buildNextBtn()],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPrevBtn() {
     return Container(
       width: 80,
       height: 40,
       alignment: Alignment.centerRight,
-      decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.3),
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(20),
-            bottomRight: Radius.circular(20),
-          )),
-      padding: EdgeInsets.only(right: 5 / 2),
+      decoration: prevWrapDecoration,
+      padding: const EdgeInsets.only(right: 5 / 2),
       child: FeedbackWidget(
-        onPressed: () {
-          if (widget.children.length > 0) {
-            _ctrl.animateToPage(
-                (_currentIndex.value - 1) % widget.children.length,
-                duration: Duration(milliseconds: 500),
-                curve: Curves.linear);
-          }
-        },
+        onPressed: _switchPrevPage,
         child: Container(
           width: 35,
           height: 35,
-          decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor.withOpacity(0.6),
-              shape: BoxShape.circle),
+          decoration: BoxDecoration(color: btnColor, shape: BoxShape.circle),
           child: Icon(Icons.navigate_before, color: Colors.white),
         ),
         // height: 60,
@@ -118,41 +135,42 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
     );
   }
 
-  Widget _buildNextBtn(BuildContext context) {
+  Widget _buildNextBtn() {
     return Container(
         width: 80,
         height: 40,
         alignment: Alignment.centerLeft,
-        padding: EdgeInsets.only(left: 5 / 2),
-        decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.3),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              topLeft: Radius.circular(20),
-            )),
+        padding: const EdgeInsets.only(left: 5 / 2),
+        decoration: nextWrapDecoration,
         child: FeedbackWidget(
-            onPressed: () {
-              if (widget.children.length > 0) {
-                _ctrl.animateToPage(
-                    (_currentIndex.value + 1) % widget.children.length,
-                    duration: Duration(milliseconds: 500),
-                    curve: Curves.linear);
-              }
-            },
+            onPressed: _switchNextPage,
             child: Container(
               width: 35,
               height: 35,
-              decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor.withOpacity(0.6),
-                  shape: BoxShape.circle),
-              child: Icon(Icons.navigate_next, color: Colors.white),
+              decoration:
+                  BoxDecoration(color: btnColor, shape: BoxShape.circle),
+              child: const Icon(Icons.navigate_next, color: Colors.white),
               // height: 60,
             )));
   }
 
-  bool get isFirst => _currentIndex.value == 0;
+  // 跳转上一页
+  void _switchPrevPage() {
+    if (widget.children.length > 0) {
+      int page = (_currentIndex.value - 1) % widget.children.length;
+      _ctrl.animateToPage(page,
+          duration: const Duration(milliseconds: 500), curve: Curves.linear);
+    }
+  }
 
-  bool get isEnd => _currentIndex.value == widget.children.length - 1;
+  // 跳转下一页
+  void _switchNextPage() {
+    if (widget.children.length > 0) {
+      int page = (_currentIndex.value + 1) % widget.children.length;
+      _ctrl.animateToPage(page,
+          duration: const Duration(milliseconds: 500), curve: Curves.linear);
+    }
+  }
 
   Widget buildTitle(BuildContext context) {
     return Container(
@@ -183,11 +201,13 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
   }
 
   Widget _buildIndicatorText(BuildContext context, int value, Widget child) {
+    String indicatorText =
+        "${widget.children.length != 0 ? (value + 1) : 0} / ${widget.children.length}";
+
     return Text(
-      "${widget.children.length != 0 ? (value + 1) : 0} / ${widget.children.length}",
-      style: TextStyle(shadows: [
-        Shadow(
-            color: Colors.black, offset: const Offset(.2, .2), blurRadius: .5)
+      indicatorText,
+      style: const TextStyle(shadows: [
+        Shadow(color: Colors.black, offset: Offset(.2, .2), blurRadius: .5)
       ], fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),
     );
   }

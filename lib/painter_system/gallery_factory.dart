@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/painter_system/anim/spring_widget.dart';
 
 import 'anim/bezier3_player/bezier3_palyer.dart';
+import 'anim/draw_path.dart';
 import 'art/circle_packing.dart';
 import 'art/cubic_disarray.dart';
 import 'art/hypnotic_squares.dart';
@@ -9,12 +11,12 @@ import 'art/piet_mondrian.dart';
 import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
-import 'anim/draw_path.dart';
 import 'base/clock_widget.dart';
-import 'base/draw_path_fun.dart';
 import 'base/draw_grid_axis.dart';
+import 'base/draw_path_fun.dart';
 import 'base/draw_picture.dart';
-import 'base/random_portrait.dart';
+import 'fun/random_portrait.dart';
+import 'fun/stemp/stamp_paper.dart';
 import 'gallery.dart';
 
 /// create by 张风捷特烈 on 2020/12/5
@@ -63,10 +65,21 @@ class GalleryFactory {
       case GalleryType.anim:
         return [
           FrameShower(
+              title: "手势弹簧",
+              author: "张风捷特烈",
+              info: "    本样例介绍如何绘制弹簧，通过触点竖直拖拽拉伸、压缩，放手时进行恢复动画，是一个很好的综合小案例。",
+              content: const SpringWidget()),
+          FrameShower(
+              title: "Draw Curve",
+              author: "张风捷特烈",
+              info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
+              content: DrawPath()),
+          FrameShower(
               title: "Bezier3 演示 (双击清除)",
               author: "张风捷特烈",
               info: "    本样例介绍如何绘制三次贝塞尔曲线，通过触点判断某点是否激活，据此控制点的位置达到拖动控制效果。",
-              content: Bezier3Player()),          FrameShower(
+              content: Bezier3Player()),
+          FrameShower(
               title: "Draw Curve",
               author: "张风捷特烈",
               info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
@@ -82,6 +95,12 @@ class GalleryFactory {
               info:
                   "    本样例介绍绘制矩形及随机数处理。通过点位集合确定矩形位置信息，将其绘制出来。其中对点的随机生成和对称处理能让你练习对数据的控制力。",
               content: RandomPortrait()),
+          FrameShower(
+              title: "井字棋",
+              author: "张风捷特烈",
+              info:
+                  "    本例通过井字棋的绘制与逻辑校验，集合了手势、绘制、动画、校验等重要的技能，是一个非常好的联系案例。",
+              content: StampPaper()),
         ];
       case GalleryType.art:
         return [

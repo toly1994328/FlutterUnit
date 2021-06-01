@@ -112,9 +112,11 @@ class TechnoWidgetListItem extends StatelessWidget {
         Expanded(
           child: Text(data.name,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
+                  decoration: (data.deprecated??false)?TextDecoration.lineThrough:TextDecoration.none,
+                  decorationThickness: 2,
                   shadows: [
                     Shadow(color: Colors.white, offset: Offset(.3, .3))
                   ])),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/repositories/app_storage.dart';
+import 'package:flutter_unit/repositories/app_start.dart';
+import 'package:flutter_unit/repositories/local_db.dart';
 import 'package:flutter_unit/repositories/rep/impl/catagory_db_repository.dart';
 import 'package:flutter_unit/repositories/rep/impl/widget_db_repository.dart';
 import 'package:flutter_unit/repositories/rep/widget_repository.dart';
@@ -16,7 +17,7 @@ import 'package:flutter_unit/blocs/bloc_exp.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: Bloc提供器包裹层
 
-final AppStorage storage = AppStorage();
+final AppStart storage = AppStart();
 
 class BlocWrapper extends StatefulWidget {
   final Widget child;
@@ -28,9 +29,9 @@ class BlocWrapper extends StatefulWidget {
 }
 
 class _BlocWrapperState extends State<BlocWrapper> {
-  final WidgetRepository repository = WidgetDbRepository(storage);
+  final WidgetRepository repository = WidgetDbRepository();
 
-  final categoryBloc = CategoryBloc(repository: CategoryDbRepository(storage));
+  final categoryBloc = CategoryBloc(repository: CategoryDbRepository());
   final authBloc = AuthenticBloc()..add(const AppStarted());
 
   @override
@@ -39,22 +40,18 @@ class _BlocWrapperState extends State<BlocWrapper> {
         //使用MultiBlocProvider包裹
         providers: [
           //Bloc提供器
-          BlocProvider<GlobalBloc>(
-              create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
+          BlocProvider<GlobalBloc>(create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
 
-          BlocProvider<WidgetsBloc>(
-              create: (_) => WidgetsBloc(repository: repository)
-                ..add(EventTabTap(WidgetFamily.statelessWidget))),
+          BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
 
           BlocProvider<DetailBloc>(
               create: (_) => DetailBloc(repository: repository)),
 
           BlocProvider<CategoryBloc>(
-              create: (_) => categoryBloc..add(EventLoadCategory())),
+              create: (_) => categoryBloc),
 
           BlocProvider<LikeWidgetBloc>(
-              create: (_) => LikeWidgetBloc(repository: repository)
-                ..add(EventLoadLikeData())),
+              create: (_) => LikeWidgetBloc(repository: repository)),
 
           BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
 
@@ -79,6 +76,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
   void dispose() {
     categoryBloc.close();
     authBloc.close();
+    LocalDb.instance.closeDb();
     super.dispose();
   }
 }

@@ -28,7 +28,6 @@ class _UnitNavigationState extends State<UnitNavigation> {
   // 禁止 PageView 滑动
   final ScrollPhysics neverScroll = const NeverScrollableScrollPhysics();
 
-
   @override
   void dispose() {
     _controller.dispose(); //释放控制器

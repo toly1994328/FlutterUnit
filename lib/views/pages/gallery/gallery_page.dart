@@ -7,7 +7,7 @@ import 'package:flutter_unit/painter_system/base/draw_picture.dart';
 import 'package:flutter_unit/painter_system/art/hypnotic_squares.dart';
 import 'package:flutter_unit/painter_system/art/joy_division.dart';
 import 'package:flutter_unit/painter_system/art/piet_mondrian.dart';
-import 'package:flutter_unit/painter_system/base/random_portrait.dart';
+import 'package:flutter_unit/painter_system/fun/random_portrait.dart';
 import 'package:flutter_unit/painter_system/art/tiled_lines.dart';
 import 'package:flutter_unit/painter_system/art/triangular_mesh.dart';
 import 'package:flutter_unit/painter_system/art/un_deux_trois.dart';

@@ -9,10 +9,9 @@ class WidgetPo extends Equatable {
   final int id;
   final String name;
   final String nameCN;
-  final int collected;
+  final int deprecated;
   final int family;
   final double lever;
-  final String image;
   final String info;
   final String linkWidget;
 
@@ -20,11 +19,10 @@ class WidgetPo extends Equatable {
       {this.id,
       this.name,
       this.nameCN,
-      this.collected,
+      this.deprecated,
       this.family,
       this.lever,
       this.linkWidget,
-      this.image,
       this.info});
 
   factory WidgetPo.fromJson(Map<String, dynamic> map) {
@@ -33,19 +31,31 @@ class WidgetPo extends Equatable {
         name: map['name'],
         nameCN: map["nameCN"],
         family: map["family"],
-        collected: map["collected"]??0,
+        deprecated: map["deprecated"] ?? 0,
         lever: map["lever"].toDouble(),
-        image: map["image"],
         linkWidget: map["linkWidget"],
         info: map["info"]);
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      "id": this.id,
+      "name": this.name,
+      "nameCN": this.nameCN,
+      "family": this.family,
+      "deprecated": this.deprecated,
+      "lever": this.lever,
+      "linkWidget": this.linkWidget,
+      "info": this.info
+    };
+  }
+
   @override
   String toString() {
-    return 'WidgetPo{id: $id, name: $name, nameCN: $nameCN, collected: $collected, family: $family, lever: $lever, image: $image, info: $info}';
+    return 'WidgetPo{id: $id, name: $name, nameCN: $nameCN, deprecated: $deprecated, family: $family, lever: $lever,  info: $info}';
   }
 
   @override
   List<Object> get props =>
-      [id, name, nameCN, collected, family, lever, image, info];
+      [id, name, nameCN, deprecated, family, linkWidget, lever, info];
 }
