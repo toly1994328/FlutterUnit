@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/painter_system/anim/spring_widget.dart';
 
 import 'anim/bezier3_player/bezier3_palyer.dart';
+import 'anim/curve_shower/curve_anim_shower.dart';
 import 'anim/draw_path.dart';
 import 'art/circle_packing.dart';
 import 'art/cubic_disarray.dart';
@@ -69,6 +70,11 @@ class GalleryFactory {
               author: "张风捷特烈",
               info: "    本样例介绍如何绘制弹簧，通过触点竖直拖拽拉伸、压缩，放手时进行恢复动画，是一个很好的综合小案例。",
               content: const SpringWidget()),
+          FrameShower(
+              title: "动画曲线散点图",
+              author: "张风捷特烈",
+              info: "    本样例通过直观的方式，来查看动画曲线 curve 的作用效果，让大家对动画有更深的理解。",
+              content: const CurveAnimShower()),
           FrameShower(
               title: "Draw Curve",
               author: "张风捷特烈",
