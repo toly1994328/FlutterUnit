@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/painter_system/anim/spring_widget.dart';
 
 import 'anim/bezier3_player/bezier3_palyer.dart';
+import 'anim/circle_halo.dart';
 import 'anim/curve_shower/curve_anim_shower.dart';
 import 'anim/draw_path.dart';
 import 'art/circle_packing.dart';
@@ -76,6 +77,11 @@ class GalleryFactory {
               info: "    本样例通过直观的方式，来查看动画曲线 curve 的作用效果，让大家对动画有更深的理解。",
               content: const CurveAnimShower()),
           FrameShower(
+              title: "流光",
+              author: "张风捷特烈",
+              info: "    本样例介绍如何在绘制中使用着色器和过滤器，并通过动画进行数值变化达到旋转流光效果。",
+              content: const CircleHalo()),
+          FrameShower(
               title: "Draw Curve",
               author: "张风捷特烈",
               info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
@@ -85,11 +91,6 @@ class GalleryFactory {
               author: "张风捷特烈",
               info: "    本样例介绍如何绘制三次贝塞尔曲线，通过触点判断某点是否激活，据此控制点的位置达到拖动控制效果。",
               content: Bezier3Player()),
-          FrameShower(
-              title: "Draw Curve",
-              author: "张风捷特烈",
-              info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
-              content: DrawPath()),
         ];
       case GalleryType.particle:
         return [];
