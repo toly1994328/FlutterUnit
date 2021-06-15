@@ -4,10 +4,7 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-
-
-import '../permanent/burst_flow.dart';
+import '../permanent/burst_menu.dart';
 import '../permanent/color_wrapper.dart';
 
 /// create by 张风捷特烈 on 2020/10/21
@@ -84,11 +81,8 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   final double circleRadius = 80;
   final double menuSize = 36;
 
-  GlobalKey<BurstFlowState> burstFlowKey = GlobalKey<BurstFlowState>();
-
-  _buildFloating() {
+  Widget _buildFloating() {
     Color wrapColor = Colors.blue.withOpacity(0.6);
-
     bool left = offset.dx < 100;
 
     return Container(
@@ -98,96 +92,100 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       // color: Colors.orangeAccent,
       child: IconTheme(
         data: IconTheme.of(context).copyWith(color: Colors.white, size: 18),
-        child: BurstFlow(
-            key: burstFlowKey,
-            startAngle: !left ? 90.0 + 15 : -90 + 15.0,
-            swapAngle: !left ? 180.0 - 15 * 2 : 180.0 - 15 * 2.0,
-            menu: GestureDetector(
-              onPanEnd: _onPanEnd,
-              onPanDown: _onPanDown,
-              onPanUpdate: _updatePosition,
-              child: Opacity(
-                opacity: 0.9,
-                child: Container(
-                  width: menuSize,
-                  height: menuSize,
-                  padding: EdgeInsets.all(2),
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(menuSize / 2)),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/icon_head.webp')),
-                        borderRadius: BorderRadius.circular(menuSize / 2)),
-                  ),
-                ),
-              ),
-            ),
-            children: _buildMenuItems(wrapColor)),
+        child: BurstMenu(
+            startAngle: !left ? 90.0 + 15 : -90 - 15.0 + 180,
+            swapAngle: !left ? 180.0 - 15 * 2 : -(180.0 - 15 * 2),
+            center: _buildCenter(),
+            burstMenuItemClick: _burstMenuItemClick,
+            menus: _buildMenuItems(wrapColor)),
       ),
     );
   }
 
+  Widget _buildCenter() => GestureDetector(
+        onPanEnd: _onPanEnd,
+        onPanUpdate: _updatePosition,
+        child: Opacity(
+          opacity: 0.9,
+          child: Container(
+            width: menuSize,
+            height: menuSize,
+            padding: const EdgeInsets.all(2),
+            decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(menuSize / 2)),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.blue,
+                  image: DecorationImage(
+                      image: const AssetImage('assets/images/icon_head.webp')),
+                  borderRadius: BorderRadius.circular(menuSize / 2)),
+            ),
+          ),
+        ),
+      );
+
   // 构建 菜单 item
   List<Widget> _buildMenuItems(Color wrapColor) => [
-        FeedbackWidget(
-            onPressed: _doClose,
-            child: Circled(color: wrapColor, child: Icon(Icons.close))),
-        FeedbackWidget(
-            onPressed: _toPoint,
-            child: Circled(
-                color: wrapColor, radius: 15, child: Icon(TolyIcon.icon_bug))),
-        FeedbackWidget(
-            onPressed: _toGalley,
-            child: Circled(
-                color: wrapColor, radius: 15, child: Icon(Icons.palette))),
-        FeedbackWidget(
-            onPressed: _toWidget,
-            child: Circled(color: wrapColor, child: Icon(Icons.widgets))),
-        FeedbackWidget(
-            onPressed: _toSetting,
-            child: Circled(color: wrapColor, child: Icon(Icons.settings))),
+        Circled(color: wrapColor, child: const Icon(Icons.close)),
+        Circled(color: wrapColor, radius: 15, child: const Icon(TolyIcon.icon_bug)),
+        Circled(color: wrapColor, radius: 15, child: const Icon(Icons.palette)),
+        Circled(color: wrapColor, child: const Icon(Icons.widgets)),
+        Circled(color: wrapColor, child: const Icon(Icons.settings)),
       ];
+
+  bool _burstMenuItemClick(int index) {
+    print(index);
+    switch (index) {
+      case 0:
+        _doClose();
+        return true;
+        break;
+      case 1:
+        _toPoint();
+        break;
+      case 2:
+        _toGalley();
+        break;
+      case 3:
+        _toWidget();
+        break;
+      case 4:
+        _toSetting();
+        break;
+    }
+
+    return true;
+  }
 
   // 处理 菜单 item 点击事件
   void _toSetting() {
     Navigator.of(context).pushNamed(UnitRouter.setting);
-    burstFlowKey.currentState.toggle();
   }
 
-  void _toWidget() {
-    burstFlowKey.currentState.toggle();
-  }
+  void _toWidget() {}
 
   void _toGalley() {
     Navigator.of(context).pushNamed(UnitRouter.galley);
-    burstFlowKey.currentState.toggle();
   }
 
   void _toPoint() {
     BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
     Navigator.of(context).pushNamed(UnitRouter.point);
-    burstFlowKey.currentState.toggle();
   }
 
   void _doClose() {
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     }
-    burstFlowKey.currentState.toggle();
   }
 
-  double endx;
+  double endX;
 
   void _onPanEnd(details) {
-    endx = offset.dx;
+    endX = offset.dx;
     _ctrl.reset();
     _ctrl.forward();
-
-    // offset = Offset(x, y);
-    // entry.markNeedsBuild();
   }
 
   void _listenAnimate() {
@@ -197,7 +195,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     // print(offset.dx);
     if (offset.dx > MediaQuery.of(context).size.width / 2 - circleRadius) {
 
-      double begin = endx;
+      double begin = endX;
       double end = MediaQuery.of(context).size.width -
           menuSize / 2 -
           circleRadius;
@@ -205,7 +203,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       px = begin + (end - begin) * t; // x = menuSize / 2 - circleRadius;
 
     } else {
-    double begin = endx;
+    double begin = endX;
     double end = menuSize / 2 - circleRadius;
     double t =  _ctrl.value;
     px = begin + (end - begin) * t; // x = menuSize / 2 - circleRadius;
@@ -237,15 +235,14 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     entry.markNeedsBuild();
   }
 
-  showFloating() {
+  void showFloating() {
     if (!show) {
       Overlay.of(context).insert(entry);
       show = true;
     }
   }
 
-  //
-  hideFloating() {
+  void hideFloating() {
     if (show) {
       entry.remove();
       show = false;
@@ -256,6 +253,4 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   Widget build(BuildContext context) {
     return widget.child;
   }
-
-  void _onPanDown(DragDownDetails details) {}
 }
