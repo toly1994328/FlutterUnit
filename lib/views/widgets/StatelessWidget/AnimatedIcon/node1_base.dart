@@ -42,12 +42,7 @@ class _CustomAnimatedIconState extends State<CustomAnimatedIcon>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _ctrl.reset();
-          _ctrl.forward();
-        });
-      },
+      onTap: () => _ctrl.forward(from: 0),
       child: Wrap(
         runSpacing: 30,
         children: _buildChildren(),

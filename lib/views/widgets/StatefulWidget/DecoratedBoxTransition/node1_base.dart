@@ -39,12 +39,7 @@ class _CustomDecoratedBoxTransitionState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          setState(() {
-            _ctrl.reset();
-            _ctrl.forward();
-          });
-        },
+        onTap: () => _ctrl.forward(from:  0),
         child: Container(
           width: 200,
           height: 100,

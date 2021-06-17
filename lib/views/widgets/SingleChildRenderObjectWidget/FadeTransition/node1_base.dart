@@ -36,12 +36,8 @@ class _CustomFadeTransitionState extends State<CustomFadeTransition>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _ctrl.reset();
-          _ctrl.forward();
-        });
-      },
+      onTap: () => _ctrl.forward(from: 0),
+
       child: Container(
         color: Colors.grey.withAlpha(22),
         width: 100,
