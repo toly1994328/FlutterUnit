@@ -23,7 +23,7 @@ class _CustomRotationTransitionState extends State<CustomRotationTransition> wit
 
   @override
   void initState() {
-     _ctrl= AnimationController(vsync: this,duration: Duration(seconds: 2));
+     _ctrl= AnimationController(vsync: this,duration: const Duration(seconds: 2));
      _ctrl.forward();
     super.initState();
   }
@@ -37,19 +37,14 @@ class _CustomRotationTransitionState extends State<CustomRotationTransition> wit
   Widget build(BuildContext context) {
 
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _ctrl.reset();
-          _ctrl.forward();
-        });
-      },
+      onTap: () => _ctrl.forward(from: 0),
       child: Container(
         color: Colors.grey.withAlpha(22),
         width: 100,
         height: 100,
         child: RotationTransition(
           turns: CurvedAnimation(parent: _ctrl, curve: Curves.linear),
-          child: Icon(Icons.android,color: Colors.green,size: 60),
+          child: const Icon(Icons.camera_outlined,color: Colors.green,size: 60),
         ),
       ),
     );

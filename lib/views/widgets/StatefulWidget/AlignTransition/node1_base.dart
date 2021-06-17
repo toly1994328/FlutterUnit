@@ -36,12 +36,7 @@ class _CustomAlignTransitionState extends State<CustomAlignTransition>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          setState(() {
-            _ctrl.reset();
-            _ctrl.forward();
-          });
-        },
+        onTap: () => _ctrl.forward(from: 0),
         child: Container(
           width: MediaQuery.of(context).size.width,
           color: Colors.grey.withAlpha(33),

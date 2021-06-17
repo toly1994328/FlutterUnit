@@ -37,12 +37,7 @@ class _CustomSizeTransitionState extends State<CustomSizeTransition>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _ctrl.reset();
-          _ctrl.forward();
-        });
-      },
+      onTap: () => _ctrl.forward(from: 0),
       child: Wrap(
         runSpacing: 20,
         children: <Widget>[
