@@ -29,22 +29,32 @@ class CustomAnimatedContainer extends StatefulWidget {
 }
 
 class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
-  final Decoration startDecoration = BoxDecoration(
+  final Decoration startDecoration = const BoxDecoration(
+      color: Colors.deepPurple,
+      borderRadius: BorderRadius.all(Radius.circular(30)),
+      boxShadow: [
+        BoxShadow(
+            offset: Offset(1, 1),
+            color: Colors.purple,
+            blurRadius: 5,
+            spreadRadius: 2)
+      ]);
+  final Decoration endDecoration = const BoxDecoration(
       color: Colors.blue,
-      image: DecorationImage(
-          image: AssetImage('assets/images/wy_200x300.webp'), fit: BoxFit.cover),
-      borderRadius: BorderRadius.all(Radius.circular(20)));
-  final Decoration endDecoration = BoxDecoration(
-      image: DecorationImage(
-          image: AssetImage('assets/images/wy_200x300.webp'), fit: BoxFit.cover),
-      color: Colors.orange,
-      borderRadius: BorderRadius.all(Radius.circular(50)));
+      borderRadius: BorderRadius.all(Radius.circular(10)),
+      boxShadow: [
+        BoxShadow(
+            offset: Offset(1, 1),
+            color: Colors.blue,
+            blurRadius: 10,
+            spreadRadius: 0)
+      ]);
 
-  final Alignment startAlignment = Alignment(0, 0);
-  final Alignment endAlignment = Alignment.topLeft + Alignment(0.2, 0.2);
+  final Alignment startAlignment = Alignment.topLeft + Alignment(0.2, 0.2);
+  final Alignment endAlignment = Alignment.center;
 
-  final startHeight = 100.0;
-  final endHeight = 50.0;
+  final double startHeight = 150.0;
+  final double endHeight = 100.0;
 
   Decoration _decoration;
   double _height;
@@ -52,46 +62,50 @@ class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
 
   @override
   void initState() {
+    super.initState();
     _decoration = startDecoration;
     _height = startHeight;
-    _alignment=startAlignment;
-    super.initState();
+    _alignment = startAlignment;
   }
 
+  bool get selected => _height == endHeight;
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Wrap(
+      direction: Axis.vertical,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: <Widget>[
-        _buildSwitch(),
-        AnimatedContainer(
-          duration: Duration(seconds: 1),
-          curve: Curves.fastOutSlowIn,
-          alignment: _alignment,
-          color: Colors.grey.withAlpha(22),
-          width: 200,
-          height: 120,
-          child: UnconstrainedBox(
-            child: AnimatedContainer(
-              duration: Duration(seconds: 1),
-              curve: Curves.fastOutSlowIn,
-              decoration: _decoration,
-              onEnd: () => print('End'),
-              height: _height,
-              width: _height,
-            ),
-          ),
+        Switch(
+          value: selected,
+          onChanged: onChanged,
         ),
+        buildAnim()
       ],
     );
   }
-
-  Widget _buildSwitch() => Switch(
-          value: _height == endHeight,
-          onChanged: (v) {
-            setState(() {
-              _height = v ? endHeight : startHeight;
-              _decoration = v ? endDecoration : startDecoration;
-              _alignment = v ? endAlignment : startAlignment;
-            });
-          });
+  Widget _buildChild() => const Icon(
+    Icons.camera_outlined,
+    size: 30,
+    color: Colors.white,
+  );
+  Widget buildAnim() => AnimatedContainer(
+    duration: const Duration(seconds: 1),
+    curve: Curves.fastOutSlowIn,
+    decoration: _decoration,
+    alignment: _alignment,
+    onEnd: onEnd,
+    height: _height,
+    width: _height,
+    child: _buildChild(),
+  );
+  void onChanged(bool value) {
+    setState(() {
+      _height = value ? endHeight : startHeight;
+      _decoration = value ? endDecoration : startDecoration;
+      _alignment = value ? endAlignment : startAlignment;
+    });
+  }
+  void onEnd() {
+    print('End');
+  }
 }
