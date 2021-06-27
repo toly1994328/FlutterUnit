@@ -86,7 +86,7 @@ class UserPage extends StatelessWidget {
     }
     return FeedbackWidget(
       onEnd: () {
-        Navigator.of(context).pushNamed(UnitRouter.login);
+        // Navigator.of(context).pushNamed(UnitRouter.login);
       },
       child: CircleImage(
         size: 80,
