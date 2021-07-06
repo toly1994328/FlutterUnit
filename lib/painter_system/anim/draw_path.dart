@@ -1,9 +1,9 @@
 import 'dart:math';
 import 'dart:ui';
+import 'dart:ui' as ui;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 /// create by 张风捷特烈 on 2020/5/1
 /// contact me by email 1981462002@qq.com
@@ -69,7 +69,7 @@ class PaperPainter extends CustomPainter {
   }
 
   double f(double thta) {
-    double p = 150*sin(5*thta).abs();
+    double p = 120 * sin(5 * thta).abs();
     return p;
   }
 

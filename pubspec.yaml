@@ -25,7 +25,7 @@ dependencies:
   share: ^2.0.1 # 文字分享
   intl: ^0.17.0
   path_provider: ^2.0.1 # 路径
-  connectivity: ^3.0.3 #网络状态
+#  connectivity: ^3.0.3 #网络状态
   flutter_spinkit: ^5.0.0 # loading
   flutter_markdown: ^0.6.1 # markdown
   dio: ^3.0.10 # 网络请求

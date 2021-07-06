@@ -61,7 +61,7 @@ class PaperPainter extends CustomPainter {
 
   double f(double thta) {
     double p =
-        50 * (pow(e, cos(thta)) - 2 * cos(4 * thta) + pow(sin(thta / 12), 5));
+        40 * (pow(e, cos(thta)) - 2 * cos(4 * thta) + pow(sin(thta / 12), 5));
     return p;
   }
 
