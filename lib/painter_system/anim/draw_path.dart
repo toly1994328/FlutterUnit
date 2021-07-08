@@ -23,8 +23,7 @@ class _DrawPathState extends State<DrawPath> with SingleTickerProviderStateMixin
     _controller = AnimationController(
       duration: const Duration(seconds: 15),
       vsync: this,
-    )..repeat()
-    ;
+    )..repeat();
   }
 
   @override

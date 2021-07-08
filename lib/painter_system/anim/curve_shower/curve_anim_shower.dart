@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/views/components/drop_selectable_widget.dart';
 
 import 'anim_painter.dart';
 import 'point_data.dart';
@@ -21,6 +22,50 @@ class _CurveAnimShowerState extends State<CurveAnimShower>
   final Duration animDuration = const Duration(milliseconds: 1000);
 
   Animation<double> curveAnim;
+
+  Map<String, Curve> maps = {
+    'bounceOut': Curves.bounceOut,
+    'linear': Curves.linear,
+    'decelerate': Curves.decelerate,
+    'fastLinearToSlowEaseIn': Curves.fastLinearToSlowEaseIn,
+    'ease': Curves.ease,
+    'easeIn': Curves.easeIn,
+    'easeInToLinear': Curves.easeInToLinear,
+    'easeInSine': Curves.easeInSine,
+    'easeInQuad': Curves.easeInQuad,
+    'easeInCubic': Curves.easeInCubic,
+    'easeInQuart': Curves.easeInQuart,
+    'easeInQuint': Curves.easeInQuint,
+    'easeInExpo': Curves.easeInExpo,
+    'easeInCirc': Curves.easeInCirc,
+    'easeInBack': Curves.easeInBack,
+    'easeOut': Curves.easeOut,
+    'linearToEaseOut': Curves.linearToEaseOut,
+    'easeOutSine': Curves.easeOutSine,
+    'easeOutQuad': Curves.easeOutQuad,
+    'easeOutCubic': Curves.easeOutCubic,
+    'easeOutQuart': Curves.easeOutQuart,
+    'easeOutQuint': Curves.easeOutQuint,
+    'easeOutExpo': Curves.easeOutExpo,
+    'easeOutCirc': Curves.easeOutCirc,
+    'easeOutBack': Curves.easeOutBack,
+    'easeInOut': Curves.easeInOut,
+    'easeInOutSine': Curves.easeInOutSine,
+    'easeInOutQuad': Curves.easeInOutQuad,
+    'easeInOutCubic': Curves.easeInOutCubic,
+    'easeInOutQuart': Curves.easeInOutQuart,
+    'easeInOutExpo': Curves.easeInOutExpo,
+    'easeInOutQuint': Curves.easeInOutQuint,
+    'easeInOutCirc': Curves.easeInOutCirc,
+    'easeInOutBack': Curves.easeInOutBack,
+    'fastOutSlowIn': Curves.fastOutSlowIn,
+    'slowMiddle': Curves.slowMiddle,
+    'bounceIn': Curves.bounceIn,
+    'bounceInOut': Curves.bounceInOut,
+    'elasticIn': Curves.elasticIn,
+    'elasticOut': Curves.elasticOut,
+    'elasticInOut': Curves.elasticInOut,
+  };
 
   @override
   void initState() {
@@ -52,15 +97,35 @@ class _CurveAnimShowerState extends State<CurveAnimShower>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _startAnim,
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: CustomPaint(
-          painter: AnimPainter(points),
-          size: const Size(
-            200,
-            200,
-          ),
-        ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+              right: 5,
+              top: 5,
+              child: DropSelectableWidget(
+                fontSize: 12,
+                data: maps.keys.toList(),
+                iconSize: 20,
+                height: 25,
+                width: 180,
+                disableColor: Color(0xff1F425F),
+                onDropSelected: (int index) async {
+                  curveAnim = CurvedAnimation(
+                      parent: _ctrl, curve: maps.values.toList()[index]);
+                  _startAnim();
+                },
+              )),
+          Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: CustomPaint(
+                painter: AnimPainter(points),
+                size: const Size(
+                  200,
+                  200,
+                ),
+              )),
+        ],
       ),
     );
   }

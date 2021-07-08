@@ -73,7 +73,7 @@ class AnimPainter extends CustomPainter {
 
     if(points.values.length>0){
       canvas.drawLine(Offset(0, -points.values.last*step*10), Offset(280, -points.values.last*step*10), Paint()..color=Colors.purple);
-      canvas.drawCircle(Offset(240, -points.values.last*step*10), 10, Paint()..color=Colors.orange);
+      canvas.drawCircle(Offset(230, -points.values.last*step*10), 10, Paint()..color=Colors.orange);
     }
 
     Path scalePath = Path();
