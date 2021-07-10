@@ -14,7 +14,7 @@ class TolyAppBar extends StatefulWidget {
   TolyAppBar({this.maxHeight, this.onItemClick, this.defaultIndex = 0});
 }
 
-const _kBorderRadius = BorderRadius.only(
+const BorderRadius _kBorderRadius = BorderRadius.only(
   bottomLeft: Radius.circular(15),
   bottomRight: Radius.circular(15),
 );
@@ -27,6 +27,7 @@ class _TolyAppBarState extends State<TolyAppBar>
     with SingleTickerProviderStateMixin {
   double _width = 0;
   int _selectIndex = 0;
+  int _prevSelectIndex = 0;
 
   static const List<int> colors = [
     0xff44D1FD,
@@ -48,50 +49,59 @@ class _TolyAppBarState extends State<TolyAppBar>
     'Other'
   ];
 
-
   AnimationController _controller;
+  Animation<double> circleAnim;
+  Animation<double> heightAnim;
+  Animation<double> backCircleAnim;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: const Duration(milliseconds: 300), vsync: this)
-      ..addListener(_render)
-      ..addStatusListener(_listenStatus);
+      value: 1,
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+    circleAnim = circleTween.animate(_controller);
+    heightAnim = CurveTween(curve: Curves.ease).animate(_controller);
+    backCircleAnim = ReverseAnimation(circleAnim);
     _selectIndex = widget.defaultIndex;
-  }
-
-  void _render() {
-    setState(() {});
-  }
-
-  void _listenStatus(AnimationStatus status) {
-    if (status == AnimationStatus.completed) {
-      setState(() {});
-    }
   }
 
   int get nextIndex => (_selectIndex + 1) % colors.length;
 
-  bool clicked = false;
+  Tween<double> circleTween = Tween(begin: 1, end: 0);
 
   @override
   Widget build(BuildContext context) {
-    _width = MediaQuery.of(context).size.width / colors.length;
-    return Container(
-      alignment: Alignment.center,
-      child: Flow(
+    return Center(
+      child:Flow(
           delegate: TolyAppBarDelegate(
-              _selectIndex, clicked ? _controller.value : 1, widget.maxHeight),
+            _selectIndex,
+            _prevSelectIndex,
+            widget.maxHeight,
+            repaint: heightAnim,
+          ),
           children: [
             ...colors
                 .map((e) => GestureDetector(
-                onTap: () => _onTap(e), child: _buildChild(e)))
+                      onTap: () => _onTap(e),
+                      child: _buildChild(e),
+                    ))
                 .toList(),
-            ...colors.map((e) => Circle(
-              color: Color(e),
-              radius: 6,
-            ))
+            ...colors.map((e) {
+              Widget child = Circle(
+                color: Color(e),
+                radius: 6,
+              );
+              if (e == colors[_selectIndex]) {
+                return ScaleTransition(scale: circleAnim, child: child);
+              }
+              if (e == colors[_prevSelectIndex]) {
+                return ScaleTransition(scale: backCircleAnim, child: child);
+              }
+              return child;
+            })
           ]),
     );
   }
@@ -116,13 +126,12 @@ class _TolyAppBarState extends State<TolyAppBar>
 
   void _onTap(int color) {
     if (_selectIndex == colors.indexOf(color)) return;
-    clicked = true;
     setState(() {
       _controller.reset();
       _controller.forward();
+      _prevSelectIndex = _selectIndex;
       _selectIndex = colors.indexOf(color);
-      if (widget.onItemClick != null)
-        widget.onItemClick(_selectIndex);
+      if (widget.onItemClick != null) widget.onItemClick(_selectIndex);
     });
   }
 
@@ -135,10 +144,15 @@ class _TolyAppBarState extends State<TolyAppBar>
 
 class TolyAppBarDelegate extends FlowDelegate {
   final int selectIndex;
-  final double factor;
+  final int prevSelectIndex;
   final double height;
+  final Animation<double> repaint;
 
-  TolyAppBarDelegate(this.selectIndex, this.factor, this.height);
+  TolyAppBarDelegate(this.selectIndex, this.prevSelectIndex, this.height,
+      {this.repaint})
+      : super(repaint: repaint);
+
+  double get factor => repaint.value;
 
   @override
   void paintChildren(FlowPaintingContext context) {
@@ -151,6 +165,11 @@ class TolyAppBarDelegate extends FlowDelegate {
         context.paintChild(i,
             transform: Matrix4.translationValues(ox, 20.0 * factor - 20, 0.0));
         ox += cSize.width;
+      } else if (i == prevSelectIndex) {
+        context.paintChild(i,
+            transform:
+                Matrix4.translationValues(ox, 20.0 * (1 - factor) - 20, 0.0));
+        ox += cSize.width;
       } else {
         context.paintChild(i,
             transform: Matrix4.translationValues(ox, -20, 0.0));
@@ -158,18 +177,18 @@ class TolyAppBarDelegate extends FlowDelegate {
       }
     }
 
+    // 绘制小点
     for (int i = (context.childCount / 2).floor(); i < context.childCount; i++) {
-      if (i - (context.childCount / 2).floor() == selectIndex) {
-        obx += context.getChildSize(0).width;
-      } else {
-        context.paintChild(i,
-            transform: Matrix4.translationValues(
-                obx + context.getChildSize(0).width / 2 - 5, height + 5, 0));
-        obx += context.getChildSize(0).width;
-      }
+      context.paintChild(i,
+          transform: Matrix4.translationValues(
+              obx + context.getChildSize(0).width / 2 - 5, height + 5, 0));
+      obx += context.getChildSize(0).width;
     }
   }
 
   @override
-  bool shouldRepaint(FlowDelegate oldDelegate) => true;
+  bool shouldRepaint(TolyAppBarDelegate oldDelegate) =>
+      oldDelegate.selectIndex != selectIndex ||
+      oldDelegate.height != height ||
+      oldDelegate.repaint != repaint;
 }
