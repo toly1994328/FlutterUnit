@@ -25,7 +25,7 @@ const _kTabTextStyle = TextStyle(color: Colors.white, shadows: [
 
 class _TolyAppBarState extends State<TolyAppBar>
     with SingleTickerProviderStateMixin {
-  double _width = 0;
+  double _width;
   int _selectIndex = 0;
   int _prevSelectIndex = 0;
 
@@ -65,6 +65,7 @@ class _TolyAppBarState extends State<TolyAppBar>
     circleAnim = circleTween.animate(_controller);
     heightAnim = CurveTween(curve: Curves.ease).animate(_controller);
     backCircleAnim = ReverseAnimation(circleAnim);
+
     _selectIndex = widget.defaultIndex;
   }
 
@@ -74,6 +75,7 @@ class _TolyAppBarState extends State<TolyAppBar>
 
   @override
   Widget build(BuildContext context) {
+    _width = _width ?? MediaQuery.of(context).size.width / colors.length;
     return Center(
       child:Flow(
           delegate: TolyAppBarDelegate(
