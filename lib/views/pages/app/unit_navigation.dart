@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/painter_system/gallery_unit.dart';
 import 'package:flutter_unit/views/components/project/nav/unit_bottom_bar.dart';
 import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/views/pages/category/collect_page.dart';
 import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
-import 'package:flutter_unit/painter_system/gallery_unit.dart';
 import 'package:flutter_unit/views/pages/user/user_page.dart';
 import 'package:flutter_unit/views/pages/widget_home/home_drawer.dart';
 import 'package:flutter_unit/views/pages/widget_home/home_page.dart';
@@ -45,17 +45,18 @@ class _UnitNavigationState extends State<UnitNavigation> {
         floatingActionButton: _buildSearchButton(context),
         body: wrapOverlayTool(
           child: PageView(
-            physics: neverScroll,
-            controller: _controller,
-            children: <Widget>[
-              HomePage(),
-              GalleryUnit(),
-              CollectPage(),
-              UserPage(),
-            ],
-          ),
+          physics: neverScroll,
+          controller: _controller,
+          children: <Widget>[
+            HomePage(),
+            GalleryUnit(),
+            CollectPage(),
+            UserPage(),
+          ],
         ),
-        bottomNavigationBar: _buildBottomNav(context));
+      ),
+      bottomNavigationBar: _buildBottomNav(context),
+    );
   }
 
   // 构建悬浮按钮工具

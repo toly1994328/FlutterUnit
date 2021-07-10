@@ -35,8 +35,7 @@ class FeedbackWidget extends StatefulWidget {
   _FeedBackState createState() => _FeedBackState();
 }
 
-class _FeedBackState extends State<FeedbackWidget>
-    with SingleTickerProviderStateMixin {
+class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   @override

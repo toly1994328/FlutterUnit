@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 /// 说明: 
 
 class NoMoreWidget extends StatelessWidget {
+
+  const NoMoreWidget();
+
   @override
   Widget build(BuildContext context) {
     return Container(height: 56);
   }
+
+
 }

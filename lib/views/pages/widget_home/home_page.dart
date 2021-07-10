@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage>
                   slivers: <Widget>[
                     _buildPersistentHeader(),
                     _buildContent(state),
-                    SliverToBoxAdapter(
+                    const SliverToBoxAdapter(
                       child: NoMoreWidget(),
                     )
                   ],
