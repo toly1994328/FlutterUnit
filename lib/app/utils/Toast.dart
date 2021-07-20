@@ -14,4 +14,20 @@ class Toast {
       backgroundColor: color??Theme.of(context).primaryColor,
     ));
   }
+
+  static void error(BuildContext context,String msg){
+    toast(context,msg,  color:Colors.red, );
+  }
+
+  static  void warning(BuildContext context,String msg){
+    toast(context,msg, color:Colors.orange, );
+  }
+
+  static  void success(BuildContext context,String msg){
+    toast(context,msg, color:Theme.of(context).primaryColor, );
+  }
+
+  static  void green(BuildContext context,String msg){
+    toast(context,msg, color:Colors.green, );
+  }
 }

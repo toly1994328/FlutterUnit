@@ -149,6 +149,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.4"
+  install_plugin:
+    dependency: "direct main"
+    description:
+      name: install_plugin
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.1"
   intl:
     dependency: "direct main"
     description:
@@ -205,6 +212,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
+  package_info:
+    dependency: "direct main"
+    description:
+      name: package_info
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.2"
   path:
     dependency: transitive
     description:

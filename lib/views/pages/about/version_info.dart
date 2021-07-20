@@ -1,11 +1,16 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/api/app_info.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/style/behavior/no_scroll_behavior.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
+import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'version/app_version_checker.dart';
+import 'version/version_shower.dart';
 
 /// create by 张风捷特烈 on 2020/6/16
 /// contact me by email 1981462002@qq.com
@@ -54,12 +59,10 @@ class VersionInfo extends StatelessWidget {
       children: <Widget>[
         CircleImage(image: AssetImage("assets/images/icon_head.webp"),size: 80,),
         Text('Flutter Unit',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        Text('Version ${StrUnit.version}'),
+        const VersionShower(),
       ],
     );
   }
-
-
 
   Widget _buildCenter(BuildContext context) {
     final labelStyle= TextStyle(fontSize: 13);
@@ -77,13 +80,7 @@ class VersionInfo extends StatelessWidget {
               onTap: () => Navigator.of(context).pushNamed(UnitRouter.about_app),
             ),
             Divider(height: 1,indent: 10),
-            ListTile(
-              title: Text('检查新版本',style: labelStyle),
-              trailing: _nextIcon(context),
-              onTap: () {
-
-              },
-            ),
+            const AppVersionChecker(),
             Divider(height: 1,indent: 10),
             ListTile(
               title: Text('检查数据库新版本',style: labelStyle),

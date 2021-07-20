@@ -19,8 +19,8 @@ const BorderRadius _kBorderRadius = BorderRadius.only(
   bottomRight: Radius.circular(15),
 );
 
-const _kTabTextStyle = TextStyle(color: Colors.white, shadows: [
-  const Shadow(color: Colors.black, offset: Offset(0.5, 0.5), blurRadius: 0.5)
+const TextStyle _kTabTextStyle = TextStyle(color: Colors.white, shadows: [
+  Shadow(color: Colors.black, offset: Offset(0.5, 0.5), blurRadius: 0.5)
 ]);
 
 class _TolyAppBarState extends State<TolyAppBar>
