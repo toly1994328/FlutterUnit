@@ -15,11 +15,12 @@ dependencies:
 
   flutter_bloc: ^7.0.0 # 状态管理
   equatable: ^2.0.0 # 相等辅助
-
+  package_info: ^2.0.2 # 应用包信息
   sqflite: ^2.0.0+3 # 数据库
   shared_preferences: ^2.0.5 # xml 固化
   jwt_decoder: ^2.0.1 # jwt 解析
   toggle_rotate: ^0.0.5
+  install_plugin: ^2.0.1
   flutter_star: ^0.1.2 # 星星组件
   url_launcher: ^6.0.3 # url
   share: ^2.0.1 # 文字分享
