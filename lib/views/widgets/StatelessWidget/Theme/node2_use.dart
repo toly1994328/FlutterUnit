@@ -16,12 +16,15 @@ class CustomTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
         data: ThemeData(
-            cardTheme: CardTheme(color: Colors.red, elevation: 4),
-            dividerTheme: DividerThemeData(
-                color: Colors.blue,
-                thickness: 2
+            cardTheme: const CardTheme(
+              color: Colors.red,
+              elevation: 4,
             ),
-            sliderTheme: SliderThemeData(
+            dividerTheme: const DividerThemeData(
+              color: Colors.blue,
+              thickness: 2,
+            ),
+            sliderTheme: const SliderThemeData(
               thumbColor: Colors.red,
               activeTrackColor: Colors.green,
               inactiveTrackColor: Colors.grey,
@@ -37,9 +40,13 @@ class CustomTheme extends StatelessWidget {
                 ),
               ),
               Container(
-                  width: 150,
-                  child: Slider(value: 0.8, onChanged: (v) => {})),
-              Container(  width: 150,child: Divider())
+                width: 150,
+                child: Slider(value: 0.8, onChanged: null),
+              ),
+              Container(
+                width: 150,
+                child: const Divider(),
+              )
             ]));
   }
 }

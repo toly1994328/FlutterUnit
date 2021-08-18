@@ -13,8 +13,8 @@ import 'package:flutter/material.dart';
 class TextThemeDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var queryData = Theme.of(context).textTheme;
-    var styles = {
+    TextTheme queryData = Theme.of(context).textTheme;
+    Map<String, TextStyle> styles = {
       "headline: ": queryData.headline,
       "title: ": queryData.title,
       "subhead: ": queryData.subhead,
@@ -32,32 +32,34 @@ class TextThemeDemo extends StatelessWidget {
 
     return Container(
       child: Column(
-        children: styles.keys.map((e) => buildItem(e, styles[e])).toList(),
+        children: styles.keys
+            .map((String styleInfo) => buildItem(styleInfo, styles[styleInfo]))
+            .toList(),
       ),
     );
   }
 
-  Widget buildItem(String e, TextStyle style) => Column(
-    children: <Widget>[
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Text(
-              e,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            Text(
+  Widget buildItem(String styleInfo, TextStyle style) => Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  styleInfo,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                Text(
               "@toly",
               style: style,
             )
           ],
         ),
       ),
-      Divider(
-        height: 1,
-      )
-    ],
+          const Divider(
+            height: 1,
+          )
+        ],
   );
 }

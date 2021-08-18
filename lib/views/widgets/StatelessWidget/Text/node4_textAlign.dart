@@ -19,13 +19,13 @@ class TextAlignText extends StatelessWidget {
       spacing: 10,
       runSpacing: 10,
       children: TextAlign.values
-          .map((e) => Container(
+          .map((TextAlign textAlign) => Container(
         width: 120,
         color: Colors.cyanAccent.withAlpha(33),
         height: 120 * 0.618,
         child: Text(
           " 张风捷特烈 toly " * 3,
-          textAlign: e,
+          textAlign: textAlign,
         ),
       ))
           .toList(),

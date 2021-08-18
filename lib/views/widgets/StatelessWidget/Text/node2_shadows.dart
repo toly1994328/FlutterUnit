@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 class ShadowText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       "张风捷特烈",
       style: TextStyle(
           fontSize: 50,

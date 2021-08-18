@@ -16,9 +16,12 @@ class TitleDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Title(
-          title: '张风捷特烈',
-          color: Color(0xFF9C27B0),
-          child: Center(child: Text('应用菜单栏中该页的名称为: 张风捷特烈'))),
+        title: '张风捷特烈',
+        color: const Color(0xFF9C27B0),
+        child: const Center(
+          child: Text('应用菜单栏中该页的名称为: 张风捷特烈'),
+        ),
+      ),
     );
   }
 }

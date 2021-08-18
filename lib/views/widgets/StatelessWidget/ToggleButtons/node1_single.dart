@@ -20,15 +20,15 @@ class CustomToggleButtons extends StatefulWidget {
 }
 
 class _CustomToggleButtonsState extends State<CustomToggleButtons> {
-  var _isSelected = [true, false, false];
+  List<bool> _isSelected = [true, false, false];
 
   @override
   Widget build(BuildContext context) {
     return ToggleButtons(
-      children: <Widget>[
-        Icon(Icons.skip_previous),
-        Icon(Icons.pause),
-        Icon(Icons.skip_next),
+      children: const <Widget>[
+         Icon(Icons.skip_previous),
+         Icon(Icons.pause),
+         Icon(Icons.skip_next),
       ],
       borderWidth: 1,
       borderRadius: BorderRadius.circular(10),

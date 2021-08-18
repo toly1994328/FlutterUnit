@@ -20,13 +20,13 @@ class TextDirectionText extends StatelessWidget {
       spacing: 40,
       runSpacing: 10,
       children: TextDirection.values
-          .map((e) => Container(
+          .map((TextDirection direction) => Container(
         width: 120,
         color: Colors.cyanAccent.withAlpha(33),
         height: 120 * 0.618,
         child: Text(
           " 张风捷特烈 toly " * 10,
-          textDirection: e,
+          textDirection: direction,
           maxLines: 3,
           overflow: TextOverflow.ellipsis,
         ),
