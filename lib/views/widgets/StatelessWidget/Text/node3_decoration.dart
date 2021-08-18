@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 class DecorationText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       "19940328",
       style: TextStyle(
           fontSize: 50,

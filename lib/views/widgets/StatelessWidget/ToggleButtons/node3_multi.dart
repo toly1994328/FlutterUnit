@@ -17,11 +17,12 @@ class ProToggleButtons extends StatefulWidget {
 }
 
 class _ProToggleButtonsState extends State<ProToggleButtons> {
-  var _isSelected = [false, false, false];
+  List<bool> _isSelected = [false, false, false];
+
   @override
   Widget build(BuildContext context) {
     return ToggleButtons(
-      children: <Widget>[
+      children: const <Widget>[
         Icon(Icons.skip_previous),
         Icon(Icons.pause),
         Icon(Icons.skip_next),

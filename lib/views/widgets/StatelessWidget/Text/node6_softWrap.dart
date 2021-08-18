@@ -20,14 +20,16 @@ class SoftWrapText extends StatelessWidget {
       spacing: 10,
       runSpacing: 10,
       children: TextOverflow.values
-          .map((e) => Container(
-        width: 150,
-        color: Colors.cyanAccent.withAlpha(33),
-        height: 150 * 0.618 * 0.618,
-        child: Text(" 张风捷特烈 toly " * 5,
-            overflow: e,
-            softWrap: false),
-      ))
+          .map((TextOverflow textOverflow) => Container(
+                width: 150,
+                color: Colors.cyanAccent.withAlpha(33),
+                height: 150 * 0.618 * 0.618,
+                child: Text(
+                  " 张风捷特烈 toly " * 5,
+                  overflow: textOverflow,
+                  softWrap: false,
+                ),
+              ))
           .toList(),
     );
   }
