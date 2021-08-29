@@ -19,7 +19,7 @@ class R3C2 extends StatefulWidget {
 }
 
 class _R3C2State extends State<R3C2> {
-  Matrix4 _m4;
+  late Matrix4 _m4;
   double _value = 0;
   double _rad = 0;
 

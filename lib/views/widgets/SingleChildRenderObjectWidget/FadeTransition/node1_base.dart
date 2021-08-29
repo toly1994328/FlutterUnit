@@ -18,7 +18,7 @@ class CustomFadeTransition extends StatefulWidget {
 
 class _CustomFadeTransitionState extends State<CustomFadeTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+ late AnimationController _ctrl;
 
   @override
   void initState() {
@@ -37,7 +37,6 @@ class _CustomFadeTransitionState extends State<CustomFadeTransition>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => _ctrl.forward(from: 0),
-
       child: Container(
         color: Colors.grey.withAlpha(22),
         width: 100,

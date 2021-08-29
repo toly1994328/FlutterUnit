@@ -9,10 +9,10 @@ typedef BoolWidgetBuilder = Widget Function(BuildContext context, bool selected)
 class MultiChipFilter<T> extends StatefulWidget {
   final List<T> data;
   final BoolWidgetBuilder labelBuilder;
-  final IndexedWidgetBuilder avatarBuilder;
+  final IndexedWidgetBuilder? avatarBuilder;
   final Function(List<int>) onChange;
 
-  MultiChipFilter({@required this.data,@required this.labelBuilder,this.avatarBuilder,@required this.onChange});
+  MultiChipFilter({required this.data,required this.labelBuilder,this.avatarBuilder,required this.onChange});
 
   @override
   _MultiChipFilterState createState() => _MultiChipFilterState();
@@ -39,7 +39,7 @@ class _MultiChipFilterState<T> extends State<MultiChipFilter<T>> {
       shadowColor: Colors.orangeAccent,
       pressElevation: 5,
       elevation: 3,
-      avatar: widget.avatarBuilder==null?null:widget.avatarBuilder(context,index),
+      avatar: widget.avatarBuilder==null?null:widget.avatarBuilder!(context,index),
       label: widget.labelBuilder(context,selected),
       selected: selected,
       onSelected: (bool value) {

@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 //    }
 
 class ValueListenableBuilderDemo extends StatelessWidget {
-  ValueListenableBuilderDemo({Key key}) : super(key: key);
+  ValueListenableBuilderDemo({Key? key}) : super(key: key);
 
   final ValueNotifier<int> _counter = ValueNotifier<int>(0);
 
@@ -44,12 +44,12 @@ class ValueListenableBuilderDemo extends StatelessWidget {
     );
   }
 
-  Widget _buildWithValue(BuildContext context, int value, Widget child) {
+  Widget _buildWithValue(BuildContext context, int value, Widget? child) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         Text('$value'),
-        child,
+        child ?? const SizedBox.shrink(),
       ],
     );
   }

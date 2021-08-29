@@ -11,7 +11,7 @@ class GalleryDetailPage extends StatefulWidget {
   final GalleryInfo galleryInfo;
   final List<Widget> children;
 
-  GalleryDetailPage({Key key, this.galleryInfo, this.children = const []})
+  GalleryDetailPage({Key? key,required this.galleryInfo, this.children = const []})
       : super(key: key);
 
   @override
@@ -19,7 +19,7 @@ class GalleryDetailPage extends StatefulWidget {
 }
 
 class _GalleryDetailPageState extends State<GalleryDetailPage> {
-  PageController _ctrl;
+  late PageController _ctrl;
   final ValueNotifier<int> _currentIndex = ValueNotifier<int>(0);
 
   @override
@@ -200,7 +200,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
     );
   }
 
-  Widget _buildIndicatorText(BuildContext context, int value, Widget child) {
+  Widget _buildIndicatorText(BuildContext context, int value, Widget? child) {
     String indicatorText =
         "${widget.children.length != 0 ? (value + 1) : 0} / ${widget.children.length}";
 

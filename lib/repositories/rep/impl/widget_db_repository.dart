@@ -61,7 +61,7 @@ class WidgetDbRepository implements WidgetRepository {
     List<Map<String, dynamic>> data = await _widgetDao.queryByIds(id);
     List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
     if (widgets.length > 0) return widgets.map(WidgetModel.fromPo).toList();
-    return null;
+    return [];
   }
 
   @override
@@ -73,7 +73,7 @@ class WidgetDbRepository implements WidgetRepository {
 
 
   @override
-  Future<void> collected(int id) async{
-    return  await _likeDao.like(id);
+  Future<int> collected(int id) async{
+    return await _likeDao.like(id);
   }
 }

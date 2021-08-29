@@ -25,9 +25,9 @@ class CustomFadeInImage extends StatelessWidget {
   Widget build(BuildContext context) {
     var placeholder = "assets/images/icon_head.webp";
     var img =
-        "https://user-gold-cdn.xitu.io/2017/8/24/"
-        "d324efef8cbee6468a018aad7ab2ba6b?imageView2/"
-        "1/w/180/h/180/q/85/format/webp/interlace/1";
+        "https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/"
+        "15739960c2da4de3a263eeabcb60057f~tplv-k3u1fbpfcp-zoom-crop-mark"
+        ":1304:1304:1304:734.awebp";
     return FadeInImage.assetNetwork(
         placeholder: placeholder,
         image: img,
@@ -36,7 +36,7 @@ class CustomFadeInImage extends StatelessWidget {
       fit: BoxFit.cover,
       repeat:ImageRepeat.noRepeat,
       alignment: Alignment.center,
-      fadeInDuration: Duration(seconds: 5),
+      fadeInDuration:const Duration(seconds: 5),
       fadeInCurve: Curves.easeInCubic,
     );
   }

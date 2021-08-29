@@ -18,7 +18,7 @@ class CustomAlignTransition extends StatefulWidget {
 
 class _CustomAlignTransitionState extends State<CustomAlignTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {

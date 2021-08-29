@@ -18,8 +18,8 @@ class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
     AuthEvent event,
   ) async* {
     if (event is AppStarted) {
-      String token = await LocalStorage.get(LocalStorage.tokenKey);
-      String userJson = await LocalStorage.get(LocalStorage.userKey);
+      String? token = await LocalStorage.get(LocalStorage.tokenKey);
+      String? userJson = await LocalStorage.get(LocalStorage.userKey);
       if (token != null && userJson != null) {
         bool disable = JwtDecoder.isExpired(token);
         if (!disable) {

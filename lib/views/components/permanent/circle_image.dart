@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class CircleImage extends StatelessWidget {
   CircleImage(
-      {Key key,
+      {Key? key,
         this.borderSize =3,
-      @required this.image,
+      required this.image,
       this.size = 70,
       this.shadowColor,
       this.roundColor})
       : super(key: key);
   final ImageProvider image; //图片
   final double size; //大小
-  final Color shadowColor; //阴影颜色
-  final Color roundColor; //边框颜色
+  final Color? shadowColor; //阴影颜色
+  final Color? roundColor; //边框颜色
   final double borderSize;
   @override
   Widget build(BuildContext context) {

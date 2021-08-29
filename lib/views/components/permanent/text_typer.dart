@@ -8,8 +8,8 @@ class TextTyper extends StatefulWidget {
   final TextStyle textStyle;
 
   TextTyper(
-      {this.text,
-      Key key,
+      {required this.text,
+      Key? key,
       this.textStyle =
           const TextStyle(fontWeight: FontWeight.w600, fontSize: 20.0),
       this.duration = const Duration(milliseconds: 150)})
@@ -21,7 +21,7 @@ class TextTyper extends StatefulWidget {
 
 class _TextTyperState extends State<TextTyper> {
   final ValueNotifier<String> data = ValueNotifier<String>("");
-  Timer _timer;
+   Timer? _timer;
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _TextTyperState extends State<TextTyper> {
     );
   }
 
-  Widget _buildByAnim(BuildContext context, Widget child) => Text(
+  Widget _buildByAnim(BuildContext context, Widget? child) => Text(
         data.value,
         style: widget.textStyle,
       );

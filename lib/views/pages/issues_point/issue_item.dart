@@ -14,7 +14,7 @@ import 'package:flutter_unit/model/github/issue.dart';
 class IssueItem extends StatelessWidget {
   final Issue issue;
 
-  IssueItem({this.issue});
+  IssueItem({required this.issue});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class IssueItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 10),
             child: Text(
-              issue.title,
+              '${issue.title}',
               style: TextStyle(fontSize: 15, color: Colors.grey, shadows: [
                 Shadow(color: Colors.white, offset: Offset(1, .5))
               ]),
@@ -65,7 +65,7 @@ class IssueItem extends StatelessWidget {
     return Row(
       children: <Widget>[
         CircleImage(
-          image: NetworkImage(issue.user.avatarUrl),
+          image: NetworkImage(issue.user?.avatarUrl??''),
           size: 40,
           borderSize: 2,
         ),
@@ -81,11 +81,11 @@ class IssueItem extends StatelessWidget {
           width: 10,
         ),
         Text(
-          issue.user.login,
+          '${issue.user?.login}',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         Spacer(),
-        Text(ConvertMan.time2string(issue.createdAt)),
+        Text(ConvertMan.time2string(issue.createdAt!)),
       ],
     );
   }

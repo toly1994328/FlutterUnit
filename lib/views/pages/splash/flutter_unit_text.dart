@@ -7,8 +7,11 @@ class FlutterUnitText extends StatefulWidget {
   final String text;
   final Color color;
 
-  FlutterUnitText({this.text = "Toly", this.color = Colors.blue, Key key})
-      : super(key: key);
+  FlutterUnitText({
+    this.text = "Toly",
+    this.color = Colors.blue,
+    Key? key,
+  }) : super(key: key);
 
   @override
   _FlutterUnitTextState createState() => _FlutterUnitTextState();
@@ -17,12 +20,12 @@ class FlutterUnitText extends StatefulWidget {
 class _FlutterUnitTextState extends State<FlutterUnitText>
     with SingleTickerProviderStateMixin {
 
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   final TextPainter _textPainter =
       TextPainter(textDirection: TextDirection.ltr);
 
-  Animation<double> animation;
+  late Animation<double> animation;
 
   @override
   void initState() {
@@ -57,7 +60,10 @@ class _FlutterUnitTextState extends State<FlutterUnitText>
     return CustomPaint(
         size: _textPainter.size,
         painter: SpringPainter(
-            textPainter: _textPainter, color: widget.color, skew: animation));
+          textPainter: _textPainter,
+          color: widget.color,
+          skew: animation,
+        ));
   }
 }
 
@@ -73,16 +79,15 @@ class Interpolator extends Curve {
 
 class SpringPainter extends CustomPainter {
   final ValueListenable<double> skew;
-
-  String _text = '';
-  Color color = Colors.blue;
-
-  SpringPainter({this.skew, this.textPainter, this.color})
-      : super(repaint: skew) {
-    _text = textPainter.text.toPlainText();
-  }
-
   final TextPainter textPainter;
+  String _text = '';
+  Color color;
+
+  SpringPainter(
+      {required this.skew, required this.textPainter, this.color = Colors.blue})
+      : super(repaint: skew) {
+    _text = textPainter.text?.toPlainText() ?? '';
+  }
 
   @override
   void paint(Canvas canvas, Size size) {

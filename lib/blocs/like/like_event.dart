@@ -13,7 +13,7 @@ class EventLoadLikeData extends LikeWidgetEvent {
 class ToggleLikeWidgetEvent extends LikeWidgetEvent {
   final int id;
 
-  ToggleLikeWidgetEvent({this.id});
+  ToggleLikeWidgetEvent({required this.id});
 
   @override
   // TODO: implement props

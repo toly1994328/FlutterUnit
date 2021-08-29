@@ -29,7 +29,7 @@ class PaginatedDataTableDemo extends StatefulWidget {
 class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
   int _rowsPerPage = 5;
 
-  int _sortColumnIndex;
+  int _sortColumnIndex = 0;
   bool _sortAscending = true;
 
   final DessertDataSource _dessertsDataSource = DessertDataSource();
@@ -59,9 +59,9 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
               ),
               rowsPerPage: _rowsPerPage,
               availableRowsPerPage: [5, 8, 10, 15],
-              onRowsPerPageChanged: (int value) {
+              onRowsPerPageChanged: (int? value) {
                 setState(() {
-                  _rowsPerPage = value;
+                  _rowsPerPage = value ?? 0;
                 });
               },
               sortColumnIndex: _sortColumnIndex,
@@ -175,14 +175,14 @@ class DessertDataSource extends DataTableSource {
   int _selectedCount = 0;
 
   @override
-  DataRow getRow(int index) {
+  DataRow? getRow(int index) {
     if (index >= _desserts.length) return null;
     final HeroInfo dessert = _desserts[index];
     return DataRow.byIndex(
         index: index,
         selected: dessert.selected,
-        onSelectChanged: (bool value) {
-          if (dessert.selected != value) {
+        onSelectChanged: (bool? value) {
+          if (dessert.selected != value && value != null) {
             _selectedCount += value ? 1 : -1;
             assert(_selectedCount >= 0);
             dessert.selected = value;
@@ -206,7 +206,8 @@ class DessertDataSource extends DataTableSource {
   @override
   int get selectedRowCount => _selectedCount;
 
-  void _selectAll(bool checked) {
+  void _selectAll(bool? checked) {
+    if (checked == null) return;
     for (HeroInfo dessert in _desserts) dessert.selected = checked;
     _selectedCount = checked ? _desserts.length : 0;
     notifyListeners();

@@ -33,7 +33,7 @@ class _CustomAnimatedDefaultTextStyleState
     Shadow(offset: Offset(1, 1), color: Colors.purple, blurRadius: 3)
   ]);
 
-  TextStyle _style;
+  late TextStyle _style;
 
   @override
   void initState() {

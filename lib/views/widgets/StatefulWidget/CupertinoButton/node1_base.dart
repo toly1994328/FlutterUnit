@@ -17,13 +17,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomCupertinoButton extends StatelessWidget {
+
+  final Map<Color,double> data = {
+    CupertinoColors.activeBlue:4.0,
+    Colors.blue:6.0,
+    CupertinoColors.activeOrange:8.0,
+  };
+
   @override
   Widget build(BuildContext context) {
-    var data = {
-      CupertinoColors.activeBlue:4.0,
-      Colors.blue:6.0,
-      CupertinoColors.activeOrange:8.0,
-    };
+
     return Wrap(
       spacing: 20,
       children:data.keys.map((e)=> CupertinoButton(
@@ -31,7 +34,7 @@ class CustomCupertinoButton extends StatelessWidget {
         onPressed: () => Navigator.of(context).pushNamed('AboutMePage'),
         color: e,
         pressedOpacity: 0.4,
-        borderRadius:  BorderRadius.all(Radius.circular(data[e])),
+        borderRadius:  BorderRadius.all(Radius.circular(data[e]!)),
         child: Text("iOS"),
       )).toList()
     );

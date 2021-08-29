@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 /// 说明:
 
 class CountDownWidget extends StatefulWidget {
-  final Function(BuildContext context) onPress;
+  final Function(BuildContext context)? onPress;
 
-  CountDownWidget({Key key, this.onPress}) : super(key: key);
+  CountDownWidget({Key? key, this.onPress}) : super(key: key);
 
   @override
   _CountDownWidgetState createState() => _CountDownWidgetState();
 }
 
 class _CountDownWidgetState extends State<CountDownWidget> {
-  Timer timer;
+  Timer? timer;
   int count = 60;
   bool startTimer = false;
 
@@ -41,7 +41,7 @@ class _CountDownWidgetState extends State<CountDownWidget> {
                 setState(() {
                   startTimer = true;
                 });
-                widget.onPress(context);
+                widget.onPress?.call(context);
               },
         child: Text(startTimer ? '$count 秒后重试' : '获取验证码'));
   }

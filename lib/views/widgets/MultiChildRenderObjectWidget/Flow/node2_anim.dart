@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class BurstFlow extends StatefulWidget {
   final List<Widget> children;
   final Widget menu;
 
-  BurstFlow({@required this.children, @required this.menu});
+  BurstFlow({required this.children, required this.menu});
 
   @override
   _BurstFlowState createState() => _BurstFlowState();
@@ -41,7 +42,7 @@ class BurstFlow extends StatefulWidget {
 
 class _BurstFlowState extends State<BurstFlow>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
   double _rad = 0.0;
   bool _closed = true;
 
@@ -90,27 +91,26 @@ class _BurstFlowDelegate extends FlowDelegate {
   @override //绘制孩子的方法
   void paintChildren(FlowPaintingContext context) {
     double radius = context.size.shortestSide / 2;
-    var count = context.childCount - 1;
-    var perRad = 2 * pi / count;
+    final int count = context.childCount - 1;
+    final double perRad = 2 * pi / count;
     for (int i = 0; i < count; i++) {
-      print(i);
-      var cSizeX = context.getChildSize(i).width / 2;
-      var cSizeY = context.getChildSize(i).height / 2;
-      var offsetX = rad * (radius - cSizeX) * cos(i * perRad) + radius;
-      var offsetY = rad * (radius - cSizeY) * sin(i * perRad) + radius;
+      Size size = context.getChildSize(i) ?? Size.zero;
+      final double offsetX = rad * (radius - size.width/2) * cos(i * perRad) + radius;
+      final double offsetY = rad * (radius - size.height/2) * sin(i * perRad) + radius;
       context.paintChild(i,
           transform: Matrix4.translationValues(
-              offsetX - cSizeX, offsetY - cSizeY, 0.0));
+              offsetX - size.width/2, offsetY - size.height/2, 0.0));
     }
+
+    Size size = context.getChildSize(context.childCount - 1) ?? Size.zero;
+
     context.paintChild(context.childCount - 1,
         transform: Matrix4.translationValues(
-            radius - context.getChildSize(context.childCount - 1).width / 2,
-            radius - context.getChildSize(context.childCount - 1).height / 2,
-            0.0));
+            radius - size.width / 2, radius - size.height / 2, 0.0));
   }
 
   @override
-  bool shouldRepaint(FlowDelegate oldDelegate) {
-    return true;
+  bool shouldRepaint(_BurstFlowDelegate oldDelegate) {
+    return oldDelegate.rad != rad;
   }
 }

@@ -109,7 +109,7 @@ class DataManagePage extends StatelessWidget {
         CategoryRepository repository =
             BlocProvider.of<CategoryBloc>(context).repository;
         await repository.syncCategoryByData(
-            result.data.data, result.data.likeData);
+            result.data!.data, result.data!.likeData);
         BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
         BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
       } else {

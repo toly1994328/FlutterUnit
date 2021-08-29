@@ -24,7 +24,7 @@ class AnimatedBuilderDemo extends StatefulWidget {
 
 class _AnimatedBuilderDemoState extends State<AnimatedBuilderDemo>
     with SingleTickerProviderStateMixin {
-  AnimationController controller;
+  late AnimationController controller;
 
   @override
   void initState() {

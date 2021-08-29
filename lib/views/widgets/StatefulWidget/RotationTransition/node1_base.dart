@@ -19,15 +19,19 @@ class CustomRotationTransition extends StatefulWidget {
 
 class _CustomRotationTransitionState extends State<CustomRotationTransition> with SingleTickerProviderStateMixin{
 
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {
-     _ctrl= AnimationController(vsync: this,duration: const Duration(seconds: 2));
-     _ctrl.forward();
     super.initState();
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    _ctrl.forward();
   }
-@override
+
+  @override
   void dispose() {
     _ctrl.dispose();
     super.dispose();
@@ -35,7 +39,6 @@ class _CustomRotationTransitionState extends State<CustomRotationTransition> wit
 
   @override
   Widget build(BuildContext context) {
-
     return GestureDetector(
       onTap: () => _ctrl.forward(from: 0),
       child: Container(
@@ -43,8 +46,15 @@ class _CustomRotationTransitionState extends State<CustomRotationTransition> wit
         width: 100,
         height: 100,
         child: RotationTransition(
-          turns: CurvedAnimation(parent: _ctrl, curve: Curves.linear),
-          child: const Icon(Icons.camera_outlined,color: Colors.green,size: 60),
+          turns: CurvedAnimation(
+            parent: _ctrl,
+            curve: Curves.linear,
+          ),
+          child: const Icon(
+            Icons.camera_outlined,
+            color: Colors.green,
+            size: 60,
+          ),
         ),
       ),
     );

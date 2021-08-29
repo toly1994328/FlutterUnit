@@ -22,7 +22,7 @@ class GalleryUnit extends StatefulWidget {
 class _GalleryUnitState extends State<GalleryUnit> {
   final ValueNotifier<double> factor = ValueNotifier<double>(0);
 
-  PageController _ctrl;
+ late PageController _ctrl;
 
   final int _firstOffset = 1000; //初始偏移
   int _position = 0; //页面位置
@@ -38,8 +38,11 @@ class _GalleryUnitState extends State<GalleryUnit> {
       viewportFraction: 0.9,
       initialPage: _position,
     )..addListener(() {
-        double value = (_ctrl.page - _firstOffset + 1) % 5 / 5;
+      if(_ctrl.page!=null){
+        double value = (_ctrl.page! - _firstOffset + 1) % 5 / 5;
         factor.value = value == 0 ? 1 : value;
+      }
+
       });
   }
 
@@ -76,7 +79,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
           ],
         ),
         valueListenable: factor,
-        builder: (_, value, child) => Container(
+        builder: (_,double value, child) => Container(
           color: Color.lerp(
             color,
             nextColor,
@@ -161,10 +164,10 @@ class _GalleryUnitState extends State<GalleryUnit> {
         ));
   }
 
-  Widget _buildAnimItemByIndex(BuildContext context, Widget child, int index) {
+  Widget _buildAnimItemByIndex(BuildContext context, Widget? child, int index) {
     double value;
-    if (_ctrl.position.haveDimensions) {
-      value = _ctrl.page - index;
+    if (_ctrl.position.haveDimensions&&_ctrl.page!=null) {
+      value = _ctrl.page! - index;
     } else {
       value = (_position - index).toDouble();
     }

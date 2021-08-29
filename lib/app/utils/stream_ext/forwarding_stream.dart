@@ -18,8 +18,8 @@ Stream<R> forwardStream<T, R>(
   ArgumentError.checkNotNull(stream, 'stream');
   ArgumentError.checkNotNull(connectedSink, 'connectedSink');
 
-  StreamController<R> controller;
-  StreamSubscription<T> subscription;
+  late StreamController<R> controller;
+  late StreamSubscription<T> subscription;
 
   void runCatching(void Function() block) {
     try {
@@ -50,9 +50,9 @@ Stream<R> forwardStream<T, R>(
     return Future.wait<dynamic>(futures);
   };
 
-  final onPause = ([Future resumeSignal]) {
+  final onPause = ([Future? resumeSignal]) {
     subscription.pause(resumeSignal);
-    runCatching(() => connectedSink.onPause(controller, resumeSignal));
+    runCatching(() => connectedSink.onPause(controller, resumeSignal!));
   };
 
   final onResume = () {

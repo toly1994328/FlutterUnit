@@ -17,7 +17,7 @@ class SimpleWidgetListItem extends StatelessWidget {
   final WidgetModel data;
 
   SimpleWidgetListItem({
-    this.data,
+    required this.data,
   });
 
   @override
@@ -104,7 +104,7 @@ class SimpleWidgetListItem extends StatelessWidget {
                 ),
               )
             : CircleImage(
-                image: data.image,
+                image: data.image!,
                 size: 55,
               ),
       );
@@ -121,7 +121,7 @@ class SimpleWidgetListItem extends StatelessWidget {
               style:  TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
-                  decoration: (data.deprecated??false)?TextDecoration.lineThrough:TextDecoration.none,
+                  decoration: data.deprecated?TextDecoration.lineThrough:TextDecoration.none,
                   decorationThickness: 2,
                   shadows: [
                     Shadow(color: Colors.white, offset: Offset(.3, .3))

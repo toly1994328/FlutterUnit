@@ -10,9 +10,9 @@ import 'package:flutter_unit/model/widget_model.dart';
 
 class CollectWidgetListItem extends StatelessWidget {
   final WidgetModel data;
-  final Function(WidgetModel) onDeleteItemClick;
+  final Function(WidgetModel model)? onDeleteItemClick;
 
-  CollectWidgetListItem({this.data, this.onDeleteItemClick});
+  CollectWidgetListItem({required this.data, this.onDeleteItemClick});
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +49,7 @@ class CollectWidgetListItem extends StatelessWidget {
             right: 5,
             child: FeedbackWidget(
               onPressed: () {
-                if (onDeleteItemClick != null) {
-                  onDeleteItemClick(data);
-                }
+                onDeleteItemClick?.call(data);
               },
               child: const Icon(
                 CupertinoIcons.delete_solid,
@@ -74,7 +72,7 @@ class CollectWidgetListItem extends StatelessWidget {
                 ),
               )
             : CircleImage(
-                image: data.image,
+                image: data.image!,
                 size: 50,
               ),
       );

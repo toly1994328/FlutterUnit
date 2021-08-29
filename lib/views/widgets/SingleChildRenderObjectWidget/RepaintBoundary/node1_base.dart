@@ -30,7 +30,7 @@ class TempPlayBezier3Page extends StatefulWidget {
 
 class _TempPlayBezier3PageState extends State<TempPlayBezier3Page> {
   List<Offset> _pos = <Offset>[];
-  int selectPos;
+  int? selectPos;
 
   @override
   void initState() {
@@ -59,17 +59,17 @@ class _TempPlayBezier3PageState extends State<TempPlayBezier3Page> {
 }
 
 class TempBezierPainter extends CustomPainter {
-  Paint _gridPaint;
-  Path _gridPath;
+  late Paint _gridPaint;
+  late Path _gridPath;
 
-  Paint _mainPaint;
-  Path _mainPath;
-  int selectPos;
-  Paint _helpPaint;
+  late Paint _mainPaint;
+  late Path _mainPath;
+  int? selectPos;
+  late Paint _helpPaint;
 
   List<Offset> pos;
 
-  TempBezierPainter({this.pos, this.selectPos}) {
+  TempBezierPainter({this.pos=const [], this.selectPos}) {
     _gridPaint = Paint()..style = PaintingStyle.stroke;
     _gridPath = Path();
 
@@ -173,7 +173,7 @@ class TempBezierPainter extends CustomPainter {
   void _drawSelectPos(Canvas canvas) {
     if (selectPos == null) return;
     canvas.drawCircle(
-        pos[selectPos],
+        pos[selectPos!],
         10,
         _helpPaint
           ..color = Colors.green

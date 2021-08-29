@@ -24,7 +24,7 @@ class PrimaryScrollControllerDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    ScrollController label = PrimaryScrollController.of(context);
+    ScrollController? label = PrimaryScrollController.of(context);
 
     return Container(
       color: Colors.blue.withOpacity(0.1),

@@ -22,7 +22,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       if(result.data == null){
         yield RegisterError('注册失败');
       }else{
-        if (result.data) {
+        if (result.data!=null&&result.data!) {
           // 注册成功
           yield RegisterSuccess(event.email);
         }else{

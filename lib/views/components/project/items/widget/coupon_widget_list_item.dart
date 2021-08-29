@@ -16,7 +16,7 @@ class CouponWidgetListItem extends StatelessWidget {
   final bool isClip;
 
   CouponWidgetListItem(
-      {this.data,
+      {required this.data,
       this.hasTopHole = true,
       this.hasBottomHole = false,
       this.isClip = true});
@@ -80,7 +80,7 @@ class CouponWidgetListItem extends StatelessWidget {
                   ),
                 )
               : CircleImage(
-                  image: data.image,
+                  image: data.image!,
                   size: 60,
                 ),
         ),
@@ -122,7 +122,7 @@ class CouponWidgetListItem extends StatelessWidget {
                 style:  TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
-                    decoration: (data.deprecated??false)?TextDecoration.lineThrough:TextDecoration.none,
+                    decoration: data.deprecated?TextDecoration.lineThrough:TextDecoration.none,
                     decorationThickness: 2,
                     shadows: [
                       Shadow(color: Colors.white, offset: Offset(.3, .3))

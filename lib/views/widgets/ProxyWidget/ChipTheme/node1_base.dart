@@ -59,12 +59,12 @@ class _CustomFilterChipState extends State<CustomFilterChip> {
       padding: const EdgeInsets.all(4.0),
       child: FilterChip(
         avatar: CircleAvatar(child: Text(key)),
-        label: Text(map[key]),
+        label: Text(map[key]!),
         selected: _selected.contains(map[key]),
         onSelected: (bool value) {
           setState(() {
             if (value) {
-              _selected.add(map[key]);
+              _selected.add(map[key]!);
             } else {
               _selected.removeWhere((name) => name == map[key]);
             }

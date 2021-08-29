@@ -10,10 +10,10 @@ import 'package:flutter_unit/model/category_model.dart';
 
 class CategoryListItem extends StatelessWidget {
   final CategoryModel data;
-  final Function(CategoryModel) onDeleteItemClick;
-  final Function(CategoryModel) onEditItemClick;
+  final Function(CategoryModel)? onDeleteItemClick;
+  final Function(CategoryModel)? onEditItemClick;
 
-  CategoryListItem({this.data, this.onDeleteItemClick,this.onEditItemClick});
+  CategoryListItem({required this.data, this.onDeleteItemClick,this.onEditItemClick});
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +59,7 @@ class CategoryListItem extends StatelessWidget {
                       child:
                       FeedbackWidget(
                         onPressed: () {
-                          if (onEditItemClick != null) {
-                            onEditItemClick(data);
-                          }
+                          onEditItemClick?.call(data);
                         },
                         child: Icon(
                           Icons.edit,
@@ -103,9 +101,7 @@ class CategoryListItem extends StatelessWidget {
             )),
           FeedbackWidget(
             onPressed: () {
-              if (onDeleteItemClick != null) {
-                onDeleteItemClick(data);
-              }
+              onDeleteItemClick?.call(data);
             },
             child: const Icon(
               CupertinoIcons.delete_solid,

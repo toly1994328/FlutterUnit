@@ -15,17 +15,17 @@ import 'package:flutter/material.dart';
 //          "【pinned】 : 是否顶部停留   【bool】",
 //    }
 class SliverPersistentHeaderDemo extends StatelessWidget {
-  final data = <Color>[
-    Colors.purple[50],
-    Colors.purple[100],
-    Colors.purple[200],
-    Colors.purple[300],
-    Colors.purple[400],
-    Colors.purple[500],
-    Colors.purple[600],
-    Colors.purple[700],
-    Colors.purple[800],
-    Colors.purple[900],
+  final List<Color> data = [
+    Colors.purple[50]!,
+    Colors.purple[100]!,
+    Colors.purple[200]!,
+    Colors.purple[300]!,
+    Colors.purple[400]!,
+    Colors.purple[500]!,
+    Colors.purple[600]!,
+    Colors.purple[700]!,
+    Colors.purple[800]!,
+    Colors.purple[900]!,
   ];
 
   @override
@@ -135,9 +135,9 @@ class SliverPersistentHeaderDemo extends StatelessWidget {
 
 class _SliverDelegate extends SliverPersistentHeaderDelegate {
   _SliverDelegate({
-    @required this.minHeight,
-    @required this.maxHeight,
-    @required this.child,
+    required this.minHeight,
+    required this.maxHeight,
+    required this.child,
   });
 
   final double minHeight; //最小高度

@@ -8,85 +8,85 @@ import 'repository_permissions.dart';
 part 'g/repository.g.dart';
 
 class Repository {
-  int id;
+  int? id;
 
-  int size;
+  int? size;
 
-  String name;
+  String? name;
 
-  String fullName;
-
-
-  String htmlUrl;
-
-  String description;
-
-  String language;
+  String? fullName;
 
 
-  String defaultBranch;
+  String? htmlUrl;
+
+  String? description;
+
+  String? language;
 
 
-  DateTime createdAt;
+  String? defaultBranch;
 
 
-  DateTime updatedAt;
-
-  DateTime pushedAt;
+  DateTime? createdAt;
 
 
-  String gitUrl;
+  DateTime? updatedAt;
+
+  DateTime? pushedAt;
 
 
-  String sshUrl;
+  String? gitUrl;
 
 
-  String cloneUrl;
+  String? sshUrl;
 
 
-  String svnUrl;
+  String? cloneUrl;
 
 
-  int stargazersCount;
+  String? svnUrl;
 
 
-  int watchersCount;
+  int? stargazersCount;
 
 
-  int forksCount;
+  int? watchersCount;
 
 
-  int openIssuesCount;
+  int? forksCount;
 
 
-  int subscribersCount;
+  int? openIssuesCount;
 
 
-  bool private;
+  int? subscribersCount;
 
-  bool fork;
 
-  bool hasIssues;
+  bool? private;
 
-  bool hasProjects;
+  bool? fork;
 
-  bool hasDownloads;
+  bool? hasIssues;
 
-  bool hasWiki;
+  bool? hasProjects;
 
-  bool hasPages;
+  bool? hasDownloads;
 
-  GithubUser owner;
+  bool? hasWiki;
 
-  License license;
+  bool? hasPages;
 
-  Repository parent;
+  GithubUser? owner;
 
-  RepositoryPermissions permissions;
+  License? license;
 
-  List<String> topics;
+  Repository? parent;
 
-  int allIssueCount;
+  RepositoryPermissions? permissions;
+
+  List<String>? topics;
+
+  int? allIssueCount;
 
   Repository(
     this.id,

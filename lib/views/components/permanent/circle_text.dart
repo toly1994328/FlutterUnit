@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class CircleText extends StatelessWidget {
   CircleText(
-      {Key key,
-        @required this.text,
+      {Key? key,
+        required this.text,
         this.size = 70,
         this.fontSize = 24,
         this.color = Colors.white,
@@ -14,10 +14,10 @@ class CircleText extends StatelessWidget {
   final String text; //图片
   final double size; //大小
   final double fontSize; //大小
-  final Color shadowColor; //阴影颜色
+  final Color? shadowColor; //阴影颜色
   final Color color; //阴影颜色
-  final Color roundColor; //边框颜色
-  final Color backgroundColor; //边框颜色
+  final Color? roundColor; //边框颜色
+  final Color? backgroundColor; //边框颜色
   @override
   Widget build(BuildContext context) {
     Widget headIcon = Container(

@@ -7,7 +7,7 @@ import 'package:flutter_unit/app/res/style_unit.dart';
 /// 说明:  默认 加载视图
 
 class LoadingShower extends StatelessWidget {
- const LoadingShower({Key key}) : super(key: key);
+ const LoadingShower({Key? key}) : super(key: key);
 
 
   @override

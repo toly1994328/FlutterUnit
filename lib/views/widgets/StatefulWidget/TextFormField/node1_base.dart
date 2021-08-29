@@ -43,7 +43,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     );
   }
 
-  String _validateUsername(value) {
+  String? _validateUsername(value) {
     if (value.isEmpty) {
       return '用户名不能为空';
     }
@@ -72,8 +72,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   }
 
   _onSubmit(){
-    _formKey.currentState.save();
-    if (_formKey.currentState.validate()) {
+    if(_formKey.currentState==null) return;
+    _formKey.currentState!.save();
+    if (_formKey.currentState!.validate()) {
       FocusScope.of(context).requestFocus(FocusNode());
     }
   }

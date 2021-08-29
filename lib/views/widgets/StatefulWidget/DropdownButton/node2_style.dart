@@ -21,8 +21,8 @@ class StyleDropDownButton extends StatefulWidget {
 
 class _StyleDropDownButtonState extends State<StyleDropDownButton> {
   Color _color = Colors.red ;
-  final _colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
-  final _info = ["红色", "黄色", "蓝色", "绿色"];
+  final List<Color> _colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
+  final List<String> _info = ["红色", "黄色", "蓝色", "绿色"];
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +33,16 @@ class _StyleDropDownButtonState extends State<StyleDropDownButton> {
           margin: EdgeInsets.symmetric(horizontal: 20),
           width: 50,
           height: 50,
-          color: _color??Colors.transparent,
+          color: _color,
         ),
         DropdownButton<Color>(
             hint: Text('请选择'),
             isDense: true,
             iconSize:20,
-            iconEnabledColor:_color??Colors.orange,
+            iconEnabledColor:_color,
             value: _color,
             items: _buildItems(),
-            onChanged: (v) => setState(() => _color = v)),
+            onChanged: (v) => setState(() => _color = v??Colors.blue)),
       ],
     );
   }

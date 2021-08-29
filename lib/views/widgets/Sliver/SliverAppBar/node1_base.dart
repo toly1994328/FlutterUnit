@@ -32,17 +32,17 @@ class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
   bool _pinned = false;
   bool _snap = false;
 
-  final data = <Color>[
-    Colors.purple[50],
-    Colors.purple[100],
-    Colors.purple[200],
-    Colors.purple[300],
-    Colors.purple[400],
-    Colors.purple[500],
-    Colors.purple[600],
-    Colors.purple[700],
-    Colors.purple[800],
-    Colors.purple[900],
+  final List<Color> data = [
+    Colors.purple[50]!,
+    Colors.purple[100]!,
+    Colors.purple[200]!,
+    Colors.purple[300]!,
+    Colors.purple[400]!,
+    Colors.purple[500]!,
+    Colors.purple[600]!,
+    Colors.purple[700]!,
+    Colors.purple[800]!,
+    Colors.purple[900]!,
   ];
 
   @override
@@ -163,7 +163,6 @@ class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
                   if(_floating){
                     setState(() => _snap = v);
                   }
-
                 }),
           ],
         )

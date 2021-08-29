@@ -19,13 +19,13 @@ class VerticalStepper extends StatefulWidget {
 class _VerticalStepperState extends State<VerticalStepper> {
   int _position = 0;
 
-  final stepsData = {
+  final Map<String,String> stepsData = {
     "填写表单": '请按表单填写个人信息。',
     "邮箱校验": '已将邮件发送至您的邮箱，请按照相关指示对您的账号进行邮箱校验。',
     "注册完成": '恭喜您，注册完成！',
   };
 
-  final steps = [
+  final List<Step> steps = [
     Step(
       title: Text("填写表单"),
       content: Container(height: 60, child: Text("请按表单填写个人信息")),
@@ -60,7 +60,7 @@ class _VerticalStepperState extends State<VerticalStepper> {
             }
           },
           controlsBuilder: (_,
-              {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
+              {VoidCallback? onStepContinue, VoidCallback? onStepCancel}) {
             return Row(
               children: <Widget>[
                 RaisedButton(
@@ -97,7 +97,7 @@ class _VerticalStepperState extends State<VerticalStepper> {
               ),
               isActive: isActive,
               state: _getState(stepsData.keys.toList().indexOf(e)),
-              content: Container(height: 60, child: Text(stepsData[e])),
+              content: Container(height: 60, child: Text(stepsData[e]!)),
             );
           }).toList()),
     );

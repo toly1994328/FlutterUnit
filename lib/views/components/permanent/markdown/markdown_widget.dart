@@ -113,7 +113,7 @@ class MarkdownWidget extends StatelessWidget {
       Iterable<Match> tags = exp.allMatches(markdownData);
       if (tags != null && tags.length > 0) {
         for (Match m in tags) {
-          String imageMatch = m.group(0);
+          String imageMatch = m.group(0)??'';
           if (imageMatch != null && !imageMatch.contains(".svg")) {
             String match = imageMatch.replaceAll("\)", "?raw=true)");
             if (!match.contains(".svg") && match.contains("http")) {
@@ -126,7 +126,7 @@ class MarkdownWidget extends StatelessWidget {
             } else {
               match = "";
             }
-            mdDataCode = mdDataCode.replaceAll(m.group(0), match);
+            mdDataCode = mdDataCode.replaceAll(m.group(0)??'', match);
           }
         }
       }
@@ -135,12 +135,12 @@ class MarkdownWidget extends StatelessWidget {
       tags = expImg.allMatches(markdownData);
       if (tags != null && tags.length > 0) {
         for (Match m in tags) {
-          String imageTag = m.group(0);
+          String imageTag = m.group(0)??'';
           String match = imageTag;
           if (imageTag != null) {
             Iterable<Match> srcTags = expSrc.allMatches(imageTag);
             for (Match srcMatch in srcTags) {
-              String srcString = srcMatch.group(0);
+              String srcString = srcMatch.group(0)??'';
               if (srcString != null && srcString.contains("http")) {
                 String newSrc = srcString.substring(
                         srcString.indexOf("http"), srcString.length - 1) +
@@ -168,7 +168,7 @@ class MarkdownWidget extends StatelessWidget {
           styleSheet: _getStyle(context),
           syntaxHighlighter:  Highlighter(),
           data: _getMarkDownData(markdownData),
-          onTapLink: (String text, String href, String title) {
+          onTapLink: (String text, String? href, String title) {
 //            CommonUtils.launchUrl(context, source);
           },
         ),

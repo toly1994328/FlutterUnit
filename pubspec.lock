@@ -70,14 +70,14 @@ packages:
       name: dio
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.0.10"
+    version: "4.0.0"
   equatable:
     dependency: "direct main"
     description:
       name: equatable
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -110,14 +110,14 @@ packages:
       name: flutter_bloc
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "7.0.0"
+    version: "7.1.0"
   flutter_markdown:
     dependency: "direct main"
     description:
       name: flutter_markdown
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.6.1"
+    version: "0.6.4"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -131,7 +131,7 @@ packages:
       name: flutter_star
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.1.2"
+    version: "1.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -148,13 +148,13 @@ packages:
       name: http_parser
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.1.4"
+    version: "4.0.0"
   install_plugin:
     dependency: "direct main"
     description:
-      name: install_plugin
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "plugins/install_plugin-2.0.1"
+      relative: true
+    source: path
     version: "2.0.1"
   intl:
     dependency: "direct main"
@@ -232,7 +232,7 @@ packages:
       name: path_provider
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   path_provider_linux:
     dependency: transitive
     description:
@@ -295,14 +295,14 @@ packages:
       name: share
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.4"
   shared_preferences:
     dependency: "direct main"
     description:
       name: shared_preferences
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.5"
+    version: "2.0.6"
   shared_preferences_linux:
     dependency: transitive
     description:
@@ -412,7 +412,7 @@ packages:
       name: toggle_rotate
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.5"
+    version: "1.0.1"
   typed_data:
     dependency: transitive
     description:
@@ -426,7 +426,7 @@ packages:
       name: url_launcher
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "6.0.3"
+    version: "6.0.9"
   url_launcher_linux:
     dependency: transitive
     description:
@@ -447,7 +447,7 @@ packages:
       name: url_launcher_platform_interface
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.4"
   url_launcher_web:
     dependency: transitive
     description:

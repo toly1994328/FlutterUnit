@@ -1,9 +1,9 @@
 class ResultBean<T> {
-  T data;
+  T? data;
   bool status;
   String msg;
 
-  ResultBean({this.data, this.status, this.msg});
+  ResultBean({this.data, this.status=false, this.msg=''});
 
   @override
   String toString() {
@@ -26,7 +26,7 @@ class ResultBean<T> {
     );
   }
 
-  static ResultBean<T> ok<T>(T data) {
+  static ResultBean<T> ok<T>(T? data) {
     return ResultBean(
       msg: '请求成功',
       data: data,

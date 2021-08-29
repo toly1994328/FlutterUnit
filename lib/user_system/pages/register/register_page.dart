@@ -172,7 +172,7 @@ class _RegisterPageState extends State<RegisterPage> {
         listener: _listenerLogin,
         child: ValueListenableBuilder(
           valueListenable: _enableRegister,
-          builder: (ctx,value,child){
+          builder: (ctx,bool value,child){
             return RaisedButton(
                 elevation: 0,
                 shape: RoundedRectangleBorder(

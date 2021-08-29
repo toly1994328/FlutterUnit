@@ -14,18 +14,17 @@ import '../permanent/color_wrapper.dart';
 class OverlayToolWrapper extends StatefulWidget {
   final Widget child;
 
-  OverlayToolWrapper({Key key, this.child}) : super(key: key);
+  OverlayToolWrapper({Key? key,required this.child}) : super(key: key);
 
   @override
   OverlayToolWrapperState createState() => OverlayToolWrapperState();
 
   static OverlayToolWrapperState of(BuildContext context,
       {bool nullOk = false}) {
-    assert(nullOk != null);
-    assert(context != null);
-    final OverlayToolWrapperState result =
+
+    final OverlayToolWrapperState? result =
         context.findAncestorStateOfType<OverlayToolWrapperState>();
-    if (nullOk || result != null) return result;
+    if (result != null) return result;
     throw FlutterError.fromParts(<DiagnosticsNode>[
       ErrorSummary(
           'OverlayToolWrapper.of() called with a context that does not contain a OverlayToolWrapper.'),
@@ -38,7 +37,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   bool show = false;
   Offset offset = Offset(200, 200);
 
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   final double width = 200;
   final double height = 30;
@@ -46,7 +45,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   final double boxHeight = 110;
 
   final double radius = 60;
-  OverlayEntry entry;
+  OverlayEntry? entry;
   double showWidth = 0;
 
   bool out = false;
@@ -60,7 +59,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       vsync: this,
     )..addListener(_listenAnimate);
 
-    WidgetsBinding.instance.addPostFrameCallback((callback) {
+    WidgetsBinding.instance?.addPostFrameCallback((callback) {
       var px = MediaQuery.of(context).size.width - 100;
       var py = 250.0;
       offset = Offset(px, py);
@@ -180,7 +179,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     }
   }
 
-  double endX;
+  double endX=0;
 
   void _onPanEnd(details) {
     endX = offset.dx;
@@ -210,7 +209,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     }
 
     offset = Offset(px, offset.dy);
-    entry.markNeedsBuild();
+    entry?.markNeedsBuild();
   }
 
   void _updatePosition(DragUpdateDetails details) {
@@ -232,19 +231,19 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       y = MediaQuery.of(context).size.height - menuSize / 2 - circleRadius;
     }
     offset = Offset(x, y);
-    entry.markNeedsBuild();
+    entry?.markNeedsBuild();
   }
 
   void showFloating() {
-    if (!show) {
-      Overlay.of(context).insert(entry);
+    if (!show&&entry!=null) {
+      Overlay.of(context)?.insert(entry!);
       show = true;
     }
   }
 
   void hideFloating() {
     if (show) {
-      entry.remove();
+      entry?.remove();
       show = false;
     }
   }

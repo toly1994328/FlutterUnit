@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 //    }
 class Ball extends StatelessWidget {
   Ball({
-    Key key,
+    Key? key,
     this.radius = 15,
     this.color = Colors.blue,
   }) : super(key: key);
@@ -36,7 +36,7 @@ class Ball extends StatelessWidget {
 
 class SinLayout extends StatefulWidget {
   SinLayout({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

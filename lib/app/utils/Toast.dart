@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class Toast {
   static toast(BuildContext context, String msg,
       {duration = const Duration(milliseconds: 600),
-        Color color,
-        SnackBarAction action}) {
+        Color? color,
+        SnackBarAction? action}) {
 
     Scaffold.of(context).showSnackBar(SnackBar(
       content: Text(msg),

@@ -8,13 +8,13 @@ import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 
 class CategoryApi {
   static Future<ResultBean<bool>> uploadCategoryData(
-      {String data, String likeData}) async {
+      {required String data, required String likeData}) async {
     String errorMsg = "";
 
     var result = await HttpUtil.getInstance().client.post(
         PathUnit.categoryDataSync,
         data: {"data": data, "likeData": likeData}).catchError((err) {
-      errorMsg  =err.toString();
+      errorMsg = err.toString();
     });
 
     if (result.data != null) {
@@ -54,7 +54,11 @@ class CategoryData{
   final String data;
   final String likeData;
 
-  CategoryData({this.categoryDataId, this.userId, this.data, this.likeData});
+  CategoryData(
+      {required this.categoryDataId,
+      required this.userId,
+      required this.data,
+      required this.likeData});
 
   factory CategoryData.fromJson(Map<String, dynamic> map) {
     return CategoryData(

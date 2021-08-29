@@ -35,7 +35,7 @@ class _CustomSnackBarState extends State<CustomSnackBar> {
             )));
   }
 
-  Widget _buildSnackBar() {
+  SnackBar _buildSnackBar() {
     return SnackBar(
       elevation: 3,
       shape: RoundedRectangleBorder(

@@ -15,7 +15,7 @@ import 'widgets_state.dart';
 class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   final WidgetRepository repository;
 
-  WidgetsBloc({@required this.repository}):super(WidgetsLoading(WidgetFamily.statelessWidget));
+  WidgetsBloc({required this.repository}):super(WidgetsLoading(WidgetFamily.statelessWidget));
 
 
 

@@ -12,7 +12,7 @@ import 'package:flutter_unit/model/github/repository.dart';
 class RepoWidget extends StatelessWidget {
   final Repository repository;
 
-  RepoWidget({this.repository});
+  RepoWidget({required this.repository});
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +36,13 @@ class RepoWidget extends StatelessWidget {
           Row(
             children: <Widget>[
               Text(
-                repository.fullName,
+                repository.fullName!,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               SizedBox(width: 10,),
               WrapColor(
                 child: Text(
-                  repository.license.spdxId,
+                  '${repository.license?.type}',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -52,7 +52,7 @@ class RepoWidget extends StatelessWidget {
               Spacer(),
               Text(
                 "创建:" +
-                    ConvertMan.time2string(repository.createdAt, just: true),
+                    ConvertMan.time2string(repository.createdAt!, just: true),
                 style: TextStyle(color: Colors.grey),
               ),
             ],
@@ -60,7 +60,7 @@ class RepoWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
-              repository.description,
+              repository.description!,
               style: TextStyle(color: Colors.grey),
             ),
           ),

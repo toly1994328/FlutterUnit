@@ -33,15 +33,15 @@ class ThemeColorSettingPage extends StatelessWidget {
       crossAxisSpacing: 10,
       childAspectRatio: 1.5,
       children: themeColorSupport
-          .map((e) => FeedbackWidget(
+          .map((MaterialColor c) => FeedbackWidget(
               a: 0.95,
               duration: Duration(milliseconds: 200),
-              onPressed: () => BlocProvider.of<GlobalBloc>(context).add(EventSwitchThemeColor(e)),
+              onPressed: () => BlocProvider.of<GlobalBloc>(context).add(EventSwitchThemeColor(c)),
               child: GridTile(
                   header: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                      color: color == e
+                      color: color == c
                           ? Colors.blue.withAlpha(88):
                       Colors.grey.withAlpha(55),
                     ),
@@ -51,12 +51,12 @@ class ThemeColorSettingPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Spacer(),
-                        Text(colorString(e),
+                        Text(colorString(c),
                             style: TextStyle(
                               color: Colors.white,
                             )),
                         Spacer(),
-                        if (color == e) Padding(
+                        if (color == c) Padding(
                           padding: const EdgeInsets.only(right:8.0),
                           child: Circle(color: Colors.white,radius: 7,),
                         )
@@ -67,20 +67,20 @@ class ThemeColorSettingPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                           gradient: LinearGradient(colors: [
-                        e[50],
-                        e[100],
-                        e[200],
-                        e[300],
-                        e[400],
-                        e[500],
-                        e[600],
-                        e[700],
-                        e[800],
-                        e[900],
+                        c.shade50,
+                        c.shade100,
+                        c.shade200,
+                        c.shade300,
+                        c.shade400,
+                        c.shade500,
+                        c.shade600,
+                        c.shade700,
+                        c.shade800,
+                        c.shade900,
                       ])),
                       alignment: Alignment(0,0.35),
                       child: Text(
-                        Cons.themeColorSupport [e],
+                        '${Cons.themeColorSupport[c]}',
                         style: TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),
                       )),
               )))

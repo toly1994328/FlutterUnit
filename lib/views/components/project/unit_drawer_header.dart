@@ -8,7 +8,7 @@ class UnitDrawerHeader extends StatelessWidget {
   final Color color;
 
 
-  UnitDrawerHeader({this.color});
+  const UnitDrawerHeader({required this.color});
 
   @override
   Widget build(BuildContext context) {

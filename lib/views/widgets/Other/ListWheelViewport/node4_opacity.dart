@@ -15,13 +15,26 @@ import 'package:flutter/material.dart';
 //    }
 
 class ListWheelViewportDemo4 extends StatelessWidget {
+
   final List<Color> data = [
-    Colors.blue[50], Colors.blue[100], Colors.blue[200],
-    Colors.blue[300], Colors.blue[400], Colors.blue[500],
-    Colors.blue[600], Colors.blue[700], Colors.blue[800],
-    Colors.blue[900], Colors.blue[800], Colors.blue[700],
-    Colors.blue[600], Colors.blue[500], Colors.blue[400],
-    Colors.blue[300], Colors.blue[200], Colors.blue[100],
+    Colors.blue[50]!,
+    Colors.blue[100]!,
+    Colors.blue[200]!,
+    Colors.blue[300]!,
+    Colors.blue[400]!,
+    Colors.blue[500]!,
+    Colors.blue[600]!,
+    Colors.blue[700]!,
+    Colors.blue[800]!,
+    Colors.blue[900]!,
+    Colors.blue[800]!,
+    Colors.blue[700]!,
+    Colors.blue[600]!,
+    Colors.blue[500]!,
+    Colors.blue[400]!,
+    Colors.blue[300]!,
+    Colors.blue[200]!,
+    Colors.blue[100]!,
   ];
 
   @override

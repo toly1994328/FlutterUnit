@@ -35,23 +35,23 @@ class ShapeCard extends StatelessWidget {
 
 class StarShapeBorder extends ShapeBorder {
   @override
-  EdgeInsetsGeometry get dimensions => null;
+  EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    return null;
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
+    return Path();
   }
 
   @override
-  Path getOuterPath(Rect rect, {TextDirection textDirection}) =>
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) =>
       Pather.create.nStarPath(9, 50, 40, dx: 50, dy: 50);
 
   @override
-  void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
   }
 
   @override
   ShapeBorder scale(double t) {
-    return null;
+    return this;
   }
 }

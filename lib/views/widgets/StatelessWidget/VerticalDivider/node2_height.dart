@@ -30,9 +30,9 @@ class HeightVerticalDivider extends StatelessWidget {
             .map((e) => VerticalDivider(
           color: e,
           indent:data[e],
-          endIndent: data[e]*2,
+          endIndent: data[e]!*2,
           width: data[e],
-          thickness: data[e]/10,
+          thickness: data[e]!/10,
         ))
             .toList(),
       ),

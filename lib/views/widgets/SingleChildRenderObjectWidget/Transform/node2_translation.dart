@@ -21,7 +21,7 @@ class TranslationTransform extends StatefulWidget {
 }
 
 class _TranslationTransformState extends State<TranslationTransform> {
-  Matrix4 _m4;
+  late Matrix4 _m4;
   double _x = 0;
   double _y = 0;
   double _z = 0;

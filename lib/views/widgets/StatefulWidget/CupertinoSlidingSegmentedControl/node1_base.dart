@@ -47,7 +47,8 @@ class _CupertinoSlidingSegmentedControlDemoState
     );
   }
 
-  void _onValueChanged(int value) {
+  void _onValueChanged(int? value) {
+    if(value==null) return;
     setState(() {
       _value=value;
     });

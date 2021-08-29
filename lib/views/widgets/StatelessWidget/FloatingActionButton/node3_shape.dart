@@ -43,24 +43,24 @@ class ShapeFAB extends StatelessWidget {
 /// 边线形状类
 class StarBorder extends ShapeBorder {
   @override
-  EdgeInsetsGeometry get dimensions => null;
+  EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    return null;
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
+    return Path();
   }
 
   @override
-  Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
     return Pather.create.nStarPath(20, 25, 25 * cos((360 / 9 / 2) * pi / 180),
         dx: rect.height / 2, dy: rect.width / 2);
   }
 
   @override
-  void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {}
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {}
 
   @override
   ShapeBorder scale(double t) {
-    return null;
+    return this;
   }
 }

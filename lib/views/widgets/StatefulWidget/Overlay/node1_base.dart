@@ -91,7 +91,7 @@ _buildFloating() => GestureDetector(
 
 showFloating(BuildContext context) {
   if (!show) {
-    Overlay.of(context).insert(entry);
+    Overlay.of(context)?.insert(entry);
     show = true;
   }
 }

@@ -34,7 +34,7 @@ class _TagPaint extends CustomPainter {
 
   final rate = 0.5;
 
-  _TagPaint({this.tranRate, this.color ,this.shadowHeight})
+  _TagPaint({this.tranRate,required this.color ,required this.shadowHeight})
       : _paint = Paint()..color = color;
 
   @override

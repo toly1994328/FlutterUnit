@@ -38,7 +38,7 @@ class CategoryDao {
           category.info,
           category.priority,
           category.image,
-          category.created.toIso8601String(),
+          category.created?.toIso8601String(),
           category.updated.toIso8601String(),
         ]));
   }
@@ -197,6 +197,6 @@ class CategoryDao {
         "ORDER BY lever DESC";
 
     var data = await db.rawQuery(querySql,[categoryId]);
-    return data.map<int>((e) => e["id"]).toList();
+    return data.map<int>((e) => e["id"] as int).toList();
   }
 }

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
@@ -15,7 +16,7 @@ class DrawPicture extends StatefulWidget {
 }
 
 class _DrawPictureState extends State<DrawPicture> {
-  ui.Image _image;
+  ui.Image? _image;
 
   @override
   void initState() {
@@ -33,7 +34,7 @@ class _DrawPictureState extends State<DrawPicture> {
     ByteData data = await rootBundle.load(path);
     List<int> bytes =
         data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-    return decodeImageFromList(bytes);
+    return decodeImageFromList(Uint8List.fromList(bytes));
   }
 
   @override
@@ -49,7 +50,7 @@ class PaperPainter extends CustomPainter {
   final double strokeWidth = 0.5;
   final Color color = Colors.blue;
 
-  final ui.Image image;
+  final ui.Image? image;
 
   PaperPainter(this.image)
       : _paint = Paint()
@@ -76,11 +77,11 @@ class PaperPainter extends CustomPainter {
   void _drawImage(Canvas canvas, Size size) {
     if (image != null) {
       canvas.drawImageRect(
-          image,
+          image!,
           Rect.fromCenter(
-              center: Offset(image.width / 2, image.height / 2),
-              width: image.width * 1.0,
-              height: image.width * 1.0),
+              center: Offset(image!.width / 2, image!.height / 2),
+              width: image!.width * 1.0,
+              height: image!.width * 1.0),
           Rect.fromLTRB(0, 0, size.width, size.height),
           _paint);
     }

@@ -23,7 +23,7 @@ class _CustomAnimatedPaddingState extends State<CustomAnimatedPadding> {
   final EdgeInsets startPadding = EdgeInsets.all(10);
   final EdgeInsets endPadding = EdgeInsets.all(30);
 
-  EdgeInsets _padding;
+  late EdgeInsets _padding;
 
   @override
   void initState() {

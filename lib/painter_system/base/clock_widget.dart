@@ -12,7 +12,7 @@ import 'package:flutter/scheduler.dart';
 class ClockWidget extends StatefulWidget {
   final double radius;
 
-  const ClockWidget({Key key, this.radius = 100}) : super(key: key);
+  const ClockWidget({Key? key, this.radius = 100}) : super(key: key);
 
   @override
   _ClockWidgetState createState() => _ClockWidgetState();
@@ -20,7 +20,7 @@ class ClockWidget extends StatefulWidget {
 
 class _ClockWidgetState extends State<ClockWidget>
     with SingleTickerProviderStateMixin {
-  Ticker _ticker;
+ late Ticker _ticker;
   ValueNotifier<DateTime> time = ValueNotifier<DateTime>(DateTime.now());
 
   @override
@@ -209,7 +209,7 @@ class ClockPainter extends CustomPainter {
   final double radius;
   final ValueListenable<DateTime> listenable;
 
-  ClockPainter({this.listenable, this.radius = 100})
+  ClockPainter({required this.listenable, this.radius = 100})
       : super(repaint: listenable);
 
   @override

@@ -3,12 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class PictureFrame extends StatelessWidget {
-  final Widget child;
-  final double width;
-  final double height;
-  final Color color;
-  final Alignment alignment;
-  final EdgeInsetsGeometry marge;
+  final Widget? child;
+  final double? width;
+  final double? height;
+  final Color? color;
+  final Alignment? alignment;
+  final EdgeInsetsGeometry? marge;
 
   const PictureFrame(
       {this.child,

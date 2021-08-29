@@ -23,9 +23,14 @@ class DropdownButtonFormFieldDemo extends StatefulWidget {
 }
 
 class _DropdownButtonFormFieldDemoState extends State<DropdownButtonFormFieldDemo> {
-  Color _color;
-  final _colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
-  final _info = ["红色", "黄色", "蓝色", "绿色"];
+  Color _color = Colors.blue;
+  final List<Color> _colors = [
+    Colors.red,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green
+  ];
+  final List<String> _info = ["红色", "黄色", "蓝色", "绿色"];
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,7 @@ class _DropdownButtonFormFieldDemoState extends State<DropdownButtonFormFieldDem
           margin: EdgeInsets.symmetric(horizontal: 20),
           width: 50,
           height: 50,
-          color: _color??_colors[0],
+          color: _color,
         ),
 
         SizedBox(
@@ -50,8 +55,7 @@ class _DropdownButtonFormFieldDemoState extends State<DropdownButtonFormFieldDem
                 color: _color,
               ),
             items: _buildItems(),
-              onChanged: (v) => setState(() => _color = v)
-          ),
+              onChanged: (v) => setState(() => _color = v ?? Colors.blue)),
         )
 
       ],

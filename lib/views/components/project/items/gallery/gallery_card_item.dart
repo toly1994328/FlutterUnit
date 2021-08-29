@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/views/components/permanent/color_wrapper.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
+import 'package:flutter_unit/views/components/permanent/color_wrapper.dart';
 
 /// create by 张风捷特烈 on 2020/11/28
 /// contact me by email 1981462002@qq.com
@@ -10,7 +10,12 @@ import 'package:flutter_unit/painter_system/gallery_factory.dart';
 class GalleryCardItem extends StatelessWidget {
   final GalleryInfo galleryInfo;
   final int count;
-  GalleryCardItem({Key key, this.galleryInfo,this.count=0}) : super(key: key);
+
+  GalleryCardItem({
+    Key? key,
+    required this.galleryInfo,
+    this.count = 0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +117,7 @@ class GalleryInfo {
   }
 
   const GalleryInfo(
-      {this.count = 0, this.name, this.info, this.image, this.router});
+      {this.count = 0,required this.name,required this.info,required this.image,required this.router});
 
   factory GalleryInfo.fromJson(Map<String, dynamic> map) {
     return GalleryInfo(

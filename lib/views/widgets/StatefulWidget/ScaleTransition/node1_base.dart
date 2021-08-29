@@ -17,7 +17,7 @@ class CustomScaleTransition extends StatefulWidget {
 
 class _CustomScaleTransitionState extends State<CustomScaleTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {

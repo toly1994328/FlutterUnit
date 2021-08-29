@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/model/category_model.dart';
+import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/pages/app/unit_navigation.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
@@ -66,7 +68,7 @@ class UnitRouter {
       // 组件详情页
       case widget_detail:
         return Right2LeftRouter(
-            child: WidgetDetailPage(model: settings.arguments));
+            child: WidgetDetailPage(model: settings.arguments as WidgetModel));
 
       case search:
         return Right2LeftRouter(child: SearchPage());
@@ -119,7 +121,7 @@ class UnitRouter {
       case category_show:
         return Right2LeftRouter(
             child: CategoryShow(
-          model: settings.arguments,
+          model: settings.arguments as CategoryModel,
         ));
 
       default:

@@ -21,7 +21,7 @@ class CustomDecoratedBoxTransition extends StatefulWidget {
 class _CustomDecoratedBoxTransitionState
     extends State<CustomDecoratedBoxTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {

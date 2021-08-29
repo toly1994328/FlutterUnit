@@ -16,13 +16,13 @@ class FeedbackWidget extends StatefulWidget {
   final Widget child;
   final FeedMode mode;
   final Duration duration;
-  final Function() onPressed;
-  final Function() onEnd;
-  final Function() onLongPressed;
+  final Function()? onPressed;
+  final Function()? onEnd;
+  final Function()? onLongPressed;
   final a;
 
   FeedbackWidget({
-    @required this.child,
+    required this.child,
     this.mode = FeedMode.scale,
     this.a = 0.9,
     this.onLongPressed,
@@ -36,7 +36,7 @@ class FeedbackWidget extends StatefulWidget {
 }
 
 class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+ late AnimationController _controller;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStat
     )..addStatusListener((s) {
         if (s == AnimationStatus.completed) {
           _controller.reverse().then((value) {
-            if (widget.onEnd != null) widget.onEnd();
+            widget.onEnd?.call();
           });
         }
       });
@@ -77,9 +77,7 @@ class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStat
         onLongPress: widget.onLongPressed,
         onTap: () {
           _controller.forward();
-          if (widget.onPressed != null) {
-            widget.onPressed();
-          }
+          widget.onPressed?.call();
         },
         child: AnimatedBuilder(
           animation: _controller,
@@ -88,7 +86,7 @@ class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStat
         ));
   }
 
-  Widget _buildByMode(Widget child, FeedMode mode) {
+  Widget _buildByMode(Widget? child, FeedMode mode) {
     double rate = (widget.a - 1) * _controller.value + 1;
     switch (mode) {
       case FeedMode.scale:

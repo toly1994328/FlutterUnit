@@ -21,7 +21,7 @@ class CollectPage extends StatefulWidget {
 
 class _CollectPageState extends State<CollectPage>
     with AutomaticKeepAliveClientMixin {
-  final _tabs = [
+  final List<String> _tabs = [
     '收藏集录',
     '珍藏组件',
   ];
@@ -36,7 +36,7 @@ class _CollectPageState extends State<CollectPage>
           color:
               BlocProvider.of<WidgetsBloc>(context).state.color.withAlpha(11),
           child: DefaultTabController(
-            length: _tabs.length, // This is the number of tabs.
+            length: _tabs.length,
             child: NestedScrollView(
               headerSliverBuilder: (context, innerBoxIsScrolled) => <Widget>[
                 SliverOverlapAbsorber(

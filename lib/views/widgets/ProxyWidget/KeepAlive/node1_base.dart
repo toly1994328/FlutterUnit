@@ -18,26 +18,26 @@ import 'package:flutter/material.dart';
 class KeepAliveDemo extends StatelessWidget {
 
   final List<Color> data = [
-    Colors.purple[50],
-    Colors.purple[100],
-    Colors.purple[200],
-    Colors.purple[300],
-    Colors.purple[400],
-    Colors.purple[500],
-    Colors.purple[600],
-    Colors.purple[700],
-    Colors.purple[800],
-    Colors.purple[900],
-    Colors.red[50],
-    Colors.red[100],
-    Colors.red[200],
-    Colors.red[300],
-    Colors.red[400],
-    Colors.red[500],
-    Colors.red[600],
-    Colors.red[700],
-    Colors.red[800],
-    Colors.red[900],
+    Colors.purple[50]!,
+    Colors.purple[100]!,
+    Colors.purple[200]!,
+    Colors.purple[300]!,
+    Colors.purple[400]!,
+    Colors.purple[500]!,
+    Colors.purple[600]!,
+    Colors.purple[700]!,
+    Colors.purple[800]!,
+    Colors.purple[900]!,
+    Colors.red[50]!,
+    Colors.red[100]!,
+    Colors.red[200]!,
+    Colors.red[300]!,
+    Colors.red[400]!,
+    Colors.red[500]!,
+    Colors.red[600]!,
+    Colors.red[700]!,
+    Colors.red[800]!,
+    Colors.red[900]!,
   ];
 
   @override
@@ -59,7 +59,7 @@ class ColorBox extends StatefulWidget {
   final Color color;
   final int index;
 
-  ColorBox({Key key, this.color, this.index}) : super(key: key);
+  ColorBox({Key? key,required this.color,required this.index}) : super(key: key);
 
   @override
   _ColorBoxState createState() => _ColorBoxState();
@@ -94,9 +94,9 @@ class _ColorBoxState extends State<ColorBox> with AutomaticKeepAliveClientMixin 
           SizedBox(width: 60,),
           Checkbox(
             value: _checked,
-            onChanged: (v) {
+            onChanged: (bool? v) {
               setState(() {
-                _checked = v;
+                _checked = v??false;
               });
             },
           ),

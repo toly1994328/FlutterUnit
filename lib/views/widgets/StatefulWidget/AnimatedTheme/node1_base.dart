@@ -35,7 +35,7 @@ class _AnimatedThemeDemoState extends State<AnimatedThemeDemo> {
               fontSize: 16,
               fontWeight: FontWeight.normal)));
 
-  ThemeData them;
+  late ThemeData them;
 
   @override
   void initState() {

@@ -19,5 +19,5 @@ abstract class WidgetRepository {
 
   Future<List<WidgetModel>> loadLikeWidgets();
 
-  Future<void> collected(int id);
+  Future<int> collected(int id);
 }

@@ -17,7 +17,7 @@ import 'category_state.dart';
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   final CategoryRepository repository;
 
-  CategoryBloc({@required this.repository}) : super(const CategoryLoadingState());
+  CategoryBloc({required this.repository}) : super(const CategoryLoadingState());
 
   @override
   Stream<CategoryState> mapEventToState(CategoryEvent event) async* {
@@ -66,6 +66,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
           priority: event.priority ?? 0,
           image: event.image ?? '',
           color: event.color ??
+
               ColorUtils.colorString(UnitColor.collectColorSupport[0]),
           info: event.info ?? '这里什么都没有...',
           updated: DateTime.now());
@@ -86,7 +87,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     if(state is CategoryLoadedState){
       return (state as CategoryLoadedState).categories;
     }else{
-      return null;
+      return [];
     }
   }
 }

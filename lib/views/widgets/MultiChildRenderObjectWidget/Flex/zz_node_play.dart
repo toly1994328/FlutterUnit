@@ -83,7 +83,7 @@ class _PlayFlexState extends State<PlayFlex> {
                   .toList(),
               onChanged: (e) {
                 setState(() {
-                  _direction = e;
+                  _direction = e??_direction;
                 });
               }),
         ],
@@ -114,7 +114,7 @@ class _PlayFlexState extends State<PlayFlex> {
                   .toList(),
               onChanged: (e) {
                 setState(() {
-                  _mainAxisAlignment = e;
+                  _mainAxisAlignment = e??_mainAxisAlignment;
                 });
               }),
         ],
@@ -145,7 +145,7 @@ class _PlayFlexState extends State<PlayFlex> {
                   .toList(),
               onChanged: (e) {
                 setState(() {
-                  _crossAxisAlignment = e;
+                  _crossAxisAlignment = e??_crossAxisAlignment;
                 });
               }),
         ],
@@ -176,7 +176,7 @@ class _PlayFlexState extends State<PlayFlex> {
                   .toList(),
               onChanged: (e) {
                 setState(() {
-                  _verticalDirection = e;
+                  _verticalDirection = e??_verticalDirection;
                 });
               }),
         ],

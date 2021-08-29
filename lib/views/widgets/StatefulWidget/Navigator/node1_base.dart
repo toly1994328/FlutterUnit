@@ -57,7 +57,7 @@ class NavigatorDemo extends StatelessWidget {
 //路由监听器
 class TolyNavigatorObservers extends NavigatorObserver {
   @override
-  void didPush(Route<dynamic> route, Route<dynamic> previousRoute) {
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
     print(
         '--didPush:--route:--${route.settings}--previousRoute:--${previousRoute?.settings}');
   }
@@ -68,27 +68,27 @@ class TolyNavigatorObservers extends NavigatorObserver {
   }
 
   @override
-  void didStartUserGesture(Route<dynamic> route, Route<dynamic> previousRoute) {
+  void didStartUserGesture(Route<dynamic> route, Route<dynamic>? previousRoute) {
     print(
-        '--didStartUserGesture:--route:--${route.settings}--previousRoute:--${previousRoute.settings}');
+        '--didStartUserGesture:--route:--${route.settings}--previousRoute:--${previousRoute?.settings}');
   }
 
   @override
-  void didReplace({Route<dynamic> newRoute, Route<dynamic> oldRoute}) {
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
     print(
-        '--didReplace:--newRoute:--${newRoute.settings}--oldRoute:--${oldRoute.settings}');
+        '--didReplace:--newRoute:--${newRoute?.settings}--oldRoute:--${oldRoute?.settings}');
   }
 
   @override
-  void didRemove(Route<dynamic> route, Route<dynamic> previousRoute) {
+  void didRemove(Route<dynamic>? route, Route<dynamic>? previousRoute) {
     print(
-        '--didRemove:--route:--${route.settings}--previousRoute:--${previousRoute.settings}');
+        '--didRemove:--route:--${route?.settings}--previousRoute:--${previousRoute?.settings}');
   }
 
   @override
-  void didPop(Route<dynamic> route, Route<dynamic> previousRoute) {
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
     print(
-        '--didPop:--route:--${route.settings}--previousRoute:--${previousRoute.settings}');
+        '--didPop:--route:--${route.settings}--previousRoute:--${previousRoute?.settings}');
   }
 }
 

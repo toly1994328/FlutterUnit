@@ -17,11 +17,11 @@ class AlignSelectableText extends StatefulWidget {
 }
 
 class _AlignSelectableTextState extends State<AlignSelectableText> {
-  final text =
+  final String text =
       "The [SelectableText] widget displays a string of text with a single style."
       "The string might break across multiple lines or might all be displayed on"
       "the same line depending on the layout constraints.";
-  var _textAlign = TextAlign.left;
+  TextAlign _textAlign = TextAlign.left;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class _AlignSelectableTextState extends State<AlignSelectableText> {
                 .toList(),
             onChanged: (e) {
               setState(() {
-                _textAlign = e;
+                _textAlign = e??_textAlign;
               });
             }),
       ],

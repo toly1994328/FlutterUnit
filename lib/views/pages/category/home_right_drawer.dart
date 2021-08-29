@@ -13,9 +13,9 @@ class HomeRightDrawer extends StatefulWidget {
 }
 
 class _HomeRightDrawerState extends State<HomeRightDrawer> {
-  String name;
-  String color;
-  String info;
+  String name='';
+  String color='';
+  String info='';
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,9 @@ class _HomeRightDrawerState extends State<HomeRightDrawer> {
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
           UnitDrawerHeader(color:color),
           _buildTitle(context),
-          EditCategoryPanel()
+          const EditCategoryPanel(
+
+          )
         ]),
       );
   }

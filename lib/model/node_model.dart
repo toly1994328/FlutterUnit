@@ -10,7 +10,7 @@ class NodeModel extends Equatable {
   final String subtitle;
   final String code;
 
-  const NodeModel({this.name, this.subtitle, this.code});
+  const NodeModel({required this.name,required this.subtitle,required this.code});
 
   @override
   List<Object> get props => [name, subtitle, code];

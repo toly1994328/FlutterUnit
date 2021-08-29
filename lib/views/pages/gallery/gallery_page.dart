@@ -130,12 +130,12 @@ class FrameShower extends StatelessWidget {
   final Widget content;
 
   FrameShower(
-      {Key key,
+      {Key? key,
       this.title = "",
       this.author = "",
       this.srcUrl = "",
       this.info = "",
-      @required this.content})
+      required this.content})
       : super(key: key);
 
   @override

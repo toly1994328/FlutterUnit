@@ -1,6 +1,7 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/api/issues_api.dart';
+import 'package:flutter_unit/model/github/issue_comment.dart';
 
 
 import 'point_comment_event.dart';
@@ -26,13 +27,16 @@ class PointCommentBloc extends Bloc<PointCommentEvent, PointCommentState> {
 
   Stream<PointCommentState> _mapLoadWidgetToState(EventLoadPointComment event) async* {
     yield PointCommentLoading(event.point);
+    if(event.point.number==null){
+      yield PointCommentLoadFailure('point id 为空');
+    }
     try {
-      final comments = await IssuesApi.getIssuesComment(event.point.number);
-      comments.sort((a,b)=>a.createdAt.compareTo(b.createdAt));
+      final List<IssueComment> comments = await IssuesApi.getIssuesComment(event.point.number!);
+      comments.sort((a,b)=>a.createdAt!.compareTo(b.createdAt!));
       yield PointCommentLoaded(event.point,comments);
     } catch (err) {
       print(err);
-      yield PointCommentLoadFailure(err);
+      yield PointCommentLoadFailure(err.toString());
     }
   }
 }

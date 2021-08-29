@@ -33,8 +33,8 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
               value: _checked,
               checkColor: Colors.white,
               activeColor: e,
-              onChanged: (v) =>
-                  setState(() => _checked = v)))
+              onChanged: (bool? value) =>
+                  setState(() => _checked = value??false)))
           .toList(),
     );
   }

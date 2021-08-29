@@ -87,7 +87,8 @@ class _SortDataTableState extends State<SortDataTable> {
     });
   }
 
-  _onSelectOne(bool selected, _BeanOp e) {
+  void _onSelectOne(bool? selected, _BeanOp e) {
+    if(selected==null) return;
     setState(() {
       if (selected) {
         //选中
@@ -100,7 +101,8 @@ class _SortDataTableState extends State<SortDataTable> {
     });
   }
 
-  _onSelectAll(bool select) {
+  void _onSelectAll(bool? select) {
+    if(select==null) return;
     setState(() {
       if (select) {
         data.forEach((e) => e.select = true);

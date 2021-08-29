@@ -5,7 +5,7 @@ typedef ChangeCallback = void Function(String str);
 ///输入面板
 class EditPanel extends StatefulWidget {
   EditPanel(
-      {Key key,
+      {Key? key,
       this.backgroundColor = Colors.white,
       this.color = Colors.lightBlue,
       this.minLines = 4,
@@ -24,7 +24,7 @@ class EditPanel extends StatefulWidget {
   final double fontSize; //字号
   final String hint; //提示字
   final bool submitClear; //提交是否清空文字
-  final ChangeCallback onChange; //提交监听
+  final ChangeCallback? onChange; //提交监听
   final String defaultText; //提交监听
 
   @override
@@ -32,14 +32,14 @@ class EditPanel extends StatefulWidget {
 }
 
 class _EditPanelState extends State<EditPanel> {
-  Radius _radius; //边角半径
+  Radius _radius=Radius.zero; //边角半径
 
-  TextEditingController _controller;
+  late TextEditingController _controller;
 
   @override
   void initState() {
     _radius = Radius.circular(widget.fontSize * 0.618);
-    _controller = TextEditingController(text: widget.defaultText??'');
+    _controller = TextEditingController(text: widget.defaultText);
     super.initState();
   }
 
@@ -92,7 +92,7 @@ class _EditPanelState extends State<EditPanel> {
       ),
       onChanged: (str) {
         //文字变化监听
-        if (widget.onChange != null) widget.onChange(str);
+        widget.onChange?.call(str);
       },
       onSubmitted: (str) {
         //提交监听

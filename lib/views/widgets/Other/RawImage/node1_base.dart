@@ -24,7 +24,7 @@ class RawImageDemo extends StatefulWidget {
 }
 
 class _RawImageDemoState extends State<RawImageDemo> {
-  ui.Image _image;
+  ui.Image? _image;
 
   @override
   void initState() {
@@ -76,9 +76,10 @@ class _RawImageDemoState extends State<RawImageDemo> {
 
   void _loadImageFromAssets(String name) async {
     _image = await loadImageByProvider(AssetImage(name));
-
     setState(() {});
   }
+
+  late ImageStreamListener listener;
 
   //通过ImageProvider读取Image
   Future<ui.Image> loadImageByProvider(
@@ -86,7 +87,6 @@ class _RawImageDemoState extends State<RawImageDemo> {
     ImageConfiguration config = ImageConfiguration.empty,
   }) async {
     Completer<ui.Image> completer = Completer<ui.Image>(); //完成的回调
-    ImageStreamListener listener;
     ImageStream stream = provider.resolve(config); //获取图片流
     listener = ImageStreamListener((ImageInfo frame, bool sync) {
       //监听

@@ -26,7 +26,7 @@ class _CustomAnimatedSizeState extends State<CustomAnimatedSize>
   final double start = 100;
   final double end = 200;
 
-  double _width;
+  late double _width;
 
   @override
   void initState() {

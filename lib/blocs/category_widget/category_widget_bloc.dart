@@ -15,7 +15,7 @@ class CategoryWidgetBloc
     extends Bloc<CategoryWidgetEvent, CategoryWidgetState> {
   final CategoryBloc categoryBloc;
 
-  CategoryWidgetBloc({@required this.categoryBloc})
+  CategoryWidgetBloc({required this.categoryBloc})
       : super(CategoryWidgetEmptyState());
 
   CategoryRepository get repository => categoryBloc.repository;

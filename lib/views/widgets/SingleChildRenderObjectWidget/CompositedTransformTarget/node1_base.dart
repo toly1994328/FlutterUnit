@@ -49,7 +49,7 @@ class _LogoTips extends StatefulWidget {
 }
 
 class _LogoTipsState extends State<_LogoTips> {
-  OverlayEntry _overlayEntry;
+  OverlayEntry? _overlayEntry;
 
   final LayerLink _layerLink = LayerLink();
 
@@ -97,7 +97,7 @@ class _LogoTipsState extends State<_LogoTips> {
 
   void _showOverlay() {
     _overlayEntry = _createOverlayEntry();
-    Overlay.of(context).insert(_overlayEntry);
+    Overlay.of(context)?.insert(_overlayEntry!);
   }
 
   void _hideOverlay() {

@@ -11,13 +11,14 @@ class NodePo {
   final String subtitle;
   final String code;
 
-  const NodePo(
-      {this.id,
-      this.widgetId,
-      this.name,
-      this.priority,
-      this.subtitle,
-      this.code});
+  const NodePo({
+    required this.id,
+    required this.widgetId,
+    required this.name,
+    required this.priority,
+    required this.subtitle,
+    required this.code,
+  });
 
   factory NodePo.fromJson(Map<String, dynamic> map) {
     return NodePo(

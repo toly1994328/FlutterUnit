@@ -3,9 +3,9 @@
 part 'g/repository_permissions.g.dart';
 
 class RepositoryPermissions {
-  bool admin;
-  bool push;
-  bool pull;
+  bool? admin;
+  bool? push;
+  bool? pull;
 
   RepositoryPermissions(
     this.admin,

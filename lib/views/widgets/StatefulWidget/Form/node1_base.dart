@@ -58,7 +58,7 @@ class _CustomFormState extends State<CustomForm> {
     );
   }
 
-  String _validateUsername(value) {
+  String? _validateUsername(value) {
     if (value.isEmpty) {
       return '用户名不能为空';
     }
@@ -80,7 +80,8 @@ class _CustomFormState extends State<CustomForm> {
   }
 
   _onSubmit(){
-    if (_formKey.currentState.validate()) {
+    if(_formKey.currentState==null) return;
+     if (_formKey.currentState!.validate()) {
       FocusScope.of(context).requestFocus(FocusNode());
       Navigator.of(context).pop();
     }
