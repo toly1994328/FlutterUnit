@@ -29,7 +29,7 @@ class IssuesPointContent extends StatefulWidget {
 }
 
 class _IssuesPointContentState extends State<IssuesPointContent> {
-  Repository _repository;
+  Repository? _repository;
 
   @override
   void initState() {
@@ -122,7 +122,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
                 ),
               )
             : RepoWidget(
-                repository: _repository,
+                repository: _repository!,
               ),
       ),
     );
@@ -134,7 +134,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
   }
 
   void _loadRepo() async {
-    final Repository result = await IssuesApi.getRepoFlutterUnit();
+    final Repository? result = await IssuesApi.getRepoFlutterUnit();
     setState(() {
       if (result != null) {
         _repository = result;

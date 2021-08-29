@@ -4,30 +4,30 @@ import 'package:flutter_unit/model/github/github_user.dart';
 part 'g/issue.g.dart';
 
 class Issue extends Equatable {
-  final int id;
-  final int number;
-  final String title;
-  final String state;
-  final bool locked;
+  final int? id;
+  final int? number;
+  final String? title;
+  final String? state;
+  final bool? locked;
 
-  final int commentNum;
+  final int? commentNum;
 
-  final DateTime createdAt;
+  final DateTime? createdAt;
 
-  final  DateTime updatedAt;
+  final  DateTime? updatedAt;
 
-  final DateTime closedAt;
-  final String body;
+  final DateTime? closedAt;
+  final String? body;
 
-  final String bodyHtml;
+  final String? bodyHtml;
 
-  final  GithubUser user;
+  final  GithubUser? user;
 
-  final String repoUrl;
+  final String? repoUrl;
 
-  final String htmlUrl;
+  final String? htmlUrl;
 
- final GithubUser closeBy;
+ final GithubUser? closeBy;
 
   Issue(
     this.id,
@@ -57,7 +57,7 @@ class Issue extends Equatable {
   }
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         number,
         title,

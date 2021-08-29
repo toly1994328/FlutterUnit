@@ -7,9 +7,10 @@ import 'package:flutter/material.dart';
 typedef FunNum1 = Function(double t);
 
 class MathRunner extends StatefulWidget {
-  MathRunner({Key key, this.child, this.f, this.g, this.reverse = true})
+  MathRunner({Key? key, this.child,required this.f,required this.g, this.reverse = true})
       : super(key: key);
-  final Widget child;
+
+  final Widget? child;
   final FunNum1 f;
   final FunNum1 g;
   final bool reverse;
@@ -20,8 +21,8 @@ class MathRunner extends StatefulWidget {
 
 class _MathRunnerState extends State<MathRunner>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation animationX;
+  late AnimationController _controller;
+  late Animation<double> animationX;
   double _x = -1.0;
   double _y = 0;
 

@@ -16,7 +16,7 @@ import 'package:flutter_unit/views/widgets/widgets_map.dart';
 class WidgetDetailPage extends StatefulWidget {
   final WidgetModel model;
 
-  WidgetDetailPage({this.model});
+  WidgetDetailPage({required this.model});
 
   @override
   _WidgetDetailPageState createState() => _WidgetDetailPageState();
@@ -218,7 +218,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 class WidgetDetailTitle extends StatelessWidget {
   final WidgetModel model;
 
-  WidgetDetailTitle({this.model});
+  WidgetDetailTitle({required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -274,7 +274,7 @@ class WidgetDetailTitle extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       child: model.image == null
                           ? Image.asset('assets/images/caver.webp')
-                          : Image(image: model.image))),
+                          : Image(image: model.image!))),
             ),
           ),
           StarScore(

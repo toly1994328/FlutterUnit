@@ -14,7 +14,7 @@ import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 
 class AppVersionChecker extends StatefulWidget {
-  const AppVersionChecker({Key key}) : super(key: key);
+  const AppVersionChecker({Key? key}) : super(key: key);
 
   @override
   _AppVersionCheckerState createState() => _AppVersionCheckerState();
@@ -34,7 +34,9 @@ class _AppVersionCheckerState extends State<AppVersionChecker> {
   ValueNotifier<double> progress = ValueNotifier<double>(0);
 
   _doDownload() async {
-    Directory dir = await getExternalStorageDirectory();
+    Directory? dir = await getExternalStorageDirectory();
+    if(dir ==null) return;
+
     String dstPath = path.join(dir.path, 'FlutterUnit.apk');
 
     if(File(dstPath).existsSync()){
@@ -79,15 +81,15 @@ class _AppVersionCheckerState extends State<AppVersionChecker> {
         ResultBean<AppInfo> result = await AppInfoApi.getAppVersion();
         PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
-        if (result.status) {
-          print('${result.data.appName}:${result.data.appVersion}');
-          if (packageInfo.version == result.data.appVersion) {
+        if (result.status&&result.data!=null) {
+          print('${result.data!.appName}:${result.data!.appVersion}');
+          if (packageInfo.version == result.data!.appVersion) {
             Toast.success(context, '当前应用已是最新版本!');
             versionState.value = VersionState.none;
           } else {
             oldVersion = packageInfo.version;
-            newVersion = result.data.appVersion;
-            Toast.green(context, '检测到新版本【${result.data.appVersion}】，可点击更新!');
+            newVersion = result.data!.appVersion;
+            Toast.green(context, '检测到新版本【${result.data!.appVersion}】，可点击更新!');
             versionState.value = VersionState.shouldUpdate;
           }
         } else {
@@ -99,7 +101,7 @@ class _AppVersionCheckerState extends State<AppVersionChecker> {
   }
 
   Widget _buildTrailByState(
-      BuildContext context, VersionState value, Widget child) {
+      BuildContext context, VersionState value, Widget? child) {
     switch (value) {
       case VersionState.none:
         return const SizedBox();
@@ -129,7 +131,7 @@ class _AppVersionCheckerState extends State<AppVersionChecker> {
     return const SizedBox();
   }
 
-  Widget _buildProgress(BuildContext context, double value, Widget child) {
+  Widget _buildProgress(BuildContext context, double value, Widget? child) {
     return Wrap(
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,

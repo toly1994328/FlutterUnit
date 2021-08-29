@@ -20,7 +20,7 @@ class CustomLinearProgressIndicator extends StatefulWidget {
 
 class _CustomLinearProgressIndicatorState
     extends State<CustomLinearProgressIndicator> {
-  var data = <double>[0.2, 0.4, 0.6, 0.8, null];
+  List<double?> data = [0.2, 0.4, 0.6, 0.8, null];
 
   @override
   Widget build(BuildContext context) {

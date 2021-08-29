@@ -1,0 +1,24 @@
+name: install_plugin
+description: A flutter plugin for install apk for android; and using url to go to app store for iOS.
+version: 2.0.1
+author: akindone <akindone@163.com>
+homepage: https://github.com/hui-z/flutter_install_plugin
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  plugin:
+    androidPackage: com.zaihui.installplugin
+    pluginClass: InstallPlugin
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

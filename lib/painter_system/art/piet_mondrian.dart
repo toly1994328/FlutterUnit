@@ -33,11 +33,11 @@ class Square {
   final Color color;
 
   Square({
-    this.x,
-    this.y,
-    this.width,
-    this.height,
-    this.color,
+   required this.x,
+   required this.y,
+   required this.width,
+   required this.height,
+   required this.color,
   });
 
   Map toJson() {

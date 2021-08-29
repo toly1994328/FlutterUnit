@@ -23,25 +23,25 @@ final jellyDistributionLmt = 97;
 
 class ClockFx with ChangeNotifier {
 
-   double width; //宽
-   double height;//高
-   double sizeMin; // 宽高最小值
-   Offset center; //画布中心
-   Rect spawnArea; // 粒子活动区域
+   double width=0; //宽
+   double height=0;//高
+   double sizeMin=0; // 宽高最小值
+   Offset center=Offset.zero; //画布中心
+   Rect spawnArea=Rect.zero; // 粒子活动区域
 
-   List<Particle> particles; // 所有粒子
+   List<Particle> particles=[]; // 所有粒子
 
-  int numParticles;// 最大粒子数
+  int numParticles=0;// 最大粒子数
 
-  DateTime time; //时间
+  late DateTime time; //时间
 
   ClockFx({
-    @required Size size,
-    @required DateTime time,
+    required Size size,
+    required DateTime time,
     this.numParticles = 5000,
   }) {
     this.time = time;
-    particles = List<Particle>.filled(numParticles, null);
+    particles = List<Particle>.filled(numParticles, Particle());
     setSize(size);
   }
 

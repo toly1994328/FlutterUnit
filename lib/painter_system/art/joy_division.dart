@@ -53,14 +53,14 @@ class JoyDivisionPainter extends CustomPainter {
 
     for (int i = 5; i < lines.length; i++) {
       Point p1 = lines[i][0];
-      Path path = Path()..moveTo(p1.x, p1.y);
+      Path path = Path()..moveTo(p1.x.toDouble(), p1.y.toDouble());
 
       for (int j = 0; j < lines[i].length - 2; j++) {
         double xc = (lines[i][j].x + lines[i][j + 1].x) / 2;
         double yc = (lines[i][j].y + lines[i][j + 1].y) / 2;
 
         Point p2 = lines[i][j];
-        path.quadraticBezierTo(p2.x, p2.y, xc, yc);
+        path.quadraticBezierTo(p2.x.toDouble(), p2.y.toDouble(), xc, yc);
         canvas.drawPath(path, paint);
       }
     }

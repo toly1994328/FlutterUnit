@@ -10,13 +10,13 @@ import 'high_light_code.dart';
 import 'highlighter_style.dart';
 
 class CodeWidget extends StatelessWidget {
-  CodeWidget({Key key, @required this.code, this.style, this.fontSize = 13,this.fontFamily})
+  CodeWidget({Key? key, required this.code,required this.style, this.fontSize = 13,this.fontFamily})
       : super(key: key);
 
   final String code;
   final HighlighterStyle style;
   final double fontSize;
-  final String fontFamily;
+  final String? fontFamily;
 
   @override
   Widget build(BuildContext context) {

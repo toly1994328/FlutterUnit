@@ -27,10 +27,10 @@ class ArcClipper extends CustomClipper<Path> {
 }
 
 class ArcBackground extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final ImageProvider image;
 
-  ArcBackground({this.child, this.image});
+  ArcBackground({this.child,required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class ArcBackground extends StatelessWidget {
 
 class UnitArcBackground extends StatelessWidget {
   final double height;
-  UnitArcBackground({Key key,this.height}) : super(key: key);
+  UnitArcBackground({Key? key,required this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

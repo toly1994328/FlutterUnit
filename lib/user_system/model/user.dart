@@ -19,7 +19,7 @@ class User extends Equatable{
   final String roles;
   final int userId;
 
-  const User({this.username, this.email, this.roles, this.userId,this.userAvatar});
+  const User({required this.username,required this.email,required this.roles,required this.userId,required this.userAvatar});
 
   factory User.fromJson(Map<String, dynamic> map) {
     return User(

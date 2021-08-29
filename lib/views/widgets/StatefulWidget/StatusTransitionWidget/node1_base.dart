@@ -22,7 +22,7 @@ class StatusTransitionWidgetDemo extends StatefulWidget {
 
 class _StatusTransitionWidgetDemoState extends State<StatusTransitionWidgetDemo>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {
@@ -46,7 +46,7 @@ class _StatusTransitionWidgetDemoState extends State<StatusTransitionWidgetDemo>
 class ColorStatusTransitionWidget extends StatusTransitionWidget {
   final Animation<double> animation;
 
-  ColorStatusTransitionWidget({Key key, this.animation})
+  ColorStatusTransitionWidget({Key? key,required this.animation})
       : super(key: key, animation: animation);
 
   @override

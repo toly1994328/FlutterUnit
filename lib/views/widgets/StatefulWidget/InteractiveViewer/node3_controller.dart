@@ -21,14 +21,13 @@ class _InteractiveViewerDemo3State extends State<InteractiveViewerDemo3>
     with SingleTickerProviderStateMixin {
   final TransformationController _transformationController =
       TransformationController();
-  Animation<Matrix4> _animationReset;
-  AnimationController _controllerReset;
+  late Animation<Matrix4> _animationReset;
+  late AnimationController _controllerReset;
 
   void _onAnimateReset() {
     _transformationController.value = _animationReset.value;
     if (!_controllerReset.isAnimating) {
-      _animationReset?.removeListener(_onAnimateReset);
-      _animationReset = null;
+      _animationReset.removeListener(_onAnimateReset);
       _controllerReset.reset();
     }
   }
@@ -45,8 +44,7 @@ class _InteractiveViewerDemo3State extends State<InteractiveViewerDemo3>
 
   void _animateResetStop() {
     _controllerReset.stop();
-    _animationReset?.removeListener(_onAnimateReset);
-    _animationReset = null;
+    _animationReset.removeListener(_onAnimateReset);
     _controllerReset.reset();
   }
 

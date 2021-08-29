@@ -54,14 +54,13 @@ class _LogoTips extends StatefulWidget {
 }
 
 class _LogoTipsState extends State<_LogoTips> {
-  OverlayEntry _overlayEntry;
+  OverlayEntry? _overlayEntry;
 
   final LayerLink _layerLink = LayerLink();
 
   bool show = false;
 
   OverlayEntry _createOverlayEntry() {
-
     return OverlayEntry(
         builder: (context) => Positioned(
               width: 150,
@@ -104,7 +103,7 @@ class _LogoTipsState extends State<_LogoTips> {
 
   void _showOverlay() {
     _overlayEntry = _createOverlayEntry();
-    Overlay.of(context).insert(_overlayEntry);
+    Overlay.of(context)?.insert(_overlayEntry!);
   }
 
   void _hideOverlay() {

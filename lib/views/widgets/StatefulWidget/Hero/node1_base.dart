@@ -101,9 +101,11 @@ class Bottom2TopRouter<T> extends PageRouteBuilder<T> {
   final int duration;
   final Curve curve;
 
-  Bottom2TopRouter(
-      {this.child, this.duration = 500, this.curve = Curves.fastOutSlowIn})
-      : super(
+  Bottom2TopRouter({
+    required this.child,
+    this.duration = 500,
+    this.curve = Curves.fastOutSlowIn,
+  }) : super(
             transitionDuration: Duration(milliseconds: duration),
             pageBuilder: (ctx, a1, a2) {
               return child;

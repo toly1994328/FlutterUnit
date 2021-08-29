@@ -19,16 +19,16 @@ class WidgetNodePanel extends StatefulWidget {
   final String text;
   final String subText;
   final String code;
-  final Widget show;
-  final HighlighterStyle codeStyle;
-  final String codeFamily;
+  final Widget? show;
+  final HighlighterStyle? codeStyle;
+  final String? codeFamily;
 
   WidgetNodePanel(
-      {this.text,
-      this.subText,
-      this.code,
+      {this.text='',
+      this.subText='',
+      this.code='',
       this.show,
-      this.codeStyle,
+     required this.codeStyle,
       this.codeFamily});
 
   @override

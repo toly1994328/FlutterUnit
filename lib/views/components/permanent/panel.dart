@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class Panel extends StatelessWidget {
   final double radius;
-  final Color color;
-  final Widget child;
+  final Color? color;
+  final Widget? child;
 
-  Panel({this.radius = 5.0, this.color, this.child});
+  Panel({this.radius = 5.0,  this.color, this.child});
 
   @override
   Widget build(BuildContext context) {

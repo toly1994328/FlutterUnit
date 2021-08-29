@@ -15,15 +15,16 @@ class WidgetPo extends Equatable {
   final String info;
   final String linkWidget;
 
-  const WidgetPo(
-      {this.id,
-      this.name,
-      this.nameCN,
-      this.deprecated,
-      this.family,
-      this.lever,
-      this.linkWidget,
-      this.info});
+  const WidgetPo({
+    required this.id,
+    required this.name,
+    required this.nameCN,
+    required this.deprecated,
+    required this.family,
+    required this.lever,
+    required this.linkWidget,
+    required this.info,
+  });
 
   factory WidgetPo.fromJson(Map<String, dynamic> map) {
     return WidgetPo(

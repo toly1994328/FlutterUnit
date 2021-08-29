@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 
 class Circle {
-  Point center;
-  double radius;
-  Color color;
+  Point center = Point(0,0);
+  double radius = 10;
+  Color color = Colors.black;
 }
 
 class CirclePacking extends StatefulWidget {
@@ -39,11 +39,12 @@ class CirclePackingPainter extends CustomPainter {
   Random random = Random();
 
   void _createCircles(Canvas canvas, Size size) {
-    Circle circle;
+    Circle circle= Circle();
+
     bool circleSafeToDraw = false;
 
     for (int i = 0; i < createCircleAttemps; i++) {
-      circle = Circle()
+      circle
         ..radius = minRaidus
         ..center = Point(
           random.nextDouble() * size.width,
@@ -82,7 +83,7 @@ class CirclePackingPainter extends CustomPainter {
 
     circles.asMap().forEach((key, circle) {
       paint.color = Colors.black;
-      Offset offset = Offset(circle.center.x, circle.center.y);
+      Offset offset = Offset(circle.center.x.toDouble(), circle.center.y.toDouble());
       canvas.drawCircle(offset, circle.radius, paint);
     });
   }

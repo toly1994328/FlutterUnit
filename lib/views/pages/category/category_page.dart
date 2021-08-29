@@ -79,7 +79,7 @@ class CategoryPage extends StatelessWidget {
                   content: '    删除【${model.name}】收藏集，你将会失去其中的所有收藏组件，是否确定继续执行?',
                   onSubmit: () {
                     BlocProvider.of<CategoryBloc>(context)
-                        .add(EventDeleteCategory(id: model.id));
+                        .add(EventDeleteCategory(id: model.id!));
                     Navigator.of(context).pop();
                   },
                 ),
@@ -127,7 +127,7 @@ class CategoryPage extends StatelessWidget {
   }
 
   _toDetailPage(BuildContext context, CategoryModel model) {
-    BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id));
+    BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id!));
     Navigator.pushNamed(context, UnitRouter.category_show, arguments: model);
   }
 

@@ -18,7 +18,7 @@ class CustomFutureBuilder extends StatefulWidget {
 }
 
 class _CustomFutureBuilderState extends State<CustomFutureBuilder> {
-  Future<String> _future;
+ late Future<String> _future;
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _CustomFutureBuilderState extends State<CustomFutureBuilder> {
           future: _future,
           builder: (ctx, snap) {
             if (snap.connectionState == ConnectionState.done) {
-              return Text(snap.data);
+              return Text('${snap.data}');
             }
             if (snap.connectionState == ConnectionState.waiting) {
               return CircularProgressIndicator();

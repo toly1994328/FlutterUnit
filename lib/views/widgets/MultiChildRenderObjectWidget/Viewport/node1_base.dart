@@ -55,7 +55,7 @@ class ViewportDemo extends StatelessWidget {
 class ColorItem extends StatefulWidget {
   final Color color;
 
-  ColorItem({Key key,this.color}) : super(key: key);
+  ColorItem({Key? key,required this.color}) : super(key: key);
   @override
   _ColorItemState createState() => _ColorItemState();
 }

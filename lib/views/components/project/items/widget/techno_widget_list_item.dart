@@ -13,7 +13,7 @@ import 'package:flutter_unit/model/widget_model.dart';
 class TechnoWidgetListItem extends StatelessWidget {
   final WidgetModel data;
 
-  TechnoWidgetListItem({this.data});
+  TechnoWidgetListItem({required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class TechnoWidgetListItem extends StatelessWidget {
                 ),
               )
             : CircleImage(
-                image: data.image,
+                image: data.image!,
                 size: 55,
               ),
       );
@@ -115,7 +115,7 @@ class TechnoWidgetListItem extends StatelessWidget {
               style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
-                  decoration: (data.deprecated??false)?TextDecoration.lineThrough:TextDecoration.none,
+                  decoration: data.deprecated?TextDecoration.lineThrough:TextDecoration.none,
                   decorationThickness: 2,
                   shadows: [
                     Shadow(color: Colors.white, offset: Offset(.3, .3))

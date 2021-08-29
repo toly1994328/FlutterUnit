@@ -33,7 +33,7 @@ class _TweenAnimationBuilderDemoState extends State<TweenAnimationBuilderDemo> {
     return TweenAnimationBuilder(
       tween: ColorTween(begin: Colors.blue, end: _value),
       duration: Duration(milliseconds: 800),
-      builder: (BuildContext context, Color color, Widget child) {
+      builder: (BuildContext context, Color? color, Widget? child) {
         return GestureDetector(
           onTap: () {
             setState(() {

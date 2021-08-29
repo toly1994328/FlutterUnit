@@ -16,7 +16,7 @@ import 'package:flutter_unit/views/components/project/unit_drawer_header.dart';
 class CategoryEndDrawer extends StatelessWidget {
   final WidgetModel widget;
 
-  CategoryEndDrawer({this.widget});
+  CategoryEndDrawer({required this.widget});
 
   @override
   Widget build(BuildContext context) {
@@ -128,10 +128,10 @@ class _CategoryInfoState extends State<CategoryInfo> {
         selected: inHere,
         label: Text(category.name),
         onSelected: (v) async {
-          await repository.toggleCategory(category.id, widget.id);
+          await repository.toggleCategory(category.id!, widget.id);
           _loadCategoryIds();
           BlocProvider.of<CategoryWidgetBloc>(context)
-              .add(EventLoadCategoryWidget(category.id));
+              .add(EventLoadCategoryWidget(category.id!));
         });
   }
 

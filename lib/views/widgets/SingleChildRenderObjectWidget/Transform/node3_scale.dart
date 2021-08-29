@@ -20,7 +20,7 @@ class ScaleTransform extends StatefulWidget {
 }
 
 class _ScaleTransformState extends State<ScaleTransform> {
-  Matrix4 _m4;
+  late Matrix4 _m4;
   double _x = 1.0;
   double _y = 1.0;
   double _z = 1.0;

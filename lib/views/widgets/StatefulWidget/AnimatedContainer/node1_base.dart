@@ -56,9 +56,9 @@ class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
   final double startHeight = 150.0;
   final double endHeight = 100.0;
 
-  Decoration _decoration;
-  double _height;
-  Alignment _alignment;
+  late Decoration _decoration;
+  late double _height;
+  late Alignment _alignment;
 
   @override
   void initState() {

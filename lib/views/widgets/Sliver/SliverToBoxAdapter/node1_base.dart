@@ -11,17 +11,17 @@ import 'package:flutter/material.dart';
 //          "【child】 : 子组件   【Widget】",
 //    }
 class SliverToBoxAdapterDemo extends StatelessWidget {
-  final data = <Color>[
-    Colors.purple[50],
-    Colors.purple[100],
-    Colors.purple[200],
-    Colors.purple[300],
-    Colors.purple[400],
-    Colors.purple[500],
-    Colors.purple[600],
-    Colors.purple[700],
-    Colors.purple[800],
-    Colors.purple[900],
+  final List<Color> data = [
+    Colors.purple[50]!,
+    Colors.purple[100]!,
+    Colors.purple[200]!,
+    Colors.purple[300]!,
+    Colors.purple[400]!,
+    Colors.purple[500]!,
+    Colors.purple[600]!,
+    Colors.purple[700]!,
+    Colors.purple[800]!,
+    Colors.purple[900]!,
   ];
 
   @override

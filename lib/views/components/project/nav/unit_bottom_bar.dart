@@ -14,14 +14,14 @@ class UnitBottomBar extends StatefulWidget {
   final Color color;
 
   // item 点击事件
-  final IndexTapCallback onItemTap;
+  final IndexTapCallback? onItemTap;
 
   // item 长按事件
-  final IndexLongTapCallback onItemLongTap;
+  final IndexLongTapCallback? onItemLongTap;
 
   UnitBottomBar({
     this.color = Colors.blue,
-    @required this.onItemTap,
+    required this.onItemTap,
     this.onItemLongTap,
   });
 
@@ -163,15 +163,12 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
   void _updateIndex(int index) {
     setState(() {
       _position = index;
-      if (widget.onItemTap != null) {
-        widget.onItemTap(_position);
-      }
+      widget.onItemTap?.call(_position);
     });
   }
 
   void _onLongPress(BuildContext context, int index) {
-    if (widget.onItemLongTap != null) {
-      widget.onItemLongTap(context, index);
-    }
+    widget.onItemLongTap?.call(context, index);
+
   }
 }

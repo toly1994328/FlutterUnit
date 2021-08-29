@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 /// 说明: app 闪屏页画板
 
 class UnitPainter extends CustomPainter {
-  Paint _paint;
+  late Paint _paint;
   final double width;
-  Animation<double> _curveAnim;
+  late Animation<double> _curveAnim;
   final Color color;
 
   final Path _path1 = Path();
@@ -15,9 +15,13 @@ class UnitPainter extends CustomPainter {
   final Path _path3 = Path();
   final Path _path4 = Path();
 
-  UnitPainter({this.width = 200.0, this.color = Colors.blue,Animation repaint}):super(repaint: repaint) {
+  UnitPainter(
+      {this.width = 200.0,
+      this.color = Colors.blue,
+      required Animation<double> repaint})
+      : super(repaint: repaint) {
     _paint = Paint();
-    _curveAnim= CurvedAnimation(parent: repaint, curve: Curves.fastOutSlowIn);
+    _curveAnim = CurvedAnimation(parent: repaint, curve: Curves.fastOutSlowIn);
   }
 
   @override

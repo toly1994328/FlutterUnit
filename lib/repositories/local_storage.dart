@@ -10,14 +10,14 @@ class LocalStorage {
   static String userKey= "user_key";
   static String dbVersionKey= "db_version_key";
 
-  static SharedPreferences _sp;
+  static SharedPreferences? _sp;
 
   // 如果_sp已存在，直接返回，为null时创建
   static Future<SharedPreferences> get sp async {
     if (_sp == null) {
       _sp = await SharedPreferences.getInstance();
     }
-    return _sp;
+    return _sp!;
   }
 
   static Future<bool> save(String key, String value) async {
@@ -32,7 +32,7 @@ class LocalStorage {
     return (await sp).setInt(key, value);
   }
 
-  static Future<int> getInt(String key) async {
+  static Future<int?> getInt(String key) async {
     return (await sp).getInt(key);
   }
 

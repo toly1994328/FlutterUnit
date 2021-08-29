@@ -47,11 +47,11 @@ class IssuesDetailPage extends StatelessWidget {
 class IssueTitle extends StatelessWidget {
   final Issue issue;
 
-  IssueTitle({Key key, this.issue}) : super(key: key);
+  IssueTitle({Key? key,required this.issue}) : super(key: key);
 
   String get issueDesHtml => issue.bodyHtml != null
-      ? issue.bodyHtml
-      : (issue.body != null) ? issue.body : "";
+      ? issue.bodyHtml!
+      : (issue.body != null) ? issue.body! : "";
 
   @override
   Widget build(BuildContext context) {
@@ -80,15 +80,15 @@ class IssueTitle extends StatelessWidget {
               color: Colors.blue.withAlpha(22),
               child: ListTile(
                 dense: true,
-                leading: CircleImage(size:40,borderSize:1,image: NetworkImage(issue.user.avatarUrl),),
-                title: Text(issue.user.login),
+                leading: CircleImage(size:40,borderSize:1,image: NetworkImage(issue.user!.avatarUrl!),),
+                title: Text(issue.user!.login!),
                 subtitle:Row(
                   children: [
-                    Text('创建于:${ConvertMan.time2string(issue.createdAt)}'),
+                    Text('创建于:${ConvertMan.time2string(issue.createdAt!)}'),
                     Spacer(),
                     WrapColor(
                         color: Colors.green,
-                        child: Text('更新于:${ConvertMan.time2string(issue.updatedAt)}',style: TextStyle(color: Colors.white),)),
+                        child: Text('更新于:${ConvertMan.time2string(issue.updatedAt!)}',style: TextStyle(color: Colors.white),)),
 
                   ],
                 ) ,
@@ -111,11 +111,11 @@ class IssueTitle extends StatelessWidget {
 class IssueCommentWidget extends StatelessWidget {
   final IssueComment comment;
 
-  IssueCommentWidget({Key key, this.comment}) : super(key: key);
+  IssueCommentWidget({Key? key,required this.comment}) : super(key: key);
 
   String get issueDesHtml => comment.bodyHtml != null
-      ? comment.bodyHtml
-      : (comment.body != null) ? comment.body : "";
+      ? comment.bodyHtml!
+      : (comment.body != null) ? comment.body! : "";
 
   @override
   Widget build(BuildContext context) {
@@ -127,15 +127,15 @@ class IssueCommentWidget extends StatelessWidget {
             color: Colors.blue.withAlpha(22),
             child: ListTile(
               dense: true,
-              leading: CircleImage(size:40,borderSize:1,image: NetworkImage(comment.user.avatarUrl),),
-              title: Text(comment.user.login),
+              leading: CircleImage(size:40,borderSize:1,image: NetworkImage(comment.user!.avatarUrl!),),
+              title: Text(comment.user!.login!),
               subtitle:Row(
                 children: [
-                  Text('创建于:${ConvertMan.time2string(comment.createdAt)}'),
+                  Text('创建于:${ConvertMan.time2string(comment.createdAt!)}'),
                   Spacer(),
                   WrapColor(
                       color: Colors.green,
-                      child: Text('更新于:${ConvertMan.time2string(comment.updatedAt)}',style: TextStyle(color: Colors.white),)),
+                      child: Text('更新于:${ConvertMan.time2string(comment.updatedAt!)}',style: TextStyle(color: Colors.white),)),
 
                 ],
               ) ,

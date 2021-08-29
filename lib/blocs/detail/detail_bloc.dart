@@ -13,7 +13,7 @@ import 'detail_state.dart';
 class DetailBloc extends Bloc<DetailEvent, DetailState> {
   final WidgetRepository repository;
 
-  DetailBloc({@required this.repository}):super(DetailLoading());
+  DetailBloc({required this.repository}):super(DetailLoading());
 
 
   @override

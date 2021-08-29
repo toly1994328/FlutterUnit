@@ -52,6 +52,7 @@ class HomeItemSupport {
       id: Random().nextInt(10000),
       name: 'Container',
       nameCN: "",
+      links: [],
       lever: 5,
       family: WidgetFamily.statelessWidget,
       info: '用于容纳单个子组件的容器组件。集成了若干个单子组件的功能，如内外边距、形变、装饰、约束等...');

@@ -11,7 +11,7 @@ class AuthenticWidget extends StatelessWidget {
   final Widget authentic;
   final Widget noAuthentic;
 
-  const AuthenticWidget({this.authentic, this.noAuthentic});
+  const AuthenticWidget({required this.authentic, required this.noAuthentic});
 
   @override
   Widget build(BuildContext context) {

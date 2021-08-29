@@ -29,7 +29,7 @@ class PointBloc extends Bloc<PointEvent, PointState> {
       yield PointLoaded(issues);
     } catch (err) {
       print(err);
-      yield PointLoadFailure(err);
+      yield PointLoadFailure(err.toString());
     }
   }
 }

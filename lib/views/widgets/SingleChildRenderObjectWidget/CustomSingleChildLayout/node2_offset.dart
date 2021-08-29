@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 //    }
 
 class OffSetWidgetDemo extends StatelessWidget {
-  final data = [
+  final List<Map<String,dynamic>> data = [
     {
       'offset': Offset(20, 20),
       'direction': Direction.topLeft,
@@ -71,7 +71,7 @@ class OffSetWidget extends StatelessWidget {
 
   OffSetWidget(
       {this.offset = Offset.zero,
-      this.child,
+      required this.child,
       this.direction = Direction.topLeft});
 
   @override

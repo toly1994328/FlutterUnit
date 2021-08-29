@@ -4,14 +4,14 @@ import 'package:flutter_unit/views/components/permanent/circle.dart';
 
 class TolyAppBar extends StatefulWidget {
   final double maxHeight;
-  final Function(int) onItemClick;
+  final Function(int)? onItemClick;
 
   @override
   _TolyAppBarState createState() => _TolyAppBarState();
 
   final int defaultIndex;
 
-  TolyAppBar({this.maxHeight, this.onItemClick, this.defaultIndex = 0});
+  TolyAppBar({required this.maxHeight, this.onItemClick, this.defaultIndex = 0});
 }
 
 const BorderRadius _kBorderRadius = BorderRadius.only(
@@ -25,7 +25,7 @@ const TextStyle _kTabTextStyle = TextStyle(color: Colors.white, shadows: [
 
 class _TolyAppBarState extends State<TolyAppBar>
     with SingleTickerProviderStateMixin {
-  double _width;
+  double? _width;
   int _selectIndex = 0;
   int _prevSelectIndex = 0;
 
@@ -49,10 +49,10 @@ class _TolyAppBarState extends State<TolyAppBar>
     'Other'
   ];
 
-  AnimationController _controller;
-  Animation<double> circleAnim;
-  Animation<double> heightAnim;
-  Animation<double> backCircleAnim;
+  late AnimationController _controller;
+  late Animation<double> circleAnim;
+  late Animation<double> heightAnim;
+  late Animation<double> backCircleAnim;
 
   @override
   void initState() {
@@ -133,7 +133,7 @@ class _TolyAppBarState extends State<TolyAppBar>
       _controller.forward();
       _prevSelectIndex = _selectIndex;
       _selectIndex = colors.indexOf(color);
-      if (widget.onItemClick != null) widget.onItemClick(_selectIndex);
+      widget.onItemClick?.call(_selectIndex);
     });
   }
 
@@ -151,7 +151,7 @@ class TolyAppBarDelegate extends FlowDelegate {
   final Animation<double> repaint;
 
   TolyAppBarDelegate(this.selectIndex, this.prevSelectIndex, this.height,
-      {this.repaint})
+      {required this.repaint})
       : super(repaint: repaint);
 
   double get factor => repaint.value;
@@ -162,7 +162,7 @@ class TolyAppBarDelegate extends FlowDelegate {
     double obx = 0;
 
     for (int i = 0; i < context.childCount / 2; i++) {
-      Size cSize = context.getChildSize(i);
+      Size cSize = context.getChildSize(i)??Size.zero;
       if (i == selectIndex) {
         context.paintChild(i,
             transform: Matrix4.translationValues(ox, 20.0 * factor - 20, 0.0));
@@ -181,10 +181,11 @@ class TolyAppBarDelegate extends FlowDelegate {
 
     // 绘制小点
     for (int i = (context.childCount / 2).floor(); i < context.childCount; i++) {
+      Size size = context.getChildSize(0)??Size.zero;
       context.paintChild(i,
           transform: Matrix4.translationValues(
-              obx + context.getChildSize(0).width / 2 - 5, height + 5, 0));
-      obx += context.getChildSize(0).width;
+              obx + size.width / 2 - 5, height + 5, 0));
+      obx += size.width;
     }
   }
 

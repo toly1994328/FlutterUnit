@@ -8,7 +8,7 @@ import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 /// 说明:
 
 class SystemApi {
-  static Future<ResultBean<String>> sendEmail({@required String email}) async {
+  static Future<ResultBean<String>> sendEmail({required String email}) async {
     var result =
         await HttpUtil.getInstance().client.post(PathUnit.sendEmail + "$email");
 

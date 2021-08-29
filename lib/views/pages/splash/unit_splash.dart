@@ -21,7 +21,7 @@ class UnitSplash extends StatefulWidget {
 }
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
-  AnimationController _controller;
+ late AnimationController _controller;
 
   ValueNotifier<bool> _animEnd = ValueNotifier<bool>(false);
 
@@ -94,7 +94,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       top: winH / 1.4,
       child: ValueListenableBuilder(
         valueListenable: _animEnd,
-        builder: (_, value, __) => value
+        builder: (_,bool value, __) => value
             ? FlutterUnitText(
                 text: StrUnit.appName,
                 color: Theme.of(context).primaryColor,

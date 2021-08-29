@@ -6,7 +6,7 @@ import 'views/pages/app/flutter_unit.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   //滚动性能优化 1.22.0
-  GestureBinding.instance.resamplingEnabled = true;
+  GestureBinding.instance?.resamplingEnabled = true;
   runApp(BlocWrapper(child: FlutterUnit()));
 }
 

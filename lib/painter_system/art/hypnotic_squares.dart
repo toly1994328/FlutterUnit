@@ -26,7 +26,7 @@ class _HypnoticSquaresState extends State<HypnoticSquares> {
 }
 
 class HypnoticSquaresPainter extends CustomPainter {
-  double startSteps;
+  double startSteps = 1;
   double offset = 4.0;
   double finalSize = 10.0;
   Random random = Random();

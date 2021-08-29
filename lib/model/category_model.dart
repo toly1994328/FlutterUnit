@@ -9,31 +9,31 @@ import 'package:intl/intl.dart';
 /// 说明: 收藏夹展示数据模型
 
 class CategoryModel extends Equatable {
-  final int id;
+  final int? id;
   final String name;
   final String info;
-  final String createDate;
-  final String imageCover;
-  final int count;
+  final String? createDate;
+  final String? imageCover;
+  final int? count;
   final Color color;
 
   CategoryModel(
-      {this.name,
-      this.id,
-      this.info,
+      {required this.name,
+      required this.id,
+      required this.info,
       this.createDate,
       this.imageCover,
       this.count,
-      this.color});
+      required this.color});
 
-  bool get canDelete => id > 1;
+  bool get canDelete => id != null && id! > 1;
 
   static CategoryModel fromPo(CategoryPo po) {
     return CategoryModel(
       id: po.id,
       name: po.name,
       info: po.info,
-      createDate: DateFormat('yyyy-MM-dd HH:mm').format(po.created),
+      createDate:po.created!=null? DateFormat('yyyy-MM-dd HH:mm').format(po.created!):null,
       imageCover: po.image,
       count: po.count,
       color: ColorUtils.parse(po.color),
@@ -41,7 +41,7 @@ class CategoryModel extends Equatable {
   }
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         name,
         info,
@@ -62,9 +62,9 @@ class CategoryModel extends Equatable {
 class CategoryTo{
   final CategoryPo model;
   final List<int> widgetIds;
-  final List<dynamic> likesData;
+  final List<dynamic>? likesData;
 
-  CategoryTo({this.model, this.widgetIds,this.likesData});
+  CategoryTo({required this.model,required this.widgetIds, this.likesData});
 
   Map toJson() => {
     "model": this.model,

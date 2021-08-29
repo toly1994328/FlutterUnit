@@ -77,7 +77,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
       if (result.data != null) {
         //说明有后台备份数据，进行同步操作
         CategoryRepository repository = BlocProvider.of<CategoryBloc>(context).repository;
-        await repository.syncCategoryByData(result.data.data,result.data.likeData);
+        await repository.syncCategoryByData(result.data!.data,result.data!.likeData);
         BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
         BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
       } else {

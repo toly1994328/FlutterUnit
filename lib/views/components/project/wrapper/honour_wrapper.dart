@@ -17,7 +17,7 @@ class HonourWrapper extends StatefulWidget {
 
 class _HonourWrapperState extends State<HonourWrapper>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {
@@ -60,7 +60,7 @@ class HonourPainter extends CustomPainter {
       textAlign: TextAlign.center,
       textDirection: TextDirection.ltr);
 
-  HonourPainter({this.factor}) : super(repaint: factor);
+  HonourPainter({required this.factor}) : super(repaint: factor);
 
   static const List<Color> colors = [
     Color(0xffFFAB40),

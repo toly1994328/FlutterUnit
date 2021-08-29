@@ -17,11 +17,11 @@ class _CurveAnimShowerState extends State<CurveAnimShower>
     with SingleTickerProviderStateMixin {
   PointData points = PointData();
 
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   final Duration animDuration = const Duration(milliseconds: 1000);
 
-  Animation<double> curveAnim;
+  late Animation<double> curveAnim;
 
   Map<String, Curve> maps = {
     'bounceOut': Curves.bounceOut,

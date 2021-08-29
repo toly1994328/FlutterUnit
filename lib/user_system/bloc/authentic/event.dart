@@ -21,7 +21,7 @@ class LoginOver extends AuthEvent {
   final String token;
   final User user;
 
-  const LoginOver({@required this.token,this.user});
+  const LoginOver({required this.token,required this.user});
 
   @override
   List<Object> get props => [token];

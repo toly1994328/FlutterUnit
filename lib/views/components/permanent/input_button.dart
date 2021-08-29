@@ -7,13 +7,11 @@ class InputButtonConfig {
   final IconData iconData; //图标
   final String hint; //提示文字
   final double fontSize; //文字大小
-  final Widget front; //前面图标
+  final Widget? front; //前面图标
   final bool submitClear; //是否提交清空
-
 
   const InputButtonConfig(
       {this.height = 36,
-
       this.iconData = Icons.add,
       this.fontSize = 14,
       this.submitClear = true,
@@ -22,17 +20,17 @@ class InputButtonConfig {
 }
 
 class InputButton extends StatefulWidget {
-  final SubmitCallback onSubmit;
-  final ValueChanged<String> onChanged;
-  final VoidCallback onTap;
+  final SubmitCallback? onSubmit;
+  final ValueChanged<String>? onChanged;
+  final VoidCallback? onTap;
   final InputButtonConfig config;
   final String defaultText;
 
   InputButton(
-      {Key key,
+      {Key? key,
       this.onSubmit,
       this.onChanged,
-        this.defaultText,
+      this.defaultText = '请输入',
       this.onTap,
       this.config = const InputButtonConfig()})
       : super(key: key);
@@ -42,11 +40,11 @@ class InputButton extends StatefulWidget {
 }
 
 class _InputButtonState extends State<InputButton> {
-  double _height;
-  double _fontSize;
-  Radius _radius;
+  double _height = 0;
+  double _fontSize = 0;
+  Radius _radius = Radius.zero;
 
-   TextEditingController _controller;
+  late TextEditingController _controller;
 
   @override
   void initState() {
@@ -54,7 +52,7 @@ class _InputButtonState extends State<InputButton> {
     _height = widget.config.height;
     _fontSize = widget.config.fontSize;
     _radius = Radius.circular(_height / 3.6);
-    _controller = TextEditingController(text: widget.defaultText??'');
+    _controller = TextEditingController(text: widget.defaultText);
   }
 
   @override
@@ -90,7 +88,7 @@ class _InputButtonState extends State<InputButton> {
         ),
       ),
       onChanged: (str) {
-        if (widget.onChanged != null) widget.onChanged(str);
+        widget.onChanged?.call(str);
       },
       onTap: widget.onTap,
     );
@@ -102,7 +100,7 @@ class _InputButtonState extends State<InputButton> {
       padding: EdgeInsets.zero,
       onPressed: () {
         FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
-        if (widget.onSubmit != null) widget.onSubmit(_controller.text);
+        widget.onSubmit?.call(_controller.text);
         if (widget.config.submitClear) {
           setState(() {
             _controller.clear();

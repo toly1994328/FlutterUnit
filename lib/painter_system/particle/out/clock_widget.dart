@@ -14,7 +14,7 @@ import 'clock_fx.dart';
 class ClockWidget extends StatefulWidget {
   final double radius;
 
-  const ClockWidget({Key key, this.radius = 100}) : super(key: key);
+  const ClockWidget({Key? key, this.radius = 100}) : super(key: key);
 
   @override
   _ClockWidgetState createState() => _ClockWidgetState();
@@ -22,8 +22,8 @@ class ClockWidget extends StatefulWidget {
 
 class _ClockWidgetState extends State<ClockWidget>
     with SingleTickerProviderStateMixin {
-  Ticker _ticker;
-  ClockFx _fx;
+  late Ticker _ticker;
+  late ClockFx _fx;
 
   @override
   void initState() {
@@ -64,7 +64,7 @@ const double noiseAlpha = 160;
 class ClockFxPainter extends CustomPainter {
   final ClockFx fx;
 
-  ClockFxPainter({@required this.fx}) : super(repaint: fx);
+  ClockFxPainter({required this.fx}) : super(repaint: fx);
 
   @override
   void paint(Canvas canvas, Size size) {

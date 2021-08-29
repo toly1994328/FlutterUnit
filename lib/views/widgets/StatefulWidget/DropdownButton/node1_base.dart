@@ -45,7 +45,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
               color: _color,
             ),
             items: _buildItems(),
-            onChanged: (v) => setState(() => _color = v)),
+            onChanged: (v) => setState(() => _color = v??Colors.blue)),
       ],
     );
   }

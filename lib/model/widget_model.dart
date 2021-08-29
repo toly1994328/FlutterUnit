@@ -10,15 +10,6 @@ import 'package:flutter_unit/repositories/bean/widget_po.dart';
 /// 说明: 组件信息-展示-数据模型
 ///
 
-enum WidgetType {
-  singe_show, //单一展示型 0
-  structure, //结构型 1
-  shape, //可形变 2
-  event, //事件型 3
-  ability, //功能型 4
-  layout, //布局型 5
-  scroll, //滚动型
-}
 
 class WidgetModel extends Equatable {
   final int id;
@@ -26,25 +17,25 @@ class WidgetModel extends Equatable {
   final String nameCN;
   final WidgetFamily family;
   final bool deprecated;
-  final WidgetType type;
   final List<int> links;
   final double lever;
-  final ImageProvider image;
+  final ImageProvider? image;
   final String info;
 
   Color get color => Color(Cons.tabColors[family.index]);
 
   const WidgetModel(
-      {this.id,
-      this.name,
-      this.nameCN,
-      this.family,
-      this.deprecated,
-        this.links,
-      this.type,
-      this.lever,
+      {
+        required this.id,
+        required  this.name,
+        required this.nameCN,
+        required  this.family,
+         this.deprecated =false,
+        required this.links,
+        // required this.type,
+        required this.lever,
       this.image,
-      this.info});
+        required this.info});
 
   @override
   List<Object> get props => [id];
@@ -71,7 +62,7 @@ class WidgetModel extends Equatable {
 
   @override
   String toString() {
-    return 'WidgetModel{id: $id, name: $name, nameCN: $nameCN, family: $family, deprecated: $deprecated, type: $type, links: $links, lever: $lever, image: $image, info: $info}';
+    return 'WidgetModel{id: $id, name: $name, nameCN: $nameCN, family: $family, deprecated: $deprecated, links: $links, lever: $lever, image: $image, info: $info}';
   }
 
   static List<int> formatLinkTo(String links) {

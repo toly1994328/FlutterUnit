@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -13,7 +14,7 @@ import 'package:flutter/material.dart';
 //          "【delegate】 : 代理   【FlowDelegate】",
 //    }
 class CircleFlow extends StatelessWidget {
-  final data = List.generate(
+  final List<String> data = List.generate(
       16,
       (index) => index.isEven
           ? "assets/images/icon_head.webp"
@@ -38,19 +39,18 @@ class CircleFlow extends StatelessWidget {
 class _CircleFlowDelegate extends FlowDelegate {
   @override //绘制孩子的方法
   void paintChildren(FlowPaintingContext context) {
-    double radius = context.size.shortestSide / 2;
-    print(context.getChildSize(0));
-    var count = context.childCount;
-    var perRad = 2 * pi / count;
+    final double radius = context.size.shortestSide / 2;
+    final int count = context.childCount;
+    final double perRad = 2 * pi / count;
     for (int i = 0; i < count; i++) {
-      var cSizeX = context.getChildSize(i).width / 2;
-      var cSizeY = context.getChildSize(i).height / 2;
-
-      var offsetX = (radius - cSizeX) * cos(i * perRad) + radius;
-      var offsetY = (radius - cSizeY) * sin(i * perRad) + radius;
+      final Size size = context.getChildSize(i) ?? Size.zero;
+      final double offsetX =
+          (radius - size.width / 2) * cos(i * perRad) + radius;
+      final double offsetY =
+          (radius - size.height / 2) * sin(i * perRad) + radius;
       context.paintChild(i,
           transform: Matrix4.translationValues(
-              offsetX - cSizeX, offsetY - cSizeY, 0.0));
+              offsetX - size.width / 2, offsetY - size.height / 2, 0.0));
     }
   }
 

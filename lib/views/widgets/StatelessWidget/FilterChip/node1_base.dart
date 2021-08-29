@@ -53,12 +53,12 @@ class _CustomFilterChipState extends State<CustomFilterChip> {
         pressElevation: 5,
         elevation: 3,
         avatar: CircleAvatar(child: Text(key)),
-        label: Text(map[key]),
+        label: Text(map[key]!),
         selected: _selected.contains(map[key]),
         onSelected: (bool value) {
           setState(() {
             if (value) {
-              _selected.add(map[key]);
+              _selected.add(map[key]!);
             } else {
               _selected.removeWhere((name) => name == map[key]);
             }

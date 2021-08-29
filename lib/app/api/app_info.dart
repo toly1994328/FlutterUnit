@@ -36,5 +36,9 @@ class AppInfo{
   final String appVersion;
   final String appUrl;
 
-  AppInfo({this.appName, this.appVersion, this.appUrl});
+  AppInfo({
+    required this.appName,
+    required this.appVersion,
+    required this.appUrl,
+  });
 }

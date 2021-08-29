@@ -12,20 +12,23 @@
 
 import 'package:flutter/material.dart';
 class FlutterLogoWithText extends StatelessWidget {
+
+  final Map<FlutterLogoStyle,Color> data = {
+    FlutterLogoStyle.horizontal:Colors.blue,
+    FlutterLogoStyle.markOnly:Colors.red,
+    FlutterLogoStyle.stacked:Colors.green,
+  };
+
+
   @override
   Widget build(BuildContext context) {
-    var data = {
-      FlutterLogoStyle.horizontal:Colors.blue,
-      FlutterLogoStyle.markOnly:Colors.red,
-      FlutterLogoStyle.stacked:Colors.green,
-    };
 
     return Wrap(
       spacing: 20,
-      children: data.keys.map((e) => FlutterLogo(
+      children: data.keys.map((FlutterLogoStyle style) => FlutterLogo(
         size: 80,
-        style: e,
-        textColor: data[e],
+        style: style,
+        textColor: data[style]!,
       ))
           .toList(),
     );

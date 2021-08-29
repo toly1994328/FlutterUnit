@@ -17,26 +17,27 @@ import 'package:equatable/equatable.dart';
 //     );"""; //建表语句
 
 class CategoryPo extends Equatable {
-  final int id;
+  final int? id;
   final String name;
   final String color;
   final String info;
-  final DateTime created;
+  final DateTime? created;
   final DateTime updated;
   final String image;
   final int count;
   final int priority;
 
-  const CategoryPo(
-      {this.id,
-      this.name,
-      this.color = '#FFF2F2F2',
-      this.created,
-      this.updated,
-        this.count = 0,
-      this.priority = 0,
-      this.info = '这里什么都没有...',
-      this.image = ''});
+  const CategoryPo({
+     this.id,
+    required this.name,
+    this.color = '#FFF2F2F2',
+     this.created,
+    required this.updated,
+    this.count = 0,
+    this.priority = 0,
+    this.info = '这里什么都没有...',
+    this.image = '',
+  });
 
   factory CategoryPo.fromJson(Map<String, dynamic> map) {
     return CategoryPo(
@@ -68,7 +69,7 @@ class CategoryPo extends Equatable {
     "id": this.id,
     "name": this.name,
     "info": this.info,
-    "created": this.created.millisecondsSinceEpoch,
+    "created": this.created?.millisecondsSinceEpoch,
     "updated": this.updated.millisecondsSinceEpoch,
     "image": this.image,
     "count": this.count,
@@ -82,6 +83,6 @@ class CategoryPo extends Equatable {
   }
 
   @override
-  List<Object> get props =>
+  List<Object?> get props =>
       [id, name, color, created, image, info, updated, priority,count];
 }

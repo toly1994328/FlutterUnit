@@ -32,7 +32,7 @@ class InheritedWidgetDemo extends StatelessWidget {
 class InfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String info = InfoInheritedWidget.of(context).info;
+    String info = InfoInheritedWidget.of(context)?.info??'';
 
     return Container(
       color: Colors.blue.withOpacity(0.1),
@@ -46,13 +46,13 @@ class InfoWidget extends StatelessWidget {
 class InfoInheritedWidget extends InheritedWidget {
   final String info;
 
-  InfoInheritedWidget({Key key, this.info, @required Widget child})
+  InfoInheritedWidget({Key? key,required this.info, required Widget child})
       : super(key: key, child: child);
 
   @override
   bool updateShouldNotify(covariant InfoInheritedWidget oldWidget) =>
       info != oldWidget.info;
 
-  static InfoInheritedWidget of(BuildContext context) =>
+  static InfoInheritedWidget? of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<InfoInheritedWidget>();
 }

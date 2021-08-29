@@ -17,7 +17,7 @@ import 'package:flutter_unit/model/widget_model.dart';
 class CategoryShow extends StatelessWidget {
   final CategoryModel model;
 
-  CategoryShow({this.model});
+  CategoryShow({required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class CategoryShow extends StatelessWidget {
               ),
               onDismissed: (v) {
                 BlocProvider.of<CategoryWidgetBloc>(context).add(
-                    EventToggleCategoryWidget(model.id, widgets[index].id));
+                    EventToggleCategoryWidget(model.id!, widgets[index].id));
               },
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
@@ -77,7 +77,7 @@ class CategoryShow extends StatelessWidget {
 class SimpleWidgetItem extends StatelessWidget {
   final WidgetModel data;
 
-  SimpleWidgetItem({this.data});
+  SimpleWidgetItem({required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +134,7 @@ class SimpleWidgetItem extends StatelessWidget {
                 ),
               )
             : CircleImage(
-                image: data.image,
+                image: data.image!,
                 size: 60,
               ),
       );

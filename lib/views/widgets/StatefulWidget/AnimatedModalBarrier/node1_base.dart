@@ -20,16 +20,15 @@ class AnimatedModalBarrierDemo extends StatefulWidget {
 
 class _AnimatedModalBarrierDemoState extends State<AnimatedModalBarrierDemo>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Color> _color;
+ late AnimationController _controller;
+ late Animation<Color?> _color;
 
   @override
   void initState() {
     super.initState();
     _controller =
         AnimationController(vsync: this, duration: Duration(seconds: 2))..forward();
-    _color = ColorTween(begin: Colors.blue, end: Colors.purple)
-        .animate(_controller);
+    _color = ColorTween(begin: Colors.blue, end: Colors.purple).animate(_controller);
   }
 
   @override

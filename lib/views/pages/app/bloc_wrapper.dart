@@ -22,7 +22,7 @@ final AppStart storage = AppStart();
 class BlocWrapper extends StatefulWidget {
   final Widget child;
 
-  BlocWrapper({this.child});
+  BlocWrapper({required this.child});
 
   @override
   _BlocWrapperState createState() => _BlocWrapperState();

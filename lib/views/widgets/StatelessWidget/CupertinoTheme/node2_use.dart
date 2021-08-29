@@ -28,7 +28,7 @@ class CustomCupertinoTheme extends StatelessWidget {
 
 class _ChildUseTheme extends StatelessWidget {
   const _ChildUseTheme({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

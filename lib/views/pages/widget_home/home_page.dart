@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback(_onFrameCallBack);
+    WidgetsBinding.instance?.addPostFrameCallback(_onFrameCallBack);
   }
 
   void _onFrameCallBack(Duration timeStamp) {
@@ -139,9 +139,9 @@ class _HomePageState extends State<HomePage>
 
 class FlexHeaderDelegate extends SliverPersistentHeaderDelegate {
   FlexHeaderDelegate({
-    @required this.minHeight,
-    @required this.maxHeight,
-    @required this.childBuilder,
+    required this.minHeight,
+    required this.maxHeight,
+    required this.childBuilder,
   });
 
   final double minHeight; //最小高度

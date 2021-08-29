@@ -83,8 +83,8 @@ class PaperPainter extends CustomPainter {
 
   final TouchInfo repaint;
 
-  PaperPainter({this.repaint}) : super(repaint: repaint);
-  List<Offset> pos;
+  PaperPainter({required this.repaint}) : super(repaint: repaint);
+  List<Offset> pos=[];
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -118,7 +118,7 @@ class PaperPainter extends CustomPainter {
   }
 
   void _drawSelectPos(Canvas canvas,Size size) {
-    Offset selectPos = repaint.selectPoint;
+    Offset? selectPos = repaint.selectPoint;
     if (selectPos == null) return;
       selectPos = selectPos.translate(-size.width / 2, -size.height / 2);
     canvas.drawCircle(

@@ -21,7 +21,7 @@ class CustomTextField extends StatefulWidget {
 
 class _CustomTextFieldState extends State<CustomTextField> {
   final FocusNode _focusNode = FocusNode();
-  TextEditingController _controller;
+  late TextEditingController _controller;
 
   void initState() {
     super.initState();

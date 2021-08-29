@@ -32,17 +32,17 @@ class TechnoShapeBorder extends ShapeBorder {
   }
 
   @override
-  EdgeInsetsGeometry get dimensions => null;
+  EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     Path path = Path();
     path.addRRect(RRect.fromRectAndRadius(rect, Radius.circular(5)));
     return path;
   }
 
   @override
-  Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
     double width = rect.width;
 
     outLinePath
@@ -64,7 +64,7 @@ class TechnoShapeBorder extends ShapeBorder {
   }
 
   @override
-  void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
     canvas.drawPath(
         outLinePath,
         _paint..style = PaintingStyle.stroke);
@@ -81,6 +81,6 @@ class TechnoShapeBorder extends ShapeBorder {
 
   @override
   ShapeBorder scale(double t) {
-    return null;
+    return this;
   }
 }

@@ -19,8 +19,13 @@ class CustomDropDownButtonHideUnderline extends StatefulWidget {
 class _CustomDropDownButtonHideUnderlineState
     extends State<CustomDropDownButtonHideUnderline> {
   Color _color = Colors.red;
-  final _colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
-  final _info = ["红色", "黄色", "蓝色", "绿色"];
+  final List<Color> _colors = [
+    Colors.red,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green
+  ];
+  final List<String> _info = ["红色", "黄色", "蓝色", "绿色"];
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +47,8 @@ class _CustomDropDownButtonHideUnderlineState
                 color: _color,
               ),
               items: _buildItems(),
-              onChanged: (v) => setState(() => _color = v)),
+              onChanged: (Color? color) =>
+                  setState(() => _color = color ?? _color)),
         ),
       ],
     );

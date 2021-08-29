@@ -18,7 +18,7 @@ class TabAppBar extends StatefulWidget {
 class _TabAppBarState extends State<TabAppBar>
     with SingleTickerProviderStateMixin {
   final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
-  TabController _tabController;
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -56,7 +56,7 @@ class _TabAppBarState extends State<TabAppBar>
         title: Text('风雅六社'),
         elevation: 1,
         leading: BackButton(),
-        backgroundColor: Colors.amber[500].withAlpha(33),
+        backgroundColor: Colors.amber[500]!.withAlpha(33),
         centerTitle: true,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(

@@ -24,7 +24,7 @@ class CustomDefaultTextStyleTransition extends StatefulWidget {
 class _CustomDefaultTextStyleTransitionState
     extends State<CustomDefaultTextStyleTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {

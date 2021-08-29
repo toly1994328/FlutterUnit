@@ -7,7 +7,7 @@ class LikeDao {
 
   Future<List<int>> likeWidgetIds() async {
     var result = await db.rawQuery("SELECT widget_id FROM like_widget");
-    var ids = result.map<int>((e) => e['widget_id']).toList();
+    var ids = result.map<int>((e) => e['widget_id'] as int).toList();
     return ids;
   }
 

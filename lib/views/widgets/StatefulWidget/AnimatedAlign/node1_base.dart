@@ -24,7 +24,7 @@ class _CustomAnimatedAlignState extends State<CustomAnimatedAlign> {
   final Alignment start = Alignment(0, 0);
   final Alignment end = Alignment.bottomRight;
 
-  Alignment _alignment;
+  late Alignment _alignment;
 
   @override
   void initState() {

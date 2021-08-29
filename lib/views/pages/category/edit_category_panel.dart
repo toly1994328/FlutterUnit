@@ -15,34 +15,32 @@ import 'package:flutter_unit/model/category_model.dart';
 enum EditType { add, update }
 
 class EditCategoryPanel extends StatefulWidget {
-  final CategoryModel model;
+  final CategoryModel? model;
   final EditType type;
 
-  EditCategoryPanel({this.model, this.type = EditType.add});
+  const EditCategoryPanel({this.model, this.type = EditType.add});
 
   @override
   _EditCategoryPanelState createState() => _EditCategoryPanelState();
 }
 
 class _EditCategoryPanelState extends State<EditCategoryPanel> {
-  String name;
-  String color;
-  String info;
+  String name='';
+  String color='';
+  String info='';
 
   int get colorIndex => widget.model == null
       ? 0
       : UnitColor.collectColorSupport
           .map((e) => e.value)
           .toList()
-          .indexOf(widget.model.color.value);
+          .indexOf(widget.model!.color.value);
 
   @override
   void initState() {
     super.initState();
-    info = widget.model?.info;
-    color = widget.model == null
-        ? null
-        : ColorUtils.colorString(widget.model.color);
+    info = widget.model?.info??'';
+    color = (widget.model == null ? null : ColorUtils.colorString(widget.model!.color))??'';
   }
 
   @override
@@ -53,7 +51,7 @@ class _EditCategoryPanelState extends State<EditCategoryPanel> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
           child: InputButton(
-            defaultText: widget.model?.name,
+            defaultText: '${widget.model?.name}',
             config: InputButtonConfig(hint: '收藏集名称', iconData: Icons.check),
             onSubmit: (str) {
               name = str;
@@ -65,7 +63,7 @@ class _EditCategoryPanelState extends State<EditCategoryPanel> {
                 if (widget.type == EditType.update) {
                   BlocProvider.of<CategoryBloc>(context).add(
                       EventUpdateCategory(
-                          id: widget.model.id,
+                          id: widget.model!.id!,
                           name: name,
                           info: info,
                           color: color));
@@ -78,7 +76,7 @@ class _EditCategoryPanelState extends State<EditCategoryPanel> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
           child: EditPanel(
-            defaultText: widget.model?.info,
+            defaultText: '${widget.model?.info}',
             submitClear: false,
             hint: '收藏集简介...',
             onChange: (v) => info = v,

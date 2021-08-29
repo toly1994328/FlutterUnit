@@ -45,7 +45,7 @@ class MePageItem extends StatelessWidget {
 
   Widget _buildItem(
           BuildContext context, IconData icon, String title, String linkTo,
-          {VoidCallback onTap}) =>
+          {VoidCallback? onTap}) =>
       ListTile(
         leading: Icon(
           icon,
@@ -55,7 +55,7 @@ class MePageItem extends StatelessWidget {
         trailing:
             Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
         onTap: () {
-          if (linkTo != null && linkTo.isNotEmpty) {
+          if (linkTo.isNotEmpty) {
             Navigator.of(context).pushNamed(linkTo);
             if (onTap != null) onTap();
           }

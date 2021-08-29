@@ -68,7 +68,7 @@ class _PageStorageDemoState extends State<PageStorageDemo> {
 }
 
 class CountWidget extends StatefulWidget {
-  CountWidget({Key key}) : super(key: key);
+  CountWidget({Key? key}) : super(key: key);
 
   @override
   _CountWidgetState createState() => _CountWidgetState();
@@ -80,7 +80,7 @@ class _CountWidgetState extends State<CountWidget> {
   @override
   void initState() {
     super.initState();
-    _count = PageStorage.of(context)?.readState(context) as int ?? 0;
+    _count = PageStorage.of(context)?.readState(context);
   }
 
   @override

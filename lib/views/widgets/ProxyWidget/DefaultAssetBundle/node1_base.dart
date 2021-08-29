@@ -20,7 +20,7 @@ class DefaultAssetBundleDemo extends StatefulWidget {
 }
 
 class _DefaultAssetBundleDemoState extends State<DefaultAssetBundleDemo> {
- ui.Image _image;
+ ui.Image? _image;
   @override
   void initState() {
     super.initState();

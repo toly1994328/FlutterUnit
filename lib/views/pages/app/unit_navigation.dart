@@ -60,7 +60,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
   }
 
   // 构建悬浮按钮工具
-  Widget wrapOverlayTool({Widget child}) => Builder(
+  Widget wrapOverlayTool({required Widget child}) => Builder(
       builder: (ctx) => OverlayToolWrapper(
             child: child,
           ));

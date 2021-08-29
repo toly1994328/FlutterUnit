@@ -21,20 +21,21 @@ class SliverIgnorePointerDemo extends StatefulWidget {
 }
 
 class _SliverIgnorePointerDemoState extends State<SliverIgnorePointerDemo> {
-  final data = <Color>[
-    Colors.orange[50],
-    Colors.orange[100],
-    Colors.orange[200],
-    Colors.orange[300],
-    Colors.orange[400],
-    Colors.orange[500],
-    Colors.orange[600],
-    Colors.orange[700],
-    Colors.orange[800],
-    Colors.orange[900],
+  final List<Color> data = [
+    Colors.orange[50]!,
+    Colors.orange[100]!,
+    Colors.orange[200]!,
+    Colors.orange[300]!,
+    Colors.orange[400]!,
+    Colors.orange[500]!,
+    Colors.orange[600]!,
+    Colors.orange[700]!,
+    Colors.orange[800]!,
+    Colors.orange[900]!,
   ];
 
-  final r = Random();
+
+  final Random r = Random();
 
   bool hasScrollBody = false;
   bool fillOverscroll = true;

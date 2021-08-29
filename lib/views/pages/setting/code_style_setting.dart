@@ -65,7 +65,7 @@ class Hello {
             bottom: 20,
             child: Text(Cons.codeThemeSupport.values.toList()[i],style: TextStyle(
               fontSize: 14,
-              color: styles[i].stringStyle.color,
+              color: styles[i].stringStyle!.color,
               shadows: [Shadow(
                 color: Colors.white,
                 offset: Offset(.5,.5),

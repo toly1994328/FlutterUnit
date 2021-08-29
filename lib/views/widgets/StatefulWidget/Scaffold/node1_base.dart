@@ -18,7 +18,7 @@ import '../PopupMenuButton/node1_base.dart';
 //          "【floatingActionButtonLocation】 : 浮动按钮位置   【FloatingActionButtonLocation】",
 //    }
 class CustomScaffold extends StatefulWidget {
-  CustomScaffold({Key key}) : super(key: key);
+  CustomScaffold({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _CustomScaffoldState();
@@ -43,7 +43,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
     Colors.purple,
   ];
 
-  TabController _tabController;
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -91,7 +91,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
         ),
       );
 
-  Widget _buildTabBar() => TabBar(
+  PreferredSizeWidget _buildTabBar() => TabBar(
         isScrollable: true,
         controller: _tabController,
         indicatorColor: Colors.orangeAccent,

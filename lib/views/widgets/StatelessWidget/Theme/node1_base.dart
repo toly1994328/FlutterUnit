@@ -15,25 +15,25 @@ class TextThemeDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     TextTheme queryData = Theme.of(context).textTheme;
     Map<String, TextStyle> styles = {
-      "headline: ": queryData.headline,
-      "title: ": queryData.title,
-      "subhead: ": queryData.subhead,
-      "body1: ": queryData.body1,
-      "body2: ": queryData.body2,
-      "button: ": queryData.button,
-      "overline: ": queryData.overline,
-      "subtitle: ": queryData.subtitle,
-      "caption: ": queryData.caption,
-      "display1: ": queryData.display1,
-      "display2: ": queryData.display2,
-      "display3: ": queryData.display3,
-      "display4: ": queryData.display4,
+      "headline: ": queryData.headline!,
+      "title: ": queryData.title!,
+      "subhead: ": queryData.subhead!,
+      "body1: ": queryData.body1!,
+      "body2: ": queryData.body2!,
+      "button: ": queryData.button!,
+      "overline: ": queryData.overline!,
+      "subtitle: ": queryData.subtitle!,
+      "caption: ": queryData.caption!,
+      "display1: ": queryData.display1!,
+      "display2: ": queryData.display2!,
+      "display3: ": queryData.display3!,
+      "display4: ": queryData.display4!,
     };
 
     return Container(
       child: Column(
         children: styles.keys
-            .map((String styleInfo) => buildItem(styleInfo, styles[styleInfo]))
+            .map((String styleInfo) => buildItem(styleInfo, styles[styleInfo]!))
             .toList(),
       ),
     );

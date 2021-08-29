@@ -23,7 +23,7 @@ class RotateTransform extends StatefulWidget {
 }
 
 class _RotateTransformState extends State<RotateTransform> {
-  Matrix4 _m4;
+  late Matrix4 _m4;
   double _x = 0;
   int _rotateFlag = 1;
 
@@ -103,7 +103,7 @@ class _RotateTransformState extends State<RotateTransform> {
         pressElevation: 5,
         elevation: 3,
         avatar: CircleAvatar(child: Text(key.toString())),
-        label: Text(map[key]),
+        label: Text(map[key]!),
         selected: _rotateFlag == key,
         onSelected: (bool value) {
           print(map[key]);

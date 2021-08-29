@@ -6,15 +6,15 @@ typedef CheckCallback<T> = void Function(T color);
 
 class ColorChooser extends StatefulWidget {
   ColorChooser(
-      {Key key,
+      {Key? key,
         this.defaultIndex=0,
       this.radius = 10,
-      @required this.colors,
-      @required this.onChecked})
+      required this.colors,
+      required this.onChecked})
       : super(key: key);
   final double radius;
   final List<Color> colors;
-  final Function(Color) onChecked;
+  final Function(Color)? onChecked;
   final int defaultIndex;
 
   @override
@@ -22,7 +22,7 @@ class ColorChooser extends StatefulWidget {
 }
 
 class _ColorChooserState extends State<ColorChooser> {
-  List<bool> _checkLi;
+  List<bool> _checkLi=[];
   int _perPosition = 0;
 
   @override
@@ -43,7 +43,7 @@ class _ColorChooserState extends State<ColorChooser> {
             _checkLi[_perPosition] = false;
             _perPosition = i;
             _checkLi[i] = true;
-            if (widget.onChecked != null) widget.onChecked(widget.colors[i]);
+            widget.onChecked?.call(widget.colors[i]);
             setState(() {});
           },
           child: Circle(
@@ -55,7 +55,7 @@ class _ColorChooserState extends State<ColorChooser> {
                     size: 15,
                     color: Colors.white,
                   )
-                : null,
+                : const SizedBox.shrink(),
 //              checked: _checkLi[i]
           )));
     }
@@ -65,10 +65,10 @@ class _ColorChooserState extends State<ColorChooser> {
 
 class IconChooser extends StatefulWidget {
   IconChooser(
-      {Key key,
+      {Key? key,
       this.radius = 20,
-      @required this.icons,
-      @required this.onChecked,
+      required this.icons,
+      required this.onChecked,
       this.initialIndex = 0})
       : super(key: key);
   final double radius;
@@ -81,7 +81,7 @@ class IconChooser extends StatefulWidget {
 }
 
 class _IconChooserState extends State<IconChooser> {
-  List<bool> _checkLi;
+  List<bool> _checkLi=[];
   int _perPosition = 0;
 
   @override
@@ -112,7 +112,7 @@ class _IconChooserState extends State<IconChooser> {
         children: li);
   }
 
-  buildIcon({bool checked, IconData icon}) {
+  Widget buildIcon({bool checked = false, IconData? icon}) {
     Color defaultColor = Colors.black26;
     Color activeColor = Colors.blue;
     return Icon(

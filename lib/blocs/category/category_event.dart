@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-21
 /// contact me by email 1981462002@qq.com
@@ -8,7 +7,7 @@ import 'package:flutter/material.dart';
 abstract class CategoryEvent extends Equatable{
   const CategoryEvent();
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 // 加载 收藏集 事件
 class EventLoadCategory extends CategoryEvent{
@@ -21,7 +20,7 @@ class EventLoadCategory extends CategoryEvent{
 class EventToggleWidget extends CategoryEvent{
   final int widgetId;
   final int categoryId;
-  const EventToggleWidget({this.widgetId, this.categoryId});
+  const EventToggleWidget({required this.widgetId, required this.categoryId});
 
   @override
   List<Object> get props => [widgetId,categoryId];
@@ -31,7 +30,7 @@ class EventToggleWidget extends CategoryEvent{
 class EventDeleteCategory extends CategoryEvent{
   final int id;
 
-  const EventDeleteCategory({@required this.id});
+  const EventDeleteCategory({required this.id});
 
   @override
   List<Object> get props => [id];
@@ -40,26 +39,33 @@ class EventDeleteCategory extends CategoryEvent{
 // 添加 收藏集
 class EventAddCategory extends CategoryEvent{
   final String name;
-  final String info;
-  final String color;
+  final String? info;
+  final String? color;
 
-  const EventAddCategory({@required this.name, this.info, this.color});
+  const EventAddCategory(
+      {required this.name, required this.info, required this.color});
 
   @override
-  List<Object> get props => [name,info,color];
+  List<Object?> get props => [name, info, color];
 }
 
 // 更新 收藏集
 class EventUpdateCategory extends CategoryEvent {
   final int id;
   final String name;
-  final String info;
-  final String color;
-  final int  priority;
-  final String image;
+  final String? info;
+  final String? color;
+  final int? priority;
+  final String? image;
 
-  const EventUpdateCategory({@required this.name, this.info, this.color,this.priority,this.image,this.id});
+  const EventUpdateCategory(
+      {required this.name,
+      required this.info,
+      required this.color,
+      this.priority,
+      this.image,
+      required this.id});
 
   @override
-  List<Object> get props => [name, info, color,priority,image,id];
+  List<Object?> get props => [name, info, color, priority, image, id];
 }

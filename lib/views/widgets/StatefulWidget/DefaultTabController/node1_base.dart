@@ -38,7 +38,7 @@ class DefaultTabControllerDemo extends StatelessWidget {
             children: tabs.map((Tab tab) {
               return Center(
                 child: Text(
-                  tab.text,
+                  '${tab.text}',
                   style: const TextStyle(fontSize: 20),
                 ),
               );

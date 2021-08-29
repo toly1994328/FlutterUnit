@@ -49,6 +49,7 @@ class RepaintBoundarySave extends StatelessWidget {
         var bits = await _widget2Image(_globalKey);
         var dir = await getApplicationSupportDirectory();
         var file = File(dir.path + "/save_img.png");
+        if(bits==null) return;
         var f = await file.writeAsBytes(bits);
         Scaffold.of(context).showSnackBar(SnackBar(
           backgroundColor: Theme.of(context).primaryColor,
@@ -56,13 +57,15 @@ class RepaintBoundarySave extends StatelessWidget {
         ));
       });
 
-  Future<Uint8List> _widget2Image(GlobalKey key) async {
-    RenderRepaintBoundary boundary = key.currentContext.findRenderObject();
+  Future<Uint8List?> _widget2Image(GlobalKey key) async {
+    RenderObject? boundary = key.currentContext?.findRenderObject();
+    if(boundary==null || boundary is! RenderRepaintBoundary) return null;
+
     //获得 ui.image
     ui.Image img = await boundary.toImage();
     //获取图片字节
     var byteData = await img.toByteData(format: ui.ImageByteFormat.png);
-    Uint8List bits = byteData.buffer.asUint8List();
+    Uint8List? bits = byteData?.buffer.asUint8List();
     return bits;
   }
 }

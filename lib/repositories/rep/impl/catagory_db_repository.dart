@@ -103,8 +103,8 @@ class CategoryDbRepository implements CategoryRepository {
         CategoryPo po = CategoryPo.fromNetJson(dataMap[i]["model"]);
         List<dynamic> widgetIds = dataMap[i]["widgetIds"];
         await addCategory(po);
-        if (widgetIds.isNotEmpty) {
-          await _categoryDao.addWidgets(po.id, widgetIds);
+        if (widgetIds.isNotEmpty&&po.id!=null) {
+          await _categoryDao.addWidgets(po.id!, widgetIds);
         }
       }
       List<int> likeWidgets = (json.decode(likeData) as List).map<int>((e) => e).toList();

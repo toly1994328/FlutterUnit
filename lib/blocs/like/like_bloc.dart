@@ -13,7 +13,7 @@ import 'like_state.dart';
 class LikeWidgetBloc extends Bloc<LikeWidgetEvent, LikeWidgetState> {
   final WidgetRepository repository;
 
-  LikeWidgetBloc({@required this.repository}):super(LikeWidgetState(widgets: []));
+  LikeWidgetBloc({required this.repository}):super(LikeWidgetState(widgets: []));
 
 
   @override

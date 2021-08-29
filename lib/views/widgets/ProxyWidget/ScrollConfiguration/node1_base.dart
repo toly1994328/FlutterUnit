@@ -14,16 +14,16 @@ import 'package:flutter/material.dart';
 //    }
 class CustomScrollConfiguration extends StatelessWidget {
   final data = <Color>[
-    Colors.cyan[50],
-    Colors.cyan[100],
-    Colors.cyan[200],
-    Colors.cyan[300],
-    Colors.cyan[400],
-    Colors.cyan[500],
-    Colors.cyan[600],
-    Colors.cyan[700],
-    Colors.cyan[800],
-    Colors.cyan[900],
+    Colors.cyan[50]!,
+    Colors.cyan[100]!,
+    Colors.cyan[200]!,
+    Colors.cyan[300]!,
+    Colors.cyan[400]!,
+    Colors.cyan[500]!,
+    Colors.cyan[600]!,
+    Colors.cyan[700]!,
+    Colors.cyan[800]!,
+    Colors.cyan[900]!,
   ];
 
   @override

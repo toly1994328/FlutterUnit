@@ -22,7 +22,7 @@ class TabPageSelectorDemo extends StatefulWidget {
 class _TabPageSelectorDemoState extends State<TabPageSelectorDemo>
     with SingleTickerProviderStateMixin {
   final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
-  TabController _tabController;
+ late TabController _tabController;
 
   @override
   void initState() {

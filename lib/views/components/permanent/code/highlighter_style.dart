@@ -127,13 +127,13 @@ class HighlighterStyle {
     ),
     backgroundColor: Color(colors[8]),
   );
-  final TextStyle baseStyle;
-  final TextStyle numberStyle;
-  final TextStyle commentStyle;
-  final TextStyle keywordStyle;
-  final TextStyle stringStyle;
-  final TextStyle punctuationStyle;
-  final TextStyle classStyle;
-  final TextStyle constantStyle;
-  final Color backgroundColor;
+  final TextStyle? baseStyle;
+  final TextStyle? numberStyle;
+  final TextStyle? commentStyle;
+  final TextStyle? keywordStyle;
+  final TextStyle? stringStyle;
+  final TextStyle? punctuationStyle;
+  final TextStyle? classStyle;
+  final TextStyle? constantStyle;
+  final Color? backgroundColor;
 }

@@ -13,17 +13,17 @@ import 'package:flutter/material.dart';
 //          "【onPageChanged】 : 点击事件  【ValueChanged<int>】",
 //    }
 class CustomPageView extends StatelessWidget {
-  final data = <Color>[
-    Colors.green[50],
-    Colors.green[100],
-    Colors.green[200],
-    Colors.green[300],
-    Colors.green[400],
-    Colors.green[500],
-    Colors.green[600],
-    Colors.green[700],
-    Colors.green[800],
-    Colors.green[900],
+  final List<Color> data = [
+    Colors.green[50]!,
+    Colors.green[100]!,
+    Colors.green[200]!,
+    Colors.green[300]!,
+    Colors.green[400]!,
+    Colors.green[500]!,
+    Colors.green[600]!,
+    Colors.green[700]!,
+    Colors.green[800]!,
+    Colors.green[900]!,
   ];
 
   @override

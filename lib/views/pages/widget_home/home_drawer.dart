@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/blocs/point/point_bloc.dart';
 import 'package:flutter_unit/blocs/point/point_event.dart';
@@ -31,16 +31,17 @@ class HomeDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            UnitDrawerHeader(color: color),
-            _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
-            _buildItem(context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
-            Divider(height: 1),
-            _buildFlutterUnit(context),
-            _buildItem(context, TolyIcon.icon_code, 'Dart 手册', null),
-            Divider(height: 1),
-            _buildItem(context, Icons.info, '关于应用', UnitRouter.about_app),
-            _buildItem(context, TolyIcon.icon_kafei, '联系本王', UnitRouter.about_me),
-          ],
+          UnitDrawerHeader(color: color),
+          _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
+          _buildItem(
+              context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
+          Divider(height: 1),
+          _buildFlutterUnit(context),
+          _buildItem(context, TolyIcon.icon_code, 'Dart 手册', ''),
+          Divider(height: 1),
+          _buildItem(context, Icons.info, '关于应用', UnitRouter.about_app),
+          _buildItem(context, TolyIcon.icon_kafei, '联系本王', UnitRouter.about_me),
+        ],
         ),
       );
   }
@@ -63,7 +64,8 @@ class HomeDrawer extends StatelessWidget {
       );
 
   Widget _buildItem(
-          BuildContext context, IconData icon, String title, String linkTo,{VoidCallback onTap}) =>
+          BuildContext context, IconData icon, String title, String linkTo,
+          {VoidCallback? onTap}) =>
       ListTile(
         leading: Icon(
           icon,
@@ -73,9 +75,9 @@ class HomeDrawer extends StatelessWidget {
         trailing:
             Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
         onTap: () {
-          if (linkTo != null && linkTo.isNotEmpty) {
+          if (linkTo.isNotEmpty) {
             Navigator.of(context).pushNamed(linkTo);
-            if(onTap!=null) onTap();
+            if (onTap != null) onTap();
           }
         },
       );

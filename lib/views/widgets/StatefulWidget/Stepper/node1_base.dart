@@ -64,7 +64,7 @@ class _StepperDemoState extends State<StepperDemo> {
             }
           },
           controlsBuilder: (_,
-              {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
+              {VoidCallback? onStepContinue, VoidCallback? onStepCancel}) {
             return Row(
               children: <Widget>[
                 RaisedButton(
@@ -98,7 +98,7 @@ class _StepperDemoState extends State<StepperDemo> {
             title: Text(e,style: TextStyle(color: isActive?Colors.blue:Colors.black),),
             isActive: isActive,
             state: _getState(stepsData.keys.toList().indexOf(e)),
-            content: Container(height: 60, child: Text(stepsData[e])),
+            content: Container(height: 60, child: Text(stepsData[e]!)),
           );
           }).toList()),
     );

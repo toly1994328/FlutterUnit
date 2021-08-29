@@ -192,7 +192,7 @@ class InfoPanel extends StatelessWidget {
   final String info;
 
 
-  InfoPanel({this.title, this.info});
+  InfoPanel({required this.title,required this.info});
 
   @override
   Widget build(BuildContext context) {

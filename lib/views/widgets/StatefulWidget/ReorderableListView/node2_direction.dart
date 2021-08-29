@@ -18,17 +18,17 @@ class DirectionReorderableListView extends StatefulWidget {
 }
 
 class _DirectionReorderableListViewState extends State<DirectionReorderableListView> {
-  var data = <Color>[
-    Colors.yellow[50],
-    Colors.yellow[100],
-    Colors.yellow[200],
-    Colors.yellow[300],
-    Colors.yellow[400],
-    Colors.yellow[500],
-    Colors.yellow[600],
-    Colors.yellow[700],
-    Colors.yellow[800],
-    Colors.yellow[900],
+  final List<Color> data = [
+    Colors.yellow[50]!,
+    Colors.yellow[100]!,
+    Colors.yellow[200]!,
+    Colors.yellow[300]!,
+    Colors.yellow[400]!,
+    Colors.yellow[500]!,
+    Colors.yellow[600]!,
+    Colors.yellow[700]!,
+    Colors.yellow[800]!,
+    Colors.yellow[900]!,
   ];
 
   @override

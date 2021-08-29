@@ -27,12 +27,12 @@ class BurstMenu extends StatefulWidget {
   final Duration duration;
   final BurstType burstType;
   final Curve curve;
-  final BurstMenuItemClick burstMenuItemClick;
+  final BurstMenuItemClick? burstMenuItemClick;
 
   const BurstMenu({
-    Key key,
-    @required this.menus,
-    @required this.center,
+    Key? key,
+    required this.menus,
+    required this.center,
     this.radius = 100,
     this.swapAngle = 120,
     this.startAngle = -60,
@@ -44,10 +44,10 @@ class BurstMenu extends StatefulWidget {
   }) : super(key: key);
 
   BurstMenu.topLeft({
-    this.menus,
+    required this.menus,
     this.burstMenuItemClick,
-    this.radius,
-    this.center,
+    this.radius = 100,
+    required this.center,
     this.hideOpacity = 0,
     this.curve = Curves.ease,
     this.duration = const Duration(milliseconds: 300),
@@ -57,10 +57,10 @@ class BurstMenu extends StatefulWidget {
   });
 
   BurstMenu.bottomLeft({
-    this.menus,
+    required this.menus,
     this.burstMenuItemClick,
-    this.radius,
-    this.center,
+    this.radius = 100,
+    required this.center,
     this.hideOpacity = 0,
     this.curve = Curves.ease,
     this.duration = const Duration(milliseconds: 300),
@@ -70,10 +70,10 @@ class BurstMenu extends StatefulWidget {
   });
 
   BurstMenu.topRight({
-    this.menus,
+    required this.menus,
     this.burstMenuItemClick,
-    this.radius,
-    this.center,
+    this.radius = 100,
+    required this.center,
     this.hideOpacity = 0,
     this.curve = Curves.ease,
     this.duration = const Duration(milliseconds: 500),
@@ -83,10 +83,10 @@ class BurstMenu extends StatefulWidget {
   });
 
   BurstMenu.bottomRight({
-    this.menus,
+    required this.menus,
     this.burstMenuItemClick,
-    this.radius,
-    this.center,
+    this.radius = 100,
+    required this.center,
     this.hideOpacity = 0,
     this.curve = Curves.ease,
     this.duration = const Duration(milliseconds: 300),
@@ -101,11 +101,11 @@ class BurstMenu extends StatefulWidget {
 
 class BurstMenuState extends State<BurstMenu>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   // 是否已关闭
   bool _closed = true;
-  Animation<double> curveAnim; // 1.定义曲线动画
+  late Animation<double> curveAnim; // 1.定义曲线动画
 
   @override
   void initState() {
@@ -114,8 +114,8 @@ class BurstMenuState extends State<BurstMenu>
       duration: widget.duration,
       vsync: this,
     );
-    curveAnim = CurvedAnimation(
-        parent: _controller, curve: widget.curve); //<--2.创建曲线动画
+    curveAnim =
+        CurvedAnimation(parent: _controller, curve: widget.curve); //<--2.创建曲线动画
   }
 
   @override
@@ -153,7 +153,7 @@ class BurstMenuState extends State<BurstMenu>
       toggle();
       return;
     }
-    bool close = widget.burstMenuItemClick.call(index);
+    bool close = widget.burstMenuItemClick?.call(index) ?? false;
     if (close) toggle();
   }
 
@@ -207,7 +207,7 @@ class _CircleFlowDelegate extends FlowDelegate {
   void paintChildren(FlowPaintingContext context) {
     double radius = context.size.shortestSide / 2;
     final double halfCenterSize =
-        context.getChildSize(context.childCount - 1).width / 2;
+        context.getChildSize(context.childCount - 1)?.width ?? 0 / 2;
 
     switch (burstType) {
       case BurstType.circle:
@@ -215,7 +215,7 @@ class _CircleFlowDelegate extends FlowDelegate {
         break;
       case BurstType.topLeft:
         Offset centerOffset =
-        Offset(-radius + halfCenterSize, -radius + halfCenterSize);
+            Offset(-radius + halfCenterSize, -radius + halfCenterSize);
         paintWithOffset(context, centerOffset);
         break;
       case BurstType.bottomLeft:
@@ -249,8 +249,8 @@ class _CircleFlowDelegate extends FlowDelegate {
 
     if (animation.value > hideOpacity) {
       for (int i = 0; i < count; i++) {
-        final double cSizeX = context.getChildSize(i).width / 2;
-        final double cSizeY = context.getChildSize(i).height / 2;
+        final double cSizeX = context.getChildSize(i)?.width ?? 0 / 2;
+        final double cSizeY = context.getChildSize(i)?.height ?? 0 / 2;
 
         final double beforeRadius = (radius - cSizeX);
         final double now = beforeRadius + centerOffset.dy.abs();
@@ -277,15 +277,13 @@ class _CircleFlowDelegate extends FlowDelegate {
       }
     }
 
+    Size? size = context.getChildSize(context.childCount - 1);
+    if (size == null) return;
     context.paintChild(
       context.childCount - 1,
       transform: Matrix4.translationValues(
-        radius -
-            context.getChildSize(context.childCount - 1).width / 2 +
-            centerOffset.dx,
-        radius -
-            context.getChildSize(context.childCount - 1).height / 2 +
-            centerOffset.dy,
+        radius - size.width / 2 + centerOffset.dx,
+        radius - size.height / 2 + centerOffset.dy,
         0.0,
       ),
     );

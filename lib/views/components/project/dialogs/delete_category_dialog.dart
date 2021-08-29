@@ -8,7 +8,7 @@ import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 class DeleteCategoryDialog extends StatelessWidget {
   final String title;
   final String content;
-  final Function() onSubmit;
+  final VoidCallback? onSubmit;
 
 
   DeleteCategoryDialog({

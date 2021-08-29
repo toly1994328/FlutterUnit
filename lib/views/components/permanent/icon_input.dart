@@ -9,7 +9,7 @@ class IconInput extends StatelessWidget {
   final Widget textFiled;
   final IconData icon;
 
-  IconInput({Key key,this.textFiled,this.icon}) : super(key: key);
+  IconInput({Key? key,required this.textFiled,required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

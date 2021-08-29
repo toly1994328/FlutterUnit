@@ -4,19 +4,19 @@ part 'g/issue_comment.g.dart';
 
 
 class IssueComment{
-  int id;
-  GithubUser user;
+  int? id;
+  GithubUser? user;
 
-  DateTime createdAt;
+  DateTime? createdAt;
 
-  DateTime updatedAt;
+  DateTime? updatedAt;
 
-  String authorAssociation;
-  String body;
+  String? authorAssociation;
+  String? body;
 
-  String bodyHtml;
-  String type;
-  String htmlUrl;
+  String? bodyHtml;
+  String? type;
+  String? htmlUrl;
 
   IssueComment(
     this.id,

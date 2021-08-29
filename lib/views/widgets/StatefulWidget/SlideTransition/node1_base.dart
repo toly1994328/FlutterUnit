@@ -19,8 +19,8 @@ class CustomSlideTransition extends StatefulWidget {
 
 class _CustomSlideTransitionState extends State<CustomSlideTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
-  Animation<Offset> animation;
+ late AnimationController _ctrl;
+ late Animation<Offset> animation;
 
   @override
   void initState() {

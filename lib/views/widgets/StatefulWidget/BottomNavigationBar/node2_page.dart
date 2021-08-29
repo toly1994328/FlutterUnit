@@ -31,7 +31,7 @@ class _BottomNavigationBarWithPageViewState
     Colors.green,
     Colors.purple,
   ];
-  PageController _controller; //页面控制器，初始0
+  late PageController _controller; //页面控制器，初始0
 
   @override
   void initState() {

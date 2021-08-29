@@ -10,14 +10,14 @@ import 'package:flutter_unit/app/utils/stream_ext/ext.dart';
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final WidgetRepository repository;
 
-  SearchBloc({@required this.repository}):super(SearchStateNoSearch());
+  SearchBloc({required this.repository}):super(SearchStateNoSearch());
 
 
   @override
   Stream<Transition<SearchEvent, SearchState>> transformEvents(
       Stream<SearchEvent> events, TransitionFunction<SearchEvent, SearchState> transitionFn) {
       return super.transformEvents(events
-          .debounceTime(Duration(milliseconds: 500),),
+          .debounceTime(const Duration(milliseconds: 500),),
         transitionFn,
       );
   }

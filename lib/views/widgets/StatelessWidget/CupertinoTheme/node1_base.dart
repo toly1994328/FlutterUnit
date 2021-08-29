@@ -29,7 +29,7 @@ class TextCupertinoTheme extends StatelessWidget {
 
     return Container(
       child: Column(
-        children: styles.keys.map((e) => buildItem(e, styles[e])).toList(),
+        children: styles.keys.map((e) => buildItem(e, styles[e]!)).toList(),
       ),
     );
   }

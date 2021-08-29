@@ -13,7 +13,6 @@ class TouchInfo extends ChangeNotifier {
   List<Offset> get points => _points;
 
   set selectIndex(int value) {
-    assert(value != null);
     if (_selectIndex == value) return;
 
     _selectIndex = value;
@@ -36,6 +35,6 @@ class TouchInfo extends ChangeNotifier {
     notifyListeners();
   }
 
-  Offset get selectPoint =>
+  Offset? get selectPoint =>
       _selectIndex == -1 ? null : _points[_selectIndex];
 }

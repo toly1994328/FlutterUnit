@@ -106,9 +106,9 @@ class Stamp {
   Offset center;
   double radius;
 
-  Stamp({this.color = Colors.blue, this.center, this.radius = 20});
+  Stamp({this.color = Colors.blue, this.center = Offset.zero, this.radius = 20});
 
-  Path _path;
+  Path? _path;
 
   Path get path {
     if (_path == null) {
@@ -116,21 +116,21 @@ class Stamp {
       double r = radius;
       double rad = 30 / 180 * pi;
 
-      _path..moveTo(center.dx, center.dy);
-      _path.relativeMoveTo(r * cos(rad), -r * sin(rad));
-      _path.relativeLineTo(-2 * r * cos(rad), 0);
-      _path.relativeLineTo(r * cos(rad), r + r * sin(rad));
-      _path.relativeLineTo(r * cos(rad), -(r + r * sin(rad)));
+      _path!..moveTo(center.dx, center.dy);
+      _path!.relativeMoveTo(r * cos(rad), -r * sin(rad));
+      _path!.relativeLineTo(-2 * r * cos(rad), 0);
+      _path!.relativeLineTo(r * cos(rad), r + r * sin(rad));
+      _path!.relativeLineTo(r * cos(rad), -(r + r * sin(rad)));
 
-      _path..moveTo(center.dx, center.dy);
-      _path.relativeMoveTo(0, -r);
-      _path.relativeLineTo(-r * cos(rad), r + r * sin(rad));
-      _path.relativeLineTo(2 * r * cos(rad), 0);
-      _path.relativeLineTo(-r * cos(rad), -(r + r * sin(rad)));
+      _path!..moveTo(center.dx, center.dy);
+      _path!.relativeMoveTo(0, -r);
+      _path!.relativeLineTo(-r * cos(rad), r + r * sin(rad));
+      _path!.relativeLineTo(2 * r * cos(rad), 0);
+      _path!.relativeLineTo(-r * cos(rad), -(r + r * sin(rad)));
 
-      return _path;
+      return _path!;
     } else {
-      return _path;
+      return _path!;
     }
   }
 

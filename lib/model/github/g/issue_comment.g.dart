@@ -8,7 +8,7 @@ part of '../issue_comment.dart';
 
 IssueComment _$IssueEventFromJson(Map<String, dynamic> json) {
   return IssueComment(
-    json['id'] as int,
+    json['id'] as int?,
     json['user'] == null
         ? null
         : GithubUser.fromJson(json['user'] as Map<String, dynamic>),
@@ -18,11 +18,11 @@ IssueComment _$IssueEventFromJson(Map<String, dynamic> json) {
     json['updated_at'] == null
         ? null
         : DateTime.parse(json['updated_at'] as String),
-    json['author_association'] as String,
-    json['body'] as String,
-    json['body_html'] as String,
-    json['event'] as String,
-    json['html_url'] as String,
+    json['author_association'] as String?,
+    json['body'] as String?,
+    json['body_html'] as String?,
+    json['event'] as String?,
+    json['html_url'] as String?,
   );
 }
 

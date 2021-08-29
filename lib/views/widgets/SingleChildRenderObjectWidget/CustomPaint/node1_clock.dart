@@ -26,8 +26,8 @@ class ClockPage extends StatelessWidget {
 }
 
 class ClockPainter extends CustomPainter {
-  Paint _paint;
-  var _radius = 3.0; //小球半径
+  late Paint _paint;
+  double _radius = 3.0; //小球半径
   Path _path = Path(); //画笔对象
   ClockPainter () {
     _paint = Paint()..color= Color(0xff45d0fd)..isAntiAlias=true;

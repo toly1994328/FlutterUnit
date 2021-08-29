@@ -33,9 +33,9 @@ class _TristateCheckBokState extends State<TristateCheckBok> {
               tristate: true,
               checkColor: Colors.white,
               activeColor: e,
-              onChanged: (v) {
-                print(v);
-                setState(() => _checked = v);
+              onChanged: (bool? value) {
+                print(value);
+                setState(() => _checked = value??false);
               }))
           .toList(),
     );

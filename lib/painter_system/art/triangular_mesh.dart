@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 
 class Point {
-  double x;
-  double y;
+  double x=0;
+  double y=0;
 }
 
 class TriangularMesh extends StatefulWidget {

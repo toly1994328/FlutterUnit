@@ -4,7 +4,7 @@ class Circle extends StatelessWidget {
   final Color color;
   final double radius;
   final bool showShadow;
-  final Widget child;
+  final Widget? child;
 
   const Circle({this.color=Colors.blue, this.radius=6,this.showShadow=true,this.child});
 

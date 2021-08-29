@@ -19,7 +19,7 @@ class CustomPositionedTransition extends StatefulWidget {
 
 class _CustomPositionedTransitionState extends State<CustomPositionedTransition>
     with SingleTickerProviderStateMixin {
-  AnimationController _ctrl;
+  late AnimationController _ctrl;
 
   @override
   void initState() {

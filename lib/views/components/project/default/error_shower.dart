@@ -9,7 +9,7 @@ import 'package:flutter_unit/app/res/style_unit.dart';
 class ErrorShower extends StatelessWidget {
   final String error;
 
-  ErrorShower({Key key, this.error = "出现异常"}) : super(key: key);
+  ErrorShower({Key? key, this.error = "出现异常"}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
