@@ -17,6 +17,8 @@ import 'package:flutter_unit/views/pages/widget_home/home_page.dart';
 
 
 class UnitNavigation extends StatefulWidget {
+  const UnitNavigation();
+
   @override
   _UnitNavigationState createState() => _UnitNavigationState();
 }
@@ -26,7 +28,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
   final PageController _controller = PageController();
 
   // 禁止 PageView 滑动
-  final ScrollPhysics neverScroll = const NeverScrollableScrollPhysics();
+  final ScrollPhysics _neverScroll = const NeverScrollableScrollPhysics();
 
   @override
   void dispose() {
@@ -45,7 +47,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
         floatingActionButton: _buildSearchButton(context),
         body: wrapOverlayTool(
           child: PageView(
-          physics: neverScroll,
+          physics: _neverScroll,
           controller: _controller,
           children: <Widget>[
             HomePage(),

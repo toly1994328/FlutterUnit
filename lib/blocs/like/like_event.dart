@@ -4,16 +4,20 @@ import 'package:equatable/equatable.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-abstract class LikeWidgetEvent extends Equatable {}
+abstract class LikeWidgetEvent extends Equatable {
+  const LikeWidgetEvent();
+}
 
 class EventLoadLikeData extends LikeWidgetEvent {
+  const EventLoadLikeData();
+
   List<Object> get props => [];
 }
 
 class ToggleLikeWidgetEvent extends LikeWidgetEvent {
   final int id;
 
-  ToggleLikeWidgetEvent({required this.id});
+  const  ToggleLikeWidgetEvent({required this.id});
 
   @override
   // TODO: implement props
@@ -21,6 +25,8 @@ class ToggleLikeWidgetEvent extends LikeWidgetEvent {
 }
 
 class LoadCollectEvent extends LikeWidgetEvent {
+  const LoadCollectEvent();
+
   @override
   List<Object> get props => [];
 }
