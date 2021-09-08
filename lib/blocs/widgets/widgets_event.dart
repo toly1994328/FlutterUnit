@@ -15,7 +15,7 @@ abstract class WidgetsEvent extends Equatable {
 class EventTabTap extends WidgetsEvent {
   final WidgetFamily family;
 
-  EventTabTap(this.family);
+  const EventTabTap(this.family);
 
 }
 

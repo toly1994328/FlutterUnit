@@ -13,19 +13,18 @@ import 'package:flutter_unit/views/pages/splash/unit_splash.dart';
 class FlutterUnit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
-      return MaterialApp(
-            showPerformanceOverlay: state.showPerformanceOverlay,
-            title: StrUnit.appName,
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: UnitRouter.generateRoute,
-            theme: ThemeData(
-              primarySwatch: state.themeColor,
-              fontFamily: state.fontFamily,
-            ),
-            home: UnitSplash(),
-      );
-    });
+    return BlocBuilder<GlobalBloc, GlobalState>(
+        builder: (_, state) => MaterialApp(
+              showPerformanceOverlay: state.showPerformanceOverlay,
+              title: StrUnit.appName,
+              debugShowCheckedModeBanner: false,
+              onGenerateRoute: UnitRouter.generateRoute,
+              theme: ThemeData(
+                primarySwatch: state.themeColor,
+                fontFamily: state.fontFamily,
+              ),
+              home: const UnitSplash(),
+            ));
   }
 
 }

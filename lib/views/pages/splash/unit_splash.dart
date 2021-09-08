@@ -16,12 +16,14 @@ import 'unit_paint.dart';
 /// 说明: app 闪屏页
 
 class UnitSplash extends StatefulWidget {
+  const UnitSplash();
+
   @override
   _UnitSplashState createState() => _UnitSplashState();
 }
 
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
- late AnimationController _controller;
+  late AnimationController _controller;
 
   ValueNotifier<bool> _animEnd = ValueNotifier<bool>(false);
 
@@ -29,26 +31,49 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   final Duration delayTime = const Duration(milliseconds: 500);
   final Duration fadeInTime = const Duration(milliseconds: 600);
 
+  late Animation<Offset> logoOffsetAnim;
+  late Animation<Offset> headOffsetAnim;
+  late Animation<double> logoScaleAnim;
+
+  late UnitPainter unitPainter = UnitPainter(repaint: _controller);
+
   @override
   void initState() {
     super.initState();
 
-    SystemUiOverlayStyle systemUiOverlayStyle =
-        const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
-    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ),
+    );
 
     _controller = AnimationController(duration: animTime, vsync: this)
       ..addStatusListener(_listenStatus)
       ..forward();
 
-    Future.delayed(delayTime).then((e) {
-      _animEnd.value = true;
-    });
+    initAnimation();
+
+    Future.delayed(delayTime).then((e) => _animEnd.value = true);
+  }
+
+  void initAnimation() {
+    logoOffsetAnim = Tween<Offset>(
+      begin: const Offset(0, 0),
+      end: const Offset(0, -1.5),
+    ).animate(_controller);
+
+    headOffsetAnim = Tween<Offset>(
+      end: const Offset(0, 0),
+      begin: const Offset(0, -5),
+    ).animate(_controller);
+
+    logoScaleAnim = Tween(begin: 2.0, end: 1.0).animate(_controller);
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _animEnd.dispose();
     super.dispose();
   }
 
@@ -62,26 +87,21 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final double winH = MediaQuery.of(context).size.height;
-    final double winW = MediaQuery.of(context).size.width;
-
-    return BlocListener<GlobalBloc, GlobalState>(
-      listener: _listenStart,
-      child: Scaffold(
-        body: Stack(
+    final Size winSize = MediaQuery.of(context).size;
+    return Material(
+      child: BlocListener<GlobalBloc, GlobalState>(
+        listener: _listenStart,
+        child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             _buildFlutterLogo(),
-            Container(
-              width: winW,
-              height: winH,
-              child: CustomPaint(
-                painter: UnitPainter(repaint: _controller),
-              ),
+            CustomPaint(
+              painter: unitPainter,
+              size: winSize,
             ),
-            _buildFlutterUnitText(winH, winW),
+            _buildFlutterUnitText(winSize.height, winSize.width),
             _buildHead(),
-            Positioned(bottom: 15, child: SplashBottom())
+            const Positioned(bottom: 15, child: SplashBottom())
           ],
         ),
       ),
@@ -89,34 +109,30 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   }
 
   Widget _buildFlutterUnitText(double winH, double winW) {
-
     return Positioned(
       top: winH / 1.4,
       child: ValueListenableBuilder(
+        child: FlutterUnitText(
+          text: StrUnit.appName,
+          color: Theme.of(context).primaryColor,
+        ),
         valueListenable: _animEnd,
-        builder: (_,bool value, __) => value
-            ? FlutterUnitText(
-                text: StrUnit.appName,
-                color: Theme.of(context).primaryColor,
-              )
-            : SizedBox(),
+        builder: (_, bool value, Widget? child) => value
+            ? child! : const SizedBox(),
       ),
     );
   }
 
   Widget _buildFlutterLogo() {
     return SlideTransition(
-      position: Tween<Offset>(
-        begin: const Offset(0, 0),
-        end: const Offset(0, -1.5),
-      ).animate(_controller),
+      position: logoOffsetAnim,
       child: RotationTransition(
           turns: _controller,
           child: ScaleTransition(
-            scale: Tween(begin: 2.0, end: 1.0).animate(_controller),
+            scale: logoScaleAnim,
             child: FadeTransition(
                 opacity: _controller,
-                child: Container(
+                child: SizedBox(
                   height: 120,
                   child: const FlutterLogo(
                     size: 60,
@@ -127,20 +143,18 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   }
 
   Widget _buildHead() => SlideTransition(
-      position: Tween<Offset>(
-        end: const Offset(0, 0),
-        begin: const Offset(0, -5),
-      ).animate(_controller),
-      child: Container(
-        height: 45,
-        width: 45,
-        child: Image.asset('assets/images/icon_head.webp'),
-      ));
+        position: headOffsetAnim,
+        child: Image.asset(
+          'assets/images/icon_head.webp',
+          width: 45,
+          height: 45,
+        ),
+      );
 
   // 监听资源加载完毕，启动，触发事件
   void _listenStart(BuildContext context, GlobalState state) {
-      BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(WidgetFamily.statelessWidget));
-      BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
-      BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
+      BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
+      BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
+      BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
   }
 }
