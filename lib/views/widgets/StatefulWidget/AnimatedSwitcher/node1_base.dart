@@ -49,7 +49,7 @@ class _CustomAnimatedSwitcherState extends State<CustomAnimatedSwitcher> {
           child: Text(
             '$_count',
             key: ValueKey<int>(_count),
-            style: Theme.of(context).textTheme.display3,
+            style: Theme.of(context).textTheme.headline3,
           ),
         );
 
