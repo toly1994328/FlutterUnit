@@ -77,7 +77,7 @@ class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
         if (snap.connectionState == ConnectionState.active) {
           return Text(
             snap.data.toString(),
-            style: Theme.of(context).textTheme.display1,
+            style: Theme.of(context).textTheme.bodyText2,
           );
         }
         if (snap.connectionState == ConnectionState.waiting) {

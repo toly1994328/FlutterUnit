@@ -38,7 +38,7 @@ class _DIYSliderThemeState extends State<DIYSliderTheme> {
         valueIndicatorColor: Colors.deepPurpleAccent,
         thumbShape: _CustomThumbShape(),
         valueIndicatorShape: _CustomValueIndicatorShape(),
-        valueIndicatorTextStyle: theme.accentTextTheme.body2!
+        valueIndicatorTextStyle: theme.accentTextTheme.bodyText2!
             .copyWith(color: theme.colorScheme.onSurface),
       ),
       child: Slider(
