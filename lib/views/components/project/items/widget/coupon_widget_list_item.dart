@@ -21,7 +21,7 @@ class CouponWidgetListItem extends StatelessWidget {
       this.hasBottomHole = false,
       this.isClip = true});
 
-  final List<int> colors = Cons.tabColors;
+  final List<Color> colors = Cons.tabColors;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class CouponWidgetListItem extends StatelessWidget {
   }
 
   Widget buildContent() => Container(
-        color: Color(colors[data.family.index]).withAlpha(66),
+        color: colors[data.family.index].withAlpha(66),
         height: 95,
         padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
         child: Row(
@@ -87,7 +87,7 @@ class CouponWidgetListItem extends StatelessWidget {
       );
 
   Color get invColor {
-    return Color(colors[data.family.index]);
+    return colors[data.family.index];
   }
 
   Widget _buildCollectTag(Color color) {

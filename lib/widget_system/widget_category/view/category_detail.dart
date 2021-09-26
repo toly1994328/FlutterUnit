@@ -9,6 +9,8 @@ import 'package:flutter_unit/views/components/permanent/circle_text.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/model/category_model.dart';
 import 'package:flutter_unit/model/widget_model.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_event.dart';
 
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com

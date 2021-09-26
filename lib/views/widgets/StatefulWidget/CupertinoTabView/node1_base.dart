@@ -43,7 +43,7 @@ class CupertinoTabViewPage extends StatelessWidget {
       height: 300,
       child: CupertinoTabView(
         routes: {
-          '/': (context) => HomePage(),
+          '/': (context) => _HomePage(),
           '/test_detail': (context) => DetailPage(),
         },
       ),
@@ -69,7 +69,7 @@ class DetailPage extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class _HomePage extends StatelessWidget {
 
   final String info = "CupertinoTabView 可以像 MaterialApp 一样维护一个路由栈。"
       "通过 routes 、onGenerateRoute 来构建路由，可以通过 navigatorObservers 监听路由。"

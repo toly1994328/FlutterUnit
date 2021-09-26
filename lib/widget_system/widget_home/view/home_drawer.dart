@@ -7,6 +7,7 @@ import 'package:flutter_unit/blocs/point/point_bloc.dart';
 import 'package:flutter_unit/blocs/point/point_event.dart';
 import 'package:flutter_unit/views/components/flutter/no_div_expansion_tile.dart';
 import 'package:flutter_unit/views/components/project/unit_drawer_header.dart';
+import 'package:flutter_unit/views/navigation/color_change_bloc.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -24,7 +25,7 @@ class HomeDrawer extends StatelessWidget {
 
   Widget _buildChild(BuildContext context) {
 
-    final Color color = BlocProvider.of<WidgetsBloc>(context).state.color;
+    final Color color = BlocProvider.of<ColorChangeCubit>(context).state.color;
 
     return Container(
         color: color.withAlpha(33),

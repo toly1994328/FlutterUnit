@@ -11,9 +11,9 @@ abstract class AuthenticState extends Equatable {
   List<Object> get props => [];
 }
 
+class AuthInitial extends AuthenticState {
 
-class AuthInitial extends AuthenticState {}
-
+}
 
 
 class AuthFailure extends AuthenticState {

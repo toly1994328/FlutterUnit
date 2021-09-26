@@ -17,6 +17,8 @@ class EventTabTap extends WidgetsEvent {
 
   const EventTabTap(this.family);
 
+  @override
+  List<Object> get props => [family];
 }
 
 

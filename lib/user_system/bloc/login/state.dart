@@ -41,8 +41,6 @@ class LoginSuccess extends LoginState {
 }
 
 class LoginNone extends LoginState {
-
-
   const LoginNone();
 
   @override

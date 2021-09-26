@@ -11,6 +11,8 @@ import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_home/bloc/widgets_bloc.dart';
 
 
 /// create by 张风捷特烈 on 2020/4/28
@@ -55,9 +57,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
 
           BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
 
-          BlocProvider<LoginBloc>(
-              create: (_) => LoginBloc(authenticBloc: authBloc)),
-
+          BlocProvider<LoginBloc>(create: (_) => LoginBloc(authenticBloc: authBloc)),
           BlocProvider<AuthenticBloc>(create: (_) => authBloc),
 
           BlocProvider<CategoryWidgetBloc>(

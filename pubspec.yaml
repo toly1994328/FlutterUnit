@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
 
-  flutter_bloc: ^7.1.0 # 状态管理
+  flutter_bloc: ^7.3.0 # 状态管理
   equatable: ^2.0.3 # 相等辅助
   package_info: ^2.0.2 # 应用包信息
   sqflite: ^2.0.0+3 # 数据库

@@ -7,6 +7,7 @@ import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/views/components/project/items/gallery/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
+import 'package:flutter_unit/views/navigation/color_change_bloc.dart';
 
 import 'gallery_detail_page.dart';
 
@@ -53,9 +54,9 @@ class _GalleryUnitState extends State<GalleryUnit> {
     super.dispose();
   }
 
-  Color get color => BlocProvider.of<WidgetsBloc>(context).state.color;
+  Color get color => BlocProvider.of<ColorChangeCubit>(context).state.tabColor;
 
-  Color get nextColor => BlocProvider.of<WidgetsBloc>(context).state.nextColor;
+  Color get nextColor =>  BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
 
   BoxDecoration get boxDecoration => BoxDecoration(
       color: Colors.white,

@@ -103,7 +103,7 @@ class TechnoWidgetListItem extends StatelessWidget {
               ),
       );
 
-  Color get itemColor => Color(Cons.tabColors[data.family.index]);
+  Color get itemColor => Cons.tabColors[data.family.index];
 
   Widget _buildTitle() {
     return Row(

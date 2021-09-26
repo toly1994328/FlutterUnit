@@ -21,7 +21,7 @@ packages:
       name: bloc
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "7.0.0"
+    version: "7.2.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -110,7 +110,7 @@ packages:
       name: flutter_bloc
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "7.1.0"
+    version: "7.3.0"
   flutter_markdown:
     dependency: "direct main"
     description:
@@ -288,7 +288,7 @@ packages:
       name: provider
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.0.0"
+    version: "6.0.1"
   share:
     dependency: "direct main"
     description:
