@@ -10,8 +10,12 @@ import 'package:flutter_unit/model/widget_model.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/views/components/permanent/panel.dart';
 import 'package:flutter_unit/views/components/project/widget_node_panel.dart';
-import 'package:flutter_unit/views/pages/widget_detail/category_end_drawer.dart';
 import 'package:flutter_unit/views/widgets/widgets_map.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_event.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_state.dart';
+
+import 'category_end_drawer.dart';
 
 class WidgetDetailPage extends StatefulWidget {
   final WidgetModel model;

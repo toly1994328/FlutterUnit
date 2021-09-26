@@ -6,7 +6,7 @@ import '../bean/category_po.dart';
 
 
 //"""
-// CREATE TABLE IF NOT EXISTS category(
+// CREATE TABLE IF NOT EXISTS widget_category(
 //     id INTEGER PRIMARY KEY AUTOINCREMENT,
 //     name VARCHAR(64) NOT NULL,
 //     color VARCHAR(9) DEFAULT '#FF2196F3',
@@ -29,7 +29,7 @@ class CategoryDao {
     //插入方法
     String addSql = //插入数据
         "INSERT INTO "
-        "category(id,name,color,info,priority,image,created,updated) "
+        "widget_category(id,name,color,info,priority,image,created,updated) "
         "VALUES (?,?,?,?,?,?,?,?);";
     return await db.transaction((tran) async => await tran.rawInsert(addSql, [
       category.id,
@@ -46,7 +46,7 @@ class CategoryDao {
   Future<int> update(CategoryPo widget) async {
     //插入方法
     String updateSql = //插入数据
-        "UPDATE category SET name=? , color=? ,info=?, priority=?,image=?,updated=? "
+        "UPDATE widget_category SET name=? , color=? ,info=?, priority=?,image=?,updated=? "
         "WHERE id = ?";
 
     return await db.transaction((tran) async =>
@@ -95,7 +95,7 @@ class CategoryDao {
 
   Future<bool> existByName(String name) async {
     String sql = //插入数据
-        "SELECT COUNT(name) as count FROM category "
+        "SELECT COUNT(name) as count FROM widget_category "
         "WHERE name = ?";
     List<Map<String, dynamic>> rawData = await db.rawQuery(sql, [name]);
     if (rawData.length > 0) {
@@ -107,7 +107,7 @@ class CategoryDao {
   Future<List<Map<String, dynamic>>> queryAll() async {
     List<Map<String, dynamic>> data = await db.rawQuery(
         "SELECT c.id,c.name,c.info,c.color,c.image,c.created,c.updated,c.priority,COUNT(cw.categoryId) as `count`"
-            "FROM category AS c "
+            "FROM widget_category AS c "
             "LEFT JOIN category_widget AS cw "
             "ON c.id = cw.categoryId GROUP BY c.id "
             "ORDER BY priority DESC,created DESC",
@@ -131,7 +131,7 @@ class CategoryDao {
             "WHERE categoryId = ?",
         [id]);
     return await db.execute(
-        "DELETE FROM category "
+        "DELETE FROM widget_category "
             "WHERE id = ?",
         [id]);
   }
@@ -141,7 +141,7 @@ class CategoryDao {
         "DELETE FROM category_widget "
             "WHERE categoryId >0");
     return await db.execute(
-        "DELETE FROM category "
+        "DELETE FROM widget_category "
             "WHERE id > 0");
   }
 

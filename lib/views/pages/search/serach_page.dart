@@ -12,6 +12,8 @@ import 'package:flutter_unit/views/pages/search/app_search_bar.dart';
 import 'package:flutter_unit/views/pages/search/error_page.dart';
 import 'package:flutter_unit/views/pages/search/not_search_page.dart';
 import 'package:flutter_unit/views/components/permanent/multi_chip_filter.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_event.dart';
 
 import '../../components/project/default/empty_shower.dart';
 

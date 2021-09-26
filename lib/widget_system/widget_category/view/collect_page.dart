@@ -3,13 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/user_system/component/authentic_widget.dart';
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/pages/category/sync/upload_button.dart';
-
+import 'package:flutter_unit/views/navigation/color_change_bloc.dart';
+import 'sync/upload_button.dart';
 import 'sync/async_button.dart';
 import 'category_page.dart';
 import 'like_widget_page.dart';
@@ -30,11 +28,12 @@ class _CollectPageState extends State<CollectPage>
   Widget build(BuildContext context) {
     super.build(context);
     BuildContext _topContext = context;
+    final Color color = BlocProvider.of<ColorChangeCubit>(context).state.tabColor.withAlpha(11);
+
     return Scaffold(
         backgroundColor: Colors.white,
         body: Container(
-          color:
-              BlocProvider.of<WidgetsBloc>(context).state.color.withAlpha(11),
+          color: color,
           child: DefaultTabController(
             length: _tabs.length,
             child: NestedScrollView(
@@ -56,6 +55,8 @@ class _CollectPageState extends State<CollectPage>
   }
 
   Widget _buildAppBar(BuildContext context, bool index) {
+    final Color color = BlocProvider.of<ColorChangeCubit>(context).state.color;
+
     return SliverAppBar(
       leading: Container(
           margin: EdgeInsets.all(10),
@@ -68,7 +69,7 @@ class _CollectPageState extends State<CollectPage>
               borderSize: 1.5,
             ),
           )),
-      backgroundColor: BlocProvider.of<WidgetsBloc>(context).state.color,
+      backgroundColor: color,
       actions: <Widget>[
         SizedBox(
             width: 32,

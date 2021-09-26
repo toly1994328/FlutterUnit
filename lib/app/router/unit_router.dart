@@ -6,11 +6,11 @@ import 'package:flutter_unit/user_system/pages/register/register_page.dart';
 import 'package:flutter_unit/views/pages/about/about_app_page.dart';
 import 'package:flutter_unit/views/pages/about/about_me_page.dart';
 import 'package:flutter_unit/views/pages/about/version_info.dart';
-import 'package:flutter_unit/views/pages/app/unit_navigation.dart';
-import 'package:flutter_unit/views/pages/category/category_detail.dart';
-import 'package:flutter_unit/views/pages/category/collect_page.dart';
+import 'package:flutter_unit/views/navigation/unit_navigation.dart';
+import 'package:flutter_unit/widget_system/widget_category/view/category_detail.dart';
+import 'package:flutter_unit/widget_system/widget_category/view/collect_page.dart';
 import 'package:flutter_unit/views/pages/data_manage/data_manage_page.dart';
-import 'package:flutter_unit/views/pages/gallery/gallery_page.dart';
+import 'package:flutter_unit/painter_system/gallery_page.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_detail.dart';
 import 'package:flutter_unit/views/pages/issues_point/issues_point_page.dart';
 import 'package:flutter_unit/views/pages/search/serach_page.dart';
@@ -22,7 +22,7 @@ import 'package:flutter_unit/views/pages/setting/theme_color_setting.dart';
 import 'package:flutter_unit/views/pages/unit_todo/attr_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/views/pages/unit_todo/point_unit_page.dart';
-import 'package:flutter_unit/views/pages/widget_detail/widget_detail_page.dart';
+import 'package:flutter_unit/widget_system/widget_detail/view/widget_detail_page.dart';
 
 import 'router_utils.dart';
 

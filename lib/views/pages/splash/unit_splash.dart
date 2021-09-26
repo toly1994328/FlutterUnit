@@ -7,6 +7,8 @@ import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/views/pages/splash/splash_bottom.dart';
+import 'package:flutter_unit/widget_system/widget_home/bloc/widgets_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_home/bloc/widgets_event.dart';
 
 import 'flutter_unit_text.dart';
 import 'unit_paint.dart';

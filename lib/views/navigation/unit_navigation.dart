@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
+import 'package:flutter_unit/user_system/pages/user/user_page.dart';
 import 'package:flutter_unit/views/components/project/nav/unit_bottom_bar.dart';
 import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
-import 'package:flutter_unit/views/pages/category/collect_page.dart';
-import 'package:flutter_unit/views/pages/category/home_right_drawer.dart';
-import 'package:flutter_unit/views/pages/user/user_page.dart';
-import 'package:flutter_unit/views/pages/widget_home/home_drawer.dart';
-import 'package:flutter_unit/views/pages/widget_home/home_page.dart';
+
+import 'package:flutter_unit/widget_system/widget_category/view/collect_page.dart';
+import 'package:flutter_unit/widget_system/widget_category/view/home_right_drawer.dart';
+
+
+import 'package:flutter_unit/widget_system/widget_home/view/home_drawer.dart';
+import 'package:flutter_unit/widget_system/widget_home/view/home_page.dart';
+
+import 'color_change_bloc.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
@@ -71,7 +77,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
   // 由于 按钮 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
   Widget _buildSearchButton(BuildContext context) =>
-      BlocBuilder<WidgetsBloc, WidgetsState>(
+      BlocBuilder<ColorChangeCubit, SelectTab>(
           builder: (_, state) => FloatingActionButton(
                 elevation: 2,
                 backgroundColor: state.color,
@@ -83,17 +89,24 @@ class _UnitNavigationState extends State<UnitNavigation> {
   // 由于 bottomNavigationBar 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
   Widget _buildBottomNav(BuildContext context) =>
-      BlocBuilder<WidgetsBloc, WidgetsState>(
-          builder: (_, state) => UnitBottomBar(
-              color: state.color,
-              onItemTap: _onTapBottomNav,
-              onItemLongTap: _onItemLongTap,
-
-          ));
+      BlocBuilder<ColorChangeCubit, SelectTab>(
+        builder: (context, state) => UnitBottomBar(
+          color: state.color,
+          onItemTap: _onTapBottomNav,
+          onItemLongTap: _onItemLongTap,
+        ),
+      );
 
   // 点击底部按钮事件，切换页面
   _onTapBottomNav(int index) {
     _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    if(index!=0){
+      context.read<ColorChangeCubit>().change(Theme.of(context).primaryColor);
+    }else{
+      Color color = Cons.tabColors[context.read<ColorChangeCubit>().state.family.index];
+      context.read<ColorChangeCubit>().change(color);
+    }
+
     if (index == 2) {
       BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
     }

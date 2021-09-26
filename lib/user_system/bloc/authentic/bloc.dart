@@ -40,7 +40,9 @@ class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
       yield AuthSuccess(event.user);
     }
 
-    if (event is LoggedOut) {}
+    if (event is LoggedOut) {
+
+    }
   }
 
   // 持久化 token

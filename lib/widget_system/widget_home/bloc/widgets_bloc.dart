@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/repositories/rep/widget_repository.dart';
@@ -15,9 +13,7 @@ import 'widgets_state.dart';
 class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   final WidgetRepository repository;
 
-  WidgetsBloc({required this.repository}):super(WidgetsLoading(WidgetFamily.statelessWidget));
-
-
+  WidgetsBloc({required this.repository}):super(WidgetsLoading());
 
   @override
   Stream<WidgetsState> mapEventToState(WidgetsEvent event) async* {
@@ -27,10 +23,10 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   }
 
   Stream<WidgetsState> _mapLoadWidgetToState(WidgetFamily family) async* {
-    yield WidgetsLoading(family);
+    yield WidgetsLoading();
     try {
       final widgets = await this.repository.loadWidgets(family);
-      yield WidgetsLoaded(family, widgets: widgets);
+      yield WidgetsLoaded(widgets: widgets);
     } catch (err) {
       print(err);
       yield WidgetsLoadFailed(family,err.toString());

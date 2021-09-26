@@ -16,19 +16,10 @@ export 'like/like_bloc.dart';
 export 'like/like_state.dart';
 export 'like/like_event.dart';
 
-export 'detail/detail_bloc.dart';
-export 'detail/detail_state.dart';
-export 'detail/detail_event.dart';
 
 export 'global/global_bloc.dart';
 export 'global/global_state.dart';
 export 'global/global_event.dart';
-
-export 'widgets/widgets_bloc.dart';
-export 'widgets/widgets_state.dart';
-export 'widgets/widgets_event.dart';
-
-
 
 export 'point/point_bloc.dart';
 export 'point/point_state.dart';

@@ -3,10 +3,13 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/model/enums.dart';
 import 'package:flutter_unit/model/widget_model.dart';
+
 import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/views/components/project/default/empty_shower.dart';
 import 'package:flutter_unit/views/components/project/default/error_shower.dart';
@@ -14,7 +17,13 @@ import 'package:flutter_unit/views/components/project/default/loading_shower.dar
 import 'package:flutter_unit/views/components/project/items/widget/home_item_support.dart';
 import 'package:flutter_unit/views/components/project/no_more_widget.dart';
 import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
-import 'package:flutter_unit/views/pages/widget_home/toly_app_bar.dart';
+import 'package:flutter_unit/views/navigation/color_change_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_detail/bloc/detail/detail_event.dart';
+import 'package:flutter_unit/widget_system/widget_home/bloc/widgets_bloc.dart';
+import 'package:flutter_unit/widget_system/widget_home/bloc/widgets_event.dart';
+import 'package:flutter_unit/widget_system/widget_home/bloc/widgets_state.dart';
+import 'toly_app_bar.dart';
 
 import 'background.dart';
 
@@ -124,8 +133,9 @@ class _HomePageState extends State<HomePage>
       );
 
   _switchTab(int index) {
-    BlocProvider.of<WidgetsBloc>(context)
-        .add(EventTabTap(Convert.toFamily(index)));
+    WidgetFamily widgetFamily = Convert.toFamily(index);
+    context.read<ColorChangeCubit>().change(Cons.tabColors[index],family: widgetFamily);
+    BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
 
   _toDetailPage(WidgetModel model) {

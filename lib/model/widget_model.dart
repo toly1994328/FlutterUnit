@@ -22,7 +22,7 @@ class WidgetModel extends Equatable {
   final ImageProvider? image;
   final String info;
 
-  Color get color => Color(Cons.tabColors[family.index]);
+  Color get color => Cons.tabColors[family.index];
 
   const WidgetModel(
       {
