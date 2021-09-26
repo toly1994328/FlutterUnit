@@ -4,15 +4,15 @@ import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 
-import 'package:flutter_unit/views/components/permanent/circle.dart';
-import 'package:flutter_unit/views/components/project/default/empty_shower.dart';
-import 'package:flutter_unit/views/components/project/default/loading_shower.dart';
+import 'package:flutter_unit/components/permanent/circle.dart';
+import 'package:flutter_unit/components/project/default/empty_shower.dart';
+import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
-import 'package:flutter_unit/views/components/project/items/widget/techno_widget_list_item.dart';
+import 'package:flutter_unit/components/project/items/widget/techno_widget_list_item.dart';
 import 'app_search_bar.dart';
 import 'error_page.dart';
 import 'not_search_page.dart';
-import 'package:flutter_unit/views/components/permanent/multi_chip_filter.dart';
+import 'package:flutter_unit/components/permanent/multi_chip_filter.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
 

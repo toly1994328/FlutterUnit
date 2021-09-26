@@ -11,7 +11,7 @@ import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
 import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
 
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 
 /// create by 张风捷特烈 on 2021/2/24

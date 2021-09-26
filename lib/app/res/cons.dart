@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/components/permanent/code/highlighter_style.dart';
+import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
 class Cons {
 

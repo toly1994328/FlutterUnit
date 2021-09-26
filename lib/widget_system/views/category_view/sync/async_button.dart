@@ -12,7 +12,7 @@ import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
 import 'package:flutter_unit/widget_system/repositories/local_db.dart';
 import 'package:flutter_unit/widget_system/repositories/rep/category_repository.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 /// create by 张风捷特烈 on 2021/2/24
 /// contact me by email 1981462002@qq.com

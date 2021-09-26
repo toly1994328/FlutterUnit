@@ -4,8 +4,8 @@ import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/components/permanent/circle.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/circle.dart';
 
 /// create by 张风捷特烈 on 2020-04-10
 /// contact me by email 1981462002@qq.com

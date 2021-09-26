@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
 
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/components/project/items/gallery/gallery_card_item.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 

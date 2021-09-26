@@ -4,8 +4,8 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 
-import 'package:flutter_unit/views/components/flutter/no_div_expansion_tile.dart';
-import 'package:flutter_unit/views/components/project/unit_drawer_header.dart';
+import 'package:flutter_unit/components/flutter/no_div_expansion_tile.dart';
+import 'package:flutter_unit/components/project/unit_drawer_header.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
