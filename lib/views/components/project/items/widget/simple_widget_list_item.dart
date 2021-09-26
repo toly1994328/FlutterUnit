@@ -3,11 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/star.dart';
 import 'package:flutter_star/star_score.dart';
 import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/blocs/bloc_exp.dart';
+import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+
 import 'package:flutter_unit/views/components/permanent/circle_image.dart';
 import 'package:flutter_unit/views/components/permanent/circle_text.dart';
 import 'package:flutter_unit/views/components/permanent/tag.dart';
-import 'package:flutter_unit/model/widget_model.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
 /// create by 张风捷特烈 on 2020/11/17
 /// contact me by email 1981462002@qq.com

@@ -1,4 +1,4 @@
-import 'package:flutter_unit/model/enums.dart';
+import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
 
 /// create by 张风捷特烈 on 2020-03-07

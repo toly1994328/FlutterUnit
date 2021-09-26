@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'views/navigation/bloc_wrapper.dart';
-import 'views/navigation/flutter_unit.dart';
+import 'app/views/navigation/bloc_wrapper.dart';
+import 'app/views/navigation/flutter_unit.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

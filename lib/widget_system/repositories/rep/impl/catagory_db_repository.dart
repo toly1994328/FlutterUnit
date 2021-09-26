@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter_unit/model/category_model.dart';
-import 'package:flutter_unit/model/widget_model.dart';
-import 'package:flutter_unit/repositories/bean/category_po.dart';
-import 'package:flutter_unit/repositories/bean/widget_po.dart';
-import 'package:flutter_unit/repositories/dao/category_dao.dart';
-import 'package:flutter_unit/repositories/local_db.dart';
-import 'package:flutter_unit/repositories/rep/category_repository.dart';
+import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import '../../bean/category_po.dart';
+import '../../bean/widget_po.dart';
+import '../../dao/category_dao.dart';
+import '../../local_db.dart';
+import '../../rep/category_repository.dart';
 import 'package:sqflite/sqflite.dart';
 
 

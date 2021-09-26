@@ -1,4 +1,4 @@
-import 'package:flutter_unit/repositories/dao/like_dao.dart';
+import 'dao/like_dao.dart';
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart';
 
