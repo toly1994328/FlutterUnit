@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_unit/user_system/component/authentic_widget.dart';
-import 'package:flutter_unit/views/components/permanent/circle_image.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/circle_image.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'sync/upload_button.dart';
 import 'sync/async_button.dart';

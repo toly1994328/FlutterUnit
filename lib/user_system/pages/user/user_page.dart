@@ -2,13 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/state.dart';
 
-import 'package:flutter_unit/views/components/permanent/circle_image.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/components/project/wrapper/honour_wrapper.dart';
+import 'package:flutter_unit/components/permanent/circle_image.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/project/wrapper/honour_wrapper.dart';
 
 import 'page_item.dart';
 

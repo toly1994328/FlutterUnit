@@ -10,7 +10,7 @@ import 'package:flutter_unit/user_system/bloc/login/event.dart';
 import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/register/event.dart';
 import 'package:flutter_unit/user_system/bloc/register/state.dart';
-import 'package:flutter_unit/views/components/permanent/icon_input.dart';
+import 'package:flutter_unit/components/permanent/icon_input.dart';
 
 import 'arc_clipper.dart';
 import 'send_code.dart';

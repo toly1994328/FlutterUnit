@@ -8,10 +8,10 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/widget_system/repositories/model/node_model.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/components/permanent/panel.dart';
-import 'package:flutter_unit/views/components/project/widget_node_panel.dart';
-import 'package:flutter_unit/views/widgets/widgets_map.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/panel.dart';
+import 'package:flutter_unit/components/project/widget_node_panel.dart';
+import '../../widgets/widgets_map.dart';
 
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/components/drop_selectable_widget.dart';
+import 'package:flutter_unit/components/drop_selectable_widget.dart';
 
 import 'anim_painter.dart';
 import 'point_data.dart';

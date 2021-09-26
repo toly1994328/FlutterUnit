@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/components/project/items/gallery/gallery_card_item.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
 
 
 /// create by 张风捷特烈 on 2020/12/4

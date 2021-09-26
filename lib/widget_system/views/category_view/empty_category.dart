@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/color_unit.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/components/permanent/panel.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as path;
 /// create by 张风捷特烈 on 2021/2/25

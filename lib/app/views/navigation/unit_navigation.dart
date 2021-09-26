@@ -5,8 +5,8 @@ import 'package:flutter_unit/app/router/unit_router.dart';
 
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
 import 'package:flutter_unit/user_system/pages/user/user_page.dart';
-import 'package:flutter_unit/views/components/project/nav/unit_bottom_bar.dart';
-import 'package:flutter_unit/views/components/project/overlay_tool_wrapper.dart';
+import 'package:flutter_unit/components/project/nav/unit_bottom_bar.dart';
+import 'package:flutter_unit/components/project/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
 import 'package:flutter_unit/widget_system/views/widget_system_view.dart';

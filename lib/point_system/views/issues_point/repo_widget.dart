@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/convert_man.dart';
 import 'package:flutter_unit/point_system/github_model/github_model.dart';
-import 'package:flutter_unit/views/components/permanent/color_wrapper.dart';
+import 'package:flutter_unit/components/permanent/color_wrapper.dart';
 
 
 /// create by 张风捷特烈 on 2020/9/3
