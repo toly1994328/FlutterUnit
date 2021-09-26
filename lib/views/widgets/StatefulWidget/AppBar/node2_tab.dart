@@ -66,7 +66,7 @@ class _TabAppBarState extends State<TabAppBar>
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.star),
-              tooltip: 'like',
+              tooltip: 'liked_widget_bloc',
               onPressed: () {
                 // do nothing
               }),

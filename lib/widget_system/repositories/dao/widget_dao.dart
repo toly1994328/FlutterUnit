@@ -1,5 +1,5 @@
 
-import 'package:flutter_unit/model/enums.dart';
+import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../app_start.dart';
@@ -54,7 +54,7 @@ class WidgetDao {
   Future<List<Map<String, dynamic>>> search(SearchArgs arguments) async {
     return await db.rawQuery(
         "SELECT * "
-        "FROM widget WHERE name like ? AND lever IN(?,?,?,?,?) ORDER BY lever DESC",
+        "FROM widget WHERE name liked_widget_bloc ? AND lever IN(?,?,?,?,?) ORDER BY lever DESC",
         ["%${arguments.name}%", ...arguments.stars]);
   }
 }

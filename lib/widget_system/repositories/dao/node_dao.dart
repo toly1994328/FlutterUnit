@@ -1,9 +1,5 @@
-import 'package:flutter_unit/repositories/bean/node_po.dart';
+import '../bean/node_po.dart';
 import 'package:sqflite/sqflite.dart';
-
-import '../app_start.dart';
-
-
 
 class NodeDao {
 

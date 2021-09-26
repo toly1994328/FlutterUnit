@@ -25,7 +25,7 @@ class LikeDao {
 
   Future<int> like(int widgetId, {bool check = true}) async {
     if (check) {
-      // 如果 like ，直接取消，不执行 like 操作
+      // 如果 liked_widget_bloc ，直接取消，不执行 liked_widget_bloc 操作
       bool liked = await isLiked(widgetId);
       if (liked) return 0;
     }
@@ -39,7 +39,7 @@ class LikeDao {
 
   Future<void> unlike(int widgetId, {bool check = true}) async {
     if (check) {
-      // 如果未 like ，直接取消，不执行 unlike 操作
+      // 如果未 liked_widget_bloc ，直接取消，不执行 unlike 操作
       bool liked = await isLiked(widgetId);
       if (!liked) return;
     }
