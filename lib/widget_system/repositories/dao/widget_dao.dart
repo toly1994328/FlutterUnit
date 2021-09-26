@@ -54,7 +54,7 @@ class WidgetDao {
   Future<List<Map<String, dynamic>>> search(SearchArgs arguments) async {
     return await db.rawQuery(
         "SELECT * "
-        "FROM widget WHERE name liked_widget_bloc ? AND lever IN(?,?,?,?,?) ORDER BY lever DESC",
+        "FROM widget WHERE name like ? AND lever IN(?,?,?,?,?) ORDER BY lever DESC",
         ["%${arguments.name}%", ...arguments.stars]);
   }
 }
