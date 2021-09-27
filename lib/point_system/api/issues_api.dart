@@ -21,7 +21,7 @@ class IssuesApi {
 
   static Future<List<Issue>> getIssues(
       {int page = 1, int pageSize = 100}) async {
-    List<dynamic> res = (await dio.get('/point_bloc',
+    List<dynamic> res = (await dio.get('/point',
             queryParameters: {"page": page, "pageSize": pageSize}))
         .data['data'] as List;
     return res.map((e) => Issue.fromJson(json.decode(e['pointData']))).toList();
