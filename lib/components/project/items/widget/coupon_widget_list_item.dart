@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/style/shape/coupon_shape_border.dart';
+import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
 import 'package:flutter_unit/components/permanent/circle_image.dart';
@@ -26,26 +27,24 @@ class CouponWidgetListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10,top:2,left: 10,right: 10),
+    final CouponShapeBorder couponShapeBorder = CouponShapeBorder(
+    hasTopHole: hasTopHole,
+    hasBottomHole: hasBottomHole,
+    hasLine: false,
+    edgeRadius: 25,
+    lineRate: 0.20);
 
-      child: Stack(
+    return  Stack(
         children: <Widget>[
           isClip
               ? ClipPath(
                   clipper: ShapeBorderClipper(
-                      shape: CouponShapeBorder(
-                          hasTopHole: hasTopHole,
-                          hasBottomHole: hasBottomHole,
-                          hasLine: false,
-                          edgeRadius: 25,
-                          lineRate: 0.20)),
+                      shape: couponShapeBorder),
                   child: buildContent(),
                 )
               : buildContent(),
           _buildCollectTag(Theme.of(context).primaryColor)
         ],
-      ),
     );
   }
 

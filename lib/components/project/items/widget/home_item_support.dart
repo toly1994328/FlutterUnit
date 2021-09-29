@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/res/style/shape/coupon_shape_border.dart';
+import 'package:flutter_unit/app/res/style/shape/techno_shape.dart';
 import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 import 'package:flutter_unit/components/project/items/widget/simple_widget_list_item.dart';
@@ -13,6 +15,30 @@ import 'techno_widget_list_item.dart';
 /// 说明:
 
 class HomeItemSupport {
+
+  static Map<int,ShapeBorder> shapeBorderMap={
+    1: TechnoShapeBorder(),
+    2: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+    3: CouponShapeBorder(
+        hasTopHole: true,
+        hasBottomHole: false,
+        hasLine: false,
+        edgeRadius: 25,
+        lineRate: 0.20),
+    4: CouponShapeBorder(
+        hasTopHole: false,
+        hasBottomHole: false,
+        hasLine: false,
+        edgeRadius: 25,
+        lineRate: 0.20),
+    5: CouponShapeBorder(
+        hasTopHole: true,
+        hasBottomHole: false,
+        hasLine: false,
+        edgeRadius: 25,
+        lineRate: 0.20),
+  };
+
   static Widget get(
     WidgetModel model,
     int index,

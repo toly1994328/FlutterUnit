@@ -3,26 +3,24 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
-
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/project/default/empty_shower.dart';
 import 'package:flutter_unit/components/project/default/error_shower.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
 import 'package:flutter_unit/components/project/no_more_widget.dart';
 import 'package:flutter_unit/components/project/overlay_tool_wrapper.dart';
-import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'toly_app_bar.dart';
+import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
 import 'background.dart';
+import 'toly_app_bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -121,23 +119,32 @@ class _HomePageState extends State<HomePage>
       BlocBuilder<GlobalBloc, GlobalState>(
         buildWhen: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (_, state) {
-          return FeedbackWidget(
-              a: 0.95,
-              duration: const Duration(milliseconds: 200),
-              onEnd: () => _toDetailPage(model),
-              child: HomeItemSupport.get(model, state.itemStyleIndex));
+          int index = state.itemStyleIndex;
+          ShapeBorder? shapeBorder = HomeItemSupport.shapeBorderMap[index];
+          return Padding(
+            padding:
+                const EdgeInsets.only(bottom: 10, top: 2, left: 10, right: 10),
+            child: InkWell(
+              customBorder: shapeBorder,
+                onTap: ()=> _toDetail(model),
+                child: HomeItemSupport.get(model, index)),
+          );
         },
       );
 
-  _switchTab(int index) {
+  void _switchTab(int index) {
     WidgetFamily widgetFamily = Convert.toFamily(index);
     context.read<ColorChangeCubit>().change(Cons.tabColors[index],family: widgetFamily);
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
 
-  _toDetailPage(WidgetModel model) {
+ void _toDetail(WidgetModel model){
     BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
-    Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
+    Navigator.pushNamed(
+      context,
+      UnitRouter.widget_detail,
+      arguments: model,
+    );
   }
 
   @override
