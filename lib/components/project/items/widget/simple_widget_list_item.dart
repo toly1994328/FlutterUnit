@@ -24,12 +24,11 @@ class SimpleWidgetListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       decoration: BoxDecoration(
           color: itemColor.withAlpha(66),
         borderRadius: BorderRadius.circular(6)
       ),
-      margin: const EdgeInsets.only(bottom: 10,top:2,left: 10,right: 10),
+      // margin: const EdgeInsets.only(bottom: 10,top:2,left: 10,right: 10),
       child: Stack(
         children: <Widget>[
           Container(

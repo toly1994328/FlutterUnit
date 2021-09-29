@@ -18,9 +18,7 @@ class TechnoWidgetListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10,top:2,left: 10,right: 10),
-      child: Stack(
+    return  Stack(
         children: <Widget>[
           Material(
             color: itemColor.withAlpha(66),
@@ -62,8 +60,7 @@ class TechnoWidgetListItem extends StatelessWidget {
           ),
           _buildCollectTag(Theme.of(context).primaryColor)
         ],
-      ),
-    );
+      );
   }
 
   Widget _buildCollectTag(Color color) {

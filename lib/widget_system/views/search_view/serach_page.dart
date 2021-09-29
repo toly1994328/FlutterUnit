@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 
 import 'package:flutter_unit/components/permanent/circle.dart';
@@ -105,8 +106,11 @@ class _SearchPageState extends State<SearchPage> {
 
   Widget _buildSliverList(List<WidgetModel> models) => SliverList(
         delegate: SliverChildBuilderDelegate(
-            (_, int index) => Container(
+            (_, int index) => Padding(
+                padding:
+                const EdgeInsets.only(bottom: 10, top: 2, left: 10, right: 10),
                 child: InkWell(
+                  customBorder:  HomeItemSupport.shapeBorderMap[index],
                     onTap: () => _toDetailPage(models[index]),
                     child: TechnoWidgetListItem(
                       data: models[index],

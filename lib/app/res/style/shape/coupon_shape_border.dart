@@ -131,7 +131,6 @@ class CouponShapeBorder extends ShapeBorder {
 
   @override
   ShapeBorder scale(double t) {
-
     return this;
   }
 }
