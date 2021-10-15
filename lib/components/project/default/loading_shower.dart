@@ -7,8 +7,8 @@ import 'package:flutter_unit/app/res/style_unit.dart';
 /// 说明:  默认 加载视图
 
 class LoadingShower extends StatelessWidget {
- const LoadingShower({Key? key}) : super(key: key);
 
+  const LoadingShower({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LoadingShower extends StatelessWidget {
               width: 80,
               height: 80,
               child: SpinKitFadingCube(color: Theme.of(context).primaryColor)),
-          Text("loading ...",style: TextStyleUnit.hintStyle,)
+          const Text("loading ...",style: TextStyleUnit.hintStyle,)
         ],
       ),
     );

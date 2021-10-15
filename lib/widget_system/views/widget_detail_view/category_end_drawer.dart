@@ -18,7 +18,7 @@ import 'package:flutter_unit/components/project/unit_drawer_header.dart';
 class CategoryEndDrawer extends StatelessWidget {
   final WidgetModel widget;
 
-  CategoryEndDrawer({required this.widget});
+  const CategoryEndDrawer({required this.widget});
 
   @override
   Widget build(BuildContext context) {

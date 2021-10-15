@@ -96,7 +96,7 @@ class _SearchPageState extends State<SearchPage> {
       );
 
   Widget _buildBodyByState(BuildContext context,SearchState state) {
-    if (state is SearchStateNoSearch) return SliverToBoxAdapter(child: NotSearchPage(),);
+    if (state is SearchStateNoSearch) return SliverToBoxAdapter(child: const NotSearchPage(),);
     if (state is SearchStateLoading) return SliverToBoxAdapter(child: LoadingShower());
     if (state is SearchStateError) return SliverToBoxAdapter(child: ErrorPage());
     if (state is SearchStateSuccess) return _buildSliverList(state.result);
@@ -118,7 +118,7 @@ class _SearchPageState extends State<SearchPage> {
             childCount: models.length),
       );
 
-  _doSelectStart(List<int> select) {
+  void _doSelectStart(List<int> select) {
     List<int> temp = select.map((e)=>e+1).toList();
     if (temp.length < 5) {
       temp.addAll(List.generate(5 - temp.length, (e) => -1));
@@ -127,8 +127,8 @@ class _SearchPageState extends State<SearchPage> {
         .add(SearchWidgetEvent(args: SearchArgs(name: '', stars: temp)));
   }
 
-  _toDetailPage(WidgetModel model) {
-    BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
+  void _toDetailPage(WidgetModel model) {
+    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, UnitRouter.widget_detail,arguments: model);
   }
 }

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class NotSearchPage extends StatelessWidget {
 
+  const NotSearchPage({Key? key}):super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       height: 300,
       alignment: Alignment.center,
       child:  Column(

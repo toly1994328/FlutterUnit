@@ -14,6 +14,8 @@ import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 
 class HomeDrawer extends StatelessWidget {
 
+  const HomeDrawer({Key? key}):super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(

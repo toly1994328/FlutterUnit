@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class GapUnit{
+class Gap{
   static const Widget H5 = SizedBox(width: 5);
   static const Widget H10 = SizedBox(height: 10);
 

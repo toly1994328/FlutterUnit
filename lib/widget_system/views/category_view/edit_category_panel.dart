@@ -52,25 +52,8 @@ class _EditCategoryPanelState extends State<EditCategoryPanel> {
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
           child: InputButton(
             defaultText: '${widget.model?.name}',
-            config: InputButtonConfig(hint: '收藏集名称', iconData: Icons.check),
-            onSubmit: (str) {
-              name = str;
-              if (name.isNotEmpty) {
-                if (widget.type == EditType.add) {
-                  BlocProvider.of<CategoryBloc>(context).add(
-                      EventAddCategory(name: name, info: info, color: color));
-                }
-                if (widget.type == EditType.update) {
-                  BlocProvider.of<CategoryBloc>(context).add(
-                      EventUpdateCategory(
-                          id: widget.model!.id!,
-                          name: name,
-                          info: info,
-                          color: color));
-                }
-              }
-              Navigator.of(context).pop();
-            },
+            config: const InputButtonConfig(hint: '收藏集名称', iconData: Icons.check),
+            onSubmit: _doEdit,
           ),
         ),
         Padding(
@@ -94,4 +77,24 @@ class _EditCategoryPanelState extends State<EditCategoryPanel> {
       ],
     );
   }
+
+  void _doEdit(String str){
+    name = str;
+    if (name.isNotEmpty) {
+      if (widget.type == EditType.add) {
+        BlocProvider.of<CategoryBloc>(context).add(
+            EventAddCategory(name: name, info: info, color: color));
+      }
+      if (widget.type == EditType.update) {
+        BlocProvider.of<CategoryBloc>(context).add(
+            EventUpdateCategory(
+                id: widget.model!.id!,
+                name: name,
+                info: info,
+                color: color));
+      }
+    }
+    Navigator.of(context).pop();
+  }
+
 }

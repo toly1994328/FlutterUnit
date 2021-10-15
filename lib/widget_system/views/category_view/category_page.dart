@@ -1,21 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/res/style/gap.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/components/project/dialogs/delete_category_dialog.dart';
 import 'package:flutter_unit/components/project/items/category_list_item.dart';
 import 'package:flutter_unit/components/project/no_more_widget.dart';
+import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
 
 import 'edit_category_panel.dart';
 import 'empty_category.dart';
 
 class CategoryPage extends StatelessWidget {
-
-  final gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
+  final SliverGridDelegateWithFixedCrossAxisCount gridDelegate =
+      const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
     mainAxisSpacing: 10,
     crossAxisSpacing: 10,
@@ -33,13 +34,13 @@ class CategoryPage extends StatelessWidget {
             ),
             _buildContent(context, state),
             SliverToBoxAdapter(
-              child: NoMoreWidget(),
+              child: const NoMoreWidget(),
             )
           ],
         );
       }
-      if(state is CategoryLoadingState) return LoadingShower();
-      return EmptyCategory();
+      if (state is CategoryLoadingState) return const LoadingShower();
+      return const EmptyCategory();
     });
   }
 
@@ -65,13 +66,15 @@ class CategoryPage extends StatelessWidget {
     );
   }
 
-  _deleteCollect(BuildContext context, CategoryModel model) {
+  ShapeBorder get rRectBorder => const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(10)));
+
+  void _deleteCollect(BuildContext context, CategoryModel model) {
     showDialog(
         context: context,
         builder: (ctx) => Dialog(
               elevation: 5,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              shape: rRectBorder,
               child: Container(
                 width: 50,
                 child: DeleteCategoryDialog(
@@ -87,20 +90,17 @@ class CategoryPage extends StatelessWidget {
             ));
   }
 
-  _editCollect(BuildContext context, CategoryModel model) {
+  void _editCollect(BuildContext context, CategoryModel model) {
     showDialog(
         context: context,
         builder: (ctx) => Dialog(
-              backgroundColor:Color(0xFFF2F2F2),
+              backgroundColor: Color(0xFFF2F2F2),
               elevation: 5,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              shape: rRectBorder,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  SizedBox(
-                    height: 5,
-                  ),
+                  Gap.H5,
                   Row(
                     children: <Widget>[
                       Padding(
@@ -109,12 +109,12 @@ class CategoryPage extends StatelessWidget {
                           color: Theme.of(context).primaryColor,
                         ),
                       ),
-                      Text(
+                      const Text(
                         '修改收藏集',
                         style: TextStyle(fontSize: 20),
                       ),
-                      Spacer(),
-                      CloseButton()
+                      const Spacer(),
+                      const CloseButton()
                     ],
                   ),
                   Padding(
@@ -126,7 +126,7 @@ class CategoryPage extends StatelessWidget {
             ));
   }
 
-  _toDetailPage(BuildContext context, CategoryModel model) {
+  void _toDetailPage(BuildContext context, CategoryModel model) {
     BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id!));
     Navigator.pushNamed(context, UnitRouter.category_show, arguments: model);
   }

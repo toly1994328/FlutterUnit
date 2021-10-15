@@ -44,8 +44,8 @@ class _BlocWrapperState extends State<BlocWrapper> {
 
           BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
 
-          BlocProvider<DetailBloc>(
-              create: (_) => DetailBloc(repository: repository)),
+          BlocProvider<WidgetDetailBloc>(
+              create: (_) => WidgetDetailBloc(repository: repository)),
 
           BlocProvider<CategoryBloc>(
               create: (_) => categoryBloc),

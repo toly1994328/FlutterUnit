@@ -10,8 +10,7 @@ class NoMoreWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(height: 56);
+    return const SizedBox(height: 56);
   }
-
 
 }

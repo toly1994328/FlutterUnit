@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/project/unit_drawer_header.dart';
-import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 
 import 'edit_category_panel.dart';
 
 class HomeRightDrawer extends StatefulWidget {
+  const HomeRightDrawer({Key? key}) : super(key: key);
 
   @override
   _HomeRightDrawerState createState() => _HomeRightDrawerState();
@@ -53,8 +53,8 @@ class _HomeRightDrawerState extends State<HomeRightDrawer> {
             color: Theme.of(context).primaryColor,
             radius: 5,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
             child: Text(
               '添加收藏集',
               style: TextStyle(fontSize: 16, shadows: [

@@ -6,12 +6,14 @@ class TolyAppBar extends StatefulWidget {
   final double maxHeight;
   final Function(int)? onItemClick;
 
+  TolyAppBar({required this.maxHeight, this.onItemClick, this.defaultIndex = 0});
+
   @override
   _TolyAppBarState createState() => _TolyAppBarState();
 
   final int defaultIndex;
 
-  TolyAppBar({required this.maxHeight, this.onItemClick, this.defaultIndex = 0});
+
 }
 
 const BorderRadius _kBorderRadius = BorderRadius.only(

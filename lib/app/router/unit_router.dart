@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart';
-import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
-import 'package:flutter_unit/user_system/pages/login/login_page.dart';
-import 'package:flutter_unit/user_system/pages/register/register_page.dart';
-
-import 'package:flutter_unit/painter_system/gallery_page.dart';
-
 import 'package:flutter_unit/app/views/about/about_app_page.dart';
 import 'package:flutter_unit/app/views/about/about_me_page.dart';
 import 'package:flutter_unit/app/views/about/version_info.dart';
-import 'package:flutter_unit/app/views/navigation/unit_navigation.dart';
 import 'package:flutter_unit/app/views/data_manage/data_manage_page.dart';
+import 'package:flutter_unit/app/views/navigation/unit_navigation.dart';
 import 'package:flutter_unit/app/views/setting/code_style_setting.dart';
 import 'package:flutter_unit/app/views/setting/font_setting.dart';
 import 'package:flutter_unit/app/views/setting/item_style_setting.dart';
@@ -21,7 +12,13 @@ import 'package:flutter_unit/app/views/setting/theme_color_setting.dart';
 import 'package:flutter_unit/app/views/unit_todo/attr_unit_page.dart';
 import 'package:flutter_unit/app/views/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
-
+import 'package:flutter_unit/painter_system/gallery_page.dart';
+import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart';
+import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
+import 'package:flutter_unit/user_system/pages/login/login_page.dart';
+import 'package:flutter_unit/user_system/pages/register/register_page.dart';
+import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
 
 import 'router_utils.dart';
