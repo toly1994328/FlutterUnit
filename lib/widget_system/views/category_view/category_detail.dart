@@ -72,7 +72,7 @@ class CategoryShow extends StatelessWidget {
   }
 
   _toDetailPage(BuildContext context, WidgetModel model) async {
-    BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(model));
+    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
   }
 }

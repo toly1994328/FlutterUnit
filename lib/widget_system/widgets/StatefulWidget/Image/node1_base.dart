@@ -19,9 +19,9 @@ import 'package:flutter/material.dart';
 class LoadImage extends StatelessWidget {
   final assetsImagePath = "assets/images/icon_head.webp";
   final assetsGif = "assets/images/pica.gif";
-  final netImageUrl = "https://user-gold-cdn.xitu.io"
-      "/2019/7/24/16c225e78234ec26?"
-      "imageView2/1/w/1304/h/734/q/85/format/webp/interlace/1";
+  final netImageUrl = "https://p9-juejin.byteimg.com"
+      "/tos-cn-i-k3u1fbpfcp/36dee4e4dceb4c41a93df4a3603439fe~"
+      "tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.awebp";
 
   @override
   Widget build(BuildContext context) {

@@ -10,13 +10,14 @@ class InputButtonConfig {
   final Widget? front; //前面图标
   final bool submitClear; //是否提交清空
 
-  const InputButtonConfig(
-      {this.height = 36,
-      this.iconData = Icons.add,
-      this.fontSize = 14,
-      this.submitClear = true,
-      this.front,
-      this.hint = "I want to say..."});
+  const InputButtonConfig({
+    this.height = 36,
+    this.iconData = Icons.add,
+    this.fontSize = 14,
+    this.submitClear = true,
+    this.front,
+    this.hint = "I want to say...",
+  });
 }
 
 class InputButton extends StatefulWidget {

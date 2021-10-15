@@ -6,16 +6,14 @@ import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
-import 'package:flutter_unit/widget_system/repositories/model/node_model.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:flutter_unit/components/project/widget_node_panel.dart';
-import '../../widgets/widgets_map.dart';
-
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:flutter_unit/widget_system/repositories/model/node_model.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
-
+import '../../widgets/widgets_map.dart';
 import 'category_end_drawer.dart';
 
 class WidgetDetailPage extends StatefulWidget {
@@ -45,12 +43,15 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
       endDrawer: CategoryEndDrawer(widget: _modelStack.last),
       appBar: AppBar(
         title: Text(_modelStack.last.name),
+        leading: BackButton(),
         actions: <Widget>[
           _buildToHome(),
           FeedbackWidget(
             onPressed: () => _toggleLikeState(context),
             child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
-                listener: _listenLikeStateChange, builder: _buildByLikeState),
+              listener: _listenLikeStateChange,
+              builder: _buildByLikeState,
+            ),
           )
         ],
       ),
@@ -67,7 +68,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
             WidgetDetailTitle(
               model: _modelStack.last,
             ),
-            BlocBuilder<DetailBloc, DetailState>(builder: _buildDetail)
+            BlocBuilder<WidgetDetailBloc, DetailState>(builder: _buildDetail)
           ],
         ),
       ));
@@ -142,7 +143,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     _modelStack.removeLast();
     if (_modelStack.length > 0) {
       setState(() {
-        BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(_modelStack.last));
+        BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(_modelStack.last));
       });
       return false;
     } else {
@@ -151,7 +152,6 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   }
 
   Widget _buildDetail(BuildContext context, DetailState state) {
-    print('build---${state.runtimeType}---');
     if (state is DetailWithData) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -184,7 +184,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   }
 
   _buildLinkTo(BuildContext context, List<WidgetModel> links) {
-    if (links == null || links.isEmpty) {
+    if (links.isEmpty) {
       return Padding(
           padding: EdgeInsets.only(left: 10),
           child: Chip(
@@ -200,7 +200,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           children: links
               .map((e) => ActionChip(
                     onPressed: () {
-                      BlocProvider.of<DetailBloc>(context).add(FetchWidgetDetail(e));
+                      BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(e));
                       setState(() {
                         _modelStack.add(e);
                       });

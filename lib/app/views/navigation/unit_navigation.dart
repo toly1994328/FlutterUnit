@@ -44,8 +44,8 @@ class _UnitNavigationState extends State<UnitNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBody: true,
-        drawer: HomeDrawer(),
-        endDrawer: HomeRightDrawer(),
+        drawer: const HomeDrawer(),
+        endDrawer: const HomeRightDrawer(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: _buildSearchButton(context),
         body: wrapOverlayTool(

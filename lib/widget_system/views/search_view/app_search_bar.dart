@@ -7,6 +7,7 @@ import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 
 class AppSearchBar extends StatefulWidget {
 
+  const AppSearchBar({Key? key}):super(key: key);
 
   @override
   _AppSearchBarState createState() => _AppSearchBarState();
@@ -24,7 +25,6 @@ class _AppSearchBarState extends State<AppSearchBar> {
           controller: _controller,
           maxLines: 1,
           decoration: InputDecoration(//输入框装饰
-
               filled: true,//填满
               fillColor: Colors.white,//白色
               prefixIcon:  Icon(Icons.search),//前标

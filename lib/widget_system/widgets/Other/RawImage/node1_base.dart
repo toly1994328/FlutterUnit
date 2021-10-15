@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
+import 'package:flutter/services.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
@@ -35,7 +37,7 @@ class _RawImageDemoState extends State<RawImageDemo> {
   @override
   Widget build(BuildContext context) {
     if (_image == null)
-      return Container(
+      return const SizedBox(
         width: 80,
         height: 80,
       );
@@ -53,8 +55,8 @@ class _RawImageDemoState extends State<RawImageDemo> {
               isAntiAlias: true,
               filterQuality: FilterQuality.high,
             ),
-            Text('isAntiAlias: true'),
-            Text('FilterQuality.high')
+            const Text('isAntiAlias: true'),
+            const Text('FilterQuality.high')
           ],
         ),
         Column(
@@ -66,8 +68,8 @@ class _RawImageDemoState extends State<RawImageDemo> {
               height: 150,
               isAntiAlias: false,
             ),
-            Text('isAntiAlias: false'),
-            Text('FilterQuality.low')
+            const Text('isAntiAlias: false'),
+            const Text('FilterQuality.low')
           ],
         ),
       ],
@@ -75,26 +77,15 @@ class _RawImageDemoState extends State<RawImageDemo> {
   }
 
   void _loadImageFromAssets(String name) async {
-    _image = await loadImageByProvider(AssetImage(name));
+    _image = await loadImageFromAssets(name);
     setState(() {});
   }
 
-  late ImageStreamListener listener;
-
-  //通过ImageProvider读取Image
-  Future<ui.Image> loadImageByProvider(
-    ImageProvider provider, {
-    ImageConfiguration config = ImageConfiguration.empty,
-  }) async {
-    Completer<ui.Image> completer = Completer<ui.Image>(); //完成的回调
-    ImageStream stream = provider.resolve(config); //获取图片流
-    listener = ImageStreamListener((ImageInfo frame, bool sync) {
-      //监听
-      final ui.Image image = frame.image;
-      completer.complete(image); //完成
-      stream.removeListener(listener); //移除监听
-    });
-    stream.addListener(listener); //添加监听
-    return completer.future; //返回
+  //读取 assets 中的图片
+  Future<ui.Image> loadImageFromAssets(String path) async {
+    ByteData data = await rootBundle.load(path);
+    List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    return decodeImageFromList(Uint8List.fromList(bytes));
   }
+
 }
