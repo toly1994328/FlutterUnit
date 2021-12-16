@@ -149,13 +149,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.0"
-  install_plugin:
-    dependency: "direct main"
-    description:
-      path: "plugins/install_plugin-2.0.1"
-      relative: true
-    source: path
-    version: "2.0.1"
   intl:
     dependency: "direct main"
     description:

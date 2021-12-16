@@ -9,7 +9,7 @@ import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/point_system/api/app_info.dart';
-import 'package:install_plugin/install_plugin.dart';
+// import 'package:install_plugin/install_plugin.dart';
 import 'package:package_info/package_info.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
@@ -35,23 +35,23 @@ class _AppVersionCheckerState extends State<AppVersionChecker> {
   ValueNotifier<double> progress = ValueNotifier<double>(0);
 
   _doDownload() async {
-    Directory? dir = await getExternalStorageDirectory();
-    if(dir ==null) return;
+    // Directory? dir = await getExternalStorageDirectory();
+    // if(dir ==null) return;
+    //
+    // String dstPath = path.join(dir.path, 'FlutterUnit.apk');
+    //
+    // if(File(dstPath).existsSync()){
+    //   InstallPlugin.installApk(dstPath, 'com.toly1994.flutter_unit');
+    //   return;
+    // }
 
-    String dstPath = path.join(dir.path, 'FlutterUnit.apk');
-
-    if(File(dstPath).existsSync()){
-      InstallPlugin.installApk(dstPath, 'com.toly1994.flutter_unit');
-      return;
-    }
-
-    versionState.value = VersionState.downloading;
-
-    await HttpUtil.getInstance().client.download(url, dstPath,
-        onReceiveProgress: _onReceiveProgress,
-        options: Options(receiveTimeout: 24 * 60 * 60 * 1000));
-    versionState.value = VersionState.none;
-    InstallPlugin.installApk(dstPath, 'com.toly1994.flutter_unit');
+    // versionState.value = VersionState.downloading;
+    //
+    // await HttpUtil.getInstance().client.download(url, dstPath,
+    //     onReceiveProgress: _onReceiveProgress,
+    //     options: Options(receiveTimeout: 24 * 60 * 60 * 1000));
+    // versionState.value = VersionState.none;
+    // InstallPlugin.installApk(dstPath, 'com.toly1994.flutter_unit');
   }
 
   void _onReceiveProgress(int count, int total) {
