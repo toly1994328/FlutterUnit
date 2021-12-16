@@ -12,7 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-
   flutter_bloc: ^7.3.0 # 状态管理
   equatable: ^2.0.3 # 相等辅助
   package_info: ^2.0.2 # 应用包信息
@@ -20,14 +19,13 @@ dependencies:
   shared_preferences: ^2.0.6 # xml 固化
   jwt_decoder: ^2.0.1 # jwt 解析
   toggle_rotate: ^1.0.1
-  install_plugin:
-    path: ./plugins/install_plugin-2.0.1
+
   flutter_star: ^1.0.2 # 星星组件
   url_launcher: ^6.0.9 # url
   share: ^2.0.4 # 文字分享
   intl: ^0.17.0
   path_provider: ^2.0.2 # 路径
-#  connectivity: ^3.0.3 #网络状态
+
   flutter_spinkit: ^5.0.0 # loading
   flutter_markdown: ^0.6.4 # markdown
   dio: ^4.0.0 # 网络请求
