@@ -128,6 +128,11 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void _toDetailPage(WidgetModel model) {
+    //收起键盘
+    final FocusScopeNode focusScope = FocusScope.of(context);
+    if (focusScope.hasFocus) {
+      focusScope.unfocus();
+    }
     BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(context, UnitRouter.widget_detail,arguments: model);
   }

@@ -59,8 +59,7 @@ class _VerticalStepperState extends State<VerticalStepper> {
               });
             }
           },
-          controlsBuilder: (_,
-              {VoidCallback? onStepContinue, VoidCallback? onStepCancel}) {
+          controlsBuilder: (_,ControlsDetails details) {
             return Row(
               children: <Widget>[
                 RaisedButton(
@@ -68,7 +67,7 @@ class _VerticalStepperState extends State<VerticalStepper> {
                   shape: CircleBorder(
                     side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
                   ),
-                  onPressed: onStepContinue,
+                  onPressed: details.onStepContinue,
                   child: Icon(
                     Icons.check,
                     color: Colors.white,
@@ -79,7 +78,7 @@ class _VerticalStepperState extends State<VerticalStepper> {
                   shape: CircleBorder(
                     side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
                   ),
-                  onPressed: onStepCancel,
+                  onPressed: details.onStepCancel,
                   child: Icon(
                     Icons.keyboard_backspace,
                     color: Colors.white,

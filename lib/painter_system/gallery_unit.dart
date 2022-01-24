@@ -43,7 +43,6 @@ class _GalleryUnitState extends State<GalleryUnit> {
         double value = (_ctrl.page! - _firstOffset + 1) % 5 / 5;
         factor.value = value == 0 ? 1 : value;
       }
-
       });
   }
 
