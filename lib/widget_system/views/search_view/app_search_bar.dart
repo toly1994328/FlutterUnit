@@ -28,20 +28,18 @@ class _AppSearchBarState extends State<AppSearchBar> {
               filled: true,//填满
               fillColor: Colors.white,//白色
               prefixIcon:  Icon(Icons.search),//前标
-              // contentPadding: EdgeInsets.only(right: 0),//调整文字边距
               border: UnderlineInputBorder(
-                borderSide: BorderSide.none,//去边线
+                borderSide: BorderSide.none,
                 borderRadius: BorderRadius.all(Radius.circular(15)),
               ),
-              hintText: "搜点啥...",//提示
-              hintStyle: TextStyle(fontSize: 14)//提示样式
+              hintText: "搜点啥...",
+              hintStyle: TextStyle(fontSize: 14)
           ),
           onChanged: (str) => BlocProvider.of<SearchBloc>(context)
               .add(SearchWidgetEvent(args:SearchArgs(name: str,stars: [1,2,3,4,5]))),
 
           onSubmitted: (str) {//提交后
             FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
-//            _controller.clear();
           },
         ));
 
