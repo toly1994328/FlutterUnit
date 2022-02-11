@@ -10,23 +10,25 @@ import 'state.dart';
 /// 说明:
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
-  RegisterBloc() : super(RegisterNone());
+  RegisterBloc() : super(RegisterNone()){
+    on<RegisterEvent>(_onRegisterEvent);
 
-  @override
-  Stream<RegisterState> mapEventToState(RegisterEvent event) async* {
+  }
+
+  void _onRegisterEvent(RegisterEvent event,Emitter<RegisterState> emit) async {
     if (event is DoRegister) {
-      yield RegisterLoading();
+      emit( RegisterLoading());
       ResultBean<bool> result =
           await UserApi.register(email: event.email, code: event.code);
 
       if(result.data == null){
-        yield RegisterError('注册失败');
+    emit(RegisterError('注册失败'));
       }else{
         if (result.data!=null&&result.data!) {
           // 注册成功
-          yield RegisterSuccess(event.email);
+          emit( RegisterSuccess(event.email));
         }else{
-          yield RegisterError(result.msg);
+          emit( RegisterError(result.msg));
         }
       }
     }

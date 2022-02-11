@@ -10,7 +10,7 @@ import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/point_system/api/app_info.dart';
 // import 'package:install_plugin/install_plugin.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 

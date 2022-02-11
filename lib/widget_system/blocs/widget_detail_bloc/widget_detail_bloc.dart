@@ -1,8 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/model/node_model.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
-
 
 import 'widget_detail_event.dart';
 import 'widget_detail_state.dart';
@@ -15,32 +16,31 @@ class WidgetDetailBloc extends Bloc<DetailEvent, DetailState> {
 
   final WidgetRepository repository;
 
-  WidgetDetailBloc({required this.repository}):super(DetailLoading());
+  WidgetDetailBloc({required this.repository}) : super(DetailLoading()) {
+    on<FetchWidgetDetail>(_onFetchWidgetDetail);
+    on<ResetDetailState>(_onResetDetailState);
+  }
 
-
-  @override
-  Stream<DetailState> mapEventToState(DetailEvent event) async* {
-    if (event is FetchWidgetDetail) {
-      yield* _mapLoadWidgetToState(event.widgetModel);
-    }
-    if(event is ResetDetailState){
-      yield DetailLoading();
+  void _onFetchWidgetDetail(
+      FetchWidgetDetail event, Emitter<DetailState> emit) async {
+    emit(DetailLoading());
+    try {
+      final List<NodeModel> nodes =
+          await repository.loadNode(event.widgetModel);
+      final List<WidgetModel> links =
+          await repository.loadWidget(event.widgetModel.links);
+      if (nodes.isEmpty) {
+        emit(DetailEmpty());
+      } else {
+        emit(DetailWithData(
+            widgetModel: event.widgetModel, nodes: nodes, links: links));
+      }
+    } catch (_) {
+      emit(DetailFailed());
     }
   }
 
-  Stream<DetailState> _mapLoadWidgetToState(WidgetModel widgetModel) async* {
-    yield DetailLoading();
-    try {
-      final List<NodeModel> nodes = await repository.loadNode(widgetModel);
-      final List<WidgetModel> links = await repository.loadWidget(widgetModel.links);
-      if(nodes.isEmpty){
-        yield DetailEmpty();
-      }else{
-        yield DetailWithData(widgetModel: widgetModel, nodes: nodes,links: links);
-      }
-
-    } catch (_) {
-      yield DetailFailed();
-    }
+  void _onResetDetailState(ResetDetailState event, Emitter<DetailState> emit) async{
+    emit(DetailLoading());
   }
 }

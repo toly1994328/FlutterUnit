@@ -12,12 +12,12 @@ import 'event.dart';
 import 'state.dart';
 
 class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
-  AuthenticBloc() : super(AuthInitial());
+  AuthenticBloc() : super(AuthInitial()){
+    on<AppStarted>(_onAppStarted);
+  }
 
-  @override
-  Stream<AuthenticState> mapEventToState(
-    AuthEvent event,
-  ) async* {
+
+  void _onAppStarted(AuthEvent event,  Emitter<AuthenticState> emit) async{
     if (event is AppStarted) {
       String? token = await LocalStorage.get(LocalStorage.tokenKey);
       String? userJson = await LocalStorage.get(LocalStorage.userKey);
@@ -25,7 +25,7 @@ class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
         bool disable = JwtDecoder.isExpired(token);
         if (!disable) {
           HttpUtil.getInstance().setToken(token);
-          yield AuthSuccess(User.fromJson(json.decode(userJson)));
+          emit(AuthSuccess(User.fromJson(json.decode(userJson))));
         }else{
           // 说明 token 过期
           await _removeToken();
@@ -38,7 +38,7 @@ class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
       HttpUtil.getInstance().setToken(event.token);
       await _persistToken(event.token);
       await _persistUser(event.user);
-      yield AuthSuccess(event.user);
+      emit(AuthSuccess(event.user));
     }
 
     if (event is LoggedOut) {

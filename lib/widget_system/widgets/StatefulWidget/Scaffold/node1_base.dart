@@ -109,9 +109,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
         showSelectedLabels: true,
         items: iconsMap.keys
             .map((key) => BottomNavigationBarItem(
-                title: Text(
-                  key,
-                ),
+                label: key,
                 icon: Icon(iconsMap[key]),
                 backgroundColor: _colors[_position]))
             .toList(),

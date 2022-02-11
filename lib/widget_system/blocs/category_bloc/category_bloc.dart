@@ -17,17 +17,18 @@ import 'category_state.dart';
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   final CategoryRepository repository;
 
-  CategoryBloc({required this.repository}) : super(const CategoryLoadingState());
+  CategoryBloc({required this.repository}) : super(const CategoryLoadingState()){
+    on<CategoryEvent>(_onCategoryEvent);
+  }
 
-  @override
-  Stream<CategoryState> mapEventToState(CategoryEvent event) async* {
+  void _onCategoryEvent(CategoryEvent event,Emitter<CategoryState> emit) async {
     if (event is EventLoadCategory) {
-      yield const CategoryLoadingState();
+      emit (const CategoryLoadingState());
       // 使用 repository 加载 收藏集数据
       final category = await repository.loadCategories();
-      yield category.isEmpty
-          ? const CategoryEmptyState()
-          : CategoryLoadedState(category);
+       category.isEmpty
+          ? emit (const CategoryEmptyState())
+          : emit (CategoryLoadedState(category));
     }
 
     if (event is EventDeleteCategory) {
@@ -52,10 +53,10 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
       final success = await repository.addCategory(categoryPo);
 
       if (success) {
-        yield const AddCategorySuccess();
+        emit(const AddCategorySuccess()) ;
         add(const EventLoadCategory());
       } else {
-        yield const AddCategoryFailed();
+        emit(const AddCategoryFailed()) ;
       }
     }
 
