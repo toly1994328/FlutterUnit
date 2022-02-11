@@ -42,11 +42,11 @@ class _PageStorageDemoState extends State<PageStorageDemo> {
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text('Home'),
+              label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              title: Text('Setting'),
+              label: 'Setting',
             ),
           ],
         ),

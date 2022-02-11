@@ -11,24 +11,18 @@ import 'point_state.dart';
 /// 说明:
 
 class PointBloc extends Bloc<PointEvent, PointState> {
-  PointBloc() : super(PointLoading());
-
-
-  @override
-  Stream<PointState> mapEventToState(PointEvent event) async* {
-    if (event is EventLoadPoint) {
-      yield* _mapLoadWidgetToState();
-    }
+  PointBloc() : super(PointLoading()){
+    on<EventLoadPoint>(_onEventLoadPoint);
   }
 
-  Stream<PointState> _mapLoadWidgetToState() async* {
-    yield PointLoading();
+  void _onEventLoadPoint(PointEvent event,Emitter<PointState> emit) async{
+    emit( PointLoading());
     try {
       final issues = await IssuesApi.getIssues();
-      yield PointLoaded(issues);
+      emit( PointLoaded(issues));
     } catch (err) {
       print(err);
-      yield PointLoadFailure(err.toString());
+      emit( PointLoadFailure(err.toString()));
     }
   }
 }

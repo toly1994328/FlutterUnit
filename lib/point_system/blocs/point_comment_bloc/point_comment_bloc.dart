@@ -15,29 +15,22 @@ import 'point_comment_state.dart';
 
 class PointCommentBloc extends Bloc<PointCommentEvent, PointCommentState> {
 
-  PointCommentBloc() : super(PointCommentInitial());
-
-
-
-  @override
-  Stream<PointCommentState> mapEventToState(PointCommentEvent event) async* {
-    if (event is EventLoadPointComment) {
-      yield* _mapLoadWidgetToState(event);
-    }
+  PointCommentBloc() : super(PointCommentInitial()){
+    on<EventLoadPointComment>(_onEventLoadPointComment);
   }
 
-  Stream<PointCommentState> _mapLoadWidgetToState(EventLoadPointComment event) async* {
-    yield PointCommentLoading(event.point);
+  void _onEventLoadPointComment(EventLoadPointComment event,Emitter<PointCommentState> emit) async{
+    emit( PointCommentLoading(event.point));
     if(event.point.number==null){
-      yield PointCommentLoadFailure('point_bloc id 为空');
+      emit( PointCommentLoadFailure('point_bloc id 为空'));
     }
     try {
       final List<IssueComment> comments = await IssuesApi.getIssuesComment(event.point.number!);
       comments.sort((a,b)=>a.createdAt!.compareTo(b.createdAt!));
-      yield PointCommentLoaded(event.point,comments);
+      emit( PointCommentLoaded(event.point,comments));
     } catch (err) {
       print(err);
-      yield PointCommentLoadFailure(err.toString());
+      emit( PointCommentLoadFailure(err.toString()));
     }
   }
 }

@@ -1,4 +1,6 @@
 
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 
@@ -17,25 +19,24 @@ class CategoryWidgetBloc
   final CategoryBloc categoryBloc;
 
   CategoryWidgetBloc({required this.categoryBloc})
-      : super(CategoryWidgetEmptyState());
+      : super(CategoryWidgetEmptyState()){
+    on<EventLoadCategoryWidget>(_onEventLoadCategoryWidget);
+    on<EventToggleCategoryWidget>(_onEventToggleCategoryWidget);
+  }
 
   CategoryRepository get repository => categoryBloc.repository;
 
-  @override
-  Stream<CategoryWidgetState> mapEventToState(
-      CategoryWidgetEvent event) async* {
-    if (event is EventLoadCategoryWidget) {
-      final widgets =
-          await repository.loadCategoryWidgets(categoryId: event.categoryId);
-      yield widgets.isNotEmpty
-          ? CategoryWidgetLoadedState(widgets)
-          : CategoryWidgetEmptyState();
-      categoryBloc.add(EventLoadCategory());
-    }
+  void _onEventLoadCategoryWidget(EventLoadCategoryWidget event, Emitter<CategoryWidgetState> emit) async{
+    final widgets =
+    await repository.loadCategoryWidgets(categoryId: event.categoryId);
+     widgets.isNotEmpty
+        ? emit(CategoryWidgetLoadedState(widgets))
+        : emit(CategoryWidgetEmptyState());
+    categoryBloc.add(EventLoadCategory());
+  }
 
-    if (event is EventToggleCategoryWidget) {
-      await repository.toggleCategory(event.categoryId, event.widgetId);
-      add(EventLoadCategoryWidget(event.categoryId));
-    }
+  void _onEventToggleCategoryWidget(EventToggleCategoryWidget event, Emitter<CategoryWidgetState> emit) async{
+    await repository.toggleCategory(event.categoryId, event.widgetId);
+    add(EventLoadCategoryWidget(event.categoryId));
   }
 }

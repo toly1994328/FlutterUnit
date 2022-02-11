@@ -16,21 +16,22 @@ import 'state.dart';
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final AuthenticBloc authenticBloc;
 
-  LoginBloc({ required this.authenticBloc}) : super(LoginNone());
+  LoginBloc({ required this.authenticBloc}) : super(LoginNone()){
+    on<LoginEvent>(_onLoginEvent);
+  }
 
-  @override
-  Stream<LoginState> mapEventToState(LoginEvent event) async* {
+  void _onLoginEvent(LoginEvent event,Emitter<LoginState> emit) async {
     if (event is DoLogin) {
-      yield LoginLoading();
+      emit (LoginLoading());
       await Future.delayed(Duration(milliseconds: 500));
       ResultBean<User> result = await UserApi.login(username: event.username, password: event.password);
 
       if (result.status&& result.data!=null) {
         // 注册成功
         authenticBloc.add(LoginOver(token: result.msg,user: result.data!));
-        yield LoginSuccess(result.data!);
+        emit (LoginSuccess(result.data!));
       } else {
-        yield LoginError('用户名和密码不匹配');
+        emit (LoginError('用户名和密码不匹配'));
       }
     }
   }

@@ -93,12 +93,12 @@ class _GalleryUnitState extends State<GalleryUnit> {
 
   Widget _buildTitle(BuildContext context) {
     return Container(
-      alignment: Alignment(0, 0.3),
+      alignment: const Alignment(0, 0.3),
       height: MediaQuery.of(context).size.height * 0.2,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: [
-          FlutterLogo(
+        children: const [
+           FlutterLogo(
             size: 40,
           ),
           SizedBox(

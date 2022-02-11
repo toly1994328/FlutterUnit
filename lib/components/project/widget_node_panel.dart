@@ -5,7 +5,7 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/code/code_widget.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:toggle_rotate/toggle_rotate.dart';
 
 import '../permanent/feedback_widget.dart';

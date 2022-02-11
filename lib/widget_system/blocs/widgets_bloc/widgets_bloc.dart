@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
@@ -15,23 +17,18 @@ import 'widgets_state.dart';
 class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   final WidgetRepository repository;
 
-  WidgetsBloc({required this.repository}):super(WidgetsLoading());
-
-  @override
-  Stream<WidgetsState> mapEventToState(WidgetsEvent event) async* {
-    if (event is EventTabTap) {
-      yield* _mapLoadWidgetToState(event.family);
-    }
+  WidgetsBloc({required this.repository}):super(WidgetsLoading()){
+    on<EventTabTap>(_onEventTabTap);
   }
 
-  Stream<WidgetsState> _mapLoadWidgetToState(WidgetFamily family) async* {
-    yield WidgetsLoading();
+  void _onEventTabTap(EventTabTap event, Emitter<WidgetsState> emit) async{
+    emit( WidgetsLoading());
     try {
-      final List<WidgetModel> widgets = await repository.loadWidgets(family);
-      yield WidgetsLoaded(widgets: widgets);
+      final List<WidgetModel> widgets = await repository.loadWidgets(event.family);
+      emit( WidgetsLoaded(widgets: widgets));
     } catch (err) {
       print(err);
-      yield WidgetsLoadFailed(family,err.toString());
+      emit(WidgetsLoadFailed(event.family,err.toString()));
     }
   }
 }

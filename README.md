@@ -25,10 +25,10 @@
 > 当前Flutter 版本
 
 ```
-Flutter 2.8.1 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 77d935af4d (6 weeks ago) • 2021-12-16 08:37:33 -0800
-Engine • revision 890a5fca2e
-Tools • Dart 2.15.1
+Flutter 2.10.1 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision db747aa133 (33 hours ago) • 2022-02-09 13:57:35 -0600
+Engine • revision ab46186b24
+Tools • Dart 2.16.1 • DevTools 2.9.2
 ```
 
 ---

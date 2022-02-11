@@ -51,7 +51,7 @@ class _CustomCupertinoTabScaffoldState
                   icon: Icon(
                     iconsMap[e],
                   ),
-                  title: Text(e),
+                  label: e,
                 ))
             .toList(),
         activeColor: Colors.blue,
