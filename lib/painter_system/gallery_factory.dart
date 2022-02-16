@@ -113,7 +113,7 @@ class GalleryFactory {
               title: "冰墩墩",
               author: "张风捷特烈",
               info:
-                  "    本样例会绘制 2022 年北京冬奥会吉祥物冰墩墩的绘制，可以学到路径绘制、渐变色等知识。",
+                  "    本样例是绘制 2022 年北京冬奥会吉祥物冰墩墩的形体，从中可以学到路径绘制、渐变色等知识。",
               content: DunDunView()),
           FrameShower(
               title: "井字棋",

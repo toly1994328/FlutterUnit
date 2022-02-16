@@ -24,7 +24,7 @@ class _DunDunViewState extends State<DunDunView> {
   }
 
   void loadImage() async {
-    ByteData data2 = await rootBundle.load('assets/images/logo1.png');
+    ByteData data2 = await rootBundle.load('assets/images/logo1.webp');
     image = await decodeImageFromList(data2.buffer.asUint8List());
     if (mounted) setState(() {});
   }
@@ -232,11 +232,10 @@ class DunDunPainter extends CustomPainter {
     pathPaint..color = Colors.red;
     starPath = starPath.shift(Offset(152, -20));
     canvas.drawPath(starPath, pathPaint);
-
     if (image != null) {
       Rect src2 = Rect.fromLTWH(
           0, 0, image!.width.toDouble(), image!.height.toDouble());
-      Rect dst2 = Rect.fromLTWH(50, 55, 899 / 27, 1066 / 27);
+      Rect dst2 = Rect.fromLTWH(50, 55, 899 / 28, 1066 / 28);
 
       canvas.drawImageRect(image!, src2, dst2, Paint());
     }
