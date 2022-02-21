@@ -13,22 +13,40 @@ import 'package:flutter/material.dart';
 //    }
 class TextDirectionFlex extends StatelessWidget {
 
-  final  redBox= Container(
-    color: Colors.red,
-    height: 30,
-    width: 40,
-  );
+  static TextStyle textStyle =
+  TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
 
-  final blueBox= Container(
+  final blueBox = Container(
+    alignment: Alignment.center,
     color: Colors.blue,
     height: 20,
     width: 30,
+    child: Text(
+      '1',
+      style: textStyle,
+    ),
   );
 
-  final greenBox= Container(
+  final redBox = Container(
+    alignment: Alignment.center,
+    color: Colors.red,
+    height: 30,
+    width: 40,
+    child: Text(
+      '2',
+      style: textStyle,
+    ),
+  );
+
+  final greenBox = Container(
+    alignment: Alignment.center,
     color: Colors.green,
     height: 20,
     width: 20,
+    child: Text(
+      '3',
+      style: textStyle,
+    ),
   );
 
   @override
