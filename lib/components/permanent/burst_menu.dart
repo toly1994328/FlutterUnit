@@ -132,6 +132,7 @@ class BurstMenuState extends State<BurstMenu>
             ? widget.radius
             : widget.radius * 2,
         alignment: Alignment.center,
+        // color: Colors.orange.withOpacity(0.5),
         child: Flow(
           delegate: _CircleFlowDelegate(curveAnim,
               startAngle: widget.startAngle,
@@ -249,12 +250,15 @@ class _CircleFlowDelegate extends FlowDelegate {
 
     if (animation.value > hideOpacity) {
       for (int i = 0; i < count; i++) {
-        final double cSizeX = context.getChildSize(i)?.width ?? 0 / 2;
-        final double cSizeY = context.getChildSize(i)?.height ?? 0 / 2;
+        Size? size = context.getChildSize(i);
+        if(size == null) continue;
+        final double cSizeX = context.getChildSize(i)!.width/ 2;
+        final double cSizeY = context.getChildSize(i)!.height/ 2;
 
         final double beforeRadius = (radius - cSizeX);
         final double now = beforeRadius + centerOffset.dy.abs();
         final swapRadius = (radius - cSizeX) / beforeRadius * now;
+
 
         final double offsetX =
             animation.value * swapRadius * cos(i * perRad + rotate) +
