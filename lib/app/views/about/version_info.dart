@@ -6,9 +6,10 @@ import 'package:flutter_unit/app/router/unit_router.dart';
 
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/update_part/views/app_update_panel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'version/app_version_checker.dart';
+
 import 'version/version_shower.dart';
 
 /// create by 张风捷特烈 on 2020/6/16
@@ -79,7 +80,7 @@ class VersionInfo extends StatelessWidget {
               onTap: () => Navigator.of(context).pushNamed(UnitRouter.about_app),
             ),
             Divider(height: 1,indent: 10),
-            const AppVersionChecker(),
+            const AppUpdatePanel(),
             Divider(height: 1,indent: 10),
             ListTile(
               title: Text('检查数据库新版本',style: labelStyle),

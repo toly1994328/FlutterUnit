@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/size_unit.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/update_part/views/update_red_point.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
@@ -138,14 +139,22 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
                 child: FeedbackWidget(
                   onPressed: () => _updateIndex(3),
                   onLongPressed: () => _onLongPress(context, 3),
-                  child: Container(
-                      padding: paddingR,
-                      height: SizeUnit.bottom_nav_height,
-                      child: Icon(
-                        TolyIcon.yonghu,
-                        size: getIconSizeByPosition(3),
-                        color: getIconColorByPosition(3),
-                      )),
+                  child: Stack(
+                    children: [
+                      Container(
+                          padding: paddingR,
+                          height: SizeUnit.bottom_nav_height,
+                          child: Icon(
+                            TolyIcon.yonghu,
+                            size: getIconSizeByPosition(3),
+                            color: getIconColorByPosition(3),
+                          )),
+                      Positioned(
+                        left: 20,
+                          top: 5,
+                          child: const UpdateRedPoint())
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -169,6 +178,7 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
 
   void _onLongPress(BuildContext context, int index) {
     widget.onItemLongTap?.call(context, index);
-
   }
+
+
 }

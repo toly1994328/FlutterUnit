@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.toly1994.flutter_unit">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="flutter_unit"
         android:icon="@mipmap/logo">
