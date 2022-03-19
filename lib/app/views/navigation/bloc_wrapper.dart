@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
+import 'package:flutter_unit/bloc_exp.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
@@ -65,6 +66,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
               create: (_) => SearchBloc(repository: repository)),
 
           BlocProvider<PointBloc>(create: (_) => PointBloc()),
+          BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
 
           BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
         ], child: widget.child);

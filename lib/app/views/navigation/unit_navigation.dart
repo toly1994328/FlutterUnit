@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/bloc_exp.dart';
+
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
-
-import 'package:flutter_unit/painter_system/gallery_unit.dart';
-import 'package:flutter_unit/user_system/pages/user/user_page.dart';
 import 'package:flutter_unit/components/project/nav/unit_bottom_bar.dart';
 import 'package:flutter_unit/components/project/overlay_tool_wrapper.dart';
+import 'package:flutter_unit/painter_system/gallery_unit.dart';
+import 'package:flutter_unit/user_system/pages/user/user_page.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-
 import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
-
 
 import '../../blocs/color_change_bloc.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
 /// 说明: 主题结构 左右滑页 + 底部导航栏
-
 
 class UnitNavigation extends StatefulWidget {
   const UnitNavigation();
@@ -32,6 +30,12 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   // 禁止 PageView 滑动
   final ScrollPhysics _neverScroll = const NeverScrollableScrollPhysics();
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<UpdateBloc>(context).add(CheckUpdate(appName: 'FlutterUnit'));
+  }
 
   @override
   void dispose() {
@@ -95,12 +99,14 @@ class _UnitNavigationState extends State<UnitNavigation> {
       );
 
   // 点击底部按钮事件，切换页面
-  _onTapBottomNav(int index) {
-    _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
-    if(index!=0){
+  void _onTapBottomNav(int index) {
+    _controller.animateToPage(index,
+        duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    if (index != 0) {
       context.read<ColorChangeCubit>().change(Theme.of(context).primaryColor);
-    }else{
-      Color color = Cons.tabColors[context.read<ColorChangeCubit>().state.family.index];
+    } else {
+      Color color =
+          Cons.tabColors[context.read<ColorChangeCubit>().state.family.index];
       context.read<ColorChangeCubit>().change(color);
     }
 
