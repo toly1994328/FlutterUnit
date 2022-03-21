@@ -3,10 +3,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
-import 'package:flutter_unit/blocs/bloc_exp.dart';
-import 'package:flutter_unit/views/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/views/components/project/items/gallery/gallery_card_item.dart';
+
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
+import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 
 import 'gallery_detail_page.dart';
 
@@ -22,7 +23,7 @@ class GalleryUnit extends StatefulWidget {
 class _GalleryUnitState extends State<GalleryUnit> {
   final ValueNotifier<double> factor = ValueNotifier<double>(0);
 
-  PageController _ctrl;
+ late PageController _ctrl;
 
   final int _firstOffset = 1000; //初始偏移
   int _position = 0; //页面位置
@@ -38,8 +39,10 @@ class _GalleryUnitState extends State<GalleryUnit> {
       viewportFraction: 0.9,
       initialPage: _position,
     )..addListener(() {
-        double value = (_ctrl.page - _firstOffset + 1) % 5 / 5;
+      if(_ctrl.page!=null){
+        double value = (_ctrl.page! - _firstOffset + 1) % 5 / 5;
         factor.value = value == 0 ? 1 : value;
+      }
       });
   }
 
@@ -50,9 +53,9 @@ class _GalleryUnitState extends State<GalleryUnit> {
     super.dispose();
   }
 
-  Color get color => BlocProvider.of<WidgetsBloc>(context).state.color;
+  Color get color => BlocProvider.of<ColorChangeCubit>(context).state.tabColor;
 
-  Color get nextColor => BlocProvider.of<WidgetsBloc>(context).state.nextColor;
+  Color get nextColor =>  BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
 
   BoxDecoration get boxDecoration => BoxDecoration(
       color: Colors.white,
@@ -76,7 +79,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
           ],
         ),
         valueListenable: factor,
-        builder: (_, value, child) => Container(
+        builder: (_,double value, child) => Container(
           color: Color.lerp(
             color,
             nextColor,
@@ -90,12 +93,12 @@ class _GalleryUnitState extends State<GalleryUnit> {
 
   Widget _buildTitle(BuildContext context) {
     return Container(
-      alignment: Alignment(0, 0.3),
+      alignment: const Alignment(0, 0.3),
       height: MediaQuery.of(context).size.height * 0.2,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: [
-          FlutterLogo(
+        children: const [
+           FlutterLogo(
             size: 40,
           ),
           SizedBox(
@@ -161,10 +164,10 @@ class _GalleryUnitState extends State<GalleryUnit> {
         ));
   }
 
-  Widget _buildAnimItemByIndex(BuildContext context, Widget child, int index) {
+  Widget _buildAnimItemByIndex(BuildContext context, Widget? child, int index) {
     double value;
-    if (_ctrl.position.haveDimensions) {
-      value = _ctrl.page - index;
+    if (_ctrl.position.haveDimensions&&_ctrl.page!=null) {
+      value = _ctrl.page! - index;
     } else {
       value = (_position - index).toDouble();
     }

@@ -14,7 +14,7 @@ class CouponShapeBorder extends ShapeBorder {
   final Color color;
   final bool hasTopHole;
   final bool hasBottomHole;
-  final double edgeRadius;
+  final double? edgeRadius;
 
   CouponShapeBorder(
       {this.holeCount = 6,
@@ -26,15 +26,15 @@ class CouponShapeBorder extends ShapeBorder {
       this.color = Colors.white,this.edgeRadius});
 
   @override
-  EdgeInsetsGeometry get dimensions => null;
+  EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    return null;
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
+    return Path();
   }
 
   @override
-  Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
     double w = rect.width;
     double h = rect.height;
 
@@ -52,10 +52,10 @@ class CouponShapeBorder extends ShapeBorder {
     }
     if(edgeRadius!=null){
       if(hasTopHole){
-        _formHoleTop(path, rect, edgeRadius);
+        _formHoleTop(path, rect, edgeRadius!);
       }
       if(hasBottomHole){
-        _formHoleBottom(path, rect, edgeRadius);
+        _formHoleBottom(path, rect, edgeRadius!);
       }
 
     }
@@ -103,7 +103,7 @@ class CouponShapeBorder extends ShapeBorder {
   }
 
   @override
-  void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
     if(!hasLine) return;
     Paint paint = Paint()
       ..color = color
@@ -131,7 +131,6 @@ class CouponShapeBorder extends ShapeBorder {
 
   @override
   ShapeBorder scale(double t) {
-    // TODO: implement scale
-    return null;
+    return this;
   }
 }

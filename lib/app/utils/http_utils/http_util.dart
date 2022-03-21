@@ -11,16 +11,13 @@ const int _kConnectTimeout = 5000;
 
 class HttpUtil {
   static HttpUtil _instance = HttpUtil._internal();
-  Dio _dio;
-
-
-
+  Dio? _dio;
 
   static const CODE_SUCCESS = 200;
   static const CODE_TIME_OUT = -1;
 
   factory HttpUtil() => _instance;
-  TokenInterceptors tokenInterceptors;
+  TokenInterceptors? tokenInterceptors;
 
   ///通用全局单例，第一次使用时初始化
   HttpUtil._internal() {
@@ -31,7 +28,7 @@ class HttpUtil {
         receiveTimeout: _kConnectTimeout,
         sendTimeout: _kSendTimeout,
       ));
-      _dio.interceptors.add(LogsInterceptors());
+      _dio!.interceptors.add(LogsInterceptors());
       // _dio.interceptors.add(ResponseInterceptors());
     }
   }
@@ -41,26 +38,26 @@ class HttpUtil {
 
   }
 
-  Dio get client => _dio;
+  Dio get client => _dio!;
 
   void setToken(String token){
     print('---token---$token-------');
     tokenInterceptors = TokenInterceptors(token: token);
-    _dio.interceptors.add(tokenInterceptors);
+    _dio!.interceptors.add(tokenInterceptors!);
   }
   void deleteToken(){
-    _dio.interceptors.remove(tokenInterceptors);
+    _dio!.interceptors.remove(tokenInterceptors);
   }
 
   void rebase(String baseIp) {
-    _dio.options.baseUrl = baseIp;
+    _dio!.options.baseUrl = baseIp;
   }
 
   //一般请求，默认域名
   HttpUtil _default() {
     if (_dio != null) {
-      _dio.options.baseUrl=PathUnit.baseUrl;
-      _dio.options.headers = {};
+      _dio!.options.baseUrl=PathUnit.baseUrl;
+      _dio!.options.headers = {};
     }
     return this;
   }

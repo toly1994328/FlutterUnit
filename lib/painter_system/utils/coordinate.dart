@@ -120,7 +120,7 @@ class Coordinate {
   }
 
   void _drawAxisText(Canvas canvas, String str,
-      {Color color = Colors.black, bool x = false}) {
+      {Color color = Colors.black, bool? x = false}) {
     TextSpan text = TextSpan(
         text: str,
         style: TextStyle(

@@ -3,9 +3,10 @@
 - 🔥  [实体书 - 《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
 - 🔥  [掘金小册 -《Flutter 绘制指南 - 妙笔生花》](https://juejin.im/book/6844733827265331214)
 - 🔥  [掘金小册 -《Flutter 手势探索 - 执掌天下》](https://juejin.cn/book/6896378716427911181)
-- 🔥  [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
-- 🔥  [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
-- 🔥  [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
+- 🔥  [掘金小册 -《Flutter 动画探索 - 流光幻影》](https://juejin.cn/book/6965102582473687071)
+-   [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
+-   [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
+-   [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
 
 
 ### FlutterUnit 下载体验: 复制链接，在浏览器下载~
@@ -24,10 +25,10 @@
 > 当前Flutter 版本
 
 ```
-Flutter 2.2.0 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision b22742018b (7 days ago) • 2021-05-14 19:12:57 -0700
-Engine • revision a9d88a4d18
-Tools • Dart 2.13.0
+Flutter 2.10.1 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision db747aa133 (33 hours ago) • 2022-02-09 13:57:35 -0600
+Engine • revision ab46186b24
+Tools • Dart 2.16.1 • DevTools 2.9.2
 ```
 
 ---
@@ -59,9 +60,6 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 |------|------------|------------|
 | ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c3f21476fc5?w=1080&h=2340&f=jpeg&s=67728)| ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c44a1cfa94c?w=1080&h=2340&f=jpeg&s=92664)|    ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c4a7cd90126?w=1080&h=2340&f=jpeg&s=114306) |
 |  ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c5171d0373f?w=1080&h=2340&f=jpeg&s=159437)  | ![](https://user-gold-cdn.xitu.io/2020/4/14/17175c56ce136676?w=1080&h=2340&f=jpeg&s=87311)       |![](https://user-gold-cdn.xitu.io/2020/4/14/17175c61623c6462?w=1080&h=2340&f=jpeg&s=108215)|
-
-
-
 
 
 ---

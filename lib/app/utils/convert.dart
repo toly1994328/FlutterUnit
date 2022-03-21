@@ -1,4 +1,4 @@
-import 'package:flutter_unit/model/enums.dart';
+import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
@@ -34,4 +34,17 @@ class Convert {
     GalleryType.anim: "动画手势",
     GalleryType.art: "艺术画廊",
   };
+
+  static String convertFileSize(int size){
+    double result = size / 1024.0;
+    if(result<1024){
+      return "${result.toStringAsFixed(2)} Kb";
+    }else if(result>1024&&result<1024*1024){
+      return "${(result/1024).toStringAsFixed(2)} Mb";
+    }else{
+      return "${(result/1024/1024).toStringAsFixed(2)} Gb";
+    }
+  }
+
+
 }

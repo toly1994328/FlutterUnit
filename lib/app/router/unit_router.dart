@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/pages/app/unit_navigation.dart';
-import 'package:flutter_unit/views/pages/about/about_me_page.dart';
-import 'package:flutter_unit/views/pages/about/about_app_page.dart';
-import 'package:flutter_unit/views/pages/about/version_info.dart';
-import 'package:flutter_unit/views/pages/category/category_detail.dart';
-import 'package:flutter_unit/views/pages/category/collect_page.dart';
-import 'package:flutter_unit/views/pages/data_manage/data_manage_page.dart';
-import 'package:flutter_unit/views/pages/gallery/gallery_page.dart';
-import 'package:flutter_unit/views/pages/issues_point/issues_detail.dart';
-import 'package:flutter_unit/views/pages/issues_point/issues_point_page.dart';
+import 'package:flutter_unit/app/views/about/about_app_page.dart';
+import 'package:flutter_unit/app/views/about/about_me_page.dart';
+import 'package:flutter_unit/app/views/about/version_info.dart';
+import 'package:flutter_unit/app/views/data_manage/data_manage_page.dart';
+import 'package:flutter_unit/app/views/navigation/unit_navigation.dart';
+import 'package:flutter_unit/app/views/setting/code_style_setting.dart';
+import 'package:flutter_unit/app/views/setting/font_setting.dart';
+import 'package:flutter_unit/app/views/setting/item_style_setting.dart';
+import 'package:flutter_unit/app/views/setting/setting_page.dart';
+import 'package:flutter_unit/app/views/setting/theme_color_setting.dart';
+import 'package:flutter_unit/app/views/unit_todo/attr_unit_page.dart';
+import 'package:flutter_unit/app/views/unit_todo/layout_unit_page.dart';
+import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
+import 'package:flutter_unit/painter_system/gallery_page.dart';
+import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart';
+import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
 import 'package:flutter_unit/user_system/pages/login/login_page.dart';
 import 'package:flutter_unit/user_system/pages/register/register_page.dart';
-import 'package:flutter_unit/views/pages/search/serach_page.dart';
-import 'package:flutter_unit/views/pages/setting/code_style_setting.dart';
-import 'package:flutter_unit/views/pages/setting/font_setting.dart';
-import 'package:flutter_unit/views/pages/setting/item_style_setting.dart';
-import 'package:flutter_unit/views/pages/setting/theme_color_setting.dart';
-import 'package:flutter_unit/views/pages/unit_todo/attr_unit_page.dart';
-import 'package:flutter_unit/views/pages/unit_todo/point_unit_page.dart';
-
-import 'package:flutter_unit/views/pages/widget_detail/widget_detail_page.dart';
-import 'package:flutter_unit/views/pages/unit_todo/layout_unit_page.dart';
-import 'package:flutter_unit/views/pages/setting/setting_page.dart';
+import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
 
 import 'router_utils.dart';
 
@@ -29,7 +27,7 @@ class UnitRouter {
   static const String widget_detail = '/widget_detail';
 
   static const String detail = 'detail';
-  static const String search = 'search';
+  static const String search = 'search_bloc';
   static const String nav = 'nav';
 
   static const String collect = 'CollectPage';
@@ -61,12 +59,12 @@ class UnitRouter {
     switch (settings.name) {
       //
       case nav:
-        return Left2RightRouter(child: UnitNavigation());
+        return Left2RightRouter(child: const UnitNavigation());
 
       // 组件详情页
       case widget_detail:
         return Right2LeftRouter(
-            child: WidgetDetailPage(model: settings.arguments));
+            child: WidgetDetailPage(model: settings.arguments as WidgetModel));
 
       case search:
         return Right2LeftRouter(child: SearchPage());
@@ -119,7 +117,7 @@ class UnitRouter {
       case category_show:
         return Right2LeftRouter(
             child: CategoryShow(
-          model: settings.arguments,
+          model: settings.arguments as CategoryModel,
         ));
 
       default:

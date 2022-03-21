@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/views/components/permanent/code/highlighter_style.dart';
+import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
 class Cons {
 
   static const MENU_INFO = <String>["关于", "帮助", "问题反馈"]; //菜单栏
 
 
-  static const tabColors = [
-    0xff44D1FD,
-    0xffFD4F43,
-    0xffB375FF,
-    0xFF4CAF50,
-    0xFFFF9800,
-    0xFF00F1F1,
-    0xFFDBD83F
+  static const List<Color> tabColors = [
+    Color(0xff44D1FD),
+    Color(0xffFD4F43),
+    Color(0xffB375FF),
+    Color(0xFF4CAF50),
+    Color(0xFFFF9800),
+    Color(0xFF00F1F1),
+    Color(0xFFDBD83F),
   ];
 
   static const tabs = <String>[

@@ -1,9 +1,9 @@
 import 'dart:math';
 import 'dart:ui';
+import 'dart:ui' as ui;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 /// create by 张风捷特烈 on 2020/5/1
 /// contact me by email 1981462002@qq.com
@@ -15,7 +15,7 @@ class DrawPath extends StatefulWidget {
 }
 
 class _DrawPathState extends State<DrawPath> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+ late AnimationController _controller;
 
   @override
   void initState() {
@@ -23,8 +23,7 @@ class _DrawPathState extends State<DrawPath> with SingleTickerProviderStateMixin
     _controller = AnimationController(
       duration: const Duration(seconds: 15),
       vsync: this,
-    )..repeat()
-    ;
+    )..repeat();
   }
 
   @override
@@ -69,7 +68,7 @@ class PaperPainter extends CustomPainter {
   }
 
   double f(double thta) {
-    double p = 150*sin(5*thta).abs();
+    double p = 120 * sin(5 * thta).abs();
     return p;
   }
 
@@ -113,10 +112,10 @@ class PaperPainter extends CustomPainter {
 
     PathMetrics pms = path.computeMetrics();
     pms.forEach((pm) {
-      Tangent tangent = pm.getTangentForOffset(pm.length * repaint.value);
+      Tangent? tangent = pm.getTangentForOffset(pm.length * repaint.value);
       canvas.drawPath(pm.extractPath(0, pm.length * repaint.value), paint);
       canvas.drawCircle(
-          tangent.position, 5, Paint()..color = Colors.blue);
+          tangent?.position??Offset.zero, 5, Paint()..color = Colors.blue);
     });
   }
 

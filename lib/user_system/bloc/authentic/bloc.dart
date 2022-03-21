@@ -3,28 +3,29 @@ import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
-import 'package:flutter_unit/repositories/local_storage.dart';
+
 import 'package:flutter_unit/user_system/model/user.dart';
+import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 
 import 'event.dart';
 import 'state.dart';
 
 class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
-  AuthenticBloc() : super(AuthInitial());
+  AuthenticBloc() : super(AuthInitial()){
+    on<AppStarted>(_onAppStarted);
+  }
 
-  @override
-  Stream<AuthenticState> mapEventToState(
-    AuthEvent event,
-  ) async* {
+
+  void _onAppStarted(AuthEvent event,  Emitter<AuthenticState> emit) async{
     if (event is AppStarted) {
-      String token = await LocalStorage.get(LocalStorage.tokenKey);
-      String userJson = await LocalStorage.get(LocalStorage.userKey);
+      String? token = await LocalStorage.get(LocalStorage.tokenKey);
+      String? userJson = await LocalStorage.get(LocalStorage.userKey);
       if (token != null && userJson != null) {
         bool disable = JwtDecoder.isExpired(token);
         if (!disable) {
           HttpUtil.getInstance().setToken(token);
-          yield AuthSuccess(User.fromJson(json.decode(userJson)));
+          emit(AuthSuccess(User.fromJson(json.decode(userJson))));
         }else{
           // 说明 token 过期
           await _removeToken();
@@ -37,10 +38,12 @@ class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
       HttpUtil.getInstance().setToken(event.token);
       await _persistToken(event.token);
       await _persistUser(event.user);
-      yield AuthSuccess(event.user);
+      emit(AuthSuccess(event.user));
     }
 
-    if (event is LoggedOut) {}
+    if (event is LoggedOut) {
+
+    }
   }
 
   // 持久化 token

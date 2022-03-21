@@ -5,6 +5,7 @@ import 'anim/bezier3_player/bezier3_palyer.dart';
 import 'anim/circle_halo.dart';
 import 'anim/curve_shower/curve_anim_shower.dart';
 import 'anim/draw_path.dart';
+import 'anim/dundun_path.dart';
 import 'art/circle_packing.dart';
 import 'art/cubic_disarray.dart';
 import 'art/hypnotic_squares.dart';
@@ -17,6 +18,7 @@ import 'base/clock_widget.dart';
 import 'base/draw_grid_axis.dart';
 import 'base/draw_path_fun.dart';
 import 'base/draw_picture.dart';
+import 'fun/dundun_view.dart';
 import 'fun/random_portrait.dart';
 import 'fun/stemp/stamp_paper.dart';
 import 'gallery.dart';
@@ -87,6 +89,11 @@ class GalleryFactory {
               info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
               content: DrawPath()),
           FrameShower(
+              title: "冰墩墩线条动画",
+              author: "张风捷特烈",
+              info: "    本样例会绘制 2022 年北京冬奥会吉祥物冰墩墩的路径，并使用路径测量进行动画",
+              content: DunDunPathPage()),
+          FrameShower(
               title: "Bezier3 演示 (双击清除)",
               author: "张风捷特烈",
               info: "    本样例介绍如何绘制三次贝塞尔曲线，通过触点判断某点是否激活，据此控制点的位置达到拖动控制效果。",
@@ -102,6 +109,12 @@ class GalleryFactory {
               info:
                   "    本样例介绍绘制矩形及随机数处理。通过点位集合确定矩形位置信息，将其绘制出来。其中对点的随机生成和对称处理能让你练习对数据的控制力。",
               content: RandomPortrait()),
+          FrameShower(
+              title: "冰墩墩",
+              author: "张风捷特烈",
+              info:
+                  "    本样例是绘制 2022 年北京冬奥会吉祥物冰墩墩的形体，从中可以学到路径绘制、渐变色等知识。",
+              content: DunDunView()),
           FrameShower(
               title: "井字棋",
               author: "张风捷特烈",

@@ -16,5 +16,5 @@ class DoLogin extends LoginEvent {
   final String username;
   final String password;
 
-  DoLogin({this.username, this.password});
+  DoLogin({required this.username,required this.password});
 }
