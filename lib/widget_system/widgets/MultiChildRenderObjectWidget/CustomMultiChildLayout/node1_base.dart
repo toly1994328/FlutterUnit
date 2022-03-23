@@ -36,7 +36,7 @@ class CustomMultiChildLayoutDemo extends StatelessWidget {
   }
 }
 
-// 50 颜射盒
+// 50 颜色盒
 class Box50 extends StatelessWidget {
   final Color color;
   Box50(this.color);

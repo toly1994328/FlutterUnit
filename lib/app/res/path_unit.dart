@@ -12,7 +12,7 @@ class PathUnit{
 
   static const categoryDataSync = '/categoryData/sync';
   static const categoryData = '/categoryData';
-  static const appInfo = '/appInfo/name/FlutterUnit';
+  static const appInfo = '/appInfo/name';
 
   static const login = '/login';
 

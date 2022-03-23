@@ -36,14 +36,13 @@ class Convert {
   };
 
   static String convertFileSize(int size){
-    if(size==null) return '0 kb';
     double result = size / 1024.0;
     if(result<1024){
-      return "${result.toStringAsFixed(2)}Kb";
+      return "${result.toStringAsFixed(2)} Kb";
     }else if(result>1024&&result<1024*1024){
-      return "${(result/1024).toStringAsFixed(2)}Mb";
+      return "${(result/1024).toStringAsFixed(2)} Mb";
     }else{
-      return "${(result/1024/1024).toStringAsFixed(2)}Gb";
+      return "${(result/1024/1024).toStringAsFixed(2)} Gb";
     }
   }
 
