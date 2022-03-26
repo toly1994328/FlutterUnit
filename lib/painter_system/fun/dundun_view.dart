@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -70,7 +71,7 @@ class DunDunPainter extends CustomPainter {
     canvas.drawPath(rightHandPath, pathPaint);
 
     pathPaint.style = PaintingStyle.fill;
-    pathPaint.color = Color(0xffF1F4F7);
+    pathPaint.color = const Color(0xffF1F4F7);
 
     Path bodyPath = buildBodyPath();
     canvas.drawPath(bodyPath, pathPaint);
@@ -80,7 +81,7 @@ class DunDunPainter extends CustomPainter {
     Matrix4 m = Matrix4.translationValues(46, -12, 0)
         .multiplied(Matrix4.rotationZ(45 / 180 * pi));
     eyePath
-        .addOval(Rect.fromCenter(center: Offset(0, 0), width: 32, height: 49));
+        .addOval(Rect.fromCenter(center: const Offset(0, 0), width: 32, height: 49));
     eyePath = eyePath.transform(m.storage);
     pathPaint.color = Colors.black;
     canvas.drawPath(eyePath, pathPaint);
@@ -93,7 +94,7 @@ class DunDunPainter extends CustomPainter {
     nosePath.close();
     Path clipCirclePath = Path();
     clipCirclePath.addOval(
-        Rect.fromCenter(center: Offset(79, -10), width: 12, height: 12));
+        Rect.fromCenter(center: const Offset(79, -10), width: 12, height: 12));
 
     nosePath = Path.combine(PathOperation.intersect, nosePath, clipCirclePath);
     pathPaint.style = PaintingStyle.fill;
@@ -115,7 +116,7 @@ class DunDunPainter extends CustomPainter {
           ..color = Colors.black);
 
     Paint colorfulPaint = Paint()..style = PaintingStyle.stroke;
-    List<Color> colors = [
+    List<Color> colors = const [
       Color(0xFFF60C0C),
       Color(0xFFF3B913),
       Color(0xFFE7F716),
@@ -127,22 +128,22 @@ class DunDunPainter extends CustomPainter {
     final List<double> pos =
         List.generate(colors.length, (index) => index / colors.length);
     colorfulPaint.shader = ui.Gradient.sweep(
-        Offset(60, -5), colors, pos, TileMode.clamp, 0, 2 * pi);
-    colorfulPaint.maskFilter = MaskFilter.blur(BlurStyle.solid, 2);
+        const Offset(60, -5), colors, pos, TileMode.clamp, 0, 2 * pi);
+    colorfulPaint.maskFilter = const MaskFilter.blur(BlurStyle.solid, 2);
 
     Path colorfulPath = Path();
     colorfulPath.addOval(
-        Rect.fromCenter(center: Offset(72, -5), width: 120, height: 110));
+        Rect.fromCenter(center: const Offset(72, -5), width: 120, height: 110));
     colorfulPath.addOval(
-        Rect.fromCenter(center: Offset(72, -5), width: 110, height: 100));
+        Rect.fromCenter(center: const Offset(72, -5), width: 110, height: 100));
     colorfulPath.addOval(
-        Rect.fromCenter(center: Offset(72, -5), width: 115, height: 110));
+        Rect.fromCenter(center: const Offset(72, -5), width: 115, height: 110));
     colorfulPath.addOval(
-        Rect.fromCenter(center: Offset(72, -5), width: 120, height: 105));
+        Rect.fromCenter(center: const Offset(72, -5), width: 120, height: 105));
     colorfulPath.addOval(
-        Rect.fromCenter(center: Offset(72, -5), width: 115, height: 105));
+        Rect.fromCenter(center: const Offset(72, -5), width: 115, height: 105));
     colorfulPath.addOval(
-        Rect.fromCenter(center: Offset(72, -5), width: 117, height: 103));
+        Rect.fromCenter(center: const Offset(72, -5), width: 117, height: 103));
     canvas.drawPath(colorfulPath, colorfulPaint);
 
     canvas.save();
@@ -150,7 +151,7 @@ class DunDunPainter extends CustomPainter {
     Matrix4 m2 = Matrix4.translationValues(105, -12, 0)
         .multiplied(Matrix4.rotationZ(-40 / 180 * pi));
     eyePath2
-        .addOval(Rect.fromCenter(center: Offset(0, 0), width: 29, height: 48));
+        .addOval(Rect.fromCenter(center: const Offset(0, 0), width: 29, height: 48));
     eyePath2 = eyePath2.transform(m2.storage);
     pathPaint.style = PaintingStyle.fill;
     pathPaint.color = Colors.black;
@@ -159,42 +160,42 @@ class DunDunPainter extends CustomPainter {
     canvas.restore();
     Path rightEyePath = Path();
     rightEyePath.addOval(
-        Rect.fromCenter(center: Offset(98, -14), width: 17, height: 17));
+        Rect.fromCenter(center: const Offset(98, -14), width: 17, height: 17));
     pathPaint.style = PaintingStyle.stroke;
     pathPaint.color = Colors.white;
     canvas.drawPath(rightEyePath, pathPaint..strokeWidth = 2);
 
     Path rightEyePath2 = Path();
     rightEyePath2
-        .addOval(Rect.fromCenter(center: Offset(98, -14), width: 7, height: 7));
+        .addOval(Rect.fromCenter(center: const Offset(98, -14), width: 7, height: 7));
     pathPaint.style = PaintingStyle.fill;
     pathPaint.color = Colors.white.withOpacity(0.4);
     canvas.drawPath(rightEyePath2, pathPaint);
 
     Path rightEyePath3 = Path();
     rightEyePath3
-        .addOval(Rect.fromCenter(center: Offset(98, -19), width: 4, height: 4));
+        .addOval(Rect.fromCenter(center: const Offset(98, -19), width: 4, height: 4));
     pathPaint.style = PaintingStyle.fill;
     pathPaint.color = Colors.white;
     canvas.drawPath(rightEyePath3, pathPaint);
 
     Path leftEyePath = Path();
     leftEyePath.addOval(
-        Rect.fromCenter(center: Offset(50, -13), width: 18, height: 18));
+        Rect.fromCenter(center: const Offset(50, -13), width: 18, height: 18));
     pathPaint.style = PaintingStyle.stroke;
     pathPaint.color = Colors.white;
     canvas.drawPath(leftEyePath, pathPaint..strokeWidth = 2);
 
     Path leftEyePath2 = Path();
     leftEyePath2
-        .addOval(Rect.fromCenter(center: Offset(50, -13), width: 7, height: 7));
+        .addOval(Rect.fromCenter(center: const Offset(50, -13), width: 7, height: 7));
     pathPaint.style = PaintingStyle.fill;
     pathPaint.color = Colors.white.withOpacity(0.4);
     canvas.drawPath(leftEyePath2, pathPaint);
 
     Path leftEyePath3 = Path();
     leftEyePath3
-        .addOval(Rect.fromCenter(center: Offset(51, -19), width: 4, height: 4));
+        .addOval(Rect.fromCenter(center: const Offset(51, -19), width: 4, height: 4));
     pathPaint.style = PaintingStyle.fill;
     pathPaint.color = Colors.white;
     canvas.drawPath(leftEyePath3, pathPaint);
@@ -225,13 +226,13 @@ class DunDunPainter extends CustomPainter {
     for (int i = 0; i < len; i++) {
       starPath.lineTo(arr[i].dx, arr[i].dy);
     }
-    pathPaint..color = Colors.red;
-    starPath = starPath.shift(Offset(152, -20));
+    pathPaint.color = Colors.red;
+    starPath = starPath.shift(const Offset(152, -20));
     canvas.drawPath(starPath, pathPaint);
     if (image != null) {
       Rect src2 = Rect.fromLTWH(
           0, 0, image!.width.toDouble(), image!.height.toDouble());
-      Rect dst2 = Rect.fromLTWH(50, 55, 899 / 28, 1066 / 28);
+      Rect dst2 = const Rect.fromLTWH(50, 55, 899 / 28, 1066 / 28);
 
       canvas.drawImageRect(image!, src2, dst2, Paint());
     }
@@ -250,19 +251,19 @@ class DunDunPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..color = Colors.black
       ..strokeWidth = 3;
-    outLinePainter.maskFilter = MaskFilter.blur(BlurStyle.outer, 4);
+    outLinePainter.maskFilter = const MaskFilter.blur(BlurStyle.outer, 4);
     canvas.drawPath(dundunOutLine, outLinePainter);
 
     Path p2 = Path()
       ..addOval(Rect.fromCenter(
-          center: Offset(
+          center: const Offset(
             72,
             -5,
           ),
           width: 126,
           height: 116));
 
-    outLinePainter.maskFilter = MaskFilter.blur(BlurStyle.outer, 4);
+    outLinePainter.maskFilter = const MaskFilter.blur(BlurStyle.outer, 4);
     canvas.drawPath(
         p2,
         outLinePainter
@@ -333,20 +334,20 @@ class DunDunPainter extends CustomPainter {
     canvas.drawPoints(
         ui.PointMode.points,
         [
-          Offset(10, -68),
-          Offset(75, -75),
+          const Offset(10, -68),
+          const Offset(75, -75),
 
-          Offset(135, -70),
-          Offset(138, 0),
+          const Offset(135, -70),
+          const Offset(138, 0),
 
-          Offset(130, 90),
-          Offset(65, 98),
+          const Offset(130, 90),
+          const Offset(65, 98),
 
           // Offset(55,98),
           // Offset(18,78),
 
-          Offset(-5, 85),
-          Offset(0, 0),
+          const Offset(-5, 85),
+          const Offset(0, 0),
         ],
         helpPaint);
   }
@@ -356,16 +357,16 @@ class DunDunPainter extends CustomPainter {
     canvas.drawPoints(
         ui.PointMode.points,
         [
-          Offset(
+          const Offset(
             13,
             -40,
           ),
-          Offset(
+          const Offset(
             40,
             -68,
           ),
-          Offset(40, -55),
-          Offset(
+          const Offset(40, -55),
+          const Offset(
             8,
             -95,
           ),
@@ -385,16 +386,16 @@ class DunDunPainter extends CustomPainter {
     canvas.drawPoints(
         ui.PointMode.points,
         [
-          Offset(-0, 0),
-          Offset(-17, 14),
-          Offset(-28, 40),
-          Offset(-32, 58),
-          Offset(-15, 62),
-          Offset(
+          const Offset(-0, 0),
+          const Offset(-17, 14),
+          const Offset(-28, 40),
+          const Offset(-32, 58),
+          const Offset(-15, 62),
+          const Offset(
             8,
             60,
           ),
-          Offset(-0, 0),
+          const Offset(-0, 0),
         ],
         helpPaint);
   }
@@ -407,14 +408,14 @@ class DunDunPainter extends CustomPainter {
           // Offset(10,-68),
           // Offset(75,-75),
           //
-          Offset(140, -48),
-          Offset(165, -35),
+          const Offset(140, -48),
+          const Offset(165, -35),
 
-          Offset(180, -17),
-          Offset(135, 22),
+          const Offset(180, -17),
+          const Offset(135, 22),
 
-          Offset(125, 17),
-          Offset(135, -20),
+          const Offset(125, 17),
+          const Offset(135, -20),
 
           // Offset(55,98),
           // Offset(18,78),
@@ -427,15 +428,15 @@ class DunDunPainter extends CustomPainter {
     canvas.drawPoints(
         ui.PointMode.points,
         [
-          Offset(
+          const Offset(
             18,
             100,
           ),
-          Offset(60, 125),
-          Offset(18, 78),
-          Offset(22, 115),
-          Offset(55, 98),
-          Offset(
+          const Offset(60, 125),
+          const Offset(18, 78),
+          const Offset(22, 115),
+          const Offset(55, 98),
+          const Offset(
             40,
             80,
           ),

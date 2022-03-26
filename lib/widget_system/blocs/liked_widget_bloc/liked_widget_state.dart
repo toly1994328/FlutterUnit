@@ -8,9 +8,8 @@ import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart'
 class LikeWidgetState extends Equatable {
   final List<WidgetModel> widgets;
 
-  LikeWidgetState({required this.widgets});
+  const LikeWidgetState({required this.widgets});
 
   @override
-  // TODO: implement props
   List<Object> get props => [widgets];
 }

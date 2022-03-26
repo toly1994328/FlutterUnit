@@ -16,7 +16,7 @@ class CouponShapeBorder extends ShapeBorder {
   final bool hasBottomHole;
   final double? edgeRadius;
 
-  CouponShapeBorder(
+  const CouponShapeBorder(
       {this.holeCount = 6,
         this.hasTopHole =true,
         this.hasBottomHole =false,

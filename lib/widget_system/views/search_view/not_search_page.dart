@@ -13,10 +13,10 @@ class NotSearchPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-           Icon(Icons.search, color: Colors.blue, size: 120.0),
+           const Icon(Icons.search, color: Colors.blue, size: 120.0),
            Container(
-            padding:  EdgeInsets.only(top: 16.0),
-            child:  Text(
+            padding:  const EdgeInsets.only(top: 16.0),
+            child:  const Text(
               "哥们，搜点啥...≧◔◡◔≦",
               style:  TextStyle(
                 fontSize: 20,

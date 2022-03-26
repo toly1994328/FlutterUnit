@@ -7,7 +7,7 @@ class TextTyper extends StatefulWidget {
   final Duration duration;
   final TextStyle textStyle;
 
-  TextTyper(
+  const TextTyper(
       {required this.text,
       Key? key,
       this.textStyle =

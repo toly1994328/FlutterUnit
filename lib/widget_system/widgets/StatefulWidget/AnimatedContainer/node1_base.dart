@@ -52,7 +52,7 @@ class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
             spreadRadius: 0)
       ]);
 
-  final Alignment startAlignment = Alignment.topLeft + Alignment(0.2, 0.2);
+  final Alignment startAlignment = Alignment.topLeft + const Alignment(0.2, 0.2);
   final Alignment endAlignment = Alignment.center;
 
   final double startHeight = 150.0;

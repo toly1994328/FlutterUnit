@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'stamp_data.dart';
 
 class StampPaper extends StatefulWidget {
+  const StampPaper({Key? key}) : super(key: key);
+
   @override
   _StampPaperState createState() => _StampPaperState();
 }
@@ -92,7 +94,7 @@ class _StampPaperState extends State<StampPaper>
 
     gameState = stamps.checkWin(width / gridCount);
     if (gameState == GameState.redWin) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text("红棋获胜!"),
         backgroundColor: Colors.red,
       ));
@@ -100,7 +102,7 @@ class _StampPaperState extends State<StampPaper>
 
     if (gameState == GameState.blueWin) {
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("蓝棋获胜!"), backgroundColor: Colors.blue));
+          const SnackBar(content: Text("蓝棋获胜!"), backgroundColor: Colors.blue));
     }
   }
 
@@ -200,7 +202,7 @@ class StampPainter extends CustomPainter {
     Rect zone = Offset.zero & size;
     canvas.clipRect(zone);
 
-    stamps.stamps.forEach((stamp) {
+    for (Stamp stamp in stamps.stamps) {
       double length = size.width / count;
       int x = stamp.center.dx ~/ (size.width / count);
       int y = stamp.center.dy ~/ (size.width / count);
@@ -217,11 +219,11 @@ class StampPainter extends CustomPainter {
             ..color = Colors.white);
       canvas.drawCircle(stamp.center, stamp.radius + strokeWidth * 1.5,
           _pathPaint..color = stamp.color);
-    });
+    }
   }
 
   @override
   bool shouldRepaint(covariant StampPainter oldDelegate) {
-    return this.stamps != oldDelegate.stamps || this.count != oldDelegate.count;
+    return stamps != oldDelegate.stamps || count != oldDelegate.count;
   }
 }

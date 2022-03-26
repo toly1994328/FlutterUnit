@@ -17,6 +17,7 @@ class CategoryLoadedState extends CategoryState {
 
   const CategoryLoadedState(this.categories);
 
+  @override
   List<Object> get props => [categories];
 }
 
@@ -31,6 +32,7 @@ class CategoryLoadingState extends CategoryState {
 class CategoryEmptyState extends CategoryState {
   const CategoryEmptyState();
 
+  @override
   List<Object> get props => [];
 }
 

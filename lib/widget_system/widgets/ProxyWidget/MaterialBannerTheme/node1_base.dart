@@ -10,14 +10,16 @@ import 'package:flutter/material.dart';
 //      "subtitle": "可指定MaterialBannerThemeData数据属性为【后代】的MaterialBanner组件设置默认样式，如背景色、边距、文字样式等。也可以用MaterialBannerTheme.of获取MaterialBanner的主题数据。",
 //    }
 class MaterialBannerThemeDemo extends StatelessWidget {
+  const MaterialBannerThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialBannerTheme(
       data: MaterialBannerTheme.of(context).copyWith(
         backgroundColor: Colors.purple,
-        padding: EdgeInsetsDirectional.only(start: 16.0, top: 2.0,end: 2),
-        leadingPadding:EdgeInsetsDirectional.only(end: 16.0) ,
-        contentTextStyle:  TextStyle(color: Colors.white),
+        padding: const EdgeInsetsDirectional.only(start: 16.0, top: 2.0,end: 2),
+        leadingPadding:const EdgeInsetsDirectional.only(end: 16.0) ,
+        contentTextStyle:  const TextStyle(color: Colors.white),
       ),
       child: _MaterialBannerDemo(),
     );
@@ -35,12 +37,12 @@ class _MaterialBannerDemo extends StatelessWidget {
     return Column(
       children: <Widget>[MaterialBanner(
         content: Text(info),
-        leading: Icon(Icons.warning, color: Colors.yellow),
+        leading: const Icon(Icons.warning, color: Colors.yellow),
         actions: <Widget>[
           RaisedButton(
             color: Colors.white,
             onPressed: () {},
-            child: Text(
+            child: const Text(
               'I KNOW',
               style: TextStyle(
                   color: Colors.purple,
@@ -52,7 +54,7 @@ class _MaterialBannerDemo extends StatelessWidget {
           RaisedButton(
             color: Colors.white,
             onPressed: () {},
-            child: Text(
+            child: const Text(
               'I IGNORE',
               style: TextStyle(
                   color: Colors.purple,

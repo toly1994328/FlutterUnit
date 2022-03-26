@@ -19,7 +19,7 @@ class LoadingShower extends StatelessWidget {
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          Container(
+          SizedBox(
               width: 80,
               height: 80,
               child: SpinKitFadingCube(color: Theme.of(context).primaryColor)),

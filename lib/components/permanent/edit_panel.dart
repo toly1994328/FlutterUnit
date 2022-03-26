@@ -4,7 +4,7 @@ typedef ChangeCallback = void Function(String str);
 
 ///输入面板
 class EditPanel extends StatefulWidget {
-  EditPanel(
+  const EditPanel(
       {Key? key,
       this.backgroundColor = Colors.white,
       this.color = Colors.lightBlue,

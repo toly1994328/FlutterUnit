@@ -15,10 +15,12 @@ import 'package:flutter/material.dart';
 //    }
 
 class InheritedThemeDemo extends StatelessWidget {
+  const InheritedThemeDemo({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTextStyle(
+    return const DefaultTextStyle(
       style: TextStyle(fontSize: 24, color: Colors.blue),
       child: TestBody(),
     );
@@ -26,6 +28,8 @@ class InheritedThemeDemo extends StatelessWidget {
 }
 
 class TestBody extends StatelessWidget {
+  const TestBody({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
 
@@ -33,10 +37,10 @@ class TestBody extends StatelessWidget {
         onTap: () => _toNextPage(context),
         child: Container(
             height: 60,
-            margin: EdgeInsets.only(left: 40,right: 40),
+            margin: const EdgeInsets.only(left: 40,right: 40),
             alignment: Alignment.center,
             color: Theme.of(context).primaryColor.withOpacity(0.1),
-            child: Text('InheritedTheme')));
+            child: const Text('InheritedTheme')));
   }
 
   void _toNextPage(BuildContext context) {

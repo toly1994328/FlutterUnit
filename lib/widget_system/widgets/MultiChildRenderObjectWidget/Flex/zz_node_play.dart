@@ -5,35 +5,37 @@ import 'package:flutter/material.dart';
 /// 说明: 
 
 class PlayFlex extends StatefulWidget {
+  const PlayFlex({Key? key}) : super(key: key);
+
   @override
   _PlayFlexState createState() => _PlayFlexState();
 }
 
 class _PlayFlexState extends State<PlayFlex> {
-  final redBox = Container(
+  final Widget redBox = Container(
     color: Colors.red,
     height: 50,
     width: 50,
   );
-  final blueBox = Container(
+  final Widget blueBox = Container(
     color: Colors.blue,
     width: 60,
     height: 60,
   );
-  final yellowBox = Container(
+  final Widget yellowBox = Container(
     color: Colors.yellow,
     height: 10,
     width: 10,
   );
-  final greenBox = Container(
+  final Widget greenBox = Container(
     color: Colors.green,
     height: 30,
     width: 20,
   );
-  var _direction = Axis.horizontal;
-  var _mainAxisAlignment = MainAxisAlignment.start;
-  var _crossAxisAlignment = CrossAxisAlignment.center;
-  var _verticalDirection = VerticalDirection.up;
+  Axis _direction = Axis.horizontal;
+  MainAxisAlignment _mainAxisAlignment = MainAxisAlignment.start;
+  CrossAxisAlignment _crossAxisAlignment = CrossAxisAlignment.center;
+  VerticalDirection _verticalDirection = VerticalDirection.up;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class _PlayFlexState extends State<PlayFlex> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
+          const Text(
             "direction",
             style: TextStyle(
                 fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
@@ -97,7 +99,7 @@ class _PlayFlexState extends State<PlayFlex> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
+          const Text(
             "mainAxisAlignment",
             style: TextStyle(
                 fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
@@ -128,7 +130,7 @@ class _PlayFlexState extends State<PlayFlex> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
+          const Text(
             "crossAxisAlignment",
             style: TextStyle(
                 fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),
@@ -159,7 +161,7 @@ class _PlayFlexState extends State<PlayFlex> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
+          const Text(
             "MainAxisSize",
             style: TextStyle(
                 fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold),

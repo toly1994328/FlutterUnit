@@ -19,7 +19,7 @@ class _CircleHaloState extends State<CircleHalo>
     super.initState();
     _ctrl = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
     _ctrl.repeat();
 
@@ -34,7 +34,7 @@ class _CircleHaloState extends State<CircleHalo>
   @override
   Widget build(BuildContext context) {
     return  CustomPaint(
-        size: Size(200, 200),
+        size: const Size(200, 200),
         painter: CircleHaloPainter(_ctrl),
       );
   }
@@ -69,14 +69,14 @@ class CircleHaloPainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     Path circlePath = Path()
-      ..addOval(Rect.fromCenter(center: Offset(0, 0), width: 100, height: 100));
+      ..addOval(Rect.fromCenter(center: const Offset(0, 0), width: 100, height: 100));
     Path circlePath2 = Path()
       ..addOval(
-          Rect.fromCenter(center: Offset(-1, 0), width: 100, height: 100));
+          Rect.fromCenter(center: const Offset(-1, 0), width: 100, height: 100));
     Path result =
         Path.combine(PathOperation.difference, circlePath, circlePath2);
 
-    List<Color> colors = [
+    List<Color> colors = const[
       Color(0xFFF60C0C),
       Color(0xFFF3B913),
       Color(0xFFE7F716),
@@ -100,7 +100,7 @@ class CircleHaloPainter extends CustomPainter {
     canvas.rotate(animation.value * 2 * pi);
     paint
       ..style = PaintingStyle.fill
-      ..color = Color(0xff00abf2);
+      ..color = const Color(0xff00abf2);
     paint.shader=null;
     canvas.drawPath(result, paint);
     canvas.restore();

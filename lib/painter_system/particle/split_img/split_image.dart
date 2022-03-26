@@ -11,6 +11,8 @@ import 'world_render.dart';
 /// 说明:
 
 class SplitImage extends StatefulWidget {
+  const SplitImage({Key? key}) : super(key: key);
+
   @override
   _SplitImageState createState() => _SplitImageState();
 }

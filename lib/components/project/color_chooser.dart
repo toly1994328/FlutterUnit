@@ -5,7 +5,7 @@ import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 typedef CheckCallback<T> = void Function(T color);
 
 class ColorChooser extends StatefulWidget {
-  ColorChooser(
+  const ColorChooser(
       {Key? key,
         this.defaultIndex=0,
       this.radius = 10,
@@ -50,7 +50,7 @@ class _ColorChooserState extends State<ColorChooser> {
             color: widget.colors[i],
             radius: widget.radius,
             child: _checkLi[i]
-                ? Icon(
+                ? const Icon(
                     Icons.star,
                     size: 15,
                     color: Colors.white,
@@ -64,7 +64,7 @@ class _ColorChooserState extends State<ColorChooser> {
 }
 
 class IconChooser extends StatefulWidget {
-  IconChooser(
+  const IconChooser(
       {Key? key,
       this.radius = 20,
       required this.icons,

@@ -16,5 +16,5 @@ class DoRegister extends RegisterEvent {
   final String email;
   final String code;
 
-  DoRegister(this.email, this.code);
+  const DoRegister(this.email, this.code);
 }

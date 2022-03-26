@@ -19,7 +19,7 @@ import 'category_end_drawer.dart';
 class WidgetDetailPage extends StatefulWidget {
   final WidgetModel model;
 
-  WidgetDetailPage({required this.model});
+  const WidgetDetailPage({Key? key, required this.model}) : super(key: key);
 
   @override
   _WidgetDetailPageState createState() => _WidgetDetailPageState();
@@ -43,7 +43,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
       endDrawer: CategoryEndDrawer(widget: _modelStack.last),
       appBar: AppBar(
         title: Text(_modelStack.last.name),
-        leading: BackButton(),
+        leading: const BackButton(),
         actions: <Widget>[
           _buildToHome(),
           FeedbackWidget(
@@ -155,17 +155,17 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     if (state is DetailWithData) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Row(
-            children: <Widget>[
-              const Padding(
+            children: const[
+              Padding(
                 padding: EdgeInsets.only(left: 15, right: 5),
                 child: Icon(
                   Icons.link,
                   color: Colors.blue,
                 ),
               ),
-              const Text(
+              Text(
                 '相关组件',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
@@ -186,11 +186,11 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   _buildLinkTo(BuildContext context, List<WidgetModel> links) {
     if (links.isEmpty) {
       return Padding(
-          padding: EdgeInsets.only(left: 10),
+          padding: const EdgeInsets.only(left: 10),
           child: Chip(
             backgroundColor: Colors.grey.withAlpha(120),
-            labelStyle: TextStyle(fontSize: 12, color: Colors.white),
-            label: Text('暂无链接组件'),
+            labelStyle: const TextStyle(fontSize: 12, color: Colors.white),
+            label: const Text('暂无链接组件'),
           ));
     } else {
       return Padding(
@@ -253,7 +253,7 @@ class WidgetDetailTitle extends StatelessWidget {
                     fontSize: 20,
                     decoration: (model.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
                     decorationThickness: 2,
-                    color: Color(0xff1EBBFD),
+                    color: const Color(0xff1EBBFD),
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -268,14 +268,14 @@ class WidgetDetailTitle extends StatelessWidget {
   Widget _buildRight(WidgetModel model) => Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Container(
+          SizedBox(
             height: 100,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Hero(
                   tag: "hero_widget_image_${model.id}",
                   child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
                       child: model.image == null
                           ? Image.asset('assets/images/caver.webp')
                           : Image(image: model.image!))),
@@ -283,7 +283,7 @@ class WidgetDetailTitle extends StatelessWidget {
           ),
           StarScore(
             score: model.lever,
-            star: Star(size: 15, fillColor: Colors.blue),
+            star: const Star(size: 15, fillColor: Colors.blue),
           )
         ],
       );

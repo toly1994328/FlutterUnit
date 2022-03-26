@@ -18,6 +18,8 @@ class Position {
 }
 
 class RandomPortrait extends StatefulWidget {
+  const RandomPortrait({Key? key}) : super(key: key);
+
   @override
   _RandomPortraitState createState() => _RandomPortraitState();
 }
@@ -80,9 +82,9 @@ class PortraitPainter extends CustomPainter {
     final double perH = (size.height - pd * 2) / (blockCount);
 
     canvas.translate(pd, pd);
-    positions.forEach((element) {
+    for (Position element in positions) {
       _drawBlock(perW, perH, canvas, element);
-    });
+    }
   }
 
   void _drawBlock(double dW, double dH, Canvas canvas, Position position) {

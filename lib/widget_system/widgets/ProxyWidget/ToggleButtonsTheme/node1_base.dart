@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class ToggleButtonsThemeDemo extends StatelessWidget {
+  const ToggleButtonsThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ToggleButtonsTheme(
@@ -40,7 +42,7 @@ class _ToggleButtonsSimpleState extends State<_ToggleButtonsSimple> {
   @override
   Widget build(BuildContext context) {
     return ToggleButtons(
-      children: <Widget>[
+      children: const[
         Icon(Icons.skip_previous),
         Icon(Icons.pause),
         Icon(Icons.skip_next),

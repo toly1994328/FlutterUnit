@@ -43,17 +43,17 @@ class _StatusTransitionWidgetDemoState extends State<StatusTransitionWidgetDemo>
         _ctrl.forward(from: 0);
       },
       child: ColorStatusTransitionWidget(
-        animation: _ctrl,
+        anim: _ctrl,
       ),
     );
   }
 }
 
 class ColorStatusTransitionWidget extends StatusTransitionWidget {
-  final Animation<double> animation;
+  final Animation<double> anim;
 
-  const ColorStatusTransitionWidget({Key? key,required this.animation})
-      : super(key: key, animation: animation);
+  const ColorStatusTransitionWidget({Key? key,required this.anim})
+      : super(key: key, animation: anim);
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class ColorStatusTransitionWidget extends StatusTransitionWidget {
       width: 80,
       height: 80,
       decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-      child: Text('${animation.status}'.split('.')[1],style: TextStyle(color: Colors.white),),
+      child: Text('${animation.status}'.split('.')[1],style: const TextStyle(color: Colors.white),),
     );
   }
 }

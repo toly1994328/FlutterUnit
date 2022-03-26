@@ -19,7 +19,7 @@ class ThemeColorSettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('主题色设置'),
+        title: const Text('主题色设置'),
       ),
       body: BlocBuilder<GlobalBloc, GlobalState>(
           builder: (_, state) => _buildFontCell(
@@ -30,7 +30,7 @@ class ThemeColorSettingPage extends StatelessWidget {
   Widget _buildFontCell(
       BuildContext context, List<MaterialColor> themeColorSupport, MaterialColor color) {
     return GridView.count(
-      padding: EdgeInsets.only(top: 20, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
       shrinkWrap: true,
       crossAxisCount: 2,
       mainAxisSpacing: 10,
@@ -39,29 +39,29 @@ class ThemeColorSettingPage extends StatelessWidget {
       children: themeColorSupport
           .map((MaterialColor c) => FeedbackWidget(
               a: 0.95,
-              duration: Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 200),
               onPressed: () => BlocProvider.of<GlobalBloc>(context).add(EventSwitchThemeColor(c)),
               child: GridTile(
                   header: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                      borderRadius: const BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
                       color: color == c
                           ? Colors.blue.withAlpha(88):
                       Colors.grey.withAlpha(55),
                     ),
-                    padding: EdgeInsets.only(left: 10, right: 5),
+                    padding: const EdgeInsets.only(left: 10, right: 5),
                     height: 30,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Spacer(),
+                        const Spacer(),
                         Text(colorString(c),
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                             )),
-                        Spacer(),
-                        if (color == c) Padding(
-                          padding: const EdgeInsets.only(right:8.0),
+                        const Spacer(),
+                        if (color == c) const Padding(
+                          padding: EdgeInsets.only(right:8.0),
                           child: Circle(color: Colors.white,radius: 7,),
                         )
                       ],
@@ -69,7 +69,7 @@ class ThemeColorSettingPage extends StatelessWidget {
                   ),
                   child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderRadius: const BorderRadius.all(Radius.circular(10)),
                           gradient: LinearGradient(colors: [
                         c.shade50,
                         c.shade100,
@@ -82,10 +82,10 @@ class ThemeColorSettingPage extends StatelessWidget {
                         c.shade800,
                         c.shade900,
                       ])),
-                      alignment: Alignment(0,0.35),
+                      alignment: const Alignment(0,0.35),
                       child: Text(
                         '${Cons.themeColorSupport[c]}',
-                        style: TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),
                       )),
               )))
           .toList(),

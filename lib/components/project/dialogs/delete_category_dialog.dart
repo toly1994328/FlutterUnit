@@ -34,7 +34,7 @@ class DeleteCategoryDialog extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
-          style: TextStyle(color: Colors.red, fontSize: 20),
+          style: const TextStyle(color: Colors.red, fontSize: 20),
         ),
       ],
     );
@@ -44,7 +44,7 @@ class DeleteCategoryDialog extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Text(content,
-        style: TextStyle(color: Colors.grey, fontSize: 16),
+        style: const TextStyle(color: Colors.grey, fontSize: 16),
         textAlign: TextAlign.justify,
       ),
     );
@@ -63,9 +63,9 @@ class DeleteCategoryDialog extends StatelessWidget {
               height: 40,
               width: 100,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  borderRadius: const BorderRadius.all(Radius.circular(30)),
                   color: Theme.of(context).primaryColor),
-              child: Text('确 定',
+              child: const Text('确 定',
                   style: TextStyle(color: Colors.white, fontSize: 16)),
             ),
           ),
@@ -75,10 +75,10 @@ class DeleteCategoryDialog extends StatelessWidget {
               alignment: Alignment.center,
               height: 40,
               width: 100,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   color: Colors.orangeAccent),
-              child: Text('取 消',
+              child: const Text('取 消',
                   style: TextStyle(color: Colors.white, fontSize: 16)),
             ),
           )
@@ -89,13 +89,13 @@ class DeleteCategoryDialog extends StatelessWidget {
 
   _buildBar(context) => Row(
     children: <Widget>[
-      Spacer(),
+      const Spacer(),
       GestureDetector(
         onTap: () => Navigator.of(context).pop(),
         child: Container(
           height: 30,
           alignment: Alignment.centerRight,
-          padding: EdgeInsets.only(right: 10, top: 5),
+          padding: const EdgeInsets.only(right: 10, top: 5),
           child:  Icon(
             Icons.close,
             color:Theme.of(context).primaryColor,

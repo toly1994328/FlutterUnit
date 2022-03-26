@@ -21,7 +21,7 @@ class FeedbackWidget extends StatefulWidget {
   final Function()? onLongPressed;
   final double a;
 
-  FeedbackWidget({
+  const FeedbackWidget({Key? key,
     required this.child,
     this.mode = FeedMode.scale,
     this.a = 0.9,
@@ -29,7 +29,7 @@ class FeedbackWidget extends StatefulWidget {
     this.duration = const Duration(milliseconds: 150),
     this.onPressed,
     this.onEnd,
-  });
+  }) : super(key: key);
 
   @override
   _FeedBackState createState() => _FeedBackState();
@@ -96,6 +96,5 @@ class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStat
       case FeedMode.rotate:
         return Transform.rotate(angle: rate * pi * 2, child: widget.child);
     }
-    return Container();
   }
 }

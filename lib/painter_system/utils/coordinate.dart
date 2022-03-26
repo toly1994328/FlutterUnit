@@ -40,7 +40,7 @@ class Coordinate {
     }
     _drawText(canvas, size);
 
-    TextSpan text = TextSpan(
+    TextSpan text = const TextSpan(
         text: "x",
         style: TextStyle(
           fontSize: 20,
@@ -54,7 +54,7 @@ class Coordinate {
 
     _textPainter.paint(canvas, Offset(size.width / 2 - 20, -30));
 
-    _textPainter.text = TextSpan(
+    _textPainter.text = const TextSpan(
         text: "y",
         style: TextStyle(
           fontSize: 20,

@@ -15,6 +15,7 @@ import '../widget_system_view.dart';
 /// 说明:
 
 class LikeWidgetPage extends StatelessWidget {
+  const LikeWidgetPage({Key? key}) : super(key: key);
 
   final SliverGridDelegate gridDelegate =
       const SliverGridDelegateWithFixedCrossAxisCount(
@@ -23,6 +24,7 @@ class LikeWidgetPage extends StatelessWidget {
     crossAxisSpacing: 10,
     childAspectRatio: 1 / 0.5,
   );
+
 
   @override
   Widget build(BuildContext context) {

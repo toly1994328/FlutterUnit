@@ -26,14 +26,14 @@ class BurstFlow extends StatefulWidget {
           children: data
               .map((e) => CircleAvatar(backgroundImage: AssetImage(e)))
               .toList(),
-          menu: CircleAvatar(
+          menu: const CircleAvatar(
             backgroundImage: AssetImage('assets/images/icon_head.webp'),
           )));
 
   final List<Widget> children;
   final Widget menu;
 
-  BurstFlow({required this.children, required this.menu});
+  const BurstFlow({Key? key, required this.children, required this.menu}) : super(key: key);
 
   @override
   _BurstFlowState createState() => _BurstFlowState();
@@ -48,7 +48,9 @@ class _BurstFlowState extends State<BurstFlow>
   @override
   void initState() {
     _controller = AnimationController(
-        duration: Duration(milliseconds: 1000), vsync: this)
+      duration: const Duration(milliseconds: 1000),
+      vsync: this,
+    )
       ..addListener(() => setState(
           () => _rad = (_closed ? (_controller.value) : 1 - _controller.value)))
       ..addStatusListener((status) {
@@ -109,7 +111,5 @@ class _BurstFlowDelegate extends FlowDelegate {
   }
 
   @override
-  bool shouldRepaint(_BurstFlowDelegate oldDelegate) {
-    return oldDelegate.rad != rad;
-  }
+  bool shouldRepaint(_BurstFlowDelegate oldDelegate) => oldDelegate.rad != rad;
 }

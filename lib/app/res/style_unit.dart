@@ -8,20 +8,20 @@ import 'size_unit.dart';
 /// 说明:
 
 class TextStyleUnit {
-  static const TextStyle hintStyle = const TextStyle(
+  static const TextStyle hintStyle = TextStyle(
       color: ColorUnit.input_hit_text_color,
       fontSize: SizeUnit.input_hit_text_size);
 
-  static const TextStyle primary = const TextStyle(
+  static const TextStyle primary = TextStyle(
       color: ColorUnit.text_color, fontSize: SizeUnit.input_text_size);
 
-  static const TextStyle headTextStyle = const TextStyle(
+  static const TextStyle headTextStyle = TextStyle(
       color: ColorUnit.head_text_color, fontSize: SizeUnit.head_text_size);
 
-  static const TextStyle smallSubTextStyle = const TextStyle(
+  static const TextStyle smallSubTextStyle = TextStyle(
       color: ColorUnit.input_hit_text_color,
       fontSize: SizeUnit.small_text_size);
 
-  static const TextStyle bigTextStyle = const TextStyle(
+  static const TextStyle bigTextStyle = TextStyle(
       color: ColorUnit.text_color, fontSize: SizeUnit.big_text_size);
 }

@@ -22,7 +22,7 @@ class _HonourWrapperState extends State<HonourWrapper>
   @override
   void initState() {
     super.initState();
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 5))
+    _ctrl = AnimationController(vsync: this, duration: const Duration(seconds: 5))
       ..repeat(reverse: true);
   }
 
@@ -53,7 +53,7 @@ class _HonourWrapperState extends State<HonourWrapper>
 class HonourPainter extends CustomPainter {
   final Animation<double> factor;
   final TextPainter _textPainter = TextPainter(
-      text: TextSpan(
+      text: const TextSpan(
         text: '尊享',
         style: TextStyle(fontSize: 10, color: Colors.white, height: 1),
       ),
@@ -77,7 +77,7 @@ class HonourPainter extends CustomPainter {
           ..color = const Color(0xaaFFAB40)
           ..maskFilter = const MaskFilter.blur(BlurStyle.solid, 2)
           ..shader = ui.Gradient.linear(
-              Offset(0, 0), Offset(size.width, 0), colors, [0, 0.3, 0.6, 1.0]));
+              const Offset(0, 0), Offset(size.width, 0), colors, [0, 0.3, 0.6, 1.0]));
     canvas.drawLine(
       Offset.zero.translate(size.width * factor.value, 0),
       Offset.zero.translate(size.width * factor.value / 2, size.height),
@@ -92,7 +92,7 @@ class HonourPainter extends CustomPainter {
             Offset.zero
                     .translate(size.width * factor.value - 3, -15 - 3.0)
                     .translate(-_textPainter.size.width / 2, 0) &
-                (_textPainter.size + Offset(6, 6)),
+                (_textPainter.size + const Offset(6, 6)),
             5,
             5),
         Paint()..color = Colors.green);

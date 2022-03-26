@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class ListWheelViewportDemo2 extends StatelessWidget {
+  ListWheelViewportDemo2({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.blue[50]!,
     Colors.blue[100]!,
@@ -38,12 +40,12 @@ class ListWheelViewportDemo2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 250,
       width: 320,
       child: Scrollable(
           axisDirection: AxisDirection.down,
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           dragStartBehavior: DragStartBehavior.start,
           viewportBuilder: (ctx, position) => ListWheelViewport(
                 perspective: 0.008,
@@ -58,13 +60,17 @@ class ListWheelViewportDemo2 extends StatelessWidget {
   }
 
   Widget _buildItem(Color color) => Container(
-        alignment: Alignment.center,
-        color: color,
-        child: Text(colorString(color),
-            style: TextStyle(color: Colors.white, shadows: [
-              Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+    alignment: Alignment.center,
+    color: color,
+    child: Text(colorString(color),
+            style: const TextStyle(color: Colors.white, shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(.5, .5),
+                blurRadius: 2,
+              )
             ])),
-      );
+  );
 
   String colorString(Color color) =>
       "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";

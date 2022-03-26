@@ -15,10 +15,11 @@ import 'package:flutter/material.dart';
 //    }
 
 class CupertinoUserInterfaceLevelDemo extends StatelessWidget {
+  const CupertinoUserInterfaceLevelDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-
-    return CupertinoUserInterfaceLevel(
+    return const CupertinoUserInterfaceLevel(
       data: CupertinoUserInterfaceLevelData.elevated,
       child: LevelShower()
     );
@@ -27,6 +28,8 @@ class CupertinoUserInterfaceLevelDemo extends StatelessWidget {
 }
 
 class LevelShower extends StatelessWidget {
+  const LevelShower({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CupertinoUserInterfaceLevelData data = CupertinoUserInterfaceLevel.of(context);

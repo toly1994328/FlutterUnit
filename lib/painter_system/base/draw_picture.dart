@@ -11,6 +11,8 @@ import 'package:flutter/services.dart';
 /// 说明:
 
 class DrawPicture extends StatefulWidget {
+  const DrawPicture({Key? key}) : super(key: key);
+
   @override
   _DrawPictureState createState() => _DrawPictureState();
 }
@@ -65,7 +67,7 @@ class PaperPainter extends CustomPainter {
   }
 
   void _drawLine(Size size, Canvas canvas) {
-    _paint..color = const Color(0xFFF0F0F0);
+    _paint.color = const Color(0xFFF0F0F0);
     double step = 10.0;
     for (int i = 1; i <= size.height / step; i++) {
       canvas.drawLine(Offset(step * i, 0), Offset(0, step * i), _paint);

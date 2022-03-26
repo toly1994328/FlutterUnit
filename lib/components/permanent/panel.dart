@@ -15,7 +15,7 @@ class Panel extends StatelessWidget {
       child: child,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-          color: color ?? Color(0xffF6F8FA),
+          color: color ?? const Color(0xffF6F8FA),
           borderRadius: BorderRadius.all(Radius.circular(radius))),
     );
   }

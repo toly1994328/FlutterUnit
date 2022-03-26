@@ -6,19 +6,19 @@ import 'rnd.dart';
 import 'particle.dart';
 
 
-final easingDelayDuration = Duration(seconds: 10);
+const Duration easingDelayDuration = Duration(seconds: 10);
 
 /// Probabilities of Hour, Minute, Noise.
 // final particleDistributions = [2, 4, 100];
 
 /// Number of "arms" to emit noise particles from center.
-final int noiseAngles = 2000;
+const int noiseAngles = 2000;
 
 /// Threshold for particles to go rouge. Lower = more particles.
-final rougeDistributionLmt = 85;
+const int rougeDistributionLmt = 85;
 
 /// Threshold for particles to go jelly. Lower = more particles.
-final jellyDistributionLmt = 97;
+const int jellyDistributionLmt = 97;
 
 
 class ClockFx with ChangeNotifier {
@@ -32,15 +32,13 @@ class ClockFx with ChangeNotifier {
    List<Particle> particles=[]; // 所有粒子
 
   int numParticles=0;// 最大粒子数
-
-  late DateTime time; //时间
+   DateTime time; //时间
 
   ClockFx({
     required Size size,
-    required DateTime time,
+    required this.time,
     this.numParticles = 5000,
   }) {
-    this.time = time;
     particles = List<Particle>.filled(numParticles, Particle());
     setSize(size);
   }

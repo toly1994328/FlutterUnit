@@ -5,7 +5,7 @@ import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 import 'search_event.dart';
 import 'search_state.dart';
 
-const _duration = const Duration(milliseconds: 300);
+const Duration _duration = Duration(milliseconds: 300);
 
 EventTransformer<Event> debounce<Event>(Duration duration) {
   return (events, mapper) => events.debounce(duration).switchMap(mapper);

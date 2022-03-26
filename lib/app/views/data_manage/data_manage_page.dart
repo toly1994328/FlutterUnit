@@ -45,7 +45,7 @@ class DataManagePage extends StatelessWidget {
                 onTap: () => _doUploadCategoryData(ctx),
               ),
             ),
-            AuthenticWidget.just(Divider()),
+            AuthenticWidget.just(const Divider()),
             AuthenticWidget.just(ListTile(
               trailing: Icon(
                 TolyIcon.download,
@@ -54,7 +54,7 @@ class DataManagePage extends StatelessWidget {
               title: const Text('同步收藏集数据'),
               onTap: () => _doSync(ctx),
             )),
-            AuthenticWidget.just(Divider()),
+            AuthenticWidget.just(const Divider()),
             ListTile(
               trailing: Icon(
                 Icons.refresh,
@@ -64,7 +64,7 @@ class DataManagePage extends StatelessWidget {
               // trailing: _nextIcon(context),
               onTap: () => _recallDatabase(ctx),
             ),
-            Divider(),
+            const Divider(),
           ],
         ),
       ),
@@ -79,8 +79,8 @@ class DataManagePage extends StatelessWidget {
         data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     await File(dbPath).writeAsBytes(bytes, flush: true);
     print("==== debug ===== assets ======拷贝完成====");
-    BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
-    BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
+    BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
+    BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     Toast.toast(context, '重置成功!');
   }
 
@@ -114,8 +114,8 @@ class DataManagePage extends StatelessWidget {
             BlocProvider.of<CategoryBloc>(context).repository;
         await repository.syncCategoryByData(
             result.data!.data, result.data!.likeData);
-        BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
-        BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
+        BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
+        BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
       } else {
         // 说明还没有后台数据，
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。

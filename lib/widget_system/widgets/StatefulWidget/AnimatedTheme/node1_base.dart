@@ -61,7 +61,7 @@ class _AnimatedThemeDemoState extends State<AnimatedThemeDemo> {
           onEnd: () {
             print('----onEnd---');
           },
-          child: ChildContent(),
+          child: const ChildContent(),
         ),
       ],
     );
@@ -89,7 +89,7 @@ class ChildContent extends StatelessWidget {
       height: 60,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(const Radius.circular(5)),
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
         color: Theme.of(context).primaryColor,
       ),
       padding: const EdgeInsets.all(10),

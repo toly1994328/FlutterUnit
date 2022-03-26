@@ -29,7 +29,7 @@ class InteractiveViewerDemo extends StatelessWidget {
       height: 150,
       color: Colors.grey.withAlpha(33),
       child: InteractiveViewer(
-        boundaryMargin: EdgeInsets.all(40.0),
+        boundaryMargin: const EdgeInsets.all(40.0),
         maxScale: 2.5,
         minScale: 0.3,
         panEnabled: true,

@@ -19,13 +19,13 @@ class MarkdownWidget extends StatelessWidget {
     MarkdownStyleSheet markdownStyleSheet = MarkdownStyleSheet.fromTheme(Theme.of(context));
     return markdownStyleSheet.copyWith(
             codeblockDecoration:  BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                borderRadius: const BorderRadius.all(Radius.circular(4.0)),
                 color: codeBackground,
                 border:  Border.all(
                     color: UnitColor.subTextColor, width: 0.3)))
         .copyWith(
             blockquoteDecoration:  BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                borderRadius: const BorderRadius.all(Radius.circular(4.0)),
                 color: UnitColor.subTextColor,
                 border:  Border.all(
                     color: UnitColor.subTextColor, width: 0.3)),
@@ -33,7 +33,7 @@ class MarkdownWidget extends StatelessWidget {
   }
 
   _getStyleSheetDark(BuildContext context) {
-    return _getCommonSheet(context, Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
+    return _getCommonSheet(context, const Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
       p: TStyleUnit.smallTextWhite,
       h1: TStyleUnit.largeLargeTextWhite,
       h2: TStyleUnit.largeTextWhiteBold,
@@ -48,7 +48,7 @@ class MarkdownWidget extends StatelessWidget {
   }
 
   MarkdownStyleSheet _getStyleSheetWhite(BuildContext context) {
-    return _getCommonSheet(context, Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
+    return _getCommonSheet(context, const Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
       p: TStyleUnit.smallText,
       h1: TStyleUnit.largeLargeText,
       h2: TStyleUnit.largeTextBold,
@@ -62,7 +62,7 @@ class MarkdownWidget extends StatelessWidget {
   }
 
   _getStyleSheetTheme(BuildContext context) {
-    return _getCommonSheet(context, Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
+    return _getCommonSheet(context, const Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
       p: TStyleUnit.smallTextWhite,
       h1: TStyleUnit.largeLargeTextWhite,
       h2: TStyleUnit.largeTextWhiteBold,
@@ -105,8 +105,8 @@ class MarkdownWidget extends StatelessWidget {
   _getMarkDownData(String markdownData) {
     ///优化图片显示
     RegExp exp =  RegExp(r'!\[.*\]\((.+)\)');
-    RegExp expImg =  RegExp("<img.*?(?:>|\/>)");
-    RegExp expSrc =  RegExp("src=[\'\"]?([^\'\"]*)[\'\"]?");
+    RegExp expImg =  RegExp("<img.*?(?:>|/>)");
+    RegExp expSrc =  RegExp("src=['\"]?([^'\"]*)['\"]?");
 
     String mdDataCode = markdownData;
     try {
@@ -115,7 +115,7 @@ class MarkdownWidget extends StatelessWidget {
         for (Match m in tags) {
           String imageMatch = m.group(0)??'';
           if (!imageMatch.contains(".svg")) {
-            String match = imageMatch.replaceAll("\)", "?raw=true)");
+            String match = imageMatch.replaceAll(")", "?raw=true)");
             if (!match.contains(".svg") && match.contains("http")) {
               ///增加点击
               String src = match

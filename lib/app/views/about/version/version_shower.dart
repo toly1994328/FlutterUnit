@@ -24,9 +24,10 @@ class _VersionShowerState extends State<VersionShower> {
 
   void _fetchVersion() async{
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    if(mounted)
-    setState(() {
+    if(mounted) {
+      setState(() {
       version= packageInfo.version;
     });
+    }
   }
 }

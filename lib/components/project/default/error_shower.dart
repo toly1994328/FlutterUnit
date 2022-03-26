@@ -9,7 +9,7 @@ import 'package:flutter_unit/app/res/style_unit.dart';
 class ErrorShower extends StatelessWidget {
   final String error;
 
-  ErrorShower({Key? key, this.error = "出现异常"}) : super(key: key);
+  const ErrorShower({Key? key, this.error = "出现异常"}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ErrorShower extends StatelessWidget {
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          Container(
+          const SizedBox(
               width: 80,
               height: 80,
               child: Icon(

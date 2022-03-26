@@ -21,6 +21,8 @@ import 'package:flutter/services.dart';
 //          "很多属性同Image,详见之.",
 //    }
 class RawImageDemo extends StatefulWidget {
+  const RawImageDemo({Key? key}) : super(key: key);
+
   @override
   _RawImageDemoState createState() => _RawImageDemoState();
 }
@@ -36,11 +38,12 @@ class _RawImageDemoState extends State<RawImageDemo> {
 
   @override
   Widget build(BuildContext context) {
-    if (_image == null)
+    if (_image == null) {
       return const SizedBox(
         width: 80,
         height: 80,
       );
+    }
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -87,5 +90,4 @@ class _RawImageDemoState extends State<RawImageDemo> {
     List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     return decodeImageFromList(Uint8List.fromList(bytes));
   }
-
 }

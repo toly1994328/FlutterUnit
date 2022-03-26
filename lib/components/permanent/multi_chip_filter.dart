@@ -34,7 +34,7 @@ class _MultiChipFilterState<T> extends State<MultiChipFilter<T>> {
     bool selected = _selected.contains(index);
     return FilterChip(
       selectedColor: Colors.orange.withAlpha(55),
-      labelPadding: EdgeInsets.only(left: 5,right: 5),
+      labelPadding: const EdgeInsets.only(left: 5,right: 5),
       selectedShadowColor: Colors.blue,
       shadowColor: Colors.orangeAccent,
       pressElevation: 5,

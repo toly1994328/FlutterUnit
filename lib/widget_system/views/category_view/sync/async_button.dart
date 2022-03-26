@@ -19,6 +19,8 @@ import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 /// 说明: 同步数据按钮，点击时请求服务器，获取备份数据。
 
 class SyncCategoryButton extends StatefulWidget {
+  const SyncCategoryButton({Key? key}) : super(key: key);
+
   @override
   _SyncCategoryButtonState createState() => _SyncCategoryButtonState();
 }
@@ -79,8 +81,8 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
         //说明有后台备份数据，进行同步操作
         CategoryRepository repository = BlocProvider.of<CategoryBloc>(context).repository;
         await repository.syncCategoryByData(result.data!.data,result.data!.likeData);
-        BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
-        BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
+        BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
+        BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
       } else {
         // 说明还没有后台数据，
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。

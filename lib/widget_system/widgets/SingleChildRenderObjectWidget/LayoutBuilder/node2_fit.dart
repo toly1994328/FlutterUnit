@@ -73,7 +73,7 @@ class _FitByLayoutBuilderState extends State<FitByLayoutBuilder> {
         child: Row(
           children: <Widget>[
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               height: 80,
               width: 30,
               color: Colors.grey,

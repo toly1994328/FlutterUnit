@@ -23,7 +23,7 @@ class EmptyShower extends StatelessWidget {
           children: <Widget>[
             Icon(Icons.style, color: color, size: 120.0),
             Container(
-              padding: EdgeInsets.only(top: 10.0),
+              padding: const EdgeInsets.only(top: 10.0),
               child: Text(
                 message,
                 textAlign: TextAlign.center,

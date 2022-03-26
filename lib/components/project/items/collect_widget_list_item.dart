@@ -88,8 +88,8 @@ class CollectWidgetListItem extends StatelessWidget {
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   shadows: [
-                    const Shadow(
-                        color: Colors.white, offset: const Offset(.3, .3))
+                    Shadow(
+                        color: Colors.white, offset: Offset(.3, .3))
                   ])),
         ),
       ],
@@ -104,7 +104,7 @@ class CollectWidgetListItem extends StatelessWidget {
         style: TextStyle(
             color: Colors.grey[600],
             fontSize: 14,
-            shadows: [const Shadow(color: Colors.white, offset: const Offset(.5, .5))]),
+            shadows: const [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
       ),
     );
 }

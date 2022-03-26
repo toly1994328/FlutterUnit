@@ -75,9 +75,9 @@ class ParticleManage with ChangeNotifier {
   }
 
   void reset() {
-    particles.forEach((p) {
+    for (Particle p in particles) {
       p.x = 0;
-    });
+    }
     notifyListeners();
   }
 

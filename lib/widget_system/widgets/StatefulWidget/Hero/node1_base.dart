@@ -49,7 +49,7 @@ class CustomHero extends StatelessWidget {
       child: Card(elevation: 5, child: container),
       onTap: () => Navigator.push(
         context,
-        Bottom2TopRouter(child: TargetPage(), duration: 1000),
+        Bottom2TopRouter(child: const TargetPage(), duration: 1000),
       ),
     );
   }

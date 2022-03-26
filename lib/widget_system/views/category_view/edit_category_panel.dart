@@ -18,7 +18,7 @@ class EditCategoryPanel extends StatefulWidget {
   final CategoryModel? model;
   final EditType type;
 
-  const EditCategoryPanel({this.model, this.type = EditType.add});
+  const EditCategoryPanel({Key? key, this.model, this.type = EditType.add}) : super(key: key);
 
   @override
   _EditCategoryPanelState createState() => _EditCategoryPanelState();

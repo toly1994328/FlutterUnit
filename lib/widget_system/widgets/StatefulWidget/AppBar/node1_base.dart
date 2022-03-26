@@ -44,7 +44,7 @@ class CustomAppBar extends StatelessWidget {
             onPressed: () {
               // do nothing
             }),
-        CustomPopupMenuButton()
+        const CustomPopupMenuButton()
       ],
     );
   }

@@ -37,11 +37,11 @@ class User extends Equatable{
   List<Object> get props => [username,email,roles,userId,userAvatar];
 
   Map toJson() => {
-    "username": this.username,
-    "email": this.email,
-    "roles": this.roles,
-    "userId": this.userId,
-    "userAvatar": this.userAvatar,
+    "username": username,
+    "email": email,
+    "roles": roles,
+    "userId": userId,
+    "userAvatar": userAvatar,
   };
 
 }

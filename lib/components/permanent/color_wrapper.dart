@@ -10,12 +10,12 @@ class WrapColor extends StatelessWidget {
   final double radius;
   final EdgeInsetsGeometry padding;
 
-  WrapColor(
-      {this.child,
+  const WrapColor(
+      {Key? key, this.child,
        this.color,
       this.radius = 5,
       this.padding =
-          const EdgeInsets.only(left: 4, right: 4, top: 0, bottom: 0)});
+          const EdgeInsets.only(left: 4, right: 4, top: 0, bottom: 0)}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class Circled extends StatelessWidget {
   final Color color;
   final double radius;
 
-  Circled({required this.child, this.color = Colors.blue, this.radius = 15});
+  const Circled({Key? key, required this.child, this.color = Colors.blue, this.radius = 15}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

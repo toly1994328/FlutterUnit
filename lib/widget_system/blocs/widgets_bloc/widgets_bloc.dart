@@ -14,12 +14,12 @@ import 'widgets_state.dart';
 class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   final WidgetRepository repository;
 
-  WidgetsBloc({required this.repository}):super(WidgetsLoading()){
+  WidgetsBloc({required this.repository}):super(const WidgetsLoading()){
     on<EventTabTap>(_onEventTabTap);
   }
 
   void _onEventTabTap(EventTabTap event, Emitter<WidgetsState> emit) async{
-    emit( WidgetsLoading());
+    emit( const WidgetsLoading());
     try {
       final List<WidgetModel> widgets = await repository.loadWidgets(event.family);
       emit( WidgetsLoaded(widgets: widgets));

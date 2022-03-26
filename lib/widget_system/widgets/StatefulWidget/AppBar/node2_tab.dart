@@ -75,7 +75,7 @@ class _TabAppBarState extends State<TabAppBar>
               onPressed: () {
                 // do nothing
               }),
-          CustomPopupMenuButton()
+          const CustomPopupMenuButton()
         ],
         bottom: TabBar(
           isScrollable: true,

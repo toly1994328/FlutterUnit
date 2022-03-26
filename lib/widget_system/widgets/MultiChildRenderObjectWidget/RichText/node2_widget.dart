@@ -10,12 +10,14 @@ import 'package:flutter/material.dart';
 //          "使用WidgetSpan来承载普通组件，作为RichText的内容",
 //    }
 class RichTextWithWidget extends StatelessWidget {
+  const RichTextWithWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
         text: 'hello ',
-        style: TextStyle(color: Colors.black, fontSize: 18),
+        style: const TextStyle(color: Colors.black, fontSize: 18),
         children: <InlineSpan>[
           WidgetSpan(
               child: Image.asset(
@@ -24,29 +26,29 @@ class RichTextWithWidget extends StatelessWidget {
               ),
               alignment: PlaceholderAlignment.baseline,
               baseline: TextBaseline.ideographic),
-          TextSpan(
+          const TextSpan(
             text: ' , welcome to ',
             style: TextStyle(color: Colors.blue, fontSize: 18),
           ),
-          WidgetSpan(
+          const WidgetSpan(
               child: FlutterLogo(),
               alignment: PlaceholderAlignment.baseline,
               baseline: TextBaseline.ideographic),
-          TextSpan(
+          const TextSpan(
             text: ' .\n',
           ),
-          TextSpan(
+          const TextSpan(
             text: 'focus me on ',
             style: TextStyle(color: Colors.orange, fontSize: 16),
           ),
-          TextSpan(
+          const TextSpan(
             text: 'https://github_model.com/toly1994328',
             style: TextStyle(
                 color: Colors.blue,
                 fontSize: 18,
                 decoration: TextDecoration.underline),
           ),
-          TextSpan(
+          const TextSpan(
             text: ' .\n',
           ),
         ],

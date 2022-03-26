@@ -10,6 +10,8 @@ import 'world_render.dart';
 /// 说明:
 
 class ParticleSplit extends StatefulWidget {
+  const ParticleSplit({Key? key}) : super(key: key);
+
   @override
   _ParticleSplitState createState() => _ParticleSplitState();
 }

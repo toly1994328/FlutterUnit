@@ -7,7 +7,7 @@ class DialogAbout extends StatelessWidget {
   static show(BuildContext context){
     showDialog(//内置方法，创建对话弹框
         context: context,
-        builder: (_) => DialogAbout());
+        builder: (_) => const DialogAbout());
   }
   @override
   Widget build(BuildContext context) {
@@ -19,12 +19,12 @@ class DialogAbout extends StatelessWidget {
           width: 30,
           height: 30,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
-        Expanded(child: Text("关于",style: TextStyle(fontSize: 18),)),
+        const Expanded(child: Text("关于",style: TextStyle(fontSize: 18),)),
         InkWell(
-          child: Icon(Icons.close),
+          child: const Icon(Icons.close),
           onTap: ()=>Navigator.of(context).pop(),
         )
       ],
@@ -32,7 +32,7 @@ class DialogAbout extends StatelessWidget {
     Widget content = Column(
         //内容
         mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
+        children: const <Widget>[
 //          Image.asset(
 //            "assets/images/icon_flutter.png",
 //            width: 50,
@@ -50,8 +50,8 @@ class DialogAbout extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.only(right:15.0,bottom: 10,top: 10),
           child: Column(
-            children: <Widget>[
-              Text(
+            children: const[
+               Text(
                 "Power By GF·J·Toly\n张风捷特烈",
                 textAlign: TextAlign.center,
               ),

@@ -66,11 +66,11 @@ class _CustomTransformState extends State<CustomTransform> {
               '${m[4]},${m[5]},${m[6]},${m[7]},\n'
               '${m[8]},${m[9]},${m[10]},${m[11]},\n'
               '${m[12]},${m[13]},${m[14]},${m[15]}\n',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             )
           ],
         ),
-        Container(
+        SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 200,
             child: _buildSliders())

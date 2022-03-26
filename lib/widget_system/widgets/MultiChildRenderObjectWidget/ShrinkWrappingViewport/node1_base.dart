@@ -18,6 +18,9 @@ import 'package:flutter/material.dart';
 //    }
 
 class ShrinkWrappingViewportDemo extends StatelessWidget {
+
+  const ShrinkWrappingViewportDemo({Key? key}) : super(key: key);
+
   final String info =
       'ShrinkWrappingViewport 在源码中只有一处使用：'
       '在 ScrollView 中如果 shrinkWrap 为 true，会使用 ShrinkWrappingViewport，该属性在其子类 ListView、GridView、CustomScrollView 中可指定。'
@@ -28,8 +31,8 @@ class ShrinkWrappingViewportDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue.withOpacity(0.1),
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Text(info),
     );
   }

@@ -14,6 +14,8 @@
 //          "【flex】 : 剩余空间分配占比   【int】",
 //    }
 class CustomExpended extends StatefulWidget {
+  const CustomExpended({Key? key}) : super(key: key);
+
   @override
   _CustomExpendedState createState() => _CustomExpendedState();
 }

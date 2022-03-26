@@ -17,7 +17,7 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
 
   final AppStart storage;
 
-  GlobalBloc(this.storage) : super(GlobalState()) {
+  GlobalBloc(this.storage) : super(const GlobalState()) {
     on<EventInitApp>(_onEventInitApp);
     on<EventSwitchFontFamily>(_onEventSwitchFontFamily);
     on<EventSwitchThemeColor>(_onEventSwitchThemeColor);
@@ -38,8 +38,7 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
   void _onEventSwitchFontFamily(
       EventSwitchFontFamily event, Emitter<GlobalState> emit) async {
     int familyIndex = Cons.fontFamilySupport.indexOf(event.family);
-    await sp
-      ..setInt(SP.fontFamily, familyIndex);
+    (await sp).setInt(SP.fontFamily, familyIndex);
     emit(state.copyWith(fontFamily: event.family));
   }
 
@@ -47,16 +46,14 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
   void _onEventSwitchThemeColor(
       EventSwitchThemeColor event, Emitter<GlobalState> emit) async {
     int themeIndex = Cons.themeColorSupport.keys.toList().indexOf(event.color);
-    await sp
-      ..setInt(SP.themeColorIndex, themeIndex);
+    (await sp).setInt(SP.themeColorIndex, themeIndex);
     emit(state.copyWith(themeColor: event.color));
   }
 
   // 切换背景显示事件处理 : 固化数据 + 产出新状态
   void _onEventSwitchShowBg(
       EventSwitchShowBg event, Emitter<GlobalState> emit) async {
-    await sp
-      ..setBool(SP.showBackground, event.show);
+    (await sp).setBool(SP.showBackground, event.show);
     emit(state.copyWith(showBackGround: event.show));
   }
 
@@ -69,16 +66,14 @@ class GlobalBloc extends Bloc<GlobalEvent, GlobalState> {
   // 切换code样式事件处理 : 固化索引 + 产出新状态
   void _onEventSwitchCoderTheme(
       EventSwitchCoderTheme event, Emitter<GlobalState> emit) async {
-    await sp
-      ..setInt(SP.codeStyleIndex, event.codeStyleIndex);
+    (await sp).setInt(SP.codeStyleIndex, event.codeStyleIndex);
     emit(state.copyWith(codeStyleIndex: event.codeStyleIndex));
   }
 
   // 切换item样式事件处理 : 固化索引 + 产出新状态
   void _onEventChangeItemStyle(
       EventChangeItemStyle event, Emitter<GlobalState> emit) async {
-    await sp
-      ..setInt(SP.itemStyleIndex, event.index);
+    (await sp).setInt(SP.itemStyleIndex, event.index);
     emit(state.copyWith(itemStyleIndex: event.index));
   }
 }

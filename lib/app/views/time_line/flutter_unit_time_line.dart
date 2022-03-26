@@ -13,12 +13,12 @@ class FlutterUnitTimeLine extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('FlutterUnit 时光轴'),
+        title: const Text('FlutterUnit 时光轴'),
       ),
       body: Container(
-        margin: EdgeInsets.only(top: 0),
+        margin: const EdgeInsets.only(top: 0),
         child: ListView(
-          padding: EdgeInsets.only(top: 0, bottom: 20),
+          padding: const EdgeInsets.only(top: 0, bottom: 20),
           children: [
             TimeLineNode(
               timeNode: TimeNode(
@@ -87,15 +87,15 @@ class TimeLineNode extends StatelessWidget {
               child: timeNode.year != null
                   ? Text(
                       '${timeNode.year} 年',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     )
-                  : Visibility(
+                  : const Visibility(
                       visible: false,
                       maintainState: true,
                       maintainSize: true,
                       maintainAnimation: true,
-                      child: const Text(
+                      child: Text(
                         '2020 年',
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
@@ -148,7 +148,7 @@ class TimeLineNode extends StatelessWidget {
             if (timeNode.imageUrl != null)
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(vertical: 5),
+                margin: const EdgeInsets.symmetric(vertical: 5),
                 child: Image(
                   image: NetworkImage(
                     timeNode.imageUrl!,

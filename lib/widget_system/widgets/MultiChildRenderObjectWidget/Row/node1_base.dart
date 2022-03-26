@@ -16,13 +16,15 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomRow extends StatelessWidget {
+  const CustomRow({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
         height: 70,
-        color: Color(0x4484FFFF),
+        color: const Color(0x4484FFFF),
         child: Row(
-          children: <Widget>[
+          children: const [
             Padding(
               child: Icon(
                 Icons.add_location,

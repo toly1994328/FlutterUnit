@@ -60,12 +60,12 @@ class UnitArcBackground extends StatelessWidget {
     return SizedBox(
       height: height,
       child: ArcBackground(
-        image: AssetImage("assets/images/caver.webp"),
+        image: const AssetImage("assets/images/caver.webp"),
         child: Container(
           padding: const EdgeInsets.all(30),
           decoration: BoxDecoration(
               color: Colors.blue.withAlpha(88), shape: BoxShape.circle),
-          child: CircleImage(
+          child: const CircleImage(
               size: 100,
               roundColor: Colors.blue,
               image: AssetImage(

@@ -69,7 +69,7 @@ class BurstMenu extends StatefulWidget {
     this.startAngle = -90,
   }) : super(key: key);
 
-  BurstMenu.topRight({
+  const BurstMenu.topRight({Key? key,
     required this.menus,
     this.burstMenuItemClick,
     this.radius = 100,
@@ -80,7 +80,7 @@ class BurstMenu extends StatefulWidget {
     this.burstType = BurstType.topRight,
     this.swapAngle = -90,
     this.startAngle = 180,
-  });
+  }) : super(key: key);
 
   const BurstMenu.bottomRight({Key? key,
     required this.menus,

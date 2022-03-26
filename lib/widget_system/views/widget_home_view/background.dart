@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BackgroundShower extends StatelessWidget {
-
-
+  const BackgroundShower({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

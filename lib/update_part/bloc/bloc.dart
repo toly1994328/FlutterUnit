@@ -18,7 +18,7 @@ class UpdateBloc extends Bloc<UpdateEvent, UpdateState> {
   }
 
   void _onCheckUpdate(CheckUpdate event, Emitter<UpdateState> emit) async {
-    emit(CheckLoadingState());
+    emit(const CheckLoadingState());
     // await Future.delayed(Duration(seconds: 1));
     // 检测更新逻辑
     ResultBean<AppInfo> result =
@@ -57,7 +57,7 @@ class UpdateBloc extends Bloc<UpdateEvent, UpdateState> {
       if (info.status! == DownloadStatus.STATUS_SUCCESSFUL) {
         progress = 1;
         subscription?.cancel();
-        add(ResetNoUpdate());
+        add(const ResetNoUpdate());
       }
       add(DownloadingEvent(state: DownloadingState(
           appSize: event.appInfo.appSize,

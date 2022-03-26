@@ -70,7 +70,7 @@ var entry = OverlayEntry(
 ///绘制悬浮控件
 _buildFloating() => GestureDetector(
     onPanDown: (details) {
-      offset = details.globalPosition - Offset(radius / 2, radius / 2);
+      offset = details.globalPosition - const Offset(radius / 2, radius / 2);
       entry.markNeedsBuild();
     },
     onPanUpdate: (DragUpdateDetails details) {

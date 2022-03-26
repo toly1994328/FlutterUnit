@@ -20,7 +20,7 @@ class Circle extends StatelessWidget {
           shape: BoxShape.circle,
         boxShadow: [
           if (showShadow)
-          BoxShadow(
+          const BoxShadow(
           color: Colors.grey,
           offset: Offset(.5,.5),
           blurRadius: .5,

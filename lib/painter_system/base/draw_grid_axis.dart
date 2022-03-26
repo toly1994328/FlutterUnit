@@ -7,6 +7,8 @@ import '../utils/coordinate.dart';
 /// 说明:
 
 class DrawGridAxis extends StatelessWidget {
+  const DrawGridAxis({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.shortestSide;

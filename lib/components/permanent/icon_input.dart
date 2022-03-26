@@ -9,7 +9,7 @@ class IconInput extends StatelessWidget {
   final Widget textFiled;
   final IconData icon;
 
-  IconInput({Key? key,required this.textFiled,required this.icon}) : super(key: key);
+  const IconInput({Key? key,required this.textFiled,required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class IconInput extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
             child: Icon(
               icon,
               color: Colors.grey,

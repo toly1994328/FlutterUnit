@@ -72,7 +72,7 @@ class _StepperDemoState extends State<StepperDemo> {
                   color: Colors.blue,
                   shape: const CircleBorder(
                     side: BorderSide(
-                        width: 2.0, color: const Color(0xFFDFDFDF)),
+                        width: 2.0, color: Color(0xFFDFDFDF)),
                   ),
                   onPressed: details.onStepContinue,
                   child: const Icon(

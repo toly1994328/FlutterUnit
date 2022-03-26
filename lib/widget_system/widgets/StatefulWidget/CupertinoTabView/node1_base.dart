@@ -27,7 +27,7 @@ class CupertinoTabViewDemo extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => CupertinoTabViewPage()),
+                builder: (context) => const CupertinoTabViewPage()),
           );
         },
         child: const Text("进入 CupertinoTabView 测试页"),
@@ -48,7 +48,7 @@ class CupertinoTabViewPage extends StatelessWidget {
       child: CupertinoTabView(
         routes: {
           '/': (context) => _HomePage(),
-          '/test_detail': (context) => DetailPage(),
+          '/test_detail': (context) => const DetailPage(),
         },
       ),
     );

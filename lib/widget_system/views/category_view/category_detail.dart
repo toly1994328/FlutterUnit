@@ -20,7 +20,7 @@ import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 class CategoryShow extends StatelessWidget {
   final CategoryModel model;
 
-  CategoryShow({required this.model});
+  const CategoryShow({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class CategoryShow extends StatelessWidget {
               direction: DismissDirection.endToStart,
               key: ValueKey(widgets[index].id),
               background: Container(
-                padding: EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20),
                 alignment: Alignment.centerRight,
                 color: Colors.red,
                 child: const Icon(
@@ -57,9 +57,9 @@ class CategoryShow extends StatelessWidget {
                     EventToggleCategoryWidget(model.id!, widgets[index].id));
               },
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
                 child: FeedbackWidget(
-                    duration: Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 200),
                     onPressed: () => _toDetailPage(context, widgets[index]),
                     child:
                         // Container(height: 60,)
@@ -80,7 +80,7 @@ class CategoryShow extends StatelessWidget {
 class SimpleWidgetItem extends StatelessWidget {
   final WidgetModel data;
 
-  SimpleWidgetItem({required this.data});
+  const SimpleWidgetItem({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

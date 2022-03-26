@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 //          "【child】 : 子组件   【Widget】\n",
 //    }
 class CustomDropDownButtonHideUnderline extends StatefulWidget {
+  const CustomDropDownButtonHideUnderline({Key? key}) : super(key: key);
+
   @override
   _CustomDropDownButtonHideUnderlineState createState() =>
       _CustomDropDownButtonHideUnderlineState();
@@ -19,20 +21,20 @@ class CustomDropDownButtonHideUnderline extends StatefulWidget {
 class _CustomDropDownButtonHideUnderlineState
     extends State<CustomDropDownButtonHideUnderline> {
   Color _color = Colors.red;
-  final List<Color> _colors = [
+  final List<Color> _colors = const[
     Colors.red,
     Colors.yellow,
     Colors.blue,
     Colors.green
   ];
-  final List<String> _info = ["红色", "黄色", "蓝色", "绿色"];
+  final List<String> _info = const["红色", "黄色", "蓝色", "绿色"];
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      children: <Widget>[
+      children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           width: 50,
           height: 50,
           color: _color,

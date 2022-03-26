@@ -47,7 +47,7 @@ class _CustomColorFilteredState extends State<CustomColorFiltered> {
     );
   }
 
-  Widget _buildChild(m) => Container(
+  Widget _buildChild(m) => SizedBox(
         width: 58,
         height: 58,
         child: ColorFiltered(

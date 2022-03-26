@@ -11,7 +11,7 @@ import 'package:flutter_unit/update_part/views/update_red_point.dart';
 class MePageItem extends StatelessWidget {
   final Color color;
 
-  const MePageItem({this.color = Colors.white});
+  const MePageItem({Key? key, this.color = Colors.white}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MePageItem extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
@@ -32,17 +32,20 @@ class MePageItem extends StatelessWidget {
               context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
           _buildItem(
               context, TolyIcon.icon_collect, '我的收藏', UnitRouter.collect),
-          Divider(
-            height: 1,
-          ),
+          const Divider(height: 1),
           Stack(
             children: [
-              _buildItem(context, Icons.update, '版本信息', UnitRouter.version_info,),
-              Positioned(left: 40, top: 10, child: UpdateRedPoint())
+              _buildItem(
+                context,
+                Icons.update,
+                '版本信息',
+                UnitRouter.version_info,
+              ),
+              const Positioned(left: 40, top: 10, child: UpdateRedPoint())
             ],
           ),
           _buildItem(context, Icons.info, '关于应用', UnitRouter.about_app),
-          Divider(
+          const Divider(
             height: 1,
           ),
           _buildItem(context, TolyIcon.icon_kafei, '联系本王', UnitRouter.about_me),

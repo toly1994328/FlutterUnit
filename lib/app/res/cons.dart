@@ -3,7 +3,7 @@ import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
 class Cons {
 
-  static const MENU_INFO = <String>["关于", "帮助", "问题反馈"]; //菜单栏
+  static const menuInfo = <String>["关于", "帮助", "问题反馈"]; //菜单栏
 
 
   static const List<Color> tabColors = [
@@ -54,7 +54,7 @@ class Cons {
     Colors.indigo: "无限之靛",
     Colors.purple: "神秘之紫",
 
-    MaterialColor(0xff2D2D2D, <int, Color>{
+    const MaterialColor(0xff2D2D2D, <int, Color>{
       50: Color(0xFF8A8A8A),
       100: Color(0xFF747474),
       200: Color(0xFF616161),

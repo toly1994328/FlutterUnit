@@ -32,8 +32,8 @@ class ClockPainter extends CustomPainter {
   final double _radius = 3.0; //小球半径
   final Path _path = Path(); //画笔对象
   ClockPainter () {
-    _paint = Paint()..color= Color(0xff45d0fd)..isAntiAlias=true;
-    _path.addOval(Rect.fromCircle(radius: _radius, center: Offset(0, 0))); //小球路径
+    _paint = Paint()..color= const Color(0xff45d0fd)..isAntiAlias=true;
+    _path.addOval(Rect.fromCircle(radius: _radius, center: const Offset(0, 0))); //小球路径
   }
 
   @override

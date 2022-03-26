@@ -34,12 +34,12 @@ class EmptyCategory extends StatelessWidget {
                 "  您还没有收藏集! ",
                 style: TextStyle(fontSize: 18,color: ColorUnit.head_text_color),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               FeedbackWidget(
                 onPressed: ()=>_recallDatabase(context),
-                child: Icon(
+                child: const Icon(
                   Icons.refresh,
                   textDirection: TextDirection.rtl,
                   color: Colors.blue,
@@ -62,6 +62,6 @@ class EmptyCategory extends StatelessWidget {
     List<int> bytes =
     data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     await File(dbPath).writeAsBytes(bytes, flush: true);
-    BlocProvider.of<CategoryBloc>(context).add(EventLoadCategory());
+    BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
   }
 }

@@ -14,10 +14,12 @@ import 'package:flutter/material.dart';
 //    }
 
 class ListBodyDemo extends StatelessWidget {
+  const ListBodyDemo({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: ListView(
           children: <Widget>[
