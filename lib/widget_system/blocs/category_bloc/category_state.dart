@@ -23,6 +23,7 @@ class CategoryLoadedState extends CategoryState {
 class CategoryLoadingState extends CategoryState {
   const CategoryLoadingState();
 
+  @override
   List<Object> get props => [];
 }
 

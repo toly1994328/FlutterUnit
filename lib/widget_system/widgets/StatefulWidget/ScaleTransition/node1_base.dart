@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 //          "【scale】 : 动画   【Animation<double>】",
 //    }
 class CustomScaleTransition extends StatefulWidget {
+  const CustomScaleTransition({Key? key}) : super(key: key);
+
   @override
   _CustomScaleTransitionState createState() => _CustomScaleTransitionState();
 }
@@ -21,7 +23,7 @@ class _CustomScaleTransitionState extends State<CustomScaleTransition>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 2));
+    _ctrl = AnimationController(vsync: this, duration: const Duration(seconds: 2));
     _ctrl.forward();
     super.initState();
   }
@@ -42,7 +44,7 @@ class _CustomScaleTransitionState extends State<CustomScaleTransition>
           height: 100,
           child: ScaleTransition(
             scale: CurvedAnimation(parent: _ctrl, curve: Curves.linear),
-            child: Icon(Icons.android, color: Colors.green, size: 60),
+            child: const Icon(Icons.android, color: Colors.green, size: 60),
           ),
         ));
   }

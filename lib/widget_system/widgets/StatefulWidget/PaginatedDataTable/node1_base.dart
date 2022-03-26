@@ -198,10 +198,10 @@ class DessertDataSource extends DataTableSource {
           }
         },
         cells: <DataCell>[
-          DataCell(Center(child: Text('${dessert.name}'))),
-          DataCell(Center(child: Text('${dessert.calories}'))),
-          DataCell(Center(child: Text('${dessert.fat}'))),
-          DataCell(Center(child: Text('${dessert.carbs}'))),
+          DataCell(Center(child: Text(dessert.name))),
+          DataCell(Center(child: Text(dessert.calories))),
+          DataCell(Center(child: Text(dessert.fat))),
+          DataCell(Center(child: Text(dessert.carbs))),
         ]);
   }
 

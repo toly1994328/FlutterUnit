@@ -33,7 +33,7 @@ class $fontName {
   result+="}";
   fileCss.delete();//删除css文件
 
-  File fileOut = File(path.join(Directory.current.path,"$outFile"));
+  File fileOut = File(path.join(Directory.current.path,outFile));
   if(! await fileOut.exists()){
     await fileOut.create(recursive: true);
   }

@@ -76,7 +76,7 @@ class CategoryDbRepository implements CategoryRepository {
     Completer<List<CategoryTo>> completer = Completer();
     List<CategoryTo> collects = [];
 
-    if (data.length == 0) {
+    if (data.isEmpty) {
       completer.complete([]);
     }
 

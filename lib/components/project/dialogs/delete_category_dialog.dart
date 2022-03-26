@@ -17,17 +17,14 @@ class DeleteCategoryDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          _buildBar(context),
-          _buildTitle(context),
-          _buildContent(),
-          _buildFooter(context),
-        ],
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        _buildBar(context),
+        _buildTitle(context),
+        _buildContent(),
+        _buildFooter(context),
+      ],
     );
   }
 

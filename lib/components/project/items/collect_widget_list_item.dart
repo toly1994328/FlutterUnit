@@ -97,16 +97,14 @@ class CollectWidgetListItem extends StatelessWidget {
 
   Widget _buildSummary() => Padding(
       padding: const EdgeInsets.only(left: 5, bottom: 5, top: 5),
-      child: Container(
-        child: Text(
-          data.nameCN,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-              color: Colors.grey[600],
-              fontSize: 14,
-              shadows: [const Shadow(color: Colors.white, offset: const Offset(.5, .5))]),
-        ),
+      child: Text(
+        data.nameCN,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+            color: Colors.grey[600],
+            fontSize: 14,
+            shadows: [const Shadow(color: Colors.white, offset: const Offset(.5, .5))]),
       ),
     );
 }

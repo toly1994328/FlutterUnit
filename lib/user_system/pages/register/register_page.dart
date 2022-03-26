@@ -30,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final _emailCtrl = TextEditingController(text: '1981462002@qq.com');
   final _codeCtrl = TextEditingController(text: '');
 
-  ValueNotifier<bool> _enableRegister= ValueNotifier<bool>(false);
+  final ValueNotifier<bool> _enableRegister= ValueNotifier<bool>(false);
 
   bool get enable => _emailCtrl.text.isNotEmpty && _codeCtrl.text.isNotEmpty;
 
@@ -64,42 +64,39 @@ class _RegisterPageState extends State<RegisterPage> {
             width: winSize.width,
             height: winSize.height * 0.68,
             padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
-            child: Container(
-              // color: Colors.green,
-              child: Column(
-                children: <Widget>[
-                  const Text(
-                    "FlutterUnit 注册",
-                    style: TextStyle(fontSize: 25),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text(
-                    "更多精彩，更多体验 ~",
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                  const Spacer(
-                    flex: 1,
-                  ),
-                  IconInput(
-                    icon: Icons.person_outline,
-                    textFiled: TextField(
-                      controller: _emailCtrl,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: '请输入邮箱',
-                        hintStyle: TextStyle(color: Colors.grey),
-                      ),
+            child: Column(
+              children: <Widget>[
+                const Text(
+                  "FlutterUnit 注册",
+                  style: TextStyle(fontSize: 25),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  "更多精彩，更多体验 ~",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                const Spacer(
+                  flex: 1,
+                ),
+                IconInput(
+                  icon: Icons.person_outline,
+                  textFiled: TextField(
+                    controller: _emailCtrl,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: '请输入邮箱',
+                      hintStyle: TextStyle(color: Colors.grey),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  buildInputWithSend(),
-                  const Spacer(flex: 1),
-                  _buildBtn(),
-                  const Spacer(flex: 4),
-                ],
-              ),
+                ),
+                const SizedBox(height: 10),
+                buildInputWithSend(),
+                const Spacer(flex: 1),
+                _buildBtn(),
+                const Spacer(flex: 4),
+              ],
             ))
       ]),
     ));
@@ -146,7 +143,6 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   bool _checkEmail(String email) {
-    if (email == null) return false;
     RegExp exp =
         RegExp(r'^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$');
     return exp.hasMatch(email);

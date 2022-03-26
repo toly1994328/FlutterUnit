@@ -18,7 +18,7 @@ import '../PopupMenuButton/node1_base.dart';
 //          "【floatingActionButtonLocation】 : 浮动按钮位置   【FloatingActionButtonLocation】",
 //    }
 class CustomScaffold extends StatefulWidget {
-  CustomScaffold({Key? key}) : super(key: key);
+  const CustomScaffold({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _CustomScaffoldState();
@@ -26,16 +26,16 @@ class CustomScaffold extends StatefulWidget {
 
 // AppBar 默认的实例,有状态
 class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
-  final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
-  var _position = 0;
-  final iconsMap = {
+  final List<String> tabs = const ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
+  int _position = 0;
+  final Map<String,IconData> iconsMap = {
     "图鉴": Icons.home,
     "动态": Icons.toys,
     "喜欢": Icons.favorite,
     "手册": Icons.class_,
     "我的": Icons.account_circle,
   };
-  final _colors = [
+  final List<Color> _colors = [
     Colors.blue,
     Colors.red,
     Colors.yellow,
@@ -59,22 +59,22 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height - 300,
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: () {},
         ),
         drawer: _buildLeftDrawer(),
         endDrawer: _buildLeftDrawer(),
         appBar: AppBar(
-          title: Text('风雅六社'),
+          title: const Text('风雅六社'),
           backgroundColor: Colors.blue,
           centerTitle: true,
-          actions: <Widget>[Icon(Icons.star), CustomPopupMenuButton()],
+          actions: const [Icon(Icons.star), CustomPopupMenuButton()],
           bottom: _buildTabBar(),
         ),
         body: _buildTableBarView(),
@@ -104,7 +104,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
         elevation: 1,
         backgroundColor: Colors.white,
         iconSize: 25,
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
         showUnselectedLabels: false,
         showSelectedLabels: true,
         items: iconsMap.keys
@@ -121,7 +121,7 @@ class _CustomScaffoldState extends State with SingleTickerProviderStateMixin {
           .map((e) => Center(
                   child: Text(
                 e,
-                style: TextStyle(color: Colors.blue, fontSize: 20),
+                style: const TextStyle(color: Colors.blue, fontSize: 20),
               )))
           .toList());
 }

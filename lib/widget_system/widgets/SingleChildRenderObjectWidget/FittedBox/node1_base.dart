@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】",
 //    }
 class CustomFittedBox extends StatefulWidget {
+  const CustomFittedBox({Key? key}) : super(key: key);
+
   @override
   _CustomFittedBoxState createState() => _CustomFittedBoxState();
 }
@@ -22,7 +24,7 @@ class _CustomFittedBoxState extends State<CustomFittedBox> {
   double _childW = 20;
   double _childH = 30;
 
-  final  rainbow = <int>[
+  final List<int> rainbow = const [
     0xffff0000,
     0xffFF7F00,
     0xffFFFF00,
@@ -41,11 +43,9 @@ class _CustomFittedBoxState extends State<CustomFittedBox> {
             runSpacing: 10,
             children: BoxFit.values
                 .map((mode) => Column(
-                      children: <Widget>[
+                      children: [
                         _buildChild(mode),
-                        SizedBox(
-                          height: 10,
-                        ),
+                        const SizedBox(height: 10),
                         Text(mode.toString().split('.')[1])
                       ],
                     ))
@@ -68,7 +68,7 @@ class _CustomFittedBoxState extends State<CustomFittedBox> {
           decoration: BoxDecoration(
             //添加渐变色
             gradient: LinearGradient(
-                stops: <double>[0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0],
+                stops: const[0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0],
                 colors: rainbow.map((e) => Color(e)).toList()),
           ),
         ),

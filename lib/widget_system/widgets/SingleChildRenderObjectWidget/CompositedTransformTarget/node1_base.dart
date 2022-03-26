@@ -17,8 +17,7 @@ import 'package:flutter/material.dart';
 
 class CompositedTransformTargetDemo extends StatelessWidget {
 
-
-  const CompositedTransformTargetDemo();
+  const CompositedTransformTargetDemo({Key? key}) : super(key: key);
 
   static const  List<Color> colors =[Colors.red,Colors.yellow,Colors.blue,Colors.green];
 
@@ -29,15 +28,15 @@ class CompositedTransformTargetDemo extends StatelessWidget {
       height: 250,
       padding: const EdgeInsets.all(50.0),
       child:  ListView(
-          scrollDirection: Axis.horizontal,
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [_LogoTips(), const Text('点击图标\n显隐弹框')],
-            ),
-            ...colors.map((color) => Container(width: 80, color: color))
-          ],
-        ),
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [_LogoTips(), const Text('点击图标\n显隐弹框')],
+          ),
+          ...colors.map((color) => Container(width: 80, color: color))
+        ],
+      ),
     );
   }
 
@@ -60,12 +59,12 @@ class _LogoTipsState extends State<_LogoTips> {
         builder: (context) => Positioned(
               width: 150,
               child: CompositedTransformFollower(
-                link: this._layerLink,
+                link: _layerLink,
                 showWhenUnlinked: false,
                 targetAnchor: Alignment.topRight,
-                child: Card(
+                child: const Card(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Text('我是一个 Overlay，目标组件为图标，当它变换时，我会伴随变换。'),
                   ),
                 ),
@@ -78,9 +77,9 @@ class _LogoTipsState extends State<_LogoTips> {
     return GestureDetector(
         onTap: _toggleOverlay,
         child: CompositedTransformTarget(
-          link: this._layerLink,
+          link: _layerLink,
           child:
-          FlutterLogo(
+          const FlutterLogo(
             size: 80,
           ),
         ));

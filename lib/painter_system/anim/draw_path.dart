@@ -2,7 +2,6 @@ import 'dart:math';
 import 'dart:ui';
 import 'dart:ui' as ui;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/5/1

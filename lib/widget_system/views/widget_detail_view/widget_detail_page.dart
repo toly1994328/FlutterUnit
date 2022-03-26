@@ -26,7 +26,7 @@ class WidgetDetailPage extends StatefulWidget {
 }
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
-  List<WidgetModel> _modelStack = [];
+  final List<WidgetModel> _modelStack = [];
 
   @override
   void initState() {
@@ -141,7 +141,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   Future<bool> _whenPop(BuildContext context) async {
     if (Scaffold.of(context).isEndDrawerOpen) return true;
     _modelStack.removeLast();
-    if (_modelStack.length > 0) {
+    if (_modelStack.isNotEmpty) {
       setState(() {
         BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(_modelStack.last));
       });
@@ -211,7 +211,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                     labelStyle: TextStyle(fontSize: 12, color: Colors.white,
                       decoration: (e.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
                       decorationThickness: 2,),
-                    label: Text('${e.name}'),
+                    label: Text(e.name),
                   ))
               .toList(),
         ),
@@ -223,23 +223,22 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 class WidgetDetailTitle extends StatelessWidget {
   final WidgetModel model;
 
-  WidgetDetailTitle({required this.model});
+  const WidgetDetailTitle({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            _buildLeft(model),
-            _buildRight(model),
-          ],
-        ),
-        const Divider(),
+    Row(
+      children: <Widget>[
+        _buildLeft(model),
+        _buildRight(model),
       ],
-    ));
+    ),
+    const Divider(),
+      ],
+    );
   }
 
   Widget _buildLeft(WidgetModel model) => Expanded(

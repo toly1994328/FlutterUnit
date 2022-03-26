@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【builder】 : 布局构造器   【LayoutWidgetBuilder】",
 //    }
 class CustomLayoutBuilder extends StatelessWidget {
+  const CustomLayoutBuilder({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     print('CustomLayoutBuild');
@@ -25,7 +27,7 @@ class CustomLayoutBuilder extends StatelessWidget {
           return Text(
             '父容器宽:${zone.maxWidth}\n'
             '父容器高:${zone.maxHeight}',
-            style: TextStyle(color: Colors.white, fontSize: 16),
+            style: const TextStyle(color: Colors.white, fontSize: 16),
           );
         },
       ),

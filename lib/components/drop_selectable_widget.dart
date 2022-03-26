@@ -35,7 +35,6 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
   late FocusNode _node;
   bool _focused = false;
   late FocusAttachment _nodeAttachment;
-  Color _color = Colors.white;
   OverlayEntry? _overlayEntry;
   late AnimationController _ctrl;
   late Animation<double> animation;
@@ -120,7 +119,7 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            '${widget.data.isNotEmpty ? widget.data[_selectedIndex] : "暂无数据"}',style: TextStyle(
+            widget.data.isNotEmpty ? widget.data[_selectedIndex] : "暂无数据",style: TextStyle(
               height: 1,
               fontSize: widget.fontSize
           ),),
@@ -192,7 +191,7 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
             color: index == _selectedIndex
                 ? Colors.blue.withOpacity(0.2)
                 : Colors.transparent,
-            child: Text('${widget.data[index]}',style: TextStyle(fontSize: widget.fontSize),)),
+            child: Text(widget.data[index],style: TextStyle(fontSize: widget.fontSize),)),
       ),
     );
   }

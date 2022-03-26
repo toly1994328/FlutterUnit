@@ -1,8 +1,4 @@
-
 import 'dart:math';
-import 'dart:typed_data';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'particle.dart';

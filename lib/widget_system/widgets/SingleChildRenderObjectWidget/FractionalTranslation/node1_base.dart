@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -13,14 +12,16 @@ import 'package:flutter/material.dart';
 //    }
 
 class FractionalTranslationDemo extends StatefulWidget {
+  const FractionalTranslationDemo({Key? key}) : super(key: key);
+
   @override
   _FractionalTranslationDemoState createState() =>
       _FractionalTranslationDemoState();
 }
 
 class _FractionalTranslationDemoState extends State<FractionalTranslationDemo> {
-  var dx = 0.0;
-  var dy = 0.0;
+  double dx = 0.0;
+  double dy = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class _FractionalTranslationDemoState extends State<FractionalTranslationDemo> {
           color: Colors.grey.withAlpha(33),
           child: FractionalTranslation(
             translation: Offset(dx, dy),
-            child: Icon(
+            child: const Icon(
               Icons.android,
               color: Colors.green,
             ),

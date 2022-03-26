@@ -37,7 +37,7 @@ class _CustomFilterChipState extends State<CustomFilterChip> {
     'C': 'Cat',
     'D': 'Dog',
   };
-  List<String> _selected = <String>[];
+  final List<String> _selected = <String>[];
 
   @override
   Widget build(BuildContext context) {

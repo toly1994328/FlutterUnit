@@ -14,7 +14,6 @@
 //          "【backgroundColor】 : 背景色  【Color】\n"
 //          "【shape】 : 形状   【ShapeBorder】",
 //    }
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomDialog extends StatelessWidget {

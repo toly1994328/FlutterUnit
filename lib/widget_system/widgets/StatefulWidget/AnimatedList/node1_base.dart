@@ -160,7 +160,7 @@ class CardItem extends StatelessWidget {
       required this.animation,
       this.onTap,
       required this.item,
-      this.selected: false})
+      this.selected = false})
       : assert(item >= 0),
         super(key: key);
   final Animation<double> animation;

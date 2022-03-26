@@ -12,6 +12,10 @@ import 'package:flutter/material.dart';
 //          "着色器相关知识详见【绘制专辑】",
 //    }
 class LinearShaderMask extends StatelessWidget {
+  const LinearShaderMask({Key? key}) : super(key: key);
+
+  final List<Color> colors = const [Colors.red, Colors.yellow, Colors.blue];
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -28,7 +32,7 @@ class LinearShaderMask extends StatelessWidget {
         ),
         ShaderMask(
           shaderCallback: _buildShader,
-          child: Text(
+          child: const Text(
             '张风捷特烈',
             style: TextStyle(fontSize: 40, color: Colors.white),
           ),
@@ -45,12 +49,10 @@ class LinearShaderMask extends StatelessWidget {
     );
   }
 
-  final colors = [Colors.red, Colors.yellow, Colors.blue];
-
   Shader _buildShader(Rect bounds) => LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          tileMode: TileMode.mirror,
-          colors: colors)
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      tileMode: TileMode.mirror,
+      colors: colors)
       .createShader(bounds);
 }

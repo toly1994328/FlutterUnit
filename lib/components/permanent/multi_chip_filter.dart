@@ -19,7 +19,7 @@ class MultiChipFilter<T> extends StatefulWidget {
 }
 
 class _MultiChipFilterState<T> extends State<MultiChipFilter<T>> {
-  List<int> _selected = <int>[];
+  final List<int> _selected = <int>[];
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class _MultiChipFilterState<T> extends State<MultiChipFilter<T>> {
           } else {
             _selected.removeWhere((i) => i == index);
           }
-          if(widget.onChange!=null) widget.onChange(_selected);
+          widget.onChange(_selected);
         });
       },
     );

@@ -32,7 +32,7 @@ class ParticleManage with ChangeNotifier {
         doUpdate(particles[i]);
       }
     }
-    if(particles.length!=0){
+    if(particles.isNotEmpty){
       notifyListeners();
     }
   }
@@ -57,7 +57,7 @@ class ParticleManage with ChangeNotifier {
     if (p.y < 0) {
       particles.remove(p);
     }
-    if(particles.length==0){
+    if(particles.isEmpty){
       onEnd?.call();
     }
   }

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【initialItemCount】 : 初始item个数   【int】",
 //    }
 class SliverAnimatedListDemo extends StatefulWidget {
+  const SliverAnimatedListDemo({Key? key}) : super(key: key);
+
   @override
   _SliverAnimatedListDemoState createState() =>
       _SliverAnimatedListDemoState();
@@ -80,12 +82,12 @@ class _SliverAnimatedListDemoState extends State<SliverAnimatedListDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  SizedBox(
       height: 300,
       child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
-                title: Text(
+                title: const Text(
                   'SliverAnimatedList',
                   style: TextStyle(fontSize: 20),
                 ),
@@ -186,8 +188,7 @@ class CardItem extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Item $item',
-                  style: TextStyle(color: Colors.white,fontSize: 16),
-
+                  style: const TextStyle(color: Colors.white,fontSize: 16),
                 ),
               ),
             ),

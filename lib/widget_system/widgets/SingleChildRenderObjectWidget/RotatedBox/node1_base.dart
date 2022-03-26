@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【quarterTurns】 : 旋转多少个90°   【int】",
 //    }
 class CustomRotatedBox extends StatefulWidget {
+  const CustomRotatedBox({Key? key}) : super(key: key);
+
   @override
   _CustomRotatedBoxState createState() => _CustomRotatedBoxState();
 }
@@ -25,7 +27,7 @@ class _CustomRotatedBoxState extends State<CustomRotatedBox> {
       quarterTurns: _quarterTurns,
       child: GestureDetector(
           onTap: () => setState(() => _quarterTurns++),
-          child: Icon(
+          child: const Icon(
             Icons.android,
             size: 60,
             color: Colors.blue,

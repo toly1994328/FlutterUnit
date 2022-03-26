@@ -10,7 +10,7 @@ const int _kSendTimeout = 5000;
 const int _kConnectTimeout = 5000;
 
 class HttpUtil {
-  static HttpUtil _instance = HttpUtil._internal();
+  static final HttpUtil _instance = HttpUtil._internal();
   Dio? _dio;
 
   static const CODE_SUCCESS = 200;

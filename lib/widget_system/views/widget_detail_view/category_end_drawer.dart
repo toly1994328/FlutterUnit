@@ -23,34 +23,33 @@ class CategoryEndDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-          child: ListView(padding: EdgeInsets.zero, children: <Widget>[
+      child: ListView(padding: EdgeInsets.zero, children: <Widget>[
         UnitDrawerHeader(color: Theme.of(context).primaryColor),
         Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            children: <Widget>[
-              Circle(
-                color: widget.color,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(widget.name)
-            ],
+      padding: const EdgeInsets.all(10.0),
+      child: Row(
+        children: <Widget>[
+          Circle(
+            color: widget.color,
           ),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(widget.name)
+        ],
+      ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Panel(
-            child: Text(widget.info, style: TStyleUnit.shadowTextStyle),
-          ),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+      child: Panel(
+        child: Text(widget.info, style: TStyleUnit.shadowTextStyle),
+      ),
         ),
         Divider(),
         _buildTitle(context),
         Divider(),
         CategoryInfo(widget.id)
-      ])),
+      ]),
     );
   }
 

@@ -20,6 +20,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class TweenAnimationBuilderDemo extends StatefulWidget {
+  const TweenAnimationBuilderDemo({Key? key}) : super(key: key);
+
   @override
   _TweenAnimationBuilderDemoState createState() =>
       _TweenAnimationBuilderDemoState();
@@ -32,7 +34,7 @@ class _TweenAnimationBuilderDemoState extends State<TweenAnimationBuilderDemo> {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
       tween: ColorTween(begin: Colors.blue, end: _value),
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
       builder: (BuildContext context, Color? color, Widget? child) {
         return GestureDetector(
           onTap: () {
@@ -43,7 +45,6 @@ class _TweenAnimationBuilderDemoState extends State<TweenAnimationBuilderDemo> {
           child: Container(
             width: 40,
             height: 40,
-
             child: child,
             decoration: BoxDecoration(
               color: color,
@@ -52,7 +53,7 @@ class _TweenAnimationBuilderDemoState extends State<TweenAnimationBuilderDemo> {
           ),
         );
       },
-      child: Icon(
+      child: const Icon(
         Icons.android_outlined,
         color: Colors.white,
       ),

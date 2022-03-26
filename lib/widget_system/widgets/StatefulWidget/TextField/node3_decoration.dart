@@ -20,9 +20,11 @@ import 'package:flutter/material.dart';
 //          "border: 边线相关",
 //    }
 class ComplexTextField extends StatelessWidget {
+  const ComplexTextField({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return const TextField(
         decoration: InputDecoration(
       border: OutlineInputBorder(),
       focusedBorder: OutlineInputBorder(

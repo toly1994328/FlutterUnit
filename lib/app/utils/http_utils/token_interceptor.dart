@@ -19,7 +19,7 @@ class TokenInterceptors<T> extends InterceptorsWrapper {
         onTokenDisabled?.call();
       }
     }
-    if (token != null&&token.isNotEmpty) {
+    if (token.isNotEmpty) {
       options.headers[_kTokenKey] = '$_kTokenPrefix$token';
     }
     return handler.next(options);

@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 class UnderlineTabIndicatorDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return const DecoratedBox(
       decoration: UnderlineTabIndicator(
           insets: EdgeInsets.symmetric(horizontal: 5, vertical: -5),
           borderSide: BorderSide(color: Colors.orange, width: 2)),

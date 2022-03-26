@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../app/utils/color_utils.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
@@ -13,6 +14,8 @@ import '../../../../app/utils/color_utils.dart';
 //          "【colorFilter】 : 滤色器   【ColorFilter】",
 //    }
 class CustomColorFiltered extends StatefulWidget {
+  const CustomColorFiltered({Key? key}) : super(key: key);
+
   @override
   _CustomColorFilteredState createState() => _CustomColorFilteredState();
 }
@@ -31,12 +34,10 @@ class _CustomColorFilteredState extends State<CustomColorFiltered> {
               .map((mode) => Column(
                     children: <Widget>[
                       _buildChild(mode),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      const SizedBox(height: 10),
                       Text(
                         mode.toString().split('.')[1],
-                        style: TextStyle(fontSize: 10),
+                        style: const TextStyle(fontSize: 10),
                       )
                     ],
                   ))
@@ -50,7 +51,8 @@ class _CustomColorFilteredState extends State<CustomColorFiltered> {
         width: 58,
         height: 58,
         child: ColorFiltered(
-            child: Image(image: AssetImage("assets/images/icon_head.webp")),
+            child:
+                const Image(image: AssetImage("assets/images/icon_head.webp")),
             colorFilter: ColorFilter.mode(_color, m)),
       );
 
@@ -61,7 +63,7 @@ class _CustomColorFilteredState extends State<CustomColorFiltered> {
           width: 60,
           height: 60,
           decoration: BoxDecoration(color: _color, shape: BoxShape.circle),
-          child: Text('点我'),
+          child: const Text('点我'),
         ),
       );
 }

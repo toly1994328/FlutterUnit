@@ -101,7 +101,7 @@ class _CountWidgetState extends State<CountWidget> {
               ),
               color: Colors.green,
               shape: const CircleBorder(
-                side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+                side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
               ))
         ],
       ),

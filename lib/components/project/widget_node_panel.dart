@@ -76,7 +76,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
           ),
           Expanded(
             child: Text(
-              '${widget.text}',
+              widget.text,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
@@ -89,7 +89,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
         width: double.infinity,
         child: Panel(
             child: Text(
-          '${widget.subText}',
+          widget.subText,
           style: TextStyle(fontSize: 14),
         )),
       );

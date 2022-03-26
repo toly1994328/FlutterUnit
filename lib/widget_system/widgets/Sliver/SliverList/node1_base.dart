@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 //          "【delegate】 : 孩子代理   【SliverChildDelegate】",
 //    }
 class SliverListDemo extends StatelessWidget {
+  SliverListDemo({Key? key}) : super(key: key);
+
   final List<Color> data =[
     Colors.purple[50]!,
     Colors.purple[100]!,
@@ -26,7 +28,7 @@ class SliverListDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: CustomScrollView(
         slivers: <Widget>[_buildSliverAppBar(), _buildSliverList()],
@@ -43,7 +45,7 @@ class SliverListDemo extends StatelessWidget {
                   color: data[index],
                   child: Text(
                     colorString(data[index]),
-                    style: TextStyle(color: Colors.white, shadows: [
+                    style: const TextStyle(color: Colors.white, shadows: [
                       Shadow(
                           color: Colors.black,
                           offset: Offset(.5, .5),
@@ -58,14 +60,14 @@ class SliverListDemo extends StatelessWidget {
     return SliverAppBar(
       expandedHeight: 190.0,
       leading: _buildLeading(),
-      title: Text('张风捷特烈'),
+      title: const Text('张风捷特烈'),
       actions: _buildActions(),
       elevation: 5,
       pinned: true,
       backgroundColor: Colors.orange,
       flexibleSpace: FlexibleSpaceBar(
         //伸展处布局
-        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        titlePadding: const EdgeInsets.only(left: 55, bottom: 15), //标题边距
         collapseMode: CollapseMode.parallax, //视差效果
         background: Image.asset(
           "assets/images/caver.webp",
@@ -76,13 +78,13 @@ class SliverListDemo extends StatelessWidget {
   }
 
   Widget _buildLeading() => Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Image.asset('assets/images/icon_head.webp'));
 
   List<Widget> _buildActions() => <Widget>[
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.star_border,
             color: Colors.white,
           ),

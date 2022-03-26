@@ -23,7 +23,7 @@ class CustomOverlay extends StatelessWidget {
           child: RawMaterialButton(
             elevation: 2,
             shape: const CircleBorder(
-              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+              side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
             ),
             fillColor: Colors.blue,
             splashColor: Colors.orange,
@@ -37,7 +37,7 @@ class CustomOverlay extends StatelessWidget {
           child: RawMaterialButton(
             elevation: 2,
             shape: CircleBorder(
-              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+              side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
             ),
             fillColor: Colors.red,
             splashColor: Colors.orange,

@@ -16,12 +16,14 @@ import 'package:flutter/material.dart';
 //          "【builder】 : 点击事件  【AsyncWidgetBuilder<T>】",
 //    }
 class CustomStreamBuilder extends StatefulWidget {
+  const CustomStreamBuilder({Key? key}) : super(key: key);
+
   @override
   _CustomStreamBuilderState createState() => _CustomStreamBuilderState();
 }
 
 class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
-  CountGenerator _generator = CountGenerator()..increment();
+  final CountGenerator _generator = CountGenerator()..increment();
 
   @override
   void dispose() {
@@ -31,39 +33,37 @@ class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          FlatButton(
-            color: Colors.blue,
-            shape: CircleBorder(
-              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
-            ),
-            child: Icon(
-              Icons.add,
-              color: Colors.white,
-            ),
-            onPressed: () async {
-              await _generator.increment();
-            },
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        FlatButton(
+          color: Colors.blue,
+          shape: const CircleBorder(
+            side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
           ),
-          _buildStreamBuilder(),
-          FlatButton(
-            color: Colors.blue,
-            shape: CircleBorder(
-              side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
-            ),
-            child: Icon(
-              Icons.remove,
-              color: Colors.white,
-            ),
-            onPressed: () async {
-              await _generator.minus();
-            },
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
           ),
-        ],
-      ),
+          onPressed: () async {
+            await _generator.increment();
+          },
+        ),
+        _buildStreamBuilder(),
+        FlatButton(
+          color: Colors.blue,
+          shape: const CircleBorder(
+            side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+          ),
+          child: const Icon(
+            Icons.remove,
+            color: Colors.white,
+          ),
+          onPressed: () async {
+            await _generator.minus();
+          },
+        ),
+      ],
     );
   }
 
@@ -72,7 +72,7 @@ class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
       builder: (BuildContext context, AsyncSnapshot snap) {
         print(snap);
         if (snap.connectionState == ConnectionState.done) {
-          return Text('Done');
+          return const Text('Done');
         }
         if (snap.connectionState == ConnectionState.active) {
           return Text(
@@ -81,10 +81,10 @@ class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
           );
         }
         if (snap.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
         if (snap.hasError) {
-          return Text('Error');
+          return const Text('Error');
         }
         return Container();
       });

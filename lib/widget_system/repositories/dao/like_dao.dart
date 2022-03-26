@@ -55,7 +55,7 @@ class LikeDao {
         "Select count(id) as `count` FROM like_widget "
         "WHERE widget_id = ?",
         [widgetId]);
-    if (data.length > 0) {
+    if (data.isNotEmpty) {
       var result = data[0];
       return result['count'] as int > 0;
     }

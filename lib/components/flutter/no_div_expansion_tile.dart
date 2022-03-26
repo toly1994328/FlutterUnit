@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 
 const Duration _kExpand = Duration(milliseconds: 200);
@@ -37,8 +36,7 @@ class NoBorderExpansionTile extends StatefulWidget {
     this.children = const <Widget>[],
     this.trailing,
     this.initiallyExpanded = false,
-  }) : assert(initiallyExpanded != null),
-        super(key: key);
+  }) : super(key: key);
 
   /// A widget to display before the title.
   ///

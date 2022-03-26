@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】",
 //    }
 class CustomFractionallySizedBox extends StatefulWidget {
+  const CustomFractionallySizedBox({Key? key}) : super(key: key);
+
   @override
   _CustomFractionallySizedBoxState createState() =>
       _CustomFractionallySizedBoxState();
@@ -21,12 +23,12 @@ class CustomFractionallySizedBox extends StatefulWidget {
 
 class _CustomFractionallySizedBoxState
     extends State<CustomFractionallySizedBox> {
-  var _hf = 0.5;
-  var _wf = 0.4;
+  double _hf = 0.5;
+  double _wf = 0.4;
 
   @override
   Widget build(BuildContext context) {
-    var box = FractionallySizedBox(
+    Widget box = FractionallySizedBox(
       widthFactor: _wf,
       heightFactor: _hf,
       alignment: Alignment.center,

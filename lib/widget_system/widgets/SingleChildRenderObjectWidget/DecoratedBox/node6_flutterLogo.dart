@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 class FlutterLogoDecorationDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return const DecoratedBox(
       decoration: FlutterLogoDecoration(
 //          darkColor: Colors.orange,
 //          lightColor: Colors.deepPurpleAccent,

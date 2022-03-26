@@ -17,12 +17,19 @@ import 'package:flutter/material.dart';
 //          "  onChanged时,回调true、null、false三种状态",
 //    }
 class CustomSwitch extends StatefulWidget {
+  const CustomSwitch({Key? key}) : super(key: key);
+
   @override
   _CustomSwitchState createState() => _CustomSwitchState();
 }
 
 class _CustomSwitchState extends State<CustomSwitch> {
-  final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
+  final List<Color> colors = const[
+    Colors.red,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green
+  ];
   bool _checked = false;
 
   @override
@@ -30,8 +37,7 @@ class _CustomSwitchState extends State<CustomSwitch> {
     return Wrap(
       spacing: 10,
       children: colors
-          .map((e) =>
-          Switch(
+          .map((e) => Switch(
               value: _checked,
               inactiveThumbColor: e,
               inactiveTrackColor: Colors.grey.withAlpha(88),

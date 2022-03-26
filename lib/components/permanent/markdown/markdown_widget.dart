@@ -111,10 +111,10 @@ class MarkdownWidget extends StatelessWidget {
     String mdDataCode = markdownData;
     try {
       Iterable<Match> tags = exp.allMatches(markdownData);
-      if (tags != null && tags.length > 0) {
+      if (tags.isNotEmpty) {
         for (Match m in tags) {
           String imageMatch = m.group(0)??'';
-          if (imageMatch != null && !imageMatch.contains(".svg")) {
+          if (!imageMatch.contains(".svg")) {
             String match = imageMatch.replaceAll("\)", "?raw=true)");
             if (!match.contains(".svg") && match.contains("http")) {
               ///增加点击
@@ -133,20 +133,18 @@ class MarkdownWidget extends StatelessWidget {
 
       ///优化img标签的src资源
       tags = expImg.allMatches(markdownData);
-      if (tags != null && tags.length > 0) {
+      if (tags.isNotEmpty) {
         for (Match m in tags) {
           String imageTag = m.group(0)??'';
           String match = imageTag;
-          if (imageTag != null) {
-            Iterable<Match> srcTags = expSrc.allMatches(imageTag);
-            for (Match srcMatch in srcTags) {
-              String srcString = srcMatch.group(0)??'';
-              if (srcString != null && srcString.contains("http")) {
-                String newSrc = srcString.substring(
-                        srcString.indexOf("http"), srcString.length - 1) +
-                    "?raw=true";
-                match = "[![]($newSrc)]($newSrc)";
-              }
+          Iterable<Match> srcTags = expSrc.allMatches(imageTag);
+          for (Match srcMatch in srcTags) {
+            String srcString = srcMatch.group(0)??'';
+            if (srcString.contains("http")) {
+              String newSrc = srcString.substring(
+                      srcString.indexOf("http"), srcString.length - 1) +
+                  "?raw=true";
+              match = "[![]($newSrc)]($newSrc)";
             }
           }
           mdDataCode = mdDataCode.replaceAll(imageTag, match);

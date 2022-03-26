@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:stream_transform/stream_transform.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
@@ -28,7 +26,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       emit(SearchStateLoading());
       try {
         final results = await repository.searchWidgets(event.args);
-        results.length == 0
+        results.isEmpty
             ? emit(SearchStateEmpty())
             : emit(SearchStateSuccess(results));
       } catch (error) {

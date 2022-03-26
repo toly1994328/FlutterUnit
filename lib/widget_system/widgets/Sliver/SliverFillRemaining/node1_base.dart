@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
@@ -16,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【child】 : 子组件   【Widget】",
 //    }
 class SliverFillRemainingDemo extends StatefulWidget {
+  const SliverFillRemainingDemo({Key? key}) : super(key: key);
+
   @override
   _SliverFillRemainingDemoState createState() =>
       _SliverFillRemainingDemoState();
@@ -42,10 +42,10 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: CustomScrollView(
-        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
         slivers: <Widget>[
           _buildSliverAppBar(),
           _buildSliverList(),
@@ -53,7 +53,7 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
             hasScrollBody: hasScrollBody,
             fillOverscroll: fillOverscroll,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage("assets/images/sabar_bar.webp"))),
@@ -130,7 +130,7 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
       pinned: true,
       backgroundColor: Colors.orange,
       flexibleSpace: FlexibleSpaceBar(
-        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        titlePadding: const EdgeInsets.only(left: 55, bottom: 15), //标题边距
         collapseMode: CollapseMode.parallax, //视差效果
         background: Image.asset(
           "assets/images/caver.webp",
@@ -143,7 +143,7 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
   List<Widget> _buildActions() => <Widget>[
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.star_border,
             color: Colors.white,
           ),

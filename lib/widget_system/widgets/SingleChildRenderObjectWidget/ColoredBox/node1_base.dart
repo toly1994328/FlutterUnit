@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
@@ -14,22 +13,23 @@ import 'package:flutter/material.dart';
 //    }
 
 class ColoredBoxDemo extends StatelessWidget {
+  const ColoredBoxDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
       color: Colors.red,
       child: Container(
-        margin: EdgeInsets.all(20),
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           color: Colors.blue
         ),
           alignment: Alignment.center,
           width: 250,
           height: 100,
-          // color: Theme.of(context).primaryColor,
-          child: Text(
+          child: const Text(
             "蓝色是加了 margin 和圆角的 Container，外层包裹红色的 ColoredBox，注意作用范围。",
             style: TextStyle(color: Colors.white),
           ),

@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【onChangeEnd】 : 滑动结束时监听   【Function(double)】",
 //    }
 class DivisionsSlider extends StatefulWidget {
+  const DivisionsSlider({Key? key}) : super(key: key);
+
   @override
   _DivisionsSliderState createState() => _DivisionsSliderState();
 }
@@ -28,7 +30,7 @@ class _DivisionsSliderState extends State<DivisionsSlider> {
         min: 0.0,
         max: 360.0,
         divisions: 10,
-        label: '${_value.toStringAsFixed(1)}',
+        label: _value.toStringAsFixed(1),
         activeColor: Colors.orangeAccent,
         inactiveColor: Colors.green.withAlpha(99),
         onChangeStart: (value) {
