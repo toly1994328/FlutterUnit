@@ -19,12 +19,14 @@ import '../../../../components/project/dialogs/dialog_about.dart';
 
 
 class CustomActionChip extends StatelessWidget {
+  const CustomActionChip({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ActionChip(
-      padding: EdgeInsets.all(5),
-      labelPadding: EdgeInsets.all(3),
-      label: Text("This is a ActionChip."),
+      padding: const EdgeInsets.all(5),
+      labelPadding: const EdgeInsets.all(3),
+      label: const Text("This is a ActionChip."),
       backgroundColor: Colors.grey.withAlpha(66),
       avatar: Image.asset("assets/images/icon_head.webp"),
       shadowColor: Colors.orangeAccent,

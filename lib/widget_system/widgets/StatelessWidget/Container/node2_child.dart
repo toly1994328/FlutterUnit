@@ -13,16 +13,18 @@
 import 'package:flutter/material.dart';
 
 class ContainerWithChild extends StatelessWidget {
+  const ContainerWithChild({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(10),
       width: 200,
       height: 200 * 0.618,
       color: Colors.grey.withAlpha(88),
-      child: Icon(Icons.android),
+      child: const Icon(Icons.android),
     );
   }
 }

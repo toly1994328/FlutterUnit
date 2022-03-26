@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【onPressed】 : 点击事件  【Function()】",
 //    }
 class CustomSimpleDialogOption extends StatelessWidget {
+  const CustomSimpleDialogOption({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,21 +22,21 @@ class CustomSimpleDialogOption extends StatelessWidget {
           alignment: Alignment.center,
           width: double.infinity,
           height: 50,
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           color: Colors.grey.withAlpha(33),
           child: SimpleDialogOption(
               onPressed: () => Navigator.of(context).pushNamed('AboutMePage'),
-              child: Text('张风捷特烈')),
+              child: const Text('张风捷特烈')),
         ),
         Container(
           height: 50,
           alignment: Alignment.center,
           width: double.infinity,
           color: Colors.grey.withAlpha(33),
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           child: SimpleDialogOption(
               onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'),
-              child: Text('百里·巫缨')),
+              child: const Text('百里·巫缨')),
         ),
       ],
     );

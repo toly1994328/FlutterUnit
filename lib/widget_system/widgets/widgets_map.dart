@@ -14,12 +14,12 @@ class WidgetsMap {
     switch (name) {
       case "Container":
         return [
-          CustomContainer(),
-          ContainerWithChild(),
-          ContainerAlignment(),
+          const CustomContainer(),
+          const ContainerWithChild(),
+          const ContainerAlignment(),
           ContainerDecoration(),
-          ContainerTransform(),
-          ContainerConstraints()
+          const ContainerTransform(),
+          const ContainerConstraints()
         ];
       case "CupertinoSegmentedControl":
         return [
@@ -38,27 +38,27 @@ class WidgetsMap {
            PrimaryScrollControllerDemo(),
         ];case "CupertinoFullscreenDialogTransition":
         return [
-          CupertinoFullscreenDialogTransitionDemo(),
+          const CupertinoFullscreenDialogTransitionDemo(),
         ];case "CupertinoPageTransition":
         return [
-          CupertinoPageTransitionDemo(),
+          const CupertinoPageTransitionDemo(),
         ];case "HtmlElementView":
         return [
-          HtmlElementViewDemo(),
+          const HtmlElementViewDemo(),
         ];
       case "Text":
         return [
-          CustomText(),
-          ShadowText(),
-          DecorationText(),
-          TextAlignText(),
-          TextDirectionText(),
-          SoftWrapText()
+          const CustomText(),
+          const ShadowText(),
+          const DecorationText(),
+          const TextAlignText(),
+          const TextDirectionText(),
+          const SoftWrapText()
         ];
       case "Card":
         return [
-          CustomCard(),
-          ShapeCard(),
+          const CustomCard(),
+          const ShapeCard(),
         ];
       case "ElevatedButton":
         return [
@@ -77,8 +77,8 @@ class WidgetsMap {
         ];
       case "FlutterLogo":
         return [
-          CustomFlutterLogo(),
-          FlutterLogoWithText(),
+          const CustomFlutterLogo(),
+          const FlutterLogoWithText(),
         ];
       case "Banner":
         return [
@@ -124,7 +124,7 @@ class WidgetsMap {
         ];
       case "ModalBarrier":
         return [
-          ModalBarrierDemo(),
+          const ModalBarrierDemo(),
         ];
       case "AnimatedModalBarrier":
         return [
@@ -152,7 +152,7 @@ class WidgetsMap {
         ];
       case "ScrollView":
         return [
-          ScrollViewDemo(),
+          const ScrollViewDemo(),
         ];
       case "SliverWithKeepAliveWidget":
         return [
@@ -160,7 +160,7 @@ class WidgetsMap {
         ];
       case "BoxScrollView":
         return [
-          BoxScrollViewDemo(),
+          const BoxScrollViewDemo(),
         ];
       case "CupertinoUserInterfaceLevel":
         return [
@@ -224,7 +224,7 @@ class WidgetsMap {
         ];
       case "SafeArea":
         return [
-          SafeAreaDemo(),
+          const SafeAreaDemo(),
         ];
       case "AnimatedBuilder":
         return [
@@ -240,10 +240,10 @@ class WidgetsMap {
         ];
       case "PageStorage":
         return [
-          PageStorageDemo(),
+          const PageStorageDemo(),
         ];
       case "NotificationListener":
-        return [NotificationListenerDemo(), NotificationListenerUpdate()];
+        return [const NotificationListenerDemo(), const NotificationListenerUpdate()];
 
       case "Scrollable":
         return [
@@ -296,19 +296,19 @@ class WidgetsMap {
         ];
       case "TabPageSelector":
         return [
-          TabPageSelectorDemo(),
+          const TabPageSelectorDemo(),
         ];
       case "CupertinoNavigationBarBackButton":
         return [
-          CupertinoNavigationBarBackButtonDemo(),
+          const CupertinoNavigationBarBackButtonDemo(),
         ];
       case "TabPageSelectorIndicator":
         return [
-          TabPageSelectorIndicatorDemo(),
+          const TabPageSelectorIndicatorDemo(),
         ];
       case "Title":
         return [
-          TitleDemo(),
+          const TitleDemo(),
         ];
       case "ToggleButtonsTheme":
         return [
@@ -320,11 +320,11 @@ class WidgetsMap {
         ];
       case "NavigationToolbar":
         return [
-          NavigationToolbarDemo(),
+          const NavigationToolbarDemo(),
         ];
       case "CupertinoDialogAction":
         return [
-          CupertinoDialogActionDemo(),
+          const CupertinoDialogActionDemo(),
         ];
       case "ButtonBarTheme":
         return [
@@ -345,25 +345,25 @@ class WidgetsMap {
         ];
       case "MaterialBanner":
         return [
-          MaterialBannerDemo(),
-          MaterialBannerDemoTwo(),
+          const MaterialBannerDemo(),
+          const MaterialBannerDemoTwo(),
         ];
       case "OrientationBuilder":
         return [
-          OrientationBuilderDemo(),
+          const OrientationBuilderDemo(),
         ];
       case "Icon":
         return [
-          CustomIcon(),
-          MyIcon(),
+          const CustomIcon(),
+          const MyIcon(),
         ];
       case "ImageIcon":
         return [
-          CustomImageIcon(),
+          const CustomImageIcon(),
         ];
       case "FadeInImage":
         return [
-          CustomFadeInImage(),
+          const CustomFadeInImage(),
         ];
       case "InteractiveViewer":
         return [
@@ -373,7 +373,7 @@ class WidgetsMap {
         ];
       case "CircleAvatar":
         return [
-          CustomCircleAvatar(),
+          const CustomCircleAvatar(),
         ];
       case "SliverLayoutBuilder":
         return [
@@ -381,8 +381,8 @@ class WidgetsMap {
         ];
       case "Visibility":
         return [
-          CustomVisibility(),
-          ReplacementVisibility(),
+          const CustomVisibility(),
+          const ReplacementVisibility(),
         ];
       case "RepaintBoundary":
         return [
@@ -391,26 +391,26 @@ class WidgetsMap {
         ];
       case "Chip":
         return [
-          CustomChip(),
-          ColorOfChip(),
-          DeleteOfChip(),
+          const CustomChip(),
+          const ColorOfChip(),
+          const DeleteOfChip(),
         ];
       case "ChoiceChip":
-        return [CustomChoiceChip()];
+        return [const CustomChoiceChip()];
       case "ListTileTheme":
         return [ListTileThemeDemo()];
       case "ValueListenableBuilder":
         return [ValueListenableBuilderDemo()];
       case "ActionChip":
-        return [CustomActionChip()];
+        return [const CustomActionChip()];
       case "MaterialBannerTheme":
         return [MaterialBannerThemeDemo()];
       case "PopupMenuTheme":
         return [PopupMenuThemeDemo()];
       case "InputChip":
-        return [PressInputChip(), SelectInputChip()];
+        return [const PressInputChip(), const SelectInputChip()];
       case "FilterChip":
-        return [CustomFilterChip()];
+        return [const CustomFilterChip()];
       case "IntrinsicHeight":
         return [IntrinsicHeightDemo()];
       case "IntrinsicWidth":
@@ -418,67 +418,67 @@ class WidgetsMap {
       case "ChipTheme":
         return [ChipThemeDemo()];
       case "ListTile":
-        return [CustomListTile(), SelectListTile(), DenseListTile()];
+        return [const CustomListTile(), const SelectListTile(), const DenseListTile()];
       case "CheckboxListTile":
         return [
-          CustomCheckBoxListTile(),
-          SelectCheckBoxListTile(),
-          DenseCheckBoxListTile()
+          const CustomCheckBoxListTile(),
+          const SelectCheckBoxListTile(),
+          const DenseCheckBoxListTile()
         ];
       case "SwitchListTile":
         return [
-          CustomSwitchListTile(),
-          SelectSwitchListTile(),
-          DenseSwitchListTile()
+          const CustomSwitchListTile(),
+          const SelectSwitchListTile(),
+          const DenseSwitchListTile()
         ];
 
       case "RadioListTile":
         return [
-          CustomRadioListTile(),
-          DenseRadioListTile(),
+          const CustomRadioListTile(),
+          const DenseRadioListTile(),
         ];
 
       case "GridTileBar":
         return [
-          CustomGridTileBar(),
+          const CustomGridTileBar(),
         ];
 
       case "GridTile":
         return [
-          CustomGridTile(),
+          const CustomGridTile(),
         ];
       case "UserAccountsDrawerHeader":
         return [
-          CustomUAGHP(),
-          ProUAGHP(),
+          const CustomUAGHP(),
+          const ProUAGHP(),
         ];
 
       case "MaterialButton":
         return [
-          CustomMaterialButton(),
-          LongPressMaterialButton(),
-          ShapeMaterialButton(),
+          const CustomMaterialButton(),
+          const LongPressMaterialButton(),
+          const ShapeMaterialButton(),
         ];
       case "CupertinoButton":
         return [CustomCupertinoButton()];
       case "FlatButton":
-        return [CustomFlatButton()];
+        return [const CustomFlatButton()];
       case "RaisedButton":
-        return [CustomRaisedButton()];
+        return [const CustomRaisedButton()];
       case "OutlineButton":
-        return [CustomOutlineButton()];
+        return [const CustomOutlineButton()];
       case "FloatingActionButton":
-        return [CustomFAB(), MiniFAB(), ShapeFAB()];
+        return [const CustomFAB(), const MiniFAB(), const ShapeFAB()];
 
       case "ButtonBar":
         return [
-          CustomButtonBar(),
-          PaddingButtonBar(),
+          const CustomButtonBar(),
+          const PaddingButtonBar(),
         ];
 
       case "IconButton":
         return [
-          CustomIconButton(),
+          const CustomIconButton(),
         ];
       case "BackButton":
         return [
@@ -487,19 +487,19 @@ class WidgetsMap {
 
       case "CloseButton":
         return [
-          CustomCloseButton(),
+          const CustomCloseButton(),
         ];
       case "ToggleButtons":
         return [
-          CustomToggleButtons(),
-          ColorToggleButtons(),
-          ProToggleButtons(),
+          const CustomToggleButtons(),
+          const ColorToggleButtons(),
+          const ProToggleButtons(),
         ];
       case "ToggleButtons":
         return [
-          CustomToggleButtons(),
-          ColorToggleButtons(),
-          ProToggleButtons(),
+          const CustomToggleButtons(),
+          const ColorToggleButtons(),
+          const ProToggleButtons(),
         ];
       case "NestedScrollView":
         return [
@@ -515,23 +515,23 @@ class WidgetsMap {
         ];
       case "Divider":
         return [
-          CustomDivider(),
-          HeightDivider(),
+          const CustomDivider(),
+          const HeightDivider(),
         ];
       case "VerticalDivider":
         return [
-          CustomVerticalDivider(),
-          HeightVerticalDivider(),
+          const CustomVerticalDivider(),
+          const HeightVerticalDivider(),
         ];
       case "Placeholder":
         return [
-          CustomPlaceholder(),
-          FallbackPlaceholder(),
+          const CustomPlaceholder(),
+          const FallbackPlaceholder(),
         ];
       case "GridPager":
         return [
-          CustomGridPage(),
-          DivisionsGridPage(),
+          const CustomGridPage(),
+          const DivisionsGridPage(),
         ];
       case "Image":
         return [
@@ -617,7 +617,7 @@ class WidgetsMap {
         ];
       case "CheckedModeBanner":
         return [
-          CheckedModeBannerDemo(),
+          const CheckedModeBannerDemo(),
         ];
       case "DefaultTabController":
         return [
@@ -633,7 +633,7 @@ class WidgetsMap {
         ];
       case "DraggableScrollableActuator":
         return [
-          DraggableScrollableActuatorDemo(),
+          const DraggableScrollableActuatorDemo(),
         ];
       case "GlowingOverscrollIndicator":
         return [
@@ -682,8 +682,8 @@ class WidgetsMap {
         ];
       case "TabBar":
         return [
-          CustomTabBar(),
-          NoShadowTabBarDemo(),
+          const CustomTabBar(),
+          const NoShadowTabBarDemo(),
         ];
       case "TabBarView":
         return [
@@ -876,7 +876,7 @@ class WidgetsMap {
       case "DataTable":
         return [
           CustomDataTable(),
-          SortDataTable(),
+          const SortDataTable(),
         ];
       case "Draggable":
         return [
@@ -898,8 +898,8 @@ class WidgetsMap {
         ];
       case "Spacer":
         return [
-          OneSpacer(),
-          ManySpacer(),
+          const OneSpacer(),
+          const ManySpacer(),
         ];
       case "Positioned":
         return [
@@ -971,43 +971,43 @@ class WidgetsMap {
         ];
       case "AnimatedIcon":
         return [
-          CustomAnimatedIcon(),
+          const CustomAnimatedIcon(),
         ];
       case "Dialog":
         return [
-          CustomDialog(),
+          const CustomDialog(),
         ];
       case "AlertDialog":
         return [
-          CustomAlertDialog(),
+          const CustomAlertDialog(),
         ];
       case "SimpleDialog":
         return [
-          CustomSimpleDialog(),
+          const CustomSimpleDialog(),
         ];
       case "CupertinoAlertDialog":
         return [
-          CustomCupertinoAlertDialog(),
+          const CustomCupertinoAlertDialog(),
         ];
       case "AboutDialog":
         return [
-          CustomAboutDialog(),
+          const CustomAboutDialog(),
         ];
       case "CupertinoActionSheet":
         return [
-          CustomCupertinoActionSheet(),
+          const CustomCupertinoActionSheet(),
         ];
       case "CupertinoActionSheetAction":
         return [
-          CustomCupertinoActionSheetAction(),
+          const CustomCupertinoActionSheetAction(),
         ];
       case "SimpleDialogOption":
         return [
-          CustomSimpleDialogOption(),
+          const CustomSimpleDialogOption(),
         ];
       case "DayPicker":
         return [
-          CustomDayPicker(),
+          const CustomDayPicker(),
         ];
       case "MonthPicker":
         return [
@@ -1031,15 +1031,15 @@ class WidgetsMap {
         ];
       case "SnackBar":
         return [
-          CustomSnackBar(),
+          const CustomSnackBar(),
         ];
       case "SnackBarAction":
         return [
-          CustomSnackBarAction(),
+          const CustomSnackBarAction(),
         ];
       case "BottomSheet":
         return [
-          CustomBottomSheet(),
+          const CustomBottomSheet(),
         ];
       case "CupertinoContextMenu":
         return [
@@ -1055,26 +1055,26 @@ class WidgetsMap {
         ];
       case "Builder":
         return [
-          BuilderDemo(),
+          const BuilderDemo(),
         ];
       case "GestureDetector":
         return [
-          CustomGestureDetector(),
-          TapGestureDetector(),
-          PanGestureDetector(),
+          const CustomGestureDetector(),
+          const TapGestureDetector(),
+          const PanGestureDetector(),
         ];
       case "Listener":
         return [
-          CustomListener(),
+          const CustomListener(),
         ];
       case "Tab":
         return [
-          CustomTab(),
+          const CustomTab(),
         ];
       case "PreferredSize":
         return [
-          CustomPreferredSize(),
-          AdapterPreferredSize(),
+          const CustomPreferredSize(),
+          const AdapterPreferredSize(),
         ];
       case "InkResponse":
         return [
@@ -1102,11 +1102,11 @@ class WidgetsMap {
         ];
       case "Drawer":
         return [
-          CustomDrawer(),
+          const CustomDrawer(),
         ];
       case "DrawerHeader":
         return [
-          CustomDrawerHeader(),
+          const CustomDrawerHeader(),
         ];
       case "CupertinoApp":
         return [
@@ -1122,7 +1122,7 @@ class WidgetsMap {
         ];
       case "PositionedDirectional":
         return [
-          CustomPositionedDirectional(),
+          const CustomPositionedDirectional(),
         ];
       case "Material":
         return [
@@ -1168,9 +1168,9 @@ class WidgetsMap {
           CustomMediaQuery(),
         ];
       case "Theme":
-        return [TextThemeDemo(), CustomTheme()];
+        return [const TextThemeDemo(), const CustomTheme()];
       case "CupertinoTheme":
-        return [TextCupertinoTheme(), CustomCupertinoTheme()];
+        return [const TextCupertinoTheme(), const CustomCupertinoTheme()];
       case "WillPopScope":
         return [
           CustomWillPopScope(),
@@ -1268,7 +1268,7 @@ class WidgetsMap {
         ];
       case "AboutListTile":
         return [
-          AboutListTileDemo(),
+          const AboutListTileDemo(),
         ];
       case "Scrollbar":
         return [

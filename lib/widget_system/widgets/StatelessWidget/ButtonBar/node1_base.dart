@@ -14,6 +14,8 @@ import '../../../../components/project/dialogs/dialog_about.dart';
 
 
 class CustomButtonBar extends StatelessWidget {
+  const CustomButtonBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ButtonBar(
@@ -21,15 +23,15 @@ class CustomButtonBar extends StatelessWidget {
       children: <Widget>[
         RaisedButton(
             color: Colors.blue,
-            child: Text("Raised"),
+            child: const Text("Raised"),
             onPressed: () => DialogAbout.show(context)),
         OutlineButton(
-            child: Text("Outline"),
+            child: const Text("Outline"),
             onPressed: () => DialogAbout.show(context)),
         FlatButton(
           color: Colors.blue,
           onPressed: () => DialogAbout.show(context),
-          child: Text("Flat"),
+          child: const Text("Flat"),
         )
       ],
     );

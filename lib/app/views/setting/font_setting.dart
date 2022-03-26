@@ -13,6 +13,8 @@ import 'package:flutter_unit/components/permanent/circle.dart';
 /// 说明:
 
 class FontSettingPage extends StatelessWidget {
+  const FontSettingPage({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

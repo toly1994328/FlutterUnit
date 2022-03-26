@@ -17,12 +17,14 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomListener extends StatefulWidget {
+  const CustomListener({Key? key}) : super(key: key);
+
   @override
   _CustomListenerState createState() => _CustomListenerState();
 }
 
 class _CustomListenerState extends State<CustomListener> {
-  var _info = '';
+  String _info = '';
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class _CustomListenerState extends State<CustomListener> {
         color: Colors.grey.withAlpha(33),
         child: Text(
           _info,
-          style: TextStyle(fontSize: 16, color: Colors.blue),
+          style: const TextStyle(fontSize: 16, color: Colors.blue),
         ),
       ),
     );

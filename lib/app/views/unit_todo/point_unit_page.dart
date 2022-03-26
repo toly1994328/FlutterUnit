@@ -8,9 +8,13 @@ import 'package:flutter_unit/components/permanent/text_typer.dart';
 
 
 class BugUnitPage extends StatelessWidget {
-  final info = '【Flutter要点集录】是Unit项目计划的第二阶段的功能之一。'
+  const BugUnitPage({Key? key}) : super(key: key);
+
+
+  final String info = '【Flutter要点集录】是Unit项目计划的第二阶段的功能之一。'
       '将收录Flutter的常见异常及解决方案，也可以是Flutter中的特点或注意点，'
       '以供学习参考。本集录将支持异常/特色征集，愿开发者共同集录。';
+
 
   @override
   Widget build(BuildContext context) {

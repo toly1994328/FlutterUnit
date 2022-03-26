@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【future】 : 异步任务  【Future<T>】",
 //    }
 class CustomFutureBuilder extends StatefulWidget {
+  const CustomFutureBuilder({Key? key}) : super(key: key);
+
   @override
   _CustomFutureBuilderState createState() => _CustomFutureBuilderState();
 }
@@ -28,27 +30,25 @@ class _CustomFutureBuilderState extends State<CustomFutureBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: FutureBuilder(
-          initialData: 'Load',
-          future: _future,
-          builder: (ctx, snap) {
-            if (snap.connectionState == ConnectionState.done) {
-              return Text('${snap.data}');
-            }
-            if (snap.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
-            }
-            if (snap.hasError) {
-              return Text('Error');
-            }
-            return Container();
-          }),
-    );
+    return FutureBuilder(
+        initialData: 'Load',
+        future: _future,
+        builder: (ctx, snap) {
+          if (snap.connectionState == ConnectionState.done) {
+            return Text('${snap.data}');
+          }
+          if (snap.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          }
+          if (snap.hasError) {
+            return const Text('Error');
+          }
+          return Container();
+        });
   }
 
   Future<String> loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     return 'LoadeSuccess';
   }
 }

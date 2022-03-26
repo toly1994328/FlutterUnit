@@ -17,11 +17,11 @@ class CouponWidgetListItem extends StatelessWidget {
   final bool hasBottomHole;
   final bool isClip;
 
-  CouponWidgetListItem(
-      {required this.data,
+  const CouponWidgetListItem(
+      {Key? key, required this.data,
       this.hasTopHole = true,
       this.hasBottomHole = false,
-      this.isClip = true});
+      this.isClip = true}) : super(key: key);
 
   final List<Color> colors = Cons.tabColors;
 

@@ -15,7 +15,7 @@ import 'package:flutter_unit/components/permanent/color_wrapper.dart';
 class IssueItem extends StatelessWidget {
   final Issue issue;
 
-  IssueItem({required this.issue});
+  const IssueItem({Key? key, required this.issue}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -17,6 +17,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomCupertinoButton extends StatelessWidget {
+  CustomCupertinoButton({Key? key}) : super(key: key);
 
   final Map<Color,double> data = {
     CupertinoColors.activeBlue:4.0,
@@ -24,9 +25,9 @@ class CustomCupertinoButton extends StatelessWidget {
     CupertinoColors.activeOrange:8.0,
   };
 
+
   @override
   Widget build(BuildContext context) {
-
     return Wrap(
       spacing: 20,
       children:data.keys.map((e)=> CupertinoButton(
@@ -35,7 +36,7 @@ class CustomCupertinoButton extends StatelessWidget {
         color: e,
         pressedOpacity: 0.4,
         borderRadius:  BorderRadius.all(Radius.circular(data[e]!)),
-        child: Text("iOS"),
+        child: const Text("iOS"),
       )).toList()
     );
   }

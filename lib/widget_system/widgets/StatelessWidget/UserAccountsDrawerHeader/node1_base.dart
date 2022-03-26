@@ -15,24 +15,29 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomUAGHP extends StatelessWidget {
+  const CustomUAGHP({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width / 3 * 2,
       child: UserAccountsDrawerHeader(
         accountName: Container(
           padding: const EdgeInsets.all(8.0),
-          child: Text(
+          child: const Text(
             "张风捷特烈",
             style:
-            TextStyle(color: Colors.orangeAccent, fontSize: 22, shadows: [
+                TextStyle(color: Colors.orangeAccent, fontSize: 22, shadows: [
               Shadow(
-                  color: Colors.black, offset: Offset(.5, .5), blurRadius: 2),
+                color: Colors.black,
+                offset: Offset(.5, .5),
+                blurRadius: 2,
+              ),
             ]),
           ),
         ),
-        accountEmail: Padding(
-          padding: const EdgeInsets.all(8.0),
+        accountEmail: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text("1981462002@qq.com",
               style: TextStyle(color: Colors.white, fontSize: 14, shadows: [
                 Shadow(
@@ -43,11 +48,11 @@ class CustomUAGHP extends StatelessWidget {
         ),
         currentAccountPicture: Container(
           padding: const EdgeInsets.all(15.0),
-          child: CircleAvatar(
+          child: const CircleAvatar(
             backgroundImage: AssetImage("assets/images/icon_head.webp"),
           ),
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage("assets/images/caver.webp")),
         ),
       ),

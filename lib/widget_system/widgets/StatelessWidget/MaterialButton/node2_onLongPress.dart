@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class LongPressMaterialButton extends StatelessWidget {
+  const LongPressMaterialButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -21,8 +23,8 @@ class LongPressMaterialButton extends StatelessWidget {
         color: Colors.blue,
         highlightColor: Colors.green,
         textColor: Colors.white,
-        padding: EdgeInsets.all(8),
-        child: Text("MaterialButton"),
+        padding: const EdgeInsets.all(8),
+        child: const Text("MaterialButton"),
         onLongPress: () =>  Navigator.of(context).pushNamed('AboutMePage'),
         onPressed: () => Navigator.of(context).pushNamed('AboutMePage'));
   }

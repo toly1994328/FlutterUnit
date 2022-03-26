@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com
 /// 说明:
-
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/app/router/router_utils.dart';
+import 'package:flutter_unit/app/views/time_line/flutter_unit_time_line.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
@@ -22,27 +23,28 @@ class AboutAppPage extends StatelessWidget {
           Container(
             child: Stack(
               children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.only(bottom: 50),
-                      child: Image.asset(
-                        'assets/images/sabar.webp',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
+                Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.only(bottom: 50),
+                  child: Image.asset(
+                    'assets/images/sabar.webp',
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 _buildBar(context),
                 Positioned(
                     bottom: 0,
                     left: 50,
-                    child: CircleImage(
-                      size: 100,
-                      shadowColor: Theme.of(context).primaryColor,
-                      image: AssetImage('assets/images/icon_head.webp'),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, Right2LeftRouter(child: FlutterUnitTimeLine()));
+                      },
+                      child: CircleImage(
+                        size: 100,
+                        shadowColor: Theme.of(context).primaryColor,
+                        image: AssetImage('assets/images/icon_head.webp'),
+                      ),
                     )),
               ],
             ),
@@ -151,10 +153,10 @@ class AboutAppPage extends StatelessWidget {
             ),
             InfoPanel(
               title: '项目简介',
-              info:          '      Flutter Unit 是一个非盈利性的开源项目，'
+              info: '      Flutter Unit 是一个非盈利性的开源项目，'
                   '旨在提供全面的Flutter学习指南及编程者的交流技术的接口。'
                   '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址: '
-                  'https://github_model.com/toly1994328/FlutterUnit',
+                  'https://github.com/toly1994328/FlutterUnit',
             ),
             Divider(
               height: 20,
@@ -192,7 +194,7 @@ class InfoPanel extends StatelessWidget {
   final String info;
 
 
-  InfoPanel({required this.title,required this.info});
+  const InfoPanel({Key? key, required this.title,required this.info}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +203,8 @@ class InfoPanel extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Circle(color: Theme.of(context).primaryColor,), Padding(
+            Circle(color: Theme.of(context).primaryColor),
+            Padding(
               padding: const EdgeInsets.only(left: 15,top: 15,bottom: 15),
               child: Text('$title',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
             )

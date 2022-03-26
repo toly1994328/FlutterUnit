@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 //          "在onTap时进行使用控制器进行切页",
 //    }
 class BottomNavigationBarWithPageView extends StatefulWidget {
+  const BottomNavigationBarWithPageView({Key? key}) : super(key: key);
+
   @override
   _BottomNavigationBarWithPageViewState createState() =>
       _BottomNavigationBarWithPageViewState();
@@ -17,14 +19,14 @@ class BottomNavigationBarWithPageView extends StatefulWidget {
 
 class _BottomNavigationBarWithPageViewState
     extends State<BottomNavigationBarWithPageView> {
-  var _position = 0;
-  final iconsMap = {
+  int _position = 0;
+  final Map<String, IconData> iconsMap = {
     //底栏图标
     "图鉴": Icons.home, "动态": Icons.toys,
     "喜欢": Icons.favorite, "手册": Icons.class_,
     "我的": Icons.account_circle,
   };
-  final _colors = [
+  final List<Color> _colors = [
     Colors.red,
     Colors.yellow,
     Colors.blue,
@@ -49,28 +51,29 @@ class _BottomNavigationBarWithPageViewState
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Container(
-            color: Colors.orange.withAlpha(88),
-            width: MediaQuery.of(context).size.width,
-            height: 150,
-            child: PageView(
-              controller: _controller,
-              children: iconsMap.keys
-                  .map((e) => Center(
-                        child: Text(
-                          e,
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+    return Column(
+      children: <Widget>[
+        Container(
+          color: Colors.orange.withAlpha(88),
+          width: MediaQuery.of(context).size.width,
+          height: 150,
+          child: PageView(
+            controller: _controller,
+            children: iconsMap.keys
+                .map((e) => Center(
+                      child: Text(
+                        e,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
                         ),
-                      ))
-                  .toList(),
-            ),
+                      ),
+                    ))
+                .toList(),
           ),
-          _buildBottomNavigationBar()
-        ],
-      ),
+        ),
+        _buildBottomNavigationBar()
+      ],
     );
   }
 
@@ -85,7 +88,7 @@ class _BottomNavigationBarWithPageViewState
       type: BottomNavigationBarType.shifting,
       fixedColor: Colors.white,
       iconSize: 25,
-      selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+      selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
       showUnselectedLabels: false,
       showSelectedLabels: true,
       items: iconsMap.keys

@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【onChanged】: 选中事件   【Function(bool)】",
 //    }
 class CustomSwitchListTile extends StatefulWidget {
+  const CustomSwitchListTile({Key? key}) : super(key: key);
+
   @override
   _CustomSwitchListTileState createState() => _CustomSwitchListTileState();
 }
@@ -27,7 +29,7 @@ class _CustomSwitchListTileState extends State<CustomSwitchListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       color: Colors.grey.withAlpha(22),
       child: SwitchListTile(
         value: _value,
@@ -36,8 +38,8 @@ class _CustomSwitchListTileState extends State<CustomSwitchListTile> {
         activeColor: Colors.orangeAccent,
         activeTrackColor: Colors.orange,
         secondary: Image.asset("assets/images/icon_head.webp"),
-        title: Text("张风捷特烈"),
-        subtitle: Text("@万花过尽知无物"),
+        title: const Text("张风捷特烈"),
+        subtitle: const Text("@万花过尽知无物"),
         onChanged: (v) => setState(() => _value = !_value),
       ),
     );

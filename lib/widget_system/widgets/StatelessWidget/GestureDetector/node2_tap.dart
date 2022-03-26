@@ -14,12 +14,14 @@ import 'package:flutter/material.dart';
 //          "【onTapCancel】 : 点击取消   【GestureTapCancelCallback】",
 //    }
 class TapGestureDetector extends StatefulWidget {
+  const TapGestureDetector({Key? key}) : super(key: key);
+
   @override
   _TapGestureDetectorState createState() => _TapGestureDetectorState();
 }
 
 class _TapGestureDetectorState extends State<TapGestureDetector> {
-  var _info = '';
+  String _info = '';
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class _TapGestureDetectorState extends State<TapGestureDetector> {
         color: Colors.grey.withAlpha(33),
         child: Text(
           _info,
-          style: TextStyle(fontSize: 18, color: Colors.blue),
+          style: const TextStyle(fontSize: 18, color: Colors.blue),
         ),
       ),
     );

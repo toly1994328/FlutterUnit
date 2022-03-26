@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【mode】 : 模式*3  【CupertinoTimerPickerMode】",
 //    }
 class CustomCupertinoTimerPicker extends StatefulWidget {
+  const CustomCupertinoTimerPicker({Key? key}) : super(key: key);
+
   @override
   _CustomCupertinoTimerPickerState createState() =>
       _CustomCupertinoTimerPickerState();
@@ -24,7 +26,7 @@ class CustomCupertinoTimerPicker extends StatefulWidget {
 
 class _CustomCupertinoTimerPickerState
     extends State<CustomCupertinoTimerPicker> {
-  Duration _date = Duration(seconds: 30);
+  Duration _date = const Duration(seconds: 30);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class _CustomCupertinoTimerPickerState
       children: <Widget>[
         Text(
           '当前时间:${_date.toString()}',
-          style: TextStyle(color: Colors.grey, fontSize: 16),
+          style: const TextStyle(color: Colors.grey, fontSize: 16),
         ),
         _buildInfoTitle('CupertinoTimerPickerMode.hms'),
         buildPicker(CupertinoTimerPickerMode.hms),
@@ -49,7 +51,7 @@ class _CustomCupertinoTimerPickerState
       padding: const EdgeInsets.only(left: 20, top: 20, bottom: 5),
       child: Text(
         info,
-        style: TextStyle(
+        style: const TextStyle(
             color: Colors.blue, fontSize: 16, fontWeight: FontWeight.bold),
       ),
     );
@@ -57,11 +59,11 @@ class _CustomCupertinoTimerPickerState
 
   Widget buildPicker(CupertinoTimerPickerMode mode) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       height: 150,
       child: CupertinoTimerPicker(
         mode: mode,
-        initialTimerDuration: Duration(seconds: 30),
+        initialTimerDuration: const Duration(seconds: 30),
         onTimerDurationChanged: (date) {
           print(date);
           setState(() => _date = date);

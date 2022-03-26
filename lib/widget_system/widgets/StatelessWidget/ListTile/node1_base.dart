@@ -16,17 +16,19 @@ import 'package:flutter/material.dart';
 //          "【onLongPress】: 点击事件   【Function()】",
 //    }
 class CustomListTile extends StatelessWidget {
+  const CustomListTile({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       color: Colors.grey.withAlpha(22),
       child: ListTile(
         leading: Image.asset("assets/images/icon_head.webp"),
-        title: Text("以梦为马"),
-        subtitle: Text("海子"),
-        contentPadding: EdgeInsets.all(5),
-        trailing: Icon(Icons.more_vert),
+        title: const Text("以梦为马"),
+        subtitle: const Text("海子"),
+        contentPadding: const EdgeInsets.all(5),
+        trailing: const Icon(Icons.more_vert),
         onLongPress: () => Navigator.of(context).pushNamed('AboutMePage'),
       ),
     );

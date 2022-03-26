@@ -16,13 +16,15 @@ import 'package:flutter/material.dart';
 //          "【duration】 : 时长   【Duration】",
 //    }
 class CustomAnimatedCrossFade extends StatefulWidget {
+  const CustomAnimatedCrossFade({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedCrossFadeState createState() =>
       _CustomAnimatedCrossFadeState();
 }
 
 class _CustomAnimatedCrossFadeState extends State<CustomAnimatedCrossFade> {
-  var _crossFadeState = CrossFadeState.showFirst;
+  CrossFadeState _crossFadeState = CrossFadeState.showFirst;
 
   bool get isFirst => _crossFadeState == CrossFadeState.showFirst;
 
@@ -30,30 +32,27 @@ class _CustomAnimatedCrossFadeState extends State<CustomAnimatedCrossFade> {
   Widget build(BuildContext context) {
     return Wrap(
       children: <Widget>[
-        Container(
-          child: AnimatedCrossFade(
-            firstChild: Container(
-              alignment: Alignment.center,
-              width: 200,
-              height: 150,
-              color: Colors.orange,
-              child: FlutterLogo(textColor: Colors.blue, size: 100,),
-            ),
-            secondChild: Container(
-              width: 200,
-              height: 150,
-              alignment: Alignment.center,
-              color: Colors.blue,
-              child: FlutterLogo(
-                textColor: Colors.white,
-//                colors: Colors.orange,
-                size: 100,
-                style: FlutterLogoStyle.stacked,),
-            ),
-            duration: Duration(milliseconds: 600),
-
-            crossFadeState: _crossFadeState,
+        AnimatedCrossFade(
+          firstChild: Container(
+            alignment: Alignment.center,
+            width: 200,
+            height: 150,
+            color: Colors.orange,
+            child: const FlutterLogo(textColor: Colors.blue, size: 100,),
           ),
+          secondChild: Container(
+            width: 200,
+            height: 150,
+            alignment: Alignment.center,
+            color: Colors.blue,
+            child: const FlutterLogo(
+              textColor: Colors.white,
+//                colors: Colors.orange,
+              size: 100,
+              style: FlutterLogoStyle.stacked,),
+          ),
+          duration: const Duration(milliseconds: 600),
+          crossFadeState: _crossFadeState,
         ),
         _buildSwitch(),
       ],

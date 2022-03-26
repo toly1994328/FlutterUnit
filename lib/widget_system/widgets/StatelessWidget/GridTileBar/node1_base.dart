@@ -18,19 +18,18 @@ import 'package:flutter/material.dart';
 
 
 class CustomGridTileBar extends StatelessWidget {
+  const CustomGridTileBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GridTileBar(
       backgroundColor: Colors.blue.withAlpha(120),
-      trailing: Icon(
-        Icons.star,
-        color: Colors.red,
-      ),
-      leading: CircleAvatar(
+      trailing: const Icon(Icons.star, color: Colors.red),
+      leading: const CircleAvatar(
         backgroundImage: AssetImage("assets/images/wy_200x300.webp"),
       ),
-      title: Text("百里·巫缨"),
-      subtitle: Text("倾国必倾城"),
+      title: const Text("百里·巫缨"),
+      subtitle: const Text("倾国必倾城"),
     );
   }
 }

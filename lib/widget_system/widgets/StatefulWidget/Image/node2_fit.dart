@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //    },
 
 class FitImage extends StatefulWidget {
+  const FitImage({Key? key}) : super(key: key);
+
   @override
   _FitImageState createState() => _FitImageState();
 }
@@ -21,11 +23,11 @@ class _FitImageState extends State<FitImage> {
 
   @override
   Widget build(BuildContext context) {
-    var imageLi = BoxFit.values
+    List<Widget> imageLi = BoxFit.values
         .toList()
-        .map((mode) => Column(children: <Widget>[
+        .map((mode) => Column(children:[
       Container(
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           width: 100,
           height: 80,
           color: Colors.grey.withAlpha(88),
@@ -35,8 +37,7 @@ class _FitImageState extends State<FitImage> {
                   : "assets/images/wy_30x20.webp"),
               fit: mode)),
       Text(mode.toString().split(".")[1])
-    ]))
-        .toList();
+    ])).toList();
 
     return Wrap(
       children: [...imageLi, _buildSwitch()],
@@ -51,7 +52,7 @@ class _FitImageState extends State<FitImage> {
       child: Wrap(
         crossAxisAlignment: WrapCrossAlignment.center,
         children: <Widget>[
-          Text("使用小图"),
+          const Text("使用小图"),
           Switch(
               value: _smallImage,
               onChanged: (b) => setState(() => _smallImage = b)),

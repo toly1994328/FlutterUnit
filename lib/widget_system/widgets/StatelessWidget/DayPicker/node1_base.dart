@@ -18,6 +18,8 @@
 import 'package:flutter/material.dart';
 
 class CustomDayPicker extends StatefulWidget {
+  const CustomDayPicker({Key? key}) : super(key: key);
+
   @override
   _CustomDayPickerState createState() => _CustomDayPickerState();
 }
@@ -28,14 +30,12 @@ class _CustomDayPickerState extends State<CustomDayPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 350,
       child: DayPicker(
           selectedDate: _date,
           currentDate: DateTime.now(),
-          onChanged: (date){
-           setState(() => _date = date);
-          },
+          onChanged: (date)=> setState(() => _date = date),
           firstDate:  DateTime(2018),
           lastDate: DateTime(2030),
           displayedMonth: DateTime.now()

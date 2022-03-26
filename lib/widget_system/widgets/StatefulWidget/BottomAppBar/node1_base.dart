@@ -16,31 +16,34 @@ import 'package:flutter/material.dart';
 //          "【child】 : 孩子   【Widget】",
 //    }
 class CustomBottomAppBar extends StatefulWidget {
+  const CustomBottomAppBar({Key? key}) : super(key: key);
+
   @override
   _CustomBottomAppBarState createState() => _CustomBottomAppBarState();
 }
 
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
-  var _position = 0;
-  var _location = FloatingActionButtonLocation.centerDocked;
-  final iconsMap = {
+  int _position = 0;
+  FloatingActionButtonLocation _location =
+      FloatingActionButtonLocation.centerDocked;
+  final Map<String,IconData> iconsMap = {
     "图鉴": Icons.home,
     "动态": Icons.toys,
     "喜欢": Icons.favorite,
     "手册": Icons.class_,
   };
-  var activeColor = Colors.blue.withAlpha(240);
+  Color activeColor = Colors.blue.withAlpha(240);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 180,
       child: Scaffold(
         backgroundColor: Colors.purple.withAlpha(22),
         floatingActionButton: FloatingActionButton(
           onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'),
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
         bottomNavigationBar: _buildBottomAppBar(),
         floatingActionButtonLocation: _location,
@@ -52,13 +55,13 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   Widget _buildBottomAppBar() {
     return BottomAppBar(
       elevation: 1,
-      shape: CircularNotchedRectangle(),
+      shape: const CircularNotchedRectangle(),
       notchMargin: 5,
       color: Colors.red,
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: info.asMap().keys.map((i) => _buildChild(i)).toList()
-            ..insertAll(isCenter ? 2 : 4, [SizedBox(width: 30)])),
+            ..insertAll(isCenter ? 2 : 4, [const SizedBox(width: 30)])),
     );
   }
 
@@ -70,7 +73,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
         children: <Widget>[
           Text(
             '当前页索引:$_position',
-            style: TextStyle(color: Colors.blue, fontSize: 18),
+            style: const TextStyle(color: Colors.blue, fontSize: 18),
           ),
           Switch(
               value: isCenter,
@@ -91,7 +94,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   bool get isCenter => _location == FloatingActionButtonLocation.centerDocked;
 
   Widget _buildChild(int i) {
-    var active = i == _position;
+    bool active = i == _position;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(

@@ -30,7 +30,8 @@ class ArcBackground extends StatelessWidget {
   final Widget? child;
   final ImageProvider image;
 
-  ArcBackground({this.child,required this.image});
+  const ArcBackground({Key? key, this.child, required this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class ArcBackground extends StatelessWidget {
 
 class UnitArcBackground extends StatelessWidget {
   final double height;
-  UnitArcBackground({Key? key,required this.height}) : super(key: key);
+  const UnitArcBackground({Key? key,required this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

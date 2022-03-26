@@ -17,16 +17,18 @@
 import 'package:flutter/material.dart';
 
 class CustomFlatButton extends StatelessWidget {
+  const CustomFlatButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: ()=>{},
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       splashColor: Colors.green,
-      child: Text("FlatButton"),
-      textColor: Color(0xffFfffff),
+      child: const Text("FlatButton"),
+      textColor: const Color(0xffFfffff),
       color: Colors.blue,
-      highlightColor: Color(0xffF88B0A),
+      highlightColor: const Color(0xffF88B0A),
     );
   }
 }

@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【onTap】: 点击事件   【Function()】",
 //    }
 class SelectListTile extends StatefulWidget {
+  const SelectListTile({Key? key}) : super(key: key);
+
   @override
   _SelectListTileState createState() => _SelectListTileState();
 }
@@ -22,15 +24,15 @@ class _SelectListTileState extends State<SelectListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       color: Colors.grey.withAlpha(22),
       child: ListTile(
         leading: Image.asset("assets/images/icon_head.webp"),
         selected: _selected,
-        title: Text("以梦为马"),
-        subtitle: Text("海子"),
-        contentPadding: EdgeInsets.all(5),
-        trailing: Icon(Icons.more_vert),
+        title: const Text("以梦为马"),
+        subtitle: const Text("海子"),
+        contentPadding: const EdgeInsets.all(5),
+        trailing: const Icon(Icons.more_vert),
         onTap: () => setState(() => _selected = !_selected),
       ),
     );

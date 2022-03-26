@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 /// 说明: 收藏夹数据库-数据模型
 
 // """
-// CREATE TABLE IF NOT EXISTS widget_category(
+// CREATE TABLE IF NOT EXISTS category(
 //     id INTEGER PRIMARY KEY AUTOINCREMENT,
 //     name VARCHAR(64) NOT NULL,
 //     color VARCHAR(9) DEFAULT '#FF2196F3',

@@ -18,6 +18,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class AnimatedBuilderDemo extends StatefulWidget {
+  const AnimatedBuilderDemo({Key? key}) : super(key: key);
+
   @override
   _AnimatedBuilderDemoState createState() => _AnimatedBuilderDemoState();
 }
@@ -56,11 +58,14 @@ class _AnimatedBuilderDemoState extends State<AnimatedBuilderDemo>
   }
 
   Widget buildChild() => Container(
-        height: 100,
+    height: 100,
         width: 100,
-        decoration: BoxDecoration(color: Colors.orange, shape: BoxShape.circle),
+        decoration: const BoxDecoration(
+          color: Colors.orange,
+          shape: BoxShape.circle,
+        ),
         alignment: Alignment.center,
-        child: Text(
+        child: const Text(
           'Toly',
           style: TextStyle(fontSize: 40, color: Colors.white),
         ),

@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class HonourWrapper extends StatefulWidget {
   final String username;
 
-  HonourWrapper({this.username = '张风捷特烈'});
+  const HonourWrapper({Key? key, this.username = '张风捷特烈'}) : super(key: key);
 
   @override
   _HonourWrapperState createState() => _HonourWrapperState();

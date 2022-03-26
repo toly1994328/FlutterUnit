@@ -16,13 +16,15 @@
 
 import 'package:flutter/material.dart';
 class CustomDrawerHeader extends StatelessWidget {
+  const CustomDrawerHeader({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 400,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Unit'),
+          title: const Text('Flutter Unit'),
         ),
         drawer: Drawer(
           elevation: 3,
@@ -36,21 +38,21 @@ class CustomDrawerHeader extends StatelessWidget {
     padding: EdgeInsets.zero,
     children: <Widget>[
       _buildHeader(),
-      ListTile(
+      const ListTile(
         leading: Icon(
           Icons.star,
           color: Colors.blue,
         ),
         title: Text('我的收藏'),
       ),
-      ListTile(
+      const ListTile(
         leading: Icon(
           Icons.palette,
           color: Colors.orangeAccent,
         ),
         title: Text('我的绘画'),
       ),
-      ListTile(
+      const ListTile(
         leading: Icon(
           Icons.insert_drive_file,
           color: Colors.green,
@@ -60,8 +62,7 @@ class CustomDrawerHeader extends StatelessWidget {
     ],
   );
 
-  Widget _buildHeader() {
-    return DrawerHeader(
+  Widget _buildHeader() => const DrawerHeader(
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.only(left: 20,top: 15),
       decoration: BoxDecoration(
@@ -80,5 +81,4 @@ class CustomDrawerHeader extends StatelessWidget {
         ]),
       ),
     );
-  }
 }

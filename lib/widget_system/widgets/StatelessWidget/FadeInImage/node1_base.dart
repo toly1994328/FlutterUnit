@@ -21,10 +21,12 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomFadeInImage extends StatelessWidget {
+  const CustomFadeInImage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var placeholder = "assets/images/icon_head.webp";
-    var img =
+    String placeholder = "assets/images/icon_head.webp";
+    String img =
         "https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/"
         "15739960c2da4de3a263eeabcb60057f~tplv-k3u1fbpfcp-zoom-crop-mark"
         ":1304:1304:1304:734.awebp";

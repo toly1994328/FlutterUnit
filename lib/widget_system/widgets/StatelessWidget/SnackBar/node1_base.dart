@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【onVisible】 : 显示时回调  【Function()】",
 //    }
 class CustomSnackBar extends StatefulWidget {
+  const CustomSnackBar({Key? key}) : super(key: key);
+
   @override
   _CustomSnackBarState createState() => _CustomSnackBarState();
 }
@@ -24,25 +26,24 @@ class CustomSnackBar extends StatefulWidget {
 class _CustomSnackBarState extends State<CustomSnackBar> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: FlatButton(
-            color: Colors.blue,
-            onPressed: () =>
-                Scaffold.of(context).showSnackBar(_buildSnackBar()),
-            child: Text(
-              '点我弹出SnackBar',
-              style: TextStyle(color: Colors.white),
-            )));
+    return FlatButton(
+        color: Colors.blue,
+        onPressed: () =>
+            Scaffold.of(context).showSnackBar(_buildSnackBar()),
+        child: const Text(
+          '点我弹出SnackBar',
+          style: TextStyle(color: Colors.white),
+        ));
   }
 
   SnackBar _buildSnackBar() {
     return SnackBar(
       elevation: 3,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10), topRight: Radius.circular(10))),
-      content: Text('Wellcome to for join Flutter Unit!'),
-      duration: Duration(seconds: 3),
+      content: const Text('Wellcome to for join Flutter Unit!'),
+      duration: const Duration(seconds: 3),
       //持续时间
       backgroundColor: Colors.red,
       onVisible: () => print('onVisible'),

@@ -12,25 +12,27 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomOverlay extends StatelessWidget {
+  const CustomOverlay({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
       children: <Widget>[
-        Container(
+        SizedBox(
           height: 50,
           child: RawMaterialButton(
             elevation: 2,
-            shape: CircleBorder(
+            shape: const CircleBorder(
               side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
             ),
             fillColor: Colors.blue,
             splashColor: Colors.orange,
-            textStyle: TextStyle(color: Colors.white),
-            child: Icon(Icons.add),
+            textStyle: const TextStyle(color: Colors.white),
+            child: const Icon(Icons.add),
             onPressed: ()=>showFloating(context),
           ),
         ),
-        Container(
+        const SizedBox(
           height: 50,
           child: RawMaterialButton(
             elevation: 2,
@@ -50,9 +52,10 @@ class CustomOverlay extends StatelessWidget {
 }
 
 bool show = false;
-Offset offset = Offset(200, 200);
+Offset offset = const Offset(200, 200);
 
-final double radius = 60;
+const double radius = 60;
+
 var entry = OverlayEntry(
     builder: (context) => Stack(
       children: <Widget>[
@@ -81,7 +84,7 @@ _buildFloating() => GestureDetector(
         height: radius,
         width: radius,
         alignment: Alignment.center,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
               image: AssetImage('assets/images/icon_head.webp')),

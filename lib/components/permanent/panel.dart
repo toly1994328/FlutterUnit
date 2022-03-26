@@ -7,7 +7,7 @@ class Panel extends StatelessWidget {
   final Color? color;
   final Widget? child;
 
-  Panel({this.radius = 5.0,  this.color, this.child});
+  const Panel({Key? key, this.radius = 5.0,  this.color, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

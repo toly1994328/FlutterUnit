@@ -10,17 +10,19 @@ import 'package:flutter/material.dart';
 //      "subtitle": "【PreferredSize将普通组件转化为PreferredSizeWidget",
 //    }
 class AdapterPreferredSize extends StatelessWidget {
+  const AdapterPreferredSize({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(150),
+          preferredSize: const Size.fromHeight(150),
           child: AppBar(
-            title: Text('PreferredSize'),
+            title: const Text('PreferredSize'),
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(40),
+              preferredSize: const Size.fromHeight(40),
               child: Container(
                 height: 40,
                 color: Colors.orange,

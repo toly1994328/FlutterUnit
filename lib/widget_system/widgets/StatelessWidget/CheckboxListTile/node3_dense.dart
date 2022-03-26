@@ -12,17 +12,19 @@
 import 'package:flutter/material.dart';
 
 class DenseCheckBoxListTile extends StatefulWidget {
+  const DenseCheckBoxListTile({Key? key}) : super(key: key);
+
   @override
   _DenseCheckBoxListTileState createState() => _DenseCheckBoxListTileState();
 }
 
 class _DenseCheckBoxListTileState extends State<DenseCheckBoxListTile> {
-  var _selected = false;
+  bool _selected = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       color: Colors.grey.withAlpha(22),
       child: CheckboxListTile(
         value: _selected,
@@ -30,8 +32,8 @@ class _DenseCheckBoxListTileState extends State<DenseCheckBoxListTile> {
         checkColor: Colors.yellow,
         activeColor: Colors.orangeAccent,
         secondary: Image.asset("assets/images/icon_head.webp"),
-        title: Text("张风捷特烈"),
-        subtitle: Text("@万花过尽知无物"),
+        title: const Text("张风捷特烈"),
+        subtitle: const Text("@万花过尽知无物"),
         onChanged: (v) => setState(() => _selected = !_selected),
       ),
     );

@@ -105,3 +105,72 @@ class FramePainter extends CustomPainter {
     return false;
   }
 }
+
+
+class FrameShower extends StatelessWidget {
+  final String title;
+  final String author;
+  final String srcUrl;
+  final String info;
+  final Widget content;
+
+  FrameShower(
+      {Key? key,
+        this.title = "",
+        this.author = "",
+        this.srcUrl = "",
+        this.info = "",
+        required this.content})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Column(
+        children: [
+          SizedBox(
+            height: 15,
+          ),
+          Text(
+            title,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          PictureFrame(child: content),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: Row(
+              children: [
+                Text(
+                  "作者:    $author    ",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                Spacer(),
+                Text(
+                  "源码地址    ",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueAccent),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              alignment: Alignment.topLeft,
+              child: Text(
+                info,
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold),
+              )),
+        ],
+      ),
+    );
+  }
+}

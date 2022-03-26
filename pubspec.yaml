@@ -29,7 +29,9 @@ dependencies:
   intl: ^0.17.0
   path_provider: ^2.0.9 # 路径
   platform: ^3.1.0
-
+  image: ^3.1.0
+  wrapper: ^1.0.2
+  dash_painter: ^1.0.2
   flutter_spinkit: ^5.1.0 # loading
   flutter_markdown: ^0.6.4 # markdown
   dio: ^4.0.4 # 网络请求
@@ -37,6 +39,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^1.0.0
 
 flutter:
   uses-material-design: true

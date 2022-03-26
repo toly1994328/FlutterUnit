@@ -15,7 +15,10 @@ import 'package:flutter_unit/components/permanent/circle.dart';
 /// 说明:
 
 class CodeStyleSettingPage extends StatelessWidget {
-  final code = """
+
+  const CodeStyleSettingPage({Key? key}) : super(key: key);
+
+  final String code = """
 const String _kCounty = 'China';
 
 class Hello {
@@ -29,6 +32,7 @@ class Hello {
     this.county = _kCounty
   });
 }""";
+
 
   @override
   Widget build(BuildContext context) {

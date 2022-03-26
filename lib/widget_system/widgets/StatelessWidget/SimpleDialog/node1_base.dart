@@ -20,7 +20,9 @@ import 'package:flutter/material.dart';
 //          "【shape】 : 影深   【double】",
 //    }
 class CustomSimpleDialog extends StatelessWidget {
-  final info = [
+  const CustomSimpleDialog({Key? key}) : super(key: key);
+
+  final List<String> info = const [
     '性别:    男     未婚',
     '微信:    zdl1994328',
     "掘金:    张风捷特烈",
@@ -42,32 +44,32 @@ class CustomSimpleDialog extends StatelessWidget {
     );
   }
   Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
+    shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
     color: Colors.blue,
     onPressed: () {
       showDialog(context: context, builder: (ctx) => _buildSimpleDialog(ctx));
     },
-    child: Text(
-      'Just Show It',
-      style: TextStyle(color: Colors.white),
-    ),
+    child: const Text(
+          'Just Show It',
+          style: TextStyle(color: Colors.white),
+        ),
   );
 
   SimpleDialog _buildSimpleDialog(BuildContext context) {
     return SimpleDialog(
-    title: _buildTitle(),
-    titlePadding: EdgeInsets.only(
-      top: 5,
-      left: 20,
-    ),
-    contentPadding: EdgeInsets.symmetric(horizontal: 5),
-    children: _buildChild(context),
-    backgroundColor: Colors.white,
-    elevation: 4,
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
-  );
+      title: _buildTitle(),
+      titlePadding: const EdgeInsets.only(
+        top: 5,
+        left: 20,
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 5),
+      children: _buildChild(context),
+      backgroundColor: Colors.white,
+      elevation: 4,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))),
+    );
   }
 
   List<Column> _buildChild(BuildContext context) {
@@ -77,11 +79,12 @@ class CustomSimpleDialog extends StatelessWidget {
               children: <Widget>[
                 SimpleDialogOption(
                   onPressed: () => print(str),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: Text(
                       str,
-                      style: TextStyle(color: Color(0xff999999), fontSize: 16),
+                      style: const TextStyle(
+                          color: Color(0xff999999), fontSize: 16),
                     ),
                   ),
                 ),
@@ -98,23 +101,22 @@ class CustomSimpleDialog extends StatelessWidget {
   }
 
   Widget _buildTitle() {
-    return Row(
-      //标题
+    return Row(//标题
       children: <Widget>[
         Image.asset(
           "assets/images/icon_head.webp",
           width: 30,
           height: 30,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
-        Expanded(
+        const Expanded(
             child: Text(
           "张风捷特烈",
           style: TextStyle(fontSize: 18),
         )),
-        CloseButton()
+        const CloseButton()
       ],
     );
   }

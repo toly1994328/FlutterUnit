@@ -14,10 +14,12 @@ import 'package:flutter/material.dart';
 //          "【color】 : 颜色   【Color】",
 //    }
 class ModalBarrierDemo extends StatelessWidget {
+  const ModalBarrierDemo({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 200,
       height: 100,
       child: Stack(alignment: Alignment.center, children: [
@@ -25,7 +27,7 @@ class ModalBarrierDemo extends StatelessWidget {
           dismissible: true,
           color: Colors.grey.withOpacity(0.3),
         ),
-        Text('点击背景返回')
+        const Text('点击背景返回')
       ]),
     );
   }

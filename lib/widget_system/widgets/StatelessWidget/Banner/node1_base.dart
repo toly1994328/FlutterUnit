@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 
 class CustomBanner extends StatelessWidget {
+  CustomBanner({Key? key}) : super(key: key);
 
   final Map<BannerLocation, Color> data = {
     BannerLocation.topStart: Colors.red,
@@ -19,18 +20,20 @@ class CustomBanner extends StatelessWidget {
         runSpacing: 10,
         children: data.keys
             .map((BannerLocation location) => Container(
-                  color: Color(0xffD8F5FF),
+          color: const Color(0xffD8F5FF),
                   width: 150,
-              height: 150 * 0.618,
-              child: Banner(
-                message: "Flutter 2.2.3发布",
-                location: location,
-                color: data[location]!,
-                child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: FlutterLogo(textColor: Colors.blue,
-                      style: FlutterLogoStyle.horizontal,)),
-              ),
-            )).toList());
+                  height: 150 * 0.618,
+                  child: Banner(
+                    message: "Flutter 2.2.3发布",
+                    location: location,
+                    color: data[location]!,
+                    child: const Padding(
+                        padding: EdgeInsets.all(20),
+                        child: FlutterLogo(
+                          textColor: Colors.blue,
+                          style: FlutterLogoStyle.horizontal,
+                        )),
+                  ),
+        )).toList());
   }
 }

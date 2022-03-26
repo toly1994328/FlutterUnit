@@ -15,14 +15,16 @@ import 'package:flutter/material.dart';
 //          "【height】: 占位高   【double】",
 //    }
 class HeightVerticalDivider extends StatelessWidget {
+  const HeightVerticalDivider({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var dataColor = [
+    List<Color> dataColor = [
       Colors.red, Colors.yellow,
       Colors.blue, Colors.green];
-    var dataThickness = [10.0, 20.0, 30.0, 40.0];
-    var data = Map.fromIterables(dataColor, dataThickness);
-    return Container(
+    List<double> dataThickness = [10.0, 20.0, 30.0, 40.0];
+    Map<Color,double>  data = Map.fromIterables(dataColor, dataThickness);
+    return SizedBox(
       height: 150,
       child: Row(
         mainAxisSize: MainAxisSize.min,

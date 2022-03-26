@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 //          "【color】 : 颜色   【Color】",
 //    }
 class CustomInk extends StatelessWidget {
+  const CustomInk({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -24,20 +26,16 @@ class CustomInk extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Center(
           child: Ink(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
                 color: Colors.yellow,
-              borderRadius: BorderRadius.all(Radius.circular(20))
-            ),
-
+                borderRadius: BorderRadius.all(Radius.circular(20))),
             width: 200.0,
             height: 100.0,
             child: InkWell(
-                onTap: () {
-                },
-                child: Center(
-                  child: Text('Hello'),
-                )),
+              onTap: () {},
+              child: const Center(child: Text('Hello')),
+            ),
           ),
         ),
       ),

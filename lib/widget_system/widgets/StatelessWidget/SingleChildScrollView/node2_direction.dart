@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【reverse】 : 是否反向   【Axis】",
 //    }
 class DirectionSingleChildScrollView extends StatelessWidget {
+  DirectionSingleChildScrollView({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.blue[50]!,
     Colors.blue[100]!,
@@ -26,36 +28,43 @@ class DirectionSingleChildScrollView extends StatelessWidget {
     Colors.blue[900]!,
   ];
 
+  TextStyle get textStyle => const TextStyle(
+        color: Colors.white,
+        shadows: [
+          Shadow(
+            color: Colors.black,
+            offset: Offset(.5, .5),
+            blurRadius: 2,
+          )
+        ],
+      );
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         reverse: true,
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           children: data
               .map((color) => Container(
-            alignment: Alignment.center,
-            width: 90,
-            color: color,
-            child: Text(
-              colorString(color),
-              style: TextStyle(color: Colors.white, shadows: [
-                Shadow(
-                    color: Colors.black,
-                    offset: Offset(.5, .5),
-                    blurRadius: 2)
-              ]),
-            ),
-          ))
+                    alignment: Alignment.center,
+                    width: 90,
+                    color: color,
+                    child: Text(
+                      colorString(color),
+                      style: textStyle,
+                    ),
+                  ))
               .toList(),
         ),
 
       ),
     );
   }
+
   String colorString(Color color) =>
       "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
 }

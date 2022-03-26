@@ -15,27 +15,30 @@ import 'package:flutter/material.dart';
 //          "【child】: 子组件   【Widget】",
 //    }
 class CupertinoDialogActionDemo extends StatelessWidget {
+  const CupertinoDialogActionDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CupertinoDialogAction(
           isDestructiveAction: false,
-          onPressed: ()=>_toast(context),
-          child: Text('CupertinoDialogAction'),
+          onPressed: () => _toast(context),
+          child: const Text('CupertinoDialogAction'),
         ),
         CupertinoDialogAction(
           isDestructiveAction: true,
-          onPressed: ()=>_toast(context),
-          child: Text('CupertinoDialogAction'),
+          onPressed: () => _toast(context),
+          child: const Text('CupertinoDialogAction'),
         ),
       ],
     );
   }
 
-  _toast(BuildContext context){
+  void _toast(BuildContext context) {
     Scaffold.of(context).showSnackBar(SnackBar(
       backgroundColor: Theme.of(context).primaryColor,
-      content: Text('CupertinoDialogAction'),));
+      content: const Text('CupertinoDialogAction'),
+    ));
   }
 }

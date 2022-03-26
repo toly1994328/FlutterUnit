@@ -10,15 +10,17 @@ import 'package:flutter/material.dart';
 //      "subtitle": "【preferredSize】 : 尺寸   【Size】",
 //    }
 class CustomPreferredSize extends StatelessWidget {
+  const CustomPreferredSize({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(150),
+          preferredSize: const Size.fromHeight(150),
           child: AppBar(
-            title: Text('PreferredSize'),
+            title: const Text('PreferredSize'),
           ),
         ),
       ),

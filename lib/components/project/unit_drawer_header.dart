@@ -8,7 +8,7 @@ class UnitDrawerHeader extends StatelessWidget {
   final Color color;
 
 
-  const UnitDrawerHeader({required this.color});
+   const UnitDrawerHeader({Key? key, required this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

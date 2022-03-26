@@ -18,16 +18,18 @@ import 'package:flutter/material.dart';
 //          "【bottom】 : 到父底距离   【double】",
 //    }
 class CustomAnimatedPositioned extends StatefulWidget {
+  const CustomAnimatedPositioned({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedPositionedState createState() =>
       _CustomAnimatedPositionedState();
 }
 
 class _CustomAnimatedPositionedState extends State<CustomAnimatedPositioned> {
-  final startTop = 0.0;
-  final endTop = 30.0;
+  final double startTop = 0.0;
+  final double endTop = 30.0;
 
-  var _top = 0.0;
+  double _top = 0.0;
 
   @override
   void initState() {
@@ -54,20 +56,20 @@ class _CustomAnimatedPositionedState extends State<CustomAnimatedPositioned> {
 
   List<Widget> _buildChildren() => <Widget>[
         AnimatedPositioned(
-          duration: Duration(seconds: 1),
+          duration: const Duration(seconds: 1),
           top: _top,
           left: _top * 4,
-          child: Icon(
+          child: const Icon(
             Icons.android,
             color: Colors.green,
             size: 50,
           ),
         ),
         AnimatedPositioned(
-          duration: Duration(seconds: 1),
+          duration: const Duration(seconds: 1),
           top: 50 - _top,
           left: 150 - _top * 4,
-          child: Icon(
+          child: const Icon(
             Icons.android,
             color: Colors.red,
             size: 50,

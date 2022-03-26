@@ -15,6 +15,8 @@ import 'package:flutter_unit/app/views/splash/unit_splash.dart';
 /// 说明: 主程序
 
 class FlutterUnit extends StatelessWidget {
+  const FlutterUnit({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GlobalBloc, GlobalState>(

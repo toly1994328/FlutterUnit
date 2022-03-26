@@ -11,6 +11,8 @@
 import 'package:flutter/material.dart';
 
 class ContainerAlignment extends StatelessWidget {
+  const ContainerAlignment({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +20,7 @@ class ContainerAlignment extends StatelessWidget {
       width: 200,
       height: 200 * 0.618,
       color: Colors.grey.withAlpha(88),
-      child: Icon(
+      child: const Icon(
         Icons.android,
         color: Colors.green,
       ),

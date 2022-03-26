@@ -17,10 +17,12 @@ import 'package:flutter/material.dart';
 //    }
 
 class DraggableScrollableSheetDemo extends StatelessWidget {
+  const DraggableScrollableSheetDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
+    return Padding(
+      padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
@@ -29,13 +31,15 @@ class DraggableScrollableSheetDemo extends StatelessWidget {
                 builder: (context) => DraggableScrollableSheetPage()),
           );
         },
-        child: Text("进入 DraggableScrollableSheet 测试页"),
+        child: const Text("进入 DraggableScrollableSheet 测试页"),
       ),
     );
   }
 }
 
 class DraggableScrollableSheetPage extends StatelessWidget {
+  DraggableScrollableSheetPage({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.orange[50]!,
     Colors.orange[100]!,
@@ -63,21 +67,21 @@ class DraggableScrollableSheetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DraggableScrollableSheet"),
+        title: const Text("DraggableScrollableSheet"),
       ),
       body: SizedBox.expand(
           child: DraggableScrollableSheet(
-        initialChildSize: 0.3,
-        minChildSize: 0.2,
-        maxChildSize: 0.5,
-        expand: true,
-        builder: (BuildContext context, ScrollController scrollController)=>
-           ListView.builder(
-            controller: scrollController,
-            itemCount: data.length,
-            itemBuilder: buildColorItem,
-          ),
-      )),
+            initialChildSize: 0.3,
+            minChildSize: 0.2,
+            maxChildSize: 0.5,
+            expand: true,
+            builder: (BuildContext context, ScrollController scrollController)=>
+                ListView.builder(
+                  controller: scrollController,
+                  itemCount: data.length,
+                  itemBuilder: buildColorItem,
+                ),
+          )),
     );
   }
 
@@ -88,8 +92,12 @@ class DraggableScrollableSheetPage extends StatelessWidget {
       color: data[index],
       child: Text(
         colorString(data[index]),
-        style: TextStyle(color: Colors.white, shadows: [
-          Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+        style: const TextStyle(color: Colors.white, shadows: [
+          Shadow(
+            color: Colors.black,
+            offset: Offset(.5, .5),
+            blurRadius: 2,
+          )
         ]),
       ),
     );

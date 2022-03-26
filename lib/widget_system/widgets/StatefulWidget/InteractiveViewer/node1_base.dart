@@ -21,6 +21,7 @@ import 'package:flutter/material.dart';
 //    }
 
 class InteractiveViewerDemo extends StatelessWidget {
+  const InteractiveViewerDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +34,7 @@ class InteractiveViewerDemo extends StatelessWidget {
         minScale: 0.3,
         panEnabled: true,
         scaleEnabled: true,
-        child: Container(
-          child: Image.asset('assets/images/caver.webp'),
-        ),
+        child: Image.asset('assets/images/caver.webp'),
         onInteractionStart: _onInteractionStart,
         onInteractionUpdate: _onInteractionUpdate,
         onInteractionEnd: _onInteractionEnd,

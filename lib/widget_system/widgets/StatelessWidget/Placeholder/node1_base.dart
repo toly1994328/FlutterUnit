@@ -11,9 +11,11 @@ import 'package:flutter/material.dart';
 //          "【strokeWidth】: 线粗   【double】",
 //    }
 class CustomPlaceholder extends StatelessWidget {
+  const CustomPlaceholder({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return const SizedBox(
       width: 100,
       height: 100*0.618,
       child:  Placeholder(

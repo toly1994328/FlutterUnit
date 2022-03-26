@@ -15,21 +15,27 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomCheckbox extends StatefulWidget {
+  const CustomCheckbox({Key? key}) : super(key: key);
+
   @override
   _CustomCheckboxState createState() => _CustomCheckboxState();
 }
 
 class _CustomCheckboxState extends State<CustomCheckbox> {
   bool _checked = false;
-  final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
+  final List<Color> colors = [
+    Colors.red,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 10,
       children: colors
-          .map((e) =>
-          Checkbox(
+          .map((e) => Checkbox(
               value: _checked,
               checkColor: Colors.white,
               activeColor: e,

@@ -14,9 +14,11 @@ import 'package:flutter/material.dart';
 //          "【axis】 : 拖动的轴   【Axis】",
 //    }
 class CustomDraggable extends StatelessWidget {
+  const CustomDraggable({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var axis = [null, Axis.vertical, Axis.horizontal];
+    List<Axis?> axis = [null, Axis.vertical, Axis.horizontal];
     return Wrap(
         spacing: 30,
         children: axis
@@ -26,16 +28,20 @@ class CustomDraggable extends StatelessWidget {
                     width: 30,
                     height: 30,
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.blue, shape: BoxShape.circle),
+                    decoration: const BoxDecoration(
+                      color: Colors.blue,
+                      shape: BoxShape.circle,
+                    ),
                   ),
-                  feedback: Container(
-                    width: 30,
+              feedback: Container(
+                width: 30,
                     height: 30,
-                    decoration: BoxDecoration(
-                        color: Colors.red, shape: BoxShape.circle),
+                    decoration: const BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
                   ),
-                ))
+            ))
             .toList());
   }
 }

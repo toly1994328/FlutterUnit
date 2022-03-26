@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CupertinoPopupSurfaceDemo extends StatelessWidget {
+  CupertinoPopupSurfaceDemo({Key? key}) : super(key: key);
+
   final List<int> rainbow = [
     0xffff0000,
     0xffFF7F00,
@@ -29,6 +31,7 @@ class CupertinoPopupSurfaceDemo extends StatelessWidget {
 
   final List<double> stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,7 +40,7 @@ class CupertinoPopupSurfaceDemo extends StatelessWidget {
               radius: 1.8,
               stops: stops,
               colors: rainbow.map((e) => Color(e)).toList())),
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Wrap(
         spacing: 10,
         children: [

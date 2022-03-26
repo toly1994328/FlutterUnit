@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【alignment】 : 对齐动画   【Animation<AlignmentGeometry>】",
 //    }
 class CustomAlignTransition extends StatefulWidget {
+  const CustomAlignTransition({Key? key}) : super(key: key);
+
   @override
   _CustomAlignTransitionState createState() => _CustomAlignTransitionState();
 }
@@ -22,7 +24,10 @@ class _CustomAlignTransitionState extends State<CustomAlignTransition>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1));
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
     _ctrl.forward();
     super.initState();
   }
@@ -43,10 +48,14 @@ class _CustomAlignTransitionState extends State<CustomAlignTransition>
           height: 100,
           child: AlignTransition(
             alignment: AlignmentTween(
-                    begin: Alignment.topLeft, end: Alignment.bottomRight)
-                .animate(_ctrl),
-            child: Container(
-                child: Icon(Icons.android, color: Colors.green, size: 60)),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ).animate(_ctrl),
+            child: const Icon(
+              Icons.android,
+              color: Colors.green,
+              size: 60,
+            ),
           ),
         ));
   }

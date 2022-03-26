@@ -11,9 +11,9 @@ class DeleteCategoryDialog extends StatelessWidget {
   final VoidCallback? onSubmit;
 
 
-  DeleteCategoryDialog({
+  const DeleteCategoryDialog({Key? key,
     this.title='', this.content ='',this.onSubmit
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

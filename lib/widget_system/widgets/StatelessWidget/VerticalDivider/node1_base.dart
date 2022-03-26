@@ -11,14 +11,16 @@ import 'package:flutter/material.dart';
 //          "【thickness】: 线粗细   【double】",
 //    }
 class CustomVerticalDivider extends StatelessWidget {
+  const CustomVerticalDivider({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var dataColor = [
+    List<Color> dataColor = [
       Colors.red, Colors.yellow,
       Colors.blue, Colors.green];
-    var dataThickness = [1.0, 2.0, 4.0, 6.0];
-    var data = Map.fromIterables(dataColor, dataThickness);
-    return Container(
+    List<double> dataThickness = [1.0, 2.0, 4.0, 6.0];
+    Map<Color,double> data = Map.fromIterables(dataColor, dataThickness);
+    return SizedBox(
       height: 150,
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -26,8 +28,7 @@ class CustomVerticalDivider extends StatelessWidget {
             .map((e) => VerticalDivider(
           color: e,
           thickness: data[e],
-        ))
-            .toList(),
+        )).toList(),
       ),
     );
   }

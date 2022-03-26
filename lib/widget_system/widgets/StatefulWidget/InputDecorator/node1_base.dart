@@ -14,16 +14,18 @@ import 'package:flutter/material.dart';
 //    }
 
 class InputDecoratorDemo extends StatelessWidget {
+  const InputDecoratorDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InputDecorator(
-        decoration: InputDecoration(),
+        decoration: const InputDecoration(),
         child: EditableText(
             controller: TextEditingController(text:'hello'),
             focusNode: FocusNode(),
-            style: TextStyle(fontSize: 12,color: Colors.black),
+            style: const TextStyle(fontSize: 12,color: Colors.black),
             cursorColor: Colors.blue,
             backgroundCursorColor: Colors.orange,
         ),

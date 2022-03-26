@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【controller】 : 控制器  【ScrollController】",
 //    }
 class CustomCupertinoScrollbar extends StatelessWidget {
+  CustomCupertinoScrollbar({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.purple[50]!,
     Colors.purple[100]!,
@@ -26,29 +28,32 @@ class CustomCupertinoScrollbar extends StatelessWidget {
     Colors.purple[900]!,
   ];
 
+  TextStyle get textStyle => const TextStyle(color: Colors.white, shadows: [
+        Shadow(
+          color: Colors.black,
+          offset: Offset(.5, .5),
+          blurRadius: 2,
+        )
+      ]);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: CupertinoScrollbar(
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 5),
           children: data
               .map((color) => Container(
-            alignment: Alignment.center,
-            width: 100,
-            height: 50,
-            color: color,
-            child: Text(
-              colorString(color),
-              style: TextStyle(color: Colors.white, shadows: [
-                Shadow(
-                    color: Colors.black,
-                    offset: Offset(.5, .5),
-                    blurRadius: 2)
-              ]),
-            ),
-          ))
+                    alignment: Alignment.center,
+                    width: 100,
+                    height: 50,
+                    color: color,
+                    child: Text(
+                      colorString(color),
+                      style: textStyle,
+                    ),
+                  ))
               .toList(),
         ),
       ),

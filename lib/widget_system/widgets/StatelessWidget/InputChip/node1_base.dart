@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //      }
 
 class PressInputChip extends StatefulWidget {
+  const PressInputChip({Key? key}) : super(key: key);
+
   @override
   _PressInputChipState createState() => _PressInputChipState();
 }
@@ -22,8 +24,8 @@ class _PressInputChipState extends State<PressInputChip> {
   @override
   Widget build(BuildContext context) {
     return InputChip(
-        padding: EdgeInsets.all(5),
-        labelPadding: EdgeInsets.all(3),
+        padding: const EdgeInsets.all(5),
+        labelPadding: const EdgeInsets.all(3),
         label: Text(
             !_delete ?
             "This is a InputChip." :

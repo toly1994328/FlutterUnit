@@ -37,7 +37,6 @@ class _AppSearchBarState extends State<AppSearchBar> {
           ),
           onChanged: (str) => BlocProvider.of<SearchBloc>(context)
               .add(SearchWidgetEvent(args:SearchArgs(name: str,stars: [1,2,3,4,5]))),
-
           onSubmitted: (str) {//提交后
             FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
           },

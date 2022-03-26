@@ -15,6 +15,8 @@
 import 'package:flutter/material.dart';
 
 class CustomChoiceChip extends StatefulWidget {
+  const CustomChoiceChip({Key? key}) : super(key: key);
+
   @override
   _CustomChoiceChipState createState() => _CustomChoiceChipState();
 }
@@ -26,13 +28,13 @@ class _CustomChoiceChipState extends State<CustomChoiceChip> {
   Widget build(BuildContext context) {
     return ChoiceChip(
       selected: _select,
-      padding: EdgeInsets.all(5),
-      labelPadding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
+      labelPadding: const EdgeInsets.all(5),
       label: Text(
         _select ?
         "You are selected it." :
         "This is a ChoiceChip.",
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
       backgroundColor: Colors.grey.withAlpha(66),
       avatar: Image.asset("assets/images/icon_head.webp"),

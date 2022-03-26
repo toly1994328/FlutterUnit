@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【onChanged】 : 改变时回调   【Function(T)】",
 //    }
 class CustomRadio extends StatefulWidget {
+  const CustomRadio({Key? key}) : super(key: key);
+
   @override
   _CustomRadioState createState() => _CustomRadioState();
 }

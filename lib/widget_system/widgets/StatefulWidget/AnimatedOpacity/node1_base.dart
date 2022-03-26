@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //          "【opacity】 : 透明度   【double】",
 //    }
 class CustomAnimatedOpacity extends StatefulWidget {
+  const CustomAnimatedOpacity({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedOpacityState createState() => _CustomAnimatedOpacityState();
 }
@@ -38,11 +40,11 @@ class _CustomAnimatedOpacityState extends State<CustomAnimatedOpacity> {
           width: 200,
           height: 100,
           child: AnimatedOpacity(
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
             opacity: _opacity,
             onEnd: () => print('End'),
-            child: Icon(Icons.android, color: Colors.green, size: 60),
+            child: const Icon(Icons.android, color: Colors.green, size: 60),
           ),
         ),
       ],

@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【padding】 : 内边距   【EdgeInsetsGeometry】",
 //    }
 class CupertinoSlidingSegmentedControlDemo extends StatefulWidget {
+  const CupertinoSlidingSegmentedControlDemo({Key? key}) : super(key: key);
+
   @override
   _CupertinoSlidingSegmentedControlDemoState createState() =>
       _CupertinoSlidingSegmentedControlDemoState();
@@ -24,26 +26,24 @@ class CupertinoSlidingSegmentedControlDemo extends StatefulWidget {
 
 class _CupertinoSlidingSegmentedControlDemoState
     extends State<CupertinoSlidingSegmentedControlDemo> {
-  var _value = 1;
+  int _value = 1;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: CupertinoSlidingSegmentedControl(
-        groupValue: _value,
-        onValueChanged: _onValueChanged,
-        thumbColor: Colors.amberAccent,
-        backgroundColor: Colors.green.withAlpha(99),
-        padding: EdgeInsets.all(5),
-        children: {
-          1: Padding(
-            padding: EdgeInsets.only(left: 20, right: 20),
-            child: Text("混沌战士"),
-          ),
-          2: Text("青眼白龙"),
-          3: Text("黑魔导"),
-        },
-      ),
+    return CupertinoSlidingSegmentedControl(
+      groupValue: _value,
+      onValueChanged: _onValueChanged,
+      thumbColor: Colors.amberAccent,
+      backgroundColor: Colors.green.withAlpha(99),
+      padding: const EdgeInsets.all(5),
+      children: const {
+        1: Padding(
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: Text("混沌战士"),
+        ),
+        2: Text("青眼白龙"),
+        3: Text("黑魔导"),
+      },
     );
   }
 

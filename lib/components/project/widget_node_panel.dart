@@ -23,13 +23,13 @@ class WidgetNodePanel extends StatefulWidget {
   final HighlighterStyle? codeStyle;
   final String? codeFamily;
 
-  WidgetNodePanel(
-      {this.text='',
+  const WidgetNodePanel(
+      {Key? key, this.text='',
       this.subText='',
       this.code='',
       this.show,
      required this.codeStyle,
-      this.codeFamily});
+      this.codeFamily}) : super(key: key);
 
   @override
   _WidgetNodePanelState createState() => _WidgetNodePanelState();

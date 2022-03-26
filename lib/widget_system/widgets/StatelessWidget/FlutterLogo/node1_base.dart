@@ -13,10 +13,12 @@
 import 'package:flutter/material.dart';
 
 class CustomFlutterLogo extends StatelessWidget {
+  const CustomFlutterLogo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
 
-    var data = {
+    Map<Color,double> data = {
       Colors.blue:50.0,
       Colors.red:60.0,
       Colors.green:70.0,
@@ -27,8 +29,7 @@ class CustomFlutterLogo extends StatelessWidget {
           .map((e) => FlutterLogo(
         size: data[e],
         textColor: e,
-      ))
-          .toList(),
+      )).toList(),
     );
   }
 }
