@@ -54,7 +54,7 @@ class WidgetDbRepository implements WidgetRepository {
   Future<List<WidgetModel>> loadWidget(List<int> id) async {
     List<Map<String, dynamic>> data = await _widgetDao.queryByIds(id);
     List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-    if (widgets.length > 0) return widgets.map(WidgetModel.fromPo).toList();
+    if (widgets.isNotEmpty) return widgets.map(WidgetModel.fromPo).toList();
     return [];
   }
 

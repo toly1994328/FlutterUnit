@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 /// 说明:
 
 class CustomTransform extends StatefulWidget {
+  const CustomTransform({Key? key}) : super(key: key);
+
   @override
   _CustomTransformState createState() => _CustomTransformState();
 }
 
 class _CustomTransformState extends State<CustomTransform> {
-  var angle = 0.0;
-  var m = [
+  double angle = 0.0;
+  List<double> m = [
     1.0,
     0.0,
     0.0,

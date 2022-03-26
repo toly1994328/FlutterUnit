@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //          "【onChanged】 : 改变时回调   【Function(double)】",
 //    }
 class CustomSlider extends StatefulWidget {
+  const CustomSlider({Key? key}) : super(key: key);
+
   @override
   _CustomSliderState createState() => _CustomSliderState();
 }
@@ -33,12 +35,14 @@ class _CustomSliderState extends State<CustomSlider> {
             max: 360.0,
             activeColor: Colors.orangeAccent,
             inactiveColor: Colors.green.withAlpha(99),
-            onChanged: (value) {
-              setState(() {
-                _value = value;
-              });
-            }),
+            onChanged: _onChange),
       ],
     );
+  }
+
+  void _onChange(value) {
+    setState(() {
+      _value = value;
+    });
   }
 }

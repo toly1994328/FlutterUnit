@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
@@ -13,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【position】 : 动画   【Animation<Offset>】",
 //    }
 class CustomSlideTransition extends StatefulWidget {
+  const CustomSlideTransition({Key? key}) : super(key: key);
+
   @override
   _CustomSlideTransitionState createState() => _CustomSlideTransitionState();
 }
@@ -32,7 +33,7 @@ class _CustomSlideTransitionState extends State<CustomSlideTransition>
 
     animation = Tween<Offset>(
       begin: Offset.zero,
-      end: Offset(0.5, 0.5),
+      end: const Offset(0.5, 0.5),
     ).animate(_ctrl);
   }
 

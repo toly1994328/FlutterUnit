@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【autofocus】 : 自动聚焦   【bool】",
 //    }
 class CursorTextField extends StatefulWidget {
+  const CursorTextField({Key? key}) : super(key: key);
+
   @override
   _CursorTextFieldState createState() => _CursorTextFieldState();
 }
@@ -41,18 +43,18 @@ class _CursorTextFieldState extends State<CursorTextField> {
     );
   }
 
-  Container _buildTextField(BuildContext context) {
-    return Container(
+  Widget _buildTextField(BuildContext context) {
+    return SizedBox(
       width: 300,
       child: TextField(
-        style: TextStyle(color: Colors.blue),
+        style: const TextStyle(color: Colors.blue),
         minLines: 3,
         maxLines: 5,
         cursorColor: Colors.green,
-        cursorRadius: Radius.circular(3),
+        cursorRadius: const Radius.circular(3),
         cursorWidth: 5,
         showCursor: true,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           contentPadding: EdgeInsets.all(10),
           hintText: "请输入...",
           border: OutlineInputBorder(),
@@ -62,9 +64,9 @@ class _CursorTextFieldState extends State<CursorTextField> {
     );
   }
 
-  _buildSubmitBtn() => FlatButton(
+  Widget _buildSubmitBtn() => FlatButton(
       color: Colors.blue,
-      child: Text(
+      child: const Text(
         "提交",
         style: TextStyle(color: Colors.white, fontSize: 16),
       ),

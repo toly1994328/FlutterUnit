@@ -44,7 +44,7 @@ class DartSyntaxHighlighter extends SyntaxCostomHighlighter {
   DartSyntaxHighlighter([this._style]) {
     _spans = <_HighlightSpan>[];
 
-    if (_style == null) _style = SyntaxHighlighterStyle.defaultStyle();
+    _style ??= SyntaxHighlighterStyle.defaultStyle();
   }
 
   SyntaxHighlighterStyle? _style;
@@ -136,6 +136,7 @@ class DartSyntaxHighlighter extends SyntaxCostomHighlighter {
 
   List<_HighlightSpan> _spans =[];
 
+  @override
   TextSpan format(String src) {
     _src = src;
     _scanner =  StringScanner(_src);
@@ -327,7 +328,7 @@ class DartSyntaxHighlighter extends SyntaxCostomHighlighter {
         // Check if this loop did anything
         if (lastLoopPosition == _scanner.position) {
           // Failed to parse this file, abort gracefully
-          if (_spans.length > 0) {
+          if (_spans.isNotEmpty) {
             _spans.add( _HighlightSpan(_HighlightType.punctuation,
                 lastLoopPosition, _scanner.string.length - 1));
             _simplify();
@@ -358,7 +359,7 @@ class DartSyntaxHighlighter extends SyntaxCostomHighlighter {
   }
 
   bool _firstLetterIsUpperCase(String str) {
-    if (str.length > 0) {
+    if (str.isNotEmpty) {
       String first = str.substring(0, 1);
       return first == first.toUpperCase();
     }

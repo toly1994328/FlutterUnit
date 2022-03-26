@@ -13,23 +13,25 @@ import 'package:flutter/material.dart';
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】",
 //    }
 class CustomUnConstrainedBox extends StatefulWidget {
+  const CustomUnConstrainedBox({Key? key}) : super(key: key);
+
   @override
   _CustomUnConstrainedBoxState createState() => _CustomUnConstrainedBoxState();
 }
 
 class _CustomUnConstrainedBoxState extends State<CustomUnConstrainedBox> {
-  var _value = false;
+  bool _value = false;
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 20,
-      children: <Widget>[_buildUnconstrainedBox(), _buildConstrainedAxis()],
+      children: [_buildUnconstrainedBox(), _buildConstrainedAxis()],
     );
   }
 
   Widget _buildUnconstrainedBox() {
-    var child = Container(
+    Widget child = Container(
       color: Colors.cyanAccent,
       width: 60,
       height: 60,
@@ -74,7 +76,7 @@ class _CustomUnConstrainedBoxState extends State<CustomUnConstrainedBox> {
                 height: 60,
               )),
         ),
-        Text("竖直方向仍约束")
+        const Text("竖直方向仍约束")
       ],
     );
   }

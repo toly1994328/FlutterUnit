@@ -69,7 +69,7 @@ class _CustomFormState extends State<CustomForm> {
     return RaisedButton(
       color: Colors.blue,
       shape: const CircleBorder(
-        side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+        side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
       ),
       onPressed: _onSubmit,
       child: const Icon(

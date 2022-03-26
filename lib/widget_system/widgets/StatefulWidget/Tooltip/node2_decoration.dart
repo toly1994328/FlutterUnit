@@ -12,9 +12,11 @@ import 'package:flutter/material.dart';
 //          "【textStyle】 : 文字样式   【double】",
 //    }
 class DecorationTooltip extends StatelessWidget {
+  const DecorationTooltip({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
+    return const Tooltip(
         preferBelow: false,
         padding: EdgeInsets.all(5),
         margin: EdgeInsets.all(2),

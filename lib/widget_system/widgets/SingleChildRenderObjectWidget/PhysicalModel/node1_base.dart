@@ -16,13 +16,14 @@ import 'package:flutter/material.dart';
 //          "【color】: 颜色    【Color】",
 //    }
 class PhysicalModelDemo extends StatelessWidget{
+  const PhysicalModelDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
+        SizedBox(
           width: 150,
           height: 150,
           child: PhysicalModel(
@@ -37,7 +38,7 @@ class PhysicalModelDemo extends StatelessWidget{
               color: Colors.deepPurpleAccent),
         ),
 
-        Container(
+        SizedBox(
           width: 150,
           height: 150,
           child: PhysicalModel(
@@ -47,7 +48,7 @@ class PhysicalModelDemo extends StatelessWidget{
                 'assets/images/caver.webp',
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               clipBehavior: Clip.hardEdge,
               shape: BoxShape.rectangle,
               color: Colors.deepPurpleAccent),

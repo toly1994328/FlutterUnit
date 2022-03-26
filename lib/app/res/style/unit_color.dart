@@ -29,19 +29,19 @@ class UnitColor {
 
   static const int primaryIntValue = 0xFF24292E;
 
-  static const MaterialColor primarySwatch = const MaterialColor(
+  static const MaterialColor primarySwatch = MaterialColor(
     primaryIntValue,
-    const <int, Color>{
-      50: const Color(primaryIntValue),
-      100: const Color(primaryIntValue),
-      200: const Color(primaryIntValue),
-      300: const Color(primaryIntValue),
-      400: const Color(primaryIntValue),
-      500: const Color(primaryIntValue),
-      600: const Color(primaryIntValue),
-      700: const Color(primaryIntValue),
-      800: const Color(primaryIntValue),
-      900: const Color(primaryIntValue),
+    <int, Color>{
+      50: Color(primaryIntValue),
+      100: Color(primaryIntValue),
+      200: Color(primaryIntValue),
+      300: Color(primaryIntValue),
+      400: Color(primaryIntValue),
+      500: Color(primaryIntValue),
+      600: Color(primaryIntValue),
+      700: Color(primaryIntValue),
+      800: Color(primaryIntValue),
+      900: Color(primaryIntValue),
     },
   );
 

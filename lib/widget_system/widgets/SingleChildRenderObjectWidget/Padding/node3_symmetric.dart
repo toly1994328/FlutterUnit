@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 //          "EdgeInsets.symmetric用来限定水平和竖直方向的边距",
 //    }
 class PaddingSymmetric extends StatelessWidget {
+  const PaddingSymmetric({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +21,17 @@ class PaddingSymmetric extends StatelessWidget {
       width: 200,
       height: 150,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 30,horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 10),
         child: _buildChild(),
       ),
     );
   }
 
-  Widget _buildChild() {
-    return Container(
+  Widget _buildChild() => Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 100,
       height: 100,
-      child: Text("孩子"),
+      child: const Text("孩子"),
     );
-  }
 }

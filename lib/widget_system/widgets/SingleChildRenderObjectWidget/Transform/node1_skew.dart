@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'matrix4_shower.dart';
@@ -18,6 +16,8 @@ import 'matrix4_shower.dart';
 //          "斜切y由R1C0数控制,入参为弧度值,表示斜切角度",
 //    }
 class SkewTransform extends StatefulWidget {
+  const SkewTransform({Key? key}) : super(key: key);
+
   @override
   _SkewTransformState createState() => _SkewTransformState();
 }

@@ -19,15 +19,15 @@ class ValueListenableBuilderDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: Scaffold(
-        appBar: AppBar(title: Text("ValueListenableBuilder")),
+        appBar: AppBar(title: const Text("ValueListenableBuilder")),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('You have pushed the button this many times:'),
+              const Text('You have pushed the button this many times:'),
               ValueListenableBuilder<int>(
                 builder: _buildWithValue,
                 valueListenable: _counter,
@@ -37,7 +37,7 @@ class ValueListenableBuilderDemo extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.plus_one),
+          child: const Icon(Icons.plus_one),
           onPressed: () => _counter.value += 1,
         ),
       ),

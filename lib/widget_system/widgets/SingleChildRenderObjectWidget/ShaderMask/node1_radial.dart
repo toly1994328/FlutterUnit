@@ -15,6 +15,10 @@ import 'package:flutter/material.dart';
 //          "    通过RadialGradient#createShader创建径向渐变着色器。",
 //    }
 class RadialShaderMask extends StatelessWidget {
+  const RadialShaderMask({Key? key}) : super(key: key);
+
+  final List<Color> colors = const [Colors.red, Colors.yellow, Colors.blue];
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -31,7 +35,7 @@ class RadialShaderMask extends StatelessWidget {
         ),
         ShaderMask(
           shaderCallback: _buildShader,
-          child: Text(
+          child: const Text(
             '张风捷特烈',
             style: TextStyle(fontSize: 40, color: Colors.white),
           ),
@@ -48,12 +52,11 @@ class RadialShaderMask extends StatelessWidget {
     );
   }
 
-  final colors = [Colors.red, Colors.yellow, Colors.blue];
 
   Shader _buildShader(Rect bounds) => RadialGradient(
-          center: Alignment.topLeft,
-          radius: 1.0,
-          tileMode: TileMode.mirror,
-          colors: colors)
+      center: Alignment.topLeft,
+      radius: 1.0,
+      tileMode: TileMode.mirror,
+      colors: colors)
       .createShader(bounds);
 }

@@ -16,6 +16,8 @@ import 'matrix4_shower.dart';
 //          "平移z由R2C3数控制,入参为数值,表示平移长度",
 //    }
 class TranslationTransform extends StatefulWidget {
+  const TranslationTransform({Key? key}) : super(key: key);
+
   @override
   _TranslationTransformState createState() => _TranslationTransformState();
 }

@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -116,7 +114,7 @@ class _InteractiveViewerDemo3State extends State<InteractiveViewerDemo3>
         onPressed: _animateResetInitialize);
   }
 
-  var _x = 0.0;
+  final double _x = 0.0;
 
   Widget _buildButton2() {
     return MaterialButton(

@@ -12,10 +12,10 @@ import 'package:flutter/material.dart';
 class ShapeDecorationDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return const DecoratedBox(
       decoration: ShapeDecoration(
           shadows: [
-            const BoxShadow(
+            BoxShadow(
                 color: Colors.orangeAccent,
                 offset: Offset(0, 0),
                 blurRadius: 2,

@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -15,15 +14,19 @@ import 'package:flutter/material.dart';
 //    }
 
 class RepaintBoundaryDemo extends StatelessWidget{
+  const RepaintBoundaryDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return RepaintBoundary(
+    return const RepaintBoundary(
       child: TempPlayBezier3Page(),
     );
   }
 }
 
 class TempPlayBezier3Page extends StatefulWidget {
+  const TempPlayBezier3Page({Key? key}) : super(key: key);
+
   @override
   _TempPlayBezier3PageState createState() => _TempPlayBezier3PageState();
 }
@@ -40,15 +43,15 @@ class _TempPlayBezier3PageState extends State<TempPlayBezier3Page> {
 
   void _initPoints() {
     _pos = [];
-    _pos.add(Offset(0, 0));
-    _pos.add(Offset(60, -60));
-    _pos.add(Offset(-90, -90));
-    _pos.add(Offset(-120, -40));
+    _pos.add(const Offset(0, 0));
+    _pos.add(const Offset(60, -60));
+    _pos.add(const Offset(-90, -90));
+    _pos.add(const Offset(-120, -40));
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       width: MediaQuery.of(context).size.width,
       child: CustomPaint(

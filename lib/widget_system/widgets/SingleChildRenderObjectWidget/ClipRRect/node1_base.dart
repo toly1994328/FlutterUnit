@@ -14,10 +14,12 @@ import 'package:flutter/material.dart';
 //          "【clipper】 : 裁剪器   【CustomClipper<Rect>】",
 //    }
 class CustomClipRRect extends StatelessWidget {
+  const CustomClipRRect({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.all(Radius.elliptical(35, 30)),
+      borderRadius: const BorderRadius.all(Radius.elliptical(35, 30)),
       child: Image.asset(
         "assets/images/wy_300x200.webp",
         width: 150,

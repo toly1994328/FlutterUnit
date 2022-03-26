@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //          "【onChanged】 : 输入事件   【Function(String)】",
 //    }
 class CustomTextField extends StatefulWidget {
+  const CustomTextField({Key? key}) : super(key: key);
+
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
 }
@@ -23,6 +25,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   final FocusNode _focusNode = FocusNode();
   late TextEditingController _controller;
 
+  @override
   void initState() {
     super.initState();
     _controller = TextEditingController();
@@ -37,12 +40,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: 300,
         child: TextField(
           controller: _controller,
-          style: TextStyle(color: Colors.blue),
-          decoration: InputDecoration(
+          style: const TextStyle(color: Colors.blue),
+          decoration: const InputDecoration(
             border: OutlineInputBorder(),
             labelText: 'username',
           ),

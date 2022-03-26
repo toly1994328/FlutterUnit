@@ -15,30 +15,31 @@ import 'package:flutter/material.dart';
 
 
 class DividerThemeDemo extends StatelessWidget {
+  const DividerThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return DividerTheme(
-      data: DividerThemeData(
+      data: const DividerThemeData(
         color: Colors.orange,
         thickness: 2,
         space: 10,
         indent: 10,
         endIndent: 10,
-
       ),
       child: Wrap(
         spacing: 10,
-        children: <Widget>[
-         Divider(),
-         Divider(),
-         Divider(),
-         Divider(),
-         Divider(),
-          Container(
+        children: [
+          const Divider(),
+          const Divider(),
+          const Divider(),
+          const Divider(),
+          const Divider(),
+          SizedBox(
             height: 100,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
+              children: const [
                 VerticalDivider(),
                 VerticalDivider(),
                 VerticalDivider(),

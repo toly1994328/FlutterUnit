@@ -34,7 +34,7 @@ class ShapeMaterialButton extends StatelessWidget {
                 color: Colors.white,
               ),
               shape: const CircleBorder(
-                side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+                side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
               ),
               onLongPress: () =>  Navigator.of(context).pushNamed('AboutMePage'),
               onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage')),

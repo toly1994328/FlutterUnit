@@ -100,7 +100,7 @@ class _IconChooserState extends State<IconChooser> {
             _checkLi[_perPosition] = false;
             _perPosition = i;
             _checkLi[i] = true;
-            if (widget.onChecked != null) widget.onChecked(i);
+            widget.onChecked(i);
             setState(() {});
           },
           child: buildIcon(checked: _checkLi[i], icon: widget.icons[i])));

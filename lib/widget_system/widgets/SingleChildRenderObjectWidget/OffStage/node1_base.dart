@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【offstage】 : 是否消失   【bool】",
 //    }
 class CustomOffstage extends StatefulWidget {
+  const CustomOffstage({Key? key}) : super(key: key);
+
   @override
   _CustomOffstageState createState() => _CustomOffstageState();
 }
@@ -21,7 +23,7 @@ class _CustomOffstageState extends State<CustomOffstage> {
 
   @override
   Widget build(BuildContext context) {
-    var radBox = Container(
+    Widget radBox = Container(
       height: 50,
       width: 60,
       color: Colors.red,
@@ -30,7 +32,7 @@ class _CustomOffstageState extends State<CustomOffstage> {
           onChanged: (v) => setState(() => _off = v)),
     );
 
-    return Container(
+    return SizedBox(
       width: 250,
       height: 200,
       child: Row(
@@ -46,7 +48,7 @@ class _CustomOffstageState extends State<CustomOffstage> {
         height: 100,
         width: 100,
         color: Colors.blue,
-        child: Text(
+        child: const Text(
           "Offstage",
           style: TextStyle(fontSize: 20),
         ),

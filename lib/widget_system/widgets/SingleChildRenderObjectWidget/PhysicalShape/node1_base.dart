@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -17,9 +17,11 @@ import 'package:flutter/material.dart';
 //    }
 
 class PhysicalShapeDemo extends StatelessWidget {
+  const PhysicalShapeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 200,
       height: 200,
       child: PhysicalShape(
@@ -30,7 +32,7 @@ class PhysicalShapeDemo extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           clipBehavior: Clip.hardEdge,
-          clipper: ShapeBorderClipper(
+          clipper: const ShapeBorderClipper(
             shape: CircleBorder(side: BorderSide.none),
           ),
           color: Colors.deepPurpleAccent),

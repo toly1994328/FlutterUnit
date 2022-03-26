@@ -12,19 +12,22 @@ import 'package:flutter/material.dart';
 //          "【opacity】 : 透明度0~1   【double】",
 //    }
 class CustomOpacity extends StatefulWidget {
+  const CustomOpacity({Key? key}) : super(key: key);
+
   @override
   _CustomOpacityState createState() => _CustomOpacityState();
 }
 
 class _CustomOpacityState extends State<CustomOpacity> {
-  var _opacity = 0.2;
+  double _opacity = 0.2;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[_buildSlider(), _buildOpacity()],
+      children: [_buildSlider(), _buildOpacity()],
     );
   }
+
   // 创建Opacity
   Widget _buildOpacity() => Opacity(
         opacity: _opacity,

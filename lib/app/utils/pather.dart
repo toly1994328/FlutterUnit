@@ -7,7 +7,7 @@ class Pather {
 
   static Pather create = Pather._();
 
-  Path _path = Path();
+  final Path _path = Path();
 
   Path nStarPath(int num, double R, double r, {dx = 0, dy = 0}) {
     _path.reset();//重置路径

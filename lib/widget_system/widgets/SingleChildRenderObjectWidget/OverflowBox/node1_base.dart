@@ -16,16 +16,18 @@ import 'package:flutter/material.dart';
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】",
 //    }
 class CustomOverflowBox extends StatefulWidget {
+  const CustomOverflowBox({Key? key}) : super(key: key);
+
   @override
   _CustomOverflowBoxState createState() => _CustomOverflowBoxState();
 }
 
 class _CustomOverflowBoxState extends State<CustomOverflowBox> {
-  var _text = '';
+  String _text = '';
 
   @override
   Widget build(BuildContext context) {
-    var box = OverflowBox(
+    Widget box = OverflowBox(
       alignment: Alignment.center,
       minHeight: 50,
       minWidth: 50,
@@ -35,7 +37,6 @@ class _CustomOverflowBoxState extends State<CustomOverflowBox> {
         color: Colors.orange,
         child: Text(_text),
       ),
-//        child: Text("张风"),
     );
     return Column(
       children: <Widget>[
@@ -53,7 +54,7 @@ class _CustomOverflowBoxState extends State<CustomOverflowBox> {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: TextField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: OutlineInputBorder(),
           hintText: '请输入',
         ),

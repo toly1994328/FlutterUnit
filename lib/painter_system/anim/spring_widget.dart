@@ -100,7 +100,7 @@ class SpringPainter extends CustomPainter {
 
   SpringPainter({this.count = 20,required this.height}):super(repaint: height);
 
-  Paint _paint = Paint()
+  final Paint _paint = Paint()
     ..style = PaintingStyle.stroke
     ..strokeWidth = 1;
 

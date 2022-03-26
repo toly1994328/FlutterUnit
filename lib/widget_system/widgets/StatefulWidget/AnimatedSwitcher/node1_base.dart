@@ -66,7 +66,7 @@ class _CustomAnimatedSwitcherState extends State<CustomAnimatedSwitcher> {
           color: Colors.white,
         ),
        shape: const CircleBorder(
-         side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+         side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
        ),
         onPressed: () => setState(() => _count -= 1));
   }
@@ -83,7 +83,7 @@ class _CustomAnimatedSwitcherState extends State<CustomAnimatedSwitcher> {
           color: Colors.white,
         ),
         shape: const CircleBorder(
-          side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+          side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
         ),
         onPressed: () => setState(() => _count += 1));
 }

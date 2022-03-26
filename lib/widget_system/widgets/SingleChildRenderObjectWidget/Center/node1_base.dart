@@ -12,10 +12,12 @@ import 'package:flutter/material.dart';
 //          "【child】 : 孩子组件   【Widget】",
 //    }
 class CustomCenter extends StatelessWidget {
+  const CustomCenter({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(5),
+        margin: const EdgeInsets.all(5),
         width: 200,
         height: 100,
         color: Colors.grey.withAlpha(88),

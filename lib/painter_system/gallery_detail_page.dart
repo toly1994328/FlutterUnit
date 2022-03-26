@@ -156,7 +156,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
 
   // 跳转上一页
   void _switchPrevPage() {
-    if (widget.children.length > 0) {
+    if (widget.children.isNotEmpty) {
       int page = (_currentIndex.value - 1) % widget.children.length;
       _ctrl.animateToPage(page,
           duration: const Duration(milliseconds: 500), curve: Curves.linear);
@@ -165,7 +165,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
 
   // 跳转下一页
   void _switchNextPage() {
-    if (widget.children.length > 0) {
+    if (widget.children.isNotEmpty) {
       int page = (_currentIndex.value + 1) % widget.children.length;
       _ctrl.animateToPage(page,
           duration: const Duration(milliseconds: 500), curve: Curves.linear);
@@ -202,7 +202,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
 
   Widget _buildIndicatorText(BuildContext context, int value, Widget? child) {
     String indicatorText =
-        "${widget.children.length != 0 ? (value + 1) : 0} / ${widget.children.length}";
+        "${widget.children.isNotEmpty ? (value + 1) : 0} / ${widget.children.length}";
 
     return Text(
       indicatorText,

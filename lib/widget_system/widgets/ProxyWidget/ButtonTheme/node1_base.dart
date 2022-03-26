@@ -22,7 +22,7 @@ class ButtonThemeDemo extends StatelessWidget {
       splashColor: Colors.blue,
       minWidth: 40,
       shape: CircleBorder(
-        side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+        side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
       ),
       child: Wrap(
         spacing: 10,

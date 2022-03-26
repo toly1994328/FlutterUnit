@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomIgnorePointer extends StatefulWidget {
+  const CustomIgnorePointer({Key? key}) : super(key: key);
+
   @override
   _CustomIgnorePointerState createState() => _CustomIgnorePointerState();
 }
@@ -24,35 +26,33 @@ class _CustomIgnorePointerState extends State<CustomIgnorePointer> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Wrap(
-        crossAxisAlignment: WrapCrossAlignment.center,
-        children: <Widget>[
-          GestureDetector(
-            onTap: (){
-              print('IgnorePointer');
-            },
-            child: IgnorePointer(
-              ignoring: _ignore,
-              child: _buildButton(),
-            ),
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: <Widget>[
+        GestureDetector(
+          onTap: (){
+            print('IgnorePointer');
+          },
+          child: IgnorePointer(
+            ignoring: _ignore,
+            child: _buildButton(),
           ),
-          _buildSwitch(),
-          Text(!_ignore ? '允许点击' : '点击已锁定')
-        ],
-      ),
+        ),
+        _buildSwitch(),
+        Text(!_ignore ? '允许点击' : '点击已锁定')
+      ],
     );
   }
 
   Widget _buildButton() => RaisedButton(
       color: Theme.of(context).primaryColor,
-      child: Text(
+      child: const Text(
         'To About',
         style: TextStyle(color: Colors.white),
       ),
       onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'));
 
-  _buildSwitch() => Switch(
+  Widget _buildSwitch() => Switch(
       value: _ignore,
       onChanged: (v) {
         setState(() {

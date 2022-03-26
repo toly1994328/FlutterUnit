@@ -16,8 +16,11 @@ import 'package:flutter/material.dart';
 
 
 class StatusTransitionWidgetDemo extends StatefulWidget {
+  const StatusTransitionWidgetDemo({Key? key}) : super(key: key);
+
   @override
-  _StatusTransitionWidgetDemoState createState() => _StatusTransitionWidgetDemoState();
+  _StatusTransitionWidgetDemoState createState() =>
+      _StatusTransitionWidgetDemoState();
 }
 
 class _StatusTransitionWidgetDemoState extends State<StatusTransitionWidgetDemo>
@@ -27,7 +30,10 @@ class _StatusTransitionWidgetDemoState extends State<StatusTransitionWidgetDemo>
   @override
   void initState() {
     super.initState();
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1))..forward();
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..forward();
   }
 
   @override
@@ -46,7 +52,7 @@ class _StatusTransitionWidgetDemoState extends State<StatusTransitionWidgetDemo>
 class ColorStatusTransitionWidget extends StatusTransitionWidget {
   final Animation<double> animation;
 
-  ColorStatusTransitionWidget({Key? key,required this.animation})
+  const ColorStatusTransitionWidget({Key? key,required this.animation})
       : super(key: key, animation: animation);
 
   @override

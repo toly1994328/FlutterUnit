@@ -29,7 +29,7 @@ class _SliderThemeDemoState extends State<SliderThemeDemo> {
         min: 0.0,
         max: 200.0,
         divisions: 10,
-        label: "${_bliss.toStringAsFixed(1)}",
+        label: _bliss.toStringAsFixed(1),
         onChanged: (double value) {
           setState(() {
             _bliss = value;

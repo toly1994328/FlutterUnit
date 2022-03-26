@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //          "【clipper】 : 裁剪器   【CustomClipper<Path>】",
 //    }
 class CustomClipPath extends StatelessWidget {
+  const CustomClipPath({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ClipPath(

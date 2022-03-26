@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-06
@@ -14,11 +12,11 @@ class TechnoShapeBorder extends ShapeBorder {
   final Path innerLinePathTop = Path();
   final Color color;
 
-  final cornerWidth;
+  final double cornerWidth;
 
-  final spanWidth;
-  final storkWidth;
-  final innerRate;
+  final double spanWidth;
+  final double storkWidth;
+  final double innerRate;
 
   TechnoShapeBorder(
       {this.color = Colors.green,

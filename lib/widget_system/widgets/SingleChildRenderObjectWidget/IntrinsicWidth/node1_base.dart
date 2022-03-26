@@ -14,23 +14,23 @@ import 'package:flutter/material.dart';
 //    }
 
 class IntrinsicWidthDemo extends StatefulWidget {
+  const IntrinsicWidthDemo({Key? key}) : super(key: key);
+
   @override
   _IntrinsicWidthDemoState createState() => _IntrinsicWidthDemoState();
 }
 
 class _IntrinsicWidthDemoState extends State<IntrinsicWidthDemo> {
-  var _height =120.0;
+  double _height =120.0;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          buildChild(_height),
-          SizedBox(height: 10),
-          _buildSlider()
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        buildChild(_height),
+        const SizedBox(height: 10),
+        _buildSlider()
+      ],
     );
   }
 
@@ -52,13 +52,13 @@ class _IntrinsicWidthDemoState extends State<IntrinsicWidthDemo> {
             width: 150,
             height: 60,
             alignment: Alignment.center,
-            child: Text("固定宽"),
+            child: const Text("固定宽"),
           ),
           Container(
             color: Colors.red,
             height: 40,
             alignment: Alignment.center,
-            child: Text("最宽"),
+            child: const Text("最宽"),
           )
         ],
       ),

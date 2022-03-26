@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -20,39 +19,37 @@ class AboutAppPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  height: 150,
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.only(bottom: 50),
-                  child: Image.asset(
-                    'assets/images/sabar.webp',
-                    fit: BoxFit.cover,
-                  ),
+          Stack(
+            children: <Widget>[
+              Container(
+                height: 150,
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.only(bottom: 50),
+                child: Image.asset(
+                  'assets/images/sabar.webp',
+                  fit: BoxFit.cover,
                 ),
-                _buildBar(context),
-                Positioned(
-                    bottom: 0,
-                    left: 50,
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, Right2LeftRouter(child: FlutterUnitTimeLine()));
-                      },
-                      child: CircleImage(
-                        size: 100,
-                        shadowColor: Theme.of(context).primaryColor,
-                        image: AssetImage('assets/images/icon_head.webp'),
-                      ),
-                    )),
-              ],
-            ),
+              ),
+              _buildBar(context),
+              Positioned(
+                  bottom: 0,
+                  left: 50,
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, Right2LeftRouter(child: const FlutterUnitTimeLine()));
+                    },
+                    child: CircleImage(
+                      size: 100,
+                      shadowColor: Theme.of(context).primaryColor,
+                      image: const AssetImage('assets/images/icon_head.webp'),
+                    ),
+                  )),
+            ],
           ),
           Expanded(
             child: SingleChildScrollView(
               child: Container(
-                margin: EdgeInsets.all(24),
+                margin: const EdgeInsets.all(24),
                 child: _buildInfo(),
               ),
             ),
@@ -71,7 +68,7 @@ class AboutAppPage extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.of(context).pop(),
             child: Container(
-              padding: EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 10),
               child: Icon(
                 Icons.arrow_back,
                 size: 30,
@@ -79,7 +76,7 @@ class AboutAppPage extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           FeedbackWidget(
             onPressed: () =>
                 _launchURL("mailto:1981462002@qq.com?subject=来自Flutter Unit"),
@@ -89,7 +86,7 @@ class AboutAppPage extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           )
         ],
@@ -121,11 +118,11 @@ class AboutAppPage extends StatelessWidget {
                     direction: Axis.vertical,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: <Widget>[
-                      Icon(
+                      const Icon(
                         TolyIcon.icon_github,
                         size: 35,
                       ),
-                      Text('Github')
+                      const Text('Github')
                     ],
                   )),
             ],
@@ -134,34 +131,34 @@ class AboutAppPage extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
+            const Text(
               'Flutter Unit',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'The Unity Of Flutter, The Unity Of Coder.',
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'Flutter的联合，编程者的联合。',
               style: TextStyle(fontSize: 16),
             ),
-            Divider(
+            const Divider(
               height: 20,
             ),
-            InfoPanel(
+            const InfoPanel(
               title: '项目简介',
               info: '      Flutter Unit 是一个非盈利性的开源项目，'
                   '旨在提供全面的Flutter学习指南及编程者的交流技术的接口。'
                   '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址: '
                   'https://github.com/toly1994328/FlutterUnit',
             ),
-            Divider(
+            const Divider(
               height: 20,
             ),
-            InfoPanel(
+            const InfoPanel(
                 title: 'Flutter Unit 1.0',
                 info:    'Flutter Unit 1.0 核心计划是收录widget，即widget集录。'
                     '目前收录组件 283 个，均可在 app 中进行查看。'
@@ -173,10 +170,10 @@ class AboutAppPage extends StatelessWidget {
                     '○  主题、字体设置，代码风格等全局状态管理。\n'
                     '○  搜索功能和组件星级分类。',
             ),
-            Divider(
+            const Divider(
               height: 20,
             ),
-            InfoPanel(
+            const InfoPanel(
               title: 'Flutter Unit 2.0 计划',
               info:    'Flutter Unit 2.0 尚在计划之中，如果说1.0是本王单枪匹马，'
                   '那2.0将是Flutter爱好者的共同努力。后面陆续会发布一些征集方案，'
@@ -206,18 +203,18 @@ class InfoPanel extends StatelessWidget {
             Circle(color: Theme.of(context).primaryColor),
             Padding(
               padding: const EdgeInsets.only(left: 15,top: 15,bottom: 15),
-              child: Text('$title',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+              child: Text(title,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
             )
           ],
         ),
         Panel(
         color: Theme.of(context).primaryColor.withAlpha(33),
           child: Text(
-            '$info',
-            style: TextStyle(color: Colors.grey,
+            info,
+            style: const TextStyle(color: Colors.grey,
                 fontSize: 13,
                 shadows: [
-                  Shadow(
+                  const Shadow(
                       color: Colors.white,
                       offset: Offset(1,1)
                   )

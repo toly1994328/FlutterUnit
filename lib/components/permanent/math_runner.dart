@@ -48,11 +48,9 @@ class _MathRunnerState extends State<MathRunner>
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-        child: Align(
-          alignment: Alignment(_x, _y),
-          child: widget.child,
-        )
+    return  Align(
+      alignment: Alignment(_x, _y),
+      child: widget.child,
     );
   }
 }

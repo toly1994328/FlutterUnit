@@ -160,7 +160,7 @@ class AboutMePage extends StatelessWidget {
             child: Wrap(
               direction: Axis.vertical,
               crossAxisAlignment: WrapCrossAlignment.center,
-              children: <Widget>[
+              children: const[
                 Icon(
                   TolyIcon.icon_github,
                   size: 35,

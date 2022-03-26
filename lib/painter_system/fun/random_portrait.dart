@@ -59,7 +59,7 @@ class _RandomPortraitState extends State<RandomPortrait> {
 }
 
 class PortraitPainter extends CustomPainter {
-  Paint _paint;
+  final Paint _paint;
 
   final int blockCount;
   final Color color;

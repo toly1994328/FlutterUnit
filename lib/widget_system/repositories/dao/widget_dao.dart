@@ -1,8 +1,6 @@
 
 import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:sqflite/sqflite.dart';
-
-import '../app_start.dart';
 import '../bean/widget_po.dart';
 
 
@@ -42,7 +40,7 @@ class WidgetDao {
   }
 
   Future<List<Map<String, dynamic>>> queryByIds(List<int> ids) async {
-    if (ids.length == 0) {
+    if (ids.isEmpty) {
       return [];
     }
     String sql = "SELECT * "

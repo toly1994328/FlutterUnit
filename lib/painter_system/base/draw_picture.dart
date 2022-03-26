@@ -45,7 +45,7 @@ class _DrawPictureState extends State<DrawPicture> {
 }
 
 class PaperPainter extends CustomPainter {
-  Paint _paint;
+  final Paint _paint;
 
   final double strokeWidth = 0.5;
   final Color color = Colors.blue;

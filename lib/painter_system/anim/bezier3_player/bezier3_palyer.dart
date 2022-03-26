@@ -76,7 +76,7 @@ class _Bezier3PlayerState extends State<Bezier3Player> {
 class PaperPainter extends CustomPainter {
   final Coordinate coordinate = Coordinate();
 
-  Paint _helpPaint = Paint()
+  final Paint _helpPaint = Paint()
     ..color = Colors.purple
     ..style = PaintingStyle.stroke
     ..strokeCap = StrokeCap.round;

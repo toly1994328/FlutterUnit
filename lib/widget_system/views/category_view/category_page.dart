@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/style/gap.dart';
@@ -49,18 +48,16 @@ class CategoryPage extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
       sliver: SliverGrid(
           delegate: SliverChildBuilderDelegate(
-              (_, index) => Container(
-                    child: GestureDetector(
-                        onTap: () =>
-                            _toDetailPage(context, state.categories[index]),
-                        child: CategoryListItem(
-                          data: state.categories[index],
-                          onDeleteItemClick: (model) =>
-                              _deleteCollect(context, model),
-                          onEditItemClick: (model) =>
-                              _editCollect(context, model),
-                        )),
-                  ),
+              (_, index) => GestureDetector(
+                  onTap: () =>
+                      _toDetailPage(context, state.categories[index]),
+                  child: CategoryListItem(
+                    data: state.categories[index],
+                    onDeleteItemClick: (model) =>
+                        _deleteCollect(context, model),
+                    onEditItemClick: (model) =>
+                        _editCollect(context, model),
+                  )),
               childCount: state.categories.length),
           gridDelegate: gridDelegate),
     );

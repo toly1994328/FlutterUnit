@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 //          "EdgeInsets.only用来限定相同的四边边距",
 //    }
 class PaddingOnly extends StatelessWidget {
+  const PaddingOnly({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +21,17 @@ class PaddingOnly extends StatelessWidget {
       width: 200,
       height: 150,
       child: Padding(
-        padding: EdgeInsets.only(top:10,left: 10),
+        padding: const EdgeInsets.only(top:10,left: 10),
         child: _buildChild(),
       ),
     );
   }
 
-  Widget _buildChild() {
-    return Container(
+  Widget _buildChild() => Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 100,
       height: 100,
-      child: Text("孩子"),
+      child: const Text("孩子"),
     );
-  }
 }

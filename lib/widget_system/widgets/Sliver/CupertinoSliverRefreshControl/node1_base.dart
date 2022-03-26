@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【builder】 : 指示器构造器   【RefreshControlIndicatorBuilder】",
 //    }
 class CupertinoSliverRefreshControlDemo extends StatefulWidget {
+  const CupertinoSliverRefreshControlDemo({Key? key}) : super(key: key);
+
   @override
   _CupertinoSliverRefreshControlDemoState createState() =>
       _CupertinoSliverRefreshControlDemoState();
@@ -41,10 +43,11 @@ class _CupertinoSliverRefreshControlDemoState
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: CustomScrollView(
-        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics()),
         slivers: <Widget>[
           _buildSliverAppBar(),
           CupertinoSliverRefreshControl(
@@ -68,7 +71,7 @@ class _CupertinoSliverRefreshControlDemoState
                   color: data[index],
                   child: Text(
                     colorString(data[index]),
-                    style: TextStyle(color: Colors.white, shadows: [
+                    style: const TextStyle(color: Colors.white, shadows: [
                       Shadow(
                           color: Colors.black,
                           offset: Offset(.5, .5),
@@ -83,16 +86,16 @@ class _CupertinoSliverRefreshControlDemoState
     return SliverAppBar(
       expandedHeight: 120.0,
       leading: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Image.asset('assets/images/icon_head.webp')),
-      title: Text('张风捷特烈'),
+      title: const Text('张风捷特烈'),
       actions: _buildActions(),
       elevation: 5,
       pinned: true,
       backgroundColor: Colors.orange,
       flexibleSpace: FlexibleSpaceBar(
         //伸展处布局
-        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        titlePadding: const EdgeInsets.only(left: 55, bottom: 15), //标题边距
         collapseMode: CollapseMode.parallax, //视差效果
         background: Image.asset(
           "assets/images/caver.webp",
@@ -105,7 +108,7 @@ class _CupertinoSliverRefreshControlDemoState
   List<Widget> _buildActions() => <Widget>[
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.star_border,
             color: Colors.white,
           ),
@@ -119,7 +122,7 @@ class _CupertinoSliverRefreshControlDemoState
       r.nextInt(255), r.nextInt(255), r.nextInt(255), r.nextInt(255));
 
   Future<void> _doRefresh() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     setState(() {
       data.insertAll(0, [randomColor()]);
     });

@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【clipper】 : 裁剪器   【CustomClipper<Rect>】",
 //    }
 class CustomClipRect extends StatelessWidget {
+  const CustomClipRect({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ClipRect(
@@ -21,7 +23,8 @@ class CustomClipRect extends StatelessWidget {
         width: 100,
         child: Image.asset(
           "assets/images/wy_300x200.webp",
-          fit: BoxFit.cover,),
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

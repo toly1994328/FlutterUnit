@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【turns】 : 是否消失   【Animation<double>】",
 //    }
 class CustomRotationTransition extends StatefulWidget {
+  const CustomRotationTransition({Key? key}) : super(key: key);
+
   @override
   _CustomRotationTransitionState createState() => _CustomRotationTransitionState();
 }

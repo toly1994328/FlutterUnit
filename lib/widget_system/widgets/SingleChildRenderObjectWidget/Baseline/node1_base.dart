@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【baselineType】 : 基线类型   【TextBaseline】",
 //    }
 class CustomBaseline extends StatefulWidget {
+  const CustomBaseline({Key? key}) : super(key: key);
+
   @override
   _CustomBaselineState createState() => _CustomBaselineState();
 }
@@ -22,18 +24,16 @@ class _CustomBaselineState extends State<CustomBaseline> {
 
   @override
   Widget build(BuildContext context) {
-
-    var childBox = Text(
+    Widget childBox = const Text(
       '你好,Flutter',
-      style: TextStyle(fontSize: 20,fontFamily: "Menlo"),
+      style: TextStyle(fontSize: 20, fontFamily: "Menlo"),
     );
 
 
-    var baseline = Baseline(
+    Widget baseline = Baseline(
         child: childBox,
         baseline: _baseline,
-        baselineType: TextBaseline.alphabetic
-    );
+        baselineType: TextBaseline.alphabetic);
 
     return Column(
       children: <Widget>[
@@ -49,10 +49,11 @@ class _CustomBaselineState extends State<CustomBaseline> {
   }
 
   Widget _buildSlider() => Slider(
-      divisions: 20,
-      min: 0,
-      max: 60,
-      label: _baseline.toString(),
-      value: _baseline,
-      onChanged: (v) => setState(() => _baseline = v));
+        divisions: 20,
+        min: 0,
+        max: 60,
+        label: _baseline.toString(),
+        value: _baseline,
+        onChanged: (v) => setState(() => _baseline = v),
+      );
 }

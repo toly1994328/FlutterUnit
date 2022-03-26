@@ -16,18 +16,20 @@ import 'package:flutter/material.dart';
 //          "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】",
 //    }
 class CustomTableRowInkWell extends StatelessWidget {
+  const CustomTableRowInkWell({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var title = _ItemBean("单位称", "量纲", "单位", "单位名称", "单位符号");
-    var m = _ItemBean("长度", "L", "1m", "米", "m");
-    var kg = _ItemBean("质量", "M", "1Kg", "千克", "Kg");
-    var s = _ItemBean("时间", "T", "1s", "秒", "s");
-    var a = _ItemBean("安培", "Ι", "1A", "安培", "A");
-    var k = _ItemBean("热力学温度", "θ", "1K", "开尔文", "K");
-    var mol = _ItemBean("物质的量", "N", "1mol", "摩尔", "mol");
-    var cd = _ItemBean("发光强度", "J", "1cd", "坎德拉", "cd");
+    _ItemBean title = _ItemBean("单位称", "量纲", "单位", "单位名称", "单位符号");
+    _ItemBean m = _ItemBean("长度", "L", "1m", "米", "m");
+    _ItemBean kg = _ItemBean("质量", "M", "1Kg", "千克", "Kg");
+    _ItemBean s = _ItemBean("时间", "T", "1s", "秒", "s");
+    _ItemBean a = _ItemBean("安培", "Ι", "1A", "安培", "A");
+    _ItemBean k = _ItemBean("热力学温度", "θ", "1K", "开尔文", "K");
+    _ItemBean mol = _ItemBean("物质的量", "N", "1mol", "摩尔", "mol");
+    _ItemBean cd = _ItemBean("发光强度", "J", "1cd", "坎德拉", "cd");
 
-    var data = <_ItemBean>[title, m, kg, s, a, k, mol, cd];
+    List<_ItemBean> data = [title, m, kg, s, a, k, mol, cd];
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -52,7 +54,7 @@ class CustomTableRowInkWell extends StatelessWidget {
             child: Center(
                 child: Text(
                   item.name,
-                  style: TextStyle(color: Colors.blue),
+                  style: const TextStyle(color: Colors.blue),
                 )),
           ),
           Padding(

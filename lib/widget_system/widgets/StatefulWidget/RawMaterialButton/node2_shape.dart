@@ -23,7 +23,7 @@ class ShapeRawMaterialButton extends StatelessWidget {
         RawMaterialButton(
           elevation: 2,
           shape: const CircleBorder(
-            side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
           ),
           fillColor: Colors.green,
           splashColor: Colors.orange,
@@ -47,7 +47,7 @@ class ShapeRawMaterialButton extends StatelessWidget {
         RawMaterialButton(
           elevation: 2,
           shape: const CircleBorder(
-            side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+            side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
           ),
           fillColor: Colors.red,
           splashColor: Colors.orange,

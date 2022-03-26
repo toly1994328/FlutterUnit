@@ -11,13 +11,14 @@ import 'package:flutter/material.dart';
 //          "【selectButtonBuilder】: *选择按钮构造器   【InspectorSelectButtonBuilder】",
 //    }
 class WidgetInspectorDemo extends StatelessWidget {
+  const WidgetInspectorDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: WidgetInspector(
-        child: HomePage(),
+        child: const HomePage(),
         selectButtonBuilder: _selectButtonBuilder,
       ),
     );
@@ -30,25 +31,27 @@ class WidgetInspectorDemo extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  var _count = 0;
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        alignment: Alignment(0, 0.7),
+        alignment: const Alignment(0, 0.7),
         child: Text(
           '你点击了$_count次',
-          style: TextStyle(fontSize: 18, color: Colors.blue),
+          style: const TextStyle(fontSize: 18, color: Colors.blue),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           setState(() {
             _count++;

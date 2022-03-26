@@ -19,7 +19,7 @@ class FeedbackWidget extends StatefulWidget {
   final Function()? onPressed;
   final Function()? onEnd;
   final Function()? onLongPressed;
-  final a;
+  final double a;
 
   FeedbackWidget({
     required this.child,

@@ -71,7 +71,7 @@ class AnimPainter extends CustomPainter {
 
     double step = size.height / 11;
 
-    if(points.values.length>0){
+    if(points.values.isNotEmpty){
       canvas.drawLine(Offset(0, -points.values.last*step*10), Offset(280, -points.values.last*step*10), Paint()..color=Colors.purple);
       canvas.drawCircle(Offset(230, -points.values.last*step*10), 10, Paint()..color=Colors.orange);
     }

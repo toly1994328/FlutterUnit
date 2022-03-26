@@ -16,7 +16,9 @@ import 'package:flutter/material.dart';
 //          "【autofocus】 : 自动聚焦   【bool】",
 //    }
 class CustomSelectableText extends StatelessWidget {
-  final text = "        始臣之解牛之时，所见无非牛者。三年之后，未尝见全牛也。方今之时，"
+  const CustomSelectableText({Key? key}) : super(key: key);
+
+  final String text = "        始臣之解牛之时，所见无非牛者。三年之后，未尝见全牛也。方今之时，"
       "臣以神遇而不以目视，官知止而神欲行。依乎天理，批大郤，导大窾，因其固然，"
       "技经肯綮之未尝，而况大軱乎！良庖岁更刀，割也；族庖月更刀，折也。"
       "今臣之刀十九年矣，所解数千牛矣，而刀刃若新发于硎。彼节者有间，而刀刃者无厚；"
@@ -28,9 +30,9 @@ class CustomSelectableText extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectableText(
       text,
-      style: TextStyle(fontSize: 18, color: Colors.orange),
+      style: const TextStyle(fontSize: 18, color: Colors.orange),
       cursorColor: Colors.green,
-      cursorRadius: Radius.circular(3),
+      cursorRadius: const Radius.circular(3),
       cursorWidth: 5,
       showCursor: true,
       autofocus: false,

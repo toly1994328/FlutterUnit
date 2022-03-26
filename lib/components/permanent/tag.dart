@@ -27,14 +27,14 @@ class Tag extends StatelessWidget {
 class _TagPaint extends CustomPainter {
   Path path = Path();
   Path shadowPath = Path();
-  Paint _paint;
-  final tranRate;
+  final Paint _paint;
+  final double tranRate;
   final double shadowHeight;
   final Color color;
 
   final rate = 0.5;
 
-  _TagPaint({this.tranRate,required this.color ,required this.shadowHeight})
+  _TagPaint({this.tranRate=0,required this.color ,required this.shadowHeight})
       : _paint = Paint()..color = color;
 
   @override

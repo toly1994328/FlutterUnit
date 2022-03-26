@@ -15,7 +15,9 @@ import 'package:flutter/material.dart';
 //    }
 
 class SliverOverlapInjectorDemo extends StatelessWidget {
-  final _tabs = ['风神传', '封妖志', "幻将录", "永恒传说"];
+  const SliverOverlapInjectorDemo({Key? key}) : super(key: key);
+
+  final List<String> _tabs = const ['风神传', '封妖志', "幻将录", "永恒传说"];
 
   @override
   Widget build(BuildContext context) {
@@ -70,22 +72,10 @@ class SliverOverlapInjectorDemo extends StatelessWidget {
                 key: PageStorageKey<String>(name),
                 slivers: <Widget>[
                   SliverOverlapInjector(
-                    handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                    handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
+                        context),
                   ),
-                  SliverPadding(
-                    padding: const EdgeInsets.all(8.0),
-                    sliver: SliverFixedExtentList(
-                      itemExtent: 48.0,
-                      delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                          return ListTile(
-                            title: Text('《$name》 第 $index章'),
-                          );
-                        },
-                        childCount: 50,
-                      ),
-                    ),
-                  ),
+                  buildContent(name),
                 ],
               );
             },
@@ -94,4 +84,19 @@ class SliverOverlapInjectorDemo extends StatelessWidget {
       }).toList(),
     );
   }
+
+  Widget buildContent(String name) => SliverPadding(
+        padding: const EdgeInsets.all(8.0),
+        sliver: SliverFixedExtentList(
+          itemExtent: 48.0,
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return ListTile(
+                title: Text('《$name》 第 $index章'),
+              );
+            },
+            childCount: 50,
+          ),
+        ),
+      );
 }

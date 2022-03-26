@@ -14,9 +14,7 @@ class LocalStorage {
 
   // 如果_sp已存在，直接返回，为null时创建
   static Future<SharedPreferences> get sp async {
-    if (_sp == null) {
-      _sp = await SharedPreferences.getInstance();
-    }
+    _sp ??= await SharedPreferences.getInstance();
     return _sp!;
   }
 

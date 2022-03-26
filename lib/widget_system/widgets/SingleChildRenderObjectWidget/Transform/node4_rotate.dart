@@ -18,6 +18,8 @@ import 'matrix4_shower.dart';
 //          "z旋转由R0C0、R0C1、R1C0、R1C1控制,入参表示弧度\n"
 //    }
 class RotateTransform extends StatefulWidget {
+  const RotateTransform({Key? key}) : super(key: key);
+
   @override
   _RotateTransformState createState() => _RotateTransformState();
 }

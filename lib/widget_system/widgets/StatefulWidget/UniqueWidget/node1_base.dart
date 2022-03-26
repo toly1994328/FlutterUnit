@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class UniqueWidgetDemo extends StatelessWidget {
+  const UniqueWidgetDemo({Key? key}) : super(key: key);
+
   final String info =
       '该类是抽象类，在 Flutter 框架层没有实现类，也没有其他源码使用到它，说明它基本上没啥用。'
       '本质上它也非常简单，就是为组件添加一个 GlobalKey，在 Element#inflateWidget 时，会校验组件是否有 GlobalKey ，'
@@ -24,8 +26,8 @@ class UniqueWidgetDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue.withOpacity(0.1),
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Text(info),
     );
   }
