@@ -22,6 +22,8 @@ import 'background.dart';
 import 'toly_app_bar.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -78,9 +80,9 @@ class _HomePageState extends State<HomePage>
 
   Widget _buildBackground(BuildContext context, GlobalState state) {
     if (state.showBackGround) {
-      return BackgroundShower();
+      return const BackgroundShower();
     }
-    return Container();
+    return const SizedBox.shrink();
   }
 
   Widget _buildContent(WidgetsState state) {
@@ -92,12 +94,13 @@ class _HomePageState extends State<HomePage>
 
     if (state is WidgetsLoaded) {
       List<WidgetModel> items = state.widgets;
-      if (items.isEmpty)
+      if (items.isEmpty) {
         return const SliverFillRemaining(
           child: EmptyShower(
             message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",
           ),
         );
+      }
       return SliverList(
         delegate: SliverChildBuilderDelegate(
             (_, int index) => _buildHomeItem(items[index]),

@@ -23,7 +23,7 @@ class _SizeChangedLayoutNotifierDemoState extends State<SizeChangedLayoutNotifie
   Widget build(BuildContext context) {
     return NotificationListener<SizeChangedLayoutNotification>(
       onNotification: _onNotification,
-      child: ChangeableBox(),
+      child: const ChangeableBox(),
     );
   }
 

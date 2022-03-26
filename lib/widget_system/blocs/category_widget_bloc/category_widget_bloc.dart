@@ -29,7 +29,7 @@ class CategoryWidgetBloc
      widgets.isNotEmpty
         ? emit(CategoryWidgetLoadedState(widgets))
         : emit(CategoryWidgetEmptyState());
-    categoryBloc.add(EventLoadCategory());
+    categoryBloc.add(const EventLoadCategory());
   }
 
   void _onEventToggleCategoryWidget(EventToggleCategoryWidget event, Emitter<CategoryWidgetState> emit) async{

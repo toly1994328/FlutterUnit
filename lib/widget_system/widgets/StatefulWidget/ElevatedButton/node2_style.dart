@@ -40,7 +40,7 @@ class ElevatedButtonStyleDemo extends StatelessWidget {
                 primary: Colors.black,
                 side: const BorderSide(color: Colors.blue,width: 1),
                 shape: const RoundedRectangleBorder(
-                  borderRadius: const BorderRadius.all(Radius.circular(10))
+                  borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 // elevation: 2,
                 shadowColor: Colors.orangeAccent),

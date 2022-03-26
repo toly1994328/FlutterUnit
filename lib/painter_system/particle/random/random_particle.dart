@@ -12,6 +12,8 @@ import 'world_render.dart';
 /// 说明:
 
 class RandomParticle extends StatefulWidget {
+  const RandomParticle({Key? key}) : super(key: key);
+
   @override
   _RandomParticleState createState() => _RandomParticleState();
 }
@@ -27,7 +29,7 @@ class _RandomParticleState extends State<RandomParticle> with SingleTickerProvid
     super.initState();
 
 
-    _timer =Timer.periodic(Duration(seconds: 1),addParticle);
+    _timer =Timer.periodic(const Duration(seconds: 1),addParticle);
 
     _controller = AnimationController(
       duration: const Duration(seconds: 1),

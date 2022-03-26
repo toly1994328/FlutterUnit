@@ -33,10 +33,10 @@ class LoggedOut extends AuthEvent {
   final bool clearUser;
   final bool tokenDisable;
 
-  LoggedOut({this.clearUser=true,this.tokenDisable=false});
+  const LoggedOut({this.clearUser=true,this.tokenDisable=false});
 }
 
 class TokenDisabled extends AuthEvent {
 
-  TokenDisabled();
+  const TokenDisabled();
 }

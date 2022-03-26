@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【delegate】 : 代理   【FlowDelegate】",
 //    }
 class CircleFlow extends StatelessWidget {
+  CircleFlow({Key? key}) : super(key: key);
+
   final List<String> data = List.generate(
       16,
       (index) => index.isEven
@@ -37,6 +39,7 @@ class CircleFlow extends StatelessWidget {
 }
 
 class _CircleFlowDelegate extends FlowDelegate {
+
   @override //绘制孩子的方法
   void paintChildren(FlowPaintingContext context) {
     final double radius = context.size.shortestSide / 2;
@@ -55,7 +58,5 @@ class _CircleFlowDelegate extends FlowDelegate {
   }
 
   @override
-  bool shouldRepaint(FlowDelegate oldDelegate) {
-    return true;
-  }
+  bool shouldRepaint(FlowDelegate oldDelegate) => false;
 }

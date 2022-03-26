@@ -24,7 +24,7 @@ class ScrollViewDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: MyScrollView(),
     );

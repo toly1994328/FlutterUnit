@@ -80,7 +80,7 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
                     hasScrollBody = !hasScrollBody;
                   });
                 },
-                child: Text('hasScrollBody:$hasScrollBody',style: TextStyle(color: Colors.white),),
+                child: Text('hasScrollBody:$hasScrollBody',style: const TextStyle(color: Colors.white),),
               ),
               RaisedButton(
                 color: Colors.blue,
@@ -90,7 +90,7 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
                     fillOverscroll = !fillOverscroll;
                   });
                 },
-                child: Text('fillOverscroll:$fillOverscroll',style: TextStyle(color: Colors.white)),
+                child: Text('fillOverscroll:$fillOverscroll',style: const TextStyle(color: Colors.white)),
               ),
             ],
           ),
@@ -107,7 +107,7 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
                   color: data[index],
                   child: Text(
                     colorString(data[index]),
-                    style: TextStyle(color: Colors.white, shadows: [
+                    style: const TextStyle(color: Colors.white, shadows: [
                       Shadow(
                           color: Colors.black,
                           offset: Offset(.5, .5),
@@ -122,9 +122,9 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
     return SliverAppBar(
       expandedHeight: 120.0,
       leading: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Image.asset('assets/images/icon_head.webp')),
-      title: Text('张风捷特烈'),
+      title: const Text('张风捷特烈'),
       actions: _buildActions(),
       elevation: 5,
       pinned: true,

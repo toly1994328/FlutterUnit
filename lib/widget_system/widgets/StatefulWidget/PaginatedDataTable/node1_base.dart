@@ -216,7 +216,9 @@ class DessertDataSource extends DataTableSource {
 
   void _selectAll(bool? checked) {
     if (checked == null) return;
-    for (HeroInfo dessert in _desserts) dessert.selected = checked;
+    for (HeroInfo dessert in _desserts) {
+      dessert.selected = checked;
+    }
     _selectedCount = checked ? _desserts.length : 0;
     notifyListeners();
   }

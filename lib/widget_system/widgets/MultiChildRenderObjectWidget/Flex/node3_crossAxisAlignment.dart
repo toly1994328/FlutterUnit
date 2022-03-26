@@ -12,42 +12,44 @@ import 'package:flutter/material.dart';
 //          "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】",
 //    }
 class CrossAxisAlignmentFlex extends StatelessWidget {
+  CrossAxisAlignmentFlex({Key? key}) : super(key: key);
 
   static TextStyle textStyle =
-  TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
+  const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
 
-  final blueBox = Container(
+  final Widget blueBox = Container(
     alignment: Alignment.center,
     color: Colors.blue,
     height: 20,
     width: 30,
     child: Text(
       '1',
-      style: textStyle,
+      style: textStyle
     ),
   );
 
-  final redBox = Container(
+  final Widget redBox = Container(
     alignment: Alignment.center,
     color: Colors.red,
     height: 30,
     width: 40,
     child: Text(
       '2',
-      style: textStyle,
+      style: textStyle
     ),
   );
 
-  final greenBox = Container(
+  final Widget greenBox = Container(
     alignment: Alignment.center,
     color: Colors.green,
     height: 20,
     width: 20,
     child: Text(
       '3',
-      style: textStyle,
+      style: textStyle
     ),
   );
+
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class CrossAxisAlignmentFlex extends StatelessWidget {
         children: CrossAxisAlignment.values
             .map((mode) => Column(children: <Widget>[
           Container(
-              margin: EdgeInsets.all(5),
+              margin: const EdgeInsets.all(5),
               width: 160,
               height: 80,
               color: Colors.grey.withAlpha(33),
@@ -66,7 +68,7 @@ class CrossAxisAlignmentFlex extends StatelessWidget {
             .toList());
   }
 
-  _buildItem(mode) => Flex(
+  Widget _buildItem(mode) => Flex(
     direction: Axis.horizontal,
     crossAxisAlignment: mode,
     textBaseline: TextBaseline.alphabetic,

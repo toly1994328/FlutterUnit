@@ -11,12 +11,12 @@ class PictureFrame extends StatelessWidget {
   final EdgeInsetsGeometry? marge;
 
   const PictureFrame(
-      {this.child,
+      {Key? key, this.child,
       this.width,
       this.height,
       this.alignment,
       this.color = Colors.transparent,
-      this.marge});
+      this.marge}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,11 @@ class PictureFrame extends StatelessWidget {
       alignment: alignment,
       width: width ?? size,
       height: height ?? size,
-      padding: marge ?? EdgeInsets.all(20),
+      padding: marge ?? const EdgeInsets.all(20),
       child: CustomPaint(
         painter: FramePainter(),
         child: Container(
-          margin: EdgeInsets.all(14),
+          margin: const EdgeInsets.all(14),
           decoration: BoxDecoration(
             color: color,
             border: Border.all(
@@ -91,13 +91,13 @@ class FramePainter extends CustomPainter {
     canvas.drawPoints(
         PointMode.polygon,
         [
-          Offset(0, 0),
-          Offset(18, 0),
-          Offset(0, 18),
-          Offset(0, 0),
+          const Offset(0, 0),
+          const Offset(18, 0),
+          const Offset(0, 18),
+          const Offset(0, 0),
         ],
         myPaint);
-    canvas.drawCircle(Offset(8, 8), 3, myPaint..color = Colors.black);
+    canvas.drawCircle(const Offset(8, 8), 3, myPaint..color = Colors.black);
   }
 
   @override
@@ -114,7 +114,7 @@ class FrameShower extends StatelessWidget {
   final String info;
   final Widget content;
 
-  FrameShower(
+  const FrameShower(
       {Key? key,
         this.title = "",
         this.author = "",
@@ -129,24 +129,24 @@ class FrameShower extends StatelessWidget {
       alignment: Alignment.topCenter,
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Text(
             title,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           PictureFrame(child: content),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Row(
               children: [
                 Text(
                   "作者:    $author    ",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
-                Spacer(),
-                Text(
+                const Spacer(),
+                const Text(
                   "源码地址    ",
                   style: TextStyle(
                       fontSize: 14,
@@ -156,15 +156,15 @@ class FrameShower extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
               alignment: Alignment.topLeft,
               child: Text(
                 info,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
                     fontWeight: FontWeight.bold),

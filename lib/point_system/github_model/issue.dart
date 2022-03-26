@@ -27,7 +27,7 @@ class Issue extends Equatable {
 
  final GithubUser? closeBy;
 
-  Issue(
+  const Issue(
     this.id,
     this.number,
     this.title,

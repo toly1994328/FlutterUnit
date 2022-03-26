@@ -14,12 +14,14 @@ import 'package:flutter/material.dart';
 //    }
 
 class SliderThemeDemo extends StatefulWidget {
+  const SliderThemeDemo({Key? key}) : super(key: key);
+
   @override
   _SliderThemeDemoState createState() => _SliderThemeDemoState();
 }
 
 class _SliderThemeDemoState extends State<SliderThemeDemo> {
-  var _bliss = 0.5;
+  double _bliss = 0.5;
 
   @override
   Widget build(BuildContext context) {

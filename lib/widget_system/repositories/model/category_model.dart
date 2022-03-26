@@ -18,7 +18,7 @@ class CategoryModel extends Equatable {
   final int? count;
   final Color color;
 
-  CategoryModel(
+  const CategoryModel(
       {required this.name,
       required this.id,
       required this.info,
@@ -68,8 +68,8 @@ class CategoryTo{
   CategoryTo({required this.model,required this.widgetIds, this.likesData});
 
   Map toJson() => {
-    "model": this.model,
-    "widgetIds": this.widgetIds,
-    "likesData":this.likesData
+    "model": model,
+    "widgetIds": widgetIds,
+    "likesData":likesData
   };
 }

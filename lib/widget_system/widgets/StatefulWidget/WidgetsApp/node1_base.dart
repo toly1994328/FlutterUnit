@@ -41,7 +41,7 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
                 <T>(RouteSettings settings, WidgetBuilder builder) {
               return MaterialPageRoute<T>(settings: settings, builder: builder);
             },
-            home: HomePage(),
+            home: const HomePage(),
           ),
         ),
       ],

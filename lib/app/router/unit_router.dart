@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/views/about/about_app_page.dart';
 import 'package:flutter_unit/app/views/about/about_me_page.dart';
@@ -65,50 +67,47 @@ class UnitRouter {
             child: WidgetDetailPage(model: settings.arguments as WidgetModel));
 
       case search:
-        return Right2LeftRouter(child: SearchPage());
+        return Right2LeftRouter(child: const SearchPage());
       case collect:
-        return Right2LeftRouter(child: CollectPage());
+        return Right2LeftRouter(child: const CollectPage());
 
       case setting:
-        return Right2LeftRouter(child: SettingPage());
+        return Right2LeftRouter(child: const SettingPage());
       case data_manage:
-        return Right2LeftRouter(child: DataManagePage());
+        return Right2LeftRouter(child: const DataManagePage());
       case font_setting:
-        return Right2LeftRouter(child: FontSettingPage());
+        return Right2LeftRouter(child: const FontSettingPage());
       case theme_color_setting:
-        return Right2LeftRouter(child: ThemeColorSettingPage());
+        return Right2LeftRouter(child: const ThemeColorSettingPage());
       case code_style_setting:
-        return Right2LeftRouter(child: CodeStyleSettingPage());
+        return Right2LeftRouter(child: const CodeStyleSettingPage());
       case item_style_setting:
-        return Right2LeftRouter(child: ItemStyleSettingPage());
+        return Right2LeftRouter(child: const ItemStyleSettingPage());
 
       case version_info:
-        return Right2LeftRouter(child: VersionInfo());
-
-      case version_info:
-        return Right2LeftRouter(child: VersionInfo());
+        return Right2LeftRouter(child: const VersionInfo());
 
       case issues_point:
-        return Right2LeftRouter(child: IssuesPointPage());
+        return Right2LeftRouter(child: const IssuesPointPage());
       case login:
-        return Right2LeftRouter(child: LoginPage());
+        return Right2LeftRouter(child: const LoginPage());
 
       case register:
-        return Right2LeftRouter(child: RegisterPage());
+        return Right2LeftRouter(child: const RegisterPage());
 
       case attr:
-        return Right2LeftRouter(child: AttrUnitPage());
+        return Right2LeftRouter(child: const AttrUnitPage());
       case bug:
-        return Right2LeftRouter(child: BugUnitPage());
+        return Right2LeftRouter(child: const BugUnitPage());
       case layout:
-        return Right2LeftRouter(child: LayoutUnitPage());
+        return Right2LeftRouter(child: const LayoutUnitPage());
       case about_app:
-        return Right2LeftRouter(child: AboutAppPage());
+        return Right2LeftRouter(child: const AboutAppPage());
       case about_me:
-        return Right2LeftRouter(child: AboutMePage());
+        return Right2LeftRouter(child: const AboutMePage());
 
       case point_detail:
-        return Right2LeftRouter(child: IssuesDetailPage());
+        return Right2LeftRouter(child: const IssuesDetailPage());
 
       case category_show:
         return Right2LeftRouter(

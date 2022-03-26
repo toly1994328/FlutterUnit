@@ -29,7 +29,7 @@ class CustomCard extends StatelessWidget {
         width: 200,
         height: 0.618*200,
         margin: const EdgeInsets.all(10),
-        child: const Text("Card", style: const TextStyle(fontSize: 20)),
+        child: const Text("Card", style: TextStyle(fontSize: 20)),
       ),
     );
   }

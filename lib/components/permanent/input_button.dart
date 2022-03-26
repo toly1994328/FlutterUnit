@@ -27,7 +27,7 @@ class InputButton extends StatefulWidget {
   final InputButtonConfig config;
   final String defaultText;
 
-  InputButton(
+  const InputButton(
       {Key? key,
       this.onSubmit,
       this.onChanged,
@@ -78,12 +78,12 @@ class _InputButtonState extends State<InputButton> {
         hintStyle: TextStyle(color: Colors.black26, fontSize: _fontSize),
         contentPadding: EdgeInsets.only(left: 14.0, top: -_fontSize),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: const BorderSide(color: Colors.white),
           borderRadius:
               BorderRadius.only(topLeft: _radius, bottomLeft: _radius),
         ),
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: const BorderSide(color: Colors.white),
           borderRadius:
               BorderRadius.only(topLeft: _radius, bottomLeft: _radius),
         ),
@@ -97,7 +97,7 @@ class _InputButtonState extends State<InputButton> {
 
       elevation: 0,
       child: Icon(widget.config.iconData,color: Theme.of(context).primaryColor,),
-      color: Color(0x99E0E0E0),
+      color: const Color(0x99E0E0E0),
       padding: EdgeInsets.zero,
       onPressed: () {
         FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
@@ -113,7 +113,7 @@ class _InputButtonState extends State<InputButton> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Expanded(
-          child: Container(
+          child: SizedBox(
             child: textField,
             height: _height,
           ),
@@ -124,7 +124,7 @@ class _InputButtonState extends State<InputButton> {
               bottomLeft: Radius.zero,
               topRight: _radius,
               bottomRight: _radius),
-          child: Container(
+          child: SizedBox(
             child: btn,
             width: _height,
             height: _height,

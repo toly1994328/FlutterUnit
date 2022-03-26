@@ -18,10 +18,10 @@ class RepoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 56 + 32.0, bottom: 5),
-      padding: EdgeInsets.only(top:20,right: 10,left: 10),
+      margin: const EdgeInsets.only(top: 56 + 32.0, bottom: 5),
+      padding: const EdgeInsets.only(top:20,right: 10,left: 10),
       // padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(color: Colors.grey, offset: Offset(0, .5), blurRadius: 3)
           ],
@@ -38,23 +38,23 @@ class RepoWidget extends StatelessWidget {
             children: <Widget>[
               Text(
                 repository.fullName!,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               WrapColor(
                 child: Text(
                   '${repository.license?.type}',
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 12),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 "创建:" +
                     ConvertMan.time2string(repository.createdAt!, just: true),
-                style: TextStyle(color: Colors.grey),
+                style: const TextStyle(color: Colors.grey),
               ),
             ],
           ),
@@ -62,10 +62,10 @@ class RepoWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               repository.description!,
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
             ),
           ),
-          Divider(),
+          const Divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
@@ -73,11 +73,11 @@ class RepoWidget extends StatelessWidget {
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(Icons.star_border),
+                    const Icon(Icons.star_border),
                     Text(repository.stargazersCount.toString()),
                   ]),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   "|",
                   style: TextStyle(fontSize: 20, color: Colors.blue),
@@ -87,14 +87,14 @@ class RepoWidget extends StatelessWidget {
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(TolyIcon.icon_show),
-                    SizedBox(
+                    const Icon(TolyIcon.icon_show),
+                    const SizedBox(
                       width: 5,
                     ),
                     Text(repository.subscribersCount.toString()),
                   ]),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   "|",
                   style: TextStyle(fontSize: 20, color: Colors.blue),
@@ -104,11 +104,11 @@ class RepoWidget extends StatelessWidget {
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(TolyIcon.icon_fork),
+                    const Icon(TolyIcon.icon_fork),
                     Text(repository.forksCount.toString()),
                   ]),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   "|",
                   style: TextStyle(fontSize: 20, color: Colors.blue),
@@ -118,8 +118,8 @@ class RepoWidget extends StatelessWidget {
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(TolyIcon.icon_issues),
-                    SizedBox(
+                    const Icon(TolyIcon.icon_issues),
+                    const SizedBox(
                       width: 5,
                     ),
                     Text(repository.openIssuesCount.toString()),

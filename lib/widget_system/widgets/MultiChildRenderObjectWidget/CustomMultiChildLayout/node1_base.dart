@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 
 
 class CustomMultiChildLayoutDemo extends StatelessWidget {
+  const CustomMultiChildLayoutDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,13 +25,13 @@ class CustomMultiChildLayoutDemo extends StatelessWidget {
       color: Colors.grey.withAlpha(33),
       child: CustomMultiChildLayout(
         delegate: CornerCustomMultiChildLayout(
-          padding:EdgeInsets.only(left: 10,top: 5,right: 10,bottom: 5),
+          padding:const EdgeInsets.only(left: 10,top: 5,right: 10,bottom: 5),
         ),
         children: [
-           LayoutId(id: CornerType.topLeft, child: Box50(Colors.red)),
-           LayoutId(id: CornerType.topRight, child: Box50(Colors.yellow)),
-           LayoutId(id: CornerType.bottomLeft, child: Box50(Colors.blue)),
-           LayoutId(id: CornerType.bottomRight, child: Box50(Colors.green)),
+           LayoutId(id: CornerType.topLeft, child: const Box50(Colors.red)),
+           LayoutId(id: CornerType.topRight, child: const Box50(Colors.yellow)),
+           LayoutId(id: CornerType.bottomLeft, child: const Box50(Colors.blue)),
+           LayoutId(id: CornerType.bottomRight, child: const Box50(Colors.green)),
         ],
       ),
     );
@@ -39,7 +41,7 @@ class CustomMultiChildLayoutDemo extends StatelessWidget {
 // 50 颜色盒
 class Box50 extends StatelessWidget {
   final Color color;
-  Box50(this.color);
+  const Box50(this.color, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

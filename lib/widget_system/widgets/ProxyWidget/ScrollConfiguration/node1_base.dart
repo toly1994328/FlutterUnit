@@ -13,7 +13,9 @@ import 'package:flutter/material.dart';
 //          "    可以使用ScrollConfiguration让ListView无蓝色阴影",
 //    }
 class CustomScrollConfiguration extends StatelessWidget {
-  final data = <Color>[
+  CustomScrollConfiguration({Key? key}) : super(key: key);
+
+  final List<Color> data = [
     Colors.cyan[50]!,
     Colors.cyan[100]!,
     Colors.cyan[200]!,
@@ -26,9 +28,10 @@ class CustomScrollConfiguration extends StatelessWidget {
     Colors.cyan[900]!,
   ];
 
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: ScrollConfiguration(
           behavior: NoScrollBehavior(), child: _buildListView()),
@@ -36,7 +39,7 @@ class CustomScrollConfiguration extends StatelessWidget {
   }
 
   Widget _buildListView() => ListView(
-        padding: EdgeInsets.symmetric(horizontal: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         children: data
             .map((color) => Container(
                   alignment: Alignment.center,
@@ -45,7 +48,7 @@ class CustomScrollConfiguration extends StatelessWidget {
                   color: color,
                   child: Text(
                     colorString(color),
-                    style: TextStyle(color: Colors.white, shadows: [
+                    style: const TextStyle(color: Colors.white, shadows: [
                       Shadow(
                           color: Colors.black,
                           offset: Offset(.5, .5),

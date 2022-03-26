@@ -38,14 +38,14 @@ class CustomAlertDialog extends StatelessWidget {
 
   Widget _buildRaisedButton(BuildContext context) => RaisedButton(
     shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(const Radius.circular(10))),
+        borderRadius: BorderRadius.all(Radius.circular(10))),
     color: Colors.blue,
     onPressed: () {
       showDialog(context: context, builder: (ctx) => _buildAlertDialog());
     },
     child: const Text(
       'Just Show It !',
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.white),
     ),
   );
 
@@ -68,7 +68,7 @@ class CustomAlertDialog extends StatelessWidget {
       ],
       elevation: 4,
       shape: const RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(10))),
+          borderRadius: BorderRadius.all(Radius.circular(10))),
     );
   }
 

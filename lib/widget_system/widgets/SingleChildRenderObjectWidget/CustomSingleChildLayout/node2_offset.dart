@@ -72,9 +72,9 @@ class OffSetWidget extends StatelessWidget {
   final Direction direction;
 
   const OffSetWidget(
-      {this.offset = Offset.zero,
+      {Key? key, this.offset = Offset.zero,
       required this.child,
-      this.direction = Direction.topLeft});
+      this.direction = Direction.topLeft}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

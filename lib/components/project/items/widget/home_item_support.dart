@@ -19,19 +19,19 @@ class HomeItemSupport {
   static Map<int,ShapeBorder> shapeBorderMap={
     1: TechnoShapeBorder(),
     2: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-    3: CouponShapeBorder(
+    3: const CouponShapeBorder(
         hasTopHole: true,
         hasBottomHole: false,
         hasLine: false,
         edgeRadius: 25,
         lineRate: 0.20),
-    4: CouponShapeBorder(
+    4: const CouponShapeBorder(
         hasTopHole: false,
         hasBottomHole: false,
         hasLine: false,
         edgeRadius: 25,
         lineRate: 0.20),
-    5: CouponShapeBorder(
+    5: const CouponShapeBorder(
         hasTopHole: true,
         hasBottomHole: false,
         hasLine: false,
@@ -78,7 +78,7 @@ class HomeItemSupport {
       id: Random().nextInt(10000),
       name: 'Container',
       nameCN: "",
-      links: [],
+      links: const [],
       lever: 5,
       family: WidgetFamily.statelessWidget,
       info: '用于容纳单个子组件的容器组件。集成了若干个单子组件的功能，如内外边距、形变、装饰、约束等...');

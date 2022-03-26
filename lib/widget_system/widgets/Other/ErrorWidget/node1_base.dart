@@ -12,9 +12,11 @@ import 'package:flutter/material.dart';
 //          "入参 : 显示信息   【Object】",
 //    }
 class ErrorWidgetDemo extends StatelessWidget {
+  const ErrorWidgetDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: ErrorWidget(
           'I am Error ErrorWidget\n'

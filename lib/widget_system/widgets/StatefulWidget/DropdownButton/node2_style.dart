@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class StyleDropDownButton extends StatefulWidget {
+  const StyleDropDownButton({Key? key}) : super(key: key);
+
   @override
   _StyleDropDownButtonState createState() => _StyleDropDownButtonState();
 }
@@ -42,7 +44,7 @@ class _StyleDropDownButtonState extends State<StyleDropDownButton> {
           color: _color,
         ),
         DropdownButton<Color>(
-            hint: Text('请选择'),
+            hint: const Text('请选择'),
             isDense: true,
             iconSize:20,
             iconEnabledColor:_color,

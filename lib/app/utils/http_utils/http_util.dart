@@ -13,8 +13,8 @@ class HttpUtil {
   static final HttpUtil _instance = HttpUtil._internal();
   Dio? _dio;
 
-  static const CODE_SUCCESS = 200;
-  static const CODE_TIME_OUT = -1;
+  static const codeSuccess = 200;
+  static const codeTimeOut = -1;
 
   factory HttpUtil() => _instance;
   TokenInterceptors? tokenInterceptors;

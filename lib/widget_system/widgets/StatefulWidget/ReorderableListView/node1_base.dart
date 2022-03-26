@@ -73,7 +73,7 @@ final List<Color> data = [
       child: Text(
         colorString(color),
         style: const TextStyle(color: Colors.white, shadows: [
-          Shadow(color: Colors.black, offset: const Offset(.5, .5), blurRadius: 2)
+          Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
         ]),
       ),
     );

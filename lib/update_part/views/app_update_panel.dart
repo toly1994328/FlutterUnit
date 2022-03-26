@@ -6,7 +6,7 @@ import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:flutter_unit/bloc_exp.dart';
 
 class AppUpdatePanel extends StatelessWidget {
-  const AppUpdatePanel();
+  const AppUpdatePanel({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class AppUpdatePanel extends StatelessWidget {
             children: [
               Text(
                 '${(progress * 100).toStringAsFixed(2)} %',
-                style: TextStyle(height: 1, fontSize: 12, color: Colors.grey),
+                style: const TextStyle(height: 1, fontSize: 12, color: Colors.grey),
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
                 '${Convert.convertFileSize((appSize * progress).floor())}/${Convert.convertFileSize(appSize)}',
-                style: TextStyle(height: 1, fontSize: 10, color: Colors.grey),
+                style: const TextStyle(height: 1, fontSize: 10, color: Colors.grey),
               ),
             ],
           ),
@@ -62,14 +62,14 @@ class AppUpdatePanel extends StatelessWidget {
           children: [
             Text(
               '${state.oldVersion} --> ${state.info.appVersion} ',
-              style: TextStyle(height: 1, fontSize: 12, color: Colors.grey),
+              style: const TextStyle(height: 1, fontSize: 12, color: Colors.grey),
             ),
             const SizedBox(width: 5),
             const Icon(Icons.update, color: Colors.green)
           ]);
     }
     if (state is CheckLoadingState) {
-      trail = CupertinoActivityIndicator();
+      trail = const CupertinoActivityIndicator();
     }
     if (state is DownloadingState) {
       info = "新版本下载中...";
@@ -89,7 +89,7 @@ class AppUpdatePanel extends StatelessWidget {
   void _tapByState(UpdateState state, BuildContext context) {
     if (state is NoUpdateState) {
       BlocProvider.of<UpdateBloc>(context)
-          .add(CheckUpdate(appName: 'FlutterUnit'));
+          .add(const CheckUpdate(appName: 'FlutterUnit'));
     }
     if (state is ShouldUpdateState) {
       // 处理下载的事件

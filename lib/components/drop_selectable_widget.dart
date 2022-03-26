@@ -109,7 +109,7 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
     return Container(
       width: widget.width,
       height: widget.height,
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: const EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
@@ -148,7 +148,7 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
         child: Padding(
           padding: const EdgeInsets.only(top: 4.0),
           child: Material(
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
                 side: BorderSide.none,
                 borderRadius: BorderRadius.all(Radius.circular(5))),
             elevation: 1,
@@ -157,7 +157,7 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
               child: Container(
                 height: 200,
                 // alignment: Alignment.center,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xffDAE3FF),
                 ),
                 // padding: const EdgeInsets.only(top: 5),
@@ -187,7 +187,7 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
           _node.unfocus();
         },
         child: Container(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             color: index == _selectedIndex
                 ? Colors.blue.withOpacity(0.2)
                 : Colors.transparent,

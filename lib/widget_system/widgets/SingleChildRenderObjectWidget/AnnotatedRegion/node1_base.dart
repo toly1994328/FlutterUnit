@@ -25,7 +25,7 @@ class AnnotatedRegionDemo extends StatelessWidget {
       child: ElevatedButton(
         onPressed: (){
           Navigator.push(context,
-            MaterialPageRoute(builder: (context) => AnnotatedRegionTestPage()),
+            MaterialPageRoute(builder: (context) => const AnnotatedRegionTestPage()),
           );
         },
         child: const Text("进入 AnnotatedRegion 测试页"),

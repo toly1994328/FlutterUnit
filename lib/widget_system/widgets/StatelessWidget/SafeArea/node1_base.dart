@@ -26,7 +26,7 @@ class SafeAreaDemo extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SafeAreaPage()),
+            MaterialPageRoute(builder: (context) => const SafeAreaPage()),
           );
         },
         child: const Text("进入 SafeArea 测试页"),

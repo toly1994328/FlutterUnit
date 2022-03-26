@@ -19,6 +19,8 @@ import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
 
 class SearchPage extends StatefulWidget {
+  const SearchPage({Key? key}) : super(key: key);
+
   @override
   _SearchPageState createState() => _SearchPageState();
 }
@@ -30,7 +32,7 @@ class _SearchPageState extends State<SearchPage> {
       body: WillPopScope(
         onWillPop: () async {
           //返回时 情空搜索
-          BlocProvider.of<SearchBloc>(context).add(SearchWidgetEvent(args: SearchArgs()));
+          BlocProvider.of<SearchBloc>(context).add(const SearchWidgetEvent(args: SearchArgs()));
           return true;
         },
         child: CustomScrollView(
@@ -45,12 +47,12 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildSliverAppBar() {
-    return SliverAppBar(
+    return const SliverAppBar(
             pinned: true,
             title: AppSearchBar(),
             actions: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(right: 15.0),
+                padding: EdgeInsets.only(right: 15.0),
                 child: Icon(TolyIcon.icon_sound),
               )
             ],
@@ -66,7 +68,7 @@ class _SearchPageState extends State<SearchPage> {
               spacing: 5,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
-                Circle(
+                const Circle(
                   radius: 5,
                   color: Colors.orange,
                 ),
@@ -80,7 +82,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
           ),
           MultiChipFilter<int>(
-            data: [1, 2, 3, 4, 5],
+            data: const [1, 2, 3, 4, 5],
             avatarBuilder: (_, index) =>
                 CircleAvatar(child: Text((index + 1).toString())),
             labelBuilder: (_, selected) => Icon(
@@ -90,18 +92,18 @@ class _SearchPageState extends State<SearchPage> {
             ),
             onChange: _doSelectStart,
           ),
-          Divider(),
-          SizedBox(height: 10,)
+          const Divider(),
+          const SizedBox(height: 10,)
         ],
       );
 
   Widget _buildBodyByState(BuildContext context,SearchState state) {
-    if (state is SearchStateNoSearch) return SliverToBoxAdapter(child: const NotSearchPage(),);
-    if (state is SearchStateLoading) return SliverToBoxAdapter(child: LoadingShower());
-    if (state is SearchStateError) return SliverToBoxAdapter(child: ErrorPage());
+    if (state is SearchStateNoSearch) return const SliverToBoxAdapter(child: NotSearchPage(),);
+    if (state is SearchStateLoading) return const SliverToBoxAdapter(child: LoadingShower());
+    if (state is SearchStateError) return const SliverToBoxAdapter(child: ErrorPage());
     if (state is SearchStateSuccess) return _buildSliverList(state.result);
-    if (state is SearchStateEmpty) return SliverToBoxAdapter(child: EmptyShower(message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",));
-    return NotSearchPage();
+    if (state is SearchStateEmpty) return const SliverToBoxAdapter(child: EmptyShower(message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",));
+    return const NotSearchPage();
   }
 
   Widget _buildSliverList(List<WidgetModel> models) => SliverList(

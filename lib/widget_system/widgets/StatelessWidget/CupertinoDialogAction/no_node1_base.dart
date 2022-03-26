@@ -24,7 +24,7 @@ class CustomDialog extends StatelessWidget {
     onPressed: (){
 
     },
-    child: SizedBox(
+    child: const SizedBox(
       width: 50,
       child: DeleteDialog(),
     ),
@@ -91,7 +91,7 @@ class DeleteDialog extends StatelessWidget {
             height: 40,
             width: 120,
             decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(const Radius.circular(30)),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
                 color: Color(0xff73D1EE)),
             child: const Text('Yes, Delete',
                 style: TextStyle(color: Colors.white, fontSize: 16)),

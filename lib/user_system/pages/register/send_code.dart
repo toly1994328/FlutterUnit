@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class CountDownWidget extends StatefulWidget {
   final Function(BuildContext context)? onPress;
 
-  CountDownWidget({Key? key, this.onPress}) : super(key: key);
+  const CountDownWidget({Key? key, this.onPress}) : super(key: key);
 
   @override
   _CountDownWidgetState createState() => _CountDownWidgetState();
@@ -37,7 +37,7 @@ class _CountDownWidgetState extends State<CountDownWidget> {
         onPressed: startTimer
             ? null
             : () {
-                timer = Timer.periodic(Duration(seconds: 1), _update);
+                timer = Timer.periodic(const Duration(seconds: 1), _update);
                 setState(() {
                   startTimer = true;
                 });

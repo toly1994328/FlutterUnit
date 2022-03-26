@@ -78,7 +78,7 @@ class DunDunPainter extends CustomPainter {
     if (logo2Image!=null) {
       Rect src2 = Rect.fromLTWH(
           0, 0, logo2Image!.width.toDouble(), logo2Image!.height.toDouble());
-      Rect dst2 = Rect.fromLTWH(85, 132, 899/27, 1066/27);
+      Rect dst2 = const Rect.fromLTWH(85, 132, 899/27, 1066/27);
       canvas.drawImageRect(logo2Image!, src2, dst2, Paint());
     }
 
@@ -96,28 +96,28 @@ class DunDunPainter extends CustomPainter {
         Matrix4.rotationZ(45 / 180 * pi)
     );
     eyePath
-        .addOval(Rect.fromCenter(center: Offset(0, 0), width: 32, height: 49));
+        .addOval(Rect.fromCenter(center: const Offset(0, 0), width: 32, height: 49));
     eyePath = eyePath.transform(m.storage);
     canvas.restore();
 
     Path leftEyePath = Path();
-    leftEyePath.addOval(Rect.fromCenter(center: Offset(50, -13), width: 18, height: 18));
+    leftEyePath.addOval(Rect.fromCenter(center: const Offset(50, -13), width: 18, height: 18));
 
     Path leftEyePath2 = Path();
-    leftEyePath2.addOval(Rect.fromCenter(center: Offset(50, -13), width: 7, height: 7));
+    leftEyePath2.addOval(Rect.fromCenter(center: const Offset(50, -13), width: 7, height: 7));
 
     Path leftEyePath3 = Path();
-    leftEyePath3.addOval(Rect.fromCenter(center: Offset(51, -19), width: 4, height: 4));
+    leftEyePath3.addOval(Rect.fromCenter(center: const Offset(51, -19), width: 4, height: 4));
 
 
     Path rightEyePath = Path();
-    rightEyePath.addOval(Rect.fromCenter(center: Offset(98, -14), width: 17, height: 17));
+    rightEyePath.addOval(Rect.fromCenter(center: const Offset(98, -14), width: 17, height: 17));
 
     Path rightEyePath2 = Path();
-    rightEyePath2.addOval(Rect.fromCenter(center: Offset(98, -14), width: 7, height: 7));
+    rightEyePath2.addOval(Rect.fromCenter(center: const Offset(98, -14), width: 7, height: 7));
 
     Path rightEyePath3 = Path();
-    rightEyePath3.addOval(Rect.fromCenter(center: Offset(98, -19), width: 4, height: 4));
+    rightEyePath3.addOval(Rect.fromCenter(center: const Offset(98, -19), width: 4, height: 4));
 
     Path nosePath = Path();
     nosePath.moveTo(79, -0,);
@@ -125,7 +125,7 @@ class DunDunPainter extends CustomPainter {
     nosePath.relativeLineTo(-28, 0,);
     nosePath.close();
     Path clipCirclePath =Path();
-    clipCirclePath.addOval(Rect.fromCenter(center: Offset(79, -10,), width: 14, height: 14));
+    clipCirclePath.addOval(Rect.fromCenter(center: const Offset(79, -10,), width: 14, height: 14));
     nosePath = Path.combine(PathOperation.intersect, nosePath, clipCirclePath);
     Path smaliPath = Path();
     smaliPath.moveTo(65, -0,);
@@ -134,11 +134,11 @@ class DunDunPainter extends CustomPainter {
     smaliPath.quadraticBezierTo(78, 6, 65, 0,);
 
     Path colorfulPath =  Path();
-    colorfulPath.addOval(Rect.fromCenter(center: Offset(72, -5,), width: 120, height: 110));
-    colorfulPath.addOval(Rect.fromCenter(center: Offset(72, -5,), width: 110, height: 100));
-    colorfulPath.addOval(Rect.fromCenter(center: Offset(72, -5,), width: 115, height: 110));
-    colorfulPath.addOval(Rect.fromCenter(center: Offset(72, -5,), width: 120, height: 105));
-    colorfulPath.addOval(Rect.fromCenter(center: Offset(72, -5,), width: 115, height: 105));
+    colorfulPath.addOval(Rect.fromCenter(center: const Offset(72, -5,), width: 120, height: 110));
+    colorfulPath.addOval(Rect.fromCenter(center: const Offset(72, -5,), width: 110, height: 100));
+    colorfulPath.addOval(Rect.fromCenter(center: const Offset(72, -5,), width: 115, height: 110));
+    colorfulPath.addOval(Rect.fromCenter(center: const Offset(72, -5,), width: 120, height: 105));
+    colorfulPath.addOval(Rect.fromCenter(center: const Offset(72, -5,), width: 115, height: 105));
 
     canvas.save();
     Path eyePath2 = Path();
@@ -146,7 +146,7 @@ class DunDunPainter extends CustomPainter {
         Matrix4.rotationZ(-40 / 180 * pi)
     );
     eyePath2
-        .addOval(Rect.fromCenter(center: Offset(0, 0), width: 29, height: 48));
+        .addOval(Rect.fromCenter(center: const Offset(0, 0), width: 29, height: 48));
     eyePath2 = eyePath2.transform(m2.storage);
     canvas.restore();
     Path leftFootPath = buildFootPath();
@@ -172,7 +172,7 @@ class DunDunPainter extends CustomPainter {
     for (int i = 0; i < len; i++) {
       starPath.lineTo(arr[i].dx, arr[i].dy);
     }
-    starPath = starPath.shift(Offset(152,-20));
+    starPath = starPath.shift(const Offset(152,-20));
 
     dundunPath.addPath(bodyPath, Offset.zero);
     dundunPath.addPath(leftHandPath, Offset.zero);
@@ -196,9 +196,9 @@ class DunDunPainter extends CustomPainter {
       ..strokeWidth = 1
       ..color = Colors.cyanAccent;
     PathMetrics pms = dundunPath.computeMetrics();
-    pms.forEach((pm) {
+    for (PathMetric pm in pms) {
       canvas.drawPath(pm.extractPath(0, pm.length * repaint.value), pathPaint);
-    });
+    }
   }
 
   Path buildBodyPath() {

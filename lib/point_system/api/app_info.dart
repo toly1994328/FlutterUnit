@@ -39,7 +39,7 @@ class AppInfo extends Equatable{
   final String appUrl;
   final int appSize;
 
-  AppInfo({
+  const AppInfo({
     required this.appName,
     required this.appVersion,
     required this.appUrl,

@@ -13,7 +13,7 @@ class CategoryListItem extends StatelessWidget {
   final Function(CategoryModel)? onDeleteItemClick;
   final Function(CategoryModel)? onEditItemClick;
 
-  CategoryListItem({required this.data, this.onDeleteItemClick,this.onEditItemClick});
+  const CategoryListItem({Key? key, required this.data, this.onDeleteItemClick,this.onEditItemClick}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -11,7 +11,7 @@ class GalleryCardItem extends StatelessWidget {
   final GalleryInfo galleryInfo;
   final int count;
 
-  GalleryCardItem({
+  const GalleryCardItem({
     Key? key,
     required this.galleryInfo,
     this.count = 0,
@@ -20,7 +20,7 @@ class GalleryCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20))),
       child: Container(
           height: double.maxFinite,
@@ -35,7 +35,7 @@ class GalleryCardItem extends StatelessWidget {
                         image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(galleryInfo.image)),
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20),
                         ))
@@ -60,14 +60,14 @@ class GalleryCardItem extends StatelessWidget {
                                 blurRadius: .5)
                           ]),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     WrapColor(
                       radius: 6,
                       padding:
-                          EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 3),
+                          const EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 3),
                       child: Text(
                         "$count 幅",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 12),
@@ -90,7 +90,7 @@ class GalleryCardItem extends StatelessWidget {
               )
             ],
           ),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
                 Radius.circular(20),

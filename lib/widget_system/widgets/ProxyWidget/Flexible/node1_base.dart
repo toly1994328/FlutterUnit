@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【flex】 : 剩余空间分配占比   【int】",
 //    }
 class CustomFlexible extends StatefulWidget {
+  const CustomFlexible({Key? key}) : super(key: key);
+
   @override
   _CustomFlexibleState createState() => _CustomFlexibleState();
 }
@@ -28,7 +30,7 @@ class _CustomFlexibleState extends State<CustomFlexible> {
       Container(
           color: Colors.grey.withAlpha(33),
           width: _width,
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             children: <Widget>[
               Flexible(
@@ -37,7 +39,7 @@ class _CustomFlexibleState extends State<CustomFlexible> {
                   alignment: Alignment.center,
                   height: 50,
                   color: Colors.red,
-                  child: Text(
+                  child: const Text(
                     'flex=2',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -49,7 +51,7 @@ class _CustomFlexibleState extends State<CustomFlexible> {
                   alignment: Alignment.center,
                   height: 50,
                   color: Colors.blue,
-                  child: Text(
+                  child: const Text(
                     'flex=3',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -59,13 +61,13 @@ class _CustomFlexibleState extends State<CustomFlexible> {
                 flex: 4,
                 fit: _loose?FlexFit.loose:FlexFit.tight,
                 child: Container(
-                  constraints: BoxConstraints(maxWidth: 60),
+                  constraints: const BoxConstraints(maxWidth: 60),
                   alignment: Alignment.center,
                   height: 50,
                   color: Colors.green,
                   child: Text(
                     'flex=4 \nfit:${_loose?'loose':'tight'}',
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               )
@@ -75,9 +77,8 @@ class _CustomFlexibleState extends State<CustomFlexible> {
     ]);
   }
 
-  Widget _buildOp() {
-    return Row(
-      children: <Widget>[
+  Widget _buildOp() => Row(
+      children: [
         Switch(
             value: _loose,
             onChanged: (v) => setState(() => _loose = v)),
@@ -91,5 +92,4 @@ class _CustomFlexibleState extends State<CustomFlexible> {
         ),
       ],
     );
-  }
 }

@@ -12,6 +12,8 @@ import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutAppPage extends StatelessWidget {
+  const AboutAppPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,12 +119,12 @@ class AboutAppPage extends StatelessWidget {
                   child: Wrap(
                     direction: Axis.vertical,
                     crossAxisAlignment: WrapCrossAlignment.center,
-                    children: <Widget>[
-                      const Icon(
+                    children: const [
+                      Icon(
                         TolyIcon.icon_github,
                         size: 35,
                       ),
-                      const Text('Github')
+                      Text('Github')
                     ],
                   )),
             ],
@@ -130,52 +132,52 @@ class AboutAppPage extends StatelessWidget {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const Text(
+          children: const [
+            Text(
               'Flutter Unit',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               'The Unity Of Flutter, The Unity Of Coder.',
-              style: const TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10),
+            Text(
               'Flutter的联合，编程者的联合。',
               style: TextStyle(fontSize: 16),
             ),
-            const Divider(
+            Divider(
               height: 20,
             ),
-            const InfoPanel(
+            InfoPanel(
               title: '项目简介',
               info: '      Flutter Unit 是一个非盈利性的开源项目，'
                   '旨在提供全面的Flutter学习指南及编程者的交流技术的接口。'
                   '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址: '
                   'https://github.com/toly1994328/FlutterUnit',
             ),
-            const Divider(
+            Divider(
               height: 20,
             ),
-            const InfoPanel(
-                title: 'Flutter Unit 1.0',
-                info:    'Flutter Unit 1.0 核心计划是收录widget，即widget集录。'
-                    '目前收录组件 283 个，均可在 app 中进行查看。'
-                    '项目中提供widget图鉴文件可供下载参考。功能主要如下:\n'
-                    '○  280+的 Flutter 组件收录和详情介绍。\n'
-                    '○  对一些重要的组件提供操作体验。\n'
-                    '○  link to功能，查看组件时可以切换到相关组件。\n'
-                    '○  组件收藏和取消收藏功能。\n'
-                    '○  主题、字体设置，代码风格等全局状态管理。\n'
-                    '○  搜索功能和组件星级分类。',
+            InfoPanel(
+              title: 'Flutter Unit 1.0',
+              info: 'Flutter Unit 1.0 核心计划是收录widget，即widget集录。'
+                  '目前收录组件 283 个，均可在 app 中进行查看。'
+                  '项目中提供widget图鉴文件可供下载参考。功能主要如下:\n'
+                  '○  280+的 Flutter 组件收录和详情介绍。\n'
+                  '○  对一些重要的组件提供操作体验。\n'
+                  '○  link to功能，查看组件时可以切换到相关组件。\n'
+                  '○  组件收藏和取消收藏功能。\n'
+                  '○  主题、字体设置，代码风格等全局状态管理。\n'
+                  '○  搜索功能和组件星级分类。',
             ),
-            const Divider(
+            Divider(
               height: 20,
             ),
-            const InfoPanel(
+            InfoPanel(
               title: 'Flutter Unit 2.0 计划',
-              info:    'Flutter Unit 2.0 尚在计划之中，如果说1.0是本王单枪匹马，'
+              info: 'Flutter Unit 2.0 尚在计划之中，如果说1.0是本王单枪匹马，'
                   '那2.0将是Flutter爱好者的共同努力。后面陆续会发布一些征集方案，'
                   '包括属性、布局、绘制、bug、要点集录等。吾想让Unit 成为一个Flutter的圣地，纯粹而强大,期待与你的共同携手。',
             )
@@ -214,7 +216,7 @@ class InfoPanel extends StatelessWidget {
             style: const TextStyle(color: Colors.grey,
                 fontSize: 13,
                 shadows: [
-                  const Shadow(
+                  Shadow(
                       color: Colors.white,
                       offset: Offset(1,1)
                   )

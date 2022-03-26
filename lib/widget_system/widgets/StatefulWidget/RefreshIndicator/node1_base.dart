@@ -39,7 +39,7 @@ class _CustomRefreshIndicatorState extends State<CustomRefreshIndicator> {
             width: 200,
             height: 300,
             color: Colors.blue,
-            child: Text('$_count',style: TextStyle(color: Colors.white,fontSize: 40)),
+            child: Text('$_count',style: const TextStyle(color: Colors.white,fontSize: 40)),
           ),
         ),
       ),

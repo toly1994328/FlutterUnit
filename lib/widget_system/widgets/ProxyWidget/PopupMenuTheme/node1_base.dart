@@ -10,14 +10,16 @@ import 'package:flutter/material.dart';
 //      "subtitle": "可指定PopupMenuThemeData数据属性为【后代】的PopupMenuButton组件设置默认样式，如形状、影深、颜色、文字样式等。也可以用PopupMenuTheme.of获取PopupMenu的主题数据。",
 //    }
 class PopupMenuThemeDemo extends StatelessWidget {
+  const PopupMenuThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return PopupMenuTheme(
       data: PopupMenuTheme.of(context).copyWith(
         color: Colors.orangeAccent,
         elevation: 1,
-        textStyle:  TextStyle(color: Colors.white),
-        shape: RoundedRectangleBorder(
+        textStyle:  const TextStyle(color: Colors.white),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               bottomRight: Radius.circular(20),
@@ -36,7 +38,7 @@ class _PopupMenuButtonSimple extends StatefulWidget {
 }
 
 class _PopupMenuButtonSimpleState extends State<_PopupMenuButtonSimple> {
-  final map = {
+  final Map<String,IconData> map = {
     "关于": Icons.info_outline,
     "帮助": Icons.help_outline,
     "反馈": Icons.add_comment,
@@ -46,7 +48,7 @@ class _PopupMenuButtonSimpleState extends State<_PopupMenuButtonSimple> {
   Widget build(BuildContext context) {
     return PopupMenuButton<String>(
       itemBuilder: (context) => buildItems(),
-      offset: Offset(0, 50),
+      offset: const Offset(0, 50),
       onSelected: print,
       onCanceled: () => print('onCanceled'),
     );

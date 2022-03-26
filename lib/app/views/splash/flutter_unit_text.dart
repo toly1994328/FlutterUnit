@@ -7,7 +7,7 @@ class FlutterUnitText extends StatefulWidget {
   final String text;
   final Color color;
 
-  FlutterUnitText({
+  const FlutterUnitText({
     this.text = "Toly",
     this.color = Colors.blue,
     Key? key,
@@ -31,7 +31,7 @@ class _FlutterUnitTextState extends State<FlutterUnitText>
   void initState() {
     super.initState();
     TextSpan text = TextSpan(
-        text: widget.text, style: TextStyle(fontSize: 40, color: Colors.blue));
+        text: widget.text, style: const TextStyle(fontSize: 40, color: Colors.blue));
     _textPainter.text = text;
     _textPainter.layout(); // 进行布局
 

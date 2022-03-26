@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 //      "subtitle": "可指定ChipThemeData数据属性为【后代】的Chip类型组件设置默认样式，属性和Chip属性类似，如阴影、颜色、边距、形状、文字样式等。也可以用ChipTheme.of获取Chip的主题数据。",
 //    }
 class ChipThemeDemo extends StatelessWidget {
+  const ChipThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ChipTheme(
@@ -20,12 +22,14 @@ class ChipThemeDemo extends StatelessWidget {
         pressElevation: 5,
         elevation: 3,
       ),
-      child: CustomFilterChip(),
+      child: const CustomFilterChip(),
     );
   }
 }
 
 class CustomFilterChip extends StatefulWidget {
+  const CustomFilterChip({Key? key}) : super(key: key);
+
   @override
   _CustomFilterChipState createState() => _CustomFilterChipState();
 }
@@ -48,7 +52,7 @@ class _CustomFilterChipState extends State<CustomFilterChip> {
           children: map.keys.map((key) => _buildChild(key)).toList(),
         ),
         Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Text('您已选择: ${_selected.join(', ')}')),
       ],
     );

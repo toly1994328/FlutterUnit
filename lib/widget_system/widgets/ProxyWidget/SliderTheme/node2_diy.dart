@@ -16,17 +16,18 @@ import 'package:flutter/material.dart';
 //    }
 
 class DIYSliderTheme extends StatefulWidget {
+  const DIYSliderTheme({Key? key}) : super(key: key);
+
   @override
   _DIYSliderThemeState createState() => _DIYSliderThemeState();
 }
 
 class _DIYSliderThemeState extends State<DIYSliderTheme> {
-  var _bliss = 0.5;
+  double _bliss = 0.5;
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-
     return SliderTheme(
       data: theme.sliderTheme.copyWith(
         activeTrackColor: Colors.deepPurple,
@@ -74,17 +75,20 @@ class _CustomThumbShape extends SliderComponentShape {
   );
 
   @override
-  void paint(PaintingContext context, Offset center,
-      {required Animation<double> activationAnimation,
-      required Animation<double> enableAnimation,
-      required bool isDiscrete,
-      required TextPainter labelPainter,
-      required RenderBox parentBox,
-      required SliderThemeData sliderTheme,
-      required TextDirection textDirection,
-      required double value,
-      required double textScaleFactor,
-      required Size sizeWithOverflow}) {
+  void paint(
+    PaintingContext context,
+    Offset center, {
+    required Animation<double> activationAnimation,
+    required Animation<double> enableAnimation,
+    required bool isDiscrete,
+    required TextPainter labelPainter,
+    required RenderBox parentBox,
+    required SliderThemeData sliderTheme,
+    required TextDirection textDirection,
+    required double value,
+    required double textScaleFactor,
+    required Size sizeWithOverflow,
+  }) {
     final Canvas canvas = context.canvas;
     final ColorTween colorTween = ColorTween(
       begin: sliderTheme.disabledThumbColor,

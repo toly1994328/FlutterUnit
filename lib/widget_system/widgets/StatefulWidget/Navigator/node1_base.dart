@@ -35,18 +35,18 @@ class NavigatorDemo extends StatelessWidget {
     switch (settings.name) {
       case '/home-content':
         return MaterialPageRoute(
-            builder: (_) => HomeContent(), settings: settings);
+            builder: (_) => const HomeContent(), settings: settings);
       case "/red":
-        return MaterialPageRoute(builder: (_) => RedPage(), settings: settings);
+        return MaterialPageRoute(builder: (_) => const RedPage(), settings: settings);
       case "/yellow":
         return MaterialPageRoute(
-            builder: (_) => YellowPage(), settings: settings);
+            builder: (_) => const YellowPage(), settings: settings);
       case "/green":
         return MaterialPageRoute(
-            builder: (_) => GreenPage(), settings: settings);
+            builder: (_) => const GreenPage(), settings: settings);
       default:
         return MaterialPageRoute(
-            builder: (_) => HomeContent(), settings: settings);
+            builder: (_) => const HomeContent(), settings: settings);
     }
   }
 
@@ -146,6 +146,8 @@ class RedPage extends StatelessWidget {
 }
 
 class YellowPage extends StatelessWidget {
+  const YellowPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

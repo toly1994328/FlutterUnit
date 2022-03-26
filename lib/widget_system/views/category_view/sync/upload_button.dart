@@ -19,6 +19,8 @@ import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 /// 说明:
 
 class UploadCategoryButton extends StatefulWidget {
+  const UploadCategoryButton({Key? key}) : super(key: key);
+
   @override
   _UploadCategoryButtonState createState() => _UploadCategoryButtonState();
 }

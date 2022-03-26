@@ -21,9 +21,9 @@ class WorldRender extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    manage.particles.forEach((particle) {
+    for (Particle particle in manage.particles) {
       drawParticle(canvas, particle);
-    });
+    }
   }
 
   void drawParticle(Canvas canvas, Particle particle) {

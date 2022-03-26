@@ -15,6 +15,8 @@ import 'dart:ui' as ui;
 //          "我们可以定义自己的 DefaultAssetBundle 来供后续节点使用，也可以直接使用默认的。该案例演示通过框架提供的 DefaultAssetBundle 加载一张资源图片进行显示。",
 //    }
 class DefaultAssetBundleDemo extends StatefulWidget {
+  const DefaultAssetBundleDemo({Key? key}) : super(key: key);
+
   @override
   _DefaultAssetBundleDemoState createState() => _DefaultAssetBundleDemoState();
 }
@@ -34,8 +36,8 @@ class _DefaultAssetBundleDemoState extends State<DefaultAssetBundleDemo> {
       width: 150,
       height: 150,
       color: Colors.blue.withOpacity(0.1),
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: _image==null?Container():RawImage(image: _image,fit: BoxFit.cover,),
     );
   }

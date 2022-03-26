@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class FlutterLogoDecorationDemo extends StatelessWidget {
+  const FlutterLogoDecorationDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return const DecoratedBox(

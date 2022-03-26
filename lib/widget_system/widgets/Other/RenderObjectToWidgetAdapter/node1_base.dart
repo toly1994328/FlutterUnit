@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class RenderObjectToWidgetAdapterDemo extends StatelessWidget {
+  const RenderObjectToWidgetAdapterDemo({Key? key}) : super(key: key);
+
   final String info =
       '该组件并没有什么太大的使用价值，但却非常有纪念意义。它是 Flutter 框架中最顶层的 Widget，它的 child 是 runApp 传入的组件，在 attachRootWidget 方法中被实例化。'
       '它持有根渲染对象 RenderView ，负责创建根元素 RenderObjectToWidgetElement，是一个无名英雄，一个深藏功与名的组件。';
@@ -25,8 +27,8 @@ class RenderObjectToWidgetAdapterDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue.withOpacity(0.1),
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Text(info),
     );
   }

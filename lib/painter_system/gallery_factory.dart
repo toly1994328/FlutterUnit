@@ -38,31 +38,31 @@ class GalleryFactory {
     switch (type) {
       case GalleryType.base:
         return [
-          FrameShower(
+          const FrameShower(
               title: "The Chaos",
               author: "张风捷特烈",
               srcUrl: "",
               info:
                   "    本样例介绍如何进行图片的绘制：通过加载图片并将图片资源绘制到指定的区域。在上层绘制一批 45° 倾角的栅格线，来练习线条的绘制。",
               content: DrawPicture()),
-          FrameShower(
+          const FrameShower(
               title: "The Coordinate",
               author: "张风捷特烈",
               srcUrl: "",
               info:
                   "    本样例介绍如何使用线路径和文字绘制网格坐标系，并将绘制对象进行封装，方便重用。坐标系也会在绘制时提供参考，入门必备。",
               content: DrawGridAxis()),
-          FrameShower(
+          const FrameShower(
               title: "曲线拟合",
               author: "张风捷特烈",
               info: "    本样例介绍如何使用路径对函数曲线进行绘制，通过函数曲线上的少量点通过贝塞尔曲线进行拟合。",
               content: DrawPathFun()),
-          FrameShower(
+          const FrameShower(
               title: "随机对称图",
               author: "张风捷特烈",
               info:
                   "    本样例介绍绘制矩形及随机数处理。通过点位集合确定矩形位置信息，将其绘制出来。可以练习对数据的控制力。",
-              content: RandomPortrait()),          FrameShower(
+              content: RandomPortrait()),          const FrameShower(
               title: "简单时钟",
               author: "张风捷特烈",
               info:
@@ -71,32 +71,32 @@ class GalleryFactory {
         ];
       case GalleryType.anim:
         return [
-          FrameShower(
+          const FrameShower(
               title: "手势弹簧",
               author: "张风捷特烈",
               info: "    本样例介绍如何绘制弹簧，通过触点竖直拖拽拉伸、压缩，放手时进行恢复动画，是一个很好的综合小案例。",
-              content: const SpringWidget()),
-          FrameShower(
+              content: SpringWidget()),
+          const FrameShower(
               title: "动画曲线散点图",
               author: "张风捷特烈",
               info: "    本样例通过直观的方式，来查看动画曲线 curve 的作用效果，让大家对动画有更深的理解。",
-              content: const CurveAnimShower()),
-          FrameShower(
+              content: CurveAnimShower()),
+          const FrameShower(
               title: "流光",
               author: "张风捷特烈",
               info: "    本样例介绍如何在绘制中使用着色器和过滤器，并通过动画进行数值变化达到旋转流光效果。",
-              content: const CircleHalo()),
-          FrameShower(
+              content: CircleHalo()),
+          const FrameShower(
               title: "Draw Curve",
               author: "张风捷特烈",
               info: "    本样例介绍如何使用路径绘制函数曲线，并使用路径测量进行动画",
               content: DrawPath()),
-          FrameShower(
+          const FrameShower(
               title: "冰墩墩线条动画",
               author: "张风捷特烈",
               info: "    本样例会绘制 2022 年北京冬奥会吉祥物冰墩墩的路径，并使用路径测量进行动画",
               content: DunDunPathPage()),
-          FrameShower(
+          const FrameShower(
               title: "Bezier3 演示 (双击清除)",
               author: "张风捷特烈",
               info: "    本样例介绍如何绘制三次贝塞尔曲线，通过触点判断某点是否激活，据此控制点的位置达到拖动控制效果。",
@@ -104,19 +104,19 @@ class GalleryFactory {
         ];
       case GalleryType.particle:
         return [
-          FrameShower(
+          const FrameShower(
               title: "随机粒子生成器",
               author: "张风捷特烈",
               info:
               "    本样例介绍如何创建随机粒子及边界反弹逻辑处理，是学习粒子运动非常好的入门案例。",
               content: RandomParticle()),
-          FrameShower(
+          const FrameShower(
               title: "粒子分裂",
               author: "张风捷特烈",
               info:
               "    本样例介绍如何对个粒子进行碰撞检测，并分裂处多个粒子，是一个比较有趣的案例。",
               content: ParticleSplit()),
-          FrameShower(
+          const FrameShower(
               title: "图片粒子分裂",
               author: "张风捷特烈",
               info:
@@ -125,19 +125,19 @@ class GalleryFactory {
         ];
       case GalleryType.fun:
         return [
-          FrameShower(
+          const FrameShower(
               title: "Random Portrait",
               author: "张风捷特烈",
               info:
                   "    本样例介绍绘制矩形及随机数处理。通过点位集合确定矩形位置信息，将其绘制出来。其中对点的随机生成和对称处理能让你练习对数据的控制力。",
               content: RandomPortrait()),
-          FrameShower(
+          const FrameShower(
               title: "冰墩墩",
               author: "张风捷特烈",
               info:
                   "    本样例是绘制 2022 年北京冬奥会吉祥物冰墩墩的形体，从中可以学到路径绘制、渐变色等知识。",
               content: DunDunView()),
-          FrameShower(
+          const FrameShower(
               title: "井字棋",
               author: "张风捷特烈",
               info:
@@ -146,56 +146,56 @@ class GalleryFactory {
         ];
       case GalleryType.art:
         return [
-          FrameShower(
+          const FrameShower(
             title: "Tiled Line",
             author: "generativeartistry.com",
             info:
                 "本样例根源来自generativeartistry.com的tiled-lines,由xrr2016使用Flutter实现。仓库地址:flutter-generative-artistry",
             content: TiledLines(),
           ),
-          FrameShower(
+          const FrameShower(
             title: "Joy Division",
             author: "generativeartistry.com",
             info:
                 "本样例根源来自generativeartistry.com的joy-division,由xrr2016使用Flutter实现。仓库地址:flutter-generative-artistry",
             content: JoyDivision(),
           ),
-          FrameShower(
+          const FrameShower(
             title: "Cubic Disarray",
             author: "generativeartistry.com",
             info:
                 "本样例根源来自generativeartistry.com的cubic-disarray,由xrr2016使用Flutter实现。仓库地址:flutter-generative-artistry",
             content: CubicDisarray(),
           ),
-          FrameShower(
+          const FrameShower(
             title: "Triangular Mesh",
             author: "generativeartistry.com",
             info:
                 "本样例根源来自generativeartistry.com的triangular-mesh,由xrr2016使用Flutter实现。仓库地址:flutter-generative-artistry",
             content: TriangularMesh(),
           ),
-          FrameShower(
+          const FrameShower(
             title: "Un Deux Trois",
             author: "generativeartistry.com",
             info:
                 "本样例根源来自generativeartistry.com的un-deux-trois,由xrr2016使用Flutter实现。仓库地址:flutter-generative-artistry",
             content: UnDeuxTrois(),
           ),
-          FrameShower(
+          const FrameShower(
             title: "Circle Packing",
             author: "generativeartistry.com",
             info:
                 "本样例根源来自generativeartistry.com的circle-packing,由xrr2016使用Flutter实现。仓库地址:flutter-generative-artistry",
             content: CirclePacking(),
           ),
-          FrameShower(
+          const FrameShower(
             title: "Hypnotic Squares",
             author: "generativeartistry.com",
             info:
                 "本样例根源来自generativeartistry.com的hypnotic-squares,由xrr2016使用Flutter实现。仓库地址:flutter-generative-artistry",
             content: HypnoticSquares(),
           ),
-          FrameShower(
+          const FrameShower(
             title: "Piet Mondrian",
             author: "generativeartistry.com",
             info:

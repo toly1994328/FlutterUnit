@@ -15,22 +15,24 @@ import 'package:flutter/material.dart';
 
 
 class ButtonThemeDemo extends StatelessWidget {
+  const ButtonThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
       buttonColor: Colors.orange,
       splashColor: Colors.blue,
       minWidth: 40,
-      shape: CircleBorder(
+      shape: const CircleBorder(
         side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
       ),
       child: Wrap(
         spacing: 10,
         children: <Widget>[
-          RaisedButton(onPressed: (){},child: Icon(Icons.add)),
-          FlatButton(onPressed: (){},child: Icon(Icons.add)),
-          OutlineButton(onPressed: (){},child: Icon(Icons.add)),
-          MaterialButton(onPressed: (){},child: Icon(Icons.add)),
+          RaisedButton(onPressed: (){},child: const Icon(Icons.add)),
+          FlatButton(onPressed: (){},child: const Icon(Icons.add)),
+          OutlineButton(onPressed: (){},child: const Icon(Icons.add)),
+          MaterialButton(onPressed: (){},child: const Icon(Icons.add)),
         ],
       ),
     );

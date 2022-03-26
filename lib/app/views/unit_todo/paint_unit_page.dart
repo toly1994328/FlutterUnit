@@ -23,7 +23,7 @@ class PaintUnitPage extends StatelessWidget {
           Positioned(
             top: 50,
             child: Column(
-              children: <Widget>[
+              children: const [
                 CircleImage(
                   image: AssetImage('assets/images/icon_head.webp'),
                   size: 80,
@@ -42,13 +42,13 @@ class PaintUnitPage extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: ShaderMask(
               shaderCallback: (rect) =>
                   _buildShader(rect, Theme.of(context).primaryColor),
               child: TextTyper(
                 text:info,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   shadows: [
                     Shadow(
                         color: Colors.black,
@@ -78,7 +78,7 @@ class PaintUnitPage extends StatelessWidget {
       .createShader(bounds);
 
   Widget buildPlan() {
-    return Positioned(
+    return const Positioned(
       bottom: 80,
       child:
       Text("Flutter Unit 绘制征集方案(待完成)",
@@ -96,7 +96,7 @@ class PaintUnitPage extends StatelessWidget {
   }
 
   Widget buildPower() {
-    return Positioned(
+    return const Positioned(
       bottom: 30,
       right: 30,
       child:

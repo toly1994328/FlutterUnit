@@ -12,13 +12,15 @@ import 'package:flutter/material.dart';
 //          "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】",
 //    }
 class CrossAxisAlignmentWrap extends StatelessWidget {
+  CrossAxisAlignmentWrap({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
         children: WrapCrossAlignment.values
             .map((mode) => Column(children: <Widget>[
           Container(
-              margin: EdgeInsets.all(5),
+              margin: const EdgeInsets.all(5),
               width: 160,
               height: 100,
               color: Colors.grey.withAlpha(88),
@@ -28,44 +30,44 @@ class CrossAxisAlignmentWrap extends StatelessWidget {
             .toList());
   }
 
-  final yellowBox = Container(
+  final Widget yellowBox = Container(
     color: Colors.yellow,
     height: 30,
     width: 50,
   );
 
-  final redBox = Container(
+  final Widget redBox = Container(
     color: Colors.red,
     height: 40,
     width: 40,
   );
-  final greenBox = Container(
+  final Widget greenBox = Container(
     color: Colors.green,
     height: 40,
     width: 20,
   );
-  final blackBox = Container(
+  final Widget blackBox = Container(
     color: Colors.black,
     height: 10,
     width: 10,
   );
-  final purpleBox = Container(
+  final Widget purpleBox = Container(
     color: Colors.purple,
     height: 20,
     width: 20,
   );
-  final orangeBox = Container(
+  final Widget orangeBox = Container(
     color: Colors.orange,
     height: 80,
     width: 20,
   );
-  final cyanBox = Container(
+  final Widget cyanBox = Container(
     color: Colors.cyanAccent,
     height: 10,
     width: 20,
   );
 
-  _buildItem(mode) => Wrap(
+  Widget _buildItem(mode) => Wrap(
     crossAxisAlignment: mode,
     runSpacing: 10,
     spacing: 10,

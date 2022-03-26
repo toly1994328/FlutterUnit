@@ -32,7 +32,7 @@ class AnimPainter extends CustomPainter {
     fps_60.moveTo(3.0 * 60, 0);
     fps_60.relativeLineTo(0, -size.height);
     canvas.drawPath(fps_60, fpsPaint);
-    textPainter.text = TextSpan(
+    textPainter.text = const TextSpan(
         text: '60 帧', style: TextStyle(fontSize: 12, color: Colors.green));
     textPainter.layout(); // 进行布局
     textPainter.paint(canvas, Offset(3.0 * 61 + 5, -size.height));
@@ -54,12 +54,12 @@ class AnimPainter extends CustomPainter {
     axisPath.relativeLineTo(4, 10);
     canvas.drawPath(axisPath, axisPaint);
 
-    textPainter.text = TextSpan(
+    textPainter.text = const TextSpan(
         text: '帧数/f', style: TextStyle(fontSize: 12, color: Colors.black));
     textPainter.layout(); // 进行布局
     Size textSize = textPainter.size; // 尺寸必须在布局后获取
     textPainter.paint(canvas, Offset(size.width - textSize.width, 5));
-    textPainter.text = TextSpan(
+    textPainter.text = const TextSpan(
         text: '数值/y', style: TextStyle(fontSize: 12, color: Colors.black));
     textPainter.layout(); // 进行布局
     Size textSize2 = textPainter.size; // 尺寸必须在布局后获取
@@ -84,7 +84,7 @@ class AnimPainter extends CustomPainter {
 
       textPainter.text = TextSpan(
           text: '${i / 10}',
-          style: TextStyle(fontSize: 12, color: Colors.black));
+          style: const TextStyle(fontSize: 12, color: Colors.black));
 
       textPainter.layout(); // 进行布局
       Size textSize = textPainter.size; // 尺寸必须在布局后获取

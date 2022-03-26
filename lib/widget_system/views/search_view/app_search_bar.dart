@@ -17,14 +17,14 @@ class _AppSearchBarState extends State<AppSearchBar> {
   final TextEditingController _controller=TextEditingController();//文本控制器
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) => SizedBox(
         height: 35,
         child:
         TextField(
           autofocus: false, //自动聚焦，闪游标
           controller: _controller,
           maxLines: 1,
-          decoration: InputDecoration(//输入框装饰
+          decoration: const InputDecoration(//输入框装饰
               filled: true,//填满
               fillColor: Colors.white,//白色
               prefixIcon:  Icon(Icons.search),//前标

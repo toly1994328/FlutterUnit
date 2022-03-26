@@ -56,7 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Wrap(children: [
         Stack(children:[
           UnitArcBackground(height: winSize.height * 0.32),
-          Positioned(
+          const Positioned(
               top: 20,
               child: BackButton(color: Colors.white)),
         ]),
@@ -84,7 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   icon: Icons.person_outline,
                   textFiled: TextField(
                     controller: _emailCtrl,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: '请输入邮箱',
                       hintStyle: TextStyle(color: Colors.grey),
@@ -104,13 +104,13 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Stack buildInputWithSend() {
     return Stack(
-      alignment: Alignment(.8, 0),
+      alignment: const Alignment(.8, 0),
       children: [
         IconInput(
           icon: Icons.code_outlined,
           textFiled: TextField(
             controller: _codeCtrl,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: InputBorder.none,
               hintText: '请输入验证码',
               hintStyle: TextStyle(color: Colors.grey),
@@ -127,7 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
   _sendEmail(BuildContext context) async {
     if (!_checkEmail(_emailCtrl.text)) {
       Toast.toast(context, '邮箱格式校验错误，请重试!',
-          color: Colors.orange, duration: Duration(seconds: 2));
+          color: Colors.orange, duration: const Duration(seconds: 2));
       return;
     }
 
@@ -135,10 +135,10 @@ class _RegisterPageState extends State<RegisterPage> {
         await SystemApi.sendEmail(email: _emailCtrl.text);
     print(result);
     if (result.status) {
-      Toast.toast(context, '验证码发送成功，请注意邮箱查收!', duration: Duration(seconds: 2));
+      Toast.toast(context, '验证码发送成功，请注意邮箱查收!', duration: const Duration(seconds: 2));
     } else {
       Toast.toast(context, '验证码发送失败: ${result.msg}!',
-          color: Colors.red, duration: Duration(seconds: 2));
+          color: Colors.red, duration: const Duration(seconds: 2));
     }
   }
 
@@ -149,7 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Widget _buildBtn() => Container(
-        margin: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
+        margin: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
         height: 40,
         width: MediaQuery.of(context).size.width,
         child: BlocConsumer<RegisterBloc, RegisterState>(
@@ -173,13 +173,13 @@ class _RegisterPageState extends State<RegisterPage> {
           builder: (ctx,bool value,child){
             return RaisedButton(
                 elevation: 0,
-                shape: RoundedRectangleBorder(
+                shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 color: Colors.blue,
                 disabledColor: Colors.blue.withOpacity(0.6),
                 onPressed: (enable||!value) ? null : _doRegister,
                 child: Text(info,
-                    style: TextStyle(color: Colors.white, fontSize: 18)));
+                    style: const TextStyle(color: Colors.white, fontSize: 18)));
           },
         ));
   }
@@ -187,7 +187,7 @@ class _RegisterPageState extends State<RegisterPage> {
   void _listener(BuildContext context, RegisterState state) {
     if (state is RegisterError) {
       Toast.toast(context, '注册失败 : ${state.message}!',
-          color: Colors.red, duration: Duration(seconds: 2));
+          color: Colors.red, duration: const Duration(seconds: 2));
     }
 
     if (state is RegisterSuccess) {

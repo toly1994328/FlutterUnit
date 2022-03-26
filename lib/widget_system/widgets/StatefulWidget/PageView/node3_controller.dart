@@ -58,7 +58,7 @@ class _CtrlPageViewState extends State<CtrlPageView> {
       ]);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       child: PageView(
         controller: _controller,

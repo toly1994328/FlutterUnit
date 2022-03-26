@@ -134,9 +134,9 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             scale: logoScaleAnim,
             child: FadeTransition(
                 opacity: _controller,
-                child: SizedBox(
+                child: const SizedBox(
                   height: 120,
-                  child: const FlutterLogo(
+                  child: FlutterLogo(
                     size: 60,
                   ),
                 )),

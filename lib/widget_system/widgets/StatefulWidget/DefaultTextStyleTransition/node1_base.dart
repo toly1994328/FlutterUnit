@@ -75,7 +75,7 @@ class _CustomDefaultTextStyleTransitionState
                     color: Colors.white,
                     fontSize: 20,
                     shadows: [
-                      const Shadow(
+                      Shadow(
                           offset: Offset(1, 1),
                           color: Colors.purple,
                           blurRadius: 3)

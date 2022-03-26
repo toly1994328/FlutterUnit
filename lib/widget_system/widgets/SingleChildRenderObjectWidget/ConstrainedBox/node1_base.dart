@@ -63,7 +63,7 @@ class _CustomConstrainedBoxState extends State<CustomConstrainedBox> {
       padding: const EdgeInsets.all(18.0),
       child: TextField(
         decoration: const InputDecoration(
-          border: const OutlineInputBorder(),
+          border: OutlineInputBorder(),
           hintText: '请输入',
         ),
         onChanged: (v) {

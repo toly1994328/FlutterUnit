@@ -149,10 +149,10 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
                             size: getIconSizeByPosition(3),
                             color: getIconColorByPosition(3),
                           )),
-                      Positioned(
+                      const Positioned(
                         left: 20,
                           top: 5,
-                          child: const UpdateRedPoint())
+                          child: UpdateRedPoint())
                     ],
                   ),
                 ),

@@ -15,7 +15,7 @@ import '../permanent/color_wrapper.dart';
 class OverlayToolWrapper extends StatefulWidget {
   final Widget child;
 
-  OverlayToolWrapper({Key? key,required this.child}) : super(key: key);
+  const OverlayToolWrapper({Key? key,required this.child}) : super(key: key);
 
   @override
   OverlayToolWrapperState createState() => OverlayToolWrapperState();
@@ -56,7 +56,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     super.initState();
 
     _ctrl = AnimationController(
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       vsync: this,
     )..addListener(_listenAnimate);
 
@@ -117,8 +117,8 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.blue,
-                  image: DecorationImage(
-                      image: const AssetImage('assets/images/icon_head.webp')),
+                  image: const DecorationImage(
+                      image: AssetImage('assets/images/icon_head.webp')),
                   borderRadius: BorderRadius.circular(menuSize / 2)),
             ),
           ),
@@ -140,7 +140,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       case 0:
         _doClose();
         return true;
-        break;
       case 1:
         _toPoint();
         break;

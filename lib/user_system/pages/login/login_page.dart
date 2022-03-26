@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
       child: Wrap(children: [
         Stack(children: [
           UnitArcBackground(height: winSize.height * 0.32),
-          Positioned(
+          const Positioned(
                   top: 20,
                   child: BackButton(color: Colors.white)),
             ]),
@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
                 child: Stack(
                   alignment: Alignment.center,
-                  children: [
+                  children: const [
                     LoginFrom(),
                   ],
                 ))

@@ -18,7 +18,7 @@ import 'package:flutter_unit/components/project/unit_drawer_header.dart';
 class CategoryEndDrawer extends StatelessWidget {
   final WidgetModel widget;
 
-  const CategoryEndDrawer({required this.widget});
+  const CategoryEndDrawer({Key? key, required this.widget}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +45,9 @@ class CategoryEndDrawer extends StatelessWidget {
         child: Text(widget.info, style: TStyleUnit.shadowTextStyle),
       ),
         ),
-        Divider(),
+        const Divider(),
         _buildTitle(context),
-        Divider(),
+        const Divider(),
         CategoryInfo(widget.id)
       ]),
     );
@@ -87,7 +87,7 @@ class CategoryEndDrawer extends StatelessWidget {
 class CategoryInfo extends StatefulWidget {
   final int id;
 
-  CategoryInfo(this.id);
+  const CategoryInfo(this.id, {Key? key}) : super(key: key);
 
   @override
   _CategoryInfoState createState() => _CategoryInfoState();

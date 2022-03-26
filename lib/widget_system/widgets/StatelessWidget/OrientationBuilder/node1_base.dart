@@ -39,12 +39,10 @@ class _OrientationBuilderDemoState extends State<OrientationBuilderDemo> {
     switch(orientation){
       case Orientation.portrait:
         return const Icon(Icons.phone_android,size: 60,);
-        break;
       case Orientation.landscape:
         return const RotatedBox(
           quarterTurns: 1,
-            child: const Icon(Icons.phone_android,size: 60,));
-        break;
+            child: Icon(Icons.phone_android,size: 60,));
       default: return Container();
     }
   }

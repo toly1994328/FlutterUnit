@@ -19,7 +19,7 @@ class ItemStyleSettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('item样式设置'),
+        title: const Text('item样式设置'),
       ),
       body: BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
         return _buildCell(context, state.itemStyleIndex);
@@ -33,10 +33,10 @@ class ItemStyleSettingPage extends StatelessWidget {
     return ListView.builder(
         itemCount: items.length,
         itemBuilder: (_, i) => Padding(
-          padding: EdgeInsets.only(bottom: 8,left: 8,right: 8),
+          padding: const EdgeInsets.only(bottom: 8,left: 8,right: 8),
           child: FeedbackWidget(
                   a: 0.95,
-                  duration: Duration(milliseconds: 200),
+                  duration: const Duration(milliseconds: 200),
                   onPressed: () {
                     BlocProvider.of<GlobalBloc>(context)
                         .add(EventChangeItemStyle(i));
@@ -51,7 +51,7 @@ class ItemStyleSettingPage extends StatelessWidget {
                           child: Circle(
                             color: Theme.of(context).primaryColor,
                             radius: 10,
-                            child: Icon(
+                            child: const Icon(
                               Icons.check,
                               color: Colors.white,
                               size: 15,

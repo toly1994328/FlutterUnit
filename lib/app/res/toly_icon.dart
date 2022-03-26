@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/widgets.dart';
 //Power By 张风捷特烈--- Generated file. Do not edit.
 
