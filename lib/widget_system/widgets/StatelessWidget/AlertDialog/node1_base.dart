@@ -24,6 +24,8 @@
 import 'package:flutter/material.dart';
 
 class CustomAlertDialog extends StatelessWidget {
+  const CustomAlertDialog({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,38 +37,38 @@ class CustomAlertDialog extends StatelessWidget {
   }
 
   Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(const Radius.circular(10))),
     color: Colors.blue,
     onPressed: () {
       showDialog(context: context, builder: (ctx) => _buildAlertDialog());
     },
-    child: Text(
+    child: const Text(
       'Just Show It !',
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
     ),
   );
 
   Widget _buildAlertDialog() {
     return AlertDialog(
       title: _buildTitle(),
-      titleTextStyle: TextStyle(fontSize: 20, color: Colors.black),
-      titlePadding: EdgeInsets.only(
+      titleTextStyle: const TextStyle(fontSize: 20, color: Colors.black),
+      titlePadding: const EdgeInsets.only(
         top: 5,
         left: 20,
       ),
-      contentPadding: EdgeInsets.symmetric(horizontal: 5),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 5),
       backgroundColor: Colors.white,
       content: _buildContent(),
-      actions: <Widget>[
+      actions: const [
         Icon(Icons.android, color: Colors.blue,),
         Icon(Icons.add, color: Colors.blue,),
         Icon(Icons.g_translate, color: Colors.blue,),
         Icon(Icons.games, color: Colors.blue,),
       ],
       elevation: 4,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10))),
+      shape: const RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(10))),
     );
   }
 
@@ -79,23 +81,23 @@ class CustomAlertDialog extends StatelessWidget {
           width: 30,
           height: 30,
         ),
-        SizedBox(width: 10,),
-        Expanded(
-            child: Text(
+        const SizedBox(width: 10,),
+        const Expanded(
+            child:  Text(
               "关于",
               style: TextStyle(fontSize: 18),
             )),
-        CloseButton()
+        const CloseButton()
       ],
     );
   }
 
   Widget _buildContent() {
-    return Column(
+    return  Column(
       mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(10.0),
+      children: const [
+         Padding(
+          padding: EdgeInsets.all(10.0),
           child: Text(
             '      FlutterUnit是【张风捷特烈】的开源项目，'
                 '收录Flutter的200+组件，并附加详细介绍以及操作交互，'

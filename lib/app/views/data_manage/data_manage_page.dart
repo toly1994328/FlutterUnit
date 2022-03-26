@@ -24,6 +24,8 @@ import 'package:sqflite/sqflite.dart';
 ///
 
 class DataManagePage extends StatelessWidget {
+  const DataManagePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

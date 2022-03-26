@@ -15,13 +15,15 @@ import 'package:flutter/material.dart';
 //          "【padding】 : 内边距   【EdgeInsetsGeometry】",
 //    }
 class CustomAnimatedPadding extends StatefulWidget {
+  const CustomAnimatedPadding({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedPaddingState createState() => _CustomAnimatedPaddingState();
 }
 
 class _CustomAnimatedPaddingState extends State<CustomAnimatedPadding> {
-  final EdgeInsets startPadding = EdgeInsets.all(10);
-  final EdgeInsets endPadding = EdgeInsets.all(30);
+  final EdgeInsets startPadding = const EdgeInsets.all(10);
+  final EdgeInsets endPadding = const EdgeInsets.all(30);
 
   late EdgeInsets _padding;
 
@@ -47,14 +49,14 @@ class _CustomAnimatedPaddingState extends State<CustomAnimatedPadding> {
           width: 200,
           height: 100,
           child: AnimatedPadding(
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
             padding: _padding,
             onEnd: () => print('End'),
             child: Container(
               alignment: Alignment.center,
               color: Colors.blue,
-              child: Text(
+              child: const Text(
                 '张风捷特烈',
                 style: TextStyle(color: Colors.white),
               ),

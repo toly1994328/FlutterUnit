@@ -31,12 +31,14 @@ class _BeanOp {
 }
 
 class SortDataTable extends StatefulWidget {
+  const SortDataTable({Key? key}) : super(key: key);
+
   @override
   _SortDataTableState createState() => _SortDataTableState();
 }
 
 class _SortDataTableState extends State<SortDataTable> {
-  var data = [
+  List<_BeanOp> data = [
     _BeanOp(101, 'DataTable', 'StatelessWidget', false),
     _BeanOp(44, 'RangeSlider', 'StatefulWidget', false),
     _BeanOp(2, 'Text', 'StatelessWidget', false),
@@ -44,7 +46,7 @@ class _SortDataTableState extends State<SortDataTable> {
   ];
 
   bool _sortAscending = false;
-  var selectData = <_BeanOp>[];
+  List<_BeanOp> selectData = <_BeanOp>[];
 
   @override
   Widget build(BuildContext context) {
@@ -54,16 +56,14 @@ class _SortDataTableState extends State<SortDataTable> {
         sortAscending: _sortAscending,
         columns: [
           DataColumn(
-            label: Container(
-              child: Checkbox(
-                value: selectData.length == data.length,
-                onChanged: _onSelectAll,
-              ),
+            label: Checkbox(
+              value: selectData.length == data.length,
+              onChanged: _onSelectAll,
             ),
           ),
-          DataColumn(label: Text('id'), numeric: false, onSort: _onSortId),
-          DataColumn(label: Text('名称')),
-          DataColumn(label: Text('类型')),
+          DataColumn(label: const Text('id'), numeric: false, onSort: _onSortId),
+          const DataColumn(label: Text('名称')),
+          const DataColumn(label: Text('类型')),
         ],
         rows: data
             .map((e) => DataRow(selected: false, cells: [
@@ -72,9 +72,9 @@ class _SortDataTableState extends State<SortDataTable> {
             onChanged: (v) => _onSelectOne(v, e),
           )),
           DataCell(Text('${e.id}')),
-          DataCell(Text('${e.name}'),
+          DataCell(Text(e.name),
               showEditIcon: true, onTap: () {}),
-          DataCell(Text('${e.type}')),
+          DataCell(Text(e.type)),
         ]))
             .toList());
   }
@@ -91,13 +91,11 @@ class _SortDataTableState extends State<SortDataTable> {
     if(selected==null) return;
     setState(() {
       if (selected) {
-        //选中
         selectData.add(e);
       } else {
         selectData.remove(e);
       }
       e.select = selected;
-      print(selectData);
     });
   }
 
@@ -105,10 +103,14 @@ class _SortDataTableState extends State<SortDataTable> {
     if(select==null) return;
     setState(() {
       if (select) {
-        data.forEach((e) => e.select = true);
+        for (_BeanOp e in data) {
+          e.select = true;
+        }
         selectData = data.map((e) => e).toList();
       } else {
-        data.forEach((e) => e.select = false);
+        for (_BeanOp e in data) {
+          e.select = false;
+        }
         selectData = [];
       }
     });

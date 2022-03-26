@@ -18,7 +18,8 @@ import 'unit_paint.dart';
 /// 说明: app 闪屏页
 
 class UnitSplash extends StatefulWidget {
-  const UnitSplash();
+  const UnitSplash({Key? key}) : super(key: key);
+
 
   @override
   _UnitSplashState createState() => _UnitSplashState();

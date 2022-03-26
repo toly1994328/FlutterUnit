@@ -19,11 +19,13 @@ import 'package:flutter/material.dart';
 //    }
 
 class NestedScrollViewDemo extends StatelessWidget {
-  final _tabs = ['风神传', '封妖志', "幻将录", "永恒传说"];
+  final List<String> _tabs = const ['风神传', '封妖志', "幻将录", "永恒传说"];
+
+  const NestedScrollViewDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height - 200,
         child: Scaffold(

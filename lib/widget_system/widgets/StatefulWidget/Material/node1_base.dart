@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //          "【color】 : 颜色   【Color】",
 //    }
 class CustomMaterial extends StatelessWidget {
+  const CustomMaterial({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -34,7 +36,7 @@ class CustomMaterial extends StatelessWidget {
           height: 60,
           child: Text(
             type.toString().split('.')[1],
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
           ),
         ),
       );

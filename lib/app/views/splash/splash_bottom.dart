@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 
 class SplashBottom extends StatefulWidget {
-  const SplashBottom();
+  const SplashBottom({Key? key}) : super(key: key);
+
+
 
   @override
   _SplashBottomState createState() => _SplashBottomState();

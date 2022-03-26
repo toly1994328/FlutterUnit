@@ -13,6 +13,8 @@ import 'package:flutter_unit/components/project/items/widget/home_item_support.d
 /// 说明: item样式切换支持
 
 class ItemStyleSettingPage extends StatelessWidget {
+  const ItemStyleSettingPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

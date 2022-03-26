@@ -13,29 +13,32 @@ import 'package:flutter/material.dart';
 //    },
 
 class AlignmentImage extends StatelessWidget {
+  const AlignmentImage({Key? key}) : super(key: key);
+
+  final List<Alignment> alignment = const[
+    Alignment.center,
+    Alignment.centerLeft,
+    Alignment.centerRight,
+    Alignment.topCenter,
+    Alignment.topLeft,
+    Alignment.topRight,
+    Alignment.bottomCenter,
+    Alignment.bottomLeft,
+    Alignment.bottomRight
+  ]; //测试数组
+
   @override
   Widget build(BuildContext context) {
-    var alignment = [
-      Alignment.center,
-      Alignment.centerLeft,
-      Alignment.centerRight,
-      Alignment.topCenter,
-      Alignment.topLeft,
-      Alignment.topRight,
-      Alignment.bottomCenter,
-      Alignment.bottomLeft,
-      Alignment.bottomRight
-    ]; //测试数组
-    var imgLi = alignment
+    List<Widget> imgLi = alignment
         .map((alignment) => //生成子Widget列表
-    Column(children: <Widget>[
+    Column(children: [
       Container(
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           width: 90,
           height: 60,
           color: Colors.grey.withAlpha(88),
           child: Image(
-            image: AssetImage("assets/images/wy_30x20.webp"),
+            image: const AssetImage("assets/images/wy_30x20.webp"),
             alignment: alignment,
           )),
       Text(alignment.toString())

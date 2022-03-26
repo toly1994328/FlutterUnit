@@ -12,7 +12,7 @@ class MultiChipFilter<T> extends StatefulWidget {
   final IndexedWidgetBuilder? avatarBuilder;
   final Function(List<int>) onChange;
 
-  MultiChipFilter({required this.data,required this.labelBuilder,this.avatarBuilder,required this.onChange});
+  const MultiChipFilter({Key? key, required this.data,required this.labelBuilder,this.avatarBuilder,required this.onChange}) : super(key: key);
 
   @override
   _MultiChipFilterState createState() => _MultiChipFilterState();

@@ -19,6 +19,8 @@ import 'package:flutter/material.dart';
 //          "【style】 : 文字样式   【TextStyle】",
 //    }
 class CustomAnimatedDefaultTextStyle extends StatefulWidget {
+  const CustomAnimatedDefaultTextStyle({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedDefaultTextStyleState createState() =>
       _CustomAnimatedDefaultTextStyleState();
@@ -26,12 +28,18 @@ class CustomAnimatedDefaultTextStyle extends StatefulWidget {
 
 class _CustomAnimatedDefaultTextStyleState
     extends State<CustomAnimatedDefaultTextStyle> {
-  final TextStyle start = TextStyle(color: Colors.blue, fontSize: 50, shadows: [
-    Shadow(offset: Offset(1, 1), color: Colors.black, blurRadius: 3)
-  ]);
-  final TextStyle end = TextStyle(color: Colors.white, fontSize: 20, shadows: [
-    Shadow(offset: Offset(1, 1), color: Colors.purple, blurRadius: 3)
-  ]);
+  final TextStyle start = const TextStyle(
+      color: Colors.blue,
+      fontSize: 50,
+      shadows: [
+        Shadow(offset: Offset(1, 1), color: Colors.black, blurRadius: 3)
+      ]);
+  final TextStyle end = const TextStyle(
+      color: Colors.white,
+      fontSize: 20,
+      shadows: [
+        Shadow(offset: Offset(1, 1), color: Colors.purple, blurRadius: 3)
+      ]);
 
   late TextStyle _style;
 
@@ -56,11 +64,11 @@ class _CustomAnimatedDefaultTextStyleState
             softWrap: true,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
             style: _style,
             onEnd: () => print('End'),
-            child: Text(
+            child: const Text(
               '张风捷特烈',
               style: TextStyle(color: Colors.white),
             ),

@@ -19,6 +19,8 @@ import 'package:flutter/material.dart';
 //          "【child】 : 子组件   【Widget】",
 //    }
 class AnimatedPhysicalModelDemo extends StatefulWidget {
+  const AnimatedPhysicalModelDemo({Key? key}) : super(key: key);
+
   @override
   _AnimatedPhysicalModelDemoState createState() =>
       _AnimatedPhysicalModelDemoState();
@@ -30,13 +32,13 @@ class _AnimatedPhysicalModelDemoState extends State<AnimatedPhysicalModelDemo> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
+      children: [
         _buildSwitch(),
-        Container(
+        SizedBox(
           width: 150,
           height: 150,
           child: AnimatedPhysicalModel(
-            duration: Duration(seconds: 2),
+            duration: const Duration(seconds: 2),
             curve: Curves.fastOutSlowIn,
             shadowColor: flag?Colors.orange:Colors.purple,
             elevation: flag?10:5,
@@ -48,22 +50,18 @@ class _AnimatedPhysicalModelDemoState extends State<AnimatedPhysicalModelDemo> {
             clipBehavior: Clip.hardEdge,
             shape: BoxShape.rectangle,
             color: Colors.deepPurpleAccent,
-            onEnd: () {
-              print('----onEnd---');
-            },
+            onEnd: () => print('----onEnd---'),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildSwitch() {
-    return Switch(
+  Widget _buildSwitch() => Switch(
         value: flag,
         onChanged: (v) {
           setState(() {
             flag = v;
           });
         });
-  }
 }

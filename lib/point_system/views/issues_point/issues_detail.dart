@@ -15,6 +15,8 @@ import 'package:flutter_unit/components/permanent/panel.dart';
 /// 说明:
 
 class IssuesDetailPage extends StatelessWidget {
+  const IssuesDetailPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -18,42 +18,42 @@ import 'package:flutter/material.dart';
 //          "【onPressed】 : 点击事件  【Function()】",
 //    }
 class CustomRawMaterialButton extends StatelessWidget {
+  const CustomRawMaterialButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Wrap(
-        spacing: 20,
-        children: <Widget>[
-          RawMaterialButton(
-            elevation: 2,
-            fillColor: Colors.green,
-            splashColor: Colors.orange,
-            textStyle: TextStyle(color: Colors.white),
-            onLongPress: ()=>print('onLongPress'),
-            child: Icon(Icons.remove),
-            onPressed: ()=>print('onPressed'),
-          ),
-          RawMaterialButton(
-            elevation: 2,
-            fillColor: Colors.blue,
-            splashColor: Colors.orange,
-            textStyle: TextStyle(color: Colors.white),
-            onLongPress: ()=>print('onLongPress'),
-            child: Text('Push'),
-            onPressed: ()=>print('onPressed'),
-          ),
-          RawMaterialButton(
-            elevation: 2,
-            fillColor: Colors.red,
-            splashColor: Colors.orange,
-            textStyle: TextStyle(color: Colors.white),
-            onLongPress: ()=>print('onLongPress'),
-            child: Icon(Icons.add),
-            onPressed: ()=>print('onPressed'),
-          ),
+    return Wrap(
+      spacing: 20,
+      children: [
+        RawMaterialButton(
+          elevation: 2,
+          fillColor: Colors.green,
+          splashColor: Colors.orange,
+          textStyle: const TextStyle(color: Colors.white),
+          onLongPress: ()=>print('onLongPress'),
+          child: const Icon(Icons.remove),
+          onPressed: ()=>print('onPressed'),
+        ),
+        RawMaterialButton(
+          elevation: 2,
+          fillColor: Colors.blue,
+          splashColor: Colors.orange,
+          textStyle: const TextStyle(color: Colors.white),
+          onLongPress: ()=>print('onLongPress'),
+          child: const Text('Push'),
+          onPressed: ()=>print('onPressed'),
+        ),
+        RawMaterialButton(
+          elevation: 2,
+          fillColor: Colors.red,
+          splashColor: Colors.orange,
+          textStyle: const TextStyle(color: Colors.white),
+          onLongPress: ()=>print('onLongPress'),
+          child: const Icon(Icons.add),
+          onPressed: ()=>print('onPressed'),
+        ),
 
-        ],
-      ),
+      ],
     );
   }
 }

@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 //          "【tabBuilder】 : 页面构造器   【IndexedWidgetBuilder】",
 //    }
 class CustomCupertinoTabScaffold extends StatefulWidget {
+  const CustomCupertinoTabScaffold({Key? key}) : super(key: key);
+
   @override
   _CustomCupertinoTabScaffoldState createState() =>
       _CustomCupertinoTabScaffoldState();
@@ -23,8 +25,8 @@ class CustomCupertinoTabScaffold extends StatefulWidget {
 
 class _CustomCupertinoTabScaffoldState
     extends State<CustomCupertinoTabScaffold> {
-  var _position = 0;
-  final iconsMap = {
+  int _position = 0;
+  final Map<String,IconData> iconsMap = {
     //底栏图标
     "图鉴": Icons.home, "动态": Icons.toys,
     "喜欢": Icons.favorite, "手册": Icons.class_,
@@ -33,7 +35,7 @@ class _CustomCupertinoTabScaffoldState
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height - 300,
       child: CupertinoTabScaffold(
@@ -55,8 +57,8 @@ class _CustomCupertinoTabScaffoldState
                 ))
             .toList(),
         activeColor: Colors.blue,
-        inactiveColor: Color(0xff333333),
-        backgroundColor: Color(0xfff1f1f1),
+        inactiveColor: const Color(0xff333333),
+        backgroundColor: const Color(0xfff1f1f1),
         iconSize: 25.0,
       );
 

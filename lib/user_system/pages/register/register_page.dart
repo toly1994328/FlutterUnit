@@ -20,6 +20,8 @@ import 'send_code.dart';
 /// 说明:
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }

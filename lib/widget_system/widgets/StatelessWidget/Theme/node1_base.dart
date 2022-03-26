@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 //          "子组件可以通过ThemeData.of获取主题的数据进行使用。",
 //    }
 class TextThemeDemo extends StatelessWidget {
+  const TextThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     TextTheme queryData = Theme.of(context).textTheme;
@@ -30,14 +32,17 @@ class TextThemeDemo extends StatelessWidget {
       "bodyText2: ": queryData.bodyText2!,
     };
 
-    return Container(
-      child: Column(
-        children: styles.keys
-            .map((String styleInfo) => buildItem(styleInfo, styles[styleInfo]!))
-            .toList(),
-      ),
+    return Column(
+      children: styles.keys
+          .map((String styleInfo) => buildItem(styleInfo, styles[styleInfo]!))
+          .toList(),
     );
   }
+
+  TextStyle get textStyle => const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      );
 
   Widget buildItem(String styleInfo, TextStyle style) => Column(
         children: <Widget>[
@@ -46,20 +51,12 @@ class TextThemeDemo extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
-                  styleInfo,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                Text(
-              "@toly",
-              style: style,
-            )
-          ],
-        ),
-      ),
-          const Divider(
-            height: 1,
-          )
+                Text(styleInfo, style: textStyle),
+                Text("@toly", style: style)
+              ],
+            ),
+          ),
+          const Divider(height: 1)
         ],
-  );
+      );
 }

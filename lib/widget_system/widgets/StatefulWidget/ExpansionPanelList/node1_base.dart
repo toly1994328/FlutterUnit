@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【onPressed】 : 点击事件  【Function()】",
 //    }
 class CustomExpansionPanelList extends StatefulWidget {
+  const CustomExpansionPanelList({Key? key}) : super(key: key);
+
   @override
   _CustomExpansionPanelListState createState() =>
       _CustomExpansionPanelListState();
@@ -36,13 +38,13 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 300,
       child: ExpansionPanelList(
         children: data.map((color) => _buildItem(color)).toList(),
-        animationDuration: Duration(milliseconds: 200),
+        animationDuration: const Duration(milliseconds: 200),
         expansionCallback: (index, open) {
-          setState(() => _position=open?-1:index);
+          setState(() => _position = open ? -1 : index);
         },
       ),
     );
@@ -68,7 +70,7 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
                     height: 50,
                     child: Text(
                       colorString(color),
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                 ],
@@ -80,8 +82,12 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
           color: color,
           child: Text(
             colorString(color),
-            style: TextStyle(color: Colors.white, shadows: [
-              Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+            style: const TextStyle(color: Colors.white, shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(.5, .5),
+                blurRadius: 2,
+              )
             ]),
           ),
         ));

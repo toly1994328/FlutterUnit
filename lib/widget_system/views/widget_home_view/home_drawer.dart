@@ -56,9 +56,9 @@ class HomeDrawer extends StatelessWidget {
         ),
         title: const Text('Flutter 集录'),
         children: <Widget>[
-          _buildItem(context, TolyIcon.icon_tag, '属性集录', UnitRouter.attr),
-          _buildItem(context, Icons.palette, '绘画集录', UnitRouter.galley),
-          _buildItem(context, Icons.widgets, '布局集录', UnitRouter.layout),
+          _buildItem(context, TolyIcon.icon_tag, '属性集录', ''),
+          _buildItem(context, Icons.palette, '绘画集录', ''),
+          _buildItem(context, Icons.widgets, '布局集录', ''),
           _buildItem(context, TolyIcon.icon_bug, '要点集录', UnitRouter.issues_point,onTap: (){
             BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
           }),

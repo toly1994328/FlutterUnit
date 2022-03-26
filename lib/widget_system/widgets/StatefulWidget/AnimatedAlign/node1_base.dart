@@ -16,12 +16,14 @@ import 'package:flutter/material.dart';
 //          "【padding】 : 内边距   【EdgeInsetsGeometry】",
 //    }
 class CustomAnimatedAlign extends StatefulWidget {
+  const CustomAnimatedAlign({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedAlignState createState() => _CustomAnimatedAlignState();
 }
 
 class _CustomAnimatedAlignState extends State<CustomAnimatedAlign> {
-  final Alignment start = Alignment(0, 0);
+  final Alignment start = const Alignment(0, 0);
   final Alignment end = Alignment.bottomRight;
 
   late Alignment _alignment;
@@ -42,7 +44,7 @@ class _CustomAnimatedAlignState extends State<CustomAnimatedAlign> {
           width: 200,
           height: 100,
           child: AnimatedAlign(
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
             alignment: _alignment,
             onEnd: () => print('End'),
@@ -51,7 +53,7 @@ class _CustomAnimatedAlignState extends State<CustomAnimatedAlign> {
               width: 80,
               alignment: Alignment.center,
               color: Colors.blue,
-              child: Text(
+              child: const Text(
                 '张风捷特烈',
                 style: TextStyle(color: Colors.white),
               ),

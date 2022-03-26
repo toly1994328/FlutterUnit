@@ -18,13 +18,15 @@ import 'package:flutter/material.dart';
 //          "【onTap】 : 点击事件   【Function(int)】",
 //    }
 class CustomCupertinoTabBar extends StatefulWidget {
+  const CustomCupertinoTabBar({Key? key}) : super(key: key);
+
   @override
   _CustomCupertinoTabBarState createState() => _CustomCupertinoTabBarState();
 }
 
 class _CustomCupertinoTabBarState extends State<CustomCupertinoTabBar> {
-  var _position = 0;
-  final iconsMap = {
+  int _position = 0;
+  final Map<String,IconData> iconsMap = {
     //底栏图标
     "图鉴": Icons.home, "动态": Icons.toys,
     "喜欢": Icons.favorite, "手册": Icons.class_,
@@ -54,8 +56,8 @@ class _CustomCupertinoTabBarState extends State<CustomCupertinoTabBar> {
               ))
           .toList(),
       activeColor: Colors.blue,
-      inactiveColor: Color(0xff333333),
-      backgroundColor: Color(0xfff1f1f1),
+      inactiveColor: const Color(0xff333333),
+      backgroundColor: const Color(0xfff1f1f1),
       iconSize: 25.0,
     );
   }
@@ -65,10 +67,10 @@ class _CustomCupertinoTabBarState extends State<CustomCupertinoTabBar> {
       alignment: Alignment.center,
       width: MediaQuery.of(context).size.width,
       height: 150,
-      color: Color(0xffE7F3FC),
+      color: const Color(0xffE7F3FC),
       child: Text(
         iconsMap.keys.toList()[_position],
-        style: TextStyle(color: Colors.blue, fontSize: 24),
+        style: const TextStyle(color: Colors.blue, fontSize: 24),
       ),
     );
   }

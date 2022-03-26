@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CheckedModeBannerDemo extends StatelessWidget {
+  const CheckedModeBannerDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return CheckedModeBanner(
@@ -21,7 +23,7 @@ class CheckedModeBannerDemo extends StatelessWidget {
         width: 250,
         height: 150,
         color: Theme.of(context).primaryColor,
-        child: Text(
+        child: const Text(
           "CheckedModeBanner",
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),

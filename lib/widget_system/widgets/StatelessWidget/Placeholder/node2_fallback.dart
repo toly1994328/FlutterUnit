@@ -12,9 +12,11 @@ import 'package:flutter/material.dart';
 //          "【fallbackWidth】: 宽   【double】",
 //    }
 class FallbackPlaceholder extends StatelessWidget {
+  const FallbackPlaceholder({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return UnconstrainedBox(
+    return const UnconstrainedBox(
       child:  Placeholder(
         color: Colors.blue,
         strokeWidth: 2,

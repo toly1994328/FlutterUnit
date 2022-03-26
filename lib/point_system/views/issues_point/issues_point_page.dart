@@ -18,13 +18,17 @@ import 'repo_widget.dart';
 /// 说明:
 
 class IssuesPointPage extends StatelessWidget {
+  const IssuesPointPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: IssuesPointContent());
+    return const Scaffold(body:  IssuesPointContent());
   }
 }
 
 class IssuesPointContent extends StatefulWidget {
+  const IssuesPointContent({Key? key}) : super(key: key);
+
   @override
   _IssuesPointContentState createState() => _IssuesPointContentState();
 }

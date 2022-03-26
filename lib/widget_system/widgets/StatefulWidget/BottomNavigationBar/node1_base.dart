@@ -21,21 +21,22 @@ import 'package:flutter/material.dart';
 //          "【onTap】 : 点击事件   【Function(int)】",
 //    }
 class CustomBottomNavigationBar extends StatefulWidget {
+  const CustomBottomNavigationBar({Key? key}) : super(key: key);
+
   @override
   _CustomBottomNavigationBarState createState() =>
       _CustomBottomNavigationBarState();
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  var _position = 0;
+  int _position = 0;
   BottomNavigationBarType _type = BottomNavigationBarType.shifting;
-  final iconsMap = {
-    //底栏图标
+  final Map<String,IconData> iconsMap = { //底栏图标
     "图鉴": Icons.home, "动态": Icons.toys,
     "喜欢": Icons.favorite, "手册": Icons.class_,
     "我的": Icons.account_circle,
   };
-  final _colors = [
+  final List<Color> _colors = [
     Colors.red,
     Colors.yellow,
     Colors.blue,
@@ -65,7 +66,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       fixedColor: isShifting ? Colors.white : _colors[_position],
       backgroundColor: Colors.white,
       iconSize: 25,
-      selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+      selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
       showUnselectedLabels: false,
       showSelectedLabels: true,
       items: iconsMap.keys
@@ -83,7 +84,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       children: <Widget>[
         Text(
           _type.toString(),
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
         ),
         Switch(
             value: _type == BottomNavigationBarType.shifting,

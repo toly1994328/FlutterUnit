@@ -23,7 +23,7 @@ final AppStart storage = AppStart();
 class BlocWrapper extends StatefulWidget {
   final Widget child;
 
-  BlocWrapper({required this.child});
+  const BlocWrapper({Key? key, required this.child}) : super(key: key);
 
   @override
   _BlocWrapperState createState() => _BlocWrapperState();

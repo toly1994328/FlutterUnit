@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
 
 class DialogAbout extends StatelessWidget {
+  const DialogAbout({Key? key}) : super(key: key);
+
   static show(BuildContext context){
     showDialog(//内置方法，创建对话弹框
         context: context,

@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class RawGestureDetectorDemo extends StatefulWidget {
+  const RawGestureDetectorDemo({Key? key}) : super(key: key);
+
   @override
   _RawGestureDetectorDemoState createState() => _RawGestureDetectorDemoState();
 }

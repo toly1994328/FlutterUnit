@@ -18,6 +18,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomAnimatedSwitcher extends StatefulWidget {
+  const CustomAnimatedSwitcher({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedSwitcherState createState() => _CustomAnimatedSwitcherState();
 }
@@ -27,15 +29,13 @@ class _CustomAnimatedSwitcherState extends State<CustomAnimatedSwitcher> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Wrap(
-        crossAxisAlignment: WrapCrossAlignment.center,
-        children: <Widget>[
-          _buildMinusBtn(),
-          SizedBox(width:80,child: _buildAnimatedSwitcher(context)),
-          _buildAddBtn()
-        ],
-      ),
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: <Widget>[
+        _buildMinusBtn(),
+        SizedBox(width:80,child: _buildAnimatedSwitcher(context)),
+        _buildAddBtn()
+      ],
     );
   }
 
@@ -55,34 +55,34 @@ class _CustomAnimatedSwitcherState extends State<CustomAnimatedSwitcher> {
 
   Widget _buildMinusBtn() {
    return MaterialButton(
-        padding: EdgeInsets.all(0),
-        textColor: Color(0xffFfffff),
+        padding: const EdgeInsets.all(0),
+        textColor: const Color(0xffFfffff),
         elevation: 3,
         color: Colors.red,
-        highlightColor: Color(0xffF88B0A),
+        highlightColor: const Color(0xffF88B0A),
         splashColor: Colors.red,
-        child: Icon(
+        child: const Icon(
           Icons.remove,
           color: Colors.white,
         ),
-       shape: CircleBorder(
+       shape: const CircleBorder(
          side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
        ),
         onPressed: () => setState(() => _count -= 1));
   }
 
   Widget _buildAddBtn() => MaterialButton(
-        padding: EdgeInsets.all(0),
-        textColor: Color(0xffFfffff),
+        padding: const EdgeInsets.all(0),
+        textColor: const Color(0xffFfffff),
         elevation: 3,
         color: Colors.blue,
-        highlightColor: Color(0xffF88B0A),
+        highlightColor: const Color(0xffF88B0A),
         splashColor: Colors.red,
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.white,
         ),
-        shape: CircleBorder(
+        shape: const CircleBorder(
           side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
         ),
         onPressed: () => setState(() => _count += 1));

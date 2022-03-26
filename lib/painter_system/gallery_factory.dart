@@ -21,7 +21,10 @@ import 'base/draw_picture.dart';
 import 'fun/dundun_view.dart';
 import 'fun/random_portrait.dart';
 import 'fun/stemp/stamp_paper.dart';
-import 'gallery.dart';
+import 'particle/random/random_particle.dart';
+import 'particle/split/particle_split.dart';
+import 'particle/split_img/split_image.dart';
+import 'picture_frame.dart';
 
 /// create by 张风捷特烈 on 2020/12/5
 /// contact me by email 1981462002@qq.com
@@ -100,7 +103,26 @@ class GalleryFactory {
               content: Bezier3Player()),
         ];
       case GalleryType.particle:
-        return [];
+        return [
+          FrameShower(
+              title: "随机粒子生成器",
+              author: "张风捷特烈",
+              info:
+              "    本样例介绍如何创建随机粒子及边界反弹逻辑处理，是学习粒子运动非常好的入门案例。",
+              content: RandomParticle()),
+          FrameShower(
+              title: "粒子分裂",
+              author: "张风捷特烈",
+              info:
+              "    本样例介绍如何对个粒子进行碰撞检测，并分裂处多个粒子，是一个比较有趣的案例。",
+              content: ParticleSplit()),
+          FrameShower(
+              title: "图片粒子分裂",
+              author: "张风捷特烈",
+              info:
+              "    本样例介绍将图片使用粒子表示，并对粒子进行动画处理，达到爆炸的效果。",
+              content: SplitImage()),
+        ];
       case GalleryType.fun:
         return [
           FrameShower(

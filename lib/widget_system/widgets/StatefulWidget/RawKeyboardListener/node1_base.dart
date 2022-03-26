@@ -17,6 +17,8 @@ import 'package:flutter/services.dart';
 //    }
 
 class RawKeyboardListenerDemo extends StatefulWidget {
+  const RawKeyboardListenerDemo({Key? key}) : super(key: key);
+
   @override
   _RawKeyboardListenerDemoState createState() => _RawKeyboardListenerDemoState();
 }
@@ -31,20 +33,19 @@ class _RawKeyboardListenerDemoState extends State<RawKeyboardListenerDemo> {
     return RawKeyboardListener(
       focusNode: node,
       onKey: _onKey,
-
-      child: Container(
+      child: SizedBox(
         width: 300,
         child: Row(
           children: [
-            Expanded(
+            const Expanded(
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder()
                 ),
               ),
             ),
-            SizedBox(width: 20,),
-            Text('$_info')
+            const SizedBox(width: 20,),
+            Text(_info)
           ],
         ),
       ),

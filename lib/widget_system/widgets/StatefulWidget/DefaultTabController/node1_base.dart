@@ -15,21 +15,23 @@ import 'package:flutter/material.dart';
 //    }
 
 class DefaultTabControllerDemo extends StatelessWidget {
-  final List<Tab> tabs = [
+  final List<Tab> tabs = const [
     Tab(text: '青眼白龙'),
     Tab(text: '黑魔术师'),
     Tab(text: '混沌战士'),
   ];
 
+  const DefaultTabControllerDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: DefaultTabController(
         length: tabs.length,
         child: Scaffold(
           appBar: AppBar(
-            title: Text("DefaultTabController"),
+            title: const Text("DefaultTabController"),
             bottom: TabBar(
               tabs: tabs,
             ),

@@ -18,32 +18,32 @@ import 'package:flutter/material.dart';
 //          "【onSubmitted】: 提交监听    【ValueChanged<String>】",
 //    }
 class CupertinoTextFieldDemo extends StatefulWidget {
+  const CupertinoTextFieldDemo({Key? key}) : super(key: key);
+
   @override
   _CupertinoTextFieldDemoState createState() => _CupertinoTextFieldDemoState();
 }
 
 class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
-  var _value = '';
-  var _color =Colors.black;
+  String _value = '';
+  Color _color =Colors.black;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Text('输入了:$_value',style: TextStyle(color: _color),),
-          CupertinoTextField(
-            placeholder: 'Input Name',
-            showCursor: true,
-            minLines: 1,
-            maxLines: 4,
-            padding: EdgeInsets.all(8),
-            onChanged: _onChanged,
-            onTap: _onTap,
-            onSubmitted: _onSubmitted,
-          ),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        Text('输入了:$_value',style: TextStyle(color: _color),),
+        CupertinoTextField(
+          placeholder: 'Input Name',
+          showCursor: true,
+          minLines: 1,
+          maxLines: 4,
+          padding: const EdgeInsets.all(8),
+          onChanged: _onChanged,
+          onTap: _onTap,
+          onSubmitted: _onSubmitted,
+        ),
+      ],
     );
   }
 

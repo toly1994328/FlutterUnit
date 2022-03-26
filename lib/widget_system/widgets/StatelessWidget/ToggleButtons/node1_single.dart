@@ -15,6 +15,8 @@ import 'package:flutter/material.dart';
 //          "【onPressed】: 点击事件   【Function(int)】",
 //    }
 class CustomToggleButtons extends StatefulWidget {
+  const CustomToggleButtons({Key? key}) : super(key: key);
+
   @override
   _CustomToggleButtonsState createState() => _CustomToggleButtonsState();
 }
@@ -38,6 +40,5 @@ class _CustomToggleButtonsState extends State<CustomToggleButtons> {
         _isSelected[value] = true;
       }),
     );
-
   }
 }

@@ -13,7 +13,7 @@ class MarkdownWidget extends StatelessWidget {
   final String markdownData;
   final int style;
 
-  MarkdownWidget({this.markdownData = "", this.style = kWhite});
+  const MarkdownWidget({Key? key, this.markdownData = "", this.style = kWhite}) : super(key: key);
 
   MarkdownStyleSheet  _getCommonSheet(BuildContext context, Color codeBackground) {
     MarkdownStyleSheet markdownStyleSheet = MarkdownStyleSheet.fromTheme(Theme.of(context));

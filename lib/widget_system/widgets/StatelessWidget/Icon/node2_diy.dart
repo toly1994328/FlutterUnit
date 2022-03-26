@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../app/res/toly_icon.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
@@ -14,6 +15,8 @@ import '../../../../app/res/toly_icon.dart';
 
 
 class MyIcon extends StatelessWidget {
+  const MyIcon({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -24,13 +27,11 @@ class MyIcon extends StatelessWidget {
         TolyIcon.icon_star,
         TolyIcon.icon_layout,
         TolyIcon.icon_star_ok
-      ]
-          .map((e) => Icon(
+      ].map((e) => Icon(
         e,
         color: Colors.green,
         size: 60,
-      ))
-          .toList(),
+      ),).toList(),
     );
   }
 }

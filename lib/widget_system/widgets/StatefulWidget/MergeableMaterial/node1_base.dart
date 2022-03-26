@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class MergeableMaterialDemo extends StatefulWidget {
+  const MergeableMaterialDemo({Key? key}) : super(key: key);
+
   @override
   _MergeableMaterialDemoState createState() => _MergeableMaterialDemoState();
 }
@@ -32,7 +34,7 @@ class _MergeableMaterialDemoState extends State<MergeableMaterialDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  SizedBox(
       height: 300,
       child: SingleChildScrollView(
               child: MergeableMaterial(

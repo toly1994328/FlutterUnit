@@ -14,11 +14,13 @@ import 'package:flutter/material.dart';
 //          "【shrinkWrap】 : 无边界时是否包裹  【bool】",
 //    }
 class ExtentGridView extends StatelessWidget {
-  final data = List.generate(128, (i) => Color(0xFF00FFFF - 2*i));
+  ExtentGridView({Key? key}) : super(key: key);
+
+  final List<Color> data = List.generate(128, (i) => Color(0xFF00FFFF - 2 * i));
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: GridView.extent(
         scrollDirection: Axis.horizontal,
@@ -26,9 +28,7 @@ class ExtentGridView extends StatelessWidget {
         mainAxisSpacing: 2,
         crossAxisSpacing: 2,
         childAspectRatio: 0.618,
-        children: data
-            .map((color) => _buildItem(color))
-            .toList(),
+        children: data.map((color) => _buildItem(color)).toList(),
       ),
     );
   }
@@ -40,13 +40,13 @@ class ExtentGridView extends StatelessWidget {
     color: color,
     child: Text(
       colorString(color),
-      style: TextStyle(color: Colors.white, shadows: [
-        Shadow(
-            color: Colors.black,
-            offset: Offset(.5, .5),
-            blurRadius: 2)
-      ]),
-    ),
+          style: const TextStyle(
+            color: Colors.white,
+            shadows: [
+              Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+            ],
+          ),
+        ),
   );
 
   String colorString(Color color) =>

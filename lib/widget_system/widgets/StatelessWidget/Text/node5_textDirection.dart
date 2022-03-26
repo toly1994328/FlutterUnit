@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "下面依次是:rtl、ltr ",
 //    }
 class TextDirectionText extends StatelessWidget {
+  const TextDirectionText({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Wrap(

@@ -19,6 +19,8 @@ import 'package:flutter/material.dart';
 //          "【onChanged】 : 改变时回调   【Function(double)】",
 //    }
 class CustomCupertinoSlider extends StatefulWidget {
+  const CustomCupertinoSlider({Key? key}) : super(key: key);
+
   @override
   _CustomCupertinoSliderState createState() => _CustomCupertinoSliderState();
 }
@@ -30,7 +32,6 @@ class _CustomCupertinoSliderState extends State<CustomCupertinoSlider> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-
       children: <Widget>[
         Text('当前值:${_value.toStringAsFixed(1)}'),
         CupertinoSlider(
@@ -40,12 +41,8 @@ class _CustomCupertinoSliderState extends State<CustomCupertinoSlider> {
             max: 360.0,
             activeColor: Colors.green,
             thumbColor: Colors.white,
-            onChangeStart: (value) {
-              print('开始滑动:$value');
-            },
-            onChangeEnd: (value) {
-              print('滑动结束:$value');
-            },
+            onChangeStart: (value) => print('开始滑动:$value'),
+            onChangeEnd: (value) => print('滑动结束:$value'),
             onChanged: (value) {
               setState(() {
                 _value = value;

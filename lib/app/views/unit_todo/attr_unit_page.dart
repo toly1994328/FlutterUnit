@@ -3,9 +3,11 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/text_typer.dart';
 
 class AttrUnitPage extends StatelessWidget {
-  final info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'
+  final String info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'
       '会对所有Widget的所有属性进行收录整理到数据库，进行数据分析和组件关联。'
       '并且对一些重要属性，进行全面讲解。';
+
+  const AttrUnitPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

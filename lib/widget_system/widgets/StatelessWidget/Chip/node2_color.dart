@@ -14,6 +14,8 @@
 //    }
 import 'package:flutter/material.dart';
 class ColorOfChip extends StatelessWidget {
+  const ColorOfChip({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -21,18 +23,18 @@ class ColorOfChip extends StatelessWidget {
       children: <Widget>[
         Chip(
           avatar: Image.asset("assets/images/icon_head.webp"),
-          label: Text("张风捷特烈"),
-          padding: EdgeInsets.all(5),
-          labelPadding: EdgeInsets.all(5),
+          label: const Text("张风捷特烈"),
+          padding: const EdgeInsets.all(5),
+          labelPadding: const EdgeInsets.all(5),
           backgroundColor: Colors.grey.withAlpha(66),
           shadowColor: Colors.orangeAccent,
           elevation: 3,
         ),
         Chip(
           avatar: Image.asset("assets/images/icon_head.webp"),
-          label: Text("张风捷特烈"),
-          padding: EdgeInsets.all(5),
-          labelPadding: EdgeInsets.all(5),
+          label: const Text("张风捷特烈"),
+          padding: const EdgeInsets.all(5),
+          labelPadding: const EdgeInsets.all(5),
           backgroundColor: Colors.cyanAccent.withAlpha(11),
           shadowColor: Colors.blue.withAlpha(88),
           elevation: 4,

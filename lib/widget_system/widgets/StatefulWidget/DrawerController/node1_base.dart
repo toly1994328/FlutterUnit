@@ -18,6 +18,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class DrawerControllerDemo extends StatefulWidget {
+  const DrawerControllerDemo({Key? key}) : super(key: key);
+
   @override
   _DrawerControllerDemoState createState() => _DrawerControllerDemoState();
 }
@@ -30,37 +32,35 @@ class _DrawerControllerDemoState extends State<DrawerControllerDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          ElevatedButton(
-            onPressed: toggleDrawer,
-            child: Text("显隐 Drawer"),
-          ),
-          Container(
-            height: 200,
-            child: DrawerController(
-              scrimColor: Colors.blue.withAlpha(88),
-              enableOpenDragGesture: true,
-              key: _drawerKey,
-              alignment: DrawerAlignment.start,
-              drawerCallback: (value) {
-                _open = value;
-              },
-              child: Drawer(
-                child: Container(
-                  alignment: Alignment.center,
-                  color: Colors.red,
-                  child: Text(
-                    "I am Drawer!",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: toggleDrawer,
+          child: const Text("显隐 Drawer"),
+        ),
+        SizedBox(
+          height: 200,
+          child: DrawerController(
+            scrimColor: Colors.blue.withAlpha(88),
+            enableOpenDragGesture: true,
+            key: _drawerKey,
+            alignment: DrawerAlignment.start,
+            drawerCallback: (value) {
+              _open = value;
+            },
+            child: Drawer(
+              child: Container(
+                alignment: Alignment.center,
+                color: Colors.red,
+                child: const Text(
+                  "I am Drawer!",
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

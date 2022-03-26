@@ -13,7 +13,7 @@ import 'package:flutter_unit/components/permanent/color_wrapper.dart';
 class RepoWidget extends StatelessWidget {
   final Repository repository;
 
-  RepoWidget({required this.repository});
+  const RepoWidget({Key? key, required this.repository}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

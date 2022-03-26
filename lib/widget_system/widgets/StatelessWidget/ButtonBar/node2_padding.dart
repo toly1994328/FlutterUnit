@@ -13,24 +13,26 @@ import '../../../../components/project/dialogs/dialog_about.dart';
 //          "【buttonHeight】: 高   【double】",
 //    }
 class PaddingButtonBar extends StatelessWidget {
+  const PaddingButtonBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ButtonBar(
       alignment: MainAxisAlignment.center,
       buttonHeight: 40,
-      buttonPadding: EdgeInsets.only(left: 15,right: 15),
+      buttonPadding: const EdgeInsets.only(left: 15,right: 15),
       children: <Widget>[
         RaisedButton(
             color: Colors.blue,
-            child: Text("Raised"),
+            child: const Text("Raised"),
             onPressed: () => DialogAbout.show(context)),
         OutlineButton(
-            child: Text("Outline"),
+            child: const Text("Outline"),
             onPressed: () => DialogAbout.show(context)),
         FlatButton(
           color: Colors.blue,
           onPressed: () => DialogAbout.show(context),
-          child: Text("Flat"),
+          child: const Text("Flat"),
         )
       ],
     );

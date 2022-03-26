@@ -5,15 +5,17 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/text_typer.dart';
 
 class PaintUnitPage extends StatelessWidget {
-  final info = '【Flutter绘制集录】是Unit项目计划的第二阶段的功能之一。'
+  final String info = '【Flutter绘制集录】是Unit项目计划的第二阶段的功能之一。'
       '将收录大量绘制作品，展现Flutter强大的绘制表现力,'
       '以供学习绘制技能。本集录将支持绘制征集，愿开发者共同集录。';
+
+  const PaintUnitPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('绘制集录'),
+        title: const Text('绘制集录'),
       ),
       body: Stack(
         alignment: Alignment.center,

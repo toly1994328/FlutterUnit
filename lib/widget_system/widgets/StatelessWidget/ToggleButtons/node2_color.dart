@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【splashColor】: 水波纹色   【Color】",
 //    }
 class ColorToggleButtons extends StatefulWidget {
+  const ColorToggleButtons({Key? key}) : super(key: key);
+
   @override
   _ColorToggleButtonsState createState() => _ColorToggleButtonsState();
 }

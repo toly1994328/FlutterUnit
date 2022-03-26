@@ -10,6 +10,8 @@ import 'package:flutter_unit/user_system/bloc/login/state.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 class LoginFrom extends StatefulWidget {
+  const LoginFrom({Key? key}) : super(key: key);
+
   @override
   _LoginFromState createState() => _LoginFromState();
 }

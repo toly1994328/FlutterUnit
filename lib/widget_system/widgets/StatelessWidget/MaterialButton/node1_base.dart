@@ -20,6 +20,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomMaterialButton extends StatelessWidget {
+  const CustomMaterialButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -28,8 +30,8 @@ class CustomMaterialButton extends StatelessWidget {
         color: Colors.orangeAccent,
         textColor: Colors.white,
         splashColor: Colors.blue,
-        padding: EdgeInsets.all(8),
-        child: Text("MaterialButton"),
-        onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'));
+        padding: const EdgeInsets.all(8),
+        child: const Text("MaterialButton"),
+        onPressed: () => Navigator.of(context).pushNamed('AboutMePage'));
   }
 }

@@ -12,7 +12,6 @@ import 'package:flutter_unit/app/views/setting/theme_color_setting.dart';
 import 'package:flutter_unit/app/views/unit_todo/attr_unit_page.dart';
 import 'package:flutter_unit/app/views/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
-import 'package:flutter_unit/painter_system/gallery_page.dart';
 import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart';
 import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
 import 'package:flutter_unit/user_system/pages/login/login_page.dart';
@@ -47,7 +46,6 @@ class UnitRouter {
 
   static const String attr = 'AttrUnitPage';
   static const String bug = 'BugUnitPage';
-  static const String galley = 'GalleryPage';
   static const String layout = 'LayoutUnitPage';
   static const String about_me = 'AboutMePage';
   static const String about_app = 'AboutAppPage';
@@ -102,8 +100,6 @@ class UnitRouter {
         return Right2LeftRouter(child: AttrUnitPage());
       case bug:
         return Right2LeftRouter(child: BugUnitPage());
-      case galley:
-        return Right2LeftRouter(child: GalleryPage());
       case layout:
         return Right2LeftRouter(child: LayoutUnitPage());
       case about_app:

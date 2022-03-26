@@ -11,7 +11,7 @@ import 'package:flutter_unit/update_part/views/update_red_point.dart';
 class MePageItem extends StatelessWidget {
   final Color color;
 
-  MePageItem({this.color = Colors.white});
+  const MePageItem({this.color = Colors.white});
 
   @override
   Widget build(BuildContext context) {

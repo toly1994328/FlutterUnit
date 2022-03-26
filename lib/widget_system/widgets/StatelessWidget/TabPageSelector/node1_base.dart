@@ -15,14 +15,16 @@ import 'package:flutter/material.dart';
 //    }
 
 class TabPageSelectorDemo extends StatefulWidget {
+  const TabPageSelectorDemo({Key? key}) : super(key: key);
+
   @override
   _TabPageSelectorDemoState createState() => _TabPageSelectorDemoState();
 }
 
 class _TabPageSelectorDemoState extends State<TabPageSelectorDemo>
     with SingleTickerProviderStateMixin {
-  final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
- late TabController _tabController;
+  final List<String> tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -38,7 +40,7 @@ class _TabPageSelectorDemoState extends State<TabPageSelectorDemo>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: Stack(
         alignment: Alignment.center,
@@ -66,7 +68,7 @@ class _TabPageSelectorDemoState extends State<TabPageSelectorDemo>
           .map((e) => Center(
                   child: Text(
                 e,
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: const TextStyle(color: Colors.white, fontSize: 20),
               )))
           .toList());
 }

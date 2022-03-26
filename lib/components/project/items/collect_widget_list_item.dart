@@ -12,7 +12,7 @@ class CollectWidgetListItem extends StatelessWidget {
   final WidgetModel data;
   final Function(WidgetModel model)? onDeleteItemClick;
 
-  CollectWidgetListItem({required this.data, this.onDeleteItemClick});
+  const CollectWidgetListItem({Key? key, required this.data, this.onDeleteItemClick}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

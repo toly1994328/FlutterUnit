@@ -5,9 +5,14 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/text_typer.dart';
 
 class LayoutUnitPage extends StatelessWidget {
-  final info = '【Flutter布局集录】是Unit项目计划的第二阶段的功能之一。'
+
+  const LayoutUnitPage({Key? key}) : super(key: key);
+
+
+  final String info = '【Flutter布局集录】是Unit项目计划的第二阶段的功能之一。'
       '将收录大量的布局样板，一者，方便直接使用；二者，方便布局的学习。'
       '本集录将支持布局征集，愿开发者共同集录。';
+
 
   @override
   Widget build(BuildContext context) {

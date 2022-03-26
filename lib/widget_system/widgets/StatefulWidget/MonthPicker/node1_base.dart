@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【onChanged】 : 点击回调  【Function(DateTime)】",
 //    }
 class CustomMonthPicker extends StatefulWidget {
+  const CustomMonthPicker({Key? key}) : super(key: key);
+
   @override
   _CustomMonthPickerState createState() => _CustomMonthPickerState();
 }
@@ -23,7 +25,7 @@ class _CustomMonthPickerState extends State<CustomMonthPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 350,
       child: MonthPicker(
         selectedDate: _date,

@@ -12,6 +12,8 @@ import 'package:flutter_unit/components/permanent/circle.dart';
 /// 说明:
 
 class ThemeColorSettingPage extends StatelessWidget {
+  const ThemeColorSettingPage({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

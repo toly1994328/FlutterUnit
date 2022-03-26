@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 /// 说明:
 
 class CustomDialog extends StatelessWidget {
+  const CustomDialog({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,54 +24,53 @@ class CustomDialog extends StatelessWidget {
     onPressed: (){
 
     },
-    child: Container(
+    child: SizedBox(
       width: 50,
       child: DeleteDialog(),
     ),
   );
 
   Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all( Radius.circular(10))),
     color: Colors.blue,
     onPressed: () {
       showDialog(context: context, builder: (ctx) => _buildDialog());
     },
-    child: Text(
+    child: const Text(
       'Just Show It !',
-      style: TextStyle(color: Colors.white),
+      style:  TextStyle(color: Colors.white),
     ),
 
   );
 }
 
 class DeleteDialog extends StatelessWidget {
+  const DeleteDialog({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          _buildBar(context),
-          _buildTitle(),
-          _buildContent(),
-          _buildFooter(context),
-        ],
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        _buildBar(context),
+        _buildTitle(),
+        _buildContent(),
+        _buildFooter(context),
+      ],
     );
   }
 
   Widget _buildTitle() {
-    return Text(
+    return const Text(
       'Delete Doucument',
       style: TextStyle(color: Color(0xff5CC5E9), fontSize: 24),
     );
   }
 
   Widget _buildContent() {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
+    return const Padding(
+      padding: EdgeInsets.all(10.0),
       child: Text(
         '    Hi toly! If you push the conform buttom ,'
             ' You will lose this file. Are you sure wand to do that?',
@@ -89,10 +90,10 @@ class DeleteDialog extends StatelessWidget {
             alignment: Alignment.center,
             height: 40,
             width: 120,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(const Radius.circular(30)),
                 color: Color(0xff73D1EE)),
-            child: Text('Yes, Delete',
+            child: const Text('Yes, Delete',
                 style: TextStyle(color: Colors.white, fontSize: 16)),
           ),
           InkWell(
@@ -101,11 +102,11 @@ class DeleteDialog extends StatelessWidget {
               alignment: Alignment.center,
               height: 40,
               width: 120,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   color: Colors.orangeAccent),
-              child: Text('Cancle',
-                  style: TextStyle(color: Colors.white, fontSize: 16)),
+              child: const Text('Cancle',
+                  style:  TextStyle(color: Colors.white, fontSize: 16)),
             ),
           )
         ],
@@ -116,10 +117,10 @@ class DeleteDialog extends StatelessWidget {
   _buildBar(context) => Container(
     height: 30,
     alignment: Alignment.centerRight,
-    margin: EdgeInsets.only(right: 10, top: 5),
+    margin: const EdgeInsets.only(right: 10, top: 5),
     child: InkWell(
       onTap: ()=>Navigator.of(context).pop(),
-      child: Icon(
+      child: const Icon(
         Icons.close,
         color: Color(0xff82CAE3),
       ),

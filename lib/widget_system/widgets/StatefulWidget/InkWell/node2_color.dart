@@ -17,12 +17,14 @@ import 'package:flutter/material.dart';
 //    }
 
 class ColorInkWell extends StatefulWidget {
+  const ColorInkWell({Key? key}) : super(key: key);
+
   @override
   _ColorInkWellState createState() => _ColorInkWellState();
 }
 
 class _ColorInkWellState extends State<ColorInkWell> {
-  var _info = 'Push';
+  String _info = 'Push';
 
   @override
   Widget build(BuildContext context) {

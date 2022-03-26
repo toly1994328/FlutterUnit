@@ -13,13 +13,13 @@ import 'package:flutter/material.dart';
 //    }
 
 class CupertinoNavigationBarBackButtonDemo extends StatelessWidget {
+  const CupertinoNavigationBarBackButtonDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: CupertinoNavigationBarBackButton(
-        color: Colors.deepPurpleAccent,
-        onPressed: ()=>Navigator.of(context).pop(),
-      ),
+    return CupertinoNavigationBarBackButton(
+      color: Colors.deepPurpleAccent,
+      onPressed: () => Navigator.of(context).pop(),
     );
   }
 }

@@ -15,9 +15,11 @@
 import 'package:flutter/material.dart';
 
 class CustomFAB extends StatelessWidget {
+  const CustomFAB({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var data = {
+    Map<Color,IconData> data = {
       Colors.red: Icons.add,
       Colors.blue: Icons.bluetooth,
       Colors.green: Icons.android,
@@ -33,7 +35,6 @@ class CustomFAB extends StatelessWidget {
           child: Icon(data[e]),
           tooltip: "android",
           elevation: 5, //z-阴影盖度
-        ))
-            .toList());
+        )).toList());
   }
 }

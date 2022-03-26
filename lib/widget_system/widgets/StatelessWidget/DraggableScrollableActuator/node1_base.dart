@@ -14,10 +14,12 @@ import 'package:flutter/material.dart';
 //    }
 
 class DraggableScrollableActuatorDemo extends StatelessWidget {
+  const DraggableScrollableActuatorDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
@@ -26,13 +28,15 @@ class DraggableScrollableActuatorDemo extends StatelessWidget {
                 builder: (context) => DraggableScrollableActuatorPage()),
           );
         },
-        child: Text("进入 DraggableScrollableActuator 测试页"),
+        child: const Text("进入 DraggableScrollableActuator 测试页"),
       ),
     );
   }
 }
 
 class DraggableScrollableActuatorPage extends StatelessWidget {
+  DraggableScrollableActuatorPage({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.orange[50]!,
     Colors.orange[100]!,
@@ -56,29 +60,27 @@ class DraggableScrollableActuatorPage extends StatelessWidget {
     Colors.red[900]!,
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DraggableScrollableActuator"),
+        title: const Text("DraggableScrollableActuator"),
       ),
-      body: Container(
-        // height: 400,
-        child: DraggableScrollableActuator(
-          child: Builder(
-            builder: (ctx) => Column(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    DraggableScrollableActuator.reset(ctx);
-                  },
-                  child: Text("重置位置"),
-                ),
-                Expanded(
-                  child: buildSheet(),
-                ),
-              ],
-            ),
+      body: DraggableScrollableActuator(
+        child: Builder(
+          builder: (ctx) => Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  DraggableScrollableActuator.reset(ctx);
+                },
+                child: const Text("重置位置"),
+              ),
+              Expanded(
+                child: buildSheet(),
+              ),
+            ],
           ),
         ),
       ),
@@ -105,7 +107,7 @@ class DraggableScrollableActuatorPage extends StatelessWidget {
       color: data[index],
       child: Text(
         colorString(data[index]),
-        style: TextStyle(color: Colors.white, shadows: [
+        style: const TextStyle(color: Colors.white, shadows: [
           Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
         ]),
       ),

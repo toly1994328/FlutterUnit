@@ -16,25 +16,27 @@ import 'package:flutter/material.dart';
 import '../../../../components/project/dialogs/dialog_about.dart';
 
 class CustomCupertinoActionSheetAction extends StatelessWidget {
+  const CustomCupertinoActionSheetAction({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           color: Colors.grey.withAlpha(33),
           child: CupertinoActionSheetAction(
               isDefaultAction: true,
               onPressed: () => DialogAbout.show(context),
-              child: Text('张风捷特烈')),
+              child: const Text('张风捷特烈')),
         ),
         Container(
           color: Colors.grey.withAlpha(33),
-          margin: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
           child: CupertinoActionSheetAction(
               isDefaultAction: false,
               onPressed: () => DialogAbout.show(context),
-              child: Text('百里·巫缨')),
+              child: const Text('百里·巫缨')),
         ),
       ],
     );

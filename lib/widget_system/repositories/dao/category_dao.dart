@@ -6,7 +6,7 @@ import '../bean/category_po.dart';
 
 
 //"""
-// CREATE TABLE IF NOT EXISTS widget_category(
+// CREATE TABLE IF NOT EXISTS category_widget(
 //     id INTEGER PRIMARY KEY AUTOINCREMENT,
 //     name VARCHAR(64) NOT NULL,
 //     color VARCHAR(9) DEFAULT '#FF2196F3',
@@ -131,7 +131,7 @@ class CategoryDao {
             "WHERE categoryId = ?",
         [id]);
     return await db.execute(
-        "DELETE FROM widget_category "
+        "DELETE FROM category "
             "WHERE id = ?",
         [id]);
   }

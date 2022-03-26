@@ -17,9 +17,9 @@ import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart'
 class SimpleWidgetListItem extends StatelessWidget {
   final WidgetModel data;
 
-  SimpleWidgetListItem({
+  const SimpleWidgetListItem({Key? key,
     required this.data,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

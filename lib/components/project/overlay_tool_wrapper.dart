@@ -36,7 +36,7 @@ class OverlayToolWrapper extends StatefulWidget {
 class OverlayToolWrapperState extends State<OverlayToolWrapper>
     with SingleTickerProviderStateMixin {
   bool show = false;
-  Offset offset = Offset(200, 200);
+  late Offset offset;
 
   late AnimationController _ctrl;
 
@@ -62,7 +62,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
 
     WidgetsBinding.instance?.addPostFrameCallback((callback) {
       var px = MediaQuery.of(context).size.width - 100;
-      var py = 250.0;
+      var py = MediaQuery.of(context).size.height*0.05;
       offset = Offset(px, py);
 
       entry = OverlayEntry(
@@ -166,7 +166,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   void _toWidget() {}
 
   void _toGalley() {
-    Navigator.of(context).pushNamed(UnitRouter.galley);
+
   }
 
   void _toPoint() {

@@ -20,11 +20,11 @@ class UnitBottomBar extends StatefulWidget {
   // item 长按事件
   final IndexLongTapCallback? onItemLongTap;
 
-  UnitBottomBar({
+  const UnitBottomBar({Key? key,
     this.color = Colors.blue,
     required this.onItemTap,
     this.onItemLongTap,
-  });
+  }) : super(key: key);
 
   @override
   _UnitBottomBarState createState() => _UnitBottomBarState();

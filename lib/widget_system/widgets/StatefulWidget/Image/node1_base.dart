@@ -17,9 +17,11 @@ import 'package:flutter/material.dart';
 //    }
 
 class LoadImage extends StatelessWidget {
-  final assetsImagePath = "assets/images/icon_head.webp";
-  final assetsGif = "assets/images/pica.gif";
-  final netImageUrl = "https://p9-juejin.byteimg.com"
+  const LoadImage({Key? key}) : super(key: key);
+
+  final String assetsImagePath = "assets/images/icon_head.webp";
+  final String assetsGif = "assets/images/pica.gif";
+  final String netImageUrl = "https://p9-juejin.byteimg.com"
       "/tos-cn-i-k3u1fbpfcp/36dee4e4dceb4c41a93df4a3603439fe~"
       "tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.awebp";
 
@@ -27,7 +29,7 @@ class LoadImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 10,
-      children: <Widget>[
+      children: [
         _loadFromAssets(),
         _loadFromNet(),
       ],
@@ -36,7 +38,7 @@ class LoadImage extends StatelessWidget {
 
   Widget _loadFromAssets() => Wrap(
         spacing: 10,
-        children: <Widget>[
+        children: [
           Image.asset(assetsImagePath, height: 80, width: 80),
           Image.asset(assetsGif, height: 80, width: 80),
         ],

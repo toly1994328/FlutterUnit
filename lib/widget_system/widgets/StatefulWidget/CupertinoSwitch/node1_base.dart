@@ -13,12 +13,19 @@ import 'package:flutter/material.dart';
 //          "【onChanged】 : 切换回调   【Function(double)】",
 //    }
 class CustomCupertinoSwitch extends StatefulWidget {
+  const CustomCupertinoSwitch({Key? key}) : super(key: key);
+
   @override
   _CustomCupertinoSwitchState createState() => _CustomCupertinoSwitchState();
 }
 
 class _CustomCupertinoSwitchState extends State<CustomCupertinoSwitch> {
-  final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
+  final List<Color> colors = [
+    Colors.red,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green
+  ];
 
   bool _checked = false;
 
@@ -28,12 +35,11 @@ class _CustomCupertinoSwitchState extends State<CustomCupertinoSwitch> {
       spacing: 10,
       children: colors
           .map((e) => CupertinoSwitch(
-          value: _checked,
-          activeColor: e,
+              value: _checked,
+              activeColor: e,
           onChanged: (v) {
             setState(() => _checked = v);
-          }))
-          .toList(),
+          })).toList(),
     );
   }
 }

@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 //    }
 
 class AutomaticKeepAliveDemo extends StatelessWidget {
+  AutomaticKeepAliveDemo({Key? key}) : super(key: key);
 
   final List<Color> data = [
     Colors.purple[50]!,
@@ -41,7 +42,7 @@ class AutomaticKeepAliveDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: ListView.builder(
         itemCount: data.length,
@@ -58,7 +59,8 @@ class ColorBox extends StatefulWidget {
   final Color color;
   final int index;
 
-  ColorBox({Key? key,required this.color,required this.index}) : super(key: key);
+  const ColorBox({Key? key, required this.color, required this.index})
+      : super(key: key);
 
   @override
   _ColorBoxState createState() => _ColorBoxState();
@@ -83,26 +85,31 @@ class _ColorBoxState extends State<ColorBox> with AutomaticKeepAliveClientMixin 
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
     return Container(
       alignment: Alignment.center,
       height: 50,
       color: widget.color,
       child: Row(
         children: [
-          SizedBox(width: 60,),
+          const SizedBox(
+            width: 60,
+          ),
           Checkbox(
             value: _checked,
             onChanged: (bool? v) {
               setState(() {
-                _checked = v??false;
+                _checked = v ?? false;
               });
             },
           ),
           Text(
             "index ${widget.index}: ${colorString(widget.color)}",
-            style: TextStyle(color: Colors.white, shadows: [
-              Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+            style: const TextStyle(color: Colors.white, shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(.5, .5),
+                blurRadius: 2,
+              )
             ]),
           ),
         ],

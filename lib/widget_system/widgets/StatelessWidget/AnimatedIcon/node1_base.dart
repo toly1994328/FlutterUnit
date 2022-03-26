@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomAnimatedIcon extends StatefulWidget {
+  const CustomAnimatedIcon({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedIconState createState() => _CustomAnimatedIconState();
 }
@@ -15,7 +17,7 @@ class _CustomAnimatedIconState extends State<CustomAnimatedIcon>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1));
+    _ctrl = AnimationController(vsync: this, duration: const Duration(seconds: 1));
     _ctrl.forward();
     super.initState();
   }

@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "    value为null时会不停循环",
 //    }
 class CustomLinearProgressIndicator extends StatefulWidget {
+  const CustomLinearProgressIndicator({Key? key}) : super(key: key);
+
   @override
   _CustomLinearProgressIndicatorState createState() =>
       _CustomLinearProgressIndicatorState();
@@ -27,13 +29,13 @@ class _CustomLinearProgressIndicatorState
     return Wrap(
       spacing: 10,
       children: data
-          .map((e) => Container(
+          .map((e) => SizedBox(
         width: 50,
         height: 3,
         child:LinearProgressIndicator(
           value: e,
           backgroundColor: Colors.grey.withAlpha(33),
-          valueColor: AlwaysStoppedAnimation(Colors.orange),
+          valueColor: const AlwaysStoppedAnimation(Colors.orange),
         ),
       ))
           .toList(),

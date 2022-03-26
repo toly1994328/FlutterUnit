@@ -18,14 +18,16 @@ import 'package:flutter/material.dart';
 //          "【home】 : 主页   【Widget】",
 //    }
 class MaterialAppDemo extends StatefulWidget {
+  const MaterialAppDemo({Key? key}) : super(key: key);
+
   @override
   _WidgetsAppDemoState createState() => _WidgetsAppDemoState();
 }
 
 class _WidgetsAppDemoState extends State<MaterialAppDemo> {
-  var _debugShowCheckedModeBanner = false;
-  var _showPerformanceOverlay = false;
-  var _debugShowMaterialGrid = false;
+  bool _debugShowCheckedModeBanner = false;
+  bool _showPerformanceOverlay = false;
+  bool _debugShowMaterialGrid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +35,13 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
       mainAxisSize: MainAxisSize.min,
       children: [
         _buildSwitchers(),
-        Container(
+        SizedBox(
           height: 250,
           child: MaterialApp(
             debugShowCheckedModeBanner: _debugShowCheckedModeBanner,
             showPerformanceOverlay: _showPerformanceOverlay,
             debugShowMaterialGrid: _debugShowMaterialGrid,
-            home: HomePage(),
+            home: const HomePage(),
           ),
         ),
       ],
@@ -48,7 +50,7 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
 
   Widget _buildSwitchers() {
     return DefaultTextStyle(
-      style: TextStyle(color: Colors.blue),
+      style: const TextStyle(color: Colors.blue),
       child: Wrap(
         spacing: 10,
         children: [
@@ -62,7 +64,7 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
                   });
                 },
               ),
-              Text('性能浮层')
+              const Text('性能浮层')
             ],
           ),
           Column(
@@ -75,7 +77,7 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
                   });
                 },
               ),
-              Text('开启角标')
+              const Text('开启角标')
             ],
           ),
           Column(
@@ -88,7 +90,7 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
                   });
                 },
               ),
-              Text('开启网格')
+              const Text('开启网格')
             ],
           )
         ],
@@ -98,6 +100,8 @@ class _WidgetsAppDemoState extends State<MaterialAppDemo> {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -109,14 +113,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        alignment: Alignment(0, 0.7),
+        alignment: const Alignment(0, 0.7),
         child: Text(
           '你点击了$_count次',
-          style: TextStyle(fontSize: 18, color: Colors.blue),
+          style: const TextStyle(fontSize: 18, color: Colors.blue),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           setState(() {
             _count++;

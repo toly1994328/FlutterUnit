@@ -17,6 +17,8 @@ import 'version/version_shower.dart';
 /// 说明: 
 
 class VersionInfo extends StatelessWidget {
+  const VersionInfo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

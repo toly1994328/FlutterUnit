@@ -16,9 +16,11 @@ import 'package:flutter/material.dart';
 import '../../../../app/utils/pather.dart';
 
 class ShapeFAB extends StatelessWidget {
+  const ShapeFAB({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var data = {
+    Map<Color,IconData> data = {
       Colors.red: Icons.add,
       Colors.blue: Icons.bluetooth,
       Colors.green: Icons.android,
@@ -35,8 +37,7 @@ class ShapeFAB extends StatelessWidget {
           child: Icon(data[e]),
           tooltip: "android",
           elevation: 5,
-        ))
-            .toList());
+        )).toList());
   }
 }
 
@@ -46,9 +47,7 @@ class StarBorder extends ShapeBorder {
   EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
-    return Path();
-  }
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) => Path();
 
   @override
   Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
@@ -60,7 +59,5 @@ class StarBorder extends ShapeBorder {
   void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {}
 
   @override
-  ShapeBorder scale(double t) {
-    return this;
-  }
+  ShapeBorder scale(double t) => this;
 }
