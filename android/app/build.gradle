@@ -48,6 +48,8 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
+        archivesBaseName = "FlutterUnit.apk"
     }
 
     buildTypes {

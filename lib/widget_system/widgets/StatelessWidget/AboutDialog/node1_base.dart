@@ -1,9 +1,19 @@
+import 'package:flutter/material.dart';
+
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
 /// 说明:
-
-///
-import 'package:flutter/material.dart';
+//    {
+//      "widgetId": 130,
+//      "name": 'AboutDialog基本使用',
+//      "priority": 1,
+//      "subtitle":
+//          "【applicationIcon】 : 左上图标   【Widget】\n"
+//          "【applicationVersion】 : 版本号  【String】\n"
+//          "【applicationName】 : 应用名  【String】\n"
+//          "【applicationLegalese】 : 应用律术   【String】\n"
+//          "【children】 : 子组件列表   【List<Widget>】",
+//    }
 
 class CustomAboutDialog extends StatelessWidget {
   const CustomAboutDialog({Key? key}) : super(key: key);

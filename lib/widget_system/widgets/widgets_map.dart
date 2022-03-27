@@ -515,7 +515,7 @@ class WidgetsMap {
       case "VerticalDivider":
         return [
           const CustomVerticalDivider(),
-          const HeightVerticalDivider(),
+          const WidthVerticalDivider(),
         ];
       case "Placeholder":
         return [

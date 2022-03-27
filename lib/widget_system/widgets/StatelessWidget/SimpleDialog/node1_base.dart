@@ -13,9 +13,9 @@ import 'package:flutter/material.dart';
 //          "【children】 : 子组件列表  【List<Widget>】\n"
 //          "【titlePadding】 : 顶部内边距  【EdgeInsetsGeometry】\n"
 //          "【contentPadding】 : 内容内边距  【EdgeInsetsGeometry】\n"
-//          "【backgroundColor】 : 右下角组件列表  【背景色】\n"
-//          "【elevation】 : 右下角组件列表  【背景色】\n"
-//          "【shape】 : 影深   【double】",
+//          "【backgroundColor】 : 背景色  【Color】\n"
+//          "【elevation】 : 影深  【double】\n"
+//          "【shape】 : 形状   【ShapeBorder】",
 //    }
 class CustomSimpleDialog extends StatelessWidget {
   const CustomSimpleDialog({Key? key}) : super(key: key);

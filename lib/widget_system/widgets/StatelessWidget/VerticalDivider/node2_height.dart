@@ -12,10 +12,10 @@ import 'package:flutter/material.dart';
 //      "name": "VerticalDivider宽度和空缺",
 //      "subtitle": "【indent】: 前面空缺长度   【double】\n"
 //          "【endIndent】: 后面空缺长度   【double】\n"
-//          "【height】: 占位高   【double】",
+//          "【width】: 占位宽   【double】",
 //    }
-class HeightVerticalDivider extends StatelessWidget {
-  const HeightVerticalDivider({Key? key}) : super(key: key);
+class WidthVerticalDivider extends StatelessWidget {
+  const WidthVerticalDivider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

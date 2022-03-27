@@ -32,7 +32,7 @@ class _SelectSwitchListTileState extends State<SelectSwitchListTile> {
         selected: _value,
         activeColor: Colors.orangeAccent,
         secondary: Image.asset("assets/images/icon_head.webp"),
-        inactiveThumbImage: const AssetImage("assets/images/pica.gif"),
+        inactiveThumbImage: const AssetImage("assets/images/head_icon/icon_5.webp"),
         activeThumbImage: const AssetImage("assets/images/icon_head.webp"),
         title: const Text("张风捷特烈"),
         subtitle: const Text("@万花过尽知无物"),

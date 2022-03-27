@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
-import 'package:flutter_unit/app/res/str_unit.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';

@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 20,
 //      "priority": 1,
 //      "name": "GridTileBar的基本表现如下",
-//      "subtitle": "【value】 : 条目对象  【T】\n"
-//          "【leading】: 左侧组件   【Widget】\n"
+//      "subtitle": "【leading】: 左侧组件   【Widget】\n"
 //          "【trailing】: 尾组件   【Widget】\n"
 //          "【title】: 中间上组件   【Widget】\n"
 //          "【subtitle】: 中间下组件   【Widget】\n"

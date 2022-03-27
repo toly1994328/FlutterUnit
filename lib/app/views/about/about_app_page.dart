@@ -1,6 +1,6 @@
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com
-/// 说明:
+/// 说明: ...
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/router_utils.dart';
@@ -36,8 +36,8 @@ class AboutAppPage extends StatelessWidget {
               Positioned(
                   bottom: 0,
                   left: 50,
-                  child: GestureDetector(
-                    onTap: (){
+                  child: FeedbackWidget(
+                    onEnd : (){
                       Navigator.push(context, Right2LeftRouter(child: const FlutterUnitTimeLine()));
                     },
                     child: CircleImage(
@@ -152,9 +152,9 @@ class AboutAppPage extends StatelessWidget {
             ),
             InfoPanel(
               title: '项目简介',
-              info: '      Flutter Unit 是一个非盈利性的开源项目，'
-                  '旨在提供全面的Flutter学习指南及编程者的交流技术的接口。'
-                  '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址: '
+              info: 'Flutter Unit 是一个非盈利性的开源项目，'
+                  '旨在提供全面的 Flutter 学习指南及编程者的交流技术的接口。'
+                  '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址:\n '
                   'https://github.com/toly1994328/FlutterUnit',
             ),
             Divider(
@@ -176,10 +176,13 @@ class AboutAppPage extends StatelessWidget {
               height: 20,
             ),
             InfoPanel(
-              title: 'Flutter Unit 2.0 计划',
-              info: 'Flutter Unit 2.0 尚在计划之中，如果说1.0是本王单枪匹马，'
-                  '那2.0将是Flutter爱好者的共同努力。后面陆续会发布一些征集方案，'
-                  '包括属性、布局、绘制、bug、要点集录等。吾想让Unit 成为一个Flutter的圣地，纯粹而强大,期待与你的共同携手。',
+              title: 'Flutter Unit 2.0 ',
+              info:
+                  '○  317 的 Flutter 组件收录和详情介绍。\n'
+                  '○  绘制集录用于收录绘制相关的优秀示例。\n'
+                  '○  要点集录用于收录 Flutter 相关的小知识。\n'
+                  '○  时光轴，查看 FlutterUnit 重要事件。\n'
+                  '○  实现应用内更新功能，方便使用者及时更新到最新版体验。'
             )
           ],
         ),

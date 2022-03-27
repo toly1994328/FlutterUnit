@@ -2,6 +2,14 @@
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
 /// 说明:
+//    {
+//      "widgetId": 154,
+//      "name": 'Drawer基本使用',
+//      "priority": 1,
+//      "subtitle":
+//          "【child】 : 子组件   【Widget】\n"
+//          "【elevation】 : 影深  【double】",
+//    }
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {

@@ -14,8 +14,7 @@ import 'package:flutter/rendering.dart';
 //          "【axisDirection】: 滑动方向   【AxisDirection】\n"
 //          "【controller】: 滑动控制器   【ScrollController】\n"
 //          "【dragStartBehavior】: t拖动行为   【DragStartBehavior】\n"
-//          "【physics】: 滚动现象   【ScrollPhysics】\n"
-//          "【color】: 子组件    【Color】",
+//          "【physics】: 滚动现象   【ScrollPhysics】\n",
 //    }
 
 class ScrollableDemo extends StatelessWidget {
