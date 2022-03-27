@@ -1,5 +1,7 @@
 import 'package:dash_painter/dash_painter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:wrapper/wrapper.dart';
 
 import 'model/time_node.dart';
@@ -24,9 +26,8 @@ class FlutterUnitTimeLine extends StatelessWidget {
               timeNode: TimeNode(
                 title: 'FlutterUnit 正式开源',
                 year: '2020',
-                content: 'V1.0 版本: 核心功能是组件集录，此时收录 200+ 组件的基本使用方式。',
-                imageUrl:
-                    'https://gitee.com/toly1994/toly_blog_pic/raw/master/node1.webp',
+                content: 'V1.0 版本: 核心功能是组件集录，此时收录 213 组件的基本使用方式。',
+                imageUrl: 'https://gitee.com/toly1994/res/raw/master/img3.webp',
                 time: '2020-04-15',
               ),
             ),
@@ -34,15 +35,13 @@ class FlutterUnitTimeLine extends StatelessWidget {
               timeNode: TimeNode(
                 title: '收藏夹功能完成',
                 content: '通过收藏夹功能，使用者可以自由创建收藏夹，对组件进行自己的分类。',
-                imageUrl:
-                    'https://gitee.com/toly1994/toly_blog_pic/raw/master/node2.webp',
                 time: '2020-04-23',
               ),
             ),
             TimeLineNode(
               timeNode: TimeNode(
                 title: 'FlutterUnit 支持 MacOS',
-                content: '通过收藏夹功能，使用者可以自由创建收藏夹，对组件进行自己的分类。',
+                content: '优化相关界面布局，在新分支中支持 MacOS 系统运行 FlutterUnit 程序。',
                 imageUrl:
                     'https://gitee.com/toly1994/toly_blog_pic/raw/master/node4.webp',
                 time: '2020-05-05',
@@ -50,12 +49,109 @@ class FlutterUnitTimeLine extends StatelessWidget {
             ),
             TimeLineNode(
               timeNode: TimeNode(
+                title: 'FlutterUnit 支持 Windows',
+                content: '优化相关界面布局，在新分支中支持 Windows 系统运行 FlutterUnit 程序。',
+                time: '2020-07-09',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: 'FlutterUnit 支持 web',
+                content: '优化相关界面布局，在新分支中支持 Windows 系统运行 FlutterUnit 程序。',
+                time: '2020-08-12',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
                 title: ' Flutter 要点集录',
+                imageUrl: 'https://gitee.com/toly1994/res/raw/master/img2.webp',
                 content:
-                    '要点集录会收集 FlutterUnit 中 point 标签的 issues，在应用中进行展示，从而达到对要点知识的收集',
-                imageUrl:
-                    'https://gitee.com/toly1994/toly_blog_pic/raw/master/node3.webp',
+                    '要点集录会收集 FlutterUnit 中 point 标签的 issues，在应用中进行展示，从而达到对要点知识的收集。',
                 time: '2020-09-04',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '组件集录收集数',
+                content:
+                    '收录组件数量从最初的 213 个增加到 306 个，已经涵盖了绝大多数 Flutter 框架中的原生组件。',
+                time: '2020-12-22',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '个人页面的加入',
+                content: '相比于侧滑菜单，通过个人页面，更方便进行一些应用的设置操作。',
+                time: '2020-12-22',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                year: '2021',
+                title: '绘制集录正式加入',
+                imageUrl:
+                    'https://gitee.com/toly1994/res/raw/master/%E7%BB%98%E5%88%B6%E9%9B%86%E5%BD%95%E7%9A%84%E5%89%AF%E6%9C%AC.webp',
+                content:
+                    '绘制集录目的在于收录一些有意思的绘制案例，帮助对绘制感兴趣的朋友更好地学习，另一方面也可以反映出 Flutter 在绘制方面的强大能力。',
+                time: '2021-01-22',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '后端服务计划启动',
+                content:
+                    '基于 SpringBoot 框架实现 Flutter Unit Server，打算实现用户系统，支持组件收藏的用户化及同步操作，以及应用中组件数据的线上化。(封测中)',
+                time: '2021-03-28',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '用户登录测试',
+                content: '后端完成基本的用户系统，基于邮箱校验，前端完成用户注册、登录等界面及交互逻辑。(封测中)',
+                time: '2021-05-01',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '全面支持空安全',
+                imageUrl:
+                    'https://gitee.com/toly1994/res/raw/master/nullsafe.webp',
+                content: '由于 FlutterUnit 中存在大量的组件示例，支持空安全是一个非常大的挑战。',
+                time: '2021-08-29',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '绘制集录持续收集',
+                content:
+                    '根据绘制、手势、动画等小册中的案例，进行收录到 FlutterUnit 绘制集录中，桌面版本也同步更新中。',
+                time: '2020-10-01',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '实现应用内升级',
+                imageUrl: 'https://gitee.com/toly1994/res/raw/master/img.webp',
+                content: '服务端完成应用版本检测接口，应用内升级的实现，方便大家更新版本，及时体验最新版功能。',
+                time: '2021-12-18',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: '项目及案例全面优化',
+                year: '2022',
+                imageUrl: 'https://gitee.com/toly1994/res/raw/master/img4.webp',
+                content:
+                    '由于代码案例代码比较老旧，为了给新手朋友一个规范的示例。针对 Dart Analysis 中代码的规范性问题进行优化。由于案例数量太多，这又是一个非常巨大的挑战。',
+                time: '2021-03-26',
+              ),
+            ),
+            TimeLineNode(
+              timeNode: TimeNode(
+                title: 'FlutterUnit 2.0 发布',
+                content: '鉴于案例的优化完成、[绘制/组件]集录的收集情况、以及应用内更新的支持，FlutterUnit 正式进入 2.0 版本。',
+                imageUrl: 'https://gitee.com/toly1994/res/raw/master/img3.webp',
+                time: '2022-03-28',
               ),
             ),
           ],
@@ -78,48 +174,44 @@ class TimeLineNode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color themeColor = BlocProvider.of<GlobalBloc>(context).state.themeColor;
+
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-              padding: const EdgeInsets.only(top: 20 + 5, left: 10),
-              child: timeNode.year != null
-                  ? Text(
-                      '${timeNode.year} 年',
-                      style: const TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    )
-                  : const Visibility(
-                      visible: false,
-                      maintainState: true,
-                      maintainSize: true,
-                      maintainAnimation: true,
-                      child: Text(
-                        '2020 年',
-                        style: TextStyle(
+          SizedBox(
+            width: 65,
+            child: Padding(
+                padding: const EdgeInsets.only(top: 20 + 5, left: 10),
+                child: timeNode.year != null
+                    ? Text(
+                        '${timeNode.year} 年',
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
-                      ))),
-          _buildDecoration(),
-          Expanded(flex: 8, child: _buildCenterWidget()),
+                      )
+                    : const SizedBox.shrink()),
+          ),
+          _buildDecoration(themeColor),
+          Expanded(flex: 8, child: _buildCenterWidget(themeColor)),
           const Spacer(flex: 1)
         ],
       ),
     );
   }
 
-  Widget _buildDecoration() => Container(
+  Widget _buildDecoration(Color themeColor) => Container(
         margin: const EdgeInsets.only(left: 10),
         width: dashLineWith,
         decoration: DashDecoration(
-            circleColor: Colors.blueAccent,
+            circleColor: themeColor,
             lineColor: Colors.white,
             circleRadius: circleRadius,
             color: Colors.white,
             circleOffset: Offset(lineWidth / 2, offset + 10 / 2)),
       );
 
-  Widget _buildCenterWidget() {
+  Widget _buildCenterWidget(Color themeColor) {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: Wrapper(
@@ -130,15 +222,14 @@ class TimeLineNode extends StatelessWidget {
           children: [
             Text(
               timeNode.title,
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.purple),
+              style: TextStyle(fontWeight: FontWeight.bold, color: themeColor),
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 5),
               child: Text(
                 timeNode.content,
                 style: const TextStyle(
-                    color: Colors.lightBlue,
+                    color: Colors.grey,
                     fontSize: 12,
                     shadows: [
                       Shadow(color: Colors.blueAccent, blurRadius: .1)
@@ -160,8 +251,8 @@ class TimeLineNode extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: Text(timeNode.time,
-                  style: const TextStyle(
-                      color: Colors.grey,
+                  style: TextStyle(
+                      color: themeColor,
                       fontSize: 14,
                       fontWeight: FontWeight.bold)),
             )

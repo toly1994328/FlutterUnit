@@ -96,7 +96,7 @@ class GalleryFactory {
               info: "本样例介绍如何绘制弹簧，通过触点竖直拖拽拉伸、压缩，放手时进行恢复动画，是一个很好的综合小案例。\n特殊操作：上下拖拽伸缩弹簧",
               content: SpringWidget()),
           FrameShower(
-              title: "绕道点旋转",
+              title: "绕定点旋转",
               author: "张风捷特烈",
               srcUrl: '/anim/rotate_by_point',
               info: "本样例介绍如何根据以某个点为中心，进行旋转运动。以此学习两点间的角度在绘制中的应用。\n特殊操作：点击运行",

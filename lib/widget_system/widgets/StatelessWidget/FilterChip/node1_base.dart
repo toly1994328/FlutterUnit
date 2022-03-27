@@ -1,6 +1,15 @@
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
 /// 说明:
+//    {
+//      "widgetId": 15,
+//      "priority": 1,
+//      "name": "FilterChip可接受选择事件",
+//      "subtitle": "【selected】: 是否选择   【bool】\n"
+//          "【onSelected】: 选择事件   【Function(bool)】\n"
+//          "【selectedColor】: 选择后的颜色   【Color】\n"
+//          "【selectedShadowColor】: 选择后的阴影颜色   【Color】\n",
+//    }
 import 'package:flutter/material.dart';
 
 class CustomFilterChip extends StatefulWidget {

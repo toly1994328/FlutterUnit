@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明: 
-
+/// 说明:
 //     {
 //      "widgetId": 37,
-//      "priority": 1,
-//      "name": "GridPage基础属性",
+//      "priority": 2,
+//      "name": "GridPager 再分割",
 //      "subtitle": "【child】: 子组件   【Widget】\n"
 //          "【color】: 颜色   【Color】\n"
-//          "【interval】: 小块边长   【double】",
+//          "【subdivisions】: 小块中子块个数   【int】\n"
+//          "【divisions】: 小块中子块的分割数   【int】",
 //      }
-class CustomGridPage extends StatelessWidget {
-  const CustomGridPage({Key? key}) : super(key: key);
+class DivisionsGridPage extends StatelessWidget {
+  const DivisionsGridPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +23,8 @@ class CustomGridPage extends StatelessWidget {
         child: GridPaper(
             color: Colors.red,
             interval: 50,
+            divisions: 4,
+            subdivisions: 4,
             child: Image.asset(
               "assets/images/wy_300x200.webp",
               fit: BoxFit.cover,
