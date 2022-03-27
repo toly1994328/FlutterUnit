@@ -22,6 +22,7 @@ class AnimPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+
     canvas.translate(0, size.height);
 
     _drawAxis(canvas,size);

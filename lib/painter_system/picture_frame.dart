@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PictureFrame extends StatelessWidget {
   final Widget? child;
@@ -106,7 +107,6 @@ class FramePainter extends CustomPainter {
   }
 }
 
-
 class FrameShower extends StatelessWidget {
   final String title;
   final String author;
@@ -129,12 +129,10 @@ class FrameShower extends StatelessWidget {
       alignment: Alignment.topCenter,
       child: Column(
         children: [
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15),
           Text(
             title,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           PictureFrame(child: content),
           Container(
@@ -146,19 +144,20 @@ class FrameShower extends StatelessWidget {
                   style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 const Spacer(),
-                const Text(
-                  "源码地址    ",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueAccent),
+                GestureDetector(
+                  onTap: _launch,
+                  child: const Text(
+                    "源码地址    ",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent),
+                  ),
                 ),
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 10),
           Container(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               alignment: Alignment.topLeft,
@@ -172,5 +171,14 @@ class FrameShower extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _launch() async {
+    String url = 'https://github.com/toly1994328/FlutterUnit/tree/master/lib/painter_system$srcUrl';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+
+    }
   }
 }
