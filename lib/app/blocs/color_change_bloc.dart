@@ -27,6 +27,4 @@ class ColorChangeCubit extends Cubit<SelectTab> {
         color: color,
         family: family ?? state.family,
       ));
-
-
 }

@@ -19,7 +19,7 @@ class NotificationListenerDemo extends StatefulWidget {
 }
 
 class _NotificationListenerDemoState extends State<NotificationListenerDemo> {
-  final data = List<String>.generate(30, (i) => '第${i + 1}条');
+  final List<String> data = List.generate(30, (i) => '第${i + 1}条');
 
   @override
   Widget build(BuildContext context) {

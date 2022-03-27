@@ -76,14 +76,14 @@ class CircleHaloPainter extends CustomPainter {
     Path result =
         Path.combine(PathOperation.difference, circlePath, circlePath2);
 
-    List<Color> colors = const[
-      Color(0xFFF60C0C),
-      Color(0xFFF3B913),
-      Color(0xFFE7F716),
-      Color(0xFF3DF30B),
-      Color(0xFF0DF6EF),
-      Color(0xFF0829FB),
-      Color(0xFFB709F4),
+    List<Color> colors = [
+      const Color(0xFFF60C0C),
+      const Color(0xFFF3B913),
+      const Color(0xFFE7F716),
+      const Color(0xFF3DF30B),
+      const Color(0xFF0DF6EF),
+      const Color(0xFF0829FB),
+      const Color(0xFFB709F4),
     ];
     colors.addAll(colors.reversed.toList());
     final List<double> pos =

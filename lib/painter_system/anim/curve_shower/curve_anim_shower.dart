@@ -118,10 +118,7 @@ class _CurveAnimShowerState extends State<CurveAnimShower>
               padding: const EdgeInsets.all(30.0),
               child: CustomPaint(
                 painter: AnimPainter(points),
-                size: const Size(
-                  200,
-                  200,
-                ),
+                size: const Size(200, 200),
               )),
         ],
       ),

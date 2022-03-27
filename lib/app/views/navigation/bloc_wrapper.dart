@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
 import 'package:flutter_unit/bloc_exp.dart';
+import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
@@ -38,36 +39,25 @@ class _BlocWrapperState extends State<BlocWrapper> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        //使用MultiBlocProvider包裹
         providers: [
-          //Bloc提供器
           BlocProvider<GlobalBloc>(create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
-
           BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
-
           BlocProvider<WidgetDetailBloc>(
               create: (_) => WidgetDetailBloc(repository: repository)),
-
           BlocProvider<CategoryBloc>(
               create: (_) => categoryBloc),
-
           BlocProvider<LikeWidgetBloc>(
               create: (_) => LikeWidgetBloc(repository: repository)),
-
           BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
-
           BlocProvider<LoginBloc>(create: (_) => LoginBloc(authenticBloc: authBloc)),
           BlocProvider<AuthenticBloc>(create: (_) => authBloc),
-
           BlocProvider<CategoryWidgetBloc>(
               create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
-
           BlocProvider<SearchBloc>(
               create: (_) => SearchBloc(repository: repository)),
-
           BlocProvider<PointBloc>(create: (_) => PointBloc()),
           BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
-
+          BlocProvider<GalleryUnitBloc>(create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
           BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
         ], child: widget.child);
   }
