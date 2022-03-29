@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class DeleteDraggable extends StatefulWidget {
+  const DeleteDraggable({Key? key}) : super(key: key);
+
   @override
   _DeleteDraggableState createState() => _DeleteDraggableState();
 }
@@ -30,19 +32,12 @@ class _DeleteDraggableState extends State<DeleteDraggable> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Wrap(
-            children: _buildColors(),
-            spacing: 10,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          _buildDragTarget()
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        Wrap(children: _buildColors(), spacing: 10),
+        const SizedBox(height: 20),
+        _buildDragTarget()
+      ],
     );
   }
 
@@ -58,8 +53,8 @@ class _DeleteDraggableState extends State<DeleteDraggable> {
             width: 50.0,
             height: 50.0,
             decoration:
-            BoxDecoration(color: Colors.red, shape: BoxShape.circle),
-            child: Center(
+                const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
+            child: const Center(
               child: Icon(Icons.delete_sweep, color: Colors.white),
             )));
   }
@@ -69,15 +64,15 @@ class _DeleteDraggableState extends State<DeleteDraggable> {
         (e) => Draggable<int>(
         child: Container(
           width: 30,
-          height: 30,
-          alignment: Alignment.center,
-          child: Text(
-            colors.indexOf(e).toString(),
-            style:
-            TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-          decoration: BoxDecoration(color: e, shape: BoxShape.circle),
-        ),
+              height: 30,
+              alignment: Alignment.center,
+              child: Text(
+                colors.indexOf(e).toString(),
+                style: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              decoration: BoxDecoration(color: e, shape: BoxShape.circle),
+            ),
         data: colors.indexOf(e),
         feedback: Container(
           width: 25,

@@ -12,13 +12,15 @@ import 'package:flutter/material.dart';
 //          "将Theme关于水波纹的颜色设置为透明即可。",
 //    }
 class NoShadowTabBarDemo extends StatefulWidget {
+  const NoShadowTabBarDemo({Key? key}) : super(key: key);
+
   @override
   _NSTabBarState createState() => _NSTabBarState();
 }
 
 class _NSTabBarState extends State<NoShadowTabBarDemo>
     with SingleTickerProviderStateMixin {
-  final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
+  final List<String> tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
   late TabController _tabController;
 
   @override
@@ -41,16 +43,14 @@ class _NSTabBarState extends State<NoShadowTabBarDemo>
         highlightColor: Colors.transparent,
       ),
       child: TabBar(
-        onTap: (tab) {
-          print(tab);
-        },
-        labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        unselectedLabelStyle: TextStyle(fontSize: 16),
+        onTap: (tab) => print(tab),
+        labelStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        unselectedLabelStyle: const TextStyle(fontSize: 16),
         isScrollable: true,
         controller: _tabController,
         labelColor: Colors.blue,
         indicatorWeight: 3,
-        indicatorPadding: EdgeInsets.symmetric(horizontal: 10),
+        indicatorPadding: const EdgeInsets.symmetric(horizontal: 10),
         unselectedLabelColor: Colors.grey,
         indicatorColor: Colors.orangeAccent,
         tabs: tabs.map((e) => Tab(text: e)).toList(),

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/style/shape/coupon_shape_border.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
 import 'package:flutter_unit/components/permanent/circle_image.dart';
@@ -17,11 +16,11 @@ class CouponWidgetListItem extends StatelessWidget {
   final bool hasBottomHole;
   final bool isClip;
 
-  CouponWidgetListItem(
-      {required this.data,
+  const CouponWidgetListItem(
+      {Key? key, required this.data,
       this.hasTopHole = true,
       this.hasBottomHole = false,
-      this.isClip = true});
+      this.isClip = true}) : super(key: key);
 
   final List<Color> colors = Cons.tabColors;
 
@@ -124,7 +123,7 @@ class CouponWidgetListItem extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     decoration: data.deprecated?TextDecoration.lineThrough:TextDecoration.none,
                     decorationThickness: 2,
-                    shadows: [
+                    shadows: const [
                       Shadow(color: Colors.white, offset: Offset(.3, .3))
                     ])),
           ),
@@ -140,16 +139,14 @@ class CouponWidgetListItem extends StatelessWidget {
   Widget _buildSummary() {
     return Padding(
       padding: const EdgeInsets.only(left: 10, bottom: 10, top: 5),
-      child: Container(
-        child: Text(
-          //尾部摘要
-          data.info,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: [
-            const Shadow(color: Colors.white, offset: const Offset(.5, .5))
-          ]),
-        ),
+      child: Text(
+        //尾部摘要
+        data.info,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: const [
+          Shadow(color: Colors.white, offset: Offset(.5, .5))
+        ]),
       ),
     );
   }

@@ -27,6 +27,8 @@ class ItemBean {
 }
 
 class DenseRadioListTile extends StatefulWidget {
+  const DenseRadioListTile({Key? key}) : super(key: key);
+
   @override
   _DenseRadioListTileState createState() => _DenseRadioListTileState();
 }

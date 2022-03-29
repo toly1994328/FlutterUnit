@@ -13,28 +13,31 @@ import 'package:flutter/material.dart';
 //          "【maxWidth】 : 最大宽   【double】",
 //    }
 class CustomLimitedBox extends StatefulWidget {
+  const CustomLimitedBox({Key? key}) : super(key: key);
+
   @override
   _CustomLimitedBoxState createState() => _CustomLimitedBoxState();
 }
 
 class _CustomLimitedBoxState extends State<CustomLimitedBox> {
-  var _text = '';
+  String _text = '';
 
   @override
   Widget build(BuildContext context) {
-    var child = Container(
+    Widget child = Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 50,
       height: 50,
-      child: Text("Static"),
+      child: const Text("Static"),
     );
 
-    var box = LimitedBox(
+    Widget box = LimitedBox(
       maxHeight: 60,
       maxWidth: 100,
       child: Container(color: Colors.orange, child: Text(_text)),
     );
+
     return Column(
       children: <Widget>[
         Container(
@@ -54,7 +57,7 @@ class _CustomLimitedBoxState extends State<CustomLimitedBox> {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: TextField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: OutlineInputBorder(),
           hintText: '请输入',
         ),

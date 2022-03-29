@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PictureFrame extends StatelessWidget {
   final Widget? child;
@@ -11,12 +12,12 @@ class PictureFrame extends StatelessWidget {
   final EdgeInsetsGeometry? marge;
 
   const PictureFrame(
-      {this.child,
+      {Key? key, this.child,
       this.width,
       this.height,
       this.alignment,
       this.color = Colors.transparent,
-      this.marge});
+      this.marge}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +26,11 @@ class PictureFrame extends StatelessWidget {
       alignment: alignment,
       width: width ?? size,
       height: height ?? size,
-      padding: marge ?? EdgeInsets.all(20),
+      padding: marge ?? const EdgeInsets.all(20),
       child: CustomPaint(
         painter: FramePainter(),
         child: Container(
-          margin: EdgeInsets.all(14),
+          margin: const EdgeInsets.all(14),
           decoration: BoxDecoration(
             color: color,
             border: Border.all(
@@ -91,17 +92,93 @@ class FramePainter extends CustomPainter {
     canvas.drawPoints(
         PointMode.polygon,
         [
-          Offset(0, 0),
-          Offset(18, 0),
-          Offset(0, 18),
-          Offset(0, 0),
+          const Offset(0, 0),
+          const Offset(18, 0),
+          const Offset(0, 18),
+          const Offset(0, 0),
         ],
         myPaint);
-    canvas.drawCircle(Offset(8, 8), 3, myPaint..color = Colors.black);
+    canvas.drawCircle(const Offset(8, 8), 3, myPaint..color = Colors.black);
   }
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return false;
+  }
+}
+
+class FrameShower extends StatelessWidget {
+  final String title;
+  final String author;
+  final String srcUrl;
+  final String info;
+  final Widget content;
+
+  const FrameShower(
+      {Key? key,
+        this.title = "",
+        this.author = "",
+        this.srcUrl = "",
+        this.info = "",
+        required this.content})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Column(
+        children: [
+          const SizedBox(height: 15),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          PictureFrame(child: content),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Row(
+              children: [
+                Text(
+                  "作者:    $author    ",
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                const Spacer(),
+                GestureDetector(
+                  onTap: _launch,
+                  child: const Text(
+                    "源码地址    ",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              alignment: Alignment.topLeft,
+              child: Text(
+                info,
+                style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold),
+              )),
+        ],
+      ),
+    );
+  }
+
+  void _launch() async {
+    String url = 'https://github.com/toly1994328/FlutterUnit/tree/master/lib/painter_system$srcUrl';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+
+    }
   }
 }

@@ -3,11 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/star.dart';
 import 'package:flutter_star/star_score.dart';
 import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/circle_text.dart';
 import 'package:flutter_unit/components/permanent/tag.dart';
+import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
 /// create by 张风捷特烈 on 2020/11/17
@@ -17,9 +16,9 @@ import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart'
 class SimpleWidgetListItem extends StatelessWidget {
   final WidgetModel data;
 
-  SimpleWidgetListItem({
+  const SimpleWidgetListItem({Key? key,
     required this.data,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +122,7 @@ class SimpleWidgetListItem extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   decoration: data.deprecated?TextDecoration.lineThrough:TextDecoration.none,
                   decorationThickness: 2,
-                  shadows: [
+                  shadows: const [
                     Shadow(color: Colors.white, offset: Offset(.3, .3))
                   ])),
         ),
@@ -139,8 +138,8 @@ class SimpleWidgetListItem extends StatelessWidget {
         data.info,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: [
-          const Shadow(color: Colors.white, offset: const Offset(.5, .5))
+        style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: const [
+          Shadow(color: Colors.white, offset: Offset(.5, .5))
         ]),
       ),
     );

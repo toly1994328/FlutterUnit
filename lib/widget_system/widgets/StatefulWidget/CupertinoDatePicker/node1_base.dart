@@ -19,6 +19,8 @@ import 'package:flutter/material.dart';
 //          "【mode】 : 模式*3  【CupertinoDatePickerMode】",
 //    }
 class CustomCupertinoDatePicker extends StatefulWidget {
+  const CustomCupertinoDatePicker({Key? key}) : super(key: key);
+
   @override
   _CustomCupertinoDatePickerState createState() =>
       _CustomCupertinoDatePickerState();
@@ -33,7 +35,7 @@ class _CustomCupertinoDatePickerState extends State<CustomCupertinoDatePicker> {
       children: <Widget>[
         Text(
           '当前日期:${_date.toIso8601String()}',
-          style: TextStyle(color: Colors.grey, fontSize: 16),
+          style: const TextStyle(color: Colors.grey, fontSize: 16),
         ),
         _buildInfoTitle('CupertinoDatePickerMode.dateAndTime'),
         buildPicker(CupertinoDatePickerMode.dateAndTime),
@@ -47,7 +49,7 @@ class _CustomCupertinoDatePickerState extends State<CustomCupertinoDatePicker> {
 
   Container buildPicker(CupertinoDatePickerMode mode) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       height: 150,
       child: CupertinoDatePicker(
         mode: mode,
@@ -72,7 +74,7 @@ class _CustomCupertinoDatePickerState extends State<CustomCupertinoDatePicker> {
       padding: const EdgeInsets.only(left: 20,top: 20,bottom: 5),
       child: Text(
         info,
-        style: TextStyle(color: Colors.blue, fontSize: 16,fontWeight: FontWeight.bold),
+        style: const TextStyle(color: Colors.blue, fontSize: 16,fontWeight: FontWeight.bold),
       ),
     );
   }

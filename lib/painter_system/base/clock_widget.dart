@@ -1,6 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -102,7 +100,7 @@ class ClockBgPainter extends CustomPainter {
     final Path circlePath = Path()
       ..addArc(
           Rect.fromCenter(
-              center: Offset(0, 0), width: radius * 2, height: radius * 2),
+              center: const Offset(0, 0), width: radius * 2, height: radius * 2),
           10 / 180 * pi,
           pi / 2 - 20 / 180 * pi);
 
@@ -280,7 +278,7 @@ class ClockPainter extends CustomPainter {
   void drawHour(Canvas canvas) {
     _paint
       ..strokeWidth = hourLineWidth
-      ..color = Color(0xff8FC552)
+      ..color = const Color(0xff8FC552)
       ..strokeCap = StrokeCap.round;
     canvas.drawLine(Offset.zero, Offset(hourLen, 0), _paint);
   }
@@ -288,7 +286,7 @@ class ClockPainter extends CustomPainter {
   void drawMinus(Canvas canvas) {
     _paint
       ..strokeWidth = minusLineWidth
-      ..color = Color(0xff87B953)
+      ..color = const Color(0xff87B953)
       ..strokeCap = StrokeCap.round;
 
     canvas.drawLine(
@@ -303,7 +301,7 @@ class ClockPainter extends CustomPainter {
   void drawSecond(Canvas canvas) {
     _paint
       ..strokeWidth = logic1 * 2.5
-      ..color = Color(0xff6B6B6B)
+      ..color = const Color(0xff6B6B6B)
       ..strokeCap = StrokeCap.square
       ..style = PaintingStyle.stroke;
     Path path = Path();
@@ -318,7 +316,7 @@ class ClockPainter extends CustomPainter {
     canvas.drawPath(path, _paint);
     canvas.restore();
 
-    _paint..strokeCap = StrokeCap.round;
+    _paint.strokeCap = StrokeCap.round;
     canvas.drawLine(Offset(-logic1 * 9, 0), Offset(-logic1 * 20, 0), _paint);
 
     _paint

@@ -13,14 +13,16 @@ import 'package:flutter/material.dart';
 //          "其他属性基本上同MaterialApp,详见之。",
 //    }
 class WidgetsAppDemo extends StatefulWidget {
+  const WidgetsAppDemo({Key? key}) : super(key: key);
+
   @override
   _WidgetsAppDemoState createState() => _WidgetsAppDemoState();
 }
 
 class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
-  var _debugShowCheckedModeBanner = false;
-  var _debugShowWidgetInspector = false;
-  var _showPerformanceOverlay = false;
+  bool _debugShowCheckedModeBanner = false;
+  bool _debugShowWidgetInspector = false;
+  bool _showPerformanceOverlay = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
       mainAxisSize: MainAxisSize.min,
       children: [
         _buildSwitchers(),
-        Container(
+        SizedBox(
           height: 250,
           child: WidgetsApp(
             color: Colors.blue,
@@ -39,7 +41,7 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
                 <T>(RouteSettings settings, WidgetBuilder builder) {
               return MaterialPageRoute<T>(settings: settings, builder: builder);
             },
-            home: HomePage(),
+            home: const HomePage(),
           ),
         ),
       ],
@@ -48,7 +50,7 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
 
   Widget _buildSwitchers() {
     return DefaultTextStyle(
-      style: TextStyle(color: Colors.blue),
+      style: const TextStyle(color: Colors.blue),
       child: Wrap(
         spacing: 10,
         children: [
@@ -62,7 +64,7 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
                   });
                 },
               ),
-              Text('性能浮层')
+              const Text('性能浮层')
             ],
           ),
           Column(
@@ -75,7 +77,7 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
                   });
                 },
               ),
-              Text('开启角标')
+              const Text('开启角标')
             ],
           ),
           Column(
@@ -88,7 +90,7 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
                   });
                 },
               ),
-              Text('检查器')
+              const Text('检查器')
             ],
           )
         ],
@@ -98,25 +100,27 @@ class _WidgetsAppDemoState extends State<WidgetsAppDemo> {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  var _count = 0;
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        alignment: Alignment(0, 0.7),
+        alignment: const Alignment(0, 0.7),
         child: Text(
           '你点击了$_count次',
-          style: TextStyle(fontSize: 18, color: Colors.blue),
+          style: const TextStyle(fontSize: 18, color: Colors.blue),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           setState(() {
             _count++;

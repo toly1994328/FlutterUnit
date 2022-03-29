@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 //      "subtitle": "【builder】 : 方向组件构造器   【OrientationWidgetBuilder】",
 //    }
 class OrientationBuilderDemo extends StatefulWidget {
+  const OrientationBuilderDemo({Key? key}) : super(key: key);
+
   @override
   _OrientationBuilderDemoState createState() => _OrientationBuilderDemoState();
 }
@@ -36,13 +38,11 @@ class _OrientationBuilderDemoState extends State<OrientationBuilderDemo> {
   Widget _builder(BuildContext context, Orientation orientation) {
     switch(orientation){
       case Orientation.portrait:
-        return Icon(Icons.phone_android,size: 60,);
-        break;
+        return const Icon(Icons.phone_android,size: 60,);
       case Orientation.landscape:
-        return RotatedBox(
+        return const RotatedBox(
           quarterTurns: 1,
             child: Icon(Icons.phone_android,size: 60,));
-        break;
       default: return Container();
     }
   }

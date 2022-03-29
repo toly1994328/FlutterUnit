@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CircleText extends StatelessWidget {
-  CircleText(
+  const CircleText(
       {Key? key,
         required this.text,
         this.size = 70,
@@ -30,19 +30,19 @@ class CircleText extends StatelessWidget {
           BoxShadow(
             //阴影
             color: shadowColor ?? Colors.grey.withOpacity(0.3),
-            offset: Offset(0.0, 0.0), blurRadius: 3.0, spreadRadius: 0.0,
+            offset: const Offset(0.0, 0.0), blurRadius: 3.0, spreadRadius: 0.0,
           ),
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.all(3),
+        padding: const EdgeInsets.all(3),
         child: Container(
             alignment: Alignment.center,
             width: size,
             height: size,
             decoration: BoxDecoration(
               shape: BoxShape.circle, //圆形装饰线
-              color: backgroundColor??Color(0xffD8F5FF),
+              color: backgroundColor??const Color(0xffD8F5FF),
             ),
             child: Text(
               text.length>2?text.substring(0, 2):text,
@@ -50,7 +50,7 @@ class CircleText extends StatelessWidget {
                 fontSize: fontSize,
                 color: color,
                 fontWeight: FontWeight.bold,
-                shadows: [
+                shadows: const [
                   Shadow(
                     //阴影
                     color: Colors.grey,

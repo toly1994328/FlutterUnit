@@ -163,7 +163,7 @@ export '../StatefulWidget/GlowingOverscrollIndicator/node1_base.dart';
 export '../StatefulWidget/DraggableScrollableSheet/node1_base.dart';
 export '../StatefulWidget/DrawerController/node1_base.dart';
 export '../StatefulWidget/MergeableMaterial/node1_base.dart';
-export '../StatefulWidget/CupertinoTabView/node1_base.dart' hide HomePage;
+export '../StatefulWidget/CupertinoTabView/node1_base.dart';
 
 export '../StatefulWidget/TextButton/node1_base.dart';
 export '../StatefulWidget/TextButton/node2_style.dart';

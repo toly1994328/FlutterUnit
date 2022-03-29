@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
@@ -13,6 +12,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class SizeChangedLayoutNotifierDemo extends StatefulWidget {
+  const SizeChangedLayoutNotifierDemo({Key? key}) : super(key: key);
+
   @override
   _SizeChangedLayoutNotifierDemoState createState() => _SizeChangedLayoutNotifierDemoState();
 }
@@ -22,7 +23,7 @@ class _SizeChangedLayoutNotifierDemoState extends State<SizeChangedLayoutNotifie
   Widget build(BuildContext context) {
     return NotificationListener<SizeChangedLayoutNotification>(
       onNotification: _onNotification,
-      child: ChangeableBox(),
+      child: const ChangeableBox(),
     );
   }
 
@@ -33,6 +34,8 @@ class _SizeChangedLayoutNotifierDemoState extends State<SizeChangedLayoutNotifie
 }
 
 class ChangeableBox extends StatefulWidget {
+  const ChangeableBox({Key? key}) : super(key: key);
+
   @override
   _ChangeableBoxState createState() => _ChangeableBoxState();
 }

@@ -11,6 +11,7 @@ abstract class LikeWidgetEvent extends Equatable {
 class EventLoadLikeData extends LikeWidgetEvent {
   const EventLoadLikeData();
 
+  @override
   List<Object> get props => [];
 }
 

@@ -12,7 +12,9 @@ import 'package:flutter/material.dart';
 //          "【position】 : 前景色(左)/后景色(右)   【DecorationPosition】",
 //    }
 class BoxDecorationDemo extends StatelessWidget {
-  final rainbow = const <int>[
+  const BoxDecorationDemo({Key? key}) : super(key: key);
+
+  final List<int> rainbow = const [
     0xffff0000,
     0xffFF7F00,
     0xffFFFF00,
@@ -28,12 +30,14 @@ class BoxDecorationDemo extends StatelessWidget {
       position: DecorationPosition.background,
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              stops: <double>[0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0],
+              stops: const [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0],
               colors: rainbow.map((e) => Color(e)).toList()),
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
-          boxShadow: [
-            const BoxShadow(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+          boxShadow: const [
+            BoxShadow(
                 color: Colors.orangeAccent,
                 offset: Offset(1, 1),
                 blurRadius: 10,

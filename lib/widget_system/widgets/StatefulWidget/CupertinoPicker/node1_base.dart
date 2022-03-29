@@ -18,7 +18,9 @@ import 'package:flutter/cupertino.dart';
 //          "【onSelectedItemChanged】 : 选中事件  【Function(int)】",
 //    }
 class CustomCupertinoPicker extends StatelessWidget {
-  final names = [
+  const CustomCupertinoPicker({Key? key}) : super(key: key);
+
+  final List<String> names = const[
     'Java',
     'Kotlin',
     'Dart',
@@ -31,9 +33,10 @@ class CustomCupertinoPicker extends StatelessWidget {
     "Object-c"
   ];
 
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       child: CupertinoPicker(
           backgroundColor: CupertinoColors.systemGrey.withAlpha(33),

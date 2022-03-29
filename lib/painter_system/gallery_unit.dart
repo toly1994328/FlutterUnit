@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/str_unit.dart';
-
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
-import 'package:flutter_unit/painter_system/gallery_factory.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/project/default/loading_shower.dart';
+import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
+import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
+import 'package:flutter_unit/painter_system/gallery_factory.dart';
 
 import 'gallery_detail_page.dart';
 
@@ -16,6 +16,8 @@ import 'gallery_detail_page.dart';
 /// 说明:
 
 class GalleryUnit extends StatefulWidget {
+  const GalleryUnit({Key? key}) : super(key: key);
+
   @override
   _GalleryUnitState createState() => _GalleryUnitState();
 }
@@ -57,23 +59,25 @@ class _GalleryUnitState extends State<GalleryUnit> {
 
   Color get nextColor =>  BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
 
-  BoxDecoration get boxDecoration => BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40), topRight: Radius.circular(40)));
+  BoxDecoration get boxDecoration => const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+      );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ValueListenableBuilder(
-        child: Column(
-          //使用 child 属性优化
+        child: Column( //使用 child 属性优化
           children: [
             _buildTitle(context),
             Expanded(
                 child: Container(
               margin: const EdgeInsets.only(left: 8, right: 8),
-              child: _buildContent(),
+              child: BlocBuilder<GalleryUnitBloc,String>(
+                builder: _buildContentByState,
+              ),
               decoration: boxDecoration,
             ))
           ],
@@ -113,9 +117,15 @@ class _GalleryUnitState extends State<GalleryUnit> {
     );
   }
 
-  Widget _buildContent() {
-    final List<Widget> widgets =
-        (json.decode(StrUnit.galleryInfo) as List).map((e) {
+  Widget _buildContentByState(BuildContext context, String state) {
+    if(state.isEmpty){
+      return const LoadingShower();
+    }
+    return _buildContent(state);
+  }
+
+  Widget _buildContent(String galleryInfo) {
+    final List<Widget> widgets = (json.decode(galleryInfo) as List).map((e) {
       GalleryInfo info = GalleryInfo.fromJson(e);
       List<Widget> children = GalleryFactory.getGalleryByName(info.type);
 
@@ -185,7 +195,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
   }
 
   Widget _buildDiver() => Container(
-        margin: EdgeInsets.only(bottom: 12, left: 48, right: 48, top: 10),
+    margin: const EdgeInsets.only(bottom: 12, left: 48, right: 48, top: 10),
         height: 2,
         child: ValueListenableBuilder(
           valueListenable: factor,
@@ -210,4 +220,6 @@ class _GalleryUnitState extends State<GalleryUnit> {
     int result = offset % length;
     return result < 0 ? length + result : result;
   }
+
+
 }

@@ -52,9 +52,10 @@ class CodeHighlighter extends Highlighter {
       int currentPosition = 0;
 
       for (_HighlightSpan span in _spans) {
-        if (currentPosition != span.start)
+        if (currentPosition != span.start) {
           formattedText
               .add(TextSpan(text: _src.substring(currentPosition, span.start)));
+        }
 
         formattedText.add(TextSpan(
             style: span.textStyle(_style), text: span.textForSpan(_src)));
@@ -62,9 +63,10 @@ class CodeHighlighter extends Highlighter {
         currentPosition = span.end;
       }
 
-      if (currentPosition != _src.length)
+      if (currentPosition != _src.length) {
         formattedText
             .add(TextSpan(text: _src.substring(currentPosition, _src.length)));
+      }
 
       return TextSpan(style: _style.baseStyle, children: formattedText);
     } else {
@@ -184,16 +186,17 @@ class CodeHighlighter extends Highlighter {
 
         if (word.startsWith('_')) word = word.substring(1);
 
-        if (language.containsKeywords(word))
+        if (language.containsKeywords(word)) {
           type = _HighlightType.keyword;
-        else if (language.containsInTypes(word))
+        } else if (language.containsInTypes(word)) {
           type = _HighlightType.keyword;
-        else if (_firstLetterIsUpperCase(word))
+        } else if (_firstLetterIsUpperCase(word)) {
           type = _HighlightType.klass;
-        else if (word.length >= 2 &&
+        } else if (word.length >= 2 &&
             word.startsWith('k') &&
-            _firstLetterIsUpperCase(word.substring(1)))
+            _firstLetterIsUpperCase(word.substring(1))) {
           type = _HighlightType.constant;
+        }
 
         if (type != null) {
           _spans.add(_HighlightSpan(
@@ -254,21 +257,22 @@ class _HighlightSpan {
   }
 
   TextStyle? textStyle(HighlighterStyle? style) {
-    if (type == _HighlightType.number)
+    if (type == _HighlightType.number) {
       return style?.numberStyle;
-    else if (type == _HighlightType.comment)
+    } else if (type == _HighlightType.comment) {
       return style?.commentStyle;
-    else if (type == _HighlightType.keyword)
+    } else if (type == _HighlightType.keyword) {
       return style?.keywordStyle;
-    else if (type == _HighlightType.string)
+    } else if (type == _HighlightType.string) {
       return style?.stringStyle;
-    else if (type == _HighlightType.punctuation)
+    } else if (type == _HighlightType.punctuation) {
       return style?.punctuationStyle;
-    else if (type == _HighlightType.klass)
+    } else if (type == _HighlightType.klass) {
       return style?.classStyle;
-    else if (type == _HighlightType.constant)
+    } else if (type == _HighlightType.constant) {
       return style?.constantStyle;
-    else
+    } else {
       return style?.baseStyle;
+    }
   }
 }

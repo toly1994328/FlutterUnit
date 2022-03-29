@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "使用Theme,可以指定非常多的属性作为主题,这些属性将应用于所有的后代组件，如指定字体、滑块、卡片、文字、分割线、按钮等属性。",
 //    }
 class CustomTheme extends StatelessWidget {
+  const CustomTheme({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -39,14 +41,11 @@ class CustomTheme extends StatelessWidget {
                   color: Colors.transparent,
                 ),
               ),
-              Container(
+              const SizedBox(
                 width: 150,
                 child: Slider(value: 0.8, onChanged: null),
               ),
-              Container(
-                width: 150,
-                child: const Divider(),
-              )
+              const SizedBox(width: 150, child: Divider())
             ]));
   }
 }

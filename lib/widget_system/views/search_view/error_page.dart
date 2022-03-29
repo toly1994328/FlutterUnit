@@ -15,7 +15,7 @@ class ErrorPage extends StatelessWidget {
         children: <Widget>[
            Icon(Icons.error_outline, color: Colors.red[300], size: 120.0),
            Container(
-            padding:  EdgeInsets.only(top: 16.0),
+            padding:  const EdgeInsets.only(top: 16.0),
             child:  Text(
               "好像有些小错误，ε＝(#>д<)ﾉ",
               style:  TextStyle(

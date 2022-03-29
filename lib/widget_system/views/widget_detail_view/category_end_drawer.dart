@@ -18,39 +18,38 @@ import 'package:flutter_unit/components/project/unit_drawer_header.dart';
 class CategoryEndDrawer extends StatelessWidget {
   final WidgetModel widget;
 
-  const CategoryEndDrawer({required this.widget});
+  const CategoryEndDrawer({Key? key, required this.widget}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-          child: ListView(padding: EdgeInsets.zero, children: <Widget>[
+      child: ListView(padding: EdgeInsets.zero, children: <Widget>[
         UnitDrawerHeader(color: Theme.of(context).primaryColor),
         Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            children: <Widget>[
-              Circle(
-                color: widget.color,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(widget.name)
-            ],
+      padding: const EdgeInsets.all(10.0),
+      child: Row(
+        children: <Widget>[
+          Circle(
+            color: widget.color,
           ),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(widget.name)
+        ],
+      ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Panel(
-            child: Text(widget.info, style: TStyleUnit.shadowTextStyle),
-          ),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+      child: Panel(
+        child: Text(widget.info, style: TStyleUnit.shadowTextStyle),
+      ),
         ),
-        Divider(),
+        const Divider(),
         _buildTitle(context),
-        Divider(),
+        const Divider(),
         CategoryInfo(widget.id)
-      ])),
+      ]),
     );
   }
 
@@ -88,7 +87,7 @@ class CategoryEndDrawer extends StatelessWidget {
 class CategoryInfo extends StatefulWidget {
   final int id;
 
-  CategoryInfo(this.id);
+  const CategoryInfo(this.id, {Key? key}) : super(key: key);
 
   @override
   _CategoryInfoState createState() => _CategoryInfoState();

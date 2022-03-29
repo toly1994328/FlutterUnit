@@ -12,7 +12,9 @@ import 'package:flutter/material.dart';
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】",
 //    }
 class CustomAlign extends StatelessWidget {
-  final alignments = [
+  const CustomAlign({Key? key}) : super(key: key);
+
+  final List<Alignment> alignments = const [
     Alignment.topLeft,
     Alignment.topCenter,
     Alignment.topRight,
@@ -24,7 +26,7 @@ class CustomAlign extends StatelessWidget {
     Alignment.bottomRight,
   ];
 
-  final alignmentsInfo = [
+  final List<String> alignmentsInfo = const [
     "topLeft",
     "topCenter",
     "topRight",
@@ -43,7 +45,7 @@ class CustomAlign extends StatelessWidget {
             .toList()
             .map((mode) => Column(children: <Widget>[
                   Container(
-                      margin: EdgeInsets.all(5),
+                      margin: const EdgeInsets.all(5),
                       width: 100,
                       height: 60,
                       color: Colors.grey.withAlpha(88),

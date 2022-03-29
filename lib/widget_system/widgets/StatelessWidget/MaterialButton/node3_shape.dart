@@ -12,46 +12,48 @@ import 'package:flutter/material.dart';
 //    }
 
 class ShapeMaterialButton extends StatelessWidget {
+  const ShapeMaterialButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 20,
       children: <Widget>[
-        Container(
+        SizedBox(
           width: 40,
           height: 40,
           child: MaterialButton(
-              padding: EdgeInsets.all(0),
-              textColor: Color(0xffFfffff),
+              padding: const EdgeInsets.all(0),
+              textColor: const Color(0xffFfffff),
               elevation: 3,
               color: Colors.blue,
-              highlightColor: Color(0xffF88B0A),
+              highlightColor: const Color(0xffF88B0A),
               splashColor: Colors.red,
-              child: Icon(
+              child: const Icon(
                 Icons.add,
                 color: Colors.white,
               ),
-              shape: CircleBorder(
-                side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+              shape: const CircleBorder(
+                side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
               ),
               onLongPress: () =>  Navigator.of(context).pushNamed('AboutMePage'),
               onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage')),
         ),
-        Container(
+        SizedBox(
           width: 100,
           height: 40,
           child: MaterialButton(
-              padding: EdgeInsets.all(0),
-              textColor: Color(0xffFfffff),
+              padding: const EdgeInsets.all(0),
+              textColor: const Color(0xffFfffff),
               elevation: 3,
               color: Colors.blue,
-              highlightColor: Color(0xffF88B0A),
+              highlightColor: const Color(0xffF88B0A),
               splashColor: Colors.red,
-              child: Icon(
+              child: const Icon(
                 Icons.remove,
                 color: Colors.white,
               ),
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(15))),
               onLongPress: () =>  Navigator.of(context).pushNamed('AboutMePage'),
               onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage')),

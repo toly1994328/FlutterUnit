@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【onReorder】 : 调换时回调  【ReorderCallback】",
 //    }
 class CustomReorderableListView extends StatefulWidget {
+  const CustomReorderableListView({Key? key}) : super(key: key);
+
   @override
   _CustomReorderableListViewState createState() => _CustomReorderableListViewState();
 }
@@ -35,15 +37,15 @@ final List<Color> data = [
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 250,
       child: ReorderableListView(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         header: Container(
           color: Colors.blue,
           alignment: Alignment.center,
             height: 50,
-            child: Text('长按拖拽进行换位',style: TextStyle(color: Colors.white),)),
+            child: const Text('长按拖拽进行换位',style: TextStyle(color: Colors.white),)),
         onReorder: _handleReorder,
         children: data.map((color) => _buildItem(color)).toList(),
       ),
@@ -70,7 +72,7 @@ final List<Color> data = [
       color: color,
       child: Text(
         colorString(color),
-        style: TextStyle(color: Colors.white, shadows: [
+        style: const TextStyle(color: Colors.white, shadows: [
           Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
         ]),
       ),

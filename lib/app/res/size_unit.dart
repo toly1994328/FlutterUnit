@@ -2,6 +2,8 @@
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
+// ignore_for_file: constant_identifier_names
+
 class SizeUnit {
 
   // 小文字大小

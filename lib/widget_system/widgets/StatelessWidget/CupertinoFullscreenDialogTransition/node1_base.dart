@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/11
 /// contact me by email 1981462002@qq.com
@@ -16,6 +15,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CupertinoFullscreenDialogTransitionDemo extends StatelessWidget {
+  const CupertinoFullscreenDialogTransitionDemo({Key? key}) : super(key: key);
+
   final String info =
       '和 CupertinoPageTransition 一样，该组件底层基于 SlideTransition 组件实现，'
       '主要用途是模仿 iOS 风格，用于唤出全屏对话框动画过渡效果。'
@@ -27,8 +28,8 @@ class CupertinoFullscreenDialogTransitionDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue.withOpacity(0.1),
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Text(info),
     );
   }

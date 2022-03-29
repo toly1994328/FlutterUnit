@@ -20,15 +20,17 @@ import 'package:flutter/rendering.dart';
 //    }
 
 class ViewportDemo extends StatelessWidget {
+  ViewportDemo({Key? key}) : super(key: key);
+
   final data = List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 250,
       child: Scrollable(
         axisDirection: AxisDirection.down,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         dragStartBehavior: DragStartBehavior.start,
         viewportBuilder: (ctx, position) => Viewport(
           axisDirection: AxisDirection.down,
@@ -43,10 +45,10 @@ class ViewportDemo extends StatelessWidget {
   }
 
   Widget _buildSliverList() => SliverList(
-        delegate: SliverChildBuilderDelegate(
+    delegate: SliverChildBuilderDelegate(
             (_, int index) =>ColorItem(color: data[index],),
-            childCount: data.length),
-      );
+        childCount: data.length),
+  );
 
   String colorString(Color color) =>
       "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
@@ -55,7 +57,8 @@ class ViewportDemo extends StatelessWidget {
 class ColorItem extends StatefulWidget {
   final Color color;
 
-  ColorItem({Key? key,required this.color}) : super(key: key);
+  const ColorItem({Key? key, required this.color}) : super(key: key);
+
   @override
   _ColorItemState createState() => _ColorItemState();
 }
@@ -71,18 +74,15 @@ class _ColorItemState extends State<ColorItem> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      margin: EdgeInsets.only(top: 1),
+      margin: const EdgeInsets.only(top: 1),
       alignment: Alignment.center,
       width: 100,
       height: 60,
       color: widget.color,
       child: Text(
         colorString(widget.color),
-        style: TextStyle(color: Colors.white, shadows: [
-          Shadow(
-              color: Colors.black,
-              offset: Offset(.5, .5),
-              blurRadius: 2)
+        style: const TextStyle(color: Colors.white, shadows: [
+          Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
         ]),
       ),
     );

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -12,13 +11,15 @@ import 'package:flutter/material.dart';
 //    }
 
 class ButtonBarThemeDemo extends StatelessWidget {
+  const ButtonBarThemeDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ButtonBarTheme(
-        child: TempButtonBar(),
+        child: const TempButtonBar(),
         data: ButtonBarTheme.of(context).copyWith(
             alignment: MainAxisAlignment.center,
-            buttonPadding: EdgeInsets.symmetric(horizontal: 6),
+            buttonPadding: const EdgeInsets.symmetric(horizontal: 6),
             overflowDirection: VerticalDirection.up,
             buttonMinWidth: 150,
             buttonHeight: 30,
@@ -27,18 +28,20 @@ class ButtonBarThemeDemo extends StatelessWidget {
 }
 
 class TempButtonBar extends StatelessWidget {
+  const TempButtonBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ButtonBar(
       alignment: MainAxisAlignment.center,
       children: <Widget>[
         RaisedButton(
-            color: Colors.blue, child: Text("1.Raised"), onPressed: () {}),
-        OutlineButton(child: Text("2.Outline"), onPressed: () {}),
+            color: Colors.blue, child: const Text("1.Raised"), onPressed: () {}),
+        OutlineButton(child: const Text("2.Outline"), onPressed: () {}),
         FlatButton(
           color: Colors.blue,
           onPressed: () {},
-          child: Text("3.Flat"),
+          child: const Text("3.Flat"),
         )
       ],
     );

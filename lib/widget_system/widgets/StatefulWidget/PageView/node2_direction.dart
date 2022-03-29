@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //          "【reverse】 : 是否反向  【bool】",
 //    }
 class DirectionPageView extends StatelessWidget {
+  DirectionPageView({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.orange[50]!,
     Colors.orange[100]!,
@@ -26,9 +28,18 @@ class DirectionPageView extends StatelessWidget {
     Colors.orange[900]!,
   ];
 
+  TextStyle get textStyle =>
+      const TextStyle(color: Colors.white, fontSize: 24, shadows: [
+        Shadow(
+          color: Colors.black,
+          offset: Offset(.5, .5),
+          blurRadius: 2,
+        ),
+      ]);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       child: PageView(
         scrollDirection: Axis.vertical,
@@ -37,22 +48,15 @@ class DirectionPageView extends StatelessWidget {
           print(position);
         },
         children: data
-            .map((color) =>
-            Container(
-              alignment: Alignment.center,
-              width: 90,
-              color: color,
-              child: Text(
-                colorString(color),
-                style: TextStyle(color: Colors.white,
-                    fontSize: 24, shadows: [
-                      Shadow(
-                          color: Colors.black,
-                          offset: Offset(.5, .5),
-                          blurRadius: 2)
-                    ]),
-              ),
-            ))
+            .map((color) => Container(
+                  alignment: Alignment.center,
+                  width: 90,
+                  color: color,
+                  child: Text(
+                    colorString(color),
+                    style: textStyle,
+                  ),
+                ))
             .toList(),
       ),
     );

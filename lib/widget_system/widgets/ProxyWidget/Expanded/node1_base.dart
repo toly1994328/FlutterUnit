@@ -14,6 +14,8 @@
 //          "【flex】 : 剩余空间分配占比   【int】",
 //    }
 class CustomExpended extends StatefulWidget {
+  const CustomExpended({Key? key}) : super(key: key);
+
   @override
   _CustomExpendedState createState() => _CustomExpendedState();
 }
@@ -21,18 +23,16 @@ class CustomExpended extends StatefulWidget {
 class _CustomExpendedState extends State<CustomExpended> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          buildRow([0, 0, 0]),
-          SizedBox(height: 10,),
-          buildRow([0, 0, 1]),
-          SizedBox(height: 10,),
-          buildRow([1, 1, 1]),
-          SizedBox(height: 10,),
-          buildRow([2, 3, 3]),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        buildRow([0, 0, 0]),
+        const SizedBox(height: 10,),
+        buildRow([0, 0, 1]),
+        const SizedBox(height: 10,),
+        buildRow([1, 1, 1]),
+        const SizedBox(height: 10,),
+        buildRow([2, 3, 3]),
+      ],
     );
   }
 
@@ -47,7 +47,7 @@ class _CustomExpendedState extends State<CustomExpended> {
                 color: ColorUtils.randomColor(),
                 child: Text(
                   'flex=$e',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             )).toList());

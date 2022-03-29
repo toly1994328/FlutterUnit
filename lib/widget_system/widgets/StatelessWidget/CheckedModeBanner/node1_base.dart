@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
@@ -13,6 +12,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CheckedModeBannerDemo extends StatelessWidget {
+  const CheckedModeBannerDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return CheckedModeBanner(
@@ -21,7 +22,7 @@ class CheckedModeBannerDemo extends StatelessWidget {
         width: 250,
         height: 150,
         color: Theme.of(context).primaryColor,
-        child: Text(
+        child: const Text(
           "CheckedModeBanner",
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),

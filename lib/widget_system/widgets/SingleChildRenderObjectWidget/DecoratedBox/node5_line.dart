@@ -10,9 +10,11 @@ import 'package:flutter/material.dart';
 //      "subtitle": "通过UnderlineTabIndicator对象可指定底线\n",
 //    }
 class UnderlineTabIndicatorDemo extends StatelessWidget {
+  const UnderlineTabIndicatorDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return const DecoratedBox(
       decoration: UnderlineTabIndicator(
           insets: EdgeInsets.symmetric(horizontal: 5, vertical: -5),
           borderSide: BorderSide(color: Colors.orange, width: 2)),

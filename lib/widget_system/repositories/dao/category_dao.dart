@@ -1,12 +1,10 @@
 
 import 'package:sqflite/sqflite.dart';
-
-import '../app_start.dart';
 import '../bean/category_po.dart';
 
 
 //"""
-// CREATE TABLE IF NOT EXISTS widget_category(
+// CREATE TABLE IF NOT EXISTS category_widget(
 //     id INTEGER PRIMARY KEY AUTOINCREMENT,
 //     name VARCHAR(64) NOT NULL,
 //     color VARCHAR(9) DEFAULT '#FF2196F3',
@@ -98,7 +96,7 @@ class CategoryDao {
         "SELECT COUNT(name) as count FROM category "
         "WHERE name = ?";
     List<Map<String, dynamic>> rawData = await db.rawQuery(sql, [name]);
-    if (rawData.length > 0) {
+    if (rawData.isNotEmpty) {
       return rawData[0]['count'] > 0;
     }
     return false;
@@ -131,7 +129,7 @@ class CategoryDao {
             "WHERE categoryId = ?",
         [id]);
     return await db.execute(
-        "DELETE FROM widget_category "
+        "DELETE FROM category "
             "WHERE id = ?",
         [id]);
   }
@@ -162,7 +160,7 @@ class CategoryDao {
         "SELECT COUNT(id) as count FROM category_widget "
         "WHERE categoryId = ? AND widgetId = ?";
     List<Map<String, dynamic>> rawData = await db.rawQuery(sql, [categoryId, widgetId]);
-    if (rawData.length > 0) {
+    if (rawData.isNotEmpty) {
       return rawData[0]['count'] > 0;
     }
     return false;

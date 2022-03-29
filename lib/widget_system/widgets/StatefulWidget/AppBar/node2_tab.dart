@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../PopupMenuButton/node1_base.dart';
 /// create by 张风捷特烈 on 2020-03-23
 /// contact me by email 1981462002@qq.com
@@ -11,13 +12,15 @@ import '../PopupMenuButton/node1_base.dart';
 //          "【bottom】 : 底部组件   【PreferredSizeWidget】",
 //    }
 class TabAppBar extends StatefulWidget {
+  const TabAppBar({Key? key}) : super(key: key);
+
   @override
   _TabAppBarState createState() => _TabAppBarState();
 }
 
 class _TabAppBarState extends State<TabAppBar>
     with SingleTickerProviderStateMixin {
-  final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
+  final List<String> tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
   late TabController _tabController;
 
   @override
@@ -38,7 +41,7 @@ class _TabAppBarState extends State<TabAppBar>
       children: <Widget>[
         Container(
           height: 180,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
                     "assets/images/sabar.webp",
@@ -47,30 +50,32 @@ class _TabAppBarState extends State<TabAppBar>
           child: _buildAppBar(),
         ),
         Container(
-            height: 150, color: Color(0xff916BF0), child: _buildTableBarView())
+            height: 150,
+            color: const Color(0xff916BF0),
+            child: _buildTableBarView())
       ],
     );
   }
 
   Widget _buildAppBar() => AppBar(
-        title: Text('风雅六社'),
+    title: const Text('风雅六社'),
         elevation: 1,
-        leading: BackButton(),
+        leading: const BackButton(),
         backgroundColor: Colors.amber[500]!.withAlpha(33),
         centerTitle: true,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         )),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.star),
+              icon: const Icon(Icons.star),
               tooltip: 'liked_widget_bloc',
               onPressed: () {
                 // do nothing
               }),
-          CustomPopupMenuButton()
+          const CustomPopupMenuButton()
         ],
         bottom: TabBar(
           isScrollable: true,
@@ -85,8 +90,8 @@ class _TabAppBarState extends State<TabAppBar>
       children: tabs
           .map((e) => Center(
                   child: Text(
-                e,
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                    e,
+                style: const TextStyle(color: Colors.white, fontSize: 20),
               )))
           .toList());
 }

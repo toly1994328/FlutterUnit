@@ -30,7 +30,8 @@ class ArcBackground extends StatelessWidget {
   final Widget? child;
   final ImageProvider image;
 
-  ArcBackground({this.child,required this.image});
+  const ArcBackground({Key? key, this.child, required this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,19 +53,19 @@ class ArcBackground extends StatelessWidget {
 
 class UnitArcBackground extends StatelessWidget {
   final double height;
-  UnitArcBackground({Key? key,required this.height}) : super(key: key);
+  const UnitArcBackground({Key? key,required this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
       child: ArcBackground(
-        image: AssetImage("assets/images/caver.webp"),
+        image: const AssetImage("assets/images/caver.webp"),
         child: Container(
           padding: const EdgeInsets.all(30),
           decoration: BoxDecoration(
               color: Colors.blue.withAlpha(88), shape: BoxShape.circle),
-          child: CircleImage(
+          child: const CircleImage(
               size: 100,
               roundColor: Colors.blue,
               image: AssetImage(

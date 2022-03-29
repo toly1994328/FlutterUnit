@@ -20,11 +20,11 @@ class UnitBottomBar extends StatefulWidget {
   // item 长按事件
   final IndexLongTapCallback? onItemLongTap;
 
-  UnitBottomBar({
+  const UnitBottomBar({Key? key,
     this.color = Colors.blue,
     required this.onItemTap,
     this.onItemLongTap,
-  });
+  }) : super(key: key);
 
   @override
   _UnitBottomBarState createState() => _UnitBottomBarState();
@@ -149,10 +149,10 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
                             size: getIconSizeByPosition(3),
                             color: getIconColorByPosition(3),
                           )),
-                      Positioned(
+                      const Positioned(
                         left: 20,
                           top: 5,
-                          child: const UpdateRedPoint())
+                          child: UpdateRedPoint())
                     ],
                   ),
                 ),

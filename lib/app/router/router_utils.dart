@@ -64,7 +64,7 @@ class Right2LeftRouter<T> extends PageRouteBuilder<T> {
          SlideTransition(
            child: child,
             position: Tween<Offset>(
-              begin: Offset(1.0, 0.0), end: Offset(0.0, 0.0),).animate(
+              begin: const Offset(1.0, 0.0), end: const Offset(0.0, 0.0),).animate(
                 CurvedAnimation(parent: a1, curve: curve)),
         ));
 }
@@ -82,7 +82,7 @@ class Left2RightRouter<T> extends PageRouteBuilder<T> {
       transitionsBuilder:(ctx,a1,a2,child,) {
         return SlideTransition(
             position: Tween<Offset>(
-              begin: Offset(-1.0, 0.0), end: Offset(0.0, 0.0),).animate(
+              begin: const Offset(-1.0, 0.0), end: const Offset(0.0, 0.0),).animate(
                 CurvedAnimation(parent: a1, curve: curve)),
             child:  child
         );
@@ -101,7 +101,7 @@ class Top2BottomRouter<T> extends PageRouteBuilder<T> {
       transitionsBuilder:(ctx,a1,a2, child,) {
         return SlideTransition(
             position: Tween<Offset>(
-              begin: Offset(0.0,-1.0), end: Offset(0.0, 0.0),).animate(
+              begin: const Offset(0.0,-1.0), end: const Offset(0.0, 0.0),).animate(
                 CurvedAnimation(parent: a1, curve: curve)),
             child:  child
         );
@@ -120,7 +120,7 @@ class Bottom2TopRouter<T> extends PageRouteBuilder<T> {
       transitionsBuilder:(ctx,a1,a2, child,) {
         return SlideTransition(
             position: Tween<Offset>(
-              begin: Offset(0.0, 1.0), end: Offset(0.0, 0.0),).animate(
+              begin: const Offset(0.0, 1.0), end: const Offset(0.0, 0.0),).animate(
                 CurvedAnimation(parent: a1, curve: curve)),
             child:  child
         );
@@ -157,7 +157,7 @@ class NoAnimRouter<T> extends PageRouteBuilder<T> {
       : super(
       opaque: false,
       pageBuilder: (context, animation, secondaryAnimation) => child,
-      transitionDuration: Duration(milliseconds: 0),
+      transitionDuration: const Duration(milliseconds: 0),
       transitionsBuilder:
           (context, animation, secondaryAnimation, child) => child);
 }

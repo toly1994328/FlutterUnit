@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class UnDeuxTrois extends StatefulWidget {
+  const UnDeuxTrois({Key? key}) : super(key: key);
+
   @override
   _UnDeuxTroisState createState() => _UnDeuxTroisState();
 }

@@ -10,11 +10,13 @@ import 'package:flutter/material.dart';
 //      "subtitle": "【border】 : 边线   【BoxBorder】\n",
 //    }
 class BorderDemo extends StatelessWidget {
+  const BorderDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
       position: DecorationPosition.foreground,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         border: Border(
             bottom: BorderSide(color: Colors.orange, width: 2),
             top: BorderSide(color: Colors.orange, width: 2)),

@@ -14,13 +14,15 @@ import 'package:flutter/material.dart';
 //          "【onPressed】 : 点击回调  【Function()】",
 //    }
 class CustomSnackBarAction extends StatelessWidget {
+  const CustomSnackBarAction({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: SnackBarAction(
-            disabledTextColor: Colors.red,
-            textColor: Colors.blue,
-            label: '确定',
-            onPressed: () => print('onPressed')));
+    return SnackBarAction(
+      disabledTextColor: Colors.red,
+      textColor: Colors.blue,
+      label: '确定',
+      onPressed: () => print('onPressed'),
+    );
   }
 }

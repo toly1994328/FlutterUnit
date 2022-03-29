@@ -16,39 +16,39 @@ import 'package:flutter/material.dart';
 //    }
 
 class TabPageSelectorIndicatorDemo extends StatelessWidget {
+  const TabPageSelectorIndicatorDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          TabPageSelectorIndicator(
-            backgroundColor: Colors.greenAccent,
-            borderColor: Colors.deepPurpleAccent,
-            size: 15,
-          ),
-          TabPageSelectorIndicator(
-            backgroundColor: Colors.blue,
-            borderColor: Colors.grey,
-            size: 20,
-          ),
-          TabPageSelectorIndicator(
-            backgroundColor: Colors.green,
-            borderColor: Colors.red,
-            size: 25,
-          ),
-          TabPageSelectorIndicator(
-            backgroundColor: Colors.yellow,
-            borderColor: Colors.brown,
-            size: 30,
-          ),
-          TabPageSelectorIndicator(
-            backgroundColor: Colors.amber,
-            borderColor: Colors.purpleAccent,
-            size: 35,
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children:const [
+        TabPageSelectorIndicator(
+          backgroundColor: Colors.greenAccent,
+          borderColor: Colors.deepPurpleAccent,
+          size: 15,
+        ),
+        TabPageSelectorIndicator(
+          backgroundColor: Colors.blue,
+          borderColor: Colors.grey,
+          size: 20,
+        ),
+        TabPageSelectorIndicator(
+          backgroundColor: Colors.green,
+          borderColor: Colors.red,
+          size: 25,
+        ),
+        TabPageSelectorIndicator(
+          backgroundColor: Colors.yellow,
+          borderColor: Colors.brown,
+          size: 30,
+        ),
+        TabPageSelectorIndicator(
+          backgroundColor: Colors.amber,
+          borderColor: Colors.purpleAccent,
+          size: 35,
+        ),
+      ],
     );
   }
 

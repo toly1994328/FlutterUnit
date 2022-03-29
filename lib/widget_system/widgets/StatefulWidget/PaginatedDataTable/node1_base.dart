@@ -22,6 +22,8 @@ import 'package:flutter/material.dart';
 //          "【source】 : 数据源   【DataTableSource】",
 //    }
 class PaginatedDataTableDemo extends StatefulWidget {
+  const PaginatedDataTableDemo({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _PaginatedDataTableDemoState();
 }
@@ -35,7 +37,10 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
   final DessertDataSource _dessertsDataSource = DessertDataSource();
 
   void sort<T>(
-      Comparable<T> getField(HeroInfo d), int columnIndex, bool ascending) {
+    Comparable<T> Function(HeroInfo d) getField,
+    int columnIndex,
+    bool ascending,
+  ) {
     _dessertsDataSource.sort<T>(getField, ascending);
     setState(() {
       _sortColumnIndex = columnIndex;
@@ -45,12 +50,12 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 300,
         width: 350,
         child: SingleChildScrollView(
           child: PaginatedDataTable(
-              actions: <Widget>[
+              actions: const <Widget>[
                 IconButton(icon: Icon(Icons.add), onPressed: null),
               ],
               header: const Text(
@@ -58,7 +63,7 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
                 style: TextStyle(color: Colors.blue),
               ),
               rowsPerPage: _rowsPerPage,
-              availableRowsPerPage: [5, 8, 10, 15],
+              availableRowsPerPage: const [5, 8, 10, 15],
               onRowsPerPageChanged: (int? value) {
                 setState(() {
                   _rowsPerPage = value ?? 0;
@@ -105,7 +110,7 @@ class HeroInfo {
 }
 
 class DessertDataSource extends DataTableSource {
-  final List<HeroInfo> _desserts = <HeroInfo>[
+  final List<HeroInfo> _desserts = [
     HeroInfo('捷特', '《幻将录》', "人族", "男"),
     HeroInfo('龙少', '《幻将录》', "人族", "男"),
     HeroInfo('巫缨', '《幻将录》', "人族", "女"),
@@ -158,7 +163,10 @@ class DessertDataSource extends DataTableSource {
     HeroInfo('古千缘', '《幻将录》', "人族", "男"),
   ];
 
-  void sort<T>(Comparable<T> getField(HeroInfo d), bool ascending) {
+  void sort<T>(
+    Comparable<T> Function(HeroInfo d) getField,
+    bool ascending,
+  ) {
     _desserts.sort((HeroInfo a, HeroInfo b) {
       if (!ascending) {
         final HeroInfo c = a;
@@ -190,10 +198,10 @@ class DessertDataSource extends DataTableSource {
           }
         },
         cells: <DataCell>[
-          DataCell(Center(child: Text('${dessert.name}'))),
-          DataCell(Center(child: Text('${dessert.calories}'))),
-          DataCell(Center(child: Text('${dessert.fat}'))),
-          DataCell(Center(child: Text('${dessert.carbs}'))),
+          DataCell(Center(child: Text(dessert.name))),
+          DataCell(Center(child: Text(dessert.calories))),
+          DataCell(Center(child: Text(dessert.fat))),
+          DataCell(Center(child: Text(dessert.carbs))),
         ]);
   }
 
@@ -208,7 +216,9 @@ class DessertDataSource extends DataTableSource {
 
   void _selectAll(bool? checked) {
     if (checked == null) return;
-    for (HeroInfo dessert in _desserts) dessert.selected = checked;
+    for (HeroInfo dessert in _desserts) {
+      dessert.selected = checked;
+    }
     _selectedCount = checked ? _desserts.length : 0;
     notifyListeners();
   }

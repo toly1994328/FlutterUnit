@@ -2,15 +2,15 @@
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-final double _kMillisLimit = 1000.0;
+const double _kMillisLimit = 1000.0;
 
-final double _kSecondsLimit = 60 * _kMillisLimit;
+const double _kSecondsLimit = 60 * _kMillisLimit;
 
-final double _kMinutesLimit = 60 * _kSecondsLimit;
+const double _kMinutesLimit = 60 * _kSecondsLimit;
 
-final double _kHourLimit = 24 * _kMinutesLimit;
+const double _kHourLimit = 24 * _kMinutesLimit;
 
-final double _kDaysLimit = 30 * _kHourLimit;
+const double _kDaysLimit = 30 * _kHourLimit;
 
 class ConvertMan {
   
@@ -37,9 +37,7 @@ class ConvertMan {
   }
 
   static String _getDateStr(DateTime date) {
-    if (date == null || date.toString() == null) {
-      return "";
-    } else if (date.toString().length < 10) {
+    if (date.toString().length < 10) {
       return date.toString();
     }
     return date.toString().substring(0, 10);

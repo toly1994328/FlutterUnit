@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 
@@ -14,7 +12,7 @@ import 'liked_widget_state.dart';
 class LikeWidgetBloc extends Bloc<LikeWidgetEvent, LikeWidgetState> {
   final WidgetRepository repository;
 
-  LikeWidgetBloc({required this.repository}):super(LikeWidgetState(widgets: [])){
+  LikeWidgetBloc({required this.repository}):super(const LikeWidgetState(widgets: [])){
    on<EventLoadLikeData>(_onEventLoadLikeData) ;
    on<ToggleLikeWidgetEvent>(_onToggleLikeWidgetEvent) ;
   }

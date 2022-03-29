@@ -14,40 +14,42 @@ import 'package:flutter/material.dart';
 //          "【itemBuilder】 : 条目构造器  【IndexedWidgetBuilder】",
 //    }
 class BuilderGridView extends StatelessWidget {
-  final data = List.generate(128, (i) => Color(0xFF33FFF - 2*i));
+  BuilderGridView({Key? key}) : super(key: key);
+
+  final List<Color> data = List.generate(128, (i) => Color(0xFF33FFF - 2 * i));
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: GridView.builder(
           itemCount: data.length,
           scrollDirection: Axis.vertical,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(//网格代理：定交叉轴数目
-              crossAxisCount: 4,//条目个数
-              mainAxisSpacing: 5,//主轴间距
-              crossAxisSpacing: 5,//交叉轴间距
-              childAspectRatio:1/0.618),
-          itemBuilder: (_, int position)=> _buildItem(data[position])
-      ),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              //网格代理：定交叉轴数目
+              crossAxisCount: 4, //条目个数
+              mainAxisSpacing: 5, //主轴间距
+              crossAxisSpacing: 5, //交叉轴间距
+              childAspectRatio: 1 / 0.618),
+          itemBuilder: (_, int position) => _buildItem(data[position])),
     );
   }
 
-  Container _buildItem(Color color) => Container(
-    alignment: Alignment.center,
-    width: 100,
-    height: 30,
-    color: color,
-    child: Text(
-      colorString(color),
-      style: TextStyle(color: Colors.white, shadows: [
-        Shadow(
-            color: Colors.black,
-            offset: Offset(.5, .5),
-            blurRadius: 2)
-      ]),
-    ),
-  );
+  Widget _buildItem(Color color) => Container(
+        alignment: Alignment.center,
+        width: 100,
+        height: 30,
+        color: color,
+        child: Text(
+          colorString(color),
+          style: const TextStyle(
+            color: Colors.white,
+            shadows: [
+              Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+            ],
+          ),
+        ),
+      );
 
   String colorString(Color color) =>
       "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";

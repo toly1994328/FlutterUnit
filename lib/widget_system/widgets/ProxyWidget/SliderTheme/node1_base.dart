@@ -14,12 +14,14 @@ import 'package:flutter/material.dart';
 //    }
 
 class SliderThemeDemo extends StatefulWidget {
+  const SliderThemeDemo({Key? key}) : super(key: key);
+
   @override
   _SliderThemeDemoState createState() => _SliderThemeDemoState();
 }
 
 class _SliderThemeDemoState extends State<SliderThemeDemo> {
-  var _bliss = 0.5;
+  double _bliss = 0.5;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class _SliderThemeDemoState extends State<SliderThemeDemo> {
         min: 0.0,
         max: 200.0,
         divisions: 10,
-        label: "${_bliss.toStringAsFixed(1)}",
+        label: _bliss.toStringAsFixed(1),
         onChanged: (double value) {
           setState(() {
             _bliss = value;

@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 //    }
 
 class KeepAliveDemo extends StatelessWidget {
+  KeepAliveDemo({Key? key}) : super(key: key);
 
   final List<Color> data = [
     Colors.purple[50]!,
@@ -42,7 +43,7 @@ class KeepAliveDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: ListView.builder(
         itemCount: data.length,
@@ -59,7 +60,11 @@ class ColorBox extends StatefulWidget {
   final Color color;
   final int index;
 
-  ColorBox({Key? key,required this.color,required this.index}) : super(key: key);
+  const ColorBox({
+    Key? key,
+    required this.color,
+    required this.index,
+  }) : super(key: key);
 
   @override
   _ColorBoxState createState() => _ColorBoxState();
@@ -91,7 +96,7 @@ class _ColorBoxState extends State<ColorBox> with AutomaticKeepAliveClientMixin 
       color: widget.color,
       child: Row(
         children: [
-          SizedBox(width: 60,),
+          const SizedBox(width: 60),
           Checkbox(
             value: _checked,
             onChanged: (bool? v) {
@@ -102,7 +107,7 @@ class _ColorBoxState extends State<ColorBox> with AutomaticKeepAliveClientMixin 
           ),
           Text(
             "index ${widget.index}: ${colorString(widget.color)}",
-            style: TextStyle(color: Colors.white, shadows: [
+            style: const TextStyle(color: Colors.white, shadows: [
               Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
             ]),
           ),

@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 //          "可以使用Align实现一些复杂的排布需求，比如按指定的数学方程变化位置",
 //    }
 class Ball extends StatelessWidget {
-  Ball({
+  const Ball({
     Key? key,
     this.radius = 15,
     this.color = Colors.blue,
@@ -35,7 +35,7 @@ class Ball extends StatelessWidget {
 }
 
 class SinLayout extends StatefulWidget {
-  SinLayout({
+  const SinLayout({
     Key? key,
   }) : super(key: key);
 
@@ -44,7 +44,7 @@ class SinLayout extends StatefulWidget {
 }
 
 class _SinLayoutState extends State<SinLayout> {
-  var _x = 0.0; //Alignment坐标系上的x坐标
+  double _x = 0.0; //Alignment坐标系上的x坐标
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _SinLayoutState extends State<SinLayout> {
       height: 120,
       color: Colors.black.withAlpha(10),
       child: Align(
-        child: Ball(
+        child: const Ball(
           color: Colors.orangeAccent,
         ),
         alignment: Alignment(_x, f(_x * pi)),

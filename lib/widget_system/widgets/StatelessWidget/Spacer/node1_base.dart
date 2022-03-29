@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 //          "一个Spacer会占据可延伸区域",
 //    }
 class OneSpacer extends StatelessWidget {
+  const OneSpacer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class OneSpacer extends StatelessWidget {
             height: 50,
             color: Colors.red,
           ),
-          Spacer(),
+          const Spacer(),
           Container(
             alignment: Alignment.center,
             width: 60,

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class RawGestureDetectorDemo extends StatefulWidget {
+  const RawGestureDetectorDemo({Key? key}) : super(key: key);
+
   @override
   _RawGestureDetectorDemoState createState() => _RawGestureDetectorDemoState();
 }

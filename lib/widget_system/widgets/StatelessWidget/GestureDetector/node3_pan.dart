@@ -16,12 +16,14 @@ import 'package:flutter/material.dart';
 //          "【onPanCancel】 : 拖动取消   【GestureDragCancelCallback】",
 //    }
 class PanGestureDetector extends StatefulWidget {
+  const PanGestureDetector({Key? key}) : super(key: key);
+
   @override
   _PanGestureDetectorState createState() => _PanGestureDetectorState();
 }
 
 class _PanGestureDetectorState extends State<PanGestureDetector> {
-  var _info = '';
+  String _info = '';
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class _PanGestureDetectorState extends State<PanGestureDetector> {
           color: Colors.grey.withAlpha(33),
           child: Text(
             _info,
-            style: TextStyle(fontSize: 18, color: Colors.blue),
+            style: const TextStyle(fontSize: 18, color: Colors.blue),
           ),
         ),
       ),

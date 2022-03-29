@@ -1,7 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_unit/user_system/model/user.dart';
-
 
 
 ///********************************验证行为********************************
@@ -35,10 +33,10 @@ class LoggedOut extends AuthEvent {
   final bool clearUser;
   final bool tokenDisable;
 
-  LoggedOut({this.clearUser=true,this.tokenDisable=false});
+  const LoggedOut({this.clearUser=true,this.tokenDisable=false});
 }
 
 class TokenDisabled extends AuthEvent {
 
-  TokenDisabled();
+  const TokenDisabled();
 }

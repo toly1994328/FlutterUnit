@@ -22,7 +22,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           await UserApi.register(email: event.email, code: event.code);
 
       if(result.data == null){
-    emit(RegisterError('注册失败'));
+    emit(const RegisterError('注册失败'));
       }else{
         if (result.data!=null&&result.data!) {
           // 注册成功

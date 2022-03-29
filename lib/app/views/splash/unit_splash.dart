@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +17,8 @@ import 'unit_paint.dart';
 /// 说明: app 闪屏页
 
 class UnitSplash extends StatefulWidget {
-  const UnitSplash();
+  const UnitSplash({Key? key}) : super(key: key);
+
 
   @override
   _UnitSplashState createState() => _UnitSplashState();
@@ -27,7 +27,7 @@ class UnitSplash extends StatefulWidget {
 class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   late AnimationController _controller;
 
-  ValueNotifier<bool> _animEnd = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> _animEnd = ValueNotifier<bool>(false);
 
   final Duration animTime = const Duration(milliseconds: 1000);
   final Duration delayTime = const Duration(milliseconds: 500);
@@ -134,9 +134,9 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
             scale: logoScaleAnim,
             child: FadeTransition(
                 opacity: _controller,
-                child: SizedBox(
+                child: const SizedBox(
                   height: 120,
-                  child: const FlutterLogo(
+                  child: FlutterLogo(
                     size: 60,
                   ),
                 )),

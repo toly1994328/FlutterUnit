@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class PageStorageDemo extends StatefulWidget {
+  const PageStorageDemo({Key? key}) : super(key: key);
+
   @override
   _PageStorageDemoState createState() => _PageStorageDemoState();
 }
@@ -23,7 +25,7 @@ class _PageStorageDemoState extends State<PageStorageDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: Scaffold(
         body: PageStorage(
@@ -39,7 +41,7 @@ class _PageStorageDemoState extends State<PageStorageDemo> {
               _pageIndex = index;
             });
           },
-          items: <BottomNavigationBarItem>[
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
@@ -56,11 +58,11 @@ class _PageStorageDemoState extends State<PageStorageDemo> {
 
   Widget _buildContentByIndex() {
     if (_pageIndex == 0) {
-      return CountWidget(key: PageStorageKey('CountWidget1'));
+      return const CountWidget(key: PageStorageKey('CountWidget1'));
     }
 
     if (_pageIndex == 1) {
-      return CountWidget(key: PageStorageKey('CountWidget2'));
+      return const CountWidget(key: PageStorageKey('CountWidget2'));
     }
 
     return ListView();
@@ -68,7 +70,7 @@ class _PageStorageDemoState extends State<PageStorageDemo> {
 }
 
 class CountWidget extends StatefulWidget {
-  CountWidget({Key? key}) : super(key: key);
+  const CountWidget({Key? key}) : super(key: key);
 
   @override
   _CountWidgetState createState() => _CountWidgetState();
@@ -93,13 +95,13 @@ class _CountWidgetState extends State<CountWidget> {
           Text('点击了$_count次'),
           MaterialButton(
               onPressed: _addCount,
-              child: Icon(
+              child: const Icon(
                 Icons.add,
                 color: Colors.white,
               ),
               color: Colors.green,
-              shape: CircleBorder(
-                side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+              shape: const CircleBorder(
+                side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
               ))
         ],
       ),

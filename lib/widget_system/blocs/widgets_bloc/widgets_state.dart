@@ -1,7 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
-import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
 /// create by 张风捷特烈 on 2020-03-03

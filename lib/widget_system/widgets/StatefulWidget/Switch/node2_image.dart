@@ -10,19 +10,22 @@ import 'package:flutter/material.dart';
 //      "priority": 2,
 //      "subtitle":
 //          "【inactiveThumbImage】 : 未选中小圈图片   【ImageProvider】\n"
-//          "【activeThumbImage】 : 选中时滑槽颜色   【ImageProvider】",
+//          "【activeThumbImage】 : 选中小圈图片   【ImageProvider】",
 //    }
 class ImageSwitch extends StatefulWidget {
+  const ImageSwitch({Key? key}) : super(key: key);
+
   @override
   _ImageSwitchState createState() => _ImageSwitchState();
 }
 
 class _ImageSwitchState extends State<ImageSwitch> {
-  final imgs = [
+  final List<String> imgs = const [
     "assets/images/head_icon/icon_5.webp",
     "assets/images/head_icon/icon_6.webp",
     "assets/images/head_icon/icon_7.webp",
-    "assets/images/head_icon/icon_8.webp"];
+    "assets/images/head_icon/icon_8.webp"
+  ];
   bool _checked = false;
 
   @override
@@ -34,7 +37,7 @@ class _ImageSwitchState extends State<ImageSwitch> {
           Switch(
               value: _checked,
               inactiveThumbImage: AssetImage(e),
-              activeThumbImage: AssetImage('assets/images/pica.gif'),
+              activeThumbImage: const AssetImage('assets/images/icon_head.webp'),
               onChanged: (v) {
                 setState(() => _checked = v);
               }))

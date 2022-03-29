@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //          "【padding】 : 内边距   【EdgeInsetsGeometry】",
 //    }
 class CustomAnimatedList extends StatefulWidget {
+  const CustomAnimatedList({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedListState createState() => _CustomAnimatedListState();
 }
@@ -32,7 +34,7 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
     super.initState();
     _list = ListModel<int>(
       listKey: _listKey,
-      initialItems: <int>[0, 1, 2, 3],
+      initialItems: [0, 1, 2, 3],
       removedItemBuilder: _buildRemovedItem,
     );
     _nextItem = 4;
@@ -84,11 +86,11 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
         child: Column(
           children: <Widget>[
             _buildBtn(),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width/2,
               height: 300,
               child: AnimatedList(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 key: _listKey,
                 initialItemCount: _list.length,
                 itemBuilder: _buildItem,
@@ -158,10 +160,8 @@ class CardItem extends StatelessWidget {
       required this.animation,
       this.onTap,
       required this.item,
-      this.selected: false})
-      : assert(animation != null),
-        assert(item != null && item >= 0),
-        assert(selected != null),
+      this.selected = false})
+      : assert(item >= 0),
         super(key: key);
   final Animation<double> animation;
   final VoidCallback? onTap;
@@ -180,7 +180,7 @@ class CardItem extends StatelessWidget {
               dense: true,
               title: Text(
                 'Item $item',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: const TextStyle(color: Colors.white, fontSize: 18),
               ),
               value: selected,
               onChanged: (v) {

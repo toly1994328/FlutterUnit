@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/style/gap.dart';
@@ -23,6 +22,8 @@ class CategoryPage extends StatelessWidget {
     childAspectRatio: 0.8,
   );
 
+  const CategoryPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CategoryBloc, CategoryState>(builder: (ctx, state) {
@@ -33,8 +34,8 @@ class CategoryPage extends StatelessWidget {
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
             ),
             _buildContent(context, state),
-            SliverToBoxAdapter(
-              child: const NoMoreWidget(),
+            const SliverToBoxAdapter(
+              child: NoMoreWidget(),
             )
           ],
         );
@@ -49,18 +50,16 @@ class CategoryPage extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
       sliver: SliverGrid(
           delegate: SliverChildBuilderDelegate(
-              (_, index) => Container(
-                    child: GestureDetector(
-                        onTap: () =>
-                            _toDetailPage(context, state.categories[index]),
-                        child: CategoryListItem(
-                          data: state.categories[index],
-                          onDeleteItemClick: (model) =>
-                              _deleteCollect(context, model),
-                          onEditItemClick: (model) =>
-                              _editCollect(context, model),
-                        )),
-                  ),
+              (_, index) => GestureDetector(
+                  onTap: () =>
+                      _toDetailPage(context, state.categories[index]),
+                  child: CategoryListItem(
+                    data: state.categories[index],
+                    onDeleteItemClick: (model) =>
+                        _deleteCollect(context, model),
+                    onEditItemClick: (model) =>
+                        _editCollect(context, model),
+                  )),
               childCount: state.categories.length),
           gridDelegate: gridDelegate),
     );
@@ -75,7 +74,7 @@ class CategoryPage extends StatelessWidget {
         builder: (ctx) => Dialog(
               elevation: 5,
               shape: rRectBorder,
-              child: Container(
+              child: SizedBox(
                 width: 50,
                 child: DeleteCategoryDialog(
                   title: '删除收藏集',
@@ -94,7 +93,7 @@ class CategoryPage extends StatelessWidget {
     showDialog(
         context: context,
         builder: (ctx) => Dialog(
-              backgroundColor: Color(0xFFF2F2F2),
+              backgroundColor: const Color(0xFFF2F2F2),
               elevation: 5,
               shape: rRectBorder,
               child: Column(

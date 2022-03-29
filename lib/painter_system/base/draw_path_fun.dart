@@ -1,7 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 // import '../coordinate_pro.dart';
@@ -11,6 +8,8 @@ import 'dart:ui' as ui;
 /// 说明:
 
 class DrawPathFun extends StatelessWidget {
+  const DrawPathFun({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.shortestSide;
@@ -33,7 +32,7 @@ class PaperPainter extends CustomPainter {
   final double step = 6;
   final double min = -240;
   final double max = 240;
-  final List<Color> colors = [
+  final List<Color> colors = const[
     Color(0xFFF60C0C),
     Color(0xFFF3B913),
     Color(0xFFE7F716),
@@ -77,7 +76,7 @@ class PaperPainter extends CustomPainter {
     var pos = [1.0 / 7, 2.0 / 7, 3.0 / 7, 4.0 / 7, 5.0 / 7, 6.0 / 7, 1.0];
 
     paint.shader = ui.Gradient.linear(
-        Offset(0, 0), Offset(100, 0), colors, pos, TileMode.mirror);
+        const Offset(0, 0), const Offset(100, 0), colors, pos, TileMode.mirror);
 
     Offset p1 = points[0];
     Path path = Path()..moveTo(p1.dx, p1.dy);

@@ -12,7 +12,7 @@ class CollectWidgetListItem extends StatelessWidget {
   final WidgetModel data;
   final Function(WidgetModel model)? onDeleteItemClick;
 
-  CollectWidgetListItem({required this.data, this.onDeleteItemClick});
+  const CollectWidgetListItem({Key? key, required this.data, this.onDeleteItemClick}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +88,8 @@ class CollectWidgetListItem extends StatelessWidget {
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   shadows: [
-                    const Shadow(
-                        color: Colors.white, offset: const Offset(.3, .3))
+                    Shadow(
+                        color: Colors.white, offset: Offset(.3, .3))
                   ])),
         ),
       ],
@@ -97,16 +97,14 @@ class CollectWidgetListItem extends StatelessWidget {
 
   Widget _buildSummary() => Padding(
       padding: const EdgeInsets.only(left: 5, bottom: 5, top: 5),
-      child: Container(
-        child: Text(
-          data.nameCN,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-              color: Colors.grey[600],
-              fontSize: 14,
-              shadows: [const Shadow(color: Colors.white, offset: const Offset(.5, .5))]),
-        ),
+      child: Text(
+        data.nameCN,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+            color: Colors.grey[600],
+            fontSize: 14,
+            shadows: const [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
       ),
     );
 }

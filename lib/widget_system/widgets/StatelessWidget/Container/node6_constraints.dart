@@ -9,20 +9,23 @@
 //          "【constraints】 : 约束   【BoxConstraints】\n "
 //              "会约束该区域的尺寸，不会小于指定的最小宽高，也不会大于指定的最大宽高。",
 //    }
-
 import 'package:flutter/material.dart';
 
 class ContainerConstraints extends StatelessWidget {
+  const ContainerConstraints({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      //容器
       color: Colors.blue,
       width: 200,
       height: 200 * 0.618,
-      constraints: BoxConstraints(
-          minWidth: 100, maxWidth: 150,
-          minHeight: 20, maxHeight: 100),
+      constraints: const BoxConstraints(
+        minWidth: 100,
+        maxWidth: 150,
+        minHeight: 20,
+        maxHeight: 100,
+      ),
     );
   }
 }

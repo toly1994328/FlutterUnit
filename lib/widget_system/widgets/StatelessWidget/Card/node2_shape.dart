@@ -17,17 +17,19 @@ import 'package:flutter/material.dart';
 import '../../../../app/utils/pather.dart';
 
 class ShapeCard extends StatelessWidget {
+  const ShapeCard({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xffB3FE65),
+      color: const Color(0xffB3FE65),
       elevation: 6,
       shape: StarShapeBorder(),
       child: Container(
         alignment: Alignment.center,
         width: 100,
         height: 100,
-        child: Text("Card", style: TextStyle(fontSize: 20)),
+        child: const Text("Card", style: TextStyle(fontSize: 20)),
       ),
     );
   }

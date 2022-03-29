@@ -9,6 +9,8 @@ class Point {
 }
 
 class TriangularMesh extends StatefulWidget {
+  const TriangularMesh({Key? key}) : super(key: key);
+
   @override
   _TriangularMeshState createState() => _TriangularMeshState();
 }

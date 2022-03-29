@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 
 class PietMondrian extends StatefulWidget {
+  const PietMondrian({Key? key}) : super(key: key);
+
   @override
   _PietMondrianState createState() => _PietMondrianState();
 }
@@ -91,14 +93,14 @@ class PietMondrianPainnter extends CustomPainter {
     for (int i = squares.length - 1; i >= 0; i--) {
       final Square square = squares[i];
 
-      if (x != null && x > square.x && x < square.x + square.width) {
+      if (x > square.x && x < square.x + square.width) {
         if (Random().nextBool()) {
           squares.removeAt(i);
           _splitOnX(square, x, squares);
         }
       }
 
-      if (y != null && y > square.y && y < square.y + square.height) {
+      if (y > square.y && y < square.y + square.height) {
         if (Random().nextBool()) {
           squares.removeAt(i);
           _splitOnY(square, y, squares);

@@ -20,15 +20,17 @@ import '../PopupMenuButton/node1_base.dart';
 //    }
 
 class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text('风雅六社'),
-      leading: BackButton(),
+      title: const Text('风雅六社'),
+      leading: const BackButton(),
       backgroundColor: Colors.amber[500],
       elevation: 2,
       centerTitle: true,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
         topLeft: Radius.circular(20),
         bottomRight: Radius.circular(20),
@@ -37,12 +39,12 @@ class CustomAppBar extends StatelessWidget {
       )),
       actions: <Widget>[
         IconButton(
-            icon: Icon(Icons.star),
+            icon: const Icon(Icons.star),
             tooltip: 'liked_widget_bloc',
             onPressed: () {
               // do nothing
             }),
-        CustomPopupMenuButton()
+        const CustomPopupMenuButton()
       ],
     );
   }

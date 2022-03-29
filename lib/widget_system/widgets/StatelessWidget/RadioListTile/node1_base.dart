@@ -32,6 +32,8 @@ class ItemBean {
 }
 
 class CustomRadioListTile extends StatefulWidget {
+  const CustomRadioListTile({Key? key}) : super(key: key);
+
   @override
   _CustomRadioListTileState createState() => _CustomRadioListTileState();
 }

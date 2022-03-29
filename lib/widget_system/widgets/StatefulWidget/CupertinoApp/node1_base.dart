@@ -15,12 +15,14 @@ import 'package:flutter/cupertino.dart';
 //          "【home】 : 主页   【Widget】",
 //    }
 class CustomCupertinoApp extends StatelessWidget {
+  const CustomCupertinoApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height - 200,
-      child: CupertinoApp(
+      child: const CupertinoApp(
         title: 'Flutter Demo',
         theme: CupertinoThemeData(
           primaryColor: CupertinoColors.white,

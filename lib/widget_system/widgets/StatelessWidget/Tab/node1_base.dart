@@ -16,26 +16,26 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomTab extends StatelessWidget {
+  const CustomTab({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Tab(
-            icon:Icon( Icons.add,color: Colors.blue,),
-            child: Text('添加'),
-          ),
-          Tab(
-            icon:Icon( Icons.close,color: Colors.red,),
-            text: '删除',
-          ),
-          Tab(
-            icon:Icon( Icons.refresh,color: Colors.green),
-            text: '更新',
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const [
+        Tab(
+          icon:Icon( Icons.add,color: Colors.blue,),
+          child: Text('添加'),
+        ),
+        Tab(
+          icon:Icon( Icons.close,color: Colors.red,),
+          text: '删除',
+        ),
+        Tab(
+          icon:Icon( Icons.refresh,color: Colors.green),
+          text: '更新',
+        ),
+      ],
     );
   }
 }

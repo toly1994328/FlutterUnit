@@ -10,6 +10,8 @@ import 'package:flutter_unit/user_system/bloc/login/state.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 class LoginFrom extends StatefulWidget {
+  const LoginFrom({Key? key}) : super(key: key);
+
   @override
   _LoginFromState createState() => _LoginFromState();
 }
@@ -25,23 +27,23 @@ class _LoginFromState extends State<LoginFrom> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Text(
+        const Text(
           "FlutterUnit 登录",
           style: TextStyle(fontSize: 25),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
-        Text(
+        const Text(
           "更多精彩，更多体验 ~",
           style: TextStyle(color: Colors.grey),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         buildUsernameInput(),
         Stack(
-          alignment: Alignment(.8, 0),
+          alignment: const Alignment(.8, 0),
           children: [
             buildPasswordInput(),
             FeedbackWidget(
@@ -52,16 +54,16 @@ class _LoginFromState extends State<LoginFrom> {
         Row(
           children: <Widget>[
             Checkbox(value: true, onChanged: (e) => {}),
-            Text(
+            const Text(
               "自动登录",
               style: TextStyle(color: Color(0xff444444), fontSize: 14),
             ),
-            Spacer(),
+            const Spacer(),
             FeedbackWidget(
               onEnd: () {
                 Navigator.of(context).pushReplacementNamed(UnitRouter.register);
               },
-              child: Text(
+              child: const Text(
                 "用户注册",
                 style: TextStyle(
                     color: Colors.blue,
@@ -106,7 +108,7 @@ class _LoginFromState extends State<LoginFrom> {
           margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
           child: Row(
             children: <Widget>[
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
                 child: Icon(
                   Icons.person_outline,
@@ -122,7 +124,7 @@ class _LoginFromState extends State<LoginFrom> {
               Expanded(
                 child: TextField(
                   controller: _usernameController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                     hintText: '请输入用户名...',
                     hintStyle: TextStyle(color: Colors.grey),
@@ -150,7 +152,7 @@ class _LoginFromState extends State<LoginFrom> {
           margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
           child: Row(
             children: <Widget>[
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
                 child: Icon(
                   Icons.lock_outline,
@@ -167,7 +169,7 @@ class _LoginFromState extends State<LoginFrom> {
                 child: TextField(
                   obscureText: !_showPwd,
                   controller: _passwordController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                     hintText: '请输入密码...',
                     hintStyle: TextStyle(color: Colors.grey),
@@ -188,13 +190,13 @@ class _LoginFromState extends State<LoginFrom> {
         Padding(
           padding: const EdgeInsets.only(top: 30.0),
           child: Row(
-            children: [
+            children: const [
               Expanded(
                   child: Divider(
                 height: 20,
               )),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   '第三方登录',
                   style: TextStyle(color: Colors.grey),
@@ -207,7 +209,7 @@ class _LoginFromState extends State<LoginFrom> {
             ],
           ),
         ),
-        Icon(
+        const Icon(
           TolyIcon.icon_github,
           color: Colors.black,
           size: 30,
@@ -219,29 +221,29 @@ class _LoginFromState extends State<LoginFrom> {
   Widget _buildBtnByState(BuildContext context, LoginState state) {
     if(state is LoginLoading){
       return Container(
-          margin: EdgeInsets.only(top: 10, bottom: 0),
+          margin: const EdgeInsets.only(top: 10, bottom: 0),
           height: 40,
           width: 40,
           child: RaisedButton(
             elevation: 0,
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             color: Colors.blue.withOpacity(0.4),
             onPressed: _doLogIn,
-            child: CupertinoActivityIndicator(),
+            child: const CupertinoActivityIndicator(),
           ));
     }
     return Container(
-        margin: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
+        margin: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
         height: 40,
         width: MediaQuery.of(context).size.width,
         child: RaisedButton(
           elevation: 0,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(20))),
           color: Colors.blue,
           onPressed: _doLogIn,
-          child: Text("进入 Unit 世界",
+          child: const Text("进入 Unit 世界",
               style: TextStyle(color: Colors.white, fontSize: 18)),
         ));
   }
@@ -252,14 +254,14 @@ class _LoginFromState extends State<LoginFrom> {
     }
     if (state is LoginError) {
       Toast.toast(context, '登录失败 : ${state.message}!',
-          color: Colors.red, duration: Duration(seconds: 2));
+          color: Colors.red, duration: const Duration(seconds: 2));
     }
   }
 
   bool _preValidate(String username, String password) {
     if (username.isEmpty || password.isEmpty) {
       Toast.toast(context, '登录失败 : 用户名和密码不能为空!',
-          color: Colors.orange, duration: Duration(seconds: 2));
+          color: Colors.orange, duration: const Duration(seconds: 2));
       return false;
     }
     return true;

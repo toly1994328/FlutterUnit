@@ -19,17 +19,19 @@
 import 'package:flutter/material.dart';
 
 class AboutListTileDemo extends StatelessWidget {
+  const AboutListTileDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return AboutListTile(
-      icon: Icon(Icons.info),
-      applicationIcon: FlutterLogo(),
+    return const AboutListTile(
+      icon:  Icon(Icons.info),
+      applicationIcon:  FlutterLogo(),
       applicationName: 'Flutter Unit',
       applicationVersion: 'v0.0.1',
       applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
       aboutBoxChildren: [
-        Padding(
-          padding: const EdgeInsets.all(10.0),
+         Padding(
+          padding: EdgeInsets.all(10.0),
           child: Text(
             '      FlutterUnit是【张风捷特烈】的开源项目，'
                 '收录Flutter的200+组件，并附加详细介绍以及操作交互，'

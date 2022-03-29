@@ -10,9 +10,11 @@ import 'package:flutter/material.dart';
 //          "【painter】 : 绘画器   【CustomPainter】",
 //    }
 class ClockPage extends StatelessWidget {
+  const ClockPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: 100,
       child:RepaintBoundary(
@@ -27,11 +29,11 @@ class ClockPage extends StatelessWidget {
 
 class ClockPainter extends CustomPainter {
   late Paint _paint;
-  double _radius = 3.0; //小球半径
-  Path _path = Path(); //画笔对象
+  final double _radius = 3.0; //小球半径
+  final Path _path = Path(); //画笔对象
   ClockPainter () {
-    _paint = Paint()..color= Color(0xff45d0fd)..isAntiAlias=true;
-    _path.addOval(Rect.fromCircle(radius: _radius, center: Offset(0, 0))); //小球路径
+    _paint = Paint()..color= const Color(0xff45d0fd)..isAntiAlias=true;
+    _path.addOval(Rect.fromCircle(radius: _radius, center: const Offset(0, 0))); //小球路径
   }
 
   @override

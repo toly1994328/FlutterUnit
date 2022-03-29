@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomColumn extends StatelessWidget {
+  const CustomColumn({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,9 +31,9 @@ class CustomColumn extends StatelessWidget {
   Widget _buildTitle() {
     return Container(
         height: 70,
-        color: Color(0x4484FFFF),
+        color: const Color(0x4484FFFF),
         child: Row(
-          children: <Widget>[
+          children: const [
             Padding(
               child: Icon(
                 Icons.add_location,
@@ -58,7 +60,7 @@ class CustomColumn extends StatelessWidget {
         width: MediaQuery.of(ctx).size.width,
         color: Colors.orangeAccent,
         height: 100,
-        child: Icon(
+        child: const Icon(
           Icons.android,
           size: 50,
           color: Colors.white,

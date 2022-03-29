@@ -17,6 +17,8 @@ import 'version/version_shower.dart';
 /// 说明: 
 
 class VersionInfo extends StatelessWidget {
+  const VersionInfo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +26,12 @@ class VersionInfo extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.grey
         ),
       ),
       body:ConstrainedBox(
-        constraints: BoxConstraints.expand(),
+        constraints: const BoxConstraints.expand(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -39,7 +41,7 @@ class VersionInfo extends StatelessWidget {
               ),
 
               _buildCenter(context),
-              Spacer(),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(bottom:8.0),
                 child: buildBottom(),
@@ -56,16 +58,16 @@ class VersionInfo extends StatelessWidget {
       direction: Axis.vertical,
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 10,
-      children: <Widget>[
+      children: const [
         CircleImage(image: AssetImage("assets/images/icon_head.webp"),size: 80,),
         Text('Flutter Unit',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        const VersionShower(),
+        VersionShower(),
       ],
     );
   }
 
   Widget _buildCenter(BuildContext context) {
-    final labelStyle= TextStyle(fontSize: 13);
+    const TextStyle labelStyle= TextStyle(fontSize: 13);
     return Padding(
       padding: const EdgeInsets.only(left:20.0,right: 20,top: 20),
       child: ScrollConfiguration(
@@ -73,23 +75,23 @@ class VersionInfo extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: <Widget>[
-            Divider(height: 1,),
+            const Divider(height: 1,),
             ListTile(
-              title: Text('应用详情',style: labelStyle,),
+              title: const Text('应用详情',style: labelStyle,),
               trailing: _nextIcon(context),
               onTap: () => Navigator.of(context).pushNamed(UnitRouter.about_app),
             ),
-            Divider(height: 1,indent: 10),
+            const Divider(height: 1,indent: 10),
             const AppUpdatePanel(),
-            Divider(height: 1,indent: 10),
+            const Divider(height: 1,indent: 10),
             ListTile(
-              title: Text('检查数据库新版本',style: labelStyle),
+              title: const Text('检查数据库新版本',style: labelStyle),
               trailing: _nextIcon(context),
               onTap: () async{
 
               },
             ),
-            Divider(height: 1,),
+            const Divider(height: 1,),
           ],
         ),
       ),
@@ -97,7 +99,7 @@ class VersionInfo extends StatelessWidget {
   }
 
   Widget _nextIcon(BuildContext context) =>
-      Icon(Icons.chevron_right, color: Colors.grey);
+      const Icon(Icons.chevron_right, color: Colors.grey);
 
   Widget buildBottom() {
     return Wrap(
@@ -109,14 +111,14 @@ class VersionInfo extends StatelessWidget {
             onPressed: (){
               _launchURL("https://github_model.com/toly1994328/FlutterUnit");
             },
-            child: Text('《查看本项目Github仓库》',style: TextStyle(fontSize: 12,color: Color(0xff616C84),),)),
-        Text('Power By 张风捷特烈',style: TextStyle(fontSize: 12,color: Colors.grey),),
-        Text('Copyright © 2008-2020 Toly1994',style: TextStyle(fontSize: 12,color: Colors.grey),),
+            child: const Text('《查看本项目Github仓库》',style: TextStyle(fontSize: 12,color: Color(0xff616C84),),)),
+        const Text('Power By 张风捷特烈',style: TextStyle(fontSize: 12,color: Colors.grey),),
+        const Text('Copyright © 2008-2020 Toly1994',style: TextStyle(fontSize: 12,color: Colors.grey),),
       ],
     );
   }
 
-  _launchURL(String url) async {
+  void _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {

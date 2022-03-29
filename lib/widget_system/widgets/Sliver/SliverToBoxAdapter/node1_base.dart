@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 //          "【child】 : 子组件   【Widget】",
 //    }
 class SliverToBoxAdapterDemo extends StatelessWidget {
+  SliverToBoxAdapterDemo({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.purple[50]!,
     Colors.purple[100]!,
@@ -26,7 +28,7 @@ class SliverToBoxAdapterDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: CustomScrollView(
         slivers: <Widget>[
@@ -40,15 +42,15 @@ class SliverToBoxAdapterDemo extends StatelessWidget {
 
   Widget _buildCommonWidget() => SliverToBoxAdapter(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           color: Colors.grey.withAlpha(22),
           child: ListTile(
             leading: Image.asset("assets/images/icon_head.webp"),
-            title: Text("以梦为马"),
-            subtitle: Text("海子"),
+            title: const Text("以梦为马"),
+            subtitle: const Text("海子"),
             selected: true,
-            contentPadding: EdgeInsets.all(5),
-            trailing: Icon(Icons.more_vert),
+            contentPadding: const EdgeInsets.all(5),
+            trailing: const Icon(Icons.more_vert),
           ),
         ),
       );
@@ -62,7 +64,7 @@ class SliverToBoxAdapterDemo extends StatelessWidget {
                   color: data[index],
                   child: Text(
                     colorString(data[index]),
-                    style: TextStyle(color: Colors.white, shadows: [
+                    style: const TextStyle(color: Colors.white, shadows: [
                       Shadow(
                           color: Colors.black,
                           offset: Offset(.5, .5),
@@ -77,14 +79,14 @@ class SliverToBoxAdapterDemo extends StatelessWidget {
     return SliverAppBar(
       expandedHeight: 190.0,
       leading: _buildLeading(),
-      title: Text('张风捷特烈'),
+      title: const Text('张风捷特烈'),
       actions: _buildActions(),
       elevation: 2,
       pinned: true,
       backgroundColor: Colors.orange,
       flexibleSpace: FlexibleSpaceBar(
         //伸展处布局
-        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        titlePadding: const EdgeInsets.only(left: 55, bottom: 15), //标题边距
         collapseMode: CollapseMode.parallax, //视差效果
         background: Image.asset(
           "assets/images/caver.webp",
@@ -95,13 +97,13 @@ class SliverToBoxAdapterDemo extends StatelessWidget {
   }
 
   Widget _buildLeading() => Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Image.asset('assets/images/icon_head.webp'));
 
   List<Widget> _buildActions() => <Widget>[
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.star_border,
             color: Colors.white,
           ),

@@ -6,11 +6,11 @@ class Tag extends StatelessWidget {
   final double tranRate;
   final Color color;
 
-  const Tag({this.size = const Size(100, 150),this.shadowHeight=9.0,this.tranRate=0.25,this.color=Colors.red});
+  const Tag({Key? key, this.size = const Size(100, 150),this.shadowHeight=9.0,this.tranRate=0.25,this.color=Colors.red}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: size.width,
       height: size.height,
       child: CustomPaint(
@@ -27,14 +27,14 @@ class Tag extends StatelessWidget {
 class _TagPaint extends CustomPainter {
   Path path = Path();
   Path shadowPath = Path();
-  Paint _paint;
-  final tranRate;
+  final Paint _paint;
+  final double tranRate;
   final double shadowHeight;
   final Color color;
 
   final rate = 0.5;
 
-  _TagPaint({this.tranRate,required this.color ,required this.shadowHeight})
+  _TagPaint({this.tranRate=0,required this.color ,required this.shadowHeight})
       : _paint = Paint()..color = color;
 
   @override

@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import '../utils/colors.dart';
 
 class Circle {
-  Point center = Point(0,0);
+  Point center = const Point(0,0);
   double radius = 10;
   Color color = Colors.black;
 }
 
 class CirclePacking extends StatefulWidget {
+  const CirclePacking({Key? key}) : super(key: key);
+
   @override
   _CirclePackingState createState() => _CirclePackingState();
 }

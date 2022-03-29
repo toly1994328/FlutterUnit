@@ -17,12 +17,14 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomInkResponse extends StatefulWidget {
+  const CustomInkResponse({Key? key}) : super(key: key);
+
   @override
   _CustomInkResponseState createState() => _CustomInkResponseState();
 }
 
 class _CustomInkResponseState extends State<CustomInkResponse> {
-  var _info = 'Push';
+  String _info = 'Push';
 
   @override
   Widget build(BuildContext context) {

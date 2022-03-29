@@ -20,9 +20,11 @@ import 'package:flutter/material.dart';
 //    }
 
 class ScrollViewDemo extends StatelessWidget {
+  const ScrollViewDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: MyScrollView(),
     );
@@ -30,6 +32,8 @@ class ScrollViewDemo extends StatelessWidget {
 }
 
 class MyScrollView extends ScrollView {
+  MyScrollView({Key? key}) : super(key: key);
+
   final String info =
       'ScrollView 其内部依靠 Viewport + Scrollable 实现滑动。它只有一个 buildSlivers 的抽象方法，返回 Sliver 家族 Widget 列表，'
       '其子类最简单的是 CustomScrollView，将 slivers 交由用户传递，自身打个酱油。'
@@ -55,8 +59,8 @@ class MyScrollView extends ScrollView {
       SliverToBoxAdapter(
         child: Container(
           color: Colors.blue.withOpacity(0.1),
-          padding: EdgeInsets.all(10),
-          margin: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Text(info),
         ),
       ),
@@ -68,13 +72,12 @@ class MyScrollView extends ScrollView {
     return SliverAppBar(
       expandedHeight: 190.0,
       leading: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Image.asset('assets/images/icon_head.webp')),
-      flexibleSpace: FlexibleSpaceBar(
-        //伸展处布局
-        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+      flexibleSpace: FlexibleSpaceBar(//伸展处布局
+        titlePadding: const EdgeInsets.only(left: 55, bottom: 15), //标题边距
         collapseMode: CollapseMode.parallax, //视差效果
-        title: Text(
+        title: const Text(
           '张风捷特烈',
           style: TextStyle(color: Colors.black, //标题
               shadows: [
@@ -99,7 +102,7 @@ class MyScrollView extends ScrollView {
                   color: data[index],
                   child: Text(
                     colorString(data[index]),
-                    style: TextStyle(color: Colors.white, shadows: [
+                    style: const TextStyle(color: Colors.white, shadows: [
                       Shadow(
                           color: Colors.black,
                           offset: Offset(.5, .5),

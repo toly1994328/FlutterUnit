@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
@@ -17,6 +16,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class GlowingOverscrollIndicatorDemo extends StatelessWidget {
+  GlowingOverscrollIndicatorDemo({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.orange[50]!,
     Colors.orange[100]!,
@@ -42,7 +43,7 @@ class GlowingOverscrollIndicatorDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: GlowingOverscrollIndicator(
         color: Colors.purple,
@@ -51,7 +52,7 @@ class GlowingOverscrollIndicatorDemo extends StatelessWidget {
         axisDirection: AxisDirection.down,
         child: ListView.builder(
           itemBuilder: (_, index) => Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             height: 60,
             color: data[index],
           ),

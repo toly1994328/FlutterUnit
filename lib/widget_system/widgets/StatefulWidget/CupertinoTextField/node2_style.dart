@@ -19,23 +19,22 @@ import 'package:flutter/material.dart';
 //          "【readOnly】: 是否只读    【bool】",
 //    }
 class CupertinoTextFieldStyle extends StatelessWidget {
+  const CupertinoTextFieldStyle({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child:
-          CupertinoTextField(
-            style: TextStyle(color: Colors.blue),
-            prefix: Icon(CupertinoIcons.add),
-            prefixMode: OverlayVisibilityMode.notEditing,
-            suffix: Icon(CupertinoIcons.clear),
-            suffixMode: OverlayVisibilityMode.editing,
-            cursorColor: Colors.purple,
-            cursorWidth: 4,
-            cursorRadius: Radius.circular(2),
-            readOnly: false,
-            placeholder: '输入用户名',
-          )
+    return const CupertinoTextField(
+      style: TextStyle(color: Colors.blue),
+      prefix: Icon(CupertinoIcons.add),
+      prefixMode: OverlayVisibilityMode.notEditing,
+      suffix: Icon(CupertinoIcons.clear),
+      suffixMode: OverlayVisibilityMode.editing,
+      cursorColor: Colors.purple,
+      cursorWidth: 4,
+      cursorRadius: Radius.circular(2),
+      readOnly: false,
+      placeholder: '输入用户名',
     );
   }
 }

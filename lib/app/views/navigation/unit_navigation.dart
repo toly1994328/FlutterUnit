@@ -18,7 +18,7 @@ import '../../blocs/color_change_bloc.dart';
 /// 说明: 主题结构 左右滑页 + 底部导航栏
 
 class UnitNavigation extends StatefulWidget {
-  const UnitNavigation();
+  const UnitNavigation({Key? key}) : super(key: key);
 
   @override
   _UnitNavigationState createState() => _UnitNavigationState();
@@ -34,7 +34,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<UpdateBloc>(context).add(CheckUpdate(appName: 'FlutterUnit'));
+    BlocProvider.of<UpdateBloc>(context).add(const CheckUpdate(appName: 'FlutterUnit'));
   }
 
   @override
@@ -56,7 +56,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
           child: PageView(
           physics: _neverScroll,
           controller: _controller,
-          children: <Widget>[
+          children: const[
             HomePage(),
             GalleryUnit(),
             CollectPage(),
@@ -111,7 +111,7 @@ class _UnitNavigationState extends State<UnitNavigation> {
     }
 
     if (index == 2) {
-      BlocProvider.of<LikeWidgetBloc>(context).add(EventLoadLikeData());
+      BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     }
   }
 

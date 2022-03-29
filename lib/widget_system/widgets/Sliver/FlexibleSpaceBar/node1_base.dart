@@ -1,9 +1,7 @@
-/// create by 张风捷特烈 on 2020-03-31
-/// contact me by email 1981462002@qq.com
-/// 说明: 
-
 import 'package:flutter/material.dart';
 
+/// create by 张风捷特烈 on 2020-03-31
+/// contact me by email 1981462002@qq.com
 /// 说明:
 //    {
 //      "widgetId": 196,
@@ -17,7 +15,9 @@ import 'package:flutter/material.dart';
 //          "【background】 : 背景组件   【Widget】\n"
 //          "【centerTitle】 : 是否居中   【bool】",
 //    }
+
 class FlexibleSpaceBarDemo extends StatelessWidget {
+  FlexibleSpaceBarDemo({Key? key}) : super(key: key);
 
   final List<Color> data =[
     Colors.blue[50]!,
@@ -34,15 +34,11 @@ class FlexibleSpaceBarDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        Container(
-          height: 300,
-          child: CustomScrollView(
-            slivers: <Widget>[
-              _buildSliverAppBar(),
-              _buildSliverFixedExtentList()
-            ],
-          ),
+    return SizedBox(
+      height: 300,
+      child: CustomScrollView(
+        slivers: <Widget>[_buildSliverAppBar(), _buildSliverFixedExtentList()],
+      ),
     );
   }
 
@@ -55,12 +51,17 @@ class FlexibleSpaceBarDemo extends StatelessWidget {
       backgroundColor: Colors.blue,
       flexibleSpace: FlexibleSpaceBar(//伸展处布局
         centerTitle: false,
-        title: Text('张风捷特烈',style: TextStyle(shadows: [
-          Shadow(color: Colors.blue, offset: Offset(1, 1), blurRadius: 2)
-        ]),),
-        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
-        collapseMode: CollapseMode.parallax, //视差效果
-        stretchModes: [StretchMode.blurBackground,StretchMode.zoomBackground],
+        title: const Text(
+          '张风捷特烈',
+          style: TextStyle(shadows: [
+            Shadow(color: Colors.blue, offset: Offset(1, 1), blurRadius: 2)
+          ]),
+        ),
+        titlePadding: const EdgeInsets.only(left: 55, bottom: 15),
+        //标题边距
+        collapseMode: CollapseMode.parallax,
+        //视差效果
+        stretchModes: const [StretchMode.blurBackground, StretchMode.zoomBackground],
         background: Image.asset(
           "assets/images/caver.webp",
           fit: BoxFit.cover,
@@ -70,16 +71,16 @@ class FlexibleSpaceBarDemo extends StatelessWidget {
   }
 
   Widget _buildLeading() => Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Image.asset('assets/images/icon_head.webp'));
 
   List<Widget> _buildActions() => <Widget>[
     IconButton(
       onPressed: () {},
-      icon: Icon(
-        Icons.star_border,
-        color: Colors.white,
-      ),
+      icon: const Icon(
+            Icons.star_border,
+            color: Colors.white,
+          ),
     )
   ];
 
@@ -93,12 +94,12 @@ class FlexibleSpaceBarDemo extends StatelessWidget {
           color: data[index],
           child: Text(
             colorString(data[index]),
-            style: TextStyle(color: Colors.white, shadows: [
-              Shadow(
-                  color: Colors.black,
-                  offset: Offset(.5, .5),
-                  blurRadius: 2)
-            ]),
+            style: const TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
           ),
         ),
         childCount: data.length),

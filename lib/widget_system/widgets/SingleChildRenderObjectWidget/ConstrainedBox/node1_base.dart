@@ -15,25 +15,27 @@ import 'package:flutter/material.dart';
 //          "【maxWidth】 : 最大宽   【double】",
 //    }
 class CustomConstrainedBox extends StatefulWidget {
+  const CustomConstrainedBox({Key? key}) : super(key: key);
+
   @override
   _CustomConstrainedBoxState createState() => _CustomConstrainedBoxState();
 }
 
 class _CustomConstrainedBoxState extends State<CustomConstrainedBox> {
-  var _text = '';
+  String _text = '';
 
   @override
   Widget build(BuildContext context) {
-    var child = Container(
+    Widget child = Container(
       alignment: Alignment.center,
       color: Colors.cyanAccent,
       width: 40,
       height: 40,
-      child: Text("Static"),
+      child: const Text("Static"),
     );
 
-    var box = ConstrainedBox(
-      constraints: BoxConstraints(
+    Widget box = ConstrainedBox(
+      constraints: const BoxConstraints(
         minHeight: 50,
         minWidth: 20,
         maxHeight: 80,
@@ -60,7 +62,7 @@ class _CustomConstrainedBoxState extends State<CustomConstrainedBox> {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: TextField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: OutlineInputBorder(),
           hintText: '请输入',
         ),

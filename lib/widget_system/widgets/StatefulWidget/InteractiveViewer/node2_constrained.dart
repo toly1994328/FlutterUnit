@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -12,12 +11,28 @@ import 'package:flutter/material.dart';
 //    }
 
 class InteractiveViewerDemo2 extends StatelessWidget {
+  const InteractiveViewerDemo2({Key? key}) : super(key: key);
 
+  final List<Color> colors = const [
+    Colors.red,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green
+  ];
+
+  final List<Color> colors2 = const [
+    Colors.yellow,
+    Colors.blue,
+    Colors.green,
+    Colors.red
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    const int _rowCount = 20;
-    const int _columnCount = 4;
+    int _rowCount = 20;
+    int _columnCount = 4;
 
-    return Container(
+    return SizedBox(
       width: 300,
       height: 200,
       child: InteractiveViewer(
@@ -36,24 +51,25 @@ class InteractiveViewerDemo2 extends StatelessWidget {
 
   List<TableRow> buildRows(int rowCount, int columnCount) {
     return <TableRow>[
-          for (int row = 0; row < rowCount; row += 1)
-            TableRow(
-              children: <Widget>[
-                for (int column = 0; column < columnCount; column += 1)
-                  Container(
-                    margin: EdgeInsets.all(2),
-                    height: 50,
-                    alignment: Alignment.center,
-                    color: _colorful(row,column),
-                    child: Text('($row,$column)',style: TextStyle(fontSize: 20,color: Colors.white),),
-                  ),
-              ],
-            ),
-        ];
+      for (int row = 0; row < rowCount; row += 1)
+        TableRow(
+          children: <Widget>[
+            for (int column = 0; column < columnCount; column += 1)
+              Container(
+                margin: const EdgeInsets.all(2),
+                height: 50,
+                alignment: Alignment.center,
+                color: _colorful(row, column),
+                child: Text(
+                  '($row,$column)',
+                  style: const TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+          ],
+        ),
+    ];
   }
 
-  final colors = [Colors.red,Colors.yellow,Colors.blue,Colors.green];
-  final colors2 = [Colors.yellow,Colors.blue,Colors.green,Colors.red];
-
-  _colorful(int row, int column ) => row % 2==0?colors[column]:colors2[column];
+  Color _colorful(int row, int column) =>
+      row % 2 == 0 ? colors[column] : colors2[column];
 }

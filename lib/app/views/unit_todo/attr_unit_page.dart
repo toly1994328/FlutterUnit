@@ -3,15 +3,17 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/text_typer.dart';
 
 class AttrUnitPage extends StatelessWidget {
-  final info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'
+  final String info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'
       '会对所有Widget的所有属性进行收录整理到数据库，进行数据分析和组件关联。'
       '并且对一些重要属性，进行全面讲解。';
+
+  const AttrUnitPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('属性集录'),
+        title: const Text('属性集录'),
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -19,7 +21,7 @@ class AttrUnitPage extends StatelessWidget {
           Positioned(
             top: 50,
             child: Column(
-              children: <Widget>[
+              children: const [
                 CircleImage(
                   image: AssetImage('assets/images/icon_head.webp'),
                   size: 80,
@@ -38,13 +40,13 @@ class AttrUnitPage extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: ShaderMask(
               shaderCallback: (rect) =>
                   _buildShader(rect, Theme.of(context).primaryColor),
               child: TextTyper(
                 text:info,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   shadows: [
                     Shadow(
                         color: Colors.black,
@@ -73,7 +75,7 @@ class AttrUnitPage extends StatelessWidget {
       .createShader(bounds);
 
   Widget buildPower() {
-    return Positioned(
+    return const Positioned(
       bottom: 30,
       right: 30,
       child:

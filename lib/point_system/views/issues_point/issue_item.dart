@@ -15,12 +15,12 @@ import 'package:flutter_unit/components/permanent/color_wrapper.dart';
 class IssueItem extends StatelessWidget {
   final Issue issue;
 
-  IssueItem({required this.issue});
+  const IssueItem({Key? key, required this.issue}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
           border: Border(
               bottom: BorderSide(
@@ -34,24 +34,24 @@ class IssueItem extends StatelessWidget {
             padding: const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 10),
             child: Text(
               '${issue.title}',
-              style: TextStyle(fontSize: 15, color: Colors.grey, shadows: [
+              style: const TextStyle(fontSize: 15, color: Colors.grey, shadows: [
                 Shadow(color: Colors.white, offset: Offset(1, .5))
               ]),
             ),
           ),
           Row(
             children: <Widget>[
-              Spacer(),
+              const Spacer(),
               WrapColor(
                   color: Colors.greenAccent,
                   child: Text(
                     issue.commentNum.toString(),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   )),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
-              Icon(
+              const Icon(
                 TolyIcon.icon_common,
                 size: 20,
               ),
@@ -70,22 +70,22 @@ class IssueItem extends StatelessWidget {
           size: 40,
           borderSize: 2,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         WrapColor(
             child: Text(
               "#${issue.number}",
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             )),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Text(
           '${issue.user?.login}',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        Spacer(),
+        const Spacer(),
         Text(ConvertMan.time2string(issue.createdAt!)),
       ],
     );

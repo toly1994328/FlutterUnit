@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -18,17 +16,19 @@ import 'package:flutter/services.dart';
 
 
 class AnnotatedRegionDemo extends StatelessWidget {
+  const AnnotatedRegionDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         onPressed: (){
           Navigator.push(context,
-            MaterialPageRoute(builder: (context) => AnnotatedRegionTestPage()),
+            MaterialPageRoute(builder: (context) => const AnnotatedRegionTestPage()),
           );
         },
-        child: Text("进入 AnnotatedRegion 测试页"),
+        child: const Text("进入 AnnotatedRegion 测试页"),
       ),
     );
   }
@@ -36,9 +36,11 @@ class AnnotatedRegionDemo extends StatelessWidget {
 
 
 class AnnotatedRegionTestPage extends StatelessWidget{
+  const AnnotatedRegionTestPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final SystemUiOverlayStyle overlayStyle = SystemUiOverlayStyle(
+    const SystemUiOverlayStyle overlayStyle =  SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.green,
       // 导航栏颜色
       systemNavigationBarDividerColor: Colors.red,
@@ -51,33 +53,31 @@ class AnnotatedRegionTestPage extends StatelessWidget{
     return AnnotatedRegion<SystemUiOverlayStyle>(
         value: overlayStyle,
         child: Scaffold(
-          body: Container(
-            child: Column(
-              children: [
-                Container(height: 56+30.0,color: Colors.blue,
-                alignment: Alignment(0,0.55),
-                child: Row(
-                  children: [
-                    BackButton(color: Colors.white,),
-                    Text("AnnotatedRegion测试",style: TextStyle(color: Colors.white,fontSize: 18),)
-                  ],
-                ),
-                ),
-                SizedBox(height: 30,),
-                Text(
-                  "上面标题栏背景颜色为蓝色\n"
-                      "上面标题栏图标为亮调",
+          body: Column(
+            children: [
+              Container(height: 56+30.0,color: Colors.blue,
+              alignment: const Alignment(0,0.55),
+              child: Row(
+                children: const [
+                  BackButton(color: Colors.white,),
+                  Text("AnnotatedRegion测试",style: TextStyle(color: Colors.white,fontSize: 18),)
+                ],
+              ),
+              ),
+              const SizedBox(height: 30,),
+              const Text(
+                "上面标题栏背景颜色为蓝色\n"
+                    "上面标题栏图标为亮调",
 
-                  style: TextStyle(color: Colors.black,fontSize: 18),),
-                Spacer(),
-                Text(
-                      "下面导航栏背景颜色为绿色\n"
-                      "下面导航栏图标为亮调",
+                style: TextStyle(color: Colors.black,fontSize: 18),),
+              const Spacer(),
+              const Text(
+                    "下面导航栏背景颜色为绿色\n"
+                    "下面导航栏图标为亮调",
 
-                  style: TextStyle(color: Colors.black,fontSize: 18),),
-                SizedBox(height: 30,),
-              ],
-            ),
+                style: TextStyle(color: Colors.black,fontSize: 18),),
+              const SizedBox(height: 30,),
+            ],
           ),
       ),
     );

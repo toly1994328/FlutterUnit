@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
@@ -13,13 +13,15 @@ import 'package:flutter/material.dart';
 //          "【tag】 : 标签   【String】\n",
 //    }
 class CustomHero extends StatelessWidget {
+  const CustomHero({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var hero = Hero(
+    Hero hero = Hero(
       //----定义一个Hero,并添加tag标签,此中组件共享
       tag: 'user-head',
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(30)),
+        borderRadius: const BorderRadius.all(Radius.circular(30)),
         child: Image.asset(
           "assets/images/icon_head.webp",
           width: 60,
@@ -29,8 +31,8 @@ class CustomHero extends StatelessWidget {
       ),
     );
 
-    var container = Container(
-      alignment: Alignment(-0.8, -0.8),
+    Widget container = Container(
+      alignment: const Alignment(-0.8, -0.8),
       child: hero,
       width: 250,
       height: 250 * 0.618,
@@ -47,7 +49,7 @@ class CustomHero extends StatelessWidget {
       child: Card(elevation: 5, child: container),
       onTap: () => Navigator.push(
         context,
-        Bottom2TopRouter(child: TargetPage(), duration: 1000),
+        Bottom2TopRouter(child: const TargetPage(), duration: 1000),
       ),
     );
   }
@@ -55,9 +57,11 @@ class CustomHero extends StatelessWidget {
 }
 
 class TargetPage extends StatelessWidget {
+  const TargetPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var hero = Hero(
+    Hero hero = const Hero(
       //----定义一个Hero,为其添加标签，两个标签相同，则可以共享
       tag: 'user-head',
       child: Padding(
@@ -71,7 +75,7 @@ class TargetPage extends StatelessWidget {
       ),
     );
 
-    var touch = InkWell(
+    Widget touch = InkWell(
       onTap: () {
         Navigator.of(context).pop();
       },
@@ -80,7 +84,7 @@ class TargetPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        actions: <Widget>[touch],
+        actions: [touch],
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -117,8 +121,8 @@ class Bottom2TopRouter<T> extends PageRouteBuilder<T> {
               Widget child,
             ) => SlideTransition(
                   position: Tween<Offset>(
-                    begin: Offset(0.0, 1.0),
-                    end: Offset(0.0, 0.0),
+                    begin: const Offset(0.0, 1.0),
+                    end: const Offset(0.0, 0.0),
                   ).animate(CurvedAnimation(parent: a1, curve: curve)),
                   child: child));
 }

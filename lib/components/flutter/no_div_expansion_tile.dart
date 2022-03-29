@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 
 const Duration _kExpand = Duration(milliseconds: 200);
@@ -37,8 +36,7 @@ class NoBorderExpansionTile extends StatefulWidget {
     this.children = const <Widget>[],
     this.trailing,
     this.initiallyExpanded = false,
-  }) : assert(initiallyExpanded != null),
-        super(key: key);
+  }) : super(key: key);
 
   /// A widget to display before the title.
   ///
@@ -110,8 +108,9 @@ class _NoBorderExpansionTileState extends State<NoBorderExpansionTile> with Sing
     _backgroundColor = _controller.drive(_backgroundColorTween.chain(_easeOutTween));
 
     _isExpanded = PageStorage.of(context)?.readState(context) ?? widget.initiallyExpanded;
-    if (_isExpanded)
+    if (_isExpanded) {
       _controller.value = 1.0;
+    }
   }
 
 
@@ -128,8 +127,9 @@ class _NoBorderExpansionTileState extends State<NoBorderExpansionTile> with Sing
         _controller.forward();
       } else {
         _controller.reverse().then<void>((void value) {
-          if (!mounted)
+          if (!mounted) {
             return;
+          }
           setState(() {
             // Rebuild without widget.children.
           });
@@ -177,7 +177,7 @@ class _NoBorderExpansionTileState extends State<NoBorderExpansionTile> with Sing
   void didChangeDependencies() {
     final ThemeData theme = Theme.of(context);
     _borderColorTween
-      ..end = theme.dividerColor;
+      .end = theme.dividerColor;
     _headerColorTween
       ..begin = theme.textTheme.subtitle1!.color
       ..end = theme.accentColor;
@@ -185,7 +185,7 @@ class _NoBorderExpansionTileState extends State<NoBorderExpansionTile> with Sing
       ..begin = theme.unselectedWidgetColor
       ..end = theme.accentColor;
     _backgroundColorTween
-      ..end = widget.backgroundColor;
+      .end = widget.backgroundColor;
     super.didChangeDependencies();
   }
 

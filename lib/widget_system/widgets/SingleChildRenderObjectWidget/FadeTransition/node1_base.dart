@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【opacity】 : 动画   【Animation<double>】",
 //    }
 class CustomFadeTransition extends StatefulWidget {
+  const CustomFadeTransition({Key? key}) : super(key: key);
+
   @override
   _CustomFadeTransitionState createState() => _CustomFadeTransitionState();
 }
@@ -22,7 +24,10 @@ class _CustomFadeTransitionState extends State<CustomFadeTransition>
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 2));
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
     _ctrl.forward();
     super.initState();
   }
@@ -43,7 +48,7 @@ class _CustomFadeTransitionState extends State<CustomFadeTransition>
         height: 100,
         child: FadeTransition(
           opacity: CurvedAnimation(parent: _ctrl, curve: Curves.linear),
-          child: Icon(Icons.android, color: Colors.green, size: 60),
+          child: const Icon(Icons.android, color: Colors.green, size: 60),
         ),
       ),
     );

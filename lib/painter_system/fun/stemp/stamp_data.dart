@@ -116,13 +116,13 @@ class Stamp {
       double r = radius;
       double rad = 30 / 180 * pi;
 
-      _path!..moveTo(center.dx, center.dy);
+      _path!.moveTo(center.dx, center.dy);
       _path!.relativeMoveTo(r * cos(rad), -r * sin(rad));
       _path!.relativeLineTo(-2 * r * cos(rad), 0);
       _path!.relativeLineTo(r * cos(rad), r + r * sin(rad));
       _path!.relativeLineTo(r * cos(rad), -(r + r * sin(rad)));
 
-      _path!..moveTo(center.dx, center.dy);
+      _path!.moveTo(center.dx, center.dy);
       _path!.relativeMoveTo(0, -r);
       _path!.relativeLineTo(-r * cos(rad), r + r * sin(rad));
       _path!.relativeLineTo(2 * r * cos(rad), 0);

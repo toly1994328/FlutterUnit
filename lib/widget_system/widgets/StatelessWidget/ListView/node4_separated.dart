@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //          "【separatorBuilder】 : 条目构造器   【IndexedWidgetBuilder】",
 //    }
 class SeparatedListView extends StatelessWidget {
+  SeparatedListView({Key? key}) : super(key: key);
+
   final List<Color> data = [
     Colors.purple[50]!,
     Colors.purple[100]!,
@@ -24,12 +26,13 @@ class SeparatedListView extends StatelessWidget {
     Colors.purple[800]!,
     Colors.purple[900]!,
   ];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: ListView.separated(
-        separatorBuilder: (context, index) => Divider(
+        separatorBuilder: (context, index) => const Divider(
           thickness: 1,
           height: 1,
           color: Colors.orange,
@@ -43,16 +46,21 @@ class SeparatedListView extends StatelessWidget {
   String colorString(Color color) =>
       "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
 
+  TextStyle get textStyle => const TextStyle(
+        color: Colors.white,
+        shadows: [
+          Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
+        ],
+      );
+
   Widget _buildItem(Color color) => Container(
-    alignment: Alignment.center,
-    width: 100,
-    height: 50,
-    color: color,
-    child: Text(
-      colorString(color),
-      style: TextStyle(color: Colors.white, shadows: [
-        Shadow(color: Colors.black, offset: Offset(.5, .5), blurRadius: 2)
-      ]),
-    ),
-  );
+        alignment: Alignment.center,
+        width: 100,
+        height: 50,
+        color: color,
+        child: Text(
+          colorString(color),
+          style: textStyle,
+        ),
+      );
 }

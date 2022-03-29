@@ -11,7 +11,7 @@ class GalleryDetailPage extends StatefulWidget {
   final GalleryInfo galleryInfo;
   final List<Widget> children;
 
-  GalleryDetailPage({Key? key,required this.galleryInfo, this.children = const []})
+  const GalleryDetailPage({Key? key,required this.galleryInfo, this.children = const []})
       : super(key: key);
 
   @override
@@ -105,7 +105,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
               buildTitle(context),
               Expanded(
                 child: Row(
-                  children: [_buildPrevBtn(), Spacer(), _buildNextBtn()],
+                  children: [_buildPrevBtn(), const Spacer(), _buildNextBtn()],
                 ),
               )
             ],
@@ -128,7 +128,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
           width: 35,
           height: 35,
           decoration: BoxDecoration(color: btnColor, shape: BoxShape.circle),
-          child: Icon(Icons.navigate_before, color: Colors.white),
+          child: const Icon(Icons.navigate_before, color: Colors.white),
         ),
         // height: 60,
       ),
@@ -156,7 +156,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
 
   // 跳转上一页
   void _switchPrevPage() {
-    if (widget.children.length > 0) {
+    if (widget.children.isNotEmpty) {
       int page = (_currentIndex.value - 1) % widget.children.length;
       _ctrl.animateToPage(page,
           duration: const Duration(milliseconds: 500), curve: Curves.linear);
@@ -165,7 +165,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
 
   // 跳转下一页
   void _switchNextPage() {
-    if (widget.children.length > 0) {
+    if (widget.children.isNotEmpty) {
       int page = (_currentIndex.value + 1) % widget.children.length;
       _ctrl.animateToPage(page,
           duration: const Duration(milliseconds: 500), curve: Curves.linear);
@@ -190,7 +190,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
                       blurRadius: .5)
                 ]),
           ),
-          Spacer(),
+          const Spacer(),
           ValueListenableBuilder<int>(
             valueListenable: _currentIndex,
             builder: _buildIndicatorText,
@@ -202,7 +202,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
 
   Widget _buildIndicatorText(BuildContext context, int value, Widget? child) {
     String indicatorText =
-        "${widget.children.length != 0 ? (value + 1) : 0} / ${widget.children.length}";
+        "${widget.children.isNotEmpty ? (value + 1) : 0} / ${widget.children.length}";
 
     return Text(
       indicatorText,

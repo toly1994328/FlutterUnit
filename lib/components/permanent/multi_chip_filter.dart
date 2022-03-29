@@ -12,14 +12,14 @@ class MultiChipFilter<T> extends StatefulWidget {
   final IndexedWidgetBuilder? avatarBuilder;
   final Function(List<int>) onChange;
 
-  MultiChipFilter({required this.data,required this.labelBuilder,this.avatarBuilder,required this.onChange});
+  const MultiChipFilter({Key? key, required this.data,required this.labelBuilder,this.avatarBuilder,required this.onChange}) : super(key: key);
 
   @override
   _MultiChipFilterState createState() => _MultiChipFilterState();
 }
 
 class _MultiChipFilterState<T> extends State<MultiChipFilter<T>> {
-  List<int> _selected = <int>[];
+  final List<int> _selected = <int>[];
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _MultiChipFilterState<T> extends State<MultiChipFilter<T>> {
     bool selected = _selected.contains(index);
     return FilterChip(
       selectedColor: Colors.orange.withAlpha(55),
-      labelPadding: EdgeInsets.only(left: 5,right: 5),
+      labelPadding: const EdgeInsets.only(left: 5,right: 5),
       selectedShadowColor: Colors.blue,
       shadowColor: Colors.orangeAccent,
       pressElevation: 5,
@@ -49,7 +49,7 @@ class _MultiChipFilterState<T> extends State<MultiChipFilter<T>> {
           } else {
             _selected.removeWhere((i) => i == index);
           }
-          if(widget.onChange!=null) widget.onChange(_selected);
+          widget.onChange(_selected);
         });
       },
     );

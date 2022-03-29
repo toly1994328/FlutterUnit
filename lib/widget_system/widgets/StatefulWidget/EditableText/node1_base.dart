@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -17,24 +16,27 @@ import 'package:flutter/material.dart';
 //    }
 
 class EditableTextDemo extends StatefulWidget {
+  const EditableTextDemo({Key? key}) : super(key: key);
+
   @override
   _EditableTextDemoState createState() => _EditableTextDemoState();
 }
 
 class _EditableTextDemoState extends State<EditableTextDemo> {
-  final _ctrl =  TextEditingController(text:'Hello Flutter Unit!');
-  final _node = FocusNode();
+  final TextEditingController _ctrl =
+      TextEditingController(text: 'Hello Flutter Unit!');
+  final FocusNode _node = FocusNode();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: EditableText(
-              controller: _ctrl,
-              focusNode: _node,
-              style: TextStyle(fontSize: 16,color: Colors.blue),
-              cursorColor: Colors.blue,
-              backgroundCursorColor: Colors.orange,
+        controller: _ctrl,
+        focusNode: _node,
+        style: const TextStyle(fontSize: 16, color: Colors.blue),
+        cursorColor: Colors.blue,
+        backgroundCursorColor: Colors.orange,
       ),
     );
   }

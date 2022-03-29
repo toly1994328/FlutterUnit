@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-06
@@ -14,11 +12,11 @@ class TechnoShapeBorder extends ShapeBorder {
   final Path innerLinePathTop = Path();
   final Color color;
 
-  final cornerWidth;
+  final double cornerWidth;
 
-  final spanWidth;
-  final storkWidth;
-  final innerRate;
+  final double spanWidth;
+  final double storkWidth;
+  final double innerRate;
 
   TechnoShapeBorder(
       {this.color = Colors.green,
@@ -37,7 +35,7 @@ class TechnoShapeBorder extends ShapeBorder {
   @override
   Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     Path path = Path();
-    path.addRRect(RRect.fromRectAndRadius(rect, Radius.circular(5)));
+    path.addRRect(RRect.fromRectAndRadius(rect, const Radius.circular(5)));
     return path;
   }
 

@@ -13,12 +13,14 @@ import 'package:flutter/cupertino.dart';
 //          "【navigationBar】 : 头部   【ObstructingPreferredSizeWidget】",
 //    }
 class CustomCupertinoPageScaffold extends StatelessWidget {
+  const CustomCupertinoPageScaffold({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height - 300,
-      child: CupertinoPageScaffold(
+      child: const CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           leading: Icon(CupertinoIcons.reply),
           trailing: Icon(CupertinoIcons.share),

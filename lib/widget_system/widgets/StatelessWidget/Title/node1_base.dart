@@ -12,15 +12,15 @@ import 'package:flutter/material.dart';
 //          "【child】: 子组件    【Widget】",
 //    }
 class TitleDemo extends StatelessWidget {
+  const TitleDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Title(
-        title: '张风捷特烈',
-        color: const Color(0xFF9C27B0),
-        child: const Center(
-          child: Text('应用菜单栏中该页的名称为: 张风捷特烈'),
-        ),
+    return Title(
+      title: '张风捷特烈',
+      color: const Color(0xFF9C27B0),
+      child: const Center(
+        child: Text('应用菜单栏中该页的名称为: 张风捷特烈'),
       ),
     );
   }

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
@@ -16,6 +14,8 @@ import 'page_item.dart';
 /// 说明:
 
 class UserPage extends StatelessWidget {
+  const UserPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class UserPage extends StatelessWidget {
             Container(
               height: 180,
               width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.only(bottom: 40),
+              margin: const EdgeInsets.only(bottom: 40),
               child: Image.asset(
                 'assets/images/sabar_bar.webp',
                 fit: BoxFit.cover,
@@ -47,7 +47,7 @@ class UserPage extends StatelessWidget {
                 ))
           ],
         ),
-        Expanded(child: MePageItem())
+        const Expanded(child: MePageItem())
       ],
     ));
   }
@@ -79,7 +79,7 @@ class UserPage extends StatelessWidget {
           size: 80,
           shadowColor: Theme.of(context).primaryColor.withAlpha(33),
           // image: NetworkImage(state.user.userAvatar),
-          image: AssetImage("assets/images/icon_head.webp"),
+          image: const AssetImage("assets/images/icon_head.webp"),
         ),
       );
     }
@@ -90,7 +90,7 @@ class UserPage extends StatelessWidget {
       child: CircleImage(
         size: 80,
         shadowColor: Theme.of(context).primaryColor.withAlpha(33),
-        image: AssetImage("assets/images/icon_head.webp"),
+        image: const AssetImage("assets/images/icon_head.webp"),
       ),
     );
   }

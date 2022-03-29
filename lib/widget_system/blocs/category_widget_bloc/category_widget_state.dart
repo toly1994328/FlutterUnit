@@ -17,11 +17,13 @@ class CategoryWidgetLoadedState extends CategoryWidgetState {
 
   CategoryWidgetLoadedState(this.widgets);
 
+  @override
   List<Object> get props => [widgets];
 
 }
 
 class CategoryWidgetEmptyState extends CategoryWidgetState{
+  @override
   List<Object> get props => [];
 }
 

@@ -15,6 +15,8 @@ import 'matrix4_shower.dart';
 //          "缩放z由R2C2数控制,入参为数值,表示缩放分率",
 //    }
 class ScaleTransform extends StatefulWidget {
+  const ScaleTransform({Key? key}) : super(key: key);
+
   @override
   _ScaleTransformState createState() => _ScaleTransformState();
 }

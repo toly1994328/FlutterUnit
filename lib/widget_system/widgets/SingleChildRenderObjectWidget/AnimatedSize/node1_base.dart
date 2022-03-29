@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomAnimatedSize extends StatefulWidget {
+  const CustomAnimatedSize({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedSizeState createState() => _CustomAnimatedSizeState();
 }
@@ -46,15 +48,15 @@ class _CustomAnimatedSizeState extends State<CustomAnimatedSize>
           alignment: Alignment.center,
           child: AnimatedSize(
             vsync: this,
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
-            alignment: Alignment(0, 0),
+            alignment: const Alignment(0, 0),
             child: Container(
               height: 40,
               width: _width,
               alignment: Alignment.center,
               color: Colors.blue,
-              child: Text(
+              child: const Text(
                 '张风捷特烈',
                 style: TextStyle(color: Colors.white),
               ),

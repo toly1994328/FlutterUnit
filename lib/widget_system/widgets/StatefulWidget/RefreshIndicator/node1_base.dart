@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //          "【onRefresh】 : 异步函数   【Future<void> Function()】"
 //    }
 class CustomRefreshIndicator extends StatefulWidget {
+  const CustomRefreshIndicator({Key? key}) : super(key: key);
+
   @override
   _CustomRefreshIndicatorState createState() => _CustomRefreshIndicatorState();
 }
@@ -23,8 +25,7 @@ class _CustomRefreshIndicatorState extends State<CustomRefreshIndicator> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Container(
+    return SizedBox(
       height: 200,
       width: 200,
       child: RefreshIndicator(
@@ -38,7 +39,7 @@ class _CustomRefreshIndicatorState extends State<CustomRefreshIndicator> {
             width: 200,
             height: 300,
             color: Colors.blue,
-            child: Text('$_count',style: TextStyle(color: Colors.white,fontSize: 40)),
+            child: Text('$_count',style: const TextStyle(color: Colors.white,fontSize: 40)),
           ),
         ),
       ),
@@ -46,7 +47,7 @@ class _CustomRefreshIndicatorState extends State<CustomRefreshIndicator> {
   }
 
   Future<void> _increment() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     setState(() {
       _count++;
     });

@@ -8,13 +8,13 @@ class UnitDrawerHeader extends StatelessWidget {
   final Color color;
 
 
-  UnitDrawerHeader({required this.color});
+  const UnitDrawerHeader({Key? key, required this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DrawerHeader(
-      padding: EdgeInsets.only(top: 10, left: 15),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.only(top: 10, left: 15),
+      decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage('assets/images/login_bg.png'),
             fit: BoxFit.cover),
@@ -25,7 +25,7 @@ class UnitDrawerHeader extends StatelessWidget {
           Wrap(
             spacing: 10,
             crossAxisAlignment: WrapCrossAlignment.center,
-            children: <Widget>[
+            children: const <Widget>[
               FlutterLogo(
                 // colors: Colors.orange,
                 size: 35,
@@ -41,29 +41,29 @@ class UnitDrawerHeader extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Text(
             'The Unity Of Flutter, The Unity Of Coder.',
             style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-              Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
+              Shadow(color: color, offset: const Offset(.5, .5), blurRadius: 1)
             ]),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Text(
             'Flutter的联合，编程者的联合。',
             style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-              Shadow(color: color, offset: Offset(.5, .5), blurRadius: 1)
+              Shadow(color: color, offset: const Offset(.5, .5), blurRadius: 1)
             ]),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
-            children: <Widget>[
+            children: const [
               Spacer(
                 flex: 5,
               ),

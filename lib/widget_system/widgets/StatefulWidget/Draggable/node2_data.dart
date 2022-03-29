@@ -17,6 +17,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class DraggablePage extends StatefulWidget {
+  const DraggablePage({Key? key}) : super(key: key);
+
   @override
   _DraggablePageState createState() => _DraggablePageState();
 }
@@ -27,47 +29,45 @@ class _DraggablePageState extends State<DraggablePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Wrap(
-            children: _buildColors(),
-            spacing: 10,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          _buildDragTarget()
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        Wrap(
+          children: _buildColors(),
+          spacing: 10,
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        _buildDragTarget()
+      ],
     );
   }
 
-  List<Widget> _buildColors() {
-    var colors = [
-      Colors.red,
-      Colors.yellow,
-      Colors.blue,
-      Colors.green,
-      Colors.orange,
-      Colors.purple,
-      Colors.cyanAccent
-    ];
-    return colors
-        .map(
-          (e) => Draggable<Color>(
-          onDragStarted: () => setState(() => _info = '开始拖拽'),
-          onDragEnd: (d) => setState(() => _info = '结束拖拽'),
-          onDragCompleted: () => _info = '拖拽完成',
-          onDraggableCanceled: (v, o) => _info = '拖拽取消',
-          child: Container(
-            width: 30,
-            height: 30,
-            alignment: Alignment.center,
-            child: Text(
+  List<Color> colors = [
+    Colors.red,
+    Colors.yellow,
+    Colors.blue,
+    Colors.green,
+    Colors.orange,
+    Colors.purple,
+    Colors.cyanAccent
+  ];
+
+  List<Widget> _buildColors() => colors
+      .map(
+        (e) => Draggable<Color>(
+            onDragStarted: () => setState(() => _info = '开始拖拽'),
+            onDragEnd: (d) => setState(() => _info = '结束拖拽'),
+            onDragCompleted: () => _info = '拖拽完成',
+            onDraggableCanceled: (v, o) => _info = '拖拽取消',
+            child: Container(
+              width: 30,
+              height: 30,
+              alignment: Alignment.center,
+              child: Text(
               colors.indexOf(e).toString(),
-              style: TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.bold,),
             ),
             decoration: BoxDecoration(color: e, shape: BoxShape.circle),
           ),
@@ -79,7 +79,6 @@ class _DraggablePageState extends State<DraggablePage> {
           )),
     )
         .toList();
-  }
 
   Widget _buildDragTarget() {
     return DragTarget<Color>(
@@ -101,7 +100,7 @@ class _DraggablePageState extends State<DraggablePage> {
             child: Center(
               child: Text(
                 _info,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             )));
   }

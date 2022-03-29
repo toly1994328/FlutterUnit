@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
@@ -16,6 +15,8 @@ import 'package:flutter/material.dart';
 //          "【style】 : 动画   【Animation<TextStyle>】",
 //    }
 class CustomDefaultTextStyleTransition extends StatefulWidget {
+  const CustomDefaultTextStyleTransition({Key? key}) : super(key: key);
+
   @override
   _CustomDefaultTextStyleTransitionState createState() =>
       _CustomDefaultTextStyleTransitionState();
@@ -28,7 +29,10 @@ class _CustomDefaultTextStyleTransitionState
 
   @override
   void initState() {
-    _ctrl = AnimationController(vsync: this, duration: Duration(seconds: 1));
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
     _ctrl.forward();
     super.initState();
   }
@@ -58,15 +62,25 @@ class _CustomDefaultTextStyleTransitionState
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyleTween(
-                begin: TextStyle(color: Colors.blue, fontSize: 50, shadows: [
-                  Shadow(
-                      offset: Offset(1, 1), color: Colors.black, blurRadius: 3)
-                ]),
-                end: TextStyle(color: Colors.white, fontSize: 20, shadows: [
-                  Shadow(
-                      offset: Offset(1, 1), color: Colors.purple, blurRadius: 3)
-                ])).animate(_ctrl),
-            child: Text('张风捷特烈'),
+                begin: const TextStyle(
+                    color: Colors.blue,
+                    fontSize: 50,
+                    shadows: [
+                      Shadow(
+                          offset: Offset(1, 1),
+                          color: Colors.black,
+                          blurRadius: 3)
+                    ]),
+                end: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                          offset: Offset(1, 1),
+                          color: Colors.purple,
+                          blurRadius: 3)
+                    ])).animate(_ctrl),
+            child: const Text('张风捷特烈'),
           ),
         ));
   }

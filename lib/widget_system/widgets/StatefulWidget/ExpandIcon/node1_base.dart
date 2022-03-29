@@ -15,18 +15,20 @@ import 'package:flutter/material.dart';
 //          "【onPressed】 : 点击事件   【Function(bool)】",
 //    }
 class CustomExpandIcon extends StatefulWidget {
+  const CustomExpandIcon({Key? key}) : super(key: key);
+
   @override
   _CustomExpandIconState createState() => _CustomExpandIconState();
 }
 
 class _CustomExpandIconState extends State<CustomExpandIcon> {
-  var _closed = true;
+  bool _closed = true;
 
   @override
   Widget build(BuildContext context) {
     return ExpandIcon(
       isExpanded: _closed,
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       size: 30,
       color: Colors.blue,
       expandedColor: Colors.orangeAccent,

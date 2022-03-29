@@ -13,7 +13,9 @@ import 'package:flutter/material.dart';
 //    }
 
 class OffSetWidgetDemo extends StatelessWidget {
-  final List<Map<String,dynamic>> data = [
+  const OffSetWidgetDemo({Key? key}) : super(key: key);
+
+  final List<Map<String, dynamic>> data = const [
     {
       'offset': Offset(20, 20),
       'direction': Direction.topLeft,
@@ -54,7 +56,7 @@ class OffSetWidgetDemo extends StatelessWidget {
                 child: OffSetWidget(
                   offset: e['offset'],
                   direction: e['direction'],
-                  child: Icon(
+                  child: const Icon(
                     Icons.android,
                     size: 30,
                     color: Colors.green,
@@ -69,10 +71,10 @@ class OffSetWidget extends StatelessWidget {
   final Widget child;
   final Direction direction;
 
-  OffSetWidget(
-      {this.offset = Offset.zero,
+  const OffSetWidget(
+      {Key? key, this.offset = Offset.zero,
       required this.child,
-      this.direction = Direction.topLeft});
+      this.direction = Direction.topLeft}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,8 +91,10 @@ class _OffSetDelegate extends SingleChildLayoutDelegate {
   final Offset offset;
   final Direction direction;
 
-  _OffSetDelegate(
-      {this.offset = Offset.zero, this.direction = Direction.topLeft});
+  _OffSetDelegate({
+    this.offset = Offset.zero,
+    this.direction = Direction.topLeft,
+  });
 
   @override
   bool shouldRelayout(_OffSetDelegate oldDelegate) =>
@@ -98,10 +102,10 @@ class _OffSetDelegate extends SingleChildLayoutDelegate {
 
   @override
   Offset getPositionForChild(Size size, Size childSize) {
-    var w = size.width;
-    var h = size.height;
-    var wc = childSize.width;
-    var hc = childSize.height;
+    double w = size.width;
+    double h = size.height;
+    double wc = childSize.width;
+    double hc = childSize.height;
 
     switch (direction) {
       case Direction.topLeft:
@@ -113,6 +117,5 @@ class _OffSetDelegate extends SingleChildLayoutDelegate {
       case Direction.bottomRight:
         return offset.translate(w - wc - offset.dx * 2, h - hc - offset.dy * 2);
     }
-    return offset;
   }
 }

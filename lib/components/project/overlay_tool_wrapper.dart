@@ -15,7 +15,7 @@ import '../permanent/color_wrapper.dart';
 class OverlayToolWrapper extends StatefulWidget {
   final Widget child;
 
-  OverlayToolWrapper({Key? key,required this.child}) : super(key: key);
+  const OverlayToolWrapper({Key? key,required this.child}) : super(key: key);
 
   @override
   OverlayToolWrapperState createState() => OverlayToolWrapperState();
@@ -36,7 +36,7 @@ class OverlayToolWrapper extends StatefulWidget {
 class OverlayToolWrapperState extends State<OverlayToolWrapper>
     with SingleTickerProviderStateMixin {
   bool show = false;
-  Offset offset = Offset(200, 200);
+  late Offset offset;
 
   late AnimationController _ctrl;
 
@@ -56,13 +56,13 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
     super.initState();
 
     _ctrl = AnimationController(
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       vsync: this,
     )..addListener(_listenAnimate);
 
     WidgetsBinding.instance?.addPostFrameCallback((callback) {
       var px = MediaQuery.of(context).size.width - 100;
-      var py = 250.0;
+      var py = MediaQuery.of(context).size.height*0.05;
       offset = Offset(px, py);
 
       entry = OverlayEntry(
@@ -117,8 +117,8 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.blue,
-                  image: DecorationImage(
-                      image: const AssetImage('assets/images/icon_head.webp')),
+                  image: const DecorationImage(
+                      image: AssetImage('assets/images/icon_head.webp')),
                   borderRadius: BorderRadius.circular(menuSize / 2)),
             ),
           ),
@@ -140,7 +140,6 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       case 0:
         _doClose();
         return true;
-        break;
       case 1:
         _toPoint();
         break;
@@ -166,7 +165,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   void _toWidget() {}
 
   void _toGalley() {
-    Navigator.of(context).pushNamed(UnitRouter.galley);
+
   }
 
   void _toPoint() {

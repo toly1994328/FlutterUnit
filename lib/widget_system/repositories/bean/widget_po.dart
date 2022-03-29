@@ -40,14 +40,14 @@ class WidgetPo extends Equatable {
 
   Map<String, dynamic> toJson() {
     return {
-      "id": this.id,
-      "name": this.name,
-      "nameCN": this.nameCN,
-      "family": this.family,
-      "deprecated": this.deprecated,
-      "lever": this.lever,
-      "linkWidget": this.linkWidget,
-      "info": this.info
+      "id": id,
+      "name": name,
+      "nameCN": nameCN,
+      "family": family,
+      "deprecated": deprecated,
+      "lever": lever,
+      "linkWidget": linkWidget,
+      "info": info
     };
   }
 

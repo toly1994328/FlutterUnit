@@ -12,12 +12,14 @@ import 'package:flutter/material.dart';
 //      "subtitle": "    可以控制状态转化的逻辑来形成不同的效果。",
 //    }
 class ProToggleButtons extends StatefulWidget {
+  const ProToggleButtons({Key? key}) : super(key: key);
+
   @override
   _ProToggleButtonsState createState() => _ProToggleButtonsState();
 }
 
 class _ProToggleButtonsState extends State<ProToggleButtons> {
-  List<bool> _isSelected = [false, false, false];
+  final List<bool> _isSelected = [false, false, false];
 
   @override
   Widget build(BuildContext context) {

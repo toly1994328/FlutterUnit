@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com
-/// 说明:
-
+/// 说明: ...
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/app/router/router_utils.dart';
+import 'package:flutter_unit/app/views/time_line/flutter_unit_time_line.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
@@ -12,6 +12,8 @@ import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutAppPage extends StatelessWidget {
+  const AboutAppPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,38 +21,37 @@ class AboutAppPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            child: Stack(
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.only(bottom: 50),
-                      child: Image.asset(
-                        'assets/images/sabar.webp',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
+          Stack(
+            children: <Widget>[
+              Container(
+                height: 150,
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.only(bottom: 50),
+                child: Image.asset(
+                  'assets/images/sabar.webp',
+                  fit: BoxFit.cover,
                 ),
-                _buildBar(context),
-                Positioned(
-                    bottom: 0,
-                    left: 50,
+              ),
+              _buildBar(context),
+              Positioned(
+                  bottom: 0,
+                  left: 50,
+                  child: FeedbackWidget(
+                    onEnd : (){
+                      Navigator.push(context, Right2LeftRouter(child: const FlutterUnitTimeLine()));
+                    },
                     child: CircleImage(
                       size: 100,
                       shadowColor: Theme.of(context).primaryColor,
-                      image: AssetImage('assets/images/icon_head.webp'),
-                    )),
-              ],
-            ),
+                      image: const AssetImage('assets/images/icon_head.webp'),
+                    ),
+                  )),
+            ],
           ),
           Expanded(
             child: SingleChildScrollView(
               child: Container(
-                margin: EdgeInsets.all(24),
+                margin: const EdgeInsets.all(24),
                 child: _buildInfo(),
               ),
             ),
@@ -69,7 +70,7 @@ class AboutAppPage extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.of(context).pop(),
             child: Container(
-              padding: EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 10),
               child: Icon(
                 Icons.arrow_back,
                 size: 30,
@@ -77,7 +78,7 @@ class AboutAppPage extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           FeedbackWidget(
             onPressed: () =>
                 _launchURL("mailto:1981462002@qq.com?subject=来自Flutter Unit"),
@@ -87,7 +88,7 @@ class AboutAppPage extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           )
         ],
@@ -118,7 +119,7 @@ class AboutAppPage extends StatelessWidget {
                   child: Wrap(
                     direction: Axis.vertical,
                     crossAxisAlignment: WrapCrossAlignment.center,
-                    children: <Widget>[
+                    children: const [
                       Icon(
                         TolyIcon.icon_github,
                         size: 35,
@@ -131,7 +132,7 @@ class AboutAppPage extends StatelessWidget {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: const [
             Text(
               'Flutter Unit',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -151,34 +152,37 @@ class AboutAppPage extends StatelessWidget {
             ),
             InfoPanel(
               title: '项目简介',
-              info:          '      Flutter Unit 是一个非盈利性的开源项目，'
-                  '旨在提供全面的Flutter学习指南及编程者的交流技术的接口。'
-                  '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址: '
-                  'https://github_model.com/toly1994328/FlutterUnit',
+              info: 'Flutter Unit 是一个非盈利性的开源项目，'
+                  '旨在提供全面的 Flutter 学习指南及编程者的交流技术的接口。'
+                  '由【张风捷特烈】提供技术支持和全权维护。唯一开源网站网址:\n '
+                  'https://github.com/toly1994328/FlutterUnit',
             ),
             Divider(
               height: 20,
             ),
             InfoPanel(
-                title: 'Flutter Unit 1.0',
-                info:    'Flutter Unit 1.0 核心计划是收录widget，即widget集录。'
-                    '目前收录组件 283 个，均可在 app 中进行查看。'
-                    '项目中提供widget图鉴文件可供下载参考。功能主要如下:\n'
-                    '○  280+的 Flutter 组件收录和详情介绍。\n'
-                    '○  对一些重要的组件提供操作体验。\n'
-                    '○  link to功能，查看组件时可以切换到相关组件。\n'
-                    '○  组件收藏和取消收藏功能。\n'
-                    '○  主题、字体设置，代码风格等全局状态管理。\n'
-                    '○  搜索功能和组件星级分类。',
+              title: 'Flutter Unit 1.0',
+              info: 'Flutter Unit 1.0 核心计划是收录widget，即widget集录。'
+                  '目前收录组件 283 个，均可在 app 中进行查看。'
+                  '项目中提供widget图鉴文件可供下载参考。功能主要如下:\n'
+                  '○  280+的 Flutter 组件收录和详情介绍。\n'
+                  '○  对一些重要的组件提供操作体验。\n'
+                  '○  link to功能，查看组件时可以切换到相关组件。\n'
+                  '○  组件收藏和取消收藏功能。\n'
+                  '○  主题、字体设置，代码风格等全局状态管理。\n'
+                  '○  搜索功能和组件星级分类。',
             ),
             Divider(
               height: 20,
             ),
             InfoPanel(
-              title: 'Flutter Unit 2.0 计划',
-              info:    'Flutter Unit 2.0 尚在计划之中，如果说1.0是本王单枪匹马，'
-                  '那2.0将是Flutter爱好者的共同努力。后面陆续会发布一些征集方案，'
-                  '包括属性、布局、绘制、bug、要点集录等。吾想让Unit 成为一个Flutter的圣地，纯粹而强大,期待与你的共同携手。',
+              title: 'Flutter Unit 2.0 ',
+              info:
+                  '○  317 的 Flutter 组件收录和详情介绍。\n'
+                  '○  绘制集录用于收录绘制相关的优秀示例。\n'
+                  '○  要点集录用于收录 Flutter 相关的小知识。\n'
+                  '○  时光轴，查看 FlutterUnit 重要事件。\n'
+                  '○  实现应用内更新功能，方便使用者及时更新到最新版体验。'
             )
           ],
         ),
@@ -192,7 +196,7 @@ class InfoPanel extends StatelessWidget {
   final String info;
 
 
-  InfoPanel({required this.title,required this.info});
+  const InfoPanel({Key? key, required this.title,required this.info}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -201,17 +205,18 @@ class InfoPanel extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Circle(color: Theme.of(context).primaryColor,), Padding(
+            Circle(color: Theme.of(context).primaryColor),
+            Padding(
               padding: const EdgeInsets.only(left: 15,top: 15,bottom: 15),
-              child: Text('$title',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+              child: Text(title,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
             )
           ],
         ),
         Panel(
         color: Theme.of(context).primaryColor.withAlpha(33),
           child: Text(
-            '$info',
-            style: TextStyle(color: Colors.grey,
+            info,
+            style: const TextStyle(color: Colors.grey,
                 fontSize: 13,
                 shadows: [
                   Shadow(

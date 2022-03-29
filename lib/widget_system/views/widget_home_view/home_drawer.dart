@@ -37,10 +37,10 @@ class HomeDrawer extends StatelessWidget {
           _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
           _buildItem(
               context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
-          Divider(height: 1),
+          const Divider(height: 1),
           _buildFlutterUnit(context),
           _buildItem(context, TolyIcon.icon_code, 'Dart 手册', ''),
-          Divider(height: 1),
+          const Divider(height: 1),
           _buildItem(context, Icons.info, '关于应用', UnitRouter.about_app),
           _buildItem(context, TolyIcon.icon_kafei, '联系本王', UnitRouter.about_me),
         ],
@@ -56,9 +56,9 @@ class HomeDrawer extends StatelessWidget {
         ),
         title: const Text('Flutter 集录'),
         children: <Widget>[
-          _buildItem(context, TolyIcon.icon_tag, '属性集录', UnitRouter.attr),
-          _buildItem(context, Icons.palette, '绘画集录', UnitRouter.galley),
-          _buildItem(context, Icons.widgets, '布局集录', UnitRouter.layout),
+          _buildItem(context, TolyIcon.icon_tag, '属性集录', ''),
+          _buildItem(context, Icons.palette, '绘画集录', ''),
+          _buildItem(context, Icons.widgets, '布局集录', ''),
           _buildItem(context, TolyIcon.icon_bug, '要点集录', UnitRouter.issues_point,onTap: (){
             BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
           }),

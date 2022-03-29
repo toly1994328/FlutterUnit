@@ -11,17 +11,19 @@ import 'package:flutter/material.dart';
 //      "subtitle": "【dense】: 是否密排   【bool】",
 //    }
 class DenseSwitchListTile extends StatefulWidget {
+  const DenseSwitchListTile({Key? key}) : super(key: key);
+
   @override
   _DenseSwitchListTileState createState() => _DenseSwitchListTileState();
 }
 
 class _DenseSwitchListTileState extends State<DenseSwitchListTile> {
-  var _value=false;
+  bool _value = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       color: Colors.grey.withAlpha(22),
       child: SwitchListTile(
         value: _value,
@@ -29,8 +31,8 @@ class _DenseSwitchListTileState extends State<DenseSwitchListTile> {
         selected: _value,
         activeColor: Colors.orangeAccent,
         secondary: Image.asset("assets/images/icon_head.webp"),
-        title: Text("张风捷特烈"),
-        subtitle: Text("@万花过尽知无物"),
+        title: const Text("张风捷特烈"),
+        subtitle: const Text("@万花过尽知无物"),
         onChanged: (v) => setState(() => _value = !_value),
       ),
     );

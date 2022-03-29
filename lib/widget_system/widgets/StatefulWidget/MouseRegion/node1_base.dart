@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class MouseRegionDemo extends StatefulWidget {
+  const MouseRegionDemo({Key? key}) : super(key: key);
+
   @override
   _MouseRegionDemoState createState() => _MouseRegionDemoState();
 }
@@ -42,7 +44,7 @@ class _MouseRegionDemoState extends State<MouseRegionDemo> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints.tight(Size(300.0, 200.0)),
+      constraints: BoxConstraints.tight(const Size(300.0, 200.0)),
       child: MouseRegion(
         onEnter: _incrementEnter,
         onHover: _updateLocation,
@@ -52,7 +54,7 @@ class _MouseRegionDemoState extends State<MouseRegionDemo> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('你的鼠标移入移除信息:'),
+              const Text('你的鼠标移入移除信息:'),
               Text(
                 '$_enterCounter Entries\n$_exitCounter Exits',
                 style: Theme.of(context).textTheme.headline4,

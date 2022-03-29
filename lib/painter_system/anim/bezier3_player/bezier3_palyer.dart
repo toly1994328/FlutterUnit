@@ -9,6 +9,8 @@ import 'touch_info.dart';
 /// 说明:
 
 class Bezier3Player extends StatefulWidget {
+  const Bezier3Player({Key? key}) : super(key: key);
+
   @override
   _Bezier3PlayerState createState() => _Bezier3PlayerState();
 }
@@ -76,7 +78,7 @@ class _Bezier3PlayerState extends State<Bezier3Player> {
 class PaperPainter extends CustomPainter {
   final Coordinate coordinate = Coordinate();
 
-  Paint _helpPaint = Paint()
+  final Paint _helpPaint = Paint()
     ..color = Colors.purple
     ..style = PaintingStyle.stroke
     ..strokeCap = StrokeCap.round;
@@ -112,7 +114,7 @@ class PaperPainter extends CustomPainter {
   }
 
   void _drawHelp(Canvas canvas) {
-    _helpPaint..color = Colors.purple;
+    _helpPaint.color = Colors.purple;
     canvas.drawPoints(PointMode.polygon, pos, _helpPaint..strokeWidth = 1);
     canvas.drawPoints(PointMode.points, pos, _helpPaint..strokeWidth = 8);
   }

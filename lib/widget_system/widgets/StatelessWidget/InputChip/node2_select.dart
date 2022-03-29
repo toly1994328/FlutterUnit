@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 //      }
 
 class SelectInputChip extends StatefulWidget {
+  const SelectInputChip({Key? key}) : super(key: key);
+
   @override
   _SelectInputChipState createState() => _SelectInputChipState();
 }
@@ -25,9 +27,9 @@ class _SelectInputChipState extends State<SelectInputChip> {
   Widget build(BuildContext context) {
     return InputChip(
       selected: _select,
-      padding: EdgeInsets.all(5),
-      labelPadding: EdgeInsets.all(3),
-      label: Text("This is a InputChip."),
+      padding: const EdgeInsets.all(5),
+      labelPadding: const EdgeInsets.all(3),
+      label: const Text("This is a InputChip."),
       backgroundColor: Colors.grey.withAlpha(66),
       avatar: Image.asset("assets/images/icon_head.webp"),
       selectedColor: Colors.orangeAccent.withAlpha(88),

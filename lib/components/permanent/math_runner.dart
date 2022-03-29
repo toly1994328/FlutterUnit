@@ -7,7 +7,12 @@ import 'package:flutter/material.dart';
 typedef FunNum1 = Function(double t);
 
 class MathRunner extends StatefulWidget {
-  MathRunner({Key? key, this.child,required this.f,required this.g, this.reverse = true})
+  const MathRunner(
+      {Key? key,
+      this.child,
+      required this.f,
+      required this.g,
+      this.reverse = true})
       : super(key: key);
 
   final Widget? child;
@@ -28,8 +33,10 @@ class _MathRunnerState extends State<MathRunner>
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 3))..repeat(reverse: widget.reverse);
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    )..repeat(reverse: widget.reverse);
     animationX = Tween(begin: -1.0, end: 1.0).animate(_controller)
       ..addListener(() {
         setState(() {
@@ -48,11 +55,9 @@ class _MathRunnerState extends State<MathRunner>
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-        child: Align(
-          alignment: Alignment(_x, _y),
-          child: widget.child,
-        )
+    return  Align(
+      alignment: Alignment(_x, _y),
+      child: widget.child,
     );
   }
 }

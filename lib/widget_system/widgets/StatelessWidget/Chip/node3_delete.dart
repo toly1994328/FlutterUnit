@@ -16,13 +16,15 @@ import 'package:flutter/material.dart';
 import '../../../../components/project/dialogs/dialog_about.dart';
 
 class DeleteOfChip extends StatelessWidget {
+  const DeleteOfChip({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Chip(
       avatar: Image.asset("assets/images/icon_head.webp"),
-      label: Text("张风捷特烈"),
-      padding: EdgeInsets.all(5),
-      labelPadding: EdgeInsets.all(3),
+      label: const Text("张风捷特烈"),
+      padding: const EdgeInsets.all(5),
+      labelPadding: const EdgeInsets.all(3),
       backgroundColor: Colors.grey.withAlpha(66),
       shadowColor: Colors.orangeAccent,
 //      deleteIcon: Icon(Icons.close,size: 18),

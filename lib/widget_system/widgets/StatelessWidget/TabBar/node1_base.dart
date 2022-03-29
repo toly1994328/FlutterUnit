@@ -20,14 +20,16 @@ import 'package:flutter/material.dart';
 //          "【tabs】 : 标签组件   【List<Widget>】",
 //    }
 class CustomTabBar extends StatefulWidget {
+  const CustomTabBar({Key? key}) : super(key: key);
+
   @override
   _CustomTabBarState createState() => _CustomTabBarState();
 }
 
 class _CustomTabBarState extends State<CustomTabBar>
     with SingleTickerProviderStateMixin {
-  final tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
- late TabController _tabController;
+  final List<String> tabs = ['风画庭', '雨韵舍', '雷鸣殿', '电疾堂', '霜寒阁', '雪月楼'];
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -44,16 +46,14 @@ class _CustomTabBarState extends State<CustomTabBar>
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      onTap: (tab) {
-        print(tab);
-      },
-      labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      unselectedLabelStyle: TextStyle(fontSize: 16),
+      onTap: (tab) => print(tab),
+      labelStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      unselectedLabelStyle: const TextStyle(fontSize: 16),
       isScrollable: true,
       controller: _tabController,
       labelColor: Colors.blue,
       indicatorWeight: 3,
-      indicatorPadding: EdgeInsets.symmetric(horizontal: 10),
+      indicatorPadding: const EdgeInsets.symmetric(horizontal: 10),
       unselectedLabelColor: Colors.grey,
       indicatorColor: Colors.orangeAccent,
       tabs: tabs.map((e) => Tab(text: e)).toList(),

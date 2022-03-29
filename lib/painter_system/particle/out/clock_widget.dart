@@ -1,7 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -68,7 +65,7 @@ class ClockFxPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    fx.particles.forEach((p) {
+    for (var p in fx.particles) {
       double a;
       a = max(0.0, (p.distFrac - .13) / p.distFrac) * 255;
       a = min(a, min(noiseAlpha, p.lifeLeft * 3 * 255));
@@ -79,7 +76,7 @@ class ClockFxPainter extends CustomPainter {
         ..color = p.color.withAlpha(alpha);
 
       canvas.drawCircle(Offset(p.x, p.y), p.size, circlePaint);
-    });
+    }
   }
 
   @override

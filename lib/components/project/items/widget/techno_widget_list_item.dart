@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
@@ -14,7 +13,7 @@ import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart'
 class TechnoWidgetListItem extends StatelessWidget {
   final WidgetModel data;
 
-  TechnoWidgetListItem({required this.data});
+  const TechnoWidgetListItem({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +114,7 @@ class TechnoWidgetListItem extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   decoration: data.deprecated?TextDecoration.lineThrough:TextDecoration.none,
                   decorationThickness: 2,
-                  shadows: [
+                  shadows: const [
                     Shadow(color: Colors.white, offset: Offset(.3, .3))
                   ])),
         ),
@@ -131,8 +130,8 @@ class TechnoWidgetListItem extends StatelessWidget {
         data.info,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: [
-          const Shadow(color: Colors.white, offset: const Offset(.5, .5))
+        style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: const [
+          Shadow(color: Colors.white, offset: Offset(.5, .5))
         ]),
       ),
     );

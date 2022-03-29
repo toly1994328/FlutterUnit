@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
@@ -12,6 +11,8 @@ import 'sync/async_button.dart';
 import 'sync/upload_button.dart';
 
 class CollectPage extends StatefulWidget {
+  const CollectPage({Key? key}) : super(key: key);
+
   @override
   _CollectPageState createState() => _CollectPageState();
 }
@@ -42,8 +43,8 @@ class _CollectPageState extends State<CollectPage>
                         context),
                     sliver: _buildAppBar(_topContext, innerBoxIsScrolled)),
               ],
-              body: TabBarView(
-                children: <Widget>[
+              body: const TabBarView(
+                children: [
                   CategoryPage(),
                   LikeWidgetPage(),
                 ],
@@ -58,7 +59,7 @@ class _CollectPageState extends State<CollectPage>
 
     return SliverAppBar(
       leading: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: FeedbackWidget(
             onPressed: () {
               // Navigator.of(context).pushNamed(UnitRouter.login);
@@ -72,11 +73,11 @@ class _CollectPageState extends State<CollectPage>
       actions: <Widget>[
         SizedBox(
             width: 32,
-            child: AuthenticWidget.just(UploadCategoryButton())),
+            child: AuthenticWidget.just(const UploadCategoryButton())),
         // SizedBox(width: 5,),
         SizedBox(
             width: 32,
-            child: AuthenticWidget.just(SyncCategoryButton())),
+            child: AuthenticWidget.just(const SyncCategoryButton())),
         _buildAddAction(context)
       ],
       title: const Text(
@@ -85,7 +86,7 @@ class _CollectPageState extends State<CollectPage>
             color: Colors.white, //标题
             fontSize: 18,
             shadows: [
-              Shadow(color: Colors.blue, offset:const Offset(1, 1), blurRadius: 2)
+              Shadow(color: Colors.blue, offset:Offset(1, 1), blurRadius: 2)
             ]),
       ),
       pinned: true,

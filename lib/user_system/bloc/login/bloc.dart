@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/user_system/api/user_api.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
@@ -16,14 +15,14 @@ import 'state.dart';
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final AuthenticBloc authenticBloc;
 
-  LoginBloc({ required this.authenticBloc}) : super(LoginNone()){
+  LoginBloc({ required this.authenticBloc}) : super(const LoginNone()){
     on<LoginEvent>(_onLoginEvent);
   }
 
   void _onLoginEvent(LoginEvent event,Emitter<LoginState> emit) async {
     if (event is DoLogin) {
       emit (LoginLoading());
-      await Future.delayed(Duration(milliseconds: 500));
+      await Future.delayed(const Duration(milliseconds: 500));
       ResultBean<User> result = await UserApi.login(username: event.username, password: event.password);
 
       if (result.status&& result.data!=null) {
@@ -31,7 +30,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         authenticBloc.add(LoginOver(token: result.msg,user: result.data!));
         emit (LoginSuccess(result.data!));
       } else {
-        emit (LoginError('用户名和密码不匹配'));
+        emit (const LoginError('用户名和密码不匹配'));
       }
     }
   }

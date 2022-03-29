@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -18,13 +16,17 @@ import 'repo_widget.dart';
 /// 说明:
 
 class IssuesPointPage extends StatelessWidget {
+  const IssuesPointPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: IssuesPointContent());
+    return const Scaffold(body:  IssuesPointContent());
   }
 }
 
 class IssuesPointContent extends StatefulWidget {
+  const IssuesPointContent({Key? key}) : super(key: key);
+
   @override
   _IssuesPointContentState createState() => _IssuesPointContentState();
 }
@@ -41,20 +43,18 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PointBloc, PointState>(
-        builder: (_, state) => Container(
-              child: RefreshIndicator(
-                onRefresh: _loadIssues,
-                child: CustomScrollView(slivers: <Widget>[
-                  _buildSliverAppBar(),
-                  buildContentByState(state)
-                ]),
-              ),
-            ));
+        builder: (_, state) => RefreshIndicator(
+          onRefresh: _loadIssues,
+          child: CustomScrollView(slivers: <Widget>[
+            _buildSliverAppBar(),
+            buildContentByState(state)
+          ]),
+        ));
   }
 
   Widget buildContentByState(PointState state) {
     if (state is PointLoading) {
-      return SliverPadding(
+      return const SliverPadding(
         padding: EdgeInsets.only(top: 150),
         sliver: SliverToBoxAdapter(
             child: Center(
@@ -80,7 +80,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
 
     if (state is PointLoadFailure) {
       return SliverPadding(
-        padding: EdgeInsets.only(top: 40),
+        padding: const EdgeInsets.only(top: 40),
         sliver: SliverToBoxAdapter(
             child: Center(
           child: Text(state.error),
@@ -88,7 +88,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
       );
     }
 
-    return SliverPadding(
+    return const SliverPadding(
       padding: EdgeInsets.zero,
     );
   }
@@ -97,13 +97,13 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
     return SliverAppBar(
       expandedHeight: 210.0,
 //      leading: _buildLeading(),
-      title: Text('Flutter要点集录'),
+      title: const Text('Flutter要点集录'),
 //      actions: _buildActions(),
       elevation: 5,
       pinned: true,
       actions: [
         IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.help_outline,
               color: Colors.white,
             ),
@@ -114,10 +114,10 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
       backgroundColor: Colors.blue,
       flexibleSpace: FlexibleSpaceBar(
         //伸展处布局
-        titlePadding: EdgeInsets.only(left: 55, bottom: 15), //标题边距
+        titlePadding: const EdgeInsets.only(left: 55, bottom: 15), //标题边距
         collapseMode: CollapseMode.parallax, //视差效果
         background: _repository == null
-            ? Center(
+            ? const Center(
                 child: SpinKitFadingCube(
                   color: Colors.white,
                 ),
@@ -131,7 +131,7 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
 
   Future<void> _loadIssues() async {
     BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
-    await Future.delayed(Duration(milliseconds: 200));
+    await Future.delayed(const Duration(milliseconds: 200));
   }
 
   void _loadRepo() async {

@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 //          "【borderColor】 : 边线色   【Color】",
 //    }
 class CupertinoSegmentedControlColor extends StatefulWidget {
+  const CupertinoSegmentedControlColor({Key? key}) : super(key: key);
+
   @override
   _CupertinoSegmentedControlColorState createState() =>
       _CupertinoSegmentedControlColorState();
@@ -23,28 +25,26 @@ class CupertinoSegmentedControlColor extends StatefulWidget {
 
 class _CupertinoSegmentedControlColorState
     extends State<CupertinoSegmentedControlColor> {
-  var _value = 1;
+  int _value = 1;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: CupertinoSegmentedControl<int>(
-        unselectedColor: Colors.yellow,
-        selectedColor: Colors.green,
-        pressedColor: Colors.blue,
-        borderColor: Colors.red,
-        groupValue: _value,
-        onValueChanged: _onValueChanged,
-        padding: EdgeInsets.only(top: 20),
-        children: {
-          1: Padding(
-            padding: EdgeInsets.only(left: 20, right: 20),
-            child: Text("混沌战士"),
-          ),
-          2: Text("青眼白龙"),
-          3: Text("黑魔术士"),
-        },
-      ),
+    return CupertinoSegmentedControl<int>(
+      unselectedColor: Colors.yellow,
+      selectedColor: Colors.green,
+      pressedColor: Colors.blue,
+      borderColor: Colors.red,
+      groupValue: _value,
+      onValueChanged: _onValueChanged,
+      padding: const EdgeInsets.only(top: 20),
+      children: const {
+        1: Padding(
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: Text("混沌战士"),
+        ),
+        2: Text("青眼白龙"),
+        3: Text("黑魔术士"),
+      },
     );
   }
 

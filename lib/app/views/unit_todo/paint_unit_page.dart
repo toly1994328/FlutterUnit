@@ -5,15 +5,17 @@ import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/text_typer.dart';
 
 class PaintUnitPage extends StatelessWidget {
-  final info = '【Flutter绘制集录】是Unit项目计划的第二阶段的功能之一。'
+  final String info = '【Flutter绘制集录】是Unit项目计划的第二阶段的功能之一。'
       '将收录大量绘制作品，展现Flutter强大的绘制表现力,'
       '以供学习绘制技能。本集录将支持绘制征集，愿开发者共同集录。';
+
+  const PaintUnitPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('绘制集录'),
+        title: const Text('绘制集录'),
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -21,7 +23,7 @@ class PaintUnitPage extends StatelessWidget {
           Positioned(
             top: 50,
             child: Column(
-              children: <Widget>[
+              children: const [
                 CircleImage(
                   image: AssetImage('assets/images/icon_head.webp'),
                   size: 80,
@@ -40,13 +42,13 @@ class PaintUnitPage extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: ShaderMask(
               shaderCallback: (rect) =>
                   _buildShader(rect, Theme.of(context).primaryColor),
               child: TextTyper(
                 text:info,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   shadows: [
                     Shadow(
                         color: Colors.black,
@@ -76,7 +78,7 @@ class PaintUnitPage extends StatelessWidget {
       .createShader(bounds);
 
   Widget buildPlan() {
-    return Positioned(
+    return const Positioned(
       bottom: 80,
       child:
       Text("Flutter Unit 绘制征集方案(待完成)",
@@ -94,7 +96,7 @@ class PaintUnitPage extends StatelessWidget {
   }
 
   Widget buildPower() {
-    return Positioned(
+    return const Positioned(
       bottom: 30,
       right: 30,
       child:

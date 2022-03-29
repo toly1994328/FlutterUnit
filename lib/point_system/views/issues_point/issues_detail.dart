@@ -15,10 +15,12 @@ import 'package:flutter_unit/components/permanent/panel.dart';
 /// 说明:
 
 class IssuesDetailPage extends StatelessWidget {
+  const IssuesDetailPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter Point'),),
+      appBar: AppBar(title: const Text('Flutter Point'),),
       body: BlocBuilder<PointCommentBloc, PointCommentState>(
           builder: _buildContent),
     );
@@ -48,7 +50,7 @@ class IssuesDetailPage extends StatelessWidget {
 class IssueTitle extends StatelessWidget {
   final Issue issue;
 
-  IssueTitle({Key? key,required this.issue}) : super(key: key);
+  const IssueTitle({Key? key,required this.issue}) : super(key: key);
 
   String get issueDesHtml => issue.bodyHtml != null
       ? issue.bodyHtml!
@@ -62,18 +64,18 @@ class IssueTitle extends StatelessWidget {
           Stack(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Panel(child: Text('${issue.title}',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Panel(child: Text('${issue.title}',style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)),
               ),
               Positioned(
                   right: 10,
                   bottom: 10,
                   child: WrapColor(
-                    child: Text('#${issue.number}',style: TextStyle(color: Colors.white),),
+                    child: Text('#${issue.number}',style: const TextStyle(color: Colors.white),),
                   )),
             ],
           ),
-          Divider(),
+          const Divider(),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -86,10 +88,10 @@ class IssueTitle extends StatelessWidget {
                 subtitle:Row(
                   children: [
                     Text('创建于:${ConvertMan.time2string(issue.createdAt!)}'),
-                    Spacer(),
+                    const Spacer(),
                     WrapColor(
                         color: Colors.green,
-                        child: Text('更新于:${ConvertMan.time2string(issue.updatedAt!)}',style: TextStyle(color: Colors.white),)),
+                        child: Text('更新于:${ConvertMan.time2string(issue.updatedAt!)}',style: const TextStyle(color: Colors.white),)),
 
                   ],
                 ) ,
@@ -102,7 +104,7 @@ class IssueTitle extends StatelessWidget {
             child: MarkdownWidget(
                 markdownData: issueDesHtml, style: MarkdownWidget.kWhite),
           ),
-          Divider(thickness: 2,)
+          const Divider(thickness: 2,)
         ],
       ),
     );
@@ -112,7 +114,7 @@ class IssueTitle extends StatelessWidget {
 class IssueCommentWidget extends StatelessWidget {
   final IssueComment comment;
 
-  IssueCommentWidget({Key? key,required this.comment}) : super(key: key);
+  const IssueCommentWidget({Key? key,required this.comment}) : super(key: key);
 
   String get issueDesHtml => comment.bodyHtml != null
       ? comment.bodyHtml!
@@ -133,10 +135,10 @@ class IssueCommentWidget extends StatelessWidget {
               subtitle:Row(
                 children: [
                   Text('创建于:${ConvertMan.time2string(comment.createdAt!)}'),
-                  Spacer(),
+                  const Spacer(),
                   WrapColor(
                       color: Colors.green,
-                      child: Text('更新于:${ConvertMan.time2string(comment.updatedAt!)}',style: TextStyle(color: Colors.white),)),
+                      child: Text('更新于:${ConvertMan.time2string(comment.updatedAt!)}',style: const TextStyle(color: Colors.white),)),
 
                 ],
               ) ,
@@ -148,7 +150,7 @@ class IssueCommentWidget extends StatelessWidget {
           child: MarkdownWidget(
               markdownData: issueDesHtml, style: MarkdownWidget.kWhite),
         ),
-        Divider(thickness: 2,)
+        const Divider(thickness: 2,)
       ],
     );
   }

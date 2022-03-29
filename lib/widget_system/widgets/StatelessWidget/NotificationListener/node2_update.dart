@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 //    }
 
 class NotificationListenerUpdate extends StatefulWidget {
+  const NotificationListenerUpdate({Key? key}) : super(key: key);
+
   @override
   _NotificationListenerUpdateState createState() =>
       _NotificationListenerUpdateState();
@@ -19,18 +21,19 @@ class NotificationListenerUpdate extends StatefulWidget {
 
 class _NotificationListenerUpdateState
     extends State<NotificationListenerUpdate> {
-  final data = List<String>.generate(30, (i) => '第${i + 1}条');
+  final List<String> data = List.generate(30, (i) => '第${i + 1}条');
 
-  var _info = '';
+  String _info = '';
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: Stack(
         children: [
-          Positioned(child: Padding(
-            padding: const EdgeInsets.only(left:8.0),
+          Positioned(
+              child: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
             child: Text(_info),
           )),
           NotificationListener<ScrollUpdateNotification>(
@@ -39,9 +42,7 @@ class _NotificationListenerUpdateState
                 child: ListView.separated(
                   itemBuilder: _buildItem,
                   itemCount: data.length,
-                  separatorBuilder: (_, __) => Divider(
-                    height: 5,
-                  ),
+                  separatorBuilder: (_, __) => const Divider(height: 5),
                 ),
               )),
 
@@ -51,7 +52,6 @@ class _NotificationListenerUpdateState
   }
 
   bool _onNotification(ScrollUpdateNotification notification) {
-
     setState(() {
       _info = 'axis------【${notification.metrics.axis}】------\n'
           'pixels------【${notification.metrics.pixels}】------\n'
@@ -67,9 +67,7 @@ class _NotificationListenerUpdateState
           'localPosition------【${notification.dragDetails?.localPosition}】------\n'
           'scrollDelta------【${notification.scrollDelta}】------\n'
           'depth------【${notification.depth}】------';
-
     });
-
     return true;
   }
 
@@ -77,7 +75,7 @@ class _NotificationListenerUpdateState
     return Container(
       height: 50,
       alignment: Alignment.centerRight,
-      padding: EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.only(right: 8),
       child: Text(
         data[index],
         style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 18),

@@ -9,7 +9,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   //滚动性能优化 1.22.0
   GestureBinding.instance?.resamplingEnabled = true;
-  runApp(BlocWrapper(child: FlutterUnit()));
+  runApp(const BlocWrapper(child: FlutterUnit()));
 }
 
 

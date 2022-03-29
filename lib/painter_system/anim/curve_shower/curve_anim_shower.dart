@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/components/drop_selectable_widget.dart';
 
@@ -7,7 +5,7 @@ import 'anim_painter.dart';
 import 'point_data.dart';
 
 class CurveAnimShower extends StatefulWidget {
-  const CurveAnimShower();
+  const CurveAnimShower({Key? key}) : super(key: key);
 
   @override
   _CurveAnimShowerState createState() => _CurveAnimShowerState();
@@ -109,7 +107,7 @@ class _CurveAnimShowerState extends State<CurveAnimShower>
                 iconSize: 20,
                 height: 25,
                 width: 180,
-                disableColor: Color(0xff1F425F),
+                disableColor: const Color(0xff1F425F),
                 onDropSelected: (int index) async {
                   curveAnim = CurvedAnimation(
                       parent: _ctrl, curve: maps.values.toList()[index]);
@@ -120,10 +118,7 @@ class _CurveAnimShowerState extends State<CurveAnimShower>
               padding: const EdgeInsets.all(30.0),
               child: CustomPaint(
                 painter: AnimPainter(points),
-                size: const Size(
-                  200,
-                  200,
-                ),
+                size: const Size(200, 200),
               )),
         ],
       ),

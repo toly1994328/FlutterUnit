@@ -12,9 +12,11 @@ import 'package:flutter/material.dart';
 //          "【image】 : 背景图片   【DecorationImage】\n",
 //    }
 class ShapeImageDemo extends StatelessWidget {
+  const ShapeImageDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return const DecoratedBox(
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(

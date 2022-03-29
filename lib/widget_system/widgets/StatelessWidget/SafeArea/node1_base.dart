@@ -16,24 +16,28 @@ import 'package:flutter/material.dart';
 //    }
 
 class SafeAreaDemo extends StatelessWidget {
+  const SafeAreaDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SafeAreaPage()),
+            MaterialPageRoute(builder: (context) => const SafeAreaPage()),
           );
         },
-        child: Text("进入 SafeArea 测试页"),
+        child: const Text("进入 SafeArea 测试页"),
       ),
     );
   }
 }
 
 class SafeAreaPage extends StatefulWidget {
+  const SafeAreaPage({Key? key}) : super(key: key);
+
   @override
   _SafeAreaPageState createState() => _SafeAreaPageState();
 }
@@ -53,7 +57,7 @@ class _SafeAreaPageState extends State<SafeAreaPage> {
       bottom: _bottom,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'SafeArea 测试',
           ),
         ),
@@ -63,7 +67,7 @@ class _SafeAreaPageState extends State<SafeAreaPage> {
             Expanded(
               child: ListView.separated(
                 itemCount: 20,
-                separatorBuilder: (_, __) => Divider(
+                separatorBuilder: (_, __) => const Divider(
                   height: 1,
                 ),
                 itemBuilder: (_, index) => Container(
@@ -73,7 +77,7 @@ class _SafeAreaPageState extends State<SafeAreaPage> {
                   height: 50,
                   child: Text(
                     "第$index个",
-                    style: TextStyle(fontSize: 24, color: Colors.white),
+                    style: const TextStyle(fontSize: 24, color: Colors.white),
                   ),
                 ),
               ),

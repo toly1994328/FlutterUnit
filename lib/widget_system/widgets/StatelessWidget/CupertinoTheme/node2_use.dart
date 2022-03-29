@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
@@ -10,26 +12,20 @@
 //          "和Theme一样可以通过指定的属性，让它们在后代中共享，不过属性较少。注意如果需要使用主题，不能在当前的context中获取。",
 //    }
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-
 class CustomCupertinoTheme extends StatelessWidget {
+  const CustomCupertinoTheme({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return CupertinoTheme(
+    return const CupertinoTheme(
         data: CupertinoThemeData(
-            primaryColor: Colors.blue,
-            primaryContrastingColor: Colors.green
-        ),
+            primaryColor: Colors.blue, primaryContrastingColor: Colors.green),
         child: _ChildUseTheme());
   }
 }
 
 class _ChildUseTheme extends StatelessWidget {
-  const _ChildUseTheme({
-    Key? key,
-  }) : super(key: key);
+  const _ChildUseTheme({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +37,13 @@ class _ChildUseTheme extends StatelessWidget {
             height: 50,
             color: CupertinoTheme.of(context).primaryContrastingColor,
           ),
-          Container(
+          SizedBox(width: 150, child: Slider(value: 0.8, onChanged: (v) => {})),
+          SizedBox(
               width: 150,
-              child: Slider(value: 0.8, onChanged: (v) => {})),
-          Container(  width: 150,child: Divider(color:CupertinoTheme.of(context).primaryContrastingColor,thickness: 1,))
+              child: Divider(
+                color: CupertinoTheme.of(context).primaryContrastingColor,
+                thickness: 1,
+              ))
         ]);
   }
 }

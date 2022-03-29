@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
 /// 说明:
-
-///
 //    {
 //      "widgetId": 130,
 //      "name": 'AboutDialog基本使用',
@@ -15,9 +15,9 @@
 //          "【children】 : 子组件列表   【List<Widget>】",
 //    }
 
-import 'package:flutter/material.dart';
-
 class CustomAboutDialog extends StatelessWidget {
+  const CustomAboutDialog({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -29,13 +29,13 @@ class CustomAboutDialog extends StatelessWidget {
   }
 
   Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
         color: Colors.blue,
         onPressed: () {
           showDialog(context: context, builder: (ctx) => _buildAboutDialog());
         },
-        child: Text(
+        child: const Text(
           'Just Show It',
           style: TextStyle(color: Colors.white),
         ),
@@ -43,25 +43,29 @@ class CustomAboutDialog extends StatelessWidget {
 
   AboutDialog _buildAboutDialog() {
     return AboutDialog(
-      applicationIcon: FlutterLogo(),
+      applicationIcon: const FlutterLogo(),
       applicationVersion: 'v0.0.1',
       applicationName: 'Flutter Unit',
       applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
       children: <Widget>[
         Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 20),
             width: 80,
             height: 80,
             child: Image.asset('assets/images/icon_head.webp')),
         Container(
-            margin: EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 10),
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'The King Of Coder.',
-              style: TextStyle(color: Colors.white, fontSize: 20, shadows: [
-                Shadow(
-                    color: Colors.blue, offset: Offset(.5, .5), blurRadius: 3)
-              ]),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                shadows: [
+                  Shadow(
+                      color: Colors.blue, offset: Offset(.5, .5), blurRadius: 3)
+                ],
+              ),
             ))
       ],
     );

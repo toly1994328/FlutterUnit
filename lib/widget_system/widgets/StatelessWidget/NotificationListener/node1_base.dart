@@ -12,16 +12,18 @@ import 'package:flutter/material.dart';
 //    }
 
 class NotificationListenerDemo extends StatefulWidget {
+  const NotificationListenerDemo({Key? key}) : super(key: key);
+
   @override
   _NotificationListenerDemoState createState() => _NotificationListenerDemoState();
 }
 
 class _NotificationListenerDemoState extends State<NotificationListenerDemo> {
-  final data = List<String>.generate(30, (i) => '第${i + 1}条');
+  final List<String> data = List.generate(30, (i) => '第${i + 1}条');
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 250,
       child: NotificationListener<OverscrollIndicatorNotification>(
           onNotification: _onNotification,
@@ -29,7 +31,7 @@ class _NotificationListenerDemoState extends State<NotificationListenerDemo> {
             child: ListView.separated(
               itemBuilder: _buildItem,
               itemCount: data.length,
-              separatorBuilder: (_,__)=>Divider(height: 5,),
+              separatorBuilder: (_,__)=>const Divider(height: 5,),
             ),
           )),
     );
@@ -37,15 +39,15 @@ class _NotificationListenerDemoState extends State<NotificationListenerDemo> {
 
   bool _onNotification(OverscrollIndicatorNotification notification) {
     if (notification.leading) {
-      notification.disallowGlow();
-      Scaffold.of(context).showSnackBar(SnackBar(
+      notification.disallowIndicator();
+      Scaffold.of(context).showSnackBar(const SnackBar(
         content: Text('已滑到顶部'),
         backgroundColor: Colors.blue,
         duration: Duration(milliseconds: 200),
       ));
     } else {
-      notification.disallowGlow();
-      Scaffold.of(context).showSnackBar(SnackBar(
+      notification.disallowIndicator();
+      Scaffold.of(context).showSnackBar(const SnackBar(
         content: Text('已滑到底部'),
         duration: Duration(milliseconds: 200),
         backgroundColor: Colors.blue,

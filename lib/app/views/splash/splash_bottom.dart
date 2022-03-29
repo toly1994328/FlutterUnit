@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 
 class SplashBottom extends StatefulWidget {
-  const SplashBottom();
+  const SplashBottom({Key? key}) : super(key: key);
+
+
 
   @override
   _SplashBottomState createState() => _SplashBottomState();
@@ -23,7 +25,7 @@ class _SplashBottomState extends State<SplashBottom> {
     Future.delayed(delayTime).then(startAnim);
   }
 
-  FutureOr<Null> startAnim(value){
+  void startAnim(value){
     setState(() {
       _animStart = true;
     });
@@ -38,9 +40,9 @@ class _SplashBottomState extends State<SplashBottom> {
               direction: Axis.vertical,
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
-              children: [
-                const Text("Power By 张风捷特烈", style: TStyleUnit.splashShadows),
-                const Text("· 2021 ·  @编程之王 ", style: TStyleUnit.splashShadows),
+              children: const [
+                Text("Power By 张风捷特烈", style: TStyleUnit.splashShadows),
+                Text("· 2021 ·  @编程之王 ", style: TStyleUnit.splashShadows),
               ],
         ));
   }

@@ -23,13 +23,13 @@ class WidgetNodePanel extends StatefulWidget {
   final HighlighterStyle? codeStyle;
   final String? codeFamily;
 
-  WidgetNodePanel(
-      {this.text='',
+  const WidgetNodePanel(
+      {Key? key, this.text='',
       this.subText='',
       this.code='',
       this.show,
      required this.codeStyle,
-      this.codeFamily});
+      this.codeFamily}) : super(key: key);
 
   @override
   _WidgetNodePanelState createState() => _WidgetNodePanelState();
@@ -45,12 +45,12 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           buildNodeTitle(),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           _buildCode(context),
@@ -59,7 +59,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
             child: widget.show,
           ),
           _buildNodeInfo(),
-          Divider(),
+          const Divider(),
         ],
       ),
     );
@@ -76,8 +76,8 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
           ),
           Expanded(
             child: Text(
-              '${widget.text}',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              widget.text,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
           _buildShareButton(),
@@ -85,12 +85,12 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
         ],
       );
 
-  Widget _buildNodeInfo() => Container(
+  Widget _buildNodeInfo() => SizedBox(
         width: double.infinity,
         child: Panel(
             child: Text(
-          '${widget.subText}',
-          style: TextStyle(fontSize: 14),
+          widget.subText,
+          style: const TextStyle(fontSize: 14),
         )),
       );
 
@@ -125,8 +125,8 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
   Widget _buildCode(BuildContext context) => AnimatedCrossFade(
         firstCurve: Curves.easeInCirc,
         secondCurve: Curves.easeInToLinear,
-        firstChild: Container(),
-        secondChild: Container(
+        firstChild: const SizedBox(),
+        secondChild: SizedBox(
           width: MediaQuery.of(context).size.width,
           child: CodeWidget(
             fontFamily: widget.codeFamily,
@@ -135,7 +135,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
                 HighlighterStyle.fromColors(HighlighterStyle.lightColor),
           ),
         ),
-        duration: Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 200),
         crossFadeState: _crossFadeState,
       );
 

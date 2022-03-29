@@ -1,8 +1,5 @@
 import 'dart:io';
 import 'dart:typed_data';
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:path_provider/path_provider.dart';
@@ -22,13 +19,15 @@ import 'node1_base.dart';
 class RepaintBoundarySave extends StatelessWidget {
   final GlobalKey _globalKey = GlobalKey();
 
+  RepaintBoundarySave({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         RepaintBoundary(
           key: _globalKey,
-          child: TempPlayBezier3Page(),
+          child: const TempPlayBezier3Page(),
         ),
         Positioned(right: -10, child: _buildButton3(context))
       ],
@@ -36,19 +35,19 @@ class RepaintBoundarySave extends StatelessWidget {
   }
 
   Widget _buildButton3(context) => MaterialButton(
-      child: Icon(
+      child: const Icon(
         Icons.save_alt,
         size: 15,
         color: Colors.white,
       ),
       color: Colors.green,
-      shape: CircleBorder(
-        side: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+      shape: const CircleBorder(
+        side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
       ),
       onPressed: () async {
-        var bits = await _widget2Image(_globalKey);
-        var dir = await getApplicationSupportDirectory();
-        var file = File(dir.path + "/save_img.png");
+        Uint8List? bits = await _widget2Image(_globalKey);
+        Directory dir = await getApplicationSupportDirectory();
+        File file = File(dir.path + "/save_img.png");
         if(bits==null) return;
         var f = await file.writeAsBytes(bits);
         Scaffold.of(context).showSnackBar(SnackBar(

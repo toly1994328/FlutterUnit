@@ -13,9 +13,11 @@ import 'package:flutter/material.dart';
 //      }
 
 class CustomImageIcon extends StatelessWidget {
+  const CustomImageIcon({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var data = {
+    Map<Color, double> data = {
       Colors.blue: 50.0,
       Colors.red: 60.0,
       Colors.green: 70.0,
@@ -25,7 +27,7 @@ class CustomImageIcon extends StatelessWidget {
       spacing: 10,
       children: data.keys
           .map((e) => ImageIcon(
-                AssetImage("assets/images/leaf.webp"),
+        const AssetImage("assets/images/leaf.webp"),
                 color: e,
                 size: data[e],
               ))

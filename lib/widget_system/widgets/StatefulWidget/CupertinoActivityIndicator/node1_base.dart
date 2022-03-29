@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -12,13 +11,15 @@ import 'package:flutter/material.dart';
 //          "【radius】 : 半径   【double】",
 //    }
 class CustomCupertinoActivityIndicator extends StatelessWidget {
+  const CustomCupertinoActivityIndicator({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
 
     return Wrap(
       spacing: 20,
-      children: <Widget>[
+      children: const [
         CupertinoActivityIndicator(
           animating: true,
           radius: 25,

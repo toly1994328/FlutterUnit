@@ -15,7 +15,10 @@ import 'package:flutter_unit/components/permanent/circle.dart';
 /// 说明:
 
 class CodeStyleSettingPage extends StatelessWidget {
-  final code = """
+
+  const CodeStyleSettingPage({Key? key}) : super(key: key);
+
+  final String code = """
 const String _kCounty = 'China';
 
 class Hello {
@@ -30,11 +33,12 @@ class Hello {
   });
 }""";
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('代码高亮样式'),
+        title: const Text('代码高亮样式'),
       ),
       body: BlocBuilder<GlobalBloc, GlobalState>(
           builder: (_, state) => _buildFontCell(context,
@@ -48,7 +52,7 @@ class Hello {
       itemCount: styles.length,
       itemBuilder: (_ctx, i) =>  FeedbackWidget(
         a: 0.95,
-        duration: Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 200),
       onPressed: (){
         BlocProvider.of<GlobalBloc>(context).add(EventSwitchCoderTheme(i));
       },
@@ -56,7 +60,7 @@ class Hello {
         fit: StackFit.passthrough,
         children: <Widget>[
          Card(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child: CodeWidget(
                 code: code,
                 style: styles[i],
@@ -69,7 +73,7 @@ class Hello {
             child: Text(Cons.codeThemeSupport.values.toList()[i],style: TextStyle(
               fontSize: 14,
               color: styles[i].stringStyle!.color,
-              shadows: [Shadow(
+              shadows: const [Shadow(
                 color: Colors.white,
                 offset: Offset(.5,.5),
                 blurRadius: 1
@@ -83,7 +87,7 @@ class Hello {
             top: 20,
             child: Circle(radius: 10,
               color: Theme.of(context).primaryColor,
-              child: Icon(Icons.check,color:Colors.white,size: 15,),),
+              child: const Icon(Icons.check,color:Colors.white,size: 15,),),
           )
         ],
       ),

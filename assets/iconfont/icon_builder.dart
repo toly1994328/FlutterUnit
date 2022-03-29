@@ -20,7 +20,7 @@ class $fontName {
 
   String read = await fileCss.readAsString();
   List<String> split = read.split(".icon-");
-  split.forEach((str) {
+  for (String str in split) {
     if (str.contains("before")) {
       List<String> split = str.split(":");
       result += "static const IconData " +
@@ -29,11 +29,11 @@ class $fontName {
           split[2].replaceAll("\"\\", "0x").split("\"")[0] +
           ", fontFamily: \"$fontName\");\n";
     }
-  });
+  }
   result+="}";
   fileCss.delete();//删除css文件
 
-  File fileOut = File(path.join(Directory.current.path,"$outFile"));
+  File fileOut = File(path.join(Directory.current.path,outFile));
   if(! await fileOut.exists()){
     await fileOut.create(recursive: true);
   }
@@ -43,7 +43,7 @@ class $fontName {
   fonts:
     - family: $fontName
       fonts:
-        - asset: """+"$resDir/iconfont.ttf";
+        - asset: $resDir/iconfont.ttf""";
 
   print("build OK:\n $config");
 }

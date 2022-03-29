@@ -20,6 +20,7 @@ import 'package:flutter/material.dart';
 //    }
 
 class BoxScrollViewDemo extends StatelessWidget {
+  const BoxScrollViewDemo({Key? key}) : super(key: key);
 
   final String info =
       'BoxScrollView 是 ScrollView 的子类，实现了它的抽象方法，且暴露出另一个抽象方法 buildChildLayout，返回 Sliver 家族 Widget，'
@@ -27,14 +28,14 @@ class BoxScrollViewDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: Column(
         children: [
           Container(
             color: Colors.blue.withOpacity(0.1),
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Text(info),
           ),
           Expanded(child: MyBoxScrollView()),
@@ -45,6 +46,7 @@ class BoxScrollViewDemo extends StatelessWidget {
 }
 
 class MyBoxScrollView extends BoxScrollView {
+  MyBoxScrollView({Key? key}) : super(key: key);
 
   final List<Color> data = [
     Colors.purple[50]!,
@@ -68,19 +70,19 @@ class MyBoxScrollView extends BoxScrollView {
     delegate: SliverChildBuilderDelegate(
             (_, int index) => Container(
           alignment: Alignment.center,
-          width: 100,
-          height: 50,
-          color: data[index],
-          child: Text(
-            colorString(data[index]),
-            style: TextStyle(color: Colors.white, shadows: [
-              Shadow(
-                  color: Colors.black,
-                  offset: Offset(.5, .5),
-                  blurRadius: 2)
-            ]),
-          ),
-        ),
+                  width: 100,
+                  height: 50,
+                  color: data[index],
+                  child: Text(
+                    colorString(data[index]),
+                    style: const TextStyle(color: Colors.white, shadows: [
+                      Shadow(
+                          color: Colors.black,
+                          offset: Offset(.5, .5),
+                          blurRadius: 2)
+                    ]),
+                  ),
+                ),
         childCount: data.length),
   );
 }

@@ -23,6 +23,8 @@ import 'package:flutter/material.dart';
 //          "【padding】 : 内边距   【EdgeInsetsGeometry】",
 //    }
 class CustomAnimatedContainer extends StatefulWidget {
+  const CustomAnimatedContainer({Key? key}) : super(key: key);
+
   @override
   _CustomAnimatedContainerState createState() =>
       _CustomAnimatedContainerState();
@@ -50,7 +52,7 @@ class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
             spreadRadius: 0)
       ]);
 
-  final Alignment startAlignment = Alignment.topLeft + Alignment(0.2, 0.2);
+  final Alignment startAlignment = Alignment.topLeft + const Alignment(0.2, 0.2);
   final Alignment endAlignment = Alignment.center;
 
   final double startHeight = 150.0;

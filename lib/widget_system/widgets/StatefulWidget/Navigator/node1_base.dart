@@ -15,9 +15,11 @@ import 'package:flutter/material.dart';
 //          "【onPopPage】 : 出栈回调   【PopPageCallback】",
 //    }
 class NavigatorDemo extends StatelessWidget {
+  const NavigatorDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       width: 300,
       child: Navigator(
@@ -33,18 +35,18 @@ class NavigatorDemo extends StatelessWidget {
     switch (settings.name) {
       case '/home-content':
         return MaterialPageRoute(
-            builder: (_) => HomeContent(), settings: settings);
+            builder: (_) => const HomeContent(), settings: settings);
       case "/red":
-        return MaterialPageRoute(builder: (_) => RedPage(), settings: settings);
+        return MaterialPageRoute(builder: (_) => const RedPage(), settings: settings);
       case "/yellow":
         return MaterialPageRoute(
-            builder: (_) => YellowPage(), settings: settings);
+            builder: (_) => const YellowPage(), settings: settings);
       case "/green":
         return MaterialPageRoute(
-            builder: (_) => GreenPage(), settings: settings);
+            builder: (_) => const GreenPage(), settings: settings);
       default:
         return MaterialPageRoute(
-            builder: (_) => HomeContent(), settings: settings);
+            builder: (_) => const HomeContent(), settings: settings);
     }
   }
 
@@ -93,46 +95,48 @@ class TolyNavigatorObservers extends NavigatorObserver {
 }
 
 class HomeContent extends StatelessWidget {
+  const HomeContent({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              RaisedButton(
-                color: Colors.red,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/red');
-                },
-              ),
-              RaisedButton(
-                color: Colors.yellow,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/yellow');
-                },
-              ),
-              RaisedButton(
-                color: Colors.green,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/green');
-                },
-              )
-            ],
-          ),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            RaisedButton(
+              color: Colors.red,
+              onPressed: () {
+                Navigator.pushNamed(context, '/red');
+              },
+            ),
+            RaisedButton(
+              color: Colors.yellow,
+              onPressed: () {
+                Navigator.pushNamed(context, '/yellow');
+              },
+            ),
+            RaisedButton(
+              color: Colors.green,
+              onPressed: () {
+                Navigator.pushNamed(context, '/green');
+              },
+            )
+          ],
+        ),
+      ],
     );
   }
 }
 
 class RedPage extends StatelessWidget {
+  const RedPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("RedPage"),
+        title: const Text("RedPage"),
       ),
       body: Container(
         color: Colors.red,
@@ -142,11 +146,13 @@ class RedPage extends StatelessWidget {
 }
 
 class YellowPage extends StatelessWidget {
+  const YellowPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("YellowPage"),
+        title: const Text("YellowPage"),
       ),
       body: Container(
         color: Colors.yellow,
@@ -156,11 +162,13 @@ class YellowPage extends StatelessWidget {
 }
 
 class GreenPage extends StatelessWidget {
+  const GreenPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GreenPage"),
+        title: const Text("GreenPage"),
       ),
       body: Container(
         color: Colors.green,

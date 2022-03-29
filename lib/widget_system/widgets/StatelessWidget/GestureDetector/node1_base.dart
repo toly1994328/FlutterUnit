@@ -20,12 +20,14 @@ import 'package:flutter/material.dart';
 //    }
 
 class CustomGestureDetector extends StatefulWidget {
+  const CustomGestureDetector({Key? key}) : super(key: key);
+
   @override
   _CustomGestureDetectorState createState() => _CustomGestureDetectorState();
 }
 
 class _CustomGestureDetectorState extends State<CustomGestureDetector> {
-  var _info = '';
+  String _info = '';
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class _CustomGestureDetectorState extends State<CustomGestureDetector> {
         color: Colors.grey.withAlpha(33),
         child: Text(
           _info,
-          style: TextStyle(fontSize: 18, color: Colors.blue),
+          style: const TextStyle(fontSize: 18, color: Colors.blue),
         ),
       ),
     );

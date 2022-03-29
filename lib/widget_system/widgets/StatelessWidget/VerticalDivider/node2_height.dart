@@ -12,17 +12,19 @@ import 'package:flutter/material.dart';
 //      "name": "VerticalDivider宽度和空缺",
 //      "subtitle": "【indent】: 前面空缺长度   【double】\n"
 //          "【endIndent】: 后面空缺长度   【double】\n"
-//          "【height】: 占位高   【double】",
+//          "【width】: 占位宽   【double】",
 //    }
-class HeightVerticalDivider extends StatelessWidget {
+class WidthVerticalDivider extends StatelessWidget {
+  const WidthVerticalDivider({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var dataColor = [
+    List<Color> dataColor = [
       Colors.red, Colors.yellow,
       Colors.blue, Colors.green];
-    var dataThickness = [10.0, 20.0, 30.0, 40.0];
-    var data = Map.fromIterables(dataColor, dataThickness);
-    return Container(
+    List<double> dataThickness = [10.0, 20.0, 30.0, 40.0];
+    Map<Color,double>  data = Map.fromIterables(dataColor, dataThickness);
+    return SizedBox(
       height: 150,
       child: Row(
         mainAxisSize: MainAxisSize.min,
