@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 110,
 //      "name": 'Table基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【children】 : 组件列表   【List<Widget>】\n"
+//      "subtitle": "【children】 : 组件列表   【List<Widget>】\n"
 //          "【columnWidths】 : 列宽   【Map<int, TableColumnWidth>】\n"
 //          "【defaultColumnWidth】 : 默认列宽  【TableColumnWidth】\n"
 //          "【border】 : 边线   【TableBorder】\n"

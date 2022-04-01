@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 59,
 //      "name": 'TabBarView需要与TabBar联用',
 //      "priority": 1,
-//      "subtitle":
-//          "【controller】 : 控制器   【TabController】\n"
+//      "subtitle": "【controller】 : 控制器   【TabController】\n"
 //          "【children】 : 孩子们   【指示器颜色】\n"
 //          "【physics】 : 表现   【ScrollPhysics】",
 //    }

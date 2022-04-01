@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 196,
 //      "name": 'FlexibleSpaceBar基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【title】 : 标题组件   【Widget】\n"
+//      "subtitle": "【title】 : 标题组件   【Widget】\n"
 //          "【titlePadding】 : 标题间距   【EdgeInsetsGeometry】\n"
 //          "【collapseMode】 : 折叠模式   【CollapseMode】\n"
 //          "【stretchModes】 : 延伸模式   【List<StretchMode>】\n"

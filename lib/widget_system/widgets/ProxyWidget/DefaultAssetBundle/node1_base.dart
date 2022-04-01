@@ -9,8 +9,7 @@ import 'dart:ui' as ui;
 //      "widgetId": 320,
 //      "name": 'DefaultAssetBundle 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【bundle】 : *资源包   【AssetBundle】\n"
+//      "subtitle": "【bundle】 : *资源包   【AssetBundle】\n"
 //          "【child】 : *子组件  【Widget】\n"
 //          "我们可以定义自己的 DefaultAssetBundle 来供后续节点使用，也可以直接使用默认的。该案例演示通过框架提供的 DefaultAssetBundle 加载一张资源图片进行显示。",
 //    }

@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 170,
 //      "name": 'WillPopScope使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【onWillPop】 : 返回回调  【WillPopCallback】",
 //    }
 class CustomWillPopScope extends StatelessWidget {

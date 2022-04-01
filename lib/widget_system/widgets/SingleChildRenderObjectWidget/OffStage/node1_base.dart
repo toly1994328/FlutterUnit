@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 71,
 //      "name": 'Offstage基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【offstage】 : 是否消失   【bool】",
 //    }
 class CustomOffstage extends StatefulWidget {

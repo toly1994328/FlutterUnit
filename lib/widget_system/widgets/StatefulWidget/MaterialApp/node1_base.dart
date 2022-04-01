@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 65,
 //      "name": 'MaterialApp基本用法',
 //      "priority": 1,
-//      "subtitle":
-//          "【theme】 : 主题   【ThemeData】\n"
+//      "subtitle": "【theme】 : 主题   【ThemeData】\n"
 //          "【title】 : 任务栏标题   【String】\n"
 //          "【debugShowCheckedModeBanner】 : 开启角标   【bool】\n"
 //          "【showPerformanceOverlay】 : 开启性能浮层   【bool】\n"

@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 331,
 //      "name": 'SliderTheme对Slider的样式定制',
 //      "priority": 2,
-//      "subtitle":
-//          "通过thumbShape和valueIndicatorShape可以对Slider进行样式定制。"
+//      "subtitle": "通过thumbShape和valueIndicatorShape可以对Slider进行样式定制。"
 //          "注: 本例参考flutter-gallery中的SlideDemo",
 //    }
 

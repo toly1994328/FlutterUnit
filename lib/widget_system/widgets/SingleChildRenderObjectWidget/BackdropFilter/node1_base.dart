@@ -11,8 +11,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 278,
 //      "name": 'BackdropFilter基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【filter】 : 过滤器   【ImageFilter】\n"
 //          "ImageFilter.blur可以实现高斯模糊，指定x，y模糊因子。",
 //    }

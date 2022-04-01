@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 301,
 //      "name": 'SliverAnimatedList基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【itemBuilder】 : item构造器   【AnimatedListItemBuilder】\n"
+//      "subtitle": "【itemBuilder】 : item构造器   【AnimatedListItemBuilder】\n"
 //          "【initialItemCount】 : 初始item个数   【int】",
 //    }
 class SliverAnimatedListDemo extends StatefulWidget {

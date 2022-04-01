@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 217,
 //      "name": 'CupertinoPopupSurface 使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【isSurfacePainted】 : 是否绘白   【bool】\n"
+//      "subtitle": "【isSurfacePainted】 : 是否绘白   【bool】\n"
 //          "【child】 : 子组件   【Widget】\n"
 //          "测试效果左侧 isSurfacePainted = false，右侧 isSurfacePainted = true",
 //    }

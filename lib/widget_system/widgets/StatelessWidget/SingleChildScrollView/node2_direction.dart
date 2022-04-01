@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 164,
 //      "name": 'SingleChildScrollView滑动方向',
 //      "priority": 2,
-//      "subtitle":
-//          "【scrollDirection】 : 滑动方向   【Axis】\n"
+//      "subtitle": "【scrollDirection】 : 滑动方向   【Axis】\n"
 //          "【reverse】 : 是否反向   【Axis】",
 //    }
 class DirectionSingleChildScrollView extends StatelessWidget {

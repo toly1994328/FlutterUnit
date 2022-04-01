@@ -74,41 +74,52 @@ class _UnitNavigationState extends State<UnitNavigation> {
             child: child,
           ));
 
+  bool get isDark => Theme.of(context).brightness == Brightness.dark;
+
+
   // 主页搜索按钮
   // 由于 按钮 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
-  Widget _buildSearchButton(BuildContext context) =>
-      BlocBuilder<ColorChangeCubit, SelectTab>(
-          builder: (_, state) => FloatingActionButton(
+  Widget _buildSearchButton(BuildContext context) {
+    return BlocBuilder<ColorChangeCubit, SelectTab>(
+          builder: (_, state) {
+            return FloatingActionButton(
                 elevation: 2,
-                backgroundColor: state.color,
+                backgroundColor: isDark? state.color: state.color,
                 child: const Icon(Icons.search),
                 onPressed: () =>
                     Navigator.of(context).pushNamed(UnitRouter.search),
-              ));
+              );
+          });
+  }
 
   // 由于 bottomNavigationBar 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
   Widget _buildBottomNav(BuildContext context) =>
       BlocBuilder<ColorChangeCubit, SelectTab>(
-        builder: (context, state) => UnitBottomBar(
+        builder: (context, state) {
+          return UnitBottomBar(
           color: state.color,
           onItemTap: _onTapBottomNav,
           onItemLongTap: _onItemLongTap,
-        ),
+        );
+        },
       );
 
   // 点击底部按钮事件，切换页面
   void _onTapBottomNav(int index) {
-    _controller.animateToPage(index,
-        duration: const Duration(milliseconds: 200), curve: Curves.linear);
-    if (index != 0) {
-      context.read<ColorChangeCubit>().change(Theme.of(context).primaryColor);
-    } else {
-      Color color =
-          Cons.tabColors[context.read<ColorChangeCubit>().state.family.index];
+    _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
+
+    if(!isDark){
+      late Color color;
+      if (index != 0) {
+        color = Theme.of(context).primaryColor;
+      } else {
+        color = Cons.tabColors[context.read<ColorChangeCubit>().state.family.index];
+      }
       context.read<ColorChangeCubit>().change(color);
     }
+
 
     if (index == 2) {
       BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());

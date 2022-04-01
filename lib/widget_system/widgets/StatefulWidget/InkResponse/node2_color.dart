@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 149,
 //      "name": 'InkResponse其他属性',
 //      "priority": 2,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】\n"
 //          "【highlightColor】 : 高亮色   【Color】\n"
 //          "【splashColor】 : 水波纹色   【Color】\n"

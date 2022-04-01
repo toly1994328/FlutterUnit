@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 197,
 //      "name": 'ErrorWidget基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "入参 : 显示信息   【Object】",
+//      "subtitle": "入参 : 显示信息   【Object】",
 //    }
 class ErrorWidgetDemo extends StatelessWidget {
   const ErrorWidgetDemo({Key? key}) : super(key: key);

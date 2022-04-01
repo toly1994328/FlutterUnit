@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 291,
 //      "name": 'ListWheelViewport 放大',
 //      "priority": 3,
-//      "subtitle":
-//          "【useMagnifier】 : 是否放大   【bool】\n"
+//      "subtitle": "【useMagnifier】 : 是否放大   【bool】\n"
 //          "【magnification】 : 放大比例   【double】\n"
 //          "【clipBehavior】 : 剪裁行为   【Clip】\n"
 //          "【renderChildrenOutsideViewport】 : 出视野是否渲染   【bool】",

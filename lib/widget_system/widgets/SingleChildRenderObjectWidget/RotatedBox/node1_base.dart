@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 72,
 //      "name": 'RotatedBox基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【quarterTurns】 : 旋转多少个90°   【int】",
 //    }
 class CustomRotatedBox extends StatefulWidget {

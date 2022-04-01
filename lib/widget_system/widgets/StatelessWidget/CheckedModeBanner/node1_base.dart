@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 215,
 //      "name": 'CheckedModeBanner基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 组件   【Widget】",
+//      "subtitle": "【child】 : 组件   【Widget】",
 //    }
 
 class CheckedModeBannerDemo extends StatelessWidget {

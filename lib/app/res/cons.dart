@@ -5,7 +5,6 @@ class Cons {
 
   static const menuInfo = <String>["关于", "帮助", "问题反馈"]; //菜单栏
 
-
   static const List<Color> tabColors = [
     Color(0xff44D1FD),
     Color(0xffFD4F43),

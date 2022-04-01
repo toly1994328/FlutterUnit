@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 82,
 //      "name": 'FractionallySizedBox基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【widthFactor】 : 宽分率   【double】\n"
 //          "【heightFactor】 : 高分率   【double】\n"
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】",

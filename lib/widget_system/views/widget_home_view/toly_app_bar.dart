@@ -110,9 +110,14 @@ class _TolyAppBarState extends State<TolyAppBar>
     );
   }
 
-  Widget _buildChild(int color) => Container(
+  Widget _buildChild(int color) {
+    ThemeData themeData = Theme.of(context);
+    bool isDark = themeData.brightness == Brightness.dark;
+
+    return Container(
     alignment: const Alignment(0, 0.4),
     decoration: BoxDecoration(boxShadow: [
+      if(!isDark)
       BoxShadow(
           color: _selectIndex == colors.indexOf(color)
               ? Colors.transparent
@@ -127,6 +132,7 @@ class _TolyAppBarState extends State<TolyAppBar>
       style: _kTabTextStyle,
     ),
   );
+  }
 
   void _onTap(int color) {
     if (_selectIndex == colors.indexOf(color)) return;

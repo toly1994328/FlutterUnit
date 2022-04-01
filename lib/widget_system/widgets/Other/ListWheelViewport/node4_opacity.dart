@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 291,
 //      "name": '偏移和透明度',
 //      "priority": 4,
-//      "subtitle":
-//          "【offAxisFraction】 : 轴中心偏移比   【double】\n"
+//      "subtitle": "【offAxisFraction】 : 轴中心偏移比   【double】\n"
 //          "【overAndUnderCenterOpacity】 : 放大器之外的透明度   【double】",
 //    }
 

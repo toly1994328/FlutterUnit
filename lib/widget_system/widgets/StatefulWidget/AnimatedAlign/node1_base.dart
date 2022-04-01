@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 120,
 //      "name": 'AnimatedAlign基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【duration】 : 动画时长   【Duration】\n"
 //          "【onEnd】 : 动画结束回调   【Function()】\n"
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"

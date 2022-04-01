@@ -45,15 +45,25 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
   final paddingL = const EdgeInsets.only(left: 8);
   final paddingR = const EdgeInsets.only(right: 8);
 
+  bool get isDark => Theme.of(context).brightness == Brightness.dark;
+
+  Color get color {
+    if(isDark){
+      return Theme.of(context).bottomNavigationBarTheme.backgroundColor??const Color(0xff181818);
+    }else{
+      return widget.color;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
         elevation: 0,
         shape: shape,
         notchMargin: 5,
-        color: widget.color,
+        color: color,
         child: IconTheme(
-          data: IconTheme.of(context).copyWith(color: Colors.white, size: 25),
+          data: IconTheme.of(context).copyWith(color: isDark?null:Colors.white, size: 25),
           child: Stack(
             children: [
               _buildLeftBtn(context),
@@ -72,7 +82,7 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
           margin: paddingTR,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: widget.color.withAlpha(88), borderRadius: borderTR),
+              color: color.withAlpha(88), borderRadius: borderTR),
           height: SizeUnit.bottom_nav_height,
           width: SizeUnit.bottom_nav_right_width,
           child: Row(
@@ -116,7 +126,7 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
           margin: paddingTL,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: widget.color.withAlpha(88), borderRadius: borderTL),
+              color: color.withAlpha(88), borderRadius: borderTL),
           height: SizeUnit.bottom_nav_height,
           width: SizeUnit.bottom_nav_right_width,
           child: Row(
@@ -167,7 +177,7 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
       : SizeUnit.default_bottom_nav_icon;
 
   Color getIconColorByPosition(int position) =>
-      _position == position ? widget.color : Colors.white;
+      _position == position ? isDark? Colors.blue: widget.color : Colors.white;
 
   void _updateIndex(int index) {
     setState(() {

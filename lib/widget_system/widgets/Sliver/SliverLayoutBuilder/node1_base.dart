@@ -9,8 +9,7 @@ import 'package:flutter/rendering.dart';
 //      "widgetId": 304,
 //      "name": 'SliverLayoutBuilder基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【builder】 : 组件构造器   【SliverLayoutWidgetBuilder】",
+//      "subtitle": "【builder】 : 组件构造器   【SliverLayoutWidgetBuilder】",
 //    }
 class SliverLayoutBuilderDemo extends StatefulWidget {
   const SliverLayoutBuilderDemo({Key? key}) : super(key: key);

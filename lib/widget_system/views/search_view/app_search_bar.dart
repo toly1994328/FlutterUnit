@@ -47,4 +47,5 @@ class _AppSearchBarState extends State<AppSearchBar> {
     _controller.dispose();
     super.dispose();
   }
+
 }

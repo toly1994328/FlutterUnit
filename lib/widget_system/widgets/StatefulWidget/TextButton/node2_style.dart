@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 353,
 //      "name": 'TextButton样式',
 //      "priority": 2,
-//      "subtitle":
-//          "【style】 : 按钮样式   【ButtonStyle】\n"
+//      "subtitle": "【style】 : 按钮样式   【ButtonStyle】\n"
 //          "【focusNode】 : 焦点   【FocusNode】\n"
 //          "【clipBehavior】 : 裁剪行为   【Clip】\n"
 //          "【autofocus】 : 自动聚焦   【bool】",
