@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 317,
 //      "name": 'TableCell基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 组件   【Widget】\n"
+//      "subtitle": "【child】 : 组件   【Widget】\n"
 //          "【verticalAlignment】 : 竖直对齐方式   【TableCellVerticalAlignment】",
 //    }
 

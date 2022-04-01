@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 291,
 //      "name": 'ListWheelViewport 透视效果',
 //      "priority": 2,
-//      "subtitle":
-//          "【perspective】 : 透视参数   【double】\n"
+//      "subtitle": "【perspective】 : 透视参数   【double】\n"
 //          "【squeeze】 : 挤压值   【double】\n"
 //          "【diameterRatio】 : 直径分率   【double】",
 //    }

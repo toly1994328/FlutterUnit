@@ -7,8 +7,7 @@ import '../../StatelessWidget/RadioListTile/node1_base.dart';
 //      "widgetId": 52,
 //      "name": 'ExpansionTile基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【children】 : 展开内容   【List<Widget>】\n"
+//      "subtitle": "【children】 : 展开内容   【List<Widget>】\n"
 //          "【leading】 : 头左组件   【Widget】\n"
 //          "【title】 : 头中组件   【Widget】\n"
 //          "【trailing】 : 头尾组件   【Widget】\n"

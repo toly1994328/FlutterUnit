@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 349,
 //      "name": 'ScrollView 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【reverse】 : 是否反向   【bool】\n"
+//      "subtitle": "【reverse】 : 是否反向   【bool】\n"
 //          "【scrollDirection】 : 滑动方向   【Axis】\n"
 //          "【cacheExtent】 : 缓存长   【double】\n"
 //          "【dragStartBehavior】 : 拖动行为   【DragStartBehavior】\n"

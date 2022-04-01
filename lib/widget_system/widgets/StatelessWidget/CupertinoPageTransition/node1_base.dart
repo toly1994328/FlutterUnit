@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 216,
 //      "name": 'CupertinoPageTransition 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【linearTransition】 : 是否线性转换   【bool】\n"
 //          "【primaryRouteAnimation】 : 初始路由动画   【Animation<double>】\n"
 //          "【secondaryRouteAnimation】 : 第二路由动画   【Animation<double>】",

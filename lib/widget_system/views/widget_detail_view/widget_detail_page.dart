@@ -27,6 +27,7 @@ class WidgetDetailPage extends StatefulWidget {
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
   final List<WidgetModel> _modelStack = [];
+  bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
   @override
   void initState() {
@@ -127,8 +128,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
             .asMap()
             .keys
             .map((i) => WidgetNodePanel(
-                  codeStyle: Cons.codeThemeSupport.keys
-                      .toList()[globalState.codeStyleIndex],
+                  codeStyle: Cons.codeThemeSupport.keys.toList()[globalState.codeStyleIndex],
                   codeFamily: 'Inconsolata',
                   text: nodes[i].name,
                   subText: nodes[i].subtitle,
@@ -160,10 +160,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
             children: const[
               Padding(
                 padding: EdgeInsets.only(left: 15, right: 5),
-                child: Icon(
-                  Icons.link,
-                  color: Colors.blue,
-                ),
+                child: Icon(Icons.link, color: Colors.blue),
               ),
               Text(
                 '相关组件',
@@ -171,10 +168,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
               ),
             ],
           ),
-          _buildLinkTo(
-            context,
-            state.links,
-          ),
+          _buildLinkTo(context, state.links),
           const Divider(),
           _buildNodes(state.nodes, state.widgetModel.name)
         ],
@@ -183,7 +177,11 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     return Container();
   }
 
-  _buildLinkTo(BuildContext context, List<WidgetModel> links) {
+  Color? get chipColor => isDark
+      ? Theme.of(context).floatingActionButtonTheme.backgroundColor
+      : Theme.of(context).primaryColor;
+
+  Widget _buildLinkTo(BuildContext context, List<WidgetModel> links) {
     if (links.isEmpty) {
       return Padding(
           padding: const EdgeInsets.only(left: 10),
@@ -200,17 +198,23 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           children: links
               .map((e) => ActionChip(
                     onPressed: () {
-                      BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(e));
+                      BlocProvider.of<WidgetDetailBloc>(context)
+                          .add(FetchWidgetDetail(e));
                       setState(() {
                         _modelStack.add(e);
                       });
                     },
                     elevation: 2,
-                    shadowColor: Colors.orange,
-                    backgroundColor: Theme.of(context).primaryColor,
-                    labelStyle: TextStyle(fontSize: 12, color: Colors.white,
-                      decoration: (e.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
-                      decorationThickness: 2,),
+                    shadowColor: chipColor,
+                    backgroundColor: chipColor,
+                    labelStyle: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                      decoration: (e.deprecated)
+                          ? TextDecoration.lineThrough
+                          : TextDecoration.none,
+                      decorationThickness: 2,
+                    ),
                     label: Text(e.name),
                   ))
               .toList(),
@@ -230,18 +234,18 @@ class WidgetDetailTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-    Row(
-      children: <Widget>[
-        _buildLeft(model),
-        _buildRight(model),
-      ],
-    ),
-    const Divider(),
+        Row(
+          children: <Widget>[
+            _buildLeft(model, context),
+            _buildRight(model),
+          ],
+        ),
+        const Divider(),
       ],
     );
   }
 
-  Widget _buildLeft(WidgetModel model) => Expanded(
+  Widget _buildLeft(WidgetModel model, BuildContext context) => Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -251,7 +255,9 @@ class WidgetDetailTitle extends StatelessWidget {
                 model.nameCN,
                 style: TextStyle(
                     fontSize: 20,
-                    decoration: (model.deprecated)?TextDecoration.lineThrough:TextDecoration.none,
+                    decoration: (model.deprecated)
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
                     decorationThickness: 2,
                     color: const Color(0xff1EBBFD),
                     fontWeight: FontWeight.bold),
@@ -259,7 +265,9 @@ class WidgetDetailTitle extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Panel(child: Text(model.info)),
+              child: Panel(
+                  color: Theme.of(context).appBarTheme.backgroundColor,
+                  child: Text(model.info)),
             )
           ],
         ),

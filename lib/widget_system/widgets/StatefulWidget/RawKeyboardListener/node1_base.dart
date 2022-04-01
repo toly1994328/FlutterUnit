@@ -8,8 +8,7 @@ import 'package:flutter/services.dart';
 //      "widgetId": 254,
 //      "name": 'RawGestureDetector基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【onKey】 : 键盘事件   【ValueChanged<RawKeyEvent>】\n"
+//      "subtitle": "【onKey】 : 键盘事件   【ValueChanged<RawKeyEvent>】\n"
 //          "【focusNode】 : 焦点   【FocusNode】\n"
 //          "【autofocus】 : 是否自动聚焦   【bool】\n"
 //          "【child】 : 子组件   【Widget】",

@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 189,
 //      "name": 'SliverToBoxAdapter基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】",
+//      "subtitle": "【child】 : 子组件   【Widget】",
 //    }
 class SliverToBoxAdapterDemo extends StatelessWidget {
   SliverToBoxAdapterDemo({Key? key}) : super(key: key);

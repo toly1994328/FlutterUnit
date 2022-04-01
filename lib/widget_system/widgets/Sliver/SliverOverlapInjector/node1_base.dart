@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 308,
 //      "name": 'SliverOverlapInjector基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【sliver】 : 子组件   【Widget】\n"
+//      "subtitle": "【sliver】 : 子组件   【Widget】\n"
 //          "【handle】 : *处理器   【SliverOverlapAbsorberHandle】\n"
 //          "如果不使用SliverOverlapAbsorber和SliverOverlapInjector组件,NestedScrollView的内容会和头部栏重叠。",
 //    }

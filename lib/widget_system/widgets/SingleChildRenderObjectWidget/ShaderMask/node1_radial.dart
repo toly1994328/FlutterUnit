@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 277,
 //      "name": '径向渐变着色',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【shaderCallback】 : 着色器回调   【ShaderCallback】\n"
 //          "【blendMode】 : 混色模式   【BlendMode】\n"
 //          "    通过RadialGradient#createShader创建径向渐变着色器。",

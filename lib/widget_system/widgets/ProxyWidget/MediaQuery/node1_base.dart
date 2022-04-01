@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 167,
 //      "name": 'MediaQuery获取数据信息',
 //      "priority": 1,
-//      "subtitle":
-//          "MediaQuery.of(context)可以获取MediaQueryData",
+//      "subtitle": "MediaQuery.of(context)可以获取MediaQueryData",
 //    }
 
 class CustomMediaQuery extends StatelessWidget {

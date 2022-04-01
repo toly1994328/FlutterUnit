@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 316,
 //      "name": 'KeepAlive 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : *子组件   【Widget】\n"
+//      "subtitle": "【child】 : *子组件   【Widget】\n"
 //          "【keepAlive】 : *是否保活   【bool】\n"
 //          "在 flutter 框架层中，只用于 AutomaticKeepAlive 中，源码中也说很少单独使用它。该示例展示出 ListView 条目的状态保活。",
 //    }

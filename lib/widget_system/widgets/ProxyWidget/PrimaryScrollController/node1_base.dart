@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 335,
 //      "name": 'PrimaryScrollController 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【controller】 : 滑动控制器   【ScrollController】\n"
+//      "subtitle": "【controller】 : 滑动控制器   【ScrollController】\n"
 //          "【child】 : 子组件   【Widget】",
 //    }
 class PrimaryScrollControllerDemo extends StatelessWidget {

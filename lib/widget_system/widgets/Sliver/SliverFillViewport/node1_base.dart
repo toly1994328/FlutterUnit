@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 187,
 //      "name": 'SliverFillViewport基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【viewportFraction】 : 视口分率   【double】\n"
+//      "subtitle": "【viewportFraction】 : 视口分率   【double】\n"
 //          "【delegate】 : 孩子代理   【SliverChildDelegate】",
 //    }
 class SliverFillViewportDemo extends StatefulWidget {

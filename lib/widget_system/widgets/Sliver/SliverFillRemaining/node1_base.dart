@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 306,
 //      "name": 'SliverFillRemaining基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【hasScrollBody】 : 是否具有滚动主体   【bool】\n"
+//      "subtitle": "【hasScrollBody】 : 是否具有滚动主体   【bool】\n"
 //          "【fillOverscroll】 : 是否可填充滚动区域   【bool】\n"
 //          "【child】 : 子组件   【Widget】",
 //    }

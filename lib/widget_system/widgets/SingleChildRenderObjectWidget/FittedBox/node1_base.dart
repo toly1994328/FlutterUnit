@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 87,
 //      "name": 'FittedBox基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【fit】 : 适应模式   【BoxFit】\n"
 //          "【alignment】 : 对齐方式   【AlignmentGeometry】",
 //    }

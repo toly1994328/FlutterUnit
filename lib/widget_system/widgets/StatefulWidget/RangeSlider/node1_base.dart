@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 44,
 //      "name": 'RangeSlider基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【values】 : 数值   【RangeValues】\n"
+//      "subtitle": "【values】 : 数值   【RangeValues】\n"
 //          "【min】 : 最小值   【double】\n"
 //          "【max】 : 最大值   【double】\n"
 //          "【divisions】 : 分段数   【int】\n"

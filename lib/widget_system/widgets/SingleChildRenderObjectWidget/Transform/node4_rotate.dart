@@ -12,8 +12,7 @@ import 'matrix4_shower.dart';
 //      "widgetId": 78,
 //      "name": '旋转变换rotation',
 //      "priority": 4,
-//      "subtitle":
-//          "x旋转由R1C1、R1C2、R2C1、R2C2控制,入参表示弧度\n"
+//      "subtitle": "x旋转由R1C1、R1C2、R2C1、R2C2控制,入参表示弧度\n"
 //          "y旋转由R0C0、R0C2、R2C0、R2C2控制,入参表示弧度\n"
 //          "z旋转由R0C0、R0C1、R1C0、R1C1控制,入参表示弧度\n"
 //    }

@@ -25,7 +25,7 @@ class $fontName {
       List<String> split = str.split(":");
       result += "static const IconData " +
           split[0].replaceAll("-", "_") +
-          " = const IconData(" +
+          " = IconData(" +
           split[2].replaceAll("\"\\", "0x").split("\"")[0] +
           ", fontFamily: \"$fontName\");\n";
     }

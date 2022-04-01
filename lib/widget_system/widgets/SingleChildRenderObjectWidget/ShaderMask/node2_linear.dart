@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 277,
 //      "name": '线性渐变着色',
 //      "priority": 2,
-//      "subtitle":
-//          "通过LinearGradient#createShader创建线性渐变着色器\n"
+//      "subtitle": "通过LinearGradient#createShader创建线性渐变着色器\n"
 //          "着色器相关知识详见【绘制专辑】",
 //    }
 class LinearShaderMask extends StatelessWidget {

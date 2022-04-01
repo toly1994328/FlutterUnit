@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 287,
 //      "name": 'LayoutBuilder基本认识',
 //      "priority": 1,
-//      "subtitle":
-//          "【builder】 : 布局构造器   【LayoutWidgetBuilder】",
+//      "subtitle": "【builder】 : 布局构造器   【LayoutWidgetBuilder】",
 //    }
 class CustomLayoutBuilder extends StatelessWidget {
   const CustomLayoutBuilder({Key? key}) : super(key: key);

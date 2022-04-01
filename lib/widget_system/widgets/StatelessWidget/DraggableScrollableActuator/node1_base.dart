@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 221,
 //      "name": '基本使用方法',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "使用 DraggableScrollableActuator.reset(context) 重置后代 DraggableScrollableSheet 位初始位置。",
 //    }
 

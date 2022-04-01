@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 188,
 //      "name": 'SliverList基本使用',
 //      "priority": 1,
-//      "subtitle":
-//        "SliverGrid.count 指定轴向数量构造\n"
+//      "subtitle": "SliverGrid.count 指定轴向数量构造\n"
 //        "SliverGrid.extent 指定轴向长度构造\n"
 //        "属性特征同GridView,可详见之",
 //    }

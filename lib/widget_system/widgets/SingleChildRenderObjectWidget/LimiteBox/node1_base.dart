@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 79,
 //      "name": 'LimitedBox基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【maxHeight】 : 最大高   【double】\n"
 //          "【maxWidth】 : 最大宽   【double】",
 //    }

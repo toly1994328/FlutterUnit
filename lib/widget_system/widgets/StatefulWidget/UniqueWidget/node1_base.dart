@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 243,
 //      "name": 'UniqueWidget 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】",
+//      "subtitle": "【child】 : 子组件   【Widget】",
 //    }
 
 class UniqueWidgetDemo extends StatelessWidget {

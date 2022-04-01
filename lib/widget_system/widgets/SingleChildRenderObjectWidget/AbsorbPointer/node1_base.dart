@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 295,
 //      "name": 'AbsorbPointer基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【absorbing】 : 是否吸收事件   【bool】\n"
 //          "如下,Switch选中时absorbing为true，按钮事件将被吸收，无法点击。",
 //    }

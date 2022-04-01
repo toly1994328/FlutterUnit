@@ -3,11 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/style/shape/techno_shape.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/circle_text.dart';
 import 'package:flutter_unit/components/permanent/tag.dart';
+import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
 class TechnoWidgetListItem extends StatelessWidget {
@@ -17,49 +16,53 @@ class TechnoWidgetListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Stack(
-        children: <Widget>[
-          Material(
-            color: itemColor.withAlpha(66),
-            shape: TechnoShapeBorder(color: itemColor),
-            child: Container(
-              height: 95,
-              padding: const EdgeInsets.only(
-                  top: 10, left: 10, right: 10, bottom: 5),
-              child: Row(
-                children: <Widget>[
-                  Wrap(
-                    spacing: 5,
-                    direction: Axis.vertical,
-                    alignment: WrapAlignment.center,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: <Widget>[
-                      Hero(
-                          tag: "hero_widget_image_${data.id}",
-                          child: _buildLeading()),
-                      StarScore(
-                        star: Star(
-                            emptyColor: Colors.white,
-                            size: 12,
-                            fillColor: itemColor),
-                        score: data.lever,
-                      )
-                    ],
+    ThemeData themeData = Theme.of(context);
+    bool isDark = themeData.brightness == Brightness.dark;
+    Color tagColor = isDark?themeData.floatingActionButtonTheme.backgroundColor!: themeData.primaryColor;
+    return Stack(
+      children: <Widget>[
+        Material(
+          // color: Colors.transparent,
+          color: isDark ? itemColor.withAlpha(22) : itemColor.withAlpha(66),
+          shape: TechnoShapeBorder(color: itemColor),
+          child: Container(
+            height: 95,
+            padding:
+                const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+            child: Row(
+              children: <Widget>[
+                Wrap(
+                  spacing: 5,
+                  direction: Axis.vertical,
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: <Widget>[
+                    Hero(
+                        tag: "hero_widget_image_${data.id}",
+                        child: _buildLeading()),
+                    StarScore(
+                      star: Star(
+                          emptyColor: Colors.white,
+                          size: 12,
+                          fillColor: itemColor),
+                      score: data.lever,
+                    )
+                  ],
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[_buildTitle(), _buildSummary(isDark)],
                   ),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[_buildTitle(), _buildSummary()],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-          _buildCollectTag(Theme.of(context).primaryColor)
-        ],
-      );
+        ),
+        _buildCollectTag(tagColor)
+      ],
+    );
   }
 
   Widget _buildCollectTag(Color color) {
@@ -89,6 +92,7 @@ class TechnoWidgetListItem extends StatelessWidget {
             ? Material(
                 color: Colors.transparent,
                 child: CircleText(
+                  // backgroundColor: Colors.bla,
                   text: data.name,
                   size: 60,
                   color: itemColor,
@@ -122,7 +126,7 @@ class TechnoWidgetListItem extends StatelessWidget {
     );
   }
 
-  Widget _buildSummary() {
+  Widget _buildSummary(bool isDark) {
     return Container(
       padding: const EdgeInsets.only(left: 10),
       child: Text(
@@ -130,9 +134,14 @@ class TechnoWidgetListItem extends StatelessWidget {
         data.info,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(color: Colors.grey[600], fontSize: 14, shadows: const [
-          Shadow(color: Colors.white, offset: Offset(.5, .5))
-        ]),
+        style: TextStyle(
+            color: isDark ? Colors.white : Colors.grey[600],
+            fontSize: 14,
+            shadows: [
+              Shadow(
+                  color: isDark ? Colors.grey[600]! : Colors.white,
+                  offset: Offset(.5, .5))
+            ]),
       ),
     );
   }

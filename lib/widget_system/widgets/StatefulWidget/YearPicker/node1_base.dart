@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 136,
 //      "name": 'YearPicker基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【selectedDate】 : 选中日期   【DateTime】\n"
+//      "subtitle": "【selectedDate】 : 选中日期   【DateTime】\n"
 //          "【firstDate】 : 最前日期限制   【DateTime】\n"
 //          "【lastDate】 : 最后日期限制   【DateTime】\n"
 //          "【onChanged】 : 点击回调  【Function(DateTime)】",

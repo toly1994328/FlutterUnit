@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 117,
 //      "name": 'AnimatedList基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【itemBuilder】 : 组件构造器   【AnimatedListItemBuilder】\n"
+//      "subtitle": "【itemBuilder】 : 组件构造器   【AnimatedListItemBuilder】\n"
 //          "【initialItemCount】 : 子组件数量   【int】\n"
 //          "【scrollDirection】 : 滑动方向   【Axis】\n"
 //          "【controller】 : 滑动控制器   【ScrollController】\n"

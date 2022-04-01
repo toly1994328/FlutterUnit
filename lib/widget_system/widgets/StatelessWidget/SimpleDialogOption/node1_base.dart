@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 133,
 //      "name": 'SimpleDialogOption基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【onPressed】 : 点击事件  【Function()】",
 //    }
 class CustomSimpleDialogOption extends StatelessWidget {

@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 347,
 //      "name": 'ParentDataWidget 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】",
+//      "subtitle": "【child】 : 子组件   【Widget】",
 //    }
 
 class ParentDataWidgetDemo extends StatelessWidget {

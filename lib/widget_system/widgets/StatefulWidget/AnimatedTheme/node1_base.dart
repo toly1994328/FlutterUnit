@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 224 ,
 //      "name": 'AnimatedTheme基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【data】 : 主题数据   【ThemeData】\n"
+//      "subtitle": "【data】 : 主题数据   【ThemeData】\n"
 //          "【duration】 : 动画时长   【Duration】\n"
 //          "【onEnd】 : 动画结束回调   【Function()】\n"
 //          "【curve】 : 动画曲线   【Duration】\n"

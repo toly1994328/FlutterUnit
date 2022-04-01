@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 186,
 //      "name": 'SliverFixedExtentList基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【itemExtent】 : 主轴方向强迫长度   【double】\n"
+//      "subtitle": "【itemExtent】 : 主轴方向强迫长度   【double】\n"
 //          "【delegate】 : 孩子代理   【SliverChildDelegate】",
 //    }
 class SliverFixedExtentListDemo extends StatefulWidget {

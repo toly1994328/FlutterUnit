@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 289,
 //      "name": 'RenderObjectToWidgetAdapter 介绍',
 //      "priority": 1,
-//      "subtitle":
-//          "【container】 : 渲染对象   【RenderObjectWithChildMixin<T>】\n"
+//      "subtitle": "【container】 : 渲染对象   【RenderObjectWithChildMixin<T>】\n"
 //          "【child】 : 子组件   【Widget】\n"
 //          "【debugShortDescription】 : 调试简介   【String】",
 //    }

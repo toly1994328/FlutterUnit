@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 331,
 //      "name": 'SliderTheme使用',
 //      "priority": 1,
-//      "subtitle":
-//          "可通过SliderTheme.of获取Slider主题数据对象，其中包含大量属性用于对Slider的设定。"
+//      "subtitle": "可通过SliderTheme.of获取Slider主题数据对象，其中包含大量属性用于对Slider的设定。"
 //          "可以为ButtonTheme【后代】的按钮组件设置默认样式，包括颜色、形状、尺寸等。",
 //    }
 

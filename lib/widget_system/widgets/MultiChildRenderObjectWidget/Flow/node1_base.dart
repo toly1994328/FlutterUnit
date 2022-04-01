@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 99,
 //      "name": 'Flow圆形排布',
 //      "priority": 1,
-//      "subtitle":
-//          "【children】 : 组件列表   【List<Widget>】\n"
+//      "subtitle": "【children】 : 组件列表   【List<Widget>】\n"
 //          "【delegate】 : 代理   【FlowDelegate】",
 //    }
 class CircleFlow extends StatelessWidget {

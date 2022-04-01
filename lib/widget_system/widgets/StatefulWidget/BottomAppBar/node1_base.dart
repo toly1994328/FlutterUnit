@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 61,
 //      "name": 'BottomAppBar基本用法',
 //      "priority": 1,
-//      "subtitle":
-//          "【elevation】 : 影深   【double】\n"
+//      "subtitle": "【elevation】 : 影深   【double】\n"
 //          "【shape】 : 形状   【NotchedShape】\n"
 //          "【notchMargin】 : 间隔距离   【double】\n"
 //          "【color】 : 颜色   【Color】\n"

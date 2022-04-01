@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 180,
 //      "name": 'ScrollConfiguration基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【behavior】 : 滑动行为  【ScrollBehavior】\n"
 //          "    可以使用ScrollConfiguration让ListView无蓝色阴影",
 //    }

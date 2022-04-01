@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 291,
 //      "name": 'ListWheelViewport 简单使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【itemExtent】 : 轴向item尺寸   【double】\n"
+//      "subtitle": "【itemExtent】 : 轴向item尺寸   【double】\n"
 //          "【offset】 : 视口偏移   【ViewportOffset】\n"
 //          "【childDelegate】 : 孩子代理构造器   【ListWheelChildDelegate】",
 //    }

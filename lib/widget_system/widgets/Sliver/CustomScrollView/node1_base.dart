@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 183,
 //      "name": 'CustomScrollView基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【slivers】 : 子组件列表   【List<Widget>】\n"
+//      "subtitle": "【slivers】 : 子组件列表   【List<Widget>】\n"
 //          "【reverse】 : 是否反向   【bool】\n"
 //          "【scrollDirection】 : 滑动方向   【Axis】\n"
 //          "【controller】 : 控制器   【ScrollController】",

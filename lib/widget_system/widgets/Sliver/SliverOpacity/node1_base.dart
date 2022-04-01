@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 192,
 //      "name": 'SliverOpacity基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【opacity】 : 透明度   【double】\n"
+//      "subtitle": "【opacity】 : 透明度   【double】\n"
 //          "【sliver】 : 子组件  【Function()】",
 //    }
 class SliverOpacityDemo extends StatelessWidget {

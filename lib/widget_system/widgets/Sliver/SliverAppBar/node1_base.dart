@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 184,
 //      "name": 'SliverAppBar基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【leading】 : 左侧组件   【Widget】\n"
+//      "subtitle": "【leading】 : 左侧组件   【Widget】\n"
 //          "【title】 : 中间组件   【Widget】\n"
 //          "【actions】 : 尾部组件列表   【List<Widget>】\n"
 //          "【floating】 : 是否浮动   【bool】\n"

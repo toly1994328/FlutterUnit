@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 267,
 //      "name": 'ColoredBox基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【color】 : 组件   【Color】\n"
+//      "subtitle": "【color】 : 组件   【Color】\n"
 //          "【child】 : 组件   【Widget】",
 //    }
 

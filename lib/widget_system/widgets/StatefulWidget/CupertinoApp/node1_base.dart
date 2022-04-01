@@ -8,8 +8,7 @@ import 'package:flutter/cupertino.dart';
 //      "widgetId": 156,
 //      "name": 'CupertinoApp基本用法',
 //      "priority": 1,
-//      "subtitle":
-//          "【theme】 : 主题   【ThemeData】\n"
+//      "subtitle": "【theme】 : 主题   【ThemeData】\n"
 //          "【title】 : 任务栏标题   【String】\n"
 //          "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
 //          "【home】 : 主页   【Widget】",

@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 145,
 //      "name": 'LicensePage基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【applicationIcon】 : 左上图标   【Widget】\n"
+//      "subtitle": "【applicationIcon】 : 左上图标   【Widget】\n"
 //          "【applicationVersion】 : 版本号  【String】\n"
 //          "【applicationName】 : 应用名  【String】\n"
 //          "【applicationLegalese】 : 应用律术   【String】",

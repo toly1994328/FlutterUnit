@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 176,
 //      "name": 'Dismissible基本使用',
 //      "priority": 2,
-//      "subtitle":
-//          "【direction】 : 方向   【DismissDirection】\n"
+//      "subtitle": "【direction】 : 方向   【DismissDirection】\n"
 //          "【crossAxisEndOffset】 : 偏移  【double】\n",
 //    }
 class DirectionDismissible extends StatefulWidget {

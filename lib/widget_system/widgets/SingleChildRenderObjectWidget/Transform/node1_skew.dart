@@ -11,8 +11,7 @@ import 'matrix4_shower.dart';
 //      "widgetId": 78,
 //      "name": '斜切变换skew',
 //      "priority": 1,
-//      "subtitle":
-//          "斜切x由R0C1数控制,入参为弧度值,表示斜切角度\n"
+//      "subtitle": "斜切x由R0C1数控制,入参为弧度值,表示斜切角度\n"
 //          "斜切y由R1C0数控制,入参为弧度值,表示斜切角度",
 //    }
 class SkewTransform extends StatefulWidget {

@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 66,
 //      "name": 'ClipOval基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【clipBehavior】 : 裁剪行为   【Clip】\n"
 //          "【clipper】 : 裁剪器   【CustomClipper<RRect>】",
 //    }

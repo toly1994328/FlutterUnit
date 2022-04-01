@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 346,
 //      "name": 'InheritedWidget 使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "下面是一个简单的自定义 InheritedWidget，实现信息的子树共享。",
 //    }
 

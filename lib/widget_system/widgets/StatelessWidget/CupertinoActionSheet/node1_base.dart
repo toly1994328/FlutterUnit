@@ -7,8 +7,7 @@
 //      "widgetId": 131,
 //      "name": 'CupertinoActionSheet基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【title】 : 第一行组件   【Widget】\n"
+//      "subtitle": "【title】 : 第一行组件   【Widget】\n"
 //          "【message】 : 第二行组件  【Widget】\n"
 //          "【cancelButton】 : 取消按钮处组件  【Widget】\n"
 //          "【actions】 : 中间组件列表  【List<Widget>】",
