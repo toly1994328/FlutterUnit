@@ -13,7 +13,7 @@ class WidgetFilter {
 
   WidgetFilter.family(
     this.family, {
-    this.name = '',
+    this.name = '*',
     this.stars = const [1, 2, 3, 4, 5],
   });
 
