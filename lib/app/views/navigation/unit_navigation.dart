@@ -108,7 +108,8 @@ class _UnitNavigationState extends State<UnitNavigation> {
 
   // 点击底部按钮事件，切换页面
   void _onTapBottomNav(int index) {
-    _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    // _controller.animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.linear);
+    _controller.jumpToPage(index);
 
     if(!isDark){
       late Color color;
@@ -119,7 +120,6 @@ class _UnitNavigationState extends State<UnitNavigation> {
       }
       context.read<ColorChangeCubit>().change(color);
     }
-
 
     if (index == 2) {
       BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());

@@ -19,7 +19,3 @@ export './liked_widget_bloc/liked_widget_bloc.dart';
 export './liked_widget_bloc/liked_widget_event.dart';
 export './liked_widget_bloc/liked_widget_state.dart';
 
-
-export './search_bloc/search_bloc.dart';
-export './search_bloc/search_event.dart';
-export './search_bloc/search_state.dart';

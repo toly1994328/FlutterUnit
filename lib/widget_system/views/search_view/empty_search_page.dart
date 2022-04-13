@@ -6,6 +6,8 @@ class NotSearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color color = Theme.of(context).primaryColor;
+
     return Container(
       height: 300,
       alignment: Alignment.center,
@@ -13,14 +15,14 @@ class NotSearchPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-           const Icon(Icons.search, color: Colors.blue, size: 120.0),
+            Icon(Icons.search, color:color, size: 120.0),
            Container(
             padding:  const EdgeInsets.only(top: 16.0),
-            child:  const Text(
+            child: Text(
               "哥们，搜点啥...≧◔◡◔≦",
               style:  TextStyle(
                 fontSize: 20,
-                color: Colors.blue,
+                color: color,
               ),
             ),
           )
