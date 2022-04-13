@@ -2,6 +2,7 @@
 import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
 import 'package:sqflite/sqflite.dart';
+
 import '../bean/widget_po.dart';
 
 
@@ -52,23 +53,24 @@ class WidgetDao {
 
   Future<List<Map<String, dynamic>>> search(WidgetFilter arguments) async {
     // 保证 name 参数为空时，不进行搜索
-    if(arguments.name.isEmpty){
+    if (arguments.name.isEmpty) {
       return [];
     }
-
-   bool hasFamily = arguments.family != null;
-   String familySql = hasFamily?' AND family = ?':'';
-   List<int> familyArg = hasFamily?[arguments.family!.index]:[];
-   List<int> starArg = arguments.stars;
-   // 保证在星级参数是 [-1,-1,-1,-1,-1] 时，搜索全星级
-   if(arguments.stars.reduce((a, b) => a+b)==-5){
-     starArg = [1,2,3,4,5];
-   }
+    // _表示 name 任意
+    String name = arguments.name == '*' ? '' : arguments.name;
+    bool hasFamily = arguments.family != null;
+    String familySql = hasFamily ? ' AND family = ?' : '';
+    List<int> familyArg = hasFamily ? [arguments.family!.index] : [];
+    List<int> starArg = arguments.stars;
+    // 保证在星级参数是 [-1,-1,-1,-1,-1] 时，搜索全星级
+    if (arguments.stars.reduce((a, b) => a + b) == -5) {
+      starArg = [1, 2, 3, 4, 5];
+    }
 
     return db.rawQuery(
         "SELECT * "
         "FROM widget WHERE name like ?$familySql AND lever IN(?,?,?,?,?) ORDER BY lever DESC",
-        ["%${arguments.name}%",...familyArg,...starArg]);
+        ["%$name%", ...familyArg, ...starArg]);
   }
 }
 
