@@ -1,3 +1,5 @@
+import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
+
 import '../../bean/widget_po.dart';
 import '../../dao/like_dao.dart';
 import '../../local_db.dart';
@@ -22,13 +24,6 @@ class WidgetDbRepository implements WidgetRepository {
   LikeDao get _likeDao => LocalDb.instance.likeDao;
 
   @override
-  Future<List<WidgetModel>> loadWidgets(WidgetFamily family) async {
-    List<Map<String, dynamic>> data = await _widgetDao.queryByFamily(family);
-    List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-    return widgets.map(WidgetModel.fromPo).toList();
-  }
-
-  @override
   Future<List<WidgetModel>> loadLikeWidgets() async {
     List<int> likeIds = await _likeDao.likeWidgetIds();
     List<Map<String, dynamic>> data = await _widgetDao.queryByIds(likeIds);
@@ -37,7 +32,7 @@ class WidgetDbRepository implements WidgetRepository {
   }
 
   @override
-  Future<List<WidgetModel>> searchWidgets(SearchArgs args) async {
+  Future<List<WidgetModel>> searchWidgets(WidgetFilter args) async {
     List<Map<String, dynamic>> data = await _widgetDao.search(args);
     List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();

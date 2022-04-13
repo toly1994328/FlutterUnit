@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
@@ -7,22 +8,21 @@ import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart'
 /// 说明: 主页 Widget 列表 状态类
 
 abstract class WidgetsState extends Equatable {
-
-  const WidgetsState();
+  final WidgetFilter filter;
+  const WidgetsState({required this.filter});
 
   @override
   List<Object> get props => [];
 }
 
 class WidgetsLoading extends WidgetsState {
-  const WidgetsLoading() ;
-
+  const WidgetsLoading({ WidgetFilter filter=const WidgetFilter()}) : super(filter:filter) ;
 }
 
 class WidgetsLoaded extends WidgetsState {
   final List<WidgetModel> widgets;
 
-  const WidgetsLoaded( {this.widgets = const []});
+  const WidgetsLoaded( {this.widgets = const [],required WidgetFilter filter}): super(filter:filter);
 
   @override
   List<Object> get props => [widgets];
@@ -36,7 +36,8 @@ class WidgetsLoaded extends WidgetsState {
 class WidgetsLoadFailed extends WidgetsState {
   final String error;
 
-  const WidgetsLoadFailed(WidgetFamily activeFamily, this.error);
+  const WidgetsLoadFailed(this.error,
+      {required WidgetFilter filter}): super(filter:filter);
 
   @override
   List<Object> get props => [error];

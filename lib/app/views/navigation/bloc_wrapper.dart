@@ -53,8 +53,6 @@ class _BlocWrapperState extends State<BlocWrapper> {
           BlocProvider<AuthenticBloc>(create: (_) => authBloc),
           BlocProvider<CategoryWidgetBloc>(
               create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
-          BlocProvider<SearchBloc>(
-              create: (_) => SearchBloc(repository: repository)),
           BlocProvider<PointBloc>(create: (_) => PointBloc()),
           BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
           BlocProvider<GalleryUnitBloc>(create: (_) => GalleryUnitBloc()..loadGalleryInfo()),

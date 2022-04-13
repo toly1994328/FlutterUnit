@@ -1,9 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/repositories.dart';
-
+import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
 
 class AppSearchBar extends StatefulWidget {
 
@@ -14,33 +13,50 @@ class AppSearchBar extends StatefulWidget {
 }
 
 class _AppSearchBarState extends State<AppSearchBar> {
-  final TextEditingController _controller=TextEditingController();//文本控制器
+  final TextEditingController _controller = TextEditingController(); //文本控制器
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-        height: 35,
-        child:
-        TextField(
-          autofocus: false, //自动聚焦，闪游标
-          controller: _controller,
-          maxLines: 1,
-          decoration: const InputDecoration(//输入框装饰
-              filled: true,//填满
-              fillColor: Colors.white,//白色
-              prefixIcon:  Icon(Icons.search),//前标
-              border: UnderlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-              ),
-              hintText: "搜点啥...",
-              hintStyle: TextStyle(fontSize: 14)
-          ),
-          onChanged: (str) => BlocProvider.of<SearchBloc>(context)
-              .add(SearchWidgetEvent(args:SearchArgs(name: str,stars: [1,2,3,4,5]))),
-          onSubmitted: (str) {//提交后
-            FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
-          },
-        ));
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.centerRight,
+      children: [
+        SizedBox(
+            height: 35,
+            child: TextField(
+              autofocus: true,
+              //自动聚焦，闪游标
+              controller: _controller,
+              maxLines: 1,
+              decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  prefixIcon: Icon(Icons.search),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                  ),
+                  hintText: "搜点啥...",
+                  hintStyle: TextStyle(fontSize: 14)),
+              onChanged: _doSearch,
+              onSubmitted: (str) {
+                //提交后
+                FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
+              },
+            )),
+        _buildClearIcon()
+      ],
+    );
+  }
+
+  void _doSearch(String str) {
+    WidgetsBloc widgetsBloc = BlocProvider.of<WidgetsBloc>(context);
+    final WidgetFilter filter = widgetsBloc.state.filter.copyWith(
+      name: str,
+    );
+    widgetsBloc.add(
+      EventSearchWidget(filter: filter),
+    );
+  }
 
   @override
   void dispose() {
@@ -48,4 +64,25 @@ class _AppSearchBarState extends State<AppSearchBar> {
     super.dispose();
   }
 
+  Widget _buildClearIcon() {
+    return ValueListenableBuilder<TextEditingValue>(
+        valueListenable: _controller,
+        builder: (_, TextEditingValue value, __) => value.text.isNotEmpty
+            ? GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: () {
+                  _controller.clear();
+                  _doSearch('');
+                },
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8.0),
+                  child: Icon(
+                    CupertinoIcons.clear_circled,
+                    color: Colors.black,
+                    size: 20,
+                  ),
+                ),
+              )
+            : const SizedBox.shrink());
+  }
 }
