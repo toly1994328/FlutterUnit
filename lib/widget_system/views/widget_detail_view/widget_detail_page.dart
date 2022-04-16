@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
+import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:flutter_unit/components/project/widget_node_panel.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:flutter_unit/widget_system/repositories/model/node_model.dart';
@@ -15,6 +15,7 @@ import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart'
 
 import '../../widgets/widgets_map.dart';
 import 'category_end_drawer.dart';
+import 'widget_detail_panel.dart';
 
 class WidgetDetailPage extends StatefulWidget {
   final WidgetModel model;
@@ -40,39 +41,62 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      endDrawer: CategoryEndDrawer(widget: _modelStack.last),
-      appBar: AppBar(
-        title: Text(_modelStack.last.name),
-        leading: const BackButton(),
-        actions: <Widget>[
-          _buildToHome(),
-          FeedbackWidget(
-            onPressed: () => _toggleLikeState(context),
-            child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
-              listener: _listenLikeStateChange,
-              builder: _buildByLikeState,
-            ),
-          )
-        ],
+    return BlocBuilder<WidgetDetailBloc, DetailState>(
+      builder: (_, state) => Scaffold(
+        endDrawer: CategoryEndDrawer(widget: currentWidgetModel),
+        appBar: AppBar(
+          title: Text(currentWidgetModel.name),
+          leading: const BackButton(),
+          actions: <Widget>[
+            _buildToHome(),
+            FeedbackWidget(
+              onPressed: () => _toggleLikeState(context),
+              child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
+                listener: _listenLikeStateChange,
+                builder: _buildByLikeState,
+              ),
+            )
+          ],
+        ),
+        body: Builder(builder: (ctx) {
+          return _buildContent(ctx, state);
+        }),
       ),
-      body: Builder(builder: _buildContent),
     );
   }
 
-  Widget _buildContent(BuildContext context) => WillPopScope(
-      onWillPop: () => _whenPop(context),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            WidgetDetailTitle(
-              model: _modelStack.last,
+  Widget get linkText => Row(
+        children: const [
+          Padding(
+            padding: EdgeInsets.only(left: 15, right: 5),
+            child: Icon(Icons.link, color: Colors.blue),
+          ),
+          Text('相关组件', style: TStyleUnit.labelBold),
+        ],
+      );
+
+  Widget _buildContent(BuildContext context, DetailState state) {
+    return WillPopScope(
+        onWillPop: () => _whenPop(context),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  WidgetDetailPanel(model: _modelStack.last),
+                  linkText,
+                  if (state is DetailWithData)
+                    _buildLinkTo(context, state.links),
+                  const Divider(),
+                ],
+              ),
             ),
-            BlocBuilder<WidgetDetailBloc, DetailState>(builder: _buildDetail)
+            if (state is DetailWithData)
+              _buildSliverNodeList(state.nodes, state.widgetModel.name)
           ],
-        ),
-      ));
+        ));
+  }
 
   Widget _buildToHome() => Builder(
       builder: (ctx) => GestureDetector(
@@ -117,64 +141,22 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
 
 
   void _toggleLikeState(BuildContext context) {
-    BlocProvider.of<LikeWidgetBloc>(context)
-        .add(ToggleLikeWidgetEvent(id: currentWidgetModel.id));
-  }
-
-  Widget _buildNodes(List<NodeModel> nodes, String name) {
-    GlobalState globalState = BlocProvider.of<GlobalBloc>(context).state;
-    return Column(
-        children: nodes
-            .asMap()
-            .keys
-            .map((i) => WidgetNodePanel(
-                  codeStyle: Cons.codeThemeSupport.keys.toList()[globalState.codeStyleIndex],
-                  codeFamily: 'Inconsolata',
-                  text: nodes[i].name,
-                  subText: nodes[i].subtitle,
-                  code: nodes[i].code,
-                  show: WidgetsMap.map(name)[i],
-                ))
-            .toList());
+    BlocProvider.of<LikeWidgetBloc>(context).add(
+      ToggleLikeWidgetEvent(id: currentWidgetModel.id),
+    );
   }
 
   Future<bool> _whenPop(BuildContext context) async {
     if (Scaffold.of(context).isEndDrawerOpen) return true;
     _modelStack.removeLast();
     if (_modelStack.isNotEmpty) {
-      setState(() {
-        BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(_modelStack.last));
-      });
+      BlocProvider.of<WidgetDetailBloc>(context).add(
+        FetchWidgetDetail(currentWidgetModel),
+      );
       return false;
     } else {
       return true;
     }
-  }
-
-  Widget _buildDetail(BuildContext context, DetailState state) {
-    if (state is DetailWithData) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: const[
-              Padding(
-                padding: EdgeInsets.only(left: 15, right: 5),
-                child: Icon(Icons.link, color: Colors.blue),
-              ),
-              Text(
-                '相关组件',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-            ],
-          ),
-          _buildLinkTo(context, state.links),
-          const Divider(),
-          _buildNodes(state.nodes, state.widgetModel.name)
-        ],
-      );
-    }
-    return Container();
   }
 
   Color? get chipColor => isDark
@@ -196,103 +178,43 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         child: Wrap(
           spacing: 5,
           children: links
-              .map((e) => ActionChip(
-                    onPressed: () {
-                      BlocProvider.of<WidgetDetailBloc>(context)
-                          .add(FetchWidgetDetail(e));
-                      setState(() {
-                        _modelStack.add(e);
-                      });
-                    },
+              .map((WidgetModel model) => ActionChip(
+                    onPressed: () => _toLinkWidget(model),
                     elevation: 2,
                     shadowColor: chipColor,
                     backgroundColor: chipColor,
-                    labelStyle: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white,
-                      decoration: (e.deprecated)
-                          ? TextDecoration.lineThrough
-                          : TextDecoration.none,
-                      decorationThickness: 2,
-                    ),
-                    label: Text(e.name),
+                    labelStyle: model.deprecated
+                        ? TStyleUnit.deprecatedChip
+                        : TStyleUnit.commonChip,
+                    label: Text(model.name),
                   ))
               .toList(),
         ),
       );
     }
   }
-}
 
-class WidgetDetailTitle extends StatelessWidget {
-  final WidgetModel model;
-
-  const WidgetDetailTitle({Key? key, required this.model}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            _buildLeft(model, context),
-            _buildRight(model),
-          ],
-        ),
-        const Divider(),
-      ],
-    );
+  void _toLinkWidget(WidgetModel model) {
+    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
+    _modelStack.add(model);
   }
 
-  Widget _buildLeft(WidgetModel model, BuildContext context) => Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0, left: 20),
-              child: Text(
-                model.nameCN,
-                style: TextStyle(
-                    fontSize: 20,
-                    decoration: (model.deprecated)
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none,
-                    decorationThickness: 2,
-                    color: const Color(0xff1EBBFD),
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Panel(
-                  color: Theme.of(context).appBarTheme.backgroundColor,
-                  child: Text(model.info)),
-            )
-          ],
-        ),
-      );
-
-  Widget _buildRight(WidgetModel model) => Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          SizedBox(
-            height: 100,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Hero(
-                  tag: "hero_widget_image_${model.id}",
-                  child: ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      child: model.image == null
-                          ? Image.asset('assets/images/caver.webp')
-                          : Image(image: model.image!))),
-            ),
-          ),
-          StarScore(
-            score: model.lever,
-            star: const Star(size: 15, fillColor: Colors.blue),
-          )
-        ],
-      );
+  Widget _buildSliverNodeList(List<NodeModel> nodes, String name) {
+    GlobalState globalState = BlocProvider.of<GlobalBloc>(context).state;
+    HighlighterStyle codeStyle =
+        Cons.codeThemeSupport.keys.toList()[globalState.codeStyleIndex];
+    return SliverList(
+        delegate: SliverChildBuilderDelegate(
+      (_, i) => WidgetNodePanel(
+        codeStyle: codeStyle,
+        codeFamily: 'Inconsolata',
+        text: nodes[i].name,
+        subText: nodes[i].subtitle,
+        code: nodes[i].code,
+        show: WidgetsMap.map(name)[i],
+      ),
+      childCount: nodes.length,
+    ));
+  }
 }
+

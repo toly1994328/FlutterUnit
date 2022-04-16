@@ -4,6 +4,20 @@ import 'unit_color.dart';
 
 ///文本样式
 class TStyleUnit {
+
+  // 标题加黑
+  static const labelBold = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  static const commonChip = TextStyle(
+    fontSize: 12,
+    color: Colors.white,
+  );
+  static const deprecatedChip = TextStyle(
+    fontSize: 12,
+    color: Colors.white,
+    decoration:  TextDecoration.lineThrough,
+    decorationThickness: 2,
+  );
+
   static const lagerTextSize = 30.0;
   static const bigTextSize = 23.0;
   static const normalTextSize = 18.0;
