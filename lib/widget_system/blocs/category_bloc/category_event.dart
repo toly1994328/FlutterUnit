@@ -20,7 +20,10 @@ class EventLoadCategory extends CategoryEvent{
 class EventToggleWidget extends CategoryEvent{
   final int widgetId;
   final int categoryId;
-  const EventToggleWidget({required this.widgetId, required this.categoryId});
+  const EventToggleWidget({
+    required this.widgetId,
+    required this.categoryId,
+  });
 
   @override
   List<Object> get props => [widgetId,categoryId];
@@ -42,8 +45,11 @@ class EventAddCategory extends CategoryEvent{
   final String? info;
   final String? color;
 
-  const EventAddCategory(
-      {required this.name, required this.info, required this.color});
+  const EventAddCategory({
+    required this.name,
+    required this.info,
+    required this.color,
+  });
 
   @override
   List<Object?> get props => [name, info, color];
@@ -58,13 +64,14 @@ class EventUpdateCategory extends CategoryEvent {
   final int? priority;
   final String? image;
 
-  const EventUpdateCategory(
-      {required this.name,
-      required this.info,
-      required this.color,
-      this.priority,
-      this.image,
-      required this.id});
+  const EventUpdateCategory({
+    required this.name,
+    required this.info,
+    required this.color,
+    this.priority,
+    this.image,
+    required this.id,
+  });
 
   @override
   List<Object?> get props => [name, info, color, priority, image, id];

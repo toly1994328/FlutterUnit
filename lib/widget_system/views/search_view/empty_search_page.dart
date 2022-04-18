@@ -7,7 +7,6 @@ class NotSearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
-
     return Container(
       height: 300,
       alignment: Alignment.center,
