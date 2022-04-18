@@ -24,7 +24,6 @@ class _AppSearchBarState extends State<AppSearchBar> {
             height: 35,
             child: TextField(
               autofocus: true,
-              //自动聚焦，闪游标
               controller: _controller,
               maxLines: 1,
               decoration: const InputDecoration(
@@ -39,8 +38,8 @@ class _AppSearchBarState extends State<AppSearchBar> {
                   hintStyle: TextStyle(fontSize: 14)),
               onChanged: _doSearch,
               onSubmitted: (str) {
-                //提交后
-                FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
+                //提交后,收起键盘
+                FocusScope.of(context).requestFocus(FocusNode());
               },
             )),
         _buildClearIcon()
