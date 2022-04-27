@@ -26,7 +26,12 @@ class WidgetsMap {
           const CupertinoSegmentedControlDemo(),
           const CupertinoSegmentedControlColor()
         ];
-
+      case "ImageFiltered":
+        return [
+          const ImageFilteredBlur(),
+          const ImageFilteredColor(),
+          const ImageFilteredMatrix()
+        ];
       case "Autocomplete":
         return [
           const AutocompleteDemo(),
