@@ -21,9 +21,7 @@ class FlutterUnit extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GlobalBloc, GlobalState>(
         builder: (_, state) => BlocProvider(
-          create: (_) => ColorChangeCubit(
-            Cons.tabColors[0]
-          ),
+          create: (_) => ColorChangeCubit(Cons.tabColors[0]),
           child: DefaultTextStyle(
             style: TextStyle(
                 fontFamily: state.fontFamily

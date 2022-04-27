@@ -147,7 +147,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   }
 
   Future<bool> _whenPop(BuildContext context) async {
-    if (Scaffold.of(context).isEndDrawerOpen) return true;
+    if (Scaffold.of(context).isEndDrawerOpen||_modelStack.isEmpty) return true;
     _modelStack.removeLast();
     if (_modelStack.isNotEmpty) {
       BlocProvider.of<WidgetDetailBloc>(context).add(

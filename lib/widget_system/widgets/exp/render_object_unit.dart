@@ -95,3 +95,6 @@ export '../SingleChildRenderObjectWidget/ShaderMask/node2_linear.dart';
 export '../SingleChildRenderObjectWidget/IntrinsicHeight/node1_base.dart';
 export '../SingleChildRenderObjectWidget/IntrinsicWidth/node1_base.dart';
 export '../SingleChildRenderObjectWidget/PhysicalShape/node1_base.dart';
+export '../SingleChildRenderObjectWidget/ImageFiltered/node1_blur.dart';
+export '../SingleChildRenderObjectWidget/ImageFiltered/node2_color.dart';
+export '../SingleChildRenderObjectWidget/ImageFiltered/node3_matrix.dart';
