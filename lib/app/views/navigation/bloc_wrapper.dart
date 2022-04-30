@@ -42,17 +42,13 @@ class _BlocWrapperState extends State<BlocWrapper> {
         providers: [
           BlocProvider<GlobalBloc>(create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
           BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
-          BlocProvider<WidgetDetailBloc>(
-              create: (_) => WidgetDetailBloc(repository: repository)),
-          BlocProvider<CategoryBloc>(
-              create: (_) => categoryBloc),
-          BlocProvider<LikeWidgetBloc>(
-              create: (_) => LikeWidgetBloc(repository: repository)),
+          BlocProvider<WidgetDetailBloc>(create: (_) => WidgetDetailBloc(repository: repository)),
+          BlocProvider<CategoryBloc>(create: (_) => categoryBloc),
+          BlocProvider<LikeWidgetBloc>(create: (_) => LikeWidgetBloc(repository: repository)),
           BlocProvider<RegisterBloc>(create: (_) => RegisterBloc()),
           BlocProvider<LoginBloc>(create: (_) => LoginBloc(authenticBloc: authBloc)),
           BlocProvider<AuthenticBloc>(create: (_) => authBloc),
-          BlocProvider<CategoryWidgetBloc>(
-              create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
+          BlocProvider<CategoryWidgetBloc>(create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
           BlocProvider<PointBloc>(create: (_) => PointBloc()),
           BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
           BlocProvider<GalleryUnitBloc>(create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
