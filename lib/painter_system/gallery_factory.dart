@@ -22,6 +22,7 @@ import 'base/draw_picture.dart';
 
 import 'base/n_side/n_side_page.dart';
 import 'base/polar/polar_painter_widget.dart';
+import 'fun/bufeng/bufeng_panel.dart';
 import 'fun/dundun_view.dart';
 import 'fun/random_portrait.dart';
 import 'fun/stemp/stamp_paper.dart';
@@ -168,6 +169,12 @@ class GalleryFactory {
               srcUrl: '/fun/dundun_view.dart',
               info: "本样例是绘制 2022 年北京冬奥会吉祥物冰墩墩的形体，从中可以学到路径绘制、渐变色等知识。",
               content: DunDunView()),
+          FrameShower(
+              title: "蒲丰投针试验",
+              author: "张风捷特烈",
+              srcUrl: '/fun/bufeng',
+              info: "本样实现蒲丰投针试验的测试过程，根据概率来估算圆周率。其中可以学习到一些绘制小技巧已经数据的逻辑处理。",
+              content: BufengPanel()),
           FrameShower(
               title: "井字棋",
               author: "张风捷特烈",

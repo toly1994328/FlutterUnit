@@ -35,12 +35,6 @@ class _TabAppBarState extends State<TabAppBar>
     super.dispose();
   }
 
-// decoration: const BoxDecoration(
-//               image: DecorationImage(
-//                   image: AssetImage(
-//                     "assets/images/sabar.webp",
-//                   ),
-//                   fit: BoxFit.cover))
   @override
   Widget build(BuildContext context) {
     return SizedBox(
