@@ -60,7 +60,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       vsync: this,
     )..addListener(_listenAnimate);
 
-    WidgetsBinding.instance?.addPostFrameCallback((callback) {
+    WidgetsBinding.instance.addPostFrameCallback((callback) {
       var px = MediaQuery.of(context).size.width - 100;
       var py = MediaQuery.of(context).size.height*0.05;
       offset = Offset(px, py);

@@ -48,7 +48,7 @@ class CouponWidgetListItem extends StatelessWidget {
   }
 
   Widget buildContent() => Container(
-        color: colors[data.family.index].withAlpha(66),
+        color: data.death?Colors.grey:colors[data.family.index].withAlpha(66),
         height: 95,
         padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
         child: Row(

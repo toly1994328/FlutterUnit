@@ -18,6 +18,7 @@ class WidgetModel extends Equatable {
   final String nameCN;
   final WidgetFamily family;
   final bool deprecated;
+  final bool death;
   final List<int> links;
   final double lever;
   final ImageProvider? image;
@@ -32,6 +33,7 @@ class WidgetModel extends Equatable {
         required this.nameCN,
         required  this.family,
          this.deprecated =false,
+         this.death =false,
         required this.links,
         // required this.type,
         required this.lever,
@@ -50,6 +52,7 @@ class WidgetModel extends Equatable {
       image: convertImage(po.name),
       lever: po.lever,
       deprecated: po.deprecated == 1,
+      death: po.deprecated == -1,
       info: po.info,
       links: formatLinkTo(po.linkWidget),
     );

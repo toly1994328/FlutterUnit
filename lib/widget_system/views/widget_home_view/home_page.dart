@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback(_onFrameCallBack);
+    WidgetsBinding.instance.addPostFrameCallback(_onFrameCallBack);
   }
 
   void _onFrameCallBack(Duration timeStamp) {

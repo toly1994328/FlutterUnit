@@ -104,7 +104,8 @@ class TechnoWidgetListItem extends StatelessWidget {
               ),
       );
 
-  Color get itemColor => Cons.tabColors[data.family.index];
+  Color get itemColor => data.death?Colors.grey:Cons.tabColors[data.family.index];
+
 
   Widget _buildTitle() {
     return Row(

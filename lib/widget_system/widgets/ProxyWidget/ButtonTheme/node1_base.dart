@@ -30,7 +30,7 @@ class ButtonThemeDemo extends StatelessWidget {
         children: <Widget>[
           RaisedButton(onPressed: (){},child: const Icon(Icons.add)),
           FlatButton(onPressed: (){},child: const Icon(Icons.add)),
-          OutlineButton(onPressed: (){},child: const Icon(Icons.add)),
+          OutlinedButton(onPressed: (){},child: const Icon(Icons.add)),
           MaterialButton(onPressed: (){},child: const Icon(Icons.add)),
         ],
       ),
