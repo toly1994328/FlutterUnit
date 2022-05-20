@@ -211,6 +211,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         text: nodes[i].name,
         subText: nodes[i].subtitle,
         code: nodes[i].code,
+        death: _modelStack.last.death,
         show: WidgetsMap.map(name)[i],
       ),
       childCount: nodes.length,

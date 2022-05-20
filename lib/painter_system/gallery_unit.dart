@@ -68,10 +68,9 @@ class _GalleryUnitState extends State<GalleryUnit> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: ValueListenableBuilder(
-        child: Column( //使用 child 属性优化
+        child: Column(
           children: [
             _buildTitle(context),
             Expanded(

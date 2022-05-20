@@ -37,7 +37,7 @@ class TempButtonBar extends StatelessWidget {
       children: <Widget>[
         RaisedButton(
             color: Colors.blue, child: const Text("1.Raised"), onPressed: () {}),
-        OutlineButton(child: const Text("2.Outline"), onPressed: () {}),
+        OutlinedButton(child: const Text("2.Outlined"), onPressed: () {}),
         FlatButton(
           color: Colors.blue,
           onPressed: () {},
