@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback(_onFrameCallBack);
+    WidgetsBinding.instance.addPostFrameCallback(_onFrameCallBack);
   }
 
   void _onFrameCallBack(Duration timeStamp) {
@@ -43,7 +43,6 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
     return Scaffold(
         body: Stack(
       children: <Widget>[

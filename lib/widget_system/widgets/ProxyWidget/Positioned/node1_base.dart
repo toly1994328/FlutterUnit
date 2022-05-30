@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 108,
 //      "name": 'Positioned基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 组件   【Widget】\n"
+//      "subtitle": "【child】 : 组件   【Widget】\n"
 //          "【top】 : 到父顶距离   【double】\n"
 //          "【right】 : 到父右距离   【double】\n"
 //          "【left】 : 到父左距离   【double】\n"

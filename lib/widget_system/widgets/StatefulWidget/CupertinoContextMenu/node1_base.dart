@@ -7,8 +7,7 @@ import 'package:flutter/cupertino.dart';
 //      "widgetId": 143,
 //      "name": 'CupertinoContextMenu基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【actions】 : 行为组件集   【List<Widget>】\n"
 //          "【previewBuilder】 : 动画构造器  【ContextMenuPreviewBuilder】",
 //    }

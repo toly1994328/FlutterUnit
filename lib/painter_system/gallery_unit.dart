@@ -58,10 +58,11 @@ class _GalleryUnitState extends State<GalleryUnit> {
   Color get color => BlocProvider.of<ColorChangeCubit>(context).state.tabColor;
 
   Color get nextColor =>  BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
+  bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
-  BoxDecoration get boxDecoration => const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
+  BoxDecoration get boxDecoration =>  BoxDecoration(
+        color: isDark?Colors.white.withAlpha(33):Colors.white,
+        borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40), topRight: Radius.circular(40)),
       );
 
@@ -69,7 +70,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ValueListenableBuilder(
-        child: Column( //使用 child 属性优化
+        child: Column(
           children: [
             _buildTitle(context),
             Expanded(
@@ -84,7 +85,7 @@ class _GalleryUnitState extends State<GalleryUnit> {
         ),
         valueListenable: factor,
         builder: (_,double value, child) => Container(
-          color: Color.lerp(
+          color: isDark?null:Color.lerp(
             color,
             nextColor,
             value,

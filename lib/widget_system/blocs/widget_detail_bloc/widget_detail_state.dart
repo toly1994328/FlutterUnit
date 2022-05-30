@@ -19,7 +19,11 @@ class DetailWithData extends DetailState {
   final List<WidgetModel> links;
   final List<NodeModel> nodes;
 
-  const DetailWithData({required this.widgetModel,required this.nodes,required this.links});
+  const DetailWithData({
+    required this.widgetModel,
+    required this.nodes,
+    required this.links,
+  });
 
   @override
   List<Object> get props => [widgetModel,nodes];

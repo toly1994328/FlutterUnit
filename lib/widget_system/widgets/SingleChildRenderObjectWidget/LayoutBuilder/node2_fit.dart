@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 287,
 //      "name": 'LayoutBuilder的适应布局',
 //      "priority": 2,
-//      "subtitle":
-//          "可以根据区域的大小进行组件展示设计。"
+//      "subtitle": "可以根据区域的大小进行组件展示设计。"
 //          "比如在不同的宽度区域显示不同的布局结构。"
 //          "毕竟很多地方不容易获取父组件区域，使用LayoutBuilder就会非常爽口。",
 //    }

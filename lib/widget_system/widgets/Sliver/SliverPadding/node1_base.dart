@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 191,
 //      "name": 'SliverPadding基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【sliver】 : 子组件   【Widget】\n"
+//      "subtitle": "【sliver】 : 子组件   【Widget】\n"
 //          "【padding】 : 内边距  【EdgeInsetsGeometry】",
 //    }
 class SliverPaddingDemo extends StatelessWidget {

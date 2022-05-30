@@ -19,6 +19,9 @@ class GalleryCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+    bool isDark = themeData.brightness == Brightness.dark;
+
     return Card(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -80,7 +83,7 @@ class GalleryCardItem extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
                 child: Text(
                   galleryInfo.info,
-                  style: TextStyle(color: Colors.grey, shadows: [
+                  style: TextStyle(color: isDark?Colors.white:Colors.grey, shadows: [
                     Shadow(
                         color: Theme.of(context).primaryColor,
                         offset: const Offset(.2, .2),
@@ -90,8 +93,8 @@ class GalleryCardItem extends StatelessWidget {
               )
             ],
           ),
-          decoration: const BoxDecoration(
-              color: Colors.white,
+          decoration:  BoxDecoration(
+              color: isDark?Colors.black87:Colors.white,
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
               ))),

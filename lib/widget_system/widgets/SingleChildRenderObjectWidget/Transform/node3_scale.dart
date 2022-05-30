@@ -9,8 +9,7 @@ import 'matrix4_shower.dart';
 //      "widgetId": 78,
 //      "name": '缩放变换diagonal3Values',
 //      "priority": 3,
-//      "subtitle":
-//          "缩放x由R0C0数控制,入参为数值,表示缩放分率\n"
+//      "subtitle": "缩放x由R0C0数控制,入参为数值,表示缩放分率\n"
 //          "缩放y由R1C2数控制,入参为数值,表示缩放分率\n"
 //          "缩放z由R2C2数控制,入参为数值,表示缩放分率",
 //    }

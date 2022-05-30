@@ -25,8 +25,8 @@ class CustomButtonBar extends StatelessWidget {
             color: Colors.blue,
             child: const Text("Raised"),
             onPressed: () => DialogAbout.show(context)),
-        OutlineButton(
-            child: const Text("Outline"),
+        OutlinedButton(
+            child: const Text("Outlined"),
             onPressed: () => DialogAbout.show(context)),
         FlatButton(
           color: Colors.blue,

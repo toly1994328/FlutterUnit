@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 292,
 //      "name": 'IgnorePointer基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
+//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
 //          "【ignoring】 : 是否忽视事件   【bool】\n"
 //          "如下,Switch选中时ignoring为true，按钮事件将被锁定，无法点击。",
 //    }

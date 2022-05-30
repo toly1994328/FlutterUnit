@@ -20,17 +20,30 @@ import 'package:flutter/material.dart';
 class CustomOutlineButton extends StatelessWidget {
   const CustomOutlineButton({Key? key}) : super(key: key);
 
+  final String info =
+      'OutlineButton 按钮于 Flutter3.0 退出历史舞台。取代者为 OutlinedButton 按钮。';
+
   @override
   Widget build(BuildContext context) {
-    return OutlineButton(//边线按钮
-      onPressed: () {},
-      child: const Text("OutlineButton"),
-      padding: const EdgeInsets.all(8),
-      splashColor: Colors.green,
-      highlightColor: Colors.orangeAccent,
-      highlightedBorderColor: Colors.grey,
-      textColor: const Color(0xff000000),
-      borderSide: const BorderSide(color: Color(0xff0A66F8), width: 2),
+    return Container(
+      color: Colors.blue.withOpacity(0.1),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      child: Text(info),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return OutlineButton(//边线按钮
+  //     onPressed: () {},
+  //     child: const Text("OutlineButton"),
+  //     padding: const EdgeInsets.all(8),
+  //     splashColor: Colors.green,
+  //     highlightColor: Colors.orangeAccent,
+  //     highlightedBorderColor: Colors.grey,
+  //     textColor: const Color(0xff000000),
+  //     borderSide: const BorderSide(color: Color(0xff0A66F8), width: 2),
+  //   );
+  // }
 }

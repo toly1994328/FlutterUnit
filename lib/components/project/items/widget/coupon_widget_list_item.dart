@@ -48,7 +48,7 @@ class CouponWidgetListItem extends StatelessWidget {
   }
 
   Widget buildContent() => Container(
-        color: colors[data.family.index].withAlpha(66),
+        color: data.death?Colors.grey:colors[data.family.index].withAlpha(66),
         height: 95,
         padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
         child: Row(
@@ -69,18 +69,13 @@ class CouponWidgetListItem extends StatelessWidget {
         padding: const EdgeInsets.all(5.0),
         child: Hero(
           tag: "hero_widget_image_${data.id}",
-          child: data.image == null
-              ? Material(
+          child: Material(
                   color: Colors.transparent,
                   child: CircleText(
                     text: data.name,
                     size: 60,
                     color: invColor,
                   ),
-                )
-              : CircleImage(
-                  image: data.image!,
-                  size: 60,
                 ),
         ),
       );

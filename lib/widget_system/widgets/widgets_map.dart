@@ -26,6 +26,17 @@ class WidgetsMap {
           const CupertinoSegmentedControlDemo(),
           const CupertinoSegmentedControlColor()
         ];
+      case "ImageFiltered":
+        return [
+          const ImageFilteredBlur(),
+          const ImageFilteredColor(),
+          const ImageFilteredMatrix()
+        ];
+      case "Autocomplete":
+        return [
+          const AutocompleteDemo(),
+          const AutocompleteType()
+        ];
       case "CompositedTransformTarget":
         return [
           const CompositedTransformTargetDemo(),
@@ -33,16 +44,20 @@ class WidgetsMap {
       case "CompositedTransformFollower":
         return [
           const CompositedTransformFollowerDemo(),
-        ];      case "PrimaryScrollController":
+        ];
+      case "PrimaryScrollController":
         return [
           const PrimaryScrollControllerDemo(),
-        ];case "CupertinoFullscreenDialogTransition":
+        ];
+      case "CupertinoFullscreenDialogTransition":
         return [
           const CupertinoFullscreenDialogTransitionDemo(),
-        ];case "CupertinoPageTransition":
+        ];
+      case "CupertinoPageTransition":
         return [
           const CupertinoPageTransitionDemo(),
-        ];case "HtmlElementView":
+        ];
+      case "HtmlElementView":
         return [
           const HtmlElementViewDemo(),
         ];

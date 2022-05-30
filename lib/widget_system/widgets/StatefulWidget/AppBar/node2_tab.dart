@@ -37,31 +37,19 @@ class _TabAppBarState extends State<TabAppBar>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          height: 180,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    "assets/images/sabar.webp",
-                  ),
-                  fit: BoxFit.cover)),
-          child: _buildAppBar(),
-        ),
-        Container(
-            height: 150,
-            color: const Color(0xff916BF0),
-            child: _buildTableBarView())
-      ],
+    return SizedBox(
+      height: 220,
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: _buildTableBarView(),
+      ),
     );
   }
 
-  Widget _buildAppBar() => AppBar(
-    title: const Text('风雅六社'),
+  PreferredSizeWidget _buildAppBar() => AppBar(
+        title: const Text('风雅六社'),
         elevation: 1,
         leading: const BackButton(),
-        backgroundColor: Colors.amber[500]!.withAlpha(33),
         centerTitle: true,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -88,10 +76,13 @@ class _TabAppBarState extends State<TabAppBar>
   Widget _buildTableBarView() => TabBarView(
       controller: _tabController,
       children: tabs
-          .map((e) => Center(
-                  child: Text(
-                    e,
+          .map((e) => ColoredBox(
+          color: Colors.purple,
+          child:Center(
+                  child:  Text(
+                      e,
                 style: const TextStyle(color: Colors.white, fontSize: 20),
-              )))
+              ),
+                  )))
           .toList());
 }

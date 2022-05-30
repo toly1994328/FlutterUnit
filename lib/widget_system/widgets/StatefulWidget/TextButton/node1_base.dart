@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 353,
 //      "name": 'TextButton基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 是否具有滚动主体   【Widget】\n"
+//      "subtitle": "【child】 : 是否具有滚动主体   【Widget】\n"
 //          "【onPressed】 : 点击事件   【VoidCallback】\n"
 //          "【onLongPress】 : 长按事件   【VoidCallback】",
 //    }

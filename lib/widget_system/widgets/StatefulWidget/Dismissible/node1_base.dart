@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 176,
 //      "name": 'Dismissible基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【background】 : 左底  【Widget】\n"
 //          "【secondaryBackground】 : 右底  【Widget】\n"
 //          "【key】 : 键  【Key】\n"

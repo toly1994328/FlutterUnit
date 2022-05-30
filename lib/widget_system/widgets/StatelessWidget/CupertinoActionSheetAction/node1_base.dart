@@ -5,8 +5,7 @@
 //      "widgetId": 132,
 //      "name": 'CupertinoActionSheetAction基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【isDefaultAction】 : 是否默认选中  【bool】\n"
 //          "【onPressed】 : 点击事件  【Function()】",
 //    }

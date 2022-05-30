@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 329,
 //      "name": 'DividerTheme使用',
 //      "priority": 1,
-//      "subtitle":
-//          "属性参数与Divider类似，可以通过DividerTheme.of获取分割线主题数据，"
+//      "subtitle": "属性参数与Divider类似，可以通过DividerTheme.of获取分割线主题数据，"
 //          "也可以为DividerTheme【后代】的分割线设置默认样式，包括颜色、粗细、高度等。",
 //    }
 

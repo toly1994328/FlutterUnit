@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 287,
 //      "name": 'LayoutBuilder的展开使用',
 //      "priority": 3,
-//      "subtitle":
-//          "使用TextPainter来检测文字的行数，实现展开或收起功能。",
+//      "subtitle": "使用TextPainter来检测文字的行数，实现展开或收起功能。",
 //    }
 
 class SimpleExpandableText extends StatefulWidget {

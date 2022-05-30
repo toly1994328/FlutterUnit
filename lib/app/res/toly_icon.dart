@@ -1,11 +1,10 @@
-// ignore_for_file: constant_identifier_names
-
 import 'package:flutter/widgets.dart';
 //Power By 张风捷特烈--- Generated file. Do not edit.
 
 class TolyIcon {
 
     TolyIcon._();
+static const IconData icon_layout = IconData( 0xe85e, fontFamily: "TolyIcon");
 static const IconData upload_success = IconData( 0xe60b, fontFamily: "TolyIcon");
 static const IconData download = IconData( 0xea51, fontFamily: "TolyIcon");
 static const IconData upload = IconData( 0xea52, fontFamily: "TolyIcon");
@@ -31,7 +30,6 @@ static const IconData icon_kafei = IconData( 0xe6aa, fontFamily: "TolyIcon");
 static const IconData icon_tag = IconData( 0xe6e7, fontFamily: "TolyIcon");
 static const IconData icon_them = IconData( 0xe6c2, fontFamily: "TolyIcon");
 static const IconData icon_bug = IconData( 0xe7af, fontFamily: "TolyIcon");
-static const IconData icon_layout = IconData( 0xe631, fontFamily: "TolyIcon");
 static const IconData icon_sound = IconData( 0xe606, fontFamily: "TolyIcon");
 static const IconData icon_search = IconData( 0xe604, fontFamily: "TolyIcon");
 static const IconData icon_star_ok = IconData( 0xe6ae, fontFamily: "TolyIcon");

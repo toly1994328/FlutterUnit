@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 305,
 //      "name": 'SliverIgnorePointer基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【sliver】 : sliver组件   【Widget】\n"
+//      "subtitle": "【sliver】 : sliver组件   【Widget】\n"
 //          "【ignoring】 : 是否忽略事件   【bool】\n",
 //    }
 class SliverIgnorePointerDemo extends StatefulWidget {

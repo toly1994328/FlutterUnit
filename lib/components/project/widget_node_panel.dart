@@ -22,11 +22,13 @@ class WidgetNodePanel extends StatefulWidget {
   final Widget? show;
   final HighlighterStyle? codeStyle;
   final String? codeFamily;
+  final bool death;
 
   const WidgetNodePanel(
       {Key? key, this.text='',
       this.subText='',
       this.code='',
+      this.death=false,
       this.show,
      required this.codeStyle,
       this.codeFamily}) : super(key: key);
@@ -58,6 +60,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
             padding: const EdgeInsets.only(top: 10, bottom: 20),
             child: widget.show,
           ),
+          if(!widget.death)
           _buildNodeInfo(),
           const Divider(),
         ],
@@ -88,6 +91,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
   Widget _buildNodeInfo() => SizedBox(
         width: double.infinity,
         child: Panel(
+          color: Theme.of(context).appBarTheme.backgroundColor,
             child: Text(
           widget.subText,
           style: const TextStyle(fontSize: 14),

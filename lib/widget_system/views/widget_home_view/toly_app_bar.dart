@@ -51,6 +51,16 @@ class _TolyAppBarState extends State<TolyAppBar>
     'Other'
   ];
 
+  static const List<String> semantics = [
+    '无状态组件',
+    '有状态组件',
+    '单子组件',
+    '多子组件',
+    '滑动组件',
+    '代理组件',
+    '其他组件'
+  ];
+
   late AnimationController _controller;
   late Animation<double> circleAnim;
   late Animation<double> heightAnim;
@@ -110,9 +120,14 @@ class _TolyAppBarState extends State<TolyAppBar>
     );
   }
 
-  Widget _buildChild(int color) => Container(
+  Widget _buildChild(int color) {
+    ThemeData themeData = Theme.of(context);
+    bool isDark = themeData.brightness == Brightness.dark;
+    int index = colors.indexOf(color);
+    return Container(
     alignment: const Alignment(0, 0.4),
     decoration: BoxDecoration(boxShadow: [
+      if(!isDark)
       BoxShadow(
           color: _selectIndex == colors.indexOf(color)
               ? Colors.transparent
@@ -123,10 +138,12 @@ class _TolyAppBarState extends State<TolyAppBar>
     height: widget.maxHeight + 20,
     width: _width,
     child: Text(
-      info[colors.indexOf(color)],
+      info[index],
       style: _kTabTextStyle,
+      semanticsLabel: '您当前点击了:${semantics[index]}',
     ),
   );
+  }
 
   void _onTap(int color) {
     if (_selectIndex == colors.indexOf(color)) return;

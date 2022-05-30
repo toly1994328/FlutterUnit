@@ -67,7 +67,7 @@ class UnitRouter {
             child: WidgetDetailPage(model: settings.arguments as WidgetModel));
 
       case search:
-        return Right2LeftRouter(child: const SearchPage());
+        return Right2LeftRouter(child: const SearchPageProvider());
       case collect:
         return Right2LeftRouter(child: const CollectPage());
 

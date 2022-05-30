@@ -5,13 +5,14 @@ class BackgroundShower extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
+    return const Opacity(
       opacity: 0.05,
-      child: Container(
-        decoration: const BoxDecoration(
+      child: DecoratedBox(
+        decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/sabar.webp'),
-                fit: BoxFit.cover),
+              image: AssetImage('assets/images/sabar.webp'),
+              fit: BoxFit.cover,
+            ),
             borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(400),
                 topLeft: Radius.circular(400))),

@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 
@@ -16,16 +19,33 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
 
   WidgetsBloc({required this.repository}):super(const WidgetsLoading()){
     on<EventTabTap>(_onEventTabTap);
+    on<EventSearchWidget>(_onEventSearchWidget);
   }
 
   void _onEventTabTap(EventTabTap event, Emitter<WidgetsState> emit) async{
     emit( const WidgetsLoading());
+    WidgetFilter filter = WidgetFilter.family(event.family);
     try {
-      final List<WidgetModel> widgets = await repository.loadWidgets(event.family);
-      emit( WidgetsLoaded(widgets: widgets));
+      final List<WidgetModel> widgets = await repository.searchWidgets(
+          filter
+      );
+      emit( WidgetsLoaded(widgets: widgets,filter: filter));
     } catch (err) {
       print(err);
-      emit(WidgetsLoadFailed(event.family,err.toString()));
+      emit(WidgetsLoadFailed(err.toString(),filter: filter));
+    }
+  }
+
+  void _onEventSearchWidget(EventSearchWidget event, Emitter<WidgetsState> emit) async{
+    emit( const WidgetsLoading());
+    try {
+      final List<WidgetModel> widgets = await repository.searchWidgets(
+          event.filter
+      );
+      emit( WidgetsLoaded(widgets: widgets,filter:  event.filter));
+    } catch (err) {
+      print(err);
+      emit(WidgetsLoadFailed(err.toString(),filter:  event.filter));
     }
   }
 }

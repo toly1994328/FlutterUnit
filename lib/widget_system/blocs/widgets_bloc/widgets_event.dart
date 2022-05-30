@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
+import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
 
 
 /// create by 张风捷特烈 on 2020-03-03
@@ -21,4 +22,8 @@ class EventTabTap extends WidgetsEvent {
   List<Object> get props => [family];
 }
 
+class EventSearchWidget extends WidgetsEvent {
+  final WidgetFilter filter;//参数
+  const EventSearchWidget({required this.filter});
+}
 

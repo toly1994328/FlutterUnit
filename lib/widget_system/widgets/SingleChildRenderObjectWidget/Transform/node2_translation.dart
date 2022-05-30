@@ -10,8 +10,7 @@ import 'matrix4_shower.dart';
 //      "widgetId": 78,
 //      "name": '平移变换translationValues',
 //      "priority": 2,
-//      "subtitle":
-//          "平移x由R0C3数控制,入参为数值,表示平移长度\n"
+//      "subtitle": "平移x由R0C3数控制,入参为数值,表示平移长度\n"
 //          "平移y由R1C3数控制,入参为数值,表示平移长度\n"
 //          "平移z由R2C3数控制,入参为数值,表示平移长度",
 //    }

@@ -194,4 +194,7 @@ export '../StatelessWidget/PageStorage/node1_base.dart';
 export '../StatelessWidget/NotificationListener/node1_base.dart';
 export '../StatelessWidget/NotificationListener/node2_update.dart';
 
+export '../StatelessWidget/Autocomplete/node1_base.dart';
+export '../StatelessWidget/Autocomplete/node2_type.dart';
+
 
