@@ -11,7 +11,7 @@ import 'package:flutter_unit/app/blocs/global/global_state.dart';
 
 import 'flutter_unit_text.dart';
 import 'unit_paint.dart';
-
+import 'dart:io';
 /// create by 张风捷特烈 on 2020-03-07
 /// contact me by email 1981462002@qq.com
 /// 说明: app 闪屏页
@@ -79,13 +79,23 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
     super.dispose();
   }
 
+
+  bool _loaded = false;
+  bool _splashDone = false;
+
+
+
   void _listenStatus(AnimationStatus status) {
     if (status == AnimationStatus.completed) {
       Future.delayed(delayTime).then((e) {
-        Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
+        _splashDone = true;
+        if(_loaded){
+          Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
+        }
       });
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -155,8 +165,13 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   // 监听资源加载完毕，启动，触发事件
   void _listenStart(BuildContext context, GlobalState state) {
-      BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
-      BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
-      BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
+    BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
+    BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
+    BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
+    _loaded = true;
+    if(_splashDone){
+      Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
+    }
   }
+
 }
