@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter_unit/plateform_adapter/database/db_open_helper.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import 'dao/like_dao.dart';
 import 'package:path/path.dart' as path;
@@ -35,7 +38,21 @@ class LocalDb {
     String databasesPath = await DbOpenHelper.getDbDirPath();
     String dbPath = path.join(databasesPath, name);
 
-    _database = await openDatabase(dbPath);
+    if (Platform.isWindows||Platform.isLinux) {
+      DatabaseFactory databaseFactory = databaseFactoryFfi;
+      _database = await databaseFactory.openDatabase(
+        dbPath,
+        options: OpenDatabaseOptions(
+            // version: DbUpdater.VERSION,
+            // onCreate: _onCreate,
+            // onUpgrade: _onUpgrade,
+            // onOpen: _onOpen
+        ),
+      );
+    }else{
+      _database = await openDatabase(dbPath);
+    }
+
 
     _widgetDao = WidgetDao(_database!);
     _categoryDao = CategoryDao(_database!);
