@@ -1,3 +1,5 @@
+import 'package:flutter_unit/plateform_adapter/database/db_open_adapter.dart';
+
 import 'dao/like_dao.dart';
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart';
@@ -30,7 +32,7 @@ class LocalDb {
 
   Future<void> initDb({String name = "flutter.db"}) async {
     if (_database != null) return;
-    String databasesPath = await getDatabasesPath();
+    String databasesPath = await DbOpenHelper.getDbDirPath();
     String dbPath = path.join(databasesPath, name);
 
     _database = await openDatabase(dbPath);

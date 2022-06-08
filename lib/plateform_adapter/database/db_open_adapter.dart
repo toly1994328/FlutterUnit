@@ -1,42 +1,26 @@
 import 'dart:io';
 
-import 'package:sqflite/sqflite.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as path;
 
-mixin DbOpenAdapter{
-  Database? _database;
+class DbOpenHelper{
 
-  Future<void> initDb({String name = "flutter.db"}) async {
-    if (_database != null) return;
-    if(Platform.isAndroid||Platform.isMacOS||Platform.isIOS){
-      String databasesPath = await getDatabasesPath();
-      String dbPath = path.join(databasesPath, name);
-      _database = await openDatabase(dbPath);
-
-    }
-
+  static Future<String> getDbDirPath() async{
+    Directory appDocDir = await getApplicationDocumentsDirectory();
+    String dirName = 'databases';
+    String dirPath = path.join(appDocDir.path, dirName);
+    
+     if(Platform.isAndroid){
+       dirPath = path.join(appDocDir.parent.path, dirName);
+     }
     if(Platform.isWindows||Platform.isLinux){
-      // Directory current = await getApplicationSupportDirectory();
-      // databasesPath = path.join(
-      //   current.parent.path,
-      //   'example',
-      //   'myap',
-      // );
-      // print(databasesPath);
-      // DatabaseFactory databaseFactory = databaseFactoryFfi;
-      // dbPath = path.join(databasesPath, name);
-      //
-      // _database = await databaseFactory.openDatabase(
-      //   dbPath,
-      //   options: OpenDatabaseOptions(
-      //       version: DbUpdater.VERSION,
-      //       onCreate: _onCreate,
-      //       onUpgrade: _onUpgrade,
-      //       onOpen: _onOpen),
-      // );
+      dirPath = path.join(appDocDir.path, 'FlutterUnit','databases');
     }
 
-    print('初始化数据库....');
+    Directory result = Directory(dirPath);
+    if(!result.existsSync()){
+      result.createSync(recursive: true);
+    }
+    return dirPath;
   }
-
 }
