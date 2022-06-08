@@ -1,13 +1,16 @@
 
 #### Flutter Unit 周边
-- 🔥  [实体书 - 《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
 - 🔥  [掘金小册 -《Flutter 绘制指南 - 妙笔生花》](https://juejin.im/book/6844733827265331214)
 - 🔥  [掘金小册 -《Flutter 手势探索 - 执掌天下》](https://juejin.cn/book/6896378716427911181)
 - 🔥  [掘金小册 -《Flutter 动画探索 - 流光幻影》](https://juejin.cn/book/6965102582473687071)
--   [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
--   [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
--   [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
-
+- 🔥  [掘金小册 -《Flutter 滑动探索 - 珠联璧合》](https://juejin.cn/book/6984685333312962573)
+- 🔥  [掘金小册 -《Flutter 布局探索 - 薪火相传》](https://juejin.cn/book/7075958265250578469)
+- 🔥  [掘金小册 -《Flutter 渲染机制 - 聚沙成塔》](https://juejin.cn/book/6965102582473687071)
+  
+- [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
+- [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
+- [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
+- [实体书 - 《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
 
 ### FlutterUnit 下载体验: 复制链接，在浏览器下载~
 
