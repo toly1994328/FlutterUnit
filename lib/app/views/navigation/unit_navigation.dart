@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/bloc_exp.dart';
@@ -34,7 +36,9 @@ class _UnitNavigationState extends State<UnitNavigation> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<UpdateBloc>(context).add(const CheckUpdate(appName: 'FlutterUnit'));
+    if(Platform.isAndroid){
+      BlocProvider.of<UpdateBloc>(context).add(const CheckUpdate(appName: 'FlutterUnit'));
+    }
   }
 
   @override
