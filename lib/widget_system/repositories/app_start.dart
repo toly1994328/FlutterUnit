@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/sp.dart';
+import 'package:flutter_unit/plateform_adapter/database/db_open_adapter.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'local_db.dart';
 import 'package:path/path.dart' as path;
@@ -16,12 +18,12 @@ import 'local_storage.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 本地存储访问对象,用于读取配置数据，及初始化Database和SharedPreferences
 
-class AppStart {
+class AppStart{
   // 初始化 App 固化的配置数据
   Future<GlobalState> initApp() async {
     SharedPreferences prefs = await LocalStorage.sp;
     //数据库不存在，执行拷贝
-    String databasesPath = await getDatabasesPath();
+    String databasesPath = await DbOpenHelper.getDbDirPath();
     String dbPath = path.join(databasesPath, "flutter.db");
 
     bool shouldCopy = await _checkShouldCopy(dbPath);
