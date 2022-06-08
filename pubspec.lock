@@ -85,6 +85,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.2"
+  desktop_window:
+    dependency: "direct main"
+    description:
+      name: desktop_window
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.4.0"
   dio:
     dependency: "direct main"
     description:

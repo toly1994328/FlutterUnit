@@ -40,6 +40,8 @@ dependencies:
   flutter_markdown: ^0.6.4 # markdown
   dio: ^4.0.4 # 网络请求
 
+  desktop_window: ^0.4.0 #桌面尺寸
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
