@@ -316,7 +316,7 @@ packages:
       name: path_provider
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.9"
+    version: "2.0.11"
   path_provider_android:
     dependency: transitive
     description:
@@ -400,7 +400,7 @@ packages:
       name: r_upgrade
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.7+3"
+    version: "0.3.8+2"
   share_plus:
     dependency: "direct main"
     description:
@@ -517,14 +517,14 @@ packages:
       name: sqflite
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.2+1"
   sqflite_common:
     dependency: transitive
     description:
       name: sqflite_common
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.1+1"
   stack_trace:
     dependency: transitive
     description:
