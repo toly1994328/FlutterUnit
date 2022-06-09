@@ -91,7 +91,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
       alignment: Alignment.center,
       // color: Colors.orangeAccent,
       child: IconTheme(
-        data: IconTheme.of(context).copyWith(color: Colors.white, size: 18),
+        data: const IconThemeData(color: Colors.white, size: 18),
         child: BurstMenu(
             startAngle: !left ? 90.0 + 15 : -90 - 15.0 + 180,
             swapAngle: !left ? 180.0 - 15 * 2 : -(180.0 - 15 * 2),

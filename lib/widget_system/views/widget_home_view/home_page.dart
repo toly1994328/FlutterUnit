@@ -19,6 +19,8 @@ import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 
 import 'background.dart';
+import 'content/desk_widget_content.dart';
+import 'content/phone_widget_content.dart';
 import 'toly_app_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -100,11 +102,17 @@ class _HomePageState extends State<HomePage>
           ),
         );
       }
-      return SliverList(
-        delegate: SliverChildBuilderDelegate(
-            (_, int index) => _buildHomeItem(items[index]),
-            childCount: items.length),
-      );
+      return SliverLayoutBuilder(builder: (_,c){
+        if(c.crossAxisExtent>500){
+          return DeskWidgetContent(
+            items: items,
+            width: c.crossAxisExtent,
+          );
+        }
+        return PhoneWidgetContent(
+          items: items,
+        );
+      });
     }
 
     if (state is WidgetsLoadFailed) {

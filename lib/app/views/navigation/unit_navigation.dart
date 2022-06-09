@@ -14,19 +14,36 @@ import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
 
 import '../../blocs/color_change_bloc.dart';
+import 'unit_desk_navigation.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
 /// 说明: 主题结构 左右滑页 + 底部导航栏
 
-class UnitNavigation extends StatefulWidget {
+class UnitNavigation extends StatelessWidget {
   const UnitNavigation({Key? key}) : super(key: key);
 
   @override
-  _UnitNavigationState createState() => _UnitNavigationState();
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (_,c){
+      if(c.maxWidth>500){
+        return const UnitDeskNavigation();
+      }
+      return const UnitPhoneNavigation();
+    });
+  }
 }
 
-class _UnitNavigationState extends State<UnitNavigation> {
+
+
+class UnitPhoneNavigation extends StatefulWidget {
+  const UnitPhoneNavigation({Key? key}) : super(key: key);
+
+  @override
+  _UnitPhoneNavigationState createState() => _UnitPhoneNavigationState();
+}
+
+class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   //页面控制器，初始 0
   final PageController _controller = PageController();
 

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +19,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDesk = Platform.isMacOS||Platform.isWindows||Platform.isLinux;
     return Stack(
       alignment: Alignment.centerRight,
       children: [
@@ -26,9 +29,10 @@ class _AppSearchBarState extends State<AppSearchBar> {
               autofocus: true,
               controller: _controller,
               maxLines: 1,
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
+                  contentPadding: EdgeInsets.only(top: isDesk?6:-1),//调整文字边距
                   prefixIcon: Icon(Icons.search),
                   border: UnderlineInputBorder(
                     borderSide: BorderSide.none,

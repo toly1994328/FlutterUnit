@@ -25,6 +25,13 @@ class LikeWidgetPage extends StatelessWidget {
     childAspectRatio: 1 / 0.5,
   );
 
+  final SliverGridDelegate deskGridDelegate =
+  const SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 3,
+    mainAxisSpacing: 10,
+    crossAxisSpacing: 10,
+    childAspectRatio: 1 / 0.5,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +53,13 @@ class LikeWidgetPage extends StatelessWidget {
   Widget _buildContent(BuildContext context, LikeWidgetState state) {
     return SliverPadding(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
-      sliver: SliverGrid(
+      sliver: SliverLayoutBuilder(
+          builder: (_,c){
+            SliverGridDelegate delegate = gridDelegate;
+            if(c.crossAxisExtent>500){
+              delegate = deskGridDelegate;
+            }
+            return SliverGrid(
           delegate: SliverChildBuilderDelegate(
               (_, index) => GestureDetector(
                   onTap: () =>
@@ -57,8 +70,8 @@ class LikeWidgetPage extends StatelessWidget {
                         _deleteCollect(context, model),
                   )),
               childCount: state.widgets.length),
-          gridDelegate: gridDelegate),
-    );
+          gridDelegate: delegate);},
+    ));
   }
 
   _deleteCollect(BuildContext context, WidgetModel model) =>
