@@ -22,6 +22,13 @@ class CategoryPage extends StatelessWidget {
     childAspectRatio: 0.8,
   );
 
+  final SliverGridDelegateWithFixedCrossAxisCount deskGridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 3,
+    mainAxisSpacing: 10,
+    crossAxisSpacing: 10,
+    childAspectRatio: 0.9,
+  );
+  
   const CategoryPage({Key? key}) : super(key: key);
 
   @override
@@ -48,20 +55,27 @@ class CategoryPage extends StatelessWidget {
   _buildContent(BuildContext context, CategoryLoadedState state) {
     return SliverPadding(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
-      sliver: SliverGrid(
-          delegate: SliverChildBuilderDelegate(
-              (_, index) => GestureDetector(
-                  onTap: () =>
-                      _toDetailPage(context, state.categories[index]),
-                  child: CategoryListItem(
-                    data: state.categories[index],
-                    onDeleteItemClick: (model) =>
-                        _deleteCollect(context, model),
-                    onEditItemClick: (model) =>
-                        _editCollect(context, model),
-                  )),
-              childCount: state.categories.length),
-          gridDelegate: gridDelegate),
+      sliver: SliverLayoutBuilder(
+          builder: (_,c){
+            SliverGridDelegate delegate = gridDelegate;
+            if(c.crossAxisExtent>500){
+              delegate = deskGridDelegate;
+            }
+            return SliverGrid(
+            delegate: SliverChildBuilderDelegate(
+                (_, index) => GestureDetector(
+                    onTap: () =>
+                        _toDetailPage(context, state.categories[index]),
+                    child: CategoryListItem(
+                      data: state.categories[index],
+                      onDeleteItemClick: (model) =>
+                          _deleteCollect(context, model),
+                      onEditItemClick: (model) =>
+                          _editCollect(context, model),
+                    )),
+                childCount: state.categories.length),
+            gridDelegate: delegate); }
+      ),
     );
   }
 

@@ -27,7 +27,7 @@ const TextStyle _kTabTextStyle = TextStyle(color: Colors.white, shadows: [
 
 class _TolyAppBarState extends State<TolyAppBar>
     with SingleTickerProviderStateMixin {
-  double? _width;
+  // double? _width;
   int _selectIndex = 0;
   int _prevSelectIndex = 0;
 
@@ -87,40 +87,42 @@ class _TolyAppBarState extends State<TolyAppBar>
 
   @override
   Widget build(BuildContext context) {
-    _width = _width ?? MediaQuery.of(context).size.width / colors.length;
-    return Center(
-      child:Flow(
-          delegate: TolyAppBarDelegate(
-            _selectIndex,
-            _prevSelectIndex,
-            widget.maxHeight,
-            repaint: heightAnim,
-          ),
-          children: [
-            ...colors
-                .map((e) => GestureDetector(
-                      onTap: () => _onTap(e),
-                      child: _buildChild(e),
-                    ))
-                .toList(),
-            ...colors.map((e) {
-              Widget child = Circle(
-                color: Color(e),
-                radius: 6,
-              );
-              if (e == colors[_selectIndex]) {
-                return ScaleTransition(scale: circleAnim, child: child);
-              }
-              if (e == colors[_prevSelectIndex]) {
-                return ScaleTransition(scale: backCircleAnim, child: child);
-              }
-              return child;
-            })
-          ]),
+    // _width = MediaQuery.of(context).size.width / colors.length;
+    return LayoutBuilder(
+      builder:(_,c)=> Center(
+        child:Flow(
+            delegate: TolyAppBarDelegate(
+              _selectIndex,
+              _prevSelectIndex,
+              widget.maxHeight,
+              repaint: heightAnim,
+            ),
+            children: [
+              ...colors
+                  .map((e) => GestureDetector(
+                        onTap: () => _onTap(e),
+                        child: _buildChild(e,c.maxWidth/ colors.length),
+                      ))
+                  .toList(),
+              ...colors.map((e) {
+                Widget child = Circle(
+                  color: Color(e),
+                  radius: 6,
+                );
+                if (e == colors[_selectIndex]) {
+                  return ScaleTransition(scale: circleAnim, child: child);
+                }
+                if (e == colors[_prevSelectIndex]) {
+                  return ScaleTransition(scale: backCircleAnim, child: child);
+                }
+                return child;
+              })
+            ]),
+      ),
     );
   }
 
-  Widget _buildChild(int color) {
+  Widget _buildChild(int color,double width) {
     ThemeData themeData = Theme.of(context);
     bool isDark = themeData.brightness == Brightness.dark;
     int index = colors.indexOf(color);
@@ -136,7 +138,7 @@ class _TolyAppBarState extends State<TolyAppBar>
           blurRadius: 2)
     ], color: Color(color), borderRadius: _kBorderRadius),
     height: widget.maxHeight + 20,
-    width: _width,
+    width: width,
     child: Text(
       info[index],
       style: _kTabTextStyle,

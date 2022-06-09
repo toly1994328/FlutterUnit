@@ -9,20 +9,35 @@ import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.
 import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
 
+import 'desk_ui/desk_gallery_unit.dart';
 import 'gallery_detail_page.dart';
 
 /// create by 张风捷特烈 on 2020/11/28
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-class GalleryUnit extends StatefulWidget {
+class GalleryUnit extends StatelessWidget {
   const GalleryUnit({Key? key}) : super(key: key);
 
   @override
-  _GalleryUnitState createState() => _GalleryUnitState();
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (_,c){
+      if(c.maxWidth>500){
+        return const DeskGalleryUnit();
+      }
+      return const PhoneGalleryUnit();
+    });
+  }
 }
 
-class _GalleryUnitState extends State<GalleryUnit> {
+class PhoneGalleryUnit extends StatefulWidget {
+  const PhoneGalleryUnit({Key? key}) : super(key: key);
+
+  @override
+  _PhoneGalleryUnitState createState() => _PhoneGalleryUnitState();
+}
+
+class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
   final ValueNotifier<double> factor = ValueNotifier<double>(0);
 
  late PageController _ctrl;

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
+import 'toly_icon.dart';
+
 class Cons {
 
   static const menuInfo = <String>["关于", "帮助", "问题反馈"]; //菜单栏
@@ -24,6 +26,13 @@ class Cons {
     'Proxy',
     'Other'
   ]; //标题列表
+
+  static const iconMap = {
+    //底栏图标
+    "组件集录": TolyIcon.icon_layout, "收藏集录": TolyIcon.icon_star,
+    "绘制集录": Icons.palette, "布局集录": Icons.widgets,
+    "要点集录": TolyIcon.icon_bug,
+  };
 
   static const fontFamilySupport = <String>[
     'local',

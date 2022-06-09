@@ -1,7 +1,10 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'desk_ui/desk_frame.dart';
 
 class PictureFrame extends StatelessWidget {
   final Widget? child;
@@ -11,13 +14,12 @@ class PictureFrame extends StatelessWidget {
   final Alignment? alignment;
   final EdgeInsetsGeometry? marge;
 
-  const PictureFrame(
-      {Key? key, this.child,
-      this.width,
-      this.height,
-      this.alignment,
-      this.color = Colors.transparent,
-      this.marge}) : super(key: key);
+  const PictureFrame({Key? key, this.child,
+    this.width,
+    this.height,
+    this.alignment,
+    this.color = Colors.transparent,
+    this.marge}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +51,7 @@ class FramePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Path path = Path()
-      ..relativeLineTo(0, size.height)
-      ..relativeLineTo(size.width, 0)
-      ..relativeLineTo(0, -size.height)
+      ..relativeLineTo(0, size.height)..relativeLineTo(size.width, 0)..relativeLineTo(0, -size.height)
       ..close();
     Paint myPaint = Paint()
       ..style = PaintingStyle.stroke
@@ -114,17 +114,26 @@ class FrameShower extends StatelessWidget {
   final String info;
   final Widget content;
 
-  const FrameShower(
-      {Key? key,
-        this.title = "",
-        this.author = "",
-        this.srcUrl = "",
-        this.info = "",
-        required this.content})
+  const FrameShower({Key? key,
+    this.title = "",
+    this.author = "",
+    this.srcUrl = "",
+    this.info = "",
+    required this.content})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool isDesk = Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+    if (isDesk) {
+      return DeskFrameShower(
+          content: content,
+          title: title,
+          author: author,
+          srcUrl: srcUrl,
+          info: info);
+    }
+
     return Align(
       alignment: Alignment.topCenter,
       child: Column(

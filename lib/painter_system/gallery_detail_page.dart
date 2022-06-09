@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
@@ -172,11 +174,17 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
     }
   }
 
+  bool isDesk = Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+
+
   Widget buildTitle(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 46, bottom: 10, left: 20, right: 10),
+      padding:  EdgeInsets.only(top: isDesk?26:46, bottom: 10, left: 20, right: 10),
       child: Row(
         children: [
+          if(isDesk)
+          const BackButton(color: Colors.white,),
+
           Text(
             widget.galleryInfo.name,
             style: TextStyle(
