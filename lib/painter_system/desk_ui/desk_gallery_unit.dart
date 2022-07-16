@@ -34,12 +34,16 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
 
   Color get color => BlocProvider.of<ColorChangeCubit>(context).state.tabColor;
 
-  Color get nextColor =>  BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
+  Color get nextColor =>
+      BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
 
-  BoxDecoration get boxDecoration => BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20), topRight: Radius.circular(20)));
+  BoxDecoration get boxDecoration => const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +51,7 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
       body: _buildContent(),
     );
   }
+
   Widget _buildContent() {
     final List<Widget> widgets =
         (json.decode(StrUnit.galleryInfo) as List).map((e) {
@@ -69,18 +74,17 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
       );
     }).toList();
 
-    final gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 2,
-      mainAxisSpacing: 10,
-      crossAxisSpacing: 10,
-        childAspectRatio:0.85
-
-    );
+    const SliverGridDelegate gridDelegate =
+        SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: 0.85);
 
     return GridView.builder(
-      controller: controller,
+        controller: controller,
         gridDelegate: gridDelegate,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         itemCount: widgets.length,
         itemBuilder: (ctx, index) => widgets[index]);
   }

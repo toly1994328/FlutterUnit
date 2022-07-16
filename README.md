@@ -19,8 +19,8 @@
 |------|------------|------|------------|
 | Android版 | http://toly1994.com/file/FlutterUnit.apk |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
 | iOS版 | 暂未提供，可自己下载项目运行 |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
-| MacOS版 | http://toly1994.com/file/flutter_unit_mac.zip |[flutter_unit_desk](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_desk)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
-| Windows版 |http://toly1994.com/file/FlutterUnitWin.zip  | [flutter_unit_desk](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_desk) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
+| MacOS版 | http://toly1994.com/file/flutter_unit_mac.zip |[flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
+| Windows版 |http://toly1994.com/file/FlutterUnitWin.zip  | [flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
 | Web版 | http://toly1994328.gitee.io/flutter_web | [ flutter_unit_web ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
 
 ---
@@ -28,10 +28,10 @@
 > 当前Flutter 版本
 
 ```
-Flutter 3.0.0 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision ee4e09cce0 (10 days ago) • 2022-05-09 16:45:18 -0700
-Engine • revision d1b9a6938a
-Tools • Dart 2.17.0 • DevTools 2.12.2
+Flutter 3.0.5 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision f1875d570e (3 days ago) • 2022-07-13 11:24:16 -0700
+Engine • revision e85ea0e79c
+Tools • Dart 2.17.6 • DevTools 2.12.2
 ```
 
 ---

@@ -25,20 +25,22 @@ dependencies:
   shared_preferences: ^2.0.13 # xml 固化
   path_provider: ^2.0.11 # 路径
 
+  dio: ^4.0.4 # 网络请求
   jwt_decoder: ^2.0.1 # jwt 解析
-  toggle_rotate: ^1.0.1
 
+  toggle_rotate: ^1.0.1
   flutter_star: ^1.0.2 # 星星组件
+  dash_painter: ^1.0.2
+  wrapper: ^1.0.2
+
   url_launcher: ^6.0.20 # url
   share_plus: ^3.0.4 # 文字分享
+
   intl: ^0.17.0
   platform: ^3.1.0
   image: ^3.1.0
-  wrapper: ^1.0.2
-  dash_painter: ^1.0.2
   flutter_spinkit: ^5.1.0 # loading
   flutter_markdown: ^0.6.4 # markdown
-  dio: ^4.0.4 # 网络请求
 
   desktop_window: ^0.4.0 #桌面尺寸
 

@@ -31,20 +31,20 @@ class DeskFrameShower extends StatelessWidget {
       children: [
         Expanded(
           child: Align(
-            alignment: Alignment(0,-0.7),
+            alignment: const Alignment(0,-0.7),
             child: Wrap(
               direction: Axis.vertical,
               spacing: 5,
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "作者:  $author    ",
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   "源码地址    ",
                   style: TextStyle(
                       fontSize: 12,
@@ -65,15 +65,15 @@ class DeskFrameShower extends StatelessWidget {
         Expanded(
           child: Column(
             children: [
-              Spacer(flex: 70,),
+              const Spacer(flex: 70,),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
                   info,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: Colors.grey),
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: Colors.grey),
                 ),
               ),
-              Spacer(flex: 20,),
+              const Spacer(flex: 20,),
 
             ],
           ),
