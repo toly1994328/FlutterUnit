@@ -1372,7 +1372,27 @@ class WidgetsMap {
           const CustomSingleChildLayoutDemo(),
           const OffSetWidgetDemo(),
         ];
+        case "NavigationRail":
+        return [
+          const AnotherPage(child:  CustomNavigationRail()),
+          const AnotherPage(child:  ExtendableNavigationRail()),
+          const AnotherPage(child:  DarkNavigationRail()),
+        ];
       default: return [];
     }
+  }
+}
+
+class AnotherPage extends StatelessWidget {
+  final Widget child;
+  const AnotherPage({Key? key, required this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: (){
+      Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Scaffold(
+        appBar: AppBar(leading: const BackButton(),),
+          body: child)));
+    }, child: Text('跳转到新界面查看效果'));
   }
 }
