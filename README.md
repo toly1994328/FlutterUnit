@@ -166,6 +166,7 @@ FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。
 | 长按右菜单滑页 | 长按左菜单滑页 | 详情内长按展示收藏菜单 |
 |------|------------|------------|
 | ![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/5/3/171dae6beb370b8b~tplv-t2oaga2asx-image.image) |![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/5/3/171dae6befe43cd2~tplv-t2oaga2asx-image.image)        | ![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/5/3/171dae6bfd3cd42f~tplv-t2oaga2asx-image.image)       |
+
 | 删除与数据同步 | 组件加入收藏集 | 收藏集支持多选 |
 |------|------------|------------|
 | ![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/5/3/171dae6ba47ab64c~tplv-t2oaga2asx-image.image)  | ![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/5/3/171dae6badf6ee28~tplv-t2oaga2asx-image.image)        | ![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/5/3/171dae6bb380c7f5~tplv-t2oaga2asx-image.image)   |
