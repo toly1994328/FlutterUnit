@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/user_system/api/system_api.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
+import 'package:flutter_unit/components/permanent/icon_input.dart';
+import 'package:flutter_unit/user_system/api/system_api.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/state.dart';
 import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
@@ -10,7 +11,6 @@ import 'package:flutter_unit/user_system/bloc/login/event.dart';
 import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/register/event.dart';
 import 'package:flutter_unit/user_system/bloc/register/state.dart';
-import 'package:flutter_unit/components/permanent/icon_input.dart';
 
 import 'arc_clipper.dart';
 import 'send_code.dart';
@@ -170,14 +170,16 @@ class _RegisterPageState extends State<RegisterPage> {
         listener: _listenerLogin,
         child: ValueListenableBuilder(
           valueListenable: _enableRegister,
-          builder: (ctx,bool value,child){
-            return RaisedButton(
-                elevation: 0,
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                color: Colors.blue,
-                disabledColor: Colors.blue.withOpacity(0.6),
-                onPressed: (enable||!value) ? null : _doRegister,
+          builder: (ctx,bool value,child) {
+            return ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  backgroundColor: Colors.blue,
+                  disabledBackgroundColor: Colors.blue.withOpacity(0.6),
+                ),
+                onPressed: (enable || !value) ? null : _doRegister,
                 child: Text(info,
                     style: const TextStyle(color: Colors.white, fontSize: 18)));
           },

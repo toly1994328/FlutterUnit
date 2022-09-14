@@ -35,13 +35,14 @@ class TempButtonBar extends StatelessWidget {
     return ButtonBar(
       alignment: MainAxisAlignment.center,
       children: <Widget>[
-        RaisedButton(
-            color: Colors.blue, child: const Text("1.Raised"), onPressed: () {}),
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+            child: const Text("1.Elevated"), onPressed: () {}),
         OutlinedButton(child: const Text("2.Outlined"), onPressed: () {}),
-        FlatButton(
-          color: Colors.blue,
+        TextButton(
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
           onPressed: () {},
-          child: const Text("3.Flat"),
+          child: const Text("3.Text"),
         )
       ],
     );

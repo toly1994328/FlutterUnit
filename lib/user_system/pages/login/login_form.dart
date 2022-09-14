@@ -224,11 +224,14 @@ class _LoginFromState extends State<LoginFrom> {
           margin: const EdgeInsets.only(top: 10, bottom: 0),
           height: 40,
           width: 40,
-          child: RaisedButton(
-            elevation: 0,
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20))),
-            color: Colors.blue.withOpacity(0.4),
+          child:
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                backgroundColor: Colors.blue.withOpacity(0.4),
+              ),
             onPressed: _doLogIn,
             child: const CupertinoActivityIndicator(),
           ));
@@ -237,11 +240,13 @@ class _LoginFromState extends State<LoginFrom> {
         margin: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
         height: 40,
         width: MediaQuery.of(context).size.width,
-        child: RaisedButton(
-          elevation: 0,
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-          color: Colors.blue,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            elevation: 0,
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            backgroundColor: Colors.blue.withOpacity(0.4),
+          ),
           onPressed: _doLogIn,
           child: const Text("进入 Unit 世界",
               style: TextStyle(color: Colors.white, fontSize: 18)),

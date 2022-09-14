@@ -21,17 +21,15 @@ class CustomButtonBar extends StatelessWidget {
     return ButtonBar(
       alignment: MainAxisAlignment.center,
       children: <Widget>[
-        RaisedButton(
-            color: Colors.blue,
-            child: const Text("Raised"),
+        ElevatedButton(
+            child: const Text("ElevatedButton"),
             onPressed: () => DialogAbout.show(context)),
         OutlinedButton(
             child: const Text("Outlined"),
             onPressed: () => DialogAbout.show(context)),
-        FlatButton(
-          color: Colors.blue,
+        TextButton(
           onPressed: () => DialogAbout.show(context),
-          child: const Text("Flat"),
+          child: const Text("TextButton"),
         )
       ],
     );

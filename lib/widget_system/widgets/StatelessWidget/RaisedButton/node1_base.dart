@@ -20,17 +20,30 @@ import 'package:flutter/material.dart';
 class CustomRaisedButton extends StatelessWidget {
   const CustomRaisedButton({Key? key}) : super(key: key);
 
+  final String info =
+      'RaisedButton 按钮于 Flutter3.3 退出历史舞台。取代者为 ElevatedButton 按钮。';
+
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: Colors.blue,
-      splashColor: Colors.green,
-      onPressed: () {},
-      child: const Text("RaisedButton"),
-      textColor: const Color(0xffFfffff),
-      padding: const EdgeInsets.all(8),
-      elevation: 5,
-      highlightColor: const Color(0xffF88B0A),
+    return Container(
+      color: Colors.blue.withOpacity(0.1),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      child: Text(info),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return RaisedButton(
+  //     color: Colors.blue,
+  //     splashColor: Colors.green,
+  //     onPressed: () {},
+  //     child: const Text("RaisedButton"),
+  //     textColor: const Color(0xffFfffff),
+  //     padding: const EdgeInsets.all(8),
+  //     elevation: 5,
+  //     highlightColor: const Color(0xffF88B0A),
+  //   );
+  // }
 }

@@ -93,12 +93,15 @@ class _InputButtonState extends State<InputButton> {
       },
       onTap: widget.onTap,
     );
-    Widget btn = RaisedButton(
-
-      elevation: 0,
+    Widget btn = ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        padding: EdgeInsets.zero,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(20))),
+        backgroundColor: const Color(0x99E0E0E0),
+      ),
       child: Icon(widget.config.iconData,color: Theme.of(context).primaryColor,),
-      color: const Color(0x99E0E0E0),
-      padding: EdgeInsets.zero,
       onPressed: () {
         FocusScope.of(context).requestFocus(FocusNode()); //收起键盘
         widget.onSubmit?.call(_controller.text);

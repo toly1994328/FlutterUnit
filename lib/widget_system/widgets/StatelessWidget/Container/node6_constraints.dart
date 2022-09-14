@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -9,8 +11,6 @@
 //          "【constraints】 : 约束   【BoxConstraints】\n "
 //              "会约束该区域的尺寸，不会小于指定的最小宽高，也不会大于指定的最大宽高。",
 //    }
-import 'package:flutter/material.dart';
-
 class ContainerConstraints extends StatelessWidget {
   const ContainerConstraints({Key? key}) : super(key: key);
 

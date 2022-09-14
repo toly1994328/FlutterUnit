@@ -43,13 +43,12 @@ class _CustomIgnorePointerState extends State<CustomIgnorePointer> {
     );
   }
 
-  Widget _buildButton() => RaisedButton(
-      color: Theme.of(context).primaryColor,
+  Widget _buildButton() => ElevatedButton(
       child: const Text(
         'To About',
         style: TextStyle(color: Colors.white),
       ),
-      onPressed: () =>  Navigator.of(context).pushNamed('AboutMePage'));
+      onPressed: () => Navigator.of(context).pushNamed('AboutMePage'));
 
   Widget _buildSwitch() => Switch(
       value: _ignore,

@@ -1,4 +1,5 @@
-
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
@@ -12,9 +13,6 @@
 //          "【cancelButton】 : 取消按钮处组件  【Widget】\n"
 //          "【actions】 : 中间组件列表  【List<Widget>】",
 //    }
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
 class CustomCupertinoActionSheet extends StatelessWidget {
   const CustomCupertinoActionSheet({Key? key}) : super(key: key);
 
@@ -39,25 +37,31 @@ class CustomCupertinoActionSheet extends StatelessWidget {
               onPressed: () => Navigator.pop(context), child: const Text("Cancel")),
           actions: <Widget>[
             CupertinoActionSheetAction(
-                onPressed: () => Navigator.pop(context), child: const Text('Dart')),
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Dart')),
             CupertinoActionSheetAction(
-                onPressed: () => Navigator.pop(context), child: const Text('Java')),
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Java')),
             CupertinoActionSheetAction(
-                onPressed: () => Navigator.pop(context), child: const Text('Kotlin')),
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Kotlin')),
           ],
         ),
       );
 
-  Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-        color: Colors.blue,
+  Widget _buildRaisedButton(BuildContext context) => ElevatedButton(
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.blue,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+        ),
         onPressed: () => showDialog(
             context: context,
             builder: (ctx) => _buildCupertinoActionSheet(context)),
         child: const Text(
           'Just Show It !',
-          style:  TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white),
         ),
       );
 }

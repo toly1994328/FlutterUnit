@@ -10,10 +10,8 @@
 - [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
 - [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
-- [实体书 - 《Flutter之旅》源码下载地址 ](https://gitee.com/toly1994328/FlutterUnit/attach_files/466731/download)
 
 ### FlutterUnit 下载体验: 复制链接，在浏览器下载~
-
 
 | 平台类型 | 下载地址 | 项目分支地址  | 相关文章 | 
 |------|------------|------|------------|
@@ -28,10 +26,10 @@
 > 当前Flutter 版本
 
 ```
-Flutter 3.0.5 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision f1875d570e (3 days ago) • 2022-07-13 11:24:16 -0700
-Engine • revision e85ea0e79c
-Tools • Dart 2.17.6 • DevTools 2.12.2
+Flutter 3.3.1 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 4f9d92fbbd (7 days ago) • 2022-09-06 17:54:53 -0700
+Engine • revision 3efdf03e73
+Tools • Dart 2.18.0 • DevTools 2.15.0
 ```
 
 ---

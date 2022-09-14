@@ -6,7 +6,7 @@ class Toast {
         Color? color,
         SnackBarAction? action}) {
 
-    Scaffold.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(msg),
       duration: duration,
       action: action,

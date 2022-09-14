@@ -72,8 +72,10 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
           child: Wrap(
             spacing: 10,
             children: [
-              RaisedButton(
-                color: Colors.blue,
+              ElevatedButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
                 onPressed: () {
                   setState(() {
                     hasScrollBody = !hasScrollBody;
@@ -81,9 +83,10 @@ class _SliverFillRemainingDemoState extends State<SliverFillRemainingDemo> {
                 },
                 child: Text('hasScrollBody:$hasScrollBody',style: const TextStyle(color: Colors.white),),
               ),
-              RaisedButton(
-                color: Colors.blue,
-
+              ElevatedButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
                 onPressed: () {
                   setState(() {
                     fillOverscroll = !fillOverscroll;

@@ -1,19 +1,17 @@
-
-/// create by 张风捷特烈 on 2020-03-24
-/// contact me by email 1981462002@qq.com
-/// 说明:
-///
-//    {
-//      "widgetId": 129,
-//      "name": 'CupertinoAlertDialog基本使用',
-//      "priority": 1,
-//      "subtitle": "【title】 : 顶部组件   【Widget】\n"
-//          "【content】 : 内容组件  【Widget】\n"
-//          "【actions】 : 顶部文字样式  【List<Widget>】",
-//    }
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+/// create by 张风捷特烈 on 2020-03-25
+/// contact me by email 1981462002@qq.com
+/// 说明:
+//    {
+//      "widgetId": 132,
+//      "name": 'CupertinoActionSheetAction基本使用',
+//      "priority": 1,
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
+//          "【isDefaultAction】 : 是否默认选中  【bool】\n"
+//          "【onPressed】 : 点击事件  【Function()】",
+//    }
 
 class CustomCupertinoAlertDialog extends StatelessWidget {
   const CustomCupertinoAlertDialog({Key? key}) : super(key: key);
@@ -28,10 +26,14 @@ class CustomCupertinoAlertDialog extends StatelessWidget {
     );
   }
 
-  Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-        shape: const RoundedRectangleBorder(
-            borderRadius:  BorderRadius.all(Radius.circular(10))),
-        color: Colors.blue,
+  Widget _buildRaisedButton(BuildContext context) =>
+      ElevatedButton(
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.blue,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+        ),
         onPressed: () {
           showDialog(
               context: context,

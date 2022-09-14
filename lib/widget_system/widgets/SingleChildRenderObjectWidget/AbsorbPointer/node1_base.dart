@@ -43,8 +43,7 @@ class _CustomAbsorbPointerState extends State<CustomAbsorbPointer> {
     );
   }
 
-  Widget _buildButton() => RaisedButton(
-      color: Theme.of(context).primaryColor,
+  Widget _buildButton() => ElevatedButton(
       child: const Text(
         'To About',
         style: TextStyle(color: Colors.white),

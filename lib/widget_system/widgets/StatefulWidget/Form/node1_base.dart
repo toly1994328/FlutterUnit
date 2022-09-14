@@ -65,11 +65,13 @@ class _CustomFormState extends State<CustomForm> {
     return null;
   }
 
-  RaisedButton _buildSubmitButton(BuildContext context) {
-    return RaisedButton(
-      color: Colors.blue,
-      shape: const CircleBorder(
-        side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+  Widget _buildSubmitButton(BuildContext context) {
+    return ElevatedButton(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.blue,
+        shape: const CircleBorder(
+          side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+        ),
       ),
       onPressed: _onSubmit,
       child: const Icon(
@@ -96,11 +98,11 @@ class _CustomFormState extends State<CustomForm> {
             title: const Text('提示'),
             content: const Text('你确定要离开此页吗?'),
             actions: <Widget>[
-              FlatButton(
+              ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(true),
                 child: const Text('确定'),
               ),
-              FlatButton(
+              ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(false),
                 child: const Text('取消'),
               ),

@@ -39,8 +39,8 @@ class _MaterialBannerDemo extends StatelessWidget {
         content: Text(info),
         leading: const Icon(Icons.warning, color: Colors.yellow),
         actions: <Widget>[
-          RaisedButton(
-            color: Colors.white,
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
             onPressed: () {},
             child: const Text(
               'I KNOW',
@@ -50,9 +50,8 @@ class _MaterialBannerDemo extends StatelessWidget {
                   fontSize: 14),
             ),
           ),
-
-          RaisedButton(
-            color: Colors.white,
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
             onPressed: () {},
             child: const Text(
               'I IGNORE',
