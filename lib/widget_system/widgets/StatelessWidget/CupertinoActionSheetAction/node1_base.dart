@@ -1,3 +1,7 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import '../../../../components/project/dialogs/dialog_about.dart';
+
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -9,11 +13,6 @@
 //          "【isDefaultAction】 : 是否默认选中  【bool】\n"
 //          "【onPressed】 : 点击事件  【Function()】",
 //    }
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import '../../../../components/project/dialogs/dialog_about.dart';
-
 class CustomCupertinoActionSheetAction extends StatelessWidget {
   const CustomCupertinoActionSheetAction({Key? key}) : super(key: key);
 

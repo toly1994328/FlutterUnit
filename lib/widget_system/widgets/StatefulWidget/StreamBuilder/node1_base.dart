@@ -36,11 +36,11 @@ class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        FlatButton(
-          color: Colors.blue,
-          shape: const CircleBorder(
-            side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
-          ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              shape: const CircleBorder(
+                side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+              )),
           child: const Icon(
             Icons.add,
             color: Colors.white,
@@ -50,11 +50,11 @@ class _CustomStreamBuilderState extends State<CustomStreamBuilder> {
           },
         ),
         _buildStreamBuilder(),
-        FlatButton(
-          color: Colors.blue,
-          shape: const CircleBorder(
-            side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
-          ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              shape: const CircleBorder(
+                side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+              )),
           child: const Icon(
             Icons.remove,
             color: Colors.white,

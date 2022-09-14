@@ -104,20 +104,38 @@ class HomeContent extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            RaisedButton(
-              color: Colors.red,
+            ElevatedButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.red,
+                shape: const CircleBorder(
+                  side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+                ),
+              ),
+              child: const Text('to red'),
               onPressed: () {
                 Navigator.pushNamed(context, '/red');
               },
             ),
-            RaisedButton(
-              color: Colors.yellow,
+            ElevatedButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.yellow,
+                shape: const CircleBorder(
+                  side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+                ),
+              ),
+              child: const Text('to yellow'),
               onPressed: () {
                 Navigator.pushNamed(context, '/yellow');
               },
             ),
-            RaisedButton(
-              color: Colors.green,
+            ElevatedButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.green,
+                shape: const CircleBorder(
+                  side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+                ),
+              ),
+              child: const Text('to yellow'),
               onPressed: () {
                 Navigator.pushNamed(context, '/green');
               },

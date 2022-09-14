@@ -50,7 +50,7 @@ class RepaintBoundarySave extends StatelessWidget {
         File file = File(dir.path + "/save_img.png");
         if(bits==null) return;
         var f = await file.writeAsBytes(bits);
-        Scaffold.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           backgroundColor: Theme.of(context).primaryColor,
           content: Text('保存成功后! 路径为:${f.path}'),
         ));

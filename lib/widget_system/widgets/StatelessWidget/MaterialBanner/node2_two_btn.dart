@@ -33,8 +33,10 @@ class MaterialBannerDemoTwo extends StatelessWidget {
               const EdgeInsetsDirectional.only(start: 16.0, top: 2.0, end: 2),
           leadingPadding: const EdgeInsetsDirectional.only(end: 16.0),
           actions: <Widget>[
-            RaisedButton(
-              color: Colors.white,
+            ElevatedButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.white,
+              ),
               onPressed: () {},
               child: const Text(
                 'I KNOW',
@@ -43,20 +45,21 @@ class MaterialBannerDemoTwo extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 14),
               ),
-          ),
-
-          RaisedButton(
-            color: Colors.white,
-            onPressed: () {},
-            child: const Text(
+            ),
+            ElevatedButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.white,
+              ),
+              onPressed: () {},
+              child: const Text(
                 'I IGNORE',
                 style: TextStyle(
                     color: Colors.purple,
                     fontWeight: FontWeight.bold,
                     fontSize: 14),
               ),
-          ),
-        ],
+            ),
+          ],
       )],
     );
   }

@@ -28,8 +28,8 @@ class ButtonThemeDemo extends StatelessWidget {
       child: Wrap(
         spacing: 10,
         children: <Widget>[
-          RaisedButton(onPressed: (){},child: const Icon(Icons.add)),
-          FlatButton(onPressed: (){},child: const Icon(Icons.add)),
+          ElevatedButton(onPressed: (){},child: const Icon(Icons.add)),
+          TextButton(onPressed: (){},child: const Icon(Icons.add)),
           OutlinedButton(onPressed: (){},child: const Icon(Icons.add)),
           MaterialButton(onPressed: (){},child: const Icon(Icons.add)),
         ],

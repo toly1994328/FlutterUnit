@@ -40,14 +40,14 @@ class _NotificationListenerDemoState extends State<NotificationListenerDemo> {
   bool _onNotification(OverscrollIndicatorNotification notification) {
     if (notification.leading) {
       notification.disallowIndicator();
-      Scaffold.of(context).showSnackBar(const SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('已滑到顶部'),
         backgroundColor: Colors.blue,
         duration: Duration(milliseconds: 200),
       ));
     } else {
       notification.disallowIndicator();
-      Scaffold.of(context).showSnackBar(const SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('已滑到底部'),
         duration: Duration(milliseconds: 200),
         backgroundColor: Colors.blue,

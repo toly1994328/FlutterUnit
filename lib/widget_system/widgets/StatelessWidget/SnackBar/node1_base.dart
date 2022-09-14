@@ -26,10 +26,9 @@ class CustomSnackBar extends StatefulWidget {
 class _CustomSnackBarState extends State<CustomSnackBar> {
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-        color: Colors.blue,
+    return ElevatedButton(
         onPressed: () =>
-            Scaffold.of(context).showSnackBar(_buildSnackBar()),
+            ScaffoldMessenger.of(context).showSnackBar(_buildSnackBar()),
         child: const Text(
           '点我弹出SnackBar',
           style: TextStyle(color: Colors.white),

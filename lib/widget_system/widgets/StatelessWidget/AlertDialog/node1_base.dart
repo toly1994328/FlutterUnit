@@ -36,10 +36,13 @@ class CustomAlertDialog extends StatelessWidget {
     );
   }
 
-  Widget _buildRaisedButton(BuildContext context) => RaisedButton(
-    shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
-    color: Colors.blue,
+  Widget _buildRaisedButton(BuildContext context) => ElevatedButton(
+    style: TextButton.styleFrom(
+      backgroundColor: Colors.blue,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+    ),
     onPressed: () {
       showDialog(context: context, builder: (ctx) => _buildAlertDialog());
     },

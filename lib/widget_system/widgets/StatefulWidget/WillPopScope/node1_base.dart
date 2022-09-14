@@ -32,11 +32,11 @@ class CustomWillPopScope extends StatelessWidget {
             title: const Text('提示'),
             content: const Text('你确定要离开此页吗?'),
             actions: [
-              FlatButton(
+              ElevatedButton(
                 onPressed: () => Navigator.of(ctx).pop(true),
                 child: const Text('确定'),
               ),
-              FlatButton(
+              ElevatedButton(
                 onPressed: () => Navigator.of(ctx).pop(false),
                 child: const Text('取消'),
               ),

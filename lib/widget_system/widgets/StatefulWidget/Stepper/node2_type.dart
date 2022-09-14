@@ -63,22 +63,24 @@ class _VerticalStepperState extends State<VerticalStepper> {
         controlsBuilder: (_,ControlsDetails details) {
           return Row(
             children: <Widget>[
-              RaisedButton(
-                color: Colors.blue,
-                shape: const CircleBorder(
-                  side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
-                ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: const CircleBorder(
+                      side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+                    )),
                 onPressed: details.onStepContinue,
                 child: const Icon(
                   Icons.check,
                   color: Colors.white,
                 ),
               ),
-              RaisedButton(
-                color: Colors.red,
-                shape: const CircleBorder(
-                  side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
-                ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    shape: const CircleBorder(
+                      side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+                    )),
                 onPressed: details.onStepCancel,
                 child: const Icon(
                   Icons.keyboard_backspace,

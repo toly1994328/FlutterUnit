@@ -60,11 +60,12 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     print('onFieldSubmitted:' + value);
   }
 
-  Widget _buildSubmitButton(BuildContext context) => RaisedButton(
-        color: Colors.blue,
-        shape: const CircleBorder(
-          side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
-        ),
+  Widget _buildSubmitButton(BuildContext context) => ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            shape: const CircleBorder(
+              side: BorderSide(width: 2.0, color: Color(0xFFDFDFDF)),
+            )),
         onPressed: _onSubmit,
         child: const Icon(
           Icons.check,

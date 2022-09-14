@@ -27,8 +27,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-        color: Colors.blue,
+    return ElevatedButton(
         onPressed: () {
           opened = !opened;
           opened
