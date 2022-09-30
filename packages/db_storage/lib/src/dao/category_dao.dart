@@ -2,7 +2,6 @@
 import 'package:sqflite/sqflite.dart';
 import '../bean/category_po.dart';
 
-
 //"""
 // CREATE TABLE IF NOT EXISTS category_widget(
 //     id INTEGER PRIMARY KEY AUTOINCREMENT,

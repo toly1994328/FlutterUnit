@@ -5,10 +5,9 @@ import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/style/shape/coupon_shape_border.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
-import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/circle_text.dart';
 import 'package:flutter_unit/components/permanent/tag.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 class CouponWidgetListItem extends StatelessWidget {
   final WidgetModel data;

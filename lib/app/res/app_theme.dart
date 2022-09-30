@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
 
 class AppTheme {
-  static ThemeData darkTheme(GlobalState state) => ThemeData(
+  static ThemeData darkTheme(AppState state) => ThemeData(
       fontFamily: state.fontFamily,
       brightness: Brightness.dark,
       primaryColor: Color(0xff4699FB),
@@ -20,7 +20,7 @@ class AppTheme {
           selectedItemColor: Color(0xff4699FB)),
       scaffoldBackgroundColor: const Color(0xff010201));
 
-  static ThemeData lightTheme(GlobalState state) {
+  static ThemeData lightTheme(AppState state) {
     return ThemeData(
       fontFamily: state.fontFamily,
       primarySwatch: state.themeColor,

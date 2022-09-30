@@ -8,7 +8,7 @@ import 'package:flutter_unit/components/project/dialogs/delete_category_dialog.d
 import 'package:flutter_unit/components/project/items/category_list_item.dart';
 import 'package:flutter_unit/components/project/no_more_widget.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import 'edit_category_panel.dart';
 import 'empty_category.dart';

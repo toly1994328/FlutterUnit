@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局状态类
 ///
-class GlobalState extends Equatable {
+class AppState extends Equatable {
+  final bool initialized;
+
   /// [fontFamily] 文字字体
   final String fontFamily;
 
@@ -23,8 +25,9 @@ class GlobalState extends Equatable {
   /// [showPerformanceOverlay] 是否显示性能浮层
   final bool showPerformanceOverlay;
 
-  const GlobalState({
+  const AppState({
     this.fontFamily = 'ComicNeue',
+    this.initialized = false,
     this.themeColor = Colors.blue,
     this.showBackGround = true,
     this.codeStyleIndex = 0,
@@ -33,8 +36,10 @@ class GlobalState extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object> get props =>
+      [
         fontFamily,
+        initialized,
         themeColor,
         showBackGround,
         codeStyleIndex,
@@ -42,7 +47,7 @@ class GlobalState extends Equatable {
         showPerformanceOverlay
       ];
 
-  GlobalState copyWith({
+  AppState copyWith({
     double? height,
     String? fontFamily,
     MaterialColor? themeColor,
@@ -50,18 +55,21 @@ class GlobalState extends Equatable {
     int? codeStyleIndex,
     int? itemStyleIndex,
     bool? showPerformanceOverlay,
+    bool? initialized,
   }) =>
-      GlobalState(
+      AppState(
         fontFamily: fontFamily ?? this.fontFamily,
         themeColor: themeColor ?? this.themeColor,
         showBackGround: showBackGround ?? this.showBackGround,
         codeStyleIndex: codeStyleIndex ?? this.codeStyleIndex,
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
-        showPerformanceOverlay: showPerformanceOverlay ?? this.showPerformanceOverlay,
+        showPerformanceOverlay:
+            showPerformanceOverlay ?? this.showPerformanceOverlay,
+        initialized: initialized ?? this.initialized,
       );
 
   @override
   String toString() {
-    return 'GlobalState{fontFamily: $fontFamily, themeColor: $themeColor, showBackGround: $showBackGround, codeStyleIndex: $codeStyleIndex, itemStyleIndex: $itemStyleIndex, showPerformanceOverlay: $showPerformanceOverlay}';
+    return 'AppState{fontFamily: $fontFamily, themeColor: $themeColor, showBackGround: $showBackGround, codeStyleIndex: $codeStyleIndex, itemStyleIndex: $itemStyleIndex, showPerformanceOverlay: $showPerformanceOverlay}';
   }
 }

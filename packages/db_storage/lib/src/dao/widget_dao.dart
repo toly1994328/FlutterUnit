@@ -1,6 +1,6 @@
 
-import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
+import 'package:db_storage/src/model/enums.dart';
+import 'package:db_storage/src/model/widget_filter.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../bean/widget_po.dart';
@@ -66,7 +66,6 @@ class WidgetDao {
     if (arguments.stars.reduce((a, b) => a + b) == -5) {
       starArg = [1, 2, 3, 4, 5];
     }
-
     return db.rawQuery(
         "SELECT * "
         "FROM widget WHERE name like ?$familySql AND lever IN(?,?,?,?,?) ORDER BY lever DESC",

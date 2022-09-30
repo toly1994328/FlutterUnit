@@ -1,16 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:db_storage/db_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/sp.dart';
-import 'package:flutter_unit/plateform_adapter/database/db_open_helper.dart';
-import 'package:path_provider/path_provider.dart';
-
-import 'local_db.dart';
 import 'package:path/path.dart' as path;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sqflite/sqflite.dart';
+
 
 import 'local_storage.dart';
 
@@ -20,7 +17,7 @@ import 'local_storage.dart';
 
 class AppStart{
   // 初始化 App 固化的配置数据
-  Future<GlobalState> initApp() async {
+  Future<AppState> initApp() async {
     SharedPreferences prefs = await LocalStorage.sp;
     DbOpenHelper.setupDatabase();
     //数据库不存在，执行拷贝
@@ -43,11 +40,12 @@ class AppStart{
     int codeIndex = prefs.getInt(SP.codeStyleIndex) ?? 0;
     int itemStyleIndex = prefs.getInt(SP.itemStyleIndex) ?? 0;
 
-    return GlobalState(
+    return AppState(
         showBackGround: showBg,
         themeColor: Cons.themeColorSupport.keys.toList()[themeIndex],
         fontFamily: Cons.fontFamilySupport[fontIndex],
         itemStyleIndex: itemStyleIndex,
+        initialized: true,
         codeStyleIndex: codeIndex);
   }
 

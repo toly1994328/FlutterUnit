@@ -1,15 +1,13 @@
 import 'dart:io';
 
-import 'package:flutter_unit/plateform_adapter/database/db_open_helper.dart';
+import 'package:db_storage/db_storage.dart';
+
+import 'db_open_helper.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-import 'dao/like_dao.dart';
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart';
 
-import 'dao/category_dao.dart';
-import 'dao/node_dao.dart';
-import 'dao/widget_dao.dart';
 
 class LocalDb {
   Database? _database;
@@ -32,6 +30,7 @@ class LocalDb {
   LikeDao get likeDao => _likeDao;
 
   Database get db => _database!;
+  bool get inited => _database!=null;
 
   Future<void> initDb({String name = "flutter.db"}) async {
     if (_database != null) return;
@@ -52,7 +51,6 @@ class LocalDb {
     }else{
       _database = await openDatabase(dbPath);
     }
-
 
     _widgetDao = WidgetDao(_database!);
     _categoryDao = CategoryDao(_database!);

@@ -22,7 +22,7 @@ class FontSettingPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('字体设置 - font setting'),
       ),
-      body: BlocBuilder<GlobalBloc, GlobalState>(
+      body: BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => _buildFontCell(
               context, Cons.fontFamilySupport, state.fontFamily)),
     );
@@ -42,7 +42,7 @@ class FontSettingPage extends StatelessWidget {
               a: 0.95,
               duration: const Duration(milliseconds: 200),
               onPressed: () {
-                BlocProvider.of<GlobalBloc>(context)
+                BlocProvider.of<AppBloc>(context)
                     .add(EventSwitchFontFamily(e));
               },
               child: Card(

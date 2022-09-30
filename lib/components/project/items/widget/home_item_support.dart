@@ -1,11 +1,11 @@
 import 'dart:math';
 
+import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/style/shape/coupon_shape_border.dart';
 import 'package:flutter_unit/app/res/style/shape/techno_shape.dart';
-import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 import 'package:flutter_unit/components/project/items/widget/simple_widget_list_item.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import 'coupon_widget_list_item.dart';
 import 'techno_widget_list_item.dart';

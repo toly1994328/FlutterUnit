@@ -1,5 +1,3 @@
-import 'package:equatable/equatable.dart';
-
 /// create by 张风捷特烈 on 2020-04-17
 /// contact me by email 1981462002@qq.com
 /// 说明: 收藏夹数据库-数据模型
@@ -16,7 +14,7 @@ import 'package:equatable/equatable.dart';
 //     image VARCHAR(128) NULL image DEFAULT ''
 //     );"""; //建表语句
 
-class CategoryPo extends Equatable {
+class CategoryPo {
   final int? id;
   final String name;
   final String color;

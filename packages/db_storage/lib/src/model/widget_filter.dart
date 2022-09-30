@@ -1,4 +1,4 @@
-import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
+import 'enums.dart';
 
 class WidgetFilter {
   final String name;

@@ -5,7 +5,7 @@ import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 class DeskWidgetContent extends StatelessWidget {
   final List<WidgetModel> items;
@@ -35,7 +35,7 @@ class DeskWidgetContent extends StatelessWidget {
   }
 
   Widget _buildHomeItem(WidgetModel model) =>
-      BlocBuilder<GlobalBloc, GlobalState>(
+      BlocBuilder<AppBloc, AppState>(
         buildWhen: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (context, state) {
           int index = state.itemStyleIndex;

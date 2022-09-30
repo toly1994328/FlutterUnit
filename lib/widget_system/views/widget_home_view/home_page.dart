@@ -15,13 +15,13 @@ import 'package:flutter_unit/components/project/items/widget/home_item_support.d
 import 'package:flutter_unit/components/project/no_more_widget.dart';
 import 'package:flutter_unit/components/project/overlay_tool_wrapper.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import 'background.dart';
 import 'content/desk_widget_content.dart';
 import 'content/phone_widget_content.dart';
 import 'toly_app_bar.dart';
+import 'package:db_storage/db_storage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
         body: Stack(
       children: <Widget>[
-        BlocBuilder<GlobalBloc, GlobalState>(builder: _buildBackground),
+        BlocBuilder<AppBloc, AppState>(builder: _buildBackground),
         BlocBuilder<WidgetsBloc, WidgetsState>(
             builder: (_, state) => CustomScrollView(
                   slivers: <Widget>[
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage>
             );
           }));
 
-  Widget _buildBackground(BuildContext context, GlobalState state) {
+  Widget _buildBackground(BuildContext context, AppState state) {
     if (state.showBackGround) {
       return const BackgroundShower();
     }
@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage>
   }
 
   Widget _buildHomeItem(WidgetModel model) =>
-      BlocBuilder<GlobalBloc, GlobalState>(
+      BlocBuilder<AppBloc, AppState>(
         buildWhen: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (_, state) {
           int index = state.itemStyleIndex;

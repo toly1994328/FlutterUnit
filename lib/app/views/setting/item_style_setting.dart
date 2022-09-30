@@ -21,7 +21,7 @@ class ItemStyleSettingPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('item样式设置'),
       ),
-      body: BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
+      body: BlocBuilder<AppBloc, AppState>(builder: (_, state) {
         return _buildCell(context, state.itemStyleIndex);
       }),
     );
@@ -38,7 +38,7 @@ class ItemStyleSettingPage extends StatelessWidget {
                   a: 0.95,
                   duration: const Duration(milliseconds: 200),
                   onPressed: () {
-                    BlocProvider.of<GlobalBloc>(context)
+                    BlocProvider.of<AppBloc>(context)
                         .add(EventChangeItemStyle(i));
                   },
                   child: Stack(
