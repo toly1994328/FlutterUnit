@@ -21,7 +21,7 @@ class ThemeColorSettingPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('主题色设置'),
       ),
-      body: BlocBuilder<GlobalBloc, GlobalState>(
+      body: BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => _buildFontCell(
               context, Cons.themeColorSupport.keys.toList(), state.themeColor)),
     );
@@ -40,7 +40,7 @@ class ThemeColorSettingPage extends StatelessWidget {
           .map((MaterialColor c) => FeedbackWidget(
               a: 0.95,
               duration: const Duration(milliseconds: 200),
-              onPressed: () => BlocProvider.of<GlobalBloc>(context).add(EventSwitchThemeColor(c)),
+              onPressed: () => BlocProvider.of<AppBloc>(context).add(EventSwitchThemeColor(c)),
               child: GridTile(
                   header: Container(
                     decoration: BoxDecoration(

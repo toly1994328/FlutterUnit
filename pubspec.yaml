@@ -1,6 +1,6 @@
 name: flutter_unit
 description: A new Flutter application.
-
+publish_to: none
 version: 2.0.4
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
@@ -43,7 +43,12 @@ dependencies:
   flutter_markdown: ^0.6.4 # markdown
 
   desktop_window: ^0.4.0 #桌面尺寸
-
+  widget_repository:
+    path: packages/widget_repository
+  utils:
+    path: packages/utils
+  db_storage:
+    path: packages/db_storage
 dev_dependencies:
   flutter_test:
     sdk: flutter

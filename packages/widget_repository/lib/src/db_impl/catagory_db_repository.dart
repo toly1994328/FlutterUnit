@@ -1,14 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
-import '../../bean/category_po.dart';
-import '../../bean/widget_po.dart';
-import '../../dao/category_dao.dart';
-import '../../local_db.dart';
-import '../../rep/category_repository.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:db_storage/db_storage.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 
 /// create by 张风捷特烈 on 2020-04-21
@@ -17,29 +11,30 @@ import 'package:sqflite/sqflite.dart';
 
 class CategoryDbRepository implements CategoryRepository {
 
-  CategoryDao get _categoryDao => LocalDb.instance.categoryDao;
+  CategoryDao get categoryDao => LocalDb.instance.categoryDao;
+  LikeDao get likeDao => LocalDb.instance.likeDao;
 
-  Database get db => LocalDb.instance.db;
+  // CategoryDbRepository({required this.categoryDao,required this.likeDao});
 
   @override
   Future<bool> addCategory(CategoryPo categoryPo) async {
-    int success = await _categoryDao.insert(categoryPo);
+    int success = await categoryDao.insert(categoryPo);
     return success != -1;
   }
 
   @override
   Future<bool> check(int categoryId, int widgetId) async {
-    return await _categoryDao.existWidgetInCollect(categoryId, widgetId);
+    return await categoryDao.existWidgetInCollect(categoryId, widgetId);
   }
 
   @override
   Future<void> deleteCategory(int id) async {
-    await _categoryDao.deleteCollect(id);
+    await categoryDao.deleteCollect(id);
   }
 
   @override
   Future<List<CategoryModel>> loadCategories() async {
-    List<Map<String, dynamic>> data = await _categoryDao.queryAll();
+    List<Map<String, dynamic>> data = await categoryDao.queryAll();
     List<CategoryPo> collects =
         data.map((e) => CategoryPo.fromJson(e)).toList();
     return collects.map(CategoryModel.fromPo).toList();
@@ -48,30 +43,30 @@ class CategoryDbRepository implements CategoryRepository {
   @override
   Future<List<WidgetModel>> loadCategoryWidgets({int categoryId = 0}) async {
     List<Map<String, dynamic>> rawData =
-        await _categoryDao.loadCollectWidgets(categoryId);
+        await categoryDao.loadCollectWidgets(categoryId);
     List<WidgetPo> widgets = rawData.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();
   }
 
   @override
   Future<void> toggleCategory(int categoryId, int widgetId) async {
-    return await _categoryDao.toggleCollect(categoryId, widgetId);
+    return await categoryDao.toggleCollect(categoryId, widgetId);
   }
 
   @override
   Future<List<int>> getCategoryByWidget(int widgetId) async {
-    return await _categoryDao.categoryWidgetIds(widgetId);
+    return await categoryDao.categoryWidgetIds(widgetId);
   }
 
   @override
   Future<bool> updateCategory(CategoryPo categoryPo) async {
-    int success = await _categoryDao.update(categoryPo);
+    int success = await categoryDao.update(categoryPo);
     return success != -1;
   }
 
   @override
   Future<List<CategoryTo>> loadCategoryData() async {
-    List<Map<String, dynamic>> data = await _categoryDao.queryAll();
+    List<Map<String, dynamic>> data = await categoryDao.queryAll();
 
     Completer<List<CategoryTo>> completer = Completer();
     List<CategoryTo> collects = [];
@@ -81,7 +76,7 @@ class CategoryDbRepository implements CategoryRepository {
     }
 
     for (int i = 0; i < data.length; i++) {
-      List<int> ids = await _categoryDao.loadCollectWidgetIds(data[i]['id']);
+      List<int> ids = await categoryDao.loadCollectWidgetIds(data[i]['id']);
       collects.add(CategoryTo(
           widgetIds: ids,
           model: CategoryPo.fromJson(data[i])));
@@ -97,19 +92,19 @@ class CategoryDbRepository implements CategoryRepository {
   @override
   Future<bool> syncCategoryByData(String data,String likeData) async {
     try {
-      await _categoryDao.clear();
+      await categoryDao.clear();
       List<dynamic> dataMap = json.decode(data);
       for (int i = 0; i < dataMap.length; i++) {
         CategoryPo po = CategoryPo.fromNetJson(dataMap[i]["model"]);
         List<dynamic> widgetIds = dataMap[i]["widgetIds"];
         await addCategory(po);
         if (widgetIds.isNotEmpty&&po.id!=null) {
-          await _categoryDao.addWidgets(po.id!, widgetIds);
+          await categoryDao.addWidgets(po.id!, widgetIds);
         }
       }
       List<int> likeWidgets = (json.decode(likeData) as List).map<int>((e) => e).toList();
       for (int i = 0; i < likeWidgets.length; i++) {
-        await LocalDb.instance.likeDao.like(likeWidgets[i]);
+        await likeDao.like(likeWidgets[i]);
       }
       return true;
     } catch (e) {

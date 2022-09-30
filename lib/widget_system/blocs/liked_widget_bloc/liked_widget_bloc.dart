@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/repositories.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 
 import 'liked_widget_event.dart';

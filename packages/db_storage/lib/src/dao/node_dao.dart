@@ -5,7 +5,6 @@ class NodeDao {
 
   final Database db;
 
-
   NodeDao(this.db);
 
   Future<int> insert(NodePo widget) async {

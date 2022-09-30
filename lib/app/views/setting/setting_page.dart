@@ -76,7 +76,7 @@ class SettingPage extends StatelessWidget {
   }
 
   Widget _buildShowBg(BuildContext context) =>
-      BlocBuilder<GlobalBloc, GlobalState>(
+      BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => SwitchListTile(
                 value: state.showBackGround,
                 secondary: Icon(
@@ -85,13 +85,13 @@ class SettingPage extends StatelessWidget {
                 ),
                 title: const Text('显示背景'),
                 onChanged: (show) {
-                  BlocProvider.of<GlobalBloc>(context)
+                  BlocProvider.of<AppBloc>(context)
                       .add(EventSwitchShowBg(show));
                 },
               ));
 
   Widget _buildShowOver(BuildContext context) =>
-      BlocBuilder<GlobalBloc, GlobalState>(
+      BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => SwitchListTile(
             value: state.showPerformanceOverlay,
             secondary: Icon(
@@ -100,7 +100,7 @@ class SettingPage extends StatelessWidget {
             ),
             title: const Text('显示性能浮层'),
             onChanged: (show) {
-              BlocProvider.of<GlobalBloc>(context)
+              BlocProvider.of<AppBloc>(context)
                   .add(EventSwitchShowOver(show));
             },
           ));

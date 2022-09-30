@@ -1,17 +1,19 @@
+import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
+import 'package:flutter_unit/app/storage/app_start.dart';
 import 'package:flutter_unit/bloc_exp.dart';
 import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/event.dart';
 import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 
 
@@ -19,7 +21,7 @@ import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: Bloc提供器包裹层
 
-final AppStart storage = AppStart();
+// final AppStart storage = AppStart();
 
 class BlocWrapper extends StatefulWidget {
   final Widget child;
@@ -33,14 +35,14 @@ class BlocWrapper extends StatefulWidget {
 class _BlocWrapperState extends State<BlocWrapper> {
   final WidgetRepository repository = WidgetDbRepository();
 
-  final categoryBloc = CategoryBloc(repository: CategoryDbRepository());
+  final CategoryBloc categoryBloc= CategoryBloc(repository: CategoryDbRepository());
   final authBloc = AuthenticBloc()..add(const AppStarted());
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider<GlobalBloc>(create: (_) => GlobalBloc(storage)..add(const EventInitApp())),
+          BlocProvider<AppBloc>(create: (_) => AppBloc(AppStart())..add(const EventInitApp())),
           BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
           BlocProvider<WidgetDetailBloc>(create: (_) => WidgetDetailBloc(repository: repository)),
           BlocProvider<CategoryBloc>(create: (_) => categoryBloc),

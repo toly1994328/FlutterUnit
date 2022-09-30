@@ -1,9 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
-import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/widget_system/repositories/repositories.dart';
+import 'package:db_storage/db_storage.dart';
 
 
 /// create by 张风捷特烈 on 2020-03-04
@@ -11,6 +8,15 @@ import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 /// 说明: 组件信息-展示-数据模型
 ///
 
+const List<Color> kTabColors = [
+  Color(0xff44D1FD),
+  Color(0xffFD4F43),
+  Color(0xffB375FF),
+  Color(0xFF4CAF50),
+  Color(0xFFFF9800),
+  Color(0xFF00F1F1),
+  Color(0xFFDBD83F),
+];
 
 class WidgetModel extends Equatable {
   final int id;
@@ -24,7 +30,6 @@ class WidgetModel extends Equatable {
   final ImageProvider? image;
   final String info;
 
-  Color get color => Cons.tabColors[family.index];
 
   const WidgetModel(
       {
@@ -43,12 +48,14 @@ class WidgetModel extends Equatable {
   @override
   List<Object> get props => [id];
 
+  Color get color => kTabColors[family.index];
+
   static WidgetModel fromPo(WidgetPo po) {
     return WidgetModel(
       id: po.id,
       name: po.name,
       nameCN: po.nameCN,
-      family: Convert.toFamily(po.family),
+      family: toFamily(po.family),
       image: convertImage(po.name),
       lever: po.lever,
       deprecated: po.deprecated == 1,
@@ -77,5 +84,26 @@ class WidgetModel extends Equatable {
       return [int.parse(links)];
     }
     return links.split(',').map<int>((e)=>int.parse(e)).toList();
+  }
+
+  static WidgetFamily toFamily(int id) {
+    switch (id) {
+      case 0:
+        return WidgetFamily.statelessWidget;
+      case 1:
+        return WidgetFamily.statefulWidget;
+      case 2:
+        return WidgetFamily.singleChildRenderObjectWidget;
+      case 3:
+        return WidgetFamily.multiChildRenderObjectWidget;
+      case 4:
+        return WidgetFamily.sliver;
+      case 5:
+        return WidgetFamily.proxyWidget;
+      case 6:
+        return WidgetFamily.other;
+      default:
+        return WidgetFamily.statelessWidget;
+    }
   }
 }

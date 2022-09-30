@@ -1,7 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/model/node_model.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
-import 'package:flutter_unit/widget_system/repositories/repositories.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import 'widget_detail_event.dart';
 import 'widget_detail_state.dart';

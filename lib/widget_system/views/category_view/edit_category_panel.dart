@@ -6,7 +6,7 @@ import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:flutter_unit/components/permanent/edit_panel.dart';
 import 'package:flutter_unit/components/permanent/input_button.dart';
 import 'package:flutter_unit/components/project/color_chooser.dart';
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 /// create by 张风捷特烈 on 2020-04-23
 /// contact me by email 1981462002@qq.com

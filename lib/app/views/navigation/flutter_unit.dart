@@ -9,6 +9,14 @@ import 'package:flutter_unit/app/res/str_unit.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/views/splash/unit_splash.dart';
 
+import 'unit_navigation.dart';
+import 'package:flutter_unit/widget_system/blocs/category_bloc/category_bloc.dart';
+import 'package:flutter_unit/widget_system/blocs/category_bloc/category_event.dart';
+import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_bloc.dart';
+import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_event.dart';
+import 'package:flutter_unit/widget_system/blocs/widgets_bloc/widgets_bloc.dart';
+import 'package:flutter_unit/widget_system/blocs/widgets_bloc/widgets_event.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
@@ -19,7 +27,7 @@ class FlutterUnit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GlobalBloc, GlobalState>(
+    return BlocBuilder<AppBloc, AppState>(
         builder: (_, state) => BlocProvider(
           create: (_) => ColorChangeCubit(Cons.tabColors[0]),
           child: DefaultTextStyle(
@@ -44,5 +52,4 @@ class FlutterUnit extends StatelessWidget {
           ),
         ));
   }
-
 }

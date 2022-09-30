@@ -40,7 +40,7 @@ class Hello {
       appBar: AppBar(
         title: const Text('代码高亮样式'),
       ),
-      body: BlocBuilder<GlobalBloc, GlobalState>(
+      body: BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => _buildFontCell(context,
               Cons.codeThemeSupport.keys.toList(), state.codeStyleIndex)),
     );
@@ -54,7 +54,7 @@ class Hello {
         a: 0.95,
         duration: const Duration(milliseconds: 200),
       onPressed: (){
-        BlocProvider.of<GlobalBloc>(context).add(EventSwitchCoderTheme(i));
+        BlocProvider.of<AppBloc>(context).add(EventSwitchCoderTheme(i));
       },
       child: Stack(
         fit: StackFit.passthrough,

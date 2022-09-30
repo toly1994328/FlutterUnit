@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 class WidgetDetailPanel extends StatelessWidget {
   final WidgetModel model;
