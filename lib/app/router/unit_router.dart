@@ -58,7 +58,7 @@ class UnitRouter {
     switch (settings.name) {
       //
       case nav:
-        return Left2RightRouter(child: const UnitNavigation());
+        return Left2RightRouter(child: UnitNavigation());
 
       // 组件详情页
       case widget_detail:

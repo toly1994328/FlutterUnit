@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/res/style/app_style.dart';
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局状态类
 ///
 class AppState extends Equatable {
-  final bool initialized;
 
   /// [fontFamily] 文字字体
   final String fontFamily;
@@ -25,25 +25,33 @@ class AppState extends Equatable {
   /// [showPerformanceOverlay] 是否显示性能浮层
   final bool showPerformanceOverlay;
 
+  /// [showOverlayTool] 是否显示浮动工具
+  final bool showOverlayTool;
+
+  /// [appStyle] app 样式;
+  final AppStyle appStyle;
+
   const AppState({
     this.fontFamily = 'ComicNeue',
-    this.initialized = false,
     this.themeColor = Colors.blue,
+    this.appStyle = AppStyle.standard,
     this.showBackGround = true,
     this.codeStyleIndex = 0,
     this.itemStyleIndex = 0,
     this.showPerformanceOverlay = false,
+    this.showOverlayTool = true,
   });
 
   @override
   List<Object> get props =>
       [
         fontFamily,
-        initialized,
         themeColor,
         showBackGround,
         codeStyleIndex,
         itemStyleIndex,
+        appStyle,
+        showOverlayTool,
         showPerformanceOverlay
       ];
 
@@ -56,16 +64,19 @@ class AppState extends Equatable {
     int? itemStyleIndex,
     bool? showPerformanceOverlay,
     bool? initialized,
+    bool? showOverlayTool,
+    AppStyle? appStyle,
   }) =>
       AppState(
         fontFamily: fontFamily ?? this.fontFamily,
         themeColor: themeColor ?? this.themeColor,
         showBackGround: showBackGround ?? this.showBackGround,
         codeStyleIndex: codeStyleIndex ?? this.codeStyleIndex,
+        showOverlayTool: showOverlayTool ?? this.showOverlayTool,
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
+        appStyle: appStyle ?? this.appStyle,
         showPerformanceOverlay:
             showPerformanceOverlay ?? this.showPerformanceOverlay,
-        initialized: initialized ?? this.initialized,
       );
 
   @override

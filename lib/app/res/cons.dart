@@ -1,6 +1,8 @@
+import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
+import 'style/app_style.dart';
 import 'toly_icon.dart';
 
 class Cons {
@@ -34,7 +36,7 @@ class Cons {
     "要点集录": TolyIcon.icon_bug,
   };
 
-  static const fontFamilySupport = <String>[
+  static const List<String> kFontFamilySupport = [
     'local',
     'ComicNeue',
     'IndieFlower',
@@ -42,6 +44,16 @@ class Cons {
     'Inconsolata',
     'Neucha'
   ];
+
+  static const Map<WidgetFamily,String> kWidgetFamilyLabelMap = {
+    WidgetFamily.statelessWidget: "StatelessWidget",
+    WidgetFamily.statefulWidget: "StatefulWidget",
+    WidgetFamily.singleChildRenderObjectWidget: "SingleChildRenderObjectWidget",
+    WidgetFamily.multiChildRenderObjectWidget: "MultiChildRenderObjectWidget",
+    WidgetFamily.sliver: "Sliver",
+    WidgetFamily.proxyWidget: "ProxyWidget",
+    WidgetFamily.other: "Other",
+  };
 
   static Map<HighlighterStyle, String> codeThemeSupport = <HighlighterStyle, String>{
     HighlighterStyle.fromColors(HighlighterStyle.gitHub):"GitHub - Power By 张风捷特烈",
@@ -52,8 +64,12 @@ class Cons {
     HighlighterStyle.fromColors(HighlighterStyle.solarized):"cst - Power By cst",
   };
 
+  static const Map<AppStyle,String> kAppStyleStringMap = {
+    AppStyle.standard: "标准样式",
+    AppStyle.fancy: "华丽样式",
+  };
 
-  static final themeColorSupport = <MaterialColor, String>{
+  static final kThemeColorSupport = <MaterialColor, String>{
     Colors.red: "毁灭之红",
     Colors.orange: "愤怒之橙",
     Colors.yellow: "警告之黄",

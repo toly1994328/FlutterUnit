@@ -10,8 +10,6 @@ import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
-
-
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com
 /// 说明:

@@ -13,7 +13,7 @@ typedef IndexLongTapCallback = void Function(BuildContext, int);
 
 class UnitBottomBar extends StatefulWidget {
   final Color color;
-
+  final int initPosition;
   // item 点击事件
   final IndexTapCallback? onItemTap;
 
@@ -22,6 +22,7 @@ class UnitBottomBar extends StatefulWidget {
 
   const UnitBottomBar({Key? key,
     this.color = Colors.blue,
+    this.initPosition = 0,
     required this.onItemTap,
     this.onItemLongTap,
   }) : super(key: key);
@@ -32,6 +33,12 @@ class UnitBottomBar extends StatefulWidget {
 
 class _UnitBottomBarState extends State<UnitBottomBar> {
   int _position = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _position = widget.initPosition;
+  }
 
   final NotchedShape shape = const CircularNotchedRectangle();
 

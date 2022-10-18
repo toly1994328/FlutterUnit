@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/sp.dart';
+import 'package:flutter_unit/app/res/style/app_style.dart';
 import 'package:path/path.dart' as path;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -35,17 +36,20 @@ class AppStart{
     await LocalDb.instance.initDb();
 
     bool showBg = prefs.getBool(SP.showBackground) ?? true;
+    bool showTool = prefs.getBool(SP.showTool) ?? true;
     int themeIndex = prefs.getInt(SP.themeColorIndex) ?? 4;
     int fontIndex = prefs.getInt(SP.fontFamily) ?? 1;
     int codeIndex = prefs.getInt(SP.codeStyleIndex) ?? 0;
     int itemStyleIndex = prefs.getInt(SP.itemStyleIndex) ?? 0;
+    int appStyleIndex = prefs.getInt(SP.appStyleIndex) ?? 0;
 
     return AppState(
         showBackGround: showBg,
-        themeColor: Cons.themeColorSupport.keys.toList()[themeIndex],
-        fontFamily: Cons.fontFamilySupport[fontIndex],
+        themeColor: Cons.kThemeColorSupport.keys.toList()[themeIndex],
+        fontFamily: Cons.kFontFamilySupport[fontIndex],
         itemStyleIndex: itemStyleIndex,
-        initialized: true,
+        appStyle: Cons.kAppStyleStringMap.keys.toList()[appStyleIndex],
+        showOverlayTool: showTool,
         codeStyleIndex: codeIndex);
   }
 
