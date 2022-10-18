@@ -1,0 +1,68 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/app/router/router_utils.dart';
+
+import 'search_page/standard_search_page.dart';
+
+class StandardHomeSearch extends StatelessWidget
+    implements PreferredSizeWidget {
+  const StandardHomeSearch({Key? key}) : super(key: key);
+
+  @override
+  Size get preferredSize => const Size.fromHeight(35 + 8 * 2);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        children: [
+          const SizedBox(width: 15),
+          const CircleAvatar(
+            radius: 16,
+            backgroundImage: AssetImage('assets/images/icon_head.webp'),
+          ),
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context)
+                    .push(FadeRouter(child: const StandardSearchPageProvider()));
+              },
+              child: Container(
+                  height: 35,
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: const Material(
+                    color: Colors.transparent,
+                    child: TextField(
+                      autofocus: false,
+                      enabled: false,
+                      cursorColor: Colors.blue,
+                      maxLines: 1,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Color(0xffF3F6F9),
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: Colors.grey,
+                          ),
+                          contentPadding: EdgeInsets.only(right: 0),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(35 / 2)),
+                          ),
+                          hintText: "搜索组件",
+                          hintStyle: TextStyle(fontSize: 14)),
+                    ),
+                  )),
+            ),
+          ),
+          const Icon(TolyIcon.icon_sound),
+          const SizedBox(width: 15)
+        ],
+      ),
+    );
+  }
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
 
 class AppTheme {
@@ -21,9 +22,17 @@ class AppTheme {
       scaffoldBackgroundColor: const Color(0xff010201));
 
   static ThemeData lightTheme(AppState state) {
+    SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark
+    );
     return ThemeData(
       fontFamily: state.fontFamily,
       primarySwatch: state.themeColor,
+        appBarTheme: AppBarTheme(
+            systemOverlayStyle: overlayStyle
+        ),
     );
   }
 }

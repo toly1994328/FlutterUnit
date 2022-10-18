@@ -30,17 +30,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback(_onFrameCallBack);
-  }
-
-  void _onFrameCallBack(Duration timeStamp) {
-    OverlayToolWrapper.of(context).showFloating();
-  }
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
@@ -124,36 +114,10 @@ class _HomePageState extends State<HomePage>
     return Container();
   }
 
-  Widget _buildHomeItem(WidgetModel model) =>
-      BlocBuilder<AppBloc, AppState>(
-        buildWhen: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
-        builder: (_, state) {
-          int index = state.itemStyleIndex;
-          ShapeBorder? shapeBorder = HomeItemSupport.shapeBorderMap[index];
-          return Padding(
-            padding:
-                const EdgeInsets.only(bottom: 10, top: 2, left: 10, right: 10),
-            child: InkWell(
-              customBorder: shapeBorder,
-                onTap: ()=> _toDetail(model),
-                child: HomeItemSupport.get(model, index)),
-          );
-        },
-      );
-
   void _switchTab(int index) {
     WidgetFamily widgetFamily = Convert.toFamily(index);
     context.read<ColorChangeCubit>().change(Cons.tabColors[index],family: widgetFamily);
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
-  }
-
- void _toDetail(WidgetModel model){
-    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
-    Navigator.pushNamed(
-      context,
-      UnitRouter.widget_detail,
-      arguments: model,
-    );
   }
 
   @override

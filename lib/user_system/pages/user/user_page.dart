@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
+import 'package:flutter_unit/app/res/style/app_style.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/state.dart';
 
@@ -18,6 +20,7 @@ class UserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppStyle style = context.read<AppBloc>().state.appStyle;
     return Scaffold(
         body: Column(
       children: [
@@ -28,9 +31,20 @@ class UserPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               margin: const EdgeInsets.only(bottom: 40),
               child: Image.asset(
-                'assets/images/sabar_bar.webp',
+                style == AppStyle.standard?'assets/images/base_draw.webp':'assets/images/sabar_bar.webp',
                 fit: BoxFit.cover,
               ),
+            ),
+            Positioned(
+              top: 50,
+              right: 20,
+              child: Container(
+                padding: EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.5),
+borderRadius: BorderRadius.circular(4)
+                  ),
+                  child: Icon(Icons.color_lens_outlined,color: Colors.white,size: 20,)),
             ),
             Positioned(
               bottom: 0,
@@ -40,7 +54,7 @@ class UserPage extends StatelessWidget {
               ),
             ),
             Positioned(
-                bottom: 0,
+                bottom: 5,
                 right: 30,
                 child: BlocBuilder<AuthenticBloc, AuthenticState>(
                   builder: _buildByState,
@@ -65,7 +79,7 @@ class UserPage extends StatelessWidget {
     }
     return Text(
       '张风捷特烈',
-      style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
+      style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor,fontWeight: FontWeight.bold),
     );
   }
 

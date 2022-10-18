@@ -34,8 +34,8 @@ class DeskWidgetContent extends StatelessWidget {
     );
   }
 
-  Widget _buildHomeItem(WidgetModel model) =>
-      BlocBuilder<AppBloc, AppState>(
+  Widget _buildHomeItem(WidgetModel model) {
+    return BlocBuilder<AppBloc, AppState>(
         buildWhen: (p, c) => (p.itemStyleIndex != c.itemStyleIndex),
         builder: (context, state) {
           int index = state.itemStyleIndex;
@@ -46,6 +46,7 @@ class DeskWidgetContent extends StatelessWidget {
               child: HomeItemSupport.get(model, index));
         },
       );
+  }
 
   //  Widget _buildHomeItem(WidgetModel model) =>
   //       BlocBuilder<GlobalBloc, GlobalState>(

@@ -47,46 +47,41 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
   }
 
   // 构建悬浮按钮工具
-  Widget wrapOverlayTool({required Widget child}) => Builder(
-      builder: (ctx) => OverlayToolWrapper(
-        child: child,
-      ));
+  // Widget wrapOverlayTool({required Widget child}) => Builder(
+  //     builder: (ctx) => OverlayToolWrapper(
+  //       child: child,
+  //     ));
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ColorChangeCubit, SelectTab>(
         builder: (_, state) => Scaffold(
               drawer: HomeDrawer(),
-              //左滑页
-              endDrawer: HomeRightDrawer(
-                // color: state.homeColor,
-              ),
+              endDrawer: HomeRightDrawer(),
               //右滑页
               floatingActionButton: _buildSearchButton(state.tabColor),
-              body: wrapOverlayTool(
-                child: Row(
-                  children: [
-                    _buildLeftNav(),
-                    Expanded(
-                      child: Container(
-                        child: PageView(
-                          physics: const NeverScrollableScrollPhysics(),
-                          //使用PageView实现页面的切换
-                          controller: _controller,
-                          children: <Widget>[
-                            HomePage(),
-                            CollectPage(),
-                            GalleryUnit(),
-                            // GalleryPage(),
-                            // PaintUnitPage(),
-                            LayoutUnitPage(),
-                            BugUnitPage(),
-                          ],
-                        ),
+              body: Row(
+                children: [
+                  _buildLeftNav(),
+                  Expanded(
+                    child: Container(
+                      child: PageView(
+                        physics: const NeverScrollableScrollPhysics(),
+                        //使用PageView实现页面的切换
+                        controller: _controller,
+                        children: <Widget>[
+                          HomePage(),
+                          CollectPage(),
+                          GalleryUnit(),
+                          // GalleryPage(),
+                          // PaintUnitPage(),
+                          LayoutUnitPage(),
+                          BugUnitPage(),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ));
   }

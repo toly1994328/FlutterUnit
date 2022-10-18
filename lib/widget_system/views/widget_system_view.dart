@@ -1,5 +1,5 @@
-export './widget_home_view/home_page.dart';
-export './widget_home_view/home_drawer.dart';
+export './widget_home/home_page.dart';
+export './widget_home/home_drawer.dart';
 
 export './widget_detail_view/widget_detail_page.dart';
 export './category_view/category_page.dart';

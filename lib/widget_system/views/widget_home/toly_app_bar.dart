@@ -5,14 +5,12 @@ import 'package:flutter_unit/components/permanent/circle.dart';
 class TolyAppBar extends StatefulWidget {
   final double maxHeight;
   final Function(int)? onItemClick;
+  final int defaultIndex;
 
   const TolyAppBar({Key? key, required this.maxHeight, this.onItemClick, this.defaultIndex = 0}) : super(key: key);
 
   @override
   _TolyAppBarState createState() => _TolyAppBarState();
-
-  final int defaultIndex;
-
 
 }
 

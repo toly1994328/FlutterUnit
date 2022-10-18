@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/res/sp.dart';
+import 'package:flutter_unit/app/res/style/app_style.dart';
 import 'package:flutter_unit/app/storage/app_start.dart';
 import 'package:flutter_unit/app/storage/local_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,6 +27,8 @@ class AppBloc extends Bloc<GlobalEvent, AppState> {
     on<EventSwitchShowOver>(_onEventSwitchShowOver);
     on<EventSwitchCoderTheme>(_onEventSwitchCoderTheme);
     on<EventChangeItemStyle>(_onEventChangeItemStyle);
+    on<EventChangeAppStyle>(_onEventChangeAppStyle);
+    on<EventSwitchShowTool>(_onEventSwitchShowTool);
   }
 
   Future<SharedPreferences> get sp => LocalStorage.sp;
@@ -38,7 +41,7 @@ class AppBloc extends Bloc<GlobalEvent, AppState> {
   // 切换字体事件处理 : 固化索引 + 产出新状态
   void _onEventSwitchFontFamily(
       EventSwitchFontFamily event, Emitter<AppState> emit) async {
-    int familyIndex = Cons.fontFamilySupport.indexOf(event.family);
+    int familyIndex = Cons.kFontFamilySupport.indexOf(event.family);
     (await sp).setInt(SP.fontFamily, familyIndex);
     emit(state.copyWith(fontFamily: event.family));
   }
@@ -46,7 +49,7 @@ class AppBloc extends Bloc<GlobalEvent, AppState> {
   // 切换主题色事件处理 : 固化索引 + 产出新状态
   void _onEventSwitchThemeColor(
       EventSwitchThemeColor event, Emitter<AppState> emit) async {
-    int themeIndex = Cons.themeColorSupport.keys.toList().indexOf(event.color);
+    int themeIndex = Cons.kThemeColorSupport.keys.toList().indexOf(event.color);
     (await sp).setInt(SP.themeColorIndex, themeIndex);
     emit(state.copyWith(themeColor: event.color));
   }
@@ -76,5 +79,16 @@ class AppBloc extends Bloc<GlobalEvent, AppState> {
       EventChangeItemStyle event, Emitter<AppState> emit) async {
     (await sp).setInt(SP.itemStyleIndex, event.index);
     emit(state.copyWith(itemStyleIndex: event.index));
+  }
+
+  void _onEventChangeAppStyle(EventChangeAppStyle event, Emitter<AppState> emit) async{
+    (await sp).setInt(SP.appStyleIndex, event.style.index);
+    emit(state.copyWith(appStyle: event.style));
+
+  }
+
+  void _onEventSwitchShowTool(EventSwitchShowTool event, Emitter<AppState> emit) async{
+    (await sp).setBool(SP.showTool, event.show);
+    emit(state.copyWith(showOverlayTool: event.show));
   }
 }

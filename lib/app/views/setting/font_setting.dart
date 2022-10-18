@@ -1,12 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/app/res/color_unit.dart';
+import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 /// create by 张风捷特烈 on 2020-04-10
 /// contact me by email 1981462002@qq.com
@@ -15,16 +16,14 @@ import 'package:flutter_unit/components/permanent/circle.dart';
 class FontSettingPage extends StatelessWidget {
   const FontSettingPage({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('字体设置 - font setting'),
-      ),
+      backgroundColor: ColorUnit.scaffoldBgLight,
+      appBar: const UnitAppbar(title: '字体设置 - font setting'),
       body: BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => _buildFontCell(
-              context, Cons.fontFamilySupport, state.fontFamily)),
+              context, Cons.kFontFamilySupport, state.fontFamily)),
     );
   }
 

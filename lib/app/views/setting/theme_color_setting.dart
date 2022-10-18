@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/res/color_unit.dart';
 import 'package:flutter_unit/app/res/cons.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
+import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 
@@ -18,16 +20,15 @@ class ThemeColorSettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('主题色设置'),
-      ),
+      backgroundColor: ColorUnit.scaffoldBgLight,
+      appBar: const UnitAppbar(title:'主题色设置'),
       body: BlocBuilder<AppBloc, AppState>(
-          builder: (_, state) => _buildFontCell(
-              context, Cons.themeColorSupport.keys.toList(), state.themeColor)),
+          builder: (_, state) => _buildCell(
+              context, Cons.kThemeColorSupport.keys.toList(), state.themeColor)),
     );
   }
 
-  Widget _buildFontCell(
+  Widget _buildCell(
       BuildContext context, List<MaterialColor> themeColorSupport, MaterialColor color) {
     return GridView.count(
       padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
@@ -84,7 +85,7 @@ class ThemeColorSettingPage extends StatelessWidget {
                       ])),
                       alignment: const Alignment(0,0.35),
                       child: Text(
-                        '${Cons.themeColorSupport[c]}',
+                        '${Cons.kThemeColorSupport[c]}',
                         style: const TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),
                       )),
               )))
