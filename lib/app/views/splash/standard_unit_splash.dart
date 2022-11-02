@@ -111,11 +111,9 @@ class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProv
     BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
     BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
-    if(_cost<_minCost){
-      Future.delayed(Duration(milliseconds: _minCost-_cost)).then((value){
-        Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
-      });
-    }
+    Future.delayed(Duration(milliseconds: max(_minCost-_cost, 0))).then((value){
+      Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
+    });
   }
 
 }
