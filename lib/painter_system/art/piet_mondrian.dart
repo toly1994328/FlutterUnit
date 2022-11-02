@@ -87,8 +87,8 @@ class PietMondrianPainnter extends CustomPainter {
   }
 
   void _splitSquaresWith(Map coordinates, List<Square> squares) {
-    final double x = coordinates["x"];
-    final double y = coordinates["y"];
+    final double x = coordinates["x"]??0;
+    final double y = coordinates["y"]??0;
 
     for (int i = squares.length - 1; i >= 0; i--) {
       final Square square = squares[i];

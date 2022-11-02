@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,12 +30,12 @@ class StandardUnitSplash extends StatefulWidget {
 class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProviderStateMixin {
  static const int _minCost = 1500;
 
-  int _cost = 0;
+  int _recoder = 0;
 
   @override
   void initState() {
     super.initState();
-    _cost = DateTime.now().millisecondsSinceEpoch;
+    _recoder = DateTime.now().millisecondsSinceEpoch;
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -104,18 +106,18 @@ class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProv
     );
   }
 
-
   // 监听资源加载完毕，启动，触发事件
   void _listenStart(BuildContext context, AppState state) {
-    _cost = DateTime.now().millisecondsSinceEpoch - _cost;
+    int cost = DateTime.now().millisecondsSinceEpoch - _recoder;
     BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
     BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
-    if(_cost<_minCost){
-      Future.delayed(Duration(milliseconds: _minCost-_cost)).then((value){
+    if(cost<_minCost){
+      Future.delayed(Duration(milliseconds: _minCost-cost)).then((value){
         Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
       });
     }
+
   }
 
 }

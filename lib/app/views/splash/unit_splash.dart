@@ -90,7 +90,6 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       Future.delayed(delayTime).then((e) {
         _splashDone = true;
         if(_loaded){
-          print("======pushReplacementNamed======");
           Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
         }
       });
@@ -166,7 +165,6 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
 
   // 监听资源加载完毕，启动，触发事件
   void _listenStart(BuildContext context, AppState state) {
-    print('======_listenStart========');
     BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
     BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
