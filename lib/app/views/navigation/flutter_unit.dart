@@ -50,7 +50,7 @@ class FlutterUnit extends StatelessWidget {
                     //   primarySwatch: state.themeColor,
                     //   fontFamily: state.fontFamily,
                     // ),
-                    home: state.appStyle ==AppStyle.standard?const StandardUnitSplash():const UnitSplash(),
+                    home: const StandardUnitSplash(),
                   ),
 
           ),
