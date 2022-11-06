@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/bloc_exp.dart';
+import 'package:flutter_unit/update_part/bloc_exp.dart';
 
 
 class UpdateRedPoint extends StatelessWidget {

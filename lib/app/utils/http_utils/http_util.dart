@@ -1,6 +1,6 @@
 
 import 'package:dio/dio.dart';
-import 'package:flutter_unit/app/res/path_unit.dart';
+import 'package:flutter_unit/app/res/cons/path_unit.dart';
 
 import 'logs_interceptor.dart';
 import 'token_interceptor.dart';

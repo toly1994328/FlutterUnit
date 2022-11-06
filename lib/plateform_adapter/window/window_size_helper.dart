@@ -10,7 +10,6 @@ class WindowSizeHelper{
     bool isDesk = Platform.isMacOS||Platform.isWindows||Platform.isLinux;
     if(isDesk){
       size = size*window.devicePixelRatio;
-      print('${window.physicalGeometry}');
       await DesktopWindow.setWindowSize(size);
       await DesktopWindow.setMinWindowSize(size);
       // await DesktopWindow.setMaxWindowSize(size);

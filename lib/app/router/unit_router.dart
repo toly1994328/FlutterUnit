@@ -63,7 +63,9 @@ class UnitRouter {
       // 组件详情页
       case widget_detail:
         return Right2LeftRouter(
-            child: WidgetDetailPage(model: settings.arguments as WidgetModel));
+            child: WidgetDetailPageScope(
+          model: settings.arguments as WidgetModel,
+        ));
 
       case search:
         return Right2LeftRouter(child: const SearchPageProvider());
@@ -87,7 +89,7 @@ class UnitRouter {
         return Right2LeftRouter(child: const VersionInfo());
 
       case issues_point:
-        return Right2LeftRouter(child: const IssuesPointPage());
+        return Right2LeftRouter(child: const IssuesPointScope());
       case login:
         return Right2LeftRouter(child: const LoginPage());
 

@@ -1,35 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/res/theme/size_unit.dart';
 
 import 'unit_color.dart';
 
 ///文本样式
-class TStyleUnit {
+class UnitTextStyle {
 
   // 标题加黑
   static const labelBold = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-  static const commonChip = TextStyle(
-    fontSize: 12,
-    color: Colors.white,
-  );
-  static const deprecatedChip = TextStyle(
-    fontSize: 12,
-    color: Colors.white,
-    decoration:  TextDecoration.lineThrough,
-    decorationThickness: 2,
-  );
 
-  static const lagerTextSize = 30.0;
-  static const bigTextSize = 23.0;
-  static const normalTextSize = 18.0;
-  static const middleTextWhiteSize = 16.0;
-  static const smallTextSize = 14.0;
-  static const minTextSize = 12.0;
-
-  static const minText = TextStyle(
-    color: UnitColor.subLightTextColor,
-    fontSize: minTextSize,
-  );
-
+  // 闪屏页文字阴影样式
   static const splashShadows = TextStyle(
       color: Colors.grey,
       shadows: [
@@ -40,153 +20,38 @@ class TStyleUnit {
       ],
       fontSize: 12);
 
-  static const smallTextWhite = TextStyle(
-    color: UnitColor.textColorWhite,
-    fontSize: smallTextSize,
-  );
-
   static const shadowTextStyle = TextStyle(color: Colors.grey, shadows: [
     Shadow(color: Colors.white, offset: Offset(.5, .5), blurRadius: .5)
   ]);
 
-  static const smallText = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: smallTextSize,
+
+  // 过时文字样式
+  static const deprecatedChip = TextStyle(
+    fontSize: 12,
+    color: Colors.white,
+    decoration:  TextDecoration.lineThrough,
+    decorationThickness: 2,
   );
 
-  static const smallTextBold = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: smallTextSize,
-    fontWeight: FontWeight.bold,
+  static const commonChip = TextStyle(
+    fontSize: 12,
+    color: Colors.white,
   );
 
-  static const smallSubLightText = TextStyle(
-    color: UnitColor.subLightTextColor,
-    fontSize: smallTextSize,
-  );
+  static const TextStyle hintStyle = TextStyle(
+      color: UnitColor.input_hit_text_color,
+      fontSize: SizeUnit.input_hit_text_size);
 
-  static const smallActionLightText = TextStyle(
-    color: UnitColor.actionBlue,
-    fontSize: smallTextSize,
-  );
+  static const TextStyle primary = TextStyle(
+      color: UnitColor.text_color, fontSize: SizeUnit.input_text_size);
 
-  static const smallMiLightText = TextStyle(
-    color: UnitColor.miWhite,
-    fontSize: smallTextSize,
-  );
+  static const TextStyle headTextStyle = TextStyle(
+      color: UnitColor.head_text_color, fontSize: SizeUnit.head_text_size);
 
-  static const smallSubText = TextStyle(
-    color: UnitColor.subTextColor,
-    fontSize: smallTextSize,
-  );
+  static const TextStyle smallSubTextStyle = TextStyle(
+      color: UnitColor.input_hit_text_color,
+      fontSize: SizeUnit.small_text_size);
 
-  static const middleText = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: middleTextWhiteSize,
-  );
-
-  static const middleTextWhite = TextStyle(
-    color: UnitColor.textColorWhite,
-    fontSize: middleTextWhiteSize,
-  );
-
-  static const middleSubText = TextStyle(
-    color: UnitColor.subTextColor,
-    fontSize: middleTextWhiteSize,
-  );
-
-  static const middleSubLightText = TextStyle(
-    color: UnitColor.subLightTextColor,
-    fontSize: middleTextWhiteSize,
-  );
-
-  static const middleTextBold = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: middleTextWhiteSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const middleTextWhiteBold = TextStyle(
-    color: UnitColor.textColorWhite,
-    fontSize: middleTextWhiteSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const middleSubTextBold = TextStyle(
-    color: UnitColor.subTextColor,
-    fontSize: middleTextWhiteSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const normalText = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: normalTextSize,
-  );
-
-  static const normalTextBold = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: normalTextSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const normalSubText = TextStyle(
-    color: UnitColor.subTextColor,
-    fontSize: normalTextSize,
-  );
-
-  static const normalTextWhite = TextStyle(
-    color: UnitColor.textColorWhite,
-    fontSize: normalTextSize,
-  );
-
-  static const normalTextMitWhiteBold = TextStyle(
-    color: UnitColor.miWhite,
-    fontSize: normalTextSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const normalTextActionWhiteBold = TextStyle(
-    color: UnitColor.actionBlue,
-    fontSize: normalTextSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const normalTextLight = TextStyle(
-    color: UnitColor.primaryLightValue,
-    fontSize: normalTextSize,
-  );
-
-  static const largeText = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: bigTextSize,
-  );
-
-  static const largeTextBold = TextStyle(
-    color: UnitColor.mainTextColor,
-    fontSize: bigTextSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const largeTextWhite = TextStyle(
-    color: UnitColor.textColorWhite,
-    fontSize: bigTextSize,
-  );
-
-  static const largeTextWhiteBold = TextStyle(
-    color: UnitColor.textColorWhite,
-    fontSize: bigTextSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const largeLargeTextWhite = TextStyle(
-    color: UnitColor.textColorWhite,
-    fontSize: lagerTextSize,
-    fontWeight: FontWeight.bold,
-  );
-
-  static const largeLargeText = TextStyle(
-    color: UnitColor.primaryValue,
-    fontSize: lagerTextSize,
-    fontWeight: FontWeight.bold,
-  );
+  static const TextStyle bigTextStyle = TextStyle(
+      color: UnitColor.text_color, fontSize: SizeUnit.big_text_size);
 }

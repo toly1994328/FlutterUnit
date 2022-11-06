@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/color_unit.dart';
+
+import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
@@ -23,7 +24,7 @@ class EmptyCategory extends StatelessWidget {
     return Center(
         child: Panel(
       radius: 15,
-      color: ColorUnit.warning_color.withOpacity(0.3),
+      color: UnitColor.warning_color.withOpacity(0.3),
       child: Wrap(
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
@@ -32,7 +33,7 @@ class EmptyCategory extends StatelessWidget {
             children: [
               const Text(
                 "  您还没有收藏集! ",
-                style: TextStyle(fontSize: 18,color: ColorUnit.head_text_color),
+                style: TextStyle(fontSize: 18,color: UnitColor.head_text_color),
               ),
               const SizedBox(
                 width: 10,
@@ -48,7 +49,7 @@ class EmptyCategory extends StatelessWidget {
               ),
               const Text(
                 "恢复默认",
-                style: TextStyle(fontSize: 14,color: ColorUnit.input_hit_text_color),
+                style: TextStyle(fontSize: 14,color: UnitColor.input_hit_text_color),
               ),
             ],
           ),
