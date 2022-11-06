@@ -40,6 +40,8 @@ class _TagPaint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     canvas.clipRect(Offset.zero & size);
+    shadowPath.reset();
+    path.reset();
 
     path.moveTo(0, 0);
     path.relativeLineTo(size.width-shadowHeight*rate, 0);

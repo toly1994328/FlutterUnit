@@ -38,7 +38,7 @@ class LayoutIdDemo extends StatelessWidget {
   }
 }
 
-// 50 颜射盒
+// 50 颜色盒
 class Box50 extends StatelessWidget {
   final Color color;
   const Box50(this.color, {Key? key}) : super(key: key);
