@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/res/theme/app_style.dart';
@@ -22,53 +23,58 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) {
     AppStyle style = context.read<AppBloc>().state.appStyle;
     return Scaffold(
-        body: Column(
+        body: AnnotatedRegion<SystemUiOverlayStyle>(
+          value:const SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.dark
+          ),
+          child: Column(
       children: [
-        Stack(
-          children: [
-            Container(
-              height: 180,
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.only(bottom: 40),
-              child: Image.asset(
-                style == AppStyle.standard
-                    ? 'assets/images/base_draw.webp'
-                    : 'assets/images/sabar_bar.webp',
-                fit: BoxFit.cover,
+          Stack(
+            children: [
+              Container(
+                height: 180,
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.only(bottom: 40),
+                child: Image.asset(
+                  style == AppStyle.standard
+                      ? 'assets/images/base_draw.webp'
+                      : 'assets/images/sabar_bar.webp',
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            Positioned(
-              top: 50,
-              right: 20,
-              child: Container(
-                padding: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.5),
-                      borderRadius: BorderRadius.circular(4)),
-                  child: const Icon(
-                    Icons.color_lens_outlined,
-                    color: Colors.white,
-                    size: 20,
-                  )),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 40,
-              child: BlocBuilder<AuthenticBloc, AuthenticState>(
-                builder: _buildAvatarByState,
+              Positioned(
+                top: 50,
+                right: 20,
+                child: Container(
+                  padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(4)),
+                    child: const Icon(
+                      Icons.color_lens_outlined,
+                      color: Colors.white,
+                      size: 20,
+                    )),
               ),
-            ),
-            Positioned(
-                bottom: 5,
-                right: 30,
+              Positioned(
+                bottom: 0,
+                left: 40,
                 child: BlocBuilder<AuthenticBloc, AuthenticState>(
-                  builder: _buildByState,
-                ))
-          ],
-        ),
-        const Expanded(child: MePageItem())
+                  builder: _buildAvatarByState,
+                ),
+              ),
+              Positioned(
+                  bottom: 5,
+                  right: 30,
+                  child: BlocBuilder<AuthenticBloc, AuthenticState>(
+                    builder: _buildByState,
+                  ))
+            ],
+          ),
+          const Expanded(child: MePageItem())
       ],
-    ));
+    ),
+        ));
   }
 
   Widget _buildByState(BuildContext context, AuthenticState state) {

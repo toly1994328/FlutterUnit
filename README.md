@@ -1,12 +1,15 @@
 
 #### Flutter Unit 周边
+- 🔥  [掘金小册 -《Flutter 语言基础 - 梦始之地》](https://juejin.cn/book/6844733827617652750)
 - 🔥  [掘金小册 -《Flutter 绘制指南 - 妙笔生花》](https://juejin.im/book/6844733827265331214)
 - 🔥  [掘金小册 -《Flutter 手势探索 - 执掌天下》](https://juejin.cn/book/6896378716427911181)
 - 🔥  [掘金小册 -《Flutter 动画探索 - 流光幻影》](https://juejin.cn/book/6965102582473687071)
 - 🔥  [掘金小册 -《Flutter 滑动探索 - 珠联璧合》](https://juejin.cn/book/6984685333312962573)
 - 🔥  [掘金小册 -《Flutter 布局探索 - 薪火相传》](https://juejin.cn/book/7075958265250578469)
 - 🔥  [掘金小册 -《Flutter 渲染机制 - 聚沙成塔》](https://juejin.cn/book/6965102582473687071)
-  
+
+---
+
 - [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
 - [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
@@ -26,10 +29,10 @@
 > 当前Flutter 版本
 
 ```
-Flutter 3.3.1 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 4f9d92fbbd (7 days ago) • 2022-09-06 17:54:53 -0700
-Engine • revision 3efdf03e73
-Tools • Dart 2.18.0 • DevTools 2.15.0
+Flutter 3.3.2 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision e3c29ec00c (8 weeks ago) • 2022-09-14 08:46:55 -0500
+Engine • revision a4ff2c53d8
+Tools • Dart 2.18.1 • DevTools 2.15.0
 ```
 
 ---
