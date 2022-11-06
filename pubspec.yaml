@@ -36,7 +36,7 @@ dependencies:
   wrapper: ^1.0.2
 
   url_launcher: ^6.0.20 # url
-  share_plus: ^3.0.4 # 文字分享
+  share_plus: ^6.2.0 # 文字分享
 
   intl: ^0.17.0
   platform: ^3.1.0
