@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/app/res/sp.dart';
-import 'package:flutter_unit/app/res/style/app_style.dart';
+import 'package:flutter_unit/app/res/cons/cons.dart';
+import 'package:flutter_unit/app/res/cons/sp.dart';
+import 'package:flutter_unit/app/res/theme/app_style.dart';
 import 'package:flutter_unit/app/storage/app_start.dart';
 import 'package:flutter_unit/app/storage/local_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';

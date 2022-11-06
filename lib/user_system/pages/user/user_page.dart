@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/res/style/app_style.dart';
+import 'package:flutter_unit/app/res/theme/app_style.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/state.dart';
 
@@ -31,7 +31,9 @@ class UserPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               margin: const EdgeInsets.only(bottom: 40),
               child: Image.asset(
-                style == AppStyle.standard?'assets/images/base_draw.webp':'assets/images/sabar_bar.webp',
+                style == AppStyle.standard
+                    ? 'assets/images/base_draw.webp'
+                    : 'assets/images/sabar_bar.webp',
                 fit: BoxFit.cover,
               ),
             ),
@@ -39,12 +41,15 @@ class UserPage extends StatelessWidget {
               top: 50,
               right: 20,
               child: Container(
-                padding: EdgeInsets.all(6),
+                padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
-borderRadius: BorderRadius.circular(4)
-                  ),
-                  child: Icon(Icons.color_lens_outlined,color: Colors.white,size: 20,)),
+                      color: Colors.black.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(4)),
+                  child: const Icon(
+                    Icons.color_lens_outlined,
+                    color: Colors.white,
+                    size: 20,
+                  )),
             ),
             Positioned(
               bottom: 0,
@@ -79,7 +84,10 @@ borderRadius: BorderRadius.circular(4)
     }
     return Text(
       '张风捷特烈',
-      style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor,fontWeight: FontWeight.bold),
+      style: TextStyle(
+          fontSize: 18,
+          color: Theme.of(context).primaryColor,
+          fontWeight: FontWeight.bold),
     );
   }
 

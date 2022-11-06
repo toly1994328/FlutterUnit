@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/str_unit.dart';
+import 'package:flutter_unit/app/res/cons/str_unit.dart';
 
 class DialogAbout extends StatelessWidget {
   const DialogAbout({Key? key}) : super(key: key);

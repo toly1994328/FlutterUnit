@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/app/res/cons.dart';
-import 'package:flutter_unit/app/res/style/app_style.dart';
+import 'package:flutter_unit/app/res/cons/cons.dart';
+import 'package:flutter_unit/app/res/theme/app_style.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/bloc_exp.dart';
+import 'package:flutter_unit/update_part/bloc_exp.dart';
 import 'package:flutter_unit/components/project/nav/pure_bottom_bar.dart';
 import 'package:flutter_unit/components/project/nav/unit_bottom_bar.dart';
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
@@ -77,7 +77,6 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     bool isStandard = style == AppStyle.standard;
     return Scaffold(
       extendBody: true,
-      drawer: const HomeDrawer(),
       endDrawer: const HomeRightDrawer(),
       floatingActionButtonLocation: isStandard ? null : FloatingActionButtonLocation.centerDocked,
       floatingActionButton: isStandard ? null : _buildSearchButton(context),

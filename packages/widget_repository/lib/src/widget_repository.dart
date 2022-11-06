@@ -13,8 +13,6 @@ abstract class WidgetRepository {
   /// 根据 [WidgetFilter] 搜索 [WidgetModel] 列表
   Future<List<WidgetModel>> searchWidgets(WidgetFilter args);
 
-  Future<List<NodeModel>> loadNode(WidgetModel widgetModel);
-
   Future<void> toggleLike(int id);
 
   Future<List<WidgetModel>> loadLikeWidgets();

@@ -15,6 +15,22 @@ import 'repo_widget.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
+
+class IssuesPointScope extends StatelessWidget {
+  const IssuesPointScope({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(providers: [
+      BlocProvider<PointBloc>(create: (_) => PointBloc()..add(EventLoadPoint())),
+      BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
+    ], child: const IssuesPointPage());
+  }
+}
+
+
+
+
 class IssuesPointPage extends StatelessWidget {
   const IssuesPointPage({Key? key}) : super(key: key);
 
