@@ -18,9 +18,8 @@ import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart'
 import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
 import 'package:flutter_unit/user_system/pages/login/login_page.dart';
 import 'package:flutter_unit/user_system/pages/register/register_page.dart';
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
 import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import 'router_utils.dart';
 
@@ -59,7 +58,7 @@ class UnitRouter {
     switch (settings.name) {
       //
       case nav:
-        return Left2RightRouter(child: const UnitNavigation());
+        return Left2RightRouter(child: UnitNavigation());
 
       // 组件详情页
       case widget_detail:

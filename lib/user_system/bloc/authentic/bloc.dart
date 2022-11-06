@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter_unit/app/storage/local_storage.dart';
 import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
 
 import 'package:flutter_unit/user_system/model/user.dart';
-import 'package:flutter_unit/widget_system/repositories/repositories.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 
 import 'event.dart';
@@ -15,7 +15,6 @@ class AuthenticBloc extends Bloc<AuthEvent, AuthenticState> {
   AuthenticBloc() : super(AuthInitial()){
     on<AppStarted>(_onAppStarted);
   }
-
 
   void _onAppStarted(AuthEvent event,  Emitter<AuthenticState> emit) async{
     if (event is AppStarted) {

@@ -174,7 +174,7 @@ class TimeLineNode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color themeColor = BlocProvider.of<GlobalBloc>(context).state.themeColor;
+    Color themeColor = BlocProvider.of<AppBloc>(context).state.themeColor;
 
     return IntrinsicHeight(
       child: Row(

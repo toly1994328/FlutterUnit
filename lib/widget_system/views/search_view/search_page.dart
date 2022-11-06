@@ -9,9 +9,8 @@ import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
 import 'package:flutter_unit/components/project/items/widget/techno_widget_list_item.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
-
+import 'package:widget_repository/widget_repository.dart';
+import 'package:db_storage/db_storage.dart';
 import 'app_search_bar.dart';
 import 'empty_search_page.dart';
 import 'error_page.dart';

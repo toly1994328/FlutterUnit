@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/style/behavior/no_scroll_behavior.dart';
+import 'package:flutter_unit/app/res/style/gap.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
+import 'package:flutter_unit/app/router/router_utils.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
+import 'package:flutter_unit/app/views/setting/setting_page.dart';
 import 'package:flutter_unit/update_part/views/update_red_point.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
@@ -27,11 +30,13 @@ class MePageItem extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+          Gap.sfl10,
           _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
           _buildItem(
               context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
           _buildItem(
               context, TolyIcon.icon_collect, '我的收藏', UnitRouter.collect),
+          Gap.sfl10,
           const Divider(height: 1),
           Stack(
             children: [
@@ -48,6 +53,7 @@ class MePageItem extends StatelessWidget {
           const Divider(
             height: 1,
           ),
+          Gap.sfl10,
           _buildItem(context, TolyIcon.icon_kafei, '联系本王', UnitRouter.about_me),
         ],
       ),
@@ -62,11 +68,7 @@ class MePageItem extends StatelessWidget {
           icon,
           color: Theme.of(context).primaryColor,
         ),
-        title: Stack(
-          children: [
-            Text(title),
-          ],
-        ),
+        title: Text(title, style:  const TextStyle(fontSize: 16)),
         trailing:
             Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
         onTap: () {

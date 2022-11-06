@@ -1,13 +1,14 @@
+import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/str_unit.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/widget_system/repositories/model/enums.dart';
 import 'package:flutter_unit/app/views/splash/splash_bottom.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import 'flutter_unit_text.dart';
 import 'unit_paint.dart';
@@ -18,7 +19,6 @@ import 'dart:io';
 
 class UnitSplash extends StatefulWidget {
   const UnitSplash({Key? key}) : super(key: key);
-
 
   @override
   _UnitSplashState createState() => _UnitSplashState();
@@ -101,7 +101,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final Size winSize = MediaQuery.of(context).size;
     return Material(
-      child: BlocListener<GlobalBloc, GlobalState>(
+      child: BlocListener<AppBloc, AppState>(
         listener: _listenStart,
         child: Stack(
           alignment: Alignment.center,
@@ -164,7 +164,7 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
       );
 
   // 监听资源加载完毕，启动，触发事件
-  void _listenStart(BuildContext context, GlobalState state) {
+  void _listenStart(BuildContext context, AppState state) {
     BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
     BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
@@ -175,3 +175,4 @@ class _UnitSplashState extends State<UnitSplash> with TickerProviderStateMixin {
   }
 
 }
+

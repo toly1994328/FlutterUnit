@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
+import 'package:flutter_unit/app/res/color_unit.dart';
+import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
@@ -18,10 +20,9 @@ class ItemStyleSettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('item样式设置'),
-      ),
-      body: BlocBuilder<GlobalBloc, GlobalState>(builder: (_, state) {
+      backgroundColor: ColorUnit.scaffoldBgLight,
+    appBar: const UnitAppbar(title: 'item样式设置'),
+      body: BlocBuilder<AppBloc, AppState>(builder: (_, state) {
         return _buildCell(context, state.itemStyleIndex);
       }),
     );
@@ -38,7 +39,7 @@ class ItemStyleSettingPage extends StatelessWidget {
                   a: 0.95,
                   duration: const Duration(milliseconds: 200),
                   onPressed: () {
-                    BlocProvider.of<GlobalBloc>(context)
+                    BlocProvider.of<AppBloc>(context)
                         .add(EventChangeItemStyle(i));
                   },
                   child: Stack(
