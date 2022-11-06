@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/router/router_utils.dart';
 
 import 'package:flutter_unit/components/project/no_more_widget.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 import 'package:flutter_unit/components/project/items/collect_widget_list_item.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 

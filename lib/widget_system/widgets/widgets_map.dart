@@ -37,6 +37,11 @@ class WidgetsMap {
           const AutocompleteDemo(),
           const AutocompleteType()
         ];
+        case "DateRangePickerDialog":
+        return [
+          const DateRangePickerDialogDemo(),
+          const DiyDateRangePickerDialogDemo()
+        ];
       case "CompositedTransformTarget":
         return [
           const CompositedTransformTargetDemo(),

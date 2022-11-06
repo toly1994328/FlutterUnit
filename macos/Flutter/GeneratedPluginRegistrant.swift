@@ -8,7 +8,7 @@ import Foundation
 import desktop_window
 import package_info_plus_macos
 import path_provider_macos
-import share_plus_macos
+import share_plus
 import shared_preferences_macos
 import sqflite
 import url_launcher_macos

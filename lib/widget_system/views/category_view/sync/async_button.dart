@@ -8,10 +8,8 @@ import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/point_system/api/category_api.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
-import 'package:flutter_unit/widget_system/repositories/local_db.dart';
-import 'package:flutter_unit/widget_system/repositories/rep/category_repository.dart';
+import 'package:db_storage/db_storage.dart';
+import 'package:widget_repository/widget_repository.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 /// create by 张风捷特烈 on 2021/2/24

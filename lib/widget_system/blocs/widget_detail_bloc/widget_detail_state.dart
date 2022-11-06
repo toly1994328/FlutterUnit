@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_unit/widget_system/repositories/model/node_model.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 
 /// create by 张风捷特烈 on 2020-03-03

@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_filter.dart';
-
+import 'package:widget_repository/widget_repository.dart';
+import 'package:db_storage/db_storage.dart';
 class AppSearchBar extends StatefulWidget {
 
   const AppSearchBar({Key? key}):super(key: key);
@@ -32,7 +32,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
               decoration:  InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
-                  contentPadding: EdgeInsets.only(top: isDesk?6:-1),//调整文字边距
+                  contentPadding: EdgeInsets.only(top: isDesk?6:1),//调整文字边距
                   prefixIcon: Icon(Icons.search),
                   border: UnderlineInputBorder(
                     borderSide: BorderSide.none,

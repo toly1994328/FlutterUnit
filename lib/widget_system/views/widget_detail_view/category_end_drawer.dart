@@ -3,12 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 
-import 'package:flutter_unit/widget_system/repositories/repositories.dart';
-
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';
-import 'package:flutter_unit/widget_system/repositories/model/category_model.dart';
-import 'package:flutter_unit/widget_system/repositories/model/widget_model.dart';
+import 'package:widget_repository/widget_repository.dart';
 import 'package:flutter_unit/components/project/unit_drawer_header.dart';
 
 /// create by 张风捷特烈 on 2020-04-22

@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
+import 'package:flutter_unit/app/res/color_unit.dart';
 import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
 
 import 'package:flutter_unit/components/permanent/code/code_widget.dart';
 import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
@@ -37,10 +39,9 @@ class Hello {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('代码高亮样式'),
-      ),
-      body: BlocBuilder<GlobalBloc, GlobalState>(
+      backgroundColor: ColorUnit.scaffoldBgLight,
+    appBar: const UnitAppbar(title: '代码高亮样式'),
+      body: BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => _buildFontCell(context,
               Cons.codeThemeSupport.keys.toList(), state.codeStyleIndex)),
     );
@@ -54,7 +55,7 @@ class Hello {
         a: 0.95,
         duration: const Duration(milliseconds: 200),
       onPressed: (){
-        BlocProvider.of<GlobalBloc>(context).add(EventSwitchCoderTheme(i));
+        BlocProvider.of<AppBloc>(context).add(EventSwitchCoderTheme(i));
       },
       child: Stack(
         fit: StackFit.passthrough,

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/res/style/app_style.dart';
 
 abstract class GlobalEvent extends Equatable {
   const GlobalEvent();
@@ -60,6 +61,15 @@ class EventSwitchShowOver extends GlobalEvent {
   List<Object> get props => [show];
 }
 
+class EventSwitchShowTool extends GlobalEvent {
+  final bool show;
+
+  const EventSwitchShowTool(this.show);
+
+  @override
+  List<Object> get props => [show];
+}
+
 class EventChangeItemStyle extends GlobalEvent {
   final int index;
 
@@ -67,4 +77,13 @@ class EventChangeItemStyle extends GlobalEvent {
 
   @override
   List<Object> get props => [index];
+}
+
+class EventChangeAppStyle extends GlobalEvent {
+  final AppStyle style;
+
+  const EventChangeAppStyle(this.style);
+
+  @override
+  List<Object> get props => [style];
 }

@@ -1,0 +1,79 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
+import 'package:flutter_unit/app/blocs/global/global_event.dart';
+import 'package:flutter_unit/app/blocs/global/global_state.dart';
+import 'package:flutter_unit/app/res/style/app_style.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:flutter_unit/components/permanent/circle.dart';
+
+/// create by 张风捷特烈 on 2020-04-10
+/// contact me by email 1981462002@qq.com
+/// 说明:
+
+
+void showAppStyleSelectDialog(BuildContext context) {
+  List<String> data = Cons.kAppStyleStringMap.values.toList();
+  showCupertinoModalPopup(
+      context: context,
+      builder: (context) => AppThemeSettingDialog(
+        data: data,
+      ));
+}
+
+class AppThemeSettingDialog extends StatelessWidget {
+  final List<String> data;
+
+
+  const AppThemeSettingDialog({Key? key,required this.data}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: SizedBox(
+        height: 350,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                '选择应用风格样式',
+                style:
+                TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+            ),
+            const Divider(height: 1,),
+            Expanded(
+              child: ListView.builder(
+                padding: EdgeInsets.zero,
+                itemBuilder: _buildItem,
+                itemCount: data.length,
+              ),
+            )
+          ],
+        ),
+        // color: Colors.orange,
+      ),
+    );
+  }
+
+  Widget _buildItem(BuildContext context, int index) {
+    AppStyle locale = Cons.kAppStyleStringMap.keys.toList()[index];
+    AppStyle style = BlocProvider.of<AppBloc>(context).state.appStyle;
+    bool checked = style == locale;
+    Color color = Theme.of(context).primaryColor;
+    return ListTile(
+      title: Text(data[index]),
+      onTap: () => _onSelect(context, index),
+      trailing: checked ? Icon(Icons.check, size: 20, color: color) : null,
+    );
+  }
+  void _onSelect(BuildContext context, int index) {
+    AppStyle appStyle = Cons.kAppStyleStringMap.keys.toList()[index];
+    BlocProvider.of<AppBloc>(context).add(EventChangeAppStyle(appStyle));
+    Navigator.of(context).pop();
+  }
+}

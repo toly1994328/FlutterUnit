@@ -14,6 +14,10 @@ class ColorUnit{
   static const Color input_hit_text_color = Color(0xff939EA7);
   static const Color head_text_color = Color(0xff666666);
 
+  static const Color scaffoldBgLight = Color(0xffF3F4F6);
+
+
+
   // 缺省相关
 
   static const Color error_color = Colors.red;
