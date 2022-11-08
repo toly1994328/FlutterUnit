@@ -106,7 +106,7 @@ class _CategoryInfoState extends State<CategoryInfo> {
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
-        spacing: 5,
+        spacing: 4,
         children: categories.map((e) => _buildItem(e)).toList(),
       ),
     );
@@ -119,6 +119,7 @@ class _CategoryInfoState extends State<CategoryInfo> {
         selectedColor: Colors.orange.withAlpha(120),
         shadowColor: Theme.of(context).primaryColor,
         elevation: 1,
+        labelPadding: const EdgeInsets.only(right: 4,left: 4),
         avatar: Circle(
           radius: 13,
           color: category.color,
@@ -128,8 +129,7 @@ class _CategoryInfoState extends State<CategoryInfo> {
         onSelected: (v) async {
           await repository.toggleCategory(category.id!, widget.id);
           _loadCategoryIds();
-          BlocProvider.of<CategoryWidgetBloc>(context)
-              .add(EventLoadCategoryWidget(category.id!));
+          BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(category.id!));
         });
   }
 

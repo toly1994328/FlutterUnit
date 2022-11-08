@@ -31,7 +31,7 @@ class _FlutterUnitTextState extends State<FlutterUnitText>
   void initState() {
     super.initState();
     TextSpan text = TextSpan(
-        text: widget.text, style: const TextStyle(fontSize: 40, color: Colors.blue));
+        text: widget.text, style: const TextStyle(fontSize: 32, color: Colors.blue));
     _textPainter.text = text;
     _textPainter.layout(); // 进行布局
 
@@ -93,7 +93,7 @@ class SpringPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     canvas.translate(size.width / 2, size.height / 2);
     TextSpan text =
-        TextSpan(text: _text, style: TextStyle(fontSize: 40, color: color));
+        TextSpan(text: _text, style: TextStyle(fontSize: 32, color: color));
     textPainter.text = text;
     textPainter.layout(); // 进行布局
     Size textSize = textPainter.size; // 尺寸必须在布局后获取
@@ -103,7 +103,7 @@ class SpringPainter extends CustomPainter {
     textPainter.paint(canvas, Offset.zero);
     TextSpan textShadow = TextSpan(
         text: _text,
-        style: TextStyle(fontSize: 40, color: color.withAlpha(88)));
+        style: TextStyle(fontSize: 32, color: color.withAlpha(88)));
     textPainter.text = textShadow;
     textPainter.layout(); // 进行布局
     Matrix4 matrix4 = Matrix4.skewX((6 / 180 * pi) * skew.value);
