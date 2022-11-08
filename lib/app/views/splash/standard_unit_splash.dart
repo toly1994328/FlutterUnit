@@ -4,7 +4,7 @@ import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/str_unit.dart';
+import 'package:flutter_unit/app/res/cons/str_unit.dart';
 import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/views/splash/splash_bottom.dart';
@@ -64,7 +64,7 @@ class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProv
                       padding:  EdgeInsets.all(8.0),
                       child:  Text('&',style: TextStyle(fontSize: 30),),
                     ),
-                    _buildFlutterLogo(),
+                    const FlutterLogo(size: 60),
                   ],
                 ),
                 const SizedBox(height: 20,),
@@ -76,8 +76,8 @@ class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProv
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: const [
-                Text("Power By 张风捷特烈", style: TStyleUnit.splashShadows),
-                Text("· 2021 ·  @编程之王 ", style: TStyleUnit.splashShadows),
+                Text("Power By 张风捷特烈", style: UnitTextStyle.splashShadows),
+                Text("· 2021 ·  @编程之王 ", style: UnitTextStyle.splashShadows),
               ],
             ))
           ],
@@ -93,16 +93,11 @@ class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProv
       height: 50,
     ),
   );
+
   Widget _buildFlutterUnitText(double winH, double winW) {
     return FlutterUnitText(
       text: StrUnit.appName,
       color: Theme.of(context).primaryColor,
-    );
-  }
-
-  Widget _buildFlutterLogo() {
-    return FlutterLogo(
-      size: 60,
     );
   }
 

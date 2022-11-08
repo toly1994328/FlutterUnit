@@ -41,8 +41,8 @@ class _SplashBottomState extends State<SplashBottom> {
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: const [
-                Text("Power By 张风捷特烈", style: TStyleUnit.splashShadows),
-                Text("· 2021 ·  @编程之王 ", style: TStyleUnit.splashShadows),
+                Text("Power By 张风捷特烈", style: UnitTextStyle.splashShadows),
+                Text("· 2021 ·  @编程之王 ", style: UnitTextStyle.splashShadows),
               ],
         ));
   }

@@ -9,10 +9,13 @@ import 'widget_detail_state.dart';
 /// 说明:
 
 class WidgetDetailBloc extends Bloc<DetailEvent, DetailState> {
+  final WidgetRepository widgetRepository;
+  final NodeRepository nodeRepository;
 
-  final WidgetRepository repository;
-
-  WidgetDetailBloc({required this.repository}) : super(DetailLoading()) {
+  WidgetDetailBloc({
+    required this.widgetRepository,
+    required this.nodeRepository,
+  }) : super(DetailLoading()) {
     on<FetchWidgetDetail>(_onFetchWidgetDetail);
     on<ResetDetailState>(_onResetDetailState);
   }
@@ -21,22 +24,27 @@ class WidgetDetailBloc extends Bloc<DetailEvent, DetailState> {
       FetchWidgetDetail event, Emitter<DetailState> emit) async {
     emit(DetailLoading());
     try {
+      final WidgetModel widget = event.widgetModel;
       final List<NodeModel> nodes =
-          await repository.loadNode(event.widgetModel);
+          await nodeRepository.loadNode(widget.id);
       final List<WidgetModel> links =
-          await repository.loadWidget(event.widgetModel.links);
+          await widgetRepository.loadWidget(widget.links);
       if (nodes.isEmpty) {
         emit(DetailEmpty());
       } else {
         emit(DetailWithData(
-            widgetModel: event.widgetModel, nodes: nodes, links: links));
+          widgetModel: widget,
+          nodes: nodes,
+          links: links,
+        ));
       }
     } catch (_) {
       emit(DetailFailed());
     }
   }
 
-  void _onResetDetailState(ResetDetailState event, Emitter<DetailState> emit) async{
+  void _onResetDetailState(
+      ResetDetailState event, Emitter<DetailState> emit) async {
     emit(DetailLoading());
   }
 }

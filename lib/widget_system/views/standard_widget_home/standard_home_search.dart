@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/router_utils.dart';
+import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
 import 'search_page/standard_search_page.dart';
 
@@ -20,15 +21,18 @@ class StandardHomeSearch extends StatelessWidget
       child: Row(
         children: [
           const SizedBox(width: 15),
-          const CircleAvatar(
-            radius: 16,
-            backgroundImage: AssetImage('assets/images/icon_head.webp'),
+          FeedbackWidget(
+            onPressed: () => _openDrawer(context),
+            child: const CircleAvatar(
+              radius: 16,
+              backgroundImage: AssetImage('assets/images/icon_head.webp'),
+            ),
           ),
           Expanded(
             child: GestureDetector(
               onTap: () {
-                Navigator.of(context)
-                    .push(FadeRouter(child: const StandardSearchPageProvider()));
+                Navigator.of(context).push(
+                    FadeRouter(child: const StandardSearchPageProvider()));
               },
               child: Container(
                   height: 35,
@@ -64,5 +68,9 @@ class StandardHomeSearch extends StatelessWidget
         ],
       ),
     );
+  }
+
+  void _openDrawer(BuildContext context) {
+    Scaffold.of(context).openDrawer();
   }
 }

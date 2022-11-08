@@ -6,9 +6,9 @@ class AppTheme {
   static ThemeData darkTheme(AppState state) => ThemeData(
       fontFamily: state.fontFamily,
       brightness: Brightness.dark,
-      primaryColor: Color(0xff4699FB),
+      primaryColor: const Color(0xff4699FB),
       appBarTheme: const AppBarTheme(backgroundColor: Color(0xff222222)),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
         backgroundColor: Color(0xff4699FB)
       ),
@@ -16,7 +16,7 @@ class AppTheme {
       // switchTheme: SwitchThemeData(
       //     // trackColor: '',
       //     ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xff181818),
           selectedItemColor: Color(0xff4699FB)),
       scaffoldBackgroundColor: const Color(0xff010201));

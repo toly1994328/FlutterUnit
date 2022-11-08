@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:flutter_unit/app/res/style/unit_text_style.dart';
+import 'md_text_styles.dart';
 import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/components/permanent/markdown/syntax_high_lighter.dart';
 
@@ -22,65 +22,65 @@ class MarkdownWidget extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(4.0)),
                 color: codeBackground,
                 border:  Border.all(
-                    color: UnitColor.subTextColor, width: 0.3)))
+                    color: MdTextStyles.subTextColor, width: 0.3)))
         .copyWith(
             blockquoteDecoration:  BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-                color: UnitColor.subTextColor,
+                color: MdTextStyles.subTextColor,
                 border:  Border.all(
-                    color: UnitColor.subTextColor, width: 0.3)),
-            blockquote: TStyleUnit.smallTextWhite);
+                    color: MdTextStyles.subTextColor, width: 0.3)),
+            blockquote: MdTextStyles.smallTextWhite);
   }
 
   _getStyleSheetDark(BuildContext context) {
     return _getCommonSheet(context, const Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
-      p: TStyleUnit.smallTextWhite,
-      h1: TStyleUnit.largeLargeTextWhite,
-      h2: TStyleUnit.largeTextWhiteBold,
-      h3: TStyleUnit.normalTextMitWhiteBold,
-      h4: TStyleUnit.middleTextWhite,
-      h5: TStyleUnit.smallTextWhite,
-      h6: TStyleUnit.smallTextWhite,
+      p: MdTextStyles.smallTextWhite,
+      h1: MdTextStyles.largeLargeTextWhite,
+      h2: MdTextStyles.largeTextWhiteBold,
+      h3: MdTextStyles.normalTextMitWhiteBold,
+      h4: MdTextStyles.middleTextWhite,
+      h5: MdTextStyles.smallTextWhite,
+      h6: MdTextStyles.smallTextWhite,
       em: const TextStyle(fontStyle: FontStyle.italic),
-      strong: TStyleUnit.middleTextWhiteBold,
-      code: TStyleUnit.smallSubText,
+      strong: MdTextStyles.middleTextWhiteBold,
+      code: MdTextStyles.smallSubText,
     );
   }
 
   MarkdownStyleSheet _getStyleSheetWhite(BuildContext context) {
     return _getCommonSheet(context, const Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
-      p: TStyleUnit.smallText,
-      h1: TStyleUnit.largeLargeText,
-      h2: TStyleUnit.largeTextBold,
-      h3: TStyleUnit.normalTextBold,
-      h4: TStyleUnit.middleText,
-      h5: TStyleUnit.smallText,
-      h6: TStyleUnit.smallText,
-      strong: TStyleUnit.middleTextBold,
-      code: TStyleUnit.smallSubText,
+      p: MdTextStyles.smallText,
+      h1: MdTextStyles.largeLargeText,
+      h2: MdTextStyles.largeTextBold,
+      h3: MdTextStyles.normalTextBold,
+      h4: MdTextStyles.middleText,
+      h5: MdTextStyles.smallText,
+      h6: MdTextStyles.smallText,
+      strong: MdTextStyles.middleTextBold,
+      code: MdTextStyles.smallSubText,
     );
   }
 
   _getStyleSheetTheme(BuildContext context) {
     return _getCommonSheet(context, const Color.fromRGBO(40, 44, 52, 1.00)).copyWith(
-      p: TStyleUnit.smallTextWhite,
-      h1: TStyleUnit.largeLargeTextWhite,
-      h2: TStyleUnit.largeTextWhiteBold,
-      h3: TStyleUnit.normalTextMitWhiteBold,
-      h4: TStyleUnit.middleTextWhite,
-      h5: TStyleUnit.smallTextWhite,
-      h6: TStyleUnit.smallTextWhite,
+      p: MdTextStyles.smallTextWhite,
+      h1: MdTextStyles.largeLargeTextWhite,
+      h2: MdTextStyles.largeTextWhiteBold,
+      h3: MdTextStyles.normalTextMitWhiteBold,
+      h4: MdTextStyles.middleTextWhite,
+      h5: MdTextStyles.smallTextWhite,
+      h6: MdTextStyles.smallTextWhite,
       em: const TextStyle(fontStyle: FontStyle.italic),
-      strong: TStyleUnit.middleTextWhiteBold,
-      code: TStyleUnit.smallSubText,
+      strong: MdTextStyles.middleTextWhiteBold,
+      code: MdTextStyles.smallSubText,
     );
   }
 
   _getBackgroundColor(context) {
-    Color background = UnitColor.white;
+    Color background = MdTextStyles.white;
     switch (style) {
       case kDarkLight:
-        background = UnitColor.primaryLightValue;
+        background = MdTextStyles.primaryLightValue;
         break;
       case kDarkTheme:
         background = Theme.of(context).primaryColor;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/style_unit.dart';
+import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 
 /// create by 张风捷特烈 on 2020/11/17
 /// contact me by email 1981462002@qq.com
@@ -27,7 +27,7 @@ class EmptyShower extends StatelessWidget {
               child: Text(
                 message,
                 textAlign: TextAlign.center,
-                style: TextStyleUnit.headTextStyle.copyWith(color: color),
+                style: UnitTextStyle.headTextStyle.copyWith(color: color),
               ),
             )
           ],

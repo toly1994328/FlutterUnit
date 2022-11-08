@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
@@ -58,6 +59,9 @@ class _CollectPageState extends State<CollectPage>
     final Color color = BlocProvider.of<ColorChangeCubit>(context).state.color;
 
     return SliverAppBar(
+      systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarIconBrightness: Brightness.light
+      ),
       leading: Container(
           margin: const EdgeInsets.all(10),
           child: FeedbackWidget(

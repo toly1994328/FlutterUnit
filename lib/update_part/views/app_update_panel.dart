@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/bloc_exp.dart';
+import 'package:flutter_unit/update_part/bloc_exp.dart';
 
 class AppUpdatePanel extends StatelessWidget {
   const AppUpdatePanel({Key? key}) : super(key: key);

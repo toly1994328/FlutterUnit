@@ -59,9 +59,7 @@ class HomeDrawer extends StatelessWidget {
           _buildItem(context, TolyIcon.icon_tag, '属性集录', ''),
           _buildItem(context, Icons.palette, '绘画集录', ''),
           _buildItem(context, Icons.widgets, '布局集录', ''),
-          _buildItem(context, TolyIcon.icon_bug, '要点集录', UnitRouter.issues_point,onTap: (){
-            BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
-          }),
+          _buildItem(context, TolyIcon.icon_bug, '要点集录', UnitRouter.issues_point),
         ],
       );
 

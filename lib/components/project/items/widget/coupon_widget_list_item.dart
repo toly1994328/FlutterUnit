@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/res/cons/cons.dart';
 import 'package:flutter_unit/app/res/style/shape/coupon_shape_border.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 

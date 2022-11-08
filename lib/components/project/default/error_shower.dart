@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/color_unit.dart';
-import 'package:flutter_unit/app/res/style_unit.dart';
+
+import 'package:flutter_unit/app/res/style/unit_color.dart';
+import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 
 /// create by 张风捷特烈 on 2020/11/17
 /// contact me by email 1981462002@qq.com
@@ -26,11 +27,11 @@ class ErrorShower extends StatelessWidget {
               child: Icon(
                 Icons.error,
                 size: 80,
-                color: ColorUnit.error_color,
+                color: UnitColor.error_color,
               )),
           Text(
             error,
-            style: TextStyleUnit.headTextStyle.copyWith(color: ColorUnit.error_color),
+            style: UnitTextStyle.headTextStyle.copyWith(color: UnitColor.error_color),
             textAlign: TextAlign.center,
           )
         ],
