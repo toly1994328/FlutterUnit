@@ -62,7 +62,7 @@ class StandardSearchPage extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemBuilder: (_,index)=>StandardWidgetItem(
             searchArg: state.filter.name,
-            model: state.widgets[index], onTap: ()=>_toDetail(context, state.widgets[index])),itemCount: state.widgets.length,);
+            model: state.widgets[index], onTap: ()=> _toDetail(context, state.widgets[index])),itemCount: state.widgets.length,);
     }
 
 
@@ -80,7 +80,7 @@ class StandardSearchPage extends StatelessWidget {
   }
 
   void _toDetail(BuildContext context,WidgetModel model){
-    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
+    // BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(
       context,
       UnitRouter.widget_detail,
