@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/color_unit.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+
+import 'package:flutter_unit/app/res/cons/cons.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_event.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
+import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
@@ -20,7 +21,7 @@ class ThemeColorSettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorUnit.scaffoldBgLight,
+      backgroundColor: UnitColor.scaffoldBgLight,
       appBar: const UnitAppbar(title:'主题色设置'),
       body: BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => _buildCell(

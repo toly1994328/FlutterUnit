@@ -2,7 +2,7 @@ import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/str_unit.dart';
+import 'package:flutter_unit/app/res/cons/str_unit.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/views/splash/splash_bottom.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';

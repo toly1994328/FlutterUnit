@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/star.dart';
 import 'package:flutter_star/star_score.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/res/cons/cons.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';
 import 'package:flutter_unit/components/permanent/circle_text.dart';
 import 'package:flutter_unit/components/permanent/tag.dart';

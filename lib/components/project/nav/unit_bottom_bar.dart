@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/size_unit.dart';
+import 'package:flutter_unit/app/res/theme/size_unit.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/update_part/views/update_red_point.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';

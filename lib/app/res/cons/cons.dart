@@ -2,8 +2,8 @@ import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
 
-import 'style/app_style.dart';
-import 'toly_icon.dart';
+import '../theme/app_style.dart';
+import '../toly_icon.dart';
 
 class Cons {
 

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/color_unit.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+
+import 'package:flutter_unit/app/res/cons/cons.dart';
+import 'package:flutter_unit/app/res/style/unit_color.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
@@ -25,7 +26,7 @@ class SettingPage extends StatelessWidget {
       appBar: const UnitAppbar(title:'应用设置'),
       body: ListView(
         children: <Widget>[
-          Container( height: 15,color: ColorUnit.scaffoldBgLight),
+          Container( height: 15,color: UnitColor.scaffoldBgLight),
 
           ListTile(
             leading: Icon(
@@ -75,7 +76,7 @@ class SettingPage extends StatelessWidget {
             onTap: () => Navigator.of(context).pushNamed(UnitRouter.font_setting),
           ),
           divider,
-          Container( height: 10,color: ColorUnit.scaffoldBgLight),
+          Container( height: 10,color: UnitColor.scaffoldBgLight),
           ListTile(
             leading: Icon(
               TolyIcon.icon_item,
@@ -97,14 +98,14 @@ class SettingPage extends StatelessWidget {
             onTap: () => Navigator.of(context).pushNamed(UnitRouter.code_style_setting),
           ),
           divider,
-          Container( height: 10,color: ColorUnit.scaffoldBgLight),
+          Container( height: 10,color: UnitColor.scaffoldBgLight),
           _buildShowBg(context),
           divider,
           _buildShowOver(context),
           divider,
           // _buildShowTool(context),
           // divider,
-          Container( height: 10,color: ColorUnit.scaffoldBgLight),
+          Container( height: 10,color: UnitColor.scaffoldBgLight),
           ListTile(
             leading: Icon(
               Icons.info,

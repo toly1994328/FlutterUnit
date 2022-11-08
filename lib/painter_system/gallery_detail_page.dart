@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
 
@@ -72,20 +73,25 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            flex: 20,
-            child: buildTopBar(context),
-          ),
-          Expanded(
-              flex: 80,
-              child: PageView(
-                controller: _ctrl,
-                children: widget.children,
-                onPageChanged: _onPageChanged,
-              ))
-        ],
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value:const SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.light
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 20,
+              child: buildTopBar(context),
+            ),
+            Expanded(
+                flex: 80,
+                child: PageView(
+                  controller: _ctrl,
+                  children: widget.children,
+                  onPageChanged: _onPageChanged,
+                ))
+          ],
+        ),
       ),
     );
   }

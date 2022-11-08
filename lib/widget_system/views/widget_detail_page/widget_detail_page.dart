@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/res/cons/cons.dart';
 import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
@@ -16,6 +17,27 @@ import '../../widgets/widgets_map.dart';
 import 'category_end_drawer.dart';
 import 'widget_detail_panel.dart';
 
+// 用于组件详情不需要在一开始就加载
+// WidgetDetailBloc 可以在稍后提供
+class WidgetDetailPageScope extends StatelessWidget {
+  final WidgetModel model;
+
+  const WidgetDetailPageScope({super.key, required this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<WidgetDetailBloc>(
+      create: (_) => WidgetDetailBloc(
+          widgetRepository: const WidgetDbRepository(),
+          nodeRepository: const NodeDbRepository())
+        ..add(FetchWidgetDetail(model)),
+      child: WidgetDetailPage(
+        model: model,
+      ),
+    );
+  }
+}
+
 class WidgetDetailPage extends StatefulWidget {
   final WidgetModel model;
 
@@ -27,6 +49,7 @@ class WidgetDetailPage extends StatefulWidget {
 
 class _WidgetDetailPageState extends State<WidgetDetailPage> {
   final List<WidgetModel> _modelStack = [];
+
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
   @override
@@ -45,6 +68,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         endDrawer: CategoryEndDrawer(widget: currentWidgetModel),
         appBar: AppBar(
           title: Text(currentWidgetModel.name),
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.light
+          ),
           leading: const BackButton(),
           actions: <Widget>[
             _buildToHome(),
@@ -70,7 +96,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
             padding: EdgeInsets.only(left: 15, right: 5),
             child: Icon(Icons.link, color: Colors.blue),
           ),
-          Text('相关组件', style: TStyleUnit.labelBold),
+          Text('相关组件', style: UnitTextStyle.labelBold),
         ],
       );
 
@@ -138,7 +164,6 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     );
   }
 
-
   void _toggleLikeState(BuildContext context) {
     BlocProvider.of<LikeWidgetBloc>(context).add(
       ToggleLikeWidgetEvent(id: currentWidgetModel.id),
@@ -146,7 +171,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
   }
 
   Future<bool> _whenPop(BuildContext context) async {
-    if (Scaffold.of(context).isEndDrawerOpen||_modelStack.isEmpty) return true;
+    if (Scaffold.of(context).isEndDrawerOpen || _modelStack.isEmpty) {
+      return true;
+    }
     _modelStack.removeLast();
     if (_modelStack.isNotEmpty) {
       BlocProvider.of<WidgetDetailBloc>(context).add(
@@ -183,8 +210,8 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
                     shadowColor: chipColor,
                     backgroundColor: chipColor,
                     labelStyle: model.deprecated
-                        ? TStyleUnit.deprecatedChip
-                        : TStyleUnit.commonChip,
+                        ? UnitTextStyle.deprecatedChip
+                        : UnitTextStyle.commonChip,
                     label: Text(model.name),
                   ))
               .toList(),
@@ -217,4 +244,3 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     ));
   }
 }
-

@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
-import 'package:flutter_unit/app/res/cons.dart';
+import 'package:flutter_unit/app/res/cons/cons.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:flutter_unit/components/permanent/decorations/round_rect_rab_indicator.dart';
 import 'package:flutter_unit/components/permanent/sliver_header/sliver_pinned_header.dart';
 import 'package:flutter_unit/components/permanent/sliver_header/sliver_snap_header.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:flutter_unit/widget_system/views/widget_home/home_drawer.dart';
 
 import 'standard_home_search.dart';
 import 'widget_list_panel.dart';
@@ -84,6 +85,7 @@ class _StandardHomePageState extends State<StandardHomePage>
 
     return Scaffold(
       backgroundColor: const Color(0xffF3F4F6),
+      drawer: const HomeDrawer(),
       body: Column(
         children: [
           AnnotatedRegion<SystemUiOverlayStyle>(

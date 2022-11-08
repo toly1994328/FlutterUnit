@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/res/style/app_style.dart';
+import 'package:flutter_unit/app/res/theme/app_style.dart';
 
 class UnitAppbar extends StatelessWidget implements PreferredSizeWidget{
   final String title;

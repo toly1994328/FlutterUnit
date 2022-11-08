@@ -39,7 +39,7 @@ class CategoryEndDrawer extends StatelessWidget {
         Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Panel(
-        child: Text(widget.info, style: TStyleUnit.shadowTextStyle),
+        child: Text(widget.info, style: UnitTextStyle.shadowTextStyle),
       ),
         ),
         const Divider(),

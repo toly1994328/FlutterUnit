@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/style/app_style.dart';
+import 'package:flutter_unit/app/res/theme/app_style.dart';
 
 abstract class GlobalEvent extends Equatable {
   const GlobalEvent();

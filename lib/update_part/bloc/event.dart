@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_unit/bloc_exp.dart';
+import 'package:flutter_unit/update_part/bloc_exp.dart';
 import 'package:flutter_unit/point_system/api/app_info.dart';
 
 abstract class UpdateEvent extends Equatable {

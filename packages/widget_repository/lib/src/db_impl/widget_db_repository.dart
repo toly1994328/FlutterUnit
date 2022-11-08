@@ -9,8 +9,9 @@ import 'package:db_storage/db_storage.dart';
 
 class WidgetDbRepository implements WidgetRepository {
 
+  const WidgetDbRepository();
+
   WidgetDao get widgetDao => LocalDb.instance.widgetDao;
-  NodeDao get nodeDao => LocalDb.instance.nodeDao;
   LikeDao get likeDao => LocalDb.instance.likeDao;
 
   @override
@@ -26,13 +27,6 @@ class WidgetDbRepository implements WidgetRepository {
     List<Map<String, dynamic>> data = await widgetDao.search(args);
     List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();
-  }
-
-  @override
-  Future<List<NodeModel>> loadNode(WidgetModel widgetModel) async {
-    List<Map<String, dynamic>> data = await nodeDao.queryById(widgetModel.id);
-    List<NodeModel> nodes = data.map((e) => NodeModel.fromJson(e)).toList();
-    return nodes;
   }
 
   @override

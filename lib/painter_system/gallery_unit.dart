@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
@@ -84,28 +85,33 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ValueListenableBuilder(
-        child: Column(
-          children: [
-            _buildTitle(context),
-            Expanded(
-                child: Container(
-              margin: const EdgeInsets.only(left: 8, right: 8),
-              child: BlocBuilder<GalleryUnitBloc,String>(
-                builder: _buildContentByState,
-              ),
-              decoration: boxDecoration,
-            ))
-          ],
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value:const SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.light
         ),
-        valueListenable: factor,
-        builder: (_,double value, child) => Container(
-          color: isDark?null:Color.lerp(
-            color,
-            nextColor,
-            value,
+        child:ValueListenableBuilder(
+          child: Column(
+            children: [
+              _buildTitle(context),
+              Expanded(
+                  child: Container(
+                margin: const EdgeInsets.only(left: 8, right: 8),
+                child: BlocBuilder<GalleryUnitBloc,String>(
+                  builder: _buildContentByState,
+                ),
+                decoration: boxDecoration,
+              ))
+            ],
           ),
-          child: child,
+          valueListenable: factor,
+          builder: (_,double value, child) => Container(
+            color: isDark?null:Color.lerp(
+              color,
+              nextColor,
+              value,
+            ),
+            child: child,
+          ),
         ),
       ),
     );
