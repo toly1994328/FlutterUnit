@@ -22,6 +22,7 @@ import 'base/draw_picture.dart';
 
 import 'base/n_side/n_side_page.dart';
 import 'base/polar/polar_painter_widget.dart';
+import 'base/windmill.dart';
 import 'fun/bufeng/bufeng_panel.dart';
 import 'fun/dundun_view.dart';
 import 'fun/random_portrait.dart';
@@ -49,6 +50,12 @@ class GalleryFactory {
               srcUrl: "/base/draw_picture.dart",
               info: "本样例介绍如何进行图片的绘制：通过加载图片并将图片资源绘制到指定的区域。在上层绘制一批 45° 倾角的栅格线，来练习线条的绘制。",
               content: DrawPicture()),
+          FrameShower(
+              title: "旋转风车",
+              author: "张风捷特烈",
+              srcUrl: "/base/windmill.dart",
+              info: "本样例介绍如何进行简单的路径绘制，以及画板的旋转，再结合动画让风车旋转。这是一个非常精简的绘制与动画结合的案例。",
+              content: WindmillWidget()),
           FrameShower(
               title: "平面直角坐标系",
               author: "张风捷特烈",
