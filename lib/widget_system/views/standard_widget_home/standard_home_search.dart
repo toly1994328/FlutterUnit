@@ -51,7 +51,6 @@ class StandardHomeSearch extends StatelessWidget
                             Icons.search,
                             color: Colors.grey,
                           ),
-                          contentPadding: EdgeInsets.only(right: 0),
                           border: UnderlineInputBorder(
                             borderSide: BorderSide.none,
                             borderRadius:

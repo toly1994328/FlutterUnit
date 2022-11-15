@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 38,
 //      "name": '图片重复模式',
 //      "priority": 5,
-//      "subtitle":
-//          "【repeat】 : 重复模式*4   【ImageRepeat】",
+//      "subtitle": "【repeat】 : 重复模式*4   【ImageRepeat】",
 //    },
 
 class RepeatImage extends StatelessWidget {

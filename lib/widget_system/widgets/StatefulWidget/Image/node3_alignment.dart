@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 38,
 //      "name": '图片对齐模式',
 //      "priority": 3,
-//      "subtitle":
-//          "【alignment】 : 颜色   【AlignmentGeometry】\n"
+//      "subtitle": "【alignment】 : 颜色   【AlignmentGeometry】\n"
 //          "    常用Alignment类的九个静态常量，但也可定制位置",
 //    },
 
@@ -41,7 +40,7 @@ class AlignmentImage extends StatelessWidget {
             image: const AssetImage("assets/images/wy_30x20.webp"),
             alignment: alignment,
           )),
-      Text(alignment.toString())
+      Text(alignment.toString().split(".")[1])
     ]))
         .toList();
     var imageAlignment = Wrap(children: imgLi);

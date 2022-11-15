@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 38,
 //      "name": '图片的适应模式',
 //      "priority": 2,
-//      "subtitle":
-//          "【fit】 : 适应模式*7   【BoxFit】\n",
+//      "subtitle": "【fit】 : 适应模式*7   【BoxFit】\n",
 //    },
 
 class FitImage extends StatefulWidget {
