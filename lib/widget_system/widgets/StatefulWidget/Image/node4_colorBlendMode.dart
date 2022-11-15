@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 38,
 //      "name": '图片颜色及混合模式',
 //      "priority": 4,
-//      "subtitle":
-//          "【color】 : 颜色   【Color】\n"
+//      "subtitle": "【color】 : 颜色   【Color】\n"
 //          "【colorBlendMode】: 混合模式*29 【BlendMode】",
 //    },
 

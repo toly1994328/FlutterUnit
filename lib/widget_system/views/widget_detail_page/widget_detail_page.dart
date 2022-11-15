@@ -15,6 +15,7 @@ import 'package:widget_repository/widget_repository.dart';
 
 import '../../widgets/widgets_map.dart';
 import 'category_end_drawer.dart';
+import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
 
 // 用于组件详情不需要在一开始就加载
@@ -66,23 +67,6 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
     return BlocBuilder<WidgetDetailBloc, DetailState>(
       builder: (_, state) => Scaffold(
         endDrawer: CategoryEndDrawer(widget: currentWidgetModel),
-        appBar: AppBar(
-          title: Text(currentWidgetModel.name),
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarIconBrightness: Brightness.light
-          ),
-          leading: const BackButton(),
-          actions: <Widget>[
-            _buildToHome(),
-            FeedbackWidget(
-              onPressed: () => _toggleLikeState(context),
-              child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
-                listener: _listenLikeStateChange,
-                builder: _buildByLikeState,
-              ),
-            )
-          ],
-        ),
         body: Builder(builder: (ctx) {
           return _buildContent(ctx, state);
         }),
@@ -105,6 +89,9 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         onWillPop: () => _whenPop(context),
         child: CustomScrollView(
           slivers: [
+            SliverWidgetDetailBar(
+                model: _modelStack.last
+            ),
             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,52 +110,7 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
         ));
   }
 
-  Widget _buildToHome() => Builder(
-      builder: (ctx) => GestureDetector(
-          onLongPress: () => Scaffold.of(ctx).openEndDrawer(),
-          child: const Padding(
-            padding: EdgeInsets.all(15.0),
-            child: Icon(Icons.home),
-          ),
-          onTap: () => Navigator.of(ctx).pop()));
 
-  // 监听 LikeWidgetBloc 伺机弹出 toast
-  void _listenLikeStateChange(BuildContext context, LikeWidgetState state) {
-    bool collected = state.widgets.contains(currentWidgetModel);
-    String msg = collected
-        ? "收藏【${currentWidgetModel.name}】组件成功!"
-        : "已取消【${currentWidgetModel.name}】组件收藏!";
-
-    Toast.toast(
-      context,
-      msg,
-      duration: Duration(milliseconds: collected ? 1500 : 600),
-      action: collected
-          ? SnackBarAction(
-              textColor: Colors.white,
-              label: '收藏夹管理',
-              onPressed: () => Scaffold.of(context).openEndDrawer())
-          : null,
-    );
-  }
-
-  // 根据 [LikeWidgetState ] 构建图标
-  Widget _buildByLikeState(BuildContext context, LikeWidgetState state) {
-    bool liked = state.widgets.contains(currentWidgetModel);
-    return Padding(
-      padding: const EdgeInsets.only(right: 20.0),
-      child: Icon(
-        liked ? TolyIcon.icon_star_ok : TolyIcon.icon_star_add,
-        size: 25,
-      ),
-    );
-  }
-
-  void _toggleLikeState(BuildContext context) {
-    BlocProvider.of<LikeWidgetBloc>(context).add(
-      ToggleLikeWidgetEvent(id: currentWidgetModel.id),
-    );
-  }
 
   Future<bool> _whenPop(BuildContext context) async {
     if (Scaffold.of(context).isEndDrawerOpen || _modelStack.isEmpty) {
@@ -205,9 +147,11 @@ class _WidgetDetailPageState extends State<WidgetDetailPage> {
           spacing: 5,
           children: links
               .map((WidgetModel model) => ActionChip(
+            labelPadding: EdgeInsets.zero,
+            side: BorderSide.none,
                     onPressed: () => _toLinkWidget(model),
-                    elevation: 2,
-                    shadowColor: chipColor,
+                    elevation: 1,
+                    // shadowColor: chipColor,
                     backgroundColor: chipColor,
                     labelStyle: model.deprecated
                         ? UnitTextStyle.deprecatedChip

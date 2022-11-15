@@ -13,6 +13,7 @@ import 'package:flutter_unit/app/blocs/global/global_state.dart';
 
 import 'flutter_unit_text.dart';
 import 'dart:ui' as ui;
+
 /// create by 张风捷特烈 on 2020-03-07
 /// contact me by email 1981462002@qq.com
 /// 说明: app 闪屏页
@@ -24,74 +25,91 @@ class StandardUnitSplash extends StatefulWidget {
   _StandardUnitSplashState createState() => _StandardUnitSplashState();
 }
 
-class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProviderStateMixin {
- static const int _minCost = 1500;
+class _StandardUnitSplashState extends State<StandardUnitSplash>
+    with TickerProviderStateMixin {
+  static const int _minCost = 1500;
 
-  int _recoder = 0;
+  int _recorder = 0;
 
-  final Paint paint = Paint()..style=PaintingStyle.stroke..shader= ui.Gradient.linear(
-      const Offset(0, 0), const Offset(22, 0), [Colors.red,Colors.yellow,Colors.blue,Colors.green], [1/4,2/4,3/4,1],TileMode.mirror,Matrix4.rotationZ(pi/4).storage);
+  final Paint paint = Paint()
+    ..style = PaintingStyle.stroke
+    ..shader = ui.Gradient.linear(
+      const Offset(0, 0),
+      const Offset(22, 0),
+      [Colors.red, Colors.yellow, Colors.blue, Colors.green],
+      [1 / 4, 2 / 4, 3 / 4, 1],
+      TileMode.mirror,
+      Matrix4.rotationZ(pi / 4).storage,
+    );
 
   @override
   void initState() {
     super.initState();
-    _recoder = DateTime.now().millisecondsSinceEpoch;
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-      ),
-    );
+    _recorder = DateTime.now().millisecondsSinceEpoch;
   }
 
   @override
   Widget build(BuildContext context) {
     final Size winSize = MediaQuery.of(context).size;
-    return Material(
-      child: BlocListener<AppBloc, AppState>(
-        listener: _listenStart,
-        child: Column(
-          children: [
-            const Spacer(),
-            Expanded(child:  Wrap(
-              direction: Axis.vertical,
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark),
+      child: Material(
+        child: BlocListener<AppBloc, AppState>(
+            listener: _listenStart,
+            child: Column(
               children: [
-                Stack(
-                  children: [
-                    Text("U",style: TextStyle(
-                        fontSize: 26,
-                        height: 1,
-                        fontWeight: FontWeight.bold,
-                        foreground: paint
-                    ),),
-                    const FlutterLogo(size: 60),
-                  ],
-                ),
-                const SizedBox(height: 20,),
-                _buildFlutterUnitText(winSize.height, winSize.width),
-              ],
-            )),
-            Expanded(child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Positioned(bottom: 15, child: Wrap(
+                const Spacer(),
+                Expanded(
+                    child: Wrap(
                   direction: Axis.vertical,
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
-                  children: const [
-                    Text("Power By 张风捷特烈", style: UnitTextStyle.splashShadows),
-                    Text("· 2021 ·  @编程之王 ", style: UnitTextStyle.splashShadows),
+                  children: [
+                    Stack(
+                      children: [
+                        Text(
+                          "U",
+                          style: TextStyle(
+                              fontSize: 26,
+                              height: 1,
+                              fontWeight: FontWeight.bold,
+                              foreground: paint),
+                        ),
+                        const FlutterLogo(size: 60),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    _buildFlutterUnitText(winSize.height, winSize.width),
                   ],
                 )),
+                Expanded(
+                    child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Positioned(
+                        bottom: 15,
+                        child: Wrap(
+                          direction: Axis.vertical,
+                          alignment: WrapAlignment.center,
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: const [
+                            Text("Power By 张风捷特烈",
+                                style: UnitTextStyle.splashShadows),
+                            Text("· 2021 ·  @编程之王 ",
+                                style: UnitTextStyle.splashShadows),
+                          ],
+                        )),
+                  ],
+                ))
               ],
-            ))
-          ],
-        )
+            )),
       ),
     );
   }
-
 
   Widget _buildFlutterUnitText(double winH, double winW) {
     return FlutterUnitText(
@@ -102,17 +120,15 @@ class _StandardUnitSplashState extends State<StandardUnitSplash> with TickerProv
 
   // 监听资源加载完毕，启动，触发事件
   void _listenStart(BuildContext context, AppState state) {
-    int cost = DateTime.now().millisecondsSinceEpoch - _recoder;
-    BlocProvider.of<WidgetsBloc>(context).add(const EventTabTap(WidgetFamily.statelessWidget));
+    int cost = DateTime.now().millisecondsSinceEpoch - _recorder;
+    BlocProvider.of<WidgetsBloc>(context)
+        .add(const EventTabTap(WidgetFamily.statelessWidget));
     BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
-    if(cost<_minCost){
-      Future.delayed(Duration(milliseconds: _minCost-cost)).then((value){
+    if (cost < _minCost) {
+      Future.delayed(Duration(milliseconds: _minCost - cost)).then((value) {
         Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
       });
     }
-
   }
-
 }
-

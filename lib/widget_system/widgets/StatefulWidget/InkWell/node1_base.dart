@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 150,
 //      "name": 'InkWell基本事件',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【onTap】 : 点击事件   【Function()】\n"
 //          "【onDoubleTap】 : 双击事件   【Function()】\n"
 //          "【onTapCancel】 : 点击取消   【Function()】\n"

@@ -25,30 +25,11 @@ class WidgetDetailPanel extends StatelessWidget {
   }
 
   Widget _buildLeft(WidgetModel model, BuildContext context) => Expanded(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0, left: 20),
-          child: Text(
-            model.nameCN,
-            style: TextStyle(
-                fontSize: 20,
-                decoration: (model.deprecated)
-                    ? TextDecoration.lineThrough
-                    : TextDecoration.none,
-                decorationThickness: 2,
-                color: const Color(0xff1EBBFD),
-                fontWeight: FontWeight.bold),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Panel(
-              color: Theme.of(context).appBarTheme.backgroundColor,
-              child: Text(model.info)),
-        )
-      ],
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Panel(
+          color: Theme.of(context).appBarTheme.backgroundColor,
+          child: Text(model.info)),
     ),
   );
 
