@@ -30,6 +30,7 @@ class AppTheme {
     return ThemeData(
       fontFamily: state.fontFamily,
       primarySwatch: state.themeColor,
+        useMaterial3: true,
         appBarTheme: AppBarTheme(
             systemOverlayStyle: overlayStyle
         ),

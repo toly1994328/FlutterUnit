@@ -80,7 +80,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
           Expanded(
             child: Text(
               widget.text,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
           ),
           _buildShareButton(),
@@ -94,7 +94,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
           color: Theme.of(context).appBarTheme.backgroundColor,
             child: Text(
           widget.subText,
-          style: const TextStyle(fontSize: 14),
+          style: const TextStyle(fontSize: 12),
         )),
       );
 

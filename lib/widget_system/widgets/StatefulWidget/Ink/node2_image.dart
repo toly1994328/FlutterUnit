@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 152,
 //      "name": 'Ink.image图片水波纹',
 //      "priority": 2,
-//      "subtitle":
-//          "    其中属性与Image组件一致，详见Image组件",
+//      "subtitle": "    其中属性与Image组件一致，详见Image组件",
 //    }
 
 class InkImage extends StatelessWidget {

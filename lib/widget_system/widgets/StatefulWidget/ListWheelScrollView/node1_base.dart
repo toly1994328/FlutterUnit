@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 179,
 //      "name": 'ListWheelScrollView基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【children】 : 子组件列表   【List<Widget>】\n"
+//      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
 //          "【perspective】 : 透视度   【double】\n"
 //          "【itemExtent】 : item高   【EdgeInsets】\n"
 //          "【onSelectedItemChanged】 : 选中回调  【ValueChanged<int> 】",

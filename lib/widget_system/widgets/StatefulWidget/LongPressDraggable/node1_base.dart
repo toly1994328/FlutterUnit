@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 105,
 //      "name": 'LongPressDraggable与DragTarget联用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子   【Widget】\n"
+//      "subtitle": "【child】 : 孩子   【Widget】\n"
 //          "【feedback】 : 拖拽时的孩子   【Widget】\n"
 //          "【axis】 : 拖动的轴   【Axis】\n"
 //          "【data】 : 数据   【T】\n"
