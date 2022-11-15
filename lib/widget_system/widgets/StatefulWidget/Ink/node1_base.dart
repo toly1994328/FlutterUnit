@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 152,
 //      "name": 'Ink基本使用',
 //      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
+//      "subtitle": "【child】 : 子组件   【Widget】\n"
 //          "【padding】 : 内边距   【EdgeInsetsGeometry】\n"
 //          "【decoration】 : 装饰   【Decoration】\n"
 //          "【width】 : 宽   【double】\n"

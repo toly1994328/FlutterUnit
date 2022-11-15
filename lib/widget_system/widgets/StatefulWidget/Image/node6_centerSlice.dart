@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 38,
 //      "name": '图片实现局部放大',
 //      "priority": 6,
-//      "subtitle":
-//          "【centerSlice】 : 保留的区域   【Rect】",
+//      "subtitle": "【centerSlice】 : 保留的区域   【Rect】",
 //    },
 
 class CenterSliceImage extends StatelessWidget {

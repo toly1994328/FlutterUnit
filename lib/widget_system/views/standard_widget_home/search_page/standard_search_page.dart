@@ -38,9 +38,15 @@ class StandardSearchPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: MediaQuery.of(context).padding.top,width:MediaQuery.of(context).size.width,child: const ColoredBox(color: Colors.white),),
+          SizedBox(
+            height: MediaQuery.of(context).padding.top,
+            width: MediaQuery.of(context).size.width,
+            child: const ColoredBox(color: Colors.white),
+          ),
           const StandardSearchBarInner(),
-          Expanded(child:           BlocBuilder<WidgetsBloc, WidgetsState>(builder: _buildBodyByState))
+          Expanded(
+              child: BlocBuilder<WidgetsBloc, WidgetsState>(
+                  builder: _buildBodyByState))
         ],
       ),
     );
@@ -52,7 +58,7 @@ class StandardSearchPage extends StatelessWidget {
       return noSearchArg;
     }
 
-    if(state is WidgetsLoaded){
+    if (state is WidgetsLoaded) {
       if (state.widgets.isEmpty) {
         return const EmptyShower(
           message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",
@@ -60,12 +66,13 @@ class StandardSearchPage extends StatelessWidget {
       }
       return ListView.builder(
         padding: EdgeInsets.zero,
-        itemBuilder: (_,index)=>StandardWidgetItem(
+        itemBuilder: (_, index) => StandardWidgetItem(
             searchArg: state.filter.name,
-            model: state.widgets[index], onTap: ()=> _toDetail(context, state.widgets[index])),itemCount: state.widgets.length,);
+            model: state.widgets[index],
+            onTap: () => _toDetail(context, state.widgets[index])),
+        itemCount: state.widgets.length,
+      );
     }
-
-
 
     if (state is WidgetsLoading) {
       return const LoadingShower();
@@ -76,10 +83,9 @@ class StandardSearchPage extends StatelessWidget {
     }
 
     return noSearchArg;
-
   }
 
-  void _toDetail(BuildContext context,WidgetModel model){
+  void _toDetail(BuildContext context, WidgetModel model) {
     // BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(
       context,

@@ -43,7 +43,7 @@ Icons.arrow_back
             Expanded(
               child: Container(
                   height: 35,
-                  padding: EdgeInsets.only(left: 10, right: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10),
                   child:  Material(
                     color: Colors.transparent,
                     child: TextField(
@@ -56,14 +56,13 @@ Icons.arrow_back
                         //提交后,收起键盘
                         FocusScope.of(context).requestFocus(FocusNode());
                       },
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           filled: true,
                           fillColor: Color(0xffF3F6F9),
                           prefixIcon: Icon(
                             Icons.search,
                             color: Colors.grey,
                           ),
-                          contentPadding: EdgeInsets.only(right: 0),
                           border: UnderlineInputBorder(
                             borderSide: BorderSide.none,
                             borderRadius: BorderRadius.all(Radius.circular(35 / 2)),
@@ -79,7 +78,7 @@ Icons.arrow_back
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                Icon(TolyIcon.icon_sound),
+                const Icon(TolyIcon.icon_sound),
                 // Text('已签',style: TextStyle(color: Colors.grey),)
               ],
             ),

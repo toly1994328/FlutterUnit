@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //      "widgetId": 38,
 //      "name": '可从资源文件和网络加载图片',
 //      "priority": 1,
-//      "subtitle":
-//      "Image.asset加载资源图片,指定路径;\n"
+//      "subtitle": "Image.asset加载资源图片,指定路径;\n"
 //      "Image.network加载资源网络图片，指定链接。\n"
 //      "Image.file加载资源文件图片，指定路径。\n"
 //      "Image.memory加载内存图片，指定字节数组。\n"
