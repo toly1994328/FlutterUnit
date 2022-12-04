@@ -15,12 +15,20 @@ class DeskWidgetContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //
+    // final SliverGridDelegateWithFixedCrossAxisCount gridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
+    //   crossAxisCount: 2,
+    //   mainAxisSpacing: 10,
+    //   crossAxisSpacing: 20,
+    //   childAspectRatio: 3.2,
+    // );
 
-    final SliverGridDelegateWithFixedCrossAxisCount gridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 2,
+    SliverGridDelegate gridDelegate =
+    const SliverGridDelegateWithMaxCrossAxisExtent(
+      maxCrossAxisExtent: 400,
       mainAxisSpacing: 10,
+      mainAxisExtent: 100,
       crossAxisSpacing: 20,
-      childAspectRatio: 3.2,
     );
 
     return SliverPadding(
@@ -61,7 +69,7 @@ class DeskWidgetContent extends StatelessWidget {
   //       );
 
   void _toDetail(BuildContext context,WidgetModel model){
-    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
+    // BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
     Navigator.pushNamed(
       context,
       UnitRouter.widget_detail,
