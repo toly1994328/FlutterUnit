@@ -46,12 +46,12 @@ class Cons {
   ];
 
   static const Map<WidgetFamily,String> kWidgetFamilyLabelMap = {
-    WidgetFamily.statelessWidget: "StatelessWidget",
-    WidgetFamily.statefulWidget: "StatefulWidget",
-    WidgetFamily.singleChildRenderObjectWidget: "SingleChildRenderObjectWidget",
-    WidgetFamily.multiChildRenderObjectWidget: "MultiChildRenderObjectWidget",
+    WidgetFamily.statelessWidget: "Stateless",
+    WidgetFamily.statefulWidget: "Stateful",
+    WidgetFamily.singleChildRenderObjectWidget: "SingleChild",
+    WidgetFamily.multiChildRenderObjectWidget: "MultiChild",
     WidgetFamily.sliver: "Sliver",
-    WidgetFamily.proxyWidget: "ProxyWidget",
+    WidgetFamily.proxyWidget: "Proxy",
     WidgetFamily.other: "Other",
   };
 
