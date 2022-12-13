@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
-import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
+import 'package:flutter_unit/painter_system/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
 

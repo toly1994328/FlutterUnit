@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/router_utils.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 

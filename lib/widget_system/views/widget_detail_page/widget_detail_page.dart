@@ -1,14 +1,8 @@
+import 'package:app_config/app_config.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/app/res/cons/cons.dart';
-import 'package:flutter_unit/app/res/style/unit_text_style.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
-import 'package:flutter_unit/app/utils/Toast.dart';
-import 'package:flutter_unit/components/permanent/code/highlighter_style.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+
 import 'package:flutter_unit/components/project/widget_node_panel.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
 import 'package:widget_repository/widget_repository.dart';

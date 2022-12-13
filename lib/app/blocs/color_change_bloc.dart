@@ -1,7 +1,7 @@
 import 'dart:ui';
 
+import 'package:app_config/app_config.dart';
 import 'package:bloc/bloc.dart';
-import 'package:flutter_unit/app/res/cons/cons.dart';
 import 'package:db_storage/db_storage.dart';
 
 class SelectTab {

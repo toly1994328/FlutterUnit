@@ -1,7 +1,8 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
 
-import 'unit_bottom_bar.dart';
+
+import '../../../old_fancy_mobile_ui/home_page/unit_bottom_bar.dart';
 
 class PureBottomBar extends StatefulWidget {
   final int initPosition;

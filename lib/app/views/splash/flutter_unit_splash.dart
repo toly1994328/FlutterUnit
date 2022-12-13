@@ -1,15 +1,14 @@
+import 'package:app_config/app_config.dart';
 import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_state.dart';
 import 'package:flutter_unit/widget_system/blocs/category_bloc/category_bloc.dart';
 import 'package:flutter_unit/widget_system/blocs/category_bloc/category_event.dart';
 import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_bloc.dart';
 import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_event.dart';
 import 'package:flutter_unit/widget_system/blocs/widgets_bloc/widgets_bloc.dart';
 import 'package:flutter_unit/widget_system/blocs/widgets_bloc/widgets_event.dart';
-import 'package:widget_repository/widget_repository.dart';
+
 
 class FlutterUnitSplash extends StatefulWidget {
   const FlutterUnitSplash({Key? key}) : super(key: key);

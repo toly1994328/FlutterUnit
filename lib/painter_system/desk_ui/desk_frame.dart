@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/project/items/gallery/gallery_card_item.dart';
+import 'package:flutter_unit/painter_system/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/picture_frame.dart';
 
 

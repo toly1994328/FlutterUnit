@@ -51,6 +51,11 @@ dependencies:
     path: packages/utils
   db_storage:
     path: packages/db_storage
+  app_config:
+    path: packages/app_config
+  components:
+    path: packages/components
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

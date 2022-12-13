@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/style/unit_color.dart';
 
 class MdTextStyles{
   static const Color primaryValue = Color(0xFF24292E);

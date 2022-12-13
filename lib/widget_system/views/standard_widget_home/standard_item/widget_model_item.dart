@@ -1,7 +1,7 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
-import 'package:flutter_unit/app/res/cons/cons.dart';
 import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_bloc.dart';
 import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_state.dart';
 import 'package:widget_repository/widget_repository.dart';
