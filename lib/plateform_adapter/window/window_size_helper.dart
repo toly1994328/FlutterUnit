@@ -12,7 +12,7 @@ class WindowSizeHelper{
       size = size*window.devicePixelRatio;
       await DesktopWindow.setWindowSize(size);
       await DesktopWindow.setMinWindowSize(size);
-      // await DesktopWindow.setMaxWindowSize(size);
+      await DesktopWindow.setMaxWindowSize(size);
     }
   }
 }
