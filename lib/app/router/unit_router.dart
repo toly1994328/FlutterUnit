@@ -5,7 +5,7 @@ import 'package:flutter_unit/app/views/about/about_app_page.dart';
 import 'package:flutter_unit/app/views/about/about_me_page.dart';
 import 'package:flutter_unit/app/views/about/version_info.dart';
 import 'package:flutter_unit/app/views/data_manage/data_manage_page.dart';
-import 'package:flutter_unit/app/views/navigation/unit_navigation.dart';
+import 'package:flutter_unit/old_fancy_mobile_ui/navigation/unit_navigation.dart';
 import 'package:flutter_unit/app/views/setting/code_style_setting.dart';
 import 'package:flutter_unit/app/views/setting/font_setting.dart';
 import 'package:flutter_unit/app/views/setting/item_style_setting.dart';

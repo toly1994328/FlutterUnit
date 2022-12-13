@@ -1,5 +1,6 @@
+import 'package:app_config/app_config.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_unit/app/res/cons/path_unit.dart';
+
 import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 

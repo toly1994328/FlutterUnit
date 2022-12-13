@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 
 class SplashBottom extends StatefulWidget {
   const SplashBottom({Key? key}) : super(key: key);

@@ -1,11 +1,7 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/style/behavior/no_scroll_behavior.dart';
-import 'package:flutter_unit/app/res/style/gap.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
-import 'package:flutter_unit/app/router/router_utils.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/app/views/setting/setting_page.dart';
-import 'package:flutter_unit/update_part/views/update_red_point.dart';
+import 'package:flutter_unit/app/update_part/views/update_red_point.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com

@@ -4,8 +4,8 @@ import 'package:flutter_unit/components/project/default/empty_shower.dart';
 import 'package:flutter_unit/components/project/default/error_shower.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/widget_system/views/widget_home/content/desk_widget_content.dart';
-import 'package:flutter_unit/widget_system/views/widget_home/content/phone_widget_content.dart';
+import 'package:flutter_unit/old_fancy_mobile_ui/home_page/desk_widget_content.dart';
+import 'package:flutter_unit/old_fancy_mobile_ui/home_page/phone_widget_content.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 class WidgetListPanel extends StatelessWidget {

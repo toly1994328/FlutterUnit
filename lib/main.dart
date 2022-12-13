@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/plateform_adapter/window/window_size_helper.dart';
+import 'package:flutter_unit/app/plateform_adapter/window/window_size_helper.dart';
 
 import 'app/views/navigation/bloc_wrapper.dart';
 import 'app/views/navigation/flutter_unit.dart';

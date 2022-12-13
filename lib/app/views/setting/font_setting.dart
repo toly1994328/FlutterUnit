@@ -1,11 +1,8 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_event.dart';
-import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/app/res/cons/cons.dart';
-import 'package:flutter_unit/app/res/style/unit_color.dart';
-import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
+
+import 'package:flutter_unit/old_fancy_mobile_ui/navigation/unit_app_bar.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 
@@ -41,8 +38,7 @@ class FontSettingPage extends StatelessWidget {
               a: 0.95,
               duration: const Duration(milliseconds: 200),
               onPressed: () {
-                BlocProvider.of<AppBloc>(context)
-                    .add(EventSwitchFontFamily(e));
+                BlocProvider.of<AppBloc>(context).switchFontFamily(e);
               },
               child: Card(
                 child: GridTile(

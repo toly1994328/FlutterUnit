@@ -1,8 +1,8 @@
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com
 /// 说明: ...
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/router_utils.dart';
 import 'package:flutter_unit/app/views/time_line/flutter_unit_time_line.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';

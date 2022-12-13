@@ -1,8 +1,8 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/res/theme/app_style.dart';
+
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/state.dart';
 

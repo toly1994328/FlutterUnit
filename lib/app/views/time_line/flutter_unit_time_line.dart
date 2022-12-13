@@ -1,7 +1,7 @@
+import 'package:app_config/app_config.dart';
 import 'package:dash_painter/dash_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
 import 'package:wrapper/wrapper.dart';
 
 import 'model/time_node.dart';
