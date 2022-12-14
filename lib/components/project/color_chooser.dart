@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:components/toly_ui/toly_ui.dart';
+
 
 typedef CheckCallback<T> = void Function(T color);
 

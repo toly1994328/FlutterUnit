@@ -7,7 +7,8 @@ import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/event.dart';
 
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
+
 import 'package:widget_repository/widget_repository.dart';
 
 

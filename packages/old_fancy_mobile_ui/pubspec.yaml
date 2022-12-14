@@ -2,6 +2,7 @@ name: old_fancy_mobile_ui
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
+publish_to: none
 
 environment:
   sdk: '>=2.18.5 <3.0.0'
@@ -10,10 +11,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.0.1 # 状态管理
+  url_launcher: ^6.0.20 # url
+  flutter_star: ^1.0.2 # 星星组件
   app_config:
     path: ../app_config
   components:
     path: ../components
+  widget_module:
+    path: ../widget_module
+  widget_repository:
+    path: ../widget_repository
+  db_storage:
+    path: ../db_storage
 dev_dependencies:
   flutter_test:
     sdk: flutter

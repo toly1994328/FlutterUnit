@@ -8,9 +8,9 @@ import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:flutter_unit/components/permanent/decorations/round_rect_rab_indicator.dart';
 import 'package:flutter_unit/components/permanent/sliver_header/sliver_pinned_header.dart';
 import 'package:flutter_unit/components/permanent/sliver_header/sliver_snap_header.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/old_fancy_mobile_ui/home_page/home_drawer.dart';
+import 'package:widget_module/blocs/blocs.dart';
 
+import '../../../navigation/home_page/home_drawer.dart';
 import 'standard_home_search.dart';
 import 'widget_list_panel.dart';
 

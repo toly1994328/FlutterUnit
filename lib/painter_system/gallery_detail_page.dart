@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:components/toly_ui/toly_ui.dart';
+
 import 'package:flutter_unit/painter_system/gallery_card_item.dart';
 
 

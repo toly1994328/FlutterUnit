@@ -1,7 +1,6 @@
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/router/router_utils.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 
 import 'search_page/standard_search_page.dart';
 

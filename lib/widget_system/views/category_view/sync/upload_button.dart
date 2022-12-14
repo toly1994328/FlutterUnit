@@ -7,9 +7,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:db_storage/db_storage.dart';
 import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/point_system/api/category_api.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
 
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+
+import 'package:components/toly_ui/toly_ui.dart';
+
 import 'package:widget_repository/widget_repository.dart';
 
 
