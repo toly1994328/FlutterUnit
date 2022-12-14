@@ -7,7 +7,8 @@ import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:toggle_rotate/toggle_rotate.dart';
 
-import '../permanent/feedback_widget.dart';
+import 'package:components/toly_ui/toly_ui.dart';
+
 
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com

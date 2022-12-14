@@ -1,7 +1,8 @@
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
+
 
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/permanent/panel.dart';

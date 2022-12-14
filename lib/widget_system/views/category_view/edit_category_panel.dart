@@ -2,7 +2,8 @@ import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
+
 import 'package:flutter_unit/components/permanent/edit_panel.dart';
 import 'package:flutter_unit/components/permanent/input_button.dart';
 import 'package:flutter_unit/components/project/color_chooser.dart';

@@ -55,6 +55,10 @@ dependencies:
     path: packages/app_config
   components:
     path: packages/components
+  widget_module:
+    path: packages/widget_module
+  old_fancy_mobile_ui:
+    path: packages/old_fancy_mobile_ui
 
 dev_dependencies:
   flutter_test:

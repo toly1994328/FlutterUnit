@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/components/project/default/empty_shower.dart';
 import 'package:flutter_unit/components/project/default/error_shower.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/old_fancy_mobile_ui/home_page/desk_widget_content.dart';
-import 'package:flutter_unit/old_fancy_mobile_ui/home_page/phone_widget_content.dart';
+import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
+import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
+
+import '../../../navigation/home_page/phone_widget_content.dart';
 
 class WidgetListPanel extends StatelessWidget {
   const WidgetListPanel({Key? key}) : super(key: key);

@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/state.dart';
 
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:components/toly_ui/toly_ui.dart';
+
 import 'package:flutter_unit/components/project/wrapper/honour_wrapper.dart';
 
 import 'page_item.dart';

@@ -5,11 +5,11 @@ import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 
-import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
 
-import 'flutter_unit_text.dart';
+
 import 'dart:ui' as ui;
 
 /// create by 张风捷特烈 on 2020-03-07

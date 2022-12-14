@@ -28,7 +28,7 @@ class FlutterUnit extends StatelessWidget {
             title: StrUnit.appName,
 
             debugShowCheckedModeBanner: false,
-            onGenerateRoute: UnitRouter.generateRoute,
+            onGenerateRoute: UnitRouters.generateRoute,
             localizationsDelegates: GlobalMaterialLocalizations.delegates,
             supportedLocales: const [
               Locale('zh', 'CN'),
