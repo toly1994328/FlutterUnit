@@ -10,7 +10,10 @@ import 'package:flutter_unit/painter_system/gallery_unit.dart';
 import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
 
 import 'package:url_launcher/url_launcher.dart';
+import 'package:window_manager/window_manager.dart';
 
+import '../../app/plateform_adapter/window/windows_adapter.dart';
+import '../../widget_system/views/desk_ui/widget_panel/widget_panel.dart';
 import '../home_page/home_drawer.dart';
 import '../home_page/home_page.dart';
 
@@ -53,10 +56,10 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
   Widget build(BuildContext context) {
     return BlocBuilder<ColorChangeCubit, SelectTab>(
         builder: (_, state) => Scaffold(
-              drawer: HomeDrawer(),
-              endDrawer: HomeRightDrawer(),
+              drawer: const HomeDrawer(),
+              endDrawer: const HomeRightDrawer(),
               //右滑页
-              floatingActionButton: _buildSearchButton(state.tabColor),
+              // floatingActionButton: _buildSearchButton(state.tabColor),
               body: Row(
                 children: [
                   _buildLeftNav(),
@@ -66,8 +69,9 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
                         physics: const NeverScrollableScrollPhysics(),
                         //使用PageView实现页面的切换
                         controller: _controller,
-                        children: <Widget>[
-                          HomePage(),
+                        children: const <Widget>[
+                          // HomePage(),
+                          DeskWidgetPanel(),
                           CollectPage(),
                           GalleryUnit(),
                           // GalleryPage(),
@@ -100,71 +104,76 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
   }
 
   Widget _buildLeftNav() {
-    return Container(
-      padding: EdgeInsets.only(top: 20),
-      alignment: Alignment.topCenter,
-      margin: EdgeInsets.only(right: 1),
-      width: 120,
-      decoration: BoxDecoration(color: Color(0xff2C3036), boxShadow: [
-        BoxShadow(color: Colors.grey, offset: Offset(1, 0), blurRadius: 2)
-      ]),
-      child: Column(
-        children: [
-          Wrap(
-            direction: Axis.vertical,
-            spacing: 10,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              CircleImage(
-                image: AssetImage('assets/images/icon_head.webp'),
-                size: 60,
-              ),
-              Text(
-                '张风捷特烈',
-                style: TextStyle(color: Colors.white70),
-              )
-            ],
-          ),
-          buildIcons(),
-          Divider(
-            color: Colors.white,
-            height: 1,
-            endIndent: 20,
-          ),
-//          SizedBox(height: 60,),
-          Expanded(
-            flex: 5,
-            child: Center(
-              child: RightNavBar(
-                itemData: Cons.iconMap,
-                onItemClick: _onTapNav,
-                color: Theme.of(context).primaryColor,
-              ),
+    return DragToMoveAreaNoDouble(
+      child: Container(
+        padding: const EdgeInsets.only(top: 20),
+        alignment: Alignment.topCenter,
+        margin: const EdgeInsets.only(right: 1),
+        width: 120,
+        decoration: const BoxDecoration(color:
+        Color(0xff2C3036),
+            boxShadow: [
+          BoxShadow(color: Colors.grey, offset: Offset(1, 0), blurRadius: 2)
+        ]
+        ),
+        child: Column(
+          children: [
+            Wrap(
+              direction: Axis.vertical,
+              spacing: 10,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: const [
+                CircleImage(
+                  image: AssetImage('assets/images/icon_head.webp'),
+                  size: 60,
+                ),
+                Text(
+                  '张风捷特烈',
+                  style: TextStyle(color: Colors.white70),
+                )
+              ],
             ),
-          ),
-
-          Expanded(
-            child: Container(),
-            flex: 1,
-          ),
-          Divider(
-            indent: 20,
-            color: Colors.white,
-            height: 1,
-          ),
-          Builder(
-            builder: (ctx) => FeedbackWidget(
-              onPressed: () => Scaffold.of(ctx).openDrawer(),
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 20, top: 20),
-                child: Icon(
-                  Icons.settings,
-                  color: Colors.white,
+            buildIcons(),
+            const Divider(
+              color: Colors.white,
+              height: 1,
+              endIndent: 20,
+            ),
+//          SizedBox(height: 60,),
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: RightNavBar(
+                  itemData: Cons.iconMap,
+                  onItemClick: _onTapNav,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
             ),
-          ),
-        ],
+
+            Expanded(
+              child: Container(),
+              flex: 1,
+            ),
+            const Divider(
+              indent: 20,
+              color: Colors.white,
+              height: 1,
+            ),
+            Builder(
+              builder: (ctx) => FeedbackWidget(
+                onPressed: () => Scaffold.of(ctx).openDrawer(),
+                child: const Padding(
+                  padding: EdgeInsets.only(bottom: 20, top: 20),
+                  child: Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -177,7 +186,7 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
         children: [
           FeedbackWidget(
             onPressed: () => _launchURL("http://blog.toly1994.com"),
-            child: Icon(
+            child: const Icon(
               TolyIcon.icon_item,
               color: Colors.white,
             ),
@@ -185,7 +194,7 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
           FeedbackWidget(
             onPressed: () =>
                 _launchURL("https://github.com/toly1994328/FlutterUnit"),
-            child: Icon(
+            child: const Icon(
               TolyIcon.icon_github,
               color: Colors.white,
             ),
@@ -193,7 +202,7 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
           FeedbackWidget(
             onPressed: () =>
                 _launchURL("https://juejin.im/user/5b42c0656fb9a04fe727eb37"),
-            child: Icon(
+            child: const Icon(
               TolyIcon.icon_juejin,
               color: Colors.white,
             ),
@@ -250,14 +259,14 @@ class _RightNavBarState extends State<RightNavBar> {
         onTap: () => _tapTab(i),
         child: Container(
           alignment: Alignment.topLeft,
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           width: widget.itemSize.width,
           child: UnconstrainedBox(
             child: Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: active ? widget.color : Colors.white.withAlpha(33),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(20),
                       bottomRight: Radius.circular(20))),
               width: active
