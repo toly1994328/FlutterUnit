@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
-class WindowButtons extends StatelessWidget {
+class WindowButtons extends StatefulWidget {
   const WindowButtons({Key? key}) : super(key: key);
 
+  @override
+  State<WindowButtons> createState() => _WindowButtonsState();
+}
+
+class _WindowButtonsState extends State<WindowButtons> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -33,15 +38,21 @@ class WindowButtons extends StatelessWidget {
               if (snapshot.data == true) {
                 return WindowCaptionButton.unmaximize(
                   brightness: Brightness.light,
-                  onPressed: () {
-                    windowManager.unmaximize();
+                  onPressed: () async{
+                    await windowManager.unmaximize();
+                    setState(() {
+
+                    });
                   },
                 );
               }
               return WindowCaptionButton.maximize(
                 brightness: Brightness.light,
-                onPressed: () {
-                  windowManager.maximize();
+                onPressed: () async{
+                  await windowManager.maximize();
+                  setState(() {
+
+                  });
                 },
               );
             },

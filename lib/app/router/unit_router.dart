@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'dart:io';
+
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/views/about/about_app_page.dart';
@@ -29,7 +31,7 @@ class UnitRouters {
 
   static const String detail = 'detail';
   static const String search = 'search_bloc';
-  static const String nav = 'nav';
+
 
   static const String collect = 'CollectPage';
   static const String point = 'IssuesPointPage';
@@ -58,7 +60,10 @@ class UnitRouters {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       //
-      case nav:
+      case UnitRouter.nav:
+        if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
+          return NoAnimRouter(child: UnitNavigation());
+        }
         return Left2RightRouter(child: UnitNavigation());
 
       // 组件详情页
