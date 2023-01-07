@@ -11,6 +11,7 @@ import 'package:window_manager/window_manager.dart';
 
 import 'desk_widget_model_item.dart';
 import 'desk_search_bar.dart';
+import 'desk_widget_top_bar.dart';
 import 'window_buttons.dart';
 
 class DeskWidgetPanel extends StatefulWidget {
@@ -20,63 +21,19 @@ class DeskWidgetPanel extends StatefulWidget {
   State<DeskWidgetPanel> createState() => _DeskWidgetPanelState();
 }
 
-class _DeskWidgetPanelState extends State<DeskWidgetPanel> with SingleTickerProviderStateMixin{
-
-  late TabController tabController;
-  static const List<String> _tabs = ['无态', '有态', '单渲', '多渲', '滑片', '代理', '其它'];
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    tabController = TabController(length: _tabs.length, vsync: this);
-  }
+class _DeskWidgetPanelState extends State<DeskWidgetPanel>{
 
   @override
   Widget build(BuildContext context) {
     WidgetsState state = context.watch<WidgetsBloc>().state;
-    Color themeColor = Theme.of(context).primaryColor;
 
     return Scaffold(
-      body:  Column(
+      body: Column(
         children: [
-          DragToMoveAreaNoDouble(
-            child: Container(
-              height: 64,
-              color: Colors.white,
-              child: Row(
-                children: [
-                  Expanded(child: TabBar(
-                    onTap: _switchTab,
-                    indicatorSize: TabBarIndicatorSize.label,
-                    labelPadding: const EdgeInsets.symmetric(horizontal: 6),
-                    isScrollable: false,
-                    indicator: RoundRectTabIndicator(
-                      borderSide: BorderSide(color: themeColor, width: 3),
-                    ),
-                    labelStyle: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    controller: tabController,
-                    labelColor: themeColor,
-                    indicatorWeight: 3,
-                    unselectedLabelColor: Colors.grey,
-                    indicatorColor: themeColor,
-                    tabs: _tabs.map((String name) => Tab(text: name)).toList(),
-                  )),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: SizedBox(width: 250, height: 30, child: DeskSearchBar()),
-                  ),
-                  // const SizedBox(width: 20,),
-                  WindowButtons(),
-                  const SizedBox(width: 20,),
-                ],
-              ),
-            ),
+          DeskWidgetTopBar(
+            onTabPressed: _switchTab,
           ),
-          Divider(height: 1,),
+          const Divider(height: 1),
           Expanded(
             child: _buildByState(state),
           ),
@@ -86,7 +43,7 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel> with SingleTickerProv
   }
 
   Widget _buildByState(WidgetsState state) {
-    if(state is WidgetsLoaded){
+    if (state is WidgetsLoaded) {
       return WidgetList(state: state);
     }
     return Center(
@@ -103,12 +60,12 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel> with SingleTickerProv
 class WidgetList extends StatelessWidget {
   final WidgetsLoaded state;
 
-  const WidgetList({Key? key,required this.state}) : super(key: key);
+  const WidgetList({Key? key, required this.state}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SliverGridDelegate gridDelegate =
-    const SliverGridDelegateWithMaxCrossAxisExtent(
+        const SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 400,
       mainAxisSpacing: 10,
       mainAxisExtent: 130,
@@ -116,9 +73,9 @@ class WidgetList extends StatelessWidget {
     );
 
     return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       gridDelegate: gridDelegate,
-        itemBuilder: _buildItem,
+      itemBuilder: _buildItem,
       itemCount: state.widgets.length,
     );
   }
@@ -127,7 +84,7 @@ class WidgetList extends StatelessWidget {
     WidgetModel model = state.widgets[index];
     return DeskWidgetItem(
       model: model,
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(
           context,
           UnitRouter.widget_detail,
@@ -137,5 +94,3 @@ class WidgetList extends StatelessWidget {
     );
   }
 }
-
-
