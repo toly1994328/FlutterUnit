@@ -31,6 +31,17 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
   }
 
   void onSelected(WidgetModel model) {
+    final FocusScopeNode focusScope = FocusScope.of(context);
+    if (focusScope.hasFocus) {
+      focusScope.unfocus();
+    }
+    _controller.clear();
+
+    Navigator.pushNamed(
+      context,
+      UnitRouter.widget_detail,
+      arguments: model,
+    );
   }
 
   Future<Iterable<WidgetModel>> buildOptions(TextEditingValue textEditingValue) async {
@@ -65,7 +76,7 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
                   itemBuilder: (_,index) {
               WidgetModel model = options.elementAt(index);
               return InkWell(
-                onTap: ()=>_toDetaile(model),
+                onTap: ()=>onSelected(model),
                 child: Ink(
                   padding: EdgeInsets.symmetric(vertical: 6, horizontal: 15),
                 child: Row(children: [
@@ -143,17 +154,4 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
     return TextSpan(children: span);
   }
 
-  void _toDetaile(WidgetModel model) {
-    final FocusScopeNode focusScope = FocusScope.of(context);
-    if (focusScope.hasFocus) {
-      focusScope.unfocus();
-    }
-    _controller.clear();
-
-    Navigator.pushNamed(
-      context,
-      UnitRouter.widget_detail,
-      arguments: model,
-    );
-  }
 }
