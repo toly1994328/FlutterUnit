@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import 'package:db_storage/db_storage.dart';
+import 'package:widget_repository/widget_repository.dart';
 class AppSearchBar extends StatefulWidget {
 
   const AppSearchBar({Key? key}):super(key: key);

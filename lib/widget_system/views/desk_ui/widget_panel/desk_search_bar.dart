@@ -57,7 +57,6 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
     return repository.searchWidgets(WidgetFilter(
       name: text
     ));
-
   }
 
   Widget _buildOptionsView(BuildContext context, AutocompleteOnSelected<WidgetModel> onSelected, Iterable<WidgetModel> options) {

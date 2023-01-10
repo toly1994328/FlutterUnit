@@ -12,6 +12,8 @@ import 'package:widget_module/blocs/blocs.dart';
 
 import 'dart:ui' as ui;
 
+import 'package:widget_repository/widget_repository.dart';
+
 /// create by 张风捷特烈 on 2020-03-07
 /// contact me by email 1981462002@qq.com
 /// 说明: app 闪屏页
