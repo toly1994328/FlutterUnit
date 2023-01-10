@@ -24,6 +24,7 @@ import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 import '../../navigation/navigation/unit_navigation.dart';
+import '../../widget_system/views/widget_detail_page/desk_ui/widget_detail_page.dart';
 import 'router_utils.dart';
 
 class UnitRouters {
@@ -68,10 +69,18 @@ class UnitRouters {
 
       // 组件详情页
       case widget_detail:
+        Widget child;
+        if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
+          child = DeskWidgetDetailPageScope(          model: settings.arguments as WidgetModel,
+          );
+        }else{
+          child =  WidgetDetailPageScope(
+            model: settings.arguments as WidgetModel,
+          );
+        }
+
         return Right2LeftRouter(
-            child: WidgetDetailPageScope(
-          model: settings.arguments as WidgetModel,
-        ));
+            child: child);
 
       case search:
         return Right2LeftRouter(child: const SearchPageProvider());
