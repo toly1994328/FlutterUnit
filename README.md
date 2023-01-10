@@ -39,7 +39,7 @@ Tools • Dart 2.18.6 • DevTools 2.15.0
 
 #### MacOS 桌面版本组件界面
 
-![](./doc/screens/macos-1.webp)
+![](./doc/screens/macos-2.webp)
 
 #### Windows 桌面版本组件界面
 
