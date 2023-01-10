@@ -1,6 +1,6 @@
 import 'package:components/toly_ui/toly_ui.dart';
-import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import '../../model/app_style.dart';
 import '../res/toly_icon.dart';

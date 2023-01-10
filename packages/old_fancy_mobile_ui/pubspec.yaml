@@ -22,8 +22,6 @@ dependencies:
     path: ../widget_module
   widget_repository:
     path: ../widget_repository
-  db_storage:
-    path: ../db_storage
 dev_dependencies:
   flutter_test:
     sdk: flutter

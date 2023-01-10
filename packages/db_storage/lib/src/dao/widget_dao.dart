@@ -1,7 +1,6 @@
 
-import 'package:db_storage/src/model/enums.dart';
-import 'package:db_storage/src/model/widget_filter.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 import '../bean/widget_po.dart';
 

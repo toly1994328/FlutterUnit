@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:app_config/app_config.dart';
 import 'package:bloc/bloc.dart';
-import 'package:db_storage/db_storage.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 class SelectTab {
   final WidgetFamily family;
