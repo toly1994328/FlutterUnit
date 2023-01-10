@@ -1,13 +1,11 @@
+import 'package:app_config/app_config.dart';
 import 'package:db_storage/db_storage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
-import 'package:flutter_unit/app/router/router_utils.dart';
-import 'package:flutter_unit/widget_system/blocs/widgets_bloc/widgets_bloc.dart';
-import 'package:flutter_unit/widget_system/blocs/widgets_bloc/widgets_event.dart';
+import 'package:widget_module/blocs/blocs.dart';
+import 'package:widget_repository/widget_repository.dart';
 
-import '../search_page/standard_search_page.dart';
+
 
 class StandardSearchBarInner extends StatelessWidget implements PreferredSizeWidget {
 

@@ -1,14 +1,8 @@
+import 'package:app_config/app_config.dart';
+import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_unit/app/res/cons/cons.dart';
-import 'package:flutter_unit/app/res/style/unit_color.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_event.dart';
-import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
 import 'package:flutter_unit/components/project/overlay_tool_wrapper.dart';
 
 import 'app_style_setting.dart';
@@ -132,8 +126,7 @@ class SettingPage extends StatelessWidget {
                 ),
                 title: const Text('显示背景', style:  TextStyle(fontSize: 16)),
                 onChanged: (show) {
-                  BlocProvider.of<AppBloc>(context)
-                      .add(EventSwitchShowBg(show));
+                  BlocProvider.of<AppBloc>(context).switchShowBg(show);
                 },
               ));
 
@@ -147,8 +140,7 @@ class SettingPage extends StatelessWidget {
             ),
             title: const Text('显示性能浮层', style:  TextStyle(fontSize: 16)),
             onChanged: (show) {
-              BlocProvider.of<AppBloc>(context)
-                  .add(EventSwitchShowOver(show));
+              BlocProvider.of<AppBloc>(context).switchShowOver(show);
             },
           ));
 
@@ -167,8 +159,7 @@ class SettingPage extends StatelessWidget {
               }else{
                 OverlayToolWrapper.of(context).hideFloating();
               }
-              BlocProvider.of<AppBloc>(context)
-                  .add(EventSwitchShowTool(show));
+              BlocProvider.of<AppBloc>(context).switchShowTool(show);
             },
           ));
 

@@ -1,7 +1,5 @@
 library db_storage;
 
-export 'src/model/enums.dart';
-export 'src/model/widget_filter.dart';
 
 export 'src/dao/category_dao.dart';
 export 'src/dao/like_dao.dart';

@@ -1,6 +1,6 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 

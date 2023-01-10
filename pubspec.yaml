@@ -44,13 +44,22 @@ dependencies:
   flutter_spinkit: ^5.1.0 # loading
   flutter_markdown: ^0.6.4 # markdown
 
-  desktop_window: ^0.4.0 #桌面尺寸
+  window_manager: ^0.2.8 #桌面尺寸
   widget_repository:
     path: packages/widget_repository
   utils:
     path: packages/utils
   db_storage:
     path: packages/db_storage
+  app_config:
+    path: packages/app_config
+  components:
+    path: packages/components
+  widget_module:
+    path: packages/widget_module
+  old_fancy_mobile_ui:
+    path: packages/old_fancy_mobile_ui
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

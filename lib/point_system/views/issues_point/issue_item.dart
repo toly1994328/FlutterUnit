@@ -1,7 +1,7 @@
 import 'dart:ui';
 
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/convert_man.dart';
 import 'package:flutter_unit/point_system/github_model/github_model.dart';
 import 'package:flutter_unit/components/permanent/circle_image.dart';

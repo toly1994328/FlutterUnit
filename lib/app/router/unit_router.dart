@@ -1,11 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
+import 'dart:io';
+
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/views/about/about_app_page.dart';
 import 'package:flutter_unit/app/views/about/about_me_page.dart';
 import 'package:flutter_unit/app/views/about/version_info.dart';
 import 'package:flutter_unit/app/views/data_manage/data_manage_page.dart';
-import 'package:flutter_unit/app/views/navigation/unit_navigation.dart';
 import 'package:flutter_unit/app/views/setting/code_style_setting.dart';
 import 'package:flutter_unit/app/views/setting/font_setting.dart';
 import 'package:flutter_unit/app/views/setting/item_style_setting.dart';
@@ -21,14 +23,15 @@ import 'package:flutter_unit/user_system/pages/register/register_page.dart';
 import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
 import 'package:widget_repository/widget_repository.dart';
 
+import '../../navigation/navigation/unit_navigation.dart';
 import 'router_utils.dart';
 
-class UnitRouter {
+class UnitRouters {
   static const String widget_detail = '/widget_detail';
 
   static const String detail = 'detail';
   static const String search = 'search_bloc';
-  static const String nav = 'nav';
+
 
   static const String collect = 'CollectPage';
   static const String point = 'IssuesPointPage';
@@ -57,7 +60,10 @@ class UnitRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       //
-      case nav:
+      case UnitRouter.nav:
+        if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
+          return NoAnimRouter(child: UnitNavigation());
+        }
         return Left2RightRouter(child: UnitNavigation());
 
       // 组件详情页

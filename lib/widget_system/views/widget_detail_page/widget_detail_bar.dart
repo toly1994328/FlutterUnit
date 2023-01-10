@@ -1,16 +1,13 @@
 import 'dart:math';
-import 'dart:ui';
 
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/toly_icon.dart';
 import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:flutter_unit/components/flutter/diy_flexible_space_bar.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter_unit/components/project/windmill.dart';
-import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_bloc.dart';
-import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_event.dart';
-import 'package:flutter_unit/widget_system/blocs/liked_widget_bloc/liked_widget_state.dart';
+import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 class SliverWidgetDetailBar extends StatelessWidget {

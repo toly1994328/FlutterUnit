@@ -1,5 +1,5 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/res/style/unit_text_style.dart';
 
 /// create by 张风捷特烈 on 2020/11/17
 /// contact me by email 1981462002@qq.com

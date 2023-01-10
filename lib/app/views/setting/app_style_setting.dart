@@ -1,13 +1,7 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/cons/cons.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_event.dart';
-import 'package:flutter_unit/app/blocs/global/global_state.dart';
-import 'package:flutter_unit/app/res/theme/app_style.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
 
 /// create by 张风捷特烈 on 2020-04-10
 /// contact me by email 1981462002@qq.com
@@ -73,7 +67,7 @@ class AppThemeSettingDialog extends StatelessWidget {
   }
   void _onSelect(BuildContext context, int index) {
     AppStyle appStyle = Cons.kAppStyleStringMap.keys.toList()[index];
-    BlocProvider.of<AppBloc>(context).add(EventChangeAppStyle(appStyle));
+    BlocProvider.of<AppBloc>(context).changeAppStyle(appStyle);
     Navigator.of(context).pop();
   }
 }
