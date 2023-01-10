@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:db_storage/db_storage.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 
 /// create by 张风捷特烈 on 2020-03-04

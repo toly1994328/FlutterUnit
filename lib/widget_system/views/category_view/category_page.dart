@@ -1,13 +1,14 @@
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/style/gap.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
 import 'package:flutter_unit/components/project/default/loading_shower.dart';
 import 'package:flutter_unit/components/project/dialogs/delete_category_dialog.dart';
-import 'package:flutter_unit/components/project/items/category_list_item.dart';
+import 'package:flutter_unit/widget_system/views/category_view/category_list_item.dart';
 import 'package:flutter_unit/components/project/no_more_widget.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
+
 import 'package:widget_repository/widget_repository.dart';
 
 import 'edit_category_panel.dart';

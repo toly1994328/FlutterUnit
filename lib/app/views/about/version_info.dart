@@ -1,12 +1,10 @@
 
+import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_unit/app/res/style/behavior/no_scroll_behavior.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
-import 'package:flutter_unit/update_part/views/app_update_panel.dart';
+import 'package:flutter_unit/app/update_part/views/app_update_panel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 

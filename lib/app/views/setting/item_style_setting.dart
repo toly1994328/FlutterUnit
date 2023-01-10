@@ -1,14 +1,11 @@
+import 'package:app_config/app_config.dart';
+import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_event.dart';
-import 'package:flutter_unit/app/blocs/global/global_state.dart';
-
-import 'package:flutter_unit/app/res/style/unit_color.dart';
-import 'package:flutter_unit/app/views/navigation/unit_app_bar.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/project/items/widget/home_item_support.dart';
+import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
+
 
 
 /// create by 张风捷特烈 on 2020-04-10
@@ -40,8 +37,7 @@ class ItemStyleSettingPage extends StatelessWidget {
                   a: 0.95,
                   duration: const Duration(milliseconds: 200),
                   onPressed: () {
-                    BlocProvider.of<AppBloc>(context)
-                        .add(EventChangeItemStyle(i));
+                    BlocProvider.of<AppBloc>(context).changeItemStyle(i);
                   },
                   child: Stack(
                     children: <Widget>[

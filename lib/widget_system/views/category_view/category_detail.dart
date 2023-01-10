@@ -1,14 +1,13 @@
+import 'package:app_config/app_config.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
 
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/circle_text.dart';
-import 'package:flutter_unit/components/permanent/feedback_widget.dart';
 import 'package:widget_repository/widget_repository.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
+
 
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com

@@ -1,18 +1,14 @@
+import 'package:app_config/app_config.dart';
 import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_event.dart';
-import 'package:flutter_unit/app/storage/app_start.dart';
-import 'package:flutter_unit/update_part/bloc_exp.dart';
+import 'package:flutter_unit/app/update_part/bloc_exp.dart';
 import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
-import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/bloc.dart';
 import 'package:flutter_unit/user_system/bloc/authentic/event.dart';
-import 'package:flutter_unit/user_system/bloc/login/bloc.dart';
-import 'package:flutter_unit/user_system/bloc/register/bloc.dart';
 
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
+import 'package:widget_module/blocs/blocs.dart';
+
 import 'package:widget_repository/widget_repository.dart';
 
 
@@ -42,7 +38,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
     return MultiBlocProvider(
         providers: [
           // 全局 bloc : 维护应用存储状态、更新、认证
-          BlocProvider<AppBloc>(create: (_) => AppBloc(AppStart())..add(const EventInitApp())),
+          BlocProvider<AppBloc>(create: (_) => AppBloc(AppStateRepository())..initApp()),
           BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
           BlocProvider<AuthenticBloc>(create: (_) => AuthenticBloc()..add(const AppStarted())),
 

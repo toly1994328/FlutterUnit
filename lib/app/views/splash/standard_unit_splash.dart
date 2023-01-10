@@ -1,18 +1,18 @@
 import 'dart:math';
 
+import 'package:app_config/app_config.dart';
 import 'package:db_storage/db_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/res/cons/str_unit.dart';
-import 'package:flutter_unit/app/res/style/unit_text_style.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
-import 'package:flutter_unit/widget_system/blocs/widget_system_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_bloc.dart';
-import 'package:flutter_unit/app/blocs/global/global_state.dart';
+import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 
-import 'flutter_unit_text.dart';
+import 'package:widget_module/blocs/blocs.dart';
+
+
 import 'dart:ui' as ui;
+
+import 'package:widget_repository/widget_repository.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
 /// contact me by email 1981462002@qq.com
