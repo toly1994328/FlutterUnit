@@ -197,7 +197,6 @@ class CodeHighlighter extends Highlighter {
             _firstLetterIsUpperCase(word.substring(1))) {
           type = _HighlightType.constant;
         }
-
         if (type != null) {
           _spans.add(_HighlightSpan(
               type, _scanner.lastMatch?.start??0, _scanner.lastMatch?.end??0));
@@ -217,10 +216,8 @@ class CodeHighlighter extends Highlighter {
 
   void _simplify() {
     for (int i = _spans.length - 2; i >= 0; i -= 1) {
-      if (_spans[i].type == _spans[i + 1].type &&
-          _spans[i].end == _spans[i + 1].start) {
-        _spans[i] =
-            _HighlightSpan(_spans[i].type, _spans[i].start, _spans[i + 1].end);
+      if (_spans[i].type == _spans[i + 1].type && _spans[i].end == _spans[i + 1].start) {
+        _spans[i] = _HighlightSpan(_spans[i].type, _spans[i].start, _spans[i + 1].end);
         _spans.removeAt(i + 1);
       }
     }
