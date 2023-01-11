@@ -11,6 +11,7 @@ import 'package:widget_repository/widget_repository.dart';
 
 import '../../../widgets/widgets_map.dart';
 import '../category_end_drawer.dart';
+import 'link_widget_buttons.dart';
 import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
 import 'widget_node_panel.dart';
@@ -103,13 +104,15 @@ class _DeskWidgetDetailPageState extends State<DeskWidgetDetailPage> {
                         children: [
                           linkText,
                           if (state is DetailWithData)
-                            _buildLinkTo(context, state.links),
-                          // const Divider(),
+                            LinkWidgetButtons(
+                              links: state.links,
+                              onSelect: _toLinkWidget,
+                            )
                         ],
                       ))
                     ],
                   ),
-                  Divider()
+                  const Divider()
                 ],
               ),
             ),
@@ -131,44 +134,6 @@ class _DeskWidgetDetailPageState extends State<DeskWidgetDetailPage> {
       return false;
     } else {
       return true;
-    }
-  }
-
-  Color? get chipColor => isDark
-      ? Theme.of(context).floatingActionButtonTheme.backgroundColor
-      : Theme.of(context).primaryColor;
-
-  Widget _buildLinkTo(BuildContext context, List<WidgetModel> links) {
-    if (links.isEmpty) {
-      return Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Chip(
-            backgroundColor: Colors.grey.withAlpha(120),
-            labelStyle: const TextStyle(fontSize: 12, color: Colors.white),
-            label: const Text('暂无链接组件'),
-          ));
-    } else {
-      return Padding(
-        padding: const EdgeInsets.only(left: 10.0, top: 10),
-        child: Wrap(
-          spacing: 5,
-          runSpacing: 5,
-          children: links
-              .map((WidgetModel model) => ActionChip(
-                    labelPadding: EdgeInsets.zero,
-                    side: BorderSide.none,
-                    onPressed: () => _toLinkWidget(model),
-                    elevation: 1,
-                    // shadowColor: chipColor,
-                    backgroundColor: chipColor,
-                    labelStyle: model.deprecated
-                        ? UnitTextStyle.deprecatedChip
-                        : UnitTextStyle.commonChip,
-                    label: Text(model.name),
-                  ))
-              .toList(),
-        ),
-      );
     }
   }
 
