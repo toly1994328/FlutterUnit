@@ -20,12 +20,14 @@ import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart'
 import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
 import 'package:flutter_unit/user_system/pages/login/login_page.dart';
 import 'package:flutter_unit/user_system/pages/register/register_page.dart';
-import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
+import 'package:flutter_unit/widget_ui/desk/widget_detail/widget_detail_page.dart';
+import 'package:flutter_unit/widget_ui/mobile/category_page/category_detail.dart';
+import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
+import 'package:flutter_unit/widget_ui/mobile/search_page/search_page.dart';
+import 'package:flutter_unit/widget_ui/mobile/widget_detail/widget_detail_page.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 import '../../navigation/navigation/unit_navigation.dart';
-import '../../widget_system/views/widget_detail_page/desk_ui/widget_detail_page.dart';
-import 'router_utils.dart';
 
 class UnitRouters {
   static const String widget_detail = '/widget_detail';

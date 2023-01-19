@@ -51,6 +51,8 @@ dependencies:
     path: packages/utils
   db_storage:
     path: packages/db_storage
+  widgets:
+    path: packages/widgets
   app_config:
     path: packages/app_config
   components:

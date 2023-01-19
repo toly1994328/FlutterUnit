@@ -7,15 +7,15 @@ import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
-import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
+import 'package:flutter_unit/widget_ui/desk/widget_panel/widget_panel.dart';
 
 import 'package:url_launcher/url_launcher.dart';
-import 'package:window_manager/window_manager.dart';
-
 import '../../app/plateform_adapter/window/windows_adapter.dart';
-import '../../widget_system/views/desk_ui/widget_panel/widget_panel.dart';
+
+import '../../widget_ui/mobile/category_page/collect_page.dart';
+import '../../widget_ui/mobile/category_page/home_right_drawer.dart';
 import '../home_page/home_drawer.dart';
-import '../home_page/home_page.dart';
+
 
 
 class UnitDeskNavigation extends StatefulWidget {
