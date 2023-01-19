@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/update_part/bloc_exp.dart';
 import 'package:flutter_unit/components/project/nav/pure_bottom_bar.dart';
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
@@ -11,10 +10,11 @@ import 'package:flutter_unit/app/update_part/views/update_red_point.dart';
 import 'package:flutter_unit/user_system/pages/user/user_page.dart';
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
-import 'package:flutter_unit/widget_system/views/standard_widget_home/standard_home_page.dart';
-import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
+import 'package:flutter_unit/widget_ui/mobile/widget_panel/standard_home_page.dart';
 
 import '../../app/blocs/color_change_bloc.dart';
+import '../../widget_ui/mobile/category_page/collect_page.dart';
+import '../../widget_ui/mobile/category_page/home_right_drawer.dart';
 import '../home_page/home_page.dart';
 import 'unit_desk_navigation.dart';
 

@@ -1,10 +1,11 @@
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/widget_system/views/standard_widget_home/standard_item/widget_model_item.dart';
 
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_repository/widget_repository.dart';
+
+import '../../widget_ui/mobile/widget_panel/widget_model_item.dart';
 
 class PhoneWidgetContent extends StatelessWidget {
   final List<WidgetModel> items;
