@@ -1,8 +1,8 @@
 import 'package:components/toly_ui/ti/circle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
-import 'package:flutter_unit/navigation/navigation/unit_drawer_header.dart';
+import 'package:flutter_unit/app/navigation/unit_drawer_header.dart';
+import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
 import 'edit_category_panel.dart';
 

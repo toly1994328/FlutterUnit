@@ -2,8 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'app/plateform_adapter/window/windows_adapter.dart';
-import 'app/views/navigation/bloc_wrapper.dart';
-import 'app/views/navigation/flutter_unit.dart';
+import 'app/bloc_wrapper.dart';
+import 'app/flutter_unit.dart';
 
 
 void main() {

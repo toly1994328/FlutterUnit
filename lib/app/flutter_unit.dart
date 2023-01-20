@@ -1,12 +1,11 @@
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/views/splash/standard_unit_splash.dart';
+import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
 
 /// create by 张风捷特烈 on 2020/4/28

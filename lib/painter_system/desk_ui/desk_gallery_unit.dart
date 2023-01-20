@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 
 import 'package:flutter_unit/painter_system/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
+import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
 import '../gallery_detail_page.dart';
 

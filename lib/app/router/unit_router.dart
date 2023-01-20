@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/navigation/unit_navigation.dart';
 import 'package:flutter_unit/app/views/about/about_app_page.dart';
 import 'package:flutter_unit/app/views/about/about_me_page.dart';
 import 'package:flutter_unit/app/views/about/version_info.dart';
@@ -27,7 +28,6 @@ import 'package:flutter_unit/widget_ui/mobile/search_page/search_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_detail/widget_detail_page.dart';
 import 'package:widget_repository/widget_repository.dart';
 
-import '../../navigation/navigation/unit_navigation.dart';
 
 class UnitRouters {
   static const String widget_detail = '/widget_detail';

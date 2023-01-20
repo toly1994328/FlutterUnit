@@ -4,24 +4,23 @@ import 'package:app_config/app_config.dart';
 import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
-import 'package:flutter_unit/app/utils/convert.dart';
 
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 
+import '../bloc/color_change_bloc.dart';
 import 'phone_widget_content.dart';
 
+class FancyHomePage extends StatefulWidget {
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const FancyHomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _FancyHomePageState createState() => _FancyHomePageState();
 }
 
-class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
+class _FancyHomePageState extends State<FancyHomePage> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +89,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             width: c.crossAxisExtent,
           );
         }
-        return PhoneWidgetContent(
+        return FancyWidgetContent(
           items: items,
         );
       });
@@ -106,7 +105,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   }
 
   void _switchTab(int index) {
-    WidgetFamily widgetFamily = Convert.toFamily(index);
+    WidgetFamily widgetFamily = WidgetFamily.values[index];
     context.read<ColorChangeCubit>().change(Cons.tabColors[index],family: widgetFamily);
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
