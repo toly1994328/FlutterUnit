@@ -5,9 +5,9 @@ import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
-import 'package:flutter_unit/app/utils/Toast.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter_unit/widget_ui/desk/widget_panel/window_buttons.dart';
+import 'package:utils/utils.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';

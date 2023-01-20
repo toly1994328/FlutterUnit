@@ -5,13 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:db_storage/db_storage.dart';
-import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
+
 import 'package:flutter_unit/point_system/api/category_api.dart';
+import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
-
-
 import 'package:components/toly_ui/toly_ui.dart';
-
 import 'package:widget_repository/widget_repository.dart';
 
 
@@ -83,9 +81,9 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
     String json = jsonEncode(loadCategories);
     String likeJson = jsonEncode(likeData);
 
-    ResultBean<bool> result = await CategoryApi.uploadCategoryData(data: json,likeData: likeJson);
+    TaskResult<bool> result = await CategoryApi.uploadCategoryData(data: json,likeData: likeJson);
 
-    if (result.status) {
+    if (result.success) {
       setState(() => state = AsyncType.success);
       _toDefault();
     } else {

@@ -1,12 +1,11 @@
 import 'dart:io';
 
 import 'package:app_config/app_config.dart';
+import 'package:app_update/app_update.dart';
+import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/update_part/bloc_exp.dart';
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
-import 'package:flutter_unit/app/update_part/views/update_red_point.dart';
-import 'package:flutter_unit/user_system/pages/user/user_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/home_right_drawer.dart';
 import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';

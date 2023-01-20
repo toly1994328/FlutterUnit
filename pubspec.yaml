@@ -53,8 +53,12 @@ dependencies:
     path: packages/db_storage
   widgets:
     path: packages/widgets
+  authentication:
+    path: packages/authentication
   app_config:
     path: packages/app_config
+  app_update:
+    path: packages/app_update
   components:
     path: packages/components
   widget_module:

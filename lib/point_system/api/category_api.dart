@@ -1,33 +1,32 @@
 import 'package:app_config/app_config.dart';
+import 'package:utils/utils.dart';
 
-import 'package:flutter_unit/app/utils/http_utils/http_util.dart';
-import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 
 /// create by 张风捷特烈 on 2021/2/24
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
 class CategoryApi {
-  static Future<ResultBean<bool>> uploadCategoryData(
+  static Future<TaskResult<bool>> uploadCategoryData(
       {required String data, required String likeData}) async {
     String errorMsg = "";
 
-    var result = await HttpUtil.getInstance().client.post(
+    var result = await HttpUtil.instance.client.post(
         PathUnit.categoryDataSync,
         data: {"data": data, "likeData": likeData}).catchError((err) {
       errorMsg = err.toString();
     });
 
     if (result.data != null) {
-      return ResultBean.fromData<bool>(result.data);
+      return TaskResult.success(data:result.data);
     }
 
-    return ResultBean.error('请求错误: $errorMsg');
+    return TaskResult.error(msg: '请求错误: $errorMsg');
   }
 
-  static Future<ResultBean<CategoryData>> getCategoryData() async {
+  static Future<TaskResult<CategoryData>> getCategoryData() async {
     String errorMsg = "";
-    var result = await HttpUtil.getInstance()
+    var result = await HttpUtil.instance
         .client
         .get(PathUnit.categoryData)
         .catchError((err) {
@@ -39,13 +38,13 @@ class CategoryApi {
     if (result.data != null && result.data['status']) {
       // 说明有数据
       if (result.data['data'] != null) {
-        return ResultBean.ok<CategoryData>(CategoryData.fromJson(result.data['data']));
+        return TaskResult.success(data:CategoryData.fromJson(result.data['data']));
       } else {
-        return ResultBean.ok<CategoryData>(null);
+        return const TaskResult.success(data:null);
       }
     }
 
-    return ResultBean.error('请求错误: $errorMsg');
+    return TaskResult.error(msg: '请求错误: $errorMsg');
   }
 }
 

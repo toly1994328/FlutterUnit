@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 
-import 'package:flutter_unit/user_system/component/authentic_widget.dart';
+import 'package:authentication/views/authentic_widget.dart';
 import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
 import 'category_page.dart';
