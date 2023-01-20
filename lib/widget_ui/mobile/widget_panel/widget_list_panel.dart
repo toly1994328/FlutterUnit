@@ -5,7 +5,7 @@ import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 
-import '../../../navigation/home_page/phone_widget_content.dart';
+import 'phone_widget_content.dart';
 
 class WidgetListPanel extends StatelessWidget {
   const WidgetListPanel({Key? key}) : super(key: key);

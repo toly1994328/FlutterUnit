@@ -7,15 +7,16 @@ import 'package:flutter_unit/app/update_part/bloc_exp.dart';
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
 import 'package:flutter_unit/app/update_part/views/update_red_point.dart';
 import 'package:flutter_unit/user_system/pages/user/user_page.dart';
-import 'package:flutter_unit/navigation/navigation/pure_bottom_bar.dart';
+import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
+import 'package:flutter_unit/widget_ui/mobile/category_page/home_right_drawer.dart';
+import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
+
+import 'package:old_fancy_mobile_ui/home_page/fancy_home_page.dart';
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_panel/standard_home_page.dart';
 
-import '../../app/blocs/color_change_bloc.dart';
-import '../../widget_ui/mobile/category_page/collect_page.dart';
-import '../../widget_ui/mobile/category_page/home_right_drawer.dart';
-import '../home_page/home_page.dart';
+import 'pure_bottom_bar.dart';
 import 'unit_desk_navigation.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
@@ -83,7 +84,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
         physics: _neverScroll,
         controller: _controller,
         children: [
-          if (style == AppStyle.fancy) const HomePage(),
+          if (style == AppStyle.fancy) const FancyHomePage(),
           if (style == AppStyle.standard) const StandardHomePage(),
           GalleryUnit(),
           CollectPage(),
