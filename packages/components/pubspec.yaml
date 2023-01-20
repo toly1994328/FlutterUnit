@@ -10,7 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_spinkit: ^5.1.0 # loading
+  flutter_markdown: ^0.6.4 # markdown
 dev_dependencies:
   flutter_test:
     sdk: flutter

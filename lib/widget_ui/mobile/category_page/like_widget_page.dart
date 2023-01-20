@@ -1,9 +1,9 @@
 import 'package:app_config/app_config.dart';
+import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_unit/components/project/no_more_widget.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_detail/collect_widget_list_item.dart';
 import 'package:widget_module/blocs/blocs.dart';

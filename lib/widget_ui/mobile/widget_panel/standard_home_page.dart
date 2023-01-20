@@ -1,12 +1,10 @@
 import 'package:app_config/app_config.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/components/permanent/decorations/round_rect_rab_indicator.dart';
-import 'package:flutter_unit/components/permanent/sliver_header/sliver_pinned_header.dart';
-import 'package:flutter_unit/components/permanent/sliver_header/sliver_snap_header.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 

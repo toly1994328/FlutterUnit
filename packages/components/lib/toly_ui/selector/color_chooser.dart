@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
+
 import 'package:components/toly_ui/toly_ui.dart';
 
 
@@ -47,8 +47,8 @@ class _ColorChooserState extends State<ColorChooser> {
             widget.onChecked?.call(widget.colors[i]);
             setState(() {});
           },
-          child: Circle(
-            color: widget.colors[i],
+          child: CircleAvatar(
+            backgroundColor: widget.colors[i],
             radius: widget.radius,
             child: _checkLi[i]
                 ? const Icon(

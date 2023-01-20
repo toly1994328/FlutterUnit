@@ -1,13 +1,8 @@
 import 'package:app_config/app_config.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:toggle_rotate/toggle_rotate.dart';
-
-import 'package:components/toly_ui/toly_ui.dart';
 
 
 /// create by 张风捷特烈 on 2020-04-13

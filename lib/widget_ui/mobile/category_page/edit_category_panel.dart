@@ -1,12 +1,10 @@
 import 'package:app_config/app_config.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/color_utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import 'package:flutter_unit/components/permanent/edit_panel.dart';
-import 'package:flutter_unit/components/permanent/input_button.dart';
-import 'package:flutter_unit/components/project/color_chooser.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 /// create by 张风捷特烈 on 2020-04-23

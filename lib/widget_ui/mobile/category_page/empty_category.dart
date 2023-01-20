@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:components/toly_ui/toly_ui.dart';
 
-import 'package:flutter_unit/components/permanent/panel.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:path/path.dart' as path;

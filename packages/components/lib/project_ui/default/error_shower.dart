@@ -1,4 +1,3 @@
-import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 
 
@@ -26,11 +25,13 @@ class ErrorShower extends StatelessWidget {
               child: Icon(
                 Icons.error,
                 size: 80,
-                color: UnitColor.error_color,
+                color: Colors.red,
               )),
           Text(
             error,
-            style: UnitTextStyle.headTextStyle.copyWith(color: UnitColor.error_color),
+            style:TextStyle(
+              color: Colors.red, fontSize: 18,
+            ),
             textAlign: TextAlign.center,
           )
         ],
