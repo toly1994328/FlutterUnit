@@ -8,6 +8,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  app_update:
+    dependency: "direct main"
+    description:
+      path: "packages/app_update"
+      relative: true
+    source: path
+    version: "0.0.1"
   archive:
     dependency: transitive
     description:
@@ -29,6 +36,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.9.0"
+  authentication:
+    dependency: "direct main"
+    description:
+      path: "packages/authentication"
+      relative: true
+    source: path
+    version: "0.0.1"
   bloc:
     dependency: transitive
     description:

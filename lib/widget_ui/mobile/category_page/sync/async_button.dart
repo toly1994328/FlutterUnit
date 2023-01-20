@@ -5,8 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/point_system/api/category_api.dart';
+import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:db_storage/db_storage.dart';
@@ -73,9 +73,9 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
 
   void _doSync() async {
     setState(() => state = AsyncType.loading);
-    ResultBean<CategoryData> result = await CategoryApi.getCategoryData();
+    TaskResult<CategoryData> result = await CategoryApi.getCategoryData();
 
-    if (result.status) {
+    if (result.success) {
       // 说明请求成功
       if (result.data != null) {
         //说明有后台备份数据，进行同步操作
