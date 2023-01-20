@@ -2,10 +2,7 @@ import 'package:app_config/app_config.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/permanent/multi_chip_filter.dart';
-import 'package:flutter_unit/components/project/default/empty_shower.dart';
-import 'package:flutter_unit/components/project/default/loading_shower.dart';
+
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 

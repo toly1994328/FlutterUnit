@@ -1,4 +1,4 @@
-import 'package:app_config/app_config.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -23,7 +23,9 @@ class LoadingShower extends StatelessWidget {
               width: 80,
               height: 80,
               child: SpinKitFadingCube(color: Theme.of(context).primaryColor)),
-          const Text("loading ...",style: UnitTextStyle.hintStyle,)
+          const Text("loading ...",style: TextStyle(
+              color: Color(0xff939EA7),
+              fontSize: 13),)
         ],
       ),
     );

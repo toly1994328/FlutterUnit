@@ -1,11 +1,11 @@
 import 'package:app_config/app_config.dart';
+import 'package:components/project_ui/project_ui.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/components/permanent/circle.dart';
-import 'package:flutter_unit/components/project/default/loading_shower.dart';
-import 'package:flutter_unit/components/project/dialogs/delete_category_dialog.dart';
 
-import 'package:flutter_unit/components/project/no_more_widget.dart';
+import 'package:flutter_unit/widget_ui/mobile/category_page/delete_category_dialog.dart';
+
 import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:widget_repository/widget_repository.dart';

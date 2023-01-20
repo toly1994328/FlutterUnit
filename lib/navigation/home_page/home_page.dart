@@ -1,20 +1,18 @@
 import 'dart:math';
 
 import 'package:app_config/app_config.dart';
+import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/blocs/color_change_bloc.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:flutter_unit/components/project/default/empty_shower.dart';
-import 'package:flutter_unit/components/project/default/error_shower.dart';
-import 'package:flutter_unit/components/project/default/loading_shower.dart';
-import 'package:flutter_unit/components/project/no_more_widget.dart';
+
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 import 'phone_widget_content.dart';
-import 'package:db_storage/db_storage.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

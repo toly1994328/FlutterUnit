@@ -1,5 +1,5 @@
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/drop_selectable_widget.dart';
 
 import 'anim_painter.dart';
 import 'point_data.dart';
