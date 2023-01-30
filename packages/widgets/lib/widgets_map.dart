@@ -37,6 +37,11 @@ class WidgetsMap {
           const AutocompleteDemo(),
           const AutocompleteType()
         ];
+        case "Badge":
+        return [
+          const BadgeDemo(),
+          const BadgeVisibleDemo(),
+        ];
         case "DateRangePickerDialog":
         return [
           const DateRangePickerDialogDemo(),

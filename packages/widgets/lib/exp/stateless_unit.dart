@@ -32,6 +32,8 @@ export '../StatelessWidget/Container/node6_constraints.dart';
 export '../StatelessWidget/MaterialBanner/node1_one_btn.dart';
 export '../StatelessWidget/MaterialBanner/node2_two_btn.dart';
 export '../StatelessWidget/SafeArea/node1_base.dart';
+export '../StatelessWidget/Badge/node_1.dart';
+export '../StatelessWidget/Badge/node_2.dart';
 
 export '../StatelessWidget/CupertinoFullscreenDialogTransition/node1_base.dart';
 export '../StatelessWidget/CupertinoPageTransition/node1_base.dart';
@@ -42,7 +44,6 @@ export '../StatelessWidget/DataTable/node2_operation.dart';
 export '../StatelessWidget/OrientationBuilder/node1_base.dart';
 export '../StatelessWidget/Title/node1_base.dart';
 export '../StatelessWidget/TabPageSelector/node1_base.dart';
-export '../StatelessWidget/TabPageSelectorIndicator/node1_base.dart';
 export '../StatelessWidget/TabPageSelectorIndicator/node1_base.dart';
 export '../StatelessWidget/CupertinoNavigationBarBackButton/node1_base.dart';
 
