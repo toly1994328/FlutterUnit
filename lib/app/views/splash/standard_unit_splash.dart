@@ -9,7 +9,6 @@ import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 
-
 import 'dart:ui' as ui;
 
 import 'package:widget_repository/widget_repository.dart';
@@ -125,10 +124,11 @@ class _StandardUnitSplashState extends State<StandardUnitSplash>
         .add(const EventTabTap(WidgetFamily.statelessWidget));
     BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
-    if (cost < _minCost) {
-      Future.delayed(Duration(milliseconds: _minCost - cost)).then((value) {
-        Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
-      });
-    }
+
+    // 启动耗时小于 _minCost 时，等待 delay 毫秒
+    int delay = cost < _minCost ? _minCost - cost : 0;
+    Future.delayed(Duration(milliseconds: delay)).then((value) {
+      Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
+    });
   }
 }

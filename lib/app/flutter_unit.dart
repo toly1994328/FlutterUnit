@@ -25,7 +25,6 @@ class FlutterUnit extends StatelessWidget {
           child: MaterialApp(
             showPerformanceOverlay: state.showPerformanceOverlay,
             title: StrUnit.appName,
-
             debugShowCheckedModeBanner: false,
             onGenerateRoute: UnitRouters.generateRoute,
             localizationsDelegates: GlobalMaterialLocalizations.delegates,
