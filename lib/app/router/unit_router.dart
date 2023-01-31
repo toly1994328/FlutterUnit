@@ -3,7 +3,9 @@
 import 'dart:io';
 
 import 'package:app_config/app_config.dart';
+import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/navigation/unit_navigation.dart';
 import 'package:flutter_unit/app/views/about/about_app_page.dart';
 import 'package:flutter_unit/app/views/about/about_me_page.dart';
 import 'package:flutter_unit/app/views/about/version_info.dart';
@@ -18,13 +20,13 @@ import 'package:flutter_unit/app/views/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
 import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart';
 import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
-import 'package:flutter_unit/user_system/pages/login/login_page.dart';
-import 'package:flutter_unit/user_system/pages/register/register_page.dart';
-import 'package:flutter_unit/widget_system/views/widget_system_view.dart';
+import 'package:flutter_unit/widget_ui/desk/widget_detail/widget_detail_page.dart';
+import 'package:flutter_unit/widget_ui/mobile/category_page/category_detail.dart';
+import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
+import 'package:flutter_unit/widget_ui/mobile/search_page/search_page.dart';
+import 'package:flutter_unit/widget_ui/mobile/widget_detail/widget_detail_page.dart';
 import 'package:widget_repository/widget_repository.dart';
 
-import '../../navigation/navigation/unit_navigation.dart';
-import 'router_utils.dart';
 
 class UnitRouters {
   static const String widget_detail = '/widget_detail';
@@ -68,10 +70,18 @@ class UnitRouters {
 
       // 组件详情页
       case widget_detail:
+        Widget child;
+        if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
+          child = DeskWidgetDetailPageScope(          model: settings.arguments as WidgetModel,
+          );
+        }else{
+          child =  WidgetDetailPageScope(
+            model: settings.arguments as WidgetModel,
+          );
+        }
+
         return Right2LeftRouter(
-            child: WidgetDetailPageScope(
-          model: settings.arguments as WidgetModel,
-        ));
+            child: child);
 
       case search:
         return Right2LeftRouter(child: const SearchPageProvider());

@@ -1,6 +1,5 @@
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/text_typer.dart';
 
 class AttrUnitPage extends StatelessWidget {
   final String info = '【Flutter属性集录】是Unit项目计划的第二阶段的功能之一。'

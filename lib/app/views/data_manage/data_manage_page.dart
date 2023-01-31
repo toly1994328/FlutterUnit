@@ -8,10 +8,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_unit/app/utils/Toast.dart';
-import 'package:flutter_unit/app/utils/http_utils/result_bean.dart';
 import 'package:flutter_unit/point_system/api/category_api.dart';
 
-import 'package:flutter_unit/user_system/component/authentic_widget.dart';
+import 'package:authentication/views/authentic_widget.dart';
+import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:path/path.dart' as path;
@@ -93,10 +93,10 @@ class DataManagePage extends StatelessWidget {
     String json = jsonEncode(loadCategories);
     String likeJson = jsonEncode(likeData);
 
-    ResultBean<bool> result =
+    TaskResult<bool> result =
         await CategoryApi.uploadCategoryData(data: json, likeData: likeJson);
 
-    if (result.status) {
+    if (result.success) {
       Toast.toast(context, '数据集备份成功!');
     } else {
       Toast.toast(context, '数据集备份失败!');
@@ -104,9 +104,9 @@ class DataManagePage extends StatelessWidget {
   }
 
   void _doSync(BuildContext context) async {
-    ResultBean<CategoryData> result = await CategoryApi.getCategoryData();
+    TaskResult<CategoryData> result = await CategoryApi.getCategoryData();
 
-    if (result.status) {
+    if (result.success) {
       // 说明请求成功
       if (result.data != null) {
         //说明有后台备份数据，进行同步操作
