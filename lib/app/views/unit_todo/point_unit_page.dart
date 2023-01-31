@@ -1,11 +1,6 @@
-
-
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:components/toly_ui/toly_ui.dart';
-
-import 'package:flutter_unit/components/permanent/text_typer.dart';
-
 
 class BugUnitPage extends StatelessWidget {
   const BugUnitPage({Key? key}) : super(key: key);
@@ -66,7 +61,6 @@ class BugUnitPage extends StatelessWidget {
                         blurRadius: 1)
                   ],
                   color: Colors.white,
-//              color: Theme.of(context).primaryColor,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),

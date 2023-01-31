@@ -1,14 +1,9 @@
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/convert_man.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 import 'package:flutter_unit/point_system/github_model/github_model.dart';
-
-import 'package:flutter_unit/components/permanent/circle_image.dart';
-import 'package:flutter_unit/components/permanent/color_wrapper.dart';
-import 'package:flutter_unit/components/permanent/markdown/markdown_widget.dart';
-import 'package:flutter_unit/components/permanent/panel.dart';
-
 
 /// create by 张风捷特烈 on 2020/9/3
 /// contact me by email 1981462002@qq.com
@@ -20,7 +15,9 @@ class IssuesDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Flutter Point'),),
+      appBar: AppBar(
+        title: const Text('Flutter Point'),
+      ),
       body: BlocBuilder<PointCommentBloc, PointCommentState>(
           builder: _buildContent),
     );
@@ -36,9 +33,12 @@ class IssuesDetailPage extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(child: IssueTitle(issue: state.issue)),
           SliverList(
-              delegate: SliverChildBuilderDelegate(
-                      (ctx, int index) =>  IssueCommentWidget(comment:state.comments[index]),
-                  childCount: state.comments.length))
+            delegate: SliverChildBuilderDelegate(
+                (ctx, int index) => IssueCommentWidget(
+                      comment: state.comments[index],
+                    ),
+                childCount: state.comments.length),
+          )
         ],
       );
     }
@@ -50,11 +50,13 @@ class IssuesDetailPage extends StatelessWidget {
 class IssueTitle extends StatelessWidget {
   final Issue issue;
 
-  const IssueTitle({Key? key,required this.issue}) : super(key: key);
+  const IssueTitle({Key? key, required this.issue}) : super(key: key);
 
   String get issueDesHtml => issue.bodyHtml != null
       ? issue.bodyHtml!
-      : (issue.body != null) ? issue.body! : "";
+      : (issue.body != null)
+          ? issue.body!
+          : "";
 
   @override
   Widget build(BuildContext context) {
@@ -65,46 +67,60 @@ class IssueTitle extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Panel(child: Text('${issue.title}',style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)),
+                child: Panel(
+                    child: Text(
+                  '${issue.title}',
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                )),
               ),
               Positioned(
                   right: 10,
                   bottom: 10,
                   child: WrapColor(
-                    child: Text('#${issue.number}',style: const TextStyle(color: Colors.white),),
+                    child: Text(
+                      '#${issue.number}',
+                      style: const TextStyle(color: Colors.white),
+                    ),
                   )),
             ],
           ),
           const Divider(),
-
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: WrapColor(
               color: Colors.blue.withAlpha(22),
               child: ListTile(
                 dense: true,
-                leading: CircleImage(size:40,borderSize:1,image: NetworkImage(issue.user!.avatarUrl!),),
+                leading: CircleImage(
+                  size: 40,
+                  borderSize: 1,
+                  image: NetworkImage(issue.user!.avatarUrl!),
+                ),
                 title: Text(issue.user!.login!),
-                subtitle:Row(
+                subtitle: Row(
                   children: [
                     Text('创建于:${ConvertMan.time2string(issue.createdAt!)}'),
                     const Spacer(),
                     WrapColor(
                         color: Colors.green,
-                        child: Text('更新于:${ConvertMan.time2string(issue.updatedAt!)}',style: const TextStyle(color: Colors.white),)),
-
+                        child: Text(
+                          '更新于:${ConvertMan.time2string(issue.updatedAt!)}',
+                          style: const TextStyle(color: Colors.white),
+                        )),
                   ],
-                ) ,
+                ),
               ),
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: MarkdownWidget(
                 markdownData: issueDesHtml, style: MarkdownWidget.kWhite),
           ),
-          const Divider(thickness: 2,)
+          const Divider(
+            thickness: 2,
+          )
         ],
       ),
     );
@@ -114,11 +130,13 @@ class IssueTitle extends StatelessWidget {
 class IssueCommentWidget extends StatelessWidget {
   final IssueComment comment;
 
-  const IssueCommentWidget({Key? key,required this.comment}) : super(key: key);
+  const IssueCommentWidget({Key? key, required this.comment}) : super(key: key);
 
   String get issueDesHtml => comment.bodyHtml != null
       ? comment.bodyHtml!
-      : (comment.body != null) ? comment.body! : "";
+      : (comment.body != null)
+          ? comment.body!
+          : "";
 
   @override
   Widget build(BuildContext context) {
@@ -130,18 +148,24 @@ class IssueCommentWidget extends StatelessWidget {
             color: Colors.blue.withAlpha(22),
             child: ListTile(
               dense: true,
-              leading: CircleImage(size:40,borderSize:1,image: NetworkImage(comment.user!.avatarUrl!),),
+              leading: CircleImage(
+                size: 40,
+                borderSize: 1,
+                image: NetworkImage(comment.user!.avatarUrl!),
+              ),
               title: Text(comment.user!.login!),
-              subtitle:Row(
+              subtitle: Row(
                 children: [
                   Text('创建于:${ConvertMan.time2string(comment.createdAt!)}'),
                   const Spacer(),
                   WrapColor(
                       color: Colors.green,
-                      child: Text('更新于:${ConvertMan.time2string(comment.updatedAt!)}',style: const TextStyle(color: Colors.white),)),
-
+                      child: Text(
+                        '更新于:${ConvertMan.time2string(comment.updatedAt!)}',
+                        style: const TextStyle(color: Colors.white),
+                      )),
                 ],
-              ) ,
+              ),
             ),
           ),
         ),
@@ -150,7 +174,7 @@ class IssueCommentWidget extends StatelessWidget {
           child: MarkdownWidget(
               markdownData: issueDesHtml, style: MarkdownWidget.kWhite),
         ),
-        const Divider(thickness: 2,)
+        const Divider(thickness: 2)
       ],
     );
   }
