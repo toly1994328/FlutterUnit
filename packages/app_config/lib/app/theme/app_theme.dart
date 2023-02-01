@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,12 +29,18 @@ class AppTheme {
         statusBarBrightness: Brightness.light,
         statusBarIconBrightness: Brightness.dark
     );
+
     return ThemeData(
       fontFamily: state.fontFamily,
       primarySwatch: state.themeColor,
-        useMaterial3: true,
+        useMaterial3: Platform.isAndroid, // Android 使用 Material3
+        chipTheme: ChipThemeData(
+          padding: EdgeInsets.symmetric(horizontal: 10)
+          // labelPadding: EdgeInsets.symmetric(horizontal: 6,vertical: 5)
+        ),
         appBarTheme: AppBarTheme(
-            systemOverlayStyle: overlayStyle
+            systemOverlayStyle: overlayStyle,
+
         ),
     );
   }
