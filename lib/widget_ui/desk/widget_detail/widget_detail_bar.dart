@@ -64,7 +64,10 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
             builder: _buildByLikeState,
           ),
         ),
-        const Center(child: WindowButtons())
+        Padding(
+          padding: const EdgeInsets.only(right: 20),
+          child: const Center(child: WindowButtons()),
+        )
       ],
     );
   }
