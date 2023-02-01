@@ -17,11 +17,11 @@ class DeskWidgetTopBar extends StatefulWidget {
 
 class _DeskWidgetTopBarState extends State<DeskWidgetTopBar>  with SingleTickerProviderStateMixin {
   late TabController tabController;
+
   static const List<String> _tabs = ['无态', '有态', '单渲', '多渲', '滑片', '代理', '其它'];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(length: _tabs.length, vsync: this);
   }
@@ -65,7 +65,6 @@ class _DeskWidgetTopBarState extends State<DeskWidgetTopBar>  with SingleTickerP
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: SizedBox(
                   width: 250, height: 30, child: DeskSearchBar(
-
               )),
             ),
             // const SizedBox(width: 20,),

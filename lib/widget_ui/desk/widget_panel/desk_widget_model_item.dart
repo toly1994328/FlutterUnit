@@ -19,9 +19,19 @@ class DeskWidgetItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(6),
       onTap: onTap,
       child: Ink(
-        color: Colors.white,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Theme.of(context).primaryColor.withOpacity(0.1),
+              blurRadius: 2,
+            )
+          ]
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         // margin:
         child: Column(
