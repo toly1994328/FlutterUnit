@@ -8,8 +8,8 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:widgets/widgets.dart';
 
-import '../../../../widget_ui/desk/widget_detail/link_widget_buttons.dart';
-import '../../../../widget_ui/desk/widget_detail/widget_detail_bar.dart';
+import 'link_widget_buttons.dart';
+import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
 import 'widget_node_panel.dart';
 

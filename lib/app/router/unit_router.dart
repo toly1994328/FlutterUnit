@@ -20,7 +20,7 @@ import 'package:flutter_unit/app/views/unit_todo/layout_unit_page.dart';
 import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
 import 'package:flutter_unit/point_system/views/issues_point/issues_detail.dart';
 import 'package:flutter_unit/point_system/views/issues_point/issues_point_page.dart';
-import 'package:flutter_unit/widget_ui/desk/widget_detail/widget_detail_page.dart';
+import 'package:flutter_unit/widget_ui/desk_ui/widget_detail/widget_detail_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/category_detail.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/search_page/search_page.dart';
@@ -86,7 +86,7 @@ class UnitRouters {
       case search:
         return Right2LeftRouter(child: const SearchPageProvider());
       case collect:
-        return Right2LeftRouter(child: const CollectPage());
+        return Right2LeftRouter(child: const CollectPageAdapter());
 
       case setting:
         return Right2LeftRouter(child: const SettingPage());
