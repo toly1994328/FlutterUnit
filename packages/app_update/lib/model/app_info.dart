@@ -3,27 +3,28 @@ import 'package:equatable/equatable.dart';
 import 'package:utils/utils.dart';
 
 class AppInfoApi {
-
-  static Future<TaskResult<AppInfo>> getAppVersion({required String appName}) async {
+  static Future<TaskResult<AppInfo>> getAppVersion(
+      {required String appName}) async {
     String errorMsg = "";
-    var result = await HttpUtil.instance
-        .client
-        .get(PathUnit.appInfo+"/$appName")
-        .catchError((err) {
+    var result;
+    try {
+      result =
+          await HttpUtil.instance.client.get(PathUnit.appInfo + "/$appName");
+    } catch (err) {
       errorMsg = err.toString();
-    });
+    }
 
     // 获取的数据非空且 status = true
     if (result.data != null && result.data['status']) {
       // 说明有数据
       if (result.data['data'] != null) {
         return TaskResult.success(
-           data: AppInfo(
-              appName: result.data['data']['appName'],
-              appVersion: result.data['data']['appVersion'],
-              appUrl: result.data['data']['appUrl'],
-              appSize: result.data['data']['appSize'],
-            ));
+            data: AppInfo(
+          appName: result.data['data']['appName'],
+          appVersion: result.data['data']['appVersion'],
+          appUrl: result.data['data']['appUrl'],
+          appSize: result.data['data']['appSize'],
+        ));
       } else {
         return const TaskResult.success(data: null);
       }
@@ -32,7 +33,7 @@ class AppInfoApi {
   }
 }
 
-class AppInfo extends Equatable{
+class AppInfo extends Equatable {
   final String appName;
   final String appVersion;
   final String appUrl;
@@ -46,7 +47,7 @@ class AppInfo extends Equatable{
   });
 
   @override
-  List<Object?> get props => [appName,appVersion,appUrl,appSize];
+  List<Object?> get props => [appName, appVersion, appUrl, appSize];
 
   @override
   String toString() {

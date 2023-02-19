@@ -9,6 +9,7 @@ import 'package:flutter_unit/painter_system/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
 import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
+import '../../point_system/views/desk_ui/desk_point_page.dart';
 import '../gallery_detail_page.dart';
 
 /// create by 张风捷特烈 on 2020/11/28
@@ -49,7 +50,17 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _buildContent(),
+      body: Column(
+        children: [
+          SimpleDeskTopBar(
+            leading: Text(
+              'Flutter 绘制集录',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(child: _buildContent()),
+        ],
+      ),
     );
   }
 
@@ -75,12 +86,13 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
       );
     }).toList();
 
-    const SliverGridDelegate gridDelegate =
-        SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
-            childAspectRatio: 0.85);
+    SliverGridDelegate gridDelegate =
+    const SliverGridDelegateWithMaxCrossAxisExtent(
+      maxCrossAxisExtent: 460,
+      mainAxisSpacing: 10,
+      mainAxisExtent: 360,
+      crossAxisSpacing: 10,
+    );
 
     return GridView.builder(
         controller: controller,
