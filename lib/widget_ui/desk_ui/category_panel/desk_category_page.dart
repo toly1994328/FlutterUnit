@@ -11,22 +11,34 @@ import '../../mobile/category_page/category_list_item.dart';
 import '../../mobile/category_page/delete_category_dialog.dart';
 import '../../mobile/category_page/edit_category_panel.dart';
 import '../../mobile/category_page/like_widget_page.dart';
+import 'desk_top_like_panel.dart';
 
-class DeskCategoryPage extends StatelessWidget {
+class DeskCategoryPage extends StatefulWidget {
   const DeskCategoryPage({Key? key}) : super(key: key);
+
+  @override
+  State<DeskCategoryPage> createState() => _DeskCategoryPageState();
+}
+
+class _DeskCategoryPageState extends State<DeskCategoryPage> {
+
+  final PageController _ctrl = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          DeskTabTopBar(onTabPressed: (int value) {}, tabs: ['收藏记录','珍藏组件',
+          DeskTabTopBar(onTabPressed: (int value) {
+            _ctrl.jumpToPage(value);
+          }, tabs: ['收藏记录','珍藏组件',
             // '添加收藏集'
           ],),
               Expanded(child: PageView(
+                controller: _ctrl,
                 children: [
                   DeskCateGoryPage(),
-                  LikeWidgetPage(),
+                  DeskLikePage(),
                 ],
               ))
         ],
@@ -42,7 +54,7 @@ class DeskCateGoryPage extends StatelessWidget {
   const SliverGridDelegateWithMaxCrossAxisExtent(
     maxCrossAxisExtent: 300,
     mainAxisSpacing: 10,
-    mainAxisExtent: 280,
+    mainAxisExtent: 260,
     crossAxisSpacing: 10,
   );
 
