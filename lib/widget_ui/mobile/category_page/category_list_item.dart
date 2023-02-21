@@ -17,18 +17,16 @@ class CategoryListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      shadowColor: data.color.withAlpha(88),
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-      elevation: 2,
-      child: Container(
-        child: _buildChild(context),
-        padding: const EdgeInsets.all(10),
+    return Container(
+      child: _buildChild(context),
+      padding: const EdgeInsets.all(10),
 
-        decoration:const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-        ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.1),blurRadius: 2)
+        ],
+        borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
     );
 
@@ -50,7 +48,7 @@ class CategoryListItem extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.grey,
                           shadows: [
-                            Shadow(color: themeColor, offset:const Offset(.2,.2),blurRadius: .5)
+                            Shadow(color: themeColor.withOpacity(0.4), offset:const Offset(.2,.2),blurRadius: .5)
                           ])),
                 ),
                   Positioned(
