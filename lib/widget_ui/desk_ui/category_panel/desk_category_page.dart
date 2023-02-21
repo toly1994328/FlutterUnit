@@ -20,11 +20,7 @@ class DeskCategoryPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          DeskTabTopBar(
-
-            onTabPressed: (int value) {
-
-          }, tabs: ['收藏记录','珍藏组件',
+          DeskTabTopBar(onTabPressed: (int value) {}, tabs: ['收藏记录','珍藏组件',
             // '添加收藏集'
           ],),
               Expanded(child: PageView(
