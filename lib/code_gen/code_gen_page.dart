@@ -1,7 +1,6 @@
 import 'dart:io';
-
-import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/code_gen/icon_font_gen/icon_font_gen_page.dart';
 
 import 'class_generator.dart';
 import 'desk_widget_top_bar.dart';
@@ -22,6 +21,7 @@ class CodeGenPage extends StatefulWidget {
 class _CodeGenPageState extends State<CodeGenPage> {
 
   TextEditingController _dirPath = TextEditingController();
+  final PageController _ctrl = PageController();
   int selectIndex = 0;
 
   final List<String> selectData = [
@@ -50,12 +50,30 @@ class _CodeGenPageState extends State<CodeGenPage> {
         children: [
           DeskCodeGenTopBar(
             onTapGen: _doGen,
-            onTabPressed: (int value) {},
+            onTabPressed: (int value) {
+              _ctrl.jumpToPage(value);
+            },
           ),
-          Expanded(child: Center(
-            child: Text(
-              '敬请期待'
-            ),
+          Expanded(child: PageView(
+            controller:_ctrl,
+            children: [
+              IconFontGenPage(),
+              Center(
+                child: Text(
+                    '敬请期待'
+                ),
+              ),
+              Center(
+                child: Text(
+                    '敬请期待'
+                ),
+              ),
+              Center(
+                child: Text(
+                    '敬请期待'
+                ),
+              )
+            ],
           )),
           if(false)
           Padding(
@@ -64,11 +82,11 @@ class _CodeGenPageState extends State<CodeGenPage> {
               children:  [
                 GestureDetector(
                     onTap: () async{
-                      final String? directoryPath = await getDirectoryPath();
-                      if (directoryPath != null) {
-                        print("====$directoryPath=========");
-                        _dirPath.text = directoryPath;
-                      }
+                      // final String? directoryPath = await getDirectoryPath();
+                      // if (directoryPath != null) {
+                      //   print("====$directoryPath=========");
+                      //   _dirPath.text = directoryPath;
+                      // }
                     },
                     child: Icon(Icons.file_copy_outlined)),
                 SizedBox(width: 20,),
@@ -124,6 +142,8 @@ class _CodeGenPageState extends State<CodeGenPage> {
       clazz1.write2File(Directory(_dirPath.text));
     }
   }
+
+
 }
 
 class GenInput extends StatelessWidget {
