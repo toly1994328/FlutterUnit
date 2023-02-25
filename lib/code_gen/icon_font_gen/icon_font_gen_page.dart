@@ -133,27 +133,7 @@ class _IconFontGenPageState extends State<IconFontGenPage>
       projectPath:  _projectCtrl.text,
       srcZip:  _iconFontCtrl.text,
     );
-
     parser.gen(config);
-    // // 将压缩包有用资源解压到目标文件
-    // final archive = ZipDecoder().decodeBuffer(inputStream);
-    // for (var file in archive.files) {
-    //   if (file.isFile) {
-    //     if (file.name.endsWith('.ttf')) {
-    //       String filePath = path.join(assetsDirPath, path.basename(file.name));
-    //       final outputStream = OutputFileStream(filePath);
-    //       file.writeContent(outputStream);
-    //       outputStream.close();
-    //     }
-    //
-    //     if (file.name.endsWith('.json')) {
-    //       dynamic data = file.content;
-    //       String jsonContent = utf8.decode(data);
-    //
-    //       Toast.success(context, '生成代码成功！');
-    //     }
-    //   }
-    // }
     Toast.success(context, '生成代码成功！');
 
     sp.setString(SpKey.iconFontGenConfig,json.encode(config));
