@@ -65,7 +65,7 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
                 onItemClick: _onItemClick, itemData: {
                 //底栏图标
                 "组件集录": TolyIcon.icon_layout, "收藏集录": TolyIcon.icon_star,
-                "绘制集录": Icons.palette, "代码生成": Icons.widgets,
+                "绘制集录": Icons.palette, "代码生成": TolyIcon.icon_fast,
                 "要点集录": TolyIcon.icon_bug,
                 },
               ),

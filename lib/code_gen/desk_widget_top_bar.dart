@@ -19,7 +19,7 @@ class DeskCodeGenTopBar extends StatefulWidget {
 class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>  with SingleTickerProviderStateMixin {
   late TabController tabController;
 
-  static const List<String> _tabs = ['数据类', 'IconFont', '状态管理', 'Json 解析',];
+  static const List<String> _tabs = ['IconFont', '数据类' , '状态管理', 'Json 解析',];
 
   @override
   void initState() {
@@ -62,12 +62,7 @@ class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>  with SingleTicke
               ),
             ),
             Spacer(),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    shape: StadiumBorder()
-                ),
-                onPressed: widget.onTapGen, child: Text('生成代码')),
+
             const SizedBox(width: 20,),
             WindowButtons(),
           ],

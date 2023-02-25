@@ -6,6 +6,9 @@ class SpKey{
   SpKey._();
 
   static const themeColorIndex = 'theme_color_index';
+
+  static const iconFontGenConfig = 'icon_font_gen_config';
+
   static const showBackground = 'show_background';
   static const showTool = 'show_tool';
   static const fontFamily = 'font_family';
