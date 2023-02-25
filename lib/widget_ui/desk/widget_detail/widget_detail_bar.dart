@@ -32,6 +32,7 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
       scrolledUnderElevation: 0.5,
       flexibleSpace: DragToMoveAreaNoDouble(
         child: DiyFlexibleSpaceBar(
+          centerTitle: false,
           expandedTitleScale: 2,
           titleIconBuilder: (t) => WindmillWidget(
             rotate: t * 2 * pi * 2,
