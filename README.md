@@ -48,7 +48,7 @@ Tools • Dart 2.19.0 • DevTools 2.20.1
 
 > 开源不易，请我喝咖啡 ~
 
-![](./ewm/coffee.webp)
+![](./doc/ewm/coffee.webp)
 
 ### 一、组件的展示页面
 
