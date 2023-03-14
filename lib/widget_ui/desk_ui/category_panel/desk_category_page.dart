@@ -31,7 +31,7 @@ class _DeskCategoryPageState extends State<DeskCategoryPage> {
         children: [
           DeskTabTopBar(onTabPressed: (int value) {
             _ctrl.jumpToPage(value);
-          }, tabs: ['收藏记录','珍藏组件',
+          }, tabs: ['组件酒肆','珍藏组件',
             // '添加收藏集'
           ],),
               Expanded(child: PageView(
