@@ -46,6 +46,9 @@ Tools • Dart 2.19.0 • DevTools 2.20.1
 ![](./doc/screens/windows-1.png)
 
 
+> 开源不易，请我喝咖啡 ~
+
+![](./ewm/coffee.webp)
 
 ### 一、组件的展示页面
 
