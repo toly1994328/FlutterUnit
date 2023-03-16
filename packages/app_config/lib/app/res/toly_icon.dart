@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
-//Power By 张风捷特烈--- Generated file. Do not edit.
-
+// Power By 张风捷特烈--- Generated file. Do not edit.
+// 欢迎支持： https://github.com/toly1994328/FlutterUnit
 class TolyIcon {
-
     TolyIcon._();
+    static const IconData icon_fast = IconData( 0xe607, fontFamily: "TolyIcon");
 static const IconData icon_layout = IconData( 0xe85e, fontFamily: "TolyIcon");
 static const IconData upload_success = IconData( 0xe60b, fontFamily: "TolyIcon");
 static const IconData download = IconData( 0xea51, fontFamily: "TolyIcon");
@@ -35,4 +35,5 @@ static const IconData icon_search = IconData( 0xe604, fontFamily: "TolyIcon");
 static const IconData icon_star_ok = IconData( 0xe6ae, fontFamily: "TolyIcon");
 static const IconData icon_star = IconData( 0xe609, fontFamily: "TolyIcon");
 static const IconData icon_star_add = IconData( 0xe68e, fontFamily: "TolyIcon");
-}
+
+}  

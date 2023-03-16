@@ -36,42 +36,10 @@ class _StandardHomePageState extends State<StandardHomePage>
     super.dispose();
   }
 
-  List<Widget> _buildHeader(BuildContext context, bool innerBoxIsScrolled) {
-    Color themeColor = Theme.of(context).primaryColor;
-
-    return [
-      const SliverSnapHeader(
-        child: StandardHomeSearch(),
-      ),
-      SliverOverlapAbsorber(
-        sliver: SliverPinnedHeader(
-          child: TabBar(
-            onTap: _switchTab,
-            indicatorSize: TabBarIndicatorSize.label,
-            isScrollable: true,
-            indicator: RoundRectTabIndicator(
-              borderSide: BorderSide(color: themeColor, width: 3),
-            ),
-            labelStyle: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-            controller: tabController,
-            labelColor: themeColor,
-            indicatorWeight: 3,
-            unselectedLabelColor: Colors.grey,
-            indicatorColor: themeColor,
-            tabs: _tabs.map((String name) => Tab(text: name)).toList(),
-          ),
-        ),
-        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-      ),
-    ];
-  }
-
   void _switchTab(int index) {
     WidgetFamily widgetFamily = Convert.toFamily(index);
-    context.read<ColorChangeCubit>()
+    context
+        .read<ColorChangeCubit>()
         .change(Cons.tabColors[index], family: widgetFamily);
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
@@ -109,6 +77,37 @@ class _StandardHomePageState extends State<StandardHomePage>
     );
   }
 
+  List<Widget> _buildHeader(BuildContext context, bool innerBoxIsScrolled) {
+    Color themeColor = Theme.of(context).primaryColor;
+
+    return [
+      const SliverSnapHeader(child: StandardHomeSearch()),
+      SliverOverlapAbsorber(
+        sliver: SliverPinnedHeader(
+          child: TabBar(
+            onTap: _switchTab,
+            indicatorSize: TabBarIndicatorSize.label,
+            isScrollable: true,
+            indicator: RoundRectTabIndicator(
+              borderSide: BorderSide(color: themeColor, width: 3),
+            ),
+            labelStyle: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+            controller: tabController,
+            labelColor: themeColor,
+            indicatorWeight: 3,
+            unselectedLabelColor: Colors.grey,
+            indicatorColor: themeColor,
+            tabs: _tabs.map((String name) => Tab(text: name)).toList(),
+          ),
+        ),
+        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+      ),
+    ];
+  }
+
   Widget buildScrollPage(String name) {
     return Builder(
       builder: (BuildContext context) => CustomScrollView(
@@ -131,4 +130,13 @@ class _StandardHomePageState extends State<StandardHomePage>
 
   @override
   bool get wantKeepAlive => true;
+}
+
+class _UnitSliverTopBar extends StatelessWidget {
+  const _UnitSliverTopBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
 }

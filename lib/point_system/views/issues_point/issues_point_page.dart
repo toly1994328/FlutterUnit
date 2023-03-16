@@ -8,14 +8,13 @@ import 'package:flutter_unit/point_system/api/issues_api.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 import 'package:flutter_unit/point_system/github_model/github_model.dart';
 
-
 import 'issue_item.dart';
+import 'issues_detail.dart';
 import 'repo_widget.dart';
 
 /// create by 张风捷特烈 on 2020/6/17
 /// contact me by email 1981462002@qq.com
 /// 说明:
-
 
 class IssuesPointScope extends StatelessWidget {
   const IssuesPointScope({Key? key}) : super(key: key);
@@ -24,20 +23,17 @@ class IssuesPointScope extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
       BlocProvider<PointBloc>(create: (_) => PointBloc()..add(EventLoadPoint())),
-      BlocProvider<PointCommentBloc>(create: (_) => PointCommentBloc()),
-    ], child: const IssuesPointPage());
+    ], child: const IssuesPointPage(),
+    );
   }
 }
-
-
-
 
 class IssuesPointPage extends StatelessWidget {
   const IssuesPointPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body:  IssuesPointContent());
+    return const Scaffold(body: IssuesPointContent());
   }
 }
 
@@ -61,12 +57,12 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
   Widget build(BuildContext context) {
     return BlocBuilder<PointBloc, PointState>(
         builder: (_, state) => RefreshIndicator(
-          onRefresh: _loadIssues,
-          child: CustomScrollView(slivers: <Widget>[
-            _buildSliverAppBar(),
-            buildContentByState(state)
-          ]),
-        ));
+              onRefresh: _loadIssues,
+              child: CustomScrollView(slivers: <Widget>[
+                // _buildSliverAppBar(),
+                buildContentByState(state)
+              ]),
+            ));
   }
 
   Widget buildContentByState(PointState state) {
@@ -88,11 +84,17 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
           delegate: SliverChildBuilderDelegate(
               (ctx, int index) => GestureDetector(
                   onTap: () {
-                    BlocProvider.of<PointCommentBloc>(ctx).add(EventLoadPointComment(issues[index]));
-                    Navigator.pushNamed(ctx, UnitRouter.point_detail);
+                    Navigator.of(context).push(Right2LeftRouter(
+                        child: BlocProvider<PointCommentBloc>(
+                            create: (_) => PointCommentBloc()
+                              ..add(EventLoadPointComment(issues[index])),
+                            child: const IssuesDetailPage())));
+
+                    // Navigator.pushNamed(ctx, UnitRouter.
+                    // );
                   },
                   child: IssueItem(issue: issues[index])),
-              childCount: issues.length));
+              childCount: issues.length),);
     }
 
     if (state is PointLoadFailure) {
