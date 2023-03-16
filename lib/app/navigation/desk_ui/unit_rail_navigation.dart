@@ -1,121 +1,36 @@
 import 'package:app_config/app_config.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
-import 'package:flutter_unit/app/views/unit_todo/layout_unit_page.dart';
-import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
 import 'package:components/toly_ui/toly_ui.dart';
-
-import 'package:flutter_unit/painter_system/gallery_unit.dart';
-import 'package:flutter_unit/widget_ui/desk/widget_panel/widget_panel.dart';
-import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
-import 'package:flutter_unit/widget_ui/mobile/category_page/home_right_drawer.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
-
+import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'home_drawer.dart';
+class UnitRailNavigation extends StatelessWidget {
+  final ValueChanged<int> onItemClick;
+  final int selectedIndex;
+  final Map<String, IconData> itemData;
 
+  const UnitRailNavigation(
+      {Key? key,
+      required this.onItemClick,
+      required this.selectedIndex,
+      required this.itemData})
+      : super(key: key);
 
-
-class UnitDeskNavigation extends StatefulWidget {
-
-  const UnitDeskNavigation();
-
-  @override
-  _UnitDeskNavigationState createState() => _UnitDeskNavigationState();
-
-}
-
-class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
-  late PageController _controller; //页面控制器，初始0
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = PageController();
-
-    // ActionUnit.searchAction.onSearch = () {
-    //   Navigator.of(context).pushNamed(UnitRouter.search);
-    // };
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose(); //释放控制器
-    super.dispose();
-  }
-
-  // 构建悬浮按钮工具
-  // Widget wrapOverlayTool({required Widget child}) => Builder(
-  //     builder: (ctx) => OverlayToolWrapper(
-  //       child: child,
-  //     ));
+  List<String> get info => itemData.keys.toList();
+  List<IconData> get icons => itemData.values.toList();
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ColorChangeCubit, SelectTab>(
-        builder: (_, state) => Scaffold(
-              drawer: const HomeDrawer(),
-              endDrawer: const HomeRightDrawer(),
-              //右滑页
-              // floatingActionButton: _buildSearchButton(state.tabColor),
-              body: Row(
-                children: [
-                  _buildLeftNav(),
-                  Expanded(
-                    child: Container(
-                      child: PageView(
-                        physics: const NeverScrollableScrollPhysics(),
-                        //使用PageView实现页面的切换
-                        controller: _controller,
-                        children: const <Widget>[
-                          // HomePage(),
-                          DeskWidgetPanel(),
-                          CollectPage(),
-                          GalleryUnit(),
-                          // GalleryPage(),
-                          // PaintUnitPage(),
-                          LayoutUnitPage(),
-                          BugUnitPage(),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ));
-  }
-
-  Widget _buildSearchButton(Color color) {
-    return FloatingActionButton(
-      elevation: 2,
-      backgroundColor: color,
-      child: const Icon(Icons.search),
-      onPressed: () => Navigator.of(context).pushNamed(UnitRouter.search),
-    );
-  }
-
-  _onTapNav(int index) {
-    _controller.jumpToPage(index);
-    if (index == 1) {
-      // BlocProvider.of<CollectBloc>(context).add(EventSetCollectData());
-    }
-  }
-
-  Widget _buildLeftNav() {
+    // NavigationRail
     return DragToMoveAreaNoDouble(
       child: Container(
         padding: const EdgeInsets.only(top: 20),
         alignment: Alignment.topCenter,
         margin: const EdgeInsets.only(right: 1),
         width: 120,
-        decoration: const BoxDecoration(color:
-        Color(0xff2C3036),
-            boxShadow: [
+        decoration: const BoxDecoration(color: Color(0xff2C3036), boxShadow: [
           BoxShadow(color: Colors.grey, offset: Offset(1, 0), blurRadius: 2)
-        ]
-        ),
+        ]),
         child: Column(
           children: [
             Wrap(
@@ -143,14 +58,29 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
             Expanded(
               flex: 5,
               child: Center(
-                child: RightNavBar(
-                  itemData: Cons.iconMap,
-                  onItemClick: _onTapNav,
-                  color: Theme.of(context).primaryColor,
-                ),
-              ),
-            ),
+                  //const Size(120, 35)
+                  child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: info
+                    .asMap()
+                    .keys
+                    .map((int index) => _UnitRailMenu(
+                          onTap: () {onItemClick.call(index);},
+                          selected: selectedIndex == index,
+                          width: 120,
+                          height: 35, activeColor: Theme.of(context).primaryColor, inactiveColor:
+                Colors.white.withAlpha(33), icon: icons[index],label: info[index],
+                        ))
+                    .toList(),
+              )
 
+                  // RightNavBar(
+                  //   itemData: Cons.iconMap,
+                  //   onItemClick: onItemClick,
+                  //   color: Theme.of(context).primaryColor,
+                  // ),
+                  ),
+            ),
             Expanded(
               child: Container(),
               flex: 1,
@@ -176,6 +106,7 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
         ),
       ),
     );
+    ;
   }
 
   Widget buildIcons() {
@@ -224,14 +155,15 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
 class RightNavBar extends StatefulWidget {
   final Color color;
   final Map<String, IconData> itemData;
-  final Function(int) onItemClick;
+  final ValueChanged<int> onItemClick;
   final Size itemSize;
 
-  RightNavBar(
-      {this.color = Colors.blue,
-     required this.itemData,
-        required this.onItemClick,
-      this.itemSize = const Size(120, 35)});
+  RightNavBar({
+    this.color = Colors.blue,
+    required this.itemData,
+    required this.onItemClick,
+    this.itemSize = const Size(120, 35),
+  });
 
   @override
   _RightNavBarState createState() => _RightNavBarState();
@@ -302,5 +234,69 @@ class _RightNavBarState extends State<RightNavBar> {
         widget.onItemClick(_position);
       }
     });
+  }
+}
+
+class _UnitRailMenu extends StatelessWidget {
+  final VoidCallback onTap;
+  final bool selected;
+  final Color activeColor;
+  final Color inactiveColor;
+  final double width;
+  final double height;
+  final IconData icon;
+  final String label;
+
+  const _UnitRailMenu({
+    Key? key,
+    required this.onTap,
+    required this.selected,
+    required this.width,
+    required this.activeColor,
+    required this.inactiveColor,
+    required this.height,
+    required this.icon,
+    required this.label,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: onTap,
+        child: Container(
+          alignment: Alignment.topLeft,
+          margin: const EdgeInsets.only(top: 10),
+          width: width,
+          child: UnconstrainedBox(
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  color: selected ? activeColor : inactiveColor,
+                  borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomRight: Radius.circular(20))),
+              width: selected ? width * 0.95 : width * 0.85,
+              height: height,
+              child: Wrap(
+                spacing: 10,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  Icon(
+                    icon,
+                    size: selected ? 24 : 20,
+                    color: selected ? Colors.white : Colors.white70,
+                  ),
+                  Text(
+                    label,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: selected ? Colors.white : Colors.white70,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }

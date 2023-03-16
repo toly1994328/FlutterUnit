@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
+import 'package:utils/utils.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 
@@ -119,6 +120,7 @@ class _StandardUnitSplashState extends State<StandardUnitSplash>
 
   // 监听资源加载完毕，启动，触发事件
   void _listenStart(BuildContext context, AppState state) {
+    HttpUtil.instance.rebase(PathUnit.baseUrl);
     int cost = DateTime.now().millisecondsSinceEpoch - _recorder;
     BlocProvider.of<WidgetsBloc>(context)
         .add(const EventTabTap(WidgetFamily.statelessWidget));

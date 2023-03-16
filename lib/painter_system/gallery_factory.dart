@@ -16,6 +16,7 @@ import 'art/tiled_lines.dart';
 import 'art/triangular_mesh.dart';
 import 'art/un_deux_trois.dart';
 import 'base/clock_widget.dart';
+import 'base/digital/digital_shower.dart';
 import 'base/draw_grid_axis.dart';
 import 'base/draw_path_fun.dart';
 import 'base/draw_picture.dart';
@@ -50,6 +51,12 @@ class GalleryFactory {
               srcUrl: "/base/draw_picture.dart",
               info: "本样例介绍如何进行图片的绘制：通过加载图片并将图片资源绘制到指定的区域。在上层绘制一批 45° 倾角的栅格线，来练习线条的绘制。",
               content: DrawPicture()),
+          FrameShower(
+              title: "数字显示管",
+              author: "张风捷特烈",
+              srcUrl: "/base/digital",
+              info: "本样例介绍如何绘制 LED 数字显示管，以此练习对路径 Path 的使用、变换、组合，以及组件封装的知识。是一个非常好的绘制案例。",
+              content: DigitalShower()),
           FrameShower(
               title: "旋转风车",
               author: "张风捷特烈",

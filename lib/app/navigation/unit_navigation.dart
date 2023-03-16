@@ -16,7 +16,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_panel/standard_home_page.dart';
 
 import 'pure_bottom_bar.dart';
-import 'unit_desk_navigation.dart';
+import 'desk_ui/unit_desk_navigation.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
@@ -86,7 +86,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
           if (style == AppStyle.fancy) const FancyHomePage(),
           if (style == AppStyle.standard) const StandardHomePage(),
           GalleryUnit(),
-          CollectPage(),
+          CollectPageAdapter(),
           UserPage(),
         ],
       ),

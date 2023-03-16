@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,10 +8,27 @@ import 'package:components/toly_ui/toly_ui.dart';
 import 'package:authentication/views/authentic_widget.dart';
 import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
+import '../../desk_ui/category_panel/desk_category_page.dart';
 import 'category_page.dart';
 import 'like_widget_page.dart';
 import 'sync/async_button.dart';
 import 'sync/upload_button.dart';
+
+
+class CollectPageAdapter extends StatelessWidget {
+  const CollectPageAdapter({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    bool isDesk = Platform.isMacOS||Platform.isWindows||Platform.isLinux;
+    if(isDesk){
+      return DeskCategoryPage();
+    }else{
+      return CollectPage();
+    }
+  }
+}
+
 
 
 class CollectPage extends StatefulWidget {

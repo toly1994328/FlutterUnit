@@ -1,7 +1,5 @@
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 import 'widget_model_item.dart';
