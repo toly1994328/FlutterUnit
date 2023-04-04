@@ -50,6 +50,11 @@ Tools • Dart 2.19.0 • DevTools 2.20.1
 
 ![](./doc/ewm/coffee.webp)
 
+
+#### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=toly1994328/FlutterUnit&type=Date)](https://star-history.com/#toly1994328/FlutterUnit&Date)
+
 ### 一、组件的展示页面
 
 #### 1. `300+组件收录`
