@@ -1,19 +1,11 @@
 import 'package:app_config/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
-import 'package:flutter_unit/app/views/unit_todo/layout_unit_page.dart';
-import 'package:flutter_unit/app/views/unit_todo/point_unit_page.dart';
-import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter_unit/code_gen/code_gen_page.dart';
 
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
 import 'package:flutter_unit/widget_ui/desk_ui/widget_panel/widget_panel.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/home_right_drawer.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import '../../../point_system/views/desk_ui/desk_point_page.dart';
 import '../home_drawer.dart';
 import 'unit_rail_navigation.dart';

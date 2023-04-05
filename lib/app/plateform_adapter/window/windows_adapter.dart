@@ -10,8 +10,8 @@ class WindowsAdapter {
     //仅对桌面端进行尺寸设置
       await windowManager.ensureInitialized();
       WindowOptions windowOptions = const WindowOptions(
-        size: Size(900,600),
-        minimumSize: Size(900,600),
+        size: Size(900,680),
+        minimumSize: Size(900,680),
         center: true,
         backgroundColor: Colors.transparent,
         skipTaskbar: false,
