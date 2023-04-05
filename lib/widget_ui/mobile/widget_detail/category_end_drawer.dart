@@ -103,10 +103,11 @@ class _CategoryInfoState extends State<CategoryInfo> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
         spacing: 4,
+        runSpacing: 8,
         children: categories.map((e) => _buildItem(e)).toList(),
       ),
     );
@@ -119,9 +120,9 @@ class _CategoryInfoState extends State<CategoryInfo> {
         selectedColor: Colors.orange.withAlpha(120),
         shadowColor: Theme.of(context).primaryColor,
         elevation: 1,
-        labelPadding: const EdgeInsets.only(right: 4,left: 4),
+        // labelPadding: const EdgeInsets.only(right: 4,left: 4),
         avatar: Circle(
-          radius: 13,
+          radius: 10,
           color: category.color,
         ),
         selected: inHere,

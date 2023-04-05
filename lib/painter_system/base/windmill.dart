@@ -26,6 +26,12 @@ class _WindmillWidgetState extends State<WindmillWidget>
   }
 
   @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
