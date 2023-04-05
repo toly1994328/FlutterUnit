@@ -123,7 +123,6 @@ class _IconFontGenPageState extends State<IconFontGenPage>
       projectPath:  _projectCtrl.text,
       srcZip:  _iconFontCtrl.text,
     );
-
     parser.gen(config);
     Toast.success(context, '生成代码成功！');
 

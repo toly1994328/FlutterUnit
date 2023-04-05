@@ -62,12 +62,9 @@ class $fontFamily {
     String familyName = config.fontFamily;
     String fontAssetsDist =  config.yamlAssetDist;
     final String filePath = path.join(config.projectPath,'pubspec.yaml');
-    // final String filePath = r'E:\Projects\Flutter\FlutterUnit\pubspec.yaml';
-
     File pubspecFile = File(filePath);
 
     List<String> lines = pubspecFile.readAsLinesSync();
-
     RegExp fontsRegex = RegExp(r'^  fonts:',multiLine: true);
     bool hasFonts = fontsRegex.hasMatch(lines.join('\n'));
 
@@ -108,7 +105,6 @@ class $fontFamily {
       ];
       lines.insertAll(index+1, fonts);
       pubspecFile.writeAsStringSync(lines.join('\n'));
-      return;
     }
   }
 
