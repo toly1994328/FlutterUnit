@@ -1,6 +1,6 @@
 
 import 'model/model.dart';
-import 'package:db_storage/db_storage.dart';
+import 'package:storage/storage.dart';
 
 /// create by 张风捷特烈 on 2020-04-21
 /// contact me by email 1981462002@qq.com

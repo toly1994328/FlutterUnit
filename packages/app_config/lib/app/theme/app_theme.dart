@@ -11,13 +11,8 @@ class AppTheme {
       primaryColor: const Color(0xff4699FB),
       appBarTheme: const AppBarTheme(backgroundColor: Color(0xff222222)),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: Colors.white,
-        backgroundColor: Color(0xff4699FB)
-      ),
+          foregroundColor: Colors.white, backgroundColor: Color(0xff4699FB)),
       dividerColor: Colors.white,
-      // switchTheme: SwitchThemeData(
-      //     // trackColor: '',
-      //     ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xff181818),
           selectedItemColor: Color(0xff4699FB)),
@@ -27,21 +22,25 @@ class AppTheme {
     SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.dark
-    );
+        statusBarIconBrightness: Brightness.dark);
+
+    bool useMaterial3 = (Platform.isAndroid || Platform.isIOS)&&state.appStyle!=AppStyle.fancy;
 
     return ThemeData(
       fontFamily: state.fontFamily,
-      primarySwatch: state.themeColor,
-        useMaterial3: Platform.isAndroid, // Android 使用 Material3
-        chipTheme: ChipThemeData(
-          padding: EdgeInsets.symmetric(horizontal: 10)
-          // labelPadding: EdgeInsets.symmetric(horizontal: 6,vertical: 5)
-        ),
-        appBarTheme: AppBarTheme(
-            systemOverlayStyle: overlayStyle,
-
-        ),
+      primaryColor: state.themeColor,
+      useMaterial3: useMaterial3 ,
+      // Android 使用 Material3
+      chipTheme: ChipThemeData(padding: EdgeInsets.symmetric(horizontal: 10)
+          ),
+      dividerTheme: DividerThemeData(
+        color: const Color(0xffDEE0E2),
+        space: px1,
+        thickness: px1,
+      ),
+      appBarTheme: AppBarTheme(
+        systemOverlayStyle: overlayStyle,
+      ),
     );
   }
 }

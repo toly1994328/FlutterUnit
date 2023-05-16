@@ -51,8 +51,8 @@ dependencies:
     path: packages/widget_repository
   utils:
     path: packages/utils
-  db_storage:
-    path: packages/db_storage
+  storage:
+    path: packages/storage
   widgets:
     path: packages/widgets
   authentication:

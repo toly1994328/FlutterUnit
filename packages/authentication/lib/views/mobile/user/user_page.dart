@@ -21,6 +21,7 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) {
     AppStyle style = context.read<AppBloc>().state.appStyle;
     return Scaffold(
+      backgroundColor: Colors.white,
         body: AnnotatedRegion<SystemUiOverlayStyle>(
           value:const SystemUiOverlayStyle(
             statusBarIconBrightness: Brightness.dark

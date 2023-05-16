@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:db_storage/db_storage.dart';
+import 'package:storage/storage.dart';
+
 import 'package:widget_repository/widget_repository.dart';
 
 
@@ -11,8 +12,8 @@ import 'package:widget_repository/widget_repository.dart';
 
 class CategoryDbRepository implements CategoryRepository {
 
-  CategoryDao get categoryDao => LocalDb.instance.categoryDao;
-  LikeDao get likeDao => LocalDb.instance.likeDao;
+  CategoryDao get categoryDao => FlutterDbStorage.instance.categoryDao;
+  LikeDao get likeDao => FlutterDbStorage.instance.likeDao;
 
   // CategoryDbRepository({required this.categoryDao,required this.likeDao});
 

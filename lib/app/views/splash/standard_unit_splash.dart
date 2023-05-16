@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:app_config/app_config.dart';
-import 'package:db_storage/db_storage.dart';
+import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
