@@ -9,7 +9,7 @@ import 'package:flutter_unit/point_system/api/category_api.dart';
 import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import 'package:db_storage/db_storage.dart';
+import 'package:storage/storage.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 
@@ -88,7 +88,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。
         CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
         List<CategoryTo> loadCategories = await rep.loadCategoryData();
-        List<int> likeData = await LocalDb.instance.likeDao.likeWidgetIds();
+        List<int> likeData = await FlutterDbStorage.instance.likeDao.likeWidgetIds();
 
         String json = jsonEncode(loadCategories);
         String likeJson = jsonEncode(likeData);

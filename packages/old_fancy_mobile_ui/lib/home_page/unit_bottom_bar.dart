@@ -64,6 +64,7 @@ class _UnitBottomBarState extends State<UnitBottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+
         elevation: 0,
         shape: shape,
         notchMargin: 5,

@@ -15,8 +15,8 @@ dependencies:
   equatable: ^2.0.3 # 相等辅助
   widget_repository:
     path: ../widget_repository
-  db_storage:
-    path: ../db_storage
+  storage:
+    path: ../storage
 dev_dependencies:
   flutter_test:
     sdk: flutter

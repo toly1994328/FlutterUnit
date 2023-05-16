@@ -15,8 +15,8 @@ dependencies:
   intl: ^0.17.0
   utils:
     path: ../utils
-  db_storage:
-    path: ../db_storage
+  storage:
+    path: ../storage
 
 dev_dependencies:
   flutter_test:

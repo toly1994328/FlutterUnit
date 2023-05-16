@@ -1,5 +1,7 @@
+import 'package:app_config/app/cons/cons.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:storage/storage.dart';
 
 import 'app_style.dart';
 
@@ -45,8 +47,7 @@ class AppState extends Equatable {
   });
 
   @override
-  List<Object> get props =>
-      [
+  List<Object> get props => [
         fontFamily,
         themeColor,
         showBackGround,
@@ -58,14 +59,12 @@ class AppState extends Equatable {
       ];
 
   AppState copyWith({
-    double? height,
     String? fontFamily,
     MaterialColor? themeColor,
     bool? showBackGround,
     int? codeStyleIndex,
     int? itemStyleIndex,
     bool? showPerformanceOverlay,
-    bool? initialized,
     bool? showOverlayTool,
     AppStyle? appStyle,
   }) =>
@@ -77,9 +76,35 @@ class AppState extends Equatable {
         showOverlayTool: showOverlayTool ?? this.showOverlayTool,
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
         appStyle: appStyle ?? this.appStyle,
-        showPerformanceOverlay:
-            showPerformanceOverlay ?? this.showPerformanceOverlay,
+        showPerformanceOverlay: showPerformanceOverlay ?? this.showPerformanceOverlay,
       );
+
+
+  // 将 AppState 状态数据转换为配置对象，以便存储
+  AppConfigPo toAppConfigPo() => AppConfigPo(
+    showBackGround : showBackGround,
+    showOverlayTool : showOverlayTool,
+    showPerformanceOverlay : showPerformanceOverlay,
+    fontFamilyIndex : Cons.kFontFamilySupport.indexOf(fontFamily),
+    themeColorIndex : Cons.kThemeColorSupport.keys.toList().indexOf(themeColor),
+    codeStyleIndex : codeStyleIndex,
+    appStyleIndex : appStyle.index,
+    itemStyleIndex : itemStyleIndex,
+  );
+
+  // 根据存储的配置信息对象，形成 AppState 状态数据
+  factory AppState.fromPo(AppConfigPo po) {
+    return AppState(
+        fontFamily: Cons.kFontFamilySupport[po.fontFamilyIndex],
+        themeColor: Cons.kThemeColorSupport.keys.toList()[po.themeColorIndex],
+        showBackGround: po.showBackGround,
+        codeStyleIndex:  po.codeStyleIndex,
+        itemStyleIndex: po.itemStyleIndex,
+        showPerformanceOverlay: po.showPerformanceOverlay,
+        showOverlayTool: po.showOverlayTool,
+        appStyle: AppStyle.values[po.appStyleIndex],
+    );
+  }
 
   @override
   String toString() {

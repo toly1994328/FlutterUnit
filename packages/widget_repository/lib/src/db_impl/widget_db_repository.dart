@@ -1,6 +1,7 @@
 import 'package:widget_repository/src/model/model.dart';
 import 'package:widget_repository/src/widget_repository.dart';
-import 'package:db_storage/db_storage.dart';
+import 'package:storage/storage.dart';
+
 
 
 /// create by 张风捷特烈 on 2020-03-03
@@ -11,8 +12,8 @@ class WidgetDbRepository implements WidgetRepository {
 
   const WidgetDbRepository();
 
-  WidgetDao get widgetDao => LocalDb.instance.widgetDao;
-  LikeDao get likeDao => LocalDb.instance.likeDao;
+  WidgetDao get widgetDao => FlutterDbStorage.instance.widgetDao;
+  LikeDao get likeDao => FlutterDbStorage.instance.likeDao;
 
   @override
   Future<List<WidgetModel>> loadLikeWidgets() async {

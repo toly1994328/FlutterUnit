@@ -5,6 +5,7 @@ export 'model/global_state.dart';
 export 'model/app_style.dart';
 export 'repository/app_state_repository.dart';
 export 'app/cons/cons.dart';
+export 'app/cons/global_value.dart';
 export 'app/cons/path_unit.dart';
 export 'app/cons/sp.dart';
 export 'app/cons/str_unit.dart';
