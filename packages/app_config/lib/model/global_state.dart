@@ -1,4 +1,5 @@
 import 'package:app_config/app/cons/cons.dart';
+import 'package:components/toly_ui/toly_ui.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:storage/storage.dart';
@@ -105,6 +106,9 @@ class AppState extends Equatable {
         appStyle: AppStyle.values[po.appStyleIndex],
     );
   }
+
+  HighlighterStyle get codeStyle => Cons.codeThemeSupport.keys.toList()[codeStyleIndex];
+
 
   @override
   String toString() {

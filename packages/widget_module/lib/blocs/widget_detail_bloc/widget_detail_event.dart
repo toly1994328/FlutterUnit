@@ -26,6 +26,6 @@ class FetchWidgetDetail extends DetailEvent {
 }
 
 
-class ResetDetailState extends DetailEvent {
-
-}
+// class ResetDetailState extends DetailEvent {
+//
+// }
