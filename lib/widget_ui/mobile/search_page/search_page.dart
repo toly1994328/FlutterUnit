@@ -162,7 +162,7 @@ class _SearchPageState extends State<SearchPage> {
     if (focusScope.hasFocus) {
       focusScope.unfocus();
     }
-    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
+    BlocProvider.of<WidgetDetailBloc>(context).queryDetail(model);
     Navigator.pushNamed(context, UnitRouter.widget_detail,arguments: model);
   }
 }

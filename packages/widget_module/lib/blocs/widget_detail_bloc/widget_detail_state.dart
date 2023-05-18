@@ -23,13 +23,24 @@ class DetailWithData extends DetailState {
   });
 
   @override
-  List<Object> get props => [widgetModel,nodes];
+  List<Object> get props => [widgetModel, nodes];
 
   @override
   String toString() {
     return 'DetailWithData{widget: $widgetModel, nodes: $nodes}';
   }
 
+  DetailWithData copyWith({
+    WidgetModel? widgetModel,
+    List<WidgetModel>? links,
+    List<NodeModel>? nodes,
+  }) {
+    return DetailWithData(
+      widgetModel: widgetModel ?? this.widgetModel,
+      nodes: this.nodes,
+      links: this.links,
+    );
+  }
 }
 
 class DetailLoading extends DetailState {}

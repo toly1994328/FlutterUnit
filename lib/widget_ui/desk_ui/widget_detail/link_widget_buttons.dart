@@ -12,7 +12,11 @@ class LinkWidgetButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color chipColor = Theme.of(context).primaryColor;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    Color? chipColor = isDark
+        ? Theme.of(context).floatingActionButtonTheme.backgroundColor
+        : Theme.of(context).primaryColor;
 
     if (links.isEmpty) {
       return Padding(
@@ -22,28 +26,28 @@ class LinkWidgetButtons extends StatelessWidget {
             labelStyle: const TextStyle(fontSize: 12, color: Colors.white),
             label: const Text('暂无链接组件'),
           ));
+    } else {
+      return Padding(
+        padding: const EdgeInsets.only(left: 10.0, top: 10),
+        child: Wrap(
+          spacing: 5,
+          runSpacing: 5,
+          children: links
+              .map((WidgetModel model) => ActionChip(
+            labelPadding: EdgeInsets.zero,
+            side: BorderSide.none,
+            onPressed: () => onSelect(model),
+            elevation: 1,
+            // shadowColor: chipColor,
+            backgroundColor: chipColor,
+            labelStyle: model.deprecated
+                ? UnitTextStyle.deprecatedChip
+                : UnitTextStyle.commonChip,
+            label: Text(model.name),
+          ))
+              .toList(),
+        ),
+      );
     }
-
-    return Padding(
-      padding: const EdgeInsets.only(left: 10.0, top: 10),
-      child: Wrap(
-        spacing: 5,
-        runSpacing: 5,
-        children: links
-            .map((WidgetModel model) => ActionChip(
-                  labelPadding: EdgeInsets.zero,
-                  side: BorderSide.none,
-                  onPressed: () => onSelect(model),
-                  elevation: 1,
-                  // shadowColor: chipColor,
-                  backgroundColor: chipColor,
-                  labelStyle: model.deprecated
-                      ? UnitTextStyle.deprecatedChip
-                      : UnitTextStyle.commonChip,
-                  label: Text(model.name),
-                ))
-            .toList(),
-      ),
-    );
   }
 }
