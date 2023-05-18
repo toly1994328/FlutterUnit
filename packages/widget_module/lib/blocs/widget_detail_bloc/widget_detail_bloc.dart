@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_repository/widget_repository.dart';
 
-part 'widget_detail_event.dart';
 part 'widget_detail_state.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
