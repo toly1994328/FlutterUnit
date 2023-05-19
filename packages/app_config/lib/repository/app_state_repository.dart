@@ -22,9 +22,9 @@ class AppStateRepository{
     //数据库不存在，执行拷贝
     String databasesPath = await DbOpenHelper.getDbDirPath();
     String dbPath = path.join(databasesPath, "flutter.db");
-
+    SpStorage.instance.initSp();
     // 读取配置文件，初始化应用状态
-    AppConfigPo po = await sp.readAppConfig();
+    AppConfigPo po = await sp.appConfig.read();
 
     bool shouldCopy = await _checkShouldCopy(dbPath,sp.spf);
 
