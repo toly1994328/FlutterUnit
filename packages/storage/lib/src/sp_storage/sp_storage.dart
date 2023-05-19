@@ -1,9 +1,6 @@
-import 'dart:convert';
-
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:storage/src/sp_storage/sp_keys.dart';
 
-import 'models/app_config_po.dart';
+import 'cao/app_config_cao.dart';
 
 class SpStorage {
   SpStorage._();
@@ -16,22 +13,16 @@ class SpStorage {
   }
 
   SharedPreferences? _sp;
+
   SharedPreferences get spf => _sp!;
 
-  Future<void> initSpWhenNull() async {
+  late AppConfigCao _appConfig;
+
+  AppConfigCao get appConfig => _appConfig;
+
+  Future<void> initSp() async {
     if (_sp != null) return;
     _sp = _sp ?? await SharedPreferences.getInstance();
-  }
-
-  Future<bool> saveAppConfig(AppConfigPo appConfigPo) async {
-    await initSpWhenNull();
-    String config = json.encode(appConfigPo);
-    return _sp!.setString(kAppSpKey, config);
-  }
-
-  Future<AppConfigPo> readAppConfig() async {
-    await initSpWhenNull();
-    String content = _sp!.getString(kAppSpKey) ?? "{}";
-    return AppConfigPo.fromPo(json.decode(content));
+    _appConfig = AppConfigCao(_sp!);
   }
 }

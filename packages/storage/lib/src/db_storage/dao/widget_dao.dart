@@ -2,7 +2,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:widget_repository/widget_repository.dart';
 
-import '../bean/widget_po.dart';
+import '../models/widget_po.dart';
 
 
 class WidgetDao {
