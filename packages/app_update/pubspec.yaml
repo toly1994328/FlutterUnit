@@ -14,7 +14,7 @@ dependencies:
   flutter_bloc: ^8.0.1 # 状态管理
   shared_preferences: ^2.0.13 # xml 固化
   r_upgrade: ^0.3.8+2 # 应用升级
-  package_info_plus: ^1.3.0 # 应用包信息
+  package_info_plus: ^4.0.1
   utils:
     path: ../utils
   app_config:

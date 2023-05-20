@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   equatable: ^2.0.5
-  intl: ^0.17.0
+  intl: ^0.18.0
   utils:
     path: ../utils
   storage:
