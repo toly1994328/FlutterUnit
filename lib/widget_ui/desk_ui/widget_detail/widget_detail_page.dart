@@ -1,5 +1,4 @@
-import 'package:app_config/app_config.dart';
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_detail/category_end_drawer.dart';

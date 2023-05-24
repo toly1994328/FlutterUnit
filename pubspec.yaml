@@ -57,8 +57,8 @@ dependencies:
     path: packages/widgets
   authentication:
     path: packages/authentication
-  app_config:
-    path: packages/app_config
+  app:
+    path: packages/app
   app_update:
     path: packages/app_update
   components:

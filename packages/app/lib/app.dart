@@ -1,4 +1,4 @@
-library app_config;
+library app;
 
 export 'bloc/global_bloc.dart';
 export 'model/global_state.dart';

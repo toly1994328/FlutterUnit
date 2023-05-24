@@ -1,4 +1,4 @@
-import 'package:app_config/app/cons/cons.dart';
+import 'package:app/app/cons/cons.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
