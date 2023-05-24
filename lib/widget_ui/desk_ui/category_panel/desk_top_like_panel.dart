@@ -1,4 +1,4 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_detail/widget_detail_page.dart';

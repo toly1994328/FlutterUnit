@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:app_config/model/global_state.dart';
-import 'package:app_config/model/app_style.dart';
+import 'package:app/model/global_state.dart';
+import 'package:app/model/app_style.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

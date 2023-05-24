@@ -17,8 +17,8 @@ dependencies:
   package_info_plus: ^4.0.1
   utils:
     path: ../utils
-  app_config:
-    path: ../app_config
+  app:
+    path: ../app
 dev_dependencies:
   flutter_test:
     sdk: flutter

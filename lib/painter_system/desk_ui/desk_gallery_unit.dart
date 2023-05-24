@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:components/toly_ui/toly_ui.dart';

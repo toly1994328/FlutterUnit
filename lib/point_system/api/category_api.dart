@@ -1,4 +1,4 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:utils/utils.dart';
 
 
