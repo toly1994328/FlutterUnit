@@ -1,5 +1,4 @@
-import 'package:app_config/app_config.dart';
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_detail/category_end_drawer.dart';
@@ -26,7 +25,7 @@ class DeskWidgetDetailPageScope extends StatelessWidget {
       create: (_) => WidgetDetailBloc(
           widgetRepository: const WidgetDbRepository(),
           nodeRepository: const NodeDbRepository())
-        ..add(FetchWidgetDetail(model)),
+        ..push(model),
       child: DeskWidgetDetailPage(
         model: model,
       ),
@@ -34,36 +33,20 @@ class DeskWidgetDetailPageScope extends StatelessWidget {
   }
 }
 
-class DeskWidgetDetailPage extends StatefulWidget {
+class DeskWidgetDetailPage extends StatelessWidget {
   final WidgetModel model;
 
   const DeskWidgetDetailPage({Key? key, required this.model}) : super(key: key);
 
   @override
-  _DeskWidgetDetailPageState createState() => _DeskWidgetDetailPageState();
-}
-
-class _DeskWidgetDetailPageState extends State<DeskWidgetDetailPage> {
-  final List<WidgetModel> _modelStack = [];
-
-  bool get isDark => Theme.of(context).brightness == Brightness.dark;
-
-  @override
-  void initState() {
-    _modelStack.add(widget.model);
-    super.initState();
-  }
-
-  // 获取当前的 组件数据模型
-  WidgetModel get currentWidgetModel => _modelStack.last;
-
-  @override
   Widget build(BuildContext context) {
+    WidgetDetailBloc bloc = context.watch<WidgetDetailBloc>();
+
     return BlocBuilder<WidgetDetailBloc, DetailState>(
       builder: (_, state) => Scaffold(
-        endDrawer: CategoryEndDrawer(widget: currentWidgetModel),
+        endDrawer: CategoryEndDrawer(widget: bloc.currentWidget),
         body: Builder(builder: (ctx) {
-          return _buildContent(ctx, state);
+          return _buildContent(ctx, bloc);
         }),
       ),
     );
@@ -79,12 +62,13 @@ class _DeskWidgetDetailPageState extends State<DeskWidgetDetailPage> {
         ],
       );
 
-  Widget _buildContent(BuildContext context, DetailState state) {
+  Widget _buildContent(BuildContext context, WidgetDetailBloc bloc) {
+    DetailState state = bloc.state;
     return WillPopScope(
         onWillPop: () => _whenPop(context),
         child: CustomScrollView(
           slivers: [
-            DeskSliverWidgetDetailBar(model: _modelStack.last),
+            DeskSliverWidgetDetailBar(model: bloc.currentWidget),
             SliverToBoxAdapter(
               child: Column(
                 children: [
@@ -92,9 +76,11 @@ class _DeskWidgetDetailPageState extends State<DeskWidgetDetailPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child: DeskWidgetDetailPanel(model: _modelStack.last),
+                        child: DeskWidgetDetailPanel(model: bloc.currentWidget),
                       ),
-                      const SizedBox(width: 20,),
+                      const SizedBox(
+                        width: 20,
+                      ),
                       Expanded(
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +89,7 @@ class _DeskWidgetDetailPageState extends State<DeskWidgetDetailPage> {
                           if (state is DetailWithData)
                             LinkWidgetButtons(
                               links: state.links,
-                              onSelect: _toLinkWidget,
+                              onSelect: bloc.push,
                             )
                         ],
                       ))
@@ -114,45 +100,32 @@ class _DeskWidgetDetailPageState extends State<DeskWidgetDetailPage> {
               ),
             ),
             if (state is DetailWithData)
-              _buildSliverNodeList(state.nodes, state.widgetModel.name)
+              _buildSliverNodeList(context, state.nodes, state.widgetModel)
           ],
         ));
   }
 
   Future<bool> _whenPop(BuildContext context) async {
-    if (Scaffold.of(context).isEndDrawerOpen || _modelStack.isEmpty) {
+    WidgetDetailBloc detailBloc = context.read<WidgetDetailBloc>();
+    if (Scaffold.of(context).isEndDrawerOpen) {
       return true;
     }
-    _modelStack.removeLast();
-    if (_modelStack.isNotEmpty) {
-      BlocProvider.of<WidgetDetailBloc>(context).add(
-        FetchWidgetDetail(currentWidgetModel),
-      );
-      return false;
-    } else {
-      return true;
-    }
+    return detailBloc.pop();
   }
 
-  void _toLinkWidget(WidgetModel model) {
-    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
-    _modelStack.add(model);
-  }
-
-  Widget _buildSliverNodeList(List<NodeModel> nodes, String name) {
+  Widget _buildSliverNodeList(
+      BuildContext context, List<NodeModel> nodes, WidgetModel model) {
     AppState globalState = BlocProvider.of<AppBloc>(context).state;
-    HighlighterStyle codeStyle =
-        Cons.codeThemeSupport.keys.toList()[globalState.codeStyleIndex];
     return SliverList(
         delegate: SliverChildBuilderDelegate(
       (_, i) => DeskWidgetNodePanel(
-        codeStyle: codeStyle,
+        codeStyle: globalState.codeStyle,
         codeFamily: 'Inconsolata',
         text: nodes[i].name,
         subText: nodes[i].subtitle,
         code: nodes[i].code,
-        death: _modelStack.last.death,
-        show: WidgetsMap.map(name)[i],
+        death: model.death,
+        show: WidgetsMap.map(model.name)[i],
       ),
       childCount: nodes.length,
     ));

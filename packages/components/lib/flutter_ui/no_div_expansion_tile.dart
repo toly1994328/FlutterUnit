@@ -107,7 +107,7 @@ class _NoBorderExpansionTileState extends State<NoBorderExpansionTile> with Sing
     _iconColor = _controller.drive(_iconColorTween.chain(_easeInTween));
     _backgroundColor = _controller.drive(_backgroundColorTween.chain(_easeOutTween));
 
-    _isExpanded = PageStorage.of(context)?.readState(context) ?? widget.initiallyExpanded;
+    _isExpanded = PageStorage.of(context).readState(context) ?? widget.initiallyExpanded;
     if (_isExpanded) {
       _controller.value = 1.0;
     }
@@ -135,7 +135,7 @@ class _NoBorderExpansionTileState extends State<NoBorderExpansionTile> with Sing
           });
         });
       }
-      PageStorage.of(context)?.writeState(context, _isExpanded);
+      PageStorage.of(context).writeState(context, _isExpanded);
     });
       widget.onExpansionChanged?.call(_isExpanded);
   }
@@ -179,11 +179,11 @@ class _NoBorderExpansionTileState extends State<NoBorderExpansionTile> with Sing
     _borderColorTween
       .end = theme.dividerColor;
     _headerColorTween
-      ..begin = theme.textTheme.subtitle1!.color
-      ..end = theme.accentColor;
+      ..begin = theme.textTheme.bodyMedium?.color
+      ..end = theme.primaryColor;
     _iconColorTween
       ..begin = theme.unselectedWidgetColor
-      ..end = theme.accentColor;
+      ..end = theme.primaryColor;
     _backgroundColorTween
       .end = widget.backgroundColor;
     super.didChangeDependencies();

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

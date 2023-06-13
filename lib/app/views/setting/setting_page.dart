@@ -1,4 +1,4 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -119,6 +119,9 @@ class SettingPage extends StatelessWidget {
   Widget _buildShowBg(BuildContext context) =>
       BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => SwitchListTile(
+            inactiveTrackColor: Colors.grey.withOpacity(0.3),
+            // inactiveThumbColor: Colors.white,
+            activeColor: Theme.of(context).primaryColor,
                 value: state.showBackGround,
                 secondary: Icon(
                   TolyIcon.icon_background,
@@ -134,6 +137,9 @@ class SettingPage extends StatelessWidget {
       BlocBuilder<AppBloc, AppState>(
           builder: (_, state) => SwitchListTile(
             value: state.showPerformanceOverlay,
+            inactiveTrackColor: Colors.grey.withOpacity(0.3),
+            // inactiveThumbColor: Colors.white,
+            activeColor: Theme.of(context).primaryColor,
             secondary: Icon(
               TolyIcon.icon_show,
               color: Theme.of(context).primaryColor,
@@ -164,6 +170,5 @@ class SettingPage extends StatelessWidget {
           ));
 
 
-  Widget _nextIcon(BuildContext context) =>
-      Icon(Icons.chevron_right, color: Theme.of(context).primaryColor);
+  Widget _nextIcon(BuildContext context) => Icon(Icons.chevron_right, color: Theme.of(context).primaryColor);
 }

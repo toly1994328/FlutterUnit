@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:authentication/authentication.dart';
 import 'package:authentication/models/user.dart';
 import 'package:bloc/bloc.dart';

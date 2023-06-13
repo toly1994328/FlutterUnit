@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
+
 import 'package:flutter/material.dart';
 
 class SplashBottom extends StatefulWidget {

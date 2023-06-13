@@ -1,4 +1,4 @@
-import 'package:db_storage/db_storage.dart';
+import 'package:storage/storage.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_repository/widget_repository.dart';

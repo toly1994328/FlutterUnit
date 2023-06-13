@@ -47,7 +47,6 @@ class _CustomAnimatedSizeState extends State<CustomAnimatedSize>
           height: 100,
           alignment: Alignment.center,
           child: AnimatedSize(
-            vsync: this,
             duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,
             alignment: const Alignment(0, 0),
