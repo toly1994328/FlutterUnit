@@ -1,8 +1,7 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:components/toly_ui/toly_ui.dart';
 import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 
 /// create by 张风捷特烈 on 2020-04-10

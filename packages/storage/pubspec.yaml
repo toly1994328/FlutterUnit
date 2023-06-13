@@ -1,4 +1,4 @@
-name: db_storage
+name: storage
 description: A new Flutter project.
 version: 0.0.1
 homepage:
@@ -13,6 +13,7 @@ dependencies:
   sqflite: ^2.0.2+1 # 数据库
   sqflite_common_ffi: ^2.1.1 # 数据库
   path_provider: ^2.0.11 # 路径
+  shared_preferences: ^2.0.13 # xml 固化
   widget_repository:
     path: ../widget_repository
 

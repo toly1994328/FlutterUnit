@@ -1,5 +1,6 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
 import 'package:widget_module/blocs/blocs.dart';
@@ -24,8 +25,15 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel>{
     return Scaffold(
       body: Column(
         children: [
-          DeskWidgetTopBar(
-            onTabPressed: _switchTab,
+          Shortcuts(
+            shortcuts: <ShortcutActivator, Intent>{
+              const SingleActivator(LogicalKeyboardKey.keyQ): VoidCallbackIntent(() {
+                print("hello");
+              }),
+            },
+            child: DeskWidgetTopBar(
+              onTabPressed: _switchTab,
+            ),
           ),
           const Divider(height: 1),
           Expanded(

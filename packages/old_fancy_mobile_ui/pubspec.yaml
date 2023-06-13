@@ -14,8 +14,8 @@ dependencies:
   flutter_bloc: ^8.0.1 # 状态管理
   url_launcher: ^6.0.20 # url
   flutter_star: ^1.0.2 # 星星组件
-  app_config:
-    path: ../app_config
+  app:
+    path: ../app
   components:
     path: ../components
   widget_module:

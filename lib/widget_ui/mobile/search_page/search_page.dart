@@ -1,4 +1,4 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -162,7 +162,7 @@ class _SearchPageState extends State<SearchPage> {
     if (focusScope.hasFocus) {
       focusScope.unfocus();
     }
-    BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
+    BlocProvider.of<WidgetDetailBloc>(context).queryDetail(model);
     Navigator.pushNamed(context, UnitRouter.widget_detail,arguments: model);
   }
 }

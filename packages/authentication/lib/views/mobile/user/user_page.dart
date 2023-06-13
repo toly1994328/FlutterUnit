@@ -1,4 +1,4 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,6 +21,7 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) {
     AppStyle style = context.read<AppBloc>().state.appStyle;
     return Scaffold(
+      backgroundColor: Colors.white,
         body: AnnotatedRegion<SystemUiOverlayStyle>(
           value:const SystemUiOverlayStyle(
             statusBarIconBrightness: Brightness.dark

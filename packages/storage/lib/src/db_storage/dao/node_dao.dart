@@ -1,4 +1,4 @@
-import '../bean/node_po.dart';
+import '../models/node_po.dart';
 import 'package:sqflite/sqflite.dart';
 
 class NodeDao {

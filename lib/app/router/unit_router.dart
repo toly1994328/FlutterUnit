@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/navigation/unit_navigation.dart';

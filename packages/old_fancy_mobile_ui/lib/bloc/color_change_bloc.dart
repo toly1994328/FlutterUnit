@@ -1,6 +1,7 @@
 import 'dart:ui';
 
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
+
 import 'package:bloc/bloc.dart';
 import 'package:widget_repository/widget_repository.dart';
 

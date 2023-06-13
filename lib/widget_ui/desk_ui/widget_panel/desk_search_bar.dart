@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:app_config/app_config.dart';
-import 'package:db_storage/db_storage.dart';
+import 'package:app/app.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';

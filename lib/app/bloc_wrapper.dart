@@ -1,7 +1,7 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:authentication/authentication.dart';
-import 'package:db_storage/db_storage.dart';
+import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
@@ -51,7 +51,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
   @override
   void dispose() {
     categoryBloc.close();
-    LocalDb.instance.closeDb();
+    FlutterDbStorage.instance.closeDb();
     super.dispose();
   }
 }

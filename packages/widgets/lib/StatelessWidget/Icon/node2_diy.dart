@@ -1,4 +1,4 @@
-import 'package:app_config/app_config.dart';
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
