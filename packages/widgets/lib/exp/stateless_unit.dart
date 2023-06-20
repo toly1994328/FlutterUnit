@@ -197,5 +197,7 @@ export '../StatelessWidget/NotificationListener/node2_update.dart';
 
 export '../StatelessWidget/Autocomplete/node1_base.dart';
 export '../StatelessWidget/Autocomplete/node2_type.dart';
+export '../StatelessWidget/RawMagnifier/node1_base.dart';
+export '../StatelessWidget/RawMagnifier/node2_shape.dart';
 
 
