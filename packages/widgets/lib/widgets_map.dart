@@ -33,16 +33,13 @@ class WidgetsMap {
           const ImageFilteredMatrix()
         ];
       case "Autocomplete":
-        return [
-          const AutocompleteDemo(),
-          const AutocompleteType()
-        ];
-        case "Badge":
+        return [const AutocompleteDemo(), const AutocompleteType()];
+      case "Badge":
         return [
           const BadgeDemo(),
           const BadgeVisibleDemo(),
         ];
-        case "DateRangePickerDialog":
+      case "DateRangePickerDialog":
         return [
           const DateRangePickerDialogDemo(),
           const DiyDateRangePickerDialogDemo()
@@ -116,7 +113,8 @@ class WidgetsMap {
       case "ShrinkWrappingViewport":
         return [
           const ShrinkWrappingViewportDemo(),
-        ];      case "NestedScrollViewViewport":
+        ];
+      case "NestedScrollViewViewport":
         return [
           const NestedScrollViewViewportDemo(),
         ];
@@ -268,7 +266,10 @@ class WidgetsMap {
           const PageStorageDemo(),
         ];
       case "NotificationListener":
-        return [const NotificationListenerDemo(), const NotificationListenerUpdate()];
+        return [
+          const NotificationListenerDemo(),
+          const NotificationListenerUpdate()
+        ];
 
       case "Scrollable":
         return [
@@ -443,7 +444,11 @@ class WidgetsMap {
       case "ChipTheme":
         return [const ChipThemeDemo()];
       case "ListTile":
-        return [const CustomListTile(), const SelectListTile(), const DenseListTile()];
+        return [
+          const CustomListTile(),
+          const SelectListTile(),
+          const DenseListTile()
+        ];
       case "CheckboxListTile":
         return [
           const CustomCheckBoxListTile(),
@@ -1382,13 +1387,19 @@ class WidgetsMap {
           const CustomSingleChildLayoutDemo(),
           const OffSetWidgetDemo(),
         ];
-        case "NavigationRail":
+      case "NavigationRail":
         return [
-          const AnotherPage(child:  CustomNavigationRail()),
-          const AnotherPage(child:  ExtendableNavigationRail()),
-          const AnotherPage(child:  DarkNavigationRail()),
+          const AnotherPage(child: CustomNavigationRail()),
+          const AnotherPage(child: ExtendableNavigationRail()),
+          const AnotherPage(child: DarkNavigationRail()),
         ];
-      default: return [];
+      case "RawMagnifier":
+        return [
+          const MagnifierCircleShape(),
+          const MagnifierStarShape(),
+        ];
+      default:
+        return [];
     }
   }
 }
@@ -1399,10 +1410,15 @@ class AnotherPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){
-      Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Scaffold(
-        appBar: AppBar(leading: const BackButton(),),
-          body: child)));
-    }, child: Text('跳转到新界面查看效果'));
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => Scaffold(
+                  appBar: AppBar(
+                    leading: const BackButton(),
+                  ),
+                  body: child)));
+        },
+        child: Text('跳转到新界面查看效果'));
   }
 }
