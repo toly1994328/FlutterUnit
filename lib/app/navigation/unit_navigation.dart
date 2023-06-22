@@ -8,10 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/painter_system/gallery_unit.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/home_right_drawer.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
-
-import 'package:old_fancy_mobile_ui/home_page/fancy_home_page.dart';
-import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_panel/standard_home_page.dart';
 
@@ -71,73 +67,39 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   /// extendBody = true 凹嵌透明，需要处理底部 边距
   @override
   Widget build(BuildContext context) {
-    AppStyle style = context.read<AppBloc>().state.appStyle;
-    bool isStandard = style == AppStyle.standard;
     return Scaffold(
       extendBody: true,
       endDrawer: const HomeRightDrawer(),
-      floatingActionButtonLocation:
-          isStandard ? null : FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: isStandard ? null : _buildSearchButton(context),
       body: PageView(
         physics: _neverScroll,
         controller: _controller,
         children: [
-          if (style == AppStyle.fancy) const FancyHomePage(),
-          if (style == AppStyle.standard) const StandardHomePage(),
+          StandardHomePage(),
           GalleryUnit(),
           CollectPageAdapter(),
           UserPage(),
         ],
       ),
-      bottomNavigationBar: _buildBottomNav(context, style),
+      bottomNavigationBar: _buildBottomNav(context),
     );
   }
 
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
-  // 主页搜索按钮
-  // 由于 按钮 颜色需要随 点击头部栏 状态而改变，
-  // 使用 BlocBuilder 构建
-  Widget _buildSearchButton(BuildContext context) {
-    return BlocBuilder<ColorChangeCubit, SelectTab>(builder: (_, state) {
-      return FloatingActionButton(
-        shape: const StadiumBorder(),
-        elevation: 2,
-        backgroundColor: isDark ? state.color : state.color,
-        child: const Icon(Icons.search),
-        onPressed: () => Navigator.of(context).pushNamed(UnitRouter.search),
-      );
-    });
-  }
 
   // 由于 bottomNavigationBar 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
-  Widget _buildBottomNav(BuildContext context, AppStyle style) {
-    switch (style) {
-      case AppStyle.standard:
-        return Stack(
-          children: [
-            PureBottomBar(
-              initPosition: position,
-              onItemTap: _onTapBottomNav,
-              onItemLongTap: _onItemLongTap,
-            ),
-            const Positioned(right: 26, top: 8, child: UpdateRedPoint())
-          ],
-        );
-      case AppStyle.fancy:
-        return BlocBuilder<ColorChangeCubit, SelectTab>(
-          builder: (context, state) {
-            return UnitBottomBar(
-              initPosition: position,
-              color: state.color,
-              onItemTap: _onTapBottomNav,
-              onItemLongTap: _onItemLongTap,
-            );
-          },
-        );
-    }
+  Widget _buildBottomNav(BuildContext context) {
+    return Stack(
+      children: [
+        PureBottomBar(
+          initPosition: position,
+          onItemTap: _onTapBottomNav,
+          onItemLongTap: _onItemLongTap,
+        ),
+        const Positioned(right: 26, top: 8, child: UpdateRedPoint())
+      ],
+    );
   }
 
   // 点击底部按钮事件，切换页面
@@ -149,10 +111,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
       if (index != 0) {
         color = Theme.of(context).primaryColor;
       } else {
-        color =
-            Cons.tabColors[context.read<ColorChangeCubit>().state.family.index];
       }
-      context.read<ColorChangeCubit>().change(color);
     }
 
     if (index == 2) {

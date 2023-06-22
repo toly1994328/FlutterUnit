@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/navigation/home_drawer.dart';
 import 'package:flutter_unit/app/utils/convert.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 
@@ -38,9 +37,8 @@ class _StandardHomePageState extends State<StandardHomePage>
 
   void _switchTab(int index) {
     WidgetFamily widgetFamily = Convert.toFamily(index);
-    context
-        .read<ColorChangeCubit>()
-        .change(Cons.tabColors[index], family: widgetFamily);
+    WidgetsBloc bloc = BlocProvider.of<WidgetsBloc>(context);
+    if(bloc.state.filter.family==widgetFamily) return;
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
 
@@ -48,16 +46,17 @@ class _StandardHomePageState extends State<StandardHomePage>
   Widget build(BuildContext context) {
     super.build(context);
     final AppBarTheme appBarTheme = AppBarTheme.of(context);
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: const Color(0xffF3F4F6),
+      // backgroundColor: const Color(0xffF3F4F6),
       drawer: const HomeDrawer(),
       body: Column(
         children: [
           AnnotatedRegion<SystemUiOverlayStyle>(
             value: appBarTheme.systemOverlayStyle!,
             child: Container(
-              color: Colors.white,
+              color: isDark?Colors.black:Colors.white,
               height: MediaQuery.of(context).padding.top,
             ),
           ),
@@ -79,11 +78,13 @@ class _StandardHomePageState extends State<StandardHomePage>
 
   List<Widget> _buildHeader(BuildContext context, bool innerBoxIsScrolled) {
     Color themeColor = Theme.of(context).primaryColor;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return [
       const SliverSnapHeader(child: StandardHomeSearch()),
       SliverOverlapAbsorber(
         sliver: SliverPinnedHeader(
+          color: isDark?Colors.black:Colors.white,
           child: TabBar(
             onTap: _switchTab,
             indicatorSize: TabBarIndicatorSize.label,
@@ -130,13 +131,4 @@ class _StandardHomePageState extends State<StandardHomePage>
 
   @override
   bool get wantKeepAlive => true;
-}
-
-class _UnitSliverTopBar extends StatelessWidget {
-  const _UnitSliverTopBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
 }

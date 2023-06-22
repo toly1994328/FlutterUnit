@@ -9,7 +9,13 @@ import 'app_style.dart';
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局状态类
-///
+
+Map<ThemeMode,String> themeMode2Str = const {
+  ThemeMode.system: "跟随系统",
+  ThemeMode.light: "浅色模式",
+  ThemeMode.dark: "深色模式",
+};
+
 class AppState extends Equatable {
 
   /// [fontFamily] 文字字体
@@ -33,13 +39,13 @@ class AppState extends Equatable {
   /// [showOverlayTool] 是否显示浮动工具
   final bool showOverlayTool;
 
-  /// [appStyle] app 样式;
-  final AppStyle appStyle;
+  /// [appStyle] app 深色样式;
+  final ThemeMode themeMode;
 
   const AppState({
     this.fontFamily = 'ComicNeue',
     this.themeColor = Colors.blue,
-    this.appStyle = AppStyle.standard,
+    this.themeMode = ThemeMode.system,
     this.showBackGround = true,
     this.codeStyleIndex = 0,
     this.itemStyleIndex = 0,
@@ -54,7 +60,7 @@ class AppState extends Equatable {
         showBackGround,
         codeStyleIndex,
         itemStyleIndex,
-        appStyle,
+        themeMode,
         showOverlayTool,
         showPerformanceOverlay
       ];
@@ -67,7 +73,7 @@ class AppState extends Equatable {
     int? itemStyleIndex,
     bool? showPerformanceOverlay,
     bool? showOverlayTool,
-    AppStyle? appStyle,
+    ThemeMode? themeMode,
   }) =>
       AppState(
         fontFamily: fontFamily ?? this.fontFamily,
@@ -76,7 +82,7 @@ class AppState extends Equatable {
         codeStyleIndex: codeStyleIndex ?? this.codeStyleIndex,
         showOverlayTool: showOverlayTool ?? this.showOverlayTool,
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
-        appStyle: appStyle ?? this.appStyle,
+        themeMode: themeMode ?? this.themeMode,
         showPerformanceOverlay: showPerformanceOverlay ?? this.showPerformanceOverlay,
       );
 
@@ -89,7 +95,7 @@ class AppState extends Equatable {
     fontFamilyIndex : Cons.kFontFamilySupport.indexOf(fontFamily),
     themeColorIndex : Cons.kThemeColorSupport.keys.toList().indexOf(themeColor),
     codeStyleIndex : codeStyleIndex,
-    appStyleIndex : appStyle.index,
+    themeModeIndex : themeMode.index,
     itemStyleIndex : itemStyleIndex,
   );
 
@@ -103,7 +109,7 @@ class AppState extends Equatable {
         itemStyleIndex: po.itemStyleIndex,
         showPerformanceOverlay: po.showPerformanceOverlay,
         showOverlayTool: po.showOverlayTool,
-        appStyle: AppStyle.values[po.appStyleIndex],
+        themeMode: ThemeMode.values[po.themeModeIndex],
     );
   }
 

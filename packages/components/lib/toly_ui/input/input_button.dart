@@ -52,7 +52,7 @@ class _InputButtonState extends State<InputButton> {
     super.initState();
     _height = widget.config.height;
     _fontSize = widget.config.fontSize;
-    _radius = Radius.circular(_height / 3.6);
+    _radius = Radius.circular(6);
     _controller = TextEditingController(text: widget.defaultText);
   }
 
@@ -98,7 +98,7 @@ class _InputButtonState extends State<InputButton> {
         elevation: 0,
         padding: EdgeInsets.zero,
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+            borderRadius: BorderRadius.only(topRight: Radius.circular(6),bottomRight: Radius.circular(6))),
         backgroundColor: const Color(0x99E0E0E0),
       ),
       child: Icon(widget.config.iconData,color: Theme.of(context).primaryColor,),

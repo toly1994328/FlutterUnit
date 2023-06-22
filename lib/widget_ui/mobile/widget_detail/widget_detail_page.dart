@@ -43,8 +43,10 @@ class WidgetDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetDetailBloc bloc = context.watch<WidgetDetailBloc>();
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: isDark?Colors.black:Colors.white,
       endDrawer: CategoryEndDrawer(widget: bloc.currentWidget),
       body: Builder(builder: (ctx) => _buildContent(ctx, bloc)),
     );

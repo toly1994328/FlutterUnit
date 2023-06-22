@@ -6,8 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 
 import 'package:authentication/views/authentic_widget.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
-
 import '../../desk_ui/category_panel/desk_category_page.dart';
 import 'category_page.dart';
 import 'like_widget_page.dart';
@@ -49,10 +47,10 @@ class _CollectPageState extends State<CollectPage>
   Widget build(BuildContext context) {
     super.build(context);
     BuildContext _topContext = context;
-    final Color color = BlocProvider.of<ColorChangeCubit>(context).state.tabColor.withAlpha(11);
+    final Color color = Colors.blue.withAlpha(11);
 
     return Scaffold(
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
         body: Container(
           color: color,
           child: DefaultTabController(
@@ -76,8 +74,10 @@ class _CollectPageState extends State<CollectPage>
   }
 
   Widget _buildAppBar(BuildContext context, bool index) {
-    final Color color = BlocProvider.of<ColorChangeCubit>(context).state.color;
 
+    // final Color color = Colors.blue;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    String image = isDark?'draw_bg3.webp':'caver.webp';
     return SliverAppBar(
       systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarIconBrightness: Brightness.light
@@ -93,7 +93,7 @@ class _CollectPageState extends State<CollectPage>
               borderSize: 1.5,
             ),
           )),
-      backgroundColor: color,
+      // backgroundColor: color,
       actions: <Widget>[
         SizedBox(
             width: 32,
@@ -105,7 +105,7 @@ class _CollectPageState extends State<CollectPage>
         _buildAddAction(context)
       ],
       title: const Text(
-        '收藏集 CollectUnit',
+        '收藏集录',
         style: TextStyle(
             color: Colors.white, //标题
             fontSize: 18,
@@ -118,7 +118,7 @@ class _CollectPageState extends State<CollectPage>
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax, //视差效果
         background: Image.asset(
-          "assets/images/caver.webp",
+          "assets/images/$image",
           fit: BoxFit.cover,
         ),
       ),

@@ -37,7 +37,7 @@ class CategoryModel extends Equatable {
       id: po.id,
       name: po.name,
       info: po.info,
-      createDate:po.created!=null? DateFormat('yyyy-MM-dd HH:mm').format(po.created!):null,
+      createDate:po.created!=null? DateFormat('yyyy/MM/dd').format(po.created!):null,
       imageCover: po.image,
       count: po.count,
       color: ColorUtils.parse(po.color),
