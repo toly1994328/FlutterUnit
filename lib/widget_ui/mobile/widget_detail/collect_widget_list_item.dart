@@ -16,61 +16,75 @@ class CollectWidgetListItem extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Material(
-          color: itemColor.withAlpha(66),
-          shape: TechnoShapeBorder(color: itemColor),
-          child:  Row(
-              children: <Widget>[
-                _buildLeading(),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      _buildTitle(),
-                      _buildSummary(),
-                      StarScore(
-                        star: Star(
-                            emptyColor: Colors.white,
-                            size: 12,
-                            fillColor: itemColor),
-                        score: data.lever,
-                      )
-                    ],
+          color: Theme.of(context).listTileTheme.tileColor,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+          child:  Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 6),
+            child: Row(
+                children: <Widget>[
+                  _buildLeading(),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        _buildTitle(),
+                        Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                _buildSummary(),
+                                StarScore(
+                                  star: Star(
+                                      emptyColor: Colors.white,
+                                      size: 12,
+                                      fillColor: itemColor),
+                                  score: data.lever,
+                                )
+                              ],
+                            ),
+                           const  Spacer(),
+                            FeedbackWidget(
+                              onPressed: () {
+                                onDeleteItemClick?.call(data);
+                              },
+                              child: const Icon(
+                                CupertinoIcons.delete_solid,
+                                color: Colors.red,
+                                size: 20,
+                              ),
+                            )
+                          ],
+                        )
+
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+            ),
           ),
         ),
-        Positioned(
-            bottom: 5,
-            right: 5,
-            child: FeedbackWidget(
-              onPressed: () {
-                onDeleteItemClick?.call(data);
-              },
-              child: const Icon(
-                CupertinoIcons.delete_solid,
-                color: Colors.red,
-              ),
-            ))
       ],
     );
   }
 
   Widget _buildLeading() => Padding(
-        padding: const EdgeInsets.only(left: 5, right: 5),
+        padding: const EdgeInsets.only(right: 8),
         child: data.image == null
             ? Material(
                 color: Colors.transparent,
                 child: CircleText(
                   text: data.name,
-                  size: 50,
+                  size: 40,
+                  fontSize: 18,
                   color: itemColor,
                 ),
               )
             : CircleImage(
                 image: data.image!,
-                size: 50,
+                size: 40,
               ),
       );
 
@@ -82,7 +96,7 @@ class CollectWidgetListItem extends StatelessWidget {
           child: Text(data.name,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                  fontSize: 17,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                   shadows: [
                     Shadow(
@@ -93,14 +107,14 @@ class CollectWidgetListItem extends StatelessWidget {
     );
 
   Widget _buildSummary() => Padding(
-      padding: const EdgeInsets.only(left: 5, bottom: 5, top: 5),
+      padding: const EdgeInsets.only(bottom: 5, top: 5),
       child: Text(
         data.nameCN,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         style: TextStyle(
             color: Colors.grey[600],
-            fontSize: 14,
+            fontSize: 12,
             shadows: const [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
       ),
     );

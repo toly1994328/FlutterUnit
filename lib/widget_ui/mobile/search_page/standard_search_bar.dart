@@ -15,8 +15,10 @@ class StandardSearchBarInner extends StatelessWidget implements PreferredSizeWid
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    Color? color = Theme.of(context).appBarTheme.backgroundColor;
     return  Container(
-        color: Colors.white,
+        color: isDark?color:Colors.white,
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
           children: [
@@ -53,9 +55,10 @@ Icons.arrow_back
                         //提交后,收起键盘
                         FocusScope.of(context).requestFocus(FocusNode());
                       },
-                      decoration: const InputDecoration(
+                      decoration:  InputDecoration(
                           filled: true,
-                          fillColor: Color(0xffF3F6F9),
+                          fillColor: isDark?Color(0xff292929):Color(0xffF3F6F9),
+
                           prefixIcon: Icon(
                             Icons.search,
                             color: Colors.grey,

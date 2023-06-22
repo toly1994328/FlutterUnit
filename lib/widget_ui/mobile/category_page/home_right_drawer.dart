@@ -2,7 +2,6 @@ import 'package:components/toly_ui/ti/circle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/app/navigation/unit_drawer_header.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
 import 'edit_category_panel.dart';
 
@@ -28,10 +27,10 @@ class _HomeRightDrawerState extends State<HomeRightDrawer> {
 
   Widget _buildChild(BuildContext context) {
     // final Color color =  BlocProvider.of<WidgetsBloc>(context).state.color;
-    final Color color = BlocProvider.of<ColorChangeCubit>(context).state.color;
+    final Color color = Theme.of(context).scaffoldBackgroundColor;
 
     return Container(
-        color: color.withAlpha(33),
+        color: color,
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
           UnitDrawerHeader(color:color),
           _buildTitle(context),

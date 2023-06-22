@@ -3,8 +3,6 @@ import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
-
 import 'unit_drawer_header.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
@@ -25,7 +23,7 @@ class HomeDrawer extends StatelessWidget {
 
   Widget _buildChild(BuildContext context) {
 
-    final Color color = BlocProvider.of<ColorChangeCubit>(context).state.color;
+    final Color color = Theme.of(context).primaryColor;
 
     return Container(
         color: color.withAlpha(33),

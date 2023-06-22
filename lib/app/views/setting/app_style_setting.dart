@@ -9,11 +9,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 void showAppStyleSelectDialog(BuildContext context) {
-  List<String> data = Cons.kAppStyleStringMap.values.toList();
+  // List<String> data = Cons.kAppStyleStringMap.values.toList();
   showCupertinoModalPopup(
       context: context,
       builder: (context) => AppThemeSettingDialog(
-        data: data,
+        data: [],
       ));
 }
 
@@ -54,20 +54,20 @@ class AppThemeSettingDialog extends StatelessWidget {
     );
   }
 
-  Widget _buildItem(BuildContext context, int index) {
-    AppStyle locale = Cons.kAppStyleStringMap.keys.toList()[index];
-    AppStyle style = BlocProvider.of<AppBloc>(context).state.appStyle;
-    bool checked = style == locale;
-    Color color = Theme.of(context).primaryColor;
-    return ListTile(
-      title: Text(data[index]),
-      onTap: () => _onSelect(context, index),
-      trailing: checked ? Icon(Icons.check, size: 20, color: color) : null,
-    );
+  Widget? _buildItem(BuildContext context, int index) {
+    // AppStyle locale = Cons.kAppStyleStringMap.keys.toList()[index];
+    // AppStyle style = BlocProvider.of<AppBloc>(context).state.appStyle;
+    // bool checked = style == locale;
+    // Color color = Theme.of(context).primaryColor;
+    // return ListTile(
+    //   title: Text(data[index]),
+    //   onTap: () => _onSelect(context, index),
+    //   trailing: checked ? Icon(Icons.check, size: 20, color: color) : null,
+    // );
   }
   void _onSelect(BuildContext context, int index) {
-    AppStyle appStyle = Cons.kAppStyleStringMap.keys.toList()[index];
-    BlocProvider.of<AppBloc>(context).changeAppStyle(appStyle);
-    Navigator.of(context).pop();
+    // AppStyle appStyle = Cons.kAppStyleStringMap.keys.toList()[index];
+    // BlocProvider.of<AppBloc>(context).changeThemeMode(appStyle);
+    // Navigator.of(context).pop();
   }
 }

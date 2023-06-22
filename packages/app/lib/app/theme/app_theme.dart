@@ -5,41 +5,84 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppTheme {
-  static ThemeData darkTheme(AppState state) => ThemeData(
+  static ThemeData darkTheme(AppState state) {
+
+    SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
+    );
+    bool useMaterial3 = (Platform.isAndroid || Platform.isIOS);
+
+    return ThemeData(
+  tabBarTheme: TabBarTheme(
+        dividerColor:  Colors.transparent,
+      ),
       fontFamily: state.fontFamily,
+        useMaterial3:useMaterial3,
       brightness: Brightness.dark,
       primaryColor: const Color(0xff4699FB),
-      appBarTheme: const AppBarTheme(backgroundColor: Color(0xff222222)),
+        listTileTheme: ListTileThemeData(
+          tileColor: Color(0xff181818),
+          textColor: Color(0xffD6D6D6),
+        ),
+      appBarTheme:  AppBarTheme(
+    systemOverlayStyle: overlayStyle,
+    elevation: 0,
+    centerTitle: true,
+    backgroundColor: Color(0xff181818),
+
+    iconTheme: IconThemeData(color:  Color(0xffCCCCCC)),
+
+    titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Color(0xffCCCCCC))),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
           foregroundColor: Colors.white, backgroundColor: Color(0xff4699FB)),
-      dividerColor: Colors.white,
+        dividerTheme: DividerThemeData(
+          color: const Color(0xff2F2F2F),
+          space: px1,
+          thickness: px1,
+        ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xff181818),
           selectedItemColor: Color(0xff4699FB)),
       scaffoldBackgroundColor: const Color(0xff010201));
+  }
 
   static ThemeData lightTheme(AppState state) {
     SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.dark);
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
+    );
 
-    bool useMaterial3 = (Platform.isAndroid || Platform.isIOS)&&state.appStyle!=AppStyle.fancy;
+    bool useMaterial3 = (Platform.isAndroid || Platform.isIOS);
 
     return ThemeData(
       fontFamily: state.fontFamily,
       primaryColor: state.themeColor,
-      useMaterial3: useMaterial3 ,
+      scaffoldBackgroundColor: Color(0xffF3F4F6),
+      useMaterial3: useMaterial3,
+      tabBarTheme: TabBarTheme(
+        dividerColor:  Colors.transparent,
+      ),
       // Android 使用 Material3
-      chipTheme: ChipThemeData(padding: EdgeInsets.symmetric(horizontal: 10)
-          ),
+      chipTheme: ChipThemeData(padding: EdgeInsets.symmetric(horizontal: 10)),
+      listTileTheme: ListTileThemeData(
+        tileColor: Colors.white,
+      ),
       dividerTheme: DividerThemeData(
         color: const Color(0xffDEE0E2),
         space: px1,
         thickness: px1,
       ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.white),
       appBarTheme: AppBarTheme(
-        systemOverlayStyle: overlayStyle,
+          systemOverlayStyle: overlayStyle,
+          elevation: 0,
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.black),
       ),
     );
   }

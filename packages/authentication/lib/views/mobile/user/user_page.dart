@@ -19,13 +19,11 @@ class UserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppStyle style = context.read<AppBloc>().state.appStyle;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    String image = isDark?'anim_draw.webp':'base_draw.webp';
     return Scaffold(
-      backgroundColor: Colors.white,
         body: AnnotatedRegion<SystemUiOverlayStyle>(
-          value:const SystemUiOverlayStyle(
-            statusBarIconBrightness: Brightness.dark
-          ),
+          value:Theme.of(context).appBarTheme.systemOverlayStyle!,
           child: Column(
       children: [
           Stack(
@@ -35,9 +33,7 @@ class UserPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.only(bottom: 40),
                 child: Image.asset(
-                  style == AppStyle.standard
-                      ? 'assets/images/base_draw.webp'
-                      : 'assets/images/sabar_bar.webp',
+               'assets/images/$image',
                   fit: BoxFit.cover,
                 ),
               ),
