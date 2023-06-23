@@ -32,7 +32,7 @@ class UnitRouters {
   static const String widget_detail = '/widget_detail';
 
   static const String detail = 'detail';
-  static const String search = 'search_bloc';
+  // static const String search = 'search_bloc';
 
 
   static const String collect = 'CollectPage';
@@ -83,8 +83,8 @@ class UnitRouters {
         return Right2LeftRouter(
             child: child);
 
-      case search:
-        return Right2LeftRouter(child: const SearchPageProvider());
+      // case search:
+      //   return Right2LeftRouter(child: const SearchPageProvider());
       case collect:
         return Right2LeftRouter(child: const CollectPageAdapter());
 
@@ -98,8 +98,8 @@ class UnitRouters {
         return Right2LeftRouter(child: const ThemeColorSettingPage());
       case code_style_setting:
         return Right2LeftRouter(child: const CodeStyleSettingPage());
-      case item_style_setting:
-        return Right2LeftRouter(child: const ItemStyleSettingPage());
+      // case item_style_setting:
+      //   return Right2LeftRouter(child: const ItemStyleSettingPage());
 
       case version_info:
         return Right2LeftRouter(child: const VersionInfo());

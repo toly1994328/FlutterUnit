@@ -47,5 +47,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>FlutterUnit 申请访问相册，以提升您的图片选择功能的体验</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>FlutterUnit 申请访问相册，以支持您保存图片到相册</string>
 </dict>
 </plist>

@@ -65,10 +65,6 @@ class Cons {
     HighlighterStyle.fromColors(HighlighterStyle.solarized):"cst - Power By cst",
   };
 
-  static const Map<AppStyle,String> kAppStyleStringMap = {
-    AppStyle.standard: "标准样式",
-    AppStyle.fancy: "华丽样式",
-  };
 
   static final kThemeColorSupport = <MaterialColor, String>{
     Colors.red: "毁灭之红",

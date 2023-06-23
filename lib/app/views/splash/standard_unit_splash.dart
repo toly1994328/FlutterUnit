@@ -4,7 +4,6 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 import 'package:utils/utils.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
@@ -12,6 +11,8 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'dart:ui' as ui;
 
 import 'package:widget_repository/widget_repository.dart';
+
+import 'flutter_unit_text.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
 /// contact me by email 1981462002@qq.com

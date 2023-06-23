@@ -28,7 +28,7 @@ class WidgetDetailPanel extends StatelessWidget {
     child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: Panel(
-          color: Theme.of(context).appBarTheme.backgroundColor,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: Text(model.info)),
     ),
   );

@@ -27,12 +27,14 @@ class MePageItem extends StatelessWidget {
           ),
           Gap.sfl10,
           _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
+          const Divider(),
           _buildItem(
               context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
+          const Divider(),
           _buildItem(
               context, TolyIcon.icon_collect, '我的收藏', UnitRouter.collect),
           Gap.sfl10,
-          const Divider(height: 1),
+
           Stack(
             children: [
               _buildItem(
@@ -44,10 +46,9 @@ class MePageItem extends StatelessWidget {
               const Positioned(left: 40, top: 10, child: UpdateRedPoint())
             ],
           ),
+          const Divider(),
           _buildItem(context, Icons.info, '关于应用', UnitRouter.about_app),
-          const Divider(
-            height: 1,
-          ),
+
           Gap.sfl10,
           _buildItem(context, TolyIcon.icon_kafei, '联系本王', UnitRouter.about_me),
         ],

@@ -19,14 +19,14 @@ class CategoryListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: _buildChild(context),
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(8),
 
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).listTileTheme.tileColor,
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.1),blurRadius: 2)
+          BoxShadow(color: Colors.black.withOpacity(0.01),blurRadius: 6,offset: Offset(0,2))
         ],
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
     );
 
@@ -37,44 +37,25 @@ class CategoryListItem extends StatelessWidget {
     return Column(
       children: <Widget>[
         _buildTitle(themeColor),
+        const SizedBox(height: 8,),
         const Divider(),
         Expanded(
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-                  child: Text(data.info,
-                      style: TextStyle(
-                          color: Colors.grey,
-                          shadows: [
-                            Shadow(color: themeColor.withOpacity(0.4), offset:const Offset(.2,.2),blurRadius: .5)
-                          ])),
-                ),
-                  Positioned(
-                      bottom: 5,
-                      right: 5,
-                      child:
-                      FeedbackWidget(
-                        onPressed: () {
-                          onEditItemClick?.call(data);
-                        },
-                        child: Icon(
-                          Icons.edit,
-                          size: 20,
-                          color: themeColor,
-                        ),
-                      )
-                  )
-              ],
-            )),
+            child:    Container(
+              padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+              child: Text(data.info,
+                  maxLines: 4,
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12,
+                      shadows: [
+                        Shadow(color: themeColor.withOpacity(0.4), offset:const Offset(.2,.2),blurRadius: .5)
+                      ])),
+            ),),
         const Divider(),
-        Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Text(
-            '创建于 ${data.createDate}',
-            style: const TextStyle(color: Colors.grey, fontSize: 12),
-          ),
+        const SizedBox(height: 8,),
+        Text(
+          '创建于: ${data.createDate}',
+          style: const TextStyle(color: Colors.grey, fontSize: 12),
         ),
       ],
     );
@@ -97,6 +78,17 @@ class CategoryListItem extends StatelessWidget {
               data.name,
               style: const TextStyle(fontWeight: FontWeight.bold),
             )),
+        FeedbackWidget(
+          onPressed: () {
+            onEditItemClick?.call(data);
+          },
+          child: Icon(
+            Icons.edit,
+            size: 20,
+            color: themeColor,
+          ),
+        ),
+          const SizedBox(width: 4,),
           FeedbackWidget(
             onPressed: () {
               onDeleteItemClick?.call(data);
@@ -104,8 +96,11 @@ class CategoryListItem extends StatelessWidget {
             child: const Icon(
               CupertinoIcons.delete_solid,
               color: Colors.red,
+              size: 20,
             ),
-          )
+          ),
+
+
       ],
     );
   }

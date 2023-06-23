@@ -31,13 +31,15 @@ class StandardSearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: Column(
         children: [
           SizedBox(
             height: MediaQuery.of(context).padding.top,
             width: MediaQuery.of(context).size.width,
-            child: const ColoredBox(color: Colors.white),
+            child:  ColoredBox(color: isDark?Theme.of(context).appBarTheme.backgroundColor??Colors.black:Colors.white),
           ),
           const StandardSearchBarInner(),
           Expanded(

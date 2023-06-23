@@ -15,12 +15,15 @@ import 'edit_category_panel.dart';
 import 'empty_category.dart';
 
 class CategoryPage extends StatelessWidget {
-  final SliverGridDelegateWithFixedCrossAxisCount gridDelegate =
-      const SliverGridDelegateWithFixedCrossAxisCount(
-    crossAxisCount: 2,
-    mainAxisSpacing: 10,
-    crossAxisSpacing: 10,
-    childAspectRatio: 0.8,
+  final SliverGridDelegateWithMaxCrossAxisExtent gridDelegate =
+      const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,
+        mainAxisExtent: 200,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+    // crossAxisCount: 2,
+
+    // childAspectRatio: 0.8,
   );
 
   final SliverGridDelegateWithFixedCrossAxisCount deskGridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
@@ -55,7 +58,7 @@ class CategoryPage extends StatelessWidget {
 
   _buildContent(BuildContext context, CategoryLoadedState state) {
     return SliverPadding(
-      padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
+      padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
       sliver: SliverLayoutBuilder(
           builder: (_,c){
             SliverGridDelegate delegate = gridDelegate;
