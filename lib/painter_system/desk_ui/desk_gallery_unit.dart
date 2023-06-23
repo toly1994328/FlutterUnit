@@ -7,7 +7,6 @@ import 'package:components/toly_ui/toly_ui.dart';
 
 import 'package:flutter_unit/painter_system/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
 import '../../point_system/views/desk_ui/desk_point_page.dart';
 import '../gallery_detail_page.dart';
@@ -34,10 +33,9 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
 
   final ScrollController controller = ScrollController();
 
-  Color get color => BlocProvider.of<ColorChangeCubit>(context).state.tabColor;
+  Color get color => Colors.blue;
 
-  Color get nextColor =>
-      BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
+  Color get nextColor =>Colors.orangeAccent;
 
   BoxDecoration get boxDecoration => const BoxDecoration(
         color: Colors.white,

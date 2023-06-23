@@ -20,11 +20,17 @@ class SliverWidgetDetailBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    Color? appBarColor = Theme.of(context).appBarTheme.backgroundColor;
+    Color? appBarTextColor = Theme.of(context).appBarTheme.titleTextStyle?.color;
+    print(appBarTextColor);
+
     return SliverAppBar(
       pinned: true,
-      backgroundColor: backgroundColor,
-      titleTextStyle: const TextStyle(color: textColor),
-      iconTheme: const IconThemeData(color: textColor),
+      backgroundColor: isDark? appBarColor:backgroundColor,
+      titleTextStyle:  TextStyle(color:isDark?appBarTextColor: textColor),
+      iconTheme:  isDark? null:const IconThemeData(color: textColor),
+      centerTitle: false,
       expandedHeight: 120.0,
       scrolledUnderElevation: 0.5,
       flexibleSpace: DiyFlexibleSpaceBar(
@@ -35,13 +41,13 @@ class SliverWidgetDetailBar extends StatelessWidget {
         ),
         fixedSubtitle: Text(
           model.name,
-          style: const TextStyle(color: Color(0xff696969), fontSize: 12),
+          style:  TextStyle(color: isDark?appBarTextColor:Color(0xff696969), fontSize: 12),
         ),
         title: Padding(
           padding: const EdgeInsets.only(bottom: 3),
           child: Text(
             model.nameCN,
-            style: const TextStyle(color: textColor, fontSize: 16),
+            style:  TextStyle( fontSize: 16,color:isDark?appBarTextColor: textColor),
           ),
         ),
         //伸展处布局

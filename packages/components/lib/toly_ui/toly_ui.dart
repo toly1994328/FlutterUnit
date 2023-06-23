@@ -20,4 +20,5 @@ export 'decorations/round_rect_rab_indicator.dart';
 export 'object/windmill.dart';
 export 'sliver_header/sliver_pinned_header.dart';
 export 'sliver_header/sliver_snap_header.dart';
+export 'ti/toly_switch_list_tile.dart';
 export 'markdown/markdown_widget.dart' hide Highlighter;

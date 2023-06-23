@@ -20,6 +20,7 @@ class CategoryShow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title: Text(model.name)),
       body: BlocBuilder<CategoryWidgetBloc, CategoryWidgetState>(
@@ -79,20 +80,21 @@ class SimpleWidgetItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+Color shadowColor = isDark?Colors.black:Colors.white;
     return Container(
-      color: Colors.transparent,
-      height: 75,
+      height: 64,
       child: Row(
         children: <Widget>[
-          _buildLeading(),
+          _buildLeading(shadowColor),
           const SizedBox(
-            width: 20,
+            width: 8,
           ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[_buildTitle(), _buildSummary()],
+              children: <Widget>[_buildTitle(shadowColor), _buildSummary(shadowColor)],
             ),
           )
         ],
@@ -100,52 +102,56 @@ class SimpleWidgetItem extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle() {
+  Widget _buildTitle(Color shadowColor) {
     return Row(
       children: [
-        Text(data.name,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  Shadow(color: Colors.white, offset: Offset(.3, .3))
-                ])),
+        Expanded(
+          child: Text(data.name,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              style:  TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  shadows: [
+                    Shadow(color: shadowColor, offset: Offset(.3, .3))
+                  ])),
+        ),
         const SizedBox(width: 15),
         StarScore(
-          star: Star(emptyColor: Colors.white, size: 12, fillColor: data.color),
+          star: Star(emptyColor: shadowColor, size: 12, fillColor: data.color),
           score: data.lever,
         )
       ],
     );
   }
 
-  Widget _buildLeading() => Padding(
+  Widget _buildLeading(Color shadowColor) => Padding(
         padding: const EdgeInsets.only(left: 5, right: 5),
         child: data.image == null
             ? Material(
                 color: Colors.transparent,
                 child: CircleText(
+
                   text: data.name,
-                  size: 60,
+                  size: 50,
                   color: data.color,
                 ),
               )
             : CircleImage(
                 image: data.image!,
-                size: 60,
+                size: 50,
               ),
       );
 
-  Widget _buildSummary() {
+  Widget _buildSummary(Color shadowColor) {
     return Text(
       data.info,
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
-      style: const TextStyle(
+      style:  TextStyle(
           color: Color(0xFF757575),
-          fontSize: 14,
-          shadows: [Shadow(color: Colors.white, offset: Offset(.5, .5))]),
+          fontSize: 12,
+          shadows: [Shadow(color: shadowColor, offset: Offset(.5, .5))]),
     );
   }
 }

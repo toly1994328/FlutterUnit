@@ -9,7 +9,6 @@ import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter_unit/painter_system/gallery_card_item.dart';
 import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
 import 'package:flutter_unit/painter_system/gallery_factory.dart';
-import 'package:old_fancy_mobile_ui/bloc/color_change_bloc.dart';
 
 import 'desk_ui/desk_gallery_unit.dart';
 import 'gallery_detail_page.dart';
@@ -72,9 +71,10 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
     super.dispose();
   }
 
-  Color get color => BlocProvider.of<ColorChangeCubit>(context).state.tabColor;
 
-  Color get nextColor =>  BlocProvider.of<ColorChangeCubit>(context).state.nextTabColor;
+  Color get color => Colors.blue;
+
+  Color get nextColor =>Colors.orangeAccent;
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
   BoxDecoration get boxDecoration =>  BoxDecoration(

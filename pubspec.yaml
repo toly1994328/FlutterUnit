@@ -1,7 +1,7 @@
 name: flutter_unit
 description: A new Flutter application.
 publish_to: none
-version: 2.8.0
+version: 2.9.0+3
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -65,8 +65,8 @@ dependencies:
     path: packages/components
   widget_module:
     path: packages/widget_module
-  old_fancy_mobile_ui:
-    path: packages/old_fancy_mobile_ui
+#  old_fancy_mobile_ui:
+#    path: packages/old_fancy_mobile_ui
 
 dev_dependencies:
   flutter_test:

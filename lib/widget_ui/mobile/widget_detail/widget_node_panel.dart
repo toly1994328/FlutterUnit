@@ -85,7 +85,7 @@ class _WidgetNodePanelState extends State<WidgetNodePanel> {
   Widget _buildNodeInfo() => SizedBox(
         width: double.infinity,
         child: Panel(
-          color: Theme.of(context).appBarTheme.backgroundColor,
+          color: Theme.of(context).scaffoldBackgroundColor,
             child: Text(
           widget.subText,
           style: const TextStyle(fontSize: 12),

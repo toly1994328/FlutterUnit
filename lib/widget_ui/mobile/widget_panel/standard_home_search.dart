@@ -12,8 +12,10 @@ class StandardHomeSearch extends StatelessWidget implements PreferredSizeWidget 
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
-      color: Colors.white,
+      color: isDark?null:Colors.white,
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         children: [
@@ -34,7 +36,7 @@ class StandardHomeSearch extends StatelessWidget implements PreferredSizeWidget 
               child: Container(
                   height: 35,
                   padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: const Material(
+                  child:  Material(
                     color: Colors.transparent,
                     child: TextField(
                       autofocus: false,
@@ -43,7 +45,7 @@ class StandardHomeSearch extends StatelessWidget implements PreferredSizeWidget 
                       maxLines: 1,
                       decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color(0xffF3F6F9),
+                          fillColor: isDark?Color(0xff292929):Color(0xffF3F6F9),
                           prefixIcon: Icon(
                             Icons.search,
                             color: Colors.grey,

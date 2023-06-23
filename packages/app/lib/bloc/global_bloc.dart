@@ -12,7 +12,7 @@ import '../model/global_state.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局信息的bloc
 
-class AppBloc extends Cubit< AppState> {
+class AppBloc extends Cubit<AppState> {
 
   final AppStateRepository storage;
 
@@ -67,8 +67,8 @@ class AppBloc extends Cubit< AppState> {
     emit(newState);
   }
 
-  void changeAppStyle(AppStyle style) async{
-    AppState newState = state.copyWith(appStyle: style);
+  void changeThemeMode(ThemeMode style) async{
+    AppState newState = state.copyWith(themeMode: style);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }

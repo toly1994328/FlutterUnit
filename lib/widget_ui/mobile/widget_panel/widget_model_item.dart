@@ -18,21 +18,26 @@ class StandardWidgetItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
+    Color? textColor = Theme.of(context).listTileTheme.textColor;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    textColor = isDark?textColor: Color(0xff2F3032);
+
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: InkWell(
         onTap: onTap,
         child: Ink(
-          color: Colors.white,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          color: tileColor,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           // margin:
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildTitle(Theme.of(context).primaryColor),
-              _buildContent(),
-              _buildFoot()
+              _buildTitle(Theme.of(context).primaryColor,textColor,isDark),
+              _buildContent(textColor),
+              _buildFoot(isDark)
             ],
           ),
         ),
@@ -40,15 +45,15 @@ class StandardWidgetItem extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle(Color color) {
+  Widget _buildTitle(Color color,Color? textColor,bool isDark) {
     return Row(
       children: [
         if (searchArg == null)
           Text(
             model.name,
-            style: const TextStyle(
+            style:  TextStyle(
               fontSize: 16,
-              color: Color(0xff2F3032),
+              color: textColor,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -62,7 +67,7 @@ class StandardWidgetItem extends StatelessWidget {
             opacity: show ? 1.0 : 0.0,
             child: Wrapper.just(
               radius: 10,
-              color: const Color(0xffF3F3F5),
+              color:  isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               child: Text(
                 '已收藏',
@@ -70,9 +75,9 @@ class StandardWidgetItem extends StatelessWidget {
                     color: color,
                     height: 1,
                     fontSize: 10,
-                    shadows: const [
+                    shadows:  [
                       Shadow(
-                          color: Colors.white,
+                          color:isDark? Colors.black: Colors.white,
                           blurRadius: 2,
                           offset: Offset(1, 1))
                     ]),
@@ -89,17 +94,20 @@ class StandardWidgetItem extends StatelessWidget {
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(Color? textColor) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: Text(
         model.info,
-        style: const TextStyle(fontSize: 14, color: Color(0xff2F3032)),
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style:  TextStyle(fontSize: 14, color: textColor),
       ),
     );
   }
 
-  Widget _buildFoot() {
+  Widget _buildFoot(bool isDark) {
+
     return Row(
       children: [
         Container(
@@ -117,17 +125,17 @@ class StandardWidgetItem extends StatelessWidget {
         const Spacer(),
         Wrapper.just(
           radius: 2,
-          color: const Color(0xffF3F3F5),
+          color: isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: Text(
             Cons.kWidgetFamilyLabelMap[model.family]!,
-            style: const TextStyle(
-                color: Color(0xff878D96),
+            style:  TextStyle(
+                color:  isDark?Color(0xffCCCCCC):Color(0xff878D96),
                 height: 1,
                 fontSize: 12,
                 shadows: [
                   Shadow(
-                      color: Colors.white, blurRadius: 2, offset: Offset(1, 1))
+                      color: isDark? Colors.black:Colors.white, blurRadius: 2, offset: Offset(1, 1))
                 ]),
           ),
         ),

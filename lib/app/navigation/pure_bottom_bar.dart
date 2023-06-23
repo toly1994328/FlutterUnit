@@ -1,9 +1,8 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-import 'package:old_fancy_mobile_ui/old_fancy_mobile_ui.dart';
 
-
-
+typedef IndexTapCallback = void Function(int);
+typedef IndexLongTapCallback = void Function(BuildContext, int);
 class PureBottomBar extends StatefulWidget {
   final int initPosition;
 
@@ -43,7 +42,7 @@ class _PureBottomBarState extends State<PureBottomBar> {
       children: [
         // Divider(height: 1,),
         BottomNavigationBar(
-          backgroundColor: Colors.white,
+          // backgroundColor: Colors.white,
           onTap: (position) {
             // checkTokenExpires();
             _position = position;

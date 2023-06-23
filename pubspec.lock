@@ -361,13 +361,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
-  old_fancy_mobile_ui:
-    dependency: "direct main"
-    description:
-      path: "packages/old_fancy_mobile_ui"
-      relative: true
-    source: path
-    version: "0.0.1"
   package_info_plus:
     dependency: "direct main"
     description:
