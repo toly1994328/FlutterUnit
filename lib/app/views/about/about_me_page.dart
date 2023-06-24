@@ -160,7 +160,7 @@ class AboutMePage extends StatelessWidget {
             )),
         FeedbackWidget(
             onPressed: () =>
-                _launchURL("https://github_model.com/toly1994328"),
+                _launchURL("https://github.com/toly1994328"),
             child: Wrap(
               direction: Axis.vertical,
               crossAxisAlignment: WrapCrossAlignment.center,

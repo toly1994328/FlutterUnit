@@ -117,7 +117,7 @@ class AboutAppPage extends StatelessWidget {
             children: <Widget>[
               FeedbackWidget(
                   onPressed: () =>
-                      _launchURL("https://github_model.com/toly1994328/FlutterUnit"),
+                      _launchURL("https://github.com/toly1994328/FlutterUnit"),
                   child: Wrap(
                     direction: Axis.vertical,
                     crossAxisAlignment: WrapCrossAlignment.center,

@@ -109,7 +109,7 @@ class VersionInfo extends StatelessWidget {
       children: <Widget>[
         FeedbackWidget(
             onPressed: (){
-              _launchURL("https://github_model.com/toly1994328/FlutterUnit");
+              _launchURL("https://github.com/toly1994328/FlutterUnit");
             },
             child: const Text('《查看本项目Github仓库》',style: TextStyle(fontSize: 12,color: Color(0xff616C84),),)),
         const Text('Power By 张风捷特烈',style: TextStyle(fontSize: 12,color: Colors.grey),),
