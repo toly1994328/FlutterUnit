@@ -42,7 +42,7 @@ class RichTextWithWidget extends StatelessWidget {
             style: TextStyle(color: Colors.orange, fontSize: 16),
           ),
           const TextSpan(
-            text: 'https://github_model.com/toly1994328',
+            text: 'https://github.com/toly1994328',
             style: TextStyle(
                 color: Colors.blue,
                 fontSize: 18,
