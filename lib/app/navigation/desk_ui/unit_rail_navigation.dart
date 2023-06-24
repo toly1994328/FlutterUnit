@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/navigation/desk_ui/theme_model_switch_icon.dart';
 import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -86,14 +87,15 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
 
   @override
   Widget build(BuildContext context) {
+   Color? divColor = Theme.of(context).dividerTheme.color;
     return DragToMoveAreaNoDouble(
       child: Container(
         padding: const EdgeInsets.only(top: 20),
         alignment: Alignment.topCenter,
         margin: const EdgeInsets.only(right: 1),
-        width: 120,
-        decoration: const BoxDecoration(color: Color(0xff2C3036), boxShadow: [
-          BoxShadow(color: Colors.grey, offset: Offset(1, 0), blurRadius: 2)
+        width: 130,
+        decoration:  BoxDecoration(color: Color(0xff2C3036), boxShadow: [
+          BoxShadow(color: divColor!, offset: Offset(1, 0), blurRadius: 2)
         ]),
         child: Column(
           children: [
@@ -134,8 +136,8 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
                             widget.onItemClick.call(index);
                           },
                           selected: widget.selectedIndex == index,
-                          width: 120,
-                          height: 35,
+                          width: 130,
+                          height: 46,
                           activeColor: Theme.of(context).primaryColor,
                           inactiveColor: Colors.white.withAlpha(33),
                           icon: icons[index],
@@ -153,17 +155,24 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
               color: Colors.white,
               height: 1,
             ),
-            Builder(
-              builder: (ctx) => FeedbackWidget(
-                onPressed: () => Scaffold.of(ctx).openDrawer(),
-                child: const Padding(
-                  padding: EdgeInsets.only(bottom: 20, top: 20),
-                  child: Icon(
-                    Icons.settings,
-                    color: Colors.white,
+
+            Wrap(
+              spacing: 12,
+              children: [
+                const ThemeModelSwitchIcon(),
+                Builder(
+                  builder: (ctx) => FeedbackWidget(
+                    onPressed: () => Scaffold.of(ctx).openDrawer(),
+                    child: const Padding(
+                      padding: EdgeInsets.only(bottom: 16, top: 16),
+                      child: Icon(
+                        Icons.settings,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
@@ -174,9 +183,9 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
 
   Widget buildIcons() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20, top: 20),
+      padding: const EdgeInsets.only(bottom: 16, top: 16),
       child: Wrap(
-        spacing: 5,
+        spacing: 8,
         children: [
           FeedbackWidget(
             onPressed: () => _launchURL("http://blog.toly1994.com"),
@@ -215,7 +224,7 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
   }
 }
 
-class _UnitRailMenu extends StatelessWidget {
+class _UnitRailMenu extends StatefulWidget {
   final VoidCallback onTap;
   final bool selected;
   final Color activeColor;
@@ -240,48 +249,52 @@ class _UnitRailMenu extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<_UnitRailMenu> createState() => _UnitRailMenuState();
+}
+
+class _UnitRailMenuState extends State<_UnitRailMenu> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: onTap,
+        onTap: widget.onTap,
         child: Container(
           alignment: Alignment.topLeft,
           margin: const EdgeInsets.only(top: 10),
           child: AnimatedBuilder(
-            animation: animation,
+            animation: widget.animation,
             builder: (BuildContext context, Widget? child) => _buildItem(),
           ),
         ));
   }
 
-  late ColorTween colorTween = ColorTween(begin: inactiveColor, end: activeColor);
-
+  late ColorTween colorTween = ColorTween(begin: widget.inactiveColor, end: widget.activeColor);
 
   Widget _buildItem() {
-    double iconSize = _sizeTween.transform(animation.value);
-    Color? color = colorTween.transform(animation.value);
+    double iconSize = _sizeTween.transform(widget.animation.value);
+    Color? color = colorTween.transform(widget.animation.value);
     return Container(
       alignment: Alignment.center,
       decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.only(
-              topRight: Radius.circular(height / 2),
-              bottomRight: Radius.circular(height / 2))),
-      width: _widthTween.transform(animation.value) * width,
-      height: height,
+              topRight: Radius.circular(widget.height / 2),
+              bottomRight: Radius.circular(widget.height / 2))),
+      width: _widthTween.transform(widget.animation.value) * widget.width,
+      height: widget.height,
       child: Wrap(
         spacing: 6,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           Icon(
-            icon,
+            widget.icon,
             size: iconSize,
-            color: selected ? Colors.white : Colors.white70,
+            color: widget.selected ? Colors.white : Colors.white70,
           ),
           Text(
-            label,
+            widget.label,
             style: TextStyle(
-              fontSize: 12,
-              color: selected ? Colors.white : Colors.white70,
+              fontSize: 14,
+              color: widget.selected ? Colors.white : Colors.white70,
             ),
           ),
         ],

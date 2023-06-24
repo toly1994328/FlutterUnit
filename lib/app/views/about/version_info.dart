@@ -18,10 +18,13 @@ class VersionInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Color? bgColor = Theme.of(context).listTileTheme.tileColor;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: bgColor,
         elevation: 0,
         iconTheme: const IconThemeData(
           color: Colors.grey

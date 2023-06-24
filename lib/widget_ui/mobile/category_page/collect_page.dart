@@ -14,7 +14,8 @@ import 'sync/upload_button.dart';
 
 
 class CollectPageAdapter extends StatelessWidget {
-  const CollectPageAdapter({Key? key}) : super(key: key);
+  final bool canPop;
+  const CollectPageAdapter({Key? key, this.canPop=false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class CollectPageAdapter extends StatelessWidget {
     if(isDesk){
       return DeskCategoryPage();
     }else{
-      return CollectPage();
+      return CollectPage(canPop:canPop);
     }
   }
 }
@@ -30,7 +31,8 @@ class CollectPageAdapter extends StatelessWidget {
 
 
 class CollectPage extends StatefulWidget {
-  const CollectPage({Key? key}) : super(key: key);
+  final bool canPop;
+  const CollectPage({Key? key, this.canPop=false}) : super(key: key);
 
   @override
   _CollectPageState createState() => _CollectPageState();
@@ -74,7 +76,6 @@ class _CollectPageState extends State<CollectPage>
   }
 
   Widget _buildAppBar(BuildContext context, bool index) {
-
     // final Color color = Colors.blue;
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     String image = isDark?'draw_bg3.webp':'caver.webp';
@@ -82,7 +83,7 @@ class _CollectPageState extends State<CollectPage>
       systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarIconBrightness: Brightness.light
       ),
-      leading: Container(
+      leading: widget.canPop?BackButton(color: Colors.white,):Container(
           margin: const EdgeInsets.all(10),
           child: FeedbackWidget(
             onPressed: () {
@@ -99,9 +100,11 @@ class _CollectPageState extends State<CollectPage>
             width: 32,
             child: AuthenticWidget.just(const UploadCategoryButton())),
         // SizedBox(width: 5,),
+
         SizedBox(
             width: 32,
             child: AuthenticWidget.just(const SyncCategoryButton())),
+        if(!widget.canPop)
         _buildAddAction(context)
       ],
       title: const Text(

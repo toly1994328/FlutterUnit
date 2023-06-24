@@ -91,20 +91,19 @@ class CodeHighlighter extends Highlighter {
       }
 
       // Line comments
-      if (_scanner.scan('//')) {
+      if (_scanner.scan(RegExp(r'//'))) {
         final int startComment = _scanner.lastMatch?.start??0;
-
         bool eof = false;
         int endComment;
-        if (_scanner.scan(RegExp(r'.*\n'))) {
-          endComment = _scanner.lastMatch?.end??0 - 1;
+        if (_scanner.scan(RegExp(r'(.*\r\n)|(.*\n)'))) {
+          int? end = _scanner.lastMatch?.end;
+          endComment = end==null?0:end - 1;
         } else {
           eof = true;
           endComment = _src.length;
         }
 
-        _spans.add(
-            _HighlightSpan(_HighlightType.comment, startComment, endComment));
+        _spans.add(_HighlightSpan(_HighlightType.comment, startComment, endComment));
 
         if (eof) break;
         continue;

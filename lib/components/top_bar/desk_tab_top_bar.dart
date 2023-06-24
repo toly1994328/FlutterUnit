@@ -38,11 +38,13 @@ class _DeskTabTopBarState extends State<DeskTabTopBar>  with TickerProviderState
   Widget build(BuildContext context) {
     Color themeColor = Theme.of(context).primaryColor;
 
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return DragToMoveAreaNoDouble(
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         height: 64,
-        color: Colors.white,
+        color: isDark?Color(0xff2C3036):Colors.white,
         child: Row(
           children: [
             SizedBox(

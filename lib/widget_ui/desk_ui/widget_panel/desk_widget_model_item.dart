@@ -18,12 +18,18 @@ class DeskWidgetItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
+    Color? textColor = Theme.of(context).listTileTheme.textColor;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    textColor = isDark?textColor: Color(0xff2F3032);
+
     return InkWell(
       borderRadius: BorderRadius.circular(6),
       onTap: onTap,
       child: Ink(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: tileColor,
           borderRadius: BorderRadius.circular(6),
           boxShadow: [
             BoxShadow(
@@ -38,24 +44,24 @@ class DeskWidgetItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _buildTitle(Theme.of(context).primaryColor),
-            _buildContent(),
-            _buildFoot()
+            _buildTitle(Theme.of(context).primaryColor,textColor,isDark),
+            _buildContent(textColor),
+            _buildFoot(isDark)
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTitle(Color color) {
+  Widget _buildTitle(Color color,Color? textColor,bool isDark) {
     return Row(
       children: [
         if (searchArg == null)
           Text(
             model.name,
-            style: const TextStyle(
+            style:  TextStyle(
               fontSize: 15,
-              color: Color(0xff2F3032),
+              color: textColor,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -68,7 +74,7 @@ class DeskWidgetItem extends StatelessWidget {
             opacity: show ? 1.0 : 0.0,
             child: Wrapper.just(
               radius: 10,
-              color: const Color(0xffF3F3F5),
+              color:  isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               child: Text(
                 '已收藏',
@@ -76,9 +82,9 @@ class DeskWidgetItem extends StatelessWidget {
                     color: color,
                     height: 1,
                     fontSize: 10,
-                    shadows: const [
+                    shadows:  [
                       Shadow(
-                          color: Colors.white,
+                          color:isDark? Colors.black: Colors.white,
                           blurRadius: 2,
                           offset: Offset(1, 1))
                     ]),
@@ -95,19 +101,19 @@ class DeskWidgetItem extends StatelessWidget {
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(Color? textColor) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Text(
         model.info,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: const TextStyle(fontSize: 14, color: Color(0xff2F3032)),
+        style:  TextStyle(fontSize: 14, color: textColor),
       ),
     );
   }
 
-  Widget _buildFoot() {
+  Widget _buildFoot(bool isDark) {
     return Row(
       children: [
         Container(
@@ -125,17 +131,17 @@ class DeskWidgetItem extends StatelessWidget {
         const Spacer(),
         Wrapper.just(
           radius: 2,
-          color: const Color(0xffF3F3F5),
+          color:  isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: Text(
             Cons.kWidgetFamilyLabelMap[model.family]!,
-            style: const TextStyle(
-                color: Color(0xff878D96),
+            style:  TextStyle(
+                color:  isDark?Color(0xffCCCCCC):Color(0xff878D96),
                 height: 1,
                 fontSize: 12,
                 shadows: [
                   Shadow(
-                      color: Colors.white, blurRadius: 2, offset: Offset(1, 1))
+                      color: isDark? Colors.black:Colors.white, blurRadius: 2, offset: Offset(1, 1))
                 ]),
           ),
         ),

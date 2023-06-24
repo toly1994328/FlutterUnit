@@ -86,7 +86,7 @@ flutter:
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源
     - family: TolyIcon
       fonts:
-        - asset: assets/iconfont/iconfont.ttf
+        - asset: assets/iconfont/toly_icon.ttf
     - family: IndieFlower #字体名
       fonts:
         - asset: assets/fonts/IndieFlower-Regular.ttf

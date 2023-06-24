@@ -19,6 +19,8 @@ class IssueItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
@@ -34,8 +36,8 @@ class IssueItem extends StatelessWidget {
             padding: const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 10),
             child: Text(
               '${issue.title}',
-              style: const TextStyle(fontSize: 15, color: Colors.grey, shadows: [
-                Shadow(color: Colors.white, offset: Offset(1, .5))
+              style:  TextStyle(fontSize: 15, color: Colors.grey, shadows: [
+                Shadow(color: isDark?Colors.black:Colors.white, offset: Offset(1, .5))
               ]),
             ),
           ),

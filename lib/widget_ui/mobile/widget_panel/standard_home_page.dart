@@ -119,7 +119,7 @@ class _StandardHomePageState extends State<StandardHomePage>
           ),
           const WidgetListPanel(),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 30),
             sliver: SliverOverlapInjector(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
             ),
