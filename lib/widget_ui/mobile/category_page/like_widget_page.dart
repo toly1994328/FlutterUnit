@@ -81,7 +81,6 @@ class LikeWidgetPage extends StatelessWidget {
           .add(ToggleLikeWidgetEvent(id: model.id));
 
   _toDetailPage(BuildContext context, WidgetModel model) {
-    BlocProvider.of<WidgetDetailBloc>(context).queryDetail(model);
-    Navigator.push(context, Right2LeftRouter(child: WidgetDetailPage(model: model)));
+    Navigator.push(context, Right2LeftRouter(child: WidgetDetailPageScope(model: model)));
   }
 }
