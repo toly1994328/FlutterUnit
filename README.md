@@ -19,7 +19,7 @@
 | 平台类型 | 下载地址 | 项目分支地址  | 相关文章 | 
 |------|------------|------|------------|
 | Android版 | http://toly1994.com/file/FlutterUnit.apk |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
-| iOS版 | 暂未提供，可自己下载项目运行 |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
+| iOS版 | https://apps.apple.com/cn/app/flutter-unit/id6450545123 |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
 | MacOS版 | http://toly1994.com/file/flutter_unit_mac.zip |[flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
 | Windows版 |http://toly1994.com/file/FlutterUnitWin.zip  | [flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
 | Web版 | http://toly1994328.gitee.io/flutter_web | [ flutter_unit_web ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
