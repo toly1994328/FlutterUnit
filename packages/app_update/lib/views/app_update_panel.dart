@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:r_upgrade/r_upgrade.dart';
 import 'package:utils/utils.dart';
 
 import '../bloc/bloc.dart';
@@ -94,6 +97,11 @@ class AppUpdatePanel extends StatelessWidget {
           .add(const CheckUpdate(appName: 'FlutterUnit'));
     }
     if (state is ShouldUpdateState) {
+      if(Platform.isIOS){
+        // ios 跳转应用商店
+        RUpgrade.upgradeFromAppStore('6450545123', false);
+        return;
+      }
       // 处理下载的事件
       BlocProvider.of<UpdateBloc>(context)
           .add(DownloadEvent(appInfo: state.info));

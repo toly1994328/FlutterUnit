@@ -29,12 +29,13 @@ class _DeskWidgetTopBarState extends State<DeskWidgetTopBar>  with SingleTickerP
   @override
   Widget build(BuildContext context) {
     Color themeColor = Theme.of(context).primaryColor;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return DragToMoveAreaNoDouble(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.only(left: 20),
         height: 64,
-        color: Colors.white,
+        color: isDark?Color(0xff2C3036):Colors.white,
         child: Row(
           children: [
             SizedBox(
@@ -68,7 +69,7 @@ class _DeskWidgetTopBarState extends State<DeskWidgetTopBar>  with SingleTickerP
               )),
             ),
             // const SizedBox(width: 20,),
-            WindowButtons(),
+            const WindowButtons(),
           ],
         ),
       ),

@@ -23,7 +23,7 @@ class SliverWidgetDetailBar extends StatelessWidget {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     Color? appBarColor = Theme.of(context).appBarTheme.backgroundColor;
     Color? appBarTextColor = Theme.of(context).appBarTheme.titleTextStyle?.color;
-    print(appBarTextColor);
+
 
     return SliverAppBar(
       pinned: true,
@@ -34,6 +34,7 @@ class SliverWidgetDetailBar extends StatelessWidget {
       expandedHeight: 120.0,
       scrolledUnderElevation: 0.5,
       flexibleSpace: DiyFlexibleSpaceBar(
+        centerTitle: false,
         expandedTitleScale: 2,
         titleIconBuilder: (t) => WindmillWidget(
           rotate: t * 2 * pi * 2,

@@ -72,7 +72,8 @@ class UnitRouters {
       case widget_detail:
         Widget child;
         if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
-          child = DeskWidgetDetailPageScope(          model: settings.arguments as WidgetModel,
+          child = DeskWidgetDetailPageScope(
+            model: settings.arguments as WidgetModel,
           );
         }else{
           child =  WidgetDetailPageScope(
@@ -86,7 +87,9 @@ class UnitRouters {
       // case search:
       //   return Right2LeftRouter(child: const SearchPageProvider());
       case collect:
-        return Right2LeftRouter(child: const CollectPageAdapter());
+        return Right2LeftRouter(child:  CollectPageAdapter(
+          canPop: settings.arguments as bool,
+        ));
 
       case setting:
         return Right2LeftRouter(child: const SettingPage());

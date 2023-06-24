@@ -60,10 +60,10 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
   }
 
   Widget _buildOptionsView(BuildContext context, AutocompleteOnSelected<WidgetModel> onSelected, Iterable<WidgetModel> options) {
+
     return  Align(
       alignment: Alignment.topLeft,
       child: Material(
-        color: Colors.white,
             elevation: 6,
             borderRadius: BorderRadius.circular(8),
             shadowColor: Colors.black,
@@ -96,6 +96,8 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
 
   Widget _buildFieldView(BuildContext context, TextEditingController textEditingController, FocusNode focusNode, VoidCallback onFieldSubmitted) {
     _controller = textEditingController;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return TextField(
       controller: textEditingController,
       onChanged: widget.onChanged,
@@ -109,7 +111,7 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
           filled: true,
           hoverColor: Colors.transparent,
           contentPadding: EdgeInsets.only(top: 0),
-          fillColor: Color(0xffF1F2F3),
+          fillColor: isDark?null:Color(0xffF1F2F3),
           prefixIcon: Icon(
             Icons.search,
             size: 18,
@@ -139,6 +141,9 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
   );
 
   InlineSpan formSpan(String src, String pattern) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    Color? textColor = Theme.of(context).listTileTheme.textColor;
+
     List<TextSpan> span = [];
     RegExp regExp = RegExp(pattern, caseSensitive: false);
     src.splitMapJoin(regExp, onMatch: (Match match) {
@@ -147,7 +152,7 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
     }, onNonMatch: (str) {
       span.add(TextSpan(
           text: str,
-          style: lightTextStyle.copyWith(color: const Color(0xff2F3032),fontSize: 12)));
+          style: lightTextStyle.copyWith(color:  isDark?textColor:const Color(0xff2F3032),fontSize: 12)));
       return '';
     });
     return TextSpan(children: span);

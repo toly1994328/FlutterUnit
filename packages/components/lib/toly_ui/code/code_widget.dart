@@ -9,7 +9,7 @@ import 'highlighter_style.dart';
 import 'language/dart_languge.dart';
 
 class CodeWidget extends StatelessWidget {
-  const CodeWidget({Key? key, required this.code,required this.style, this.fontSize = 13,this.fontFamily})
+   CodeWidget({Key? key, required this.code,required this.style, this.fontSize = 13,this.fontFamily})
       : super(key: key);
 
   final String code;
