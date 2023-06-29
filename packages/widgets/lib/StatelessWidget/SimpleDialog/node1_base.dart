@@ -24,7 +24,7 @@ class CustomSimpleDialog extends StatelessWidget {
     '性别:    男     未婚',
     '微信:    zdl1994328',
     "掘金:    张风捷特烈",
-    "github_model:    toly1994328",
+    "github:    toly1994328",
     "邮箱:    1981462008@qq.com",
   ];
 

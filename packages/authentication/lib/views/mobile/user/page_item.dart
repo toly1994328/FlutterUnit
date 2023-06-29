@@ -32,7 +32,7 @@ class MePageItem extends StatelessWidget {
               context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_collect, '我的收藏', UnitRouter.collect),
+              context, TolyIcon.icon_collect, '我的收藏', UnitRouter.collect,),
           Gap.sfl10,
 
           Stack(
@@ -69,7 +69,11 @@ class MePageItem extends StatelessWidget {
             Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
         onTap: () {
           if (linkTo.isNotEmpty) {
-            Navigator.of(context).pushNamed(linkTo);
+            Object? arg ;
+            if(linkTo==UnitRouter.collect){
+              arg = true;
+            }
+            Navigator.of(context).pushNamed(linkTo,arguments: arg);
             if (onTap != null) onTap();
           }
         },

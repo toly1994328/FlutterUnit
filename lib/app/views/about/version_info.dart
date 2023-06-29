@@ -18,10 +18,13 @@ class VersionInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Color? bgColor = Theme.of(context).listTileTheme.tileColor;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: bgColor,
         elevation: 0,
         iconTheme: const IconThemeData(
           color: Colors.grey
@@ -106,7 +109,7 @@ class VersionInfo extends StatelessWidget {
       children: <Widget>[
         FeedbackWidget(
             onPressed: (){
-              _launchURL("https://github_model.com/toly1994328/FlutterUnit");
+              _launchURL("https://github.com/toly1994328/FlutterUnit");
             },
             child: const Text('《查看本项目Github仓库》',style: TextStyle(fontSize: 12,color: Color(0xff616C84),),)),
         const Text('Power By 张风捷特烈',style: TextStyle(fontSize: 12,color: Colors.grey),),

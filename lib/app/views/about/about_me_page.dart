@@ -12,7 +12,11 @@ class AboutMePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Theme(
+        data: ThemeData(
+        brightness: Brightness.light
+    ),
+    child:Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +58,7 @@ class AboutMePage extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ));
   }
 
   Widget _buildBar(BuildContext context) {
@@ -156,7 +160,7 @@ class AboutMePage extends StatelessWidget {
             )),
         FeedbackWidget(
             onPressed: () =>
-                _launchURL("https://github_model.com/toly1994328"),
+                _launchURL("https://github.com/toly1994328"),
             child: Wrap(
               direction: Axis.vertical,
               crossAxisAlignment: WrapCrossAlignment.center,

@@ -29,7 +29,7 @@ class _GithubRepoPanelState extends State<GithubRepoPanel> {
               boxShadow: [
                 BoxShadow(color: Colors.black.withOpacity(0.1), offset: Offset(0, .5), blurRadius: 3)
               ],
-              color: Colors.white,
+              color:Theme.of(context).listTileTheme.tileColor,
               borderRadius: BorderRadius.circular(8)),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -80,6 +80,7 @@ class _GithubRepoPanelState extends State<GithubRepoPanel> {
                 ),
               ),
               const Divider(),
+              const SizedBox(height: 8,),
               DefaultTextStyle(
                 style: TextStyle(fontSize: 12,color: Theme.of(context).primaryColor),
                 child: Row(

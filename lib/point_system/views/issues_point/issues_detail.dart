@@ -1,6 +1,7 @@
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
 import 'package:flutter_unit/app/utils/convert_man.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 import 'package:flutter_unit/point_system/github_model/github_model.dart';
@@ -15,8 +16,14 @@ class IssuesDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Point'),
+      appBar: PreferredSize(
+        preferredSize: Size(0,kToolbarHeight),
+        child: DragToMoveAreaNoDouble(
+          child: AppBar(
+            centerTitle: false,
+            title: const Text('Flutter 要点集录'),
+          ),
+        ),
       ),
       body: BlocBuilder<PointCommentBloc, PointCommentState>(
           builder: _buildContent),
@@ -60,34 +67,38 @@ class IssueTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return SingleChildScrollView(
       child: Column(
         children: [
-          Stack(
+          Row(
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Panel(
-                    child: Text(
-                  '${issue.title}',
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
-                )),
-              ),
-              Positioned(
-                  right: 10,
-                  bottom: 10,
-                  child: WrapColor(
-                    child: Text(
-                      '#${issue.number}',
-                      style: const TextStyle(color: Colors.white),
-                    ),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Panel(
+                      color: isDark?Colors.transparent:null,
+                      child: Text(
+
+                    '${issue.title}',
+                    maxLines: 1,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   )),
+                ),
+              ),
+              WrapColor(
+                child: Text(
+                  '#${issue.number}',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              )
             ],
           ),
-          const Divider(),
+
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 8),
             child: WrapColor(
               color: Colors.blue.withAlpha(22),
               child: ListTile(
@@ -113,10 +124,12 @@ class IssueTitle extends StatelessWidget {
               ),
             ),
           ),
+
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 20),
             child: MarkdownWidget(
-                markdownData: issueDesHtml, style: MarkdownWidget.kWhite),
+                markdownData: issueDesHtml,
+                style: isDark?MarkdownWidget.kDarkLight:MarkdownWidget.kWhite),
           ),
           const Divider(
             thickness: 2,
