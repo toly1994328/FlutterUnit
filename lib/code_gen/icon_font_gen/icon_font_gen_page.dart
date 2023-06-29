@@ -52,6 +52,7 @@ class _IconFontGenPageState extends State<IconFontGenPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Center(
       child: SizedBox(
         width: 600,
@@ -149,6 +150,8 @@ class LabelInputInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -171,14 +174,14 @@ class LabelInputInput extends StatelessWidget {
                   filled: true,
                   hoverColor: Colors.transparent,
                   contentPadding: EdgeInsets.only(top: 0, left: 15),
-                  fillColor: Color(0xffF1F2F3),
+                  fillColor: isDark?null:Color(0xffF1F2F3),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Theme.of(context).primaryColor),
                     borderRadius: BorderRadius.all(Radius.circular(6)),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffE2E7EE)),
+                    borderSide: BorderSide(color: isDark?Color(0xff2C3036):Color(0xffE2E7EE)),
                     borderRadius: BorderRadius.all(Radius.circular(6)),
                   ),
                   hintText: hintText,
@@ -207,6 +210,8 @@ class FileSelectorInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -251,13 +256,13 @@ class FileSelectorInput extends StatelessWidget {
                 filled: true,
                 hoverColor: Colors.transparent,
                 contentPadding: EdgeInsets.only(top: 0, left: 15),
-                fillColor: Color(0xffF1F2F3),
+                fillColor: isDark?null:Color(0xffF1F2F3),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Theme.of(context).primaryColor),
                   borderRadius: BorderRadius.all(Radius.circular(6)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xffE2E7EE)),
+                  borderSide: BorderSide(color: isDark?Color(0xff2C3036):Color(0xffE2E7EE)),
                   borderRadius: BorderRadius.all(Radius.circular(6)),
                 ),
                 hintText: hintText,

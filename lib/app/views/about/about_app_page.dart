@@ -13,47 +13,52 @@ class AboutAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Stack(
-            children: <Widget>[
-              Container(
-                height: 150,
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.only(bottom: 50),
-                child: Image.asset(
-                  'assets/images/sabar.webp',
-                  fit: BoxFit.cover,
+    return Theme(
+      data: ThemeData(
+        brightness: Brightness.light
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width,
+                  margin: const EdgeInsets.only(bottom: 50),
+                  child: Image.asset(
+                    'assets/images/sabar.webp',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                _buildBar(context),
+                Positioned(
+                    bottom: 0,
+                    left: 50,
+                    child: FeedbackWidget(
+                      onEnd : (){
+                        Navigator.push(context, Right2LeftRouter(child: const FlutterUnitTimeLine()));
+                      },
+                      child: CircleImage(
+                        size: 100,
+                        shadowColor: Theme.of(context).primaryColor,
+                        image: const AssetImage('assets/images/icon_head.webp'),
+                      ),
+                    )),
+              ],
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Container(
+                  margin: const EdgeInsets.all(24),
+                  child: _buildInfo(),
                 ),
               ),
-              _buildBar(context),
-              Positioned(
-                  bottom: 0,
-                  left: 50,
-                  child: FeedbackWidget(
-                    onEnd : (){
-                      Navigator.push(context, Right2LeftRouter(child: const FlutterUnitTimeLine()));
-                    },
-                    child: CircleImage(
-                      size: 100,
-                      shadowColor: Theme.of(context).primaryColor,
-                      image: const AssetImage('assets/images/icon_head.webp'),
-                    ),
-                  )),
-            ],
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Container(
-                margin: const EdgeInsets.all(24),
-                child: _buildInfo(),
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -112,7 +117,7 @@ class AboutAppPage extends StatelessWidget {
             children: <Widget>[
               FeedbackWidget(
                   onPressed: () =>
-                      _launchURL("https://github_model.com/toly1994328/FlutterUnit"),
+                      _launchURL("https://github.com/toly1994328/FlutterUnit"),
                   child: Wrap(
                     direction: Axis.vertical,
                     crossAxisAlignment: WrapCrossAlignment.center,

@@ -52,7 +52,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   @override
   void initState() {
     super.initState();
-    if (Platform.isAndroid) {
+    if (Platform.isAndroid||Platform.isIOS) {
       BlocProvider.of<UpdateBloc>(context)
           .add(const CheckUpdate(appName: 'FlutterUnit'));
     }

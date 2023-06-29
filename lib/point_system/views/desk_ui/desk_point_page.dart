@@ -26,8 +26,8 @@ class _DeskPointPageState extends State<DeskPointPage> {
     'license': {"spdx_id": 'GPL-3.0'},
     'description':
         '【Flutter 集录指南 App】The unity of flutter, The unity of coder.',
-    'stargazers_count': 5840,
-    'forks_count': 956,
+    'stargazers_count': 6261,
+    'forks_count': 1039,
     'subscribers_count': 126,
     'open_issues_count': 40,
   });
@@ -120,11 +120,14 @@ class SimpleDeskTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return DragToMoveAreaNoDouble(
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         height: 64,
-        color: Colors.white,
+        color: isDark?Color(0xff2C3036):Colors.white,
         child: Row(
           children: [
             if (leading != null) leading!,

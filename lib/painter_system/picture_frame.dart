@@ -143,7 +143,7 @@ class FrameShower extends StatelessWidget {
             title,
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          PictureFrame(child: content),
+          PictureFrame(child: content,color: Colors.white,),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Row(

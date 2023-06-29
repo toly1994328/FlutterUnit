@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 
 class AppTheme {
   static ThemeData darkTheme(AppState state) {
+    Color scaffoldBackgroundColor = const Color(0xff010201);
+
 
     SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -15,7 +17,9 @@ class AppTheme {
     bool useMaterial3 = (Platform.isAndroid || Platform.isIOS);
 
     return ThemeData(
-  tabBarTheme: TabBarTheme(
+      scaffoldBackgroundColor: scaffoldBackgroundColor,
+
+      tabBarTheme: TabBarTheme(
         dividerColor:  Colors.transparent,
       ),
       fontFamily: state.fontFamily,
@@ -45,7 +49,7 @@ class AppTheme {
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xff181818),
           selectedItemColor: Color(0xff4699FB)),
-      scaffoldBackgroundColor: const Color(0xff010201));
+    );
   }
 
   static ThemeData lightTheme(AppState state) {

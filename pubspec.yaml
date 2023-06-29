@@ -1,7 +1,7 @@
 name: flutter_unit
 description: A new Flutter application.
 publish_to: none
-version: 2.9.0+3
+version: 2.9.1+3
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -86,7 +86,7 @@ flutter:
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源
     - family: TolyIcon
       fonts:
-        - asset: assets/iconfont/iconfont.ttf
+        - asset: assets/iconfont/toly_icon.ttf
     - family: IndieFlower #字体名
       fonts:
         - asset: assets/fonts/IndieFlower-Regular.ttf

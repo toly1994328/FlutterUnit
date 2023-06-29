@@ -22,11 +22,15 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    Color? appBarColor = Theme.of(context).appBarTheme.backgroundColor;
+    Color? appBarTextColor = Theme.of(context).appBarTheme.titleTextStyle?.color;
+
     return SliverAppBar(
       pinned: true,
-      backgroundColor: backgroundColor,
-      titleTextStyle: const TextStyle(color: textColor),
-      iconTheme: const IconThemeData(color: textColor),
+      backgroundColor: isDark? appBarColor:backgroundColor,
+      titleTextStyle:  TextStyle(color: isDark?appBarTextColor:Color(0xff696969)),
+      iconTheme:  IconThemeData(color: isDark?appBarTextColor:Color(0xff696969)),
       expandedHeight: 120.0,
       scrolledUnderElevation: 0.5,
       flexibleSpace: DragToMoveAreaNoDouble(
@@ -39,13 +43,13 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
           ),
           fixedSubtitle: Text(
             model.name,
-            style: const TextStyle(color: Color(0xff696969), fontSize: 12),
+            style:  TextStyle(color:isDark?appBarTextColor:Color(0xff696969), fontSize: 12),
           ),
           title: Padding(
             padding: const EdgeInsets.only(bottom: 3),
             child: Text(
               model.nameCN,
-              style: const TextStyle(color: textColor, fontSize: 16),
+              style:  TextStyle(color:isDark?appBarTextColor: textColor, fontSize: 16),
             ),
           ),
           //伸展处布局
@@ -56,18 +60,19 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
       ),
       elevation: 0,
       actions: [
-        _buildToHome(context),
-        FeedbackWidget(
-          onPressed: () => _toggleLikeState(context),
-          child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
-            listener: _listenLikeStateChange,
-            builder: _buildByLikeState,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 20),
-          child: const Center(child: WindowButtons()),
-        )
+
+         WindowButtons(
+           actions: [
+             _buildToHome(context),
+             FeedbackWidget(
+               onPressed: () => _toggleLikeState(context),
+               child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
+                 listener: _listenLikeStateChange,
+                 builder: _buildByLikeState,
+               ),
+             ),
+           ],
+         )
       ],
     );
   }
@@ -99,20 +104,22 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
   // 根据 [LikeWidgetState ] 构建图标
   Widget _buildByLikeState(BuildContext context, LikeWidgetState state) {
     bool liked = state.widgets.contains(model);
-    return Padding(
-      padding: const EdgeInsets.only(right: 20.0),
+    return SizedBox(
+      width: 30,
+      height: 30,
       child: Icon(
         liked ? TolyIcon.icon_star_ok : TolyIcon.icon_star_add,
-        size: 25,
+        size: 20,
       ),
     );
   }
 
   Widget _buildToHome(BuildContext context) => GestureDetector(
       onLongPress: () => Scaffold.of(context).openEndDrawer(),
-      child: const Padding(
-        padding: EdgeInsets.all(15.0),
-        child: Icon(Icons.home),
+      child:const SizedBox(
+        width: 30,
+        height: 30,
+        child: Icon(Icons.home,size: 20,),
       ),
       onTap: () => Navigator.of(context).pop());
 }

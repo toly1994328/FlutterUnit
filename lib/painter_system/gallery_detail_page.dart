@@ -186,10 +186,10 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
 
   Widget buildTitle(BuildContext context) {
     return Container(
-      padding:  EdgeInsets.only(top: isDesk?26:46, bottom: 10, left: 20, right: 10),
+      padding:  EdgeInsets.only(top: isDesk?26:46, bottom: 10, left: isDesk?20:0, right: 10),
       child: Row(
         children: [
-          if(isDesk)
+          // if(isDesk)
           const BackButton(color: Colors.white,),
 
           Text(
