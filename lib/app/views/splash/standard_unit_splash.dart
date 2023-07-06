@@ -86,7 +86,7 @@ class _StandardUnitSplashState extends State<StandardUnitSplash>
                     _buildFlutterUnitText(winSize.height, winSize.width),
                   ],
                 )),
-                Expanded(
+                const Expanded(
                     child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
@@ -96,7 +96,7 @@ class _StandardUnitSplashState extends State<StandardUnitSplash>
                           direction: Axis.vertical,
                           alignment: WrapAlignment.center,
                           crossAxisAlignment: WrapCrossAlignment.center,
-                          children: const [
+                          children: [
                             Text("Power By 张风捷特烈",
                                 style: UnitTextStyle.splashShadows),
                             Text("· 2021 ·  @编程之王 ",
