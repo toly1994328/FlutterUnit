@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 
-import 'logs_interceptor.dart';
 import 'token_interceptor.dart';
 
 const int _kReceiveTimeout = 5000;

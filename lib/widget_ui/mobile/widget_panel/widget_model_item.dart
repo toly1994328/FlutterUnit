@@ -49,12 +49,16 @@ class StandardWidgetItem extends StatelessWidget {
     return Row(
       children: [
         if (searchArg == null)
-          Text(
-            model.name,
-            style:  TextStyle(
-              fontSize: 16,
-              color: textColor,
-              fontWeight: FontWeight.bold,
+          Expanded(
+            child: Text(
+              model.name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style:  TextStyle(
+                fontSize: 16,
+                color: textColor,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         if (searchArg != null) Text.rich(formSpan(model.name, searchArg!)),
@@ -85,7 +89,6 @@ class StandardWidgetItem extends StatelessWidget {
             ),
           );
         }),
-        const Spacer(),
         StarScore(
           star: Star(emptyColor: Colors.white, size: 12, fillColor: color),
           score: model.lever,

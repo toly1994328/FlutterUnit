@@ -22,8 +22,7 @@ class UpdateBloc extends Bloc<UpdateEvent, UpdateState> {
     emit(const CheckLoadingState());
     // await Future.delayed(Duration(seconds: 1));
     // 检测更新逻辑
-    TaskResult<AppInfo> result =
-        await AppInfoApi.getAppVersion(appName: event.appName);
+    TaskResult<AppInfo> result = await AppInfoApi.getAppVersion(appName: event.appName);
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
     if (result.success && result.data != null) {

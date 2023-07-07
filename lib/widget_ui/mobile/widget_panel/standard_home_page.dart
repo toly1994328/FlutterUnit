@@ -64,11 +64,23 @@ class _StandardHomePageState extends State<StandardHomePage>
             child: NestedScrollView(
               floatHeaderSlivers: true,
               headerSliverBuilder: _buildHeader,
-              body: TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
-                controller: tabController,
-                children: _tabs.map(buildScrollPage).toList(),
-              ),
+              body: Builder(
+                builder:(ctx)=> CustomScrollView(
+                  // key: PageStorageKey<String>(name),
+                  slivers: <Widget>[
+                    SliverOverlapInjector(
+                      handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
+                    ),
+                    const WidgetListPanel(),
+                    SliverPadding(
+                      padding: const EdgeInsets.only(bottom: 30),
+                      sliver: SliverOverlapInjector(
+                        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ),
           ),
         ],
