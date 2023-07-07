@@ -64,7 +64,7 @@ class UnitRouters {
       //
       case UnitRouter.nav:
         if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
-          return NoAnimRouter(child: UnitNavigation());
+          return NoAnimRouter(UnitNavigation());
         }
         return Left2RightRouter(child: UnitNavigation());
 
