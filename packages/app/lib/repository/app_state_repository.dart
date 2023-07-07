@@ -35,6 +35,7 @@ class AppStateRepository{
     }
 
     await FlutterDbStorage.instance.initDb();
+    await AppDbStorage.instance.initDb();
 
 
     return AppState.fromPo(po);

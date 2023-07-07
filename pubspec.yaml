@@ -15,14 +15,14 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.4
-
+  refresh: ^1.0.1
   flutter_bloc: ^8.0.1 # 状态管理
   stream_transform: ^2.0.0
   equatable: ^2.0.3 # 相等辅助
   archive: ^3.3.6 # 解压
   package_info_plus: ^4.0.1 # 应用包信息
   r_upgrade: ^0.3.8+2 # 应用升级
-
+  webview_flutter: ^4.2.2
   sqflite: ^2.0.2+1 # 数据库
   sqflite_common_ffi: ^2.1.1 # 数据库
   shared_preferences: ^2.0.13 # xml 固化
@@ -55,6 +55,8 @@ dependencies:
     path: packages/storage
   widgets:
     path: packages/widgets
+  artifact:
+    path: packages/artifact
   authentication:
     path: packages/authentication
   app:
