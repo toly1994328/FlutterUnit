@@ -46,24 +46,24 @@ class _RegisterPageState extends State<RegisterPage> {
         body: SingleChildScrollView(
       child: Wrap(children: [
         Stack(children: [
-          UnitArcBackground(height: winSize.height * 0.32),
+          UnitArcBackground(height: winSize.height * 0.30),
           const Positioned(top: 20, child: BackButton(color: Colors.white)),
         ]),
         Container(
             width: winSize.width,
             height: winSize.height * 0.68,
-            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
+            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
             child: Column(
               children: <Widget>[
                 const Text(
-                  "FlutterUnit 注册",
+                  "Flutter Unit 注册",
                   style: TextStyle(fontSize: 25),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
                 const Text(
-                  "更多精彩，更多体验 ~",
+                  "登录账号，更多精彩，更多体验 ~",
                   style: TextStyle(color: Colors.grey),
                 ),
                 const Spacer(
@@ -84,7 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 buildInputWithSend(),
                 const Spacer(flex: 1),
                 _buildBtn(),
-                const Spacer(flex: 4),
+                const Spacer(flex: 6),
               ],
             ))
       ]),
@@ -141,19 +141,19 @@ class _RegisterPageState extends State<RegisterPage> {
         margin: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
         height: 40,
         width: MediaQuery.of(context).size.width,
-        child: BlocConsumer<RegisterBloc, RegisterState>(
+        child: BlocConsumer<AuthBloc, AuthState>(
           builder: _build,
           listener: _listener,
         ),
       );
 
   void _doRegister() {
-    BlocProvider.of<RegisterBloc>(context)
-        .add(DoRegister(_emailCtrl.text, _codeCtrl.text));
+    BlocProvider.of<AuthBloc>(context)
+        .add(AuthByRegister(_emailCtrl.text, _codeCtrl.text));
   }
 
   Widget _build(BuildContext context, state) {
-    bool enable = state is RegisterLoading || state is RegisterSuccess;
+    bool enable = state is AuthLoading || state is AuthSuccess;
     String info = enable ? '注册中...' : '开启 Unit 新世界';
     return BlocListener<AuthBloc, AuthState>(
         listener: _listenerLogin,
@@ -170,22 +170,24 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 onPressed: (enable || !value) ? null : _doRegister,
                 child: Text(info,
-                    style: const TextStyle(color: Colors.white, fontSize: 18)));
+                    style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.bold)),
+
+            );
           },
         ));
   }
 
-  void _listener(BuildContext context, RegisterState state) {
-    if (state is RegisterError) {
-      Toast.toast(context, '注册失败 : ${state.message}!',
+  void _listener(BuildContext context, AuthState state) {
+    if (state is AuthFailure) {
+      Toast.toast(context, '注册失败 : ${state.error}!',
           color: Colors.red, duration: const Duration(seconds: 2));
     }
 
-    if (state is RegisterSuccess) {
-      BlocProvider.of<AuthBloc>(context).add(AuthByPassword(
-        username: _emailCtrl.text,
-        password: _codeCtrl.text,
-      ));
+    if (state is AuthSuccess) {
+      // BlocProvider.of<AuthBloc>(context).add(AuthByPassword(
+      //   username: _emailCtrl.text,
+      //   password: _codeCtrl.text,
+      // ));
     }
   }
 

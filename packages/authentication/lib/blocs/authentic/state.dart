@@ -2,8 +2,13 @@
 import 'package:authentication/models/user.dart';
 import 'package:equatable/equatable.dart';
 
+enum AuthType{
+  login,
+  register,
+  visitor
+}
+
 ///********************************校验状态********************************
-//
 abstract class AuthState extends Equatable {
   const AuthState();
   @override
@@ -11,7 +16,7 @@ abstract class AuthState extends Equatable {
 }
 
 class AuthInitial extends AuthState {
-
+const AuthInitial();
 }
 
 
@@ -43,4 +48,6 @@ class AuthSuccess extends AuthState {
   }
 }
 
-class AuthLoading extends AuthState {}
+class AuthLoading extends AuthState {
+
+}

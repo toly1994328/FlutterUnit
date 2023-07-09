@@ -36,9 +36,11 @@ class _BlocWrapperState extends State<BlocWrapper> {
     return MultiBlocProvider(
         providers: [
           // 全局 bloc : 维护应用存储状态、更新、认证
+          BlocProvider<AuthBloc>(create: (_) => AuthBloc(repository: authRepository)..add(const AppStarted())),
           BlocProvider<AppBloc>(create: (_) => AppBloc(AppStateRepository())..initApp()),
           BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
-          BlocProvider<AuthBloc>(create: (_) => AuthBloc(repository: authRepository)..add(const AppStarted())),
+          BlocProvider<UserBloc>(create: (_) => UserBloc()),
+
 
           BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
           BlocProvider<CategoryBloc>(create: (_) => categoryBloc),

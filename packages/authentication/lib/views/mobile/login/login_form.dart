@@ -27,14 +27,14 @@ class _LoginFromState extends State<LoginFrom> {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         const Text(
-          "FlutterUnit 登录",
+          "Flutter Unit 登录",
           style: TextStyle(fontSize: 25),
         ),
         const SizedBox(
           height: 5,
         ),
         const Text(
-          "更多精彩，更多体验 ~",
+          "登录账号，更多精彩，更多体验 ~",
           style: TextStyle(color: Colors.grey),
         ),
         const SizedBox(
@@ -50,33 +50,37 @@ class _LoginFromState extends State<LoginFrom> {
                 child: Icon(_showPwd ? TolyIcon.icon_show : TolyIcon.icon_hide))
           ],
         ),
-        Row(
-          children: <Widget>[
-            Checkbox(value: true, onChanged: (e) => {}),
-            const Text(
-              "自动登录",
-              style: TextStyle(color: Color(0xff444444), fontSize: 14),
-            ),
-            const Spacer(),
-            FeedbackWidget(
-              onEnd: () {
-                Navigator.of(context).pushReplacementNamed(UnitRouter.register);
-              },
-              child: const Text(
-                "用户注册",
-                style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 14,
-                    decoration: TextDecoration.underline),
-              ),
-            )
-          ],
-        ),
+        // Row(
+        //   children: <Widget>[
+        //     Checkbox(value: true, onChanged: (e) => {}),
+        //     const Text(
+        //       "自动登录",
+        //       style: TextStyle(color: Color(0xff444444), fontSize: 14),
+        //     ),
+        //     const Spacer(),
+        //
+        //   ],
+        // ),
         BlocConsumer<AuthBloc, AuthState>(
           listener: _listenLoginState,
           builder: _buildBtnByState,
         ),
-        buildOtherLogin(),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushReplacementNamed(UnitRouter.register);
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: const Text(
+              "没有账号，立即注册",
+              style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 14,
+                  decoration: TextDecoration.underline,decorationColor: Colors.blue),
+            ),
+          ),
+        ),
+        // buildOtherLogin(),
         const Spacer(flex: 4),
       ],
     );
@@ -242,11 +246,11 @@ class _LoginFromState extends State<LoginFrom> {
             elevation: 0,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20))),
-            backgroundColor: Colors.blue.withOpacity(0.4),
+            backgroundColor: Colors.blue,
           ),
           onPressed: _doLogIn,
           child: const Text("进入 Unit 世界",
-              style: TextStyle(color: Colors.white, fontSize: 18)),
+              style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.bold)),
         ));
   }
 
