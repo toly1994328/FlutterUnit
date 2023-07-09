@@ -150,7 +150,7 @@ class ColumnizeItem extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         ArticleRepository repository = context.read<ArticleBloc>().repository;
-        Navigator.of(context).push(SlidePageRouter(child: MultiBlocProvider(
+        Navigator.of(context).push(SlidePageRoute(child: MultiBlocProvider(
             providers: [
               BlocProvider<ArticleBloc>(create: (_) => ArticleBloc(repository,groupId: columnize.id)..init()),
             ],

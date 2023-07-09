@@ -92,7 +92,7 @@ class WidgetDetailPage extends StatelessWidget {
   }
 
   Future<bool> _whenPop(BuildContext context) async {
-    print("======_whenPop============");
+    // print("======_whenPop============");
     WidgetDetailBloc detailBloc = context.read<WidgetDetailBloc>();
     if (Scaffold.of(context).isEndDrawerOpen) {
       return true;
