@@ -32,7 +32,6 @@ class FlutterDbStorage {
   LikeDao get likeDao => _likeDao;
 
   Database get db => _database!;
-  bool get inited => _database!=null;
 
   Future<void> initDb({String name = "flutter.db"}) async {
     if (_database != null) return;

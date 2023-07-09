@@ -1,5 +1,6 @@
 import 'package:app/app/cons/cons.dart';
 import 'package:components/toly_ui/toly_ui.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:storage/storage.dart';
@@ -41,6 +42,8 @@ class AppState extends Equatable {
 
   /// [appStyle] app 深色样式;
   final ThemeMode themeMode;
+  final ConnectivityResult netConnect;
+  final String dbPath;
 
   const AppState({
     this.fontFamily = 'ComicNeue',
@@ -51,6 +54,8 @@ class AppState extends Equatable {
     this.itemStyleIndex = 0,
     this.showPerformanceOverlay = false,
     this.showOverlayTool = true,
+    this.dbPath = '',
+    this.netConnect = ConnectivityResult.none,
   });
 
   @override
@@ -62,11 +67,13 @@ class AppState extends Equatable {
         itemStyleIndex,
         themeMode,
         showOverlayTool,
-        showPerformanceOverlay
+        showPerformanceOverlay,
+      netConnect,
       ];
 
   AppState copyWith({
     String? fontFamily,
+    String? dbPath,
     MaterialColor? themeColor,
     bool? showBackGround,
     int? codeStyleIndex,
@@ -74,6 +81,7 @@ class AppState extends Equatable {
     bool? showPerformanceOverlay,
     bool? showOverlayTool,
     ThemeMode? themeMode,
+    ConnectivityResult? netConnect,
   }) =>
       AppState(
         fontFamily: fontFamily ?? this.fontFamily,
@@ -84,6 +92,8 @@ class AppState extends Equatable {
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
         themeMode: themeMode ?? this.themeMode,
         showPerformanceOverlay: showPerformanceOverlay ?? this.showPerformanceOverlay,
+        netConnect: netConnect ?? this.netConnect,
+        dbPath: dbPath ?? this.dbPath,
       );
 
 

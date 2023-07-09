@@ -64,7 +64,7 @@ class UnitRouters {
       //
       case UnitRouter.nav:
         if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
-          return NoAnimRouter(child: UnitNavigation());
+          return NoAnimRouter(UnitNavigation());
         }
         return Left2RightRouter(child: UnitNavigation());
 
@@ -81,56 +81,58 @@ class UnitRouters {
           );
         }
 
-        return Right2LeftRouter(
+        return SlidePageRouter(
             child: child);
 
       // case search:
       //   return Right2LeftRouter(child: const SearchPageProvider());
       case collect:
-        return Right2LeftRouter(child:  CollectPageAdapter(
+        return SlidePageRouter(child:  CollectPageAdapter(
           canPop: settings.arguments as bool,
         ));
 
       case setting:
-        return Right2LeftRouter(child: const SettingPage());
+        return SlidePageRouter(child: const SettingPage());
+        // return Right2LeftRouter(builder:(_)=> const SettingPage());
+        // return MaterialPageRoute(builder:(_)=> const SettingPage());
       case data_manage:
-        return Right2LeftRouter(child: const DataManagePage());
+        return SlidePageRouter(child: const DataManagePage());
       case font_setting:
-        return Right2LeftRouter(child: const FontSettingPage());
+        return SlidePageRouter(child: const FontSettingPage());
       case theme_color_setting:
-        return Right2LeftRouter(child: const ThemeColorSettingPage());
+        return SlidePageRouter(child: const ThemeColorSettingPage());
       case code_style_setting:
-        return Right2LeftRouter(child: const CodeStyleSettingPage());
+        return SlidePageRouter(child: const CodeStyleSettingPage());
       // case item_style_setting:
       //   return Right2LeftRouter(child: const ItemStyleSettingPage());
 
       case version_info:
-        return Right2LeftRouter(child: const VersionInfo());
+        return SlidePageRouter(child: const VersionInfo());
 
       case issues_point:
-        return Right2LeftRouter(child: const IssuesPointScope());
+        return SlidePageRouter(child: const IssuesPointScope());
       case login:
-        return Right2LeftRouter(child: const LoginPage());
+        return SlidePageRouter(child: const LoginPage());
 
       case register:
-        return Right2LeftRouter(child: const RegisterPage());
+        return SlidePageRouter(child: const RegisterPage());
 
       case attr:
-        return Right2LeftRouter(child: const AttrUnitPage());
+        return SlidePageRouter(child: const AttrUnitPage());
       case bug:
-        return Right2LeftRouter(child: const BugUnitPage());
+        return SlidePageRouter(child: const BugUnitPage());
       case layout:
-        return Right2LeftRouter(child: const LayoutUnitPage());
+        return SlidePageRouter(child: const LayoutUnitPage());
       case about_app:
-        return Right2LeftRouter(child: const AboutAppPage());
+        return SlidePageRouter(child: const AboutAppPage());
       case about_me:
-        return Right2LeftRouter(child: const AboutMePage());
+        return SlidePageRouter(child: const AboutMePage());
 
       case point_detail:
-        return Right2LeftRouter(child: const IssuesDetailPage());
+        return SlidePageRouter(child: const IssuesDetailPage());
 
       case category_show:
-        return Right2LeftRouter(
+        return SlidePageRouter(
             child: CategoryShow(
           model: settings.arguments as CategoryModel,
         ));
