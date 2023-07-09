@@ -64,9 +64,9 @@ class UnitRouters {
       //
       case UnitRouter.nav:
         if(Platform.isWindows||Platform.isMacOS||Platform.isLinux){
-          return NoAnimRouter(UnitNavigation());
+          return ZeroPageRoute( child: UnitNavigation());
         }
-        return Left2RightRouter(child: UnitNavigation());
+        return SlidePageRoute(child: UnitNavigation());
 
       // 组件详情页
       case widget_detail:
