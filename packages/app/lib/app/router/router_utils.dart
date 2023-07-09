@@ -34,38 +34,6 @@ class ScaleRouter<T> extends MaterialPageRoute<T> {
 }
 
 
-//渐变透明路由动画
-class FadeRouter<T> extends MaterialPageRoute<T> {
-  final Widget child;
-  final Duration duration;
-  final Curve curve;
-
-  FadeRouter({
-    required this.child,
-    this.duration = const Duration(milliseconds: 300),
-    this.curve = Curves.fastOutSlowIn,
-  }) : super(builder: (_) => child);
-
-  @override
-  Widget buildTransitions(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      Widget child,
-      ) {
-    return FadeTransition(
-      opacity: Tween(begin: 0.1, end: 1.0).animate(CurvedAnimation(
-        parent: animation,
-        curve: curve,
-      )),
-      child: child,
-    );
-  }
-
-  @override
-  Duration get transitionDuration => duration;
-}
-
 //旋转路由动画
 class RotateRouter<T> extends MaterialPageRoute<T> {
   final Widget child;

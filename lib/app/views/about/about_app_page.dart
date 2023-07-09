@@ -39,7 +39,7 @@ class AboutAppPage extends StatelessWidget {
                     left: 50,
                     child: FeedbackWidget(
                       onEnd : (){
-                        Navigator.push(context, SlidePageRouter(child: const FlutterUnitTimeLine()));
+                        Navigator.push(context, SlidePageRoute(child: const FlutterUnitTimeLine()));
                       },
                       child: CircleImage(
                         size: 100,

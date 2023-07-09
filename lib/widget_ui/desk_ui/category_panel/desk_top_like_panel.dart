@@ -48,7 +48,7 @@ class DeskLikePage extends StatelessWidget {
 
   _toDetailPage(BuildContext context, WidgetModel model) {
     // BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
-    Navigator.push(context, SlidePageRouter(child: WidgetDetailPageScope(model: model)));
+    Navigator.push(context, SlidePageRoute(child: WidgetDetailPageScope(model: model)));
   }
 
 

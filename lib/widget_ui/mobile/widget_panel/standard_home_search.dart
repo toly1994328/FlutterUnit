@@ -31,7 +31,7 @@ class StandardHomeSearch extends StatelessWidget implements PreferredSizeWidget 
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
-                    FadeRouter(child: const StandardSearchPageProvider()));
+                    FadePageRoute(child: const StandardSearchPageProvider()));
               },
               child: Container(
                   height: 35,
