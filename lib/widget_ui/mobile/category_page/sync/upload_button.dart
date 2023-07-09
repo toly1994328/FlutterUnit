@@ -56,8 +56,8 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
   Widget _buildError() {
     return const Icon(
       TolyIcon.error,
-      size: 28,
-      color: Colors.green,
+      size: 22,
+      color: Colors.redAccent,
     );
   }
 
@@ -65,7 +65,7 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
     return FeedbackWidget(
         child: const Icon(
           TolyIcon.upload,
-          size: 28,
+          size: 24,
         ),
         onPressed: _doUploadCategoryData);
   }
@@ -95,7 +95,7 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
   Widget _buildSuccess() {
     return const Icon(
       TolyIcon.upload_success,
-      size: 25,
+      size: 22,
       color: Colors.green,
     );
   }

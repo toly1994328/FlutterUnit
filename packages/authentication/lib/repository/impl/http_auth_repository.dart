@@ -17,30 +17,32 @@ class HttpAuthRepository implements AuthRepository {
   }) async {
     String errorMsg = "";
 
-    var result = await HttpUtil.instance.client.post(
-      kLogin,
-      data: {
-        "username": username,
-        "password": password,
-      },
-    ).catchError((err) {
-      errorMsg = err.toString();
-    });
+    try {
+      var result = await HttpUtil.instance.client.post(
+        kLogin,
+        data: {
+          "username": username,
+          "password": password,
+        },
+      );
 
-    if (result.data != null) {
-      if (result.data['status']) {
-        return TaskResult<User>(
-          msg: result.data['msg'],
-          data: User.fromJson(result.data['data']),
-          success: result.data['status'],
-        );
-      } else {
-        return TaskResult<User>(
-          msg: result.data['msg'],
-          data: null,
-          success: false,
-        );
+      if (result.data != null) {
+        if (result.data['status']) {
+          return TaskResult<User>(
+            msg: result.data['msg'],
+            data: User.fromJson(result.data['data']),
+            success: result.data['status'],
+          );
+        } else {
+          return TaskResult<User>(
+            msg: result.data['msg'],
+            data: null,
+            success: false,
+          );
+        }
       }
+    } catch (e) {
+      errorMsg = e.toString();
     }
 
     return TaskResult.error(msg: '请求错误: $errorMsg');
@@ -53,13 +55,15 @@ class HttpAuthRepository implements AuthRepository {
   }) async {
     String errorMsg = "";
 
-    var result = await HttpUtil.instance.client.post(kRegister,
-        data: {"email": email, "activeCode": code}).catchError((err) {
-      errorMsg = err.toString();
-    });
+    try {
+      var result = await HttpUtil.instance.client
+          .post(kRegister, data: {"email": email, "activeCode": code});
 
-    if (result.data != null) {
-      return TaskResult.success(data: result.data);
+      if (result.data != null) {
+        return TaskResult.success(data: result.data);
+      }
+    } catch (e) {
+      errorMsg = e.toString();
     }
 
     return TaskResult.error(msg: '请求错误: $errorMsg');
@@ -67,9 +71,17 @@ class HttpAuthRepository implements AuthRepository {
 
   @override
   Future<TaskResult<String>> sendEmail({required String email}) async {
-    var result = await HttpUtil.instance.client.post(kSendEmail + email);
-    if (result.data != null) {
-      return TaskResult.success(data: result.data);
+    try {
+      var result = await HttpUtil.instance.client.post(kSendEmail + email);
+      if (result.data != null) {
+        if(result.data['status']){
+          return TaskResult.success(data: result.data);
+        }else{
+          return TaskResult.error(msg: result.data['msg']);
+        }
+      }
+    } catch (e) {
+      print(e);
     }
     return const TaskResult.error(msg: '请求错误');
   }

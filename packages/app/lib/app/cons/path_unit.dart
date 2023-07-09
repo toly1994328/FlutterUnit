@@ -4,7 +4,7 @@
 
 class PathUnit{
 
-  static const baseUrl='http://119.45.173.197:8080/api/v1';
+  static const baseUrl='http://82.157.176.209:8080/api/v1';
   // static const baseUrl='http://192.168.0.100:8080/api/v1';
 
   static const sendEmail = '/sendEmail/';
