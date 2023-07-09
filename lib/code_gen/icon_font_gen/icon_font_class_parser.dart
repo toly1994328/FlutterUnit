@@ -107,38 +107,4 @@ class $fontFamily {
       pubspecFile.writeAsStringSync(lines.join('\n'));
     }
   }
-
-  // // 修改 pubspec.yaml
-  // void setYaml(IconFontGenConfig config){
-  //   String fontFamily = config.fontFamily;
-  //   String assets = config.assetsDist.replaceAll('\\', '/');
-  //
-  //   final String filePath = path.join(config.projectPath,'pubspec.yaml');
-  //   File pubspecFile = File(filePath);
-  //   final String pubspec = pubspecFile.readAsStringSync();
-  //   final doc = loadYaml(pubspec);
-  //   final modifiableDoc = getModifiableNode(doc);
-  //
-  //   YamlList? fontsList = doc['flutter']['fonts'] as YamlList?;
-  //   if(fontsList == null){
-  //     // 新文件，没有配置 fonts 节点
-  //     modifiableDoc['flutter']['fonts'] =  YamlMap.wrap({
-  //       'family': fontFamily,
-  //       'fonts':YamlList.wrap([YamlMap.wrap({'asset':'$assets/iconfont.ttf'})])
-  //     });
-  //   }else{
-  //     final modifiableList = getModifiableNode(fontsList);
-  //     modifiableList.removeWhere((e) => e['family'] == fontFamily);
-  //     modifiableList.add(
-  //         YamlMap.wrap({
-  //           'family': fontFamily,
-  //           'fonts':YamlList.wrap([YamlMap.wrap({'asset':'$assets/iconfont.ttf'})])
-  //         })
-  //     );
-  //     modifiableDoc['flutter']['fonts'] = modifiableList;
-  //   }
-  //   final targetYaml = toYamlString(modifiableDoc);
-  //   pubspecFile.writeAsStringSync(targetYaml);
-  // }
-
 }

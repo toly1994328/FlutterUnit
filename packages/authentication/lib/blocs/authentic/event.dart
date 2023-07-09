@@ -1,7 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-
-
 ///********************************验证行为********************************
 
 abstract class AuthEvent extends Equatable {

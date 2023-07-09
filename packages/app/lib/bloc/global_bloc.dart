@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storage/storage.dart';
@@ -14,9 +15,27 @@ import '../model/global_state.dart';
 
 class AppBloc extends Cubit<AppState> {
 
-  final AppStateRepository storage;
+  final Connectivity _connectivity = Connectivity();
 
-  AppBloc(this.storage) : super(const AppState());
+
+  final AppStateRepository storage;
+  late StreamSubscription<ConnectivityResult> _subscription;
+
+  AppBloc(this.storage) : super(const AppState()){
+    _subscription = _connectivity.onConnectivityChanged.listen(_onNetConnectChange);
+  }
+
+  void _onNetConnectChange(ConnectivityResult event) {
+    emit(state.copyWith(netConnect: event,));
+  }
+
+
+  @override
+  Future<void> close() async{
+    _subscription.cancel();
+    super.close();
+  }
+
 
   // 程序初始化事件处理: 使用 AppStorage 进行初始化
   void initApp() async {

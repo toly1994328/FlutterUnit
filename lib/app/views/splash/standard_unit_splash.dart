@@ -58,6 +58,7 @@ class _StandardUnitSplashState extends State<StandardUnitSplash>
       child: Material(
         child: BlocListener<AppBloc, AppState>(
             listener: _listenStart,
+            listenWhen: (p,n)=>p.dbPath.isEmpty&&n.dbPath.isNotEmpty,
             child: Column(
               children: [
                 const Spacer(),

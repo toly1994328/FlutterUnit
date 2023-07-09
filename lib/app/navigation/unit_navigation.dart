@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
+import 'package:artifact/artifact.dart';
 import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_unit/widget_ui/mobile/category_page/collect_page.dart';
 import 'package:flutter_unit/widget_ui/mobile/category_page/home_right_drawer.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:flutter_unit/widget_ui/mobile/widget_panel/standard_home_page.dart';
+
 
 import 'pure_bottom_bar.dart';
 import 'desk_ui/unit_desk_navigation.dart';
@@ -53,8 +55,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   void initState() {
     super.initState();
     if (Platform.isAndroid||Platform.isIOS) {
-      BlocProvider.of<UpdateBloc>(context)
-          .add(const CheckUpdate(appName: 'FlutterUnit'));
+      BlocProvider.of<UpdateBloc>(context).add(const CheckUpdate(appName: 'FlutterUnit'));
     }
   }
 
@@ -76,6 +77,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
         children: [
           StandardHomePage(),
           GalleryUnit(),
+          // ArtifactPage(),
           CollectPageAdapter(),
           UserPage(),
         ],
@@ -114,7 +116,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
       }
     }
 
-    if (index == 2) {
+    if (index == 3) {
       BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     }
   }
@@ -124,7 +126,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     if (index == 0) {
       Scaffold.of(context).openDrawer();
     }
-    if (index == 3) {
+    if (index == 4) {
       Scaffold.of(context).openEndDrawer();
     }
   }

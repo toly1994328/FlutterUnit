@@ -3,7 +3,8 @@ import 'package:flutter/widgets.dart';
 // 欢迎支持： https://github.com/toly1994328/FlutterUnit
 class TolyIcon {
     TolyIcon._();
-    static const IconData dark = IconData(0xe72f, fontFamily: "TolyIcon");
+    static const IconData icon_artifact = IconData(0xe726, fontFamily: "TolyIcon");
+static const IconData dark = IconData(0xe72f, fontFamily: "TolyIcon");
 static const IconData wb_sunny = IconData(0xe746, fontFamily: "TolyIcon");
 static const IconData icon_fast = IconData(0xe607, fontFamily: "TolyIcon");
 static const IconData icon_layout = IconData(0xe85e, fontFamily: "TolyIcon");

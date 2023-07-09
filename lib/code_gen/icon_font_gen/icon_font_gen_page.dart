@@ -274,7 +274,6 @@ class FileSelectorInput extends StatelessWidget {
   }
 
   void _showSelectFile() async {
-    print("=======_showSelectFile=============");
     String? path;
     if (pickerDir) {
       path = await FilePicker.platform.getDirectoryPath();

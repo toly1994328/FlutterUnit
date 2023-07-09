@@ -66,9 +66,6 @@ class AppTheme {
       primaryColor: state.themeColor,
       scaffoldBackgroundColor: Color(0xffF3F4F6),
       useMaterial3: useMaterial3,
-      tabBarTheme: TabBarTheme(
-        dividerColor:  Colors.transparent,
-      ),
       // Android 使用 Material3
       chipTheme: ChipThemeData(padding: EdgeInsets.symmetric(horizontal: 10)),
       listTileTheme: ListTileThemeData(
@@ -78,6 +75,15 @@ class AppTheme {
         color: const Color(0xffDEE0E2),
         space: px1,
         thickness: px1,
+      ),
+      tabBarTheme: TabBarTheme(
+        dividerColor:  Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
+        overlayColor: MaterialStateProperty.resolveWith<Color?>(
+              (Set<MaterialState> states) {
+            return states.contains(MaterialState.focused) ? null : Colors.transparent;
+          },
+        ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white),

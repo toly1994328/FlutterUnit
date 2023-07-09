@@ -13,7 +13,7 @@ class AppInfoApi {
     } catch (err) {
       errorMsg = err.toString();
     }
-
+    print("=====${errorMsg}=====");
     // 获取的数据非空且 status = true
     if (result.data != null && result.data['status']) {
       // 说明有数据

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -90,6 +92,7 @@ class WidgetDetailPage extends StatelessWidget {
   }
 
   Future<bool> _whenPop(BuildContext context) async {
+    print("======_whenPop============");
     WidgetDetailBloc detailBloc = context.read<WidgetDetailBloc>();
     if (Scaffold.of(context).isEndDrawerOpen) {
       return true;
@@ -115,4 +118,3 @@ class WidgetDetailPage extends StatelessWidget {
     ));
   }
 }
-
