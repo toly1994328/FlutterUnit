@@ -22,13 +22,13 @@ class PureBottomBar extends StatefulWidget {
 
 class _PureBottomBarState extends State<PureBottomBar> {
   List<String> get bottomBar => const ['组件', '绘制',
-    // '宝具',
+    '知识',
     '收藏', '我的'];
 
   List<IconData> get bottomBarIcon => const [
         TolyIcon.icon_layout,
         TolyIcon.dingzhi1,
-    // TolyIcon.icon_artifact,
+    TolyIcon.icon_artifact,
     TolyIcon.icon_collect,
         TolyIcon.yonghu,
       ];

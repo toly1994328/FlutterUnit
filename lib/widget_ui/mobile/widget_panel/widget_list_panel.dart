@@ -13,9 +13,7 @@ class WidgetListPanel extends StatelessWidget {
     WidgetsState state = context.watch<WidgetsBloc>().state;
 
     if (state is WidgetsLoaded) {
-      return PhoneWidgetContent(
-        items: state.widgets,
-      );
+      return PhoneWidgetContent(items: state.widgets);
     }
 
     if (state is WidgetsLoading) {

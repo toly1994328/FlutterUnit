@@ -46,49 +46,58 @@ class StandardWidgetItem extends StatelessWidget {
   }
 
   Widget _buildTitle(Color color,Color? textColor,bool isDark) {
+    Widget text ;
+    if(searchArg==null){
+      text = Text(
+        model.name,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style:  TextStyle(
+          fontSize: 16,
+          color: textColor,
+          fontWeight: FontWeight.bold,
+        ),
+      );
+    }else{
+      text = Text.rich(formSpan(model.name, searchArg!));
+    }
+
+
     return Row(
       children: [
-        if (searchArg == null)
-          Expanded(
-            child: Text(
-              model.name,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style:  TextStyle(
-                fontSize: 16,
-                color: textColor,
-                fontWeight: FontWeight.bold,
-              ),
+        Expanded(child: Wrap(
+          children: [
+            text,
+            const SizedBox(
+              width: 8,
             ),
-          ),
-        if (searchArg != null) Text.rich(formSpan(model.name, searchArg!)),
-        const SizedBox(
-          width: 8,
-        ),
-        BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (_, s) {
-          bool show = s.widgets.contains(model);
-          return Opacity(
-            opacity: show ? 1.0 : 0.0,
-            child: Wrapper.just(
-              radius: 10,
-              color:  isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              child: Text(
-                '已收藏',
-                style: TextStyle(
-                    color: color,
-                    height: 1,
-                    fontSize: 10,
-                    shadows:  [
-                      Shadow(
-                          color:isDark? Colors.black: Colors.white,
-                          blurRadius: 2,
-                          offset: Offset(1, 1))
-                    ]),
-              ),
-            ),
-          );
-        }),
+            BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (_, s) {
+              bool show = s.widgets.contains(model);
+              return Opacity(
+                opacity: show ? 1.0 : 0.0,
+                child: Wrapper.just(
+                  radius: 10,
+                  color:  isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  child: Text(
+                    '已收藏',
+                    style: TextStyle(
+                        color: color,
+                        height: 1,
+                        fontSize: 10,
+                        shadows:  [
+                          Shadow(
+                              color:isDark? Colors.black: Colors.white,
+                              blurRadius: 2,
+                              offset: Offset(1, 1))
+                        ]),
+                  ),
+                ),
+              );
+            }),
+          ],
+        )),
+
         StarScore(
           star: Star(emptyColor: Colors.white, size: 12, fillColor: color),
           score: model.lever,

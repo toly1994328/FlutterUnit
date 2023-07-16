@@ -18,64 +18,46 @@ class ArticleBloc extends Cubit<ArticleState> {
   /// 初始化时，加载 [pageSize] 条记录
   ///
   void init() {
-    _loadDataFromDbOrNet(1, pageSize, filter: groupId?.toString(),requestNet: true);
+    _loadDataFromDb(1, pageSize, filter: groupId?.toString(), requestNet: true);
   }
 
   Future<void> loadNextPageMore() async {
     int curPage = state.data.length ~/ pageSize;
     int nextPage = curPage + 1;
-    TaskResult<List<Article>> result = await repository.queryByHttp(
+    ArticleFilter filter = ArticleFilter(
       page: nextPage,
       pageSize: pageSize,
       groupId: groupId,
     );
-    if (result.success) {
-      emit(ArticleWithData(
-          data: state.data + result.data!, total: result.count));
-      repository.cacheResult(result.data!);
-    } else {
-      emit(ArticleFailed(result.msg, data: state.data));
-    }
+    List<Article> result = await repository.queryByDb(filter);
+    int count = await repository.total(filter);
+    emit(ArticleWithData(
+      data: state.data + result,
+      total: count,
+    ));
   }
 
-  Future<void> _loadDataFromDbOrNet(
+  Future<void> _loadDataFromDb(
     int page,
     int pageSize, {
     bool requestNet = false,
     String? filter,
   }) async {
-    /// 没有内存缓存时，查看数据库数据
-    List<Article> data = await repository.queryByDbCache(
-        page: page, pageSize: pageSize, filter: filter);
+    ArticleFilter filter = ArticleFilter(
+      page: page,
+      pageSize: pageSize,
+      groupId: groupId,
+    );
+    List<Article> data = await repository.queryByDb(filter);
 
     // 没有内存缓存 并且数据库有数据
     if (data.isNotEmpty) {
       emit(ArticleWithData(data: data, total: data.length));
-      if (!requestNet) return;
-    }
-    await _requestNetAndSaveOrUpdate(
-        page: page, pageSize: pageSize, groupId: int.tryParse(filter ?? '-'));
-  }
-
-  Future<void> _requestNetAndSaveOrUpdate({
-    int page = 1,
-    int pageSize = 20,
-    int? groupId,
-  }) async {
-    // 此时表示没有缓存数据，并且需要请求网络
-    // print("=====ColumnizeBloc::请求网络加载数据==========");
-    TaskResult<List<Article>> result = await repository.queryByHttp(
-        groupId: groupId, pageSize: pageSize, page: page);
-    if (result.success) {
-      emit(ArticleWithData(data: result.data!, total: result.count));
-      repository.cacheResult(result.data!);
-    } else {
-      emit(ArticleFailed(result.msg, data: state.data));
     }
   }
 
   @override
-  Future<void> close() async{
+  Future<void> close() async {
     super.close();
     print("=======close:${groupId}==================");
   }
