@@ -19,6 +19,19 @@ class EventTabTap extends WidgetsEvent {
   List<Object> get props => [family];
 }
 
+class EventLoadMore extends WidgetsEvent {
+
+  @override
+  List<Object> get props => [];
+}
+
+class EventRefresh extends WidgetsEvent {
+
+  @override
+  List<Object> get props => [];
+}
+
+
 class EventSearchWidget extends WidgetsEvent {
   final WidgetFilter filter;//参数
   const EventSearchWidget({required this.filter});
