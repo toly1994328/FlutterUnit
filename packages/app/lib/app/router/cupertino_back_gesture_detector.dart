@@ -4,6 +4,16 @@ import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+// The maximum time for a page to get reset to it's original position if the
+// user releases a page mid swipe.
+const int _kMaxPageBackAnimationTime = 300; // Milliseconds.
+const double _kBackGestureWidth = 20.0;
+const double _kMinFlingVelocity = 1.0; // Screen widths per second.
+
+// An eyeballed value for the maximum time it takes for a page to animate forward
+// if the user releases a page mid swipe.
+const int _kMaxDroppedSwipePageForwardAnimationTime = 800; // Milliseconds.
+
 /// This is the widget side of [CupertinoBackGestureController].
 ///
 /// This widget provides a gesture recognizer which, when it determines the
@@ -124,15 +134,6 @@ class _CupertinoBackGestureDetectorState<T> extends State<CupertinoBackGestureDe
   }
 }
 
-// The maximum time for a page to get reset to it's original position if the
-// user releases a page mid swipe.
-const int _kMaxPageBackAnimationTime = 300; // Milliseconds.
-const double _kBackGestureWidth = 20.0;
-const double _kMinFlingVelocity = 1.0; // Screen widths per second.
-
-// An eyeballed value for the maximum time it takes for a page to animate forward
-// if the user releases a page mid swipe.
-const int _kMaxDroppedSwipePageForwardAnimationTime = 800; // Milliseconds.
 
 class CupertinoBackGestureController<T> {
   /// Creates a controller for an iOS-style back gesture.
@@ -210,4 +211,67 @@ class CupertinoBackGestureController<T> {
       navigator.didStopUserGesture();
     }
   }
+}
+
+// Called by _CupertinoBackGestureDetector when a pop ("back") drag start
+// gesture is detected. The returned controller handles all of the subsequent
+// drag events.
+CupertinoBackGestureController<T> startPopGesture<T>(PageRoute<T> route) {
+  return CupertinoBackGestureController<T>(
+    navigator: route.navigator!,
+    controller: route.controller!, // protected access
+  );
+}
+
+bool isPopGestureEnabled<T>(PageRoute<T> route) {
+  print(
+      "======_isPopGestureEnabled:${route.hasScopedWillPopCallback}=========");
+// If there's nothing to go back to, then obviously we don't support
+// the back gesture.
+  if (route.isFirst) {
+    return false;
+  }
+// If the route wouldn't actually pop if we popped it, then the gesture
+// would be really confusing (or would skip internal routes), so disallow it.
+  if (route.willHandlePopInternally) {
+    return false;
+  }
+// If attempts to dismiss this route might be vetoed such as in a page
+// with forms, then do not allow the user to dismiss the route with a swipe.
+  if (route.hasScopedWillPopCallback) {
+    return false;
+  }
+// Fullscreen dialogs aren't dismissible by back swipe.
+  if (route.fullscreenDialog) {
+    return false;
+  }
+// If we're in an animation already, we cannot be manually swiped.
+  if (route.animation!.status != AnimationStatus.completed) {
+    return false;
+  }
+// If we're being popped into, we also cannot be swiped until the pop above
+// it completes. This translates to our secondary animation being
+// dismissed.
+  if (route.secondaryAnimation!.status != AnimationStatus.dismissed) {
+    return false;
+  }
+// If we're in a gesture already, we cannot start another.
+  if (isPopGestureInProgress(route)) {
+    return false;
+  }
+
+// Looks like a back gesture would be welcome!
+  return true;
+}
+
+/// True if an iOS-style back swipe pop gesture is currently underway for [route].
+///
+/// This just check the route's [NavigatorState.userGestureInProgress].
+///
+/// See also:
+///
+///  * [popGestureEnabled], which returns true if a user-triggered pop gesture
+///    would be allowed.
+bool isPopGestureInProgress(PageRoute<dynamic> route) {
+  return route.navigator!.userGestureInProgress;
 }
