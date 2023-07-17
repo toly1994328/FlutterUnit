@@ -35,7 +35,7 @@ class SettingPage extends StatelessWidget {
             ),
             trailing: _nextIcon(context),
             onTap: (){
-              Navigator.of(context).push(SlidePageRouter(child: ThemeModelSetting()));
+              Navigator.of(context).push(SlidePageRoute(child: ThemeModelSetting()));
             },
           ),
           divider,
