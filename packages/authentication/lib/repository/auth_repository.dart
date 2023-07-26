@@ -3,6 +3,7 @@ import 'package:utils/utils.dart';
 import '../models/user.dart';
 
 abstract class AuthRepository {
+
   // 用户登录接口
   Future<TaskResult<User>> login({
     required String username,

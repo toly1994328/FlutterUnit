@@ -49,4 +49,7 @@ class WidgetDbRepository implements WidgetRepository {
   Future<int> collected(int id) async {
     return await likeDao.like(id);
   }
+
+  @override
+  Future<int> total(WidgetFilter args) => widgetDao.total(args);
 }

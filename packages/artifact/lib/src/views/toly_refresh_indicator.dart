@@ -43,8 +43,6 @@ class _TolyRefreshIndicatorState
 
   @override
   Future<void> readyToRefresh() {
-    print("readyToRefresh");
-
     // TODO: implement readyToRefresh
     // final Simulation simulation = SpringSimulation(
     //     SpringDescription(

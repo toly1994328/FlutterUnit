@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:storage/storage.dart';
-
 class Columnize {
   final String? username;
   final String title;
@@ -11,6 +9,7 @@ class Columnize {
   final int create;
   final int update;
   final int count;
+  final int userId;
   final int id;
 
   Columnize({
@@ -23,16 +22,19 @@ class Columnize {
     this.create = 0,
     this.count = 0,
     this.id = -1,
+    this.userId = -1,
   });
 
   Map<String, dynamic> toJson() => {
         "username": username,
+        "id": id,
         "title": title,
-        "create": create,
+        "createAt": create,
         "subtitle": subtitle,
+        "userId": userId,
         "url": url,
         "cover": cover,
-        "update": update,
+        "updateAt": update,
         "count": count,
       };
 
@@ -45,31 +47,22 @@ class Columnize {
         url: map['url'] ?? '',
         cover: map['caver'] ?? '',
         count: map['count'] ?? 0,
+        userId: map['userId'] ?? 0,
         id: map['columnizeId'] ?? -1,
       );
 
-  // 通过 Columnize 对象生成 数据库缓存对象
-  factory Columnize.fromCache(CachePo cache) {
-   dynamic map = json.decode(cache.content);
-    return Columnize(
-      username: map['username'] ?? '',
-      title: map['title'] ?? '',
-      create: map['create']??0,
-      update: map['update']??0,
-      subtitle: map['subtitle'] ?? '',
-      url: map['url'] ?? '',
-      cover: map['caver'] ?? '',
-      count: map['count'] ?? 0,
-      id: map['id'] ?? -1,
-    );
-  }
-  CachePo get toCache => CachePo(
-        id: id,
-        filter: '',
-        content: json.encode(this),
-        update: update,
-        create: create,
-        type: 0,
+  factory Columnize.fromDb(dynamic map)=>
+      Columnize(
+        id: map['id'] ?? '',
+        username: map['username'] ?? '',
+        userId: map['userId'] ?? '',
+        title: map['title'] ?? '',
+        create: map['createAt'] ?? 0 ,
+        count: map['count'] ?? 0 ,
+        update: map['updateAt'] ?? 0,
+        subtitle: map['subtitle'] ?? '',
+        url: map['url'] ?? '',
+        cover: map['cover'] ?? '',
       );
 
   @override

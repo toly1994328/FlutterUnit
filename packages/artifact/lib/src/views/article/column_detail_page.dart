@@ -16,7 +16,9 @@ class ColumnDetailPage extends StatelessWidget {
       ),
       body: CustomScrollView(
         slivers: [
-          SliverArticlePanel()
+          SliverPadding(
+              padding: EdgeInsets.only(top: 8),
+          sliver: SliverArticlePanel())
           // SliverAppBar(
           //   title: Text(columnize.title),
           // ),

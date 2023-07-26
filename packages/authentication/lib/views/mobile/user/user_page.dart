@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:authentication/views/mobile/user/user_account.dart';
 import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -96,7 +97,7 @@ class UserPage extends StatelessWidget {
     if (state is AuthSuccess) {
       return FeedbackWidget(
         onEnd: () {
-          // Navigator.of(context).pushNamed(UnitRouter.login);
+          Navigator.of(context).push(SlidePageRoute(child: UserAccountPage()));
         },
         child: CircleImage(
           size: 80,

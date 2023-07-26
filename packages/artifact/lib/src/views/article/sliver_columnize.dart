@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'columnize_page_view.dart';
 
@@ -21,9 +22,9 @@ class _ColumnizeViewPageState extends State<ColumnizeViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
+    return  ColoredBox(
       color: Colors.white,
-      child: const SizedBox(
+      child: SizedBox(
         height: 220,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,18 +38,34 @@ class _ColumnizeViewPageState extends State<ColumnizeViewPage> {
                     backgroundColor: Colors.transparent,
                     radius: 10,
                   ),
-                  const SizedBox(width: 6,),
+                  SizedBox(width: 6,),
                   Text("捷特文章专栏",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                   Spacer(),
-                  Text("前往掘金",style: TextStyle(fontSize: 12,color: Colors.blue),),
-                  Icon(Icons.navigate_next,size: 12,color: Colors.blue,)
+                  GestureDetector(
+                    onTap: () async{
+                      Uri uri = Uri.parse('https://juejin.im/user/5b42c0656fb9a04fe727eb37');
+                      if (await canLaunchUrl(uri)) {
+                      await launchUrl(uri,mode:LaunchMode.externalNonBrowserApplication );
+                      } else {
+                      debugPrint('Could not launch ${uri.path}');
+                      }
+                    },
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        Text("前往掘金",style: TextStyle(fontSize: 12,color: Colors.blue),),
+                        Icon(Icons.navigate_next,size: 12,color: Colors.blue,)
+                      ],
+                    ),
+                  ),
+
                 ],
               ),
             ),
             Expanded(
               child: ColumnizePageView(),
             ),
-            const SizedBox(height: 10,)
+            SizedBox(height: 10,)
           ],
         ),
       ),

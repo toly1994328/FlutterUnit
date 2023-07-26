@@ -77,7 +77,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
         children: [
           StandardHomePage(),
           GalleryUnit(),
-          // ArtifactPage(),
+          ArtifactPage(),
           CollectPageAdapter(),
           UserPage(),
         ],

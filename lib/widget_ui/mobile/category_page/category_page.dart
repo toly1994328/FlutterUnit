@@ -45,9 +45,6 @@ class CategoryPage extends StatelessWidget {
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
             ),
             _buildContent(context, state),
-            const SliverToBoxAdapter(
-              child: NoMoreWidget(),
-            )
           ],
         );
       }
@@ -57,8 +54,10 @@ class CategoryPage extends StatelessWidget {
   }
 
   _buildContent(BuildContext context, CategoryLoadedState state) {
+    double bottom = MediaQuery.of(context).padding.bottom;
+
     return SliverPadding(
-      padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 30),
+      padding:  EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 20+bottom),
       sliver: SliverLayoutBuilder(
           builder: (_,c){
             SliverGridDelegate delegate = gridDelegate;

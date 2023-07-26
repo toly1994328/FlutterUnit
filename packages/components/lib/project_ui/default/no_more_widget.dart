@@ -11,7 +11,9 @@ class NoMoreWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(height: 56);
+    double bottom = MediaQuery.of(context).padding.bottom;
+
+    return SizedBox(height: bottom);
   }
 
 }

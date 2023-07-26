@@ -55,6 +55,7 @@ class WidgetDao {
     if (arguments.name.isEmpty) {
       return [];
     }
+
     // _表示 name 任意
     String name = arguments.name == '*' ? '' : arguments.name;
     bool hasFamily = arguments.family != null;
@@ -67,8 +68,23 @@ class WidgetDao {
     }
     return db.rawQuery(
         "SELECT * "
-        "FROM widget WHERE name like ?$familySql AND lever IN(?,?,?,?,?) ORDER BY lever DESC",
-        ["%$name%", ...familyArg, ...starArg]);
+        "FROM widget WHERE name like ?$familySql AND lever IN(?,?,?,?,?) ORDER BY lever DESC LIMIT ? OFFSET ?",
+        ["%$name%", ...familyArg, ...starArg, arguments.pageSize, arguments.offset]);
+  }
+
+  Future<int> total(WidgetFilter args) async{
+    bool hasFamily = args.family != null;
+    String familySql = hasFamily ? 'family = ?' : '';
+    List<int> familyArg = hasFamily ? [args.family!.index] : [];
+
+    String sql = "SELECT count(id) as `count` FROM widget WHERE $familySql";
+
+    List<Map<String, Object?>> result = await db.rawQuery(sql,familyArg);
+    if(result.isNotEmpty){
+      return result.first['count'] as int ??0;
+    }
+    return 0;
+
   }
 }
 

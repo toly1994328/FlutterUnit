@@ -2,6 +2,7 @@ import 'dart:io';
 
 
 
+import 'package:artifact/artifact.dart';
 import 'package:storage/storage.dart';
 
 import 'helper/db_open_helper.dart';
@@ -22,6 +23,8 @@ class FlutterDbStorage {
   late CategoryDao _categoryDao;
   late NodeDao _nodeDao;
   late LikeDao _likeDao;
+  late ArticleDao _articleDao;
+  late ColumnizeDao _columnizeDao;
 
   WidgetDao get widgetDao => _widgetDao;
 
@@ -30,6 +33,8 @@ class FlutterDbStorage {
   NodeDao get nodeDao => _nodeDao;
 
   LikeDao get likeDao => _likeDao;
+  ArticleDao get articleDao => _articleDao;
+  ColumnizeDao get columnizeDao => _columnizeDao;
 
   Database get db => _database!;
 
@@ -57,6 +62,8 @@ class FlutterDbStorage {
     _categoryDao = CategoryDao(_database!);
     _nodeDao = NodeDao(_database!);
     _likeDao = LikeDao(_database!);
+    _articleDao = ArticleDao(_database!);
+    _columnizeDao = ColumnizeDao(_database!);
 
     print('初始化数据库....');
   }
