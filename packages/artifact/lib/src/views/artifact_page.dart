@@ -33,7 +33,7 @@ const List<String> kArtifactInfo = [
   '分类收录张风捷特烈的博客文章',
   'Flutter 框架探索，七剑合璧',
   '收录布局方案，提供界面样板',
-  '生成代码字符串，辅助书写代码',
+  'Flutter 知识小要点，一网打尽',
 ];
 
 class _ArtifactPageState extends State<ArtifactPage>
@@ -56,13 +56,13 @@ class _ArtifactPageState extends State<ArtifactPage>
     super.dispose();
   }
 
-  static const String host = '192.168.0.107';
-
-  ArticleRepository aRepository = ArticleRepository(host);
-  ColumnizeRepository cRepository = ColumnizeRepository(host);
+  ArticleRepository aRepository = const ArticleRepository();
+  ColumnizeRepository cRepository = const ColumnizeRepository();
 
   @override
   Widget build(BuildContext context) {
+    double bottom = MediaQuery.of(context).padding.bottom;
+
     return MultiBlocProvider(
       providers: [
         BlocProvider<ColumnizeBloc>(create: (_) => ColumnizeBloc(cRepository)..init()),
@@ -70,7 +70,7 @@ class _ArtifactPageState extends State<ArtifactPage>
       ],
       child: Scaffold(
         backgroundColor: const Color(0xffF2F3F5),
-        bottomNavigationBar: Container(height: 56),
+        bottomNavigationBar: Container(height: bottom),
         body: NestedScrollView(
           headerSliverBuilder: _buildAppBar,
           floatHeaderSlivers: true,
@@ -129,7 +129,7 @@ class _ArtifactPageState extends State<ArtifactPage>
         title: Column(
           children: [
             Text(
-              '万象宝具',
+              'Flutter 知识宝库',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             const SizedBox(
@@ -157,19 +157,19 @@ class _ArtifactPageState extends State<ArtifactPage>
           tabs: [
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '捷文宝具',
+              text: '捷特文库',
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '修源七剑',
+              text: '七剑合璧',
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '布局宝具',
+              text: '布局宝库',
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '编程宝具',
+              text: '要点宝库',
             ),
           ],
         ),

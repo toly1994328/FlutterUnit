@@ -17,9 +17,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final AuthRepository repository;
 
-  AuthBloc({required this.repository}) : super(AuthInitial()){
+  AuthBloc({required this.repository}) : super(const AuthInitial()){
     on<AppStarted>(_onAppStarted);
     on<AuthByPassword>(_onAuthByPassword);
+    on<AuthByRegister>(_onAuthByRegister);
+    on<Logout>(_onLoggedOut);
   }
 
   void _onAppStarted(AuthEvent event,  Emitter<AuthState> emit) async{
@@ -41,7 +43,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     }
 
-    if (event is LoggedOut) {
+    if (event is Logout) {
 
     }
   }
@@ -84,5 +86,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     } else {
       emit (const AuthFailure('用户名和密码不匹配'));
     }
+  }
+
+  FutureOr<void> _onAuthByRegister(AuthByRegister event, Emitter<AuthState> emit) async{
+    emit(AuthLoading());
+    TaskResult<bool> result = await repository.register(email: event.email, code: event.code);
+
+    // if(result.data == null){
+    //   emit(const RegisterError('注册失败'));
+    // }else{
+    //   if (result.data!=null&&result.data!) {
+    //     // 注册成功
+    //     emit( RegisterSuccess(event.email));
+    //   }else{
+    //     emit( RegisterError(result.msg));
+    //   }
+    // }
+  }
+
+  FutureOr<void> _onLoggedOut(Logout event, Emitter<AuthState> emit) async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove(SpKey.tokenKey);
+    emit(const AuthInitial());
   }
 }

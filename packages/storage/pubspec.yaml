@@ -16,6 +16,8 @@ dependencies:
   shared_preferences: ^2.0.13 # xml 固化
   widget_repository:
     path: ../widget_repository
+  artifact:
+    path: ../artifact
 
 dev_dependencies:
   flutter_test:

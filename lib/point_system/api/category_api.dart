@@ -11,14 +11,17 @@ class CategoryApi {
       {required String data, required String likeData}) async {
     String errorMsg = "";
 
-    var result = await HttpUtil.instance.client.post(
-        PathUnit.categoryDataSync,
-        data: {"data": data, "likeData": likeData}).catchError((err) {
-      errorMsg = err.toString();
-    });
-
-    if (result.data != null) {
-      return TaskResult.success(data:result.data);
+    try {
+      var result = await HttpUtil.instance.client.post(
+              PathUnit.categoryDataSync,
+              data: {"data": data, "likeData": likeData});
+      print(result.data);
+      if (result.data != null) {
+            return TaskResult.success(data:result.data['status']);
+          }
+    } catch (e) {
+      print(e);
+      errorMsg = e.toString();
     }
 
     return TaskResult.error(msg: '请求错误: $errorMsg');

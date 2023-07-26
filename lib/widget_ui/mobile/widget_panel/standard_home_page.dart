@@ -1,5 +1,5 @@
-import 'package:app/app.dart';
 import 'package:components/toly_ui/toly_ui.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +9,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 import 'standard_home_search.dart';
-import 'widget_list_panel.dart';
+import 'widget_page.dart';
 
 class StandardHomePage extends StatefulWidget {
   const StandardHomePage({Key? key}) : super(key: key);
@@ -29,6 +29,8 @@ class _StandardHomePageState extends State<StandardHomePage>
     tabController = TabController(length: _tabs.length, vsync: this);
   }
 
+  int maxCount = 60;
+
   @override
   void dispose() {
     tabController.dispose();
@@ -38,7 +40,8 @@ class _StandardHomePageState extends State<StandardHomePage>
   void _switchTab(int index) {
     WidgetFamily widgetFamily = Convert.toFamily(index);
     WidgetsBloc bloc = BlocProvider.of<WidgetsBloc>(context);
-    if(bloc.state.filter.family==widgetFamily) return;
+    if (bloc.state.filter.family == widgetFamily) return;
+    PrimaryScrollController.of(context).jumpTo(0);
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
 
@@ -47,8 +50,9 @@ class _StandardHomePageState extends State<StandardHomePage>
     super.build(context);
     final AppBarTheme appBarTheme = AppBarTheme.of(context);
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-
+    double bottom = MediaQuery.of(context).padding.bottom;
     return Scaffold(
+      extendBody: true,
       // backgroundColor: const Color(0xffF3F4F6),
       drawer: const HomeDrawer(),
       body: Column(
@@ -56,33 +60,19 @@ class _StandardHomePageState extends State<StandardHomePage>
           AnnotatedRegion<SystemUiOverlayStyle>(
             value: appBarTheme.systemOverlayStyle!,
             child: Container(
-              color: isDark?Colors.black:Colors.white,
+              color: isDark ? Colors.black : Colors.white,
               height: MediaQuery.of(context).padding.top,
             ),
           ),
           Expanded(
             child: NestedScrollView(
-              floatHeaderSlivers: true,
-              headerSliverBuilder: _buildHeader,
-              body: Builder(
-                builder:(ctx)=> CustomScrollView(
-                  // key: PageStorageKey<String>(name),
-                  slivers: <Widget>[
-                    SliverOverlapInjector(
-                      handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
-                    ),
-                    const WidgetListPanel(),
-                    SliverPadding(
-                      padding: const EdgeInsets.only(bottom: 30),
-                      sliver: SliverOverlapInjector(
-                        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ),
+                floatHeaderSlivers: true,
+                headerSliverBuilder: _buildHeader,
+                body: WidgetPage()),
           ),
+          SizedBox(
+            height: bottom,
+          )
         ],
       ),
     );
@@ -94,51 +84,32 @@ class _StandardHomePageState extends State<StandardHomePage>
 
     return [
       const SliverSnapHeader(child: StandardHomeSearch()),
-      SliverOverlapAbsorber(
-        sliver: SliverPinnedHeader(
-          color: isDark?Colors.black:Colors.white,
-          child: TabBar(
-            onTap: _switchTab,
-            indicatorSize: TabBarIndicatorSize.label,
-            isScrollable: true,
-            indicator: RoundRectTabIndicator(
-              borderSide: BorderSide(color: themeColor, width: 3),
-            ),
-            labelStyle: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-            controller: tabController,
-            labelColor: themeColor,
-            indicatorWeight: 3,
-            unselectedLabelColor: Colors.grey,
-            indicatorColor: themeColor,
-            tabs: _tabs.map((String name) => Tab(text: name)).toList(),
+      // SliverOverlapAbsorber(
+      //   sliver:
+      SliverPinnedHeader(
+        color: isDark ? Colors.black : Colors.white,
+        child: TabBar(
+          onTap: _switchTab,
+          indicatorSize: TabBarIndicatorSize.label,
+          isScrollable: true,
+          indicator: RoundRectTabIndicator(
+            borderSide: BorderSide(color: themeColor, width: 3),
           ),
+          labelStyle: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+          controller: tabController,
+          labelColor: themeColor,
+          indicatorWeight: 3,
+          unselectedLabelColor: Colors.grey,
+          indicatorColor: themeColor,
+          tabs: _tabs.map((String name) => Tab(text: name)).toList(),
         ),
-        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
       ),
+      // handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+      // ),
     ];
-  }
-
-  Widget buildScrollPage(String name) {
-    return Builder(
-      builder: (BuildContext context) => CustomScrollView(
-        key: PageStorageKey<String>(name),
-        slivers: <Widget>[
-          SliverOverlapInjector(
-            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-          ),
-          const WidgetListPanel(),
-          SliverPadding(
-            padding: const EdgeInsets.only(bottom: 30),
-            sliver: SliverOverlapInjector(
-              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-            ),
-          ),
-        ],
-      ),
-    );
   }
 
   @override

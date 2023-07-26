@@ -7,19 +7,6 @@ import '../../repositories/exp.dart';
 import 'article_detail_page.dart';
 import 'columnize_page_view.dart';
 
-//class ArticleLoading extends ArticleState {
-//   const ArticleLoading({super.data});
-// }
-//
-// class ArticleWithData extends ArticleState {
-//   final int total;
-//   const ArticleWithData({super.data, this.total = 0});
-// }
-//
-// class ArticleFailed extends ArticleState {
-//   final String error;
-//   const ArticleFailed(this.error, {super.data});
-// }
 class SliverArticlePanel extends StatelessWidget {
   const SliverArticlePanel({Key? key}) : super(key: key);
 
@@ -47,27 +34,16 @@ class SliverArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-        padding: EdgeInsets.only(bottom: 0),
+        padding: const EdgeInsets.only(bottom: 0),
         sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(_buildItem,
-                childCount: data.length)));
+            delegate: SliverChildBuilderDelegate(
+          _buildItem,
+          childCount: data.length,
+        )));
   }
 
   Widget? _buildItem(BuildContext context, int index) {
-    return ArticlePanel(
-      article: data[index],
-    );
-    // return Column(
-    //   children: [
-    //     ListTile(
-    //       tileColor: Colors.white,
-    //       title: Text(data[index]),
-    //     ),
-    //     const SizedBox(
-    //       height: 6,
-    //     )
-    //   ],
-    // );
+    return ArticlePanel(article: data[index]);
   }
 }
 
@@ -136,7 +112,7 @@ class ArticlePanel extends StatelessWidget {
                         0xffA3A3A3,
                       )),
                 )),
-                if (article.cover != null&&article.cover!.isNotEmpty)
+                if (article.cover != null && article.cover!.isNotEmpty)
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: ClipRRect(

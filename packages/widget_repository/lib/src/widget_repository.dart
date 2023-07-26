@@ -14,6 +14,8 @@ abstract class WidgetRepository {
 
   Future<void> toggleLike(int id);
 
+  Future<int> total(WidgetFilter args);
+
   Future<List<WidgetModel>> loadLikeWidgets();
 
   Future<int> collected(int id);

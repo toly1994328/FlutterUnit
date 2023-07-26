@@ -66,7 +66,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
     return FeedbackWidget(
         child: const Icon(
           TolyIcon.download,
-          size: 28,
+          size: 24,
         ),
         onPressed: _doSync);
   }
@@ -104,7 +104,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
 
   Widget _buildSuccess() => const Icon(
         TolyIcon.upload_success,
-        size: 25,
+        size: 22,
         color: Colors.green,
       );
 

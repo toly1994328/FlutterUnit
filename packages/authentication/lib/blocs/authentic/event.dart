@@ -24,13 +24,20 @@ class AuthByPassword extends AuthEvent {
   List<Object> get props => [username,password];
 }
 
+// 用户注册也是认证的一部分
+class AuthByRegister extends AuthEvent{
+  final String email;
+  final String code;
 
-class LoggedOut extends AuthEvent {
+  const AuthByRegister(this.email, this.code);
+}
+
+class Logout extends AuthEvent {
 
   final bool clearUser;
   final bool tokenDisable;
 
-  const LoggedOut({this.clearUser=true,this.tokenDisable=false});
+  const Logout({this.clearUser=true,this.tokenDisable=false});
 }
 
 class TokenDisabled extends AuthEvent {

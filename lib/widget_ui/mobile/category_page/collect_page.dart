@@ -94,7 +94,8 @@ class _CollectPageState extends State<CollectPage>
               borderSize: 1.5,
             ),
           )),
-      // backgroundColor: color,
+      backgroundColor: Theme.of(context).primaryColor,
+      actionsIconTheme: IconThemeData(color: Colors.white),
       actions: <Widget>[
         SizedBox(
             width: 32,
@@ -105,7 +106,7 @@ class _CollectPageState extends State<CollectPage>
             width: 32,
             child: AuthenticWidget.just(const SyncCategoryButton())),
         if(!widget.canPop)
-        _buildAddAction(context)
+        SizedBox(child: _buildAddAction(context))
       ],
       title: const Text(
         '收藏集录',
@@ -144,12 +145,17 @@ class _CollectPageState extends State<CollectPage>
     );
   }
 
-  Widget _buildAddAction(BuildContext context) => IconButton(
-      icon: const Icon(
-        Icons.add,
-        size: 30,
+  Widget _buildAddAction(BuildContext context) => GestureDetector(
+    behavior: HitTestBehavior.opaque,
+    onTap:  () => Scaffold.of(context).openEndDrawer(),
+    child: SizedBox(
+      width: 32,
+        child: const Icon(
+          Icons.add,
+          size: 24,
+        ),
       ),
-      onPressed: () => Scaffold.of(context).openEndDrawer());
+  );
 
   List<Widget> _buildTabs() => _tabs
       .map(

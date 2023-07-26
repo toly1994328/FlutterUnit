@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:refresh/refresh.dart';
 
+import '../../../artifact.dart';
 import '../../blocs/exp.dart';
 import '../toly_refresh_indicator.dart';
 import 'sliver_article.dart';
@@ -32,60 +33,8 @@ class _TolyArticleScrollPageState extends State<TolyArticleScrollPage> {
 
   @override
   Widget build(BuildContext context) {
-    const Color themeColor = Color(0xff007ACB);
-
-    return RefreshConfiguration(
-      headerTriggerDistance: 60,
-      topHitBoundary: 20,
+    return RefreshConfigWrapper(
       child: SmartRefresher(
-          header: TolyRefreshIndicator(),
-          // header: BezierCircleHeader(),
-          // header: WaterDropHeader(),
-          // header: BezierHeader(),
-
-          // header: const ClassicHeader(
-          //   idleText: '',
-          //   releaseText: '释放刷新',
-          //   refreshingText: '加载数据',
-          //   completeText: '刷新成功!',
-          //   refreshingIcon: CupertinoActivityIndicator(color: themeColor,),
-          //   completeIcon: Icon(Icons.done, color: themeColor),
-          //   releaseIcon: Icon(Icons.refresh, color: themeColor),
-          //   idleIcon: Icon(Icons.arrow_downward, color: Colors.grey),
-          //   textStyle: TextStyle(color: themeColor),
-          // ),
-          footer: CustomFooter(
-            builder: (BuildContext context, LoadStatus? mode) {
-              Widget body;
-              if (mode == LoadStatus.idle) {
-                body = Wrap(
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    Icon(Icons.arrow_upward, color: themeColor),
-                    Text("上拉加载",
-                        style: TextStyle(color: themeColor, height: 1)),
-                  ],
-                );
-              } else if (mode == LoadStatus.loading) {
-                body = CupertinoActivityIndicator();
-              } else if (mode == LoadStatus.failed) {
-                body = Text("加载失败！点击重试！");
-              } else if (mode == LoadStatus.canLoading) {
-                body = Text("松手,加载更多!",
-                    style: TextStyle(color: themeColor, height: 1));
-              } else {
-                body = Text("没有更多数据了!",
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ));
-              }
-              return Container(
-                height: 55.0,
-                child: Center(child: body),
-              );
-            },
-          ),
           enablePullUp: true,
           onRefresh: _onRefresh,
           onLoading: _loadMore,
@@ -116,21 +65,12 @@ class _TolyArticleScrollPageState extends State<TolyArticleScrollPage> {
 
   void _onRefresh() async {
     // monitor network fetch
-    await Future.delayed(Duration(milliseconds: 1000));
-    // if failed,use refreshFailed()
-    List<String> newData = [];
-    for (int i = 0; i < 2; i++) {
-      newData.add('New: ${i}');
-    }
-    // data.insertAll(0, newData);
-    setState(() {});
+    await Future.delayed(Duration(milliseconds: 500));
 
     _refreshController.refreshCompleted();
   }
 
   void _loadMore() async {
-    print('===========_loadMore===============');
-    // await Future.delayed(Duration(milliseconds: 1000));
     ArticleBloc bloc = context.read<ArticleBloc>();
     await context.read<ArticleBloc>().loadNextPageMore();
     // int length = data.length;
