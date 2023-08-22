@@ -81,8 +81,7 @@ class UnitRouters {
           );
         }
 
-        return SlidePageRoute(
-            child: child);
+        return SlidePageRoute(child: child);
 
       // case search:
       //   return Right2LeftRouter(child: const SearchPageProvider());
