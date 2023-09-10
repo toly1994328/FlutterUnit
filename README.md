@@ -1,15 +1,13 @@
 
-### FlutterUnit 下载体验: 复制链接，在浏览器下载~
+### FlutterUnit 全平台下载体验:
 
 | 平台类型 | 下载地址 | 项目分支地址  | 相关文章 | 
 |------|------------|------|------------|
-| Android版 | https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnit.apk |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
-| iOS版 | https://apps.apple.com/cn/app/flutter-unit/id6450545123 |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
-| MacOS版 | https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnitMac.zip |[flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
-| Windows版 |https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnitWin.zip | [flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
+| Android版 | [FlutterUnit.apk](https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnit.apk) |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
+| iOS版 |[FlutterUnit in AppStore](https://apps.apple.com/cn/app/flutter-unit/id6450545123) |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
+| MacOS版 | [FlutterUnitMac.zip](https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnitMac.zip) |[flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
+| Windows版 |[FlutterUnitWin.zip](https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnitWin.zip) | [flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
 | Web版 | http://toly1994328.gitee.io/flutter_web | [ flutter_unit_web ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
-
-
 
 
 #### Flutter Unit 周边
@@ -33,10 +31,10 @@
 > 当前Flutter 版本
 
 ```
-Flutter 3.10.6 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision f468f3366c (2 weeks ago) • 2023-07-12 15:19:05 -0700
-Engine • revision cdbeda788a
-Tools • Dart 3.0.6 • DevTools 2.23.1
+Flutter 3.13.3 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 2524052335 (3 days ago) • 2023-09-06 14:32:31 -0700
+Engine • revision b8d35810e9
+Tools • Dart 3.1.1 • DevTools 2.25.0
 ```
 
 ---
