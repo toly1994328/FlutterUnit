@@ -25,3 +25,8 @@ export '../Sliver/SliverIgnorePointer/node1_base.dart';
 export '../Sliver/SliverAnimatedList/node1_base.dart';
 export '../Sliver/SliverLayoutBuilder/node1_base.dart';
 export '../Sliver/SliverWithKeepAliveWidget/node1_base.dart';
+export '../Sliver/DecoratedSliver/node1.dart';
+export '../Sliver/SliverConstrainedCrossAxis/node1.dart';
+export '../Sliver/SliverCrossAxisExpanded/node1.dart';
+export '../Sliver/SliverCrossAxisGroup/node1.dart';
+export '../Sliver/SliverMainAxisGroup/node1.dart';

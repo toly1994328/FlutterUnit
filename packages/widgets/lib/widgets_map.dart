@@ -1398,6 +1398,26 @@ class WidgetsMap {
           const MagnifierCircleShape(),
           const MagnifierStarShape(),
         ];
+      case "DecoratedSliver":
+        return [
+          const DecorationSliverDemo(),
+        ];
+      case "SliverConstrainedCrossAxis":
+        return [
+          const SliverConstrainedCrossAxisDemo(),
+        ];
+      case "SliverCrossAxisExpanded":
+        return [
+          const SliverCrossAxisExpandedDemo(),
+        ];
+      case "SliverCrossAxisGroup":
+        return [
+          const SliverCrossAxisGroupDemo(),
+        ];
+      case "SliverMainAxisGroup":
+        return [
+          const SliverMainAxisGroupDemo(),
+        ];
       default:
         return [];
     }
