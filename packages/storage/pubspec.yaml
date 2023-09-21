@@ -10,10 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sqflite: ^2.0.2+1 # 数据库
-  sqflite_common_ffi: ^2.1.1 # 数据库
-  path_provider: ^2.0.11 # 路径
-  shared_preferences: ^2.0.13 # xml 固化
+  sqflite: ^2.3.0 # 数据库
+  sqflite_common_ffi: ^2.3.0+2 # 数据库
+  shared_preferences: ^2.2.1 # xml 固化
+  path_provider: ^2.1.1  # 路径
+
   widget_repository:
     path: ../widget_repository
   artifact:

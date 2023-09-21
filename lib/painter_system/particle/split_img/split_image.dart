@@ -75,7 +75,7 @@ class _SplitImageState extends State<SplitImage> with SingleTickerProviderStateM
     pm.particles.clear();
     ByteData data = await rootBundle.load("assets/images/flutter.png");
     List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-    image.Image? imageSrc = image.decodeImage(bytes);
+    image.Image? imageSrc = image.decodeImage(Uint8List.fromList(bytes));
 
     if(imageSrc==null) return;
 
