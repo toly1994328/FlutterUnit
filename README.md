@@ -39,12 +39,12 @@ Tools • Dart 3.1.1 • DevTools 2.25.0
 
 #### 构建命令,产出应用
 
-> Android 分架构打包:  flutter build apk --target-platform android-arm64 --split-per-abi 
-> iOS 打包应用:  flutter build ios
-> Windows 打包应用:  flutter build windows
-> Macos 打包应用:  flutter build macos
-> Linux 打包应用:  flutter build linux
-> web 打包应用:  flutter build web 
+> Android 分架构打包:  flutter build apk --target-platform android-arm64 --split-per-abi   
+> iOS 打包应用:  flutter build ios  
+> Windows 打包应用:  flutter build windows  
+> Macos 打包应用:  flutter build macos  
+> Linux 打包应用:  flutter build linux  
+> web 打包应用:  flutter build web   
 
 ---
 
