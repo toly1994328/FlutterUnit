@@ -10,10 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1 # 状态管理
-  equatable: ^2.0.3 # 相等辅助
-  shared_preferences: ^2.0.13 # xml 固化
-  connectivity_plus: ^4.0.1
+  flutter_bloc: ^8.1.3 # 状态管理
+  equatable: ^2.0.5 # 相等辅助
+  shared_preferences: ^2.2.1 # xml 固化
+  connectivity_plus: ^4.0.2
   storage:
     path: ../storage
   widget_repository:

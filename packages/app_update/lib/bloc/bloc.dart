@@ -51,7 +51,7 @@ class UpdateBloc extends Bloc<UpdateEvent, UpdateState> {
 
   void _onDownloadEvent(DownloadEvent event, Emitter<UpdateState> emit) async{
     id = await RUpgrade.upgrade(event.appInfo.appUrl,
-        fileName: '${event.appInfo.appName}.apk', isAutoRequestInstall: true);
+        fileName: '${event.appInfo.appName}.apk',);
     subscription = RUpgrade.stream.listen((DownloadInfo info) {
       double progress = (info.percent ?? 0) / 100;
       if (info.status! == DownloadStatus.STATUS_SUCCESSFUL) {
