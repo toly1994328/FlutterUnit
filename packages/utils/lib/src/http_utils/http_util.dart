@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 
 import 'token_interceptor.dart';
 
-const int _kReceiveTimeout = 5000;
-const int _kSendTimeout = 5000;
-const int _kConnectTimeout = 5000;
+const Duration _kReceiveTimeout = Duration(milliseconds: 5000);
+const Duration _kSendTimeout = Duration(milliseconds: 5000);
+const Duration _kConnectTimeout = Duration(milliseconds: 5000);
 
 class HttpUtil {
   TokenInterceptors? tokenInterceptors;

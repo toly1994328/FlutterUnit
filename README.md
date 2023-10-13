@@ -28,7 +28,7 @@
 
 ---
 
-> 当前Flutter 版本
+#### 当前Flutter 版本
 
 ```
 Flutter 3.13.3 • channel stable • https://github.com/flutter/flutter.git
@@ -36,6 +36,15 @@ Framework • revision 2524052335 (3 days ago) • 2023-09-06 14:32:31 -0700
 Engine • revision b8d35810e9
 Tools • Dart 3.1.1 • DevTools 2.25.0
 ```
+
+#### 构建命令,产出应用
+
+> Android 分架构打包:  flutter build apk --target-platform android-arm64 --split-per-abi   
+> iOS 打包应用:  flutter build ios  
+> Windows 打包应用:  flutter build windows  
+> Macos 打包应用:  flutter build macos  
+> Linux 打包应用:  flutter build linux  
+> web 打包应用:  flutter build web   
 
 ---
 
