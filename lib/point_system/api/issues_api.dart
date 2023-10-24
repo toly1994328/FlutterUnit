@@ -8,7 +8,7 @@ import 'package:flutter_unit/point_system/github_model/github_model.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-const kBaseUrl = 'http://119.45.173.197:8080/api/v1';
+const kBaseUrl = 'http://toly1994.com:8080/api/v1';
 
 class IssuesApi {
   static Dio dio = Dio(BaseOptions(baseUrl: kBaseUrl));

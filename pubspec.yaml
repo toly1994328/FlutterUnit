@@ -67,6 +67,8 @@ dependencies:
     path: packages/widgets
   artifact:
     path: packages/artifact
+  algorithm:
+    path: packages/algorithm
   authentication:
     path: packages/authentication
   app:

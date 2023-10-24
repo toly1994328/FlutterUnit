@@ -80,18 +80,24 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
   @override
   Widget build(BuildContext context) {
     _nodeAttachment.reparent();
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () {
-        if (_focused) {
-          _node.unfocus();
-        } else {
-          _node.requestFocus();
-        }
+    return TapRegion(
+      groupId: 'selector',
+      onTapOutside: (_){
+        _node.unfocus();
       },
-      child: CompositedTransformTarget(
-        link: layerLink,
-        child: buildTarget(),
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          if (_focused) {
+            _node.unfocus();
+          } else {
+            _node.requestFocus();
+          }
+        },
+        child: CompositedTransformTarget(
+          link: layerLink,
+          child: buildTarget(),
+        ),
       ),
     );
   }
@@ -178,20 +184,23 @@ class _DropSelectableWidgetState extends State<DropSelectableWidget>
   );
 
   Widget _buildItem(BuildContext context, int index) {
-    return Material(
-      child: InkWell(
-        onTap: () {
-          if (_selectedIndex != index) widget.onDropSelected?.call(index);
-          _selectedIndex = index;
-          _overlayEntry?.markNeedsBuild();
-          _node.unfocus();
-        },
-        child: Container(
-            padding: const EdgeInsets.all(8),
-            color: index == _selectedIndex
-                ? Colors.blue.withOpacity(0.2)
-                : Colors.transparent,
-            child: Text(widget.data[index],style: TextStyle(fontSize: widget.fontSize),)),
+    return TapRegion(
+      groupId: 'selector',
+      child: Material(
+        child: InkWell(
+          onTap: () {
+            if (_selectedIndex != index) widget.onDropSelected?.call(index);
+            _selectedIndex = index;
+            _overlayEntry?.markNeedsBuild();
+            _node.unfocus();
+          },
+          child: Container(
+              padding: const EdgeInsets.all(8),
+              color: index == _selectedIndex
+                  ? Colors.blue.withOpacity(0.2)
+                  : Colors.transparent,
+              child: Text(widget.data[index],style: TextStyle(fontSize: widget.fontSize),)),
+        ),
       ),
     );
   }

@@ -115,8 +115,10 @@ class IssuesTip extends StatelessWidget {
 
 class SimpleDeskTopBar extends StatelessWidget {
   final Widget? leading;
+  final Widget? tail;
+  final double height;
 
-  const SimpleDeskTopBar({super.key, this.leading});
+  const SimpleDeskTopBar({super.key, this.leading,this.tail,this.height=64});
 
   @override
   Widget build(BuildContext context) {
@@ -126,8 +128,8 @@ class SimpleDeskTopBar extends StatelessWidget {
     return DragToMoveAreaNoDouble(
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        height: 64,
-        color: isDark?Color(0xff2C3036):Colors.white,
+        height: height,
+        color: isDark? Color(0xff2C3036):Colors.white,
         child: Row(
           children: [
             if (leading != null) leading!,
@@ -135,6 +137,7 @@ class SimpleDeskTopBar extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
+            if(tail!=null) tail!,
             const WindowButtons(),
           ],
         ),
