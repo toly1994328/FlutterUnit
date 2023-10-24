@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 
-
-
-class DataPainter extends CustomPainter{
-
+class DataPainter extends CustomPainter {
   final List<int> data;
 
   DataPainter({required this.data});
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.clipRect(Offset.zero&size);
-    double itemWidth = size.width/data.length;
-    double height = size.height;
+    canvas.clipRect(Offset.zero & size);
+    double itemWidth = size.width / data.length;
 
     Paint paint = Paint();
     paint.strokeWidth = itemWidth;
     paint.strokeCap = StrokeCap.round;
 
-    for(int i=0;i<data.length;i++){
+    for (int i = 0; i < data.length; i++) {
       int value = data[i];
       if (value < 1000 * .10) {
         paint.color = Colors.blue.shade100;
@@ -42,20 +38,17 @@ class DataPainter extends CustomPainter{
         paint.color = const Color(0xFF011E51);
       }
       canvas.drawLine(
-          Offset(i * itemWidth+itemWidth/2, 0),
+          Offset(i * itemWidth + itemWidth / 2, 0),
           Offset(
-            i * itemWidth+itemWidth/2,
-            size.height*(value/1000),
+            i * itemWidth + itemWidth / 2,
+            size.height * (value / 1000),
           ),
           paint);
     }
-
-
   }
 
   @override
   bool shouldRepaint(covariant DataPainter oldDelegate) {
     return true;
   }
-
 }

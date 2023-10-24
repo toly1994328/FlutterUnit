@@ -18,10 +18,7 @@ class SortState with ChangeNotifier{
   }
 
   SortStatus status = SortStatus.none;
-
   List<int> data = [];
-  List<int> stepData = [];
-
   SortConfig _config = SortConfig();
   SortConfig get config => _config;
   Random random = Random();
@@ -41,7 +38,6 @@ class SortState with ChangeNotifier{
       random = Random(config.seed);
     }
     for (int i = 0; i < count; i++) {
-      //随机往数组中填值
       data.add(random.nextInt(1000));
     }
   }
@@ -49,7 +45,6 @@ class SortState with ChangeNotifier{
   void sort() async{
     status = SortStatus.sorting;
     notifyListeners();
-    Stopwatch stopwatch = Stopwatch()..start();
     SortFunction? sortFunction = sortFunctionMap[config.name];
     if(sortFunction!=null){
       await sortFunction(data,(arr) async {
@@ -59,8 +54,6 @@ class SortState with ChangeNotifier{
     }
     status = SortStatus.sorted;
     notifyListeners();
-    stopwatch.stop();
-    print("Sorting completed in ${stopwatch.elapsed.inMilliseconds} ms.");
   }
 }
 

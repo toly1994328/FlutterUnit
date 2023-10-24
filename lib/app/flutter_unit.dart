@@ -7,7 +7,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_unit/app/router/unit_router.dart';
 import 'package:flutter_unit/app/views/splash/standard_unit_splash.dart';
 
-
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
 /// 说明: 主程序
@@ -19,8 +18,8 @@ class FlutterUnit extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(builder: (_, state) {
       return SortStateScope(
-          notifier: SortState(),
-      child: DefaultTextStyle(
+        notifier: SortState(),
+        child: DefaultTextStyle(
           style: TextStyle(fontFamily: state.fontFamily),
           child: MaterialApp(
             // routes: ,
