@@ -3,14 +3,15 @@
 
 | 平台类型 | 下载地址 | 项目分支地址  | 相关文章 | 
 |------|------------|------|------------|
-| Android版 | [FlutterUnit.apk](https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnit.apk) |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
+| Android版 | [FlutterUnit.apk](https://github.com/toly1994328/FlutterUnit/releases/download/v2.9.3/FlutterUnit.apk) |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
 | iOS版 |[FlutterUnit in AppStore](https://apps.apple.com/cn/app/flutter-unit/id6450545123) |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
-| MacOS版 | [FlutterUnitMac.zip](https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnitMac.zip) |[flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
-| Windows版 |[FlutterUnitWin.zip](https://github.com/toly1994328/FlutterUnit/releases/download/release/FlutterUnitWin.zip) | [flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
+| MacOS版 | [FlutterUnitMac.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v2.9.3/FlutterUnitMac.zip) |[flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
+| Windows版 |[FlutterUnitWin.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v2.9.3/FlutterUnitWin.zip) | [flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
 | Web版 | http://toly1994328.gitee.io/flutter_web | [ flutter_unit_web ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
 
 
 #### Flutter Unit 周边
+- 🔥 [免费] [掘金小册 -《Flutter 入门教程》](https://juejin.cn/book/7212822723330834487)
 - 🔥  [掘金小册 -《Flutter 语言基础 - 梦始之地》](https://juejin.cn/book/6844733827617652750)
 - 🔥  [掘金小册 -《Flutter 绘制指南 - 妙笔生花》](https://juejin.im/book/6844733827265331214)
 - 🔥  [掘金小册 -《Flutter 手势探索 - 执掌天下》](https://juejin.cn/book/6896378716427911181)

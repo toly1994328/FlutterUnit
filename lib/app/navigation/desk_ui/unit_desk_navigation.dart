@@ -55,8 +55,7 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
             children: [
               UnitRailNavigation(
                 selectedIndex: _currentIndex,
-                onItemClick: _onItemClick, itemData: {
-                //底栏图标
+                onItemClick: _onItemClick, itemData: const {
                 "组件集录": TolyIcon.icon_layout,
                 "收藏集录": TolyIcon.icon_star,
                 "绘制集录": Icons.palette,
