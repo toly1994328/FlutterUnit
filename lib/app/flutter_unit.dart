@@ -1,3 +1,4 @@
+import 'package:algorithm/algorithm.dart';
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,27 +18,30 @@ class FlutterUnit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(builder: (_, state) {
-      return DefaultTextStyle(
-        style: TextStyle(fontFamily: state.fontFamily),
-        child: MaterialApp(
-          // routes: ,
-          showPerformanceOverlay: state.showPerformanceOverlay,
-          title: StrUnit.appName,
-          debugShowCheckedModeBanner: false,
-          onGenerateRoute: UnitRouters.generateRoute,
-          localizationsDelegates: GlobalMaterialLocalizations.delegates,
-          supportedLocales: const [
-            Locale('zh', 'CN'),
-          ],
-          // themeMode: ThemeMode.light,
-          themeMode: state.themeMode,
-          darkTheme: AppTheme.darkTheme(state),
-          theme: AppTheme.lightTheme(state),
-          // theme: ThemeData(
-          //   primarySwatch: state.themeColor,
-          //   fontFamily: state.fontFamily,
-          // ),
-          home: const StandardUnitSplash(),
+      return SortStateScope(
+          notifier: SortState(),
+      child: DefaultTextStyle(
+          style: TextStyle(fontFamily: state.fontFamily),
+          child: MaterialApp(
+            // routes: ,
+            showPerformanceOverlay: state.showPerformanceOverlay,
+            title: StrUnit.appName,
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: UnitRouters.generateRoute,
+            localizationsDelegates: GlobalMaterialLocalizations.delegates,
+            supportedLocales: const [
+              Locale('zh', 'CN'),
+            ],
+            // themeMode: ThemeMode.light,
+            themeMode: state.themeMode,
+            darkTheme: AppTheme.darkTheme(state),
+            theme: AppTheme.lightTheme(state),
+            // theme: ThemeData(
+            //   primarySwatch: state.themeColor,
+            //   fontFamily: state.fontFamily,
+            // ),
+            home: const StandardUnitSplash(),
+          ),
         ),
       );
     });

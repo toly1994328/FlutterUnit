@@ -1,6 +1,6 @@
 // import 'package:authentication/authentication.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:utils/utils.dart';
+// import 'package:utils/algorithm.dart';
 //
 // import 'event.dart';
 // import 'state.dart';

@@ -1,3 +1,4 @@
+import 'package:algorithm/algorithm.dart';
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/code_gen/code_gen_page.dart';
@@ -56,8 +57,11 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
                 selectedIndex: _currentIndex,
                 onItemClick: _onItemClick, itemData: {
                 //底栏图标
-                "组件集录": TolyIcon.icon_layout, "收藏集录": TolyIcon.icon_star,
-                "绘制集录": Icons.palette, "代码生成": TolyIcon.icon_fast,
+                "组件集录": TolyIcon.icon_layout,
+                "收藏集录": TolyIcon.icon_star,
+                "绘制集录": Icons.palette,
+                "可视排序": Icons.sort,
+                "代码生成": TolyIcon.icon_fast,
                 "要点集录": TolyIcon.icon_bug,
                 },
               ),
@@ -71,6 +75,7 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
                     DeskWidgetPanel(),
                     CollectPageAdapter(),
                     GalleryUnit(),
+                    DeskSortPage(),
                     CodeGenPage(),
                     DeskPointPage(),
                   ],
@@ -90,4 +95,41 @@ class _UnitDeskNavigationState extends State<UnitDeskNavigation> {
   }
 }
 
+class DeskSortPage extends StatefulWidget {
+  const DeskSortPage({super.key});
+
+  @override
+  State<DeskSortPage> createState() => _DeskSortPageState();
+}
+
+class _DeskSortPageState extends State<DeskSortPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      endDrawer: Drawer(
+        child: SortSettings(),
+      ),
+      body: Column(
+        children: [
+          SimpleDeskTopBar(
+            leading: Text('可视化排序',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+          tail: Row(
+            children: [
+              SortBar(),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 18.0),
+                child: VerticalDivider(
+                  width: 32,
+                ),
+              )
+            ],
+          ),
+          ),
+
+          Expanded(child: SortPage()),
+        ],
+      ),
+    );
+  }
+}
 
