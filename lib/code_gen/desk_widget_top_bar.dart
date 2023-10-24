@@ -1,8 +1,6 @@
+import 'package:app/app.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
-
-import '../widget_ui/desk_ui/widget_panel/window_buttons.dart';
 
 
 

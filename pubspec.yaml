@@ -53,9 +53,6 @@ dependencies:
   flutter_markdown: ^0.6.4 # markdown
 #  file_selector: ^0.9.2+2
   file_picker: ^5.5.0
-  window_manager: ^0.3.6 #桌面尺寸
-
-
 
   widget_repository:
     path: packages/widget_repository

@@ -1,11 +1,10 @@
+import 'package:app/app.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/point_system/github_model/github_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../app/plateform_adapter/window/windows_adapter.dart';
-import '../../../widget_ui/desk_ui/widget_panel/window_buttons.dart';
 import '../../blocs/point_bloc/point_bloc.dart';
 import '../../blocs/point_bloc/point_event.dart';
 import '../../github_model/repository.dart';

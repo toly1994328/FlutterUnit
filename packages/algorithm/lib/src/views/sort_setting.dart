@@ -37,6 +37,18 @@ class _SortSettingsState extends State<SortSettings> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: BackButton(),
+        actions: [
+          IconButton(onPressed: (){
+            SortState state = SortStateScope.of(context);
+            state.config =state.config.copyWith(
+                count:  int.parse(_count.text),
+                duration: Duration(
+                  microseconds: int.parse(_duration.text),
+                ),
+                seed: int.parse(_seed.text)
+            );
+            Navigator.of(context).pop();
+          }, icon: Icon(Icons.check))],
         iconTheme: IconThemeData(color: Colors.black),
         titleTextStyle: TextStyle(
           color: Colors.black,
@@ -87,19 +99,19 @@ class _SortSettingsState extends State<SortSettings> {
               ],
             ),
             Spacer(),
-            ElevatedButton(
-                onPressed: () {
-                  SortState state = SortStateScope.of(context);
-                  state.config =state.config.copyWith(
-                    count:  int.parse(_count.text),
-                    duration: Duration(
-                      microseconds: int.parse(_duration.text),
-                    ),
-                    seed: int.parse(_seed.text)
-                  );
-                  Navigator.of(context).pop();
-                },
-                child: Text('确定设置'))
+            // ElevatedButton(
+            //     onPressed: () {
+            //       SortState state = SortStateScope.of(context);
+            //       state.config =state.config.copyWith(
+            //         count:  int.parse(_count.text),
+            //         duration: Duration(
+            //           microseconds: int.parse(_duration.text),
+            //         ),
+            //         seed: int.parse(_seed.text)
+            //       );
+            //       Navigator.of(context).pop();
+            //     },
+            //     child: Text('确定设置'))
           ],
         ),
       ),

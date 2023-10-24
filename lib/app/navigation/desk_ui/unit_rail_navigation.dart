@@ -2,7 +2,6 @@ import 'package:app/app.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/navigation/desk_ui/theme_model_switch_icon.dart';
-import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UnitRailNavigation extends StatefulWidget {
