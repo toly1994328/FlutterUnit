@@ -1,6 +1,9 @@
+import 'package:algorithm/algorithm.dart';
 import 'package:flutter/material.dart';
 
-import '../data_scope/state.dart';
+import '../../data_scope/state.dart';
+
+
 
 class SortButton extends StatelessWidget {
   const SortButton({super.key});

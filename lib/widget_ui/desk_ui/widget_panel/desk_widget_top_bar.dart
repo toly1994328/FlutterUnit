@@ -1,10 +1,8 @@
+import 'package:app/app.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
-
 
 import 'desk_search_bar.dart';
-import 'window_buttons.dart';
 
 class DeskWidgetTopBar extends StatefulWidget {
   final ValueChanged<int> onTabPressed;

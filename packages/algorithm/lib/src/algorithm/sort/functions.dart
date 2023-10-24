@@ -26,7 +26,7 @@ Map<String, SortFunction> sortFunctionMap = {
   'cycle': cycleSort,
   'heap': heapSort,
   'quick': quickSort,
-  'mergeSort': mergeSort,
+  'merge': mergeSort,
 };
 
 Map<String, String> sortNameMap = {
@@ -41,6 +41,6 @@ Map<String, String> sortNameMap = {
   'cycle': '循环排序',
   'heap': '堆排序',
   'quick': '快速排序',
-  'mergeSort': '归并排序',
+  'merge': '归并排序',
 };
 

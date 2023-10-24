@@ -17,6 +17,8 @@ dependencies:
   refresh: ^1.0.1
   storage:
     path: ../storage
+  algorithm:
+    path: ../algorithm
   utils:
     path: ../utils
   app:

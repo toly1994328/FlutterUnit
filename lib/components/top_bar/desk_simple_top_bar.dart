@@ -1,7 +1,5 @@
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-
-import '../../app/plateform_adapter/window/windows_adapter.dart';
-import '../../widget_ui/desk_ui/widget_panel/window_buttons.dart';
 
 class SimpleDeskTopBar extends StatelessWidget {
   final Widget? leading;

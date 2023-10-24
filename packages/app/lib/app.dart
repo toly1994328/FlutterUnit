@@ -24,3 +24,6 @@ export 'app/style/gap.dart';
 export 'app/style/shape/coupon_shape_border.dart';
 export 'app/style/shape/techno_shape.dart';
 export 'app/style/behavior/no_scroll_behavior.dart';
+
+export 'package:app/platform_adapter/window/windows_adapter.dart';
+export 'package:app/platform_adapter/views/window_buttons.dart';

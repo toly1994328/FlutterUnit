@@ -1,7 +1,7 @@
+import 'package:app/app.dart';
 import 'package:components/toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/plateform_adapter/window/windows_adapter.dart';
 import 'package:flutter_unit/app/utils/convert_man.dart';
 import 'package:flutter_unit/point_system/blocs/point_system_bloc.dart';
 import 'package:flutter_unit/point_system/github_model/github_model.dart';

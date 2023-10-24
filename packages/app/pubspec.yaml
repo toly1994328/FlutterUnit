@@ -14,6 +14,7 @@ dependencies:
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.1 # xml 固化
   connectivity_plus: ^4.0.2
+  window_manager: ^0.3.7 #桌面尺寸
   storage:
     path: ../storage
   widget_repository:

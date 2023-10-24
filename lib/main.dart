@@ -1,7 +1,7 @@
+import 'package:app/app.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'app/plateform_adapter/window/windows_adapter.dart';
 import 'app/bloc_wrapper.dart';
 import 'app/flutter_unit.dart';
 

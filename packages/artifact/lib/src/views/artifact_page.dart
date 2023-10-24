@@ -1,8 +1,10 @@
 import 'dart:math';
 
+import 'package:algorithm/algorithm.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../blocs/columnize/bloc.dart';
 import '../blocs/exp.dart';
 import '../repositories/exp.dart';
@@ -31,7 +33,7 @@ class ArtifactPage extends StatefulWidget {
 
 const List<String> kArtifactInfo = [
   '分类收录张风捷特烈的博客文章',
-  'Flutter 框架探索，七剑合璧',
+  '可视化排序算法',
   '收录布局方案，提供界面样板',
   'Flutter 知识小要点，一网打尽',
 ];
@@ -40,6 +42,7 @@ class _ArtifactPageState extends State<ArtifactPage>
     with SingleTickerProviderStateMixin {
   late TabController controller;
   List<String> data = [];
+
   @override
   void initState() {
     super.initState();
@@ -62,13 +65,17 @@ class _ArtifactPageState extends State<ArtifactPage>
   @override
   Widget build(BuildContext context) {
     double bottom = MediaQuery.of(context).padding.bottom;
+    String name = SortStateScope.of(context).config.name;
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ColumnizeBloc>(create: (_) => ColumnizeBloc(cRepository)..init()),
-        BlocProvider<ArticleBloc>(create: (_) => ArticleBloc(aRepository)..init()),
+        BlocProvider<ColumnizeBloc>(
+            create: (_) => ColumnizeBloc(cRepository)..init()),
+        BlocProvider<ArticleBloc>(
+            create: (_) => ArticleBloc(aRepository)..init()),
       ],
       child: Scaffold(
+        endDrawer: SortSettings(),
         backgroundColor: const Color(0xffF2F3F5),
         bottomNavigationBar: Container(height: bottom),
         body: NestedScrollView(
@@ -78,7 +85,31 @@ class _ArtifactPageState extends State<ArtifactPage>
             controller: controller,
             children: [
               TolyArticleScrollPage(),
-              BuildingPanel(),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                            onTap: () {
+                              _launchURL('https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart');
+                            },
+                            child: Text(
+                              '查看排序源码',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            )),
+                        Spacer(),
+                        SortSelector(),
+                      ],
+                    ),
+                  ),
+                  Expanded(child: SortPaper()),
+                ],
+              ),
               BuildingPanel(),
               BuildingPanel(),
             ],
@@ -86,6 +117,15 @@ class _ArtifactPageState extends State<ArtifactPage>
         ),
       ),
     );
+  }
+
+  _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(uri,mode: LaunchMode.externalApplication);
+    } else {
+      debugPrint('Could not launch $url');
+    }
   }
 
   List<Widget> _buildAppBar(BuildContext context, bool innerBoxIsScrolled) {
@@ -100,6 +140,7 @@ class _ArtifactPageState extends State<ArtifactPage>
         snap: true,
         pinned: true,
         backgroundColor: Colors.white,
+        leading: _curIndex == 1 ? SortButton() : null,
 
         // flexibleSpace: Image.network(
         //   'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/448d4eb270f44edab0192a1281141954~tplv-k3u1fbpfcp-watermark.image?',
@@ -146,7 +187,14 @@ class _ArtifactPageState extends State<ArtifactPage>
           ],
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded))
+          if (_curIndex == 1)
+            IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+                icon: Icon(Icons.settings)),
+          if (_curIndex != 1)
+            IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded))
         ],
         // title: Padding(
         //   padding: const EdgeInsets.only(right: 8.0),
@@ -161,7 +209,7 @@ class _ArtifactPageState extends State<ArtifactPage>
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '七剑合璧',
+              text: '可视排序',
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),

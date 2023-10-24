@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   components:
     path: ../components
+  app:
+    path: ../app
 dev_dependencies:
   flutter_test:
     sdk: flutter
