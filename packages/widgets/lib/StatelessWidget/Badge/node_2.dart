@@ -5,42 +5,28 @@ import 'package:flutter/material.dart';
 /// 说明:
 //    {
 //      "widgetId": 258,
-//      "name": 'Badge 标签不可视',
+//      "name": 'Badge 标签标记',
 //      "priority": 2,
-//      "subtitle": "【isLabelVisible】 : 是否显示标题   【bool?】\n"
-//      "该案例在点击时让标签消失",
+//      "subtitle":  "【label】 : 标题组件   【Widget?】\n"
+//          "【textStyle】 : 标题颜色  【TextStyle?】\n"
+//          "【textColor】 : 标题样式  【Color?】\n"
+//          "【padding】 : 标题边距  【EdgeInsetsGeometry?】\n"
+//          "【largeSize】 : 有标签时高度   【double?】\n",
 //    }
 
-class BadgeVisibleDemo extends StatefulWidget {
-  const BadgeVisibleDemo({Key? key}) : super(key: key);
-
-  @override
-  State<BadgeVisibleDemo> createState() => _BadgeVisibleDemoState();
-}
-
-class _BadgeVisibleDemoState extends State<BadgeVisibleDemo> {
-
-  bool _visible = true;
+class BadgeLabelDemo extends StatelessWidget {
+  const BadgeLabelDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _onTap,
-      child: Badge(
-        backgroundColor: Colors.red,
-        label: Text('99+'),
-        alignment: AlignmentDirectional(36-16,-2),
-        largeSize: 14,
-        smallSize: 6,
-        isLabelVisible: _visible,
-        child: Icon(Icons.supervised_user_circle,size: 36,),
-      ),
+    return const Badge(
+      backgroundColor: Colors.red,
+      label: Text('99'),
+      textStyle: TextStyle(fontSize: 8,color: Colors.red),
+      padding: EdgeInsets.symmetric(horizontal: 8,vertical: 2),
+      largeSize: 14,
+      child: Icon(Icons.message,size: 36,color: Colors.indigo,),
     );
   }
-
-  void _onTap() {
-    setState(() {
-      _visible = false;
-    });
-  }
 }
+
