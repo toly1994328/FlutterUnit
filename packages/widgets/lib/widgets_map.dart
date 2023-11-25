@@ -37,7 +37,8 @@ class WidgetsMap {
       case "Badge":
         return [
           const BadgeDemo(),
-          const BadgeVisibleDemo(),
+          const BadgeLabelDemo(),
+          const BadgeAlignOffsetDemo(),
         ];
       case "DateRangePickerDialog":
         return [

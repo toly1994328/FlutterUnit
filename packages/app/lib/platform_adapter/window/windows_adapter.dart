@@ -38,6 +38,7 @@ class DragToMoveAreaNoDouble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if(Platform.isAndroid||Platform.isIOS) return child;
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onPanStart: (details) {
