@@ -8,8 +8,9 @@ import 'package:flutter/material.dart';
 //      "priority": 1,
 //      "name": "BackButton属性",
 //      "subtitle": "【color】: 颜色   【Color】\n"
+//          "【style】: 按钮样式   【ButtonStyle?】\n"
 //          "【onPressed】: 点击事件   【Function】\n"
-//          "   onPressed为空会退出当前栈",
+//          " onPressed为空会退出当前栈",
 //    }
 class CustomBackButton extends StatelessWidget {
   CustomBackButton({Key? key}) : super(key: key);

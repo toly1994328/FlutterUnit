@@ -87,26 +87,25 @@ class _StandardHomePageState extends State<StandardHomePage>
       // SliverOverlapAbsorber(
       //   sliver:
       SliverPinnedHeader(
-        color: isDark ? Colors.black : Colors.white,
-        child: TabBar(
-          onTap: _switchTab,
-          indicatorSize: TabBarIndicatorSize.label,
-          isScrollable: true,
-          indicator: RoundRectTabIndicator(
-            borderSide: BorderSide(color: themeColor, width: 3),
-          ),
-          labelStyle: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-          controller: tabController,
-          labelColor: themeColor,
-          indicatorWeight: 3,
-          unselectedLabelColor: Colors.grey,
-          indicatorColor: themeColor,
-          tabs: _tabs.map((String name) => Tab(text: name)).toList(),
-        ),
-      ),
+          color: isDark ? Colors.black : Colors.white,
+          child: TabBar(
+            onTap: _switchTab,
+            indicatorSize: TabBarIndicatorSize.label,
+            isScrollable: true,
+            indicator: RoundRectTabIndicator(
+              borderSide: BorderSide(color: themeColor, width: 3),
+            ),
+            labelStyle: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+            controller: tabController,
+            labelColor: themeColor,
+            indicatorWeight: 3,
+            unselectedLabelColor: Colors.grey,
+            indicatorColor: themeColor,
+            tabs: _tabs.map((String name) => Tab(text: name)).toList(),
+          )),
       // handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
       // ),
     ];

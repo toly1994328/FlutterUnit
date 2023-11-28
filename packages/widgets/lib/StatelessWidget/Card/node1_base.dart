@@ -1,5 +1,7 @@
 
 
+import 'package:flutter/material.dart';
+
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -13,8 +15,6 @@
 //          "【color】: 颜色   【Color】\n"
 //          "【child】: 孩子   【Widget】",
 //    }
-import 'package:flutter/material.dart';
-
 class CustomCard extends StatelessWidget {
   const CustomCard({Key? key}) : super(key: key);
 
