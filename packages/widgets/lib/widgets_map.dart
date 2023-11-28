@@ -1419,6 +1419,30 @@ class WidgetsMap {
         return [
           const SliverMainAxisGroupDemo(),
         ];
+      case "BackButtonIcon":
+        return [
+          const BackButtonIconDemo(),
+        ];
+      case "DrawerButtonIcon":
+        return [
+          const DrawerButtonIconDemo(),
+        ];
+      case "CloseButtonIcon":
+        return [
+          const CloseButtonIconDemo(),
+        ];
+      case "EndDrawerButtonIcon":
+        return [
+          const EndDrawerButtonIconDemo(),
+        ];
+      case "EndDrawerButton":
+        return [
+          const EndDrawerButtonDemo(),
+        ];
+      case "DrawerButton":
+        return [
+          const DrawerButtonDemo(),
+        ];
       default:
         return [];
     }
