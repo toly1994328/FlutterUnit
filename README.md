@@ -32,10 +32,10 @@
 #### 当前Flutter 版本
 
 ```
-Flutter 3.13.3 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 2524052335 (3 days ago) • 2023-09-06 14:32:31 -0700
-Engine • revision b8d35810e9
-Tools • Dart 3.1.1 • DevTools 2.25.0
+Flutter 3.16.3 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision b0366e0a3f (2 weeks ago) • 2023-12-05 19:46:39 -0800
+Engine • revision 54a7145303
+Tools • Dart 3.2.3 • DevTools 2.28.4
 ```
 
 #### 构建命令,产出应用
