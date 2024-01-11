@@ -1,6 +1,5 @@
 import 'package:app/app.dart';
-import 'package:components/components.dart';
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,7 +31,7 @@ class Hello {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(title: Text('代码高亮样式')),
-      body: BlocBuilder<AppBloc, AppState>(
+      body: BlocBuilder<AppConfigBloc, AppConfigState>(
           builder: (_, state) => _buildFontCell(context,
               Cons.codeThemeSupport.keys.toList(), state.codeStyleIndex)),
     );
@@ -46,7 +45,7 @@ class Hello {
         a: 0.95,
         duration: const Duration(milliseconds: 200),
       onPressed: (){
-        BlocProvider.of<AppBloc>(context).switchCoderTheme(i);
+        BlocProvider.of<AppConfigBloc>(context).switchCoderTheme(i);
       },
       child: Stack(
         fit: StackFit.passthrough,

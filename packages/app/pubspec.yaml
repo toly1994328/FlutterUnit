@@ -4,7 +4,7 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -17,10 +17,12 @@ dependencies:
   window_manager: ^0.3.7 #桌面尺寸
   storage:
     path: ../storage
-  widget_repository:
-    path: ../widget_repository
+  widget_module:
+    path: ../widget_module
   components:
     path: ../components
+  toly_ui:
+    path: ../toly_ui
 dev_dependencies:
   flutter_test:
     sdk: flutter

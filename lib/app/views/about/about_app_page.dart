@@ -4,8 +4,7 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/app/views/time_line/flutter_unit_time_line.dart';
-import 'package:components/toly_ui/toly_ui.dart';
-
+import 'package:toly_ui/toly_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutAppPage extends StatelessWidget {

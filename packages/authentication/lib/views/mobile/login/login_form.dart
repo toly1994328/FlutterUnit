@@ -2,7 +2,7 @@ import 'package:app/app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
 
 import '../../../authentication.dart';
@@ -67,7 +67,7 @@ class _LoginFromState extends State<LoginFrom> {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.of(context).pushReplacementNamed(UnitRouter.register);
+            // Navigator.of(context).pushReplacementNamed(UnitRouter.register);
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),

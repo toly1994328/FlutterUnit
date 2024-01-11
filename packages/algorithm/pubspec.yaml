@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   components:
     path: ../components
+  toly_ui:
+    path: ../toly_ui
   app:
     path: ../app
 dev_dependencies:

@@ -1,11 +1,16 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../app_config/bloc/state.dart';
+import '../style/transition/fade_page_transitions_builder.dart';
+import '../style/transition/slide_transition/slide_page_transition_builder.dart';
+
 class AppTheme {
-  static ThemeData darkTheme(AppState state) {
+  static ThemeData darkTheme(AppConfigState state) {
     Color scaffoldBackgroundColor = const Color(0xff010201);
 
 
@@ -18,7 +23,13 @@ class AppTheme {
 
     return ThemeData(
       scaffoldBackgroundColor: scaffoldBackgroundColor,
-
+      pageTransitionsTheme: const PageTransitionsTheme(builders: {
+        TargetPlatform.android: SlidePageTransitionsBuilder(),
+        TargetPlatform.iOS: SlidePageTransitionsBuilder(),
+        TargetPlatform.macOS: FadePageTransitionsBuilder(),
+        TargetPlatform.windows: FadePageTransitionsBuilder(),
+        TargetPlatform.linux: FadePageTransitionsBuilder(),
+      }),
       tabBarTheme: TabBarTheme(
         dividerColor:  Colors.transparent,
       ),
@@ -52,7 +63,7 @@ class AppTheme {
     );
   }
 
-  static ThemeData lightTheme(AppState state) {
+  static ThemeData lightTheme(AppConfigState state) {
     SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.light,
@@ -76,6 +87,13 @@ class AppTheme {
         space: px1,
         thickness: px1,
       ),
+      pageTransitionsTheme: const PageTransitionsTheme(builders: {
+        TargetPlatform.android: SlidePageTransitionsBuilder(),
+        TargetPlatform.iOS: SlidePageTransitionsBuilder(),
+        TargetPlatform.macOS: FadePageTransitionsBuilder(),
+        TargetPlatform.windows: FadePageTransitionsBuilder(),
+        TargetPlatform.linux: FadePageTransitionsBuilder(),
+      }),
       tabBarTheme: TabBarTheme(
         dividerColor:  Colors.transparent,
         splashFactory: NoSplash.splashFactory,

@@ -2,8 +2,7 @@ import 'package:app/app.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:components/toly_ui/toly_ui.dart';
-
+import 'package:toly_ui/toly_ui.dart';
 /// create by 张风捷特烈 on 2020-04-10
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -17,7 +16,7 @@ class ThemeColorSettingPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: UnitColor.scaffoldBgLight,
       appBar: const UnitAppbar(title:'主题色设置'),
-      body: BlocBuilder<AppBloc, AppState>(
+      body: BlocBuilder<AppConfigBloc, AppConfigState>(
           builder: (_, state) => _buildCell(
               context, Cons.kThemeColorSupport.keys.toList(), state.themeColor)),
     );
@@ -36,7 +35,7 @@ class ThemeColorSettingPage extends StatelessWidget {
           .map((MaterialColor c) => FeedbackWidget(
               a: 0.95,
               duration: const Duration(milliseconds: 200),
-              onPressed: () => BlocProvider.of<AppBloc>(context).switchThemeColor(c),
+              onPressed: () => BlocProvider.of<AppConfigBloc>(context).switchThemeColor(c),
               child: GridTile(
                   header: Container(
                     decoration: BoxDecoration(

@@ -1,4 +1,4 @@
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 
 class AttrUnitPage extends StatelessWidget {

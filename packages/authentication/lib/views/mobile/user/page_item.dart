@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:app_update/views/update_red_point.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -26,13 +27,13 @@ class MePageItem extends StatelessWidget {
             height: 10,
           ),
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_them, '应用设置', UnitRouter.setting),
+          _buildItem(context, TolyIcon.icon_them, '应用设置', '/settings'),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_layout, '数据管理', UnitRouter.data_manage),
+              context, TolyIcon.icon_layout, '数据管理', '/data_manage'),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_collect, '我的收藏', UnitRouter.collect,),
+              context, TolyIcon.icon_collect, '我的收藏', '/collect',),
           Gap.sfl10,
 
           Stack(
@@ -41,16 +42,16 @@ class MePageItem extends StatelessWidget {
                 context,
                 Icons.update,
                 '版本信息',
-                UnitRouter.version_info,
+                '/settings/version',
               ),
               const Positioned(left: 40, top: 10, child: UpdateRedPoint())
             ],
           ),
           const Divider(),
-          _buildItem(context, Icons.info, '关于应用', UnitRouter.about_app),
+          _buildItem(context, Icons.info, '关于应用', '/about_app'),
 
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_kafei, '联系本王', UnitRouter.about_me),
+          _buildItem(context, TolyIcon.icon_kafei, '联系本王', '/about_me'),
         ],
       ),
     );
@@ -69,11 +70,7 @@ class MePageItem extends StatelessWidget {
             Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
         onTap: () {
           if (linkTo.isNotEmpty) {
-            Object? arg ;
-            if(linkTo==UnitRouter.collect){
-              arg = true;
-            }
-            Navigator.of(context).pushNamed(linkTo,arguments: arg);
+            context.push(linkTo);
             if (onTap != null) onTap();
           }
         },

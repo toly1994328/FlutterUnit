@@ -21,7 +21,6 @@ dependencies:
   equatable: ^2.0.5 # 相等辅助
   stream_transform: ^2.1.0
 
-  archive: ^3.4.9 # 解压
   package_info_plus: ^4.1.0 # 应用包信息
   r_upgrade: ^0.4.2 # 应用升级
   webview_flutter: ^4.4.2
@@ -62,6 +61,8 @@ dependencies:
     path: packages/storage
   widgets:
     path: packages/widgets
+  draw_system:
+    path: packages/draw_system
   artifact:
     path: packages/artifact
   algorithm:
@@ -74,8 +75,12 @@ dependencies:
     path: packages/app_update
   components:
     path: packages/components
+  toly_ui:
+    path: packages/toly_ui
   widget_module:
     path: packages/widget_module
+  treasure_tools:
+    path: packages/treasure_tools
 #  old_fancy_mobile_ui:
 #    path: packages/old_fancy_mobile_ui
 

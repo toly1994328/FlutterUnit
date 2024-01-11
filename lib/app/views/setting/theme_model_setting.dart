@@ -1,7 +1,5 @@
 import 'package:app/app.dart';
-import 'package:app/app/style/unit_color.dart';
-import 'package:components/project_ui/unit_app_bar.dart';
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,7 +9,7 @@ class ThemeModelSetting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    ThemeMode mode = context.select<AppBloc,ThemeMode>((bloc) => bloc.state.themeMode);
+    ThemeMode mode = context.select<AppConfigBloc,ThemeMode>((bloc) => bloc.state.themeMode);
     Color iconColor  = Theme.of(context).primaryColor;
     return     Scaffold(
       appBar: AppBar(title: Text('深色模式')),
@@ -31,7 +29,7 @@ class ThemeModelSetting extends StatelessWidget {
               }else{
                 newModel = ThemeMode.light;
               }
-              context.read<AppBloc>().changeThemeMode(newModel);
+              context.read<AppConfigBloc>().changeThemeMode(newModel);
              },
             // trailing: _nextIcon(context),
             // : () => Navigator.of(context).pushNamed(UnitRouter.font_setting),
@@ -47,7 +45,7 @@ class ThemeModelSetting extends StatelessWidget {
         ListTile(
             title: Text('浅色模式'),
             onTap: (){
-              context.read<AppBloc>().changeThemeMode(ThemeMode.light);
+              context.read<AppConfigBloc>().changeThemeMode(ThemeMode.light);
             },
             trailing: mode == ThemeMode.light ? Icon(Icons.check, size: 20, color: iconColor) : null,
           ),
@@ -55,7 +53,7 @@ class ThemeModelSetting extends StatelessWidget {
           ListTile(
             title: Text('深色模式'),
             onTap: (){
-              context.read<AppBloc>().changeThemeMode(ThemeMode.dark);
+              context.read<AppConfigBloc>().changeThemeMode(ThemeMode.dark);
             },
             trailing: mode == ThemeMode.dark ? Icon(Icons.check, size: 20, color: iconColor) : null,
           )

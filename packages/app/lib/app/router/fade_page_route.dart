@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import 'cupertino_back_gesture_detector.dart';
+import '../style/transition/slide_transition/cupertino_back_gesture_detector.dart';
 
 class FadePageRoute<T> extends MaterialPageRoute<T> {
   final Widget child;
