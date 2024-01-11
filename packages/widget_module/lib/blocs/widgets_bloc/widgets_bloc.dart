@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:app/app.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:widget_repository/widget_repository.dart';
+
+import '../../data/exp.dart';
 
 part 'widgets_event.dart';
 
@@ -25,7 +28,8 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   /// 切换页签，以 [family] 为过滤项
   void _onEventTabTap(EventTabTap event, Emitter<WidgetsState> emit) async {
     emit(const WidgetsLoading(operate: LoadOperate.load));
-    WidgetFilter filter = WidgetFilter.family(event.family);
+    int size = isDesk?1000:20;
+    WidgetFilter filter = WidgetFilter.family(event.family,pageSize: size);
     try {
       final List<WidgetModel> widgets = await repository.searchWidgets(filter);
       emit(WidgetsLoaded(

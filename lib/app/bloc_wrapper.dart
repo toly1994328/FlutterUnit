@@ -1,14 +1,13 @@
 import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:authentication/authentication.dart';
+import 'package:draw_system/draw_system.dart';
+import 'package:flutter_unit/app_stater/app_starter.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/painter_system/bloc/gallery_unit/bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
-import 'package:widget_repository/widget_repository.dart';
-
-
+import 'package:widget_module/widget_module.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
@@ -28,26 +27,37 @@ class BlocWrapper extends StatefulWidget {
 class _BlocWrapperState extends State<BlocWrapper> {
   final WidgetRepository repository = const WidgetDbRepository();
 
-  final CategoryBloc categoryBloc= CategoryBloc(repository: CategoryDbRepository());
+  final CategoryBloc categoryBloc = CategoryBloc(repository: CategoryDbRepository());
   final AuthRepository authRepository = HttpAuthRepository();
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
-          // 全局 bloc : 维护应用存储状态、更新、认证
-          BlocProvider<AuthBloc>(create: (_) => AuthBloc(repository: authRepository)..add(const AppStarted())),
-          BlocProvider<AppBloc>(create: (_) => AppBloc(AppStateRepository())..initApp()),
-          BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
-          BlocProvider<UserBloc>(create: (_) => UserBloc()),
+      providers: [
+        /// 应用启动器
+        BlocProvider<AppStartBloc>(
+            create: (_) => AppStartBloc(minStartDurationMs: 600)..startApp()),
 
+        // 全局 bloc : 维护应用存储状态、更新、认证
+        BlocProvider<AuthBloc>(
+            create: (_) => AuthBloc(repository: authRepository)),
+        BlocProvider<AppConfigBloc>(
+            create: (_) => AppConfigBloc(AppStateRepository())),
+        BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
+        BlocProvider<UserBloc>(create: (_) => UserBloc()),
 
-          BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
-          BlocProvider<CategoryBloc>(create: (_) => categoryBloc),
-          BlocProvider<LikeWidgetBloc>(create: (_) => LikeWidgetBloc(repository: repository)),
-          BlocProvider<CategoryWidgetBloc>(create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
-          BlocProvider<GalleryUnitBloc>(create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
-        ], child: widget.child);
+        BlocProvider<WidgetsBloc>(
+            create: (_) => WidgetsBloc(repository: repository)),
+        BlocProvider<CategoryBloc>(create: (_) => categoryBloc),
+        BlocProvider<LikeWidgetBloc>(
+            create: (_) => LikeWidgetBloc(repository: repository)),
+        BlocProvider<CategoryWidgetBloc>(
+            create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
+        BlocProvider<GalleryUnitBloc>(
+            create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
+      ],
+      child: widget.child,
+    );
   }
 
   @override

@@ -1,6 +1,6 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:toly_ui/toly_ui.dart';
 
 class BugUnitPage extends StatelessWidget {
   const BugUnitPage({Key? key}) : super(key: key);
@@ -26,7 +26,7 @@ class BugUnitPage extends StatelessWidget {
               children: <Widget>[
                 FeedbackWidget(
                   onPressed: (){
-                    Navigator.of(context).pushNamed(UnitRouter.issues_point);
+                    // Navigator.of(context).pushNamed(UnitRouter.issues_point);
                   },
                   child: const CircleImage(
                     image: AssetImage('assets/images/icon_head.webp'),

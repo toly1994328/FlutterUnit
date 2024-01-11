@@ -2,8 +2,9 @@
 import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -79,7 +80,7 @@ class VersionInfo extends StatelessWidget {
             ListTile(
               title: const Text('应用详情',style: labelStyle,),
               trailing: _nextIcon(context),
-              onTap: () => Navigator.of(context).pushNamed(UnitRouter.about_app),
+              onTap: () => context.push('/about_app'),
             ),
             const Divider(height: 1,indent: 10),
             const AppUpdatePanel(),

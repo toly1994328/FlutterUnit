@@ -23,13 +23,13 @@ packages:
     source: path
     version: "0.0.1"
   archive:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: archive
-      sha256: "7b875fd4a20b165a3084bd2d210439b22ebc653f21cea4842729c0c30c82596b"
+      sha256: "22600aa1e926be775fa5fe7e6894e7fb3df9efda8891c73f70fb3262399a432d"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.4.9"
+    version: "3.4.10"
   args:
     dependency: transitive
     description:
@@ -179,6 +179,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.4.0"
+  draw_system:
+    dependency: "direct main"
+    description:
+      path: "packages/draw_system"
+      relative: true
+    source: path
+    version: "0.0.1"
   equatable:
     dependency: "direct main"
     description:
@@ -763,6 +770,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.1"
+  toly_ui:
+    dependency: "direct main"
+    description:
+      path: "packages/toly_ui"
+      relative: true
+    source: path
+    version: "0.0.1"
+  treasure_tools:
+    dependency: "direct main"
+    description:
+      path: "packages/treasure_tools"
+      relative: true
+    source: path
+    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:
@@ -1000,5 +1021,5 @@ packages:
     source: hosted
     version: "1.0.1"
 sdks:
-  dart: ">=3.2.0 <4.0.0"
+  dart: ">=3.2.3 <4.0.0"
   flutter: ">=3.10.0"

@@ -1,6 +1,7 @@
 
 import 'package:sqflite/sqflite.dart';
-import 'package:widget_repository/widget_repository.dart';
+import 'package:widget_module/widget_module.dart';
+
 
 import '../models/widget_po.dart';
 
@@ -86,6 +87,15 @@ class WidgetDao {
     return 0;
 
   }
+
+ Future<Map<String, dynamic>?> queryWidgetByName(String name) async{
+   String sql = "SELECT * FROM widget WHERE name = ?";
+   List<Map<String, Object?>> result = await db.rawQuery(sql, [name]);
+   if(result.isNotEmpty){
+     return result.first;
+   }
+   return null;
+ }
 }
 
 

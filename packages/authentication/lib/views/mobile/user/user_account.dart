@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:authentication/blocs/authentic/bloc.dart';
 import 'package:authentication/blocs/user/bloc.dart';
-import 'package:components/components.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

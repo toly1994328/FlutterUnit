@@ -1,8 +1,8 @@
-import 'package:components/toly_ui/toly_ui.dart';
-import 'package:flutter/material.dart';
-import 'package:widget_repository/widget_repository.dart';
 
-import '../../model/app_style.dart';
+import 'package:flutter/material.dart';
+import 'package:toly_ui/toly_ui.dart';
+import 'package:widget_module/widget_module.dart';
+
 import '../res/toly_icon.dart';
 
 

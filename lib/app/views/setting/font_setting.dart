@@ -1,6 +1,5 @@
 import 'package:app/app.dart';
-import 'package:components/components.dart';
-import 'package:components/toly_ui/toly_ui.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +12,7 @@ class FontSettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppBloc, AppState>(
+    return BlocBuilder<AppConfigBloc, AppConfigState>(
       builder: (_, state) =>Scaffold(
       appBar: AppBar(title: Text('字体设置 - font setting',style: TextStyle(fontFamily:state.fontFamily ),)),
       body:  _buildFontCell(
@@ -34,7 +33,7 @@ class FontSettingPage extends StatelessWidget {
           active: fontFamily == e,
           fontFamily: e,
           onSelect: (font) {
-            BlocProvider.of<AppBloc>(context).switchFontFamily(font);
+            BlocProvider.of<AppConfigBloc>(context).switchFontFamily(font);
           },
         );
       }).toList(),

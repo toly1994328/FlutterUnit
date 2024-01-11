@@ -1,6 +1,6 @@
 import 'package:app/app.dart';
-import 'package:components/components.dart';
 import 'package:flutter/material.dart';
+import 'package:toly_ui/toly_ui.dart';
 
 
 import '../../data_scope/state.dart';
@@ -17,12 +17,14 @@ class DeskSortBar extends StatelessWidget {
 
     return DragToMoveAreaNoDouble(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
         height: 64,
         color: isDark? const Color(0xff2C3036):Colors.white,
         child: const Row(
           children: [
-            Text('可视化排序',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text('可视化排序',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+            ),
             Spacer(),
             SizedBox(
               width: 20,

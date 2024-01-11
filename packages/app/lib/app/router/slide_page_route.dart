@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'cupertino_back_gesture_detector.dart';
+import '../style/transition/slide_transition/cupertino_back_gesture_detector.dart';
 
 
 class SlidePageRoute<T> extends MaterialPageRoute<T> {

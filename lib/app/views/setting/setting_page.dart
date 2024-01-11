@@ -1,8 +1,9 @@
 import 'package:app/app.dart';
-import 'package:components/components.dart';
+import 'package:go_router/go_router.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_unit/app/navigation/overlay_tool_wrapper.dart';
+import 'package:flutter_unit/navigation/views/overlay_tool_wrapper.dart';
 
 
 import 'app_style_setting.dart';
@@ -27,16 +28,14 @@ class SettingPage extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
             title: const Text('深色模式', style:  TextStyle(fontSize: 16)),
-            subtitle: BlocBuilder<AppBloc,AppState>(
+            subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
               builder: (_,state)=>Text(
                   themeMode2Str[state.themeMode]!
                   , style:  const TextStyle(fontSize: 12,color: Colors.grey)
               ),
             ),
             trailing: _nextIcon(context),
-            onTap: (){
-              Navigator.of(context).push(SlidePageRoute(child: ThemeModelSetting()));
-            },
+            onTap: ()=> context.push('/settings/dark_mode'),
           ),
           divider,
           ListTile(
@@ -45,14 +44,14 @@ class SettingPage extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
             title: const Text('主题色设置', style:  TextStyle(fontSize: 16)),
-            subtitle: BlocBuilder<AppBloc,AppState>(
+            subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
               builder: (_,state)=>Text(
                   Cons.kThemeColorSupport[state.themeColor]!,
                 style: TextStyle(color: state.themeColor,fontSize: 12),
               ),
             ),
             trailing: _nextIcon(context),
-            onTap: () => Navigator.of(context).pushNamed(UnitRouter.theme_color_setting),
+            onTap: () => context.push('/settings/theme_color'),
           ),
           // divider,
           Container( height: 10),
@@ -62,13 +61,13 @@ class SettingPage extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
             title: const Text('字体设置', style:  TextStyle(fontSize: 16)),
-            subtitle: BlocBuilder<AppBloc,AppState>(
+            subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
               builder: (_,state)=>Text(
                   state.fontFamily,style: TextStyle(fontSize: 12),
               ),
             ),
             trailing: _nextIcon(context),
-            onTap: () => Navigator.of(context).pushNamed(UnitRouter.font_setting),
+            onTap: () => context.push('/settings/font_setting'),
           ),
           divider,
           ListTile(
@@ -78,7 +77,7 @@ class SettingPage extends StatelessWidget {
             ),
             title: const Text('代码高亮样式', style:  TextStyle(fontSize: 16)),
             trailing: _nextIcon(context),
-            onTap: () => Navigator.of(context).pushNamed(UnitRouter.code_style_setting),
+            onTap: () => context.push('/settings/code_style'),
           ),
           // divider,
           Container( height: 10,),
@@ -96,7 +95,7 @@ class SettingPage extends StatelessWidget {
             ),
             title: const Text('版本信息', style:  TextStyle(fontSize: 16)),
             trailing: _nextIcon(context),
-            onTap: () => Navigator.of(context).pushNamed(UnitRouter.version_info),
+            onTap: () => context.push('/settings/version'),
           ),
         ],
       ),
@@ -119,7 +118,7 @@ class SettingPage extends StatelessWidget {
 //               )
 
   Widget _buildShowBg(BuildContext context) =>
-      BlocBuilder<AppBloc, AppState>(
+      BlocBuilder<AppConfigBloc, AppConfigState>(
           builder: (_, state) =>           TolySwitchListTile(
             secondary:Icon(
             TolyIcon.icon_background,
@@ -127,12 +126,12 @@ class SettingPage extends StatelessWidget {
           ),
             title: const Text('显示背景', style:  TextStyle(fontSize: 16,fontWeight: FontWeight.bold))
             , value: state.showBackGround, onChanged: (bool value) {
-      BlocProvider.of<AppBloc>(context).switchShowBg(value);
+      BlocProvider.of<AppConfigBloc>(context).switchShowBg(value);
           },
           ),);
 
   Widget _buildShowOver(BuildContext context) =>
-      BlocBuilder<AppBloc, AppState>(
+      BlocBuilder<AppConfigBloc, AppConfigState>(
           builder: (_, state) => TolySwitchListTile(
             secondary:Icon(
               TolyIcon.icon_background,
@@ -140,12 +139,12 @@ class SettingPage extends StatelessWidget {
             ),
             title: const Text('显示性能浮层', style:  TextStyle(fontSize: 16,fontWeight: FontWeight.bold))
             , value: state.showPerformanceOverlay, onChanged: (bool value) {
-            BlocProvider.of<AppBloc>(context).switchShowOver(value);
+            BlocProvider.of<AppConfigBloc>(context).switchShowOver(value);
           },
           ));
 
   Widget _buildShowTool(BuildContext context) =>
-      BlocBuilder<AppBloc, AppState>(
+      BlocBuilder<AppConfigBloc, AppConfigState>(
           builder: (_, state) => SwitchListTile(
             value: state.showOverlayTool,
             secondary: Icon(
@@ -159,7 +158,7 @@ class SettingPage extends StatelessWidget {
               }else{
                 OverlayToolWrapper.of(context).hideFloating();
               }
-              BlocProvider.of<AppBloc>(context).switchShowTool(show);
+              BlocProvider.of<AppConfigBloc>(context).switchShowTool(show);
             },
           ));
 

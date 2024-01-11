@@ -23,6 +23,8 @@ dependencies:
     path: ../utils
   app:
     path: ../app
+  toly_ui:
+    path: ../toly_ui
 dev_dependencies:
   flutter_test:
     sdk: flutter
