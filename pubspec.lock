@@ -950,13 +950,6 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  widget_repository:
-    dependency: "direct main"
-    description:
-      path: "packages/widget_repository"
-      relative: true
-    source: path
-    version: "0.0.1"
   widgets:
     dependency: "direct main"
     description:
