@@ -120,7 +120,11 @@ flutter:
       fonts:
         - asset: assets/fonts/CHOPS.TTF
 
-
+toly:
+  icon:
+    src_zip: ''
+    assets_dir: 'assets/iconfont'
+    file_dist: 'packages/app/lib/app/res/toly_icon.dart'
 
 
 
