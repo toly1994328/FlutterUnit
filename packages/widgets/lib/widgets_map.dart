@@ -1165,8 +1165,8 @@ class WidgetsMap {
         return [
           CustomListView(),
           HorizontalListView(),
-          SeparatedListView(),
           BuilderListView(),
+          SeparatedListView(),
         ];
       case "GridView":
         return [
