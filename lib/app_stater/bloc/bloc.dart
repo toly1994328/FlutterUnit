@@ -14,7 +14,7 @@ class AppStartBloc extends Cubit<AppStatus> {
   final AppStartRepository repository = const AppStartRepository();
 
   AppStartBloc({
-    this.minStartDurationMs = 20,
+    this.minStartDurationMs = 600,
   }) : super(const AppStarting());
 
   int _timeRecord = 0;

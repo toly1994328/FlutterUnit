@@ -57,7 +57,7 @@ class GalleryCardItem extends StatelessWidget {
                     Text(
                       galleryInfo.name,
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           shadows: [
                             Shadow(
@@ -83,11 +83,11 @@ class GalleryCardItem extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 8),
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 6),
                 child: Text(
                   galleryInfo.info,
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       color: isDark?Colors.white:Colors.grey, shadows: [
                     Shadow(
                         color: Theme.of(context).primaryColor,

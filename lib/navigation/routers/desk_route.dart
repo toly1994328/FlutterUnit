@@ -28,9 +28,9 @@ final RouteBase appNavRoute = ShellRoute(
           GoRoute(
             path: 'detail/:name',
             builder: (BuildContext context, GoRouterState state) {
-              Object? extra= state.extra;
+              Object? extra = state.extra;
               WidgetModel? model;
-              if(extra is WidgetModel){
+              if (extra is WidgetModel) {
                 model = extra;
               }
               return DeskWidgetDetailPageScope(
@@ -39,10 +39,9 @@ final RouteBase appNavRoute = ShellRoute(
               );
             },
           ),
-        ]
-    ),
+        ]),
     GoRoute(
-      path: 'gallery',
+      path: 'painter',
       builder: (BuildContext context, GoRouterState state) {
         return GalleryUnit();
       },
@@ -62,18 +61,17 @@ final RouteBase appNavRoute = ShellRoute(
           GoRoute(
             path: 'widgets/:id',
             builder: (BuildContext context, GoRouterState state) {
-              Object? extra= state.extra;
+              Object? extra = state.extra;
               CategoryModel? model;
-              if(extra is CategoryModel){
+              if (extra is CategoryModel) {
                 model = extra;
               }
-              return  CategoryShow(
+              return CategoryShow(
                 model: model!,
               );
             },
           ),
-        ]
-    ),
+        ]),
     GoRoute(
       path: 'algorithm',
       builder: (BuildContext context, GoRouterState state) {

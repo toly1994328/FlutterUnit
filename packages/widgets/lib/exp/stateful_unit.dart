@@ -51,7 +51,6 @@ export '../StatefulWidget/Slider/node2_lable.dart';
 export '../StatefulWidget/Switch/node1_base.dart';
 export '../StatefulWidget/Switch/node2_image.dart';
 export '../StatefulWidget/StatefulBuilder/node1_base.dart';
-export '../StatefulWidget/TextField/node3_decoration.dart';
 export '../StatefulWidget/RefreshIndicator/node1_base.dart';
 export '../StatefulWidget/SelectableText/node1_base.dart';
 export '../StatefulWidget/SelectableText/node2_align.dart';
@@ -113,8 +112,11 @@ export '../StatefulWidget/Ink/node1_base.dart';
 export '../StatefulWidget/Ink/node2_image.dart';
 
 export '../StatefulWidget/InkResponse/node1_base.dart';
-export '../StatefulWidget/InkResponse/node2_color.dart';
 
+export '../StatefulWidget/InkResponse/node2_color.dart';
+export '../StatefulWidget/DropdownMenu/node1.dart';
+export '../StatefulWidget/DropdownMenu/node2.dart';
+export '../StatefulWidget/DropdownMenu/node3.dart';
 export '../StatefulWidget/InkWell/node1_base.dart';
 export '../StatefulWidget/InkWell/node2_color.dart';
 

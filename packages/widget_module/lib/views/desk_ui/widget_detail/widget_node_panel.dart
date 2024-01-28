@@ -49,12 +49,13 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           buildNodeTitle(),
+
           const SizedBox(
             height: 20,
           ),
           _buildCode(context),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Center(
@@ -69,6 +70,7 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
             ],
           ),
 
+          const SizedBox(height: 16,),
 
           const Divider(),
         ],
@@ -92,14 +94,14 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
             ),
           ),
           _buildShareButton(),
-          _buildCodeButton()
+          _buildCodeButton(),
         ],
       );
 
   Widget _buildNodeInfo() => SizedBox(
         width: double.infinity,
         child: Panel(
-          color: Theme.of(context).appBarTheme.backgroundColor,
+          color: Color(0x33E5EAE1),
             child: Text(
           widget.subText,
           style: const TextStyle(fontSize: 12),

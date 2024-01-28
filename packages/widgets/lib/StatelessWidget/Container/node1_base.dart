@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 //      "name": '可用于显示一个指定宽高的区域',
 //      "priority": 1,
 //      "subtitle": "【width】 : 宽   【int】\n"
-//          "【高】: 外边距   【int】\n"
-//          "【color】: 子组件    【Color】",
+//          "【height】: 高   【int】\n"
+//          "【color】: 颜色    【Color】",
 //    }
 class CustomContainer extends StatelessWidget {
   const CustomContainer({Key? key}) : super(key: key);

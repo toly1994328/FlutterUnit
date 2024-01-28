@@ -29,6 +29,8 @@ dependencies:
     path: ../authentication
   app:
     path: ../app
+  l10n:
+    path: ../l10n
   widgets:
     path: ../widgets
   utils:

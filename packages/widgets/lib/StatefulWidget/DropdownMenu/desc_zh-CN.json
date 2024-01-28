@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "name": "DropdownMenu",
+  "localName": "下拉菜单",
+  "info": "下拉选择组件，支持文本输入过滤，可自定义菜单项。底层主要依赖 MenuAnchor 和 TextFiled 实现。",
+  "lever": 4,
+  "family": 1,
+  "linkWidget": [55, 54],
+  "nodes": [
+
+  ]
+}
+
