@@ -21,6 +21,12 @@ class WidgetsMap {
           const ContainerTransform(),
           const ContainerConstraints()
         ];
+        case "DropdownMenu":
+        return [
+          const DropdownMenuNode1(),
+          const DropdownMenuNode2(),
+          const DropdownMenuNode3(),
+        ];
       case "CupertinoSegmentedControl":
         return [
           const CupertinoSegmentedControlDemo(),

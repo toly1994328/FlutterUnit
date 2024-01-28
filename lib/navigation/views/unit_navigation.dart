@@ -20,18 +20,6 @@ import '../../navigation/views/desk/unit_desk_navigation.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 主题结构 左右滑页 + 底部导航栏
 
-class UnitNavigation extends StatelessWidget {
-  const UnitNavigation({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const PlatformViewAdapter(
-      mobile: UnitPhoneNavigation(),
-      desk: UnitDeskNavigation(),
-    );
-  }
-}
-
 class UnitPhoneNavigation extends StatefulWidget {
   const UnitPhoneNavigation({Key? key}) : super(key: key);
 

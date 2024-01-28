@@ -61,16 +61,17 @@ class _DropdownMenuNode2State extends State<DropdownMenuNode2> {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               _buildColorMenu(),
-              const SizedBox(width: 24),
+              const SizedBox(height: 16),
               _buildLabelMenu(),
             ],
           ),
         ),
+        const SizedBox(height: 8),
         _buildInfo()
       ],
     );
@@ -82,7 +83,7 @@ class _DropdownMenuNode2State extends State<DropdownMenuNode2> {
       controller: colorController,
       requestFocusOnTap: true,
       label: const Text('Color'),
-      width: 250,
+      width: 160,
       menuHeight: 150,
       menuStyle: const MenuStyle(
         backgroundColor: MaterialStatePropertyAll<Color>(Colors.white),
@@ -132,6 +133,7 @@ class _DropdownMenuNode2State extends State<DropdownMenuNode2> {
       controller: iconController,
       enableFilter: false,
       requestFocusOnTap: false,
+      width: 160,
       leadingIcon: const Icon(Icons.search),
       label: const Text('Icon'),
       inputDecorationTheme: const InputDecorationTheme(

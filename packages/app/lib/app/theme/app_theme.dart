@@ -34,7 +34,7 @@ class AppTheme {
         dividerColor:  Colors.transparent,
       ),
       fontFamily: state.fontFamily,
-        useMaterial3:useMaterial3,
+        useMaterial3:true,
       brightness: Brightness.dark,
       primaryColor: const Color(0xff4699FB),
         listTileTheme: ListTileThemeData(
@@ -76,7 +76,7 @@ class AppTheme {
       fontFamily: state.fontFamily,
       primaryColor: state.themeColor,
       scaffoldBackgroundColor: Color(0xffF3F4F6),
-      useMaterial3: useMaterial3,
+      useMaterial3: true,
       // Android 使用 Material3
       chipTheme: ChipThemeData(padding: EdgeInsets.symmetric(horizontal: 10)),
       listTileTheme: ListTileThemeData(

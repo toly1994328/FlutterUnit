@@ -7,19 +7,36 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../navigation/menus/menu_meta.dart';
 
+enum ActionType{
+  widgets(path: '/widget'),
+  painter(path: '/painter'),
+  knowledge(path: '/knowledge'),
+
+  algorithm(path: '/algorithm'),
+  tools(path: '/tools'),
+
+  toggleDarkTheme(),
+  settings(path: '/settings'),
+  collection(path: '/collection');
+  final String? path;
+
+  const ActionType({this.path});
+}
+
 class UnitRailNavigation extends StatefulWidget {
-  final ValueChanged<int> onItemClick;
-  final int selectedIndex;
+  final ValueChanged<ActionType> onAction;
+
+  final int? selectedIndex;
+
   // final Map<String, IconData> itemData;
   final List<MenuMeta> itemData;
 
-
-  const UnitRailNavigation(
-      {Key? key,
-      required this.onItemClick,
-      required this.selectedIndex,
-      required this.itemData})
-      : super(key: key);
+  const UnitRailNavigation({
+    Key? key,
+    required this.onAction,
+    required this.selectedIndex,
+    required this.itemData,
+  }) : super(key: key);
 
   @override
   State<UnitRailNavigation> createState() => _UnitRailNavigationState();
@@ -52,12 +69,11 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
     _destinationAnimations = _destinationControllers
         .map((AnimationController controller) => controller.view)
         .toList();
-    _destinationControllers[widget.selectedIndex].value = 1.0;
+    _destinationControllers[widget.selectedIndex??0].value = 1.0;
   }
 
   void _rebuild() {
-    setState(() {
-    });
+    setState(() {});
   }
 
   @override
@@ -70,8 +86,9 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
     }
 
     if (widget.selectedIndex != oldWidget.selectedIndex) {
-      _destinationControllers[oldWidget.selectedIndex].reverse();
-      _destinationControllers[widget.selectedIndex].forward();
+      _destinationControllers[oldWidget.selectedIndex??0].reverse();
+
+      _destinationControllers[widget.selectedIndex??0].forward();
       return;
     }
   }
@@ -89,14 +106,14 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
 
   @override
   Widget build(BuildContext context) {
-   Color? divColor = Theme.of(context).dividerTheme.color;
+    Color? divColor = Theme.of(context).dividerTheme.color;
     return DragToMoveAreaNoDouble(
       child: Container(
         padding: const EdgeInsets.only(top: 20),
         alignment: Alignment.topCenter,
         margin: const EdgeInsets.only(right: 1),
         width: 130,
-        decoration:  BoxDecoration(color: Color(0xff2C3036), boxShadow: [
+        decoration: BoxDecoration(color: Color(0xff2C3036), boxShadow: [
           BoxShadow(color: divColor!, offset: Offset(1, 0), blurRadius: 2)
         ]),
         child: Column(
@@ -125,28 +142,26 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
             Expanded(
               flex: 5,
               child: Padding(
-                padding: const EdgeInsets.only(top: 24),
+                  padding: const EdgeInsets.only(top: 24),
                   //const Size(120, 35)
                   child: Column(
-                // mainAxisSize: MainAxisSize.min,
-                children: info
-                    .asMap()
-                    .keys
-                    .map((int index) => _UnitRailMenu(
-                          animation: _destinationControllers[index],
-                          onTap: () {
-                            widget.onItemClick.call(index);
-                          },
-                          selected: widget.selectedIndex == index,
-                          width: 130,
-                          height: 42,
-                          activeColor: Theme.of(context).primaryColor,
-                          inactiveColor: Colors.white.withAlpha(33),
-                          icon: icons[index],
-                          label: info[index],
-                        ))
-                    .toList(),
-              )),
+                    // mainAxisSize: MainAxisSize.min,
+                    children: info
+                        .asMap()
+                        .keys
+                        .map((int index) => _UnitRailMenu(
+                              animation: _destinationControllers[index],
+                              onTap: () => widget.onAction(ActionType.values[index]),
+                              selected: widget.selectedIndex == index,
+                              width: 130,
+                              height: 42,
+                              activeColor: Theme.of(context).primaryColor,
+                              inactiveColor: Colors.white.withAlpha(33),
+                              icon: icons[index],
+                              label: info[index],
+                            ))
+                        .toList(),
+                  )),
             ),
             Expanded(
               child: Container(),
@@ -157,23 +172,32 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
               color: Colors.white,
               height: 1,
             ),
-
             Wrap(
               spacing: 12,
               children: [
-                const ThemeModelSwitchIcon(),
-                Builder(
-                  builder: (ctx) => FeedbackWidget(
-                    onPressed: () => context.push('/settings'),
-                    child: const Padding(
-                      padding: EdgeInsets.only(bottom: 16, top: 16),
-                      child: Icon(
-                        Icons.settings,
-                        color: Colors.white,
-                      ),
+                FeedbackWidget(
+                  onPressed: () =>  widget.onAction(ActionType.settings),
+                  child: const Padding(
+                    padding: EdgeInsets.only(bottom: 16, top: 16),
+                    child: Icon(
+                      Icons.settings,
+                      color: Colors.white,
                     ),
                   ),
                 ),
+                FeedbackWidget(
+                  onPressed: () =>  widget.onAction(ActionType.collection),
+                  child: const Padding(
+                    padding: EdgeInsets.only(bottom: 16, top: 16),
+                    child: Icon(
+                      TolyIcon.icon_collect,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+
+                const ThemeModelSwitchIcon(),
+
               ],
             ),
           ],
@@ -212,8 +236,6 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
               color: Colors.white,
             ),
           ),
-
-
         ],
       ),
     );
@@ -239,7 +261,7 @@ class _UnitRailMenu extends StatefulWidget {
   final String label;
   final Animation<double> animation;
 
-   _UnitRailMenu({
+  _UnitRailMenu({
     Key? key,
     required this.onTap,
     required this.selected,
@@ -260,13 +282,13 @@ class _UnitRailMenuState extends State<_UnitRailMenu> {
   @override
   Widget build(BuildContext context) {
     return Container(
-            alignment: Alignment.topLeft,
-            margin: const EdgeInsets.only(top: 10),
-            child:MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: widget.onTap,
-                  child:  AnimatedBuilder(
+      alignment: Alignment.topLeft,
+      margin: const EdgeInsets.only(top: 10),
+      child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: widget.onTap,
+            child: AnimatedBuilder(
               animation: widget.animation,
               builder: (BuildContext context, Widget? child) => _buildItem(),
             ),
@@ -274,7 +296,8 @@ class _UnitRailMenuState extends State<_UnitRailMenu> {
     );
   }
 
-  late ColorTween colorTween = ColorTween(begin: widget.inactiveColor, end: widget.activeColor);
+  late ColorTween colorTween =
+      ColorTween(begin: widget.inactiveColor, end: widget.activeColor);
 
   Widget _buildItem() {
     double iconSize = _sizeTween.transform(widget.animation.value);

@@ -57,47 +57,39 @@ class _DropdownMenuNode3State extends State<DropdownMenuNode3> {
 
   @override
   Widget build(BuildContext context) {
-    // Created by Google Bard from 'create a lyrical phrase of about 25 words that begins with "is a color"'.
-    const String longText = 'is a color that sings of hope, A hue that shines like gold. It is the color of dreams, A shade that never grows old.';
-
-    return Scaffold(
-      body: Center(
-        child: DropdownMenu<User>(
-          width: 300,
-          menuHeight: 250,
-          controller: controller,
-          leadingIcon:  _selectUser!=null?SizedBox(
-            width: 26,
-            height: 26,
-            child: Center(
-              child: CircleAvatar(
-                radius: 14,
-                foregroundColor: Colors.transparent,
-                backgroundImage:
-                AssetImage('assets/images/head_icon/${_selectUser!.image}'),
-              ),
-            ),
-          ):null,
-          label: const Text('选择用户'),
-          onSelected: (User? user) {
-            print('Selected $user');
-            setState(() {
-              _selectUser = user;
-
-            });
-          },
-          dropdownMenuEntries: data.map<DropdownMenuEntry<User>>((User user) {
-            final String labelText = '${user.name} $longText\n';
-            return DropdownMenuEntry<User>(
-              value: user,
-              label: user.name,
-              // Try commenting the labelWidget out or changing
-              // the labelWidget's Text parameters.
-              labelWidget: _UserItem(user: user),
-            );
-          }).toList(),
+    return DropdownMenu<User>(
+      width: 300,
+      menuHeight: 250,
+      controller: controller,
+      leadingIcon:  _selectUser!=null?SizedBox(
+        width: 26,
+        height: 26,
+        child: Center(
+          child: CircleAvatar(
+            radius: 14,
+            foregroundColor: Colors.transparent,
+            backgroundImage:
+            AssetImage('assets/images/head_icon/${_selectUser!.image}'),
+          ),
         ),
-      ),
+      ):null,
+      label: const Text('选择用户'),
+      onSelected: (User? user) {
+        print('Selected $user');
+        setState(() {
+          _selectUser = user;
+
+        });
+      },
+      dropdownMenuEntries: data.map<DropdownMenuEntry<User>>((User user) {
+        return DropdownMenuEntry<User>(
+          value: user,
+          label: user.name,
+          // Try commenting the labelWidget out or changing
+          // the labelWidget's Text parameters.
+          labelWidget: _UserItem(user: user),
+        );
+      }).toList(),
     );
   }
 }
@@ -128,7 +120,7 @@ class _UserItem extends StatelessWidget {
             children: [
               Text(user.name),
               Text(
-                '性别: ${user.man ? '男' : '女'}',
+                '性别:'+ (user.man ? '男' : '女'),
                 style: const TextStyle(color: Colors.grey),
               ),
             ],

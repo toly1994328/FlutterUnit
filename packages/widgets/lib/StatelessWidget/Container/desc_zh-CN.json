@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "name": "Container",
+  "localName": "容器组件",
+  "info": "用于容纳单个子组件的容器组件。集成了若干个单子组件的功能，如内外边距、形变、装饰、约束等...",
+  "lever": 5,
+  "family": 0,
+  "linkWidget": [74,85,80,78,70,123],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "可用于显示一个指定宽高的区域",
+      "desc": [
+        "【width】 : 宽   【int】",
+        "【height】: 高   【int】",
+        "【color】: 颜色  【Color】"
+      ]
+    },
+    {
+      "file": "node2_child.dart",
+      "name": "可以在区域中放入一个子组件",
+      "desc": [
+        "【padding】 : 内边距   【EdgeInsetsGeometry】",
+        "【margin】: 外边距   【EdgeInsetsGeometry】",
+        "【child】: 子组件    【Widget】"
+      ]
+    }
+  ]
+}
+

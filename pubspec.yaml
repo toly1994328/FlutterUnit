@@ -52,7 +52,8 @@ dependencies:
   flutter_markdown: ^0.6.4 # markdown
 #  file_selector: ^0.9.2+2
   file_picker: ^6.1.1
-
+  l10n:
+    path: packages/l10n
   utils:
     path: packages/utils
   storage:

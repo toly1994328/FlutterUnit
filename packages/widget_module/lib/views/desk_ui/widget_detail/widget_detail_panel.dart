@@ -11,17 +11,20 @@ class DeskWidgetDetailPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            _buildLeft(model, context),
-            _buildRight(model),
-          ],
-        ),
-        // const Divider(),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              _buildLeft(model, context),
+              _buildRight(model),
+            ],
+          ),
+          // const Divider(),
+        ],
+      ),
     );
   }
 
@@ -29,7 +32,7 @@ class DeskWidgetDetailPanel extends StatelessWidget {
     child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: Panel(
-          color: Theme.of(context).appBarTheme.backgroundColor,
+          color: Color(0x33E5EAE1),
           child: Text(model.info)),
     ),
   );

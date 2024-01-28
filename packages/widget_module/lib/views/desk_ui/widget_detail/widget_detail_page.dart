@@ -118,6 +118,7 @@ class DeskWidgetDetailPage extends StatelessWidget{
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const SizedBox(height: 16,),
                           linkText,
                           if (state is DetailWithData)
                             LinkWidgetButtons(
@@ -149,7 +150,9 @@ class DeskWidgetDetailPage extends StatelessWidget{
   Widget _buildSliverNodeList(
       BuildContext context, List<NodeModel> nodes, WidgetModel model) {
     AppConfigState globalState = BlocProvider.of<AppConfigBloc>(context).state;
+
     return SliverList(
+
         delegate: SliverChildBuilderDelegate(
       (_, i) => DeskWidgetNodePanel(
         codeStyle: globalState.codeStyle,

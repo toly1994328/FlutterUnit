@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ThemeModelSwitchIcon extends StatelessWidget {
+
   const ThemeModelSwitchIcon({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ThemeMode model = context.select<AppConfigBloc,ThemeMode>((bloc)=>bloc.state.themeMode);
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     return MouseRegion(
       cursor: SystemMouseCursors.click,

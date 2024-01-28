@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 /// link: 55
 //    {
 //      "widgetId": 370,
-//      "name": '表单下拉框简单使用',
+//      "name": '下拉菜单的简单使用',
 //      "priority": 1,
 //      "subtitle":
 //          "【dropdownMenuEntries】 : 菜单条目列表   【List<DropdownMenuEntry<T>>】\n"

@@ -73,17 +73,20 @@ class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onLongPress: widget.onLongPressed,
-        onTap: () {
-          _controller.forward();
-          widget.onPressed?.call();
-        },
-        child: AnimatedBuilder(
-          animation: _controller,
-          child: widget.child,
-          builder: (ctx, child) => _buildByMode(child, widget.mode),
-        ));
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+          onLongPress: widget.onLongPressed,
+          onTap: () {
+            _controller.forward();
+            widget.onPressed?.call();
+          },
+          child: AnimatedBuilder(
+            animation: _controller,
+            child: widget.child,
+            builder: (ctx, child) => _buildByMode(child, widget.mode),
+          )),
+    );
   }
 
   Widget _buildByMode(Widget? child, FeedMode mode) {

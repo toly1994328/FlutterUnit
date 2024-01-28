@@ -2,13 +2,12 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/navigation/menus/menu_meta.dart';
 import 'package:go_router/go_router.dart';
+import 'package:l10n/l10n.dart';
 import 'unit_rail_navigation.dart';
 
 class FlutterUnitDeskNavigation extends StatelessWidget {
   final Widget content;
   const FlutterUnitDeskNavigation({super.key, required this.content});
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +35,32 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
   @override
   Widget build(BuildContext context) {
     return UnitRailNavigation(
-      selectedIndex: activeIndex??0,
-      onItemClick: _onItemClick, itemData: deskNavBarMenus,
+      selectedIndex: activeIndex,
+      onAction: _onAction,
+      itemData: deskNavBarMenus,
     );
   }
 
-  final List<MenuMeta> deskNavBarMenus = const [
-    MenuMeta(label: '组件集录', icon: TolyIcon.icon_layout, path: '/widget'),
-    MenuMeta(label: '绘制集录', icon: Icons.palette, path: '/gallery'),
-    MenuMeta(label: '知识集锦', icon: TolyIcon.icon_artifact, path: '/knowledge'),
-    MenuMeta(label: '收藏集录', icon: TolyIcon.icon_star, path: '/collection'),
-    MenuMeta(label: '算法演绎', icon: Icons.person, path: '/algorithm'),
-    MenuMeta(label: '工具宝箱', icon: TolyIcon.icon_fast, path: '/tools'),
-  ];
+  late List<MenuMeta> deskNavBarMenus;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    String widget = context.l10n.widgetCollection;
+    String canvas = context.l10n.paintCollection;
+    String knowledge = context.l10n.knowledgeCollection;
+    String treasure = context.l10n.treasureTools;
+    deskNavBarMenus =  [
+      MenuMeta(label: widget, icon: TolyIcon.icon_layout, path: '/widget'),
+      MenuMeta(label: canvas, icon: Icons.palette, path: '/painter'),
+      MenuMeta(label: knowledge, icon: TolyIcon.icon_artifact, path: '/knowledge'),
+      // MenuMeta(label: '收藏集录', icon: TolyIcon.icon_star, path: '/collection'),
+      MenuMeta(label: '算法演绎', icon: Icons.person, path: '/algorithm'),
+      MenuMeta(label: treasure, icon: TolyIcon.icon_fast, path: '/tools'),
+    ];
+  }
+
+
 
   final RegExp _segReg = RegExp(r'/\w+');
 
@@ -62,9 +74,14 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
     return index;
   }
 
-  void _onItemClick(int index) {
-    String path = deskNavBarMenus[index].path!;
-    GoRouter.of(context).go(path);
+  void _onAction(ActionType value) {
+    String? path = value.path;
+    if(path!=null){
+      if(value == ActionType.settings || value == ActionType.collection){
+        context.push(path);
+      }else{
+        context.go(path);
+      }
+    }
   }
-
 }
