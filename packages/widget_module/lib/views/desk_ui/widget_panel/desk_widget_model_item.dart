@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:widget_module/views/components/collected_tag.dart';
 
 import '../../../../data/exp.dart';
 import 'package:wrapper/wrapper.dart';
@@ -74,24 +75,7 @@ class DeskWidgetItem extends StatelessWidget {
           if (!show) return const SizedBox();
           return Opacity(
             opacity: show ? 1.0 : 0.0,
-            child: Wrapper.just(
-              radius: 10,
-              color:  isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              child: Text(
-                '已收藏',
-                style: TextStyle(
-                    color: color,
-                    height: 1,
-                    fontSize: 10,
-                    shadows:  [
-                      Shadow(
-                          color:isDark? Colors.black: Colors.white,
-                          blurRadius: 2,
-                          offset: Offset(1, 1))
-                    ]),
-              ),
-            ),
+            child: const CollectedTag(),
           );
         }),
         const Spacer(),

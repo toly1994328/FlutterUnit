@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:l10n/l10n.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -16,12 +17,22 @@ class DeskWidgetTopBar extends StatefulWidget {
 class _DeskWidgetTopBarState extends State<DeskWidgetTopBar>  with SingleTickerProviderStateMixin {
   late TabController tabController;
 
-  static const List<String> _tabs = ['无态', '有态', '单渲', '多渲', '滑片', '代理', '其它'];
+
+  List<String> get _tabs =>[
+    context.l10n.stateless,
+    context.l10n.stateful,
+    context.l10n.single,
+    context.l10n.multi,
+    context.l10n.sliver,
+    context.l10n.proxy,
+    context.l10n.other,
+  ];
+
 
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: _tabs.length, vsync: this);
+    tabController = TabController(length: 7, vsync: this);
   }
 
   @override
@@ -37,12 +48,13 @@ class _DeskWidgetTopBarState extends State<DeskWidgetTopBar>  with SingleTickerP
         child: Row(
           children: [
             SizedBox(
-              width: 350,
+              width: 380,
               child: TabBar(
                 onTap: widget.onTabPressed,
+                tabAlignment: TabAlignment.start,
                 indicatorSize: TabBarIndicatorSize.label,
                 labelPadding: const EdgeInsets.symmetric(horizontal: 6),
-                isScrollable: false,
+                isScrollable: true,
                 indicator: RoundRectTabIndicator(
                   borderSide: BorderSide(color: themeColor, width: 3),
                 ),

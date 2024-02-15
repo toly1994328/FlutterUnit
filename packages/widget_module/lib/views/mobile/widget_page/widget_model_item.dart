@@ -7,6 +7,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:wrapper/wrapper.dart';
 
 import '../../../data/exp.dart';
+import '../../components/collected_tag.dart';
 
 class StandardWidgetItem extends StatelessWidget {
   final WidgetModel model;
@@ -63,7 +64,6 @@ class StandardWidgetItem extends StatelessWidget {
       text = Text.rich(formSpan(model.name, searchArg!));
     }
 
-
     return Row(
       children: [
         Expanded(child: Wrap(
@@ -76,24 +76,7 @@ class StandardWidgetItem extends StatelessWidget {
               bool show = s.widgets.contains(model);
               return Opacity(
                 opacity: show ? 1.0 : 0.0,
-                child: Wrapper.just(
-                  radius: 10,
-                  color:  isDark? Color(0xff292A2D):const Color(0xffF3F3F5),
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  child: Text(
-                    '已收藏',
-                    style: TextStyle(
-                        color: color,
-                        height: 1,
-                        fontSize: 10,
-                        shadows:  [
-                          Shadow(
-                              color:isDark? Colors.black: Colors.white,
-                              blurRadius: 2,
-                              offset: Offset(1, 1))
-                        ]),
-                  ),
-                ),
+                child: const CollectedTag(),
               );
             }),
           ],

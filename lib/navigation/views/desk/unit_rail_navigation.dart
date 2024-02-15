@@ -11,9 +11,8 @@ enum ActionType{
   widgets(path: '/widget'),
   painter(path: '/painter'),
   knowledge(path: '/knowledge'),
-
-  algorithm(path: '/algorithm'),
   tools(path: '/tools'),
+  algorithm(path: '/account'),
 
   toggleDarkTheme(),
   settings(path: '/settings'),
@@ -146,9 +145,7 @@ class _UnitRailNavigationState extends State<UnitRailNavigation>
                   //const Size(120, 35)
                   child: Column(
                     // mainAxisSize: MainAxisSize.min,
-                    children: info
-                        .asMap()
-                        .keys
+                    children: info.asMap().keys
                         .map((int index) => _UnitRailMenu(
                               animation: _destinationControllers[index],
                               onTap: () => widget.onAction(ActionType.values[index]),

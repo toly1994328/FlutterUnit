@@ -114,7 +114,7 @@ class VersionInfo extends StatelessWidget {
             },
             child: const Text('《查看本项目Github仓库》',style: TextStyle(fontSize: 12,color: Color(0xff616C84),),)),
         const Text('Power By 张风捷特烈',style: TextStyle(fontSize: 12,color: Colors.grey),),
-        const Text('Copyright © 2008-2020 Toly1994',style: TextStyle(fontSize: 12,color: Colors.grey),),
+        const Text('Copyright © 2018-2024 Toly1994',style: TextStyle(fontSize: 12,color: Colors.grey),),
       ],
     );
   }

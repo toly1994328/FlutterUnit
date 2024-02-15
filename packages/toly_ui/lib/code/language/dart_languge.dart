@@ -5,7 +5,7 @@ import 'language.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-class DartLanguage extends Language{
+class DartLanguage extends ProgramLanguage{
 
   const DartLanguage() : super('Dart');
 

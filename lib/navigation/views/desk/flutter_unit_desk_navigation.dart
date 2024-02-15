@@ -50,18 +50,17 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
     String canvas = context.l10n.paintCollection;
     String knowledge = context.l10n.knowledgeCollection;
     String treasure = context.l10n.treasureTools;
+    String account = context.l10n.homeAccount;
+
     deskNavBarMenus =  [
       MenuMeta(label: widget, icon: TolyIcon.icon_layout, path: '/widget'),
       MenuMeta(label: canvas, icon: Icons.palette, path: '/painter'),
       MenuMeta(label: knowledge, icon: TolyIcon.icon_artifact, path: '/knowledge'),
-      // MenuMeta(label: '收藏集录', icon: TolyIcon.icon_star, path: '/collection'),
-      MenuMeta(label: '算法演绎', icon: Icons.person, path: '/algorithm'),
       MenuMeta(label: treasure, icon: TolyIcon.icon_fast, path: '/tools'),
+      MenuMeta(label: account, icon: Icons.person, path: '/account'),
     ];
   }
-
-
-
+  
   final RegExp _segReg = RegExp(r'/\w+');
 
   int? get activeIndex {
@@ -69,6 +68,7 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
     RegExpMatch? match = _segReg.firstMatch(path);
     if (match == null) return null;
     String? target = match.group(0);
+
     int index = deskNavBarMenus.indexWhere((menu) => menu.path!.contains(target??''));
     if (index == -1) return null;
     return index;

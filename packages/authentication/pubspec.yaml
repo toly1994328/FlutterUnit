@@ -20,6 +20,8 @@ dependencies:
     path: ../app_update
   app:
     path: ../app
+  l10n:
+    path: ../l10n
   components:
     path: ../components
   toly_ui:

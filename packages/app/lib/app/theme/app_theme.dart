@@ -13,7 +13,6 @@ class AppTheme {
   static ThemeData darkTheme(AppConfigState state) {
     Color scaffoldBackgroundColor = const Color(0xff010201);
 
-
     SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark,
@@ -70,11 +69,9 @@ class AppTheme {
       statusBarIconBrightness: Brightness.dark,
     );
 
-    bool useMaterial3 = (Platform.isAndroid || Platform.isIOS);
-
     return ThemeData(
       fontFamily: state.fontFamily,
-      primaryColor: state.themeColor,
+      primaryColor: state.themeColor.color,
       scaffoldBackgroundColor: Color(0xffF3F4F6),
       useMaterial3: true,
       // Android 使用 Material3

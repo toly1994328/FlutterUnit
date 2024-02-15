@@ -2,6 +2,7 @@ import 'package:app/app.dart';
 import 'package:app_update/views/update_red_point.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:l10n/l10n.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -27,13 +28,13 @@ class MePageItem extends StatelessWidget {
             height: 10,
           ),
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_them, '应用设置', '/settings'),
+          _buildItem(context, TolyIcon.icon_them, context.l10n.appSettings, '/settings'),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_layout, '数据管理', '/data_manage'),
+              context, TolyIcon.icon_layout, context.l10n.dataManagement, '/data_manage'),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_collect, '我的收藏', '/collect',),
+              context, TolyIcon.icon_collect, context.l10n.userCollection, '/collect',),
           Gap.sfl10,
 
           Stack(
@@ -41,17 +42,17 @@ class MePageItem extends StatelessWidget {
               _buildItem(
                 context,
                 Icons.update,
-                '版本信息',
+                context.l10n.versionInformation,
                 '/settings/version',
               ),
               const Positioned(left: 40, top: 10, child: UpdateRedPoint())
             ],
           ),
           const Divider(),
-          _buildItem(context, Icons.info, '关于应用', '/about_app'),
+          _buildItem(context, Icons.info, context.l10n.aboutApplications, '/about_app'),
 
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_kafei, '联系本王', '/about_me'),
+          _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing, '/about_me'),
         ],
       ),
     );

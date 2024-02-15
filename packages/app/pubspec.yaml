@@ -23,6 +23,8 @@ dependencies:
     path: ../components
   toly_ui:
     path: ../toly_ui
+  l10n:
+    path: ../l10n
 dev_dependencies:
   flutter_test:
     sdk: flutter

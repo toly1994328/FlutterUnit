@@ -19,7 +19,7 @@ import 'language/language.dart';
 
 abstract class Highlighter {
   // ignore: one_member_abstracts
-  Language language;
+  ProgramLanguage language;
 
 
   Highlighter({required this.language});
@@ -30,7 +30,7 @@ abstract class Highlighter {
 //暗黑模式下的高亮样式
 class CodeHighlighter extends Highlighter {
   CodeHighlighter(
-      {Language language = const DartLanguage(), HighlighterStyle? style}):super(language: language) {
+      {ProgramLanguage language = const DartLanguage(), HighlighterStyle? style}):super(language: language) {
     _spans = <_HighlightSpan>[];
     _style = style ?? HighlighterStyle.fromColors(HighlighterStyle.lightColor);
   }

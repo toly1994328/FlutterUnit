@@ -8,10 +8,12 @@ class SimpleDeskTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return DragToMoveAreaNoDouble(
       child: Container(
         height: 64,
-        color: Colors.white,
+        color: isDark ? Color(0xff2C3036) : Colors.white,
         child: Row(
           children: [
             if (leading != null) Padding(

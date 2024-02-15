@@ -49,7 +49,7 @@ class CustomAboutDialog extends StatelessWidget {
       applicationIcon: const FlutterLogo(),
       applicationVersion: 'v0.0.1',
       applicationName: 'Flutter Unit',
-      applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
+      applicationLegalese: 'Copyright© 2018-2024 张风捷特烈',
       children: <Widget>[
         Container(
             margin: const EdgeInsets.only(top: 20),

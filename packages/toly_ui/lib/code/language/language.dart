@@ -2,10 +2,10 @@
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
-abstract class Language {
+abstract class ProgramLanguage {
   final String name;
 
-  const Language(this.name);
+  const ProgramLanguage(this.name);
 
   bool containsKeywords(String word);
 

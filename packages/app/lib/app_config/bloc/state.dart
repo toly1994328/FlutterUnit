@@ -1,20 +1,15 @@
 import 'package:app/app/cons/cons.dart';
-import 'package:toly_ui/toly_ui.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:l10n/l10n.dart';
 import 'package:storage/storage.dart';
+import 'package:toly_ui/code/code.dart' ;
 
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局状态类
-
-Map<ThemeMode,String> themeMode2Str = const {
-  ThemeMode.system: "跟随系统",
-  ThemeMode.light: "浅色模式",
-  ThemeMode.dark: "深色模式",
-};
 
 class AppConfigState extends Equatable {
 
@@ -22,7 +17,7 @@ class AppConfigState extends Equatable {
   final String fontFamily;
 
   /// [themeColor] 主题色
-  final MaterialColor themeColor;
+  final ThemeColor themeColor;
 
   /// [showBackGround] 是否显示主页背景图
   final bool showBackGround;
@@ -41,11 +36,15 @@ class AppConfigState extends Equatable {
 
   /// [appStyle] app 深色样式;
   final ThemeMode themeMode;
+
   final ConnectivityResult netConnect;
+
+  final Language language;
 
   const AppConfigState({
     this.fontFamily = 'ComicNeue',
-    this.themeColor = Colors.blue,
+    this.language = Language.zh_CN,
+    this.themeColor = ThemeColor.blue,
     this.themeMode = ThemeMode.system,
     this.showBackGround = true,
     this.codeStyleIndex = 0,
@@ -66,13 +65,15 @@ class AppConfigState extends Equatable {
     showOverlayTool,
     showPerformanceOverlay,
     netConnect,
+    language,
   ];
 
   AppConfigState copyWith({
     String? fontFamily,
     String? dbPath,
-    MaterialColor? themeColor,
+    ThemeColor? themeColor,
     bool? showBackGround,
+    Language? language,
     int? codeStyleIndex,
     int? itemStyleIndex,
     bool? showPerformanceOverlay,
@@ -82,6 +83,7 @@ class AppConfigState extends Equatable {
   }) =>
       AppConfigState(
         fontFamily: fontFamily ?? this.fontFamily,
+        language: language ?? this.language,
         themeColor: themeColor ?? this.themeColor,
         showBackGround: showBackGround ?? this.showBackGround,
         codeStyleIndex: codeStyleIndex ?? this.codeStyleIndex,
@@ -99,18 +101,20 @@ class AppConfigState extends Equatable {
     showOverlayTool : showOverlayTool,
     showPerformanceOverlay : showPerformanceOverlay,
     fontFamilyIndex : Cons.kFontFamilySupport.indexOf(fontFamily),
-    themeColorIndex : Cons.kThemeColorSupport.keys.toList().indexOf(themeColor),
+    themeColorIndex : themeColor.index,
     codeStyleIndex : codeStyleIndex,
     themeModeIndex : themeMode.index,
     itemStyleIndex : itemStyleIndex,
+    languageIndex: language.index,
   );
 
   // 根据存储的配置信息对象，形成 AppState 状态数据
   factory AppConfigState.fromPo(AppConfigPo po) {
     return AppConfigState(
       fontFamily: Cons.kFontFamilySupport[po.fontFamilyIndex],
-      themeColor: Cons.kThemeColorSupport.keys.toList()[po.themeColorIndex],
+      themeColor: ThemeColor.values[po.themeColorIndex],
       showBackGround: po.showBackGround,
+      language: Language.values[po.languageIndex],
       codeStyleIndex:  po.codeStyleIndex,
       itemStyleIndex: po.itemStyleIndex,
       showPerformanceOverlay: po.showPerformanceOverlay,
