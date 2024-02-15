@@ -24,7 +24,7 @@ class CustomLicensePage extends StatelessWidget {
         applicationIcon: FlutterLogo(),
         applicationVersion: 'v0.0.1',
         applicationName: 'Flutter Unit',
-        applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
+        applicationLegalese: 'Copyright© 2018-2024 张风捷特烈',
       ),
     );
   }

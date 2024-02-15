@@ -81,23 +81,50 @@ class _ColumnizePageViewState extends State<ColumnizePageView> {
   @override
   Widget build(BuildContext context) {
     List<Columnize> data = context.watch<ColumnizeBloc>().state.data;
+    Widget child =  PageView.builder(
+        controller: _ctrl, // itemCount: 7,
+        itemBuilder: (_, index) {
+          return AnimatedBuilder(
+            child: _buildByIndex(context, index, data),
+            animation: _ctrl,
+            builder: (context, child) => _buildAnimItemByIndex(
+              context,
+              child,
+              index,
+            ),
+          );
+        },
+        onPageChanged: (index) {
+          _position = index;
+        },
+    );
+    if(!isDesk){
+      return child;
+    }
 
-    return PageView.builder(
-      controller: _ctrl, // itemCount: 7,
-      itemBuilder: (_, index) {
-        return AnimatedBuilder(
-          child: _buildByIndex(context, index, data),
-          animation: _ctrl,
-          builder: (context, child) => _buildAnimItemByIndex(
-            context,
-            child,
-            index,
-          ),
-        );
-      },
-      onPageChanged: (index) {
-        _position = index;
-      },
+    return MouseRegion(
+      onEnter: _onEnter,
+      onExit: _onExit,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 48.0),
+              child: child),
+          Positioned(
+              right: 0,
+              child: IconButton(onPressed: (){
+                _position+=1;
+                _ctrl.animateToPage(_position, duration: Duration(milliseconds: 500),curve: Curves.easeIn);
+              }, icon: Icon(Icons.navigate_next_outlined))),
+          Positioned(
+              left: 0,
+              child: IconButton(onPressed: (){
+                _position-=1;
+                _ctrl.animateToPage(_position, duration: Duration(milliseconds: 500),curve: Curves.easeIn);
+              }, icon: Icon(Icons.navigate_before))),
+        ],
+      ),
     );
   }
 
@@ -133,6 +160,19 @@ class _ColumnizePageViewState extends State<ColumnizePageView> {
     final int offset = realPos - initPos;
     int result = offset % length;
     return result < 0 ? length + result : result;
+  }
+
+  bool _hover = false;
+  void _onEnter(PointerEnterEvent event) {
+    setState(() {
+      _hover = true;
+    });
+  }
+
+  void _onExit(PointerExitEvent event) {
+    setState(() {
+      _hover = false;
+    });
   }
 }
 

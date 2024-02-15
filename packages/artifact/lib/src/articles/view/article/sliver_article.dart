@@ -1,3 +1,4 @@
+import 'package:app/app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,15 +32,32 @@ class SliverArticle extends StatelessWidget {
   final List<Article> data;
   const SliverArticle({Key? key, required this.data}) : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
+
+    const SliverGridDelegate deskGridDelegate = SliverGridDelegateWithMaxCrossAxisExtent(
+      maxCrossAxisExtent: 420,
+      mainAxisSpacing: 8,
+      mainAxisExtent: 188,
+      crossAxisSpacing: 8,
+    );
+
+   Widget child =  isDesk? SliverGrid(delegate: SliverChildBuilderDelegate(
+     _buildItem,
+     childCount: data.length,
+   ), gridDelegate: deskGridDelegate)
+   :
+   SliverList(
+    delegate: SliverChildBuilderDelegate(
+      _buildItem,
+      childCount: data.length,
+    ));
+
     return SliverPadding(
         padding: const EdgeInsets.only(bottom: 0),
-        sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-          _buildItem,
-          childCount: data.length,
-        )));
+        sliver: child);
   }
 
   Widget? _buildItem(BuildContext context, int index) {
@@ -63,7 +81,7 @@ class ArticlePanel extends StatelessWidget {
         );
       },
       child: Container(
-        color: Colors.white,
+        color: Theme.of(context).listTileTheme.tileColor,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         margin: EdgeInsets.only(bottom: 6),
         child: Column(

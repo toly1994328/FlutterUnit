@@ -5,6 +5,7 @@ class AppConfigPo {
   final bool showOverlayTool;
   final bool showPerformanceOverlay;
   final int fontFamilyIndex;
+  final int languageIndex;
   final int codeStyleIndex;
   final int themeModeIndex;
   final int itemStyleIndex;
@@ -15,6 +16,7 @@ class AppConfigPo {
     this.showOverlayTool = false,
     this.showPerformanceOverlay = false,
     this.fontFamilyIndex = 1,
+    this.languageIndex = 0,
     this.themeColorIndex = 4,
     this.codeStyleIndex = 0,
     this.themeModeIndex = 0,
@@ -31,6 +33,7 @@ class AppConfigPo {
       codeStyleIndex: map['codeStyleIndex'] ?? 0,
       themeModeIndex: map['themeModeIndex'] ?? 0,
       itemStyleIndex: map['itemStyleIndex'] ?? 0,
+      languageIndex: map['languageIndex'] ?? 0,
     );
   }
 
@@ -43,5 +46,6 @@ class AppConfigPo {
         'codeStyleIndex': codeStyleIndex,
         'themeModeIndex': themeModeIndex,
         'itemStyleIndex': itemStyleIndex,
+        'languageIndex': languageIndex,
       };
 }

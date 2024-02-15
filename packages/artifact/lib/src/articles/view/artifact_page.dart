@@ -69,10 +69,8 @@ class _ArtifactPageState extends State<ArtifactPage>
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ColumnizeBloc>(
-            create: (_) => ColumnizeBloc(cRepository)..init()),
-        BlocProvider<ArticleBloc>(
-            create: (_) => ArticleBloc(aRepository)..init()),
+        BlocProvider<ColumnizeBloc>(create: (_) => ColumnizeBloc(cRepository)..init()),
+        BlocProvider<ArticleBloc>(create: (_) => ArticleBloc(aRepository)..init()),
       ],
       child: Scaffold(
         endDrawer: SortSettings(),
@@ -127,6 +125,8 @@ class _ArtifactPageState extends State<ArtifactPage>
       debugPrint('Could not launch $url');
     }
   }
+
+
 
   List<Widget> _buildAppBar(BuildContext context, bool innerBoxIsScrolled) {
     // print('innerBoxIsScrolled:$innerBoxIsScrolled');

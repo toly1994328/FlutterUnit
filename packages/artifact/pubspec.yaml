@@ -19,6 +19,8 @@ dependencies:
     path: ../storage
   algorithm:
     path: ../algorithm
+  components:
+    path: ../components
   utils:
     path: ../utils
   app:

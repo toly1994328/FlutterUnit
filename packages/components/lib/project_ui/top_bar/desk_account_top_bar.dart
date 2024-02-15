@@ -1,10 +1,10 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 
-class SimpleDeskTopBar extends StatelessWidget {
+class DeskAccountTopBar extends StatelessWidget {
   final Widget? leading;
 
-  const SimpleDeskTopBar({super.key, this.leading});
+  const DeskAccountTopBar({super.key, this.leading});
 
   @override
   Widget build(BuildContext context) {

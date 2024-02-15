@@ -2,6 +2,7 @@ import 'package:algorithm/algorithm.dart';
 import 'package:artifact/artifact.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/app/views/account/desk/desk_account_page.dart';
 import 'package:flutter_unit/app/views/setting/setting_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:treasure_tools/treasure_tools.dart';
@@ -49,7 +50,8 @@ final RouteBase appNavRoute = ShellRoute(
     GoRoute(
       path: 'knowledge',
       builder: (BuildContext context, GoRouterState state) {
-        return DeskPointPage();
+        // return DeskPointPage();
+        return DeskKnowledgePage();
       },
     ),
     GoRoute(
@@ -73,9 +75,9 @@ final RouteBase appNavRoute = ShellRoute(
           ),
         ]),
     GoRoute(
-      path: 'algorithm',
+      path: 'account',
       builder: (BuildContext context, GoRouterState state) {
-        return DeskSortPage();
+        return DeskAccountPage();
       },
     ),
     GoRoute(

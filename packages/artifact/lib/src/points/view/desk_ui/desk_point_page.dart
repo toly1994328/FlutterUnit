@@ -37,13 +37,6 @@ class _DeskPointPageState extends State<DeskPointPage> {
       child: Scaffold(
         body: Column(
           children: [
-            SimpleDeskTopBar(
-              leading: Text(
-                'Flutter  要点集录',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Divider(height: 1),
             Expanded(
                 child: Row(
               children: [

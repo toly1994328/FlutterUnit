@@ -1,3 +1,4 @@
+import 'package:l10n/ext.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,13 +19,25 @@ class StandardHomePage extends StatefulWidget {
 
 class _StandardHomePageState extends State<StandardHomePage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  static const List<String> _tabs = ['无态', '有态', '单渲', '多渲', '滑片', '代理', '其它'];
+
+  List<String> get _tabs =>[
+    context.l10n.stateless,
+    context.l10n.stateful,
+    context.l10n.single,
+    context.l10n.multi,
+    context.l10n.sliver,
+    context.l10n.proxy,
+    context.l10n.other,
+  ];
+
   late TabController tabController;
+
+
 
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: _tabs.length, vsync: this);
+    tabController = TabController(length: 7, vsync: this);
   }
 
   int maxCount = 60;
@@ -88,13 +101,14 @@ class _StandardHomePageState extends State<StandardHomePage>
           color: isDark ? Colors.black : Colors.white,
           child: TabBar(
             onTap: _switchTab,
+            tabAlignment: TabAlignment.start,
             indicatorSize: TabBarIndicatorSize.label,
             isScrollable: true,
             indicator: RoundRectTabIndicator(
               borderSide: BorderSide(color: themeColor, width: 3),
             ),
             labelStyle: const TextStyle(
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
             controller: tabController,

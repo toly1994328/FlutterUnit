@@ -1,5 +1,6 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:l10n/ext.dart';
 
 typedef IndexTapCallback = void Function(int);
 typedef IndexLongTapCallback = void Function(BuildContext, int);
@@ -21,17 +22,22 @@ class PureBottomBar extends StatefulWidget {
 }
 
 class _PureBottomBarState extends State<PureBottomBar> {
-  List<String> get bottomBar => const ['组件', '绘制',
-    '知识',
-    '收藏', '我的'];
+  List<String> get bottomBar => [
+        context.l10n.homeTabWidget,
+        context.l10n.homeTabPaint,
+        context.l10n.homeTabKnowledge,
+        context.l10n.homeTabTools,
+        context.l10n.homeTabMine,
+      ];
 
   List<IconData> get bottomBarIcon => const [
         TolyIcon.icon_layout,
         TolyIcon.dingzhi1,
-    TolyIcon.icon_artifact,
-    TolyIcon.icon_collect,
+        TolyIcon.icon_artifact,
+        TolyIcon.icon_fast,
         TolyIcon.yonghu,
       ];
+
   int _position = 0;
 
   @override

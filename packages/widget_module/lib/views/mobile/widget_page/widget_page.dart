@@ -62,8 +62,6 @@ class _WidgetPageState extends State<WidgetPage> {
 
   void _listenStateChange(BuildContext context, WidgetsState state) async{
     if (state is WidgetsLoaded) {
-      print('===_listenStateChange:${state.full}======');
-
       if (state.operate == LoadOperate.refresh) {
         _refreshController.refreshCompleted();
       }

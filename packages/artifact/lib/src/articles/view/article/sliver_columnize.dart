@@ -22,52 +22,52 @@ class _ColumnizeViewPageState extends State<ColumnizeViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  ColoredBox(
-      color: Colors.white,
-      child: SizedBox(
-        height: 220,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 16.0,right: 16,top: 12,bottom: 4),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/icon_head.webp',),
-                    backgroundColor: Colors.transparent,
-                    radius: 10,
-                  ),
-                  SizedBox(width: 6,),
-                  Text("捷特文章专栏",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () async{
-                      Uri uri = Uri.parse('https://juejin.im/user/5b42c0656fb9a04fe727eb37');
-                      if (await canLaunchUrl(uri)) {
-                      await launchUrl(uri,mode:LaunchMode.externalNonBrowserApplication );
-                      } else {
-                      debugPrint('Could not launch ${uri.path}');
-                      }
-                    },
-                    child: Wrap(
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      children: [
-                        Text("前往掘金",style: TextStyle(fontSize: 12,color: Colors.blue),),
-                        Icon(Icons.navigate_next,size: 12,color: Colors.blue,)
-                      ],
-                    ),
-                  ),
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
 
-                ],
-              ),
+    return  Container(
+      height: 220,
+      color: Theme.of(context).listTileTheme.tileColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 16.0,right: 16,top: 12,bottom: 4),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/icon_head.webp',),
+                  backgroundColor: Colors.transparent,
+                  radius: 10,
+                ),
+                SizedBox(width: 6,),
+                Text("捷特文章专栏",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Spacer(),
+                GestureDetector(
+                  onTap: () async{
+                    Uri uri = Uri.parse('https://juejin.im/user/5b42c0656fb9a04fe727eb37');
+                    if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri,mode:LaunchMode.externalNonBrowserApplication );
+                    } else {
+                    debugPrint('Could not launch ${uri.path}');
+                    }
+                  },
+                  child: Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Text("前往掘金",style: TextStyle(fontSize: 12,color: Colors.blue),),
+                      Icon(Icons.navigate_next,size: 12,color: Colors.blue,)
+                    ],
+                  ),
+                ),
+
+              ],
             ),
-            Expanded(
-              child: ColumnizePageView(),
-            ),
-            SizedBox(height: 10,)
-          ],
-        ),
+          ),
+          Expanded(
+            child: ColumnizePageView(),
+          ),
+          SizedBox(height: 10,)
+        ],
       ),
     );
   }

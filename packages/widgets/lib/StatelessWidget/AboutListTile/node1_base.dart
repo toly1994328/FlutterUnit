@@ -27,7 +27,7 @@ class AboutListTileDemo extends StatelessWidget {
       applicationIcon:  FlutterLogo(),
       applicationName: 'Flutter Unit',
       applicationVersion: 'v0.0.1',
-      applicationLegalese: 'Copyright© 2018-2020 张风捷特烈',
+      applicationLegalese: 'Copyright© 2018-2024 张风捷特烈',
       aboutBoxChildren: [
          Padding(
           padding: EdgeInsets.all(10.0),

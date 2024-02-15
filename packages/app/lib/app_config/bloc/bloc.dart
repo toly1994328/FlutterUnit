@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:app/app.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:l10n/l10n.dart';
 import 'package:storage/storage.dart';
 
 import '../repository/repository.dart';
@@ -49,8 +51,16 @@ class AppConfigBloc extends Cubit<AppConfigState> {
     emit(newState);
   }
 
+  // 切换字体事件处理 : 固化索引 + 产出新状态
+  void switchLanguage(Language language) async {
+    print("=====switchLanguage:$language============");
+    AppConfigState newState = state.copyWith(language: language);
+    cao.write(newState.toAppConfigPo());
+    emit(newState);
+  }
+
   // 切换主题色事件处理 : 固化索引 + 产出新状态
-  void switchThemeColor(MaterialColor color) async {
+  void switchThemeColor(ThemeColor color) async {
     AppConfigState newState = state.copyWith(themeColor: color);
     cao.write(newState.toAppConfigPo());
     emit(newState);
