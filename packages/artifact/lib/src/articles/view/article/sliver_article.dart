@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:app/app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../bloc/exp.dart';
 import '../../data/exp.dart';
@@ -70,16 +73,31 @@ class ArticlePanel extends StatelessWidget {
 
   const ArticlePanel({Key? key, required this.article}) : super(key: key);
 
+  void toArticleDetail(BuildContext context){
+    if(Platform.isAndroid||Platform.isIOS){
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => ArticleDetailPage(article: article),
+        ),
+      );
+    }
+    _launchURL('https://juejin.cn${article.url}');
+  }
+
+  void _launchURL(String url) async {
+    print(url);
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(uri,mode: LaunchMode.externalApplication);
+    } else {
+      debugPrint('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => ArticleDetailPage(article: article),
-          ),
-        );
-      },
+      onTap: ()=>toArticleDetail(context),
       child: Container(
         color: Theme.of(context).listTileTheme.tileColor,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),

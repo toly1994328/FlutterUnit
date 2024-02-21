@@ -55,11 +55,6 @@ class ArticleBloc extends Cubit<ArticleState> {
     }
   }
 
-  @override
-  Future<void> close() async {
-    super.close();
-    print("=======close:${groupId}==================");
-  }
 }
 
 sealed class ArticleState {

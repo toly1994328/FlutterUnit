@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'columnize_page_view.dart';
-
+import 'package:l10n/l10n.dart';
 class ColumnizeViewPage extends StatefulWidget {
   const ColumnizeViewPage({Key? key}) : super(key: key);
 
@@ -54,7 +54,10 @@ class _ColumnizeViewPageState extends State<ColumnizeViewPage> {
                   child: Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      Text("前往掘金",style: TextStyle(fontSize: 12,color: Colors.blue),),
+                      Text(
+                        context.l10n.knowledgeToJuejin
+
+    ,style: TextStyle(fontSize: 12,color: Colors.blue),),
                       Icon(Icons.navigate_next,size: 12,color: Colors.blue,)
                     ],
                   ),

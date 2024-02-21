@@ -23,10 +23,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get essentialCollection => 'KeypointsCollection';
 
   @override
-  String get homeAccount => 'Account';
+  String get homeAccount => 'Application';
 
   @override
-  String get searchWidget => 'search widget...';
+  String get homeAccountTabInfo => 'About App';
+
+  @override
+  String get homeAccountTabMe => 'Contact Me';
+
+  @override
+  String get homeAccountSupport => 'Support Project';
+
+  @override
+  String get searchWidget => 'search widget ...';
 
   @override
   String get stateless => 'Stateless';
@@ -119,16 +128,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingLanguage => 'Language Setting';
 
   @override
+  String get appDetails => 'Application details';
+
+  @override
+  String get checkUpdate => 'Check New Version';
+
+  @override
+  String get downloadNewVersion => 'Download New Version';
+
+  @override
+  String get downloadingNewVersion => 'Downloading New Version ...';
+
+  @override
+  String get currentIsNew => 'There is the latest version of FlutterUnit!';
+
+  @override
+  String get checkDatabaseNewVersion => 'Check for new versions of the database';
+
+  @override
+  String get viewThisProjectGithubRepository => '《View the Github Repository for this project》';
+
+  @override
   String get favorite => 'Collected';
 
   @override
-  String get enterComponentName => 'Enter component name';
+  String get enterComponentName => 'Input widget name';
 
   @override
   String get containerComponents => 'Container components';
-
-  @override
-  String get relatedComponents => 'Related components';
 
   @override
   String get componentTavern => 'Component Tavern';
@@ -176,16 +203,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get basicDrawing => 'Basic drawing';
 
   @override
+  String get basicDrawingDesc => 'Including some basic graphics drawing examples would be very friendly to beginners in programming. Through these examples, one can learn how to draw basic shapes such as points, lines, rectangles, circles, arcs, text, images, etc., and understand the usage of core objects in drawing like Canvas, Paint, Path, etc.';
+
+  @override
   String get animationGesture => 'Animated gestures';
+
+  @override
+  String get animationGestureDesc => 'Includes some drawing examples of animation and gestures, which make drawing more interactive. Through these examples, one can learn the usage of animation and gestures, such as sliding, rotating, scaling, moving effects, etc., making drawing not just static presentation.';
 
   @override
   String get particleDrawing => 'Particle drawing';
 
   @override
+  String get particleDrawingDesc => 'Includes some drawing examples related to particles, which are top-level operations in drawing. Through these examples, one can learn how to use particles to create stunning visual effects, such as particle clocks, particle explosions, particle backgrounds, etc., giving drawing endless possibilities.';
+
+  @override
   String get interestingDrawing => 'Fun drawing';
 
   @override
+  String get interestingDrawingDesc => 'Includes some fun drawing examples, let\'s experience the joy of drawing, programming, and intelligence together here.';
+
+  @override
   String get artGallery => 'Art galleries ';
+
+  @override
+  String get artGalleryDesc => 'Includes some hall-level drawing examples, which are pinnacle works of drawing. They have no practicality and are not born for any demand. They exist only because they exist, serving as a medium for human wisdom and expression, called art.';
 
   @override
   String get drawingOfImages => 'This example explains how to draw images: by loading images and drawing image resources to a specified area. Draw a batch of 45 \"angled grid lines on the upper layer to practice drawing the lines ';
@@ -392,13 +434,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clickHereToJump => 'Click here to jump to';
 
   @override
-  String get appDetails => 'Application details';
+  String get knowledgeTabToly => 'Toly Articles';
 
   @override
-  String get checkDatabaseNewVersion => 'Check for new versions of the database';
+  String get knowledgeTabAlgo => 'Algo Player';
 
   @override
-  String get viewThisProjectGithubRepository => '《View the Github warehouse for this project》';
+  String get knowledgeTabLayout => 'Layout Treasury';
+
+  @override
+  String get knowledgeTabPoint => 'Key Points';
+
+  @override
+  String get knowledgeConstruction => 'In Construction';
+
+  @override
+  String get knowledgeToJuejin => 'To Juejin';
+
+  @override
+  String get srcPath => 'Source Path';
+
+  @override
+  String get widgetsInn => 'Widgets Inn';
+
+  @override
+  String get likedWidgets => 'Liked Widgets';
+
+  @override
+  String get relatedComponents => 'Related components';
 
   @override
   String get backupFavoritesCollectionData => 'Backup Collection Data';

@@ -44,6 +44,8 @@ class _DeskTabTopBarState extends State<DeskTabTopBar>  with TickerProviderState
         color: isDark?Color(0xff2C3036):Colors.white,
         child: Row(
           children: [
+            const SizedBox(width: 12,),
+            BackButton(),
             SizedBox(
               width: 350,
               child: TabBar(

@@ -132,8 +132,26 @@ abstract class AppLocalizations {
   /// No description provided for @homeAccount.
   ///
   /// In zh, this message translates to:
-  /// **'用户信息'**
+  /// **'应用信息'**
   String get homeAccount;
+
+  /// No description provided for @homeAccountTabInfo.
+  ///
+  /// In zh, this message translates to:
+  /// **'关于应用'**
+  String get homeAccountTabInfo;
+
+  /// No description provided for @homeAccountTabMe.
+  ///
+  /// In zh, this message translates to:
+  /// **'联系本王'**
+  String get homeAccountTabMe;
+
+  /// No description provided for @homeAccountSupport.
+  ///
+  /// In zh, this message translates to:
+  /// **'支持项目'**
+  String get homeAccountSupport;
 
   /// No description provided for @searchWidget.
   ///
@@ -321,6 +339,48 @@ abstract class AppLocalizations {
   /// **'设置语言'**
   String get settingLanguage;
 
+  /// No description provided for @appDetails.
+  ///
+  /// In zh, this message translates to:
+  /// **'应用详情'**
+  String get appDetails;
+
+  /// No description provided for @checkUpdate.
+  ///
+  /// In zh, this message translates to:
+  /// **'检查新版本'**
+  String get checkUpdate;
+
+  /// No description provided for @downloadNewVersion.
+  ///
+  /// In zh, this message translates to:
+  /// **'下载新版本'**
+  String get downloadNewVersion;
+
+  /// No description provided for @downloadingNewVersion.
+  ///
+  /// In zh, this message translates to:
+  /// **'新版本下载中...'**
+  String get downloadingNewVersion;
+
+  /// No description provided for @currentIsNew.
+  ///
+  /// In zh, this message translates to:
+  /// **'当前应用已是最新版本!'**
+  String get currentIsNew;
+
+  /// No description provided for @checkDatabaseNewVersion.
+  ///
+  /// In zh, this message translates to:
+  /// **'检查数据库新版本'**
+  String get checkDatabaseNewVersion;
+
+  /// No description provided for @viewThisProjectGithubRepository.
+  ///
+  /// In zh, this message translates to:
+  /// **'《查看本项目Github仓库》'**
+  String get viewThisProjectGithubRepository;
+
   /// No description provided for @favorite.
   ///
   /// In zh, this message translates to:
@@ -338,12 +398,6 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'容器组件'**
   String get containerComponents;
-
-  /// No description provided for @relatedComponents.
-  ///
-  /// In zh, this message translates to:
-  /// **'相关组件'**
-  String get relatedComponents;
 
   /// No description provided for @componentTavern.
   ///
@@ -435,11 +489,23 @@ abstract class AppLocalizations {
   /// **'基础绘制'**
   String get basicDrawing;
 
+  /// No description provided for @basicDrawingDesc.
+  ///
+  /// In zh, this message translates to:
+  /// **'收录一些基础图形绘制案例，这些案例对初涉绘制的编程者会非常友好。通过这些案例，可以学会点、线、矩形、圆、圆弧、文字、图片等基本图形的绘制方法，了解 Canvas、Paint、Path 等绘制中核心对象的使用。'**
+  String get basicDrawingDesc;
+
   /// No description provided for @animationGesture.
   ///
   /// In zh, this message translates to:
   /// **'动画手势'**
   String get animationGesture;
+
+  /// No description provided for @animationGestureDesc.
+  ///
+  /// In zh, this message translates to:
+  /// **'收录一些动画和手势的绘制案例，这些案例会让绘制更具有操作性。通过这些案例，可以学会动画和手势的使用，如滑动、旋转、缩放、移动等效果，让绘制不再只是静态展现。'**
+  String get animationGestureDesc;
 
   /// No description provided for @particleDrawing.
   ///
@@ -447,17 +513,35 @@ abstract class AppLocalizations {
   /// **'粒子绘制'**
   String get particleDrawing;
 
+  /// No description provided for @particleDrawingDesc.
+  ///
+  /// In zh, this message translates to:
+  /// **'收录一些粒子相关的绘制案例，这些案例将是绘制的顶级操作。通过这些案例，可以学会如何使用粒子来绘制惊艳的视觉效果，如粒子时钟、粒子爆炸、粒子背景等效果，让绘制拥有无限可能。'**
+  String get particleDrawingDesc;
+
   /// No description provided for @interestingDrawing.
   ///
   /// In zh, this message translates to:
   /// **'趣味绘制'**
   String get interestingDrawing;
 
+  /// No description provided for @interestingDrawingDesc.
+  ///
+  /// In zh, this message translates to:
+  /// **'收录一些比较有趣的绘制案例，让我们一起在这里一起体验绘制的乐趣、编程的乐趣和智慧的乐趣吧。'**
+  String get interestingDrawingDesc;
+
   /// No description provided for @artGallery.
   ///
   /// In zh, this message translates to:
   /// **'艺术画廊'**
   String get artGallery;
+
+  /// No description provided for @artGalleryDesc.
+  ///
+  /// In zh, this message translates to:
+  /// **'收录一些殿堂级的绘制案例，这些案例将是绘制的巅峰作品，它们的没有任何的实用性，也不为任何需求而生，它们仅是因为存在而存在，是人类智慧和表达的媒介，称谓艺术。'**
+  String get artGalleryDesc;
 
   /// No description provided for @drawingOfImages.
   ///
@@ -867,23 +951,65 @@ abstract class AppLocalizations {
   /// **'点击这里跳转'**
   String get clickHereToJump;
 
-  /// No description provided for @appDetails.
+  /// No description provided for @knowledgeTabToly.
   ///
   /// In zh, this message translates to:
-  /// **'应用详情'**
-  String get appDetails;
+  /// **'捷特文库'**
+  String get knowledgeTabToly;
 
-  /// No description provided for @checkDatabaseNewVersion.
+  /// No description provided for @knowledgeTabAlgo.
   ///
   /// In zh, this message translates to:
-  /// **'检查数据库新版本'**
-  String get checkDatabaseNewVersion;
+  /// **'算法演绎'**
+  String get knowledgeTabAlgo;
 
-  /// No description provided for @viewThisProjectGithubRepository.
+  /// No description provided for @knowledgeTabLayout.
   ///
   /// In zh, this message translates to:
-  /// **'《查看本项目Github仓库》'**
-  String get viewThisProjectGithubRepository;
+  /// **'布局宝库'**
+  String get knowledgeTabLayout;
+
+  /// No description provided for @knowledgeTabPoint.
+  ///
+  /// In zh, this message translates to:
+  /// **'要点宝库'**
+  String get knowledgeTabPoint;
+
+  /// No description provided for @knowledgeConstruction.
+  ///
+  /// In zh, this message translates to:
+  /// **'正在建设中'**
+  String get knowledgeConstruction;
+
+  /// No description provided for @knowledgeToJuejin.
+  ///
+  /// In zh, this message translates to:
+  /// **'前往掘金'**
+  String get knowledgeToJuejin;
+
+  /// No description provided for @srcPath.
+  ///
+  /// In zh, this message translates to:
+  /// **'源码地址'**
+  String get srcPath;
+
+  /// No description provided for @widgetsInn.
+  ///
+  /// In zh, this message translates to:
+  /// **'组件酒肆'**
+  String get widgetsInn;
+
+  /// No description provided for @likedWidgets.
+  ///
+  /// In zh, this message translates to:
+  /// **'珍藏组件'**
+  String get likedWidgets;
+
+  /// No description provided for @relatedComponents.
+  ///
+  /// In zh, this message translates to:
+  /// **'相关组件'**
+  String get relatedComponents;
 
   /// No description provided for @backupFavoritesCollectionData.
   ///

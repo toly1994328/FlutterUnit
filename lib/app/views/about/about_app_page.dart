@@ -179,7 +179,7 @@ class AboutAppPage extends StatelessWidget {
             InfoPanel(
               title: 'Flutter Unit 2.0 ',
               info:
-                  '○  317 的 Flutter 组件收录和详情介绍。\n'
+                  '○  317 个 Flutter 组件收录和详情介绍。\n'
                   '○  绘制集录用于收录绘制相关的优秀示例。\n'
                   '○  要点集录用于收录 Flutter 相关的小知识。\n'
                   '○  时光轴，查看 FlutterUnit 重要事件。\n'
@@ -202,6 +202,7 @@ class InfoPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,

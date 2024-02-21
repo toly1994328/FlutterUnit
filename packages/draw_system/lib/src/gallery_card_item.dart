@@ -86,6 +86,8 @@ class GalleryCardItem extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 15, right: 15, top: 6),
                 child: Text(
                   galleryInfo.info,
+                  maxLines: 7,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                       fontSize: 12,
                       color: isDark?Colors.white:Colors.grey, shadows: [

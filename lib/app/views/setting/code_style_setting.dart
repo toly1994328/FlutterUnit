@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:l10n/l10n.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +31,7 @@ class Hello {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(title: Text('代码高亮样式')),
+    appBar: AppBar(title: Text(context.l10n.codeHighlightStyle)),
       body: BlocBuilder<AppConfigBloc, AppConfigState>(
           builder: (_, state) => _buildFontCell(context,
               Cons.codeThemeSupport.keys.toList(), state.codeStyleIndex)),

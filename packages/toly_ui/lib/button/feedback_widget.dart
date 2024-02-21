@@ -77,6 +77,7 @@ class _FeedBackState extends State<FeedbackWidget> with SingleTickerProviderStat
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
           onLongPress: widget.onLongPressed,
+          behavior: HitTestBehavior.opaque,
           onTap: () {
             _controller.forward();
             widget.onPressed?.call();

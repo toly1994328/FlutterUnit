@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../picture_frame.dart';
-
+import 'package:l10n/l10n.dart';
 
 /// create by 张风捷特烈 on 2020/12/4
 /// contact me by email 1981462002@qq.com
@@ -43,8 +43,8 @@ class DeskFrameShower extends StatelessWidget {
                   "作者:  $author    ",
                   style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                 ),
-                const Text(
-                  "源码地址    ",
+                 Text(
+                  "${context.l10n.srcPath}    ",
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,

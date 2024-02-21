@@ -50,7 +50,7 @@ class _DeskKnowledgeTabTopBarState extends State<DeskKnowledgeTabTopBar>
                 Expanded(
                   child: Center(
                     child: SizedBox(
-                      width: 350,
+                      width: 400,
                       child: TabBar(
                         onTap: widget.onTabPressed,
                         indicatorSize: TabBarIndicatorSize.label,

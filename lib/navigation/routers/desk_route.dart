@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:treasure_tools/treasure_tools.dart';
 import 'package:widget_module/widget_module.dart';
 
+import '../../app/views/about/about_app_page.dart';
 import '../../app/views/about/version_info.dart';
 import '../../app/views/setting/code_style_setting.dart';
 import '../../app/views/setting/font_setting.dart';
@@ -45,6 +46,11 @@ final RouteBase appNavRoute = ShellRoute(
       path: 'painter',
       builder: (BuildContext context, GoRouterState state) {
         return GalleryUnit();
+      },
+    ),    GoRoute(
+      path: 'about_app',
+      builder: (BuildContext context, GoRouterState state) {
+        return AboutAppPage();
       },
     ),
     GoRoute(

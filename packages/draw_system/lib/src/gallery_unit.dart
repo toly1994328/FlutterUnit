@@ -1,11 +1,12 @@
 import 'dart:convert';
 
+import 'package:app/app.dart';
 import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toly_ui/toly_ui.dart';
-
+import 'package:l10n/l10n.dart';
 
 import 'bloc/gallery_unit/bloc.dart';
 import 'desk_ui/desk_gallery_unit.dart';
@@ -97,9 +98,7 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
               Expanded(
                   child: Container(
                 margin: const EdgeInsets.only(left: 8, right: 8),
-                child: BlocBuilder<GalleryUnitBloc,String>(
-                  builder: _buildContentByState,
-                ),
+                child: _buildContent(StrUnit.galleryDesc(context)),
                 decoration: boxDecoration,
               ))
             ],
@@ -124,7 +123,7 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
       height: MediaQuery.of(context).size.height * 0.2,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: const [
+        children:  [
            FlutterLogo(
             size: 40,
           ),
@@ -132,7 +131,7 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
             width: 10,
           ),
           Text(
-            "绘制集录",
+            context.l10n.paintCollection,
             style: TextStyle(fontSize: 26, color: Colors.white),
           ),
         ],
@@ -144,13 +143,14 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
     if(state.isEmpty){
       return const LoadingShower();
     }
-    return _buildContent(state);
+    return _buildContent(StrUnit.galleryDesc(context));
   }
 
   Widget _buildContent(String galleryInfo) {
+
     final List<Widget> widgets = (json.decode(galleryInfo) as List).map((e) {
       GalleryInfo info = GalleryInfo.fromJson(e);
-      List<Widget> children = GalleryFactory.getGalleryByName(info.type);
+      List<Widget> children = GalleryFactory.getGalleryByName(info.type,context);
 
       return FeedbackWidget(
         a: 0.95,

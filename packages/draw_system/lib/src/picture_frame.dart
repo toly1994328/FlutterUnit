@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'desk_ui/desk_frame.dart';
-
+import 'package:l10n/l10n.dart';
 class PictureFrame extends StatelessWidget {
   final Widget? child;
   final double? width;
@@ -155,8 +155,8 @@ class FrameShower extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: _launch,
-                  child: const Text(
-                    "源码地址    ",
+                  child:  Text(
+                    "${context.l10n.srcPath}    ",
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,

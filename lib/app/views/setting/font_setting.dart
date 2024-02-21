@@ -24,7 +24,7 @@ class FontSettingPage extends StatelessWidget {
       BuildContext context, List<String> fontFamilySupport, String fontFamily) {
     return GridView.count(
       padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
-      crossAxisCount: 2,
+      crossAxisCount: isDesk?4:2,
       mainAxisSpacing: 10,
       crossAxisSpacing: 10,
       childAspectRatio: 1.5,

@@ -63,9 +63,9 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
 
   Widget _buildContent() {
     final List<Widget> widgets =
-        (json.decode(StrUnit.galleryInfo) as List).map((e) {
+        (json.decode(StrUnit.galleryDesc(context)) as List).map((e) {
       GalleryInfo info = GalleryInfo.fromJson(e);
-      List<Widget> children = GalleryFactory.getGalleryByName(info.type);
+      List<Widget> children = GalleryFactory.getGalleryByName(info.type,context);
 
       return FeedbackWidget(
         a: 0.95,

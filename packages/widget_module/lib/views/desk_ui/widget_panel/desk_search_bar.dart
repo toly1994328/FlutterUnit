@@ -5,6 +5,7 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:l10n/l10n.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import '../../../../data/exp.dart';
 
@@ -127,7 +128,7 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
-          hintText: "输入组件名称",
+          hintText: context.l10n.enterComponentName,
           hintStyle: TextStyle(fontSize: 12, color: Colors.grey)),
     );
 

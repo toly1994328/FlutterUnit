@@ -25,6 +25,8 @@ dependencies:
     path: ../utils
   app:
     path: ../app
+  l10n:
+    path: ../l10n
   toly_ui:
     path: ../toly_ui
 dev_dependencies:
