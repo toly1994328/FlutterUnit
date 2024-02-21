@@ -22,16 +22,14 @@ class CategoryShow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    CategoryWidgetState state = context.watch<CategoryWidgetBloc>().state;
+    Widget child = const SizedBox();
+    if (state is CategoryWidgetLoadedState) {
+      child =  _buildWidgetList(state.widgets);
+    }
     return Scaffold(
       appBar: AppBar(title: Text(model.name)),
-      body: BlocBuilder<CategoryWidgetBloc, CategoryWidgetState>(
-          builder: (_, state) {
-        if (state is CategoryWidgetLoadedState) {
-          return _buildWidgetList(state.widgets);
-        }
-        return const SizedBox();
-      }),
+      body: child,
     );
   }
 
@@ -70,7 +68,7 @@ class CategoryShow extends StatelessWidget {
         itemCount: widgets.length);
   }
 
-  _toDetailPage(BuildContext context, WidgetModel model) async {
+ void _toDetailPage(BuildContext context, WidgetModel model) async {
     // Navigator.pushNamed(context, UnitRouter.widget_detail, arguments: model);
     context.push('/widget/detail/${model.name}',extra: model);
   }

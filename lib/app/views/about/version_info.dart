@@ -3,6 +3,7 @@ import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:l10n/l10n.dart';
 
 import 'package:toly_ui/toly_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -45,7 +46,7 @@ class VersionInfo extends StatelessWidget {
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(bottom:8.0),
-                child: buildBottom(),
+                child: buildBottom(context),
               )
 
             ],
@@ -78,7 +79,7 @@ class VersionInfo extends StatelessWidget {
           children: <Widget>[
             const Divider(height: 1,),
             ListTile(
-              title: const Text('应用详情',style: labelStyle,),
+              title:  Text(context.l10n.appDetails,style: labelStyle,),
               trailing: _nextIcon(context),
               onTap: () => context.push('/about_app'),
             ),
@@ -86,7 +87,7 @@ class VersionInfo extends StatelessWidget {
             const AppUpdatePanel(),
             const Divider(height: 1,indent: 10),
             ListTile(
-              title: const Text('检查数据库新版本',style: labelStyle),
+              title:  Text(context.l10n.checkDatabaseNewVersion,style: labelStyle),
               trailing: _nextIcon(context),
               onTap: () async{
 
@@ -102,7 +103,7 @@ class VersionInfo extends StatelessWidget {
   Widget _nextIcon(BuildContext context) =>
       const Icon(Icons.chevron_right, color: Colors.grey);
 
-  Widget buildBottom() {
+  Widget buildBottom(BuildContext context) {
     return Wrap(
       direction: Axis.vertical,
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -112,7 +113,7 @@ class VersionInfo extends StatelessWidget {
             onPressed: (){
               _launchURL("https://github.com/toly1994328/FlutterUnit");
             },
-            child: const Text('《查看本项目Github仓库》',style: TextStyle(fontSize: 12,color: Color(0xff616C84),),)),
+            child:  Text(context.l10n.viewThisProjectGithubRepository,style: TextStyle(fontSize: 12,color: Color(0xff616C84),),)),
         const Text('Power By 张风捷特烈',style: TextStyle(fontSize: 12,color: Colors.grey),),
         const Text('Copyright © 2018-2024 Toly1994',style: TextStyle(fontSize: 12,color: Colors.grey),),
       ],

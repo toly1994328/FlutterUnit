@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:r_upgrade/r_upgrade.dart';
 import 'package:utils/utils.dart';
+import 'package:l10n/l10n.dart';
 
 import '../bloc/bloc.dart';
 import '../bloc/event.dart';
@@ -57,10 +58,10 @@ class AppUpdatePanel extends StatelessWidget {
   }
 
   Widget _buildByUpdateState(BuildContext context, UpdateState state) {
-    String info = '检查新版本';
+    String info = context.l10n.checkUpdate;
     Widget trail = const SizedBox.shrink();
     if (state is ShouldUpdateState) {
-      info = "下载新版本";
+      info = context.l10n.downloadNewVersion;
       trail = Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
@@ -77,7 +78,7 @@ class AppUpdatePanel extends StatelessWidget {
       trail = const CupertinoActivityIndicator();
     }
     if (state is DownloadingState) {
-      info = "新版本下载中...";
+      info = context.l10n.downloadingNewVersion;
       trail = _buildProgress(context, state.progress, state.appSize);
     }
 
@@ -111,7 +112,7 @@ class AppUpdatePanel extends StatelessWidget {
   void _listenerByUpdateState(BuildContext context, UpdateState state) {
     if (state is NoUpdateState) {
       if (state.isChecked) {
-        Toast.success(context, '当前应用已是最新版本!');
+        Toast.success(context, context.l10n.currentIsNew);
       }
     }
   }

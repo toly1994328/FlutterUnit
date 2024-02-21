@@ -20,94 +20,96 @@ class SettingPage extends StatelessWidget {
     const Widget divider =  Divider(height: 1);
 
 
-    return Scaffold(
-      appBar: AppBar(title:Text(context.l10n.appSettings)),
-      body: ListView(
-        children: <Widget>[
-          Container( height: 15),
-          ListTile(
-            leading: Icon(
-              Icons.style,
-              color: Theme.of(context).primaryColor,
-            ),
-            title:  Text(context.l10n.darkMode, style:  TextStyle(fontSize: 16)),
-            subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
-              builder: (_,state) {
-                String info = switch(state.themeMode){
-                  ThemeMode.system => context.l10n.followSystem,
-                  ThemeMode.light => context.l10n.lightMode,
-                  ThemeMode.dark => context.l10n.darkMode,
-                };
-                return Text(info, style:  const TextStyle(fontSize: 12,color: Colors.grey)
-              );
-              },
-            ),
-            trailing: _nextIcon(context),
-            onTap: ()=> context.push('/settings/dark_mode'),
-          ),
-          divider,
-          ListTile(
-            leading: Icon(
-              Icons.palette,
-              color: Theme.of(context).primaryColor,
-            ),
-            title:  Text(context.l10n.themeColorSetting, style:  TextStyle(fontSize: 16)),
-            subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
-              builder: (_,state)=>Text(
-                state.themeColor.label(context),
-                style: TextStyle(color: state.themeColor.color,fontSize: 12),
+    return DragToMoveAreaNoDouble(
+      child: Scaffold(
+        appBar: AppBar(title:Text(context.l10n.appSettings)),
+        body: ListView(
+          children: <Widget>[
+            Container( height: 15),
+            ListTile(
+              leading: Icon(
+                Icons.style,
+                color: Theme.of(context).primaryColor,
               ),
-            ),
-            trailing: _nextIcon(context),
-            onTap: () => context.push('/settings/theme_color'),
-          ),
-          // divider,
-          Container( height: 10),
-          ListTile(
-            leading: Icon(
-              Icons.translate,
-              color: Theme.of(context).primaryColor,
-            ),
-            title:  Text(context.l10n.fontSetting, style:  TextStyle(fontSize: 16)),
-            subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
-              builder: (_,state)=>Text(
-                  state.fontFamily,style: TextStyle(fontSize: 12),
+              title:  Text(context.l10n.darkMode, style:  TextStyle(fontSize: 16)),
+              subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
+                builder: (_,state) {
+                  String info = switch(state.themeMode){
+                    ThemeMode.system => context.l10n.followSystem,
+                    ThemeMode.light => context.l10n.lightMode,
+                    ThemeMode.dark => context.l10n.darkMode,
+                  };
+                  return Text(info, style:  const TextStyle(fontSize: 12,color: Colors.grey)
+                );
+                },
               ),
+              trailing: _nextIcon(context),
+              onTap: ()=> context.push('/settings/dark_mode'),
             ),
-            trailing: _nextIcon(context),
-            onTap: () => context.push('/settings/font_setting'),
-          ),
-          divider,
-          const LanguageSwitchTile(),
-          divider,
-          ListTile(
-            leading: Icon(
-              TolyIcon.icon_code,
-              color: Theme.of(context).primaryColor,
+            divider,
+            ListTile(
+              leading: Icon(
+                Icons.palette,
+                color: Theme.of(context).primaryColor,
+              ),
+              title:  Text(context.l10n.themeColorSetting, style:  TextStyle(fontSize: 16)),
+              subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
+                builder: (_,state)=>Text(
+                  state.themeColor.label(context),
+                  style: TextStyle(color: state.themeColor.color,fontSize: 12),
+                ),
+              ),
+              trailing: _nextIcon(context),
+              onTap: () => context.push('/settings/theme_color'),
             ),
-            title:  Text(context.l10n.codeHighlightStyle, style:  TextStyle(fontSize: 16)),
-            trailing: _nextIcon(context),
-            onTap: () => context.push('/settings/code_style'),
-          ),
-          // divider,
-          Container( height: 10,),
-          // _buildShowBg(context),
-          divider,
-          _buildShowOver(context),
-          // divider,
-          // _buildShowTool(context),
-          divider,
-          // Container( height: 10),
-          ListTile(
-            leading: Icon(
-              Icons.info,
-              color: Theme.of(context).primaryColor,
+            // divider,
+            Container( height: 10),
+            ListTile(
+              leading: Icon(
+                Icons.translate,
+                color: Theme.of(context).primaryColor,
+              ),
+              title:  Text(context.l10n.fontSetting, style:  TextStyle(fontSize: 16)),
+              subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
+                builder: (_,state)=>Text(
+                    state.fontFamily,style: TextStyle(fontSize: 12),
+                ),
+              ),
+              trailing: _nextIcon(context),
+              onTap: () => context.push('/settings/font_setting'),
             ),
-            title:  Text(context.l10n.versionInformation, style:  TextStyle(fontSize: 16)),
-            trailing: _nextIcon(context),
-            onTap: () => context.push('/settings/version'),
-          ),
-        ],
+            divider,
+            const LanguageSwitchTile(),
+            divider,
+            ListTile(
+              leading: Icon(
+                TolyIcon.icon_code,
+                color: Theme.of(context).primaryColor,
+              ),
+              title:  Text(context.l10n.codeHighlightStyle, style:  TextStyle(fontSize: 16)),
+              trailing: _nextIcon(context),
+              onTap: () => context.push('/settings/code_style'),
+            ),
+            // divider,
+            Container( height: 10,),
+            // _buildShowBg(context),
+            divider,
+            _buildShowOver(context),
+            // divider,
+            // _buildShowTool(context),
+            divider,
+            // Container( height: 10),
+            ListTile(
+              leading: Icon(
+                Icons.info,
+                color: Theme.of(context).primaryColor,
+              ),
+              title:  Text(context.l10n.versionInformation, style:  TextStyle(fontSize: 16)),
+              trailing: _nextIcon(context),
+              onTap: () => context.push('/settings/version'),
+            ),
+          ],
+        ),
       ),
     );
   }

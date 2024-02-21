@@ -23,7 +23,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get essentialCollection => '要点集录';
 
   @override
-  String get homeAccount => '用户信息';
+  String get homeAccount => '应用信息';
+
+  @override
+  String get homeAccountTabInfo => '关于应用';
+
+  @override
+  String get homeAccountTabMe => '联系本王';
+
+  @override
+  String get homeAccountSupport => '支持项目';
 
   @override
   String get searchWidget => '搜索组件';
@@ -119,6 +128,27 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingLanguage => '设置语言';
 
   @override
+  String get appDetails => '应用详情';
+
+  @override
+  String get checkUpdate => '检查新版本';
+
+  @override
+  String get downloadNewVersion => '下载新版本';
+
+  @override
+  String get downloadingNewVersion => '新版本下载中...';
+
+  @override
+  String get currentIsNew => '当前应用已是最新版本!';
+
+  @override
+  String get checkDatabaseNewVersion => '检查数据库新版本';
+
+  @override
+  String get viewThisProjectGithubRepository => '《查看本项目Github仓库》';
+
+  @override
   String get favorite => '已收藏';
 
   @override
@@ -126,9 +156,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get containerComponents => '容器组件';
-
-  @override
-  String get relatedComponents => '相关组件';
 
   @override
   String get componentTavern => '组件酒肆';
@@ -176,16 +203,31 @@ class AppLocalizationsZh extends AppLocalizations {
   String get basicDrawing => '基础绘制';
 
   @override
+  String get basicDrawingDesc => '收录一些基础图形绘制案例，这些案例对初涉绘制的编程者会非常友好。通过这些案例，可以学会点、线、矩形、圆、圆弧、文字、图片等基本图形的绘制方法，了解 Canvas、Paint、Path 等绘制中核心对象的使用。';
+
+  @override
   String get animationGesture => '动画手势';
+
+  @override
+  String get animationGestureDesc => '收录一些动画和手势的绘制案例，这些案例会让绘制更具有操作性。通过这些案例，可以学会动画和手势的使用，如滑动、旋转、缩放、移动等效果，让绘制不再只是静态展现。';
 
   @override
   String get particleDrawing => '粒子绘制';
 
   @override
+  String get particleDrawingDesc => '收录一些粒子相关的绘制案例，这些案例将是绘制的顶级操作。通过这些案例，可以学会如何使用粒子来绘制惊艳的视觉效果，如粒子时钟、粒子爆炸、粒子背景等效果，让绘制拥有无限可能。';
+
+  @override
   String get interestingDrawing => '趣味绘制';
 
   @override
+  String get interestingDrawingDesc => '收录一些比较有趣的绘制案例，让我们一起在这里一起体验绘制的乐趣、编程的乐趣和智慧的乐趣吧。';
+
+  @override
   String get artGallery => '艺术画廊';
+
+  @override
+  String get artGalleryDesc => '收录一些殿堂级的绘制案例，这些案例将是绘制的巅峰作品，它们的没有任何的实用性，也不为任何需求而生，它们仅是因为存在而存在，是人类智慧和表达的媒介，称谓艺术。';
 
   @override
   String get drawingOfImages => '本样例介绍如何进行图片的绘制: 通过加载图片并将图片资源绘制到指定的区域。在上层绘制一批 45”倾角的栅格线，来练习线条的绘制 ';
@@ -392,13 +434,34 @@ class AppLocalizationsZh extends AppLocalizations {
   String get clickHereToJump => '点击这里跳转';
 
   @override
-  String get appDetails => '应用详情';
+  String get knowledgeTabToly => '捷特文库';
 
   @override
-  String get checkDatabaseNewVersion => '检查数据库新版本';
+  String get knowledgeTabAlgo => '算法演绎';
 
   @override
-  String get viewThisProjectGithubRepository => '《查看本项目Github仓库》';
+  String get knowledgeTabLayout => '布局宝库';
+
+  @override
+  String get knowledgeTabPoint => '要点宝库';
+
+  @override
+  String get knowledgeConstruction => '正在建设中';
+
+  @override
+  String get knowledgeToJuejin => '前往掘金';
+
+  @override
+  String get srcPath => '源码地址';
+
+  @override
+  String get widgetsInn => '组件酒肆';
+
+  @override
+  String get likedWidgets => '珍藏组件';
+
+  @override
+  String get relatedComponents => '相关组件';
 
   @override
   String get backupFavoritesCollectionData => '备份收藏集数据';

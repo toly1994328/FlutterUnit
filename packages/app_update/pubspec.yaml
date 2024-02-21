@@ -14,6 +14,7 @@ dependencies:
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.1 # xml 固化
   r_upgrade: ^0.4.2 # 应用升级
+  url_launcher: ^6.1.14 # url
   package_info_plus: ^4.0.2
   utils:
     path: ../utils

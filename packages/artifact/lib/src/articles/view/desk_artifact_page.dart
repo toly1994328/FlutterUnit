@@ -10,7 +10,7 @@ import '../data/exp.dart';
 import 'article/sliver_article.dart';
 import 'article/sliver_columnize.dart';
 import 'building/building_panel.dart';
-
+import 'package:l10n/l10n.dart';
 class DeskKnowledgePage extends StatefulWidget {
   const DeskKnowledgePage({super.key});
 
@@ -35,69 +35,39 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
   ColumnizeRepository cRepository = const ColumnizeRepository();
   @override
   Widget build(BuildContext context) {
-    String name = SortStateScope.of(context).config.name;
 
     return MultiBlocProvider(
       providers: [
         BlocProvider<ColumnizeBloc>(create: (_) => ColumnizeBloc(cRepository)..init()),
         BlocProvider<ArticleBloc>(create: (_) => ArticleBloc(aRepository,pageSize: 1000)..init()),
       ],
-      child: Column(
-        children: [
-          DeskKnowledgeTabTopBar(onTabPressed: (int value) {
-            controller.index = value;
-          }, tabs: [
-            '捷特文库',
-            '算法演绎',
-            '布局宝库',
-            '要点宝库',
-          ],),
-          Expanded(child: TabBarView(
-            controller: controller,
-            children: [
-              TolyArticlesPage(),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                            onTap: () {
-                              _launchURL('https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart');
-                            },
-                            child: Text(
-                              '查看排序源码',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            )),
-                        Spacer(),
-                        SortSelector(),
-                      ],
-                    ),
-                  ),
-                  Expanded(child: SortPaper()),
-                ],
-              ),
-              BuildingPanel(),
-              DeskPointPage(),
-            ],
-          ))
-        ],
+      child: Scaffold(
+        endDrawer: SortSettings(),
+        body: Column(
+          children: [
+            DeskKnowledgeTabTopBar(onTabPressed: (int value) {
+              controller.index = value;
+            }, tabs: [
+              context.l10n.knowledgeTabToly,
+              context.l10n.knowledgeTabAlgo,
+              context.l10n.knowledgeTabLayout,
+              context.l10n.knowledgeTabPoint,
+            ],),
+            Expanded(child: TabBarView(
+              controller: controller,
+              children: [
+                TolyArticlesPage(),
+                SoreAlgoPage(),
+                BuildingPanel(),
+                DeskPointPage(),
+              ],
+            ))
+          ],
+        ),
       ),
     );
   }
 
-  _launchURL(String url) async {
-    Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(uri,mode: LaunchMode.externalApplication);
-    } else {
-      debugPrint('Could not launch $url');
-    }
-  }
 
   void _listen() {
     print('${controller.index}');
@@ -127,8 +97,61 @@ class TolyArticlesPage extends StatelessWidget {
           padding: EdgeInsets.only(right: 36,left:36),
           sliver:    SliverArticlePanel(),
         ),
-
       ],
     );
   }
+}
+
+class SoreAlgoPage extends StatelessWidget {
+  const SoreAlgoPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    String name = SortStateScope.of(context).config.name;
+
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+
+              GestureDetector(
+                  onTap: () {
+                    _launchURL('https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart');
+                  },
+                  child: Text(
+                    '查看排序源码',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  )),
+              Spacer(),
+              SortButton(),
+              const SizedBox(width: 12,),
+              SortSelector(),
+              const SizedBox(width: 12,),
+              GestureDetector(
+                  onTap: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                  child: Icon(Icons.settings))
+            ],
+          ),
+        ),
+        Expanded(child: SortPaper()),
+      ],
+    );
+  }
+
+  void _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(uri,mode: LaunchMode.externalApplication);
+    } else {
+      debugPrint('Could not launch $url');
+    }
+  }
+
 }

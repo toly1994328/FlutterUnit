@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:l10n/l10n.dart';
 import 'package:toly_ui/toly_ui.dart';
 
 import 'package:authentication/views/authentic_widget.dart';
@@ -39,9 +40,9 @@ class CollectPage extends StatefulWidget {
 
 class _CollectPageState extends State<CollectPage>
     with AutomaticKeepAliveClientMixin {
-  final List<String> _tabs = const [
-    '收藏集录',
-    '珍藏组件',
+ late final List<String> _tabs =  [
+    context.l10n.widgetsInn,
+    context.l10n.likedWidgets,
   ];
 
   @override
@@ -107,8 +108,8 @@ class _CollectPageState extends State<CollectPage>
         if(!widget.canPop)
         SizedBox(child: _buildAddAction(context))
       ],
-      title: const Text(
-        '收藏集录',
+      title:  Text(
+        context.l10n.collectCollection,
         style: TextStyle(
             color: Colors.white, //标题
             fontSize: 18,
