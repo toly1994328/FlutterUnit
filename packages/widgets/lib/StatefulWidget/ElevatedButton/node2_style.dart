@@ -27,7 +27,7 @@ class ElevatedButtonStyleDemo extends StatelessWidget {
           ElevatedButton(
             style: TextButton.styleFrom(
                 backgroundColor: Colors.orange,
-                primary: Colors.white,
+                foregroundColor: Colors.white,
                 elevation: 2,
                 shadowColor: Colors.orangeAccent),
             child: const Text('ElevatedButton样式'),
@@ -37,7 +37,7 @@ class ElevatedButtonStyleDemo extends StatelessWidget {
           ElevatedButton(
             style: TextButton.styleFrom(
                 backgroundColor: Colors.white,
-                primary: Colors.black,
+                foregroundColor: Colors.black,
                 side: const BorderSide(color: Colors.blue,width: 1),
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10))

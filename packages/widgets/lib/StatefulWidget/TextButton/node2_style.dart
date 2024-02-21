@@ -27,7 +27,7 @@ class TextButtonStyleDemo extends StatelessWidget {
             style: TextButton.styleFrom(
                 backgroundColor: Colors.blue,
                 padding: const EdgeInsets.symmetric(horizontal: 8),
-                primary: Colors.white,
+                foregroundColor: Colors.white,
                 elevation: 2,
                 shadowColor: Colors.orangeAccent),
             child: const Text('TextButton 样式'),
@@ -37,7 +37,7 @@ class TextButtonStyleDemo extends StatelessWidget {
           TextButton(
             style: TextButton.styleFrom(
                 backgroundColor: Colors.white,
-                primary: Colors.black,
+                foregroundColor: Colors.black,
                 side: const BorderSide(color: Colors.blue, width: 1),
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
