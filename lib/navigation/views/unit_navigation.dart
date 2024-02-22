@@ -84,7 +84,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
           onItemTap: _onTapBottomNav,
           onItemLongTap: _onItemLongTap,
         ),
-        const Positioned(right: 26, top: 8, child: UpdateRedPoint())
+        const Positioned(right: 22, top: 8, child: UpdateRedPoint())
       ],
     );
   }

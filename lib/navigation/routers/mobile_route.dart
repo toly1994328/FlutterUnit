@@ -1,3 +1,4 @@
+import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_module/widget_module.dart';
@@ -109,6 +110,12 @@ final List<RouteBase> appMobileNavRoute = [
     path: 'about_me',
     builder: (BuildContext context, GoRouterState state) {
       return const AboutMePage();
+    },
+  ),
+  GoRoute(
+    path: 'support_me',
+    builder: (BuildContext context, GoRouterState state) {
+      return const SupportMe();
     },
   ),
 ];

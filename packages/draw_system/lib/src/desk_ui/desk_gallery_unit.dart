@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:app/app.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
+import 'package:l10n/l10n.dart';
 
 import 'package:toly_ui/toly_ui.dart';
 
@@ -51,7 +52,7 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
         children: [
           SimpleDeskTopBar(
             leading: Text(
-              'Flutter 绘制集录',
+              'Flutter ${context.l10n.paintCollection}',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),

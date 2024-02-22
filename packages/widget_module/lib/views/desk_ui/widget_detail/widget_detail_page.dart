@@ -2,6 +2,7 @@ import 'package:app/app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:l10n/l10n.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
 import '../../../../data/exp.dart';
@@ -83,13 +84,13 @@ class DeskWidgetDetailPage extends StatelessWidget{
     );
   }
 
-  Widget get linkText => Row(
-        children: const [
-          Padding(
+  Widget linkText(BuildContext  context) => Row(
+        children:  [
+          const Padding(
             padding: EdgeInsets.only(left: 15, right: 5),
             child: Icon(Icons.link, color: Colors.blue),
           ),
-          Text('相关组件', style: UnitTextStyle.labelBold),
+          Text(context.l10n.relatedComponents, style: UnitTextStyle.labelBold),
         ],
       );
 
@@ -119,7 +120,7 @@ class DeskWidgetDetailPage extends StatelessWidget{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const SizedBox(height: 16,),
-                          linkText,
+                          linkText(context),
                           if (state is DetailWithData)
                             LinkWidgetButtons(
                               links: state.links,

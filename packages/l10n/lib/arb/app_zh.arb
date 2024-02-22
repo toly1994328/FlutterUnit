@@ -12,7 +12,6 @@
   "homeAccountTabMe": "联系本王",
   "homeAccountSupport": "支持项目",
 
-
   "searchWidget": "搜索组件",
   "stateless":"无态",
   "stateful":"有态",
@@ -192,5 +191,7 @@
   "draw":"绘制",
   "knowledge":"知识",
   "collection":"收藏",
-  "my":"我的"
+  "my":"我的",
+  "picture":"幅",
+  "slogan":"Flutter 的联合，编程者的联合"
 }

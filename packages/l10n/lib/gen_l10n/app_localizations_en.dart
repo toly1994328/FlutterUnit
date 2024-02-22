@@ -17,7 +17,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get treasureTools => 'Treasure';
 
   @override
-  String get collectCollection => 'CollectionCollection';
+  String get collectCollection => 'Collection';
 
   @override
   String get essentialCollection => 'KeypointsCollection';
@@ -461,7 +461,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get likedWidgets => 'Liked Widgets';
 
   @override
-  String get relatedComponents => 'Related components';
+  String get relatedComponents => 'Related Widgets';
 
   @override
   String get backupFavoritesCollectionData => 'Backup Collection Data';
@@ -540,4 +540,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get my => 'My';
+
+  @override
+  String get picture => 'pics';
+
+  @override
+  String get slogan => 'The unity of flutter, The unity of coder.';
 }

@@ -51,7 +51,7 @@ class _DeskAccountPageState extends State<DeskAccountPage>
                   width: 20,
                 ),
                 Text(
-                  'Flutter 的联合，编程者的联合',
+                  context.l10n.slogan,
                   style: TextStyle(color: Colors.grey),
                 )
               ],
