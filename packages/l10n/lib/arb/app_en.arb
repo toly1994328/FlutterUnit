@@ -56,7 +56,7 @@
 
   "enterComponentName":"Input widget name",
   "containerComponents":"Container components",
-  "relatedComponents":"Related components",
+  "relatedComponents":"Related Widgets",
   "componentTavern":"Component Tavern",
   "cherishedComponents":"Treasure components",
   "textImageCollection":"TextImageCollection",
@@ -190,5 +190,7 @@
   "draw":"Draw",
   "knowledge":"Knowledge",
   "collection":"Collection",
-  "my":"My"
+  "my":"My",
+  "picture":"pics",
+  "slogan":"The unity of flutter, The unity of coder."
 }

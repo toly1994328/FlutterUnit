@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+
+/// create by 张风捷特烈 on 2020/9/21
+/// contact me by email 1981462002@qq.com
+/// 说明: 370 DropdownMenu 表单菜单
 //    {
 //      "widgetId": 370,
 //      "name": '下拉菜单样式设置',

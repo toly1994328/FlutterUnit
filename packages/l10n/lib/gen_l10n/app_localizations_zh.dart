@@ -540,4 +540,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get my => '我的';
+
+  @override
+  String get picture => '幅';
+
+  @override
+  String get slogan => 'Flutter 的联合，编程者的联合';
 }

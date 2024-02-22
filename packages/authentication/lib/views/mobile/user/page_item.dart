@@ -53,6 +53,8 @@ class MePageItem extends StatelessWidget {
 
           Gap.sfl10,
           _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing, '/about_me'),
+          const Divider(),
+          _buildItem(context, Icons.sanitizer, context.l10n.homeAccountSupport, '/support_me'),
         ],
       ),
     );

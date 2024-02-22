@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   toly_ui:
     path: ../toly_ui
+  l10n:
+    path: ../l10n
   app:
     path: ../app
   components:

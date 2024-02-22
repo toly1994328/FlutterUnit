@@ -4,6 +4,7 @@ import 'package:algorithm/algorithm.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:l10n/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../bloc/columnize/bloc.dart';
 import '../bloc/exp.dart';
@@ -202,22 +203,23 @@ class _ArtifactPageState extends State<ArtifactPage>
         // ),
         bottom: TabBar(
           controller: controller,
-          tabs: [
+          tabs:
+          [
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '捷特文库',
+              text: context.l10n.knowledgeTabToly,
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '可视排序',
+              text: context.l10n.knowledgeTabAlgo,
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '布局宝库',
+              text:context.l10n.knowledgeTabLayout,
             ),
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
-              text: '要点宝库',
+              text:context.l10n.knowledgeTabPoint,
             ),
           ],
         ),

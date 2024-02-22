@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:app/app.dart';
 import 'package:artifact/artifact.dart';
+import 'package:l10n/l10n.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -30,11 +31,12 @@ class DataManagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('数据管理'),
+        title:  Text(context.l10n.dataManagement),
       ),
       body: Builder(
         builder: (ctx) => ListView(
           children: <Widget>[
+            const SizedBox(height: 8,),
             AuthenticWidget.just(
               ListTile(
                 trailing: Icon(
@@ -60,7 +62,7 @@ class DataManagePage extends StatelessWidget {
                 Icons.refresh,
                 color: Theme.of(context).primaryColor,
               ),
-              title: const Text('收藏集数据重置'),
+              title: Text(context.l10n.favoritesCollectionDataReset),
               // trailing: _nextIcon(context),
               onTap: () => _recallDatabase(ctx),
             ),

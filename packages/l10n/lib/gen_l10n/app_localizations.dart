@@ -1166,6 +1166,18 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'我的'**
   String get my;
+
+  /// No description provided for @picture.
+  ///
+  /// In zh, this message translates to:
+  /// **'幅'**
+  String get picture;
+
+  /// No description provided for @slogan.
+  ///
+  /// In zh, this message translates to:
+  /// **'Flutter 的联合，编程者的联合'**
+  String get slogan;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

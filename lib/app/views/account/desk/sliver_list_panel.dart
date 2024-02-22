@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:toly_ui/toly_ui.dart';
 
 import '../../about/about_app_page.dart';
@@ -37,15 +39,12 @@ class SliverListPanel extends StatelessWidget {
       ),
       InfoPanel(
           title: 'Flutter Unit 2.0 ',
-          info:
-          '○  317 个 Flutter 组件收录和详情介绍。\n'
+          info: '○  317 个 Flutter 组件收录和详情介绍。\n'
               '○  绘制集录用于收录绘制相关的优秀示例。\n'
               '○  要点集录用于收录 Flutter 相关的小知识。\n'
               '○  时光轴，查看 FlutterUnit 重要事件。\n'
-              '○  实现应用内更新功能，方便使用者及时更新到最新版体验。'
-      )
+              '○  实现应用内更新功能，方便使用者及时更新到最新版体验。')
     ];
-
 
     return SliverToBoxAdapter(
       child: Padding(
@@ -57,16 +56,35 @@ class SliverListPanel extends StatelessWidget {
               children: <Widget>[
                 Circle(color: Theme.of(context).primaryColor),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15,top: 15,bottom: 15),
-                  child: Text('开源不易，请我喝咖啡 ~',style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                  padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
+                  child: Text(
+                    '开源不易，请我喝咖啡 ~',
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                 ),
-
-
               ],
             ),
-            Image.asset(
-              'assets/images/coffee1.webp',
-
+            Row(
+              children: [
+                Expanded(
+                  child: Image.asset(
+                    'assets/images/coffee_zfb.webp',
+                  ),
+                ),
+                const SizedBox(width: 8,),
+                Expanded(
+                  child: Image.asset(
+                    'assets/images/coffee_wx.webp',
+                  ),
+                ),
+                const SizedBox(width: 8,),
+                Expanded(
+                  child: Image.asset(
+                    'assets/images/coffee_wx_ac.webp',
+                  ),
+                ),
+              ],
             )
           ],
         ),

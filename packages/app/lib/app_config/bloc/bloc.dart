@@ -7,8 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
 import 'package:storage/storage.dart';
 
-import '../repository/repository.dart';
-import 'state.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
@@ -51,9 +49,8 @@ class AppConfigBloc extends Cubit<AppConfigState> {
     emit(newState);
   }
 
-  // 切换字体事件处理 : 固化索引 + 产出新状态
+  // 切换语言事件处理 : 固化索引 + 产出新状态
   void switchLanguage(Language language) async {
-    print("=====switchLanguage:$language============");
     AppConfigState newState = state.copyWith(language: language);
     cao.write(newState.toAppConfigPo());
     emit(newState);
