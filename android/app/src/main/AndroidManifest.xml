@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.toly1994.flutter_unit">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!--(if you want to upload google store,can not add this permission)-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />

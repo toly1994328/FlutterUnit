@@ -70,8 +70,7 @@ class UpdateBloc extends Bloc<UpdateEvent, UpdateState> {
       return;
     }
 
-    id = await RUpgrade.upgrade(event.appInfo.appUrl,
-        fileName: '${event.appInfo.appName}.apk',);
+    id = await RUpgrade.upgrade(event.appInfo.appUrl, fileName: '${event.appInfo.appName}.apk',);
     subscription = RUpgrade.stream.listen((DownloadInfo info) {
       double progress = (info.percent ?? 0) / 100;
       if (info.status! == DownloadStatus.STATUS_SUCCESSFUL) {
