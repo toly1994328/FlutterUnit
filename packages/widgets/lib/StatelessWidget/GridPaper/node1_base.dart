@@ -12,8 +12,8 @@ import 'package:flutter/material.dart';
 //          "【color】: 颜色   【Color】\n"
 //          "【interval】: 小块边长   【double】",
 //      }
-class CustomGridPage extends StatelessWidget {
-  const CustomGridPage({Key? key}) : super(key: key);
+class CustomGridPaper extends StatelessWidget {
+  const CustomGridPaper({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

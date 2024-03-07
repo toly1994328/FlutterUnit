@@ -559,10 +559,10 @@ class WidgetsMap {
           const CustomPlaceholder(),
           const FallbackPlaceholder(),
         ];
-      case "GridPager":
+      case "GridPaper":
         return [
-          const CustomGridPage(),
-          const DivisionsGridPage(),
+          const CustomGridPaper(),
+          const DivisionsGridPaper(),
         ];
       case "Image":
         return [

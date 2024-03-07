@@ -158,8 +158,8 @@ export '../StatelessWidget/GirdView/node2_direction.dart';
 export '../StatelessWidget/GirdView/node3_extend.dart';
 export '../StatelessWidget/GirdView/node4_builder.dart';
 
-export '../StatelessWidget/GridPager/node1_base.dart';
-export '../StatelessWidget/GridPager/node2_divisions.dart';
+export '../StatelessWidget/GridPaper/node1_base.dart';
+export '../StatelessWidget/GridPaper/node2_divisions.dart';
 
 export '../StatelessWidget/Spacer/node1_base.dart';
 export '../StatelessWidget/Spacer/node2_flex.dart';
