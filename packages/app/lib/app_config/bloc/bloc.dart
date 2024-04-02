@@ -35,9 +35,8 @@ class AppConfigBloc extends Cubit<AppConfigState> {
   }
 
 
-  // 程序初始化事件处理: 使用 AppStorage 进行初始化
-  void initApp() async {
-    emit(await storage.initApp());
+  void init(AppConfigState state){
+    emit(state);
   }
 
   AppConfigCao get cao => SpStorage.instance.appConfig;

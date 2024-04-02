@@ -1,6 +1,6 @@
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/app_stater/view/flutter_unit_text.dart';
+import 'package:flutter_unit/app_stater/view/splash/flutter_unit_text.dart';
 import 'package:l10n/l10n.dart';
 import 'package:toly_ui/toly_ui.dart';
 

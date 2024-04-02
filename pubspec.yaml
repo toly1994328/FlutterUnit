@@ -21,6 +21,9 @@ dependencies:
   equatable: ^2.0.5 # 相等辅助
   stream_transform: ^2.1.0
 
+  ## fx 架构 - app 启动器
+  app_boot_starter: ^1.0.0
+
   package_info_plus: ^4.1.0 # 应用包信息
   r_upgrade: ^0.4.2 # 应用升级
   webview_flutter: ^4.4.2

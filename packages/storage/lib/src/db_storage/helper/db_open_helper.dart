@@ -46,7 +46,6 @@ class DbOpenHelper{
     if(!result.existsSync()){
       result.createSync(recursive: true);
     }
-    print('====数据库所在文件夹: $dirPath=======');
     return dirPath;
   }
 }

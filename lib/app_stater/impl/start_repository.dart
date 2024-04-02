@@ -1,19 +1,38 @@
+
+
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:app/app.dart';
+import 'package:app_boot_starter/app_boot_starter.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
 
-class AppStartRepository{
 
-  const AppStartRepository();
+class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
+  const AppStartRepositoryImpl();
 
-  Future<void> initSp() async{
+  /// 初始化 app 的异步任务
+  /// 返回本地持久化的 AppConfigState 对象
+  @override
+  Future<AppConfigState> initApp() async {
     await SpStorage.instance.initSp();
+    await initDb();
+    AppConfigPo po = await SpStorage.instance.appConfig.read();
+    ConnectivityResult netConnect = await (Connectivity().checkConnectivity());
+    return AppConfigState.fromPo(po).copyWith(netConnect: netConnect);
   }
+
+  @override
+  Future<void> fixError(Object error, {Object? extra}) async {
+    await Future.delayed(const Duration(seconds: 1));
+    // throw "App 无法修复";
+    return;
+  }
+
 
   Future<void> initDb() async{
     DbOpenHelper.setupDatabase();
@@ -29,6 +48,7 @@ class AppStartRepository{
     } else {
       print("=====flutter.db 已存在====");
     }
+    print('====数据库所在文件夹: $databasesPath=======');
 
     await FlutterDbStorage.instance.initDb();
     await AppDbStorage.instance.initDb();
@@ -72,5 +92,4 @@ class AppStartRepository{
 
     return shouldCopy;
   }
-
 }

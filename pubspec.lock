@@ -15,6 +15,14 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  app_boot_starter:
+    dependency: "direct main"
+    description:
+      name: app_boot_starter
+      sha256: "09c5473dc84d054dc5df86a45f7812b32f81a7d6c9ac02a3a04c7351f28893c9"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0"
   app_update:
     dependency: "direct main"
     description:
@@ -235,10 +243,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_bloc
-      sha256: e74efb89ee6945bcbce74a5b3a5a3376b088e5f21f55c263fc38cbdc6237faae
+      sha256: f0ecf6e6eb955193ca60af2d5ca39565a86b8a142452c5b24d96fb477428f4d2
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "8.1.3"
+    version: "8.1.5"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -1045,5 +1053,5 @@ packages:
     source: hosted
     version: "1.0.1"
 sdks:
-  dart: ">=3.2.3 <4.0.0"
+  dart: ">=3.3.0 <4.0.0"
   flutter: ">=3.10.0"
