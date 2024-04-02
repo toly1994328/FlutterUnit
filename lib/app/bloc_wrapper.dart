@@ -2,7 +2,6 @@ import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
-import 'package:flutter_unit/app_stater/app_starter.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,10 +33,6 @@ class _BlocWrapperState extends State<BlocWrapper> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        /// 应用启动器
-        BlocProvider<AppStartBloc>(
-            create: (_) => AppStartBloc(minStartDurationMs: 600)..startApp()),
-
         // 全局 bloc : 维护应用存储状态、更新、认证
         BlocProvider<AuthBloc>(
             create: (_) => AuthBloc(repository: authRepository)),
