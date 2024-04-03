@@ -3,6 +3,7 @@ import 'package:artifact/artifact.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:layout/layout.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../bloc/exp.dart';
@@ -18,7 +19,7 @@ class DeskKnowledgePage extends StatefulWidget {
   State<DeskKnowledgePage> createState() => _DeskKnowledgePageState();
 }
 
-class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTickerProviderStateMixin{
+class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTickerProviderStateMixin,AutomaticKeepAliveClientMixin{
 
   late TabController controller;
   List<String> data = [];
@@ -48,17 +49,17 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
             DeskKnowledgeTabTopBar(onTabPressed: (int value) {
               controller.index = value;
             }, tabs: [
+              context.l10n.knowledgeTabLayout,
               context.l10n.knowledgeTabToly,
               context.l10n.knowledgeTabAlgo,
-              context.l10n.knowledgeTabLayout,
               context.l10n.knowledgeTabPoint,
             ],),
             Expanded(child: TabBarView(
               controller: controller,
               children: [
+                LayoutRouterPage(),
                 TolyArticlesPage(),
                 SoreAlgoPage(),
-                BuildingPanel(),
                 DeskPointPage(),
               ],
             ))
@@ -77,6 +78,9 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
       });
     }
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 class TolyArticlesPage extends StatelessWidget {

@@ -13,7 +13,7 @@ dependencies:
   flutter_bloc: ^8.1.3 # 状态管理
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.1 # xml 固化
-  go_router: ^12.1.1
+  go_router: ^13.2.2
   utils:
     path: ../utils
   app_update:

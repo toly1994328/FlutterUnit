@@ -26,7 +26,8 @@ class BlocWrapper extends StatefulWidget {
 class _BlocWrapperState extends State<BlocWrapper> {
   final WidgetRepository repository = const WidgetDbRepository();
 
-  final CategoryBloc categoryBloc = CategoryBloc(repository: CategoryDbRepository());
+  final CategoryBloc categoryBloc =
+      CategoryBloc(repository: CategoryDbRepository());
   final AuthRepository authRepository = HttpAuthRepository();
 
   @override
@@ -34,22 +35,16 @@ class _BlocWrapperState extends State<BlocWrapper> {
     return MultiBlocProvider(
       providers: [
         // 全局 bloc : 维护应用存储状态、更新、认证
-        BlocProvider<AuthBloc>(
-            create: (_) => AuthBloc(repository: authRepository)),
-        BlocProvider<AppConfigBloc>(
-            create: (_) => AppConfigBloc(AppStateRepository())),
+        BlocProvider<AuthBloc>(create: (_) => AuthBloc(repository: authRepository)),
+        BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
         BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
         BlocProvider<UserBloc>(create: (_) => UserBloc()),
 
-        BlocProvider<WidgetsBloc>(
-            create: (_) => WidgetsBloc(repository: repository)),
+        BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
         BlocProvider<CategoryBloc>(create: (_) => categoryBloc),
-        BlocProvider<LikeWidgetBloc>(
-            create: (_) => LikeWidgetBloc(repository: repository)),
-        BlocProvider<CategoryWidgetBloc>(
-            create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
-        BlocProvider<GalleryUnitBloc>(
-            create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
+        BlocProvider<LikeWidgetBloc>(create: (_) => LikeWidgetBloc(repository: repository)),
+        BlocProvider<CategoryWidgetBloc>(create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
+        BlocProvider<GalleryUnitBloc>(create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
       ],
       child: widget.child,
     );

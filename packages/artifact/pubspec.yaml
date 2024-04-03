@@ -23,6 +23,8 @@ dependencies:
     path: ../components
   utils:
     path: ../utils
+  layout:
+    path: ../layout
   app:
     path: ../app
   l10n:
