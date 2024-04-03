@@ -27,7 +27,7 @@ dependencies:
   package_info_plus: ^4.1.0 # 应用包信息
   r_upgrade: ^0.4.2 # 应用升级
   webview_flutter: ^4.4.2
-  go_router: ^12.1.1
+  go_router: ^13.2.2
   sqflite: ^2.3.0 # 数据库
   sqflite_common_ffi: ^2.3.1 # 数据库
   shared_preferences: ^2.2.2 # xml 固化
@@ -83,8 +83,8 @@ dependencies:
     path: packages/widget_module
   treasure_tools:
     path: packages/treasure_tools
-#  old_fancy_mobile_ui:
-#    path: packages/old_fancy_mobile_ui
+  layout:
+    path: packages/layout
 
 dev_dependencies:
   flutter_test:

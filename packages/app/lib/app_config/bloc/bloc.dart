@@ -16,10 +16,9 @@ class AppConfigBloc extends Cubit<AppConfigState> {
 
   final Connectivity _connectivity = Connectivity();
 
-  final AppStateRepository storage;
   late StreamSubscription<ConnectivityResult> _subscription;
 
-  AppConfigBloc(this.storage) : super(const AppConfigState()){
+  AppConfigBloc() : super(const AppConfigState()){
     _subscription = _connectivity.onConnectivityChanged.listen(_onNetConnectChange);
   }
 
