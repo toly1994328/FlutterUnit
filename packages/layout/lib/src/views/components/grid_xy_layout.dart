@@ -22,7 +22,7 @@ class GridXYLayout extends StatelessWidget {
       for (int j = 0; j < capacity.$2; j++) {
         columnChildren.add(Expanded(child: xyBuilder((i, j))));
         if (hasLine && j != capacity.$2 - 1) {
-          columnChildren.add(Divider());
+          columnChildren.add(const Divider());
         }
       }
       children.add(Expanded(
@@ -31,7 +31,7 @@ class GridXYLayout extends StatelessWidget {
         children: columnChildren,
       )));
       if (hasLine && i != capacity.$1 - 1) {
-        children.add(VerticalDivider());
+        children.add(const VerticalDivider());
       }
     }
     return Row(

@@ -34,8 +34,10 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
   }
   ArticleRepository aRepository = const ArticleRepository();
   ColumnizeRepository cRepository = const ColumnizeRepository();
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
 
     return MultiBlocProvider(
       providers: [

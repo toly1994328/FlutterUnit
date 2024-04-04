@@ -26,43 +26,19 @@ import '../view/app_desk_navigation.dart';
         },
       ),
       GoRoute(
-          path: 'base',
-          redirect: (_, state) {
-            if (state.fullPath == '/base') {
-              return '/base/size';
-            }
-            return null;
-          },
-          routes: [
-            GoRoute(
-              path: 'size',
-              builder: (BuildContext context, GoRouterState state) {
-                return SizeDisplay();
-              },
-            ),
-            GoRoute(
-              path: 'padding',
-              builder: (BuildContext context, GoRouterState state) {
-                return TextShow(
-                  info: 'padding',
-                );
-              },
-            ),
-            // GoRoute(
-            //   path: 'home',
-            //   builder: (BuildContext context, GoRouterState state) {
-            //     return const HomePage();
-            //   },
-            // ),
-            // GoRoute(
-            //   path: 'collect',
-            //   builder: (BuildContext context, GoRouterState state) {
-            //     return const CollectPage();
-            //   },
-            // )
-          ]),
+        path: 'base/:name',
+        builder: (BuildContext context, GoRouterState state) {
+          return const FrameDisplayPanel();
+        },
+      ),
       GoRoute(
-        path: 'flex',
+          path: 'popable/:name',
+        builder: (BuildContext context, GoRouterState state) {
+          return const FrameDisplayPanel();
+        },
+      ),
+      GoRoute(
+        path: 'multi',
         builder: (_,__)=>Text("暂未实现"),
         routes: [
           GoRoute(

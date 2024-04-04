@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:toly_menu/toly_menu.dart';
+
 import 'package:toly_menu_manager/bloc/state.dart';
 import 'package:toly_menu_manager/toly_menu_manager.dart';
-import 'package:toly_menu_manager/view/menu_task_builder.dart';
 
 import '../../views/playground/layout_playground.dart';
+import 'app_menu_tree.dart';
 
 class AppDeskNavigation extends StatelessWidget {
   final Widget content;
@@ -75,7 +74,14 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
       child: Stack(
         alignment: Alignment.centerRight,
         children: [
-          TolyMenuRail(),
+          MenuLoadTaskBuilder(
+            builder: (_, task) =>
+            switch (task) {
+              MenuLoading() => const Center(child: CupertinoActivityIndicator()),
+              MenuLoadSuccess() => AppMenuTree(state: task.state,),
+              MenuLoadFailed() => Text('${task.error.toString()}'),
+            },
+          ),
           DragChangeWidth(
             onDragChanged: handleWidthChange,
           )
@@ -121,76 +127,3 @@ class DragChangeWidth extends StatelessWidget {
   }
 }
 
-class TolyMenuRail extends StatefulWidget {
-  const TolyMenuRail({super.key});
-
-  @override
-  State<TolyMenuRail> createState() => _TolyMenuRailState();
-}
-
-class _TolyMenuRailState extends State<TolyMenuRail> {
-
-  @override
-  Widget build(BuildContext context) {
-    return MenuLoadTaskBuilder(
-      builder: (_, task) => switch (task) {
-          MenuLoading() => Center(child: CupertinoActivityIndicator()),
-          MenuLoadSuccess() => MenuRouterChangeListener(
-            onRouterChanged: (BuildContext context, String? path) {
-              if(path!=null){
-                // print("=====go:${path}=================");
-
-                context.go(path);
-              }
-          },
-            child: TolyMenu(
-                activeColor: Color(0xffe6edf3),
-                backgroundColor: Colors.white,
-                expandBackgroundColor: Colors.white,
-                labelTextStyle: TextStyle(color: Color(0xff2d3a53)),
-                state: task.state,
-                onSelect: _onSelect,
-              ),
-          ),
-          MenuLoadFailed() => Text('${task.error.toString()}'),
-        },
-    );
-    // return TolyMenu(
-    //   // activeColor: Color(0xffe6edf3),
-    //   // backgroundColor: Colors.white,
-    //   // expandBackgroundColor: Colors.white,
-    //   // labelTextStyle: TextStyle(color: Color(0xff2d3a53)),
-    //   state: state,
-    //   onSelect: _onSelect,
-    // );
-  }
-
-
-
-  void _onSelect(MenuNode menu) {
-    print(menu.path);
-    context.selectMenu(menu);
-    // if (menu.isLeaf) {
-    //   state = state.copyWith(activeMenu: menu.path);
-    // } else {
-    //   List<String> menus = [];
-    //   String path = menu.path.substring(1);
-    //   List<String> parts = path.split('/');
-    //
-    //   if (parts.isNotEmpty) {
-    //     String path = '';
-    //     for (String part in parts) {
-    //       path += '/$part';
-    //       menus.add(path);
-    //     }
-    //   }
-    //
-    //   if (state.expandMenus.contains(menu.path)) {
-    //     menus.remove(menu.path);
-    //   }
-    //
-    //   state = state.copyWith(expandMenus: menus);
-    // }
-    // setState(() {});
-  }
-}
