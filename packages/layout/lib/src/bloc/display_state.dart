@@ -1,5 +1,7 @@
 import 'package:layout/src/data/model/display_frame.dart';
 
+import '../data/display_map/display_map.dart';
+
 class DisplayState {
   final String router;
   final int activeIndex;
@@ -11,7 +13,9 @@ class DisplayState {
     required this.total,
   });
 
-  DisplayFrame get frame => kDisplayMap[router]![activeIndex];
+  DisplayFrame get frame {
+    return kDisplayMap[router]![activeIndex];
+  }
 
   DisplayState copyWith({
     int? total,

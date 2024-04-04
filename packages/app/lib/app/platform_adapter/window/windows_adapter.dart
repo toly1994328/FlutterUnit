@@ -12,7 +12,7 @@ class WindowsAdapter {
       await windowManager.ensureInitialized();
       WindowOptions windowOptions = const WindowOptions(
         size: Size(920,680),
-        minimumSize: Size(920,690),
+        minimumSize: Size(920/2,690/2),
         center: true,
         backgroundColor: Colors.transparent,
         skipTaskbar: false,

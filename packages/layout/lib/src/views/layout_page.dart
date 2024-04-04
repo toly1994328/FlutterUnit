@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:layout/src/navigation/router/app_router.dart';
+import 'package:toly_menu_manager/toly_menu_manager.dart';
 
 import '../bloc/display_logic.dart';
 import '../bloc/display_state.dart';
+import '../data/display_map/display_map.dart';
 import '../data/model/display_frame.dart';
 
 class LayoutRouterPage extends StatefulWidget {
@@ -33,7 +35,6 @@ class _LayoutRouterPageState extends State<LayoutRouterPage> {
       activeIndex: 0,
       total: kDisplayMap['/base/size']!.length,
     ));
-
     super.initState();
   }
 
@@ -43,12 +44,13 @@ class _LayoutRouterPageState extends State<LayoutRouterPage> {
       notifier: logic,
       child: Column(
         children: [
-          Divider(),
+          const Divider(),
           Expanded(child: Router.withConfig(config: _router)),
         ],
       ),
     );
   }
+
 }
 
 class LayoutPage extends StatelessWidget {
