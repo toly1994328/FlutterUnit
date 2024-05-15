@@ -839,6 +839,14 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  tolyui_navigation:
+    dependency: "direct main"
+    description:
+      name: tolyui_navigation
+      sha256: c1bf119679b03e72272266fd64d1310056886f334c30e9f9cd7380927f05cabc
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.3"
   treasure_tools:
     dependency: "direct main"
     description:

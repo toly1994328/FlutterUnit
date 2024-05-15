@@ -1,12 +1,14 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_unit/navigation/menus/menu_meta.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
-import 'unit_rail_navigation.dart';
-
+import 'package:tolyui_navigation/tolyui_navigation.dart';
+import 'menu_bar_leading.dart';
+import 'menu_bar_tail.dart';
+import 'toly_unit_menu_cell.dart';
 class FlutterUnitDeskNavigation extends StatelessWidget {
   final Widget content;
+
   const FlutterUnitDeskNavigation({super.key, required this.content});
 
   @override
@@ -14,14 +16,12 @@ class FlutterUnitDeskNavigation extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          DeskNavigationRail(),
+          const DragToMoveAreaNoDouble(child: DeskNavigationRail()),
           Expanded(child: content),
         ],
       ),
     );
   }
-
-
 }
 
 class DeskNavigationRail extends StatefulWidget {
@@ -32,12 +32,21 @@ class DeskNavigationRail extends StatefulWidget {
 }
 
 class _DeskNavigationRailState extends State<DeskNavigationRail> {
+
   @override
   Widget build(BuildContext context) {
-    return UnitRailNavigation(
-      selectedIndex: activeIndex,
-      onAction: _onAction,
-      itemData: deskNavBarMenus,
+    return TolyRailMenuBar(
+      cellBuilder: FlutterUnitMenuCell.create,
+      width: 130,
+      gap: 8,
+      padding: EdgeInsets.zero,
+      backgroundColor: const Color(0xff2C3036),
+      menus: deskNavBarMenus,
+      activeId: activePath,
+      enableWidthChange: false,
+      onSelected: context.go,
+      tail: (_) => const MenuBarTail(),
+      leading: (_) => const MenuBarLeading(),
     );
   }
 
@@ -52,36 +61,22 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
     String treasure = context.l10n.treasureTools;
     String account = context.l10n.homeAccount;
 
-    deskNavBarMenus =  [
-      MenuMeta(label: widget, icon: TolyIcon.icon_layout, path: '/widget'),
-      MenuMeta(label: canvas, icon: Icons.palette, path: '/painter'),
-      MenuMeta(label: knowledge, icon: TolyIcon.icon_artifact, path: '/knowledge'),
-      MenuMeta(label: treasure, icon: TolyIcon.icon_fast, path: '/tools'),
-      MenuMeta(label: account, icon: Icons.person, path: '/account'),
+    deskNavBarMenus = [
+      MenuMeta(label: widget, icon: TolyIcon.icon_layout, router: '/widget'),
+      MenuMeta(label: canvas, icon: Icons.palette, router: '/painter'),
+      MenuMeta(label: knowledge, icon: TolyIcon.icon_artifact, router: '/knowledge'),
+      MenuMeta(label: treasure, icon: TolyIcon.icon_fast, router: '/tools'),
+      MenuMeta(label: account, icon: Icons.person, router: '/account'),
     ];
   }
-  
+
   final RegExp _segReg = RegExp(r'/\w+');
 
-  int? get activeIndex {
+  String? get activePath {
     final String path = GoRouterState.of(context).uri.toString();
     RegExpMatch? match = _segReg.firstMatch(path);
     if (match == null) return null;
     String? target = match.group(0);
-
-    int index = deskNavBarMenus.indexWhere((menu) => menu.path!.contains(target??''));
-    if (index == -1) return null;
-    return index;
-  }
-
-  void _onAction(ActionType value) {
-    String? path = value.path;
-    if(path!=null){
-      if(value == ActionType.settings || value == ActionType.collection){
-        context.push(path);
-      }else{
-        context.go(path);
-      }
-    }
+    return target;
   }
 }
