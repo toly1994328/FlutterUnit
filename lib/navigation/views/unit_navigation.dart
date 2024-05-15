@@ -1,20 +1,17 @@
 import 'dart:io';
 
-import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:artifact/artifact.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:toly_ui/toly_ui.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
 
 
 import '../../navigation/views/pure_bottom_bar.dart';
-import '../../navigation/views/desk/unit_desk_navigation.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
