@@ -445,8 +445,8 @@ class _DatePickerDialogState extends State<DatePickerDialog> with RestorationMix
         ? colorScheme.onPrimary
         : colorScheme.onSurface;
     final TextStyle? dateStyle = orientation == Orientation.landscape
-        ? textTheme.headline5?.copyWith(color: onPrimarySurface)
-        : textTheme.headline4?.copyWith(color: onPrimarySurface);
+        ? textTheme.headlineMedium?.copyWith(color: onPrimarySurface)
+        : textTheme.headlineMedium?.copyWith(color: onPrimarySurface);
 
     final Widget actions = Container(
       alignment: AlignmentDirectional.centerEnd,
@@ -730,7 +730,7 @@ class _DatePickerHeader extends StatelessWidget {
     final Color primarySurfaceColor = isDark ? colorScheme.surface : colorScheme.primary;
     final Color onPrimarySurfaceColor = isDark ? colorScheme.onSurface : colorScheme.onPrimary;
 
-    final TextStyle? helpStyle = textTheme.overline?.copyWith(
+    final TextStyle? helpStyle = textTheme.headlineMedium?.copyWith(
       color: onPrimarySurfaceColor,
     );
 
@@ -1461,14 +1461,14 @@ class _CalendarRangePickerDialog extends StatelessWidget {
     final Color headerDisabledForeground = headerForeground.withOpacity(0.38);
     final String startDateText = _formatRangeStartDate(localizations, selectedStartDate, selectedEndDate);
     final String endDateText = _formatRangeEndDate(localizations, selectedStartDate, selectedEndDate, DateTime.now());
-    final TextStyle? headlineStyle = textTheme.headline5;
+    final TextStyle? headlineStyle = textTheme.headlineMedium;
     final TextStyle? startDateStyle = headlineStyle?.apply(
       color: selectedStartDate != null ? headerForeground : headerDisabledForeground,
     );
     final TextStyle? endDateStyle = headlineStyle?.apply(
       color: selectedEndDate != null ? headerForeground : headerDisabledForeground,
     );
-    final TextStyle saveButtonStyle = textTheme.button!.apply(
+    final TextStyle saveButtonStyle = textTheme.headlineMedium!.apply(
       color: onConfirm != null ? headerForeground : headerDisabledForeground,
     );
 
@@ -1503,7 +1503,7 @@ class _CalendarRangePickerDialog extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         helpText,
-                        style: textTheme.overline!.apply(
+                        style: textTheme.headlineMedium!.apply(
                           color: headerForeground,
                         ),
                       ),
@@ -1969,7 +1969,7 @@ class _DayHeaders extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     final ColorScheme colorScheme = themeData.colorScheme;
-    final TextStyle textStyle = themeData.textTheme.subtitle2!.apply(color: colorScheme.onSurface);
+    final TextStyle textStyle = themeData.textTheme.headlineMedium!.apply(color: colorScheme.onSurface);
     final MaterialLocalizations localizations = MaterialLocalizations.of(context);
     final List<Widget> labels = _getDayHeaders(textStyle, localizations);
 
@@ -2255,7 +2255,7 @@ class _MonthItemState extends State<_MonthItem> {
     final bool isDisabled = dayToBuild.isAfter(widget.lastDate) || dayToBuild.isBefore(widget.firstDate);
 
     BoxDecoration? decoration;
-    TextStyle? itemStyle = textTheme.bodyText2;
+    TextStyle? itemStyle = textTheme.headlineMedium;
 
     final bool isRangeSelected = widget.selectedDateStart != null && widget.selectedDateEnd != null;
     final bool isSelectedDayStart = widget.selectedDateStart != null && dayToBuild.isAtSameMomentAs(widget.selectedDateStart!);
@@ -2269,7 +2269,7 @@ class _MonthItemState extends State<_MonthItem> {
     if (isSelectedDayStart || isSelectedDayEnd) {
       // The selected start and end dates gets a circle background
       // highlight, and a contrasting text color.
-      itemStyle = textTheme.bodyText2?.apply(color: colorScheme.onPrimary);
+      itemStyle = textTheme.headlineMedium?.apply(color: colorScheme.onPrimary);
       decoration = BoxDecoration(
         color: colorScheme.primary,
         shape: BoxShape.circle,
@@ -2293,11 +2293,11 @@ class _MonthItemState extends State<_MonthItem> {
         textDirection: textDirection,
       );
     } else if (isDisabled) {
-      itemStyle = textTheme.bodyText2?.apply(color: colorScheme.onSurface.withOpacity(0.38));
+      itemStyle = textTheme.headlineMedium?.apply(color: colorScheme.onSurface.withOpacity(0.38));
     } else if (DateUtils.isSameDay(widget.currentDate, dayToBuild)) {
       // The current day gets a different text color and a circle stroke
       // border.
-      itemStyle = textTheme.bodyText2?.apply(color: colorScheme.primary);
+      itemStyle = textTheme.headlineMedium?.apply(color: colorScheme.primary);
       decoration = BoxDecoration(
         border: Border.all(color: colorScheme.primary),
         shape: BoxShape.circle,
@@ -2443,7 +2443,7 @@ class _MonthItemState extends State<_MonthItem> {
           child: ExcludeSemantics(
             child: Text(
               localizations.formatMonthYear(widget.displayedMonth),
-              style: textTheme.bodyText2!.apply(color: themeData.colorScheme.onSurface),
+              style: textTheme.headlineMedium!.apply(color: themeData.colorScheme.onSurface),
             ),
           ),
         ),
@@ -2591,8 +2591,8 @@ class _InputDateRangePickerDialog extends StatelessWidget {
         ? colorScheme.onPrimary
         : colorScheme.onSurface;
     final TextStyle? dateStyle = orientation == Orientation.landscape
-        ? textTheme.headline5?.apply(color: onPrimarySurfaceColor)
-        : textTheme.headline4?.apply(color: onPrimarySurfaceColor);
+        ? textTheme.headlineMedium?.apply(color: onPrimarySurfaceColor)
+        : textTheme.headlineMedium?.apply(color: onPrimarySurfaceColor);
     final String dateText = _formatDateRange(context, selectedStartDate, selectedEndDate, currentDate!);
     final String semanticDateText = selectedStartDate != null && selectedEndDate != null
         ? '${localizations.formatMediumDate(selectedStartDate!)} – ${localizations.formatMediumDate(selectedEndDate!)}'
