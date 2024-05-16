@@ -51,7 +51,7 @@ dependencies:
   share_plus: ^7.2.1 # 文字分享
 
   flutter_svg: ^2.0.7
-  intl: ^0.18.0
+  intl: ^0.19.0
   platform: ^3.1.0
   image: ^4.0.17
   flutter_spinkit: ^5.2.0 # loading

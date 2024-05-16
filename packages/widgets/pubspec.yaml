@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^2.0.11 # 路径
-  intl: ^0.18.0
+  intl: ^0.19.0
   app:
     path: ../app
   components:

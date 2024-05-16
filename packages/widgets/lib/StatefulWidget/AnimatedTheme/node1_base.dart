@@ -24,7 +24,7 @@ class _AnimatedThemeDemoState extends State<AnimatedThemeDemo> {
   ThemeData startThem = ThemeData(
       primaryColor: Colors.blue,
       textTheme: const TextTheme(
-        headline1: TextStyle(
+        headlineMedium: TextStyle(
           color: Colors.white,
           fontSize: 24,
           fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ class _AnimatedThemeDemoState extends State<AnimatedThemeDemo> {
   ThemeData endThem = ThemeData(
       primaryColor: Colors.red,
       textTheme: const TextTheme(
-          headline1: TextStyle(
+          headlineMedium: TextStyle(
         color: Colors.black,
         fontSize: 16,
         fontWeight: FontWeight.normal,
@@ -94,7 +94,7 @@ class ChildContent extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Text(
         'Flutter Unit',
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.headlineMedium,
       ),
     );
   }
