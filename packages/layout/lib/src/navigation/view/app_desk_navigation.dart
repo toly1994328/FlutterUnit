@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:toly_menu_manager/bloc/state.dart';
-import 'package:toly_menu_manager/toly_menu_manager.dart';
 
 import '../../views/playground/layout_playground.dart';
 import 'app_menu_tree.dart';
@@ -20,33 +18,11 @@ class AppDeskNavigation extends StatelessWidget {
         children: [
           DeskNavigationRail(),
           Expanded(child: LayoutPlayGround(
-            content : Column(
-              children: [
-                MenuHistoryChangeListener(onRouterChanged: _onActiveChanged,
-                child: MenuRecordTab(onCloseHistory: _onCloseHistory, onTapHistory: _onTapHistory)),
-                Expanded(child: content),
-              ],
-            ),
+            content : content,
           )),
         ],
       ),
     );
-  }
-
-  void _onCloseHistory(BuildContext context,MenuHistory history) {
-    context.removeHistory(history);
-  }
-
-  void _onTapHistory(BuildContext context,String path) {
-    print("======_onTapHistory:$path=================");
-    context.activeHistory(path);
-
-  }
-
-  void _onActiveChanged(BuildContext context,String? value) {
-    if(value!=null){
-      context.go(value);
-    }
   }
 }
 
@@ -74,14 +50,7 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
       child: Stack(
         alignment: Alignment.centerRight,
         children: [
-          MenuLoadTaskBuilder(
-            builder: (_, task) =>
-            switch (task) {
-              MenuLoading() => const Center(child: CupertinoActivityIndicator()),
-              MenuLoadSuccess() => AppMenuTree(state: task.state,),
-              MenuLoadFailed() => Text('${task.error.toString()}'),
-            },
-          ),
+          AppMenuTree(),
           DragChangeWidth(
             onDragChanged: handleWidthChange,
           )

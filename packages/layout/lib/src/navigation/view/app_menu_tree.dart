@@ -1,27 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:toly_menu/toly_menu.dart';
-import 'package:toly_menu_manager/toly_menu_manager.dart';
+import 'package:tolyui/tolyui.dart';
 
 import '../../bloc/display_logic.dart';
+import '../../ext/go_router/listener.dart';
+import '../menu/menu_repository_impl.dart';
 
-class AppMenuTree extends StatelessWidget {
-  final MenuState state;
+class AppMenuTree extends StatefulWidget {
 
-  const AppMenuTree({super.key, required this.state});
+  const AppMenuTree({super.key});
+
+  @override
+  State<AppMenuTree> createState() => _AppMenuTreeState();
+}
+
+class _AppMenuTreeState extends State<AppMenuTree> with RouterChangeListenerMixin {
+
+  late MenuTreeMeta _menuMeta;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _initTreeMeta();
+  }
+
+  void _initTreeMeta() {
+    MenuNode root = MenuNode.fromMap(layoutMenus);
+    List<String> parts = Uri.parse(path).pathSegments;
+    String parentPath = parts.sublist(0,parts.length-1).join('/');
+    _menuMeta = MenuTreeMeta(
+      expandMenus: ['/$parentPath'],
+      activeMenu: root.find(path),
+      root: root,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MenuRouterChangeListener(
-        onRouterChanged: _onMenuRouterChange,
-        child: TolyMenu(
-          activeColor: Color(0xffe6edf3),
-          backgroundColor: Colors.white,
-          expandBackgroundColor: Colors.white,
-          labelTextStyle: TextStyle(color: Color(0xff2d3a53)),
-          state: state,
-          onSelect: (v) => _onSelect(context, v),
-        ));
+    Color expandBackgroundColor = context.isDark?Colors.black:Colors.transparent;
+    Color backgroundColor = context.isDark?Color(0xff001529):Colors.white;
+
+    return TolyRailMenuTree(
+      leading: SizedBox(height: 18,),
+      enableWidthChange: true,
+      maxWidth: 360,
+      width: 240,
+      meta: _menuMeta,
+      backgroundColor: backgroundColor,
+      expandBackgroundColor: expandBackgroundColor,
+      onSelect: _onSelect,
+    );
   }
 
   void _onMenuRouterChange(BuildContext context, String? path) {
@@ -31,8 +60,27 @@ class AppMenuTree extends StatelessWidget {
     }
   }
 
-  void _onSelect(BuildContext context, MenuNode menu) {
-    print(menu.path);
-    context.selectMenu(menu);
+  void _onSelect(MenuNode menu) {
+    if(menu.isLeaf){
+      context.go(menu.id);
+      print(path);
+    }else{
+      _menuMeta = _menuMeta.select(menu, singleExpand: true);
+      setState(() {});
+    }
+  }
+
+  @override
+  void reassemble() {
+    MenuNode root = MenuNode.fromMap(layoutMenus);
+    _menuMeta = _menuMeta.copyWith(root: root);
+    super.reassemble();
+  }
+
+  @override
+  void onChangeRoute(String path) {
+    _menuMeta = _menuMeta.selectPath(path, singleExpand: true);
+    DisplayScope.of(context).active(path);
+    setState(() {});
   }
 }

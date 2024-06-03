@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:layout/src/bloc/display_logic.dart';
-import 'package:toly_menu/toly_menu.dart';
-import 'package:toly_menu_manager/toly_menu_manager.dart';
 
 import '../../data/model/display_frame.dart';
 

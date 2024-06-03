@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:layout/src/navigation/router/app_router.dart';
-import 'package:toly_menu_manager/toly_menu_manager.dart';
 
 import '../bloc/display_logic.dart';
 import '../bloc/display_state.dart';

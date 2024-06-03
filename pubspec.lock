@@ -816,22 +816,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.1"
-  toly_menu:
-    dependency: transitive
-    description:
-      name: toly_menu
-      sha256: dce49e04dc4ed40168c7af6f4830c8a92e9760e2cb8392cc454d031e24aee055
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.5"
-  toly_menu_manager:
-    dependency: transitive
-    description:
-      name: toly_menu_manager
-      sha256: "34ba03d9996097244c25575ab062ed8a16ecaa46576e4efbe6b6bc60f4853300"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.1"
   toly_ui:
     dependency: "direct main"
     description:
@@ -839,14 +823,46 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  tolyui_navigation:
+  tolyui:
     dependency: "direct main"
     description:
-      name: tolyui_navigation
-      sha256: c1bf119679b03e72272266fd64d1310056886f334c30e9f9cd7380927f05cabc
+      name: tolyui
+      sha256: "8fcd5fb7f763db3b04ace1586f6930220990abb6eefc809faff78fcb435f04e4"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.3"
+    version: "0.0.2"
+  tolyui_feedback:
+    dependency: transitive
+    description:
+      name: tolyui_feedback
+      sha256: "08508038ee77c9ec1c27a39e6cc7fae5a1f9c59da20c771b2fbd52258ff31206"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.4"
+  tolyui_message:
+    dependency: transitive
+    description:
+      name: tolyui_message
+      sha256: eb611cc7ed05aac4c962d6f2af2d71e32515f9e17aafbc45b00fe6fcb60db4db
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.1"
+  tolyui_navigation:
+    dependency: transitive
+    description:
+      name: tolyui_navigation
+      sha256: "777685f1794b7b93c6ff901e54843feac6e24833e3f243dce40c2bdc87964cae"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.8"
+  tolyui_rx_layout:
+    dependency: transitive
+    description:
+      name: tolyui_rx_layout
+      sha256: "559198f0bc1d2b3d2beb75be54ae17b8d9fc4276d7ff099967e8007450ce0719"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0"
   treasure_tools:
     dependency: "direct main"
     description:
@@ -1084,5 +1100,5 @@ packages:
     source: hosted
     version: "1.0.1"
 sdks:
-  dart: ">=3.3.0 <4.0.0"
+  dart: ">=3.3.4 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"
