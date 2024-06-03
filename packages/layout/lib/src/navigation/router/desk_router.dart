@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:toly_menu_manager/view/menu_router_scope.dart';
 
 import '../../../layout.dart';
-import '../../views/base/size/size_loss_by_align.dart';
 import '../../views/base/size/size_tight_constraint.dart';
 import '../../views/base/size/size_display.dart';
 import '../../views/test_show.dart';
@@ -13,10 +11,7 @@ import '../view/app_desk_navigation.dart';
 
  RouteBase get deskNavRoute => ShellRoute(
     builder: (BuildContext context, GoRouterState state, Widget child) {
-      return MenuRouterScope(
-        repository: MenuRepositoryImpl(),
-        child: AppDeskNavigation(content: child),
-      );
+      return AppDeskNavigation(content: child);
     },
     routes: [
       GoRoute(
