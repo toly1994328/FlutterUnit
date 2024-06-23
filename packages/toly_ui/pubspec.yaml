@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_markdown: ^0.6.4 # markdown
+  flutter_markdown: ^0.7.2+1 # markdown
 
 dev_dependencies:
   flutter_test:

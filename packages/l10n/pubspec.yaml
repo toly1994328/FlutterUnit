@@ -24,6 +24,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   generate: true # 自动生成 l10n
+
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

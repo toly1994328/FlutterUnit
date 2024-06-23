@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/25
@@ -27,7 +25,7 @@ class CustomCard extends StatelessWidget {
       child: Container(
         alignment: Alignment.topLeft,
         width: 200,
-        height: 0.618*200,
+        height: 0.618 * 200,
         margin: const EdgeInsets.all(10),
         child: const Text("Card", style: TextStyle(fontSize: 20)),
       ),

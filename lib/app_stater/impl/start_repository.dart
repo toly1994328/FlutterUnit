@@ -1,5 +1,3 @@
-
-
 import 'dart:convert';
 import 'dart:io';
 
@@ -11,7 +9,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
 
-
 class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
   const AppStartRepositoryImpl();
 
@@ -22,8 +19,12 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
     await SpStorage.instance.initSp();
     await initDb();
     AppConfigPo po = await SpStorage.instance.appConfig.read();
-    ConnectivityResult netConnect = await (Connectivity().checkConnectivity());
-    return AppConfigState.fromPo(po).copyWith(netConnect: netConnect);
+    List<ConnectivityResult> netConnect = await (Connectivity().checkConnectivity());
+    AppConfigState state = AppConfigState.fromPo(po);
+    if (netConnect.isNotEmpty) {
+      state = state.copyWith(netConnect: netConnect.first);
+    }
+    return state;
   }
 
   @override
@@ -33,8 +34,7 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
     return;
   }
 
-
-  Future<void> initDb() async{
+  Future<void> initDb() async {
     DbOpenHelper.setupDatabase();
     //数据库不存在，执行拷贝
     String databasesPath = await DbOpenHelper.getDbDirPath();
@@ -60,8 +60,7 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
       await dir.create(recursive: true);
     }
     ByteData data = await rootBundle.load("assets/flutter.db");
-    List<int> bytes =
-    data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     await File(dbPath).writeAsBytes(bytes, flush: true);
 
     print("=====flutter.db==== assets ======拷贝完成====");
