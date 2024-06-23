@@ -7,34 +7,34 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
 import 'package:storage/storage.dart';
 
-
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局信息的bloc
 
 class AppConfigBloc extends Cubit<AppConfigState> {
-
   final Connectivity _connectivity = Connectivity();
 
-  late StreamSubscription<ConnectivityResult> _subscription;
+  late StreamSubscription<List<ConnectivityResult>> _subscription;
 
-  AppConfigBloc() : super(const AppConfigState()){
+  AppConfigBloc() : super(const AppConfigState()) {
     _subscription = _connectivity.onConnectivityChanged.listen(_onNetConnectChange);
   }
 
-  void _onNetConnectChange(ConnectivityResult event) {
-    emit(state.copyWith(netConnect: event,));
+  void _onNetConnectChange(List<ConnectivityResult> event) {
+    if (event.isNotEmpty) {
+      emit(state.copyWith(
+        netConnect: event.first,
+      ));
+    }
   }
 
-
   @override
-  Future<void> close() async{
+  Future<void> close() async {
     _subscription.cancel();
     super.close();
   }
 
-
-  void init(AppConfigState state){
+  void init(AppConfigState state) {
     emit(state);
   }
 
@@ -89,13 +89,13 @@ class AppConfigBloc extends Cubit<AppConfigState> {
     emit(newState);
   }
 
-  void changeThemeMode(ThemeMode style) async{
+  void changeThemeMode(ThemeMode style) async {
     AppConfigState newState = state.copyWith(themeMode: style);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
-  void switchShowTool(bool show) async{
+  void switchShowTool(bool show) async {
     AppConfigState newState = state.copyWith(showOverlayTool: show);
     cao.write(newState.toAppConfigPo());
     emit(newState);

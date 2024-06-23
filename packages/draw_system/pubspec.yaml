@@ -19,7 +19,7 @@ dependencies:
   components:
     path: ../components
   dash_painter: ^1.0.2
-  flutter_bloc: ^8.1.3 # 状态管理
+  flutter_bloc: ^8.1.6 # 状态管理
   url_launcher: ^6.1.14 # url
   image: ^4.0.17
 dev_dependencies:

@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_spinkit: ^5.2.0 # loading
-  flutter_markdown: ^0.6.4 # markdown
+  flutter_markdown: ^0.7.2+1 # markdown
   toly_ui:
     path: ../toly_ui
   app:
