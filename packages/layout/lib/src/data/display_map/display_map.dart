@@ -8,12 +8,15 @@ import '../../views/popable/dropdown_button_demo.dart';
 import '../../views/popable/dropdown_menu_demo.dart';
 import '../model/display_frame.dart';
 import 'base.dart';
+import 'multi.dart';
 
 Map<String, List<DisplayFrame>> get kDisplayMap => {
   '/base/size': baseSize,
   '/base/padding': basePadding,
   '/base/align': baseAlign,
   '/base/positioned': basePostioned,
+
+  '/multi/flex': multiFlex,
 
   // '/popable/DropdownButton': [
   //   DisplayFrame(

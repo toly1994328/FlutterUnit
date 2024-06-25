@@ -44,12 +44,13 @@ class _LayoutRouterPageState extends State<LayoutRouterPage> {
       child: Column(
         children: [
           const Divider(),
-          Expanded(child: Router.withConfig(config: _router)),
+          Expanded(
+            child: Router.withConfig(config: _router),
+          ),
         ],
       ),
     );
   }
-
 }
 
 class LayoutPage extends StatelessWidget {
@@ -57,7 +58,6 @@ class LayoutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-        color: Colors.white, child: const Center(child: Text("TODO")));
+    return Material(color: Colors.white, child: const Center(child: Text("TODO")));
   }
 }

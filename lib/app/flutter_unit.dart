@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_unit/navigation/routers/app_route.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
+import 'package:tolyui/tolyui.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
@@ -29,17 +30,22 @@ class FlutterUnit3 extends StatelessWidget {
       notifier: SortState(),
       child: DefaultTextStyle(
         style: TextStyle(fontFamily: state.fontFamily),
-        child: MaterialApp.router(
-          routerConfig: _router,
-          showPerformanceOverlay: state.showPerformanceOverlay,
-          title: StrUnit.appName,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: l10nDelegates,
-          supportedLocales: l10nLocales,
-          locale: state.language.locale,
+        child: TolyMessage(
           themeMode: state.themeMode,
           darkTheme: AppTheme.darkTheme(state),
           theme: AppTheme.lightTheme(state),
+          child: MaterialApp.router(
+            routerConfig: _router,
+            showPerformanceOverlay: state.showPerformanceOverlay,
+            title: StrUnit.appName,
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: l10nDelegates,
+            supportedLocales: l10nLocales,
+            locale: state.language.locale,
+            themeMode: state.themeMode,
+            darkTheme: AppTheme.darkTheme(state),
+            theme: AppTheme.lightTheme(state),
+          ),
         ),
       ),
     );

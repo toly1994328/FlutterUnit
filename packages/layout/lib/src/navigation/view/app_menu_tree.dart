@@ -7,7 +7,6 @@ import '../../ext/go_router/listener.dart';
 import '../menu/menu_repository_impl.dart';
 
 class AppMenuTree extends StatefulWidget {
-
   const AppMenuTree({super.key});
 
   @override
@@ -15,9 +14,7 @@ class AppMenuTree extends StatefulWidget {
 }
 
 class _AppMenuTreeState extends State<AppMenuTree> with RouterChangeListenerMixin {
-
   late MenuTreeMeta _menuMeta;
-
 
   @override
   void initState() {
@@ -28,7 +25,7 @@ class _AppMenuTreeState extends State<AppMenuTree> with RouterChangeListenerMixi
   void _initTreeMeta() {
     MenuNode root = MenuNode.fromMap(layoutMenus);
     List<String> parts = Uri.parse(path).pathSegments;
-    String parentPath = parts.sublist(0,parts.length-1).join('/');
+    String parentPath = parts.sublist(0, parts.length - 1).join('/');
     _menuMeta = MenuTreeMeta(
       expandMenus: ['/$parentPath'],
       activeMenu: root.find(path),
@@ -38,14 +35,16 @@ class _AppMenuTreeState extends State<AppMenuTree> with RouterChangeListenerMixi
 
   @override
   Widget build(BuildContext context) {
-    Color expandBackgroundColor = context.isDark?Colors.black:Colors.transparent;
-    Color backgroundColor = context.isDark?Color(0xff001529):Colors.white;
+    Color expandBackgroundColor = context.isDark ? Colors.black : Colors.transparent;
+    Color backgroundColor = context.isDark ? Color(0xff001529) : Colors.white;
 
     return TolyRailMenuTree(
-      leading: SizedBox(height: 18,),
+      leading: const SizedBox(
+        height: 18,
+      ),
       enableWidthChange: true,
       maxWidth: 360,
-      width: 240,
+      width: 190,
       meta: _menuMeta,
       backgroundColor: backgroundColor,
       expandBackgroundColor: expandBackgroundColor,
@@ -61,10 +60,10 @@ class _AppMenuTreeState extends State<AppMenuTree> with RouterChangeListenerMixi
   }
 
   void _onSelect(MenuNode menu) {
-    if(menu.isLeaf){
+    if (menu.isLeaf) {
       context.go(menu.id);
       print(path);
-    }else{
+    } else {
       _menuMeta = _menuMeta.select(menu, singleExpand: true);
       setState(() {});
     }
