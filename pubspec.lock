@@ -803,18 +803,18 @@ packages:
     dependency: "direct main"
     description:
       name: tolyui
-      sha256: "92c3ea5f9240746c336dca8ab898797144e52545a8061937df20c924b6e5cdb7"
+      sha256: f88af1cabd06d0eb2df989abac9bfc37f1ad76d273cc9f8d9109cc163205fe48
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.2+7"
+    version: "0.0.2+15"
   tolyui_feedback:
     dependency: transitive
     description:
       name: tolyui_feedback
-      sha256: "08508038ee77c9ec1c27a39e6cc7fae5a1f9c59da20c771b2fbd52258ff31206"
+      sha256: "0efc505b83fbb3546344a9c94988938954c11f8680a9ed9e226ff82fe924053d"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.4"
+    version: "0.3.4+4"
   tolyui_message:
     dependency: transitive
     description:
@@ -827,10 +827,10 @@ packages:
     dependency: transitive
     description:
       name: tolyui_navigation
-      sha256: "1b1012899d477f7860e60e564abe152dab86cbd31b091065525f57b31d139dc6"
+      sha256: "2b1c323962903406370367d2e637a785399a568554c77d87d405da8df33f79cb"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.8+3"
+    version: "0.0.8+6"
   tolyui_rx_layout:
     dependency: transitive
     description:

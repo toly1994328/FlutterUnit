@@ -4,13 +4,10 @@ import 'layout.dart';
 import 'multi.dart';
 
 Map<String, dynamic> get layoutMenus => {
-      'path': '',
-      'label': '',
       'children': [
         home,
         baseMenus,
-        drawMenus,
+        multiMenus,
         calcMenus,
-// popableMenus,
       ]
     };

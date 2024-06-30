@@ -17,6 +17,8 @@ Map<String, List<DisplayFrame>> get kDisplayMap => {
   '/base/positioned': basePostioned,
 
   '/multi/flex': multiFlex,
+  '/multi/wrap': multiWrap,
+  '/multi/stack': multiStack,
 
   // '/popable/DropdownButton': [
   //   DisplayFrame(

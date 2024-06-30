@@ -6,10 +6,10 @@ class ColumnShow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Color> colors = [
-      Color(0xffe64032),
-      Color(0xff307dee),
-      Color(0xfff9c01f),
-      Color(0xff309949),
+      const Color(0xffe64032),
+      const Color(0xff307dee),
+      const Color(0xfff9c01f),
+      const Color(0xff309949),
     ];
     return Column(
       children: [
