@@ -11,22 +11,22 @@ import 'package:flutter/material.dart';
 // 'label': '圣杯布局',
 // // 'icon': Icons.text_fields,
 // },
-Map<String, dynamic> get drawMenus => {
+Map<String, dynamic> get multiMenus => {
       'path': '/multi',
       'icon': Icons.multitrack_audio,
       'label': '多子布局',
       'children': [
         {
           'path': '/flex',
-          'label': '行列布局',
+          'label': 'Flex 适应布局',
         },
         {
           'path': '/wrap',
-          'label': '包裹布局',
+          'label': 'Wrap 包裹布局',
         },
         {
           'path': '/stack',
-          'label': '堆叠布局',
+          'label': 'Stack 堆叠布局',
         },
       ]
     };

@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   # 菜单管理
-  tolyui: ^0.0.2+7
+  tolyui: ^0.0.2+15
 
   # 路由管理
   go_router: ^14.2.0

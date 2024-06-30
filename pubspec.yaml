@@ -25,7 +25,8 @@ dependencies:
   app_boot_starter: ^1.0.0
 
   ## tolyui
-  tolyui: ^0.0.2+7
+  tolyui: ^0.0.2+15
+
 
   package_info_plus: ^8.0.0 # 应用包信息
   r_upgrade: ^0.4.2 # 应用升级
