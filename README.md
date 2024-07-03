@@ -60,7 +60,7 @@ Tools • Dart 3.4.0 • DevTools 2.34.3
 
 > 开源不易，请我喝咖啡 ~
 
-![](./doc/ewm/coffee1.webp)
+![](./doc/ewm/coffee1.png)
 
 
 
