@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../data_scope/state.dart';
+import '../../data_scope/state.dart';
 import 'data_painter.dart';
 
 class SortPaper extends StatelessWidget{

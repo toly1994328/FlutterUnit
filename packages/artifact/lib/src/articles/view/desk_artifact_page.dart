@@ -61,7 +61,7 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
               children: [
                 LayoutRouterPage(),
                 TolyArticlesPage(),
-                SoreAlgoPage(),
+                AlgoRouterPage(),
                 DeskPointPage(),
               ],
             ))
@@ -134,7 +134,7 @@ class SoreAlgoPage extends StatelessWidget {
                     ),
                   )),
               Spacer(),
-              SortButton(),
+              FindingButton(),
               const SizedBox(width: 12,),
               SortSelector(),
               const SizedBox(width: 12,),

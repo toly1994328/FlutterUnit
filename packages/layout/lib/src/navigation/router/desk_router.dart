@@ -71,7 +71,46 @@ RouteBase get deskNavRoute => ShellRoute(
             //   ),
             // ]
           ),
-
+          GoRoute(
+            path: 'funny/:name',
+            builder: (BuildContext context, GoRouterState state) {
+              return const FrameDisplayPanel();
+            },
+            // builder: (_,__)=>Text("暂未实现"),
+            // routes: [
+            //   GoRoute(
+            //     path: 'row',
+            //     builder: (BuildContext context, GoRouterState state) {
+            //       return TextShow(
+            //         info: 'row',
+            //       );
+            //     },
+            //   ),
+            //   GoRoute(
+            //     path: 'column',
+            //     builder: (BuildContext context, GoRouterState state) {
+            //       return TextShow(
+            //         info: 'column',
+            //       );
+            //     },
+            //   ),          GoRoute(
+            //     path: 'expanded',
+            //     builder: (BuildContext context, GoRouterState state) {
+            //       return TextShow(
+            //         info: 'expanded',
+            //       );
+            //     },
+            //   ),
+            //   GoRoute(
+            //     path: 'holy',
+            //     builder: (BuildContext context, GoRouterState state) {
+            //       return TextShow(
+            //         info: 'holy',
+            //       );
+            //     },
+            //   ),
+            // ]
+          ),
           // GoRoute(
           //   path: 'text/gen/secret',
           //   builder: (BuildContext context, GoRouterState state) {

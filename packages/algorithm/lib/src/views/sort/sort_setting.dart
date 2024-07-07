@@ -1,6 +1,7 @@
+import 'package:algorithm/algorithm.dart';
 import 'package:flutter/material.dart';
 
-import '../../algorithm.dart';
+
 class SortSettings extends StatefulWidget {
 
   const SortSettings({super.key,});

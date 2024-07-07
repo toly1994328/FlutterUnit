@@ -23,6 +23,7 @@ class FlutterUnitSplash extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark,
       ),
       child: Material(
+        color: Colors.white,
         child: _SplashBody(),
       ),
     );

@@ -27,3 +27,5 @@ export 'app/platform_adapter/window/windows_adapter.dart';
 export 'app/platform_adapter/views/window_buttons.dart';
 
 export 'app_config/app_config.dart';
+
+export 'app/action/action.dart';
