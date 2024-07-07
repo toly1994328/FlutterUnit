@@ -302,6 +302,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fx_go_router_ext:
+    dependency: transitive
+    description:
+      path: "modules/fx_go_router_ext"
+      relative: true
+    source: path
+    version: "0.0.1"
   go_router:
     dependency: "direct main"
     description:

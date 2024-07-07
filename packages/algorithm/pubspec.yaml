@@ -4,12 +4,18 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=2.18.1 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  # tolyui
+  tolyui: ^0.0.2+15
+
+  fx_go_router_ext:
+    path: ../../modules/fx_go_router_ext
+
   components:
     path: ../components
   toly_ui:

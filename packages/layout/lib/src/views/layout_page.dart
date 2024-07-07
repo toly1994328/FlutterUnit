@@ -7,7 +7,6 @@ import 'package:layout/src/navigation/router/app_router.dart';
 import '../bloc/display_logic.dart';
 import '../bloc/display_state.dart';
 import '../data/display_map/display_map.dart';
-import '../data/model/display_frame.dart';
 
 class LayoutRouterPage extends StatefulWidget {
   LayoutRouterPage({super.key});

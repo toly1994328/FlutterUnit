@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # 菜单管理
+  # tolyui
   tolyui: ^0.0.2+15
 
   # 路由管理

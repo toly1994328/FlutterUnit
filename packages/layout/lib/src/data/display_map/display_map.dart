@@ -8,6 +8,7 @@ import '../../views/popable/dropdown_button_demo.dart';
 import '../../views/popable/dropdown_menu_demo.dart';
 import '../model/display_frame.dart';
 import 'base.dart';
+import 'funny.dart';
 import 'multi.dart';
 
 Map<String, List<DisplayFrame>> get kDisplayMap => {
@@ -19,6 +20,8 @@ Map<String, List<DisplayFrame>> get kDisplayMap => {
   '/multi/flex': multiFlex,
   '/multi/wrap': multiWrap,
   '/multi/stack': multiStack,
+
+  '/funny/elevator':funnyElevator,
 
   // '/popable/DropdownButton': [
   //   DisplayFrame(

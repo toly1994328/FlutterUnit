@@ -15,6 +15,7 @@ dependencies:
   shared_preferences: ^2.2.2 # xml 固化
   connectivity_plus: ^6.0.3
   window_manager: ^0.3.9 #桌面尺寸
+  url_launcher: ^6.1.14 # url
   storage:
     path: ../storage
   widget_module:

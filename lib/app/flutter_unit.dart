@@ -26,8 +26,7 @@ class FlutterUnit3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppConfigState state = context.watch<AppConfigBloc>().state;
-    return SortStateScope(
-      notifier: SortState(),
+    return AlgoScope(
       child: DefaultTextStyle(
         style: TextStyle(fontFamily: state.fontFamily),
         child: TolyMessage(

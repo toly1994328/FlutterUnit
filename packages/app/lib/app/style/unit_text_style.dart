@@ -15,7 +15,7 @@ class UnitTextStyle {
       shadows: [
         Shadow(
             color: Colors.black,
-            blurRadius: 1,
+            blurRadius: 0.5,
             offset: Offset(0.1, 0.1))
       ],
       fontSize: 12);

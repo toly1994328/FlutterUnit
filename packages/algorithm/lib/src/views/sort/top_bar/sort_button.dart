@@ -1,43 +1,43 @@
 import 'package:algorithm/algorithm.dart';
 import 'package:flutter/material.dart';
+import 'package:tolyui/tolyui.dart';
 
-import '../../data_scope/state.dart';
+import '../../../finding/data_scope/finding_state.dart';
 
-
-
-class SortButton extends StatelessWidget {
-  const SortButton({super.key});
+class FindingButton extends StatelessWidget {
+  const FindingButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SortState state = SortStateScope.of(context);
+    FindingState state = FindingStateScope.of(context);
     VoidCallback? action;
     IconData icon;
+    String? tip;
     Color color;
     switch (state.status) {
-      case SortStatus.none:
+      case FindingStatus.none:
         icon = Icons.not_started_outlined;
         color = Colors.green;
-        action = state.sort;
+        action = state.run;
+        tip = '运行';
         break;
-      case SortStatus.sorting:
+      case FindingStatus.finding:
         icon = Icons.stop_circle_outlined;
         color = Colors.grey;
+        tip = '排序中';
         action = null;
         break;
-      case SortStatus.sorted:
+      case FindingStatus.find:
         icon = Icons.refresh;
         color = Colors.black;
         action = state.reset;
+        tip = '重置';
         break;
     }
-
-    return GestureDetector(
+    return TolyAction(
       onTap: action,
-      child: Icon(
-        icon,
-        color: color,
-      ),
+      tooltip: tip,
+      child: Icon(icon, color: color, size: 20),
     );
   }
 }
