@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -124,7 +125,7 @@ class FrameShower extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isDesk = Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+    bool isDesk = kIsWeb||Platform.isMacOS || Platform.isWindows || Platform.isLinux;
     if (isDesk) {
       return DeskFrameShower(
           content: content,

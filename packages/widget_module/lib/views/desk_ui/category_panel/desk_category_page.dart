@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../data/exp.dart';
+import '../../../data/zone.dart';
 import '../../mobile/category_page/category_list_item.dart';
 import '../../mobile/category_page/delete_category_dialog.dart';
 import '../../mobile/category_page/edit_category_panel.dart';

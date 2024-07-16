@@ -2,6 +2,7 @@ import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
+import 'package:fx_app_env/fx_app_env.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,10 +25,19 @@ class BlocWrapper extends StatefulWidget {
 }
 
 class _BlocWrapperState extends State<BlocWrapper> {
-  final WidgetRepository repository = const WidgetDbRepository();
+  late WidgetRepository repository;
 
-  final CategoryBloc categoryBloc =
-      CategoryBloc(repository: CategoryDbRepository());
+  @override
+  void initState() {
+    super.initState();
+    if(kAppEnv.isWeb){
+      repository = MemoryWidgetRepository();
+    }else{
+      repository = const WidgetDbRepository();
+    }
+  }
+
+  final CategoryBloc categoryBloc = CategoryBloc(repository: CategoryDbRepository());
   final AuthRepository authRepository = HttpAuthRepository();
 
   @override

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:toly_ui/toly_ui.dart';
-import '../../../../data/exp.dart';
+import '../../../../data/zone.dart';
 
 class DeskWidgetDetailPanel extends StatelessWidget {
   final WidgetModel model;

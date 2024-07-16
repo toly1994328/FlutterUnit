@@ -1,11 +1,12 @@
 import 'package:app/app.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../../data/exp.dart';
+import '../../../../data/zone.dart';
 import 'package:widgets/widgets.dart';
 
 import '../../mobile/widget_detail/category_end_drawer.dart';
@@ -19,6 +20,7 @@ import 'widget_node_panel.dart';
 class DeskWidgetDetailPageScope extends StatefulWidget {
   final WidgetModel? model;
   final String? widgetName;
+
   const DeskWidgetDetailPageScope({super.key, required this.model, this.widgetName});
 
   @override
@@ -27,6 +29,9 @@ class DeskWidgetDetailPageScope extends StatefulWidget {
 
 class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
   WidgetModel? _model;
+
+  WidgetRepository get widgetRepository => context.read<WidgetsBloc>().repository;
+  NodeRepository get nodeRepository => kIsWeb? MemoryNodeRepository():const NodeDbRepository();
 
   @override
   void initState() {
@@ -38,10 +43,7 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
   }
 
   void _loadModelByName() async {
-    _model = await context
-        .read<WidgetsBloc>()
-        .repository
-        .queryWidgetByName(widget.widgetName);
+    _model = await widgetRepository.queryWidgetByName(widget.widgetName);
   }
 
   @override
@@ -53,9 +55,9 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
 
     return BlocProvider<WidgetDetailBloc>(
       create: (_) => WidgetDetailBloc(
-          widgetRepository: const WidgetDbRepository(),
-          nodeRepository: const NodeDbRepository())
-        ..push(_model!),
+        widgetRepository: widgetRepository,
+        nodeRepository: nodeRepository,
+      )..push(_model!),
       child: DeskWidgetDetailPage(
         model: widget.model,
       ),
@@ -63,15 +65,13 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
   }
 }
 
-class DeskWidgetDetailPage extends StatelessWidget{
+class DeskWidgetDetailPage extends StatelessWidget {
   final WidgetModel? model;
 
   const DeskWidgetDetailPage({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-
     WidgetDetailBloc bloc = context.watch<WidgetDetailBloc>();
 
     return BlocBuilder<WidgetDetailBloc, DetailState>(
@@ -84,8 +84,8 @@ class DeskWidgetDetailPage extends StatelessWidget{
     );
   }
 
-  Widget linkText(BuildContext  context) => Row(
-        children:  [
+  Widget linkText(BuildContext context) => Row(
+        children: [
           const Padding(
             padding: EdgeInsets.only(left: 15, right: 5),
             child: Icon(Icons.link, color: Colors.blue),
@@ -109,7 +109,7 @@ class DeskWidgetDetailPage extends StatelessWidget{
                     children: [
                       Expanded(
                         child: DeskWidgetDetailPanel(
-                            model: bloc.currentWidget,
+                          model: bloc.currentWidget,
                         ),
                       ),
                       const SizedBox(
@@ -119,7 +119,9 @@ class DeskWidgetDetailPage extends StatelessWidget{
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(height: 16,),
+                          const SizedBox(
+                            height: 16,
+                          ),
                           linkText(context),
                           if (state is DetailWithData)
                             LinkWidgetButtons(
@@ -148,12 +150,10 @@ class DeskWidgetDetailPage extends StatelessWidget{
     return detailBloc.pop();
   }
 
-  Widget _buildSliverNodeList(
-      BuildContext context, List<NodeModel> nodes, WidgetModel model) {
+  Widget _buildSliverNodeList(BuildContext context, List<NodeModel> nodes, WidgetModel model) {
     AppConfigState globalState = BlocProvider.of<AppConfigBloc>(context).state;
 
     return SliverList(
-
         delegate: SliverChildBuilderDelegate(
       (_, i) => DeskWidgetNodePanel(
         codeStyle: globalState.codeStyle,

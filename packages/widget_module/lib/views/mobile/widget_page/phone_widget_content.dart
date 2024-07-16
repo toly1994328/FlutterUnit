@@ -2,7 +2,7 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../data/exp.dart';
+import '../../../data/zone.dart';
 import 'widget_model_item.dart';
 
 class PhoneWidgetContent extends StatelessWidget {

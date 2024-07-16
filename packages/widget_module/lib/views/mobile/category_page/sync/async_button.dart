@@ -10,7 +10,7 @@ import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:storage/storage.dart';
-import '../../../../data/exp.dart';
+import '../../../../data/zone.dart';
 
 
 import 'package:toly_ui/toly_ui.dart';

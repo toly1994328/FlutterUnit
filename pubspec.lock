@@ -302,6 +302,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fx_app_env:
+    dependency: "direct main"
+    description:
+      path: "modules/fx_app_env"
+      relative: true
+    source: path
+    version: "0.0.1"
   fx_go_router_ext:
     dependency: transitive
     description:
@@ -1075,5 +1082,5 @@ packages:
     source: hosted
     version: "6.3.0"
 sdks:
-  dart: ">=3.4.0 <4.0.0"
+  dart: ">=3.4.3 <4.0.0"
   flutter: ">=3.22.0"

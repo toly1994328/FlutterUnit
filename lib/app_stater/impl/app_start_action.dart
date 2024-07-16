@@ -2,10 +2,11 @@ import 'package:app/app.dart';
 import 'package:app_boot_starter/app_boot_starter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_app_env/fx_app_env.dart';
 import 'package:go_router/go_router.dart';
 import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
-import 'package:widget_module/data/exp.dart';
+import 'package:widget_module/data/zone.dart';
 
 class AppStartActionImpl implements AppStartAction<AppConfigState> {
 
@@ -17,8 +18,10 @@ class AppStartActionImpl implements AppStartAction<AppConfigState> {
     HttpUtil.instance.rebase(PathUnit.baseUrl);
     context.read<AppConfigBloc>().init(state);
     context.read<WidgetsBloc>().add(const EventTabTap(WidgetFamily.statelessWidget));
-    context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
-    context.read<CategoryBloc>().add(const EventLoadCategory());
+    if(!kAppEnv.isWeb){
+      context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
+      context.read<CategoryBloc>().add(const EventLoadCategory());
+    }
   }
 
   @override

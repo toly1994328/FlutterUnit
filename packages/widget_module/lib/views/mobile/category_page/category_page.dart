@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../data/exp.dart';
+import '../../../data/zone.dart';
 
 
 import 'category_list_item.dart';

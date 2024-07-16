@@ -14,7 +14,43 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="$FLUTTER_BASE_HREF">
+<!--  <base href="$FLUTTER_BASE_HREF">-->
+  <style>
+    body{margin:0;padding:0;}
+    #app_splash {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(45deg, #ffffff, #45d3fe);
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+    }
+
+    .loading-text {
+        font-size: 20px;
+        font-weight: bold;
+        background: linear-gradient(to right, #45d3fe, #ff6347, #59a869);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: gradientShift 1s infinite;
+    }
+    @keyframes gradientShift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+  </style>
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -32,7 +68,21 @@
   <title>flutter_unit</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
+
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+<div id="app_splash" style="">
+  <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;flex-direction:column">
+      <img src="splash.gif">
+      <div style="margin-top:12px" class="loading-text" >Flutter Unit Loading...</div>
+    </div>
+  </div>
+</div>
+
+<script src="flutter_bootstrap.js" defer></script>
+
+<script src="splash.js"></script>
+
 </body>
 </html>

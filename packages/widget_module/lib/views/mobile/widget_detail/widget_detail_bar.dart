@@ -8,7 +8,7 @@ import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../data/exp.dart';
+import '../../../data/zone.dart';
 
 class SliverWidgetDetailBar extends StatelessWidget {
   final WidgetModel model;

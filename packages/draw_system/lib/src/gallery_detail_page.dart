@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:toly_ui/toly_ui.dart';
@@ -182,7 +183,7 @@ class _GalleryDetailPageState extends State<GalleryDetailPage> {
     }
   }
 
-  bool isDesk = Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+  bool isDesk = kIsWeb || Platform.isMacOS || Platform.isWindows || Platform.isLinux;
 
 
   Widget buildTitle(BuildContext context) {
