@@ -1,37 +1,20 @@
-name: app
-description: A new Flutter package project.
+name: fx_app_env
+description: "A new Flutter package project."
 version: 0.0.1
 homepage:
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: '>=3.4.3 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.6 # 状态管理
-  equatable: ^2.0.5 # 相等辅助
-  shared_preferences: ^2.2.2 # xml 固化
-  connectivity_plus: ^6.0.3
-  window_manager: ^0.3.9 #桌面尺寸
-  url_launcher: ^6.1.14 # url
-  fx_app_env:
-    path: ../../modules/fx_app_env
-  storage:
-    path: ../storage
-  widget_module:
-    path: ../widget_module
-  components:
-    path: ../components
-  toly_ui:
-    path: ../toly_ui
-  l10n:
-    path: ../l10n
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -5,7 +5,7 @@ import 'package:app/app.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../data/exp.dart';
+import '../../data/zone.dart';
 
 part 'widgets_event.dart';
 
@@ -37,8 +37,8 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
         filter: filter,
         operate: LoadOperate.load,
       ));
-    } catch (err) {
-      print(err);
+    } catch (err,t) {
+      print("======$err==========$t==============");
       emit(WidgetsLoadFailed(
         err.toString(),
         filter: filter,

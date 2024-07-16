@@ -2,11 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:fx_app_env/fx_app_env.dart';
 import 'package:window_manager/window_manager.dart';
 
 class WindowsAdapter {
 
   static Future<void> setSize() async {
+    if(kIsWeb) return;
     if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
     //仅对桌面端进行尺寸设置
       await windowManager.ensureInitialized();
@@ -39,7 +41,7 @@ class DragToMoveAreaNoDouble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if(Platform.isAndroid||Platform.isIOS) return child;
+    if(kAppEnv.isWeb||kAppEnv.isMobile) return child;
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onPanStart: (details) {
@@ -62,8 +64,7 @@ class DragToMoveWrapper extends StatelessWidget implements PreferredSizeWidget{
 
   @override
   Widget build(BuildContext context) {
-    bool isDesk = kIsWeb || Platform.isMacOS||Platform.isWindows||Platform.isLinux;
-    if(!isDesk) return child;
+    if(kAppEnv.isWeb||kAppEnv.isMobile) return child;
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onDoubleTap: !canDouble?null:() async{

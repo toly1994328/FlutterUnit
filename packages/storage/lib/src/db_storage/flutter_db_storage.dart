@@ -1,8 +1,7 @@
 import 'dart:io';
 
-
-
 import 'package:artifact/artifact.dart';
+import 'package:flutter/foundation.dart';
 import 'package:storage/storage.dart';
 
 import 'helper/db_open_helper.dart';
@@ -11,13 +10,27 @@ import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart';
 
-
 class FlutterDbStorage {
   Database? _database;
 
-  FlutterDbStorage._();
+  FlutterDbStorage._() {
+    setupDatabase();
+  }
 
-  static FlutterDbStorage instance = FlutterDbStorage._();
+  static FlutterDbStorage? _instance;
+
+  static FlutterDbStorage get instance {
+    _instance ??= FlutterDbStorage._();
+    return _instance!;
+  }
+
+  void setupDatabase() {
+    if (kIsWeb) return;
+    if (Platform.isWindows || Platform.isWindows) {
+      sqfliteFfiInit();
+      databaseFactory = databaseFactoryFfi;
+    }
+  }
 
   late WidgetDao _widgetDao;
   late CategoryDao _categoryDao;
@@ -33,7 +46,9 @@ class FlutterDbStorage {
   NodeDao get nodeDao => _nodeDao;
 
   LikeDao get likeDao => _likeDao;
+
   ArticleDao get articleDao => _articleDao;
+
   ColumnizeDao get columnizeDao => _columnizeDao;
 
   Database get db => _database!;
@@ -42,22 +57,7 @@ class FlutterDbStorage {
     if (_database != null) return;
     String databasesPath = await DbOpenHelper.getDbDirPath();
     String dbPath = path.join(databasesPath, name);
-
-    if (Platform.isWindows||Platform.isLinux) {
-      DatabaseFactory databaseFactory = databaseFactoryFfi;
-      _database = await databaseFactory.openDatabase(
-        dbPath,
-        options: OpenDatabaseOptions(
-            // version: DbUpdater.VERSION,
-            // onCreate: _onCreate,
-            // onUpgrade: _onUpgrade,
-            // onOpen: _onOpen
-        ),
-      );
-    }else{
-      _database = await openDatabase(dbPath);
-    }
-
+    _database = await openDatabase(dbPath);
     _widgetDao = WidgetDao(_database!);
     _categoryDao = CategoryDao(_database!);
     _nodeDao = NodeDao(_database!);

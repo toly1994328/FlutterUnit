@@ -10,9 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  sqflite: ^2.3.0 # 数据库
-  sqflite_common_ffi: ^2.3.1 # 数据库
+  sqflite_common_ffi: 2.3.3
+  sqflite: ^2.3.3+1
   shared_preferences: ^2.2.1 # xml 固化
   path_provider: ^2.1.1  # 路径
 

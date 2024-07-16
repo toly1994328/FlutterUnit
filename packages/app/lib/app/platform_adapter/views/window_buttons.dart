@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -12,6 +13,7 @@ class WindowButtons extends StatefulWidget {
 class _WindowButtonsState extends State<WindowButtons> {
   @override
   Widget build(BuildContext context) {
+    if(kIsWeb) return SizedBox();
     Brightness brightness = Theme.of(context).brightness;
     return  Align(
       alignment:Alignment.topRight,child:  Wrap(

@@ -5,7 +5,7 @@ import 'package:flutter_star/flutter_star.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/views/components/collected_tag.dart';
 
-import '../../../../data/exp.dart';
+import '../../../../data/zone.dart';
 import 'package:wrapper/wrapper.dart';
 
 
@@ -41,7 +41,7 @@ class DeskWidgetItem extends StatelessWidget {
             )
           ]
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
         // margin:
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

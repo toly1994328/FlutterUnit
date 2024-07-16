@@ -18,7 +18,6 @@ class AppTheme {
       statusBarBrightness: Brightness.dark,
       statusBarIconBrightness: Brightness.light,
     );
-    bool useMaterial3 = (Platform.isAndroid || Platform.isIOS);
 
     return ThemeData(
       scaffoldBackgroundColor: scaffoldBackgroundColor,

@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../data/exp.dart';
+import '../../../data/zone.dart';
 
 
 /// create by 张风捷特烈 on 2020-04-22

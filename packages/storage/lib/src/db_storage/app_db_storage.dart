@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:io';
-
 import 'package:storage/storage.dart';
 
 import 'dao/cache_dao.dart';
@@ -30,26 +28,12 @@ class AppDbStorage {
     if (_database != null) return;
     String databasesPath = await DbOpenHelper.getDbDirPath();
     String dbPath = path.join(databasesPath, name);
-
-    if (Platform.isWindows||Platform.isLinux) {
-      DatabaseFactory databaseFactory = databaseFactoryFfi;
-      _database = await databaseFactory.openDatabase(
-        dbPath,
-        options: OpenDatabaseOptions(
-            version: DbUpdater.version,
-            onCreate: _onCreate,
-            onUpgrade: _onUpgrade,
-            onOpen: _onOpen
-        ),
-      );
-    }else{
-      _database = await openDatabase(dbPath,
+    _database = await openDatabase(dbPath,
       version:  DbUpdater.version ,
       onCreate: _onCreate,
-          onUpgrade: _onUpgrade,
-        onOpen: _onOpen,
-      );
-    }
+      onUpgrade: _onUpgrade,
+      onOpen: _onOpen,
+    );
 
   }
 

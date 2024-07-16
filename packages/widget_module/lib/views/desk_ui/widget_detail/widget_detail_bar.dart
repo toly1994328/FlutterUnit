@@ -9,7 +9,7 @@ import 'package:utils/utils.dart';
 
 
 import 'package:widget_module/blocs/blocs.dart';
-import '../../../../data/exp.dart';
+import '../../../../data/zone.dart';
 
 class DeskSliverWidgetDetailBar extends StatelessWidget {
   final WidgetModel model;

@@ -23,7 +23,8 @@ dependencies:
 
   ## fx 架构 - app 启动器
   app_boot_starter: ^1.0.0
-
+  fx_app_env:
+    path: modules/fx_app_env
   ## tolyui
   tolyui: ^0.0.2+15
 
@@ -98,6 +99,7 @@ flutter:
   assets:
     - assets/images/
     - assets/data/
+    - assets/data/web/
     - assets/images/head_icon/
     - assets/images/widgets/
     - assets/flutter.db

@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../data/exp.dart';
+import '../../../data/zone.dart';
 import '../widget_page/widget_model_item.dart';
 import 'standard_search_bar.dart';
 
