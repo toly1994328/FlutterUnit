@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:app/app.dart';
-import 'package:app_boot_starter/app_boot_starter.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:fx_app_env/fx_app_env.dart';
@@ -17,6 +19,10 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
   /// 返回本地持久化的 AppConfigState 对象
   @override
   Future<AppConfigState> initApp() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    //滚动性能优化 1.22.0
+    GestureBinding.instance.resamplingEnabled = true;
+    WindowsAdapter.setSize();
     await SpStorage.instance.initSp();
     if (!kAppEnv.isWeb) await initDb();
     AppConfigPo po = await SpStorage.instance.appConfig.read();
@@ -37,8 +43,7 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
 
   Future<void> initDb() async {
     //数据库不存在，执行拷贝
-    String databasesPath = await DbOpenHelper.getDbDirPath();
-    String dbPath = path.join(databasesPath, "flutter.db");
+    String dbPath = await AppStorage().flutter.dbpath;
     await SpStorage.instance.initSp();
 
     bool shouldCopy = await _checkShouldCopy(dbPath, SpStorage.instance.spf);
@@ -48,9 +53,7 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
     } else {
       print("=====flutter.db 已存在====");
     }
-    print('====数据库所在文件夹: $databasesPath=======');
-    await FlutterDbStorage.instance.initDb();
-    await AppDbStorage.instance.initDb();
+    await AppStorage().init();
   }
 
   Future<void> _doCopyAssetsDb(String dbPath) async {

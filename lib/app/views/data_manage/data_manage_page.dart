@@ -90,7 +90,7 @@ class DataManagePage extends StatelessWidget {
     CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
     List<CategoryTo> loadCategories = await rep.loadCategoryData();
 
-    List<int> likeData = await FlutterDbStorage.instance.likeDao.likeWidgetIds();
+    List<int> likeData = await AppStorage().flutter<LikeDao>()!.likeWidgetIds();
 
     String json = jsonEncode(loadCategories);
     String likeJson = jsonEncode(likeData);
@@ -124,7 +124,7 @@ class DataManagePage extends StatelessWidget {
         CategoryRepository rep =
             BlocProvider.of<CategoryBloc>(context).repository;
         List<CategoryTo> loadCategories = await rep.loadCategoryData();
-        List<int> likeData = await FlutterDbStorage.instance.likeDao.likeWidgetIds();
+        List<int> likeData = await AppStorage().flutter<LikeDao>()!.likeWidgetIds();
 
         String json = jsonEncode(loadCategories);
         String likeJson = jsonEncode(likeData);

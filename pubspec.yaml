@@ -22,9 +22,10 @@ dependencies:
   stream_transform: ^2.1.0
 
   ## fx 架构 - app 启动器
-  app_boot_starter: ^1.0.0
+  fx_boot_starter: 0.0.1
   fx_app_env:
     path: modules/fx_app_env
+
   ## tolyui
   tolyui: ^0.0.2+15
 
@@ -49,7 +50,7 @@ dependencies:
   wrapper: ^1.0.2
 
   url_launcher: ^6.3.0 # url
-  share_plus: ^9.0.0 # 文字分享
+  share_plus: ^10.0.1 # 文字分享
 
   flutter_svg: ^2.0.10+1
   intl: ^0.19.0
@@ -57,7 +58,7 @@ dependencies:
   image: ^4.2.0
   flutter_spinkit: ^5.2.1 # loading
   flutter_markdown: ^0.7.2+1 # markdown
-  file_picker: ^8.0.5
+  file_picker: ^8.0.7
   l10n:
     path: packages/l10n
   utils:
@@ -93,6 +94,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
+
+dependency_overrides:
+  fx_boot_starter:
+    path: modules/fx_boot_starter
+  web: ^1.0.0
 
 flutter:
   uses-material-design: true

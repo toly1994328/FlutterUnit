@@ -1,9 +1,5 @@
 
-import 'package:artifact/artifact.dart';
 import 'package:storage/storage.dart';
-
-import '../exp.dart';
-
 
 
 
@@ -11,7 +7,7 @@ import '../exp.dart';
 class ArticleRepository {
   const ArticleRepository();
 
-  ArticleDao get dao => FlutterDbStorage.instance.articleDao;
+  ArticleDao get dao => AppStorage().flutter<ArticleDao>()!;
 
   // 从数据库加载资源
   Future<List<Article>> queryByDb(ArticleFilter filter) async {

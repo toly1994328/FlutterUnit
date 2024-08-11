@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storage/storage.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
 import '../../../data/zone.dart';

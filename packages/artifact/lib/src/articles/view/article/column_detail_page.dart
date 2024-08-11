@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../data/exp.dart';
+import 'package:storage/storage.dart';
+
 import 'sliver_article.dart';
 
 class ColumnDetailPage extends StatelessWidget {

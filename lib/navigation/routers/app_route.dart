@@ -1,5 +1,5 @@
 import 'package:app/app.dart';
-import 'package:app_boot_starter/app_boot_starter.dart';
+import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

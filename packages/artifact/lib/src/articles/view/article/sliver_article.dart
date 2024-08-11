@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../bloc/exp.dart';
-import '../../data/exp.dart';
+import 'package:storage/storage.dart';
 import 'article_detail_page.dart';
 import 'columnize_page_view.dart';
 

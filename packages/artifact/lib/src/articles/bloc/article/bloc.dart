@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storage/storage.dart';
 
-import '../../data/model/article.dart';
 import '../../data/repository/article_repository.dart';
 
 class ArticleBloc extends Cubit<ArticleState> {

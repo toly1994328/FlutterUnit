@@ -10,7 +10,8 @@ import 'package:intl/intl.dart';
 
 import '../../bloc/article/bloc.dart';
 import '../../bloc/exp.dart';
-import '../../data/model/columnize.dart';
+import 'package:storage/storage.dart';
+
 import '../../data/repository/article_repository.dart';
 
 import 'column_detail_page.dart';
