@@ -1,1 +1,0 @@
-flutter clean && flutter build windows && ISCC.exe "build.iss" /DVersion=3.0.0 && pause
