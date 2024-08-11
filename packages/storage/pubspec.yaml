@@ -10,11 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sqflite_common_ffi: 2.3.3
-  sqflite: ^2.3.3+1
   shared_preferences: ^2.2.1 # xml 固化
-  path_provider: ^2.1.1  # 路径
-  fx_dao: 0.0.1
+  fx_dao: 0.0.1+2
 
 dev_dependencies:
   flutter_test:

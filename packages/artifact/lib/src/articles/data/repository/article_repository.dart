@@ -7,7 +7,7 @@ import 'package:storage/storage.dart';
 class ArticleRepository {
   const ArticleRepository();
 
-  ArticleDao get dao => AppStorage().flutter<ArticleDao>()!;
+  ArticleDao get dao => AppStorage().flutter<ArticleDao>();
 
   // 从数据库加载资源
   Future<List<Article>> queryByDb(ArticleFilter filter) async {

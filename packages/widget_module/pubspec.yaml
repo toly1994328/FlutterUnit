@@ -16,8 +16,8 @@ dependencies:
   flutter_star: ^1.0.2 # 星星组件
   toggle_rotate: ^1.0.1
   wrapper: ^1.0.2
-#  widget_repository:
-#    path: ../widget_repository
+  artifact:
+    path: ../artifact
   storage:
     path: ../storage
   toly_ui:

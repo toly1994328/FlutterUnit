@@ -13,8 +13,8 @@ import '../zone.dart';
 
 class CategoryDbRepository implements CategoryRepository {
 
-  CategoryDao get categoryDao => AppStorage().flutter<CategoryDao>()!;
-  LikeDao get likeDao => AppStorage().flutter<LikeDao>()!;
+  CategoryDao get categoryDao => AppStorage().flutter<CategoryDao>();
+  LikeDao get likeDao => AppStorage().flutter<LikeDao>();
 
   // CategoryDbRepository({required this.categoryDao,required this.likeDao});
 
