@@ -1,15 +1,12 @@
 
-import 'package:artifact/artifact.dart';
 import 'package:storage/storage.dart';
-
-import '../model/columnize.dart';
 
 // 仓储: 提供数据
 class ColumnizeRepository {
 
   const ColumnizeRepository();
 
-  ColumnizeDao get dao => FlutterDbStorage.instance.columnizeDao;
+  ColumnizeDao get dao => AppStorage().flutter<ColumnizeDao>()!;
 
 
   // 从数据库加载资源

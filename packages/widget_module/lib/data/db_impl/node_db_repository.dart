@@ -9,7 +9,7 @@ class NodeDbRepository implements NodeRepository{
 
   const NodeDbRepository();
 
-  NodeDao get nodeDao => FlutterDbStorage.instance.nodeDao;
+  NodeDao get nodeDao => AppStorage().flutter<NodeDao>()!;
 
   @override
   Future<List<NodeModel>> loadNode(int widgetId) async{

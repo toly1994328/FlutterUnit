@@ -13,8 +13,8 @@ class WidgetDbRepository implements WidgetRepository {
 
   const WidgetDbRepository();
 
-  WidgetDao get widgetDao => FlutterDbStorage.instance.widgetDao;
-  LikeDao get likeDao => FlutterDbStorage.instance.likeDao;
+  WidgetDao get widgetDao => AppStorage().flutter<WidgetDao>()!;
+  LikeDao get likeDao => AppStorage().flutter<LikeDao>()!;
 
   @override
   Future<List<WidgetModel>> loadLikeWidgets() async {

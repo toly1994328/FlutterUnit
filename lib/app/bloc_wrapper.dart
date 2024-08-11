@@ -63,7 +63,7 @@ class _BlocWrapperState extends State<BlocWrapper> {
   @override
   void dispose() {
     categoryBloc.close();
-    FlutterDbStorage.instance.closeDb();
+    AppStorage().close();
     super.dispose();
   }
 }

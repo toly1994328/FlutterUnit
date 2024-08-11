@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:app/app.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storage/storage.dart';
 
 import '../../data/zone.dart';
 

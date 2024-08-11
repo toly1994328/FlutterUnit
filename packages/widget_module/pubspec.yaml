@@ -22,7 +22,7 @@ dependencies:
     path: ../storage
   toly_ui:
     path: ../toly_ui
-  share_plus: ^9.0.0 # 文字分享
+  share_plus: ^10.0.1 # 文字分享
   components:
     path: ../components
   authentication:
