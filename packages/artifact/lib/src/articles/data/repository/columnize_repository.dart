@@ -6,7 +6,7 @@ class ColumnizeRepository {
 
   const ColumnizeRepository();
 
-  ColumnizeDao get dao => AppStorage().flutter<ColumnizeDao>()!;
+  ColumnizeDao get dao => AppStorage().flutter<ColumnizeDao>();
 
 
   // 从数据库加载资源
