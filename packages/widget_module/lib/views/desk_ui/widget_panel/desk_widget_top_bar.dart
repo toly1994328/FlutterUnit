@@ -40,7 +40,7 @@ class _DeskWidgetTopBarState extends State<DeskWidgetTopBar>  with SingleTickerP
     Color themeColor = Theme.of(context).primaryColor;
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return DragToMoveAreaNoDouble(
+    return DragToMoveWrapper(
       child: Container(
         padding: const EdgeInsets.only(left: 20),
         height: 64,

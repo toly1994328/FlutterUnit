@@ -19,7 +19,7 @@ class FindingToolBar extends StatelessWidget implements PreferredSizeWidget{
     String  name = state.config.algo.name;
 
 
-    return DragToMoveAreaNoDouble(
+    return DragToMoveWrapper(
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),
         height: 42,

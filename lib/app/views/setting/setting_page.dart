@@ -20,7 +20,7 @@ class SettingPage extends StatelessWidget {
     const Widget divider =  Divider(height: 1);
 
 
-    return DragToMoveAreaNoDouble(
+    return DragToMoveWrapper(
       child: Scaffold(
         appBar: AppBar(title:Text(context.l10n.appSettings)),
         body: ListView(

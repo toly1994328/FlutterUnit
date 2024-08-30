@@ -15,7 +15,7 @@ class DeskSortBar extends StatelessWidget {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     String name = SortStateScope.of(context).config.name;
 
-    return DragToMoveAreaNoDouble(
+    return DragToMoveWrapper(
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),
         height: 42,

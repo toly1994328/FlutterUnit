@@ -2,7 +2,6 @@ import 'package:app/app.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fx_app_env/fx_app_env.dart';
 import 'package:go_router/go_router.dart';
 import 'package:storage/storage.dart';
 import 'package:utils/utils.dart';

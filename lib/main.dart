@@ -1,6 +1,5 @@
 import 'package:app/app.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'app/bloc_wrapper.dart';

@@ -8,7 +8,7 @@ class AppStartErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DragToMoveWrapper(
+      appBar: PreferredDragToMoveWrapper(
         child: AppBar(
           title: Text("App 启动异常"),
           actions: [WindowButtons()],

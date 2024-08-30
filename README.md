@@ -32,7 +32,7 @@
 #### 当前Flutter 版本
 
 ```
-Flutter 3.22.0 • channel stable • https://github.com/flutter/flutter.git
+Flutter 3.24.0 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision 5dcb86f68f (7 days ago) • 2024-05-09 07:39:20 -0500
 Engine • revision f6344b75dc
 Tools • Dart 3.4.0 • DevTools 2.34.3
