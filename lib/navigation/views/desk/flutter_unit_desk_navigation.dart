@@ -16,7 +16,7 @@ class FlutterUnitDeskNavigation extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          const DragToMoveAreaNoDouble(child: DeskNavigationRail()),
+          const DragToMoveWrapper(child: DeskNavigationRail()),
           Expanded(child: content),
         ],
       ),

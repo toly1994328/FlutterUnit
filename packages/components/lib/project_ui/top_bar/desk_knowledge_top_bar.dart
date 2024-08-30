@@ -39,7 +39,7 @@ class _DeskKnowledgeTabTopBarState extends State<DeskKnowledgeTabTopBar>
 
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return DragToMoveAreaNoDouble(
+    return DragToMoveWrapper(
       child: Stack(
         children: [
           Container(

@@ -20,7 +20,7 @@ class IssuesDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(0,kToolbarHeight),
-        child: DragToMoveAreaNoDouble(
+        child: DragToMoveWrapper(
           child: AppBar(
             centerTitle: false,
             title: const Text('Flutter 要点集录'),

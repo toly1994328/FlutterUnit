@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
-import 'package:fx_app_env/fx_app_env.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
@@ -22,7 +21,7 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
     WidgetsFlutterBinding.ensureInitialized();
     //滚动性能优化 1.22.0
     GestureBinding.instance.resamplingEnabled = true;
-    WindowsAdapter.setSize();
+    WindowSizeAdapter.setSize();
     await SpStorage.instance.initSp();
     if (!kAppEnv.isWeb) await initDb();
     AppConfigPo po = await SpStorage.instance.appConfig.read();

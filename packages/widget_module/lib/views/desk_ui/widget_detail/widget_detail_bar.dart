@@ -33,7 +33,7 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
       iconTheme:  IconThemeData(color: isDark?appBarTextColor:Color(0xff696969)),
       expandedHeight: 120.0,
       scrolledUnderElevation: 0.5,
-      flexibleSpace: DragToMoveAreaNoDouble(
+      flexibleSpace: DragToMoveWrapper(
         child: DiyFlexibleSpaceBar(
           centerTitle: false,
           expandedTitleScale: 2,

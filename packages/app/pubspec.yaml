@@ -14,10 +14,9 @@ dependencies:
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.2 # xml 固化
   connectivity_plus: ^6.0.3
-  window_manager: ^0.3.9 #桌面尺寸
   url_launcher: ^6.1.14 # url
-  fx_app_env:
-    path: ../../modules/fx_app_env
+  fx_platform_adapter: ^0.0.2 # 平台适配器
+
   storage:
     path: ../storage
   widget_module:

@@ -13,8 +13,7 @@ dependencies:
   # tolyui
   tolyui: ^0.0.2+15
 
-  fx_go_router_ext:
-    path: ../../modules/fx_go_router_ext
+  fx_go_router_ext: 0.0.2
 
   components:
     path: ../components

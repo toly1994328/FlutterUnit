@@ -23,8 +23,7 @@ export 'app/style/shape/coupon_shape_border.dart';
 export 'app/style/shape/techno_shape.dart';
 export 'app/style/behavior/no_scroll_behavior.dart';
 
-export 'app/platform_adapter/window/windows_adapter.dart';
-export 'app/platform_adapter/views/window_buttons.dart';
+export 'package:fx_platform_adapter/platform_adapter.dart';
 
 export 'app_config/app_config.dart';
 

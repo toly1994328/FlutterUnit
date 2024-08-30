@@ -116,7 +116,7 @@ class SimpleDeskTopBar extends StatelessWidget {
 
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return DragToMoveAreaNoDouble(
+    return DragToMoveWrapper(
       child: Container(
         height: height,
         color: isDark? Color(0xff2C3036):Colors.white,
