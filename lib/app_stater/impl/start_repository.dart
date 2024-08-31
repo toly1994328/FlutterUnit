@@ -19,7 +19,7 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
   @override
   Future<AppConfigState> initApp() async {
     WidgetsFlutterBinding.ensureInitialized();
-    //滚动性能优化 1.22.0
+    // 滚动性能优化 1.22.0
     GestureBinding.instance.resamplingEnabled = true;
     WindowSizeAdapter.setSize();
     await SpStorage.instance.initSp();

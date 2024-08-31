@@ -1,13 +1,13 @@
 
 ### FlutterUnit 全平台下载体验:
 
-| 平台类型 | 下载地址                                                                                                         | 项目分支地址  | 相关文章 | 
-|------|--------------------------------------------------------------------------------------------------------------|------|------------|
-| Android版 | [FlutterUnit.apk](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnit.apk)       |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
-| iOS版 | [FlutterUnit in AppStore](https://apps.apple.com/cn/app/flutter-unit/id6450545123)                           |[flutter_unit](https://github.com/toly1994328/FlutterUnit)| [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
-| MacOS版 | [FlutterUnitMac.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitMac.zip) |[flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit)| [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
-| Windows版 | [FlutterUnitWin.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitWin.zip) | [flutter_unit](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit) | [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
-| Web版 | http://toly1994328.gitee.io/flutter_web                                                                      | [ flutter_unit_web ](https://github.com/toly1994328/FlutterUnit/tree/flutter_unit_web)  | [《web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
+| 平台类型 | 下载地址                                                                                                           | 相关文章 | 
+|------|--------------------------------------------------------------------------------------------------------------|------------|
+| Android版 | [FlutterUnit.apk](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnit.apk)      | [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
+| iOS版 | [FlutterUnit in AppStore](https://apps.apple.com/cn/app/flutter-unit/id6450545123)                          | [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
+| MacOS版 | [FlutterUnitMac.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitMac.zip) | [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
+| Windows版 | [FlutterUnitWin.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitWin.zip)| [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
+| Web版 | http://toly1994.com/flutter/                                                                       | [《web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
 
 
 #### Flutter Unit 周边
