@@ -1,18 +1,11 @@
-import 'package:app/app.dart';
-import 'package:fx_boot_starter/fx_boot_starter.dart';
-import 'package:flutter/material.dart';
+import 'dart:async';
+import 'stater/boot_start.dart';
 
-import 'app/bloc_wrapper.dart';
-import 'app/flutter_unit.dart';
-import 'app_stater/impl/app_start_action.dart';
-import 'app_stater/impl/start_repository.dart';
+void main(List<String> args) {
+  runZonedGuarded(() => bootStart(args), _globalErrorHandler);
+}
 
-void main() {
-  runApp(
-    AppStartScope<AppConfigState>(
-      repository: const AppStartRepositoryImpl(),
-      appStartAction: const AppStartActionImpl(),
-      child: BlocWrapper(child: FlutterUnit3()),
-    ),
-  );
+void _globalErrorHandler(Object exception, StackTrace trace) async{
+  print(trace);
+  // 可自定义处理全局异常
 }
