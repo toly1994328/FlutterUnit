@@ -1,5 +1,6 @@
 import 'package:algorithm/algorithm.dart';
 import 'package:algorithm/src/algorithm/sort/functions.dart';
+import 'package:algorithm/src/finding/view/finding_button.dart';
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:toly_ui/toly_ui.dart';
@@ -100,7 +101,7 @@ class SortBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const FindingButton(),
+        const SortButton(),
         const SizedBox(
           width: 10,
         ),

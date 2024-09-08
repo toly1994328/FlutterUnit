@@ -8,6 +8,8 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_en.dart';
 import 'app_localizations_zh.dart';
 
+// ignore_for_file: type=lint
+
 /// Callers can lookup localized strings with an instance of AppLocalizations
 /// returned by `AppLocalizations.of(context)`.
 ///
@@ -64,8 +66,8 @@ abstract class AppLocalizations {
 
   final String localeName;
 
-  static AppLocalizations? of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+  static AppLocalizations of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
   static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
@@ -1172,6 +1174,12 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'幅'**
   String get picture;
+
+  /// No description provided for @widgetInn.
+  ///
+  /// In zh, this message translates to:
+  /// **'组件酒肆'**
+  String get widgetInn;
 
   /// No description provided for @slogan.
   ///

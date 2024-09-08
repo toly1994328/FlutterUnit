@@ -22,25 +22,20 @@ class DeskSortBar extends StatelessWidget {
         color: isDark ? const Color(0xff2C3036) : Colors.white,
         child: Row(
           children: [
-            const FindingButton(),
+            const SortButton(),
             Spacer(),
             TolyLink(
                 href:
                     'https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart',
                 text: '查看排序源码',
                 hoverColor: Colors.blue,
-                style: TextStyle(fontSize: 12,fontFamily: '宋体'),
+                style: TextStyle(fontSize: 12, fontFamily: '宋体'),
                 onTap: jumpURL),
             const SizedBox(width: 10),
             TolyAction(
                 tooltip: '设置',
-                onTap: () {
-                  Scaffold.of(context).openEndDrawer();
-                },
-                child: const Icon(
-                  Icons.settings,
-                  size: 20,
-                )),
+                onTap: Scaffold.of(context).openEndDrawer,
+                child: const Icon(Icons.settings, size: 20)),
           ],
         ),
       ),
@@ -55,7 +50,7 @@ class SortBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const FindingButton(),
+        const SortButton(),
         const SizedBox(
           width: 10,
         ),
