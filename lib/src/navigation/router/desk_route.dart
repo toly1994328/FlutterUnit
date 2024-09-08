@@ -15,9 +15,7 @@ final RouteBase appNavRoute = ShellRoute(
   routes: <RouteBase>[
     GoRoute(
         path: 'widget',
-        builder: (BuildContext context, GoRouterState state) {
-          return DeskWidgetPanel();
-        },
+        builder: (_, __) => const DeskWidgetPanel(),
         routes: [
           GoRoute(
             path: 'detail/:name',
@@ -36,27 +34,19 @@ final RouteBase appNavRoute = ShellRoute(
         ]),
     GoRoute(
       path: 'painter',
-      builder: (BuildContext context, GoRouterState state) {
-        return GalleryUnit();
-      },
-    ),    GoRoute(
+      builder: (_,__) => const GalleryUnit(),
+    ),
+    GoRoute(
       path: 'about_app',
-      builder: (BuildContext context, GoRouterState state) {
-        return AboutAppPage();
-      },
+      builder:  (_,__) => const AboutAppPage(),
     ),
     GoRoute(
       path: 'knowledge',
-      builder: (BuildContext context, GoRouterState state) {
-        // return DeskPointPage();
-        return DeskKnowledgePage();
-      },
+      builder:  (_,__) => const DeskKnowledgePage(),
     ),
     GoRoute(
         path: 'collection',
-        builder: (BuildContext context, GoRouterState state) {
-          return CollectPageAdapter();
-        },
+        builder:  (_,__) => const CollectPageAdapter(),
         routes: [
           GoRoute(
             path: 'widgets/:id',
@@ -66,59 +56,41 @@ final RouteBase appNavRoute = ShellRoute(
               if (extra is CategoryModel) {
                 model = extra;
               }
-              return CategoryShow(
-                model: model!,
-              );
+              return CategoryShow(model: model!);
             },
           ),
         ]),
     GoRoute(
       path: 'account',
-      builder: (BuildContext context, GoRouterState state) {
-        return DeskAccountPage();
-      },
+      builder:  (_,__) => const DeskAccountPage(),
     ),
     GoRoute(
       path: 'tools',
-      builder: (BuildContext context, GoRouterState state) {
-        return CodeGenPage();
-      },
+      builder:  (_,__) => const CodeGenPage(),
     ),
     GoRoute(
         path: 'settings',
-        builder: (BuildContext context, GoRouterState state) {
-          return const SettingPage();
-        },
+        builder:  (_,__) => const SettingPage(),
         routes: [
           GoRoute(
             path: 'dark_mode',
-            builder: (BuildContext context, GoRouterState state) {
-              return const ThemeModelSetting();
-            },
+            builder:  (_,__) => const ThemeModelSetting(),
           ),
           GoRoute(
             path: 'code_style',
-            builder: (BuildContext context, GoRouterState state) {
-              return const CodeStyleSettingPage();
-            },
+            builder:  (_,__) => const CodeStyleSettingPage(),
           ),
           GoRoute(
             path: 'theme_color',
-            builder: (BuildContext context, GoRouterState state) {
-              return const ThemeColorSettingPage();
-            },
+            builder:  (_,__) => const ThemeColorSettingPage(),
           ),
           GoRoute(
             path: 'font_setting',
-            builder: (BuildContext context, GoRouterState state) {
-              return const FontSettingPage();
-            },
+            builder:  (_,__) => const FontSettingPage(),
           ),
           GoRoute(
             path: 'version',
-            builder: (BuildContext context, GoRouterState state) {
-              return const VersionInfo();
-            },
+            builder:  (_,__) => const VersionInfo(),
           ),
         ])
   ],

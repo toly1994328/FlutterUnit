@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'stater/boot_start.dart';
+import 'src/stater/boot_start.dart';
 
 void main(List<String> args) {
   runZonedGuarded(() => bootStart(args), _globalErrorHandler);
