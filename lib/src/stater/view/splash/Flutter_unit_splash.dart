@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fx_boot_starter/fx_boot_starter.dart';
 
 import 'dart:ui' as ui;
 
@@ -16,14 +17,13 @@ class FlutterUnitSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark,
-      ),
-      child: Material(
-        color: Colors.white,
-        child: _SplashBody(),
+    return const AppStartListener<AppConfigState>(
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark,
+        ),
+        child: Material(color: Colors.white, child: _SplashBody()),
       ),
     );
   }

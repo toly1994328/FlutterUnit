@@ -2,8 +2,8 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 
-import '../structure/wrapper/bloc_wrapper.dart';
-import '../structure/flutter_unit.dart';
+import '../flutter_unit.dart';
+import '../wrapper/bloc_wrapper.dart';
 import 'logic/app_start_action.dart';
 import 'logic/app_start_repository.dart';
 

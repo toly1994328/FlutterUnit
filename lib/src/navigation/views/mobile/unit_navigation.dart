@@ -11,7 +11,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
 
 
-import '../../navigation/views/pure_bottom_bar.dart';
+import 'pure_bottom_bar.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com

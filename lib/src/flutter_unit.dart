@@ -11,7 +11,7 @@ import 'navigation/router/app_route.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
-/// 说明: 主程序
+/// 说明: 应用主程序
 
 class FlutterUnit3 extends StatelessWidget {
   FlutterUnit3({Key? key}) : super(key: key);
