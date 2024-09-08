@@ -1,5 +1,7 @@
 import 'app_localizations.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
@@ -543,6 +545,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get picture => 'pics';
+
+  @override
+  String get widgetInn => 'Widget Collection';
 
   @override
   String get slogan => 'The unity of flutter, The unity of coder.';

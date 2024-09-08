@@ -1,5 +1,7 @@
 import 'app_localizations.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for Chinese (`zh`).
 class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
@@ -543,6 +545,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get picture => '幅';
+
+  @override
+  String get widgetInn => '组件酒肆';
 
   @override
   String get slogan => 'Flutter 的联合，编程者的联合';

@@ -52,16 +52,16 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
               controller.index = value;
             }, tabs: [
               context.l10n.knowledgeTabLayout,
-              context.l10n.knowledgeTabToly,
               context.l10n.knowledgeTabAlgo,
+              context.l10n.knowledgeTabToly,
               context.l10n.knowledgeTabPoint,
             ],),
             Expanded(child: TabBarView(
               controller: controller,
               children: [
                 LayoutRouterPage(),
-                TolyArticlesPage(),
                 AlgoRouterPage(),
+                TolyArticlesPage(),
                 DeskPointPage(),
               ],
             ))
@@ -134,7 +134,7 @@ class SoreAlgoPage extends StatelessWidget {
                     ),
                   )),
               Spacer(),
-              FindingButton(),
+              SortButton(),
               const SizedBox(width: 12,),
               SortSelector(),
               const SizedBox(width: 12,),

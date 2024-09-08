@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tolyui/tolyui.dart';
 
-import '../../../finding/data_scope/finding_state.dart';
+import '../data_scope/finding_state.dart';
 
 class FindingButton extends StatelessWidget {
   const FindingButton({super.key});
@@ -39,4 +39,6 @@ class FindingButton extends StatelessWidget {
       child: Icon(icon, color: color, size: 20),
     );
   }
+
 }
+

@@ -141,7 +141,7 @@ class _ArtifactPageState extends State<ArtifactPage>
         snap: true,
         pinned: true,
         backgroundColor: Colors.white,
-        leading: _curIndex == 1 ? FindingButton() : null,
+        leading: _curIndex == 1 ? SortButton() : null,
 
         // flexibleSpace: Image.network(
         //   'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/448d4eb270f44edab0192a1281141954~tplv-k3u1fbpfcp-watermark.image?',

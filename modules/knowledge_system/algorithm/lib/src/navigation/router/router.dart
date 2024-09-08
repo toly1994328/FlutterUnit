@@ -11,6 +11,7 @@ import 'package:algorithm/src/finding/view/finding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:fx_go_router_ext/fx_go_router_ext.dart';
 
+import '../../sort/sort_page.dart';
 import '../view/algo_desk_navigation.dart';
 
 RouteBase get algoRoutes => GoRoute(
@@ -19,7 +20,7 @@ RouteBase get algoRoutes => GoRoute(
   routes: [
     ShellRoute(
         builder: (BuildContext context, GoRouterState state, Widget child) {
-          return AppDeskNavigation(content: child);
+          return AlgoScope(child: AppDeskNavigation(content: child));
         },
         routes: [
           GoRoute(

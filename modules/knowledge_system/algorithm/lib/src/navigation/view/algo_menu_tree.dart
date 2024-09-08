@@ -1,3 +1,4 @@
+import 'package:algorithm/algorithm.dart';
 import 'package:flutter/material.dart';
 import 'package:fx_go_router_ext/fx_go_router_ext.dart';
 import 'package:tolyui/tolyui.dart';
@@ -79,8 +80,14 @@ class _AppMenuTreeState extends State<AppMenuTree> with RouterChangeListenerMixi
 
   @override
   void onChangeRoute(String path) {
-    FindingState state = FindingStateScope.read(context);
-    state.changeAlgo(p.basename(path));
+    if(path.startsWith('/sort')){
+      SortState state = SortStateScope.of(context);
+      state.config = state.config.copyWith(name: p.basename(path));
+    }else{
+      FindingState state = FindingStateScope.read(context);
+      state.changeAlgo(p.basename(path));
+    }
+
     _menuMeta = _menuMeta.selectPath(path, singleExpand: true);
     setState(() {});
   }

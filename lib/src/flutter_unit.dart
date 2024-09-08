@@ -27,25 +27,23 @@ class FlutterUnit3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppConfigState state = context.watch<AppConfigBloc>().state;
-    return AlgoScope(
-      child: DefaultTextStyle(
-        style: TextStyle(fontFamily: state.fontFamily),
-        child: TolyMessage(
+    return DefaultTextStyle(
+      style: TextStyle(fontFamily: state.fontFamily),
+      child: TolyMessage(
+        themeMode: state.themeMode,
+        darkTheme: AppTheme.darkTheme(state),
+        theme: AppTheme.lightTheme(state),
+        child: MaterialApp.router(
+          routerConfig: _router,
+          showPerformanceOverlay: state.showPerformanceOverlay,
+          title: StrUnit.appName,
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: l10nDelegates,
+          supportedLocales: l10nLocales,
+          locale: state.language.locale,
           themeMode: state.themeMode,
           darkTheme: AppTheme.darkTheme(state),
           theme: AppTheme.lightTheme(state),
-          child: MaterialApp.router(
-            routerConfig: _router,
-            showPerformanceOverlay: state.showPerformanceOverlay,
-            title: StrUnit.appName,
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: l10nDelegates,
-            supportedLocales: l10nLocales,
-            locale: state.language.locale,
-            themeMode: state.themeMode,
-            darkTheme: AppTheme.darkTheme(state),
-            theme: AppTheme.lightTheme(state),
-          ),
         ),
       ),
     );
