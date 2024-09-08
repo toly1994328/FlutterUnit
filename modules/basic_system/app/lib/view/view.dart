@@ -1,0 +1,13 @@
+export 'about/about_app_page.dart';
+export 'about/about_me_page.dart';
+export 'about/version_info.dart';
+export 'account/desk/desk_account_page.dart';
+export 'setting/setting_page.dart';
+export 'setting/app_style_setting.dart';
+export 'setting/font_setting.dart';
+export 'setting/item_style_setting.dart';
+export 'setting/language_setting.dart';
+export 'setting/theme_color_setting.dart';
+export 'setting/code_style_setting.dart';
+export 'setting/theme_model_setting.dart';
+export 'data_manage/data_manage_page.dart';
