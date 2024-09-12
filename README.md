@@ -2,7 +2,7 @@
     <b>
         <a href="https://github.com/toly1994328/FlutterUnit">FlutterUnit</a><br>
     </b>
-    ⭐️  全平台 Flutter 体验应用  ⭐️ <br>
+    ⭐️  全平台 Flutter 探索应用  ⭐️ <br>
 </h1>
 
 <p align="center">
