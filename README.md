@@ -1,14 +1,40 @@
+<h1 align="center" style="border-bottom: none">
+    <b>
+        <a href="https://github.com/toly1994328/FlutterUnit">FlutterUnit</a><br>
+    </b>
+    ⭐️  全平台 Flutter 体验应用  ⭐️ <br>
+</h1>
 
-### FlutterUnit 全平台下载体验:
+<p align="center">
+FlutterUnit 是一个全平台体验应用，你可以在这里尽情体验 Flutter 带来的创造力。
+</p>
 
-| 平台类型 | 下载地址                                                                                                           | 相关文章 | 
-|------|--------------------------------------------------------------------------------------------------------------|------------|
-| Android版 | [FlutterUnit.apk](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnit.apk)      | [《FlutterUnit食用指南》](https://juejin.im/post/6844904147045597191)|
-| iOS版 | [FlutterUnit in AppStore](https://apps.apple.com/cn/app/flutter-unit/id6450545123)                          | [《FlutterUnit 食用指南》](https://juejin.im/post/6844904147045597191)|
-| MacOS版 | [FlutterUnitMac.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitMac.zip) | [《mac版闪亮登场》](https://juejin.im/post/6844904147817332743)|
-| Windows版 | [FlutterUnitWin.zip](https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitWin.zip)| [《win版闪亮登场》](https://juejin.im/post/6847902222626488327)|
-| Web版 | http://toly1994.com/flutter/                                                                       | [《web版闪亮登场》](https://juejin.im/post/6859888713980182541)|
+<p align="center">
+<a href="https://github.com/AppFlowy-IO/appflowy"><img src="https://img.shields.io/github/stars/toly1994328/FlutterUnit.svg?style=flat&logo=github&colorB=deeppink&label=stars"></a>
+<a href="https://github.com/AppFlowy-IO/appflowy"><img src="https://img.shields.io/github/forks/toly1994328/FlutterUnit.svg"></a>
+<a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/license-GPL-purple.svg" alt="License: GPL-3.0"></a>
+</p>
 
+<p align="center">
+    <b> 下载 App: </b>
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnit.apk"><b> [Android] </b></a> •
+    <a href="https://apps.apple.com/cn/app/flutter-unit/id6450545123"><b>[iOS]</b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitMac.zip"><b>[MacOS]</b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitWin.zip"><b>[Windows]</b></a> •
+    <a href="http://toly1994.com/flutter/"><b>[Web]</b></a>
+</p>
+
+---
+
+
+#### Flutter 版本
+
+```
+Flutter 3.24.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 5dcb86f68f (7 days ago) • 2024-05-09 07:39:20 -0500
+Engine • revision f6344b75dc
+Tools • Dart 3.4.0 • DevTools 2.34.3
+```
 
 #### Flutter Unit 周边
 - 🔥 [免费] [掘金小册 -《Flutter 入门教程》](https://juejin.cn/book/7212822723330834487)
@@ -26,17 +52,6 @@
 - [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
 
-
----
-
-#### 当前Flutter 版本
-
-```
-Flutter 3.24.0 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 5dcb86f68f (7 days ago) • 2024-05-09 07:39:20 -0500
-Engine • revision f6344b75dc
-Tools • Dart 3.4.0 • DevTools 2.34.3
-```
 
 #### 构建命令,产出应用
 
