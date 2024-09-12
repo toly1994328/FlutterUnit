@@ -26,14 +26,34 @@ FlutterUnit 是一个全平台体验应用，你可以在这里尽情体验 Flut
 
 ---
 
+### 环境与构建
 
 #### Flutter 版本
 
 ```
+·]>>  flutter --version
 Flutter 3.24.0 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision 5dcb86f68f (7 days ago) • 2024-05-09 07:39:20 -0500
 Engine • revision f6344b75dc
 Tools • Dart 3.4.0 • DevTools 2.34.3
+```
+
+#### 构建应用
+
+```
+·]>>  git clone https://github.com/toly1994328/FlutterUnit.git
+·]>>  cd FlutterUnit
+
+Build Android:
+·]>>  flutter build apk --target-platform --split-per-abi
+Build iOS:
+·]>>  flutter build ios
+Build Windows:
+·]>>  flutter build windows  
+Build Linux:
+·]>>  flutter build linux
+Build web:
+·]>>  flutter build web
 ```
 
 #### Flutter Unit 周边
@@ -51,16 +71,6 @@ Tools • Dart 3.4.0 • DevTools 2.34.3
 - [Flutter环境配置](https://github.com/toly1994328/FlutterUnit/issues/22)
 - [Flutter实用插件集录 ](https://github.com/toly1994328/FlutterUnit/issues/41)
 - [Flutter要点集录 ](https://github.com/toly1994328/FlutterUnit/labels/point)
-
-
-#### 构建命令,产出应用
-
-> Android 分架构打包:  flutter build apk --target-platform android-arm64 --split-per-abi   
-> iOS 打包应用:  flutter build ios  
-> Windows 打包应用:  flutter build windows  
-> Macos 打包应用:  flutter build macos  
-> Linux 打包应用:  flutter build linux  
-> web 打包应用:  flutter build web   
 
 ---
 
