@@ -10,9 +10,9 @@ FlutterUnit 是一个全平台体验应用，你可以在这里尽情体验 Flut
 </p>
 
 <p align="center">
-<a href="https://github.com/AppFlowy-IO/appflowy"><img src="https://img.shields.io/github/stars/toly1994328/FlutterUnit.svg?style=flat&logo=github&colorB=deeppink&label=stars"></a>
-<a href="https://github.com/AppFlowy-IO/appflowy"><img src="https://img.shields.io/github/forks/toly1994328/FlutterUnit.svg"></a>
-<a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/license-GPL-purple.svg" alt="License: GPL-3.0"></a>
+<a href="https://github.com/toly1994328/FlutterUnit"><img src="https://img.shields.io/github/stars/toly1994328/FlutterUnit.svg?style=flat&logo=github&colorB=deeppink&label=stars"></a>
+<a href="https://github.com/toly1994328/FlutterUnit"><img src="https://img.shields.io/github/forks/toly1994328/FlutterUnit.svg"></a>
+<a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/license-GPL3.0-purple.svg" alt="License: GPL-3.0"></a>
 </p>
 
 <p align="center">
