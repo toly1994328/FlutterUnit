@@ -66,6 +66,7 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
       alignment: Alignment.topLeft,
       child: Material(
             elevation: 6,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(8),
             shadowColor: Colors.black,
             child:  ConstrainedBox(
