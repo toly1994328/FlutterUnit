@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_module/widget_module.dart';
 
-import '../views/mobile/unit_navigation.dart';
+import '../view/mobile/unit_navigation.dart';
 
 final List<RouteBase> appMobileNavRoute = [
   GoRoute(

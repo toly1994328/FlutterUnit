@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:treasure_tools/treasure_tools.dart';
 import 'package:widget_module/widget_module.dart';
-import '../views/desktop/flutter_unit_desk_navigation.dart';
+import '../view/desktop/flutter_unit_desk_navigation.dart';
 
 final RouteBase appNavRoute = ShellRoute(
   builder: (BuildContext context, GoRouterState state, Widget child) {
