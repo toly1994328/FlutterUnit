@@ -1,6 +1,6 @@
 <h1 align="center" style="border-bottom: none">
     <b>
-        <a href="https://github.com/toly1994328/FlutterUnit">FlutterUnit</a><br>
+        <a href="https://github.com/toly1994328/FlutterUnit">FlutterUnit🔖</a><br>
     </b>
     ⭐️  All Platform Flutter Experience App  ⭐️ <br>
 </h1>
@@ -16,7 +16,7 @@ FlutterUnit is a cross-platform experience app, Here, you can fully explore the 
 </p>
 
 <p align="center">
-    <b> Download App: </b>
+    <b> Download v3.0.0 : </b>
     <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnit.apk"><b> [Android] </b></a> •
     <a href="https://apps.apple.com/cn/app/flutter-unit/id6450545123"><b>[iOS]</b></a> •
     <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitMac.zip"><b>[MacOS]</b></a> •
@@ -26,6 +26,7 @@ FlutterUnit is a cross-platform experience app, Here, you can fully explore the 
 
 ---
 
+### Env and Build
 
 #### Flutter Version
 
@@ -36,9 +37,26 @@ Engine • revision f6344b75dc
 Tools • Dart 3.4.0 • DevTools 2.34.3
 ```
 
+#### Build Application
+
+```
+·]>>  git clone https://github.com/toly1994328/FlutterUnit.git
+·]>>  cd FlutterUnit
+
+Build Android:
+·]>>  flutter build apk --target-platform --split-per-abi
+Build iOS:
+·]>>  flutter build ios
+Build Windows:
+·]>>  flutter build windows  
+Build Linux:
+·]>>  flutter build linux
+Build web:
+·]>>  flutter build web
+```
 
 
-#### Flutter Unit 周边
+#### My Flutter Books 
 - 🔥 [免费] [掘金小册 -《Flutter 入门教程》](https://juejin.cn/book/7212822723330834487)
 - 🔥  [掘金小册 -《Flutter 语言基础 - 梦始之地》](https://juejin.cn/book/6844733827617652750)
 - 🔥  [掘金小册 -《Flutter 绘制指南 - 妙笔生花》](https://juejin.im/book/6844733827265331214)
@@ -57,16 +75,6 @@ Tools • Dart 3.4.0 • DevTools 2.34.3
 
 ---
 
-#### 构建命令,产出应用
-
-> Android 分架构打包:  flutter build apk --target-platform android-arm64 --split-per-abi   
-> iOS 打包应用:  flutter build ios  
-> Windows 打包应用:  flutter build windows  
-> Macos 打包应用:  flutter build macos  
-> Linux 打包应用:  flutter build linux  
-> web 打包应用:  flutter build web   
-
----
 
 #### MacOS 桌面版本组件界面
 
