@@ -35,14 +35,13 @@ class _BlocWrapperState extends State<BlocWrapper> {
   }
 
   final CategoryBloc categoryBloc = CategoryBloc(repository: CategoryDbRepository());
-  final AuthRepository authRepository = HttpAuthRepository();
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         // 全局 bloc : 维护应用存储状态、更新、认证
-        BlocProvider<AuthBloc>(create: (_) => AuthBloc(repository: authRepository)),
+        BlocProvider<AuthBloc>(create: (_) => AuthBloc(repository: HttpAuthRepository())),
         BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
         BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
         BlocProvider<UserBloc>(create: (_) => UserBloc()),
