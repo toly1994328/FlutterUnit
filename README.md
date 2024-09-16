@@ -24,6 +24,8 @@ FlutterUnit 是一个全平台体验应用，你可以在这里尽情体验 Flut
     <a href="http://toly1994.com/flutter/"><b>[Web]</b></a>
 </p>
 
+<p align="center"><img src="./doc/screens/preview.webp" alt="FlutterUnit App"  /></p>
+
 ---
 
 ### 环境与构建
