@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 
 import '../flutter_unit.dart';
-import '../wrapper/bloc_wrapper.dart';
+import '../navigation/view/app_bloc_provider.dart';
 import 'logic/app_start_action.dart';
 import 'logic/app_start_repository.dart';
 
@@ -15,7 +15,7 @@ void bootStart(List<String> args) {
     AppStartScope<AppConfigState>(
       repository: const AppStartRepositoryImpl(),
       appStartAction: const AppStartActionImpl(),
-      child: BlocWrapper(child: FlutterUnit3()),
+      child: AppBlocProvider(child: FlutterUnit3()),
     ),
   );
 }

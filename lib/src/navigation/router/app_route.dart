@@ -1,7 +1,7 @@
 import 'package:app/app.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../stater/boot_start.dart';
+import '../../starter/boot_start.dart';
 import 'desk_route.dart';
 import 'mobile_route.dart';
 
@@ -17,7 +17,6 @@ final RouteBase deskAppRoute = GoRoute(
       path: 'start_error',
       builder: (_, GoRouterState state) => AppStartErrorPage(error: state.extra),
     ),
-    // isDesk ?  :
     if (isDesk) appNavRoute,
     if (!isDesk) ...appMobileNavRoute
   ],
