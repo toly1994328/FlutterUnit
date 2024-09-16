@@ -1,8 +1,6 @@
 import 'package:app/app.dart';
-import 'package:artifact/artifact.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// create by 张风捷特烈 on 2020/10/21
 /// contact me by email 1981462002@qq.com
@@ -165,7 +163,7 @@ class OverlayToolWrapperState extends State<OverlayToolWrapper>
   }
 
   void _toPoint() {
-    BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
+    // BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
     // Navigator.of(context).pushNamed(UnitRouter.point);
   }
 

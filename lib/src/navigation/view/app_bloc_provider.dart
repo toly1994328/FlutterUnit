@@ -5,36 +5,22 @@ import 'package:draw_system/draw_system.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
 /// 说明: Bloc提供器包裹层
 
-class BlocWrapper extends StatefulWidget {
+class AppBlocProvider extends StatefulWidget {
   final Widget child;
 
-  const BlocWrapper({Key? key, required this.child}) : super(key: key);
+  const AppBlocProvider({Key? key, required this.child}) : super(key: key);
 
   @override
-  State createState() => _BlocWrapperState();
+  State createState() => _AppBlocProviderState();
 }
 
-class _BlocWrapperState extends State<BlocWrapper> {
-  late WidgetRepository repository;
-
-  @override
-  void initState() {
-    super.initState();
-    if(kAppEnv.isWeb){
-      repository = MemoryWidgetRepository();
-    }else{
-      repository = const WidgetDbRepository();
-    }
-  }
-
-  final CategoryBloc categoryBloc = CategoryBloc(repository: CategoryDbRepository());
+class _AppBlocProviderState extends State<AppBlocProvider> {
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +32,14 @@ class _BlocWrapperState extends State<BlocWrapper> {
         BlocProvider<UpdateBloc>(create: (_) => UpdateBloc()),
         BlocProvider<UserBloc>(create: (_) => UserBloc()),
 
-        BlocProvider<WidgetsBloc>(create: (_) => WidgetsBloc(repository: repository)),
-        BlocProvider<CategoryBloc>(create: (_) => categoryBloc),
-        BlocProvider<LikeWidgetBloc>(create: (_) => LikeWidgetBloc(repository: repository)),
-        BlocProvider<CategoryWidgetBloc>(create: (_) => CategoryWidgetBloc(categoryBloc: categoryBloc)),
         BlocProvider<GalleryUnitBloc>(create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
       ],
-      child: widget.child,
+      child: WidgetsBlocProvider(child: widget.child),
     );
   }
 
   @override
   void dispose() {
-    categoryBloc.close();
     AppStorage().close();
     super.dispose();
   }
