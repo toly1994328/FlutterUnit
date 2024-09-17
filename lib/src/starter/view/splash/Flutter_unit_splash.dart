@@ -17,7 +17,7 @@ class FlutterUnitSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppStartListener<AppConfigState>(
+    return const AppStartListener<AppConfig>(
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,

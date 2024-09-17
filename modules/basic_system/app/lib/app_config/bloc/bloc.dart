@@ -11,12 +11,12 @@ import 'package:storage/storage.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局信息的bloc
 
-class AppConfigBloc extends Cubit<AppConfigState> {
+class AppConfigBloc extends Cubit<AppConfig> {
   final Connectivity _connectivity = Connectivity();
 
   late StreamSubscription<List<ConnectivityResult>> _subscription;
 
-  AppConfigBloc() : super(const AppConfigState()) {
+  AppConfigBloc() : super(const AppConfig()) {
     _subscription = _connectivity.onConnectivityChanged.listen(_onNetConnectChange);
   }
 
@@ -34,7 +34,7 @@ class AppConfigBloc extends Cubit<AppConfigState> {
     super.close();
   }
 
-  void init(AppConfigState state) {
+  void init(AppConfig state) {
     emit(state);
   }
 
@@ -42,61 +42,61 @@ class AppConfigBloc extends Cubit<AppConfigState> {
 
   // 切换字体事件处理 : 固化索引 + 产出新状态
   void switchFontFamily(String family) async {
-    AppConfigState newState = state.copyWith(fontFamily: family);
+    AppConfig newState = state.copyWith(fontFamily: family);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   // 切换语言事件处理 : 固化索引 + 产出新状态
   void switchLanguage(Language language) async {
-    AppConfigState newState = state.copyWith(language: language);
+    AppConfig newState = state.copyWith(language: language);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   // 切换主题色事件处理 : 固化索引 + 产出新状态
   void switchThemeColor(ThemeColor color) async {
-    AppConfigState newState = state.copyWith(themeColor: color);
+    AppConfig newState = state.copyWith(themeColor: color);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   // 切换背景显示事件处理 : 固化数据 + 产出新状态
   void switchShowBg(bool show) async {
-    AppConfigState newState = state.copyWith(showBackGround: show);
+    AppConfig newState = state.copyWith(showBackGround: show);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   // 切换背景显示事件处理 : 产出新状态
   void switchShowOver(bool show) async {
-    AppConfigState newState = state.copyWith(showPerformanceOverlay: show);
+    AppConfig newState = state.copyWith(showPerformanceOverlay: show);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   // 切换code样式事件处理 : 固化索引 + 产出新状态
   void switchCoderTheme(int codeStyleIndex) async {
-    AppConfigState newState = state.copyWith(codeStyleIndex: codeStyleIndex);
+    AppConfig newState = state.copyWith(codeStyleIndex: codeStyleIndex);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   // 切换item样式事件处理 : 固化索引 + 产出新状态
   void changeItemStyle(int index) async {
-    AppConfigState newState = state.copyWith(itemStyleIndex: index);
+    AppConfig newState = state.copyWith(itemStyleIndex: index);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   void changeThemeMode(ThemeMode style) async {
-    AppConfigState newState = state.copyWith(themeMode: style);
+    AppConfig newState = state.copyWith(themeMode: style);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }
 
   void switchShowTool(bool show) async {
-    AppConfigState newState = state.copyWith(showOverlayTool: show);
+    AppConfig newState = state.copyWith(showOverlayTool: show);
     cao.write(newState.toAppConfigPo());
     emit(newState);
   }

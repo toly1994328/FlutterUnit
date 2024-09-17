@@ -16,7 +16,7 @@ class FlutterUnitText extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FlutterUnitTextState createState() => _FlutterUnitTextState();
+  State createState() => _FlutterUnitTextState();
 }
 
 class _FlutterUnitTextState extends State<FlutterUnitText>

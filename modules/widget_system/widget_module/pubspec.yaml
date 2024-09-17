@@ -5,7 +5,7 @@ homepage:
 publish_to: none
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
@@ -16,13 +16,13 @@ dependencies:
   flutter_star: ^1.0.2 # 星星组件
   toggle_rotate: ^1.0.1
   wrapper: ^1.0.2
-  artifact:
-    path: ../../knowledge_system/artifact
+  share_plus: ^10.0.1 # 文字分享
+  go_router: ^14.2.0
+
   storage:
     path: ../../basic_system/storage
   toly_ui:
     path: ../../basic_system/toly_ui
-  share_plus: ^10.0.1 # 文字分享
   components:
     path: ../../basic_system/components
   authentication:
@@ -35,7 +35,7 @@ dependencies:
     path: ../widgets
   utils:
     path: ../../basic_system/utils
-  go_router: ^14.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -64,7 +64,7 @@ class _WrapPlaygroundState extends State<WrapPlayground> {
                     )))),
         const VerticalDivider(),
         SizedBox(
-            width: 200,
+            width: 210,
             child: WrapOpTool(
               attr: _attr,
               onAddBox: _onAddBox,

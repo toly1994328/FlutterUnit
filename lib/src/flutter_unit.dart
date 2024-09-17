@@ -1,4 +1,3 @@
-import 'package:algorithm/algorithm.dart';
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,7 @@ import 'navigation/router/app_route.dart';
 /// 说明: 应用主程序
 
 class FlutterUnit3 extends StatelessWidget {
-  FlutterUnit3({Key? key}) : super(key: key);
+   FlutterUnit3({Key? key}) : super(key: key);
 
   final GoRouter _router = GoRouter(
     initialLocation: '/splash',
@@ -26,7 +25,7 @@ class FlutterUnit3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppConfigState state = context.watch<AppConfigBloc>().state;
+    AppConfig state = context.watch<AppConfigBloc>().state;
     return DefaultTextStyle(
       style: TextStyle(fontFamily: state.fontFamily),
       child: TolyMessage(

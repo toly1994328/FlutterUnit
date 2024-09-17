@@ -83,6 +83,8 @@ class _AppMenuTreeState extends State<AppMenuTree> with RouterChangeListenerMixi
     if(path.startsWith('/sort')){
       SortState state = SortStateScope.of(context);
       state.config = state.config.copyWith(name: p.basename(path));
+      print("=====path:${p.basename(path)}==${state.config.name}======");
+
     }else{
       FindingState state = FindingStateScope.read(context);
       state.changeAlgo(p.basename(path));

@@ -32,7 +32,7 @@ class Hello {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(title: Text(context.l10n.codeHighlightStyle)),
-      body: BlocBuilder<AppConfigBloc, AppConfigState>(
+      body: BlocBuilder<AppConfigBloc, AppConfig>(
           builder: (_, state) => _buildFontCell(context,
               Cons.codeThemeSupport.keys.toList(), state.codeStyleIndex)),
     );

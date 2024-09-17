@@ -49,7 +49,7 @@ class _FlexPlaygroundState extends State<FlexPlayground> {
             )),
         const VerticalDivider(),
         SizedBox(
-            width: 200,
+            width: 210,
             child: FlexOpTool(
               attr: _attr,
               onReset: _reset,

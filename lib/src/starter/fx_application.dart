@@ -1,20 +1,31 @@
 import 'package:app/app.dart';
-import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:storage/storage.dart';
-import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-class AppStartActionImpl implements AppStartAction<AppConfigState> {
+import '../flutter_unit.dart';
+import '../navigation/view/app_bloc_provider.dart';
+import 'start_repository.dart';
 
-  const AppStartActionImpl();
+export 'view/splash/Flutter_unit_splash.dart';
+export 'view/error/app_start_error.dart';
+
+class FxApplication with FxStarter<AppConfig> {
+
+  const FxApplication();
 
   @override
-  void onLoaded(BuildContext context, int cost, AppConfigState state) {
+  Widget get app =>  AppBlocProvider(child: FlutterUnit3());
+
+  @override
+  AppStartRepository<AppConfig> get repository => const FlutterUnitStartRepo();
+
+  @override
+  void onLoaded(BuildContext context, int cost, AppConfig state) {
     debugPrint("App启动耗时:$cost ms");
-    HttpUtil.instance.rebase(PathUnit.baseUrl);
     context.read<AppConfigBloc>().init(state);
     context.read<WidgetsBloc>().add(const EventTabTap(WidgetFamily.statelessWidget));
     if(!kAppEnv.isWeb){
@@ -24,12 +35,19 @@ class AppStartActionImpl implements AppStartAction<AppConfigState> {
   }
 
   @override
+  void onStartSuccess(BuildContext context, AppConfig state) {
+    context.go('/widget');
+  }
+
+  @override
   void onStartError(BuildContext context, Object error, StackTrace trace) {
     context.go('/start_error',extra: error);
   }
 
+
   @override
-  void onStartSuccess(BuildContext context,AppConfigState state) {
-    context.go('/widget');
+  void onGlobalError(Object error, StackTrace stack) {
+    print(error);
   }
 }
+

@@ -46,6 +46,7 @@ class SortState with ChangeNotifier{
     status = SortStatus.sorting;
     notifyListeners();
     SortFunction? sortFunction = sortFunctionMap[config.name];
+    print(config.name);
     if(sortFunction!=null){
       await sortFunction(data,(arr) async {
         await Future.delayed(config.duration);
@@ -57,7 +58,6 @@ class SortState with ChangeNotifier{
   }
 }
 
-/// Provides the current [SortState] to descendant widgets in the tree.
 class SortStateScope extends InheritedNotifier<SortState> {
   const SortStateScope({
     required super.notifier,
