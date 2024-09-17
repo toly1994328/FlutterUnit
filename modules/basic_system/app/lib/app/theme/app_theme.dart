@@ -10,7 +10,7 @@ import '../style/transition/fade_page_transitions_builder.dart';
 import '../style/transition/slide_transition/slide_page_transition_builder.dart';
 
 class AppTheme {
-  static ThemeData darkTheme(AppConfigState state) {
+  static ThemeData darkTheme(AppConfig state) {
     Color scaffoldBackgroundColor = const Color(0xff010201);
 
     SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
@@ -61,7 +61,7 @@ class AppTheme {
     );
   }
 
-  static ThemeData lightTheme(AppConfigState state) {
+  static ThemeData lightTheme(AppConfig state) {
     SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.light,
@@ -69,7 +69,7 @@ class AppTheme {
     );
 
     return ThemeData(
-      fontFamily: state.fontFamily,
+      fontFamily: '宋体',
       primaryColor: state.themeColor.color,
       scaffoldBackgroundColor: Color(0xffF3F4F6),
       useMaterial3: true,

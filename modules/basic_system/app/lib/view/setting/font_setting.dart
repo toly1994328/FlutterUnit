@@ -12,7 +12,7 @@ class FontSettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppConfigBloc, AppConfigState>(
+    return BlocBuilder<AppConfigBloc, AppConfig>(
       builder: (_, state) =>Scaffold(
       appBar: AppBar(title: Text('字体设置 - font setting',style: TextStyle(fontFamily:state.fontFamily ),)),
       body:  _buildFontCell(

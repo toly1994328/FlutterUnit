@@ -1,7 +1,7 @@
 import 'package:app/app.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../starter/boot_start.dart';
+import '../../starter/fx_application.dart';
 import 'desk_route.dart';
 import 'mobile_route.dart';
 

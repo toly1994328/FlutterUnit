@@ -20,7 +20,7 @@ RouteBase get algoRoutes => GoRoute(
   routes: [
     ShellRoute(
         builder: (BuildContext context, GoRouterState state, Widget child) {
-          return AlgoScope(child: AppDeskNavigation(content: child));
+          return  AppDeskNavigation(content: child);
         },
         routes: [
           GoRoute(

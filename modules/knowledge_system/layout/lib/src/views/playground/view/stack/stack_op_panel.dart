@@ -98,7 +98,7 @@ class _StackOpToolState extends State<StackOpTool> {
           },
         ),
         ItemSelector<TextDirection>(
-          label: '文章方向:',
+          label: '文字方向:',
           subTitle: 'textDirection',
           selectIndex: widget.attr.textDirection.index,
           data: TextDirection.values,

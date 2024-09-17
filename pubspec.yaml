@@ -17,7 +17,7 @@ dependencies:
   cupertino_icons: ^1.0.4
 
   ## fx 架构
-  fx_boot_starter: 0.0.1 # app 启动器
+  fx_boot_starter: 0.1.1 # app 启动器
   go_router: ^14.2.0
 
   flutter_bloc: ^8.1.6 # 状态管理

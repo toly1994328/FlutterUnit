@@ -16,7 +16,7 @@ class ThemeColorSettingPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: UnitColor.scaffoldBgLight,
       appBar: const UnitAppbar(title:'主题色设置'),
-      body: BlocBuilder<AppConfigBloc, AppConfigState>(
+      body: BlocBuilder<AppConfigBloc, AppConfig>(
           builder: (_, state) => _buildCell(
               context, ThemeColor.values, state.themeColor)),
     );

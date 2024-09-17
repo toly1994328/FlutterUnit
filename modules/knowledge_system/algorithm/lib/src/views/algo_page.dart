@@ -12,6 +12,7 @@ class AlgoScope extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("=====build=======");
     return SortStateScope(
       notifier: SortState(),
       child: FindingStateScope(
@@ -52,13 +53,15 @@ class _AlgoRouterPageState extends State<AlgoRouterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Divider(),
-        Expanded(
-          child: Router.withConfig(config: _router),
-        ),
-      ],
+    return AlgoScope(
+      child: Column(
+        children: [
+          const Divider(),
+          Expanded(
+            child: Router.withConfig(config: _router),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -11,7 +11,7 @@ import 'package:toly_ui/code/code.dart' ;
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局状态类
 
-class AppConfigState extends Equatable {
+class AppConfig extends Equatable {
 
   /// [fontFamily] 文字字体
   final String fontFamily;
@@ -41,8 +41,8 @@ class AppConfigState extends Equatable {
 
   final Language language;
 
-  const AppConfigState({
-    this.fontFamily = 'ComicNeue',
+  const AppConfig({
+    this.fontFamily = '宋体',
     this.language = Language.zh_CN,
     this.themeColor = ThemeColor.blue,
     this.themeMode = ThemeMode.system,
@@ -68,7 +68,7 @@ class AppConfigState extends Equatable {
     language,
   ];
 
-  AppConfigState copyWith({
+  AppConfig copyWith({
     String? fontFamily,
     String? dbPath,
     ThemeColor? themeColor,
@@ -81,7 +81,7 @@ class AppConfigState extends Equatable {
     ThemeMode? themeMode,
     ConnectivityResult? netConnect,
   }) =>
-      AppConfigState(
+      AppConfig(
         fontFamily: fontFamily ?? this.fontFamily,
         language: language ?? this.language,
         themeColor: themeColor ?? this.themeColor,
@@ -109,8 +109,8 @@ class AppConfigState extends Equatable {
   );
 
   // 根据存储的配置信息对象，形成 AppState 状态数据
-  factory AppConfigState.fromPo(AppConfigPo po) {
-    return AppConfigState(
+  factory AppConfig.fromPo(AppConfigPo po) {
+    return AppConfig(
       fontFamily: Cons.kFontFamilySupport[po.fontFamilyIndex],
       themeColor: ThemeColor.values[po.themeColorIndex],
       showBackGround: po.showBackGround,

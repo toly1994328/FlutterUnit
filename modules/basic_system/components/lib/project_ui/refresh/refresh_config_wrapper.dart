@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:refresh/refresh.dart';
 
-import '../toly_refresh_indicator.dart';
+import 'toly_refresh_indicator.dart';
 
 class RefreshConfigWrapper extends StatelessWidget {
   final Widget child;

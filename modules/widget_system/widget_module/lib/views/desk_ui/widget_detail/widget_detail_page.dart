@@ -151,7 +151,7 @@ class DeskWidgetDetailPage extends StatelessWidget {
   }
 
   Widget _buildSliverNodeList(BuildContext context, List<NodeModel> nodes, WidgetModel model) {
-    AppConfigState globalState = BlocProvider.of<AppConfigBloc>(context).state;
+    AppConfig globalState = BlocProvider.of<AppConfigBloc>(context).state;
 
     return SliverList(
         delegate: SliverChildBuilderDelegate(

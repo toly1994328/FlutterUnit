@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:app/app.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
@@ -11,42 +12,34 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
 
-class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
-  const AppStartRepositoryImpl();
+class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
+  const FlutterUnitStartRepo();
 
   /// 初始化 app 的异步任务
   /// 返回本地持久化的 AppConfigState 对象
   @override
-  Future<AppConfigState> initApp() async {
+  Future<AppConfig> initApp() async {
     WidgetsFlutterBinding.ensureInitialized();
     // 滚动性能优化 1.22.0
     GestureBinding.instance.resamplingEnabled = true;
     WindowSizeAdapter.setSize();
+    // throw 'Test Debug Start Error';
     await SpStorage.instance.initSp();
     if (!kAppEnv.isWeb) await initDb();
     AppConfigPo po = await SpStorage.instance.appConfig.read();
     List<ConnectivityResult> netConnect = await (Connectivity().checkConnectivity());
-    AppConfigState state = AppConfigState.fromPo(po);
+    AppConfig state = AppConfig.fromPo(po);
     if (netConnect.isNotEmpty) {
       state = state.copyWith(netConnect: netConnect.first);
     }
     return state;
   }
 
-  @override
-  Future<void> fixError(Object error, {Object? extra}) async {
-    await Future.delayed(const Duration(seconds: 1));
-    // throw "App 无法修复";
-    return;
-  }
-
   Future<void> initDb() async {
     //数据库不存在，执行拷贝
     String dbPath = await AppStorage().flutter.dbpath;
     await SpStorage.instance.initSp();
-
     bool shouldCopy = await _checkShouldCopy(dbPath, SpStorage.instance.spf);
-
     if (shouldCopy) {
       await _doCopyAssetsDb(dbPath);
     } else {
@@ -80,8 +73,7 @@ class AppStartRepositoryImpl implements AppStartRepository<AppConfigState> {
     }
 
     //非 release模式，执行拷贝
-    const isPro = bool.fromEnvironment('dart.vm.product');
-    if (!isPro) {
+    if (!kDebugMode) {
       shouldCopy = true;
     }
 

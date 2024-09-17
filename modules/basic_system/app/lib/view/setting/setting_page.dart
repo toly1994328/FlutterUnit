@@ -27,7 +27,7 @@ class SettingPage extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
               ),
               title:  Text(context.l10n.darkMode, style:  TextStyle(fontSize: 16)),
-              subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
+              subtitle: BlocBuilder<AppConfigBloc,AppConfig>(
                 builder: (_,state) {
                   String info = switch(state.themeMode){
                     ThemeMode.system => context.l10n.followSystem,
@@ -48,7 +48,7 @@ class SettingPage extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
               ),
               title:  Text(context.l10n.themeColorSetting, style:  TextStyle(fontSize: 16)),
-              subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
+              subtitle: BlocBuilder<AppConfigBloc,AppConfig>(
                 builder: (_,state)=>Text(
                   state.themeColor.label(context),
                   style: TextStyle(color: state.themeColor.color,fontSize: 12),
@@ -65,7 +65,7 @@ class SettingPage extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
               ),
               title:  Text(context.l10n.fontSetting, style:  TextStyle(fontSize: 16)),
-              subtitle: BlocBuilder<AppConfigBloc,AppConfigState>(
+              subtitle: BlocBuilder<AppConfigBloc,AppConfig>(
                 builder: (_,state)=>Text(
                     state.fontFamily,style: TextStyle(fontSize: 12),
                 ),
@@ -125,7 +125,7 @@ class SettingPage extends StatelessWidget {
 //               )
 
   Widget _buildShowBg(BuildContext context) =>
-      BlocBuilder<AppConfigBloc, AppConfigState>(
+      BlocBuilder<AppConfigBloc, AppConfig>(
           builder: (_, state) =>           TolySwitchListTile(
             secondary:Icon(
             TolyIcon.icon_background,
@@ -138,7 +138,7 @@ class SettingPage extends StatelessWidget {
           ),);
 
   Widget _buildShowOver(BuildContext context) =>
-      BlocBuilder<AppConfigBloc, AppConfigState>(
+      BlocBuilder<AppConfigBloc, AppConfig>(
           builder: (_, state) => TolySwitchListTile(
             secondary:Icon(
               TolyIcon.icon_background,
