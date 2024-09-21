@@ -1,0 +1,24 @@
+{
+  "id": 128,
+  "name": "SimpleDialog",
+  "localName": "简单对话框",
+  "info": "一个简单的对话框结构，可指定头、中处的组件。拥有拥有标题、内容的文字样式和边距，影深、形状等属性。常与SimpleDialogOption联用。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SimpleDialog基本使用",
+      "desc": [
+        "【title】 : 顶部组件   【Widget】",
+        "【children】 : 子组件列表  【List<Widget>】",
+        "【titlePadding】 : 顶部内边距  【EdgeInsetsGeometry】",
+        "【contentPadding】 : 内容内边距  【EdgeInsetsGeometry】",
+        "【backgroundColor】 : 背景色  【Color】",
+        "【elevation】 : 影深  【double】",
+        "【shape】 : 形状   【ShapeBorder】"
+      ]
+    }
+  ]
+}

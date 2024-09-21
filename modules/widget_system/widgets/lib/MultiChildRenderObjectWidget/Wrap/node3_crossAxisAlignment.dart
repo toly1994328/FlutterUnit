@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 98,
-//      "name": 'Wrap的crossAxisAlignment属性',
-//      "priority": 3,
-//      "subtitle":
-//          "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】",
-//    }
 class CrossAxisAlignmentWrap extends StatelessWidget {
   CrossAxisAlignmentWrap({Key? key}) : super(key: key);
 

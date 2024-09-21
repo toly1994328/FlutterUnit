@@ -1,0 +1,29 @@
+{
+  "id": 177,
+  "name": "ReorderableListView",
+  "localName": "可重排序列表",
+  "info": "可以进行长按排序的ListView，可指定滑动方向、是否反向、滑动控制器等属性。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ReorderableListView基本使用",
+      "desc": [
+        "【children】 : 子组件列表   【List<Widget>】",
+        "【header】 : 头部组件   【Widget】",
+        "【padding】 : 内边距   【EdgeInsets】",
+        "【onReorder】 : 调换时回调  【ReorderCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "ReorderableListView滑动方向",
+      "desc": [
+        "【scrollDirection】 : 滑动方向   【Axis】",
+        "【reverse】 : 是否反向  【bool】"
+      ]
+    }
+  ]
+}

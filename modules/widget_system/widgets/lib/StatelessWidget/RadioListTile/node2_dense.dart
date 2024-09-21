@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 19,
-//      "priority": 2,
-//      "name": "RadioListTile选中色和密排",
-//      "subtitle": "【activeColor】 : 选中时颜色  【Color】\n"
-//          "【dense】: 是否密排   【bool】",
-//    }
 
 enum ItemType {
   java,

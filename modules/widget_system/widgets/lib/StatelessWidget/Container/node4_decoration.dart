@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 1,
-//      "name": '可对子组件进行装饰',
-//      "priority": 4,
-//      "subtitle":
-//          "【decoration】 : 装饰   【Decoration】\n "
-//              "可装饰: 边线、圆弧、颜色、渐变色、阴影、图片等内容",
-//    }
+
 class ContainerDecoration extends StatelessWidget {
   ContainerDecoration({Key? key}) : super(key: key);
 

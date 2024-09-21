@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明: 327 MaterialBannerTheme 主要用于为后代的MaterialBanner组件统一设置默认属性,也可以通过该组件获取默认MaterialBanner的属性。
-//    {
-//      "widgetId": 327,
-//      "name": "MaterialBannerTheme基本使用",
-//      "priority": 1,
-//      "subtitle": "可指定MaterialBannerThemeData数据属性为【后代】的MaterialBanner组件设置默认样式，如背景色、边距、文字样式等。也可以用MaterialBannerTheme.of获取MaterialBanner的主题数据。",
-//    }
+
 class MaterialBannerThemeDemo extends StatelessWidget {
   const MaterialBannerThemeDemo({Key? key}) : super(key: key);
 

@@ -1,0 +1,21 @@
+{
+  "id": 141,
+  "name": "SnackBarAction",
+  "localName": "信息提示条按钮",
+  "info": "一般只用于SnackBar中，接受点击事件。点击一次后该按钮就会被禁用，可以指定颜色和禁用时颜色。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SnackBarAction基本使用",
+      "desc": [
+        "【label】 :  标签  【String】",
+        "【textColor】 : 文字颜色   【Color】",
+        "【disabledTextColor】 : 文字失效色   【Color】",
+        "【onPressed】 : 点击回调  【Function()】"
+      ]
+    }
+  ]
+}

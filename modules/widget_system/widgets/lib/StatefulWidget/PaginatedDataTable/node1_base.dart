@@ -2,25 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明: 235 PaginatedDataTable 可分页表格
-/// 一个功能丰富的可分页表格组件，可指定分页数、排列、页码前后切换。
-/// link: 110,102
-//    {
-//      "widgetId": 235 ,
-//      "name": 'PaginatedDataTable 使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【header】 : 表名   【Widget】\n"
-//          "【rowsPerPage】 : 每页记录数   【int】\n"
-//          "【actions】 : 操作组件   【List<Widget>】\n"
-//          "【columns】 : 数据列   【List<DataColumn>】\n"
-//          "【sortColumnIndex】 : 排序列索引   【int】\n"
-//          "【sortAscending】 : 是否升序   【bool】\n"
-//          "【onSelectAll】 : 全选回调   【ValueSetter<bool>】\n"
-//          "【onRowsPerPageChanged】 : 分页改变监听   【ValueChanged<int>】\n"
-//          "【availableRowsPerPage】 : 可用分页列表   【List<int>】\n"
-//          "【source】 : 数据源   【DataTableSource】",
-//    }
+
 class PaginatedDataTableDemo extends StatefulWidget {
   const PaginatedDataTableDemo({Key? key}) : super(key: key);
 

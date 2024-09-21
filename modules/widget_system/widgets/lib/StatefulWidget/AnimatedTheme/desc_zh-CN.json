@@ -1,0 +1,22 @@
+{
+  "id": 224,
+  "name": "AnimatedTheme",
+  "localName": "动画主题",
+  "info": "主题变化时具有动画效果的组件，本质是Theme组件和动画结合的产物。可指定ThemeData、动画时长、曲线、结束回调等。相当于增强版的Theme组件。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedTheme基本使用",
+      "desc": [
+        "【data】 : 主题数据   【ThemeData】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": 36,
+  "name": "Placeholder",
+  "localName": "占位组件",
+  "info": "一个矩形和叉叉的占位组件,可指定颜色、线宽、宽高等属性。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Placeholder基础属性",
+      "desc": [
+        "【color】: 颜色   【Color】",
+        "【strokeWidth】: 线粗   【double】"
+      ]
+    },
+    {
+      "file": "node2_fallback.dart",
+      "name": "Placeholder的fallback属性",
+      "desc": [
+        "当所在区域无宽高约束时，占位组件的宽高。\"",
+        "【fallbackHeight】: 高   【double】",
+        "【fallbackWidth】: 宽   【double】"
+      ]
+    }
+  ]
+}

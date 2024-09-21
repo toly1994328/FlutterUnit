@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 250 GlowingOverscrollIndicator 孩子为可滑动列表，当滑动到顶部和底部时的指示效果，可指定颜色，没什么太大卵用。是Android和fuchsia系统默认滑动效果。
-//    {
-//      "widgetId": 250,
-//      "name": '基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【showLeading】 : 头部是否生效   【bool】\n"
-//          "【showTrailing】 : 底部是否生效   【bool】\n"
-//          "【axisDirection】 : 轴向   【AxisDirection】\n"
-//          "【color】 : 颜色   【Color】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 
 class GlowingOverscrollIndicatorDemo extends StatelessWidget {
   GlowingOverscrollIndicatorDemo({Key? key}) : super(key: key);

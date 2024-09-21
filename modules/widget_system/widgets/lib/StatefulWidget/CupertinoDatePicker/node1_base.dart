@@ -3,21 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 137,
-//      "name": 'CupertinoDatePicker基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【initialDateTime】 : 初始日期   【DateTime】\n"
-//          "【minimumYear】 : 最小年份   【int】\n"
-//          "【maximumYear】 : 最大年份   【int】\n"
-//          "【onDateTimeChanged】 : 点击回调  【Function(DateTime)】\n"
-//          "【minuteInterval】 : 分钟间隔  【int】\n"
-//          "【use24hFormat】 : 是否是24小时制  【bool】\n"
-//          "【backgroundColor】 : 背景色  【Color】\n"
-//          "【mode】 : 模式*3  【CupertinoDatePickerMode】",
-//    }
+
 class CustomCupertinoDatePicker extends StatefulWidget {
   const CustomCupertinoDatePicker({Key? key}) : super(key: key);
 

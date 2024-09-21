@@ -1,0 +1,25 @@
+{
+  "id": 348,
+  "name": "SliverWithKeepAliveWidget",
+  "localName": "Sliver保活容器",
+  "info": "它是抽象类，不能单独使用。只有其子类才可以容纳 KeepAlive 的孩子.",
+  "lever": 1,
+  "family": 4,
+  "linkIds": [
+    316,
+    239,
+    188,
+    185,
+    314,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverWithKeepAliveWidget 介绍",
+      "desc": [
+        "【key】 : 键   【Key】"
+      ]
+    }
+  ]
+}

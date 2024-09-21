@@ -3,14 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 301 SliverAnimatedList Sliver动画列表 在插入或删除项目时使其有动画效果的sliver组件。
-//    {
-//      "widgetId": 301,
-//      "name": 'SliverAnimatedList基本使用',
-//      "priority": 1,
-//      "subtitle": "【itemBuilder】 : item构造器   【AnimatedListItemBuilder】\n"
-//          "【initialItemCount】 : 初始item个数   【int】",
-//    }
+
 class SliverAnimatedListDemo extends StatefulWidget {
   const SliverAnimatedListDemo({Key? key}) : super(key: key);
 

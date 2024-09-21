@@ -1,0 +1,52 @@
+{
+  "id": 291,
+  "name": "ListWheelViewport",
+  "localName": "列表滚轮视口",
+  "info": "一个将孩子列表显示在柱状滚轮上的视口，是 ListWheelScrollView、CupertinoPicker 的底层依赖",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [
+    179,
+    139,
+    137,
+    253
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListWheelViewport 简单使用",
+      "desc": [
+        "【itemExtent】 : 轴向item尺寸   【double】",
+        "【offset】 : 视口偏移   【ViewportOffset】",
+        "【childDelegate】 : 孩子代理构造器   【ListWheelChildDelegate】"
+      ]
+    },
+    {
+      "file": "node2_perspective.dart",
+      "name": "ListWheelViewport 透视效果",
+      "desc": [
+        "【perspective】 : 透视参数   【double】",
+        "【squeeze】 : 挤压值   【double】",
+        "【diameterRatio】 : 直径分率   【double】"
+      ]
+    },
+    {
+      "file": "node3_magnifier.dart",
+      "name": "ListWheelViewport 放大",
+      "desc": [
+        "【useMagnifier】 : 是否放大   【bool】",
+        "【magnification】 : 放大比例   【double】",
+        "【clipBehavior】 : 剪裁行为   【Clip】",
+        "【renderChildrenOutsideViewport】 : 出视野是否渲染   【bool】"
+      ]
+    },
+    {
+      "file": "node4_opacity.dart",
+      "name": "偏移和透明度",
+      "desc": [
+        "【offAxisFraction】 : 轴中心偏移比   【double】",
+        "【overAndUnderCenterOpacity】 : 放大器之外的透明度   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 185,
+  "name": "SliverList",
+  "localName": "Sliver列表",
+  "info": "Sliver家族的列表组件，通过指定delegate构造子组件。通常用于CustomScrollView中。",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [
+    183,
+    186,
+    187
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverList基本使用",
+      "desc": [
+        "【delegate】 : 孩子代理   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

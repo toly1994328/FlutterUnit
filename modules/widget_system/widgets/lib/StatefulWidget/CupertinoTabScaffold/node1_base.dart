@@ -3,18 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 158,
-//      "name": 'CupertinoTabScaffold基本用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【tabBar】 : 页签条   【CupertinoTabBar】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【controller】 : 控制器   【CupertinoTabController】\n"
-//          "【tabBuilder】 : 页面构造器   【IndexedWidgetBuilder】",
-//    }
 class CustomCupertinoTabScaffold extends StatefulWidget {
   const CustomCupertinoTabScaffold({Key? key}) : super(key: key);
 

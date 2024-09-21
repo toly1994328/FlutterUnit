@@ -1,0 +1,20 @@
+{
+  "id": 87,
+  "name": "FittedBox",
+  "localName": "适应盒",
+  "info": "可容纳一个子组件，使用fit属性决定子组件区域相当于父组件的适应模式，拥有对齐属性alignment。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FittedBox基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【fit】 : 适应模式   【BoxFit】",
+        "【alignment】 : 对齐方式   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

@@ -3,15 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 85,
-//      "name": 'Align其他用法',
-//      "priority": 2,
-//      "subtitle":
-//          "由于Alignment对象可指定在父容器中宽高的分率位置\n"
-//          "可以使用Align实现一些复杂的排布需求，比如按指定的数学方程变化位置",
-//    }
+
 class Ball extends StatelessWidget {
   const Ball({
     Key? key,

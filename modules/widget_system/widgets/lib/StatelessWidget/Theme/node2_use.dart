@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 168,
-//      "name": 'Theme的用法',
-//      "priority": 2,
-//      "subtitle":
-//          "使用Theme,可以指定非常多的属性作为主题,这些属性将应用于所有的后代组件，如指定字体、滑块、卡片、文字、分割线、按钮等属性。",
-//    }
 class CustomTheme extends StatelessWidget {
   const CustomTheme({Key? key}) : super(key: key);
 

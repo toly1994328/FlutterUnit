@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 114,
-//      "name": 'DefaultTextStyleTransition基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【textAlign】 : 文字对齐方式  【TextAlign】\n"
-//          "【softWrap】 : 是否包裹  【bool】\n"
-//          "【maxLines】 : 最大行数  【int】\n"
-//          "【overflow】 : 溢出模式  【TextOverflow】\n"
-//          "【style】 : 动画   【Animation<TextStyle>】",
-//    }
+
 class CustomDefaultTextStyleTransition extends StatefulWidget {
   const CustomDefaultTextStyleTransition({Key? key}) : super(key: key);
 

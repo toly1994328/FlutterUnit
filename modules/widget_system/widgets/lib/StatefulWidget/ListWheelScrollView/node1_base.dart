@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
-//    {
-//      "widgetId": 179,
-//      "name": 'ListWheelScrollView基本使用',
-//      "priority": 1,
-//      "subtitle": "【children】 : 子组件列表   【List<Widget>】\n"
-//          "【perspective】 : 透视度   【double】\n"
-//          "【itemExtent】 : item高   【EdgeInsets】\n"
-//          "【onSelectedItemChanged】 : 选中回调  【ValueChanged<int> 】",
-//    }
+
 class CustomListWheelScrollView extends StatefulWidget {
   const CustomListWheelScrollView({Key? key}) : super(key: key);
 

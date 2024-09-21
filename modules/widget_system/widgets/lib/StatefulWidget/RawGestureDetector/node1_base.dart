@@ -4,16 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 248 RawGestureDetector  可以用来检测给定手势工厂描述的手势，在开发自己的手势识别器时非常有用。对于常见的手势，使用 GestureRecognizer。
-//    {
-//      "widgetId": 248,
-//      "name": 'RawGestureDetector基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【behavior】 : 侦测行为   【HitTestBehavior】\n"
-//          "【gestures】 : 手势映射   【Map<Type, GestureRecognizerFactory>】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 
 class RawGestureDetectorDemo extends StatefulWidget {
   const RawGestureDetectorDemo({Key? key}) : super(key: key);

@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 93,
-//      "name": 'PositionedTransition基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【rect】 : 动画   【Animation<RelativeRect>】\n"
-//          "    PositionedTransition组件只能在Stack内起作用",
-//    }
+
 class CustomPositionedTransition extends StatefulWidget {
   const CustomPositionedTransition({Key? key}) : super(key: key);
 

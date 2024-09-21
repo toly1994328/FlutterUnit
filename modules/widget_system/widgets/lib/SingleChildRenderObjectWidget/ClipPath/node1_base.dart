@@ -3,16 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 69,
-//      "name": 'ClipPath基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【clipBehavior】 : 裁剪行为   【Clip】\n"
-//          "【clipper】 : 裁剪器   【CustomClipper<Path>】",
-//    }
 class CustomClipPath extends StatelessWidget {
   const CustomClipPath({Key? key}) : super(key: key);
 

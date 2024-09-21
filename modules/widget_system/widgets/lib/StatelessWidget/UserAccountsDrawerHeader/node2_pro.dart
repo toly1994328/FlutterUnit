@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 22,
-//      "priority": 2,
-//      "name": "右上角和底部",
-//      "subtitle": "【otherAccountsPictures】: 右上组件   【List<Widget>】\n"
-//          "【onDetailsPressed】: 右下角点击事件   【Function()】\n"
-//          "【arrowColor】: 右下角按钮颜色   【Color】\n"
-//          "【margin】: 外边距   【EdgeInsetsGeometry】",
-//    }
 class ProUAGHP extends StatelessWidget {
   const ProUAGHP({Key? key}) : super(key: key);
 

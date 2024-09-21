@@ -1,12 +1,6 @@
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 28,
-//      "priority": 2,
-//      "name": "mini属性",
-//      "subtitle": "【mini】: 是否是迷你   【bool】",
-//    }
+
 
 import 'package:flutter/material.dart';
 

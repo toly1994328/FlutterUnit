@@ -1,0 +1,29 @@
+{
+  "id": 168,
+  "name": "Theme",
+  "localName": "主题",
+  "info": "可通过Theme.of获取ThemeData对象。也可以指定主题应用于Theme的后代组件。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    65,
+    169,
+    224
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "文字样式-ThemeData#TextTheme",
+      "desc": [
+        "子组件可以通过ThemeData.of获取主题的数据进行使用。"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "Theme的用法",
+      "desc": [
+        "使用Theme,可以指定非常多的属性作为主题,这些属性将应用于所有的后代组件，如指定字体、滑块、卡片、文字、分割线、按钮等属性。"
+      ]
+    }
+  ]
+}

@@ -2,21 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 349 ScrollView 滑动视图
-/// 该组件用于滑动的支持，该类是一个抽象类，所以无法直接使用，它有很多实现类，如 CustomScrollView、BoxScrollView、ListView、GridView。
-/// link 183,162,163,253,340
-///
-//    {
-//      "widgetId": 349,
-//      "name": 'ScrollView 介绍',
-//      "priority": 1,
-//      "subtitle": "【reverse】 : 是否反向   【bool】\n"
-//          "【scrollDirection】 : 滑动方向   【Axis】\n"
-//          "【cacheExtent】 : 缓存长   【double】\n"
-//          "【dragStartBehavior】 : 拖动行为   【DragStartBehavior】\n"
-//          "【clipBehavior】 : 裁剪行为   【ClipBehavior】\n"
-//          "【controller】 : 控制器   【ScrollController】",
-//    }
+
 
 class ScrollViewDemo extends StatelessWidget {
   const ScrollViewDemo({Key? key}) : super(key: key);

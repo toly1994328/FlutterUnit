@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 161,
-//      "name": 'IndexedStack基本使用',
-//      "priority":1 ,
-//      "subtitle":
-//          "【children】 : 子组件列表   【Lis<Widget>】\n"
-//          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
-//          "【index】 : 当前显示组件  【int】",
-//    }
 class CustomIndexedStack extends StatefulWidget {
   const CustomIndexedStack({Key? key}) : super(key: key);
 

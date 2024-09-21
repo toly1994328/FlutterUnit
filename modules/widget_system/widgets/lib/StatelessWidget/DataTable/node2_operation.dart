@@ -2,17 +2,7 @@
 
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 102,
-//      "name": 'DataTable的sort',
-//      "priority": 2,
-//      "subtitle":
-//          "【sortColumnIndex】 : 列号   【int】\n"
-//          "【columnSpacing】 : 列间距   【double】\n"
-//          "【sortAscending】 : 是否顺序  【bool】",
-//    }
 
 import 'package:flutter/material.dart';
 

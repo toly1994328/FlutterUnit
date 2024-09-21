@@ -1,0 +1,24 @@
+{
+  "id": 67,
+  "name": "ClipRect",
+  "localName": "矩形裁剪",
+  "info": "可容纳一个子组件，并将其进行矩形裁切。可借助SizedBox、Align、AspectRadio等限定组件进行定域。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    66,
+    68,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ClipRect基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【clipBehavior】 : 裁剪行为   【Clip】",
+        "【clipper】 : 裁剪器   【CustomClipper<Rect>】"
+      ]
+    }
+  ]
+}

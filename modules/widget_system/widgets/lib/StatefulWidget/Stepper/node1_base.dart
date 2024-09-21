@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 200,
-//      "name": 'Stepper基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【steps】 : 步骤列表   【List<Step>】\n"
-//          "【currentStep】 : 当前步骤   【double】\n"
-//          "【onStepTapped】 : 点击回调   【ValueChanged<int>】\n"
-//          "【onStepCancel】 : 上一步回调  【VoidCallback】\n"
-//          "【controlsBuilder】 : 控制器构造  【ControlsWidgetBuilder】",
-//    }
+
 class StepperDemo extends StatefulWidget {
   const StepperDemo({Key? key}) : super(key: key);
 

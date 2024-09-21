@@ -2,15 +2,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 111,
-//      "name": 'AlignTransition基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【alignment】 : 对齐动画   【Animation<AlignmentGeometry>】",
-//    }
+
 class CustomAlignTransition extends StatefulWidget {
   const CustomAlignTransition({Key? key}) : super(key: key);
 

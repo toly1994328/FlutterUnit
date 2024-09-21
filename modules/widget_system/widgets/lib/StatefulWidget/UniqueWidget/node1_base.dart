@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 243 UniqueWidget 唯一组件
-/// 抽象类，必须提供一个 GlobalKey 进行身份标识，该类型组件只会 inflated 一个实例，同一时刻也只会有一个状态，可以通过 currentState 属性获取状态。
-///
-//    {
-//      "widgetId": 243,
-//      "name": 'UniqueWidget 介绍',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】",
-//    }
+
 
 class UniqueWidgetDemo extends StatelessWidget {
   const UniqueWidgetDemo({Key? key}) : super(key: key);

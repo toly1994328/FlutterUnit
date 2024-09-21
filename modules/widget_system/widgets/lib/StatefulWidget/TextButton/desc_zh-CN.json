@@ -1,0 +1,33 @@
+{
+  "id": 353,
+  "name": "TextButton",
+  "localName": "文字按钮",
+  "info": "Material风格的文字按钮，默认只有文字，点击时有水波纹。可通过样式更改边框、颜色、阴影等属性。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    354,
+    355
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TextButton基本使用",
+      "desc": [
+        "【child】 : 是否具有滚动主体   【Widget】",
+        "【onPressed】 : 点击事件   【VoidCallback】",
+        "【onLongPress】 : 长按事件   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "TextButton样式",
+      "desc": [
+        "【style】 : 按钮样式   【ButtonStyle】",
+        "【focusNode】 : 焦点   【FocusNode】",
+        "【clipBehavior】 : 裁剪行为   【Clip】",
+        "【autofocus】 : 自动聚焦   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 329,
+  "name": "DividerTheme",
+  "localName": "分割线样式",
+  "info": "主要用于为后代的Divider类型组件统一设置默认属性,也可以通过该组件获取默认Divider的属性。",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    34,
+    35
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DividerTheme使用",
+      "desc": [
+        "属性参数与Divider类似，可以通过DividerTheme.of获取分割线主题数据，\"",
+        "也可以为DividerTheme【后代】的分割线设置默认样式，包括颜色、粗细、高度等。"
+      ]
+    }
+  ]
+}

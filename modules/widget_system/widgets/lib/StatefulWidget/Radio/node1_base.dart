@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 45,
-//      "name": 'Radio基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【value】 : 选钮值   【T】\n"
-//          "【groupValue】 : 当前匹配值   【T】\n"
-//          "【activeColor】 : 激活颜色   【Color】\n"
-//          "【onChanged】 : 改变时回调   【Function(T)】",
-//    }
+
 class CustomRadio extends StatefulWidget {
   const CustomRadio({Key? key}) : super(key: key);
 

@@ -1,0 +1,29 @@
+{
+  "id": 200,
+  "name": "Stepper",
+  "localName": "步骤组件",
+  "info": "步骤组件，可指定一步步的操作，可以自定义步骤的内容，确认和返回的按钮以及步骤排列的方向。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Stepper基本使用",
+      "desc": [
+        "【steps】 : 步骤列表   【List<Step>】",
+        "【currentStep】 : 当前步骤   【double】",
+        "【onStepTapped】 : 点击回调   【ValueChanged<int>】",
+        "【onStepCancel】 : 上一步回调  【VoidCallback】",
+        "【controlsBuilder】 : 控制器构造  【ControlsWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Stepper的方向",
+      "desc": [
+        "【type】 : 方向   【StepperType】"
+      ]
+    }
+  ]
+}

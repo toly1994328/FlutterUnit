@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 59,
-//      "name": 'TabBarView需要与TabBar联用',
-//      "priority": 1,
-//      "subtitle": "【controller】 : 控制器   【TabController】\n"
-//          "【children】 : 孩子们   【指示器颜色】\n"
-//          "【physics】 : 表现   【ScrollPhysics】",
-//    }
+
 class CustomTabBarView extends StatefulWidget {
   const CustomTabBarView({Key? key}) : super(key: key);
 

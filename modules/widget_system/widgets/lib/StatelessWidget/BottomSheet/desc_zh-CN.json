@@ -1,0 +1,22 @@
+{
+  "id": 142,
+  "name": "BottomSheet",
+  "localName": "底部抽屉",
+  "info": "作为组件来说是一个简单的结构组件,可指定形状、影深、背景色、内部组件构造器等。一般通过ScaffoldState的showBottomSheet方法从底部弹出。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BottomSheet基本使用",
+      "desc": [
+        "【builder】 : 组件构造器   【WidgetBuilder】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【elevation】 : 影深   【double】",
+        "【shape】 : 形状   【ShapeBorder】",
+        "【onClosing】 : 关闭回调  【Function()】"
+      ]
+    }
+  ]
+}

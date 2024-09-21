@@ -1,0 +1,18 @@
+{
+  "id": 294,
+  "name": "SizeChangedLayoutNotifier",
+  "localName": "尺寸变化通告",
+  "info": "使用 SizeChangedLayoutNotifier 可以在子组件布局区域发生变化后，发出通知。使用NotificationListener可以进行监听。",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "基本使用",
+      "desc": [
+        "【child】 : 组件   【Widget】"
+      ]
+    }
+  ]
+}

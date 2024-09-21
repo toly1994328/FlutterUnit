@@ -2,21 +2,7 @@ import 'package:flutter/material.dart';
 import '../PopupMenuButton/node1_base.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 64,
-//      "name": 'Scaffold基本用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【appBar】 : 头部组件   【PreferredSizeWidget】\n"
-//          "【bottomNavigationBar】 : 底部组件   【Widget】\n"
-//          "【drawer】 : 左侧滑组件   【Widget】\n"
-//          "【endDrawer】 : 右侧滑组件   【Widget】\n"
-//          "【body】 : 内容组件   【Widget】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【floatingActionButton】 : 浮动按钮   【Widget】\n"
-//          "【floatingActionButtonLocation】 : 浮动按钮位置   【FloatingActionButtonLocation】",
-//    }
+
 class CustomScaffold extends StatefulWidget {
   const CustomScaffold({Key? key}) : super(key: key);
 

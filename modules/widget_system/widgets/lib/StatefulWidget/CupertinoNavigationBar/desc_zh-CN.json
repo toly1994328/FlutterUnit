@@ -1,0 +1,23 @@
+{
+  "id": 62,
+  "name": "CupertinoNavigationBar",
+  "localName": "iOS导航",
+  "info": "一个iOS风格的应用顶部栏的通用结构，可在指定的部位放置相应的组件。可指定背景色、间距、边线等属性。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoNavigationBar基本用法",
+      "desc": [
+        "【leading】 : 左侧组件   【Widget】",
+        "【middle】 : 中间组件   【Widget】",
+        "【trailing】 : 尾部组件   【Widget】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【padding】 : 内边距   【EdgeInsetsDirectional】",
+        "【border】 : 边线   【Border】"
+      ]
+    }
+  ]
+}

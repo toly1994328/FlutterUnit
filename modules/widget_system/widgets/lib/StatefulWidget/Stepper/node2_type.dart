@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 200,
-//      "name": 'Stepper的方向',
-//      "priority": 2,
-//      "subtitle":
-//          "【type】 : 方向   【StepperType】",
-//    }
 class VerticalStepper extends StatefulWidget {
   const VerticalStepper({Key? key}) : super(key: key);
 

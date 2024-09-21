@@ -1,0 +1,25 @@
+{
+  "id": 253,
+  "name": "Scrollable",
+  "localName": "可滑动组件",
+  "info": "实现了一个可滚动组件的交互模型,需要viewportBuilder进的viewport的构造。是ScrollView的核心实现组件之一，一般不直接使用。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    340,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Scrollable的基本使用",
+      "desc": [
+        "【viewportBuilder】 : 视口构造器   【ViewportBuilder】",
+        "【axisDirection】: 滑动方向   【AxisDirection】",
+        "【controller】: 滑动控制器   【ScrollController】",
+        "【dragStartBehavior】: t拖动行为   【DragStartBehavior】",
+        "【physics】: 滚动现象   【ScrollPhysics】,"
+      ]
+    }
+  ]
+}

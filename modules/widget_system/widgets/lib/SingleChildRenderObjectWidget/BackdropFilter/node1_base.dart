@@ -4,17 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-
-//    {
-//      "widgetId": 278,
-//      "name": 'BackdropFilter基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【filter】 : 过滤器   【ImageFilter】\n"
-//          "ImageFilter.blur可以实现高斯模糊，指定x，y模糊因子。",
-//    }
 
 class CustomBackdropFilter extends StatefulWidget {
   const CustomBackdropFilter({Key? key}) : super(key: key);

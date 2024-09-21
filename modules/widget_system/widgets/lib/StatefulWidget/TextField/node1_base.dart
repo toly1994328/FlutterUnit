@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 54,
-//      "name": 'TextField基本用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【controller】 : 控制器   【TextEditingController】\n"
-//          "【style】 : 文字样式   【TextStyle】\n"
-//          "【decoration】 : 装饰线   【InputDecoration】\n"
-//          "【onEditingComplete】 : 输入完成事件   【Function()】\n"
-//          "【onSubmitted】 : 提交事件   【Function(String)】\n"
-//          "【onChanged】 : 输入事件   【Function(String)】",
-//    }
+
 class CustomTextField extends StatefulWidget {
   const CustomTextField({Key? key}) : super(key: key);
 

@@ -1,0 +1,27 @@
+{
+  "id": 4,
+  "name": "FlutterLogo",
+  "localName": "Flutter图标",
+  "info": "用于展示Flutter图标组件。可定义颜色、尺寸、展示模式等信息，是一个非常简单的组件。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "用于显示一个FlutterLogo",
+      "desc": [
+        "【size】 : 大小  【double】",
+        "【colors】: 颜色   【MaterialColor】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "样式用于显示文字",
+      "desc": [
+        "【style】 : 样式-3种枚举  【FlutterLogoStyle】",
+        "【textColor】: 文字颜色   【Color】"
+      ]
+    }
+  ]
+}

@@ -1,13 +1,46 @@
 {
-  "id": 1,
+  "id": 370,
   "name": "DropdownMenu",
   "localName": "下拉菜单",
   "info": "下拉选择组件，支持文本输入过滤，可自定义菜单项。底层主要依赖 MenuAnchor 和 TextFiled 实现。",
   "lever": 4,
   "family": 1,
-  "linkWidget": [55, 54],
+  "linkIds": [],
   "nodes": [
-
+    {
+      "file": "node1.dart",
+      "name": "下拉菜单的简单使用",
+      "desc": [
+        "【dropdownMenuEntries】 : 菜单条目列表   【List<DropdownMenuEntry<T>>】",
+        "【initialSelection】 : 表单验证回调   【T?】",
+        "【onSelected】 : 表单保存回调   【ValueChanged<T?>?】",
+        "【menuHeight】 : 菜单高度   【double】",
+        "【width】 : 输入框宽度   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "下拉菜单样式设置",
+      "desc": [
+        "【controller】 : 文字输入控制器   【TextEditingController?】",
+        "【label】 : 输入框标签   【Widget?】",
+        "【textStyle】 : 输入框文字样式   【TextStyle?】",
+        "【inputDecorationTheme】 : 输入框装饰主题   【InputDecorationTheme?】",
+        "【leadingIcon】 : 左侧图标   【Widget?】",
+        "【trailingIcon】 : 右侧为展开菜单时图标   【Widget?】",
+        "【selectedTrailingIcon】 : 右侧展开菜单时图标   【Widget?】",
+        "【hintText】 : 输入框提示文字   【String?】",
+        "【helperText】 : 输入框辅助文字   【String?】",
+        "【errorText】 : 输入框错误文字   【String?】",
+        "【menuStyle】 : 弹出菜单样式   【MenuStyle?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "下拉菜单自定义菜单项",
+      "desc": [
+        "可以通过 DropdownMenuEntry 的 labelWidget 定制构建菜单项。"
+      ]
+    }
   ]
 }
-

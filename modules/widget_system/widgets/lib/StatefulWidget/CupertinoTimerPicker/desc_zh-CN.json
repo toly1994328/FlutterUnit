@@ -1,0 +1,23 @@
+{
+  "id": 138,
+  "name": "CupertinoTimerPicker",
+  "localName": "iOS时间选择器",
+  "info": "高大上的滑滚时间选择器，可指定选择的类型、初始时间、背景色等，接收时间选中事件。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTimerPicker基本使用",
+      "desc": [
+        "【initialTimerDuration】 : 初始时间   【Duration】",
+        "【minuteInterval】 : 分钟间隔数   【double】",
+        "【secondInterval】 : 秒间隔数   【double】",
+        "【alignment】 : 对齐方式  【AlignmentGeometry】",
+        "【backgroundColor】 : 背景色  【Color】",
+        "【mode】 : 模式*3  【CupertinoTimerPickerMode】"
+      ]
+    }
+  ]
+}

@@ -4,21 +4,7 @@ import 'package:widgets/utils/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-03-16
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 56,
-//      "name": 'PopupMenuButton基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【itemBuilder】 : 构造器   【PopupMenuItemBuilder<T>】\n"
-//          "【offset】 : 偏移   【Offset】\n"
-//          "【color】 : 背景颜色   【Color】\n"
-//          "【shape】 : 形状   【ShapeBorder】\n"
-//          "【elevation】 : 影深   【double】\n"
-//          "【onCanceled】 : 取消事件   【Function()】\n"
-//          "【onSelected】 : 选择事件   【Function(T)】",
-//    }
 class CustomPopupMenuButton extends StatefulWidget {
   const CustomPopupMenuButton({Key? key}) : super(key: key);
 

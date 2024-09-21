@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2022/7/23
 /// contact me by email 1981462002@qq.com
-/// 说明: 358 NavigationRail 侧导航栏，一般用于桌面导航菜单。支持展开和收缩区域，可指定首尾位置组件。。
-//    {
-//      "widgetId": 358,
-//      "name": "NavigationRail 基本使用",
-//      "priority": 1,
-//      "subtitle": "【destinations】 : 菜单数据列表   【List<NavigationRailDestination>】\n"
-//          "【selectedIndex】: 激活索引    【int】\n"
-//          "【labelType】: 标签样式    【NavigationRailLabelType?】\n"
-//          "【onDestinationSelected】: 菜单点击事件    【ValueChanged<int>?】",
-//    }
+
 
 class CustomNavigationRail extends StatefulWidget {
   const CustomNavigationRail({Key? key}) : super(key: key);

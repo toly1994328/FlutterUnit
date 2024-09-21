@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-16
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 55,
-//      "name": 'DropdownButton的样式指定',
-//      "priority": 2,
-//      "subtitle":
-//      "【isDense】 : 是否紧排   【bool】\n"
-//      "【iconSize】 : 图标大小   【double】\n"
-//      "【hint】 : 提示组件   【Widget】\n"
-//          "【iconEnabledColor】 : 图标颜色   【Color】",
-//    }
+
 
 class StyleDropDownButton extends StatefulWidget {
   const StyleDropDownButton({Key? key}) : super(key: key);

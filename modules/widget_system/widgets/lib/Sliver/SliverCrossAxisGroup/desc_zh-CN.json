@@ -1,0 +1,22 @@
+{
+  "id": 269,
+  "name": "SliverCrossAxisGroup",
+  "localName": "交叉轴滑片组",
+  "info": "可以容纳多个 Sliver 组件，让它们在滑动的交叉主轴方向上视为一组。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    268,
+    270,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "SliverCrossAxisGroup 基本使用",
+      "desc": [
+        "【slivers】 : 子组件列表   【List<Widget>】"
+      ]
+    }
+  ]
+}

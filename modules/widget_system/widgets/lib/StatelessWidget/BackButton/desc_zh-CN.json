@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "返回按钮",
+  "info": "一个具有返回功能的IconButton,返回图标不可更改。在iOS和Android中表现不同",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BackButton属性",
+      "desc": [
+        "【color】: 颜色   【Color】",
+        "【style】: 按钮样式   【ButtonStyle?】",
+        "【onPressed】: 点击事件   【Function】",
+        " onPressed为空会退出当前栈"
+      ]
+    }
+  ]
+}

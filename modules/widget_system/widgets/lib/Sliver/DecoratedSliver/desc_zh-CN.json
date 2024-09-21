@@ -1,0 +1,20 @@
+{
+  "id": 209,
+  "name": "DecoratedSliver",
+  "localName": "装饰滑片",
+  "info": "该组件应用于滑动视口中，可以包裹一个子 Sliver 组件，为其添加 Decoration 装饰效果。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "DecoratedSliver 基本使用",
+      "desc": [
+        "【sliver】 : 孩子组件   【Widget?】",
+        "【decoration】 : 装饰对象   【Decoration】",
+        "【position】 : 装饰位置   【DecorationPosition】"
+      ]
+    }
+  ]
+}

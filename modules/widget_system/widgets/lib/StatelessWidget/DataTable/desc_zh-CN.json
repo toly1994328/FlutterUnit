@@ -1,0 +1,28 @@
+{
+  "id": 102,
+  "name": "DataTable",
+  "localName": "数据表格",
+  "info": "一个表格组件，可以制订逻辑进行点击、修改、排序等操作。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DataTable基本使用",
+      "desc": [
+        "【columns】 : 列   【List<DataColumn>】",
+        "【rows】 : 行  【List<DataRow>】"
+      ]
+    },
+    {
+      "file": "node2_operation.dart",
+      "name": "DataTable的sort",
+      "desc": [
+        "【sortColumnIndex】 : 列号   【int】",
+        "【columnSpacing】 : 列间距   【double】",
+        "【sortAscending】 : 是否顺序  【bool】"
+      ]
+    }
+  ]
+}

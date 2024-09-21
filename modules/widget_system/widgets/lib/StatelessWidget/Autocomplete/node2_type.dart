@@ -4,15 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2022-04-18
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 356,
-//      "name": 'Autocomplete的泛型',
-//      "priority": 2,
-//      "subtitle": "【optionsViewBuilder】 : 面板构造器   【AutocompleteOptionsViewBuilder<T>】\n"
-//          "【fieldViewBuilder】 : 输入构造器   【AutocompleteFieldViewBuilder】\n"
-//          "【displayStringForOption】 : 文字展示   【AutocompleteOptionToString】\n",
-//    }
+
 class AutocompleteType extends StatefulWidget {
   const AutocompleteType({Key? key}) : super(key: key);
 

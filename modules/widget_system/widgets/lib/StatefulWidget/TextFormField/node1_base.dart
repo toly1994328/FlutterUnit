@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明: 
-//    {
-//      "widgetId": 199,
-//      "name": 'TextFormField基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "    基本属性和TextField一致，详见之\n"
-//          "【validator】 : 验证函数   【FormFieldValidator<String> 】\n"
-//          "【onFieldSubmitted】 : 提交回调   【ValueChanged<String>】\n"
-//          "【onSaved】 : 表单save时回调  【FormFieldSetter<String>】",
-//    }
+
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({Key? key}) : super(key: key);
 

@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Cupertino页面",
+  "info": "可以像 MaterialApp 一样维护一个路由栈。通过 routes 、onGenerateRoute 来构建路由，可以通过 navigatorObservers 监听路由。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTabView基本使用",
+      "desc": [
+        "【builder】 : 主页构造器   【WidgetBuilder】",
+        "【navigatorObservers】 : 路由监听器   【List<NavigatorObserver>】",
+        "【routes】 : 路由映射   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】 : 路由工厂   【RouteFactory】"
+      ]
+    }
+  ]
+}

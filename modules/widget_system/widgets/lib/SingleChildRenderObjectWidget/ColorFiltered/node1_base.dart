@@ -3,15 +3,7 @@ import 'package:widgets/utils/color_utils.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 88,
-//      "name": 'ColorFiltered基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【colorFilter】 : 滤色器   【ColorFilter】",
-//    }
 class CustomColorFiltered extends StatefulWidget {
   const CustomColorFiltered({Key? key}) : super(key: key);
 

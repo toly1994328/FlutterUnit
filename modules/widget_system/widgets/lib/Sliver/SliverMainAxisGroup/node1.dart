@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2023/8/18
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 268,
-//      "name": 'SliverMainAxisGroup 基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【slivers】 : 子组件列表   【List<Widget>】\n"
-//          "可结合 SliverPersistentHeader 实现分组，标题吸顶效果。",
-//    }
+
 class ItemData {
   final String groupName;
   final List<String> users;

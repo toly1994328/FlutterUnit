@@ -3,15 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明: 293 MouseRegion 用于鼠标事件监听的组件,通常用于桌面和Web平台，可监听鼠标的移入、移除、移动事件。
-//    {
-//      "widgetId": 293,
-//      "name": "MouseRegion基本使用",
-//      "priority": 1,
-//      "subtitle": "【onEnter】 : 移入事件   【PointerEnterEventListener】\n"
-//          "【onHover】: 移动事件    【PointerHoverEventListener】\n"
-//          "【onExit】: 移出事件    【PointerExitEventListener】",
-//    }
+
 
 class MouseRegionDemo extends StatefulWidget {
   const MouseRegionDemo({Key? key}) : super(key: key);

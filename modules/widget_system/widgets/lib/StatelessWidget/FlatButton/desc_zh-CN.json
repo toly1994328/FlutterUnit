@@ -1,0 +1,58 @@
+{
+  "id": 25,
+  "name": "FlatButton",
+  "localName": "平按钮",
+  "info": "无阴影的平按钮，基于MaterialButton实现，所有属性和MaterialButton类似。",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    26,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FlatButton点击事件",
+      "desc": [
+        "【color】: 颜色   【Color】",
+        "【splashColor】: 水波纹颜色   【Color】",
+        "【child】: 子组件   【Widget】",
+        "【textColor】: 子组件文字颜色   【Color】",
+        "【highlightColor】: 长按高亮色   【Color】",
+        "【padding】: 内边距   【EdgeInsetsGeometry】",
+        "【onPressed】: 点击事件   【Function】",
+        "    ",
+        "",
+        "class CustomFlatButton extends StatelessWidget {",
+        "  const CustomFlatButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'FlatButton 按钮于 Flutter3.3 退出历史舞台。取代者为 ElevatedButton 按钮。';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        " @override",
+        " Widget build(BuildContext context) {",
+        "   return FlatButton(",
+        "     onPressed: ()=>{,",
+        "     padding: const EdgeInsets.all(8),",
+        "     splashColor: Colors.green,",
+        "     child: const Text(\"FlatButton\"),",
+        "     textColor: const Color(0xffFfffff),",
+        "     color: Colors.blue,",
+        "     highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

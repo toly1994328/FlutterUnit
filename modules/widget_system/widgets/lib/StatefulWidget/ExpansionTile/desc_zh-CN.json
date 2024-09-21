@@ -1,0 +1,24 @@
+{
+  "id": 52,
+  "name": "ExpansionTile",
+  "localName": "展开瓦片",
+  "info": "一个通用的展开栏,可在指定的部位安放组件,点击时会折叠显隐下方组件。接收折叠时事件。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ExpansionTile基本使用",
+      "desc": [
+        "【children】 : 展开内容   【List<Widget>】",
+        "【leading】 : 头左组件   【Widget】",
+        "【title】 : 头中组件   【Widget】",
+        "【trailing】 : 头尾组件   【Widget】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【onExpansionChanged】 : 折叠事件   【Function(bool)】",
+        "【initiallyExpanded】 : 是否初始时展开   【bool】"
+      ]
+    }
+  ]
+}

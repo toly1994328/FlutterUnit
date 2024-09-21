@@ -4,13 +4,7 @@ import 'package:flutter/rendering.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 304 SliverLayoutBuilder Sliver布局构造器 Sliver家族一员，在滑动过程中可以通过回调出的 SliverConstraints 对象进行子组件的构造。
-//    {
-//      "widgetId": 304,
-//      "name": 'SliverLayoutBuilder基本使用',
-//      "priority": 1,
-//      "subtitle": "【builder】 : 组件构造器   【SliverLayoutWidgetBuilder】",
-//    }
+
 class SliverLayoutBuilderDemo extends StatefulWidget {
   const SliverLayoutBuilderDemo({Key? key}) : super(key: key);
 

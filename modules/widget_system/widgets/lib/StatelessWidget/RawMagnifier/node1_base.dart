@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 360,
-//      "priority": 1,
-//      "name": "RawMagnifier 的简单使用",
-//      "subtitle": "【size】 : 尺寸  【Size】\n"
-//          "【magnificationScale】 : 放大倍率  【double】\n"
-//          "【focalPointOffset】: 放大内容偏移量   【Offset】\n"
-//          "【decoration】: 发现装饰   【MagnifierDecoration】\n"
-//          "【child】: 子组件   【Widget?】\n",
-//    }
 class MagnifierCircleShape extends StatefulWidget{
 
   const MagnifierCircleShape({super.key});

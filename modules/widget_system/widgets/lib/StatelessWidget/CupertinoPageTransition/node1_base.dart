@@ -3,16 +3,7 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/11
 /// contact me by email 1981462002@qq.com
 ///
-/// 说明: 216 CupertinoPageTransition 0 风格的页面过渡动画变换 提供一个 iOS 风格的页面过渡动画。 link 219
-//    {
-//      "widgetId": 216,
-//      "name": 'CupertinoPageTransition 介绍',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【linearTransition】 : 是否线性转换   【bool】\n"
-//          "【primaryRouteAnimation】 : 初始路由动画   【Animation<double>】\n"
-//          "【secondaryRouteAnimation】 : 第二路由动画   【Animation<double>】",
-//    }
+
 class CupertinoPageTransitionDemo extends StatelessWidget {
   const CupertinoPageTransitionDemo({Key? key}) : super(key: key);
 

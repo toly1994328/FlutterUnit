@@ -2,19 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 151,
-//      "name": 'TableRowInkWell基本事件',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
-//          "【onTap】 : 点击事件   【Function()】\n"
-//          "【onDoubleTap】 : 双击事件   【Function()】\n"
-//          "【onLongPress】 : 长按事件   【Function()】\n"
-//          "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】",
-//    }
 class CustomTableRowInkWell extends StatelessWidget {
   const CustomTableRowInkWell({Key? key}) : super(key: key);
 

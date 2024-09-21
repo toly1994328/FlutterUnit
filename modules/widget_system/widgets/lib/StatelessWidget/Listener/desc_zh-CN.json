@@ -1,0 +1,22 @@
+{
+  "id": 147,
+  "name": "Listener",
+  "localName": "事件监听器",
+  "info": "组件事件的监听器,可接受按下、松开、移动、取消等事件。较GestureDetector比较原始，可获取的信息也更多。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Listener基本事件",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onPointerDown】 : 按下事件   【Function(PointerDownEvent)】",
+        "【onPointerMove】 : 移动事件   【Function(PointerMoveEvent)】",
+        "【onPointerMove】 : 抬起事件   【Function(PointerUpEvent)】",
+        "【onPointerCancel】 : 取消事件   【Function(PointerUpEvent)】"
+      ]
+    }
+  ]
+}

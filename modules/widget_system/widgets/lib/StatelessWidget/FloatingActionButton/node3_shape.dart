@@ -2,13 +2,7 @@
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 28,
-//      "priority": 3,
-//      "name": "shape属性",
-//      "subtitle": "【shape】: 形状   【ShapeBorder】",
-//    }
+
 
 import 'dart:math';
 

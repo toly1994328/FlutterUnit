@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 183,
-//      "name": 'CustomScrollView基本使用',
-//      "priority": 1,
-//      "subtitle": "【slivers】 : 子组件列表   【List<Widget>】\n"
-//          "【reverse】 : 是否反向   【bool】\n"
-//          "【scrollDirection】 : 滑动方向   【Axis】\n"
-//          "【controller】 : 控制器   【ScrollController】",
-//    }
+
 class CustomScrollViewDemo extends StatelessWidget {
   CustomScrollViewDemo({Key? key}) : super(key: key);
 

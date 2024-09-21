@@ -1,0 +1,22 @@
+{
+  "id": 30,
+  "name": "IconButton",
+  "localName": "图标按钮",
+  "info": "可点击的图标按钮，可指定图标信息、内边距、大小、颜色等，接收点击事件。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "IconButton属性",
+      "desc": [
+        "【icon】: 图标组件   【Widget】",
+        "【tooltip】: 长按提示文字   【String】",
+        "【highlightColor】: 长按高亮色   【Color】",
+        "【splashColor】: 水波纹色   【Color】",
+        "【onPressed】: 点击事件   【Function】"
+      ]
+    }
+  ]
+}

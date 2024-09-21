@@ -1,0 +1,29 @@
+{
+  "id": 64,
+  "name": "Scaffold",
+  "localName": "脚手架",
+  "info": "一个通用app结构，包括上、下、左、右、中、浮动按钮部位，对应位置可盛放组件。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    57,
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Scaffold基本用法",
+      "desc": [
+        "【appBar】 : 头部组件   【PreferredSizeWidget】",
+        "【bottomNavigationBar】 : 底部组件   【Widget】",
+        "【drawer】 : 左侧滑组件   【Widget】",
+        "【endDrawer】 : 右侧滑组件   【Widget】",
+        "【body】 : 内容组件   【Widget】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【floatingActionButton】 : 浮动按钮   【Widget】",
+        "【floatingActionButtonLocation】 : 浮动按钮位置   【FloatingActionButtonLocation】"
+      ]
+    }
+  ]
+}

@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 223 DropdownButtonFormField 表单下拉框
-/// 底层依赖 DropdownButton 实现，所以基本属性类似。但拥有 FormField 的特性，可以回调 onSaved、validator 方法。
-/// link: 55,222
-///
-//    {
-//      "widgetId": 223,
-//      "name": '表单下拉框简单使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【items】 : 子组件列表   【List<DropdownMenuItem<T>>】\n"
-//          "【validator】 : 表单验证回调   【FormFieldValidator<T>】\n"
-//          "【onSaved】 : 表单保存回调   【FormFieldSetter<T>】\n"
-//          "其他属性详见 DropdownButton，表单校验特性详见 FormField。",
-//    }
+
 
 class DropdownButtonFormFieldDemo extends StatefulWidget {
   const DropdownButtonFormFieldDemo({Key? key}) : super(key: key);

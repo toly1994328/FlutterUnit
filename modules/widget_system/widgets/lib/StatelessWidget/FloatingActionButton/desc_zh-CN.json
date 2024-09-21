@@ -1,0 +1,37 @@
+{
+  "id": 28,
+  "name": "FloatingActionButton",
+  "localName": "浮动按钮",
+  "info": "浮动按钮，一般用于Scaffold中，可摆放在特定位置。可盛放一个子组件,接收点击、可定义颜色、形状等。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FloatingActionButton点击事件",
+      "desc": [
+        "【child】: 子组件   【Widget】",
+        "【tooltip】: 长按时提示文字   【String】",
+        "【backgroundColor】: 背景色   【Color】",
+        "【foregroundColor】: 前景色   【Color】",
+        "【elevation】: 影深   【double】",
+        "【onPressed】: 点击事件   【Function】"
+      ]
+    },
+    {
+      "file": "node2_mini.dart",
+      "name": "mini属性",
+      "desc": [
+        "【mini】: 是否是迷你   【bool】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+      "name": "shape属性",
+      "desc": [
+        "【shape】: 形状   【ShapeBorder】"
+      ]
+    }
+  ]
+}

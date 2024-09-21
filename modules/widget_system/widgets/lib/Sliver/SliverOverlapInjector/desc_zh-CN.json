@@ -1,0 +1,23 @@
+{
+  "id": 308,
+  "name": "SliverOverlapInjector",
+  "localName": "重叠注射器",
+  "info": "一个sliver,需要和SliverOverlapAbsorber联用,处理视图重叠问题。",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    307
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverOverlapInjector基本使用",
+      "desc": [
+        "【sliver】 : 子组件   【Widget】",
+        "【handle】 : *处理器   【SliverOverlapAbsorberHandle】",
+        "如果不使用SliverOverlapAbsorber和SliverOverlapInjector组件,NestedScrollView的内容会和头部栏重叠。"
+      ]
+    }
+  ]
+}

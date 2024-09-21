@@ -1,0 +1,23 @@
+{
+  "id": 24,
+  "name": "CupertinoButton",
+  "localName": "iOS按钮",
+  "info": "iOS风格的按钮。可指定颜色、点击时透明度、内边距、圆角等。可接收点击事件。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoButton点击事件",
+      "desc": [
+        "【color】: 颜色   【Color】",
+        "【pressedOpacity】: 按下时透明度   【double】",
+        "【child】: 子组件   【Widget】",
+        "【padding】: 内边距   【EdgeInsetsGeometry】",
+        "【borderRadius】: 圆角半径   【BorderRadius】",
+        "【onPressed】: 点击事件   【Function】"
+      ]
+    }
+  ]
+}

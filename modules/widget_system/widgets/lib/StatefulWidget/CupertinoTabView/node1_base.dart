@@ -3,17 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 229 CupertinoTabView Cupertino页面  CupertinoTabView 可以像 MaterialApp 一样维护一个路由栈。通过 routes 、onGenerateRoute 来构建路由，可以通过 navigatorObservers 监听路由。
-//    {
-//      "widgetId": 229,
-//      "name": 'CupertinoTabView基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【builder】 : 主页构造器   【WidgetBuilder】\n"
-//          "【navigatorObservers】 : 路由监听器   【List<NavigatorObserver>】\n"
-//          "【routes】 : 路由映射   【Map<String, WidgetBuilder>】\n"
-//          "【onGenerateRoute】 : 路由工厂   【RouteFactory】",
-//    }
+
 
 class CupertinoTabViewDemo extends StatelessWidget {
   const CupertinoTabViewDemo({Key? key}) : super(key: key);

@@ -1,0 +1,21 @@
+{
+  "id": 219,
+  "name": "CupertinoFullscreenDialogTransition",
+  "localName": "全页面过渡变换",
+  "info": "创建一个 iOS 风格的转换，用于唤出全屏对话框。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "组件介绍",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【linearTransition】 : 是否线性转换   【bool】",
+        "【primaryRouteAnimation】 : 初始路由动画   【Animation<double>】",
+        "【secondaryRouteAnimation】 : 第二路由动画   【Animation<double>】"
+      ]
+    }
+  ]
+}

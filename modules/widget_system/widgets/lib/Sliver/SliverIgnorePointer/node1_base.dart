@@ -3,14 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 305 SliverIgnorePointer Sliver忽略事件 可以包裹一个sliver组件,通过ignoring来控制该sliver组件是否可以响应事件。
-//    {
-//      "widgetId": 305,
-//      "name": 'SliverIgnorePointer基本使用',
-//      "priority": 1,
-//      "subtitle": "【sliver】 : sliver组件   【Widget】\n"
-//          "【ignoring】 : 是否忽略事件   【bool】\n",
-//    }
+
 class SliverIgnorePointerDemo extends StatefulWidget {
   const SliverIgnorePointerDemo({Key? key}) : super(key: key);
 

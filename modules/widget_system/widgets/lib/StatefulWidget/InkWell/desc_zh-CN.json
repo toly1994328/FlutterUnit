@@ -1,0 +1,36 @@
+{
+  "id": 150,
+  "name": "InkWell",
+  "localName": "水波纹",
+  "info": "InkResponse的子类，基本属性同InkResponse。一个矩形区域的水波纹，可以知道圆角半径，边线形状等。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    149,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "InkWell基本事件",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onTap】 : 点击事件   【Function()】",
+        "【onDoubleTap】 : 双击事件   【Function()】",
+        "【onTapCancel】 : 点击取消   【Function()】",
+        "【onLongPress】 : 长按事件   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "InkWell其他属性",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】",
+        "【highlightColor】 : 高亮色   【Color】",
+        "【splashColor】 : 水波纹色   【Color】",
+        "【radius】 : 水波半径   【double】"
+      ]
+    }
+  ]
+}

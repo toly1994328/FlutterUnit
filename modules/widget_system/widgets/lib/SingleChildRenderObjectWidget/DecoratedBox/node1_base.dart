@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 70,
-//      "name": 'DecoratedBox基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【decoration】 : 装饰对象   【Decoration】\n"
-//          "【position】 : 前景色(左)/后景色(右)   【DecorationPosition】",
-//    }
 class BoxDecorationDemo extends StatelessWidget {
   const BoxDecorationDemo({Key? key}) : super(key: key);
 

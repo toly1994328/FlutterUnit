@@ -3,13 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2022/04/23
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 357,
-//      "name": 'ImageFilter 滤色效果',
-//      "priority": 2,
-//      "subtitle": "通过 ColorFilter 对象实现颜色滤镜。",
-//    }
+
 class ImageFilteredColor extends StatefulWidget {
   const ImageFilteredColor({Key? key}) : super(key: key);
 

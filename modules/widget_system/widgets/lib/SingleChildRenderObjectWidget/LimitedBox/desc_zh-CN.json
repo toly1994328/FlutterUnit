@@ -1,0 +1,22 @@
+{
+  "id": 79,
+  "name": "LimitedBox",
+  "localName": "限制盒",
+  "info": "可容纳一个子组件，通过指定最大宽高来限定子组件容身区域。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    80
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LimitedBox基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【maxHeight】 : 最大高   【double】",
+        "【maxWidth】 : 最大宽   【double】"
+      ]
+    }
+  ]
+}

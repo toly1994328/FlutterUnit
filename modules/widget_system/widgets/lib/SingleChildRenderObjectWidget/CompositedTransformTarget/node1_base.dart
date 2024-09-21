@@ -5,15 +5,7 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/3/31
 /// contact me by email 1981462002@qq.com
 ///
-/// 说明: 266 CompositedTransformTarget 2 合成变换目标，一般与 CompositedTransformFollower 组件联合使用，可以使 Overlay 伴随目标变换。
-//    {
-//      "widgetId": 266,
-//      "name": "CompositedTransformTarget 使用",
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
-//          "【link】 : 链接   【LayerLink】",
-//    }
+
 
 class CompositedTransformTargetDemo extends StatelessWidget {
 

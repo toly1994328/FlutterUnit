@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-20
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 100,
-//      "name": 'AnimatedCrossFade动画曲线',
-//      "priority": 2,
-//      "subtitle":
-//          "【firstCurve】 : 第一曲线   【Curve】\n"
-//          "【secondCurve】 : 第二曲线   【Curve】\n"
-//          "【sizeCurve】 : 尺寸变化曲线   【CrossFadeState】",
-//    }
 class CurveAnimatedCrossFade extends StatefulWidget {
   const CurveAnimatedCrossFade({Key? key}) : super(key: key);
 

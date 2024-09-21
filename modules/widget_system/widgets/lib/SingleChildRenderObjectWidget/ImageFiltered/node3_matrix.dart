@@ -5,13 +5,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2022/04/23
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 357,
-//      "name": 'ImageFilter 变换效果',
-//      "priority": 3,
-//      "subtitle": "通过 ImageFilter.matrix 构造，进行矩阵变换，但比较鸡肋。",
-//    }
+
 class ImageFilteredMatrix extends StatefulWidget {
   const ImageFilteredMatrix({Key? key}) : super(key: key);
 

@@ -1,0 +1,20 @@
+{
+  "id": 93,
+  "name": "PositionedTransition",
+  "localName": "位置变换",
+  "info": "只能用于Stack中,可容纳一个子组件，让其在两个矩形间进行位置动画，需要提供动画器rect。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PositionedTransition基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【rect】 : 动画   【Animation<RelativeRect>】",
+        "    PositionedTransition组件只能在Stack内起作用"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 196,
+  "name": "FlexibleSpaceBar",
+  "localName": "伸展空间栏",
+  "info": "通常用于SliverAppBar中的可伸展区域，可指定标题、标题间距、背景、折叠模式等。",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FlexibleSpaceBar基本使用",
+      "desc": [
+        "【title】 : 标题组件   【Widget】",
+        "【titlePadding】 : 标题间距   【EdgeInsetsGeometry】",
+        "【collapseMode】 : 折叠模式   【CollapseMode】",
+        "【stretchModes】 : 延伸模式   【List<StretchMode>】",
+        "【background】 : 背景组件   【Widget】",
+        "【centerTitle】 : 是否居中   【bool】"
+      ]
+    }
+  ]
+}

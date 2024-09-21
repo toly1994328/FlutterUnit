@@ -1,0 +1,26 @@
+{
+  "id": 343,
+  "name": "ShrinkWrappingViewport",
+  "localName": "收缩包围视图",
+  "info": "和 ScrollView 的 shrinkWrap 属性之间关联。ShrinkWrappingViewport 在主轴上调整自身的大小以适应它的子节点，在无边界约束的情况下使用。",
+  "lever": 1,
+  "family": 3,
+  "linkIds": [
+    349,
+    162,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "NestedScrollViewViewport 介绍",
+      "desc": [
+        "【offset】 : *偏移   【ViewportOffset】",
+        "【axisDirection】 : 轴向   【AxisDirection】",
+        "【crossAxisDirection】 : 交叉轴向   【AxisDirection】",
+        "【slivers】 : 子组件   【List<Widget>】",
+        "【clipBehavior】 : 裁剪行为   【Clip】"
+      ]
+    }
+  ]
+}

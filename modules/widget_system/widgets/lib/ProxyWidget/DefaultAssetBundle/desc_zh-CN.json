@@ -1,0 +1,20 @@
+{
+  "id": 320,
+  "name": "DefaultAssetBundle",
+  "localName": "默认资源包",
+  "info": "一个 InheritedWidget，设置 AssetBundle 对象后，该节点后的节点上下文可以通过 DefaultAssetBundle.of(context) 获取 AssetBundle 对象用于访问资源文件。",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DefaultAssetBundle 介绍",
+      "desc": [
+        "【bundle】 : *资源包   【AssetBundle】",
+        "【child】 : *子组件  【Widget】",
+        "我们可以定义自己的 DefaultAssetBundle 来供后续节点使用，也可以直接使用默认的。该案例演示通过框架提供的 DefaultAssetBundle 加载一张资源图片进行显示。"
+      ]
+    }
+  ]
+}

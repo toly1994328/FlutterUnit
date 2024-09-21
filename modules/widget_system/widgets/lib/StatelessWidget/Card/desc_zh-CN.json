@@ -1,0 +1,31 @@
+{
+  "id": 3,
+  "name": "Card",
+  "localName": "卡片组件",
+  "info": " 基于Material组件实现,用于将单个组件卡片化。并使其具有投影效果，可加外边距，也可以自定义卡片形状。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Card可以让一个组件卡片化",
+      "desc": [
+        "【elevation】 : 影深  【double】",
+        "【margin】: 外边距   【double】",
+        "【color】: 颜色   【Color】",
+        "【child】: 孩子   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "可以通过shape属性实现裁切效果",
+      "desc": [
+        "【shape】 : 形状  【ShapeBorder】",
+        "【margin】: 外边距   【double】",
+        "【color】: 颜色   【Color】",
+        "【child】: 孩子   【Widget】"
+      ]
+    }
+  ]
+}

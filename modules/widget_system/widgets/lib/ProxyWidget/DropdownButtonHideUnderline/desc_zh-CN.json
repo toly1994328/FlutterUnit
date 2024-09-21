@@ -1,0 +1,18 @@
+{
+  "id": 181,
+  "name": "DropdownButtonHideUnderline",
+  "localName": "下拉按钮隐藏线",
+  "info": "用于去除DropdownButton的下划线，本身没有什么应用价值。",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DropDownButtonHideUnderline使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】,"
+      ]
+    }
+  ]
+}

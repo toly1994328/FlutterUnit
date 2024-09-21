@@ -4,17 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 173,
-//      "name": 'StreamBuilder基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【stream】 : 子组件   【Stream<T>】\n"
-//          "【initialData】 : 初始数据   【T】\n"
-//          "【builder】 : 点击事件  【AsyncWidgetBuilder<T>】",
-//    }
 class CustomStreamBuilder extends StatefulWidget {
   const CustomStreamBuilder({Key? key}) : super(key: key);
 

@@ -1,0 +1,21 @@
+{
+  "id": 82,
+  "name": "FractionallySizedBox",
+  "localName": "分率盒",
+  "info": "可容纳一个子组件，指定宽高分率,限定子组件区域为父容器宽高*各分率，及对齐方式alignment。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FractionallySizedBox基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【widthFactor】 : 宽分率   【double】",
+        "【heightFactor】 : 高分率   【double】",
+        "【alignment】 : 对齐方式   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

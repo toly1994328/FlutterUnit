@@ -1,0 +1,41 @@
+{
+  "id": 16,
+  "name": "ListTile",
+  "localName": "列表瓦片",
+  "info": "Flutter提供的一个通用列表条目结构，为左中右结构。相应位置可插入组件，可以很方便地应对特定的条目。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    162,
+    334
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListTile的基本表现如下",
+      "desc": [
+        "【leading】: 左侧组件   【Widget】",
+        "【title】: 中间上组件   【Widget】",
+        "【subtitle】: 中间下组件   【Widget】",
+        "【trailing】: 尾组件   【Widget】",
+        "【contentPadding】: 内边距   【EdgeInsetsGeometry】",
+        "【onLongPress】: 点击事件   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "ListTile选中效果和长按事件",
+      "desc": [
+        "【selected】: 是否选中   【bool】",
+        "【onTap】: 点击事件   【Function()】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "ListTile的密排属性",
+      "desc": [
+        "【dense】: 是否密排   【bool】"
+      ]
+    }
+  ]
+}

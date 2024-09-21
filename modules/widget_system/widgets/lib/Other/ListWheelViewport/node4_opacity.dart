@@ -3,15 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明:
-///
-//    {
-//      "widgetId": 291,
-//      "name": '偏移和透明度',
-//      "priority": 4,
-//      "subtitle": "【offAxisFraction】 : 轴中心偏移比   【double】\n"
-//          "【overAndUnderCenterOpacity】 : 放大器之外的透明度   【double】",
-//    }
+
 
 class ListWheelViewportDemo4 extends StatelessWidget {
   ListWheelViewportDemo4({Key? key}) : super(key: key);

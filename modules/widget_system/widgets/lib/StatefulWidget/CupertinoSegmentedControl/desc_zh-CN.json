@@ -1,0 +1,34 @@
+{
+  "id": 262,
+  "name": "CupertinoSegmentedControl",
+  "localName": "iOS多栏切换",
+  "info": "iOS风格的多按钮栏，表现和ToggleButtons类似,可指定内边距、选中色、边线色等属性。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    33,
+    256
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "iOS页签基本使用",
+      "desc": [
+        "【children】 : 组件Map   【Map<T, Widget>】",
+        "【onValueChanged】 : 值改变回调   【ValueChanged<T>】",
+        "【groupValue】 : 选中值   【T】",
+        "【padding】 : 内边距   【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "CupertinoSegmentedControl的颜色",
+      "desc": [
+        "【unselectedColor】 : 未选中色   【Color】",
+        "【selectedColor】 : 选中色   【Color<T>】",
+        "【pressedColor】 : 按下色   【Color】",
+        "【borderColor】 : 边线色   【Color】"
+      ]
+    }
+  ]
+}

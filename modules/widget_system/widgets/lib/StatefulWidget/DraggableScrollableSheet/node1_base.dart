@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 252 DraggableScrollableSheet 拖滑页 可拖动和滑动的Sheet，可指定最大、最小、最初的分度现在滑动范围。构造器builder需要返回一个可滑动组件。
-//    {
-//      "widgetId": 252,
-//      "name": 'DraggableScrollableSheet基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【initialChildSize】 : 初始分度   【double】\n"
-//          "【minChildSize】 : 最小分度   【double】\n"
-//          "【maxChildSize】 : 最大分度   【double】\n"
-//          "【builder】 : 滑动组件构造器   【ScrollableWidgetBuilder】\n"
-//          "【expand】 : 是否延展   【bool】",
-//    }
+
 
 class DraggableScrollableSheetDemo extends StatelessWidget {
   const DraggableScrollableSheetDemo({Key? key}) : super(key: key);

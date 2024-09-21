@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/20
 /// contact me by email 1981462002@qq.com
-/// 说明: 328 ChipTheme 主要用于为后代的Chip类型组件统一设置默认属性,也可以通过该组件获取默认Chip的属性。
-//    {
-//      "widgetId": 328,
-//      "name": 'ChipTheme基本使用',
-//      "priority": 1,
-//      "subtitle": "可指定ChipThemeData数据属性为【后代】的Chip类型组件设置默认样式，属性和Chip属性类似，如阴影、颜色、边距、形状、文字样式等。也可以用ChipTheme.of获取Chip的主题数据。",
-//    }
+
 class ChipThemeDemo extends StatelessWidget {
   const ChipThemeDemo({Key? key}) : super(key: key);
 

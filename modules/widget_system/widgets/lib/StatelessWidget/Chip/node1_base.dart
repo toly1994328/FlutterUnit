@@ -2,17 +2,7 @@
 
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 11,
-//      "priority": 1,
-//      "name": "Chip的普通表现如下",
-//      "subtitle": "【avatar】: 左侧组件   【Widget】\n"
-//          "【label】: 中间组件   【Widget】\n"
-//          "【padding】 : 内边距  【EdgeInsetsGeometry】\n"
-//          "【labelPadding】: label边距   【EdgeInsetsGeometry】",
-//    }
 
 import 'package:flutter/material.dart';
 class CustomChip extends StatelessWidget {

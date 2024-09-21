@@ -1,0 +1,53 @@
+{
+  "id": 94,
+  "name": "Flex",
+  "localName": "弹性布局",
+  "info": "Row和Column的父类,Flutter中最强大的布局方式。可容纳多个组件，可与Spacer、Expended、Flexible组件联用进行灵活布局",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    95,
+    96,
+    106,
+    107,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node1_direction.dart",
+      "name": "Flex的排布方向",
+      "desc": [
+        "【children】 : 组件列表   【List<Widget>】",
+        "【direction】 : 方向   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_mainAxisAlignment.dart",
+      "name": "Flex主轴对齐方式",
+      "desc": [
+        "【mainAxisAlignment】 : 主轴对齐   【MainAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node3_crossAxisAlignment.dart",
+      "name": "Flex交叉轴对齐方式",
+      "desc": [
+        "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node4_verticalDirection.dart",
+      "name": "Flex垂直方向顺序",
+      "desc": [
+        "【verticalDirection】 : 垂直方向顺序   【VerticalDirection】"
+      ]
+    },
+    {
+      "file": "node5_textDirection.dart",
+      "name": "Flex水平方向顺序",
+      "desc": [
+        "【textDirection】 : 水平方向顺序   【TextDirection】"
+      ]
+    }
+  ]
+}

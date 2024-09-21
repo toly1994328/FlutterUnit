@@ -3,14 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 99,
-//      "name": 'Flow圆形与动画结合',
-//      "priority": 2,
-//      "subtitle":
-//          "通过动画来更改周围组件的位置实现效果",
-//    }
+
 
 class BurstFlow extends StatefulWidget {
   static final data = List.generate(

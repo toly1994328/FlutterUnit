@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/6/3
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 285,
-//      "name": 'CustomSingleChildLayout基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【delegate】 : 代理   【SingleChildLayoutDelegate】",
-//    }
 
 class CustomSingleChildLayoutDemo extends StatelessWidget {
   const CustomSingleChildLayoutDemo({Key? key}) : super(key: key);

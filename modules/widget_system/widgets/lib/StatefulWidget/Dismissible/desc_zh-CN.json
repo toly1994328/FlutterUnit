@@ -1,0 +1,31 @@
+{
+  "id": 176,
+  "name": "Dismissible",
+  "localName": "滑动消失",
+  "info": "滑动时可显示底部组件，可指定滑动的方向和交叉轴的偏移量。接收确认消失和消失时的回调。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Dismissible基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【background】 : 左底  【Widget】",
+        "【secondaryBackground】 : 右底  【Widget】",
+        "【key】 : 键  【Key】",
+        "【confirmDismiss】 : 确认回调  【DismissDirectionCallback】",
+        "【onDismissed】 : 消失回调  【DismissDirectionCallback】,"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Dismissible基本使用",
+      "desc": [
+        "【direction】 : 方向   【DismissDirection】",
+        "【crossAxisEndOffset】 : 偏移  【double】,"
+      ]
+    }
+  ]
+}

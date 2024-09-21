@@ -1,0 +1,29 @@
+{
+  "id": 360,
+  "name": "RawMagnifier",
+  "localName": "原放大镜",
+  "info": "一个可以放大下方任意组件的放大镜，可以设置装饰形状、尺寸、偏移量等属性。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RawMagnifier 的简单使用",
+      "desc": [
+        "【size】 : 尺寸  【Size】",
+        "【magnificationScale】 : 放大倍率  【double】",
+        "【focalPointOffset】: 放大内容偏移量   【Offset】",
+        "【decoration】: 发现装饰   【MagnifierDecoration】",
+        "【child】: 子组件   【Widget?】,"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "RawMagnifier 自定义装饰形状",
+      "desc": [
+        "这里自定义五角星装饰形状"
+      ]
+    }
+  ]
+}

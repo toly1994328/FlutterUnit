@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 162,
-//      "name": 'ListView横向滑动',
-//      "priority": 2,
-//      "subtitle":
-//          "【scrollDirection】 : 滑动方向   【Axis】\n"
-//          "【reverse】 : 是否反向滑动   【bool】\n"
-//          "【shrinkWrap】 : 无边界时是否包裹  【bool】",
-//    }
 class HorizontalListView extends StatelessWidget {
   HorizontalListView({Key? key}) : super(key: key);
 

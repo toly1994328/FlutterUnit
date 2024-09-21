@@ -1,0 +1,20 @@
+{
+  "id": 188,
+  "name": "SliverGrid",
+  "localName": "Sliver网格",
+  "info": "Sliver家族的网格列表组件，和GirdView类似，通过count和extent构造。通常用于CustomScrollView中。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverList基本使用",
+      "desc": [
+        "SliverGrid.count 指定轴向数量构造",
+        "SliverGrid.extent 指定轴向长度构造",
+        "属性特征同GridView,可详见之"
+      ]
+    }
+  ]
+}

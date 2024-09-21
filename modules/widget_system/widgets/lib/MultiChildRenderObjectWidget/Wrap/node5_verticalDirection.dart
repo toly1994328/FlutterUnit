@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 98,
-//      "name": 'Wrap的verticalDirection属性',
-//      "priority": 5,
-//      "subtitle":
-//          "【verticalDirection】 : 竖直方向  【VerticalDirection】",
-//    }
 class VerticalDirectionWrap extends StatelessWidget {
   VerticalDirectionWrap({Key? key}) : super(key: key);
 

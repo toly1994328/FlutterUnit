@@ -1,0 +1,21 @@
+{
+  "id": 45,
+  "name": "Radio",
+  "localName": "选钮",
+  "info": "由于选中和未选择状态的圆钮，多个Radio根据逻辑可以实现单选或多选的需求。可指定颜色，接收状态变化回调。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Radio基本使用",
+      "desc": [
+        "【value】 : 选钮值   【T】",
+        "【groupValue】 : 当前匹配值   【T】",
+        "【activeColor】 : 激活颜色   【Color】",
+        "【onChanged】 : 改变时回调   【Function(T)】"
+      ]
+    }
+  ]
+}

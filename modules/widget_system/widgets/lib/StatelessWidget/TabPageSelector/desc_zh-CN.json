@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "页签滑动选择器",
+  "info": "通常作为指示器与TabBarView联用,共同使用一个TabController。可指定颜色、大小、选中色。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TabPageSelector基本使用",
+      "desc": [
+        "【controller】 : 控制器   【TabController】",
+        "【indicatorSize】: 指示器大小   【double】",
+        "【selectedColor】: 选中色   【Color】",
+        "【color】: 颜色    【Color】"
+      ]
+    }
+  ]
+}

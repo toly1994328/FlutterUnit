@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 314 SliverPrototypeExtentList Sliver原型延伸列表 其中prototypeItem属性是一个Widget,该Widget负责在主轴方向上约束item尺寸，但会不显示出来。delegate接受一个SliverChildDelegate完成item的创建。
-//    {
-//      "widgetId": 314,
-//      "name": 'SliverPrototypeExtentList基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【prototypeItem】 : 主轴方向尺寸组件   【Widget】\n"
-//          "【delegate】 : 孩子代理   【SliverChildDelegate】",
-//    }
+
 class SliverPrototypeExtentListDemo extends StatefulWidget {
   const SliverPrototypeExtentListDemo({Key? key}) : super(key: key);
 

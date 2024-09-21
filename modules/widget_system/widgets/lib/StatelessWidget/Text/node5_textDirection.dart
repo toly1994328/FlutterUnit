@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-
-//    {
-//      "widgetId": 2,
-//      "priority": 5,
-//      "name": "文字方向与最大行数",
-//      "subtitle": "【maxLines】 : 最大行数  【int】\n"
-//          "【textDirection】 : 文字方向  【TextDirection】\n"
-//          "下面依次是:rtl、ltr ",
-//    }
 class TextDirectionText extends StatelessWidget {
   const TextDirectionText({Key? key}) : super(key: key);
 

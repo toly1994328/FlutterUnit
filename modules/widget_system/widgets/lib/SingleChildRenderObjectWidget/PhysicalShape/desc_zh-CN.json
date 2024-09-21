@@ -1,0 +1,23 @@
+{
+  "id": 279,
+  "name": "PhysicalShape",
+  "localName": "物理形状",
+  "info": "可以让子组件按照路径进行剪裁,并且可以指定背景色、影深、阴影颜色、剪切行为。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PhysicalShape基本使用",
+      "desc": [
+        "【clipper】 : 裁剪器   【CustomClipper<Path>】",
+        "【clipBehavior】 : 裁剪行为   【Clip】",
+        "【child】 : 子组件   【Widget】",
+        "【elevation】 : 阴影深   【double】",
+        "【shadowColor】 : 阴影颜色   【Color】",
+        "【color】: 颜色    【Color】"
+      ]
+    }
+  ]
+}

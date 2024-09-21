@@ -1,7 +1,8 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_unit/src/l10n/gen/app_l10n.dart';
+import 'package:flutter_unit/src/navigation/model/app_tab.dart';
 import 'package:go_router/go_router.dart';
-import 'package:l10n/l10n.dart';
 import 'package:tolyui_navigation/tolyui_navigation.dart';
 import 'menu_bar_leading.dart';
 import 'menu_bar_tail.dart';
@@ -55,19 +56,8 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    String widget = context.l10n.widgetCollection;
-    String canvas = context.l10n.paintCollection;
-    String knowledge = context.l10n.knowledgeCollection;
-    String treasure = context.l10n.treasureTools;
-    String account = context.l10n.homeAccount;
-
-    deskNavBarMenus = [
-      MenuMeta(label: widget, icon: TolyIcon.icon_layout, router: '/widget'),
-      MenuMeta(label: canvas, icon: Icons.palette, router: '/painter'),
-      MenuMeta(label: knowledge, icon: TolyIcon.icon_artifact, router: '/knowledge'),
-      MenuMeta(label: treasure, icon: TolyIcon.icon_fast, router: '/tools'),
-      MenuMeta(label: account, icon: Icons.person, router: '/account'),
-    ];
+    AppL10n l10n = AppL10n.of(context);
+    deskNavBarMenus = AppTab.values.map((e)=>e.menu(l10n)).toList();
   }
 
   final RegExp _segReg = RegExp(r'/\w+');

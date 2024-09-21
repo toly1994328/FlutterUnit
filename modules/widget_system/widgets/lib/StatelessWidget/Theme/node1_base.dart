@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 168,
-//      "name": '文字样式-ThemeData#TextTheme',
-//      "priority": 1,
-//      "subtitle":
-//          "子组件可以通过ThemeData.of获取主题的数据进行使用。",
-//    }
+
 class TextThemeDemo extends StatelessWidget {
   const TextThemeDemo({Key? key}) : super(key: key);
 

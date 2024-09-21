@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 203 OrientationBuilder 能够回调父组件是横向还是纵向,可以据此来构建不同的子组件。
-//    {
-//      "widgetId": 203,
-//      "name": 'OrientationBuilder基本使用',
-//      "priority": 1,
-//      "subtitle": "【builder】 : 方向组件构造器   【OrientationWidgetBuilder】",
-//    }
+
 class OrientationBuilderDemo extends StatefulWidget {
   const OrientationBuilderDemo({Key? key}) : super(key: key);
 

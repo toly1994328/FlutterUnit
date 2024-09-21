@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 5,
-//      "priority": 1,
-//      "name": "用于显示一个角标",
-//      "subtitle": "【message】 : 显示的文字信息  【String】\n"
-//          "【location】 : 位置*4  【BannerLocation】\n"
-//          "【color】: 角标颜色   【Color】\n"
-//          "【child】: 孩子   【Widget】\n"
-//          "【textStyle】: 文字样式   【TextStyle】",
-//    }
+
 
 class CustomBanner extends StatelessWidget {
   CustomBanner({Key? key}) : super(key: key);

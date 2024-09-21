@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-27
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 162,
-//      "name": 'ListView基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【children】 : 子组件列表   【List<Widget>】\n"
-//          "【padding】 : 内边距  【EdgeInsetsGeometry】",
-//    }
+
 class CustomListView extends StatelessWidget {
   CustomListView({Key? key}) : super(key: key);
 

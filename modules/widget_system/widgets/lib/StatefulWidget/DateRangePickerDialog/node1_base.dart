@@ -4,17 +4,7 @@ import 'package:intl/intl.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 339,
-//      "name": 'DateRangePickerDialog 基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【firstDate】 : 最早日期   【DateTime】\n"
-//          "【lastDate】 : 最晚日期   【DateTime】\n"
-//          "【initialDateRange】 : 初始范围   【DateTimeRange?】\n"
-//          "【saveText】 : 保存文字  【String?】",
-//    }
+
 class DateRangePickerDialogDemo extends StatefulWidget {
   const DateRangePickerDialogDemo({Key? key}) : super(key: key);
 

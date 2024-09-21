@@ -2,21 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-31
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 63,
-//      "name": 'CupertinoTabBar基本用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【currentIndex】 : 当前激活索引   【Widget】\n"
-//          "【items】 : 条目组件   【Widget】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【inactiveColor】 : 非激活色   【Color】\n"
-//          "【activeColor】 : 激活色   【Color】\n"
-//          "【iconSize】 : 图标大小    【double】\n"
-//          "【border】 : 边线   【Border】\n"
-//          "【onTap】 : 点击事件   【Function(int)】",
-//    }
+
 class CustomCupertinoTabBar extends StatefulWidget {
   const CustomCupertinoTabBar({Key? key}) : super(key: key);
 

@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 178,
-//      "name": 'ExpansionPanelList基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【children】 : 子组件列表   【List<Widget>】\n"
-//          "【animationDuration】 : 动画时长   【Duration】\n"
-//          "【expansionCallback】 : 展开回调   【List<Widget>】\n"
-//          "【onPressed】 : 点击事件  【Function()】",
-//    }
+
 class CustomExpansionPanelList extends StatefulWidget {
   const CustomExpansionPanelList({Key? key}) : super(key: key);
 

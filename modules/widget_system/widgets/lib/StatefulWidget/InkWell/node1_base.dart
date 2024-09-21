@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 150,
-//      "name": 'InkWell基本事件',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【onTap】 : 点击事件   【Function()】\n"
-//          "【onDoubleTap】 : 双击事件   【Function()】\n"
-//          "【onTapCancel】 : 点击取消   【Function()】\n"
-//          "【onLongPress】 : 长按事件   【Function()】",
-//    }
 
 class CustomInkWell extends StatefulWidget {
   const CustomInkWell({Key? key}) : super(key: key);

@@ -1,0 +1,24 @@
+{
+  "id": 303,
+  "name": "CupertinoSliverRefreshControl",
+  "localName": "Sliver刷新控制器",
+  "info": "iOS风格的下拉刷新控制器，可执行异步刷新方法、自定义控制器组件、指示器停留高度和触发加载的滑动高度。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "刷新控制器基本使用",
+      "desc": [
+        "【refreshIndicatorExtent】 : 加载中指示器高度   【double】",
+        "【refreshTriggerPullDistance】 : 触发加载的滑动高度   【double】",
+        "【onRefresh】 : 下拉事件   【RefreshCallback】",
+        "【builder】 : 指示器构造器   【RefreshControlIndicatorBuilder】"
+      ]
+    }
+  ]
+}

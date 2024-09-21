@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/8/16
 /// contact me by email 1981462002@qq.com
-/// 说明: 236 WidgetsApp 集合一个应用程序需要的部件,如路由、语言、一些调试开关等。也是实现MaterialApp和CupertinoApp的核心组件。
-//    {
-//      "widgetId": 236,
-//      "name": "WidgetsApp基本使用",
-//      "priority": 1,
-//      "subtitle": "【pageRouteBuilder】 : *路由构造器   【PageRouteFactory】\n"
-//          "【color】: *颜色    【Color】\n"
-//          "【debugShowWidgetInspector】: 是否显示z组件查看器   【bool】\n"
-//          "其他属性基本上同MaterialApp,详见之。",
-//    }
+
 class WidgetsAppDemo extends StatefulWidget {
   const WidgetsAppDemo({Key? key}) : super(key: key);
 

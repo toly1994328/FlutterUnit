@@ -4,18 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 33,
-//      "priority": 2,
-//      "name": "ToggleButtons颜色属性",
-//      "subtitle": "【borderColor】: 边线色   【Color】\n"
-//          "【selectedBorderColor】: 选中边线色   【Color】\n"
-//          "【selectedColor】: 选中时组件色   【Color】\n"
-//          "【fillColor】: 选中时填充色   【Color】\n"
-//          "【splashColor】: 水波纹色   【Color】",
-//    }
 class ColorToggleButtons extends StatefulWidget {
   const ColorToggleButtons({Key? key}) : super(key: key);
 

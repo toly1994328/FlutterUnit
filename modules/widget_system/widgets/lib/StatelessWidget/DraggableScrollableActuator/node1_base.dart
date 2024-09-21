@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 221 DraggableScrollableActuator 拖滑重置器 它可以通知后代的 DraggableScrollableSheet，将其位置重置为初始状态。
-//    {
-//      "widgetId": 221,
-//      "name": '基本使用方法',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "使用 DraggableScrollableActuator.reset(context) 重置后代 DraggableScrollableSheet 位初始位置。",
-//    }
+
 
 class DraggableScrollableActuatorDemo extends StatelessWidget {
   const DraggableScrollableActuatorDemo({Key? key}) : super(key: key);

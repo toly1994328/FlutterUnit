@@ -1,0 +1,61 @@
+{
+  "id": 134,
+  "name": "DayPicker",
+  "localName": "日期选择器",
+  "info": "日期的选择组件，可指定当前日期、选中日期、展示月份等，接收日期选中事件。",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    135,
+    136
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DayPicker基本使用",
+      "desc": [
+        "【selectedDate】 : 选中日期   【DateTime】",
+        "【currentDate】 : 当前日期   【DateTime】",
+        "【firstDate】 : 最前日期限制   【DateTime】",
+        "【lastDate】 : 最后日期限制   【DateTime】",
+        "【displayedMonth】 : 当前展示的月份   【DateTime】",
+        "【onChanged】 : 点击回调  【Function(DateTime)】",
+        "    ",
+        "import 'package:flutter/material.dart';",
+        "",
+        "class CustomDayPicker extends StatelessWidget{",
+        "",
+        "  const CustomDayPicker({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'DayPicker 日期选择器于 Flutter3.0 退出历史舞台。取代者为 CalendarDatePicker 日历选择器。';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   final DateTime _date = DateTime.now();",
+        "  ",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return SizedBox(",
+        "       height: 350,",
+        "       child: DayPicker(",
+        "           selectedDate: _date,",
+        "           currentDate: DateTime.now(),",
+        "           onChanged: (date)=> setState(() => _date = date),",
+        "           firstDate:  DateTime(2018),",
+        "           lastDate: DateTime(2030),",
+        "           displayedMonth: DateTime.now()",
+        "       ),"
+      ]
+    }
+  ]
+}

@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 104,
-//      "name": 'DragTarget基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【builder】 : 组件构造器   【DragTargetBuilder<T>】\n"
-//          "【onWillAccept】 : 拖入时   【Function(T)】\n"
-//          "【onAccept】 : 拖拽成功   【Function(T)】\n"
-//          "【onLeave】 : 拖入再脱出   【Function(T)】",
-//    }
 
 class CustomDragTarget extends StatefulWidget {
   const CustomDragTarget({Key? key}) : super(key: key);

@@ -1,0 +1,45 @@
+{
+  "id": 11,
+  "name": "Chip",
+  "localName": "小条组件",
+  "info": "一个横向的圆边小条，可以包含左中右三个组件。可以指定颜色、阴影色和点击事件。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    12,
+    13,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Chip的普通表现如下",
+      "desc": [
+        "【avatar】: 左侧组件   【Widget】",
+        "【label】: 中间组件   【Widget】",
+        "【padding】 : 内边距  【EdgeInsetsGeometry】",
+        "【labelPadding】: label边距   【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "可以设置颜色和阴影",
+      "desc": [
+        "【backgroundColor】: 背景色   【Color】",
+        "【shadowColor】: 阴影色   【Color】",
+        "【elevation】: 影深   【double】"
+      ]
+    },
+    {
+      "file": "node3_delete.dart",
+      "name": "可以设置右侧点击按钮",
+      "desc": [
+        "【deleteIcon】: 右侧组件(通常为Icon)   【Widget】",
+        "【deleteIconColor】: 右侧组件颜色   【Color】",
+        "【onDeleted】: 右侧组件点击事件   【Function】"
+      ]
+    }
+  ]
+}

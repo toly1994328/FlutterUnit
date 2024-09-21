@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 207 SafeArea 安全区 通过添加内边距，来适配一些手机本身特殊性(圆角、刘海屏等)而所造成的布局问题。
-//    {
-//      "widgetId": 207,
-//      "name": 'SafeArea 使用测试',
-//      "priority": 1,
-//      "subtitle":
-//          "【left】 : 左侧是否启用   【bool】\n"
-//          "【top】 : 上方是否启用   【bool】\n"
-//          "【bottom】 : 下方是否启用   【bool】\n"
-//          "【right】 : 右侧是否启用   【bool】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 
 class SafeAreaDemo extends StatelessWidget {
   const SafeAreaDemo({Key? key}) : super(key: key);

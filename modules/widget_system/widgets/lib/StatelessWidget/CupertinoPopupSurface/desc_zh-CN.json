@@ -1,0 +1,20 @@
+{
+  "id": 217,
+  "name": "CupertinoPopupSurface",
+  "localName": "模糊弹出层",
+  "info": "ios 弹出框的圆角矩形模糊背景，源码中应用于 Cupertino 风格的对话框中。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoPopupSurface 使用",
+      "desc": [
+        "【isSurfacePainted】 : 是否绘白   【bool】",
+        "【child】 : 子组件   【Widget】",
+        "测试效果左侧 isSurfacePainted = false，右侧 isSurfacePainted = true"
+      ]
+    }
+  ]
+}

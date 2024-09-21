@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 103,
-//      "name": 'Draggable其他使用',
-//      "priority": 3,
-//      "subtitle":
-//          "可以根据拖拽来处理一些事件。如删除、查询、弹框等",
-//    }
 
 class DeleteDraggable extends StatefulWidget {
   const DeleteDraggable({Key? key}) : super(key: key);

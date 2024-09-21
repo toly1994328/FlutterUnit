@@ -1,0 +1,26 @@
+{
+  "id": 222,
+  "name": "FormField",
+  "localName": "表单字段",
+  "info": "一个表单字段，需要在 Form 组件中使用，内含泛型 T 的字段作为状态量，对根据字段的更新和验证会触发相应回调。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    198,
+    199,
+    223
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FormField 介绍",
+      "desc": [
+        "【builder】 : 内容构造器   【FormFieldBuilder<T>】",
+        "【initialValue】 : 初始值   【T】",
+        "【validator】 : 验证函数   【FormFieldValidator<String> 】",
+        "【enabled】 : 是否有效   【bool】",
+        "【onSaved】 : 表单save时回调  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

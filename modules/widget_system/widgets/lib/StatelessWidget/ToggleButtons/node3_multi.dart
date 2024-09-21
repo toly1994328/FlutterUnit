@@ -3,14 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 33,
-//      "priority": 3,
-//      "name": "ToggleButtons多选切换",
-//      "subtitle": "    可以控制状态转化的逻辑来形成不同的效果。",
-//    }
 class ProToggleButtons extends StatefulWidget {
   const ProToggleButtons({Key? key}) : super(key: key);
 

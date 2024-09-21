@@ -1,0 +1,20 @@
+{
+  "id": 190,
+  "name": "SliverPersistentHeader",
+  "localName": "Sliver存留头",
+  "info": "通常用于CustomScrollView中，可以让一个组件在滑动中停留在顶部，不会滑动消失。",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverPersistentHeader基本使用",
+      "desc": [
+        "【delegate】 : 代理   【SliverPersistentHeaderDelegate】",
+        "【floating】 : 是否浮动   【bool】",
+        "【pinned】 : 是否顶部停留   【bool】"
+      ]
+    }
+  ]
+}

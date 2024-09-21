@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-23
 /// contact me by email 1981462002@qq.com
-/// 详情:
-//    {
-//      "widgetId": 60,
-//      "name": '可结合PageView进行切页',
-//      "priority": 2,
-//      "subtitle":
-//          "在onTap时进行使用控制器进行切页",
-//    }
+
 class BottomNavigationBarWithPageView extends StatefulWidget {
   const BottomNavigationBarWithPageView({Key? key}) : super(key: key);
 

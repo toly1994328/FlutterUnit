@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 58,
-//      "name": '通过设置Theme可实现无水波纹',
-//      "priority": 1,
-//      "subtitle":
-//          "将Theme关于水波纹的颜色设置为透明即可。",
-//    }
 class NoShadowTabBarDemo extends StatefulWidget {
   const NoShadowTabBarDemo({Key? key}) : super(key: key);
 

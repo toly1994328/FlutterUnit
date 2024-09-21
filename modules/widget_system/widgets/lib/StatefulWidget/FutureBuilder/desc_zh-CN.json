@@ -1,0 +1,20 @@
+{
+  "id": 172,
+  "name": "FutureBuilder",
+  "localName": "异步构造器",
+  "info": "可指定一个Future对象，能够监听异步执行的状态，并在构造器中根据状态构建不同的界面。注意该Future对象不能和FutureBuilder同时创建，否则可能过渡刷新。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FutureBuilder基本使用",
+      "desc": [
+        "【builder】 : 子组件   【AsyncWidgetBuilder<T>】",
+        "【initialData】 : 初始数据   【T】",
+        "【future】 : 异步任务  【Future<T>】"
+      ]
+    }
+  ]
+}

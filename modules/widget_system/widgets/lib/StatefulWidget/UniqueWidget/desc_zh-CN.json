@@ -1,0 +1,18 @@
+{
+  "id": 243,
+  "name": "UniqueWidget",
+  "localName": "唯一组件",
+  "info": "抽象类，必须提供一个 GlobalKey 进行身份标识，该类型组件只会 inflated 一个实例，同一时刻也只会有一个状态，可以通过 currentState 属性获取状态。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "UniqueWidget 介绍",
+      "desc": [
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

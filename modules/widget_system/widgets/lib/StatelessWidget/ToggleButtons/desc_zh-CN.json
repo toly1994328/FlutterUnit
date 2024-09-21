@@ -1,0 +1,43 @@
+{
+  "id": 33,
+  "name": "ToggleButtons",
+  "localName": "切换按钮组",
+  "info": "接收组件列表，可指定边线、圆角、颜色等属性。根据具体逻辑，可以实现多个按钮单选或多选的需求。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    332,
+    262
+  ],
+  "nodes": [
+    {
+      "file": "node1_single.dart",
+      "name": "ToggleButtons单选切换",
+      "desc": [
+        "【children】: 子组件集   【List<Widget>】",
+        "【borderWidth】: 边线宽   【double】",
+        "【borderRadius】: 圆角   【BorderRadius】",
+        "【isSelected】: 是否选中集   【List<bool>】",
+        "【onPressed】: 点击事件   【Function(int)】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "ToggleButtons颜色属性",
+      "desc": [
+        "【borderColor】: 边线色   【Color】",
+        "【selectedBorderColor】: 选中边线色   【Color】",
+        "【selectedColor】: 选中时组件色   【Color】",
+        "【fillColor】: 选中时填充色   【Color】",
+        "【splashColor】: 水波纹色   【Color】"
+      ]
+    },
+    {
+      "file": "node3_multi.dart",
+      "name": "ToggleButtons多选切换",
+      "desc": [
+        "可以控制状态转化的逻辑来形成不同的效果。"
+      ]
+    }
+  ]
+}

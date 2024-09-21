@@ -3,16 +3,7 @@ import 'package:flutter/services.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 288 AnnotatedRegion 有一个泛型，源码中仅适用该组件改变状态量、导航栏样式，泛型通常为SystemUiOverlayStyle。
-//    {
-//      "widgetId": 288,
-//      "name": 'AnnotatedRegion改变状态量样式',
-//      "priority": 1,
-//      "subtitle":
-//          "【value】 : 值   【T】\n"
-//          "【sized】 : 是否提供大小   【bool】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 
 
 class AnnotatedRegionDemo extends StatelessWidget {

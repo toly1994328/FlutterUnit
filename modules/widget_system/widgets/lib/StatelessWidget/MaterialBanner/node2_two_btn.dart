@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/21
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 211,
-//      "name": 'MaterialBanner两行的使用',
-//      "priority": 2,
-//      "subtitle": "【contentTextStyle】: 中间位置样式   【TextStyle】\n"
-//          "【leadingPadding】: 左侧组件边距    【EdgeInsetsGeometry】\n"
-//          "当尾部组件数量大于1,该组件结构为左中下。",
-//    }
+
 class MaterialBannerDemoTwo extends StatelessWidget {
   const MaterialBannerDemoTwo({Key? key}) : super(key: key);
 

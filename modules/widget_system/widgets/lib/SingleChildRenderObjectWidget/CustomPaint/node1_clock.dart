@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 166,
-//      "name": 'CustomPaint绘线图形',
-//      "priority": 1,
-//      "subtitle":
-//          "【painter】 : 绘画器   【CustomPainter】",
-//    }
+
 class ClockPage extends StatelessWidget {
   const ClockPage({Key? key}) : super(key: key);
 

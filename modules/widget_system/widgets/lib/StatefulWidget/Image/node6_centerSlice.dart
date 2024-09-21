@@ -1,17 +1,7 @@
-
 import 'package:flutter/material.dart';
-
-
-
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 38,
-//      "name": '图片实现局部放大',
-//      "priority": 6,
-//      "subtitle": "【centerSlice】 : 保留的区域   【Rect】",
-//    },
+
 
 class CenterSliceImage extends StatelessWidget {
   const CenterSliceImage({Key? key}) : super(key: key);

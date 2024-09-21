@@ -1,20 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 83,
-//      "name": 'OverflowBox基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【minWidth】 : 最小宽   【double】\n"
-//          "【minHeight】 : 最小高   【double】\n"
-//          "【maxHeight】 : 最大高   【double】\n"
-//          "【maxWidth】 : 最大宽   【double】\n"
-//          "【alignment】 : 对齐方式   【AlignmentGeometry】",
-//    }
 class CustomOverflowBox extends StatefulWidget {
   const CustomOverflowBox({Key? key}) : super(key: key);
 

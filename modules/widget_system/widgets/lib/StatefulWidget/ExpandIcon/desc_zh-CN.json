@@ -1,0 +1,26 @@
+{
+  "id": 51,
+  "name": "ExpandIcon",
+  "localName": "展开图标",
+  "info": "一个展开按钮，点击时会自己执行旋转180的动画。可指定颜色、大小、边距，接收点击事件。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    66,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ExpandIcon基本使用",
+      "desc": [
+        "【isExpanded】 : 是否展开   【bool】",
+        "【padding】 : 内边距   【EdgeInsetsGeometry】,",
+        "【size】 : 图标大小   【double】",
+        "【color】 : 不展开时颜色   【Color】",
+        "【expandedColor】 : 展开时颜色   【Color】",
+        "【onPressed】 : 点击事件   【Function(bool)】"
+      ]
+    }
+  ]
+}

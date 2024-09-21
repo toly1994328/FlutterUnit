@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//     {
-//      "widgetId": 21,
-//      "priority": 1,
-//      "name": "GridTile的基本表现如下",
-//      "subtitle": "【header】: 头组件   【Widget】\n"
-//          "【child】: 子组件   【Widget】\n"
-//          "【footer】: 脚组件   【Widget】",
-//      }
 
 class CustomGridTile extends StatelessWidget {
   const CustomGridTile({Key? key}) : super(key: key);

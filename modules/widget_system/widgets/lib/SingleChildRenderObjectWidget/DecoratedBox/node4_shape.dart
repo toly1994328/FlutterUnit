@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
-//    {
-//      "widgetId": 70,
-//      "name": 'DecoratedBox形状装饰',
-//      "priority": 4,
-//      "subtitle": "通过ShapeDecoration对象可指定边线形状\n",
-//    }
+
 class ShapeDecorationDemo extends StatelessWidget {
   const ShapeDecorationDemo({Key? key}) : super(key: key);
 

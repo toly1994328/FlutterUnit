@@ -1,0 +1,42 @@
+{
+  "id": 103,
+  "name": "Draggable",
+  "localName": "可拖拽组件",
+  "info": "可以让组件在界面上任意拖拽,可存放一个泛型T的数据。通常和DragTarget组合使用，来完成拖拽效果。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    104,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Draggable基本使用",
+      "desc": [
+        "【child】 : 孩子   【Widget】",
+        "【feedback】 : 拖拽时的孩子   【Widget】",
+        "【axis】 : 拖动的轴   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_data.dart",
+      "name": "Draggable与DragTarget联用",
+      "desc": [
+        "【data】 : 数据   【T】",
+        "【onDragStarted】 : 开始拖拽   【Function()】",
+        "【onDragEnd】 : 结束拖拽   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : 拖拽完成   【Function()】",
+        "【onDraggableCanceled】 : 拖拽取消   【Function(Velocity,Offset)】",
+        "【onChanged】 : 改变时回调   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node3_use.dart",
+      "name": "Draggable其他使用",
+      "desc": [
+        "可以根据拖拽来处理一些事件。如删除、查询、弹框等"
+      ]
+    }
+  ]
+}

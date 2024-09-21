@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 354,
-//      "name": 'ElevatedButton样式',
-//      "priority": 2,
-//      "subtitle":
-//          "【style】 : 按钮样式   【ButtonStyle】\n"
-//          "【focusNode】 : 焦点   【FocusNode】\n"
-//          "【clipBehavior】 : 裁剪行为   【Clip】\n"
-//          "【autofocus】 : 自动聚焦   【bool】",
-//    }
+
 
 class ElevatedButtonStyleDemo extends StatelessWidget {
   const ElevatedButtonStyleDemo({Key? key}) : super(key: key);

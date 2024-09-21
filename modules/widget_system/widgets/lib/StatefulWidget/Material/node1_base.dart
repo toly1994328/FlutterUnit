@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 160,
-//      "name": 'Material基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
-//          "【type】 : 类型   【MaterialType】\n"
-//          "【elevation】 : 影深   【double】\n"
-//          "【shadowColor】 : 阴影颜色   【Color】\n"
-//          "【color】 : 颜色   【Color】",
-//    }
+
 class CustomMaterial extends StatelessWidget {
   const CustomMaterial({Key? key}) : super(key: key);
 

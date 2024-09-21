@@ -1,0 +1,18 @@
+{
+  "id": 325,
+  "name": "IconTheme",
+  "localName": "图标样式",
+  "info": "可容纳一个孩子，为后代的图标指定默认样式。常用于多个相同图标的样式统一，避免一一设置。",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "IconTheme使用",
+      "desc": [
+        "可以通过IconTheme.of获取图标主题数据，也可以为IconTheme【后代】的图标组件设置默认样式，包括颜色、透明度、尺寸。"
+      ]
+    }
+  ]
+}

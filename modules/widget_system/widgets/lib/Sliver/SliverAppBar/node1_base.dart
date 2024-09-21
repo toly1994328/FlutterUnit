@@ -2,25 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 184,
-//      "name": 'SliverAppBar基本使用',
-//      "priority": 1,
-//      "subtitle": "【leading】 : 左侧组件   【Widget】\n"
-//          "【title】 : 中间组件   【Widget】\n"
-//          "【actions】 : 尾部组件列表   【List<Widget>】\n"
-//          "【floating】 : 是否浮动   【bool】\n"
-//          "【pinned】 : 是否顶部停留   【bool】\n"
-//          "【snap】 : 是否半收展   【bool】\n"
-//          "【bottom】 : 底部组件   【PreferredSizeWidget】\n"
-//          "【expandedHeight】 : 延展高度   【double】\n"
-//          "【elevation】 : 影深   【double】\n"
-//          "【flexibleSpace】 : 延展空间   【FlexibleSpaceBar】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【controller】 : 控制器   【ScrollController】\n"
-//          "   snap为true时必需floating为true",
-//    }
+
 class SliverAppBarDemo extends StatefulWidget {
   const SliverAppBarDemo({Key? key}) : super(key: key);
 

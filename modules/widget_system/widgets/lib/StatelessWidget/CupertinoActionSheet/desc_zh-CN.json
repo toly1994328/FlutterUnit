@@ -1,0 +1,21 @@
+{
+  "id": 131,
+  "name": "CupertinoActionSheet",
+  "localName": "iOS行为单",
+  "info": "iOS风格的弹出选择结构，可放多的按钮，一般与CupertinoActionSheetAction联用。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoActionSheet基本使用",
+      "desc": [
+        "【title】 : 第一行组件   【Widget】",
+        "【message】 : 第二行组件  【Widget】",
+        "【cancelButton】 : 取消按钮处组件  【Widget】",
+        "【actions】 : 中间组件列表  【List<Widget>】"
+      ]
+    }
+  ]
+}

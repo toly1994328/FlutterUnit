@@ -3,15 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 129,
-//      "name": 'CupertinoActionSheetAction基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【isDefaultAction】 : 是否默认选中  【bool】\n"
-//          "【onPressed】 : 点击事件  【Function()】",
-//    }
+
 
 class CustomCupertinoAlertDialog extends StatelessWidget {
   const CustomCupertinoAlertDialog({Key? key}) : super(key: key);

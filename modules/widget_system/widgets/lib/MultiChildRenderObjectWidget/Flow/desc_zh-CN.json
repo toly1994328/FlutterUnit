@@ -1,0 +1,29 @@
+{
+  "id": 99,
+  "name": "Flow",
+  "localName": "流动布局",
+  "info": "可容纳多个组件, 需要自己制定排布的代理，可以高强度自定义组件的排布，实现普通布局无法达到的效果。布局王者，当之无愧。",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    98,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Flow圆形排布",
+      "desc": [
+        "【children】 : 组件列表   【List<Widget>】",
+        "【delegate】 : 代理   【FlowDelegate】"
+      ]
+    },
+    {
+      "file": "node2_anim.dart",
+      "name": "Flow圆形与动画结合",
+      "desc": [
+        "通过动画来更改周围组件的位置实现效果"
+      ]
+    }
+  ]
+}

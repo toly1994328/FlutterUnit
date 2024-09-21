@@ -1,0 +1,20 @@
+{
+  "id": 161,
+  "name": "IndexedStack",
+  "localName": "索引堆叠",
+  "info": "Stack组件的子类,可以堆叠多个组件，并通过index来指定展示的组件索引，其余的会被隐藏。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "IndexedStack基本使用",
+      "desc": [
+        "【children】 : 子组件列表   【Lis<Widget>】",
+        "【alignment】 : 对齐方式   【AlignmentGeometry】",
+        "【index】 : 当前显示组件  【int】"
+      ]
+    }
+  ]
+}

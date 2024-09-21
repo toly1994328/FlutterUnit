@@ -4,14 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 360,
-//      "priority": 2,
-//      "name": "RawMagnifier 自定义装饰形状",
-//      "subtitle": "这里自定义五角星装饰形状",
-//    }
 class MagnifierStarShape extends StatefulWidget{
 
   const MagnifierStarShape({super.key});

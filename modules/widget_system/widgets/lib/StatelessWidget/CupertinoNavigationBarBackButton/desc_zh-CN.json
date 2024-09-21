@@ -1,0 +1,19 @@
+{
+  "id": 218,
+  "name": "CupertinoNavigationBarBackButton",
+  "localName": "iOS风格返回按钮",
+  "info": "Cupertino风格的导航栏返回按钮,可指定颜色和点击事件,一般不单独使用。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "返回按钮基本使用",
+      "desc": [
+        "【onPressed】 : 点击事件   【VoidCallback】",
+        "【color】: 颜色    【Color】"
+      ]
+    }
+  ]
+}

@@ -5,20 +5,7 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/3/31
 /// contact me by email 1981462002@qq.com
 ///
-/// 说明: 265 CompositedTransformFollower 2 合成变换跟随者，一般与 CompositedTransformTarget 组件联合使用，可以使 Overlay 伴随目标变换。
-//    {
-//      "widgetId": 265,
-//      "name": "基本使用",
-//      "name": "CompositedTransformFollower 使用",
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
-//          "【link】 : 链接   【LayerLink】\n"
-//          "【offset】 : 偏移   【Offset】\n"
-//          "【targetAnchor】 : 目标锚点   【Alignment】\n"
-//          "【followerAnchor】 : 伴随者锚点   【Alignment】\n"
-//          "【showWhenUnlinked】 : 为链接是否显示   【bool】",
-//    }
+
 
 class CompositedTransformFollowerDemo extends StatelessWidget {
 
