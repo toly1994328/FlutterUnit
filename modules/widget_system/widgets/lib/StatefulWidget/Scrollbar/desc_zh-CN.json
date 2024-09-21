@@ -1,0 +1,23 @@
+{
+  "id": 194,
+  "name": "Scrollbar",
+  "localName": "滑动指示栏",
+  "info": "需要包裹一个可滑动区域，当可滑动时，会显示滑动的bar用于指示。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    195,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Scrollbar基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【controller】 : 控制器  【ScrollController】"
+      ]
+    }
+  ]
+}

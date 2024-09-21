@@ -5,17 +5,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 303 CupertinoSliverRefreshControl Sliver刷新控制器 iOS风格的下拉刷新控制器，可执行异步刷新方法、自定义控制器组件、指示器停留高度和触发加载的滑动高度。
-//    {
-//      "widgetId": 303,
-//      "name": '刷新控制器基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【refreshIndicatorExtent】 : 加载中指示器高度   【double】\n"
-//          "【refreshTriggerPullDistance】 : 触发加载的滑动高度   【double】\n"
-//          "【onRefresh】 : 下拉事件   【RefreshCallback】\n"
-//          "【builder】 : 指示器构造器   【RefreshControlIndicatorBuilder】",
-//    }
+
 class CupertinoSliverRefreshControlDemo extends StatefulWidget {
   const CupertinoSliverRefreshControlDemo({Key? key}) : super(key: key);
 

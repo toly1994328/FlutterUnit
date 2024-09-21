@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/6/6
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 341,
-//      "name": 'CustomMultiChildLayout基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【children】 : 子组件集   【List<Widget>】\n"
-//          "【delegate】 : 布局代理   【MultiChildLayoutDelegate】",
-//    }
 
 
 class CustomMultiChildLayoutDemo extends StatelessWidget {

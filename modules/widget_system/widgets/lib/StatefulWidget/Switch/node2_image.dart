@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-14
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 40,
-//      "name": 'Switch图片',
-//      "priority": 2,
-//      "subtitle":
-//          "【inactiveThumbImage】 : 未选中小圈图片   【ImageProvider】\n"
-//          "【activeThumbImage】 : 选中小圈图片   【ImageProvider】",
-//    }
 class ImageSwitch extends StatefulWidget {
   const ImageSwitch({Key? key}) : super(key: key);
 

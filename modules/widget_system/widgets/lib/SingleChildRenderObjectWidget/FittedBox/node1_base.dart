@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 87,
-//      "name": 'FittedBox基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【fit】 : 适应模式   【BoxFit】\n"
-//          "【alignment】 : 对齐方式   【AlignmentGeometry】",
-//    }
 class CustomFittedBox extends StatefulWidget {
   const CustomFittedBox({Key? key}) : super(key: key);
 

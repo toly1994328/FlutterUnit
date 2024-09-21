@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 81,
-//      "name": 'UnConstrainedBox基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【constrainedAxis】 : 仍受约束的轴*2   【Axis】\n"
-//          "【alignment】 : 对齐方式   【AlignmentGeometry】",
-//    }
 class CustomUnConstrainedBox extends StatefulWidget {
   const CustomUnConstrainedBox({Key? key}) : super(key: key);
 

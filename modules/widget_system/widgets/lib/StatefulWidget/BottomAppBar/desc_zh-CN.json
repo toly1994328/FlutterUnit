@@ -1,0 +1,22 @@
+{
+  "id": 61,
+  "name": "BottomAppBar",
+  "localName": "底部导航",
+  "info": "一个可凹嵌的底部导航栏，通常用于Scaffold组件的底部，可指定颜色、影深、形状等属性，可与PageView实现切页效果。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BottomAppBar基本用法",
+      "desc": [
+        "【elevation】 : 影深   【double】",
+        "【shape】 : 形状   【NotchedShape】",
+        "【notchMargin】 : 间隔距离   【double】",
+        "【color】 : 颜色   【Color】",
+        "【child】 : 孩子   【Widget】"
+      ]
+    }
+  ]
+}

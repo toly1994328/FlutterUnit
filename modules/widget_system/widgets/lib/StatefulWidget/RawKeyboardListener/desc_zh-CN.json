@@ -1,0 +1,21 @@
+{
+  "id": 254,
+  "name": "RawKeyboardListener",
+  "localName": "原键盘监听器",
+  "info": "可以用来检测键盘按键和松键的事件，目前只能检测到物理键盘，可在桌面端使用。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RawGestureDetector基本使用",
+      "desc": [
+        "【onKey】 : 键盘事件   【ValueChanged<RawKeyEvent>】",
+        "【focusNode】 : 焦点   【FocusNode】",
+        "【autofocus】 : 是否自动聚焦   【bool】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

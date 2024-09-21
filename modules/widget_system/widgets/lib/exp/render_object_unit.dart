@@ -55,7 +55,7 @@ export '../SingleChildRenderObjectWidget/DecoratedBox/node6_flutterLogo.dart';
 export '../SingleChildRenderObjectWidget/FadeTransition/node1_base.dart';
 export '../SingleChildRenderObjectWidget/FittedBox/node1_base.dart';
 export '../SingleChildRenderObjectWidget/FractionallySizedBox/node1_base.dart';
-export '../SingleChildRenderObjectWidget/LimiteBox/node1_base.dart';
+export '../SingleChildRenderObjectWidget/LimitedBox/node1_base.dart';
 export '../SingleChildRenderObjectWidget/OffStage/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Opacity/node1_base.dart';
 export '../SingleChildRenderObjectWidget/Padding/node1_all.dart';

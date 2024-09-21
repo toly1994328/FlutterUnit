@@ -3,13 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/8/14
 /// contact me by email 1981462002@qq.com
-/// 说明: NotificationListener 220 0 通知监听器 可指定Notification子泛型T,监听该类型的变化。Flutter内置很多滑动的Notification,当然你也可以自定义Notification进行监听。
-//    {
-//      "widgetId": 220,
-//      "name": "监听OverscrollIndicatorNotification",
-//      "priority": 1,
-//      "subtitle":  "该通知之后在滑动到最顶和最底是回调，通过leading属性判断是顶部还是底部。另外通过notification#disallowGlow(),可以去除顶底滑动蓝色阴影",
-//    }
+
 
 class NotificationListenerDemo extends StatefulWidget {
   const NotificationListenerDemo({Key? key}) : super(key: key);

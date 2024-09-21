@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 287,
-//      "name": 'LayoutBuilder的适应布局',
-//      "priority": 2,
-//      "subtitle": "可以根据区域的大小进行组件展示设计。"
-//          "比如在不同的宽度区域显示不同的布局结构。"
-//          "毕竟很多地方不容易获取父组件区域，使用LayoutBuilder就会非常爽口。",
-//    }
+
 
 class FitByLayoutBuilder extends StatefulWidget {
   const FitByLayoutBuilder({Key? key}) : super(key: key);

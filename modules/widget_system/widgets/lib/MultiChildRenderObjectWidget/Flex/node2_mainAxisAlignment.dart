@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 94,
-//      "name": 'Flex主轴对齐方式',
-//      "priority": 2,
-//      "subtitle":
-//          "【mainAxisAlignment】 : 主轴对齐   【MainAxisAlignment】",
-//    }
 class MainAxisAlignmentFlex extends StatelessWidget {
   MainAxisAlignmentFlex({Key? key}) : super(key: key);
 

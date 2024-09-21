@@ -1,0 +1,21 @@
+{
+  "id": 155,
+  "name": "DrawerHeader",
+  "localName": "滑页栏标题",
+  "info": "一般用于Drawer中，作为滑页栏的头部。可以指定内外边距、装饰、子组件等属性。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerHeader基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【decoration】 : 装饰   【Decoration】",
+        "【margin】 : 外边距   【EdgeInsetsGeometry】",
+        "【padding】 : 内边距   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

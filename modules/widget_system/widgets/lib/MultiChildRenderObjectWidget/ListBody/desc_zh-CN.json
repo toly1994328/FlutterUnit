@@ -1,0 +1,20 @@
+{
+  "id": 342,
+  "name": "ListBody",
+  "localName": "列表体",
+  "info": "将若干子组件按照轴向进行排列，可设置的属性很少，一般很少使用，而选择使用ListView。",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListView的基本使用",
+      "desc": [
+        "【mainAxis】 : 主轴方向   【Axis】",
+        "【reverse】: 是否反向   【bool】",
+        "【children】: 子组件集   【List<Widget>】"
+      ]
+    }
+  ]
+}

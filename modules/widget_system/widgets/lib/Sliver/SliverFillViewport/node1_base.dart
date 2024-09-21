@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-31
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 187,
-//      "name": 'SliverFillViewport基本使用',
-//      "priority": 1,
-//      "subtitle": "【viewportFraction】 : 视口分率   【double】\n"
-//          "【delegate】 : 孩子代理   【SliverChildDelegate】",
-//    }
+
 class SliverFillViewportDemo extends StatefulWidget {
   const SliverFillViewportDemo({Key? key}) : super(key: key);
 

@@ -4,14 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 99,
-//      "name": 'Flow圆形排布',
-//      "priority": 1,
-//      "subtitle": "【children】 : 组件列表   【List<Widget>】\n"
-//          "【delegate】 : 代理   【FlowDelegate】",
-//    }
+
 class CircleFlow extends StatelessWidget {
   CircleFlow({Key? key}) : super(key: key);
 

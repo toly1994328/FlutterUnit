@@ -1,0 +1,22 @@
+{
+  "id": 20,
+  "name": "GridTileBar",
+  "localName": "网格瓦片头",
+  "info": "Flutter提供的一个通用头结构，为左中右结构。相应位置可插入组件，可以很方便地应对特定的条目，相比ListTile而言，属性较少。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridTileBar的基本表现如下",
+      "desc": [
+        "【leading】: 左侧组件   【Widget】",
+        "【trailing】: 尾组件   【Widget】",
+        "【title】: 中间上组件   【Widget】",
+        "【subtitle】: 中间下组件   【Widget】",
+        "【backgroundColor】: 背景色   【Color】"
+      ]
+    }
+  ]
+}

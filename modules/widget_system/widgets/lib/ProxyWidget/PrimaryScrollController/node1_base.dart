@@ -3,14 +3,7 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/3/31
 /// contact me by email 1981462002@qq.com
 ///
-/// 说明: 335 PrimaryScrollController 5 初始滑动控制器 它是 InheritedWidget 子类，通过 context 向子树中的可滑动视图提供默认的 ScrollController 对象。
-//    {
-//      "widgetId": 335,
-//      "name": 'PrimaryScrollController 介绍',
-//      "priority": 1,
-//      "subtitle": "【controller】 : 滑动控制器   【ScrollController】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 class PrimaryScrollControllerDemo extends StatelessWidget {
   const PrimaryScrollControllerDemo({Key? key}) : super(key: key);
 

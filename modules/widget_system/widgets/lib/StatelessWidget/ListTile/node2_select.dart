@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 16,
-//      "priority": 2,
-//      "name": "ListTile选中效果和长按事件",
-//      "subtitle": "【selected】: 是否选中   【bool】\n"
-//          "【onTap】: 点击事件   【Function()】",
-//    }
 class SelectListTile extends StatefulWidget {
   const SelectListTile({Key? key}) : super(key: key);
 

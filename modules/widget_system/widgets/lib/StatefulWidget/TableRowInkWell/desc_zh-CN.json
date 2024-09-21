@@ -1,0 +1,22 @@
+{
+  "id": 151,
+  "name": "TableRowInkWell",
+  "localName": "表格水波纹",
+  "info": "只能用于Table的水波纹，接收点击、双击、长按、高亮变化事件，水波纹会作用于表格的一行。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TableRowInkWell基本事件",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onTap】 : 点击事件   【Function()】",
+        "【onDoubleTap】 : 双击事件   【Function()】",
+        "【onLongPress】 : 长按事件   【Function()】",
+        "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】"
+      ]
+    }
+  ]
+}

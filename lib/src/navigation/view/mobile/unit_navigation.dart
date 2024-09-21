@@ -7,6 +7,7 @@ import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/src/navigation/model/app_tab.dart';
 import 'package:l10n/l10n.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
@@ -28,7 +29,7 @@ class UnitPhoneNavigation extends StatefulWidget {
 class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   //页面控制器，初始 0
   final PageController _controller = PageController();
-  ValueNotifier<int> position = ValueNotifier(0);
+  ValueNotifier<AppTab> _activeTab = ValueNotifier(AppTab.widgets);
 
   // 禁止 PageView 滑动
   final ScrollPhysics _neverScroll = const NeverScrollableScrollPhysics();
@@ -43,7 +44,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   @override
   void dispose() {
     _controller.dispose(); //释放控制器
-    position.dispose();
+    _activeTab.dispose();
     super.dispose();
   }
 
@@ -70,21 +71,6 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
 
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
-  List<String> get bottomBar => [
-        context.l10n.homeTabWidget,
-        context.l10n.homeTabPaint,
-        context.l10n.homeTabKnowledge,
-        context.l10n.homeTabTools,
-        context.l10n.homeTabMine,
-      ];
-
-  List<IconData> get bottomBarIcon => const [
-        TolyIcon.icon_layout,
-        TolyIcon.dingzhi1,
-        TolyIcon.icon_artifact,
-        TolyIcon.icon_fast,
-        TolyIcon.yonghu,
-      ];
 
   // 由于 bottomNavigationBar 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
@@ -92,12 +78,9 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     return Stack(
       children: [
         ValueListenableBuilder(
-            valueListenable: position,
+            valueListenable: _activeTab,
             builder: (_, value, __) => PureBottomBar(
-                  currentIndex: value,
-                  onTap: _onTapBottomNav,
-                  labels: bottomBar,
-                  icons: bottomBarIcon,
+                  onTap: _onTapBottomNav, activeTab: value,
                 )),
         const Positioned(right: 22, top: 8, child: UpdateRedPoint())
       ],
@@ -107,14 +90,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   // 点击底部按钮事件，切换页面
   void _onTapBottomNav(int index) {
     _controller.jumpToPage(index);
-    position.value = index;
-    if (!isDark) {
-      late Color color;
-      if (index != 0) {
-        color = Theme.of(context).primaryColor;
-      } else {}
-    }
-
+    _activeTab.value = AppTab.values[index];
     if (index == 3) {
       BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
     }

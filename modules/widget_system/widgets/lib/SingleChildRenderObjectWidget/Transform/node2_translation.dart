@@ -4,16 +4,7 @@ import 'matrix4_shower.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 78,
-//      "name": '平移变换translationValues',
-//      "priority": 2,
-//      "subtitle": "平移x由R0C3数控制,入参为数值,表示平移长度\n"
-//          "平移y由R1C3数控制,入参为数值,表示平移长度\n"
-//          "平移z由R2C3数控制,入参为数值,表示平移长度",
-//    }
 class TranslationTransform extends StatefulWidget {
   const TranslationTransform({Key? key}) : super(key: key);
 

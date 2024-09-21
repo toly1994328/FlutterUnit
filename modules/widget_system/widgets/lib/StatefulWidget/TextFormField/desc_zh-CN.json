@@ -1,0 +1,24 @@
+{
+  "id": 199,
+  "name": "TextFormField",
+  "localName": "文字表单输入",
+  "info": "和TextField属性基本一致，在其基础上增加字段的校验和提交的回调，FormState的save会触发onSaved回调。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    54,
+    198
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TextFormField基本使用",
+      "desc": [
+        "基本属性和TextField一致，详见之",
+        "【validator】 : 验证函数   【FormFieldValidator<String> 】",
+        "【onFieldSubmitted】 : 提交回调   【ValueChanged<String>】",
+        "【onSaved】 : 表单save时回调  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

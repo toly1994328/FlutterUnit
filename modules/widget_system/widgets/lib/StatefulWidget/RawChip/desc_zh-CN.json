@@ -1,0 +1,43 @@
+{
+  "id": 153,
+  "name": "RawChip",
+  "localName": "原生小条",
+  "info": "各自Chip组件的始祖，拥有各自Chip表现的能力，支持选中、点击、删除等事件。详见Chip、FilterChip、ActionChip、InputChip、ChoiceChip。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_press.dart",
+      "name": "RawChip点击效果",
+      "desc": [
+        "【label】: 中间组件   【Widget】",
+        "【padding】 : 内边距   【EdgeInsetsGeometry】",
+        "【labelPadding】 : label边距   【EdgeInsetsGeometry】",
+        "【shadowColor】: 阴影色   【Color】",
+        "【avatar】: 左侧组件   【Widget】",
+        "【elevation】: 影深   【double】",
+        "【pressElevation】: 点击时影深   【double】",
+        "【onPressed】 : 点击事件  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "RawChip选中和删除效果",
+      "desc": [
+        "【selected】: 是否选中   【bool】",
+        "【deleteIconColor】: 尾部图标色   【Color】",
+        "【selectedColor】: 选中色   【Color】",
+        "【deleteIcon】: 尾部组件   【Widget】",
+        "【onSelected】: 选中事件   【Function(bool)】",
+        "【onDeleted】 : 尾部事件  【Function()】"
+      ]
+    }
+  ]
+}

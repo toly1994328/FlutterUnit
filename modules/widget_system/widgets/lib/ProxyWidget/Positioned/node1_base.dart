@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 108,
-//      "name": 'Positioned基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 组件   【Widget】\n"
-//          "【top】 : 到父顶距离   【double】\n"
-//          "【right】 : 到父右距离   【double】\n"
-//          "【left】 : 到父左距离   【double】\n"
-//          "【bottom】 : 到父底距离   【double】",
-//    }
 class CustomPositioned extends StatelessWidget {
   const CustomPositioned({Key? key}) : super(key: key);
 

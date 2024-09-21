@@ -1,0 +1,32 @@
+{
+  "id": 85,
+  "name": "Align",
+  "localName": "对齐组件",
+  "info": "可容纳一个子组件，可以通过alignment让子组件，定位在父组件宽高的任何指定分率出。",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    1,
+    86,
+    111,
+    120
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Align基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【alignment】 : 对齐方式   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node2_other.dart",
+      "name": "Align其他用法",
+      "desc": [
+        "由于Alignment对象可指定在父容器中宽高的分率位置",
+        "可以使用Align实现一些复杂的排布需求，比如按指定的数学方程变化位置"
+      ]
+    }
+  ]
+}

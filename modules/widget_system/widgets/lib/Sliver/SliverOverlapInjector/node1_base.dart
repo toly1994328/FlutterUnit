@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/6/16
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 308,
-//      "name": 'SliverOverlapInjector基本使用',
-//      "priority": 1,
-//      "subtitle": "【sliver】 : 子组件   【Widget】\n"
-//          "【handle】 : *处理器   【SliverOverlapAbsorberHandle】\n"
-//          "如果不使用SliverOverlapAbsorber和SliverOverlapInjector组件,NestedScrollView的内容会和头部栏重叠。",
-//    }
 
 class SliverOverlapInjectorDemo extends StatelessWidget {
   const SliverOverlapInjectorDemo({Key? key}) : super(key: key);

@@ -4,16 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-31
 /// contact me by email 1981462002@qq.com
-/// 说明: 
-//    {
-//      "widgetId": 190,
-//      "name": 'SliverPersistentHeader基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【delegate】 : 代理   【SliverPersistentHeaderDelegate】\n"
-//          "【floating】 : 是否浮动   【bool】\n"
-//          "【pinned】 : 是否顶部停留   【bool】",
-//    }
+
 class SliverPersistentHeaderDemo extends StatelessWidget {
   SliverPersistentHeaderDemo({Key? key}) : super(key: key);
 

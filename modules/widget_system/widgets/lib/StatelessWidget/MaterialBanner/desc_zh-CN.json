@@ -1,0 +1,32 @@
+{
+  "id": 211,
+  "name": "MaterialBanner",
+  "localName": "横幅组件",
+  "info": "Material风格的横幅组件，支持左中右或左中下结构，可指定边距背景色等",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_one_btn.dart",
+      "name": "MaterialBanner一行的使用",
+      "desc": [
+        "【content】 : 中间组件   【Widget】",
+        "【leading】: 左侧组件   【Widget】",
+        "【actions】: 右侧组件列表   【List<Widget>】",
+        "【padding】: 内边距   【EdgeInsetsGeometry】",
+        "【forceActionsBelow】: 是否按钮在下方   【bool】",
+        "【backgroundColor】: 背景色    【Color】"
+      ]
+    },
+    {
+      "file": "node2_two_btn.dart",
+      "name": "MaterialBanner两行的使用",
+      "desc": [
+        "【contentTextStyle】: 中间位置样式   【TextStyle】",
+        "【leadingPadding】: 左侧组件边距    【EdgeInsetsGeometry】",
+        "当尾部组件数量大于1,该组件结构为左中下。"
+      ]
+    }
+  ]
+}

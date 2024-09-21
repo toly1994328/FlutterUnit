@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 94,
-//      "name": 'Flex水平方向顺序',
-//      "priority": 5,
-//      "subtitle":
-//          "【textDirection】 : 水平方向顺序   【TextDirection】",
-//    }
 class TextDirectionFlex extends StatelessWidget {
   TextDirectionFlex({Key? key}) : super(key: key);
 

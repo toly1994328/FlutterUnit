@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/5/3
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 74,
-//      "name": 'Padding方向边距',
-//      "priority": 3,
-//      "subtitle":
-//          "EdgeInsets.symmetric用来限定水平和竖直方向的边距",
-//    }
 class PaddingSymmetric extends StatelessWidget {
   const PaddingSymmetric({Key? key}) : super(key: key);
 

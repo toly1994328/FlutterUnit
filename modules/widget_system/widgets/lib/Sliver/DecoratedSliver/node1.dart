@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2023/8/18
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 209,
-//      "name": 'DecoratedSliver 基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【sliver】 : 孩子组件   【Widget?】\n"
-//          "【decoration】 : 装饰对象   【Decoration】\n"
-//          "【position】 : 装饰位置   【DecorationPosition】",
-//    }
+
 class DecorationSliverDemo extends StatelessWidget {
   const DecorationSliverDemo({super.key});
 

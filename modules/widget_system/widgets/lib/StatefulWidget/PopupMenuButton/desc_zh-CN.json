@@ -1,0 +1,24 @@
+{
+  "id": 56,
+  "name": "PopupMenuButton",
+  "localName": "菜单按钮",
+  "info": "弹出菜单栏,可指定偏移、颜色、影深、形状等属性。接收item选中的事件和取消选择事件。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PopupMenuButton基本使用",
+      "desc": [
+        "【itemBuilder】 : 构造器   【PopupMenuItemBuilder<T>】",
+        "【offset】 : 偏移   【Offset】",
+        "【color】 : 背景颜色   【Color】",
+        "【shape】 : 形状   【ShapeBorder】",
+        "【elevation】 : 影深   【double】",
+        "【onCanceled】 : 取消事件   【Function()】",
+        "【onSelected】 : 选择事件   【Function(T)】"
+      ]
+    }
+  ]
+}

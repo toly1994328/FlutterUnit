@@ -4,14 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 78,
-//      "name": '透视变换rotation',
-//      "priority": 5,
-//      "subtitle": "由R3C1、R3C2、R3C3控制透视",
-//    }
 class R3C2 extends StatefulWidget {
   const R3C2({Key? key}) : super(key: key);
 

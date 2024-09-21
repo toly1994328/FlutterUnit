@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/19
 /// contact me by email 1981462002@qq.com
-/// 说明:
-///
-//    {
-//      "widgetId": 232,
-//      "name": 'Navigator基本用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【initialRoute】 : 最初显示路由   【String】\n"
-//          "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
-//          "【observers】 : 路由监听器   【List<NavigatorObserver>】\n"
-//          "【onPopPage】 : 出栈回调   【PopPageCallback】",
-//    }
+
 class NavigatorDemo extends StatelessWidget {
   const NavigatorDemo({Key? key}) : super(key: key);
 

@@ -1,0 +1,18 @@
+{
+  "id": 171,
+  "name": "Hero",
+  "localName": "共享动画",
+  "info": "可指定标签名，两个界面跳转时具有相同标签的组件会进行共享动画。一个界面中不能存在两个同名的Hero标签",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Hero基本使用",
+      "desc": [
+        "【tag】 : 标签   【String】,"
+      ]
+    }
+  ]
+}

@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 38,
-//      "name": '图片对齐模式',
-//      "priority": 3,
-//      "subtitle": "【alignment】 : 颜色   【AlignmentGeometry】\n"
-//          "    常用Alignment类的九个静态常量，但也可定制位置",
-//    },
 
 class AlignmentImage extends StatelessWidget {
   const AlignmentImage({Key? key}) : super(key: key);

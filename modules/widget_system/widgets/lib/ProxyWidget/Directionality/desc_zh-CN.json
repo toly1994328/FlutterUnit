@@ -1,0 +1,22 @@
+{
+  "id": 319,
+  "name": "Directionality",
+  "localName": "定向性",
+  "info": "为后代改变有textDirection属性的组件统一设置属性值,也可以通过Directionality.of(context)获取当前textDirection默认属性。",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [
+    2,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Directionality基本使用",
+      "desc": [
+        "【textDirection】 : 文字排列方向   【TextDirection】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

@@ -3,14 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2022/04/23
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 357,
-//      "name": 'ImageFilter 高斯模糊',
-//      "priority": 1,
-//      "subtitle": "【imageFilter】 : 图像滤镜   【ImageFilter】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 class ImageFilteredBlur extends StatefulWidget {
   const ImageFilteredBlur({Key? key}) : super(key: key);
 

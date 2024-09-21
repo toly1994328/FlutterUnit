@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 98,
-//      "name": 'Wrap的基础用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【children】 : 组件列表   【List<Widget>】\n"
-//          "【spacing】 : 主轴条目间距   【double】\n"
-//          "【runSpacing】 : 交叉轴条目间距   【double】\n"
-//          "【direction】 : 主轴对齐   【Axis】",
-//    }
+
 class DirectionWrap extends StatelessWidget {
   DirectionWrap({Key? key}) : super(key: key);
 

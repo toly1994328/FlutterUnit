@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 351,
-//      "name": "变换控制器的使用",
-//      "priority": 3,
-//      "subtitle":  "【transformationController】 : 变换控制器   【TransformationController】",
-//    }
+
 
 class InteractiveViewerDemo3 extends StatefulWidget {
   const InteractiveViewerDemo3({Key? key}) : super(key: key);

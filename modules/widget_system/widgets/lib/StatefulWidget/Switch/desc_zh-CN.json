@@ -1,0 +1,34 @@
+{
+  "id": 40,
+  "name": "Switch",
+  "localName": "切钮",
+  "info": "切换选钮,常用于配置的切换，可指定小圆颜色、图片，滑槽颜色等，接收状态变化回调。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    41,
+    18
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Switch基础用法",
+      "desc": [
+        "【inactiveThumbColor】 : 未选中小圈颜色   【Color】",
+        "【inactiveTrackColor】 : 未选中滑槽颜色   【Color】",
+        "【activeColor】 : 选中时小圈颜色   【Color】",
+        "【activeTrackColor】 : 选中时滑槽颜色   【Color】",
+        "【onChanged】 : 切换回调   【Function(double)】\"",
+        "  onChanged时,回调true、null、false三种状态"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Switch图片",
+      "desc": [
+        "【inactiveThumbImage】 : 未选中小圈图片   【ImageProvider】",
+        "【activeThumbImage】 : 选中小圈图片   【ImageProvider】"
+      ]
+    }
+  ]
+}

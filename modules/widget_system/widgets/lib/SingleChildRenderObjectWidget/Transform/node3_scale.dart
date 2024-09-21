@@ -3,16 +3,7 @@ import 'matrix4_shower.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 78,
-//      "name": '缩放变换diagonal3Values',
-//      "priority": 3,
-//      "subtitle": "缩放x由R0C0数控制,入参为数值,表示缩放分率\n"
-//          "缩放y由R1C2数控制,入参为数值,表示缩放分率\n"
-//          "缩放z由R2C2数控制,入参为数值,表示缩放分率",
-//    }
 class ScaleTransform extends StatefulWidget {
   const ScaleTransform({Key? key}) : super(key: key);
 

@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 162,
-//      "name": 'ListView.builder构造',
-//      "priority": 3,
-//      "subtitle":
-//          "【itemCount】 : 条目个数   【int】\n"
-//          "【itemBuilder】 : 条目构造器   【IndexedWidgetBuilder】",
-//    }
 class BuilderListView extends StatelessWidget {
   BuilderListView({Key? key}) : super(key: key);
 

@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/8/16
 /// contact me by email 1981462002@qq.com
-/// 说明: 234 WidgetInspector 该组件可以让你很方便地查看子组件层级结构,是Flutter Inspector插件的功能之一。
-//    {
-//      "widgetId": 234,
-//      "name": "WidgetInspector基本使用",
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【selectButtonBuilder】: *选择按钮构造器   【InspectorSelectButtonBuilder】",
-//    }
+
 class WidgetInspectorDemo extends StatelessWidget {
   const WidgetInspectorDemo({Key? key}) : super(key: key);
 

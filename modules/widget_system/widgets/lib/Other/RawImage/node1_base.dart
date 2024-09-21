@@ -8,18 +8,7 @@ import 'package:flutter/services.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明: 313 RawImage 6 是实现Image组件的核心组件，可以显示ui的Image,基本属性同Image,一般很少单独使用。
-//    {
-//      "widgetId": 313,
-//      "name": "RawImage基本使用",
-//      "priority": 1,
-//      "subtitle": "【image】 : 图片   【ui.Image】\n"
-//          "【width】 : 宽   【int】\n"
-//          "【height】: 高   【int】\n"
-//          "【isAntiAlias】: 是否抗锯齿   【bool】\n"
-//          "【filterQuality】: 过滤质量   【FilterQuality】\n"
-//          "很多属性同Image,详见之.",
-//    }
+
 class RawImageDemo extends StatefulWidget {
   const RawImageDemo({Key? key}) : super(key: key);
 

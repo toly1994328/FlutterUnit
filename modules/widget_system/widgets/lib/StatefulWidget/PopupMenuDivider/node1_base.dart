@@ -4,14 +4,7 @@ import 'package:widgets/utils/dialog_about.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 174,
-//      "name": 'PopupMenuDivider基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【height】 : 高度  【double】",
-//    }
+
 class CustomPopupMenuDivider extends StatelessWidget {
   const CustomPopupMenuDivider({Key? key}) : super(key: key);
 

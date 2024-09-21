@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 162,
-//      "name": 'ListView.separated构造',
-//      "priority": 3,
-//      "subtitle":
-//          "【separatorBuilder】 : 条目构造器   【IndexedWidgetBuilder】",
-//    }
 class SeparatedListView extends StatelessWidget {
   SeparatedListView({Key? key}) : super(key: key);
 

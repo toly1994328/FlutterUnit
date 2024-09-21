@@ -1,0 +1,37 @@
+{
+  "id": 17,
+  "name": "CheckboxListTile",
+  "localName": "复选瓦片",
+  "info": "Flutter提供的一个通用列表条目结构，为左中结构,尾部是一个CheckBox。相应位置可插入组件，可以很方便地应对特定的条目。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CheckBoxListTile的基本表现如下",
+      "desc": [
+        "【secondary】: 左侧组件   【Widget】",
+        "【checkColor】: ✔️颜色   【Color】",
+        "【activeColor】: 选中时外框颜色   【Color】",
+        "【title】: 中间上组件   【Widget】",
+        "【subtitle】: 中间下组件   【Widget】",
+        "【onChanged】: 选中事件   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "CheckBoxListTile的选中效果",
+      "desc": [
+        "【selected】: 是否选中   【bool】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "CheckBoxListTile的密排属性",
+      "desc": [
+        "【dense】: 是否密排   【bool】"
+      ]
+    }
+  ]
+}

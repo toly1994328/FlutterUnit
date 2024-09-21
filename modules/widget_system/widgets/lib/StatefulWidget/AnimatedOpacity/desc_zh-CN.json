@@ -1,0 +1,25 @@
+{
+  "id": 118,
+  "name": "AnimatedOpacity",
+  "localName": "透明动画",
+  "info": "能让子组件进行Opacity(透明度)动画，可指定时长和曲线，有动画结束事件。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    89,
+    73
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedOpacity基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【opacity】 : 透明度   【double】"
+      ]
+    }
+  ]
+}

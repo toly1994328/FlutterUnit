@@ -1,0 +1,19 @@
+{
+  "id": 91,
+  "name": "ScaleTransition",
+  "localName": "缩放变换",
+  "info": "可容纳一个子组件，并使其进行缩放动画，需要提供动画器scale，拥有alignment属性。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ScaleTransition基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【scale】 : 动画   【Animation<double>】"
+      ]
+    }
+  ]
+}

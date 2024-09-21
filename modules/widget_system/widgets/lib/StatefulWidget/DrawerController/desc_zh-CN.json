@@ -1,0 +1,25 @@
+{
+  "id": 257,
+  "name": "DrawerController",
+  "localName": "iOS滑动页签",
+  "info": "为 Drawer 组件提供交互行为，一般很少使用。在 Scaffold 组件源码中有使用场景。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    154,
+    64
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerController基本使用",
+      "desc": [
+        "【drawerCallback】 : 事件回调   【DrawerCallback】",
+        "【enableOpenDragGesture】 : 是否侧边滑开   【bool】",
+        "【alignment】 : 对齐方式   【DrawerAlignment】",
+        "【scrimColor】 : 背景颜色   【Color】",
+        "【child】 : Drawer组件   【Widget】"
+      ]
+    }
+  ]
+}

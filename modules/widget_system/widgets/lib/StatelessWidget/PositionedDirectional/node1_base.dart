@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 159,
-//      "name": 'PositionedDirectional基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 组件   【Widget】\n"
-//          "【top】 : 到父顶距离   【double】\n"
-//          "【end】 : 到父右距离   【double】\n"
-//          "【start】 : 到父左距离   【double】\n"
-//          "【bottom】 : 到父底距离   【double】",
-//    }
 class CustomPositionedDirectional extends StatelessWidget {
   const CustomPositionedDirectional({Key? key}) : super(key: key);
 

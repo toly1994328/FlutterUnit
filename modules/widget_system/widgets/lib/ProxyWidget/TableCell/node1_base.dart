@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 317 TableCell 表室  必须在 Table 组件的后代中使用，用于控制表孩子的竖直方向对齐方式，并没是什么太大的作用。
-//    {
-//      "widgetId": 317,
-//      "name": 'TableCell基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 组件   【Widget】\n"
-//          "【verticalAlignment】 : 竖直对齐方式   【TableCellVerticalAlignment】",
-//    }
+
 
 class TableCellDemo extends StatelessWidget {
   const TableCellDemo({Key? key}) : super(key: key);

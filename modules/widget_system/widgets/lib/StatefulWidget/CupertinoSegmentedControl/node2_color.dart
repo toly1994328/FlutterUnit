@@ -3,18 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/6/30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-///
-//    {
-//      "widgetId": 262,
-//      "name": 'CupertinoSegmentedControl的颜色',
-//      "priority": 2,
-//      "subtitle":
-//          "【unselectedColor】 : 未选中色   【Color】\n"
-//          "【selectedColor】 : 选中色   【Color<T>】\n"
-//          "【pressedColor】 : 按下色   【Color】\n"
-//          "【borderColor】 : 边线色   【Color】",
-//    }
+
 class CupertinoSegmentedControlColor extends StatefulWidget {
   const CupertinoSegmentedControlColor({Key? key}) : super(key: key);
 

@@ -3,15 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 18,
-//      "priority": 2,
-//      "name": "SwitchListTile的选中效果",
-//      "subtitle": "【selected】: 是否选中   【bool】\n"
-//          "【inactiveThumbImage】: 未选中时圆圈图片   【ImageProvider】\n"
-//          "【activeThumbImage】: 选中时圆圈图片   【ImageProvider】",
-//    }
+
 class SelectSwitchListTile extends StatefulWidget {
   const SelectSwitchListTile({Key? key}) : super(key: key);
 

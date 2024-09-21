@@ -1,0 +1,25 @@
+{
+  "id": 166,
+  "name": "CustomPaint",
+  "localName": "绘制组件",
+  "info": "通过CustomPainter进行绘制，可实现一些复杂的自定义绘制组件，是Flutter中自定义组件的灵魂人物。",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_clock.dart",
+      "name": "CustomPaint绘线图形",
+      "desc": [
+        "【painter】 : 绘画器   【CustomPainter】"
+      ]
+    },
+    {
+      "file": "node2_bezier.dart",
+      "name": "CustomPaint绘线贝塞尔曲线",
+      "desc": [
+        "Flutter也支持贝塞尔曲线等复杂绘制。"
+      ]
+    }
+  ]
+}

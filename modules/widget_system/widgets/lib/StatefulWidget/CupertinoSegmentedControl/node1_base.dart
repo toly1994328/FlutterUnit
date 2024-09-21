@@ -2,18 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 /// create by 张风捷特烈 on 2020/6/30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-///
-//    {
-//      "widgetId": 262,
-//      "name": 'iOS页签基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【children】 : 组件Map   【Map<T, Widget>】\n"
-//          "【onValueChanged】 : 值改变回调   【ValueChanged<T>】\n"
-//          "【groupValue】 : 选中值   【T】\n"
-//          "【padding】 : 内边距   【EdgeInsetsGeometry】",
-//    }
+
 class CupertinoSegmentedControlDemo extends StatefulWidget {
   const CupertinoSegmentedControlDemo({Key? key}) : super(key: key);
 

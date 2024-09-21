@@ -1,0 +1,20 @@
+{
+  "id": 21,
+  "name": "GridTile",
+  "localName": "网格瓦片",
+  "info": "Flutter提供的一个通用列表条目结构，可指定头、尾、子组件，常用于网格列表。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridTile的基本表现如下",
+      "desc": [
+        "【header】: 头组件   【Widget】",
+        "【child】: 子组件   【Widget】",
+        "【footer】: 脚组件   【Widget】"
+      ]
+    }
+  ]
+}

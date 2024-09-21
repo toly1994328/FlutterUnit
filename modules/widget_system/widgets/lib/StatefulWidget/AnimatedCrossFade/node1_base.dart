@@ -2,19 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-20
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-
-//    {
-//      "widgetId": 100,
-//      "name": 'AnimatedCrossFade基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【firstChild】 : 第一孩子   【Widget】\n"
-//          "【secondChild】 : 第二孩子   【Widget】\n"
-//          "【crossFadeState】 : 显示第几个   【CrossFadeState】\n"
-//          "【duration】 : 时长   【Duration】",
-//    }
 class CustomAnimatedCrossFade extends StatefulWidget {
   const CustomAnimatedCrossFade({Key? key}) : super(key: key);
 

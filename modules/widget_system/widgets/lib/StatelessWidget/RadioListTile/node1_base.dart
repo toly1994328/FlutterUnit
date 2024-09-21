@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 19,
-//      "priority": 1,
-//      "name": "RadioListTile需要一个泛型T",
-//      "subtitle": "【value】 : 条目对象  【T】\n"
-//          "【groupValue】 : 选中对象  【T】\n"
-//          "【selected】: 是否选中   【bool】\n"
-//          "【secondary】: 右侧组件   【Widget】\n"
-//          "【title】: 中间上组件   【Widget】\n"
-//          "【subtitle】: 中间下组件   【Widget】\n"
-//          "【onChanged】: 切换事件   【Function(T)】",
-//    }
 
 enum ItemType {
   java,

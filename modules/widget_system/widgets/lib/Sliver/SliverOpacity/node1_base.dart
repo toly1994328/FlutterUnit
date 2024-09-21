@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-31
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 192,
-//      "name": 'SliverOpacity基本使用',
-//      "priority": 1,
-//      "subtitle": "【opacity】 : 透明度   【double】\n"
-//          "【sliver】 : 子组件  【Function()】",
-//    }
+
 class SliverOpacityDemo extends StatelessWidget {
   SliverOpacityDemo({Key? key}) : super(key: key);
 

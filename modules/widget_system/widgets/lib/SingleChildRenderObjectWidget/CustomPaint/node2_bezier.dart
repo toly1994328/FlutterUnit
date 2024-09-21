@@ -4,14 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-28
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 166,
-//      "name": 'CustomPaint绘线贝塞尔曲线',
-//      "priority": 2,
-//      "subtitle":  "    Flutter也支持贝塞尔曲线等复杂绘制。",
-//    }
 class PlayBezier3Page extends StatefulWidget {
   const PlayBezier3Page({Key? key}) : super(key: key);
 

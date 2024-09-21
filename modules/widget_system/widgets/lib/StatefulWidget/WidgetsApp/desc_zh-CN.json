@@ -1,0 +1,24 @@
+{
+  "id": 236,
+  "name": "WidgetsApp",
+  "localName": "组件应用",
+  "info": "集合一个应用程序需要的部件,如路由、语言、一些调试开关等。也是实现MaterialApp和CupertinoApp的核心组件。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    65,
+    156
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "WidgetsApp基本使用",
+      "desc": [
+        "【pageRouteBuilder】 : *路由构造器   【PageRouteFactory】",
+        "【color】: *颜色    【Color】",
+        "【debugShowWidgetInspector】: 是否显示z组件查看器   【bool】",
+        "其他属性基本上同MaterialApp,详见之。"
+      ]
+    }
+  ]
+}

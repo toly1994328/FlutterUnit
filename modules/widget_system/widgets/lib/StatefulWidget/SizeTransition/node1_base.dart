@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-31
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 92,
-//      "name": 'SizeTransition基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【axis】 : 轴向*2   【Axis】\n"
-//          "【sizeFactor】 : 动画   【Animation<double>】",
-//    }
+
 class CustomSizeTransition extends StatefulWidget {
   const CustomSizeTransition({Key? key}) : super(key: key);
 

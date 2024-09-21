@@ -1,0 +1,24 @@
+{
+  "id": 136,
+  "name": "YearPicker",
+  "localName": "年份选择器",
+  "info": "年份的选择组件，长相比较寒酸。可指定选择的日期范围、选中日期等，接收每份选中事件",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    134,
+    135
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "YearPicker基本使用",
+      "desc": [
+        "【selectedDate】 : 选中日期   【DateTime】",
+        "【firstDate】 : 最前日期限制   【DateTime】",
+        "【lastDate】 : 最后日期限制   【DateTime】",
+        "【onChanged】 : 点击回调  【Function(DateTime)】"
+      ]
+    }
+  ]
+}

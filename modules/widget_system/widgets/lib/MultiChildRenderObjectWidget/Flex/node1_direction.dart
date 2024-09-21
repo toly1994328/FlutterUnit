@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 94,
-//      "name": 'Flex的排布方向',
-//      "priority": 1,
-//      "subtitle":
-//          "【children】 : 组件列表   【List<Widget>】\n"
-//          "【direction】 : 方向   【Axis】",
-//    }
 class DirectionFlex extends StatelessWidget {
   DirectionFlex({Key? key}) : super(key: key);
 

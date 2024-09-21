@@ -1,0 +1,33 @@
+{
+  "id": 55,
+  "name": "DropdownButton",
+  "localName": "下拉按钮",
+  "info": "用于下拉选择的按钮，可指定图标、影深、提示等属性，接收选中变化的事件。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DropdownButton基本用法",
+      "desc": [
+        "【value】 : 当前值   【T】",
+        "【items】 : 下拉选框   【List<DropdownMenuItem<T>>】",
+        "【icon】 : 图标   【Widget】",
+        "【elevation】 : 影深   【double】",
+        "【onChanged】 : 选择条目事件   【Function(T)】",
+        "【backgroundColor】 : 背景色   【Color】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "DropdownButton的样式指定",
+      "desc": [
+        "【isDense】 : 是否紧排   【bool】",
+        "【iconSize】 : 图标大小   【double】",
+        "【hint】 : 提示组件   【Widget】",
+        "【iconEnabledColor】 : 图标颜色   【Color】"
+      ]
+    }
+  ]
+}

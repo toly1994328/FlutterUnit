@@ -1,0 +1,36 @@
+{
+  "id": 357,
+  "name": "ImageFiltered",
+  "localName": "图像滤镜",
+  "info": "通过 ImageFilter 图像滤镜，可以对任意组件进行特效处理，包括但不限于高斯模糊、颜色滤镜、变换等。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    278,
+    88
+  ],
+  "nodes": [
+    {
+      "file": "node1_blur.dart",
+      "name": "ImageFilter 高斯模糊",
+      "desc": [
+        "【imageFilter】 : 图像滤镜   【ImageFilter】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "ImageFilter 滤色效果",
+      "desc": [
+        "通过 ColorFilter 对象实现颜色滤镜。"
+      ]
+    },
+    {
+      "file": "node3_matrix.dart",
+      "name": "ImageFilter 变换效果",
+      "desc": [
+        "通过 ImageFilter.matrix 构造，进行矩阵变换，但比较鸡肋。"
+      ]
+    }
+  ]
+}

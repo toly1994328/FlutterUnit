@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 370 DropdownMenu 表单菜单
-/// 下拉选择组件，支持文本输入过滤，可自定义菜单项。底层主要依赖 MenuAnchor 和 TextFiled 实现。
-/// link: 55
-//    {
-//      "widgetId": 370,
-//      "name": '下拉菜单的简单使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【dropdownMenuEntries】 : 菜单条目列表   【List<DropdownMenuEntry<T>>】\n"
-//          "【initialSelection】 : 表单验证回调   【T?】\n"
-//          "【onSelected】 : 表单保存回调   【ValueChanged<T?>?】\n"
-//          "【menuHeight】 : 菜单高度   【double】\n"
-//          "【width】 : 输入框宽度   【double】",
-//    }
+
 class DropdownMenuNode1 extends StatefulWidget {
   const DropdownMenuNode1({super.key});
 

@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 50,
-//      "name": 'Tooltip的装饰',
-//      "priority": 2,
-//      "subtitle":
-//          "【decoration】 : 装饰对象 【Decoration】\n"
-//          "【textStyle】 : 文字样式   【double】",
-//    }
 class DecorationTooltip extends StatelessWidget {
   const DecorationTooltip({Key? key}) : super(key: key);
 

@@ -1,13 +1,6 @@
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 17,
-//      "priority": 3,
-//      "name": "CheckBoxListTile的密排属性",
-//      "subtitle": "【dense】: 是否密排   【bool】",
-//    }
 
 import 'package:flutter/material.dart';
 

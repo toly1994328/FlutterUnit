@@ -1,0 +1,19 @@
+{
+  "id": 213,
+  "name": "HtmlElementView",
+  "localName": "html 元素视图",
+  "info": "在 Flutter Web 的 Widget 层次结构中嵌入一个 HTML 元素。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "HtmlElementView 介绍",
+      "desc": [
+        "【child】 : 子组件   【child】",
+        "【viewType】 : html元素唯一表识   【String】"
+      ]
+    }
+  ]
+}

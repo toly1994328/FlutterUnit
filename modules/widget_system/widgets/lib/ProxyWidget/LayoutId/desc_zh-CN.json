@@ -1,0 +1,19 @@
+{
+  "id": 315,
+  "name": "LayoutId",
+  "localName": "布局Id",
+  "info": "只能用于CustomMultiChildLayout组件中，为其子组件标识身份。",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LayoutId使用场景",
+      "desc": [
+        "【id】 : 标识id   【Object】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

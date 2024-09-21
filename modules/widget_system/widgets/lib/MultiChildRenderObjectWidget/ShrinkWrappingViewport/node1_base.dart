@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 343 ShrinkWrappingViewport 收缩包围视图
-/// 和 ScrollView 的 shrinkWrap 属性之间关联。ShrinkWrappingViewport 在主轴上调整自身的大小以适应它的子节点，在无边界约束的情况下使用。
-///
-//    {
-//      "widgetId": 343,
-//      "name": 'NestedScrollViewViewport 介绍',
-//      "priority": 1,
-//      "subtitle":
-//          "【offset】 : *偏移   【ViewportOffset】\n"
-//          "【axisDirection】 : 轴向   【AxisDirection】\n"
-//          "【crossAxisDirection】 : 交叉轴向   【AxisDirection】\n"
-//          "【slivers】 : 子组件   【List<Widget>】\n"
-//          "【clipBehavior】 : 裁剪行为   【Clip】",
-//    }
+
 
 class ShrinkWrappingViewportDemo extends StatelessWidget {
 

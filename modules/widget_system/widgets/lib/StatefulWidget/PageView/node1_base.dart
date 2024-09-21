@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-28
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 165,
-//      "name": 'PageView基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【children】 : 子组件列表   【List<Widget>】\n"
-//          "【onPageChanged】 : 点击事件  【ValueChanged<int>】",
-//    }
 class CustomPageView extends StatelessWidget {
   CustomPageView({Key? key}) : super(key: key);
 

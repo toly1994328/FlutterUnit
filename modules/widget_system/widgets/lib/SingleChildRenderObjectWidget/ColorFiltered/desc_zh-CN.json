@@ -1,0 +1,22 @@
+{
+  "id": 88,
+  "name": "ColorFiltered",
+  "localName": "滤色器",
+  "info": "可容纳一个子组件，可以并将组件按照29中叠色模式和任意组件混合，强大到我不知道该说什么好。app一键全灰了解一下。",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    277,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ColorFiltered基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【colorFilter】 : 滤色器   【ColorFilter】"
+      ]
+    }
+  ]
+}

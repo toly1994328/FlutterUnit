@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 16,
-//      "priority": 3,
-//      "name": "ListTile的密排属性",
-//      "subtitle": "【dense】: 是否密排   【bool】",
-//    }
 class DenseListTile extends StatefulWidget {
   const DenseListTile({Key? key}) : super(key: key);
 

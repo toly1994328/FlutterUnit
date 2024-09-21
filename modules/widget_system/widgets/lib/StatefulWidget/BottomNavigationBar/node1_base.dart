@@ -1,25 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-23
 /// contact me by email 1981462002@qq.com
-/// 详情:
-//    {
-//      "widgetId": 60,
-//      "name": 'BottomNavigationBar基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【currentIndex】 : 当前索引   【int】\n"
-//          "【elevation】 : 影深   【double】\n"
-//          "【type】 : 类型*2   【BottomNavigationBarType】\n"
-//          "【fixedColor】 : type为fix的颜色   【Color】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【iconSize】 : 图标大小   【double】\n"
-//          "【selectedLabelStyle】 : 选中文字样式   【TextStyle】\n"
-//          "【unselectedLabelStyle】 : 未选中文字样式   【TextStyle】\n"
-//          "【showUnselectedLabels】 : 显示未选中标签   【bool】\n"
-//          "【showSelectedLabels】 : 显示选中标签   【bool】\n"
-//          "【items】 : 条目   【List<BottomNavigationBarItem>】\n"
-//          "【onTap】 : 点击事件   【Function(int)】",
-//    }
+
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
 

@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 71,
-//      "name": 'Offstage基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【offstage】 : 是否消失   【bool】",
-//    }
 class CustomOffstage extends StatefulWidget {
   const CustomOffstage({Key? key}) : super(key: key);
 

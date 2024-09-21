@@ -1,0 +1,27 @@
+{
+  "id": 331,
+  "name": "SliderTheme",
+  "localName": "滑块样式",
+  "info": "可容纳一个孩子，为后代的Slider指定默认样式。常用于Slider的样式统一，避免一一设置，也可以对Slider进行样式定制。",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliderTheme使用",
+      "desc": [
+        "可通过SliderTheme.of获取Slider主题数据对象，其中包含大量属性用于对Slider的设定。\"",
+        "可以为ButtonTheme【后代】的按钮组件设置默认样式，包括颜色、形状、尺寸等。"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "SliderTheme对Slider的样式定制",
+      "desc": [
+        "通过thumbShape和valueIndicatorShape可以对Slider进行样式定制。\"",
+        "注: 本例参考flutter-gallery中的SlideDemo"
+      ]
+    }
+  ]
+}

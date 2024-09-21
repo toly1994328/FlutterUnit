@@ -2,15 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 143,
-//      "name": 'CupertinoContextMenu基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【actions】 : 行为组件集   【List<Widget>】\n"
-//          "【previewBuilder】 : 动画构造器  【ContextMenuPreviewBuilder】",
-//    }
+
 class CustomCupertinoContextMenu extends StatelessWidget {
   const CustomCupertinoContextMenu({Key? key}) : super(key: key);
 

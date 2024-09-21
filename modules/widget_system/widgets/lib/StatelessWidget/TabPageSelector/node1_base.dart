@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明: 205 TabPageSelector 通常作为指示器与TabBarView联用,共同使用一个TabController。可指定颜色、大小、选中色。
 
-//    {
-//      "widgetId": 205,
-//      "name": "TabPageSelector基本使用",
-//      "priority": 1,
-//      "subtitle": "【controller】 : 控制器   【TabController】\n"
-//          "【indicatorSize】: 指示器大小   【double】\n"
-//          "【selectedColor】: 选中色   【Color】\n"
-//          "【color】: 颜色    【Color】",
-//    }
 
 class TabPageSelectorDemo extends StatefulWidget {
   const TabPageSelectorDemo({Key? key}) : super(key: key);

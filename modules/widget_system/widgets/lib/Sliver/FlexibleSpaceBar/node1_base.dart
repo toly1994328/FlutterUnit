@@ -2,18 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-31
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 196,
-//      "name": 'FlexibleSpaceBar基本使用',
-//      "priority": 1,
-//      "subtitle": "【title】 : 标题组件   【Widget】\n"
-//          "【titlePadding】 : 标题间距   【EdgeInsetsGeometry】\n"
-//          "【collapseMode】 : 折叠模式   【CollapseMode】\n"
-//          "【stretchModes】 : 延伸模式   【List<StretchMode>】\n"
-//          "【background】 : 背景组件   【Widget】\n"
-//          "【centerTitle】 : 是否居中   【bool】",
-//    }
+
 
 class FlexibleSpaceBarDemo extends StatelessWidget {
   FlexibleSpaceBarDemo({Key? key}) : super(key: key);

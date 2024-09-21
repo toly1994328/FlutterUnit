@@ -1,0 +1,25 @@
+{
+  "id": 63,
+  "name": "CupertinoTabBar",
+  "localName": "iOS页签",
+  "info": "一个iOS风格的TabBar,通常用于CupertinoTabScaffold。可指定颜色、图标大小、边线等数据。接收item的点击事件。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTabBar基本用法",
+      "desc": [
+        "【currentIndex】 : 当前激活索引   【Widget】",
+        "【items】 : 条目组件   【Widget】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【inactiveColor】 : 非激活色   【Color】",
+        "【activeColor】 : 激活色   【Color】",
+        "【iconSize】 : 图标大小    【double】",
+        "【border】 : 边线   【Border】",
+        "【onTap】 : 点击事件   【Function(int)】"
+      ]
+    }
+  ]
+}

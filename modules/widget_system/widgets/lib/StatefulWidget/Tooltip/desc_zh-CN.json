@@ -1,0 +1,32 @@
+{
+  "id": 50,
+  "name": "Tooltip",
+  "localName": "提示工具",
+  "info": "由于显示提示信息的组件，长按时显示信息。可指定边距、显示时长、文字样式、装饰灯属性。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Tooltip基本使用",
+      "desc": [
+        "【preferBelow】 : 是否首选下方   【bool】",
+        "【padding】 : 内边距   【EdgeInsetsGeometry】",
+        "【margin】 : 外边距   【EdgeInsetsGeometry】",
+        "【message】 : 消息内容   【String】",
+        "【showDuration】 : 展示时间   【Duration】",
+        "【waitDuration】 : 悬浮出现时间   【Duration】",
+        "【child】 : 孩子   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_decoration.dart",
+      "name": "Tooltip的装饰",
+      "desc": [
+        "【decoration】 : 装饰对象 【Decoration】",
+        "【textStyle】 : 文字样式   【double】"
+      ]
+    }
+  ]
+}

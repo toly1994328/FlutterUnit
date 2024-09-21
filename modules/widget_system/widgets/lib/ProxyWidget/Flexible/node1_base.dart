@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 109,
-//      "name": 'Flexible基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子   【Widget】\n"
-//          "【fit】 : 适应模式*2   【FlexFit】\n"
-//          "【flex】 : 剩余空间分配占比   【int】",
-//    }
 class CustomFlexible extends StatefulWidget {
   const CustomFlexible({Key? key}) : super(key: key);
 

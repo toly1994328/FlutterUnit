@@ -2,22 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 350 BoxScrollView 盒滑动视图
-/// BoxScrollView 类是一个继承自 ScrollView 的抽象类，所以无法直接使用，它的子类有 ListView、GridView。一般不自己实现子类使用它。
-/// link 183,162,163
-///
-//    {
-//      "widgetId": 350,
-//      "name": 'BoxScrollView 介绍',
-//      "priority": 1,
-//      "subtitle":
-//          "【reverse】 : 是否反向   【bool】\n"
-//          "【scrollDirection】 : 滑动方向   【Axis】\n"
-//          "【cacheExtent】 : 缓存长   【double】\n"
-//          "【dragStartBehavior】 : 拖动行为   【DragStartBehavior】\n"
-//          "【clipBehavior】 : 裁剪行为   【ClipBehavior】\n"
-//          "【controller】 : 控制器   【ScrollController】",
-//    }
+
 
 class BoxScrollViewDemo extends StatelessWidget {
   const BoxScrollViewDemo({Key? key}) : super(key: key);

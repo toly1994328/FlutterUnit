@@ -1,0 +1,19 @@
+{
+  "id": 133,
+  "name": "SimpleDialogOption",
+  "localName": "简单对话框选项",
+  "info": "一个按钮，应用场景很少，通常用于SimpleDialog中，接收点击事件。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SimpleDialogOption基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onPressed】 : 点击事件  【Function()】"
+      ]
+    }
+  ]
+}

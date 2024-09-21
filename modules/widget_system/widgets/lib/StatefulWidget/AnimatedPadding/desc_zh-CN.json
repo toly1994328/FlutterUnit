@@ -1,0 +1,22 @@
+{
+  "id": 119,
+  "name": "AnimatedPadding",
+  "localName": "边距动画",
+  "info": "能让子组件进行Padding(内边距)动画，可指定时长和曲线，有动画结束事件。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedPadding基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【padding】 : 内边距   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

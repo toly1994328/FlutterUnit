@@ -4,14 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明: 264 RepaintBoundary 重绘边界 为子组件创建一个单独的显示列表,提升性能。源码中在TextField、DrawerController、Scrollbar、Sliver等组件中均有应用。
-//    {
-//      "widgetId": 264,
-//      "name": "RepaintBoundary基本使用",
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "比如上面的绘制视图，即使shouldRepaint为false,在滑动中会也会不断执行paint方法,使用RepaintBoundary可以避免不必要的绘制。",
-//    }
+
 
 class RepaintBoundaryDemo extends StatelessWidget{
   const RepaintBoundaryDemo({Key? key}) : super(key: key);

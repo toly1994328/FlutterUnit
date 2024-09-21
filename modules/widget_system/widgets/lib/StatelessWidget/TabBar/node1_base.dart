@@ -2,23 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-16
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 58,
-//      "name": 'TabBar基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【controller】 : 控制器   【TabController】\n"
-//          "【indicatorColor】 : 指示器颜色   【指示器颜色】\n"
-//          "【indicatorWeight】 : 指示器高   【double】\n"
-//          "【indicatorPadding】 : 指示器边距   【EdgeInsetsGeometry】\n"
-//          "【labelStyle】 : 页签文字样式   【TextStyle】\n"
-//          "【unselectedLabelStyle】 : 未选中文字样式   【TextStyle】\n"
-//          "【isScrollable】 : 是否可滑动   【bool】\n"
-//          "【onTap】 : 页签点击回调   【Function(int)】\n"
-//          "【tabs】 : 标签组件   【List<Widget>】",
-//    }
 class CustomTabBar extends StatefulWidget {
   const CustomTabBar({Key? key}) : super(key: key);
 

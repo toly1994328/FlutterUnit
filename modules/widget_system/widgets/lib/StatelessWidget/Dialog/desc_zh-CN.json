@@ -1,0 +1,21 @@
+{
+  "id": 126,
+  "name": "Dialog",
+  "localName": "对话框",
+  "info": "最简易的对话框面板,包含一个内容组件,可指定影深、背景色、形状等属性。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Dialog基本使用",
+      "desc": [
+        "【child】 : 动画图标数据   【Widget】",
+        "【elevation】 : 影深  【double】",
+        "【backgroundColor】 : 背景色  【Color】",
+        "【shape】 : 形状   【ShapeBorder】"
+      ]
+    }
+  ]
+}

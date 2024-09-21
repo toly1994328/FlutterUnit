@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 336 InheritedModel 共享模型
-/// 它是 InheritedWidget 抽象子类，通过 context 向子树传递数据，并通过 Aspect 方面控制依赖通知的粒度。
-/// link: 346
-///
-//    {
-//      "widgetId": 336,
-//      "name": 'InheritedModel 使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "下面是一个自定义 InheritedModel，实现数据的子树共享；\n并且定义颜色和数值两个方面，控制依赖通知的粒度。",
-//    }
+
 class InheritedModelDemo extends StatefulWidget {
   const InheritedModelDemo({super.key});
 

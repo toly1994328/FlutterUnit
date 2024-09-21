@@ -1,0 +1,30 @@
+{
+  "id": 123,
+  "name": "AnimatedContainer",
+  "localName": "容器动画",
+  "info": "集合alignment、padding、color、decoration、width、height、constraints、margin、transform于一身，这些属性皆可动画，可指定时长和曲线，有动画结束事件。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedContainer基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【color】 : 颜色   【Color】",
+        "【width】 : 宽   【double】",
+        "【height】 : 高   【double】",
+        "【alignment】 : 对齐   【AlignmentGeometry】",
+        "【decoration】 : 装饰   【Decoration】",
+        "【constraints】 : 约束   【BoxConstraints】",
+        "【transform】 : 变化   【Matrix4】",
+        "【margin】 : 外边距   【EdgeInsetsGeometry】",
+        "【padding】 : 内边距   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

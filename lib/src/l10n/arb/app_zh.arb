@@ -1,0 +1,13 @@
+{
+  "deskTabWidgets": "组件集录",
+  "deskTabPainter": "绘制集录",
+  "deskTabKnowledge": "知识集锦",
+  "deskTabTools": "工具宝箱",
+  "deskTabMine": "应用信息",
+
+  "mobileTabWidgets": "组件",
+  "mobileTabPainter": "绘制",
+  "mobileTabKnowledge": "知识",
+  "mobileTabTools": "工具",
+  "mobileTabMine": "我的"
+}

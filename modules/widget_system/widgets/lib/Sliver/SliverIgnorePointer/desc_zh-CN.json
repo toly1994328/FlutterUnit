@@ -1,0 +1,22 @@
+{
+  "id": 305,
+  "name": "SliverIgnorePointer",
+  "localName": "Sliver忽略事件",
+  "info": "可以包裹一个sliver组件,通过ignoring来控制该sliver组件是否可以响应事件。",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverIgnorePointer基本使用",
+      "desc": [
+        "【sliver】 : sliver组件   【Widget】",
+        "【ignoring】 : 是否忽略事件   【bool】,"
+      ]
+    }
+  ]
+}

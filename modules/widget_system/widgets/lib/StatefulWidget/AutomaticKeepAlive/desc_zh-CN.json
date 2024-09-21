@@ -1,0 +1,26 @@
+{
+  "id": 239,
+  "name": "AutomaticKeepAlive",
+  "localName": "自动保活",
+  "info": "在懒加载的列表中，允许子树请求保持状态，单独使用无效果，需要配合 KeepAliveNotification 使用。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    59,
+    162,
+    163,
+    165,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AutomaticKeepAlive 介绍",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "在 ListView、SliverList、GridView、SliverGrid、PageView、TabBarView 等列表、切页组件源码中都有使用到 AutomaticKeepAlive 组件。在保活某个 State 时，可以使用 AutomaticKeepAliveClientMixin 进行操作，它是对 KeepAliveNotification 使用的一个简易封装。该示例展示出 ListView 条目的状态保活。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 230,
+  "name": "DefaultTabController",
+  "localName": "默认页签控制器",
+  "info": "在使用 TabBar 和 TabBarView 时，需要同一个控制器实现页签和页面的控制。DefaultTabController 会在未指定控制器时提供默认控制器，简化使用。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    148,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DefaultTabController基本使用",
+      "desc": [
+        "【length】 : 页签数量   【int】",
+        "【initialIndex】 : 初始页签索引   【int】",
+        "【child】 : 组件   【Widget】"
+      ]
+    }
+  ]
+}

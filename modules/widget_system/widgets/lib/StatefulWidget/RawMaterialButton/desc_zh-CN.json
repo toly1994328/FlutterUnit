@@ -1,0 +1,37 @@
+{
+  "id": 175,
+  "name": "RawMaterialButton",
+  "localName": "原始按钮",
+  "info": "原始的Material按钮,按钮界的幕后大佬，可接受点击、长按、高亮变化事件，可指定颜色、形状。影深、内边距等属性。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RawMaterialButton基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【elevation】 : 影深   【double】",
+        "【fillColor】 : 填充色   【Color】",
+        "【splashColor】 : 水波纹色   【Color】",
+        "【textStyle】 : 文字样式   【TextStyle】",
+        "【onLongPress】 : 长按事件   【Function()】",
+        "【onPressed】 : 点击事件  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "RawMaterialButton高亮和形状",
+      "desc": [
+        "【highlightElevation】 : 高亮影深   【double】",
+        "【shape】 : 形状   【ShapeBorder】"
+      ]
+    }
+  ]
+}

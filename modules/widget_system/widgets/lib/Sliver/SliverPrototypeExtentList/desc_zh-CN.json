@@ -1,0 +1,22 @@
+{
+  "id": 314,
+  "name": "SliverPrototypeExtentList",
+  "localName": "Sliver原型延伸列表",
+  "info": "其中prototypeItem属性是Widget,它负责约束主轴方向上item尺寸，但不会显示出来。delegate接受一个SliverChildDelegate完成item的创建。",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    185,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverPrototypeExtentList基本使用",
+      "desc": [
+        "【prototypeItem】 : 主轴方向尺寸组件   【Widget】",
+        "【delegate】 : 孩子代理   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

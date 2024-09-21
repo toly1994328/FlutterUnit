@@ -1,0 +1,18 @@
+{
+  "id": 273,
+  "name": "DrawerButtonIcon",
+  "localName": "抽屉按钮图标",
+  "info": "一个抽屉 Icon 图标, 根据平台展示对应的图标，可以通过 ActionIconTheme 定制主题。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerButtonIcon 效果",
+      "desc": [
+        "通过 _ActionIcon 组件根据 ActionIconTheme 主题，来适配不同平台的抽屉按钮图标。"
+      ]
+    }
+  ]
+}

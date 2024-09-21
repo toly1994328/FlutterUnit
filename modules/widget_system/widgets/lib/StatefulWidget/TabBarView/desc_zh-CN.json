@@ -1,0 +1,20 @@
+{
+  "id": 59,
+  "name": "TabBarView",
+  "localName": "标签页",
+  "info": "通常与TabBar联用，实现滑页的效果。一般不单独使用。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TabBarView需要与TabBar联用",
+      "desc": [
+        "【controller】 : 控制器   【TabController】",
+        "【children】 : 孩子们   【指示器颜色】",
+        "【physics】 : 表现   【ScrollPhysics】"
+      ]
+    }
+  ]
+}

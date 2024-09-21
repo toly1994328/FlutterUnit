@@ -1,0 +1,21 @@
+{
+  "id": 148,
+  "name": "Tab",
+  "localName": "标签",
+  "info": "一般用于TabBar中的item，上下结构，可指定图标和一个内容组件。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Tab基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【text】 : 文字   【String】",
+        "【icon】 : 下方组件  【Widgit】",
+        "    text和child不能同时存在"
+      ]
+    }
+  ]
+}

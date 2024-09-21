@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
-
-/// create by 张风捷特烈 on 2020/9/21
+/// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明: 346 InheritedWidget 传承组件
-/// 该类是抽象类，作用是可以在本上下文存储数据，在其后续节点的上下文中共享该数据。有很多实现类，包括各种主题组件、MediaQuery等。
-/// link: 167,319,328,324,331
-///
-//    {
-//      "widgetId": 346,
-//      "name": 'InheritedWidget 使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "下面是一个简单的自定义 InheritedWidget，实现信息的子树共享。",
-//    }
+
 
 class InheritedWidgetDemo extends StatelessWidget {
   final String info =

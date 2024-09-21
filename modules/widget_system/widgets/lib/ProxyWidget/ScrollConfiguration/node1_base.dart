@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 180,
-//      "name": 'ScrollConfiguration基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【behavior】 : 滑动行为  【ScrollBehavior】\n"
-//          "    可以使用ScrollConfiguration让ListView无蓝色阴影",
-//    }
+
 class CustomScrollConfiguration extends StatelessWidget {
   CustomScrollConfiguration({Key? key}) : super(key: key);
 

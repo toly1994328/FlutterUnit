@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 133,
-//      "name": 'SimpleDialogOption基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【onPressed】 : 点击事件  【Function()】",
-//    }
+
 class CustomSimpleDialogOption extends StatelessWidget {
   const CustomSimpleDialogOption({Key? key}) : super(key: key);
 

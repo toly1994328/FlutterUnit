@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 110,
-//      "name": 'Table基本使用',
-//      "priority": 1,
-//      "subtitle": "【children】 : 组件列表   【List<Widget>】\n"
-//          "【columnWidths】 : 列宽   【Map<int, TableColumnWidth>】\n"
-//          "【defaultColumnWidth】 : 默认列宽  【TableColumnWidth】\n"
-//          "【border】 : 边线   【TableBorder】\n"
-//          "【textDirection】 : 文字方向   【TextDirection】\n"
-//          "【defaultVerticalAlignment】 : 单元格竖直方向对齐模式   【TableCellVerticalAlignment】",
-//    }
+
 class CustomTable extends StatelessWidget {
   const CustomTable({Key? key}) : super(key: key);
 

@@ -3,16 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 131,
-//      "name": 'CupertinoActionSheet基本使用',
-//      "priority": 1,
-//      "subtitle": "【title】 : 第一行组件   【Widget】\n"
-//          "【message】 : 第二行组件  【Widget】\n"
-//          "【cancelButton】 : 取消按钮处组件  【Widget】\n"
-//          "【actions】 : 中间组件列表  【List<Widget>】",
-//    }
+
 class CustomCupertinoActionSheet extends StatelessWidget {
   const CustomCupertinoActionSheet({Key? key}) : super(key: key);
 

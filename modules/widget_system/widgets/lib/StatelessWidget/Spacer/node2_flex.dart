@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 107,
-//      "name": '多个Spacer空间分配',
-//      "priority": 2,
-//      "subtitle":
-//         "【flex】 : 剩余空间分配占比   【int】",
-//    }
 class ManySpacer extends StatefulWidget {
   const ManySpacer({Key? key}) : super(key: key);
 

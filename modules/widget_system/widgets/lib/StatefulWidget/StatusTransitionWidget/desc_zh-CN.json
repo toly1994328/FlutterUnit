@@ -1,0 +1,19 @@
+{
+  "id": 233,
+  "name": "StatusTransitionWidget",
+  "localName": "状态转变组件",
+  "info": "抽象类，可以根据提供的动画器状态变化触发刷新。在 Flutter 框架层没有实现的子类，也没有使用的场景，感觉用处不是很大。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "StatusTransitionWidget 介绍",
+      "desc": [
+        "【animation】 : 子组件   【Animation<double>】",
+        "这里自定义 ColorStatusTransitionWidget 进行使用，在动画器的状态改变时构建不同的颜色。"
+      ]
+    }
+  ]
+}

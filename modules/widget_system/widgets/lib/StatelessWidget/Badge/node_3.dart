@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2023/01/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 258,
-//      "name": 'Badge 的偏移量',
-//      "priority": 3,
-//      "subtitle": "【offset】 : 标记偏移量  【Offset?】\n"
-//          "【alignment】 : 标题偏移   【AlignmentDirectional?】",
-//    }
+
 
 class BadgeAlignOffsetDemo extends StatelessWidget {
   const BadgeAlignOffsetDemo({Key? key}) : super(key: key);

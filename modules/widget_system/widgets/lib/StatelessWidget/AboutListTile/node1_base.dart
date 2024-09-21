@@ -3,19 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 193,
-//      "name": 'AboutListTile基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【icon】 : 左图标   【Widget】\n"
-//          "【applicationIcon】 : 左上图标   【Widget】\n"
-//          "【applicationVersion】 : 版本号  【String】\n"
-//          "【applicationName】 : 应用名  【String】\n"
-//          "【applicationLegalese】 : 应用律术   【String】\n"
-//          "【aboutBoxChildren】 : 弹框内容组件   【List<Widget>】",
-//    }
+
 
 class AboutListTileDemo extends StatelessWidget {
   const AboutListTileDemo({Key? key}) : super(key: key);

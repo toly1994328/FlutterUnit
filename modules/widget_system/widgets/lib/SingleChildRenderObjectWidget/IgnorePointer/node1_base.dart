@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 292,
-//      "name": 'IgnorePointer基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【ignoring】 : 是否忽视事件   【bool】\n"
-//          "如下,Switch选中时ignoring为true，按钮事件将被锁定，无法点击。",
-//    }
 
 class CustomIgnorePointer extends StatefulWidget {
   const CustomIgnorePointer({Key? key}) : super(key: key);

@@ -1,0 +1,24 @@
+{
+  "id": 223,
+  "name": "DropdownButtonFormField",
+  "localName": "表单下拉框",
+  "info": "底层依赖 DropdownButton 实现，所以基本属性类似。但拥有 FormField 的特性，可以回调 onSaved、validator 方法。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    55,
+    222
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "表单下拉框简单使用",
+      "desc": [
+        "【items】 : 子组件列表   【List<DropdownMenuItem<T>>】",
+        "【validator】 : 表单验证回调   【FormFieldValidator<T>】",
+        "【onSaved】 : 表单保存回调   【FormFieldSetter<T>】",
+        "其他属性详见 DropdownButton，表单校验特性详见 FormField。"
+      ]
+    }
+  ]
+}

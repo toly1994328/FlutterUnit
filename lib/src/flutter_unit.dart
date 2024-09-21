@@ -1,11 +1,14 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:l10n/gen_l10n/app_localizations.dart';
 import 'package:l10n/l10n.dart';
 import 'package:tolyui/tolyui.dart';
 
+import 'l10n/gen/app_l10n.dart';
 import 'navigation/router/app_route.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
@@ -37,7 +40,13 @@ class FlutterUnit3 extends StatelessWidget {
           showPerformanceOverlay: state.showPerformanceOverlay,
           title: StrUnit.appName,
           debugShowCheckedModeBanner: false,
-          localizationsDelegates: l10nDelegates,
+          localizationsDelegates: const [
+            AppL10n.delegate,
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
           supportedLocales: l10nLocales,
           locale: state.language.locale,
           themeMode: state.themeMode,

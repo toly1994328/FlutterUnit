@@ -2,22 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-23
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 124,
-//      "name": 'AnimatedDefaultTextStyle基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【duration】 : 动画时长   【Duration】\n"
-//          "【onEnd】 : 动画结束回调   【Function()】\n"
-//          "【curve】 : 动画曲线   【Duration】\n"
-//          "【textAlign】 : 文字对齐方式  【TextAlign】\n"
-//          "【softWrap】 : 是否包裹  【bool】\n"
-//          "【maxLines】 : 最大行数  【int】\n"
-//          "【overflow】 : 溢出模式  【TextOverflow】\n"
-//          "【style】 : 文字样式   【TextStyle】",
-//    }
+
 class CustomAnimatedDefaultTextStyle extends StatefulWidget {
   const CustomAnimatedDefaultTextStyle({Key? key}) : super(key: key);
 

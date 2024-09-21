@@ -1,0 +1,23 @@
+{
+  "id": 306,
+  "name": "SliverFillRemaining",
+  "localName": "Sliver填补剩余",
+  "info": "一个包含单个box子元素的sliver，它填充了视窗中的剩余空间。可指定两个bool值控制滑动效果，如下示例,自己体会。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverFillRemaining基本使用",
+      "desc": [
+        "【hasScrollBody】 : 是否具有滚动主体   【bool】",
+        "【fillOverscroll】 : 是否可填充滚动区域   【bool】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

@@ -3,17 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-23
 /// contact me by email 1981462002@qq.com
-/// 详情:
-//    {
-//      "widgetId": 61,
-//      "name": 'BottomAppBar基本用法',
-//      "priority": 1,
-//      "subtitle": "【elevation】 : 影深   【double】\n"
-//          "【shape】 : 形状   【NotchedShape】\n"
-//          "【notchMargin】 : 间隔距离   【double】\n"
-//          "【color】 : 颜色   【Color】\n"
-//          "【child】 : 孩子   【Widget】",
-//    }
+
 class CustomBottomAppBar extends StatefulWidget {
   const CustomBottomAppBar({Key? key}) : super(key: key);
 

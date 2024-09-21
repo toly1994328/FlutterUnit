@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-
-//    {
-//      "widgetId": 176,
-//      "name": 'Dismissible基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【background】 : 左底  【Widget】\n"
-//          "【secondaryBackground】 : 右底  【Widget】\n"
-//          "【key】 : 键  【Key】\n"
-//          "【confirmDismiss】 : 确认回调  【DismissDirectionCallback】\n"
-//          "【onDismissed】 : 消失回调  【DismissDirectionCallback】\n",
-//    }
 class CustomDismissible extends StatefulWidget {
   const CustomDismissible({Key? key}) : super(key: key);
 

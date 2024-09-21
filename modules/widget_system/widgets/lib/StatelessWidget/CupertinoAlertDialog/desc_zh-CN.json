@@ -1,0 +1,20 @@
+{
+  "id": 129,
+  "name": "CupertinoAlertDialog",
+  "localName": "iOS对话框",
+  "info": "iOS风格的通用的对话框结构，可指定头、中、尾处的组件。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoActionSheetAction基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【isDefaultAction】 : 是否默认选中  【bool】",
+        "【onPressed】 : 点击事件  【Function()】"
+      ]
+    }
+  ]
+}

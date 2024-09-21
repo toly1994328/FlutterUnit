@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 294 SizeChangedLayoutNotifier 尺寸变化通告  使用 SizeChangedLayoutNotifier 可以在子组件布局区域发生变化后，发出通知。使用NotificationListener可以进行监听。
-//    {
-//      "widgetId": 294,
-//      "name": '基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 组件   【Widget】",
-//    }
+
 
 class SizeChangedLayoutNotifierDemo extends StatefulWidget {
   const SizeChangedLayoutNotifierDemo({Key? key}) : super(key: key);

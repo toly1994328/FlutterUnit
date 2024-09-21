@@ -2,19 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-23
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 117,
-//      "name": 'AnimatedList基本使用',
-//      "priority": 1,
-//      "subtitle": "【itemBuilder】 : 组件构造器   【AnimatedListItemBuilder】\n"
-//          "【initialItemCount】 : 子组件数量   【int】\n"
-//          "【scrollDirection】 : 滑动方向   【Axis】\n"
-//          "【controller】 : 滑动控制器   【ScrollController】\n"
-//          "【reverse】 : 数据是否反向   【bool】\n"
-//          "【padding】 : 内边距   【EdgeInsetsGeometry】",
-//    }
 class CustomAnimatedList extends StatefulWidget {
   const CustomAnimatedList({Key? key}) : super(key: key);
 

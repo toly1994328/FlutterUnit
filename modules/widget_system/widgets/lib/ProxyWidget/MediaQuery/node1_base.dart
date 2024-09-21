@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 167,
-//      "name": 'MediaQuery获取数据信息',
-//      "priority": 1,
-//      "subtitle": "MediaQuery.of(context)可以获取MediaQueryData",
-//    }
 
 class CustomMediaQuery extends StatelessWidget {
   const CustomMediaQuery({Key? key}) : super(key: key);

@@ -1,0 +1,22 @@
+{
+  "id": 214,
+  "name": "NavigationToolbar",
+  "localName": "导航工具条",
+  "info": "左中右模式的通用结构组件,可指定中间组件距左侧边距及是否居中。源码在AppBar等导航条结构中有使用它。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "NavigationToolbar基本使用",
+      "desc": [
+        "【leading】 : 左侧组件   【Widget】",
+        "【middle】: 中间组件   【Widget】",
+        "【trailing】: 右侧组件组件   【Widget】",
+        "【centerMiddle】: 中间组件是否居中   【bool】",
+        "【middleSpacing】: 中间组件距左距离    【double】"
+      ]
+    }
+  ]
+}

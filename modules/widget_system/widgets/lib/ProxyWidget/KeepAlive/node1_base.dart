@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 316 KeepAlive 保活 在懒加载的列表中，孩子的状态是否需要保活。是 AutomaticKeepAlive 的底层实现，一般不单独使用。
-/// link 239
-///
-//    {
-//      "widgetId": 316,
-//      "name": 'KeepAlive 介绍',
-//      "priority": 1,
-//      "subtitle": "【child】 : *子组件   【Widget】\n"
-//          "【keepAlive】 : *是否保活   【bool】\n"
-//          "在 flutter 框架层中，只用于 AutomaticKeepAlive 中，源码中也说很少单独使用它。该示例展示出 ListView 条目的状态保活。",
-//    }
+
 
 class KeepAliveDemo extends StatelessWidget {
   KeepAliveDemo({Key? key}) : super(key: key);

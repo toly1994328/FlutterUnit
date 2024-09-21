@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明: 227 AnimatedModalBarrier 动画屏障模
-/// 内部依赖 ModalBarrier 实现，功能一致，只不过该组件可以传入一个颜色动画，进行过渡展现。
-/// link: 212
-//    {
-//      "widgetId": 227,
-//      "name": 'AnimatedModalBarrier 介绍',
-//      "priority": 1,
-//      "subtitle":
-//          "【dismissible】 : 点击是否返回   【bool】\n"
-//          "【color】 : 颜色   【Animation<Color>】",
-//    }
+
 class AnimatedModalBarrierDemo extends StatefulWidget {
   const AnimatedModalBarrierDemo({Key? key}) : super(key: key);
 

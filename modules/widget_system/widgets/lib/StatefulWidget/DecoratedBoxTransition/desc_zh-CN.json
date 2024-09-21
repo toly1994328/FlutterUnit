@@ -1,0 +1,20 @@
+{
+  "id": 113,
+  "name": "DecoratedBoxTransition",
+  "localName": "装饰变换",
+  "info": "AnimatedWidget的子类,使用Decorated类型的动画器让子组件在两个Decorated对象之间进行过渡动画。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DecoratedBoxTransition基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【position】 : 前/背景色  【DecorationPosition】",
+        "【decoration】 : 动画   【Animation<Decoration>】"
+      ]
+    }
+  ]
+}

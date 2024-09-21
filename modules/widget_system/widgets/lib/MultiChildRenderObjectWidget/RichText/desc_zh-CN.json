@@ -1,0 +1,26 @@
+{
+  "id": 101,
+  "name": "RichText",
+  "localName": "富文本",
+  "info": "可以容纳多种文字样式或各种组件的富文本组件，应用较为广泛。",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RichText基本使用",
+      "desc": [
+        "【text】 : 文字   【TextSpan】",
+        "    其他属性与Text相同,详见之。"
+      ]
+    },
+    {
+      "file": "node2_widget.dart",
+      "name": "RichText包含其他组件",
+      "desc": [
+        "使用WidgetSpan来承载普通组件，作为RichText的内容"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 106,
+  "name": "Expanded",
+  "localName": "延展组件",
+  "info": "父类是Flexible，相当于一个fit类型为tight的Flexible组件。可嵌套孩子利用剩余空间对占位空间进行延展。",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    94,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Expanded基本使用",
+      "desc": [
+        "【child】 : 孩子   【Widget】",
+        "【flex】 : 剩余空间分配占比   【int】"
+      ]
+    }
+  ]
+}

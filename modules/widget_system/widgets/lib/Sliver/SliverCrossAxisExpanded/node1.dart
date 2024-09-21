@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2023/8/18
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 271,
-//      "name": 'SliverCrossAxisExpanded 基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【flex】 : 占比   【int】\n"
-//          "【sliver】 : 子组件   【Widget?】",
-//    }
+
 class SliverCrossAxisExpandedDemo extends StatelessWidget {
   const SliverCrossAxisExpandedDemo({super.key});
 

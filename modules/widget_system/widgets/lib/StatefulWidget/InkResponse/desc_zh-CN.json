@@ -1,0 +1,36 @@
+{
+  "id": 149,
+  "name": "InkResponse",
+  "localName": "水波纹响应",
+  "info": "水波纹的点击效果，接收点击、双击、长按、取消、高亮变化事件，可指定水波纹颜色、半径、高亮形状等属性。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    150,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "InkResponse基本事件",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onTap】 : 点击事件   【Function()】",
+        "【onDoubleTap】 : 双击事件   【Function()】",
+        "【onTapCancel】 : 点击取消   【Function()】",
+        "【onLongPress】 : 长按事件   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "InkResponse其他属性",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onHighlightChanged】 : 高亮变化回调   【Function(bool)】",
+        "【highlightColor】 : 高亮色   【Color】",
+        "【splashColor】 : 水波纹色   【Color】",
+        "【radius】 : 水波半径   【double】"
+      ]
+    }
+  ]
+}

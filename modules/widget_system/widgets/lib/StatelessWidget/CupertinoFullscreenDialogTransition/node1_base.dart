@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/11
 /// contact me by email 1981462002@qq.com
 ///
-/// 说明: 219 CupertinoFullscreenDialogTransition 0 全页面过渡变换 创建一个 iOS 风格的转换，用于唤出全屏对话框。link 216
-//    {
-//      "widgetId": 219,
-//      "name": '组件介绍',
-//      "priority": 1,
-//      "subtitle": "【child】 : 子组件   【Widget】\n"
-//          "【linearTransition】 : 是否线性转换   【bool】\n"
-//          "【primaryRouteAnimation】 : 初始路由动画   【Animation<double>】\n"
-//          "【secondaryRouteAnimation】 : 第二路由动画   【Animation<double>】",
-//    }
+
 
 class CupertinoFullscreenDialogTransitionDemo extends StatelessWidget {
   const CupertinoFullscreenDialogTransitionDemo({Key? key}) : super(key: key);

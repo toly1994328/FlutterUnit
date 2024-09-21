@@ -1,0 +1,26 @@
+{
+  "id": 13,
+  "name": "ActionChip",
+  "localName": "事件小条",
+  "info": "和Chip组件类似的样式，有一些点击的属性。可以指定点击时的阴影深、点击事件。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ActionChip的普通表现如下",
+      "desc": [
+        "【onPressed】: 点击事件   【Function】",
+        "【pressElevation】: 按下时影深   【double】",
+        "其他属性同Chip组件，无右侧组件。"
+      ]
+    }
+  ]
+}

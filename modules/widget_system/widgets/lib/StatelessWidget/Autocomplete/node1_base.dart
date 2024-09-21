@@ -3,14 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2022-04-18
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 356,
-//      "name": 'Autocomplete基本使用',
-//      "priority": 1,
-//      "subtitle": "【optionsBuilder】 : 选项构造器   【AutocompleteOptionsBuilder<T>】\n"
-//          "【onSelected】 : 选择时回调   【AutocompleteOnSelected<T>】",
-//    }
+
 class AutocompleteDemo extends StatelessWidget {
   const AutocompleteDemo({Key? key}) : super(key: key);
 

@@ -1,0 +1,72 @@
+{
+  "id": 2,
+  "name": "Text",
+  "localName": "文字组件",
+  "info": "用于显示文字的组件。拥有的属性非常多，足够满足你的使用需求,核心样式由style属性控制。",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    101,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "文字的基本样式",
+      "desc": [
+        "【入参】 : 文字  【String】",
+        "【style】: 文字样式   【TextStyle】",
+        "【color】: 文字样式   【Color】",
+        "【fontSize】: 文字大小   【double】",
+        "【fontWeight】: 字重   【FontWeight】",
+        "【fontStyle】: 字体样式   【fontStyle】",
+        "【letterSpacing】: 字距   【double】"
+      ]
+    },
+    {
+      "file": "node2_shadows.dart",
+      "name": "文字阴影",
+      "desc": [
+        "【shadows】 : 文字  【List<Shadow>】",
+        "【backgroundColor】: 背景颜色   【Color】"
+      ]
+    },
+    {
+      "file": "node3_decoration.dart",
+      "name": "文字装饰线",
+      "desc": [
+        "【fontFamily】 : 文字字体  【String】",
+        "【decoration】: 装饰线   【TextDecoration】",
+        "【decorationColor】: 装饰线颜色   【Color】",
+        "【decorationThickness】: 装饰线粗   【double】",
+        "【decorationStyle】: 装饰线样式   【TextDecorationStyle】"
+      ]
+    },
+    {
+      "file": "node4_textAlign.dart",
+      "name": "文字对齐方式",
+      "desc": [
+        "【textAlign】: 对齐方式   【TextAlign】",
+        "下面依次是:left、right、center、justify、start、end,"
+      ]
+    },
+    {
+      "file": "node5_textDirection.dart",
+      "name": "文字方向与最大行数",
+      "desc": [
+        "【maxLines】 : 最大行数  【int】",
+        "【textDirection】 : 文字方向  【TextDirection】",
+        "下面依次是:rtl、ltr,"
+      ]
+    },
+    {
+      "file": "node6_softWrap.dart",
+      "name": "是否包裹与越界效果",
+      "desc": [
+        "【softWrap】 : 是否换行  【bool】",
+        "【overflow】 : 越界效果  【TextOverflow】",
+        "下面softWrap=false;  overflow依次是:clip、fade、ellipsis、visible,"
+      ]
+    }
+  ]
+}

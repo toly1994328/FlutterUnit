@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 239 AutomaticKeepAlive 自动保活 在懒加载的列表中，允许子树请求保持状态，单独使用无效果，需要配合 KeepAliveNotification 使用。
-/// link 59,162,163,165,185,188
-///
-//    {
-//      "widgetId": 239,
-//      "name": 'AutomaticKeepAlive 介绍',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 子组件   【Widget】\n"
-//          "在 ListView、SliverList、GridView、SliverGrid、PageView、TabBarView 等列表、切页组件源码中都有使用到 AutomaticKeepAlive 组件。在保活某个 State 时，可以使用 AutomaticKeepAliveClientMixin 进行操作，它是对 KeepAliveNotification 使用的一个简易封装。该示例展示出 ListView 条目的状态保活。",
-//    }
+
 
 class AutomaticKeepAliveDemo extends StatelessWidget {
   AutomaticKeepAliveDemo({Key? key}) : super(key: key);

@@ -3,20 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 302 CupertinoSliverNavigationBar Sliver导航条 iOS11中导航条效果，展开时largeTitle显示,列表上滑后不显示，如果middle为空，largeTitle会以小字号作为middle。
-//    {
-//      "widgetId": 302,
-//      "name": '导航条基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【leading】 : 左侧组件   【Widget】\n"
-//          "【middle】 : 中间组件   【Widget】\n"
-//          "【trailing】 : 尾部组件   【Widget】\n"
-//          "【largeTitle】 : 底部折展组件   【Widget】\n"
-//          "【border】 : 边线   【Border】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【padding】 : 内边距   【EdgeInsetsDirectional】",
-//    }
+
 class CupertinoSliverNavigationBarDemo extends StatelessWidget {
   CupertinoSliverNavigationBarDemo({Key? key}) : super(key: key);
 

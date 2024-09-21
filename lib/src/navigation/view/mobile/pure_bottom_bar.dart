@@ -1,42 +1,49 @@
 import 'package:flutter/material.dart';
 
+import '../../../l10n/gen/app_l10n.dart';
+import '../../model/app_tab.dart';
+
 class PureBottomBar extends StatelessWidget {
-  final int currentIndex;
   final ValueChanged<int>? onTap;
-  final List<String> labels;
-  final List<IconData> icons;
+  final AppTab activeTab;
+
 
   const PureBottomBar({
     super.key,
     this.onTap,
-    required this.currentIndex,
-    required this.labels,
-    required this.icons,
+    required this.activeTab,
+    // required this.labels,
+    // required this.icons,
   });
-
 
   @override
   Widget build(BuildContext context) {
+    AppL10n l10n = AppL10n.of(context);
     return BottomNavigationBar(
-      onTap: onTap,
-      currentIndex: currentIndex,
-      elevation: 3,
-      // fixedColor: themeColor.activeColor,
-      type: BottomNavigationBarType.fixed,
-      iconSize: 22,
-      selectedItemColor: Theme
-          .of(context)
-          .primaryColor,
-      selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-      showUnselectedLabels: true,
-      showSelectedLabels: true,
-      // backgroundColor: themeColor.itemColor,
-      items: labels
-          .asMap()
-          .keys
-          .map((index) =>
-          BottomNavigationBarItem(label: labels[index], icon: Icon(icons[index])))
-          .toList(),
-    );
+        onTap: onTap,
+        currentIndex: activeTab.index,
+        elevation: 3,
+        // fixedColor: themeColor.activeColor,
+        type: BottomNavigationBarType.fixed,
+        iconSize: 22,
+        selectedItemColor: Theme.of(context).primaryColor,
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
+        // backgroundColor: themeColor.itemColor,
+        items: AppTab.values
+            .map((AppTab tab) => BottomNavigationBarItem(
+                  label: tab.label(l10n),
+                  icon: Icon(tab.icon),
+                ))
+            .toList()
+
+        // labels
+        //     .asMap()
+        //     .keys
+        //     .map((index) =>
+        //
+        //     .toList(),
+        );
   }
 }

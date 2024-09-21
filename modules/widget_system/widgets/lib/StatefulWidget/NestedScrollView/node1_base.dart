@@ -2,21 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/6/16
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 251,
-//      "name": 'NestedScrollView基本用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【controller】 : 滑动控制器   【ScrollController】\n"
-//          "【scrollDirection】 : 滑动方向   【Axis】\n"
-//          "【reverse】 : 是否反向   【bool】\n"
-//          "【physics】 : 滑顶样式   【ScrollPhysics】\n"
-//          "【dragStartBehavior】 : 开始拖动行为   【DragStartBehavior】\n"
-//          "【headerSliverBuilder】 : *头部构造器   【NestedScrollViewHeaderSliversBuilder】\n"
-//          "【body】 : *内容   【Widget】",
-//    }
 
 class NestedScrollViewDemo extends StatelessWidget {
   final List<String> _tabs = const ['风神传', '封妖志', "幻将录", "永恒传说"];

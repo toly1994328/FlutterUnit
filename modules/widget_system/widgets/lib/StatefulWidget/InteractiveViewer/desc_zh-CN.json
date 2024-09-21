@@ -1,0 +1,45 @@
+{
+  "id": 351,
+  "name": "InteractiveViewer",
+  "localName": "交互视图",
+  "info": "主要对移动、缩放等手势交互进行封装，简化使用，可指定移动边界、缩放比例、手势监听等。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    147,
+    146,
+    78
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "InteractiveViewer基本使用",
+      "desc": [
+        "【alignPanAxis】 : 沿轴拖动   【bool】",
+        "【boundaryMargin】 : 边界边距   【EdgeInsets】",
+        "【panEnabled】 : 是否可平移   【bool】",
+        "【scaleEnabled】 : 是否可缩放   【bool】",
+        "【maxScale】 : 最大放大倍数   【double】",
+        "【minScale】 : 最小缩小倍数   【double】",
+        "【onInteractionEnd】 : 交互结束回调   【GestureScaleEndCallback】",
+        "【onInteractionStart】 : 交互开始回调   【GestureScaleStartCallback】",
+        "【onInteractionUpdate】 : 交互更新回调   【GestureScaleUpdateCallback】",
+        "【child】 : 游标颜色   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_constrained.dart",
+      "name": "constrained属性测试",
+      "desc": [
+        "【constrained】 :  受约束的  【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "变换控制器的使用",
+      "desc": [
+        "【transformationController】 : 变换控制器   【TransformationController】"
+      ]
+    }
+  ]
+}

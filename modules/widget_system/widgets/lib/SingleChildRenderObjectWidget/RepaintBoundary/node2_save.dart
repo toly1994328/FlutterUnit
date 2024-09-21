@@ -8,13 +8,7 @@ import 'node1_base.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 264,
-//      "name": "保存Widget成为图片",
-//      "priority": 2,
-//      "subtitle": "通过RenderRepaintBoundary可以获取子组件的Image信息，从而获取字节保存为图片文件。",
-//    }
+
 
 class RepaintBoundarySave extends StatelessWidget {
   final GlobalKey _globalKey = GlobalKey();

@@ -2,19 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-22
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 103,
-//      "name": 'Draggable与DragTarget联用',
-//      "priority": 2,
-//      "subtitle":
-//          "【data】 : 数据   【T】\n"
-//          "【onDragStarted】 : 开始拖拽   【Function()】\n"
-//          "【onDragEnd】 : 结束拖拽   【Function(DraggableDetails)】\n"
-//          "【onDragCompleted】 : 拖拽完成   【Function()】\n"
-//          "【onDraggableCanceled】 : 拖拽取消   【Function(Velocity,Offset)】\n"
-//          "【onChanged】 : 改变时回调   【Function(T)】",
-//    }
+
 
 class DraggablePage extends StatefulWidget {
   const DraggablePage({Key? key}) : super(key: key);

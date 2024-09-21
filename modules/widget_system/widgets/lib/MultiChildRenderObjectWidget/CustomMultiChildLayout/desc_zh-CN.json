@@ -1,0 +1,22 @@
+{
+  "id": 341,
+  "name": "CustomMultiChildLayout",
+  "localName": "通用多子布局",
+  "info": "使用一个代理类对子组件集进行布局控制,子组件必须使用LayoutId组件进行标识。",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    315,
+    285
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CustomMultiChildLayout基本使用",
+      "desc": [
+        "【children】 : 子组件集   【List<Widget>】",
+        "【delegate】 : 布局代理   【MultiChildLayoutDelegate】"
+      ]
+    }
+  ]
+}

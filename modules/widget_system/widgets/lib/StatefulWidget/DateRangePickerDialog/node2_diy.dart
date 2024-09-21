@@ -5,13 +5,7 @@ import 'toly_date_picker.dart' as toly;
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 339,
-//      "name": '魔改 DateRangePickerDialog',
-//      "priority": 2,
-//      "subtitle": "修改 DateRangePickerDialog 源码，使得月份条目显示数值背景。",
-//    }
+
 class DiyDateRangePickerDialogDemo extends StatefulWidget {
   const DiyDateRangePickerDialogDemo({Key? key}) : super(key: key);
 

@@ -3,13 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 169,
-//      "name": '文字样式-TextTheme',
-//      "priority": 1,
-//      "subtitle": "后代组件可以通过CupertinoTheme.of获取主题的数据进行使用。",
-//    }
+
 class TextCupertinoTheme extends StatelessWidget {
   const TextCupertinoTheme({Key? key}) : super(key: key);
 

@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 152,
-//      "name": 'Ink.image图片水波纹',
-//      "priority": 2,
-//      "subtitle": "    其中属性与Image组件一致，详见Image组件",
-//    }
+
 
 class InkImage extends StatelessWidget {
   const InkImage({Key? key}) : super(key: key);

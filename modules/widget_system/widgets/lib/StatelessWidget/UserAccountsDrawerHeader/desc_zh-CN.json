@@ -1,0 +1,31 @@
+{
+  "id": 22,
+  "name": "UserAccountsDrawerHeader",
+  "localName": "展示头",
+  "info": "Flutter提供的一个通用展示结构，相应位置可插入组件，可以很方便地应对特定的条目,常用于Drawer中。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "该组件的基本表现如下",
+      "desc": [
+        "【currentAccountPicture】: 上组件   【Widget】",
+        "【accountName】: 中组件   【Widget】",
+        "【accountEmail】: 下组件   【Widget】",
+        "【decoration】: 装饰   【Decoration】"
+      ]
+    },
+    {
+      "file": "node2_pro.dart",
+      "name": "右上角和底部",
+      "desc": [
+        "【otherAccountsPictures】: 右上组件   【List<Widget>】",
+        "【onDetailsPressed】: 右下角点击事件   【Function()】",
+        "【arrowColor】: 右下角按钮颜色   【Color】",
+        "【margin】: 外边距   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

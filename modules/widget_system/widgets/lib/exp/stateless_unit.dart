@@ -153,10 +153,10 @@ export '../StatelessWidget/VerticalDivider/node1_base.dart';
 export '../StatelessWidget/VerticalDivider/node2_height.dart';
 
 
-export '../StatelessWidget/GirdView/node1_base.dart';
-export '../StatelessWidget/GirdView/node2_direction.dart';
-export '../StatelessWidget/GirdView/node3_extend.dart';
-export '../StatelessWidget/GirdView/node4_builder.dart';
+export '../StatelessWidget/GridView/node1_base.dart';
+export '../StatelessWidget/GridView/node2_direction.dart';
+export '../StatelessWidget/GridView/node3_extend.dart';
+export '../StatelessWidget/GridView/node4_builder.dart';
 
 export '../StatelessWidget/GridPaper/node1_base.dart';
 export '../StatelessWidget/GridPaper/node2_divisions.dart';

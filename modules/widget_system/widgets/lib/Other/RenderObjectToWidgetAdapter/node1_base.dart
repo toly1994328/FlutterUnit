@@ -4,16 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 289 RenderObjectToWidgetAdapter 根组件 RenderObject 和 Element 树的桥梁。
-///
-//    {
-//      "widgetId": 289,
-//      "name": 'RenderObjectToWidgetAdapter 介绍',
-//      "priority": 1,
-//      "subtitle": "【container】 : 渲染对象   【RenderObjectWithChildMixin<T>】\n"
-//          "【child】 : 子组件   【Widget】\n"
-//          "【debugShortDescription】 : 调试简介   【String】",
-//    }
+
 
 class RenderObjectToWidgetAdapterDemo extends StatelessWidget {
   const RenderObjectToWidgetAdapterDemo({Key? key}) : super(key: key);

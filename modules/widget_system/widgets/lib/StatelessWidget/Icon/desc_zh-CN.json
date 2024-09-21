@@ -1,0 +1,31 @@
+{
+  "id": 6,
+  "name": "Icon",
+  "localName": "图标组件",
+  "info": "用于图标显示的组件。可指定图标资源、大小、颜色。非常简单，但是非常用",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    7,
+    30,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "用于显示一个图标",
+      "desc": [
+        "【入参】 :图标数据 【IconData】",
+        "【size】 : 大小  【double】",
+        "【color】: 颜色   【Color】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "使用自定义图标",
+      "desc": [
+        "可在iconfont网站中下载图标字体进行使用"
+      ]
+    }
+  ]
+}

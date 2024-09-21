@@ -1,0 +1,31 @@
+{
+  "id": 34,
+  "name": "Divider",
+  "localName": "水平分割线",
+  "info": "水平分割线，可指定颜色、高度、粗细、左右边距信息，常用与列表的item分割线。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    35,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Divider颜色和粗细",
+      "desc": [
+        "【color】: 颜色   【Color】",
+        "【thickness】: 线粗细   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "Divider高度和空缺",
+      "desc": [
+        "【indent】: 前面空缺长度   【double】",
+        "【endIndent】: 后面空缺长度   【double】",
+        "【height】: 占位高   【double】"
+      ]
+    }
+  ]
+}

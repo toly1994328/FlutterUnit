@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 348 SliverWithKeepAliveWidget Sliver保活容器
-/// 它是抽象类，不能单独使用。只有其子类才可以容纳 KeepAlive 的孩子。
-/// link 316,239,188,185,314,186
-///
-//    {
-//      "widgetId": 348,
-//      "name": 'SliverWithKeepAliveWidget 介绍',
-//      "priority": 1,
-//      "subtitle":
-//          "【key】 : 键   【Key】",
-//    }
+
 
 
 class SliverWithKeepAliveWidgetDemo extends StatelessWidget {

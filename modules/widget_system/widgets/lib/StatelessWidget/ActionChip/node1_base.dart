@@ -1,16 +1,7 @@
 
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-///
-//    {
-///     "widgetId": 13,
-//      "priority": 1,
-//      "name": "ActionChip的普通表现如下",
-//      "subtitle": "【onPressed】: 点击事件   【Function】\n"
-//          "【pressElevation】: 按下时影深   【double】\n"
-//          "其他属性同Chip组件，无右侧组件。",
-//    }
+
 ///
 
 

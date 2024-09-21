@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明: 263 FractionalTranslation 通过offset属性将子组件进行偏移,偏移量为OffSet横纵*子组件大小。
-//    {
-//      "widgetId": 263,
-//      "name": "FractionalTranslation基本使用",
-//      "priority": 1,
-//      "subtitle": "【translation】 : 偏移分度值   【Offset】\n"
-//          "【child】: 子组件    【Widget】",
-//    }
+
 
 class FractionalTranslationDemo extends StatefulWidget {
   const FractionalTranslationDemo({Key? key}) : super(key: key);

@@ -2,19 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 201,
-//      "name": 'AnimatedSize基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【duration】 : 动画时长   【Duration】\n"
-//          "【alignment】 : 对齐方式   【AlignmentGeometry】\n"
-//          "【curve】 : 动画曲线   【Duration】\n"
-//          "【vsync】 : vsync   【TickerProvider】",
-//    }
 
 class CustomAnimatedSize extends StatefulWidget {
   const CustomAnimatedSize({Key? key}) : super(key: key);

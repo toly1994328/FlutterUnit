@@ -3,15 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 171,
-//      "name": 'Hero基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【tag】 : 标签   【String】\n",
-//    }
 class CustomHero extends StatelessWidget {
   const CustomHero({Key? key}) : super(key: key);
 

@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-31
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 53,
-//      "name": 'SelectableText对齐属性',
-//      "priority": 2,
-//      "subtitle":
-//          "【textAlign】 : 对齐方式*6   【textAlign】\n"
-//          "【textDirection】 : 文字方向*2   【TextDirection】",
-//    }
+
 class AlignSelectableText extends StatefulWidget {
   const AlignSelectableText({Key? key}) : super(key: key);
 

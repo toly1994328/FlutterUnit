@@ -1,0 +1,33 @@
+{
+  "id": 14,
+  "name": "InputChip",
+  "localName": "综合小条",
+  "info": "和Chip组件类似的样式，集成了点击、删除、选择事件为一体。注意:点击事件和选择事件不能同时存在。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    13,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "可以接受点击、删除事件",
+      "desc": [
+        "【onPressed】: 点击事件   【Function()】",
+        "【onDeleted】: 删除事件   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "可以接受选中事件",
+      "desc": [
+        "【selected】: 是否选中   【bool】",
+        "【onSelected】: 选中事件   【Function(bool)】"
+      ]
+    }
+  ]
+}

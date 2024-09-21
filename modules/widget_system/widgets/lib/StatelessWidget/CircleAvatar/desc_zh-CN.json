@@ -1,0 +1,24 @@
+{
+  "id": 9,
+  "name": "CircleAvatar",
+  "localName": "圆形组件",
+  "info": "可将一张图片变成圆形，并且中间可以放置一个组件。可指定半径、前景色、背景色等。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CircleAvatar的表现",
+      "desc": [
+        "【radius】 : 半径  【double】",
+        "【backgroundImage】 : 图片资源  【ImageProvider】",
+        "【foregroundColor】: 前景色   【Color】",
+        "【backgroundColor】: 背景色   【Color】",
+        "【minRadius】: 最小半径   【double】",
+        "【maxRadius】: 最大半径   【double】",
+        "【child】: 孩子组件   【Child】"
+      ]
+    }
+  ]
+}

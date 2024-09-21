@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/25
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 125,
-//      "name": 'AnimatedIcon基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【icon】 : 动画图标数据   【AnimatedIcons】\n"
-//          "【size】 : 大小  【double】\n"
-//          "【color】 : 颜色  【Color】\n"
-//          "【progress】 : 动画   【Animation<double>】",
-//    }
+
 class CustomAnimatedIcon extends StatefulWidget {
   const CustomAnimatedIcon({Key? key}) : super(key: key);
 

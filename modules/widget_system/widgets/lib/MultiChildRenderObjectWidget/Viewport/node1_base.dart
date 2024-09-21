@@ -4,20 +4,7 @@ import 'package:flutter/rendering.dart';
 
 /// create by 张风捷特烈 on 2020/8/2
 /// contact me by email 1981462002@qq.com
-/// 说明: 340 Viewport 视口组件 通常用于为滑动视图提供视口,仅构建显示和预加载的部位。可指定预加载的长度、滑动轴向等。是ScrollView的核心实现组件之一，一般不直接使用。
 
-//    {
-//      "widgetId": 340,
-//      "name": "Viewport的基本使用",
-//      "priority": 1,
-//      "subtitle": "【offset】 : *视口偏移量   【ViewportOffset】\n"
-//          "【cacheExtentStyle】: 预加载类型   【CacheExtentStyle】\n"
-//          "【cacheExtent】: 预加载量   【double】\n"
-//          "【axisDirection】: 滑动方向   【AxisDirection】\n"
-//          "【slivers】: 子Sliver组件集   【List<Widget>】\n"
-//          "【anchor】: 锚点    【double】\n"
-//          "可以运行这些代码，查看ColorItem的构建情况，128个色条并非一次性全部构建。",
-//    }
 
 class ViewportDemo extends StatelessWidget {
   ViewportDemo({Key? key}) : super(key: key);

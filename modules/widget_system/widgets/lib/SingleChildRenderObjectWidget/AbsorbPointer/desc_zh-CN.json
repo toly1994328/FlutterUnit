@@ -1,0 +1,25 @@
+{
+  "id": 295,
+  "name": "AbsorbPointer",
+  "localName": "吸收点击",
+  "info": "容纳一个子组件，可以通过指定ignoring属性，来决定孩子是否忽略手势事件，其本身接受事件。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    146,
+    149,
+    150,
+    292
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AbsorbPointer基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【absorbing】 : 是否吸收事件   【bool】",
+        "如下,Switch选中时absorbing为true，按钮事件将被吸收，无法点击。"
+      ]
+    }
+  ]
+}

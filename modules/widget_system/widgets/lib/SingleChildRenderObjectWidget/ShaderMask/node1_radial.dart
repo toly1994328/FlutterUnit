@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-12
 /// contact me by email 1981462002@qq.com
-/// 说明:
-///
-//    {
-//      "widgetId": 277,
-//      "name": '径向渐变着色',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【shaderCallback】 : 着色器回调   【ShaderCallback】\n"
-//          "【blendMode】 : 混色模式   【BlendMode】\n"
-//          "    通过RadialGradient#createShader创建径向渐变着色器。",
-//    }
+
 class RadialShaderMask extends StatelessWidget {
   const RadialShaderMask({Key? key}) : super(key: key);
 

@@ -1,0 +1,21 @@
+{
+  "id": 178,
+  "name": "ExpansionPanelList",
+  "localName": "展开列表",
+  "info": "可展开的列表组件，可根据逻辑来实现单展开或多展开。可指定展开动画时长，接收展开回调",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ExpansionPanelList基本使用",
+      "desc": [
+        "【children】 : 子组件列表   【List<Widget>】",
+        "【animationDuration】 : 动画时长   【Duration】",
+        "【expansionCallback】 : 展开回调   【List<Widget>】",
+        "【onPressed】 : 点击事件  【Function()】"
+      ]
+    }
+  ]
+}

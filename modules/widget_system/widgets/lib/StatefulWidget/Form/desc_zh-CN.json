@@ -1,0 +1,20 @@
+{
+  "id": 198,
+  "name": "Form",
+  "localName": "表单组件",
+  "info": "表单组件，可以接收其下的FormField组件的变化回调，通过onWillPop拦截页面返回，通过FormState可对表单字段进行保存或校验。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Form基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【onChanged】 : 表单变化回调   【VoidCallback】",
+        "【onWillPop】 : 返回回调  【WillPopCallback】"
+      ]
+    }
+  ]
+}

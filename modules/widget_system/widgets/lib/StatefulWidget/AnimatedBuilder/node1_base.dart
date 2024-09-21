@@ -4,18 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 228 AnimatedBuilder 动画构造器
-/// 通过 builder 使动画对应的节点变为局部更新，并且可避免子组件刷新，减少构建的时间，提高动画性能。
-///
-//    {
-//      "widgetId": 228,
-//      "name": 'AnimatedBuilder 使用案例',
-//      "priority": 1,
-//      "subtitle":
-//          "【animation】 : *可监听对象   【Listenable】\n"
-//          "【builder】 : *组件构造器   【TransitionBuilder】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 
 class AnimatedBuilderDemo extends StatefulWidget {
   const AnimatedBuilderDemo({Key? key}) : super(key: key);

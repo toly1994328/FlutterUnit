@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 22,
-//      "priority": 1,
-//      "name": "该组件的基本表现如下",
-//      "subtitle": "【currentAccountPicture】: 上组件   【Widget】\n"
-//          "【accountName】: 中组件   【Widget】\n"
-//          "【accountEmail】: 下组件   【Widget】\n"
-//          "【decoration】: 装饰   【Decoration】",
-//    }
 
 class CustomUAGHP extends StatelessWidget {
   const CustomUAGHP({Key? key}) : super(key: key);

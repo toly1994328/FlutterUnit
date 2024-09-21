@@ -1,0 +1,23 @@
+{
+  "id": 276,
+  "name": "DrawerButton",
+  "localName": "抽屉按钮",
+  "info": "一个左抽屉图标按钮, 使用 DrawerButtonIcon 展示图标，默认点击事件可以打开左抽屉。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    273,
+    361
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerButton 基本使用",
+      "desc": [
+        "【onPressed】 : 点击事件  【VoidCallback?】",
+        "【style】: 按钮样式   【ButtonStyle?】",
+        "onPressed 为空时，点击时会打开左抽屉。"
+      ]
+    }
+  ]
+}

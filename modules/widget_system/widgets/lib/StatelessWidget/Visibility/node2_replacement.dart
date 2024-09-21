@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 10,
-//      "priority": 2,
-//      "name": "replacement可在隐藏时进行占位",
-//      "subtitle": "【replacement】 : 隐藏时的占位组件  【Widget】",
-//    }
 class ReplacementVisibility extends StatelessWidget {
   const ReplacementVisibility({Key? key}) : super(key: key);
 

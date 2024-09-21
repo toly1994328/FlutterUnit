@@ -1,0 +1,21 @@
+{
+  "id": 144,
+  "name": "CupertinoContextMenuAction",
+  "localName": "ios弹出菜单按钮",
+  "info": "一般只用于CupertinoContextMenu中的点击按钮。可指定孩子和尾部图标，接收点击事件。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoContextMenuAction基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】",
+        "【isDefaultAction】 : 是否默认选中  【bool】",
+        "【trailingIcon】 : 尾部  【bool】",
+        "【onPressed】 : 点击事件  【Function()】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 296,
+  "name": "PhysicalModel",
+  "localName": "物理模块",
+  "info": "可以让子组件按照圆形、方行进行剪裁,并且可以指定背景色、圆角、影深、阴影颜色、剪切行为。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    279,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PhysicalModel基本使用",
+      "desc": [
+        "【clipBehavior】 : 裁剪行为   【Clip】",
+        "【borderRadius】 : 圆角   【BorderRadius】",
+        "【child】 : 子组件   【Widget】",
+        "【elevation】 : 阴影深   【double】",
+        "【shadowColor】 : 阴影颜色   【Color】",
+        "【shape】 : 形状   【BoxShape】",
+        "【color】: 颜色    【Color】"
+      ]
+    }
+  ]
+}

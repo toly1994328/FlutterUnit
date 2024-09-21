@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 295,
-//      "name": 'AbsorbPointer基本使用',
-//      "priority": 1,
-//      "subtitle": "【child】 : 孩子组件   【Widget】\n"
-//          "【absorbing】 : 是否吸收事件   【bool】\n"
-//          "如下,Switch选中时absorbing为true，按钮事件将被吸收，无法点击。",
-//    }
 
 class CustomAbsorbPointer extends StatefulWidget {
   const CustomAbsorbPointer({Key? key}) : super(key: key);

@@ -1,0 +1,26 @@
+{
+  "id": 225,
+  "name": "AnimatedPhysicalModel",
+  "localName": "物理模块动画",
+  "info": "相关属性变化时具有动画效果的PhysicalModel组件，本质是PhysicalModel和动画结合的产物。可指定阴影、影深、圆角、动画时长、结束回调等属性。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedPhysicalModel基本使用",
+      "desc": [
+        "【color】 : 背景色   【Color】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【shape】 : 形状   【BoxShape】",
+        "【elevation】 : 影深   【double】",
+        "【borderRadius】 : 圆角   【BorderRadius】",
+        "【shadowColor】 : 阴影色   【Color】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

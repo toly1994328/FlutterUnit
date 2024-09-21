@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2023/8/18
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 270,
-//      "name": 'SliverConstrainedCrossAxis 基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【maxExtent】 : 大小   【double】\n"
-//          "【sliver】 : 子组件   【Widget?】",
-//    }
+
 class SliverConstrainedCrossAxisDemo extends StatelessWidget {
   const SliverConstrainedCrossAxisDemo({super.key});
 

@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-16
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 55,
-//      "name": 'DropdownButton基本用法',
-//      "priority": 1,
-//      "subtitle":
-//      "【value】 : 当前值   【T】\n"
-//      "【items】 : 下拉选框   【List<DropdownMenuItem<T>>】\n"
-//          "【icon】 : 图标   【Widget】\n"
-//          "【elevation】 : 影深   【double】\n"
-//          "【onChanged】 : 选择条目事件   【Function(T)】\n"
-//          "【backgroundColor】 : 背景色   【Color】",
-//    }
 class CustomDropDownButton extends StatefulWidget {
   const CustomDropDownButton({Key? key}) : super(key: key);
 

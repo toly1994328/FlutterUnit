@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-04-19
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 80,
-//      "name": 'BoxConstraints基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【child】 : 孩子组件   【Widget】\n"
-//          "【minWidth】 : 最小宽   【double】\n"
-//          "【minHeight】 : 最小高   【double】\n"
-//          "【maxHeight】 : 最大高   【double】\n"
-//          "【maxWidth】 : 最大宽   【double】",
-//    }
 class CustomConstrainedBox extends StatefulWidget {
   const CustomConstrainedBox({Key? key}) : super(key: key);
 

@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-17
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 65,
-//      "name": 'MaterialApp基本用法',
-//      "priority": 1,
-//      "subtitle": "【theme】 : 主题   【ThemeData】\n"
-//          "【title】 : 任务栏标题   【String】\n"
-//          "【debugShowCheckedModeBanner】 : 开启角标   【bool】\n"
-//          "【showPerformanceOverlay】 : 开启性能浮层   【bool】\n"
-//          "【debugShowMaterialGrid】 : 开启网格   【bool】\n"
-//          "【onGenerateRoute】 : 路由生成器   【RouteFactory】\n"
-//          "【home】 : 主页   【Widget】",
-//    }
 class MaterialAppDemo extends StatefulWidget {
   const MaterialAppDemo({Key? key}) : super(key: key);
 

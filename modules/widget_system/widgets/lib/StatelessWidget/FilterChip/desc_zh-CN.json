@@ -1,0 +1,27 @@
+{
+  "id": 15,
+  "name": "FilterChip",
+  "localName": "过滤小条",
+  "info": "和Chip组件类似的样式，具有选中与否的属性和选中事件。当选中时左侧组件上层会被✔️遮罩。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    13,
+    14,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FilterChip可接受选择事件",
+      "desc": [
+        "【selected】: 是否选择   【bool】",
+        "【onSelected】: 选择事件   【Function(bool)】",
+        "【selectedColor】: 选择后的颜色   【Color】",
+        "【selectedShadowColor】: 选择后的阴影颜色   【Color】,"
+      ]
+    }
+  ]
+}

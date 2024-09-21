@@ -3,15 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 306 SliverFillRemaining Sliver填补剩余 一个包含单个box子元素的sliver，它填充了视窗中的剩余空间。
-//    {
-//      "widgetId": 306,
-//      "name": 'SliverFillRemaining基本使用',
-//      "priority": 1,
-//      "subtitle": "【hasScrollBody】 : 是否具有滚动主体   【bool】\n"
-//          "【fillOverscroll】 : 是否可填充滚动区域   【bool】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 class SliverFillRemainingDemo extends StatefulWidget {
   const SliverFillRemainingDemo({Key? key}) : super(key: key);
 

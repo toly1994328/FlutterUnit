@@ -1,0 +1,21 @@
+{
+  "id": 174,
+  "name": "PopupMenuDivider",
+  "localName": "弹出菜单分割线",
+  "info": "PopupMenuButton的分割线,一般不单独使用，可指定高度。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    56,
+    34
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PopupMenuDivider基本使用",
+      "desc": [
+        "【height】 : 高度  【double】"
+      ]
+    }
+  ]
+}

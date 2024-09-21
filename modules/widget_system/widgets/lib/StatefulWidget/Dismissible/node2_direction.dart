@@ -3,16 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-
-//    {
-//      "widgetId": 176,
-//      "name": 'Dismissible基本使用',
-//      "priority": 2,
-//      "subtitle": "【direction】 : 方向   【DismissDirection】\n"
-//          "【crossAxisEndOffset】 : 偏移  【double】\n",
-//    }
 class DirectionDismissible extends StatefulWidget {
   const DirectionDismissible({Key? key}) : super(key: key);
 

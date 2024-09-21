@@ -1,0 +1,19 @@
+{
+  "id": 267,
+  "name": "ColoredBox",
+  "localName": "颜色盒",
+  "info": "在子组件的布局区域上绘制指定颜色，然后将子组件绘制在背景色上。",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ColoredBox基本使用",
+      "desc": [
+        "【color】 : 组件   【Color】",
+        "【child】 : 组件   【Widget】"
+      ]
+    }
+  ]
+}

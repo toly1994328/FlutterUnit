@@ -3,16 +3,7 @@ import 'package:flutter/services.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
-/// 说明: 254 RawKeyboardListener  可以用来检测键盘按键和松键的事件，目前只能检测到物理键盘，可在桌面端使用。
-//    {
-//      "widgetId": 254,
-//      "name": 'RawGestureDetector基本使用',
-//      "priority": 1,
-//      "subtitle": "【onKey】 : 键盘事件   【ValueChanged<RawKeyEvent>】\n"
-//          "【focusNode】 : 焦点   【FocusNode】\n"
-//          "【autofocus】 : 是否自动聚焦   【bool】\n"
-//          "【child】 : 子组件   【Widget】",
-//    }
+
 
 class RawKeyboardListenerDemo extends StatefulWidget {
   const RawKeyboardListenerDemo({Key? key}) : super(key: key);

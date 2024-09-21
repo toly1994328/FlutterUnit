@@ -1,0 +1,28 @@
+{
+  "id": 122,
+  "name": "AnimatedPositionedDirectional",
+  "localName": "方向定位动画",
+  "info": "能让子组件进行PositionedDirectional(方向定位)动画，可指定时长和曲线，有动画结束事件。只能用于Stack之中。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    121,
+    159
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedPositionedDirectional基本使用",
+      "desc": [
+        "【child】 : 孩子组件   【Widget】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【top】 : 到父顶距离   【double】",
+        "【end】 : 到父右距离   【double】",
+        "【start】 : 到父左距离   【double】",
+        "【bottom】 : 到父底距离   【double】"
+      ]
+    }
+  ]
+}

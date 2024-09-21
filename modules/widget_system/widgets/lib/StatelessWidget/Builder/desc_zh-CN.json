@@ -1,0 +1,19 @@
+{
+  "id": 202,
+  "name": "Builder",
+  "localName": "构造器",
+  "info": "一个不影响子组件占位空间，不具有显示性的组件，存在的唯一价值是提供当前组件对应元素的上下文。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Builder的使用",
+      "desc": [
+        "【builder】 : 组件构造器   【WidgetBuilder】",
+        "同一个类中使用`XXX.of(context)`获取某类状态对象方法会存在`上下文滞后`的错误，使用Builder解决。"
+      ]
+    }
+  ]
+}

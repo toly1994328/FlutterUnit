@@ -1,0 +1,20 @@
+{
+  "id": 288,
+  "name": "AnnotatedRegion",
+  "localName": "标注区域",
+  "info": "有一个泛型，源码中仅在 app_bar, nav_bar 中使用该组件改变状态量、导航栏样式，泛型通常为 SystemUiOverlayStyle。",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnnotatedRegion改变状态量样式",
+      "desc": [
+        "【value】 : 值   【T】",
+        "【sized】 : 是否提供大小   【bool】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

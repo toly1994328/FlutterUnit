@@ -1,0 +1,34 @@
+{
+  "id": 165,
+  "name": "PageView",
+  "localName": "滑页",
+  "info": "容纳多个组件页面，可对它们进行滑动切换，可指定滑动的方向、是否反向、滑动控制器等属性。",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PageView基本使用",
+      "desc": [
+        "【children】 : 子组件列表   【List<Widget>】",
+        "【onPageChanged】 : 点击事件  【ValueChanged<int>】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "PageView滑动方向",
+      "desc": [
+        "【scrollDirection】 : 滑动方向   【Axis】",
+        "【reverse】 : 是否反向  【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "PageView控制器简单实用",
+      "desc": [
+        "【controller】 : 页面控制器   【PageController】"
+      ]
+    }
+  ]
+}

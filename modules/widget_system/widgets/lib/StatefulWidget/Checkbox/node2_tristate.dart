@@ -2,18 +2,7 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-29
 /// contact me by email 1981462002@qq.com
-/// 说明:
-/// create by 张风捷特烈 on 2020-03-29
-/// contact me by email 1981462002@qq.com
-/// 说明:
-///    {
-//      "widgetId": 39,
-//      "name": 'Checkbox的三态',
-//      "priority": 2,
-//      "subtitle":
-//          "【tristate】 : 是否是三态   【double】\n"
-//          "  onChanged时,回调true、null、false三种状态"
-//    }
+
 class TristateCheckBok extends StatefulWidget {
   const TristateCheckBok({Key? key}) : super(key: key);
 

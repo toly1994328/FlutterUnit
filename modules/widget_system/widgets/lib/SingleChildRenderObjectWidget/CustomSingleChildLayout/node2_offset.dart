@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/6/3
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 285,
-//      "name": 'CustomSingleChildLayout的偏移使用',
-//      "priority": 2,
-//      "subtitle":
-//          "可以利用代理的偏移能力，对子组件进行偏移定位。",
-//    }
 
 class OffSetWidgetDemo extends StatelessWidget {
   const OffSetWidgetDemo({Key? key}) : super(key: key);

@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 98,
-//      "name": 'Wrap的textDirection属性',
-//      "priority": 4,
-//      "subtitle":
-//          "【textDirection】 : 文字方向   【TextDirection】",
-//    }
 class TextDirectionWrap extends StatelessWidget {
   TextDirectionWrap({Key? key}) : super(key: key);
 

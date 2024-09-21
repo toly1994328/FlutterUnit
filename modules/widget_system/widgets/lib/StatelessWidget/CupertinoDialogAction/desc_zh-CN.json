@@ -1,0 +1,22 @@
+{
+  "id": 352,
+  "name": "CupertinoDialogAction",
+  "localName": "交互视图",
+  "info": " 一个简单的按钮，通常用于CupertinoAlertDialog中，一般不单独使用。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoDialogAction基本使用",
+      "desc": [
+        "【isDefaultAction】 : 是否是默认性操作   【bool】",
+        "【isDestructiveAction】 : 是否是毁灭性操作   【bool】",
+        "【textStyle】: 文字样式   【TextStyle】",
+        "【onPressed】: 点击事件   【VoidCallback】",
+        "【child】: 子组件   【Widget】"
+      ]
+    }
+  ]
+}

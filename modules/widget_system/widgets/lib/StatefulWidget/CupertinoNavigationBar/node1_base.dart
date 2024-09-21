@@ -2,19 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 62,
-//      "name": 'CupertinoNavigationBar基本用法',
-//      "priority": 1,
-//      "subtitle":
-//          "【leading】 : 左侧组件   【Widget】\n"
-//          "【middle】 : 中间组件   【Widget】\n"
-//          "【trailing】 : 尾部组件   【Widget】\n"
-//          "【backgroundColor】 : 背景色   【Color】\n"
-//          "【padding】 : 内边距   【EdgeInsetsDirectional】\n"
-//          "【border】 : 边线   【Border】",
-//    }
+
 class CustomCupertinoNavigationBar extends StatelessWidget {
   const CustomCupertinoNavigationBar({Key? key}) : super(key: key);
 

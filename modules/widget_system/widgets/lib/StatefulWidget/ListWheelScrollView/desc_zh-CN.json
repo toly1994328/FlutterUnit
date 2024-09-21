@@ -1,0 +1,24 @@
+{
+  "id": 179,
+  "name": "ListWheelScrollView",
+  "localName": "滚轮列表",
+  "info": "高大上的柱面滑动列表,精妙十足，可指定item高度、透视、挤压等属性，接收滑动时选中事件。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    139,
+    291
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListWheelScrollView基本使用",
+      "desc": [
+        "【children】 : 子组件列表   【List<Widget>】",
+        "【perspective】 : 透视度   【double】",
+        "【itemExtent】 : item高   【EdgeInsets】",
+        "【onSelectedItemChanged】 : 选中回调  【ValueChanged<int> 】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 189,
+  "name": "SliverToBoxAdapter",
+  "localName": "Sliver适配器",
+  "info": "可以容纳一个普通的组件，并将其转化成Sliver家族组件的适配器。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverToBoxAdapter基本使用",
+      "desc": [
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

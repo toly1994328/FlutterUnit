@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-21
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 102,
-//      "name": 'DataTable基本使用',
-//      "priority": 1,
-//      "subtitle":
-//          "【columns】 : 列   【List<DataColumn>】\n"
-//          "【rows】 : 行  【List<DataRow>】",
-//    }
+
 
 class _Bean {
   final int id;

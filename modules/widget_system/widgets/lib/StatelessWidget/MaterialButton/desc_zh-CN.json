@@ -1,0 +1,47 @@
+{
+  "id": 23,
+  "name": "MaterialButton",
+  "localName": "材料按钮",
+  "info": "基于RawMaterialButton实现的通用Material按钮。可盛放一个子组件,能定义颜色、形状等表现,可接收点击和长按事件。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    25,
+    26,
+    27,
+    326,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "MaterialButton点击事件",
+      "desc": [
+        "【color】: 颜色   【Color】",
+        "【splashColor】: 水波纹颜色   【Color】",
+        "【height】: 高   【double】",
+        "【elevation】: 影深   【double】",
+        "【child】: 子组件   【Widget】",
+        "【textColor】: 子组件文字颜色   【Color】",
+        "【highlightColor】: 长按高亮色   【Color】",
+        "【padding】: 内边距   【EdgeInsetsGeometry】",
+        "【onPressed】: 点击事件   【Function】"
+      ]
+    },
+    {
+      "file": "node2_onLongPress.dart",
+      "name": "MaterialButton长按事件",
+      "desc": [
+        "【highlightColor】: 长按高亮色   【Color】",
+        "【onLongPress】: 长按事件   【Function】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+      "name": "MaterialButton的自定义形状",
+      "desc": [
+        "【shape】: 形状   【ShapeBorder】"
+      ]
+    }
+  ]
+}

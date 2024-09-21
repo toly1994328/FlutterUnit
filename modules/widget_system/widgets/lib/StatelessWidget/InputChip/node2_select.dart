@@ -4,14 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//      {
-//      "widgetId": 14,
-//      "priority": 2,
-//      "name": "可以接受选中事件",
-//      "subtitle": "【selected】: 是否选中   【bool】\n"
-//          "【onSelected】: 选中事件   【Function(bool)】",
-//      }
+
 
 class SelectInputChip extends StatefulWidget {
   const SelectInputChip({Key? key}) : super(key: key);

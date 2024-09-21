@@ -2,19 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-25
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 146,
-//      "name": 'GestureDetector的Pan事件',
-//      "priority": 3,
-//      "subtitle":
-//          "【onPanDown】 : 按下回调   【GestureDragDownCallback】\n"
-//          "【onPanEnd】 : 拖动结束   【GestureDragEndCallback】\n"
-//          "【onPanStart】 : 开始拖动   【GestureDragStartCallback】\n"
-//          "【onPanUpdate】 : 拖动更新   【GestureDragUpdateCallback】\n"
-//          "【onPanCancel】 : 拖动取消   【GestureDragCancelCallback】",
-//    }
 class PanGestureDetector extends StatefulWidget {
   const PanGestureDetector({Key? key}) : super(key: key);
 

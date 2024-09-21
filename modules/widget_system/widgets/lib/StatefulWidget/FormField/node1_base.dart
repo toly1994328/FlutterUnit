@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-01
 /// contact me by email 1981462002@qq.com
-/// 说明: 222 FormField 表单字段
-/// 一个表单字段，需要在 Form 组件中使用，内含泛型 T 的字段作为状态量，对根据字段的更新和验证会触发相应回调。
-/// link:198,199,223,
-//    {
-//      "widgetId": 222,
-//      "name": 'FormField 介绍',
-//      "priority": 1,
-//      "subtitle":
-//          "【builder】 : 内容构造器   【FormFieldBuilder<T>】\n"
-//          "【initialValue】 : 初始值   【T】\n"
-//          "【validator】 : 验证函数   【FormFieldValidator<String> 】\n"
-//          "【enabled】 : 是否有效   【bool】\n"
-//          "【onSaved】 : 表单save时回调  【FormFieldSetter<String>】",
-//    }
+
 class FormFieldDemo extends StatelessWidget {
   const FormFieldDemo({Key? key}) : super(key: key);
 

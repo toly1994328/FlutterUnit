@@ -2,15 +2,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/4/27
 /// contact me by email 1981462002@qq.com
-/// 说明: 
 
-//    {
-//      "widgetId": 164,
-//      "name": 'SingleChildScrollView滑动方向',
-//      "priority": 2,
-//      "subtitle": "【scrollDirection】 : 滑动方向   【Axis】\n"
-//          "【reverse】 : 是否反向   【Axis】",
-//    }
 class DirectionSingleChildScrollView extends StatelessWidget {
   DirectionSingleChildScrollView({Key? key}) : super(key: key);
 

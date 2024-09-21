@@ -4,15 +4,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-04-12
 /// contact me by email 1981462002@qq.com
-/// 说明:
 
-//    {
-//      "widgetId": 331,
-//      "name": 'SliderTheme对Slider的样式定制',
-//      "priority": 2,
-//      "subtitle": "通过thumbShape和valueIndicatorShape可以对Slider进行样式定制。"
-//          "注: 本例参考flutter-gallery中的SlideDemo",
-//    }
 
 class DIYSliderTheme extends StatefulWidget {
   const DIYSliderTheme({Key? key}) : super(key: key);

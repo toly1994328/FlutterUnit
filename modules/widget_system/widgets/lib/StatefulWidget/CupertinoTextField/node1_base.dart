@@ -3,20 +3,7 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/7/22
 /// contact me by email 1981462002@qq.com
-/// 说明: 245 CupertinoTextField 1 Cupertino风格的输入框,属性和TextField类似,可指定控制器、文字样式、装饰线、行数限制、游标样式等。接收输入变化、完成输入等事件。
-//    {
-//      "widgetId": 245,
-//      "name": "CupertinoTextField基础使用",
-//      "priority": 1,
-//      "subtitle": "【placeholder】 : 提示文字   【String】\n"
-//          "【showCursor】 : 是否显示游标   【bool】\n"
-//          "【minLines】 : 最小行数   【int】\n"
-//          "【maxLines】 : 最大行数   【int】\n"
-//          "【padding】 : 内边距   【EdgeInsetsGeometry】\n"
-//          "【onChanged】 : 变化监听   【ValueChanged<String>】\n"
-//          "【onTap】: 点击监听   【GestureTapCallback】\n"
-//          "【onSubmitted】: 提交监听    【ValueChanged<String>】",
-//    }
+
 class CupertinoTextFieldDemo extends StatefulWidget {
   const CupertinoTextFieldDemo({Key? key}) : super(key: key);
 
