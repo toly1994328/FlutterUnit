@@ -30,3 +30,6 @@ export '../Sliver/SliverConstrainedCrossAxis/node1.dart';
 export '../Sliver/SliverCrossAxisExpanded/node1.dart';
 export '../Sliver/SliverCrossAxisGroup/node1.dart';
 export '../Sliver/SliverMainAxisGroup/node1.dart';
+export '../Sliver/PinnedHeaderSliver/node_01.dart';
+export '../Sliver/PinnedHeaderSliver/node_02.dart';
+export '../Sliver/PinnedHeaderSliver/node_03.dart';

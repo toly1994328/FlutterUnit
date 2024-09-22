@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:algorithm/algorithm.dart';
 import 'package:app/app.dart';
 import 'package:app_update/app_update.dart';
 import 'package:artifact/artifact.dart';
@@ -60,7 +61,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
         children: [
           StandardHomePage(),
           GalleryUnit(),
-          ArtifactPage(),
+          AlgoScope(child: ArtifactPage()),
           CollectPageAdapter(),
           UserPage(),
         ],

@@ -48,10 +48,21 @@ class StandardHomeSearch extends StatelessWidget
     return InputDecoration(
         filled: true,
         fillColor: isDark ? const Color(0xff292929) : const Color(0xffF3F6F9),
-        prefixIcon: const Icon(Icons.search, color: Colors.grey),
+        prefixIcon: const Icon(
+          Icons.search,
+          color: Colors.grey,
+          size: 20,
+        ),
+
+        prefixIconConstraints: const BoxConstraints(
+            maxHeight: 24,
+            minWidth: 36
+        ),
+        isCollapsed: true,
+        contentPadding: const EdgeInsets.only(top: 4,bottom: 4,right: 8),
         border: const UnderlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(Radius.circular(35 / 2)),
+          borderRadius: BorderRadius.all(Radius.circular(6)),
         ),
         hintText: hintText,
         hintStyle: const TextStyle(fontSize: 14));

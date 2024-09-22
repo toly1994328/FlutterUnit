@@ -56,11 +56,19 @@ class StandardSearchBarInner extends StatelessWidget
                         prefixIcon: Icon(
                           Icons.search,
                           color: Colors.grey,
+                          size: 20,
                         ),
+
+                        prefixIconConstraints: BoxConstraints(
+                            maxHeight: 24,
+                            minWidth: 36
+                        ),
+                        isCollapsed: true,
+                        contentPadding: EdgeInsets.only(top: 4,bottom: 4,right: 8),
                         border: UnderlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius:
-                              BorderRadius.all(Radius.circular(35 / 2)),
+                              BorderRadius.all(Radius.circular(8)),
                         ),
                         hintText: "搜索组件",
                         hintStyle: TextStyle(fontSize: 14)),

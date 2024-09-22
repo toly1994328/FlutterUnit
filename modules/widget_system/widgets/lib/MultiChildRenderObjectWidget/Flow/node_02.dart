@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
 
-
-class BurstFlow extends StatefulWidget {
+class FlowNode02 extends StatefulWidget {
   static final data = List.generate(
       16,
       (index) => index.isEven
@@ -15,7 +14,7 @@ class BurstFlow extends StatefulWidget {
       width: 300,
       height: 300,
       alignment: Alignment.center,
-      child: BurstFlow(
+      child: FlowNode02(
           children: data
               .map((e) => CircleAvatar(backgroundImage: AssetImage(e)))
               .toList(),
@@ -26,13 +25,13 @@ class BurstFlow extends StatefulWidget {
   final List<Widget> children;
   final Widget menu;
 
-  const BurstFlow({Key? key, required this.children, required this.menu}) : super(key: key);
+  const FlowNode02({Key? key, required this.children, required this.menu}) : super(key: key);
 
   @override
-  _BurstFlowState createState() => _BurstFlowState();
+  State createState() => _FlowNode02State();
 }
 
-class _BurstFlowState extends State<BurstFlow>
+class _FlowNode02State extends State<FlowNode02>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   double _rad = 0.0;

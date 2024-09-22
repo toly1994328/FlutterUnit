@@ -11,16 +11,10 @@ class WidgetDetailPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            _buildLeft(model, context),
-            _buildRight(model),
-          ],
-        ),
-        const Divider(),
+        _buildLeft(model, context),
+        _buildRight(model),
       ],
     );
   }

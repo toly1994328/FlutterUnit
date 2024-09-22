@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
 
-class CircleFlow extends StatelessWidget {
-  CircleFlow({Key? key}) : super(key: key);
+class FlowNode1 extends StatelessWidget {
+  FlowNode1({Key? key}) : super(key: key);
 
   final List<String> data = List.generate(
       16,

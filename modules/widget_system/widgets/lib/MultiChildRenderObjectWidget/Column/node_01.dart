@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
 
-class CustomColumn extends StatelessWidget {
-  const CustomColumn({Key? key}) : super(key: key);
+class ColumnNode1 extends StatelessWidget {
+  const ColumnNode1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

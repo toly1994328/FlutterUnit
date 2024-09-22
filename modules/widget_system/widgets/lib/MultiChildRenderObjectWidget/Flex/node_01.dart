@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
 
-class MainAxisAlignmentFlex extends StatelessWidget {
-  MainAxisAlignmentFlex({Key? key}) : super(key: key);
+class FlexNode1 extends StatelessWidget {
+  FlexNode1({Key? key}) : super(key: key);
 
   static TextStyle textStyle =
       const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
@@ -36,8 +36,7 @@ class MainAxisAlignmentFlex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-        runSpacing: 5,
-        children: MainAxisAlignment.values
+        children: Axis.values
             .map((mode) => Column(children: <Widget>[
           Container(
               margin: const EdgeInsets.all(5),
@@ -51,8 +50,7 @@ class MainAxisAlignmentFlex extends StatelessWidget {
   }
 
   Widget _buildItem(mode) => Flex(
-    direction: Axis.horizontal,
-    mainAxisAlignment: mode,
+    direction: mode,
     children: <Widget>[
       blueBox, redBox, greenBox
     ],

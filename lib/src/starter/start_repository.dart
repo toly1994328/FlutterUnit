@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
+import 'package:utils/utils.dart';
 
 class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
   const FlutterUnitStartRepo();
@@ -26,6 +27,7 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     // throw 'Test Debug Start Error';
     await SpStorage.instance.initSp();
     if (!kAppEnv.isWeb) await initDb();
+    HttpUtil.instance.rebase(PathUnit.baseUrl);
     AppConfigPo po = await SpStorage.instance.appConfig.read();
     List<ConnectivityResult> netConnect = await (Connectivity().checkConnectivity());
     AppConfig state = AppConfig.fromPo(po);
@@ -73,7 +75,7 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     }
 
     //非 release模式，执行拷贝
-    if (!kDebugMode) {
+    if (kDebugMode) {
       shouldCopy = true;
     }
 
