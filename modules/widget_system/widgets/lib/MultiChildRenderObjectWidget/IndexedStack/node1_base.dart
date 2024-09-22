@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
 
-class CustomIndexedStack extends StatefulWidget {
-  const CustomIndexedStack({Key? key}) : super(key: key);
+class IndexedStackNode01 extends StatefulWidget {
+  const IndexedStackNode01({Key? key}) : super(key: key);
 
   @override
-  _CustomIndexedStackState createState() => _CustomIndexedStackState();
+  State createState() => _IndexedStackNode01State();
 }
 
-class _CustomIndexedStackState extends State<CustomIndexedStack> {
+class _IndexedStackNode01State extends State<IndexedStackNode01> {
   int _index = 1;
 
   @override

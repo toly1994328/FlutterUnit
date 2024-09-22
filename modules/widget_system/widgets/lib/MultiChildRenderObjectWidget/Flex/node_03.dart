@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
 
-class CrossAxisAlignmentFlex extends StatelessWidget {
-  CrossAxisAlignmentFlex({Key? key}) : super(key: key);
+class FlexNode3 extends StatelessWidget {
+  FlexNode3({Key? key}) : super(key: key);
 
   static TextStyle textStyle =
   const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);

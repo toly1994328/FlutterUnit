@@ -16,7 +16,7 @@ dependencies:
   shared_preferences: ^2.2.2 # xml 固化
   connectivity_plus: ^6.0.3
   url_launcher: ^6.1.14 # url
-  fx_platform_adapter: ^0.0.2 # 平台适配器
+  fx_platform_adapter: ^0.0.2+1 # 平台适配器
 
   storage:
     path: ../storage

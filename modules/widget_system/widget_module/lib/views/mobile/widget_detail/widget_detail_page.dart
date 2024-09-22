@@ -8,6 +8,7 @@ import 'package:l10n/l10n.dart';
 
 import '../../../data/zone.dart';
 import '../../desk_ui/widget_detail/link_widget_buttons.dart';
+import 'node_display/node_display.dart';
 import 'widget_node_panel.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
@@ -86,7 +87,7 @@ class WidgetDetailPage extends StatelessWidget {
                       links: state.links,
                       onSelect: bloc.push,
                     ),
-                  const Divider(),
+                  // const Divider(),
                 ],
               ),
             ),
@@ -109,14 +110,11 @@ class WidgetDetailPage extends StatelessWidget {
     AppConfig globalState = BlocProvider.of<AppConfigBloc>(context).state;
     return SliverList(
         delegate: SliverChildBuilderDelegate(
-      (_, i) => WidgetNodePanel(
-        codeStyle: globalState.codeStyle,
-        codeFamily: 'Inconsolata',
-        text: nodes[i].name,
-        subText: nodes[i].subtitle,
-        code: nodes[i].code,
-        death: model.death,
-        show: WidgetsMap.map(model.name)[i],
+      (_, i) => NodeDisplay(
+        node: nodes[i],
+        nodeIndex: i,
+        style: globalState.codeStyle,
+        widget: model,
       ),
       childCount: nodes.length,
     ));

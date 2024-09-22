@@ -322,10 +322,10 @@ packages:
     dependency: transitive
     description:
       name: fx_platform_adapter
-      sha256: "04b954f658e1c380abf11dee93265396147f953f5b02cbf9621c7fddab21f9c3"
+      sha256: da5920bc99ef7f732d04742c2556702376e717bb0c0b8daa56840127d133c206
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.2+1"
   go_router:
     dependency: "direct main"
     description:
@@ -985,10 +985,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: f652077d0bdf60abe4c1f6377448e8655008eef28f128bc023f7b5e8dfeb48fc
+      sha256: "5c5f338a667b4c644744b661f309fb8080bb94b18a7e91ef1dbd343bed00ed6d"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "14.2.4"
+    version: "14.2.5"
   web:
     dependency: transitive
     description:

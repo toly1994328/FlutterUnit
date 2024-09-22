@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
 
-class TextDirectionFlex extends StatelessWidget {
-  TextDirectionFlex({Key? key}) : super(key: key);
+class FlexNode5 extends StatelessWidget {
+  FlexNode5({Key? key}) : super(key: key);
 
   static TextStyle textStyle =
       const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);

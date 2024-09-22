@@ -27,6 +27,12 @@ class WidgetsMap {
           const DropdownMenuNode2(),
           const DropdownMenuNode3(),
         ];
+        case "PinnedHeaderSliver":
+        return [
+          const PinnedHeaderSliverNode1(),
+          const PinnedHeaderSliverNode2(),
+          const PinnedHeaderSliverNode3(),
+        ];
       case "CupertinoSegmentedControl":
         return [
           const CupertinoSegmentedControlDemo(),
@@ -606,7 +612,7 @@ class WidgetsMap {
         ];
       case "CustomMultiChildLayout":
         return [
-          const CustomMultiChildLayoutDemo(),
+          const CustomMultiChildLayoutNode1(),
         ];
       case "LayoutId":
         return [
@@ -868,11 +874,11 @@ class WidgetsMap {
         ];
       case "Flex":
         return [
-          DirectionFlex(),
-          MainAxisAlignmentFlex(),
-          CrossAxisAlignmentFlex(),
-          VerticalDirectionFlex(),
-          TextDirectionFlex(),
+          FlexNode1(),
+          FlexNode2(),
+          FlexNode3(),
+          FlexNode4(),
+          FlexNode5(),
         ];
       case "Row":
         return [
@@ -880,7 +886,7 @@ class WidgetsMap {
         ];
       case "Column":
         return [
-          const CustomColumn(),
+          const ColumnNode1(),
         ];
       case "Stack":
         return [const CustomStack(), const PositionedStack()];
@@ -894,8 +900,8 @@ class WidgetsMap {
         ];
       case "Flow":
         return [
-          CircleFlow(),
-          BurstFlow.show,
+          FlowNode1(),
+          FlowNode02.show,
         ];
       case "AnimatedCrossFade":
         return [
@@ -1165,7 +1171,7 @@ class WidgetsMap {
         ];
       case "IndexedStack":
         return [
-          const CustomIndexedStack(),
+          const IndexedStackNode01(),
         ];
       case "ListView":
         return [

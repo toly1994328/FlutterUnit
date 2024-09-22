@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:app/app.dart';
-import 'package:artifact/artifact.dart';
 import 'package:l10n/l10n.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +15,7 @@ import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart';
+import 'package:widget_module/views/mobile/category_page/sync/category_api.dart';
 import 'package:widget_module/widget_module.dart';
 
 

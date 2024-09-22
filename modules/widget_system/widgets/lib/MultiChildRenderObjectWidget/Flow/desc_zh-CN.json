@@ -11,7 +11,7 @@
   ],
   "nodes": [
     {
-      "file": "node1_base.dart",
+      "file": "node_01.dart",
       "name": "Flow圆形排布",
       "desc": [
         "【children】 : 组件列表   【List<Widget>】",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "file": "node2_anim.dart",
+      "file": "node_02.dart",
       "name": "Flow圆形与动画结合",
       "desc": [
         "通过动画来更改周围组件的位置实现效果"

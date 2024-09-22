@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/4/30
 /// contact me by email 1981462002@qq.com
 
-class DirectionFlex extends StatelessWidget {
-  DirectionFlex({Key? key}) : super(key: key);
+class FlexNode2 extends StatelessWidget {
+  FlexNode2({Key? key}) : super(key: key);
 
   static TextStyle textStyle =
       const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
@@ -36,7 +36,8 @@ class DirectionFlex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-        children: Axis.values
+        runSpacing: 5,
+        children: MainAxisAlignment.values
             .map((mode) => Column(children: <Widget>[
           Container(
               margin: const EdgeInsets.all(5),
@@ -50,7 +51,8 @@ class DirectionFlex extends StatelessWidget {
   }
 
   Widget _buildItem(mode) => Flex(
-    direction: mode,
+    direction: Axis.horizontal,
+    mainAxisAlignment: mode,
     children: <Widget>[
       blueBox, redBox, greenBox
     ],

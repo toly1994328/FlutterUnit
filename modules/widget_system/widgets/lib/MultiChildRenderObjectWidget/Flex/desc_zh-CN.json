@@ -14,7 +14,7 @@
   ],
   "nodes": [
     {
-      "file": "node1_direction.dart",
+      "file": "node_01.dart",
       "name": "Flex的排布方向",
       "desc": [
         "【children】 : 组件列表   【List<Widget>】",
@@ -22,28 +22,28 @@
       ]
     },
     {
-      "file": "node2_mainAxisAlignment.dart",
+      "file": "node_02.dart",
       "name": "Flex主轴对齐方式",
       "desc": [
         "【mainAxisAlignment】 : 主轴对齐   【MainAxisAlignment】"
       ]
     },
     {
-      "file": "node3_crossAxisAlignment.dart",
+      "file": "node_03.dart",
       "name": "Flex交叉轴对齐方式",
       "desc": [
         "【crossAxisAlignment】 : 交叉轴对齐   【CrossAxisAlignment】"
       ]
     },
     {
-      "file": "node4_verticalDirection.dart",
+      "file": "node_04.dart",
       "name": "Flex垂直方向顺序",
       "desc": [
         "【verticalDirection】 : 垂直方向顺序   【VerticalDirection】"
       ]
     },
     {
-      "file": "node5_textDirection.dart",
+      "file": "node_05.dart",
       "name": "Flex水平方向顺序",
       "desc": [
         "【textDirection】 : 水平方向顺序   【TextDirection】"

@@ -3,6 +3,14 @@ import 'package:equatable/equatable.dart';
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
 /// 说明: 详情页节点-展示-数据模型
+///
+
+enum NodeType{
+  display,
+  newPage,
+  description,
+  deprecated
+}
 
 class NodeModel extends Equatable {
   final String name;
@@ -17,6 +25,16 @@ class NodeModel extends Equatable {
 
   @override
   List<Object> get props => [name, subtitle, code];
+
+
+  NodeType type(String widget){
+    if(widget=='PinnedHeaderSliver'){
+      return NodeType.newPage;
+    }
+
+    return NodeType.display;
+  }
+
 
   factory NodeModel.fromJson(Map<String, dynamic> map) {
     return NodeModel(

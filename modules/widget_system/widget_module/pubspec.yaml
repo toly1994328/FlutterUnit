@@ -18,7 +18,7 @@ dependencies:
   wrapper: ^1.0.2
   share_plus: ^10.0.1 # 文字分享
   go_router: ^14.2.0
-
+  tolyui: ^0.0.2+15
   storage:
     path: ../../basic_system/storage
   toly_ui:

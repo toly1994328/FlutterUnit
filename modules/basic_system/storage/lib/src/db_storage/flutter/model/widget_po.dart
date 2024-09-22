@@ -38,6 +38,18 @@ class WidgetPo {
         info: map["info"]);
   }
 
+  factory WidgetPo.fromDesc(Map<String, dynamic> map) {
+    return WidgetPo(
+        id: map['id'],
+        name: map['name'],
+        nameCN: map["localName"],
+        family: map["family"],
+        lever: map["lever"].toDouble(),
+        linkWidget: map["linkIds"].join(','),
+        deprecated: map["deprecated"] ?? 0,
+        info: map["info"]);
+  }
+
   Map<String, dynamic> toJson() {
     return {
       "id": id,
