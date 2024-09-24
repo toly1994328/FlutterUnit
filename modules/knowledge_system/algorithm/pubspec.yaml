@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   # tolyui
-  tolyui: ^0.0.2+15
+  tolyui: 0.0.2+19
 
   fx_go_router_ext: 0.0.2
 
