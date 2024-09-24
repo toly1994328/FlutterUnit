@@ -843,10 +843,18 @@ packages:
     dependency: "direct main"
     description:
       name: tolyui
-      sha256: f88af1cabd06d0eb2df989abac9bfc37f1ad76d273cc9f8d9109cc163205fe48
+      sha256: bbe7335016275812ba28120ee5115a6c4ad15a1b17ebb21c6e3ebd8b364bcb50
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.2+15"
+    version: "0.0.2+19"
+  tolyui_color:
+    dependency: transitive
+    description:
+      name: tolyui_color
+      sha256: "410c378344d47a5f170e70a78cc1ac6a4f2665ea40f02c9aaa67da4072fde0e1"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1"
   tolyui_feedback:
     dependency: transitive
     description:

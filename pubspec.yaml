@@ -27,7 +27,7 @@ dependencies:
   connectivity_plus: ^6.0.3
 
   # tolyui
-  tolyui: ^0.0.2+15
+  tolyui: 0.0.2+19
 
   l10n:
     path: modules/basic_system/l10n
