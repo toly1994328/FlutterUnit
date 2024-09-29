@@ -23,6 +23,7 @@ class NodeDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color primaryColor = Theme.of(context).primaryColor;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -33,17 +34,17 @@ class NodeDisplay extends StatelessWidget {
           const SizedBox(height: 10),
           CodeDisplay(display: mapNode(node), code: node.code, style: style),
           if(!widget.death)
-            _buildNodeInfo(),
+            _buildNodeInfo(primaryColor),
         ],
       ),
     );
   }
-  Widget _buildNodeInfo() => Padding(
+  Widget _buildNodeInfo(Color primaryColor) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 8.0),
     child: SizedBox(
       width: double.infinity,
       child: Panel(
-          color: Colors.cyanAccent.withOpacity(0.05),
+          color: primaryColor.withOpacity(0.04),
           child: Text(
             node.subtitle,
             style: const TextStyle(fontSize: 12),

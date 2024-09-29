@@ -10,6 +10,7 @@ import '../../../../data/zone.dart';
 import 'package:widgets/widgets.dart';
 
 import '../../mobile/widget_detail/category_end_drawer.dart';
+import '../../mobile/widget_detail/node_display/node_display.dart';
 import 'link_widget_buttons.dart';
 import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
@@ -76,6 +77,7 @@ class DeskWidgetDetailPage extends StatelessWidget {
 
     return BlocBuilder<WidgetDetailBloc, DetailState>(
       builder: (_, state) => Scaffold(
+        backgroundColor: Colors.white,
         endDrawer: CategoryEndDrawer(widget: bloc.currentWidget),
         body: Builder(builder: (ctx) {
           return _buildContent(ctx, bloc);
@@ -155,15 +157,25 @@ class DeskWidgetDetailPage extends StatelessWidget {
 
     return SliverList(
         delegate: SliverChildBuilderDelegate(
-      (_, i) => DeskWidgetNodePanel(
-        codeStyle: globalState.codeStyle,
-        codeFamily: 'Inconsolata',
-        text: nodes[i].name,
-        subText: nodes[i].subtitle,
-        code: nodes[i].code,
-        death: model.death,
-        show: WidgetsMap.map(model.name)[i],
-      ),
+      (_, i) =>
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: NodeDisplay(
+              node: nodes[i],
+              nodeIndex: i,
+              style: globalState.codeStyle,
+              widget: model,
+            ),
+          ),
+      //     DeskWidgetNodePanel(
+      //   codeStyle: globalState.codeStyle,
+      //   codeFamily: 'Inconsolata',
+      //   text: nodes[i].name,
+      //   subText: nodes[i].subtitle,
+      //   code: nodes[i].code,
+      //   death: model.death,
+      //   show: WidgetsMap.map(model.name)[i],
+      // ),
       childCount: nodes.length,
     ));
   }
