@@ -21,6 +21,9 @@ Map<String, List<DisplayFrame>> get kDisplayMap => {
   '/multi/wrap': multiWrap,
   '/multi/stack': multiStack,
 
+  '/scroll/list': listView,
+  '/scroll/grid': gridView,
+
   '/funny/elevator':funnyElevator,
 
   // '/popable/DropdownButton': [
