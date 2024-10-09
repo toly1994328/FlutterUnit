@@ -16,5 +16,10 @@ Map<String, dynamic> get calcMenus => {
       'label': '网格布局',
       // 'icon': Icons.grid_on_sharp,
     },
+    {
+      'path': '/page',
+      'label': '滑页布局',
+      // 'icon': Icons.grid_on_sharp,
+    },
   ]
 };

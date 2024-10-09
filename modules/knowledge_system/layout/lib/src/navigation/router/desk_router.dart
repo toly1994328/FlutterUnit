@@ -26,6 +26,12 @@ RouteBase get deskNavRoute => ShellRoute(
             },
           ),
           GoRoute(
+            path: 'scroll/:name',
+            builder: (BuildContext context, GoRouterState state) {
+              return const FrameDisplayPanel();
+            },
+          ),
+          GoRoute(
             path: 'popable/:name',
             builder: (BuildContext context, GoRouterState state) {
               return const FrameDisplayPanel();
@@ -36,40 +42,6 @@ RouteBase get deskNavRoute => ShellRoute(
             builder: (BuildContext context, GoRouterState state) {
               return const FrameDisplayPanel();
             },
-            // builder: (_,__)=>Text("暂未实现"),
-            // routes: [
-            //   GoRoute(
-            //     path: 'row',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'row',
-            //       );
-            //     },
-            //   ),
-            //   GoRoute(
-            //     path: 'column',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'column',
-            //       );
-            //     },
-            //   ),          GoRoute(
-            //     path: 'expanded',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'expanded',
-            //       );
-            //     },
-            //   ),
-            //   GoRoute(
-            //     path: 'holy',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'holy',
-            //       );
-            //     },
-            //   ),
-            // ]
           ),
           GoRoute(
             path: 'funny/:name',

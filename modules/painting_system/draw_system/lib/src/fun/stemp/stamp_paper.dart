@@ -42,7 +42,7 @@ class _StampPaperState extends State<StampPaper>
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.shortestSide * 0.8;
+    width = MediaQuery.of(context).size.shortestSide * 0.5;
 
     return GestureDetector(
       onTapDown: _onTapDown,
