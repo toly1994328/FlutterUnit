@@ -1,0 +1,29 @@
+{
+  "id": 237,
+  "name": "CarouselView",
+  "localName": "旋转视图",
+  "info": "复选框组件，常用于配置的切换，可指定颜色，接收状态变化回调，也可指定三态。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Checkbox基础用法",
+      "desc": [
+        "【value】 : 是否选中   【double】",
+        "【checkColor】: 选中时✔️gou颜色 【Color】",
+        "【activeColor】: 选中时框内颜色 【Color】",
+        "【onChanged】: 状态改变事件 【Function(bool)】,"
+      ]
+    },
+    {
+      "file": "node2_tristate.dart",
+      "name": "Checkbox的三态",
+      "desc": [
+        "【tristate】 : 是否是三态   【double】",
+        "  onChanged时,"
+      ]
+    }
+  ]
+}

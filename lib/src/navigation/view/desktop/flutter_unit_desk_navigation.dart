@@ -7,10 +7,10 @@ import 'package:tolyui_navigation/tolyui_navigation.dart';
 import 'menu_bar_leading.dart';
 import 'menu_bar_tail.dart';
 import 'toly_unit_menu_cell.dart';
-class FlutterUnitDeskNavigation extends StatelessWidget {
+class AppDeskNavigation extends StatelessWidget {
   final Widget content;
 
-  const FlutterUnitDeskNavigation({super.key, required this.content});
+  const AppDeskNavigation({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {

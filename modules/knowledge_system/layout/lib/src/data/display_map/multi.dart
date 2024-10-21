@@ -16,6 +16,7 @@ import '../../views/multi/flex/row_show.dart';
 import '../../views/playground/view/wrap/wrap_playground.dart';
 import '../../views/scroll/grid_view/grid_view_demo01.dart';
 import '../../views/scroll/list_view/list_view_demo01.dart';
+import '../../views/scroll/page_view/page_view_demo01.dart';
 import '../model/display_frame.dart';
 
 List<DisplayFrame> get multiFlex => [
@@ -72,5 +73,14 @@ List<DisplayFrame> get gridView => [
     desc: "通过 GridView.builder 构造，可以实现按需加载的网格滑动视图。",
     src: '',
     display: (BuildContext context) => GridViewDemo01(),
+  ),
+];
+
+List<DisplayFrame> get pageView => [
+  DisplayFrame(
+    title: 'PageView 滑动界面',
+    desc: "通过 GridView.builder 构造，可以实现按需加载的网格滑动视图。",
+    src: '',
+    display: (BuildContext context) => PageViewDemo01(),
   ),
 ];

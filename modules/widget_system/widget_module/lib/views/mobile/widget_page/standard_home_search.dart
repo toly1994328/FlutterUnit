@@ -84,7 +84,7 @@ class StandardHomeSearch extends StatelessWidget
   Widget _buildCollectIcon(BuildContext context) {
     return IconButton(
       // splashRadius: 20,
-      onPressed: () => context.push('/collect'),
+      onPressed: () => context.push(AppRoute.collection.url),
       icon: const Icon(TolyIcon.icon_collect),
     );
   }

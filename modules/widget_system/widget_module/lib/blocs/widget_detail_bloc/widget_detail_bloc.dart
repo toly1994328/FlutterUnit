@@ -46,6 +46,8 @@ class WidgetDetailBloc extends Cubit<DetailState> {
     try {
       final List<NodeModel> nodes = await nodeRepository.loadNode(widget.id);
       final List<WidgetModel> links = await widgetRepository.loadWidget(widget.links);
+      print("queryDetail====${nodes.length}===");
+
       if (nodes.isEmpty) {
         emit(DetailEmpty());
       } else {
@@ -55,7 +57,9 @@ class WidgetDetailBloc extends Cubit<DetailState> {
           links: links,
         ));
       }
-    } catch (_) {
+    } catch (e,s) {
+      print("queryDetail=error===${e}=$s==");
+
       emit(DetailFailed());
     }
   }

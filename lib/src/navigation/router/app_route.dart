@@ -1,23 +1,31 @@
 import 'package:app/app.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
+import '../view/desktop/flutter_unit_desk_navigation.dart';
 
-import '../../starter/fx_application.dart';
-import 'desk_route.dart';
-import 'mobile_route.dart';
+import 'system/app.dart';
+import 'system/global.dart';
+import 'system/settings.dart';
+import 'widgets/collection_route.dart';
+import 'widgets/widgets_route.dart';
 
-final RouteBase deskAppRoute = GoRoute(
-  path: '/',
-  redirect: (_, __) => null,
-  routes: [
-    GoRoute(
-      path: 'splash',
-      builder: (_, __) => const FlutterUnitSplash(),
-    ),
-    GoRoute(
-      path: 'start_error',
-      builder: (_, GoRouterState state) => AppStartErrorPage(error: state.extra),
-    ),
-    if (isDesk) appNavRoute,
-    if (!isDesk) ...appMobileNavRoute
-  ],
-);
+RouteBase get appRoute {
+  List<RouteBase> body = [
+    widgetsRoute,
+    collectRoute,
+    settingsRoute,
+    ...systemRoutes,
+  ];
+  return GoRoute(
+    path: AppRoute.home.path,
+    redirect: (_, __) => null,
+    routes: [
+      ...globalRoutes,
+      if (kAppEnv.isDesktopUI)
+        ShellRoute(
+          builder: (_, __, Widget child) => AppDeskNavigation(content: child),
+          routes: body,
+        ),
+      if (!kAppEnv.isDesktopUI) ...body,
+    ],
+  );
+}

@@ -88,7 +88,7 @@ class WidgetList extends StatelessWidget {
     return DeskWidgetItem(
       model: model,
       onTap: () {
-        context.push('/widget/detail/${model.name}',extra: model);
+        context.push('${AppRoute.widgetDetail.url}${model.name}',extra: model);
       },
     );
   }

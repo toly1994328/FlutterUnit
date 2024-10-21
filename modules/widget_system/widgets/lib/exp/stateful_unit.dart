@@ -36,13 +36,14 @@ export '../StatefulWidget/Navigator/node1_base.dart';
 export '../StatefulWidget/InteractiveViewer/node1_base.dart';
 export '../StatefulWidget/InteractiveViewer/node2_constrained.dart';
 export '../StatefulWidget/InteractiveViewer/node3_controller.dart';
+export '../StatefulWidget/CarouselView/node1_base.dart';
+export '../StatefulWidget/CarouselView/node2.dart';
 
 export '../StatefulWidget/Image/node1_base.dart';
 export '../StatefulWidget/Image/node2_fit.dart';
 export '../StatefulWidget/Image/node3_alignment.dart';
 export '../StatefulWidget/Image/node4_colorBlendMode.dart';
 export '../StatefulWidget/Image/node5_repeat.dart';
-export '../StatefulWidget/Image/node6_centerSlice.dart';
 export '../StatefulWidget/Image/node6_centerSlice.dart';
 
 export '../StatefulWidget/RangeSlider/node1_base.dart';

@@ -14,11 +14,10 @@ export 'view/splash/Flutter_unit_splash.dart';
 export 'view/error/app_start_error.dart';
 
 class FxApplication with FxStarter<AppConfig> {
-
   const FxApplication();
 
   @override
-  Widget get app =>  AppBlocProvider(child: FlutterUnit3());
+  Widget get app => AppBlocProvider(child: FlutterUnit3());
 
   @override
   AppStartRepository<AppConfig> get repository => const FlutterUnitStartRepo();
@@ -28,7 +27,7 @@ class FxApplication with FxStarter<AppConfig> {
     debugPrint("App启动耗时:$cost ms");
     context.read<AppConfigBloc>().init(state);
     context.read<WidgetsBloc>().add(const EventTabTap(WidgetFamily.statelessWidget));
-    if(!kAppEnv.isWeb){
+    if (!kAppEnv.isWeb) {
       context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
       context.read<CategoryBloc>().add(const EventLoadCategory());
     }
@@ -36,18 +35,16 @@ class FxApplication with FxStarter<AppConfig> {
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
-    context.go('/widget');
+    context.go(AppRoute.widget.url);
   }
 
   @override
   void onStartError(BuildContext context, Object error, StackTrace trace) {
-    context.go('/start_error',extra: error);
+    context.go(AppRoute.startError.url, extra: error);
   }
-
 
   @override
   void onGlobalError(Object error, StackTrace stack) {
     print(error);
   }
 }
-

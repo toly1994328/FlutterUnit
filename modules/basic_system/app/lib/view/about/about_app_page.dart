@@ -4,6 +4,7 @@
 import 'package:app/app.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
+import 'package:fx_go_router_ext/fx_go_router_ext.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 

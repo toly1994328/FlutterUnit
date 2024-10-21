@@ -22,7 +22,7 @@ class NodePo {
 
   factory NodePo.fromJson(Map<String, dynamic> map) {
     return NodePo(
-        id: map['id'],
+        id: map['id']??0,
         name: map['name'],
         widgetId: map["widgetId"],
         priority: map["priority"],

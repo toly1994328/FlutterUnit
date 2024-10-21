@@ -1,13 +1,7 @@
-import 'dart:convert';
-import 'dart:io';
 
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '../../app_config/bloc/state.dart';
-import '../style/transition/fade_page_transitions_builder.dart';
-import '../style/transition/slide_transition/slide_page_transition_builder.dart';
 
 class AppTheme {
   static ThemeData darkTheme(AppConfig state) {
