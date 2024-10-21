@@ -6,7 +6,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/gen_l10n/app_localizations.dart';
 import 'package:l10n/l10n.dart';
+import 'package:storage/storage.dart';
 import 'package:tolyui/tolyui.dart';
+import 'package:widget_module/blocs/blocs.dart';
 
 import 'l10n/gen/app_l10n.dart';
 import 'navigation/router/app_route.dart';
@@ -15,16 +17,27 @@ import 'navigation/router/app_route.dart';
 /// contact me by email 1981462002@qq.com
 /// 说明: 应用主程序
 
-class FlutterUnit3 extends StatelessWidget {
-   FlutterUnit3({Key? key}) : super(key: key);
+class FlutterUnit3 extends StatefulWidget {
+   const FlutterUnit3({super.key});
 
+  @override
+  State<FlutterUnit3> createState() => _FlutterUnit3State();
+}
+
+class _FlutterUnit3State extends State<FlutterUnit3> {
   final GoRouter _router = GoRouter(
-    initialLocation: '/splash',
-    routes: <RouteBase>[deskAppRoute],
+    initialLocation: AppRoute.splash.url,
+    routes: <RouteBase>[appRoute],
     onException: (BuildContext ctx, GoRouterState state, GoRouter router) {
-      router.go('/404', extra: state.uri.toString());
+      router.go(AppRoute.globalError.url, extra: state.uri.toString());
     },
   );
+
+  @override
+  void initState() {
+    super.initState();
+    _initWeb();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,5 +68,11 @@ class FlutterUnit3 extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _initWeb() {
+    if(!kAppEnv.isWeb)return;
+    GoRouter.optionURLReflectsImperativeAPIs = true;
+    context.read<WidgetsBloc>().add(const EventTabTap(WidgetFamily.statelessWidget));
   }
 }

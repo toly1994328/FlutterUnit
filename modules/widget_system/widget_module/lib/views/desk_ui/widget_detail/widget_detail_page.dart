@@ -45,6 +45,9 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
 
   void _loadModelByName() async {
     _model = await widgetRepository.queryWidgetByName(widget.widgetName);
+    setState(() {
+
+    });
   }
 
   @override

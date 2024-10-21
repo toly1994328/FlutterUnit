@@ -23,6 +23,7 @@ Map<String, List<DisplayFrame>> get kDisplayMap => {
 
   '/scroll/list': listView,
   '/scroll/grid': gridView,
+  '/scroll/page': pageView,
 
   '/funny/elevator':funnyElevator,
 

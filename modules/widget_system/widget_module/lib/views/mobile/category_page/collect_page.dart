@@ -14,16 +14,15 @@ import 'sync/upload_button.dart';
 
 
 class CollectPageAdapter extends StatelessWidget {
-  final bool canPop;
-  const CollectPageAdapter({Key? key, this.canPop=false}) : super(key: key);
+  const CollectPageAdapter({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     bool isDesk = Platform.isMacOS||Platform.isWindows||Platform.isLinux;
     if(isDesk){
-      return DeskCategoryPage();
+      return const DeskCategoryPage();
     }else{
-      return CollectPage(canPop:canPop);
+      return const CollectPage(canPop:true);
     }
   }
 }

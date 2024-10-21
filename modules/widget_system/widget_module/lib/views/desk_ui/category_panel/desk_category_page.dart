@@ -146,7 +146,7 @@ class DeskCateGoryPage extends StatelessWidget {
     BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id!));
     BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id!));
     // Navigator.pushNamed(context, UnitRouter.category_show, arguments: model);
-    context.push('/collection/widgets/${model.id}',extra: model);
+    context.push('${AppRoute.collectionDetail.url}${model.id}',extra: model);
   }
 
 

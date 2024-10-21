@@ -314,10 +314,10 @@ packages:
     dependency: transitive
     description:
       name: fx_go_router_ext
-      sha256: "982aa2c7618075fd458ad50b6779578bfdff3376745320d4cb6d2dda31ddabc3"
+      sha256: a82d719d6f2026eaff97e466c7f8c34d75a55a58cfce469807df8a2211d91652
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.3"
   fx_platform_adapter:
     dependency: transitive
     description:

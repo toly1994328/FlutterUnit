@@ -28,13 +28,13 @@ class MePageItem extends StatelessWidget {
             height: 10,
           ),
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_them, context.l10n.appSettings, '/settings'),
+          _buildItem(context, TolyIcon.icon_them, context.l10n.appSettings, AppRoute.settings.url),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_layout, context.l10n.dataManagement, '/data_manage'),
+              context, TolyIcon.icon_layout, context.l10n.dataManagement, AppRoute.dataManage.url),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_collect, context.l10n.userCollection, '/collect',),
+              context, TolyIcon.icon_collect, context.l10n.userCollection, AppRoute.collection.url,),
           Gap.sfl10,
 
           Stack(
@@ -43,18 +43,18 @@ class MePageItem extends StatelessWidget {
                 context,
                 Icons.update,
                 context.l10n.versionInformation,
-                '/settings/version',
+                AppRoute.version.url,
               ),
               const Positioned(left: 40, top: 10, child: UpdateRedPoint())
             ],
           ),
           const Divider(),
-          _buildItem(context, Icons.info, context.l10n.aboutApplications, '/about_app'),
+          _buildItem(context, Icons.info, context.l10n.aboutApplications, AppRoute.aboutApp.url),
 
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing, '/about_me'),
+          _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing, AppRoute.aboutMe.url),
           const Divider(),
-          _buildItem(context, Icons.sanitizer, context.l10n.homeAccountSupport, '/support_me'),
+          _buildItem(context, Icons.sanitizer, context.l10n.homeAccountSupport,  AppRoute.supportMe.url),
         ],
       ),
     );
