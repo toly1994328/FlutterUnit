@@ -5,28 +5,12 @@ homepage:
 publish_to: none
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=1.17.0"
-
+resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  toly_ui:
-    path: ../../basic_system/toly_ui
-  l10n:
-    path: ../../basic_system/l10n
-  app:
-    path: ../../basic_system/app
-  components:
-    path: ../../basic_system/components
-  dash_painter: ^1.0.2
-  flutter_bloc: ^8.1.6 # 状态管理
-  url_launcher: ^6.1.14 # url
-  image: ^4.0.17
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
