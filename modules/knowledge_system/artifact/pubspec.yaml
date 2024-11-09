@@ -4,35 +4,13 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=2.17.0"
-
+resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.6 # 状态管理
-  dio: ^5.3.2 # 网络请求
-  webview_flutter: ^4.2.4
-  storage:
-    path: ../../basic_system/storage
-  algorithm:
-    path: ../algorithm
-  components:
-    path: ../../basic_system/components
-  utils:
-    path: ../../basic_system/utils
-  layout:
-    path: ../layout
-  app:
-    path: ../../basic_system/app
-  l10n:
-    path: ../../basic_system/l10n
-  toly_ui:
-    path: ../../basic_system/toly_ui
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

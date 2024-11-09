@@ -5,38 +5,15 @@ homepage:
 publish_to: none
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=1.17.0"
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.6 # 状态管理
-  equatable: ^2.0.5 # 相等辅助
-  shared_preferences: ^2.2.2 # xml 固化
-  connectivity_plus: ^6.0.3
-  url_launcher: ^6.1.14 # url
-  fx_platform_adapter: ^0.0.2+1 # 平台适配器
-  fx_go_router_ext: 0.0.3
-  storage:
-    path: ../storage
-  widget_module:
-    path: ../../widget_system/widget_module
-  components:
-    path: ../components
-  toly_ui:
-    path: ../toly_ui
-  l10n:
-    path: ../l10n
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
 
   # To add assets to your package, add an assets section, like this:

@@ -5,25 +5,14 @@ homepage:
 publish_to: none
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=1.17.0"
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_spinkit: ^5.2.0 # loading
-  flutter_markdown: ^0.7.2+1 # markdown
-  dash_painter: ^1.0.2
-  refresh: ^1.0.1
-
-  toly_ui:
-    path: ../toly_ui
-  app:
-    path: ../app
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

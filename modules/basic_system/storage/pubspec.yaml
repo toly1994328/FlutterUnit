@@ -4,19 +4,14 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=1.17.0"
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.2.1 # xml 固化
-  fx_dao: 0.0.1+2
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
