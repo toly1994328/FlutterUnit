@@ -133,10 +133,18 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: "11e40df547d418cc0c4900a9318b26304e665da6fa4755399a9ff9efd09034b5"
+      sha256: "5598aa796bbf4699afd5c67c0f5f6e2ed542afc956884b9cd58c306966efc260"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.4.3+1"
+    version: "5.7.0"
+  dio_web_adapter:
+    dependency: transitive
+    description:
+      name: dio_web_adapter
+      sha256: "33259a9276d6cea88774a0000cfae0d861003497755969c92faa223108620dc8"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.0"
   equatable:
     dependency: "direct main"
     description:
@@ -261,6 +269,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.0.1+2"
+  fx_dio:
+    dependency: "direct main"
+    description:
+      path: "D:\\Projects\\Flutter\\Fx\\fx\\modules\\fx_dio"
+      relative: false
+    source: path
+    version: "0.0.1"
   fx_go_router_ext:
     dependency: "direct main"
     description:

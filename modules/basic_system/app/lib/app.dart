@@ -25,3 +25,4 @@ export 'app_config/app_config.dart';
 export 'app/action/action.dart';
 export 'app/router/app_route.dart';
 export 'view/view.dart';
+export 'app/host/unit_host.dart';

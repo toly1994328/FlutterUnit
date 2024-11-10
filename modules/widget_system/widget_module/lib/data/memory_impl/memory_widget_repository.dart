@@ -1,10 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/services.dart';
 import 'package:storage/storage.dart';
 
-import '../model/widget_filter.dart';
 import '../model/widget_model.dart';
 import '../widget_repository.dart';
 

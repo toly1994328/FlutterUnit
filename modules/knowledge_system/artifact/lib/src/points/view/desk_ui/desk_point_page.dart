@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../bloc/point_bloc/point_bloc.dart';
-import '../../bloc/point_system_bloc.dart';
+import '../../bloc/point_bloc.dart';
+import '../../bloc/bloc.dart';
 import '../../data/model/repository.dart';
+import '../../repository/api/point_api.dart';
 import '../issues_point/issues_point_page.dart';
 import 'github_repo_panel.dart';
 
@@ -19,7 +20,7 @@ class DeskPointPage extends StatefulWidget {
 
 class _DeskPointPageState extends State<DeskPointPage> {
 
-  final Repository _repository = Repository.fromJson({
+  Repository _repository = Repository.fromJson({
     'full_name': 'toly1994328/FlutterUnit',
     'license': {"spdx_id": 'GPL-3.0'},
     'description':
@@ -30,10 +31,25 @@ class _DeskPointPageState extends State<DeskPointPage> {
     'open_issues_count': 40,
   });
 
+  final PointApi _api = PointApiImpl();
+
+  @override
+  void initState() {
+    super.initState();
+    _loadRepo();
+  }
+
+  void _loadRepo() async {
+    final Repository result = await _api.getFlutterUnitRepo();
+    setState(() {
+      _repository = result;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => PointBloc()..add(EventLoadPoint()),
+      create: (_) => PointBloc(_api)..loadPoint(),
       child: Scaffold(
         body: Column(
           children: [

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-
-import '../../bloc/point_system_bloc.dart';
+import '../../bloc/bloc.dart';
 import '../../data/api/issues_api.dart';
 import '../../data/model/issue.dart';
 import '../../data/model/repository.dart';
+import '../../repository/api/point_api.dart';
 import 'issue_item.dart';
 import 'issues_detail.dart';
 import 'repo_widget.dart';
@@ -17,19 +17,21 @@ import 'repo_widget.dart';
 /// 说明:
 
 class IssuesPointScope extends StatelessWidget {
-  const IssuesPointScope({Key? key}) : super(key: key);
+  const IssuesPointScope({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(providers: [
-      BlocProvider<PointBloc>(create: (_) => PointBloc()..add(EventLoadPoint())),
-    ], child: const IssuesPointPage(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<PointBloc>(create: (_) => PointBloc(PointApiImpl())..loadPoint()),
+      ],
+      child: const IssuesPointPage(),
     );
   }
 }
 
 class IssuesPointPage extends StatelessWidget {
-  const IssuesPointPage({Key? key}) : super(key: key);
+  const IssuesPointPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +40,10 @@ class IssuesPointPage extends StatelessWidget {
 }
 
 class IssuesPointContent extends StatefulWidget {
-  const IssuesPointContent({Key? key}) : super(key: key);
+  const IssuesPointContent({super.key});
 
   @override
-  _IssuesPointContentState createState() => _IssuesPointContentState();
+  State createState() => _IssuesPointContentState();
 }
 
 class _IssuesPointContentState extends State<IssuesPointContent> {
@@ -81,20 +83,11 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
     if (state is PointLoaded) {
       List<Issue> issues = state.issues;
       return SliverList(
-          delegate: SliverChildBuilderDelegate(
-              (ctx, int index) => GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(SlidePageRoute(
-                        child: BlocProvider<PointCommentBloc>(
-                            create: (_) => PointCommentBloc()
-                              ..add(EventLoadPointComment(issues[index])),
-                            child: const IssuesDetailPage())));
-
-                    // Navigator.pushNamed(ctx, UnitRouter.
-                    // );
-                  },
-                  child: IssueItem(issue: issues[index])),
-              childCount: issues.length),);
+        delegate: SliverChildBuilderDelegate(
+          (ctx, int index) => IssueItem(onTap: toDetailPage, issue: issues[index]),
+          childCount: issues.length,
+        ),
+      );
     }
 
     if (state is PointLoadFailure) {
@@ -109,6 +102,17 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
 
     return const SliverPadding(
       padding: EdgeInsets.zero,
+    );
+  }
+
+  void toDetailPage(Issue issue) {
+    Navigator.of(context).push(
+      SlidePageRoute(
+        child: BlocProvider<PointCommentBloc>(
+          create: (_) => PointCommentBloc()..loadPointComment(issue),
+          child: const IssuesDetailPage(),
+        ),
+      ),
     );
   }
 
@@ -149,12 +153,13 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
   }
 
   Future<void> _loadIssues() async {
-    BlocProvider.of<PointBloc>(context).add(EventLoadPoint());
+    BlocProvider.of<PointBloc>(context).loadPoint();
     await Future.delayed(const Duration(milliseconds: 200));
   }
 
   void _loadRepo() async {
-    final Repository result = await IssuesApi.getRepoFlutterUnit();
+    PointApi api = context.read<PointBloc>().api;
+    final Repository result = await api.getFlutterUnitRepo();
     setState(() {
       _repository = result;
     });

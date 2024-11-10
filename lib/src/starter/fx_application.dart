@@ -17,7 +17,7 @@ class FxApplication with FxStarter<AppConfig> {
   const FxApplication();
 
   @override
-  Widget get app => AppBlocProvider(child: FlutterUnit3());
+  Widget get app => const AppBlocProvider(child: FlutterUnit3());
 
   @override
   AppStartRepository<AppConfig> get repository => const FlutterUnitStartRepo();

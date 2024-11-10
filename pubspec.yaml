@@ -5,7 +5,6 @@ version: 3.0.0
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
-
 environment:
   sdk: ">=3.5.0 <4.0.0"
 workspace:
@@ -75,6 +74,8 @@ dependencies:
   # 逻辑处理
   image: ^4.0.17 # 图像处理
   equatable: ^2.0.5 # 相等辅助
+  fx_dio:
+    path: D:\Projects\Flutter\Fx\fx\modules\fx_dio
 
 dev_dependencies:
   flutter_test:
@@ -116,7 +117,7 @@ flutter:
         - asset: assets/fonts/ComicNeue-Regular.ttf
     - family: CHOPS
       fonts:
-        - asset: assets/fonts/CHOPS.TTF
+        - asset: assets/fonts/CHOPS.ttf
 
 toly:
   icon:
