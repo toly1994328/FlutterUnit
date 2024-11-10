@@ -32,7 +32,8 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
   WidgetModel? _model;
 
   WidgetRepository get widgetRepository => context.read<WidgetsBloc>().repository;
-  NodeRepository get nodeRepository => kIsWeb? MemoryNodeRepository():const NodeDbRepository();
+
+  NodeRepository get nodeRepository => kIsWeb ? MemoryNodeRepository() : const NodeDbRepository();
 
   @override
   void initState() {
@@ -45,17 +46,12 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
 
   void _loadModelByName() async {
     _model = await widgetRepository.queryWidgetByName(widget.widgetName);
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_model == null)
-      return Center(
-        child: CupertinoActivityIndicator(),
-      );
+    if (_model == null) return const Center(child: CupertinoActivityIndicator());
 
     return BlocProvider<WidgetDetailBloc>(
       create: (_) => WidgetDetailBloc(
@@ -77,15 +73,14 @@ class DeskWidgetDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetDetailBloc bloc = context.watch<WidgetDetailBloc>();
-
-    return BlocBuilder<WidgetDetailBloc, DetailState>(
-      builder: (_, state) => Scaffold(
-        backgroundColor: Colors.white,
-        endDrawer: CategoryEndDrawer(widget: bloc.currentWidget),
-        body: Builder(builder: (ctx) {
-          return _buildContent(ctx, bloc);
-        }),
-      ),
+    DetailState state = context.watch<WidgetDetailBloc>().state;
+    WidgetModel widget = bloc.currentWidget;
+    return Scaffold(
+      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+      endDrawer: CategoryEndDrawer(widget: widget),
+      body: Builder(builder: (ctx) {
+        return _buildContent(ctx, bloc, state);
+      }),
     );
   }
 
@@ -99,8 +94,7 @@ class DeskWidgetDetailPage extends StatelessWidget {
         ],
       );
 
-  Widget _buildContent(BuildContext context, WidgetDetailBloc bloc) {
-    DetailState state = bloc.state;
+  Widget _buildContent(BuildContext context, WidgetDetailBloc bloc, DetailState state) {
     return WillPopScope(
         onWillPop: () => _whenPop(context),
         child: CustomScrollView(
@@ -113,26 +107,17 @@ class DeskWidgetDetailPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child: DeskWidgetDetailPanel(
-                          model: bloc.currentWidget,
-                        ),
+                        child: DeskWidgetDetailPanel(model: bloc.currentWidget),
                       ),
-                      const SizedBox(
-                        width: 20,
-                      ),
+                      const SizedBox(width: 20),
                       Expanded(
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            height: 16,
-                          ),
+                          const SizedBox(height: 16),
                           linkText(context),
                           if (state is DetailWithData)
-                            LinkWidgetButtons(
-                              links: state.links,
-                              onSelect: bloc.push,
-                            )
+                            LinkWidgetButtons(links: state.links, onSelect: bloc.push)
                         ],
                       ))
                     ],
@@ -160,25 +145,15 @@ class DeskWidgetDetailPage extends StatelessWidget {
 
     return SliverList(
         delegate: SliverChildBuilderDelegate(
-      (_, i) =>
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: NodeDisplay(
-              node: nodes[i],
-              nodeIndex: i,
-              style: globalState.codeStyle,
-              widget: model,
-            ),
-          ),
-      //     DeskWidgetNodePanel(
-      //   codeStyle: globalState.codeStyle,
-      //   codeFamily: 'Inconsolata',
-      //   text: nodes[i].name,
-      //   subText: nodes[i].subtitle,
-      //   code: nodes[i].code,
-      //   death: model.death,
-      //   show: WidgetsMap.map(model.name)[i],
-      // ),
+      (_, i) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: NodeDisplay(
+          node: nodes[i],
+          nodeIndex: i,
+          style: globalState.codeStyle,
+          widget: model,
+        ),
+      ),
       childCount: nodes.length,
     ));
   }

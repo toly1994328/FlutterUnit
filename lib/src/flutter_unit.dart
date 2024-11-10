@@ -18,7 +18,7 @@ import 'navigation/router/app_route.dart';
 /// 说明: 应用主程序
 
 class FlutterUnit3 extends StatefulWidget {
-   const FlutterUnit3({super.key});
+  const FlutterUnit3({super.key});
 
   @override
   State<FlutterUnit3> createState() => _FlutterUnit3State();
@@ -71,7 +71,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> {
   }
 
   void _initWeb() {
-    if(!kAppEnv.isWeb)return;
+    if (!kAppEnv.isWeb) return;
     GoRouter.optionURLReflectsImperativeAPIs = true;
     context.read<WidgetsBloc>().add(const EventTabTap(WidgetFamily.statelessWidget));
   }

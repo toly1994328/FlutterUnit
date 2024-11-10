@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:utils/utils.dart';
 
-import '../../bloc/point_system_bloc.dart';
+import '../../bloc/bloc.dart';
 import '../../data/model/github_model.dart';
 import '../../data/model/issue.dart';
 

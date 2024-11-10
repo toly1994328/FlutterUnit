@@ -13,55 +13,61 @@ import '../../data/model/issue.dart';
 
 class IssueItem extends StatelessWidget {
   final Issue issue;
+  final ValueChanged<Issue> onTap;
 
-  const IssueItem({Key? key, required this.issue}) : super(key: key);
+  const IssueItem({
+    super.key,
+    required this.issue,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      decoration: BoxDecoration(
-        border: Border(
-            bottom: BorderSide(
-                color: Theme.of(context).dividerTheme.color??Colors.transparent,
-                width: 1 / window.devicePixelRatio)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          _buildTop(),
-          Padding(
-            padding: const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 10),
-            child: Text(
-              '${issue.title}',
-              style: TextStyle(fontSize: 15, color: Colors.grey, shadows: [
-                Shadow(
-                    color: isDark ? Colors.black : Colors.white,
-                    offset: Offset(1, .5))
-              ]),
+    return GestureDetector(
+      onTap: () => onTap(issue),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        decoration: BoxDecoration(
+          border: Border(
+              bottom: BorderSide(
+                  color: Theme.of(context).dividerTheme.color ?? Colors.transparent,
+                  width: 1 / window.devicePixelRatio)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            _buildTop(),
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 10),
+              child: Text(
+                '${issue.title}',
+                style: TextStyle(fontSize: 15, color: Colors.grey, shadows: [
+                  Shadow(color: isDark ? Colors.black : Colors.white, offset: Offset(1, .5))
+                ]),
+              ),
             ),
-          ),
-          Row(
-            children: <Widget>[
-              const Spacer(),
-              WrapColor(
-                  color: Colors.greenAccent,
-                  child: Text(
-                    issue.commentNum.toString(),
-                    style: const TextStyle(color: Colors.white),
-                  )),
-              const SizedBox(
-                width: 5,
-              ),
-              const Icon(
-                TolyIcon.icon_common,
-                size: 20,
-              ),
-            ],
-          )
-        ],
+            Row(
+              children: <Widget>[
+                const Spacer(),
+                WrapColor(
+                    color: Colors.greenAccent,
+                    child: Text(
+                      issue.commentNum.toString(),
+                      style: const TextStyle(color: Colors.white),
+                    )),
+                const SizedBox(
+                  width: 5,
+                ),
+                const Icon(
+                  TolyIcon.icon_common,
+                  size: 20,
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

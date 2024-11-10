@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
+import 'package:fx_dio/fx_dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
@@ -26,6 +27,9 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     WindowSizeAdapter.setSize();
     // throw 'Test Debug Start Error';
     await SpStorage.instance.initSp();
+
+    FxDio().register([const UnitHost()]);
+
     if (!kAppEnv.isWeb) await initDb();
     HttpUtil.instance.rebase(PathUnit.baseUrl);
     AppConfigPo po = await SpStorage.instance.appConfig.read();

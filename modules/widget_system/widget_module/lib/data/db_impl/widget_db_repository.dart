@@ -1,20 +1,17 @@
-
 import 'package:storage/storage.dart';
 
 import '../zone.dart';
-
-
 
 /// create by 张风捷特烈 on 2020-03-03
 /// contact me by email 1981462002@qq.com
 /// 说明 : Widget数据仓库
 
 class WidgetDbRepository implements WidgetRepository {
-
   const WidgetDbRepository();
 
-  WidgetDao get widgetDao => AppStorage().flutter<WidgetDao>()!;
-  LikeDao get likeDao => AppStorage().flutter<LikeDao>()!;
+  WidgetDao get widgetDao => AppStorage().flutter<WidgetDao>();
+
+  LikeDao get likeDao => AppStorage().flutter<LikeDao>();
 
   @override
   Future<List<WidgetModel>> loadLikeWidgets() async {
@@ -55,10 +52,10 @@ class WidgetDbRepository implements WidgetRepository {
   Future<int> total(WidgetFilter args) => widgetDao.total(args);
 
   @override
-  Future<WidgetModel?> queryWidgetByName(String? name) async{
-    if(name==null) return null;
-    Map<String, dynamic>? data =  await widgetDao.queryWidgetByName(name);
-    if(data!=null){
+  Future<WidgetModel?> queryWidgetByName(String? name) async {
+    if (name == null) return null;
+    Map<String, dynamic>? data = await widgetDao.queryWidgetByName(name);
+    if (data != null) {
       return WidgetModel.fromPo(WidgetPo.fromJson(data));
     }
     return null;
