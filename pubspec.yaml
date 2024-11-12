@@ -74,8 +74,7 @@ dependencies:
   # 逻辑处理
   image: ^4.0.17 # 图像处理
   equatable: ^2.0.5 # 相等辅助
-  fx_dio:
-    path: D:\Projects\Flutter\Fx\fx\modules\fx_dio
+  fx_dio: ^0.0.2
 
 dev_dependencies:
   flutter_test:
