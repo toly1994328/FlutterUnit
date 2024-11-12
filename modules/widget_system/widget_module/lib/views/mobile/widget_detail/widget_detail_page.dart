@@ -28,7 +28,8 @@ class WidgetDetailPageScope extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetRepository widgetRepository = context.read<WidgetsBloc>().repository;
-    NodeRepository nodeRepository = kIsWeb ? MemoryNodeRepository() : const NodeDbRepository();
+    NodeRepository nodeRepository =
+        kIsWeb ? MemoryNodeRepository() : const NodeDbRepository();
 
     return BlocProvider<WidgetDetailBloc>(
       create: (_) => WidgetDetailBloc(
@@ -71,8 +72,27 @@ class WidgetDetailPage extends StatelessWidget {
 
   Widget _buildContent(BuildContext context, WidgetDetailBloc bloc) {
     DetailState state = bloc.state;
-    return WillPopScope(
-        onWillPop: () => _whenPop(context),
+    return PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (bool didPop, dynamic result) {
+          if (didPop) {
+            return;
+          }
+          WidgetDetailBloc detailBloc = context.read<WidgetDetailBloc>();
+          // 检查抽屉是否打开
+          if (Scaffold.of(context).isEndDrawerOpen) {
+            if (context.mounted) {
+              Navigator.of(context).pop();
+            }
+            return;
+          }
+          // 调用原来的 pop 逻辑
+          detailBloc.pop().then((bool canPop) {
+            if (canPop && context.mounted) {
+              Navigator.of(context).pop();
+            }
+          });
+        },
         child: CustomScrollView(
           slivers: [
             SliverWidgetDetailBar(model: bloc.currentWidget),
@@ -97,16 +117,18 @@ class WidgetDetailPage extends StatelessWidget {
         ));
   }
 
-  Future<bool> _whenPop(BuildContext context) async {
-    // print("======_whenPop============");
-    WidgetDetailBloc detailBloc = context.read<WidgetDetailBloc>();
-    if (Scaffold.of(context).isEndDrawerOpen) {
-      return true;
-    }
-    return detailBloc.pop();
-  }
+  // Future<bool> _whenPop(BuildContext context) async {
+  //   // print("======_whenPop============");
+  //   WidgetDetailBloc detailBloc = context.read<WidgetDetailBloc>();
+  //   if (Scaffold.of(context).isEndDrawerOpen) {
+  //     return true;
+  //   }
+  //   return detailBloc.pop();
+  // }
 
-  Widget _buildSliverNodeList(BuildContext context, List<NodeModel> nodes, WidgetModel model) {
+
+  Widget _buildSliverNodeList(
+      BuildContext context, List<NodeModel> nodes, WidgetModel model) {
     AppConfig globalState = BlocProvider.of<AppConfigBloc>(context).state;
     return SliverList(
         delegate: SliverChildBuilderDelegate(
