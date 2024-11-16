@@ -11,11 +11,15 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6 # 状态管理
+  dio: ^5.7.0
+
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.3 # xml 固化
   r_upgrade: ^0.4.2 # 应用升级
+  open_file: ^3.5.9 # 打开文件
   url_launcher: ^6.3.0 # url
   package_info_plus: ^8.0.0
+  path_provider: ^2.1.5
   utils:
     path: ../utils
   app:

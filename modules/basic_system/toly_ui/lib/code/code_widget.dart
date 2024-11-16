@@ -24,9 +24,9 @@ class CodeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget body;
-    Widget _codeWidget;
+    Widget codeWidget;
     try {
-      _codeWidget = SelectableText.rich(
+      codeWidget = SelectableText.rich(
         selectionControls: MaterialTextSelectionControls(),
         TextSpan(
           style: TextStyle(fontSize: fontSize, fontFamily: fontFamily),
@@ -38,15 +38,16 @@ class CodeWidget extends StatelessWidget {
       );
     } catch (err) {
       print(err);
-      _codeWidget = SelectableText(code);
+      codeWidget = SelectableText(code);
     }
     body = SingleChildScrollView(
       child: Container(
-        child: _codeWidget,
+        alignment: Alignment.centerLeft,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: style.backgroundColor ?? const Color(0xffF6F8FA),
             borderRadius: const BorderRadius.all(Radius.circular(5.0))),
+        child: codeWidget,
       ),
     );
     return body;
