@@ -16,7 +16,7 @@ class AppUpdatePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<UpdateBloc, UpdateState>(
+    return BlocConsumer<UpgradeBloc, UpdateState>(
       builder: _buildByUpdateState,
       listener: _listenerByUpdateState,
     );
@@ -94,7 +94,7 @@ class AppUpdatePanel extends StatelessWidget {
 
   void _tapByState(UpdateState state, BuildContext context) {
     if (state is NoUpdateState) {
-      BlocProvider.of<UpdateBloc>(context)
+      BlocProvider.of<UpgradeBloc>(context)
           .add(const CheckUpdate(appName: 'FlutterUnit'));
     }
     if (state is ShouldUpdateState) {
@@ -104,7 +104,7 @@ class AppUpdatePanel extends StatelessWidget {
         return;
       }
       // 处理下载的事件
-      BlocProvider.of<UpdateBloc>(context)
+      BlocProvider.of<UpgradeBloc>(context)
           .add(DownloadEvent(appInfo: state.info));
     }
   }

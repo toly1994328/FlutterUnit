@@ -1,49 +1,20 @@
-import 'package:app/app.dart';
 import 'package:equatable/equatable.dart';
-import 'package:utils/utils.dart';
-
-class AppInfoApi {
-  static Future<TaskResult<AppInfo>> getAppVersion(
-      {required String appName}) async {
-    String errorMsg = "";
-    var result;
-    try {
-      result =
-          await HttpUtil.instance.client.get(PathUnit.appInfo + "/$appName");
-    } catch (err) {
-      errorMsg = err.toString();
-    }
-    print("=====${errorMsg}=====");
-    // 获取的数据非空且 status = true
-    if (result.data != null && result.data['status']) {
-      // 说明有数据
-      if (result.data['data'] != null) {
-        return TaskResult.success(
-            data: AppInfo(
-          appName: result.data['data']['appName'],
-          appVersion: result.data['data']['appVersion'],
-          appUrl: result.data['data']['appUrl'],
-          appSize: result.data['data']['appSize'],
-        ));
-      } else {
-        return const TaskResult.success(data: null);
-      }
-    }
-    return TaskResult.error(msg: '请求错误: $errorMsg');
-  }
-}
 
 class AppInfo extends Equatable {
   final String appName;
   final String appVersion;
   final String appUrl;
   final int appSize;
+  final String? description;
+  final String? sha256;
 
   const AppInfo({
     required this.appName,
     required this.appVersion,
     required this.appUrl,
     required this.appSize,
+    required this.description,
+    required this.sha256,
   });
 
   @override
@@ -52,5 +23,20 @@ class AppInfo extends Equatable {
   @override
   String toString() {
     return 'AppInfo{appName: $appName, appVersion: $appVersion, appUrl: $appUrl, appSize: $appSize}';
+  }
+
+  bool shouldUpgrade(String current) {
+    List<String> currentArray = current.split(".");
+    List<String> upgradeArray = appVersion.split(".");
+    int length = currentArray.length;
+    if (length == upgradeArray.length) {
+      for (int i = 0; i < length; i++) {
+        if (int.parse(currentArray[i]) == int.tryParse(upgradeArray[i])) {
+          continue;
+        }
+        return int.parse(currentArray[i]) < int.parse(upgradeArray[i]);
+      }
+    }
+    return false;
   }
 }

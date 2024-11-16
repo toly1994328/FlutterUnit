@@ -16,7 +16,7 @@ class UpdateRedPoint extends StatelessWidget {
       height: 8,
       decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
     );
-    return BlocBuilder<UpdateBloc, UpdateState>(
+    return BlocBuilder<UpgradeBloc, UpdateState>(
       builder: (BuildContext context, UpdateState state) {
         if (state is ShouldUpdateState) {
           return radPoint;

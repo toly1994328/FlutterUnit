@@ -6,3 +6,5 @@ export 'bloc/event.dart';
 export 'model/app_info.dart';
 export 'views/app_update_panel.dart';
 export 'views/update_red_point.dart';
+
+export 'repository/api/upgrade_api.dart';

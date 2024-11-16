@@ -25,6 +25,8 @@ enum UnitApi {
   repository("/repository/name/FlutterUnit"),
   point("/point"),
   pointComment("/pointComment/"),
+
+  appInfo("/appInfo/name/"),
   ;
 
   final String path;
