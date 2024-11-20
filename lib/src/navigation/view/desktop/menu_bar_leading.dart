@@ -10,6 +10,7 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:widgets/widgets.dart';
 
 class MenuBarLeading extends StatelessWidget {
   const MenuBarLeading({super.key});
@@ -20,14 +21,19 @@ class MenuBarLeading extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20,bottom: 20),
       child: Column(
         children: [
-          const Wrap(
+           Wrap(
             direction: Axis.vertical,
             spacing: 10,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              CircleImage(
-                image: AssetImage('assets/images/icon_head.webp'),
-                size: 60,
+              GestureDetector(
+                onDoubleTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CarouselNode2()));
+                },
+                child: CircleImage(
+                  image: AssetImage('assets/images/icon_head.webp'),
+                  size: 60,
+                ),
               ),
               Text(
                 '张风捷特烈',

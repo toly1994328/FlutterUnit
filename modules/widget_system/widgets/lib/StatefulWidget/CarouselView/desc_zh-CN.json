@@ -1,28 +1,37 @@
 {
   "id": 237,
   "name": "CarouselView",
-  "localName": "旋转视图",
-  "info": "复选框组件，常用于配置的切换，可指定颜色，接收状态变化回调，也可指定三态。",
+  "localName": "轮播视图",
+  "info": "一个符合 Material Design 规范的轮播组件。显示一个可滚动的项目列表，每条目都可以根据选定的布局动态调整大小。",
   "lever": 4,
   "family": 1,
-  "linkIds": [],
+  "linkIds": [
+    253,
+    340,
+    160
+  ],
   "nodes": [
     {
       "file": "node1_base.dart",
-      "name": "Checkbox基础用法",
+      "name": "CarouselView 基础用法",
       "desc": [
-        "【value】 : 是否选中   【double】",
-        "【checkColor】: 选中时✔️gou颜色 【Color】",
-        "【activeColor】: 选中时框内颜色 【Color】",
-        "【onChanged】: 状态改变事件 【Function(bool)】,"
+        "【itemExtent】 : 主轴方向强制尺寸  【double】",
+        "【shrinkExtent】: 滑动中，主轴方向条目最小尺寸 【double】",
+        "【scrollDirection】 : 滑动轴向   【Axis?】",
+        "【children】: 子组件列表 【List<Widget>】"
       ]
     },
     {
-      "file": "node2_tristate.dart",
-      "name": "Checkbox的三态",
+      "file": "node2.dart",
+      "name": "CarouselView 样式配置",
       "desc": [
-        "【tristate】 : 是否是三态   【double】",
-        "  onChanged时,"
+        "【padding】 : 内边距   【EdgeInsets? 】",
+        "【backgroundColor】 : 背景色   【Color? 】",
+        "【elevation】 : 阴影深   【double?】",
+        "【shape】 : 形状   【ShapeBorder?】",
+        "【controller】 : 控制器   【CarouselController?】",
+        "【reverse】 : 是否反向滑动   【bool】",
+        "【onTap】 : 点击事件   【ValueChanged<int>? 】"
       ]
     }
   ]

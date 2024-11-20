@@ -6,6 +6,7 @@ class UnitHost extends Host {
   @override
   Map<HostEnv, String> get value => {
         HostEnv.release: 'api.toly1994.com',
+        HostEnv.dev: '127.0.0.1',
       };
 
   @override
@@ -21,11 +22,9 @@ class UnitHost extends Host {
 
 enum UnitApi {
   hello("/hello"),
-
   repository("/repository/name/FlutterUnit"),
   point("/point"),
   pointComment("/pointComment/"),
-
   appInfo("/appInfo/name/"),
   ;
 

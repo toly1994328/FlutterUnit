@@ -27,6 +27,11 @@ class WidgetsMap {
           const DropdownMenuNode2(),
           const DropdownMenuNode3(),
         ];
+      case "CarouselView":
+        return [
+          const CarouselNode1(),
+          const CarouselNode2(),
+        ];
         case "PinnedHeaderSliver":
         return [
           const PinnedHeaderSliverNode1(),

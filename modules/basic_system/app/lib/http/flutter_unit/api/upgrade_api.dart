@@ -1,12 +1,14 @@
 import 'package:app_update/app_update.dart';
 import 'package:fx_dio/fx_dio.dart';
 import 'package:app/app.dart';
-
+import 'package:tolyui/tolyui.dart';
 class UnitUpgradeApi implements UpgradeApi {
   @override
   Future<AppInfo> fetch(String appName) async {
     Dio dio = FxDio()<UnitHost>();
-    Response rep = await dio.get('${UnitApi.appInfo.path}$appName');
+    Response rep = await dio.get('${UnitApi.appInfo.path}$appName',queryParameters: {
+      'os' : kAppEnv.os.name,
+    });
     if (rep.statusCode == 200 && rep.data != null) {
       dynamic ret = rep.data['data'];
       // 说明有数据
@@ -22,5 +24,10 @@ class UnitUpgradeApi implements UpgradeApi {
       }
     }
     throw '请求错误:';
+  }
+
+  @override
+  void toast(String message) {
+    $message.warning(message: message);
   }
 }
