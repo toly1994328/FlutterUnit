@@ -33,5 +33,5 @@ export '../Sliver/SliverMainAxisGroup/node1.dart';
 export '../Sliver/PinnedHeaderSliver/node_01.dart';
 export '../Sliver/PinnedHeaderSliver/node_02.dart';
 export '../Sliver/PinnedHeaderSliver/node_03.dart';
-export '../Sliver/SliverResizingHeader/node_01.dart';
-export '../Sliver/SliverResizingHeader/node_02.dart';
+// export '../Sliver/SliverResizingHeader/node_01.dart';
+// export '../Sliver/SliverResizingHeader/node_02.dart';

@@ -10,6 +10,7 @@ import 'package:l10n/l10n.dart';
 import '../bloc/bloc.dart';
 import '../bloc/event.dart';
 import '../bloc/state.dart';
+import 'dialog/feishu_update_dialog.dart';
 
 class AppUpdatePanel extends StatelessWidget {
   const AppUpdatePanel({Key? key}) : super(key: key);
@@ -94,18 +95,26 @@ class AppUpdatePanel extends StatelessWidget {
 
   void _tapByState(UpdateState state, BuildContext context) {
     if (state is NoUpdateState) {
-      BlocProvider.of<UpgradeBloc>(context)
-          .add(const CheckUpdate(appName: 'FlutterUnit'));
+      context.read<UpgradeBloc>().add(const CheckUpdate(appName: 'FlutterUnit'));
     }
+
     if (state is ShouldUpdateState) {
-      if(Platform.isIOS){
-        // ios 跳转应用商店
-        RUpgrade.upgradeFromAppStore('6450545123', false);
-        return;
-      }
-      // 处理下载的事件
-      BlocProvider.of<UpgradeBloc>(context)
-          .add(DownloadEvent(appInfo: state.info));
+      showDialog(
+          barrierDismissible: false,
+          context: context,
+          builder: (ctx) => FeiShuUpdateDialog(
+                result: state.info,
+                onConfirm: () {
+                  context.read<UpgradeBloc>().add(DownloadEvent(appInfo: state.info));
+                },
+              ));
+      // if(Platform.isIOS){
+      //   // ios 跳转应用商店
+      //   RUpgrade.upgradeFromAppStore('6450545123', false);
+      //   return;
+      // }
+      // // 处理下载的事件
+      // BlocProvider.of<UpgradeBloc>(context).add(DownloadEvent(appInfo: state.info));
     }
   }
 
@@ -115,16 +124,25 @@ class AppUpdatePanel extends StatelessWidget {
         Toast.success(context, context.l10n.currentIsNew);
       }
     }
+    // if (state is ShouldUpdateState) {
+    //   showDialog(
+    //       barrierDismissible: false,
+    //       context: context,
+    //       builder: (ctx) => FeiShuUpdateDialog(
+    //             result: state.info,
+    //             onConfirm: () {},
+    //           ));
+    // }
   }
 
-   String convertFileSize(int size){
+  String convertFileSize(int size) {
     double result = size / 1024.0;
-    if(result<1024){
+    if (result < 1024) {
       return "${result.toStringAsFixed(2)} Kb";
-    }else if(result>1024&&result<1024*1024){
-      return "${(result/1024).toStringAsFixed(2)} Mb";
-    }else{
-      return "${(result/1024/1024).toStringAsFixed(2)} Gb";
+    } else if (result > 1024 && result < 1024 * 1024) {
+      return "${(result / 1024).toStringAsFixed(2)} Mb";
+    } else {
+      return "${(result / 1024 / 1024).toStringAsFixed(2)} Gb";
     }
   }
 }

@@ -22,7 +22,7 @@ enum AppRoute {
   supportMe('support_me', url: '/support_me'),
 
   /// settings
-  settings('settings', url: '/setting'),
+  settings('settings', url: '/settings'),
   darkModel('dark_mode', url: '/setting/dark_mode'),
   codeStyle('code_style', url: '/setting/code_style'),
   themeColor('theme_color', url: '/setting/theme_color'),

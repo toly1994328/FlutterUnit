@@ -36,14 +36,13 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
       print(result);
 
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
-
       if (result.shouldUpgrade(packageInfo.version)) {
+        emit(ShouldUpdateState(oldVersion: packageInfo.version, info: result));
+      } else {
         emit(NoUpdateState(
           isChecked: true,
           checkTime: DateTime.now().millisecondsSinceEpoch,
         ));
-      } else {
-        emit(ShouldUpdateState(oldVersion: packageInfo.version, info: result));
       }
     } catch (e) {
       print(e);
@@ -59,15 +58,12 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
   late StreamSubscription<DownloadInfo>? subscription;
 
   void _onDownloadEvent(DownloadEvent event, Emitter<UpdateState> emit) async {
+    emit(DownloadingState(progress: 0, appSize: event.appInfo.appSize));
     if (isDesk) {
-      String url =
-          'https://gitee.com/toly1994328/FlutterUnit/releases/download/last/FlutterUnit.exe';
-      // 桌面端跳转到下载地址
-      // _launchURL('https://github.com/toly1994328/FlutterUnit/releases');
+      String url = event.appInfo.appUrl;
       Dio dio = Dio();
       Directory dir = await getTemporaryDirectory();
-      String filePath = p.join(dir.path, 'FlutterUnit.exe');
-
+      String filePath = p.join(dir.path, p.basename(url));
       Response rep = await dio.download(
         url,
         filePath,

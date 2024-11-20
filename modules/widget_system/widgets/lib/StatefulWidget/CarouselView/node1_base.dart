@@ -1,4 +1,3 @@
-
 // Copyright 2014 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -15,20 +14,14 @@ class CarouselNode1 extends StatefulWidget {
 class _CarouselNode1State extends State<CarouselNode1> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Carousel'),),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 200),
-          child: CarouselView(
-            itemExtent: 320,
-            shrinkExtent: 200,
-            // itemSnapping: true,
-            children: List<Widget>.generate(20, (int index) {
-              return UncontainedLayoutCard(index: index, label: 'Item $index');
-            }),
-          ),
-        ),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxHeight: 160),
+      child: CarouselView(
+        itemExtent: 260,
+        shrinkExtent: 160,
+        children: List<Widget>.generate(20, (int index) {
+          return UncontainedLayoutCard(index: index, label: 'Item $index');
+        }),
       ),
     );
   }

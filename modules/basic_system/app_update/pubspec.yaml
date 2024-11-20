@@ -13,6 +13,8 @@ dependencies:
   flutter_bloc: ^8.1.6 # 状态管理
   dio: ^5.7.0
 
+  convert: ^3.1.2
+
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.3 # xml 固化
   r_upgrade: ^0.4.2 # 应用升级
