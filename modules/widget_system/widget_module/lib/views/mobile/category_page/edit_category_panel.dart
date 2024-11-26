@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:widget_repository/widget_repository.dart';
 
-import '../../../data/zone.dart';
+
 
 
 /// create by 张风捷特烈 on 2020-04-23

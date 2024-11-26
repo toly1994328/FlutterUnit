@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class CustomScrollViewDemo extends StatelessWidget {
-  CustomScrollViewDemo({Key? key}) : super(key: key);
+  const CustomScrollViewDemo({super.key});
 
-  final List<Color> data = [
+  List<Color> get data =>  [
     Colors.purple[50]!,
     Colors.purple[100]!,
     Colors.purple[200]!,

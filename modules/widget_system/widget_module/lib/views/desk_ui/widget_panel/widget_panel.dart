@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:storage/storage.dart';
 import 'package:widget_module/blocs/blocs.dart';
-import '../../../../data/zone.dart';
+import 'package:widget_repository/widget_repository.dart';
+
 
 import 'desk_widget_model_item.dart';
 import 'desk_widget_top_bar.dart';

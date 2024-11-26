@@ -4,20 +4,20 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class DirectionSingleChildScrollView extends StatelessWidget {
-  DirectionSingleChildScrollView({Key? key}) : super(key: key);
+  const DirectionSingleChildScrollView({super.key});
 
-  final List<Color> data = [
-    Colors.blue[50]!,
-    Colors.blue[100]!,
-    Colors.blue[200]!,
-    Colors.blue[300]!,
-    Colors.blue[400]!,
-    Colors.blue[500]!,
-    Colors.blue[600]!,
-    Colors.blue[700]!,
-    Colors.blue[800]!,
-    Colors.blue[900]!,
-  ];
+  List<Color> get data => [
+        Colors.blue[50]!,
+        Colors.blue[100]!,
+        Colors.blue[200]!,
+        Colors.blue[300]!,
+        Colors.blue[400]!,
+        Colors.blue[500]!,
+        Colors.blue[600]!,
+        Colors.blue[700]!,
+        Colors.blue[800]!,
+        Colors.blue[900]!,
+      ];
 
   TextStyle get textStyle => const TextStyle(
         color: Colors.white,
@@ -51,7 +51,6 @@ class DirectionSingleChildScrollView extends StatelessWidget {
                   ))
               .toList(),
         ),
-
       ),
     );
   }

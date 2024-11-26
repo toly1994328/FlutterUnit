@@ -2,6 +2,13 @@
 import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/9/21
 /// contact me by email 1981462002@qq.com
+///
+class InheritedWidgetDemo2 extends StatefulWidget {
+  const InheritedWidgetDemo2({super.key});
+
+  @override
+  State<InheritedWidgetDemo2> createState() => _InheritedWidgetDemo2State();
+}
 
 class InheritedCounter extends InheritedWidget {
   const InheritedCounter({
@@ -24,14 +31,7 @@ class InheritedCounter extends InheritedWidget {
   }
 }
 
-class InheritedModelDemo extends StatefulWidget {
-  const InheritedModelDemo({super.key});
-
-  @override
-  State<InheritedModelDemo> createState() => _InheritedModelDemoState();
-}
-
-class _InheritedModelDemoState extends State<InheritedModelDemo> {
+class _InheritedWidgetDemo2State extends State<InheritedWidgetDemo2> {
   int _counter = 0;
   late Color _color = colors.first;
 

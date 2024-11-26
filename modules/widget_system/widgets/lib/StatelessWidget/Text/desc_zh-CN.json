@@ -11,7 +11,7 @@
   ],
   "nodes": [
     {
-      "file": "node1_base.dart",
+      "file": "node1.dart",
       "name": "文字的基本样式",
       "desc": [
         "【入参】 : 文字  【String】",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "file": "node2_shadows.dart",
+      "file": "node2.dart",
       "name": "文字阴影",
       "desc": [
         "【shadows】 : 文字  【List<Shadow>】",

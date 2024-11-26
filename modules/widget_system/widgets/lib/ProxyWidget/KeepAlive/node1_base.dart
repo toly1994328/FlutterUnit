@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 
 class KeepAliveDemo extends StatelessWidget {
-  KeepAliveDemo({Key? key}) : super(key: key);
+  const KeepAliveDemo({super.key});
 
-  final List<Color> data = [
+  List<Color> get data => [
     Colors.purple[50]!,
     Colors.purple[100]!,
     Colors.purple[200]!,

@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 
 class ListWheelViewportDemo2 extends StatelessWidget {
-  ListWheelViewportDemo2({Key? key}) : super(key: key);
+  const ListWheelViewportDemo2({super.key});
 
-  final List<Color> data = [
+  List<Color> get data => [
     Colors.blue[50]!,
     Colors.blue[100]!,
     Colors.blue[200]!,

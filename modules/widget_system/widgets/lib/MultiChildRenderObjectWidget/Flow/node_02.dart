@@ -1,31 +1,14 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
 
 class FlowNode02 extends StatefulWidget {
-  static final data = List.generate(
-      16,
-      (index) => index.isEven
-          ? "assets/images/icon_head.webp"
-          : "assets/images/wy_300x200.webp");
-  static final show = Container(
-      width: 300,
-      height: 300,
-      alignment: Alignment.center,
-      child: FlowNode02(
-          children: data
-              .map((e) => CircleAvatar(backgroundImage: AssetImage(e)))
-              .toList(),
-          menu: const CircleAvatar(
-            backgroundImage: AssetImage('assets/images/icon_head.webp'),
-          )));
-
-  final List<Widget> children;
-  final Widget menu;
-
-  const FlowNode02({Key? key, required this.children, required this.menu}) : super(key: key);
+  const FlowNode02({
+    super.key,
+  });
 
   @override
   State createState() => _FlowNode02State();
@@ -36,6 +19,12 @@ class _FlowNode02State extends State<FlowNode02>
   late AnimationController _controller;
   double _rad = 0.0;
   bool _closed = true;
+
+  List<String> get data => List.generate(
+      16,
+      (index) => index.isEven
+          ? "assets/images/icon_head.webp"
+          : "assets/images/wy_300x200.webp");
 
   @override
   void initState() {
@@ -64,13 +53,15 @@ class _FlowNode02State extends State<FlowNode02>
     return Flow(
       delegate: _BurstFlowDelegate(_rad),
       children: [
-        ...widget.children,
+        ...data.map((e) => CircleAvatar(backgroundImage: AssetImage(e))),
         InkWell(
             onTap: () {
               _controller.reset();
               _controller.forward();
             },
-            child: widget.menu)
+            child: const CircleAvatar(
+              backgroundImage: AssetImage('assets/images/icon_head.webp'),
+            ))
       ],
     );
   }
@@ -88,11 +79,13 @@ class _BurstFlowDelegate extends FlowDelegate {
     final double perRad = 2 * pi / count;
     for (int i = 0; i < count; i++) {
       Size size = context.getChildSize(i) ?? Size.zero;
-      final double offsetX = rad * (radius - size.width/2) * cos(i * perRad) + radius;
-      final double offsetY = rad * (radius - size.height/2) * sin(i * perRad) + radius;
+      final double offsetX =
+          rad * (radius - size.width / 2) * cos(i * perRad) + radius;
+      final double offsetY =
+          rad * (radius - size.height / 2) * sin(i * perRad) + radius;
       context.paintChild(i,
           transform: Matrix4.translationValues(
-              offsetX - size.width/2, offsetY - size.height/2, 0.0));
+              offsetX - size.width / 2, offsetY - size.height / 2, 0.0));
     }
 
     Size size = context.getChildSize(context.childCount - 1) ?? Size.zero;

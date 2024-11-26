@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class DirectionWrap extends StatelessWidget {
-  DirectionWrap({Key? key}) : super(key: key);
+  const DirectionWrap({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,38 +20,38 @@ class DirectionWrap extends StatelessWidget {
         ]))
             .toList());
   }
-  final Widget yellowBox = Container(
+   Widget get yellowBox => Container(
     color: Colors.yellow,
     height: 30,
     width: 50,
   );
 
-  final Widget redBox = Container(
+   Widget get redBox => Container(
     color: Colors.red,
     height: 40,
     width: 40,
   );
-  final Widget greenBox = Container(
+   Widget get greenBox => Container(
     color: Colors.green,
     height: 40,
     width: 20,
   );
-  final Widget blackBox = Container(
+   Widget get  blackBox => Container(
     color: Colors.black,
     height: 10,
     width: 10,
   );
-  final Widget purpleBox = Container(
+   Widget get  purpleBox => Container(
     color: Colors.purple,
     height: 20,
     width: 20,
   );
-  final Widget orangeBox = Container(
+   Widget get  orangeBox => Container(
     color: Colors.orange,
     height: 80,
     width: 20,
   );
-  final Widget cyanBox = Container(
+   Widget get  cyanBox => Container(
     color: Colors.cyanAccent,
     height: 10,
     width: 20,

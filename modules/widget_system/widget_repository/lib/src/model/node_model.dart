@@ -5,40 +5,42 @@ import 'package:equatable/equatable.dart';
 /// 说明: 详情页节点-展示-数据模型
 ///
 
-enum NodeType{
+enum NodeType {
   display,
   newPage,
   description,
-  deprecated
+  deprecated,
 }
 
 class NodeModel extends Equatable {
   final String name;
   final String subtitle;
   final String code;
+  final int priority;
 
   const NodeModel({
     required this.name,
     required this.subtitle,
     required this.code,
+    required this.priority,
   });
 
   @override
-  List<Object> get props => [name, subtitle, code];
+  List<Object> get props => [name, subtitle, code, priority];
 
-
-  NodeType type(String widget){
-    if(widget=='PinnedHeaderSliver'){
+  NodeType type(String widget) {
+    if (widget == 'PinnedHeaderSliver') {
       return NodeType.newPage;
     }
-
     return NodeType.display;
   }
 
-
   factory NodeModel.fromJson(Map<String, dynamic> map) {
     return NodeModel(
-        name: map['name'], subtitle: map["subtitle"], code: map["code"]);
+        name: map['name'],
+        subtitle: map["subtitle"],
+        code: map["code"],
+        priority: map['priority']);
   }
 
   @override

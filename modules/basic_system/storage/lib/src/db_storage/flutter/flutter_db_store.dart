@@ -3,18 +3,10 @@ import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:fx_dao/fx_dao.dart';
 
-import 'dao/article_dao.dart';
-import 'dao/category_dao.dart';
 import 'dao/columnize_dao.dart';
-import 'dao/like_dao.dart';
-import 'dao/node_dao.dart';
-import 'dao/widget_dao.dart';
+import 'package:widget_module/widget_module.dart';
 
 class FlutterDbStore extends FxDb {
-  late WidgetDao _widgetStore;
-
-  WidgetDao get widgetStore => _widgetStore;
-
   @override
   String get dbname => 'flutter.db';
 
@@ -35,11 +27,10 @@ class FlutterDbStore extends FxDb {
 
   @override
   Iterable<DbTable> get tables => [
-        WidgetDao(),
-        LikeDao(),
-        CategoryDao(),
-        NodeDao(),
-        ArticleDao(),
         ColumnizeDao(),
+        CategoryDao(),
+        WidgetDao(),
+        NodeDao(),
+        LikeDao(),
       ];
 }

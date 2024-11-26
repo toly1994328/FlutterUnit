@@ -17,9 +17,9 @@ import 'package:flutter/material.dart';
 //          "【crossAxisCount】 : 主轴一行数量  【int】",
 //    }
 class CustomGridView extends StatelessWidget {
-  CustomGridView({Key? key}) : super(key: key);
+  const CustomGridView({super.key});
 
-  final List<Color> data = List.generate(128, (i) => Color(0xFFFF00FF - 2 * i));
+  List<Color> get data => List.generate(128, (i) => Color(0xFFFF00FF - 2 * i));
 
   @override
   Widget build(BuildContext context) {

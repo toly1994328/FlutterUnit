@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class ColumnNode1 extends StatelessWidget {
-  const ColumnNode1({Key? key}) : super(key: key);
+  const ColumnNode1({super.key});
 
   @override
   Widget build(BuildContext context) {

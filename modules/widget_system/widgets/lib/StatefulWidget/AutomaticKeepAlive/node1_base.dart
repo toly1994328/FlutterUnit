@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 
 class AutomaticKeepAliveDemo extends StatelessWidget {
-  AutomaticKeepAliveDemo({Key? key}) : super(key: key);
+  const AutomaticKeepAliveDemo({super.key});
 
-  final List<Color> data = [
+  List<Color> get data => [
     Colors.purple[50]!,
     Colors.purple[100]!,
     Colors.purple[200]!,
@@ -36,7 +36,7 @@ class AutomaticKeepAliveDemo extends StatelessWidget {
       height: 300,
       child: ListView.builder(
         itemCount: data.length,
-        itemBuilder: (_, index) => ColorBox(
+        itemBuilder: (_, index) => _ColorBox(
           color: data[index],
           index: index,
         ),
@@ -45,18 +45,17 @@ class AutomaticKeepAliveDemo extends StatelessWidget {
   }
 }
 
-class ColorBox extends StatefulWidget {
+class _ColorBox extends StatefulWidget {
   final Color color;
   final int index;
 
-  const ColorBox({Key? key, required this.color, required this.index})
-      : super(key: key);
+  const _ColorBox({super.key, required this.color, required this.index});
 
   @override
   _ColorBoxState createState() => _ColorBoxState();
 }
 
-class _ColorBoxState extends State<ColorBox> with AutomaticKeepAliveClientMixin {
+class _ColorBoxState extends State<_ColorBox> with AutomaticKeepAliveClientMixin {
   bool _checked = false;
 
   @override

@@ -7,9 +7,9 @@ import 'package:flutter/rendering.dart';
 
 
 class ViewportDemo extends StatelessWidget {
-  ViewportDemo({Key? key}) : super(key: key);
+  const ViewportDemo({super.key});
 
-  final data = List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
+  List<Color> get data => List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
 
   @override
   Widget build(BuildContext context) {

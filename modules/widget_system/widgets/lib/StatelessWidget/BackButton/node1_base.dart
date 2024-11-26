@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class CustomBackButton extends StatelessWidget {
-  CustomBackButton({Key? key}) : super(key: key);
+  const CustomBackButton({super.key});
 
-  final List<Color> data = [
+  List<Color> get data => [
     Colors.red,
     Colors.yellow,
     Colors.blue,

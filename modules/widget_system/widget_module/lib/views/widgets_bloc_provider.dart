@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../blocs/blocs.dart';
-import '../widget_module.dart';
+import 'package:widget_repository/widget_repository.dart';
+
 
 class WidgetsBlocProvider extends StatefulWidget {
   final Widget child;

@@ -14,9 +14,9 @@ import 'package:flutter/material.dart';
 //          "【shrinkWrap】 : 无边界时是否包裹  【bool】",
 //    }
 class HorizontalGridView extends StatelessWidget {
-  HorizontalGridView({Key? key}) : super(key: key);
+  const HorizontalGridView({super.key});
 
-  final List<Color> data = List.generate(128, (i) => Color(0xFF00FFFF - 2 * i));
+  List<Color> get data => List.generate(128, (i) => Color(0xFF00FFFF - 2 * i));
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +35,12 @@ class HorizontalGridView extends StatelessWidget {
   }
 
   Container _buildItem(Color color) => Container(
-    alignment: Alignment.center,
-    width: 100,
-    height: 30,
-    color: color,
-    child: Text(
-      colorString(color),
+        alignment: Alignment.center,
+        width: 100,
+        height: 30,
+        color: color,
+        child: Text(
+          colorString(color),
           style: const TextStyle(
             color: Colors.white,
             shadows: [
@@ -48,7 +48,7 @@ class HorizontalGridView extends StatelessWidget {
             ],
           ),
         ),
-  );
+      );
 
   String colorString(Color color) =>
       "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";

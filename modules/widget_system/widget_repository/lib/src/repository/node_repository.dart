@@ -1,5 +1,5 @@
 
-import 'model/model.dart';
+import '../model/model.dart';
 
 abstract class NodeRepository{
 

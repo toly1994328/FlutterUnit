@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:storage/storage.dart';
+import 'package:widget_repository/widget_repository.dart';
 
-import '../model/node_model.dart';
-import '../node_repository.dart';
+import '../repository/node_repository.dart';
 
 /// create by 张风捷特烈 on 2020-03-03
 /// contact me by email 1981462002@qq.com
@@ -11,7 +10,6 @@ import '../node_repository.dart';
 
 class MemoryNodeRepository implements NodeRepository {
   List<NodePo>? _nodeCache;
-
 
   MemoryNodeRepository();
 
@@ -30,7 +28,12 @@ class MemoryNodeRepository implements NodeRepository {
     await initData();
     return _nodeCache!
         .where((element) => element.widgetId == widgetId)
-        .map<NodeModel>((e) => NodeModel(name: e.name, subtitle: e.subtitle, code: e.code))
+        .map<NodeModel>((e) => NodeModel(
+              name: e.name,
+              subtitle: e.subtitle,
+              code: e.code,
+              priority: e.priority,
+            ))
         .toList();
   }
 }

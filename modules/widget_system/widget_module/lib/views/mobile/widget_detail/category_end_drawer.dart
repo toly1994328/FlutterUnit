@@ -6,10 +6,8 @@ import 'package:toly_ui/toly_ui.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 
-
-import '../../../data/zone.dart';
+import 'package:widget_repository/widget_repository.dart';
 import '../widget_page/unit_drawer_header.dart';
-
 
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com
@@ -26,24 +24,24 @@ class CategoryEndDrawer extends StatelessWidget {
       child: ListView(padding: EdgeInsets.zero, children: <Widget>[
         UnitDrawerHeader(color: Theme.of(context).primaryColor),
         Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Row(
-        children: <Widget>[
-          Circle(
-            color: widget.color,
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            children: <Widget>[
+              Circle(
+                color: widget.color,
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Text(widget.name)
+            ],
           ),
-          const SizedBox(
-            width: 10,
-          ),
-          Text(widget.name)
-        ],
-      ),
         ),
         Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-      child: Panel(
-        child: Text(widget.info, style: UnitTextStyle.shadowTextStyle),
-      ),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Panel(
+            child: Text(widget.info, style: UnitTextStyle.shadowTextStyle),
+          ),
         ),
         const Divider(),
         _buildTitle(context),
@@ -133,7 +131,8 @@ class _CategoryInfoState extends State<CategoryInfo> {
         onSelected: (v) async {
           await repository.toggleCategory(category.id!, widget.id);
           _loadCategoryIds();
-          BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(category.id!));
+          BlocProvider.of<CategoryWidgetBloc>(context)
+              .add(EventLoadCategoryWidget(category.id!));
         });
   }
 

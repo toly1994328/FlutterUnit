@@ -185,8 +185,8 @@ export '../StatelessWidget/CupertinoActionSheet/node1_base.dart';
 export '../StatelessWidget/CupertinoActionSheetAction/node1_base.dart';
 export '../StatelessWidget/CupertinoAlertDialog/node1_base.dart';
 
-export '../StatelessWidget/Text/node1_base.dart';
-export '../StatelessWidget/Text/node2_shadows.dart';
+export '../StatelessWidget/Text/node1.dart';
+export '../StatelessWidget/Text/node2.dart';
 export '../StatelessWidget/Text/node3_decoration.dart';
 export '../StatelessWidget/Text/node4_textAlign.dart';
 export '../StatelessWidget/Text/node5_textDirection.dart';

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 
 class GlowingOverscrollIndicatorDemo extends StatelessWidget {
-  GlowingOverscrollIndicatorDemo({Key? key}) : super(key: key);
+  const GlowingOverscrollIndicatorDemo({super.key});
 
-  final List<Color> data = [
+  List<Color> get data => [
     Colors.orange[50]!,
     Colors.orange[100]!,
     Colors.orange[200]!,

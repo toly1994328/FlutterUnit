@@ -1,12 +1,9 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:app/app.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:storage/storage.dart';
-
-import '../../data/zone.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 part 'widgets_event.dart';
 
@@ -29,8 +26,8 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   /// 切换页签，以 [family] 为过滤项
   void _onEventTabTap(EventTabTap event, Emitter<WidgetsState> emit) async {
     emit(const WidgetsLoading(operate: LoadOperate.load));
-    int size = isDesk?1000:20;
-    WidgetFilter filter = WidgetFilter.family(event.family,pageSize: size);
+    int size = isDesk ? 1000 : 20;
+    WidgetFilter filter = WidgetFilter.family(event.family, pageSize: size);
     try {
       final List<WidgetModel> widgets = await repository.searchWidgets(filter);
       emit(WidgetsLoaded(
@@ -38,7 +35,7 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
         filter: filter,
         operate: LoadOperate.load,
       ));
-    } catch (err,t) {
+    } catch (err, t) {
       print("======$err==========$t==============");
       emit(WidgetsLoadFailed(
         err.toString(),
@@ -50,18 +47,16 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
 
   FutureOr<void> _onEventRefresh(
       EventRefresh event, Emitter<WidgetsState> emit) async {
-    // emit(const WidgetsLoading(operate: LoadOperate.refresh));
     try {
       await Future.delayed(const Duration(milliseconds: 500));
       final List<WidgetModel> widgets =
-      await repository.searchWidgets(state.filter.copyWith(
-        page: 1,
-      ));
+          await repository.searchWidgets(state.filter.copyWith(page: 1));
       emit(WidgetsLoaded(
-          widgets: widgets,
-          filter: state.filter,
-          operate: LoadOperate.refresh,
-          fetchTime: DateTime.now().millisecondsSinceEpoch));
+        widgets: widgets,
+        filter: state.filter,
+        operate: LoadOperate.refresh,
+        fetchTime: DateTime.now().millisecondsSinceEpoch,
+      ));
     } catch (err) {
       print(err);
       emit(WidgetsLoadFailed(
@@ -79,17 +74,21 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
       int total = await repository.total(old.filter);
       if (old.widgets.length < old.filter.pageSize) {
         // 不满一页
-        emit(old.copyWith(full: true,
+        emit(old.copyWith(
+          full: true,
           operate: LoadOperate.more,
-          fetchTime: DateTime.now().millisecondsSinceEpoch,));
+          fetchTime: DateTime.now().millisecondsSinceEpoch,
+        ));
         return;
       }
 
       if (total <= old.widgets.length) {
         // 已满
-        emit(old.copyWith(full: true,
+        emit(old.copyWith(
+          full: true,
           operate: LoadOperate.more,
-          fetchTime: DateTime.now().millisecondsSinceEpoch,));
+          fetchTime: DateTime.now().millisecondsSinceEpoch,
+        ));
         return;
       }
       // 未满，继续加载下一页
@@ -98,11 +97,12 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
       final List<WidgetModel> newData = await repository.searchWidgets(filter);
       List<WidgetModel> newWidget = old.widgets + newData;
       emit(old.copyWith(
-          widgets: newWidget,
-          full: newWidget.length == total,
-          operate: LoadOperate.more,
-          fetchTime: DateTime.now().millisecondsSinceEpoch,
-          filter: filter));
+        widgets: newWidget,
+        full: newWidget.length == total,
+        operate: LoadOperate.more,
+        fetchTime: DateTime.now().millisecondsSinceEpoch,
+        filter: filter,
+      ));
     }
   }
 
@@ -113,11 +113,17 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
       final List<WidgetModel> widgets =
           await repository.searchWidgets(event.filter);
       emit(WidgetsLoaded(
-          widgets: widgets, filter: event.filter, operate: LoadOperate.load));
+        widgets: widgets,
+        filter: event.filter,
+        operate: LoadOperate.load,
+      ));
     } catch (err) {
       print(err);
-      emit(WidgetsLoadFailed(err.toString(),
-          filter: event.filter, operate: LoadOperate.load));
+      emit(WidgetsLoadFailed(
+        err.toString(),
+        filter: event.filter,
+        operate: LoadOperate.load,
+      ));
     }
   }
 }

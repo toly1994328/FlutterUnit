@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/views/components/collected_tag.dart';
+import 'package:widget_repository/widget_repository.dart';
 
-import '../../../../data/zone.dart';
 import 'package:wrapper/wrapper.dart';
 
 class DeskWidgetItem extends StatelessWidget {

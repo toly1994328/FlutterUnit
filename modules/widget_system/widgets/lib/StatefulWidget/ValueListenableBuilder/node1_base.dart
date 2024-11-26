@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2020/7/21
 /// contact me by email 1981462002@qq.com
 
+final ValueNotifier<int> _counter = ValueNotifier<int>(0);
 
 class ValueListenableBuilderDemo extends StatelessWidget {
-  ValueListenableBuilderDemo({Key? key}) : super(key: key);
-
-  final ValueNotifier<int> _counter = ValueNotifier<int>(0);
+  const ValueListenableBuilderDemo({super.key});
 
   @override
   Widget build(BuildContext context) {

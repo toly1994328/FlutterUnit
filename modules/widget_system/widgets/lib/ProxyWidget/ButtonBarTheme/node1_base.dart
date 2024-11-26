@@ -5,24 +5,24 @@ import 'package:flutter/material.dart';
 
 
 class ButtonBarThemeDemo extends StatelessWidget {
-  const ButtonBarThemeDemo({Key? key}) : super(key: key);
+  const ButtonBarThemeDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ButtonBarTheme(
-        child: const TempButtonBar(),
         data: ButtonBarTheme.of(context).copyWith(
             alignment: MainAxisAlignment.center,
             buttonPadding: const EdgeInsets.symmetric(horizontal: 6),
             overflowDirection: VerticalDirection.up,
             buttonMinWidth: 150,
             buttonHeight: 30,
-            buttonTextTheme: ButtonTextTheme.primary));
+            buttonTextTheme: ButtonTextTheme.primary),
+        child: const TempButtonBar());
   }
 }
 
 class TempButtonBar extends StatelessWidget {
-  const TempButtonBar({Key? key}) : super(key: key);
+  const TempButtonBar({super.key});
 
   @override
   Widget build(BuildContext context) {

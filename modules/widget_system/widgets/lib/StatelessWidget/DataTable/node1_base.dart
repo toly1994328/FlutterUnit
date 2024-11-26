@@ -13,16 +13,15 @@ class _Bean {
 }
 
 class CustomDataTable extends StatelessWidget {
-  CustomDataTable({Key? key}) : super(key: key);
+  const CustomDataTable({super.key});
 
-  final List<_Bean> data = [
+   List<_Bean> get data => [
     _Bean(101, 'DataTable', 'StatelessWidget'),
     _Bean(44, 'RangeSlider', 'StatefulWidget'),
     _Bean(2, 'Text', 'StatelessWidget'),
     _Bean(1, 'Image', 'StatefulWidget'),
   ];
-
-  final List<String> columns = ['id', '名称', '类型'];
+   List<String> get columns => ['id', '名称', '类型'];
 
   @override
   Widget build(BuildContext context) {

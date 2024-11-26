@@ -10,10 +10,16 @@ import 'node1_base.dart';
 /// contact me by email 1981462002@qq.com
 
 
-class RepaintBoundarySave extends StatelessWidget {
-  final GlobalKey _globalKey = GlobalKey();
+class RepaintBoundarySave extends StatefulWidget {
 
-  RepaintBoundarySave({Key? key}) : super(key: key);
+  const RepaintBoundarySave({super.key});
+
+  @override
+  State<RepaintBoundarySave> createState() => _RepaintBoundarySaveState();
+}
+
+class _RepaintBoundarySaveState extends State<RepaintBoundarySave> {
+  final GlobalKey _globalKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {

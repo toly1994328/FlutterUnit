@@ -1,9 +1,6 @@
 
 import 'package:storage/storage.dart';
-
-
-import '../model/node_model.dart';
-import '../node_repository.dart';
+import 'package:widget_repository/widget_repository.dart';
 
 class NodeDbRepository implements NodeRepository{
 

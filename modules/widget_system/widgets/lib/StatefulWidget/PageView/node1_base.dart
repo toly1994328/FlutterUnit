@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class CustomPageView extends StatelessWidget {
-  CustomPageView({Key? key}) : super(key: key);
+  const CustomPageView({super.key});
 
-  final List<Color> data = [
+  List<Color> get data => [
     Colors.green[50]!,
     Colors.green[100]!,
     Colors.green[200]!,
