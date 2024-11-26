@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 
 class FlexibleSpaceBarDemo extends StatelessWidget {
-  FlexibleSpaceBarDemo({Key? key}) : super(key: key);
+  const FlexibleSpaceBarDemo({super.key});
 
-  final List<Color> data =[
+  List<Color> get data => [
     Colors.blue[50]!,
     Colors.blue[100]!,
     Colors.blue[200]!,

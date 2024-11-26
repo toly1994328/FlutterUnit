@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class CustomAnimatedList extends StatefulWidget {
-  const CustomAnimatedList({Key? key}) : super(key: key);
+  const CustomAnimatedList({super.key});
 
   @override
-  _CustomAnimatedListState createState() => _CustomAnimatedListState();
+  State createState() => _CustomAnimatedListState();
 }
 
 class _CustomAnimatedListState extends State<CustomAnimatedList> {
@@ -29,7 +29,7 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
 
   Widget _buildItem(
       BuildContext context, int index, Animation<double> animation) {
-    return CardItem(
+    return _CardItem(
       animation: animation,
       item: _list[index],
       selected: _selectedItem == _list[index],
@@ -43,7 +43,7 @@ class _CustomAnimatedListState extends State<CustomAnimatedList> {
 
   Widget _buildRemovedItem(
       int item, BuildContext context, Animation<double> animation) {
-    return CardItem(
+    return _CardItem(
       animation: animation,
       item: item,
       selected: false,
@@ -141,15 +141,14 @@ class ListModel<E> {
   int indexOf(E item) => _items.indexOf(item);
 }
 
-class CardItem extends StatelessWidget {
-  const CardItem(
-      {Key? key,
+class _CardItem extends StatelessWidget {
+  const _CardItem(
+      {super.key,
       required this.animation,
       this.onTap,
       required this.item,
       this.selected = false})
-      : assert(item >= 0),
-        super(key: key);
+      : assert(item >= 0);
   final Animation<double> animation;
   final VoidCallback? onTap;
   final int item;

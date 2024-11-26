@@ -6,7 +6,7 @@ import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:wrapper/wrapper.dart';
 
-import '../../../data/zone.dart';
+import 'package:widget_repository/widget_repository.dart';
 import '../../components/collected_tag.dart';
 
 class StandardWidgetItem extends StatelessWidget {

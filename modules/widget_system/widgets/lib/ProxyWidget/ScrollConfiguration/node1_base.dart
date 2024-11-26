@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class CustomScrollConfiguration extends StatelessWidget {
-  CustomScrollConfiguration({Key? key}) : super(key: key);
+  const CustomScrollConfiguration({super.key});
 
-  final List<Color> data = [
+   List<Color> get data => [
     Colors.cyan[50]!,
     Colors.cyan[100]!,
     Colors.cyan[200]!,

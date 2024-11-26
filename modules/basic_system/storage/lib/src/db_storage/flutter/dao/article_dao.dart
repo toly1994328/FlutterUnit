@@ -3,8 +3,6 @@ import 'package:sqflite/sqflite.dart';
 
 import '../model/article.dart';
 
-
-
 class ArticleDao with HasDatabase, DbTable{
   @override
   String get createSql => '';

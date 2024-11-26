@@ -5,7 +5,7 @@
   "info": "它是 InheritedWidget 抽象子类，通过 context 向子树传递数据，并通过 Aspect 方面控制依赖通知的粒度。",
   "lever": 4,
   "family": 5,
-  "linkIds": [],
+  "linkIds": [346],
   "nodes": [
     {
       "file": "node1.dart",

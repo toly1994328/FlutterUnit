@@ -5,16 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:widget_repository/widget_repository.dart';
 
-import '../../../../data/zone.dart';
-import 'package:widgets/widgets.dart';
-
+import '../../mobile/mobile_ui.dart';
 import '../../mobile/widget_detail/category_end_drawer.dart';
 import '../../mobile/widget_detail/node_display/node_display.dart';
 import 'link_widget_buttons.dart';
 import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
-import 'widget_node_panel.dart';
 
 // 用于组件详情不需要在一开始就加载
 // WidgetDetailBloc 可以在稍后提供
@@ -22,18 +20,22 @@ class DeskWidgetDetailPageScope extends StatefulWidget {
   final WidgetModel? model;
   final String? widgetName;
 
-  const DeskWidgetDetailPageScope({super.key, required this.model, this.widgetName});
+  const DeskWidgetDetailPageScope(
+      {super.key, required this.model, this.widgetName});
 
   @override
-  State<DeskWidgetDetailPageScope> createState() => _DeskWidgetDetailPageScopeState();
+  State<DeskWidgetDetailPageScope> createState() =>
+      _DeskWidgetDetailPageScopeState();
 }
 
 class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
   WidgetModel? _model;
 
-  WidgetRepository get widgetRepository => context.read<WidgetsBloc>().repository;
+  WidgetRepository get widgetRepository =>
+      context.read<WidgetsBloc>().repository;
 
-  NodeRepository get nodeRepository => kIsWeb ? MemoryNodeRepository() : const NodeDbRepository();
+  NodeRepository get nodeRepository =>
+      kIsWeb ? MemoryNodeRepository() : const NodeDbRepository();
 
   @override
   void initState() {
@@ -51,12 +53,13 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
 
   @override
   Widget build(BuildContext context) {
-    if (_model == null) return const Center(child: CupertinoActivityIndicator());
+    if (_model == null)
+      return const Center(child: CupertinoActivityIndicator());
 
     return BlocProvider<WidgetDetailBloc>(
       create: (_) => WidgetDetailBloc(
-        widgetRepository: widgetRepository,
-        nodeRepository: nodeRepository,
+        widgetRepo: widgetRepository,
+        nodeRepo: nodeRepository,
       )..push(_model!),
       child: DeskWidgetDetailPage(
         model: widget.model,
@@ -94,7 +97,8 @@ class DeskWidgetDetailPage extends StatelessWidget {
         ],
       );
 
-  Widget _buildContent(BuildContext context, WidgetDetailBloc bloc, DetailState state) {
+  Widget _buildContent(
+      BuildContext context, WidgetDetailBloc bloc, DetailState state) {
     return WillPopScope(
         onWillPop: () => _whenPop(context),
         child: CustomScrollView(
@@ -117,7 +121,8 @@ class DeskWidgetDetailPage extends StatelessWidget {
                           const SizedBox(height: 16),
                           linkText(context),
                           if (state is DetailWithData)
-                            LinkWidgetButtons(links: state.links, onSelect: bloc.push)
+                            LinkWidgetButtons(
+                                links: state.links, onSelect: bloc.push)
                         ],
                       ))
                     ],
@@ -127,7 +132,10 @@ class DeskWidgetDetailPage extends StatelessWidget {
               ),
             ),
             if (state is DetailWithData)
-              _buildSliverNodeList(context, state.nodes, state.widgetModel)
+              SliverNodeList(
+                nodes: state.nodes,
+                model: state.widgetModel,
+              )
           ],
         ));
   }
@@ -140,21 +148,4 @@ class DeskWidgetDetailPage extends StatelessWidget {
     return detailBloc.pop();
   }
 
-  Widget _buildSliverNodeList(BuildContext context, List<NodeModel> nodes, WidgetModel model) {
-    AppConfig globalState = BlocProvider.of<AppConfigBloc>(context).state;
-
-    return SliverList(
-        delegate: SliverChildBuilderDelegate(
-      (_, i) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: NodeDisplay(
-          node: nodes[i],
-          nodeIndex: i,
-          style: globalState.codeStyle,
-          widget: model,
-        ),
-      ),
-      childCount: nodes.length,
-    ));
-  }
 }

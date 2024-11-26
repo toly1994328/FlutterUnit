@@ -2,7 +2,7 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 
 class DialogAbout extends StatelessWidget {
-  const DialogAbout({Key? key}) : super(key: key);
+  const DialogAbout({super.key});
 
   static show(BuildContext context){
     showDialog(//内置方法，创建对话弹框
@@ -29,14 +29,10 @@ class DialogAbout extends StatelessWidget {
         )
       ],
     );
-    Widget content = Column(
+    Widget content = const Column(
         //内容
         mainAxisSize: MainAxisSize.min,
-        children: const <Widget>[
-//          Image.asset(
-//            "assets/images/icon_flutter.png",
-//            width: 50,
-//          ),
+        children: <Widget>[
           FlutterLogo(size: 50,),
           SizedBox(
             height: 20,
@@ -45,12 +41,11 @@ class DialogAbout extends StatelessWidget {
             "Flutter Unit ${StrUnit.version}",
           ),
         ]);
-    return AlertDialog(title: title, content: content, actions: <Widget>[
-      //左下角
+    return AlertDialog(title: title, content: content, actions: const <Widget>[
       Padding(
-          padding: const EdgeInsets.only(right:15.0,bottom: 10,top: 10),
+          padding: EdgeInsets.only(right:15.0,bottom: 10,top: 10),
           child: Column(
-            children: const[
+            children: [
                Text(
                 "Power By GF·J·Toly\n张风捷特烈",
                 textAlign: TextAlign.center,

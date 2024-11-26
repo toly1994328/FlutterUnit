@@ -14,7 +14,7 @@ class AutocompleteType extends StatefulWidget {
 
 class _AutocompleteTypeState extends State<AutocompleteType> {
   late TextEditingController _controller;
-  User? user;
+  _User? user;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _AutocompleteTypeState extends State<AutocompleteType> {
   }
 
   Widget buildAutocomplete() {
-    return Autocomplete<User>(
+    return Autocomplete<_User>(
       optionsBuilder: buildOptions,
       onSelected: onSelected,
       optionsViewBuilder: _buildOptionsView,
@@ -50,36 +50,36 @@ class _AutocompleteTypeState extends State<AutocompleteType> {
     super.dispose();
   }
 
-  void onSelected(User selection) {
+  void onSelected(_User selection) {
     debugPrint('当前选择了 $selection');
     setState(() {
       user = selection;
     });
   }
 
-  Future<Iterable<User>> buildOptions(
+  Future<Iterable<_User>> buildOptions(
     TextEditingValue textEditingValue,
   ) async {
     if (textEditingValue.text == '') {
-      return const Iterable<User>.empty();
+      return const Iterable<_User>.empty();
     }
     return searchByArgs(textEditingValue.text);
   }
 
-  Future<Iterable<User>> searchByArgs(String args) async {
+  Future<Iterable<_User>> searchByArgs(String args) async {
     // 模拟网络请求
     await Future.delayed(const Duration(milliseconds: 200));
-    const List<User> data = [
-      User('toly', true, 'icon_5.webp'),
-      User('toly49', false, 'icon_6.webp'),
-      User('toly42', true, 'icon_7.webp'),
-      User('toly56', false, 'icon_8.webp'),
-      User('card', true, 'icon_5.webp'),
-      User('ls', true, 'icon_6.webp'),
-      User('alex', true, 'icon_7.webp'),
-      User('fan sha', false, 'icon_8.webp'),
+    const List<_User> data = [
+      _User('toly', true, 'icon_5.webp'),
+      _User('toly49', false, 'icon_6.webp'),
+      _User('toly42', true, 'icon_7.webp'),
+      _User('toly56', false, 'icon_8.webp'),
+      _User('card', true, 'icon_5.webp'),
+      _User('ls', true, 'icon_6.webp'),
+      _User('alex', true, 'icon_7.webp'),
+      _User('fan sha', false, 'icon_8.webp'),
     ];
-    return data.where((User user) => user.name.contains(args));
+    return data.where((_User user) => user.name.contains(args));
   }
 
   Widget _buildFieldView(
@@ -112,7 +112,7 @@ class _AutocompleteTypeState extends State<AutocompleteType> {
   }
 
   Widget _buildOptionsView(BuildContext context,
-      AutocompleteOnSelected<User> onSelected, Iterable<User> options) {
+      AutocompleteOnSelected<_User> onSelected, Iterable<_User> options) {
     return Align(
       alignment: Alignment.topCenter,
       child: Padding(
@@ -123,7 +123,7 @@ class _AutocompleteTypeState extends State<AutocompleteType> {
             child: ListView.builder(
               padding: EdgeInsets.zero,
               itemBuilder: (_, index) {
-                final User option = options.elementAt(index);
+                final _User option = options.elementAt(index);
                 return _UserItem(
                   onSelected: onSelected,
                   user: option,
@@ -140,9 +140,9 @@ class _AutocompleteTypeState extends State<AutocompleteType> {
 }
 
 class _UserItem extends StatelessWidget {
-  final AutocompleteOnSelected<User>? onSelected;
+  final AutocompleteOnSelected<_User>? onSelected;
   final String args;
-  final User user;
+  final _User user;
 
   const _UserItem({
     Key? key,
@@ -205,15 +205,15 @@ class _UserItem extends StatelessWidget {
   }
 }
 
-class User {
+class _User {
   final String name;
   final bool man;
   final String image;
 
-  const User(this.name, this.man, this.image);
+  const _User(this.name, this.man, this.image);
 
   @override
   String toString() {
-    return 'User{name: $name, man: $man, image: $image}';
+    return '_User{name: $name, man: $man, image: $image}';
   }
 }

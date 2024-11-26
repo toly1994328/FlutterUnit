@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
-import 'package:storage/storage.dart';
 import 'package:widget_module/blocs/blocs.dart';
-import '../../../../data/zone.dart';
-
+import 'package:widget_repository/widget_repository.dart';
 
 class DeskSearchBar extends StatefulWidget {
   final ValueChanged<String>? onChanged;
@@ -143,7 +141,7 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
     Color? textColor = Theme.of(context).listTileTheme.textColor;
 
     List<TextSpan> span = [];
-    RegExp regExp = RegExp(pattern, caseSensitive: false);
+    RegExp regExp = RegExp(RegExp.escape(pattern), caseSensitive: false);
     src.splitMapJoin(regExp, onMatch: (Match match) {
       span.add(TextSpan(text: match.group(0), style: lightTextStyle));
       return '';

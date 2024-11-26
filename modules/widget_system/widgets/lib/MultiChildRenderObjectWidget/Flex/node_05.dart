@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class FlexNode5 extends StatelessWidget {
-  FlexNode5({Key? key}) : super(key: key);
+  const FlexNode5({super.key});
 
   static TextStyle textStyle =
       const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
 
-  final Widget blueBox = Container(
+  Widget get blueBox => Container(
     alignment: Alignment.center,
     color: Colors.blue,
     height: 20,
@@ -17,7 +17,7 @@ class FlexNode5 extends StatelessWidget {
     child: Text('1', style: textStyle),
   );
 
-  final Widget redBox = Container(
+  Widget get redBox => Container(
     alignment: Alignment.center,
     color: Colors.red,
     height: 30,
@@ -25,7 +25,7 @@ class FlexNode5 extends StatelessWidget {
     child: Text('2', style: textStyle),
   );
 
-  final Widget greenBox = Container(
+  Widget get greenBox => Container(
     alignment: Alignment.center,
     color: Colors.green,
     height: 20,

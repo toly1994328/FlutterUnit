@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../data/zone.dart';
+import 'package:widget_repository/widget_repository.dart';
 import '../../mobile/category_page/category_list_item.dart';
 import '../../mobile/category_page/delete_category_dialog.dart';
 import '../../mobile/category_page/edit_category_panel.dart';
@@ -30,9 +30,7 @@ class _DeskCategoryPageState extends State<DeskCategoryPage> {
         children: [
           DeskTabTopBar(onTabPressed: (int value) {
             _ctrl.jumpToPage(value);
-          }, tabs: ['组件酒肆','珍藏组件',
-            // '添加收藏集'
-          ],),
+          }, tabs: ['组件酒肆','珍藏组件'],),
               Expanded(child: PageView(
                 controller: _ctrl,
                 children: [

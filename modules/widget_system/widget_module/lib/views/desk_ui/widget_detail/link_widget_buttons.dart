@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-import '../../../../data/zone.dart';
+import 'package:widget_repository/widget_repository.dart';
+
 
 class LinkWidgetButtons extends StatelessWidget {
   final List<WidgetModel> links;

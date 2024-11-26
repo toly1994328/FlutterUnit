@@ -7,8 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:widget_repository/widget_repository.dart';
 
-import '../../../data/zone.dart';
 
 class SliverWidgetDetailBar extends StatelessWidget {
   final WidgetModel model;

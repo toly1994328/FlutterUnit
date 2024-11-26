@@ -1034,6 +1034,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.13.1"
+  widget_repository:
+    dependency: transitive
+    description:
+      path: "modules/widget_system/widget_repository"
+      relative: true
+    source: path
+    version: "0.0.1"
   win32:
     dependency: transitive
     description:

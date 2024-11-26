@@ -2,19 +2,11 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020-03-30
 /// contact me by email 1981462002@qq.com
-/// 说明:
-//    {
-//      "widgetId": 188,
-//      "name": 'SliverList基本使用',
-//      "priority": 1,
-//      "subtitle": "SliverGrid.count 指定轴向数量构造\n"
-//        "SliverGrid.extent 指定轴向长度构造\n"
-//        "属性特征同GridView,可详见之",
-//    }
-class SliverGirdDemo extends StatelessWidget {
-  SliverGirdDemo({Key? key}) : super(key: key);
 
-  final List<Color> data = List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
+class SliverGirdDemo extends StatelessWidget {
+  const SliverGirdDemo({super.key});
+
+  List<Color> get data =>  List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
 
   @override
   Widget build(BuildContext context) {

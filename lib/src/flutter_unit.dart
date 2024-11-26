@@ -6,7 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/gen_l10n/app_localizations.dart';
 import 'package:l10n/l10n.dart';
-import 'package:storage/storage.dart';
+import 'package:widget_module/widget_module.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 

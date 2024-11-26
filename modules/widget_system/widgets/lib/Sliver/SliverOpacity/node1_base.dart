@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 /// contact me by email 1981462002@qq.com
 
 class SliverOpacityDemo extends StatelessWidget {
-  SliverOpacityDemo({Key? key}) : super(key: key);
+  const SliverOpacityDemo({super.key});
 
-  final List<Color> data = List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
+  List<Color> get data => List.generate(128, (i) => Color(0xFF6600FF - 2 * i));
 
   @override
   Widget build(BuildContext context) {

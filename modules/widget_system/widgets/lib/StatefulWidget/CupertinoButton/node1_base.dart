@@ -5,9 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomCupertinoButton extends StatelessWidget {
-  CustomCupertinoButton({Key? key}) : super(key: key);
+  const CustomCupertinoButton({super.key});
 
-  final Map<Color,double> data = {
+  Map<Color,double> get data => {
     CupertinoColors.activeBlue:4.0,
     Colors.blue:6.0,
     CupertinoColors.activeOrange:8.0,

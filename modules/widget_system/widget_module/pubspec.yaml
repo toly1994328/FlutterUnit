@@ -11,7 +11,8 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-
+  widget_repository:
+    path: ../widget_repository
 
 
 # For information on the generic Dart part of this file, see the

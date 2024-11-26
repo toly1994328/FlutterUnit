@@ -33,7 +33,7 @@ class _InheritedModelDemoState extends State<InheritedModelDemo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleIconButton(
+            _CircleIconButton(
               color: Colors.green,
               icon: Icons.remove,
               onPressed: _decrease,
@@ -41,9 +41,9 @@ class _InheritedModelDemoState extends State<InheritedModelDemo> {
             CounterModel(
               color: _color,
               counter: _counter,
-              child: BoxDecorationWrap(),
+              child: const _BoxDecorationWrap(),
             ),
-            CircleIconButton(
+            _CircleIconButton(
               color: Colors.blue,
               icon: Icons.add,
               onPressed: _increase,
@@ -51,7 +51,7 @@ class _InheritedModelDemoState extends State<InheritedModelDemo> {
           ],
         ),
         const SizedBox(height: 20),
-        ColorSelector(
+        _ColorSelector(
           colors: colors,
           activeColor: _color,
           onSelect: _onSelectColor,
@@ -108,12 +108,12 @@ class CounterModel extends InheritedModel<CounterAspect> {
   }
 }
 
-class CircleIconButton extends StatelessWidget {
+class _CircleIconButton extends StatelessWidget {
   final Color color;
   final IconData icon;
   final VoidCallback onPressed;
 
-  const CircleIconButton(
+  const _CircleIconButton(
       {super.key,
       required this.color,
       required this.icon,
@@ -124,16 +124,15 @@ class CircleIconButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.symmetric(horizontal: 20),
+        decoration: const BoxDecoration(
           color: Color(0xFFDFDFDF),
           shape: BoxShape.circle,
-          // border: Border.all(width: 14.0, color: Color(0xFFDFDFDF))
         ),
         child: Padding(
           padding: const EdgeInsets.all(2.0),
           child: Container(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,
@@ -151,12 +150,12 @@ class CircleIconButton extends StatelessWidget {
   }
 }
 
-class ColorSelector extends StatelessWidget {
+class _ColorSelector extends StatelessWidget {
   final List<Color> colors;
   final ValueChanged<Color> onSelect;
   final Color activeColor;
 
-  const ColorSelector({
+  const _ColorSelector({
     super.key,
     required this.colors,
     required this.activeColor,
@@ -180,7 +179,7 @@ class ColorSelector extends StatelessWidget {
     return CircleAvatar(
       radius: 12,
       child: color == activeColor
-          ? Icon(
+          ? const Icon(
               Icons.check,
               color: Colors.white,
               size: 16,
@@ -191,14 +190,14 @@ class ColorSelector extends StatelessWidget {
   }
 }
 
-class BoxDecorationWrap extends StatefulWidget {
-  const BoxDecorationWrap({super.key});
+class _BoxDecorationWrap extends StatefulWidget {
+  const _BoxDecorationWrap({super.key});
 
   @override
-  State<BoxDecorationWrap> createState() => _BoxDecorationWrapState();
+  State<_BoxDecorationWrap> createState() => _BoxDecorationWrapState();
 }
 
-class _BoxDecorationWrapState extends State<BoxDecorationWrap> {
+class _BoxDecorationWrapState extends State<_BoxDecorationWrap> {
 
   @override
   void didChangeDependencies() {
@@ -210,8 +209,8 @@ class _BoxDecorationWrapState extends State<BoxDecorationWrap> {
   Widget build(BuildContext context) {
     final Color color = CounterModel.of(context,CounterAspect.color)?.color ?? Colors.black;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      child: CounterText(),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      child: const _CounterText(),
       decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: color),
@@ -221,20 +220,20 @@ class _BoxDecorationWrapState extends State<BoxDecorationWrap> {
                 color: color,
                 spreadRadius: 2,
                 blurRadius: 8,
-                offset: Offset(0, 0))
+                offset: const Offset(0, 0))
           ]),
     );
   }
 }
 
-class CounterText extends StatefulWidget {
-  const CounterText({super.key});
+class _CounterText extends StatefulWidget {
+  const _CounterText({super.key});
 
   @override
-  State<CounterText> createState() => _CounterTextState();
+  State<_CounterText> createState() => _CounterTextState();
 }
 
-class _CounterTextState extends State<CounterText> {
+class _CounterTextState extends State<_CounterText> {
   @override
   void didChangeDependencies() {
     print("======CounterText#didChangeDependencies=========");

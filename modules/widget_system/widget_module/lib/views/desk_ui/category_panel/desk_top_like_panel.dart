@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
-import '../../../data/zone.dart';
+import 'package:widget_repository/widget_repository.dart';
+
 import '../../mobile/widget_detail/collect_widget_list_item.dart';
 import '../../mobile/widget_detail/widget_detail_page.dart';
 

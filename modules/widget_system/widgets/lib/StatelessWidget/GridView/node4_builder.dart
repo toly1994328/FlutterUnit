@@ -14,9 +14,9 @@ import 'package:flutter/material.dart';
 //          "【itemBuilder】 : 条目构造器  【IndexedWidgetBuilder】",
 //    }
 class BuilderGridView extends StatelessWidget {
-  BuilderGridView({Key? key}) : super(key: key);
+  const BuilderGridView({super.key});
 
-  final List<Color> data = List.generate(128, (i) => Color(0xFF33FFF - 2 * i));
+  List<Color> get data => List.generate(128, (i) => Color(0xFF33FFF - 2 * i));
 
   @override
   Widget build(BuildContext context) {

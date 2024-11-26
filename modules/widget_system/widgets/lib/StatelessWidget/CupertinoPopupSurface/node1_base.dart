@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 
 class CupertinoPopupSurfaceDemo extends StatelessWidget {
-  CupertinoPopupSurfaceDemo({Key? key}) : super(key: key);
+  const CupertinoPopupSurfaceDemo({super.key});
 
-  final List<int> rainbow = [
+  List<int> get rainbow => [
     0xffff0000,
     0xffFF7F00,
     0xffFFFF00,
@@ -18,7 +18,7 @@ class CupertinoPopupSurfaceDemo extends StatelessWidget {
     0xff8B00FF
   ];
 
-  final List<double> stops = [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
+  List<double> get stops => [0.0, 1 / 6, 2 / 6, 3 / 6, 4 / 6, 5 / 6, 1.0];
 
 
   @override
