@@ -5,7 +5,7 @@
   "info": "复选框组件，常用于配置的切换，可指定颜色，接收状态变化回调，也可指定三态。",
   "lever": 4,
   "family": 1,
-  "linkIds": [],
+  "linkIds": [326,17],
   "nodes": [
     {
       "file": "node1_base.dart",

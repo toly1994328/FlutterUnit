@@ -6,41 +6,50 @@ import '../../data/model/repository.dart';
 import 'package:fx_dio/fx_dio.dart';
 import 'package:app/app.dart';
 
+export 'package:fx_dio/fx_dio.dart' show ApiRet;
+
 abstract interface class PointApi {
   /// 获取  github 中 FlutterUnit 仓库信息
-  Future<Repository> getFlutterUnitRepo();
+  Future<ApiRet<Repository>> getFlutterUnitRepo();
 
   /// 获取  github 中 FlutterUnit 仓库 issues 列表
-  Future<List<Issue>> getIssues();
+  Future<ApiRet<List<Issue>>> getIssues();
 
-  Future<List<IssueComment>> getIssuesComment(int pointId);
+  Future<ApiRet<List<IssueComment>>> getIssuesComment(int pointId);
 }
 
 class PointApiImpl implements PointApi {
-  Dio get dio => FxDio()<UnitHost>();
+  Host get unit => FxDio()<UnitHost>();
 
   @override
-  Future<Repository> getFlutterUnitRepo() async {
-    Response rep = await dio.get(UnitApi.repository.path);
-    dynamic repoStr = rep.data['data']['repositoryData'];
-    return Repository.fromJson(json.decode(repoStr));
-  }
-
-  @override
-  Future<List<Issue>> getIssues({int page = 1, int pageSize = 100}) async {
-    Response rep = await dio.get(UnitApi.point.path, queryParameters: {
-      "page": page,
-      "pageSize": pageSize,
+  Future<ApiRet<Repository>> getFlutterUnitRepo() async {
+    return unit.get<Repository>(UnitApi.repository.path, convertor: (data) {
+      dynamic repoStr = data['data']['repositoryData'];
+      return Repository.fromJson(json.decode(repoStr));
     });
-    return rep.data['data'].map<Issue>((e) => Issue.fromJson(json.decode(e['pointData']))).toList();
   }
 
   @override
-  Future<List<IssueComment>> getIssuesComment(int pointId) async {
-    Response rep = await dio.get("${UnitApi.pointComment.path}$pointId");
+  Future<ApiRet<List<Issue>>> getIssues(
+      {int page = 1, int pageSize = 100}) async {
+    return unit.get<List<Issue>>(
+      UnitApi.point.path,
+      queryParameters: {
+        "page": page,
+        "pageSize": pageSize,
+      },
+      convertor: (data) => data['data']
+          .map<Issue>((e) => Issue.fromJson(json.decode(e['pointData'])))
+          .toList(),
+    );
+  }
 
-    return rep.data['data']
-        .map<IssueComment>((e) => IssueComment.fromJson(json.decode(e['pointCommentData'])))
-        .toList();
+  @override
+  Future<ApiRet<List<IssueComment>>> getIssuesComment(int pointId) async {
+    return unit.get<List<IssueComment>>("${UnitApi.pointComment.path}$pointId",
+        convertor: (data) => data['data']
+            .map<IssueComment>((e) =>
+                IssueComment.fromJson(json.decode(e['pointCommentData'])))
+            .toList());
   }
 }

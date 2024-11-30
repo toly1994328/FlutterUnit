@@ -28,7 +28,7 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     // throw 'Test Debug Start Error';
     await SpStorage.instance.initSp();
 
-    FxDio().register([const UnitHost()]);
+    FxDio().register(const UnitHost());
 
     if (!kAppEnv.isWeb) await initDb();
     HttpUtil.instance.rebase(PathUnit.baseUrl);
