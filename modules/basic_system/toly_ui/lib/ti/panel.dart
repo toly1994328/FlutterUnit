@@ -13,11 +13,12 @@ class Panel extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      child: child,
+      alignment: Alignment.centerLeft,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: color ?? const Color(0xffF6F8FA),
           borderRadius: BorderRadius.all(Radius.circular(radius))),
+      child: child,
     );
   }
 }

@@ -17,15 +17,16 @@ class PointCommentBloc extends Cubit<PointCommentState> {
     emit(PointCommentLoading(point));
     if (point.number == null) {
       emit(const PointCommentLoadFailure('point_bloc id 为空'));
+      return;
     }
-    try {
-      final List<IssueComment> comments = await api.getIssuesComment(point.number!);
-      comments.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
-      emit(PointCommentLoaded(point, comments));
-    } catch (err) {
-      print(err);
-      emit(PointCommentLoadFailure(err.toString()));
+    ApiRet<List<IssueComment>> ret = await api.getIssuesComment(point.number!);
+    if (ret.failed) {
+      emit(PointCommentLoadFailure(ret.msg));
+      return;
     }
+    final List<IssueComment> comments = ret.data;
+    comments.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
+    emit(PointCommentLoaded(point, comments));
   }
 }
 

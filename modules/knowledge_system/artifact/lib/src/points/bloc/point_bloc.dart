@@ -15,13 +15,11 @@ class PointBloc extends Cubit<PointState> {
 
   void loadPoint() async {
     emit(const PointLoading());
-    try {
-      final issues = await api.getIssues();
-      emit(PointLoaded(issues));
-    } catch (err) {
-      print(err);
-      emit(PointLoadFailure(err.toString()));
+    ApiRet<List<Issue>> ret = await api.getIssues();
+    if(ret.failed){
+      emit(PointLoadFailure(ret.msg));
     }
+    emit(PointLoaded(ret.data));
   }
 }
 

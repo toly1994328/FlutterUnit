@@ -42,12 +42,14 @@ class _FlutterUnit3State extends State<FlutterUnit3> {
   @override
   Widget build(BuildContext context) {
     AppConfig state = context.watch<AppConfigBloc>().state;
+    ThemeData dark = darkTheme(state);
+    ThemeData light = lightTheme(state);
     return DefaultTextStyle(
       style: TextStyle(fontFamily: state.fontFamily),
       child: TolyMessage(
         themeMode: state.themeMode,
-        darkTheme: AppTheme.darkTheme(state),
-        theme: AppTheme.lightTheme(state),
+        darkTheme: dark,
+        theme:light,
         child: MaterialApp.router(
           routerConfig: _router,
           showPerformanceOverlay: state.showPerformanceOverlay,
@@ -63,8 +65,8 @@ class _FlutterUnit3State extends State<FlutterUnit3> {
           supportedLocales: l10nLocales,
           locale: state.language.locale,
           themeMode: state.themeMode,
-          darkTheme: AppTheme.darkTheme(state),
-          theme: AppTheme.lightTheme(state),
+          darkTheme: dark,
+          theme:light,
         ),
       ),
     );

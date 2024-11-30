@@ -28,12 +28,8 @@ class NodeDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     Color primaryColor = Theme.of(context).primaryColor;
     var style = context.select((AppConfigBloc bloc) => bloc.state.codeStyle);
-
-    bool isDesk =
-        kIsWeb || Platform.isMacOS || Platform.isWindows || Platform.isLinux;
-    EdgeInsets pd = isDesk
-        ? const EdgeInsets.symmetric(horizontal: 24, vertical: 8)
-        : const EdgeInsets.all(8.0);
+    bool isDesk = kIsWeb || Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+    EdgeInsets pd = isDesk ? const EdgeInsets.symmetric(horizontal: 24, vertical: 8) : const EdgeInsets.all(8.0);
     return Padding(
       padding: pd,
       child: Column(
@@ -49,14 +45,11 @@ class NodeDisplay extends StatelessWidget {
 
   Widget _buildNodeInfo(Color primaryColor) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: SizedBox(
-          width: double.infinity,
-          child: Panel(
-              color: primaryColor.withOpacity(0.04),
-              child: Text(
-                node.subtitle,
-                style: const TextStyle(fontSize: 12),
-              )),
-        ),
+        child: Panel(
+            color: primaryColor.withOpacity(0.04),
+            child: Text(
+              node.subtitle,
+              style: const TextStyle(fontSize: 12),
+            )),
       );
 }

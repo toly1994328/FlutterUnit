@@ -281,10 +281,10 @@ packages:
     dependency: "direct main"
     description:
       name: fx_dio
-      sha256: ab16f0322f05fd4381e7375c9f3bb1f18b8fbf87f8dca46955b4a2661e5836a1
+      sha256: c2a525ff6a8a70d9f39e26d335fac0eff1a605749b80affa50f9e2155288859f
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.3"
   fx_go_router_ext:
     dependency: "direct main"
     description:

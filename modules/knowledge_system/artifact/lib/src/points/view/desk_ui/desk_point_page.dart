@@ -10,6 +10,7 @@ import '../../data/model/repository.dart';
 import '../../repository/api/point_api.dart';
 import '../issues_point/issues_point_page.dart';
 import 'github_repo_panel.dart';
+import 'package:fx_dio/fx_dio.dart';
 
 class DeskPointPage extends StatefulWidget {
   const DeskPointPage({Key? key}) : super(key: key);
@@ -19,7 +20,6 @@ class DeskPointPage extends StatefulWidget {
 }
 
 class _DeskPointPageState extends State<DeskPointPage> {
-
   Repository _repository = Repository.fromJson({
     'full_name': 'toly1994328/FlutterUnit',
     'license': {"spdx_id": 'GPL-3.0'},
@@ -40,10 +40,12 @@ class _DeskPointPageState extends State<DeskPointPage> {
   }
 
   void _loadRepo() async {
-    final Repository result = await _api.getFlutterUnitRepo();
-    setState(() {
-      _repository = result;
-    });
+    final ApiRet<Repository> ret = await _api.getFlutterUnitRepo();
+    if (ret.success) {
+      setState(() {
+        _repository = ret.data;
+      });
+    }
   }
 
   @override
@@ -61,14 +63,12 @@ class _DeskPointPageState extends State<DeskPointPage> {
                     GithubRepoPanel(
                       repository: _repository,
                     ),
-                    Expanded(
-                        child: SizedBox(
-                            width: 250,
-                            child: IssuesTip())
-                        )
+                    Expanded(child: SizedBox(width: 250, child: IssuesTip()))
                   ],
                 ),
-                VerticalDivider(width: 1,),
+                VerticalDivider(
+                  width: 1,
+                ),
                 Expanded(flex: 2, child: IssuesPointContent()),
               ],
             ))
@@ -90,17 +90,14 @@ class IssuesTip extends StatelessWidget {
         TextSpan(children: [
           TextSpan(
               text: '* 注： ',
-              style: TextStyle(
-                  color: Colors.red,
-                  fontWeight: FontWeight.bold)),
+              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
           TextSpan(
               text:
-              '要点集录中的 QA 数据收录在 FlutterUnit 以 point 为标签的 issues 中。如果需要提供数据，在 issues 中问答即可。'),
+                  '要点集录中的 QA 数据收录在 FlutterUnit 以 point 为标签的 issues 中。如果需要提供数据，在 issues 中问答即可。'),
           TextSpan(
               text: '点击这里跳转',
               mouseCursor: SystemMouseCursors.click,
-              recognizer: TapGestureRecognizer()
-                ..onTap = _toUrl,
+              recognizer: TapGestureRecognizer()..onTap = _toUrl,
               style: TextStyle(
                   color: Colors.blue,
                   decoration: TextDecoration.underline,
@@ -111,42 +108,43 @@ class IssuesTip extends StatelessWidget {
     );
   }
 
-  void _toUrl() async{
-    String url = 'https://github.com/toly1994328/FlutterUnit/issues?q=label%3Apoint+';
+  void _toUrl() async {
+    String url =
+        'https://github.com/toly1994328/FlutterUnit/issues?q=label%3Apoint+';
     if (!await launchUrl(Uri.parse(url))) {
-       throw Exception('Could not launch $url');
+      throw Exception('Could not launch $url');
     }
   }
 }
-
 
 class SimpleDeskTopBar extends StatelessWidget {
   final Widget? leading;
   final Widget? tail;
   final double height;
 
-  const SimpleDeskTopBar({super.key, this.leading,this.tail,this.height=64});
+  const SimpleDeskTopBar(
+      {super.key, this.leading, this.tail, this.height = 64});
 
   @override
   Widget build(BuildContext context) {
-
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return DragToMoveWrapper(
       child: Container(
         height: height,
-        color: isDark? Color(0xff2C3036):Colors.white,
+        color: isDark ? Color(0xff2C3036) : Colors.white,
         child: Row(
           children: [
-            if (leading != null) Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: leading!,
-            ),
+            if (leading != null)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: leading!,
+              ),
             const Spacer(),
             const SizedBox(
               width: 20,
             ),
-            if(tail!=null) tail!,
+            if (tail != null) tail!,
             const WindowButtons(),
           ],
         ),
@@ -154,5 +152,3 @@ class SimpleDeskTopBar extends StatelessWidget {
     );
   }
 }
-
-

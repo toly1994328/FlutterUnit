@@ -5,7 +5,7 @@
   "info": "由于选中和未选择状态的圆钮，多个Radio根据逻辑可以实现单选或多选的需求。可指定颜色，接收状态变化回调。",
   "lever": 4,
   "family": 1,
-  "linkIds": [],
+  "linkIds": [19,240],
   "nodes": [
     {
       "file": "node1_base.dart",

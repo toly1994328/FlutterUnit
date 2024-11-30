@@ -3,14 +3,13 @@ import 'dart:io';
 
 import 'package:app/app.dart';
 import 'package:app_update/repository/api/upgrade_api.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_file/open_file.dart';
 
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:r_upgrade/r_upgrade.dart';
-
+import 'package:fx_dio/fx_dio.dart';
 import '../model/app_info.dart';
 
 import 'event.dart';
@@ -31,22 +30,19 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
     print("========_onCheckUpdate==============");
     emit(const CheckLoadingState());
     // 检测更新逻辑
-    try {
-      AppInfo result = await api.fetch(event.appName);
-      print(result);
-
-      PackageInfo packageInfo = await PackageInfo.fromPlatform();
-      if (result.shouldUpgrade(packageInfo.version)) {
-        emit(ShouldUpdateState(oldVersion: packageInfo.version, info: result));
-      } else {
-        emit(NoUpdateState(
-          isChecked: true,
-          checkTime: DateTime.now().millisecondsSinceEpoch,
-        ));
-      }
-    } catch (e) {
-      print(e);
-      emit(CheckErrorState(error: e.toString()));
+    ApiRet<AppInfo> ret = await api.fetch(event.appName);
+    if (ret.failed) {
+      emit(CheckErrorState(error: ret.msg));
+      return;
+    }
+    AppInfo result = ret.data;
+    print(result);
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    if (result.shouldUpgrade(packageInfo.version)) {
+      emit(ShouldUpdateState(oldVersion: packageInfo.version, info: result));
+    } else {
+      int time = DateTime.now().millisecondsSinceEpoch;
+      emit(NoUpdateState(isChecked: true, checkTime: time));
     }
   }
 
@@ -67,7 +63,8 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
       Response rep = await dio.download(
         url,
         filePath,
-        onReceiveProgress: (c, t) => _onProgressChange(event.appInfo.appSize, c / t),
+        onReceiveProgress: (c, t) =>
+            _onProgressChange(event.appInfo.appSize, c / t),
       );
       if (rep.statusCode == 200) {
         add(const ResetNoUpdate());

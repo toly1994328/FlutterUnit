@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../../bloc/bloc.dart';
-import '../../data/api/issues_api.dart';
 import '../../data/model/issue.dart';
 import '../../data/model/repository.dart';
 import '../../repository/api/point_api.dart';
@@ -23,7 +22,8 @@ class IssuesPointScope extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<PointBloc>(create: (_) => PointBloc(PointApiImpl())..loadPoint()),
+        BlocProvider<PointBloc>(
+            create: (_) => PointBloc(PointApiImpl())..loadPoint()),
       ],
       child: const IssuesPointPage(),
     );
@@ -84,7 +84,8 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
       List<Issue> issues = state.issues;
       return SliverList(
         delegate: SliverChildBuilderDelegate(
-          (ctx, int index) => IssueItem(onTap: toDetailPage, issue: issues[index]),
+          (ctx, int index) =>
+              IssueItem(onTap: toDetailPage, issue: issues[index]),
           childCount: issues.length,
         ),
       );
@@ -159,9 +160,11 @@ class _IssuesPointContentState extends State<IssuesPointContent> {
 
   void _loadRepo() async {
     PointApi api = context.read<PointBloc>().api;
-    final Repository result = await api.getFlutterUnitRepo();
-    setState(() {
-      _repository = result;
-    });
+    final ApiRet<Repository> ret = await api.getFlutterUnitRepo();
+    if (ret.success) {
+      setState(() {
+        _repository = ret.data;
+      });
+    }
   }
 }
