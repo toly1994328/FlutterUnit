@@ -7,7 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../bloc/exp.dart';
-import 'package:storage/storage.dart';
+
+import '../../data/exp.dart';
 import 'article_detail_page.dart';
 import 'columnize_page_view.dart';
 
@@ -33,34 +34,34 @@ class SliverArticlePanel extends StatelessWidget {
 
 class SliverArticle extends StatelessWidget {
   final List<Article> data;
+
   const SliverArticle({Key? key, required this.data}) : super(key: key);
-
-
 
   @override
   Widget build(BuildContext context) {
-
-    const SliverGridDelegate deskGridDelegate = SliverGridDelegateWithMaxCrossAxisExtent(
+    const SliverGridDelegate deskGridDelegate =
+        SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 420,
       mainAxisSpacing: 8,
       mainAxisExtent: 188,
       crossAxisSpacing: 8,
     );
 
-   Widget child =  isDesk? SliverGrid(delegate: SliverChildBuilderDelegate(
-     _buildItem,
-     childCount: data.length,
-   ), gridDelegate: deskGridDelegate)
-   :
-   SliverList(
-    delegate: SliverChildBuilderDelegate(
-      _buildItem,
-      childCount: data.length,
-    ));
+    Widget child = isDesk
+        ? SliverGrid(
+            delegate: SliverChildBuilderDelegate(
+              _buildItem,
+              childCount: data.length,
+            ),
+            gridDelegate: deskGridDelegate)
+        : SliverList(
+            delegate: SliverChildBuilderDelegate(
+            _buildItem,
+            childCount: data.length,
+          ));
 
     return SliverPadding(
-        padding: const EdgeInsets.only(bottom: 0),
-        sliver: child);
+        padding: const EdgeInsets.only(bottom: 0), sliver: child);
   }
 
   Widget? _buildItem(BuildContext context, int index) {
@@ -73,8 +74,8 @@ class ArticlePanel extends StatelessWidget {
 
   const ArticlePanel({Key? key, required this.article}) : super(key: key);
 
-  void toArticleDetail(BuildContext context){
-    if(Platform.isAndroid||Platform.isIOS){
+  void toArticleDetail(BuildContext context) {
+    if (Platform.isAndroid || Platform.isIOS) {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (_) => ArticleDetailPage(article: article),
@@ -88,7 +89,7 @@ class ArticlePanel extends StatelessWidget {
     print(url);
     Uri uri = Uri.parse(url);
     if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(uri,mode: LaunchMode.externalApplication);
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
       debugPrint('Could not launch $url');
     }
@@ -97,7 +98,7 @@ class ArticlePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=>toArticleDetail(context),
+      onTap: () => toArticleDetail(context),
       child: Container(
         color: Theme.of(context).listTileTheme.tileColor,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -119,8 +120,8 @@ class ArticlePanel extends StatelessWidget {
                 ),
                 Expanded(
                     child: Text('${article.username}',
-                        style:
-                            const TextStyle(color: Color(0xff6A6D76), fontSize: 12))),
+                        style: const TextStyle(
+                            color: Color(0xff6A6D76), fontSize: 12))),
                 const Text(
                   '掘金',
                   style: TextStyle(fontSize: 12, color: Color(0xff6A6D76)),

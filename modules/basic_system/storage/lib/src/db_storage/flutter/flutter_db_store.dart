@@ -3,8 +3,8 @@ import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:fx_dao/fx_dao.dart';
 
-import 'dao/columnize_dao.dart';
 import 'package:widget_module/widget_module.dart';
+import 'package:artifact/artifact.dart';
 
 class FlutterDbStore extends FxDb {
   @override
@@ -28,6 +28,7 @@ class FlutterDbStore extends FxDb {
   @override
   Iterable<DbTable> get tables => [
         ColumnizeDao(),
+        ArticleDao(),
         CategoryDao(),
         WidgetDao(),
         NodeDao(),
