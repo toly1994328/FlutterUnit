@@ -10,7 +10,7 @@ Widget mapNodeDisplay(int widgetId, int nodePriority) {
   String name = '$widgetId#$nodePriority';
 
   return switch (name) {
-    '96#0' => const ColumnNode1(),
+        '96#0' => const ColumnNode1(),
     '341#0' => const CustomMultiChildLayoutNode1(),
     '94#0' => const FlexNode1(),
     '94#1' => const FlexNode2(),
@@ -331,9 +331,11 @@ Widget mapNodeDisplay(int widgetId, int nodePriority) {
     '54#1' => const CursorTextField(),
     '54#2' => const ComplexTextField(),
     '199#0' => const CustomTextFormField(),
+    '246#0' => const TickerModeDemo1(),
     '50#0' => const CustomTooltip(),
     '50#1' => const DecorationTooltip(),
     '226#0' => const TweenAnimationBuilderDemo(),
+    '241#0' => const UndoHistoryDemo1(),
     '243#0' => const UniqueWidgetDemo(),
     '255#0' => const ValueListenableBuilderDemo(),
     '234#0' => const WidgetInspectorDemo(),
@@ -492,6 +494,7 @@ Widget mapNodeDisplay(int widgetId, int nodePriority) {
     '35#1' => const WidthVerticalDivider(),
     '10#0' => const CustomVisibility(),
     '10#1' => const ReplacementVisibility(),
+
     _ => const SizedBox(),
   };
 }

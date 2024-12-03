@@ -1,6 +1,8 @@
 
 import 'package:storage/storage.dart';
 
+import '../exp.dart';
+
 // 仓储: 提供数据
 class ColumnizeRepository {
 

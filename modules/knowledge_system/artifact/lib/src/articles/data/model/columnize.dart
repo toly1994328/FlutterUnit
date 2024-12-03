@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 class Columnize {
   final String? username;

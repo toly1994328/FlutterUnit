@@ -1,0 +1,20 @@
+{
+  "id": 241,
+  "name": "UndoHistory",
+  "localName": "撤销历史",
+  "info": "接收 ValueNotifier 可监听值，为该值提供撤销/重做功能；被用于 TextField 组件源码中。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "TextField 中使用 UndoHistory",
+      "desc": [
+        "该案例中通过外界按钮，进行控制 TextField 的撤销/重做功能。其中 undoController 参数可以传入 UndoHistoryController 对象，用于控制并影响输入文本内容。"
+      ]
+    }
+  ]
+}
