@@ -1,0 +1,26 @@
+{
+  "id": 247,
+  "name": "AnimatedSlide",
+  "localName": "滑动动画",
+  "info": "给定的偏移量发生变化时，子组件可以自动调整相对偏移量，且前后值有动画变化。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "滑动动画效果",
+      "desc": [
+        "该案例中，拖拽调节 x,y 参数，查看动画运动效果。其中偏移量 = x,y * 方框宽高",
+        "【child】 : 孩子组件   【Widget】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【offset】 : 偏移量   【Offset】"
+      ]
+    }
+  ]
+}
