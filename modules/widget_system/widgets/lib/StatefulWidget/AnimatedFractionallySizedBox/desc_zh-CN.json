@@ -1,0 +1,31 @@
+{
+  "id": 260,
+  "name": "AnimatedFractionallySizedBox",
+  "localName": "动画分率盒",
+  "info": "FractionallySizedBox 的动画版本，当 widthFactor 或 heightFactor 变化时， 以及 alignment 改变时，都会在指定的持续时间内自动平滑过渡到子组件的目标尺寸和位置。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    82,
+    120,
+    123,
+    121
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "动画过渡效果",
+      "desc": [
+        "该案例中，点击时会修改 heightFactor、widthFactor、alignment 参数，查看动画运动效果。",
+        "【child】 : 孩子组件   【Widget】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【alignment】 : 动画变换中心   【Alignment】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【heightFactor】 : 高度分率   【double?】",
+        "【widthFactor】 : 宽度分率   【double?】",
+        "【turns】 : 旋转量   【double】"
+      ]
+    }
+  ]
+}
