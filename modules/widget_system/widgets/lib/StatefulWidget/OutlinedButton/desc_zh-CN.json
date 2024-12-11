@@ -2,7 +2,7 @@
   "id": 355,
   "name": "OutlinedButton",
   "localName": "边框按钮",
-  "info": "Material风格的边线按钮，表现和OutlineButton类似。可通过样式更改边框、颜色、阴影等属性。",
+  "info": "Material风格的边线按钮，表现和 OutlineButton 类似。可通过样式更改边框、颜色、阴影等属性。",
   "lever": 3,
   "family": 1,
   "linkIds": [
@@ -15,7 +15,7 @@
       "file": "node1_base.dart",
       "name": "OutlinedButton基本使用",
       "desc": [
-        "【child】 : 是否具有滚动主体   【Widget】",
+        "【child】 : 按钮内容   【Widget】",
         "【onPressed】 : 点击事件   【VoidCallback】",
         "【onLongPress】 : 长按事件   【VoidCallback】"
       ]

@@ -21,7 +21,7 @@ import 'pure_bottom_bar.dart';
 /// 说明: 主题结构 左右滑页 + 底部导航栏
 
 class UnitPhoneNavigation extends StatefulWidget {
-  const UnitPhoneNavigation({Key? key}) : super(key: key);
+  const UnitPhoneNavigation({super.key});
 
   @override
   State createState() => _UnitPhoneNavigationState();
@@ -30,7 +30,7 @@ class UnitPhoneNavigation extends StatefulWidget {
 class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   //页面控制器，初始 0
   final PageController _controller = PageController();
-  ValueNotifier<AppTab> _activeTab = ValueNotifier(AppTab.widgets);
+  final ValueNotifier<AppTab> _activeTab = ValueNotifier(AppTab.widgets);
 
   // 禁止 PageView 滑动
   final ScrollPhysics _neverScroll = const NeverScrollableScrollPhysics();
