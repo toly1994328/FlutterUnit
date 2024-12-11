@@ -251,6 +251,8 @@ Widget mapNodeDisplay(int widgetId, int nodePriority) {
     '51#0' => const CustomExpandIcon(),
     '178#0' => const CustomExpansionPanelList(),
     '52#0' => const CustomExpansionTile(),
+    '359#0' => const FilledButtonDemo1(),
+    '359#1' => const FilledButtonDemo2(),
     '198#0' => const CustomForm(),
     '222#0' => const FormFieldDemo(),
     '172#0' => const CustomFutureBuilder(),

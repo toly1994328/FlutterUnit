@@ -176,6 +176,8 @@ export '../StatefulWidget/CupertinoTabView/node1_base.dart';
 
 export '../StatefulWidget/TextButton/node1_base.dart';
 export '../StatefulWidget/TextButton/node2_style.dart';
+export '../StatefulWidget/FilledButton/node1.dart';
+export '../StatefulWidget/FilledButton/node2.dart';
 
 export '../StatefulWidget/ElevatedButton/node1_base.dart';
 export '../StatefulWidget/ElevatedButton/node2_style.dart';
