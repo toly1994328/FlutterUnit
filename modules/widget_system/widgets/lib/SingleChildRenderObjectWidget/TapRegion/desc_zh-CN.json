@@ -1,0 +1,21 @@
+{
+  "id": 280,
+  "name": "TapRegion",
+  "localName": "点击范围",
+  "info": "能够检测内部或外部点击回调的组件，通过 groupId 可以多个区域视为一体。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    146,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "监听点击组件内部和外部",
+      "desc": [
+        "通过 Localizations.localeOf(context) 可以根据上下文获取最近上层的 Localizations 组件存储的 Locale 数据信息。"
+      ]
+    }
+  ]
+}
