@@ -28,7 +28,6 @@ class MenuBarLeading extends StatelessWidget {
             children: [
               GestureDetector(
                 onDoubleTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CarouselNode2()));
                 },
                 child: CircleImage(
                   image: AssetImage('assets/images/icon_head.webp'),
