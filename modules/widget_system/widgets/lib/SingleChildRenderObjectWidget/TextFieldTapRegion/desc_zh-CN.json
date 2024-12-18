@@ -1,19 +1,21 @@
 {
-  "id": 280,
-  "name": "TapRegion",
-  "localName": "点击范围",
-  "info": "能够检测内部或外部点击回调的组件，通过 groupId 可以多个区域视为一体。",
-  "lever": 4,
+  "id": 281,
+  "name": "TextFieldTapRegion",
+  "localName": "输入框点击范围",
+  "info": "groupId 为 EditableText 的 TapRegion，可以让其他组件的点击范围与输入框视为一体。",
+  "lever": 3,
   "family": 2,
   "linkIds": [
-    146,
-    54
+    280,
+    54,
+    245
   ],
   "nodes": [
     {
       "file": "node1.dart",
       "name": "监听点击组件内部和外部",
       "desc": [
+        "案例中点击加号和减号，不会取消输入框的焦点，键盘仍然可以输入。",
         "【enabled】 : 是否可用   【bool】",
         "【onTapOutside】 : 点击外界监听   【TapRegionCallback?】",
         "【onTapInside】 : 点击内部监听   【TapRegionCallback?】",

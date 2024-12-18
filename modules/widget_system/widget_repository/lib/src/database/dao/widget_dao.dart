@@ -10,8 +10,7 @@ class WidgetDao with HasDatabase, DbTable {
   String get name => 'widget';
 
   Future<int> insert(WidgetPo widget) async {
-    //插入方法
-    String addSql = //插入数据
+    String addSql =
         "INSERT INTO "
         "widget(id,name,nameCN,deprecated,family,lever,linkWidget,info) "
         "VALUES (?,?,?,?,?,?,?,?);";

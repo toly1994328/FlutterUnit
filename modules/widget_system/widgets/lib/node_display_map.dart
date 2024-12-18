@@ -136,6 +136,7 @@ Widget mapNodeDisplay(int widgetId, int nodePriority) {
     '76#0' => const CustomSizedBox(),
     '84#0' => const CustomSizedOverflowBox(),
     '280#0' => const TapRegionDemo1(),
+    '281#0' => const TextFieldTapRegionDemo1(),
     '78#0' => const SkewTransform(),
     '78#1' => const TranslationTransform(),
     '78#2' => const ScaleTransform(),
