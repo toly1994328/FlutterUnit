@@ -14,7 +14,10 @@
       "file": "node1.dart",
       "name": "监听点击组件内部和外部",
       "desc": [
-        "通过 Localizations.localeOf(context) 可以根据上下文获取最近上层的 Localizations 组件存储的 Locale 数据信息。"
+        "【enabled】 : 是否可用   【bool】",
+        "【onTapOutside】 : 点击外界监听   【TapRegionCallback?】",
+        "【onTapInside】 : 点击内部监听   【TapRegionCallback?】",
+        "【groupId】 : 点击区域组标识   【Object?】"
       ]
     }
   ]

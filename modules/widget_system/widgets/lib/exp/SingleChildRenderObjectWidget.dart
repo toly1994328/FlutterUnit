@@ -72,3 +72,4 @@ export '../SingleChildRenderObjectWidget/ImageFiltered/node1_blur.dart';
 export '../SingleChildRenderObjectWidget/ImageFiltered/node2_color.dart';
 export '../SingleChildRenderObjectWidget/ImageFiltered/node3_matrix.dart';
 export '../SingleChildRenderObjectWidget/TapRegion/node1.dart';
+export '../SingleChildRenderObjectWidget/TextFieldTapRegion/node1.dart';
