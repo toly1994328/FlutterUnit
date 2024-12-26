@@ -1,0 +1,26 @@
+{
+  "id": 284,
+  "name": "KeyboardListener",
+  "localName": "键盘监听器",
+  "info": "在获取焦点后, 通过 onKeyEvent 监听键盘的按键事件。 ",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    282,
+    283
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "监听键盘事件",
+      "desc": [
+        "案例中区域点击获取焦点，然后敲击键盘可以看到事件触发信息。",
+        "【focusNode】 : 焦点   【FocusNode】",
+        "【autofocus】 : 是否自动聚焦   【bool】",
+        "【includeSemantics】 : 包含语义   【bool】",
+        "【onKeyEvent】 : 按键回调事件   【ValueChanged<KeyEvent>?】",
+        "【child】 : 子组件   【Widget】"
+      ]
+    }
+  ]
+}

@@ -327,6 +327,8 @@ Widget mapNodeDisplay(int widgetId, int nodePriority) {
     '42#0' => const CustomSlider(),
     '42#1' => const DivisionsSlider(),
     '112#0' => const CustomSlideTransition(),
+    '283#0' => const CallbackShortcutsDemo1(),
+    '284#0' => const KeyboardListenerDemo1(),
     '242#0' => const StatefulBuilderDemo(),
     '233#0' => const StatusTransitionWidgetDemo(),
     '200#0' => const StepperDemo(),
