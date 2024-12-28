@@ -199,3 +199,6 @@ export '../StatefulWidget/CupertinoRadio/node3.dart';
 export '../StatefulWidget/UndoHistory/node1.dart';
 export '../StatefulWidget/TickerMode/node1.dart';
 export '../StatefulWidget/KeyboardListener/node1.dart';
+export '../StatefulWidget/Focus/node1.dart';
+export '../StatefulWidget/Focus/node2.dart';
+export '../StatefulWidget/Focus/node3.dart';
