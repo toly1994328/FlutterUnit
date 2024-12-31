@@ -301,6 +301,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.0.2+1"
+  fx_trace:
+    dependency: "direct main"
+    description:
+      name: fx_trace
+      sha256: bba16febf583d4464cd5cae11bd19d441c82d9ca6a7d9bb71c05cae7379a619a
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.3"
   go_router:
     dependency: "direct main"
     description:

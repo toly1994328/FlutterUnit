@@ -1,18 +1,18 @@
 import 'package:fx_dio/fx_dio.dart';
 
-class UnitHost extends Host {
-  const UnitHost();
+class ScienceHost extends Host {
+  const ScienceHost();
 
   @override
   Map<HostEnv, String> get value => {
         HostEnv.release: 'api.toly1994.com',
-        HostEnv.dev: '127.0.0.1',
+        HostEnv.dev: '192.168.109.244',
       };
 
   @override
   HostConfig get config => const HostConfig(
         scheme: 'http',
-        port: 8080,
+        port: 3000,
         apiNest: '/api/v1',
       );
 
@@ -20,16 +20,12 @@ class UnitHost extends Host {
   HostEnv get env => HostEnv.dev;
 }
 
-enum UnitApi {
-  hello("/hello"),
-  repository("/repository/name/FlutterUnit"),
-  point("/point"),
-  pointComment("/pointComment/"),
-  appInfo("/appInfo/name/"),
+enum ScienceApi {
+  appVersion("/app_version"),
   ;
 
   final String path;
   final Method? method;
 
-  const UnitApi(this.path, [this.method = Method.get]);
+  const ScienceApi(this.path, [this.method = Method.get]);
 }

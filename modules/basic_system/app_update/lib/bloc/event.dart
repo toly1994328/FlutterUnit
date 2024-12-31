@@ -1,21 +1,19 @@
 import 'package:equatable/equatable.dart';
 
+import '../repository/model/app_info.dart';
 
-import '../model/app_info.dart';
-import 'state.dart';
-
-abstract class UpdateEvent extends Equatable {
+sealed class UpdateEvent extends Equatable {
   const UpdateEvent();
 }
 
 // 检查更新 ---> 校验，转换状态
 class CheckUpdate extends UpdateEvent {
-  final String appName;
+  final int appId;
 
-  const CheckUpdate({required this.appName});
+  const CheckUpdate({required this.appId});
 
   @override
-  List<Object?> get props => [appName];
+  List<Object?> get props => [appId];
 }
 
 class DownloadEvent extends UpdateEvent {
@@ -25,21 +23,4 @@ class DownloadEvent extends UpdateEvent {
 
   @override
   List<Object?> get props => [appInfo];
-}
-
-class DownloadingEvent extends UpdateEvent {
-  final DownloadingState state;
-
-  const DownloadingEvent({required this.state});
-
-  @override
-  List<Object?> get props => [state];
-}
-
-// 将状态重置为 NoUpdateState
-class ResetNoUpdate extends UpdateEvent {
-  const ResetNoUpdate();
-
-  @override
-  List<Object?> get props => [];
 }

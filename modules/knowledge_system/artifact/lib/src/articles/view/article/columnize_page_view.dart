@@ -96,7 +96,7 @@ class _ColumnizePageViewState extends State<ColumnizePageView> {
           _position = index;
         },
     );
-    if(!isDesk){
+    if(!kIsDesk){
       return child;
     }
 

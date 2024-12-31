@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
@@ -6,34 +5,35 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/bloc.dart';
 import '../../bloc/state.dart';
-import '../../model/app_info.dart';
+import '../../repository/model/app_info.dart';
 import 'top_bar.dart';
 
-class FeiShuUpdateDialog extends StatefulWidget {
+class UpdateDialog extends StatefulWidget {
   final AppInfo result;
   final ValueChanged<String>? onDownloadSuccess;
   final VoidCallback? onBackHide;
   final VoidCallback? onConfirm;
 
-  const FeiShuUpdateDialog({
-    Key? key,
+  const UpdateDialog({
+    super.key,
     required this.result,
     this.onDownloadSuccess,
     this.onBackHide,
     this.onConfirm,
-  }) : super(key: key);
+  });
 
   @override
-  State<FeiShuUpdateDialog> createState() => _FeiShuUpdateDialogState();
+  State<UpdateDialog> createState() => _UpdateDialogState();
 }
 
-class _FeiShuUpdateDialogState extends State<FeiShuUpdateDialog> {
-  final TextStyle noticeStyle = const TextStyle(color: Colors.grey, fontSize: 16);
-  final TextStyle cancelTextStyle = const TextStyle(color: Colors.grey, fontSize: 16);
+class _UpdateDialogState extends State<UpdateDialog> {
+  final TextStyle noticeStyle =
+      const TextStyle(color: Colors.grey, fontSize: 16);
+  final TextStyle cancelTextStyle =
+      const TextStyle(color: Colors.grey, fontSize: 16);
 
-  final TextStyle subTextStyle =
-      const TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold);
-
+  final TextStyle subTextStyle = const TextStyle(
+      color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold);
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +46,12 @@ class _FeiShuUpdateDialogState extends State<FeiShuUpdateDialog> {
       child: Dialog(
         elevation: 0,
         backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Container(
           height: 360,
           alignment: Alignment.topLeft,
-          width: isDesk ? 400 : 320,
+          width: kIsDesk ? 400 : 320,
           // color: Colors.green,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -68,11 +69,10 @@ class _FeiShuUpdateDialogState extends State<FeiShuUpdateDialog> {
   }
 
   Widget buildContent(UpdateState state) {
-    if (state is DownloadingState) {
-      return downloadProgress(state.progress);
-    }
-
     if (state is ShouldUpdateState) {
+      if (state.progress > 0) {
+        return downloadProgress(state.progress);
+      }
       return _buildUpdateInfo();
     }
     return const SizedBox.shrink();
@@ -103,10 +103,11 @@ class _FeiShuUpdateDialogState extends State<FeiShuUpdateDialog> {
             Row(
               children: [
                 Text("${(progress * 100).toStringAsFixed(1)}%",
-                    style: TextStyle(height: 1, fontSize: 12, color: Colors.grey)),
+                    style:
+                        TextStyle(height: 1, fontSize: 12, color: Colors.grey)),
                 Spacer(),
                 Text(
-                  "${convertFileSize(((widget.result.appSize) * (progress)).toInt())}/${convertFileSize(widget.result.appSize)}",
+                  "${convertFileSize(((widget.result.size) * (progress)).toInt())}/${convertFileSize(widget.result.size)}",
                   style: TextStyle(height: 1, fontSize: 12, color: Colors.grey),
                 )
               ],
@@ -156,21 +157,47 @@ class _FeiShuUpdateDialogState extends State<FeiShuUpdateDialog> {
 
   Widget buildTitle(UpdateState state) {
     String text = '';
-    if (state is DownloadingState) {
-      text = "正在下载更新..";
-    }
-
     if (state is ShouldUpdateState) {
-      text = "FlutterUnit v${state.info.appVersion} 准备就绪";
+      text = "FlutterUnit v${state.info.version} 准备就绪";
+      if (state.progress > 0) {
+        text = "正在下载更新..";
+      }
     }
-
-    return FeiShuUpdateTopBar(
-      text: text,
-    );
+    return UpdateTopBar(text: text);
   }
 
   Widget buildButtons(UpdateState state) {
     if (state is ShouldUpdateState) {
+      if(state.progress>0){
+        // 下载中
+        return Row(
+          children: [
+            Expanded(
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {
+                    // widget.onBackHide?.call();
+                    Navigator.of(context).pop();
+                    // UpdateCubit.isShowDialog = false;
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            top: BorderSide(
+                                color: Colors.grey.withAlpha(88),
+                                width: 1 / window.devicePixelRatio))),
+                    height: 50,
+                    child: Text(
+                      '后台执行',
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 16),
+                    ),
+                  ),
+                )),
+          ],
+        );
+      }
       return Row(
         children: [
           Expanded(
@@ -184,9 +211,11 @@ class _FeiShuUpdateDialogState extends State<FeiShuUpdateDialog> {
                 decoration: BoxDecoration(
                     border: Border(
                         top: BorderSide(
-                            color: Colors.grey.withAlpha(88), width: 1 / window.devicePixelRatio),
+                            color: Colors.grey.withAlpha(88),
+                            width: 1 / window.devicePixelRatio),
                         right: BorderSide(
-                            color: Colors.grey.withAlpha(88), width: 1 / window.devicePixelRatio))),
+                            color: Colors.grey.withAlpha(88),
+                            width: 1 / window.devicePixelRatio))),
                 alignment: Alignment.center,
                 height: 50,
                 child: Text(
@@ -199,48 +228,24 @@ class _FeiShuUpdateDialogState extends State<FeiShuUpdateDialog> {
           Expanded(
               child: GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: (){
+            onTap: () {
               widget.onConfirm?.call();
             },
             child: Container(
               decoration: BoxDecoration(
                   border: Border(
                       top: BorderSide(
-                          color: Colors.grey.withAlpha(88), width: 1 / window.devicePixelRatio),
+                          color: Colors.grey.withAlpha(88),
+                          width: 1 / window.devicePixelRatio),
                       right: BorderSide(
-                          color: Colors.grey.withAlpha(88), width: 1 / window.devicePixelRatio))),
+                          color: Colors.grey.withAlpha(88),
+                          width: 1 / window.devicePixelRatio))),
               alignment: Alignment.center,
               height: 50,
               child: Text(
                 '立即升级',
-                style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 16),
-              ),
-            ),
-          )),
-        ],
-      );
-    }
-    if (state is DownloadingState) {
-      return Row(
-        children: [
-          Expanded(
-              child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () {
-              // widget.onBackHide?.call();
-              Navigator.of(context).pop();
-              // UpdateCubit.isShowDialog = false;
-            },
-            child: Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  border: Border(
-                      top: BorderSide(
-                          color: Colors.grey.withAlpha(88), width: 1 / window.devicePixelRatio))),
-              height: 50,
-              child: Text(
-                '后台执行',
-                style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 16),
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor, fontSize: 16),
               ),
             ),
           )),

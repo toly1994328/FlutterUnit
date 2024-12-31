@@ -7,7 +7,7 @@ import '../bloc/state.dart';
 
 
 class UpdateRedPoint extends StatelessWidget {
-  const UpdateRedPoint({Key? key}) : super(key: key);
+  const UpdateRedPoint({super.key});
 
   @override
   Widget build(BuildContext context) {

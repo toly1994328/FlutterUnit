@@ -26,7 +26,7 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   /// 切换页签，以 [family] 为过滤项
   void _onEventTabTap(EventTabTap event, Emitter<WidgetsState> emit) async {
     emit(const WidgetsLoading(operate: LoadOperate.load));
-    int size = isDesk ? 1000 : 20;
+    int size = kIsDesk ? 1000 : 20;
     WidgetFilter filter = WidgetFilter.family(event.family, pageSize: size);
     try {
       final List<WidgetModel> widgets = await repository.searchWidgets(filter);

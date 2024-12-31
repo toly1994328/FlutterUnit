@@ -114,7 +114,6 @@ class _DeskSearchBarState extends State<DeskSearchBar> {
             color: Colors.grey,
           ),
           focusedBorder: OutlineInputBorder(
-
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),

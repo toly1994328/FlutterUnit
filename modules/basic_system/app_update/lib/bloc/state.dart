@@ -1,9 +1,8 @@
 import 'package:equatable/equatable.dart';
 
-import '../model/app_info.dart';
+import '../repository/model/app_info.dart';
 
-
-abstract class UpdateState extends Equatable {
+sealed class UpdateState extends Equatable {
   const UpdateState();
 }
 
@@ -19,24 +18,16 @@ class NoUpdateState extends UpdateState {
 
 class CheckLoadingState extends UpdateState {
   const CheckLoadingState();
+
   @override
   List<Object?> get props => [];
 }
 
-class DownloadingState extends UpdateState {
-  final double progress;
-  final int appSize;
 
-  const DownloadingState({required this.progress, required this.appSize});
-
-  @override
-  List<Object?> get props => [progress, appSize];
-}
-
-class CheckErrorState extends UpdateState {
+class UpdateErrorState extends UpdateState {
   final String error;
 
-  const CheckErrorState({required this.error});
+  const UpdateErrorState({required this.error});
 
   @override
   List<Object?> get props => [error];
@@ -49,15 +40,31 @@ class CheckErrorState extends UpdateState {
 
 class ShouldUpdateState extends UpdateState {
   final String oldVersion;
+  final double progress;
   final AppInfo info;
 
-  const ShouldUpdateState({required this.oldVersion, required this.info});
+  const ShouldUpdateState({
+    required this.oldVersion,
+    required this.info,
+    this.progress = 0,
+  });
 
   @override
-  List<Object?> get props => [oldVersion, info];
+  List<Object?> get props => [oldVersion, info,progress];
 
   @override
   String toString() {
     return 'ShouldUpdateState{oldVersion: $oldVersion, info: $info}';
+  }
+
+  bool get isDownloading => progress > 0 && progress != 1;
+  String get progressDisplay => "${(progress * 100).toStringAsFixed(2)}%";
+
+  UpdateState copyWith({double? progress}) {
+    return ShouldUpdateState(
+      oldVersion: oldVersion,
+      info: info,
+      progress: progress ?? this.progress,
+    );
   }
 }

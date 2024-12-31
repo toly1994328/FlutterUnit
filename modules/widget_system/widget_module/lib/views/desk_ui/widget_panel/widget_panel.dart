@@ -4,8 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:widget_module/event/widget_event.dart';
 import 'package:widget_repository/widget_repository.dart';
-
+import 'package:fx_trace/fx_trace.dart';
 
 import 'desk_widget_model_item.dart';
 import 'desk_widget_top_bar.dart';
@@ -58,6 +59,8 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel>{
     WidgetFamily widgetFamily = WidgetFamily.values[index];
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
+
+
 }
 
 class WidgetList extends StatelessWidget {

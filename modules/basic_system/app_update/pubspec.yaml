@@ -6,15 +6,15 @@ publish_to: none
 environment:
   sdk: ">=3.5.0 <4.0.0"
   flutter: ">=1.17.0"
+
 resolution: workspace
+
 dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6 # 状态管理
   dio: ^5.7.0
-
   convert: ^3.1.2
-
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.3 # xml 固化
   r_upgrade: ^0.4.2 # 应用升级
@@ -22,10 +22,13 @@ dependencies:
   url_launcher: ^6.3.0 # url
   package_info_plus: ^8.0.0
   path_provider: ^2.1.5
+  fx_dio: ^0.0.3
+
   utils:
     path: ../utils
   app:
     path: ../app
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
