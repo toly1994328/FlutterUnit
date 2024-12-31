@@ -28,12 +28,13 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     // throw 'Test Debug Start Error';
     await SpStorage.instance.initSp();
 
-    FxDio().register(const UnitHost());
+    registerHttpClient();
 
     if (!kAppEnv.isWeb) await initDb();
     HttpUtil.instance.rebase(PathUnit.baseUrl);
     AppConfigPo po = await SpStorage.instance.appConfig.read();
-    List<ConnectivityResult> netConnect = await (Connectivity().checkConnectivity());
+    List<ConnectivityResult> netConnect =
+        await (Connectivity().checkConnectivity());
     AppConfig state = AppConfig.fromPo(po);
     if (netConnect.isNotEmpty) {
       state = state.copyWith(netConnect: netConnect.first);
@@ -60,7 +61,8 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
       await dir.create(recursive: true);
     }
     ByteData data = await rootBundle.load("assets/flutter.db");
-    List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    List<int> bytes =
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     await File(dbPath).writeAsBytes(bytes, flush: true);
 
     print("=====flutter.db==== assets ======拷贝完成====");

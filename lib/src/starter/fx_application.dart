@@ -9,7 +9,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import '../flutter_unit.dart';
 import '../navigation/view/app_bloc_provider.dart';
 import 'start_repository.dart';
-
+import 'package:app_update/app_update.dart';
 export 'view/splash/Flutter_unit_splash.dart';
 export 'view/error/app_start_error.dart';
 
@@ -35,6 +35,7 @@ class FxApplication with FxStarter<AppConfig> {
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
+    context.read<UpgradeBloc>().add(const CheckUpdate(appId: 1));
     context.go(AppRoute.widget.url);
   }
 

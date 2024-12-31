@@ -10,7 +10,7 @@ import 'package:l10n/l10n.dart';
 import '../bloc/bloc.dart';
 import '../bloc/event.dart';
 import '../bloc/state.dart';
-import 'dialog/feishu_update_dialog.dart';
+import 'dialog/update_dialog.dart';
 
 class AppUpdatePanel extends StatelessWidget {
   const AppUpdatePanel({Key? key}) : super(key: key);
@@ -32,14 +32,16 @@ class AppUpdatePanel extends StatelessWidget {
             children: [
               Text(
                 '${(progress * 100).toStringAsFixed(2)} %',
-                style: const TextStyle(height: 1, fontSize: 12, color: Colors.grey),
+                style: const TextStyle(
+                    height: 1, fontSize: 12, color: Colors.grey),
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
                 '${convertFileSize((appSize * progress).floor())}/${convertFileSize(appSize)}',
-                style: const TextStyle(height: 1, fontSize: 10, color: Colors.grey),
+                style: const TextStyle(
+                    height: 1, fontSize: 10, color: Colors.grey),
               ),
             ],
           ),
@@ -62,25 +64,27 @@ class AppUpdatePanel extends StatelessWidget {
     String info = context.l10n.checkUpdate;
     Widget trail = const SizedBox.shrink();
     if (state is ShouldUpdateState) {
-      info = context.l10n.downloadNewVersion;
-      trail = Wrap(
-          alignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: [
-            Text(
-              '${state.oldVersion} --> ${state.info.appVersion} ',
-              style: const TextStyle(height: 1, fontSize: 12, color: Colors.grey),
-            ),
-            const SizedBox(width: 5),
-            const Icon(Icons.update, color: Colors.green)
-          ]);
+      if (state.progress > 0) {
+        info = context.l10n.downloadingNewVersion;
+        trail = _buildProgress(context, state.progress, state.info.size);
+      } else {
+        info = context.l10n.downloadNewVersion;
+        trail = Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Text(
+                '${state.oldVersion} --> ${state.info.version} ',
+                style: const TextStyle(
+                    height: 1, fontSize: 12, color: Colors.grey),
+              ),
+              const SizedBox(width: 5),
+              const Icon(Icons.update, color: Colors.green)
+            ]);
+      }
     }
     if (state is CheckLoadingState) {
       trail = const CupertinoActivityIndicator();
-    }
-    if (state is DownloadingState) {
-      info = context.l10n.downloadingNewVersion;
-      trail = _buildProgress(context, state.progress, state.appSize);
     }
 
     return ListTile(
@@ -95,17 +99,19 @@ class AppUpdatePanel extends StatelessWidget {
 
   void _tapByState(UpdateState state, BuildContext context) {
     if (state is NoUpdateState) {
-      context.read<UpgradeBloc>().add(const CheckUpdate(appName: 'FlutterUnit'));
+      context.read<UpgradeBloc>().add(const CheckUpdate(appId: 1));
     }
 
     if (state is ShouldUpdateState) {
       showDialog(
           barrierDismissible: false,
           context: context,
-          builder: (ctx) => FeiShuUpdateDialog(
+          builder: (ctx) => UpdateDialog(
                 result: state.info,
                 onConfirm: () {
-                  context.read<UpgradeBloc>().add(DownloadEvent(appInfo: state.info));
+                  context
+                      .read<UpgradeBloc>()
+                      .add(DownloadEvent(appInfo: state.info));
                 },
               ));
       // if(Platform.isIOS){

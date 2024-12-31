@@ -9,6 +9,7 @@ import 'package:l10n/l10n.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:app_update/app_update.dart';
 
 import 'l10n/gen/app_l10n.dart';
 import 'navigation/router/app_route.dart';

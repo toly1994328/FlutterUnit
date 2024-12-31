@@ -17,7 +17,7 @@ class UnitHost extends Host {
       );
 
   @override
-  HostEnv get env => HostEnv.release;
+  HostEnv get env => HostEnv.dev;
 }
 
 enum UnitApi {

@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tolyui/tolyui.dart';
 
 class ThemeModelSwitchIcon extends StatelessWidget {
 
@@ -11,16 +12,15 @@ class ThemeModelSwitchIcon extends StatelessWidget {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
-      child: GestureDetector(
+      child: TolyAction(
+        style: const ActionStyle.dark(),
         onTap: (){
           context.read<AppConfigBloc>().changeThemeMode(isDark?ThemeMode.light:ThemeMode.dark);
         },
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 16, top: 16),
-          child: Icon(
-            !isDark?TolyIcon.dark:TolyIcon.wb_sunny,
-            color: Colors.white,
-          ),
+        child: Icon(
+          !isDark?TolyIcon.dark:TolyIcon.wb_sunny,
+          color: Colors.white,
+          size: 22,
         ),
       ),
     );

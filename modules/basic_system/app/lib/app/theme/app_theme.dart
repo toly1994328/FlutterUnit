@@ -113,7 +113,10 @@ ThemeData lightTheme(AppConfig state) {
       centerTitle: true,
       backgroundColor: Colors.white,
       titleTextStyle: const TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black,
+        fontFamily: '宋体',
+
+      ),
     ),
   );
 }

@@ -9,7 +9,6 @@ import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/src/navigation/model/app_tab.dart';
-import 'package:l10n/l10n.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
@@ -39,7 +38,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   void initState() {
     super.initState();
     if (Platform.isAndroid || Platform.isIOS) {}
-    context.read<UpgradeBloc>().add(const CheckUpdate(appName: 'FlutterUnit'));
+    context.read<UpgradeBloc>().add(const CheckUpdate(appId: 1));
   }
 
   @override

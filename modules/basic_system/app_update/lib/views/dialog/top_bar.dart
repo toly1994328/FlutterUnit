@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class FeiShuUpdateTopBar extends StatelessWidget {
+class UpdateTopBar extends StatelessWidget {
   final String text;
-  const FeiShuUpdateTopBar({Key? key, required this.text}) : super(key: key);
+  const UpdateTopBar({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

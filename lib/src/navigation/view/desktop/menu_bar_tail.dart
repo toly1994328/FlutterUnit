@@ -8,15 +8,21 @@
 
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/src/flutter_unit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:toly_ui/toly_ui.dart';
+import 'package:tolyui/basic/basic.dart';
 
 import 'theme_model_switch_icon.dart';
+import 'package:app_update/app_update.dart';
 
-enum ActionType{
+enum ActionType {
   settings(path: '/settings'),
   collection(path: '/collection');
+
   final String path;
+
   const ActionType({required this.path});
 }
 
@@ -28,35 +34,46 @@ class MenuBarTail extends StatelessWidget {
     return Column(
       children: [
         const Divider(indent: 20, color: Colors.white, height: 1),
-        Wrap(
-          spacing: 12,
-          children: [
-            FeedbackWidget(
-              onPressed: () {
-                context.push(ActionType.settings.path);
-              },
-              child: const Padding(
-                padding: EdgeInsets.only(bottom: 16, top: 16),
-                child: Icon(
-                  Icons.settings,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            FeedbackWidget(
-              onPressed: () => context.push(ActionType.collection.path),
-              child: const Padding(
-                padding: EdgeInsets.only(bottom: 16, top: 16),
-                child: Icon(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
+            children: [
+              const SettingIcon(),
+              TolyAction(
+                style: const ActionStyle.dark(),
+                onTap: () => context.push(ActionType.collection.path),
+                child: const Icon(
                   TolyIcon.icon_collect,
                   color: Colors.white,
+                  size: 22,
                 ),
               ),
-            ),
-            const ThemeModelSwitchIcon(),
-          ],
+              const ThemeModelSwitchIcon(),
+            ],
+          ),
         ),
       ],
     );
+  }
+}
+
+class SettingIcon extends StatelessWidget {
+  const SettingIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    UpdateState state = context.watch<UpgradeBloc>().state;
+    Color tipColor = Colors.redAccent;
+    Widget child = TolyAction(
+      style: const ActionStyle.dark(),
+      onTap: () => context.push(ActionType.settings.path),
+      child: const Icon(Icons.settings, color: Colors.white, size: 22),
+    );
+    return switch (state) {
+      ShouldUpdateState() => Badge(backgroundColor: tipColor, child: child),
+      _ => child,
+    };
   }
 }

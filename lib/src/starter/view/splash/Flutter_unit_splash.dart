@@ -114,7 +114,7 @@ class SplashTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (!isDesk) return const SizedBox.shrink();
+    if (!kIsDesk) return const SizedBox.shrink();
     return DragToMoveWrapper(
       child: Stack(
         children: [

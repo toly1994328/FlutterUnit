@@ -2,9 +2,7 @@ import 'package:fx_dao/fx_dao.dart';
 
 import '../po/node_po.dart';
 
-
 class NodeDao with HasDatabase, DbTable {
-
   @override
   String get createSql => '';
 
@@ -12,12 +10,11 @@ class NodeDao with HasDatabase, DbTable {
   String get name => 'node';
 
   Future<int> insert(NodePo widget) async {
-    //插入方法
-    String addSql = //插入数据
-        "INSERT INTO "
+    String addSql = "INSERT INTO "
         "node(widgetId,name,priority,subtitle,code) "
         "VALUES (?,?,?,?,?);";
-    return await database.transaction((tran) async => await tran.rawInsert(addSql, [
+    return await database.transaction((tran) async => await tran.rawInsert(
+            addSql, [
           widget.widgetId,
           widget.name,
           widget.priority,
@@ -26,9 +23,8 @@ class NodeDao with HasDatabase, DbTable {
         ]));
   }
 
-  Future<List<Map<String, dynamic>>> queryAll() async {
-    return await database.rawQuery("SELECT * FROM node");
-  }
+  Future<List<Map<String, dynamic>>> queryAll() async =>
+      database.rawQuery("SELECT * FROM node");
 
   //根据 id 查询组件 node
   Future<List<Map<String, dynamic>>> queryById(int id) async {

@@ -9,8 +9,8 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:toly_ui/toly_ui.dart';
+import 'package:tolyui/tolyui.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:widgets/widgets.dart';
 
 class MenuBarLeading extends StatelessWidget {
   const MenuBarLeading({super.key});
@@ -18,77 +18,69 @@ class MenuBarLeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20,bottom: 20),
+      padding: const EdgeInsets.only(top: 20, bottom: 8),
       child: Column(
         children: [
-           Wrap(
+          Wrap(
             direction: Axis.vertical,
-            spacing: 10,
+            spacing: 8,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               GestureDetector(
-                onDoubleTap: (){
-                },
-                child: CircleImage(
+                onDoubleTap: () {},
+                child: const CircleImage(
                   image: AssetImage('assets/images/icon_head.webp'),
                   size: 60,
                 ),
               ),
-              Text(
+              const Text(
                 '张风捷特烈',
                 style: TextStyle(color: Colors.white70),
               )
             ],
           ),
           _buildIcons(),
-          const Divider(
-            color: Colors.white,
-            height: 1,
-            endIndent: 20,
-          ),
-          const SizedBox(height: 16,),
+          const Divider(color: Colors.white, height: 1, endIndent: 20),
+          const SizedBox(height: 16),
         ],
       ),
     );
   }
+
+  final List<LinkIconMenu> menus = const [
+    LinkIconMenu(
+        TolyIcon.icon_github, "https://github.com/toly1994328/FlutterUnit"),
+    LinkIconMenu(TolyIcon.icon_juejin,
+        'https://juejin.im/user/5b42c0656fb9a04fe727eb37'),
+    LinkIconMenu(TolyIcon.icon_item, 'http://toly1994.com'),
+  ];
 
   Widget _buildIcons() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16, top: 16),
+      padding: const EdgeInsets.only(bottom: 8, top: 8),
       child: Wrap(
         spacing: 8,
-        children: [
-          FeedbackWidget(
-            onPressed: () =>
-                _launchURL("https://github.com/toly1994328/FlutterUnit"),
-            child: const Icon(
-              TolyIcon.icon_github,
-              color: Colors.white,
-            ),
-          ),
-          FeedbackWidget(
-            onPressed: () =>
-                _launchURL("https://juejin.im/user/5b42c0656fb9a04fe727eb37"),
-            child: const Icon(
-              TolyIcon.icon_juejin,
-              color: Colors.white,
-            ),
-          ),
-          FeedbackWidget(
-            onPressed: () => _launchURL("http://blog.toly1994.com"),
-            child: const Icon(
-              TolyIcon.icon_item,
-              color: Colors.white,
-            ),
-          ),
-        ],
+        children: menus
+            .map((menu) => TolyAction(
+                  style: const ActionStyle.dark(),
+                  onTap: menu.launch,
+                  child: Icon(menu.icon, color: Colors.white, size: 22),
+                ))
+            .toList(),
       ),
     );
   }
+}
 
-  void _launchURL(String url) async {
-    if (!await launchUrl(Uri.parse(url))) {
-      // throw Exception('Could not launch $url');
-    }
+class LinkIconMenu {
+  final IconData icon;
+  final String url;
+
+  const LinkIconMenu(this.icon, this.url);
+
+  void launch() => _launchUrl(url);
+
+  void _launchUrl(String url) async {
+    if (!await launchUrl(Uri.parse(url))) {}
   }
 }

@@ -2,7 +2,7 @@
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
 /// 说明: 组件信息-数据库-数据模型
-
+///
 class WidgetPo {
   final int id;
   final String name;

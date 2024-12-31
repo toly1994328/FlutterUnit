@@ -10,7 +10,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:r_upgrade/r_upgrade.dart';
 import 'package:fx_dio/fx_dio.dart';
-import '../model/app_info.dart';
+import '../repository/model/app_info.dart';
 
 import 'event.dart';
 import 'state.dart';
@@ -21,22 +21,17 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
 
   UpgradeBloc({required this.api}) : super(const NoUpdateState()) {
     on<CheckUpdate>(_onCheckUpdate);
-    on<ResetNoUpdate>(_onResetNoUpdate);
     on<DownloadEvent>(_onDownloadEvent);
-    on<DownloadingEvent>(_onDownloadingEvent);
   }
 
   void _onCheckUpdate(CheckUpdate event, Emitter<UpdateState> emit) async {
-    print("========_onCheckUpdate==============");
     emit(const CheckLoadingState());
-    // 检测更新逻辑
-    ApiRet<AppInfo> ret = await api.fetch(event.appName);
+    ApiRet<AppInfo> ret = await api.fetch(event.appId);
     if (ret.failed) {
-      emit(CheckErrorState(error: ret.msg));
+      emit(UpdateErrorState(error: ret.msg));
       return;
     }
     AppInfo result = ret.data;
-    print(result);
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     if (result.shouldUpgrade(packageInfo.version)) {
       emit(ShouldUpdateState(oldVersion: packageInfo.version, info: result));
@@ -46,57 +41,49 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
     }
   }
 
-  void _onResetNoUpdate(ResetNoUpdate event, Emitter<UpdateState> emit) {
-    emit(const NoUpdateState());
+  void _onDownloadEvent(DownloadEvent event, Emitter<UpdateState> emit) async {
+    UpdateState curState = state;
+    if (curState is! ShouldUpdateState) return;
+
+    void onProgressChange(double progress) {
+      emit(curState.copyWith(progress: progress));
+    }
+    onProgressChange(0.001);
+
+    String url = event.appInfo.url;
+    if (kIsDesk) {
+      handleDesk(url, onProgressChange);
+      return;
+    }
+    handleAndroid(url, onProgressChange);
+  }
+
+  void handleDesk(String url, OnProgressChange callback) async {
+    Dio dio = Dio();
+    Directory dir = await getTemporaryDirectory();
+    String filePath = p.join(dir.path, p.basename(url));
+    Response rep = await dio.download(
+      url,
+      filePath,
+      onReceiveProgress: (c, t) => callback(c / t),
+    );
+    if (rep.statusCode == 200) {
+      await OpenFile.open(filePath);
+    }
   }
 
   late int? id;
-  late StreamSubscription<DownloadInfo>? subscription;
+  StreamSubscription<DownloadInfo>? subscription;
 
-  void _onDownloadEvent(DownloadEvent event, Emitter<UpdateState> emit) async {
-    emit(DownloadingState(progress: 0, appSize: event.appInfo.appSize));
-    if (isDesk) {
-      String url = event.appInfo.appUrl;
-      Dio dio = Dio();
-      Directory dir = await getTemporaryDirectory();
-      String filePath = p.join(dir.path, p.basename(url));
-      Response rep = await dio.download(
-        url,
-        filePath,
-        onReceiveProgress: (c, t) =>
-            _onProgressChange(event.appInfo.appSize, c / t),
-      );
-      if (rep.statusCode == 200) {
-        add(const ResetNoUpdate());
-        OpenFile.open(filePath);
-      }
-      return;
-    }
-
-    id = await RUpgrade.upgrade(
-      event.appInfo.appUrl,
-      fileName: '${event.appInfo.appName}.apk',
-    );
+  void handleAndroid(String url, OnProgressChange callback) async {
+    id = await RUpgrade.upgrade(url, fileName: p.basename(url));
     subscription = RUpgrade.stream.listen((DownloadInfo info) {
       double progress = (info.percent ?? 0) / 100;
-      if (info.status! == DownloadStatus.STATUS_SUCCESSFUL) {
+      if (info.status == DownloadStatus.STATUS_SUCCESSFUL) {
         progress = 1;
         subscription?.cancel();
-        add(const ResetNoUpdate());
       }
-      _onProgressChange(event.appInfo.appSize, progress);
+      callback(progress);
     });
-  }
-
-  void _onProgressChange(int appSize, double progress) {
-    add(
-      DownloadingEvent(
-        state: DownloadingState(appSize: appSize, progress: progress),
-      ),
-    );
-  }
-
-  void _onDownloadingEvent(DownloadingEvent event, Emitter<UpdateState> emit) {
-    emit(event.state);
   }
 }

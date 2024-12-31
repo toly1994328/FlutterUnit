@@ -4,19 +4,14 @@ import 'dart:convert';
 import 'package:storage/storage.dart';
 import 'package:widget_repository/widget_repository.dart';
 
-import '../../repository/category_repository.dart';
-import '../dao/category_dao.dart';
-
 /// create by 张风捷特烈 on 2020-04-21
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
 class CategoryDbRepository implements CategoryRepository {
-
   CategoryDao get categoryDao => AppStorage().flutter<CategoryDao>();
-  LikeDao get likeDao => AppStorage().flutter<LikeDao>();
 
-  // CategoryDbRepository({required this.categoryDao,required this.likeDao});
+  LikeDao get likeDao => AppStorage().flutter<LikeDao>();
 
   @override
   Future<bool> addCategory(CategoryPo categoryPo) async {
@@ -79,10 +74,7 @@ class CategoryDbRepository implements CategoryRepository {
 
     for (int i = 0; i < data.length; i++) {
       List<int> ids = await categoryDao.loadCollectWidgetIds(data[i]['id']);
-      collects.add(CategoryTo(
-          widgetIds: ids,
-          model: CategoryPo.fromJson(data[i])));
-
+      collects.add(CategoryTo(widgetIds: ids, model: CategoryPo.fromJson(data[i])));
       if (i == data.length - 1) {
         completer.complete(collects);
       }
@@ -92,7 +84,7 @@ class CategoryDbRepository implements CategoryRepository {
   }
 
   @override
-  Future<bool> syncCategoryByData(String data,String likeData) async {
+  Future<bool> syncCategoryByData(String data, String likeData) async {
     try {
       await categoryDao.clear();
       List<dynamic> dataMap = json.decode(data);
@@ -100,11 +92,12 @@ class CategoryDbRepository implements CategoryRepository {
         CategoryPo po = CategoryPo.fromNetJson(dataMap[i]["model"]);
         List<dynamic> widgetIds = dataMap[i]["widgetIds"];
         await addCategory(po);
-        if (widgetIds.isNotEmpty&&po.id!=null) {
+        if (widgetIds.isNotEmpty && po.id != null) {
           await categoryDao.addWidgets(po.id!, widgetIds);
         }
       }
-      List<int> likeWidgets = (json.decode(likeData) as List).map<int>((e) => e).toList();
+      List<int> likeWidgets =
+          (json.decode(likeData) as List).map<int>((e) => e).toList();
       for (int i = 0; i < likeWidgets.length; i++) {
         await likeDao.like(likeWidgets[i]);
       }

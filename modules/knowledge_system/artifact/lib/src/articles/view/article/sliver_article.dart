@@ -47,7 +47,7 @@ class SliverArticle extends StatelessWidget {
       crossAxisSpacing: 8,
     );
 
-    Widget child = isDesk
+    Widget child = kIsDesk
         ? SliverGrid(
             delegate: SliverChildBuilderDelegate(
               _buildItem,
