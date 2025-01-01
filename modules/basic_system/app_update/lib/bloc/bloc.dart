@@ -10,6 +10,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:r_upgrade/r_upgrade.dart';
 import 'package:fx_dio/fx_dio.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../repository/model/app_info.dart';
 
 import 'event.dart';
@@ -61,6 +62,10 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
   }
 
   void handleDesk(String url, OnProgressChange callback) async {
+    if(kAppEnv.isMacOS){
+      launchUrl(Uri.parse(url));
+      return;
+    }
     Dio dio = Dio();
     Directory dir = await getTemporaryDirectory();
     String filePath = p.join(dir.path, p.basename(url));
@@ -70,35 +75,10 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
       onReceiveProgress: (c, t) => callback(c / t),
     );
     if (rep.statusCode == 200) {
-      if(kAppEnv.isMacOS){
-        await addQuarantineAttribute(filePath);
-      }
       await OpenFile.open(filePath);
     }
   }
 
-  Future<void> addQuarantineAttribute(String filePath) async {
-    try {
-      // 检查文件是否存在
-      if (!await File(filePath).exists()) {
-        throw Exception('File not found: $filePath');
-      }
-
-      // 添加 com.apple.quarantine 属性
-      final result = await Process.run(
-        'xattr',
-        ['-w', 'com.apple.quarantine', '0083;602b8b1a;Chrome;', filePath],
-      );
-
-      if (result.exitCode == 0) {
-        print('Successfully added quarantine attribute to $filePath');
-      } else {
-        print('Error adding quarantine attribute: ${result.stderr}');
-      }
-    } catch (e) {
-      print('Exception: $e');
-    }
-  }
 
   late int? id;
   StreamSubscription<DownloadInfo>? subscription;
