@@ -70,7 +70,33 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
       onReceiveProgress: (c, t) => callback(c / t),
     );
     if (rep.statusCode == 200) {
+      if(kAppEnv.isMacOS){
+        await addQuarantineAttribute(filePath);
+      }
       await OpenFile.open(filePath);
+    }
+  }
+
+  Future<void> addQuarantineAttribute(String filePath) async {
+    try {
+      // 检查文件是否存在
+      if (!await File(filePath).exists()) {
+        throw Exception('File not found: $filePath');
+      }
+
+      // 添加 com.apple.quarantine 属性
+      final result = await Process.run(
+        'xattr',
+        ['-w', 'com.apple.quarantine', '0083;602b8b1a;Chrome;', filePath],
+      );
+
+      if (result.exitCode == 0) {
+        print('Successfully added quarantine attribute to $filePath');
+      } else {
+        print('Error adding quarantine attribute: ${result.stderr}');
+      }
+    } catch (e) {
+      print('Exception: $e');
     }
   }
 
