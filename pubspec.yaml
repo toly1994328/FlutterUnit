@@ -90,7 +90,7 @@ flutter:
   assets:
     - assets/images/
     - assets/data/
-    - assets/data/web/
+#    - assets/data/web/
     - assets/images/head_icon/
     - assets/images/widgets/
     - assets/flutter.db

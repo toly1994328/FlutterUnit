@@ -193,5 +193,7 @@
   "my":"My",
   "picture":"pics",
   "widgetInn":"Widget Collection",
+  "emptySearch":"No Result \n(≡ _ ≡)/~┴┴",
+  "searchSomething":"Search Something ≧◔◡◔≦",
   "slogan":"The unity of flutter, The unity of coder."
 }

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:l10n/l10n.dart';
 
 import 'package:widget_repository/widget_repository.dart';
 import '../widget_page/widget_model_item.dart';
@@ -52,15 +53,15 @@ class StandardSearchPage extends StatelessWidget {
   }
 
   Widget _buildBodyByState(BuildContext context, WidgetsState state) {
-    Widget noSearchArg = const NotSearchPage();
+    Widget noSearchArg = NotSearchPage(tips: context.l10n.searchSomething,);
     if (state.filter.name.isEmpty) {
       return noSearchArg;
     }
 
     if (state is WidgetsLoaded) {
       if (state.widgets.isEmpty) {
-        return const EmptyShower(
-          message: "没数据，哥也没办法\n(≡ _ ≡)/~┴┴",
+        return  EmptyShower(
+          message: context.l10n.emptySearch,
         );
       }
       return ListView.builder(

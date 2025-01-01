@@ -550,5 +550,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get widgetInn => 'Widget Collection';
 
   @override
+  String get emptySearch => 'No Result \n(≡ _ ≡)/~┴┴';
+
+  @override
+  String get searchSomething => 'Search Something ≧◔◡◔≦';
+
+  @override
   String get slogan => 'The unity of flutter, The unity of coder.';
 }

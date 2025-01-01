@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:toly_ui/toly_ui.dart';
-
+import 'package:l10n/l10n.dart';
 import 'gallery_factory.dart';
 
 
@@ -72,7 +72,7 @@ class GalleryCardItem extends StatelessWidget {
                       padding:
                           const EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 3),
                       child: Text(
-                        "$count 幅",
+                        "$count ${context.l10n.picture}",
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,

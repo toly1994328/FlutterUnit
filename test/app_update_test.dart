@@ -6,6 +6,6 @@ void main() async {
   FxDio().register(const ScienceHost(), repInterceptor: ScienceRepInterceptor());
 
   UpgradeApi api = UnitUpgradeApi();
-  ApiRet<AppInfo> info = await api.fetch(1);
+  ApiRet<AppInfo> info = await api.fetch(1,'zh');
   print(info.data);
 }

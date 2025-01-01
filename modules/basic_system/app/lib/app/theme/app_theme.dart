@@ -66,8 +66,12 @@ ThemeData lightTheme(AppConfig state) {
     statusBarIconBrightness: Brightness.dark,
   );
 
+  String fontFamily = state.fontFamily;
+  if (kAppEnv.isWindows) {
+    fontFamily = '宋体';
+  }
   return ThemeData(
-    fontFamily: '宋体',
+    fontFamily: fontFamily,
     primaryColor: state.themeColor.color,
     scaffoldBackgroundColor: const Color(0xffF3F4F6),
     useMaterial3: true,
@@ -96,6 +100,9 @@ ThemeData lightTheme(AppConfig state) {
     }),
     tabBarTheme: TabBarTheme(
       dividerColor: Colors.transparent,
+      // labelStyle: TextStyle(fontFamily: fontFamily),
+      // unselectedLabelStyle: TextStyle(fontFamily: fontFamily),
+
       splashFactory: NoSplash.splashFactory,
       overlayColor: WidgetStateProperty.resolveWith<Color?>(
         (Set<WidgetState> states) {
@@ -112,10 +119,11 @@ ThemeData lightTheme(AppConfig state) {
       elevation: 0,
       centerTitle: true,
       backgroundColor: Colors.white,
-      titleTextStyle: const TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black,
-        fontFamily: '宋体',
-
+      titleTextStyle: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+        fontFamily: fontFamily,
       ),
     ),
   );

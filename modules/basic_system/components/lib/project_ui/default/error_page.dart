@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class ErrorPage extends StatelessWidget {
 
   const ErrorPage({Key? key}):super(key: key);

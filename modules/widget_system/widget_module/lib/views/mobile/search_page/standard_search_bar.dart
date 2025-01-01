@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_repository/widget_repository.dart';
@@ -68,7 +69,7 @@ class StandardSearchBarInner extends StatelessWidget
                           borderRadius:
                               BorderRadius.all(Radius.circular(8)),
                         ),
-                        hintText: "搜索组件",
+                        hintText:context.l10n.searchWidget,
                         hintStyle: TextStyle(fontSize: 14)),
                   ),
                 )),

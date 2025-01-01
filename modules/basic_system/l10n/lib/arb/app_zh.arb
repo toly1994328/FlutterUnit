@@ -194,5 +194,7 @@
   "my":"我的",
   "picture":"幅",
   "widgetInn":"组件酒肆",
+  "emptySearch":"没数据，哥也没办法\n(≡ _ ≡)/~┴┴",
+  "searchSomething":"哥们，搜点啥...≧◔◡◔≦",
   "slogan":"Flutter 的联合，编程者的联合"
 }
