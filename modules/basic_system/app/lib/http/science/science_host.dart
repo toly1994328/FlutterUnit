@@ -5,7 +5,7 @@ class ScienceHost extends Host {
 
   @override
   Map<HostEnv, String> get value => {
-        HostEnv.release: 'api.toly1994.com',
+        HostEnv.release: 'toly1994.com',
         HostEnv.dev: '192.168.109.244',
       };
 
@@ -17,7 +17,7 @@ class ScienceHost extends Host {
       );
 
   @override
-  HostEnv get env => HostEnv.dev;
+  HostEnv get env => HostEnv.release;
 }
 
 enum ScienceApi {

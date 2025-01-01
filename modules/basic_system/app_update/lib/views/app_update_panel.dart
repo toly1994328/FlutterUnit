@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:r_upgrade/r_upgrade.dart';
 import 'package:utils/utils.dart';
 import 'package:l10n/l10n.dart';
 
@@ -99,7 +96,8 @@ class AppUpdatePanel extends StatelessWidget {
 
   void _tapByState(UpdateState state, BuildContext context) {
     if (state is NoUpdateState) {
-      context.read<UpgradeBloc>().add(const CheckUpdate(appId: 1));
+      String locale = Localizations.localeOf(context).toString();
+      context.read<UpgradeBloc>().add( CheckUpdate(appId: 1,locale: locale));
     }
 
     if (state is ShouldUpdateState) {

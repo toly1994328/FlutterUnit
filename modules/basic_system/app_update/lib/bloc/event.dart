@@ -9,8 +9,9 @@ sealed class UpdateEvent extends Equatable {
 // 检查更新 ---> 校验，转换状态
 class CheckUpdate extends UpdateEvent {
   final int appId;
+  final String locale;
 
-  const CheckUpdate({required this.appId});
+  const CheckUpdate({required this.appId,required this.locale, });
 
   @override
   List<Object?> get props => [appId];
@@ -23,4 +24,13 @@ class DownloadEvent extends UpdateEvent {
 
   @override
   List<Object?> get props => [appInfo];
+}
+
+class ProgressChangeEvent extends UpdateEvent {
+  final double progress;
+
+  const ProgressChangeEvent({required this.progress});
+
+  @override
+  List<Object?> get props => [progress];
 }

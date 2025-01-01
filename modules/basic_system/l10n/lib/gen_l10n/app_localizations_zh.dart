@@ -550,5 +550,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get widgetInn => '组件酒肆';
 
   @override
+  String get emptySearch => '没数据，哥也没办法\n(≡ _ ≡)/~┴┴';
+
+  @override
+  String get searchSomething => '哥们，搜点啥...≧◔◡◔≦';
+
+  @override
   String get slogan => 'Flutter 的联合，编程者的联合';
 }

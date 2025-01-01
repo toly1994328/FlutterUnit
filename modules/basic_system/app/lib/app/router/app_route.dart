@@ -27,7 +27,7 @@ enum AppRoute {
   codeStyle('code_style', url: '/setting/code_style'),
   themeColor('theme_color', url: '/setting/theme_color'),
   fontSetting('font_setting', url: '/setting/font_setting'),
-  version('version', url: '/setting/version'),
+  version('version', url: '/settings/version'),
   ;
 
   final String path;

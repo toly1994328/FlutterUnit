@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NotSearchPage extends StatelessWidget {
-
-  const NotSearchPage({Key? key}):super(key: key);
+  final String tips;
+  const NotSearchPage({Key? key, required this.tips}):super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class NotSearchPage extends StatelessWidget {
            Container(
             padding:  const EdgeInsets.only(top: 16.0),
             child: Text(
-              "哥们，搜点啥...≧◔◡◔≦",
+              tips,
               style:  TextStyle(
                 fontSize: 20,
                 color: color,

@@ -8,5 +8,5 @@ typedef OnProgressChange = void Function(double progress);
 abstract class UpgradeApi with CheckUpgrade {}
 
 mixin CheckUpgrade {
-  Future<ApiRet<AppInfo>> fetch(int appId);
+  Future<ApiRet<AppInfo>> fetch(int appId,String locale);
 }

@@ -1181,6 +1181,18 @@ abstract class AppLocalizations {
   /// **'组件酒肆'**
   String get widgetInn;
 
+  /// No description provided for @emptySearch.
+  ///
+  /// In zh, this message translates to:
+  /// **'没数据，哥也没办法\n(≡ _ ≡)/~┴┴'**
+  String get emptySearch;
+
+  /// No description provided for @searchSomething.
+  ///
+  /// In zh, this message translates to:
+  /// **'哥们，搜点啥...≧◔◡◔≦'**
+  String get searchSomething;
+
   /// No description provided for @slogan.
   ///
   /// In zh, this message translates to:

@@ -22,11 +22,12 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
   UpgradeBloc({required this.api}) : super(const NoUpdateState()) {
     on<CheckUpdate>(_onCheckUpdate);
     on<DownloadEvent>(_onDownloadEvent);
+    on<ProgressChangeEvent>(_onProgressChangeEvent);
   }
 
   void _onCheckUpdate(CheckUpdate event, Emitter<UpdateState> emit) async {
     emit(const CheckLoadingState());
-    ApiRet<AppInfo> ret = await api.fetch(event.appId);
+    ApiRet<AppInfo> ret = await api.fetch(event.appId,event.locale);
     if (ret.failed) {
       emit(UpdateErrorState(error: ret.msg));
       return;
@@ -46,8 +47,9 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
     if (curState is! ShouldUpdateState) return;
 
     void onProgressChange(double progress) {
-      emit(curState.copyWith(progress: progress));
+      add(ProgressChangeEvent(progress: progress));
     }
+
     onProgressChange(0.001);
 
     String url = event.appInfo.url;
@@ -85,5 +87,11 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
       }
       callback(progress);
     });
+  }
+
+  FutureOr<void> _onProgressChangeEvent(ProgressChangeEvent event, Emitter<UpdateState> emit) async{
+    UpdateState curState = state;
+    if (curState is! ShouldUpdateState) return;
+    emit(curState.copyWith(progress: event.progress));
   }
 }

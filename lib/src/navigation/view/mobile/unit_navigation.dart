@@ -9,7 +9,7 @@ import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/src/navigation/model/app_tab.dart';
-
+import 'package:treasure_tools/treasure_tools.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
 
@@ -38,7 +38,9 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   void initState() {
     super.initState();
     if (Platform.isAndroid || Platform.isIOS) {}
-    context.read<UpgradeBloc>().add(const CheckUpdate(appId: 1));
+    String locale =
+        context.read<AppConfigBloc>().state.language.locale.toString();
+    context.read<UpgradeBloc>().add(CheckUpdate(appId: 1, locale: locale));
   }
 
   @override
@@ -61,7 +63,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
           StandardHomePage(),
           GalleryUnit(),
           AlgoScope(child: ArtifactPage()),
-          CollectPageAdapter(),
+          MobileToolPage(),
           UserPage(),
         ],
       ),
@@ -71,7 +73,6 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
 
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
-
   // 由于 bottomNavigationBar 颜色需要随 点击头部栏 状态而改变，
   // 使用 BlocBuilder 构建
   Widget _buildBottomNav(BuildContext context) {
@@ -80,7 +81,8 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
         ValueListenableBuilder(
             valueListenable: _activeTab,
             builder: (_, value, __) => PureBottomBar(
-                  onTap: _onTapBottomNav, activeTab: value,
+                  onTap: _onTapBottomNav,
+                  activeTab: value,
                 )),
         const Positioned(right: 22, top: 8, child: UpdateRedPoint())
       ],
