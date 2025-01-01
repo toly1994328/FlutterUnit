@@ -46,6 +46,12 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
   void _onDownloadEvent(DownloadEvent event, Emitter<UpdateState> emit) async {
     UpdateState curState = state;
     if (curState is! ShouldUpdateState) return;
+    String url = event.appInfo.url;
+
+    if(kAppEnv.isMacOS){
+      launchUrl(Uri.parse(url));
+      return;
+    }
 
     void onProgressChange(double progress) {
       add(ProgressChangeEvent(progress: progress));
@@ -53,7 +59,6 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
 
     onProgressChange(0.001);
 
-    String url = event.appInfo.url;
     if (kIsDesk) {
       handleDesk(url, onProgressChange);
       return;
@@ -62,10 +67,6 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
   }
 
   void handleDesk(String url, OnProgressChange callback) async {
-    if(kAppEnv.isMacOS){
-      launchUrl(Uri.parse(url));
-      return;
-    }
     Dio dio = Dio();
     Directory dir = await getTemporaryDirectory();
     String filePath = p.join(dir.path, p.basename(url));
