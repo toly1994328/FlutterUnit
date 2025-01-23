@@ -26,7 +26,9 @@ class FxApplication with FxStarter<AppConfig> {
   void onLoaded(BuildContext context, int cost, AppConfig state) {
     debugPrint("App启动耗时:$cost ms");
     context.read<AppConfigBloc>().init(state);
-    context.read<WidgetsBloc>().add(const EventTabTap(WidgetFamily.statelessWidget));
+    context
+        .read<WidgetsBloc>()
+        .add(const EventTabTap(WidgetFamily.statelessWidget));
     if (!kAppEnv.isWeb) {
       context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
       context.read<CategoryBloc>().add(const EventLoadCategory());
@@ -35,7 +37,9 @@ class FxApplication with FxStarter<AppConfig> {
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
-    context.read<UpgradeBloc>().add(CheckUpdate(appId: 1,locale: state.language.locale.toString()));
+    context
+        .read<UpgradeBloc>()
+        .add(CheckUpdate(appId: 1, locale: state.language.locale.toString()));
     context.go(AppRoute.widget.url);
   }
 

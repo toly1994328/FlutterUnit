@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:toly_ui/code/code.dart';
 import 'package:toly_ui/toly_ui.dart';
-import 'package:tolyui/tolyui.dart';
+import 'package:tolyui/tolyui.dart' hide TolyCollapse,CollapseController;
 
 // import 'package:flutter_highlight/flutter_highlight.dart';
 import 'collapse.dart';

@@ -43,7 +43,7 @@ dependencies:
 
   ## fx 架构
   fx_platform_adapter: ^0.0.2+1 # 平台适配器
-  fx_go_router_ext: 0.0.3 # 路由
+  fx_go_router_ext: 0.0.5 # 路由
   fx_dao: 0.0.1+2 # 数据库
   fx_dio: 0.0.3
   fx_boot_starter: 0.1.1 # app 启动器
@@ -63,7 +63,7 @@ dependencies:
   share_plus: ^10.0.1 # 文字分享
 
   # 视图展示
-  tolyui: 0.0.2+19   # tolyui
+  tolyui: 0.0.4   # tolyui
   refresh: ^1.0.1 # 下拉刷新
   dash_painter: ^1.0.2 # 虚线
   flutter_star: ^1.0.2 # 星星组件
