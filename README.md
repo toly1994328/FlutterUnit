@@ -34,10 +34,10 @@ FlutterUnit 是一个全平台体验应用，你可以在这里尽情体验 Flut
 
 ```
 ·]>>  flutter --version
-Flutter 3.24.3 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 2663184aa7 (3 months ago) • 2024-09-11 16:27:48 -0500
-Engine • revision 36335019a8
-Tools • Dart 3.5.3 • DevTools 2.37.3
+Flutter 3.27.3 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision c519ee916e (31 hours ago) • 2025-01-21 10:32:23 -0800
+Engine • revision e672b006cb
+Tools • Dart 3.6.1 • DevTools 2.40.2
 ```
 
 #### 构建应用
