@@ -15,15 +15,15 @@ class AppDeskNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: UnitShortcutsScope(
-        child: Row(
-          children: [
-            const DragToMoveWrapper(child: DeskNavigationRail()),
-            Expanded(child: content),
-          ],
-        ),
-      ),
+    return  Scaffold(
+            body: UnitShortcutsScope(
+              child: Row(
+                children: [
+                  const DragToMoveWrapper(child: DeskNavigationRail()),
+                  Expanded(child: content),
+                ],
+              ),
+            ),
     );
   }
 }

@@ -58,7 +58,7 @@ dependencies:
   # 平台功能
   connectivity_plus: ^6.0.3 # 网络状态
   url_launcher: ^6.1.14 # url
-  archive: ^3.6.1 # 解压
+  archive: ^4.0.2 # 解压
   file_picker: ^8.0.5 # 文件选择器
   share_plus: ^10.0.1 # 文字分享
 
@@ -72,6 +72,7 @@ dependencies:
   wrapper: ^1.0.2 # 气泡包裹
   webview_flutter: ^4.2.4 # webview
   flutter_markdown: ^0.7.2+1 # markdown
+  flutter_svg: ^2.0.17 # svg 展示
 
   # 逻辑处理
   image: ^4.0.17 # 图像处理

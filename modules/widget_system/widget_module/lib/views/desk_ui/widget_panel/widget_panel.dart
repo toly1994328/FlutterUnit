@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,14 +13,13 @@ import 'desk_widget_model_item.dart';
 import 'desk_widget_top_bar.dart';
 
 class DeskWidgetPanel extends StatefulWidget {
-  const DeskWidgetPanel({Key? key}) : super(key: key);
+  const DeskWidgetPanel({super.key});
 
   @override
   State<DeskWidgetPanel> createState() => _DeskWidgetPanelState();
 }
 
-class _DeskWidgetPanelState extends State<DeskWidgetPanel>{
-
+class _DeskWidgetPanelState extends State<DeskWidgetPanel> {
   @override
   Widget build(BuildContext context) {
     WidgetsState state = context.watch<WidgetsBloc>().state;
@@ -27,31 +27,17 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel>{
     return Scaffold(
       body: Column(
         children: [
-          Shortcuts(
-            shortcuts: <ShortcutActivator, Intent>{
-              const SingleActivator(LogicalKeyboardKey.keyQ): VoidCallbackIntent(() {
-                print("hello");
-              }),
-            },
-            child: DeskWidgetTopBar(
-              onTabPressed: _switchTab,
-            ),
-          ),
+          DeskWidgetTopBar(onTabPressed: _switchTab),
           const Divider(height: 1),
           Expanded(
-            child: _buildByState(state),
+            child: switch (state) {
+              WidgetsLoading() => const CupertinoActivityIndicator(),
+              WidgetsLoaded() => WidgetList(state: state),
+              WidgetsLoadFailed() => Center(child: Text("${state.runtimeType}")),
+            },
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildByState(WidgetsState state) {
-    if (state is WidgetsLoaded) {
-      return WidgetList(state: state);
-    }
-    return Center(
-      child: Text("${state.runtimeType}"),
     );
   }
 
@@ -59,27 +45,24 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel>{
     WidgetFamily widgetFamily = WidgetFamily.values[index];
     BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
   }
-
-
 }
 
 class WidgetList extends StatelessWidget {
   final WidgetsLoaded state;
 
-  const WidgetList({Key? key, required this.state}) : super(key: key);
+  const WidgetList({super.key, required this.state});
 
   @override
   Widget build(BuildContext context) {
-    SliverGridDelegate gridDelegate =
-        const SliverGridDelegateWithMaxCrossAxisExtent(
+    SliverGridDelegate gridDelegate = const SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 400,
       mainAxisSpacing: 10,
-      mainAxisExtent: 130,
+      mainAxisExtent: 110,
       crossAxisSpacing: 10,
     );
 
     return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
       gridDelegate: gridDelegate,
       itemBuilder: _buildItem,
       itemCount: state.widgets.length,
@@ -91,7 +74,7 @@ class WidgetList extends StatelessWidget {
     return DeskWidgetItem(
       model: model,
       onTap: () {
-        context.push('${AppRoute.widgetDetail.url}${model.name}',extra: model);
+        context.push('${AppRoute.widgetDetail.url}${model.name}', extra: model);
       },
     );
   }
