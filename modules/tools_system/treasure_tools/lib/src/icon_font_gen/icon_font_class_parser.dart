@@ -10,7 +10,7 @@ class IconFontClassParser{
   void gen(IconFontGenConfig config){
     final inputStream = InputFileStream(config.srcZip);
     // 将压缩包有用资源解压到目标文件
-    final archive = ZipDecoder().decodeBuffer(inputStream);
+    final archive = ZipDecoder().decodeStream(inputStream);
     for (var file in archive.files) {
       if (file.isFile) {
         if (file.name.endsWith('.ttf')) {

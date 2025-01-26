@@ -5,8 +5,11 @@ import 'package:flutter_star/flutter_star.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/views/components/collected_tag.dart';
 import 'package:widget_repository/widget_repository.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wrapper/wrapper.dart';
+
+import '../../components/widget_logo_map.dart';
+import '../like_tag.dart';
 
 class DeskWidgetItem extends StatelessWidget {
   final WidgetModel model;
@@ -26,30 +29,50 @@ class DeskWidgetItem extends StatelessWidget {
     Color? textColor = Theme.of(context).listTileTheme.textColor;
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     textColor = isDark ? textColor : Color(0xff2F3032);
-
-    return InkWell(
-      borderRadius: BorderRadius.circular(6),
-      onTap: onTap,
-      child: Ink(
-        decoration:
-            BoxDecoration(color: tileColor, borderRadius: BorderRadius.circular(6), boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).primaryColor.withOpacity(0.1),
-            blurRadius: 2,
-          )
-        ]),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-        // margin:
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _buildTitle(Theme.of(context).primaryColor, textColor, isDark),
-            _buildContent(textColor),
-            _buildFoot(isDark)
-          ],
+    Color color = Theme.of(context).primaryColor;
+    return Stack(
+      children: [
+        InkWell(
+          borderRadius: BorderRadius.circular(6),
+          onTap: onTap,
+          child: Ink(
+            decoration:
+                BoxDecoration(color: tileColor, borderRadius: BorderRadius.circular(6), boxShadow: [
+              BoxShadow(
+                color: Theme.of(context).primaryColor.withValues(alpha:0.1),
+                blurRadius: 2,
+              )
+            ]),
+            // padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            // margin:
+            child: Row(
+              children: [
+                GestureDetector(
+                  onLongPress: (){
+                    context.read<LikeWidgetBloc>().add(ToggleLikeWidgetEvent(id: model.id));
+                  },
+                  child: WidgetLogo(background: color, widgetName: model.name,),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding:const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _buildTitle(Theme.of(context).primaryColor, textColor, isDark),
+                        _buildContent(textColor),
+                        _buildFoot(isDark)
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
-      ),
+        LikeTag(widget: model,)
+      ],
     );
   }
 
@@ -63,20 +86,16 @@ class DeskWidgetItem extends StatelessWidget {
               spacing: 8,
               children: [
                 Text(
-                  model.name,
+                  model.name+"#${model.id}",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 14,
                     color: textColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (_, s) {
-                  bool show = s.widgets.contains(model);
-                  if (!show) return const SizedBox();
-                  return const CollectedTag();
-                }),
+
               ],
             ),
           ),
@@ -116,7 +135,7 @@ class DeskWidgetItem extends StatelessWidget {
         ),
         const Spacer(),
         Wrapper.just(
-          radius: 2,
+          radius: 4,
           color: isDark ? Color(0xff292A2D) : const Color(0xffF3F3F5),
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: Text(
@@ -124,7 +143,7 @@ class DeskWidgetItem extends StatelessWidget {
             style: TextStyle(
                 color: isDark ? Color(0xffCCCCCC) : Color(0xff878D96),
                 height: 1,
-                fontSize: 12,
+                fontSize: 10,
                 shadows: [
                   Shadow(
                       color: isDark ? Colors.black : Colors.white,

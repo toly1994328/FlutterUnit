@@ -7,7 +7,9 @@ part of 'widgets_bloc.dart';
 /// 对于一个可查询、可分页的数据集
 /// 状态类持有过滤数据 Filter, 任何衍生状态都需要感知过滤的信息，比如加载异常，点击重试，可以基于最后的过滤状态。
 /// 分页加载 信息需要 了解 总数据、页数、每页含量
-abstract class WidgetsState extends Equatable {
+///
+
+sealed class WidgetsState extends Equatable {
   final WidgetFilter filter;
   final LoadOperate operate;
   const WidgetsState({required this.filter, required this.operate});
