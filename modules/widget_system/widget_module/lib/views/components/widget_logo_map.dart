@@ -8,8 +8,11 @@ class WidgetLogo extends StatelessWidget {
   final Color background;
   final String widgetName;
 
-  const WidgetLogo(
-      {super.key, required this.background, required this.widgetName,});
+  const WidgetLogo({
+    super.key,
+    required this.background,
+    required this.widgetName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,29 +21,27 @@ class WidgetLogo extends StatelessWidget {
       decoration: BoxDecoration(
         color: background,
         gradient: LinearGradient(
-            transform:GradientRotation(270*180/pi) ,
+            transform: const GradientRotation(270 * 180 / pi),
             colors: [
-          background,
-          background.withValues(alpha: 0.5)
-        ]),
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(6),
-            bottomLeft: Radius.circular(6)
-        ),
+              background.withValues(alpha: 0.9),
+              background.withValues(alpha: 0.5)
+            ]),
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(6), bottomLeft: Radius.circular(6)),
       ),
-      child: SvgPicture.asset(
-          'assets/images/widgets/${widgetLogo(widgetName)}'),
+      child:
+          SvgPicture.asset('assets/images/widgets/${widgetLogo(widgetName)}'),
     );
   }
 }
 
-  String widgetLogo(String widgetName) {
-    return switch(widgetName){
-      'Container' => 'Container.svg',
-      'Text' => 'Text.svg',
-      'GestureDetector' => 'GestureDetector.svg',
-      'Card' => 'Card.svg',
-      'ListView' => 'ListView.svg',
-      _ => 'Widget.svg',
-    };
-  }
+String widgetLogo(String widgetName) {
+  return switch (widgetName) {
+    'Container' => 'Container.svg',
+    'Text' => 'Text.svg',
+    'GestureDetector' => 'GestureDetector.svg',
+    'Card' => 'Card.svg',
+    'ListView' => 'ListView.svg',
+    _ => 'Widget.svg',
+  };
+}
