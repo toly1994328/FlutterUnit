@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-
+import 'package:note/note.dart';
 import 'package:app/app.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -13,6 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
 import 'package:utils/utils.dart';
+
+import 'bridge/unit_bridge.dart';
 
 class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
   const FlutterUnitStartRepo();
@@ -29,6 +31,7 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     await SpStorage.instance.initSp();
 
     registerHttpClient();
+    NoteEnv().attachBridge(UnitNoteBridge());
 
     if (!kAppEnv.isWeb) await initDb();
     HttpUtil.instance.rebase(PathUnit.baseUrl);

@@ -11,6 +11,7 @@ import 'widgets/widgets_route.dart';
 RouteBase get appRoute {
   List<RouteBase> body = [
     widgetsRoute,
+    noteRoute,
     collectRoute,
     settingsRoute,
     ...systemRoutes,
