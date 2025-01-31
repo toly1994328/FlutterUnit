@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="r_upgrade_download_speech">%.2f kb/s</string>
+    <string name="r_upgrade_download_planTime">%.0fs left</string>
+    <string name="r_upgrade_download_finish">Download finished</string>
+    <string name="r_upgrade_download_paused">Download paused</string>
+    <string name="r_upgrade_download_failed">Download failed</string>
+</resources>
