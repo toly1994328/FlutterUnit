@@ -1,0 +1,43 @@
+group 'com.example.r_upgrade'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir{
+            dirs project(':r_upgrade').file('libs')
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+    namespace "com.example.r_upgrade"
+    defaultConfig {
+        minSdkVersion 16
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.0.2'
+    implementation 'org.jsoup:jsoup:1.14.3'
+    implementation(name:"r_upgrade_lib",ext:"aar")
+}
