@@ -10,6 +10,7 @@ enum AppRoute {
   collection('collection', url: '/collection'),
   collectionDetail('widgets/:id', url: '/collection/widgets/'),
 
+  note('note', url: '/note'),
   painter('painter', url: '/painter'),
   knowledge('knowledge', url: '/knowledge'),
   tools('tools', url: '/tools'),

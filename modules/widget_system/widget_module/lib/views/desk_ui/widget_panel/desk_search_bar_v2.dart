@@ -9,6 +9,7 @@ import 'package:widget_module/event/widget_event.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:fx_trace/fx_trace.dart';
+
 class GlobalFindDialog extends StatefulWidget {
   final ValueChanged<String>? onChanged;
 
@@ -19,7 +20,8 @@ class GlobalFindDialog extends StatefulWidget {
 }
 
 class _GlobalFindDialogState extends State<GlobalFindDialog> {
-  late TextEditingController _controller =TextEditingController();
+  late TextEditingController _controller = TextEditingController();
+
   // final PopoverController controller = PopoverController();
 
   @override
@@ -28,11 +30,13 @@ class _GlobalFindDialogState extends State<GlobalFindDialog> {
 
     super.initState();
   }
+
   @override
   void dispose() {
     super.dispose();
     _focusNode.removeListener(_onFocusChange);
   }
+
   void _onFocusChange() {
     // if (_focusNode.hasFocus) {
     //   controller.open();
@@ -40,26 +44,27 @@ class _GlobalFindDialogState extends State<GlobalFindDialog> {
     //   controller.close();
     // }
   }
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        child:  SizedBox(
+        child: SizedBox(
           width: 400,
           height: 400,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                SizedBox(height:32,child: _buildFieldView()),
+                SizedBox(height: 32, child: _buildFieldView()),
                 Expanded(child: _buildOptionsView()),
               ],
             ),
           ),
         ));
-     ;
+    ;
   }
 
   void onSelected(WidgetModel model) {
@@ -74,44 +79,52 @@ class _GlobalFindDialogState extends State<GlobalFindDialog> {
 
   Iterable<WidgetModel> options = [];
 
-  void searchByArgs(String text) async{
+  void searchByArgs(String text) async {
     WidgetRepository repository = context.read<WidgetsBloc>().repository;
-    options = await repository.searchWidgets(WidgetFilter(
-      name: text
-    ));
-    setState(() {
-
-    });
+    options = await repository.searchWidgets(WidgetFilter(name: text));
+    setState(() {});
   }
 
   Widget _buildOptionsView() {
-    return  Align(
+    return Align(
       alignment: Alignment.topLeft,
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 400),
-        child:ListView.builder(
-          itemCount: options.length ,
-            padding: EdgeInsets.symmetric(vertical: 10),
-            itemBuilder: (_,index) {
-        WidgetModel model = options.elementAt(index);
-        return InkWell(
-          onTap: ()=>onSelected(model),
-          child: Ink(
-            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 15),
-          child: Row(children: [
-            Expanded(child: Text.rich(formSpan(model.name,_controller.text),maxLines:1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 12))),
-            // Spacer(),
-            const SizedBox(width: 10,),
-            Text(model.nameCN,style: TextStyle(fontSize: 12),),
-          ],),
+        constraints: const BoxConstraints(maxWidth: 400),
+        child: ListView.builder(
+            itemCount: options.length,
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            itemBuilder: (_, index) {
+              WidgetModel model = options.elementAt(index);
+              return InkWell(
+                onTap: () => onSelected(model),
+                child: Ink(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 6, horizontal: 15),
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Text.rich(
+                              formSpan(model.name, _controller.text),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(fontSize: 12))),
+                      // Spacer(),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        model.nameCN,
+                        style: const TextStyle(fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }),
       ),
-        );
-      }),
-              ),
     );
   }
+
   final FocusNode _focusNode = FocusNode();
   FocusNode get focusNode => _focusNode;
 
@@ -121,40 +134,34 @@ class _GlobalFindDialogState extends State<GlobalFindDialog> {
     return TextField(
       autofocus: true,
       controller: _controller,
-      onChanged: (value){
+      onChanged: (value) {
         searchByArgs(value);
       },
       style: const TextStyle(fontSize: 12),
       maxLines: 1,
-
       focusNode: focusNode,
-      decoration:  InputDecoration(
-          prefixIconConstraints: BoxConstraints(
-            minWidth: 30,
-          ),
+      decoration: InputDecoration(
+          prefixIconConstraints: const BoxConstraints(minWidth: 30),
           filled: true,
           hoverColor: Colors.transparent,
-          contentPadding: EdgeInsets.only(top: 0),
-          fillColor: isDark?null:Color(0xffF1F2F3),
-          prefixIcon: Icon(
+          contentPadding: const EdgeInsets.only(top: 0),
+          fillColor: isDark ? null : const Color(0xffF1F2F3),
+          prefixIcon: const Icon(
             Icons.search,
             size: 18,
             color: Colors.grey,
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
           ),
-
-          enabledBorder : OutlineInputBorder(
-
+          enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
           hintText: '搜索',
-          hintStyle: TextStyle(fontSize: 12, color: Colors.grey)),
+          hintStyle: const TextStyle(fontSize: 12, color: Colors.grey)),
     );
-
   }
 
   final TextStyle lightTextStyle = const TextStyle(
@@ -175,10 +182,11 @@ class _GlobalFindDialogState extends State<GlobalFindDialog> {
     }, onNonMatch: (str) {
       span.add(TextSpan(
           text: str,
-          style: lightTextStyle.copyWith(color:  isDark?textColor:const Color(0xff2F3032),fontSize: 12)));
+          style: lightTextStyle.copyWith(
+              color: isDark ? textColor : const Color(0xff2F3032),
+              fontSize: 12)));
       return '';
     });
     return TextSpan(children: span);
   }
-
 }
