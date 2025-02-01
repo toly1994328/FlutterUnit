@@ -71,7 +71,19 @@ class DeskWidgetItem extends StatelessWidget {
             ),
           ),
         ),
-        LikeTag(widget: model,)
+        LikeTag(widget: model),
+        Positioned(
+            bottom: 2,
+            left: 6,
+            child: Text(
+          "#${model.id}",
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontSize: 12,
+            color: Colors.white70,
+          ),
+        ))
       ],
     );
   }
@@ -86,7 +98,7 @@ class DeskWidgetItem extends StatelessWidget {
               spacing: 8,
               children: [
                 Text(
-                  model.name+"#${model.id}",
+                  model.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(

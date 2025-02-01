@@ -1,12 +1,14 @@
 import 'package:app/app.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_unit/src/l10n/gen/app_l10n.dart';
 import 'package:tolyui/tolyui.dart';
 
 enum AppTab {
   widgets('/widget', TolyIcon.icon_layout),
-  painter('/painter', TolyIcon.dingzhi1),
+  note('/note', Icons.note_alt_outlined),
   knowledge('/knowledge', TolyIcon.icon_artifact),
+  painter('/painter', TolyIcon.dingzhi1),
   tools('/tools', TolyIcon.icon_fast),
   mine('/account', TolyIcon.yonghu);
 
@@ -23,6 +25,7 @@ enum AppTab {
         AppTab.knowledge => l10n.deskTabKnowledge,
         AppTab.tools => l10n.deskTabTools,
         AppTab.mine => l10n.deskTabMine,
+        AppTab.note => '匠心巧记',
       };
     }
     return switch (this) {
@@ -31,6 +34,7 @@ enum AppTab {
       AppTab.knowledge => l10n.mobileTabKnowledge,
       AppTab.tools => l10n.mobileTabTools,
       AppTab.mine => l10n.mobileTabMine,
+      AppTab.note => '匠心巧记',
     };
   }
 

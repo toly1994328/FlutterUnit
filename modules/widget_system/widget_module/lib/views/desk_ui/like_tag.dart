@@ -5,8 +5,6 @@ import '../../blocs/blocs.dart';
 import '../../widget_module.dart';
 import '../components/collected_tag.dart';
 
-// typedef test =
-typedef Calc = bool Function();
 
 class LikeTag extends StatelessWidget {
   final WidgetModel widget;
@@ -38,11 +36,5 @@ class LikeTag extends StatelessWidget {
       );
     }
     return const SizedBox();
-    // BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (_, s) {
-    //   bool show = s.widgets.contains(model);
-    //   if (!show) return const SizedBox();
-    //   return const CollectedTag();
-    // }),
-    return const Placeholder();
   }
 }
