@@ -1,3 +1,10 @@
+import 'package:intl/intl.dart';
+
+
+DateFormat _noteTimeShort = DateFormat('yyyy/M/d');
+DateFormat _noteTimeLong = DateFormat('yyyy/M/d HH:mm:ss');
+Duration offset = DateTime.now().timeZoneOffset;
+
 class ArticlePo {
   final String title;
   final String? subtitle;
@@ -20,6 +27,15 @@ class ArticlePo {
     this.type = 0,
     this.id = -1,
   });
+
+  String get updateDate {
+    return _noteTimeLong.format(DateTime.fromMillisecondsSinceEpoch(update).add(offset));
+  }
+
+
+  String get createDate =>
+      _noteTimeShort.format(DateTime.fromMillisecondsSinceEpoch(create).add(offset));
+
 
   factory ArticlePo.fromApi(dynamic map) => ArticlePo(
         id: map['article_id'] ?? 0,

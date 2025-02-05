@@ -31,7 +31,7 @@ class PureBottomBar extends StatelessWidget {
         showUnselectedLabels: true,
         showSelectedLabels: true,
         // backgroundColor: themeColor.itemColor,
-        items: AppTab.values
+        items: AppTab.mobileTabs
             .map((AppTab tab) => BottomNavigationBarItem(
                   label: tab.label(l10n),
                   icon: Icon(tab.icon),

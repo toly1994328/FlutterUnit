@@ -13,7 +13,7 @@ GoRoute get collectRoute => GoRoute(
 
 GoRoute get noteRoute => GoRoute(
   path: AppRoute.note.path,
-  builder: (_, __) => const ArticleAdmin(),
+  builder: (_, __) => ArtSysScope(child: const ArticleAdmin()),
   // routes: [
   //   GoRoute(path: AppRoute.collectionDetail.path, builder: collectionDetailBuilder),
   // ],

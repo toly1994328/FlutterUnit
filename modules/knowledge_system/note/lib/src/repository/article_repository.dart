@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:fx_dio/fx_dio.dart';
 
 import '../env/env.dart';
@@ -17,6 +19,8 @@ abstract class ArticleRepository {
   Future<ApiRet<bool>> delete(int id);
 
   Future<ApiRet<ArticlePo>> update(int id,ArticleUpdatePayload payload);
+
+  Future<ApiRet<Hierarchy>> loadArticleTree();
 }
 
 class HttpArticleRepository implements ArticleRepository {
@@ -86,6 +90,16 @@ class HttpArticleRepository implements ArticleRepository {
       data: payload.apiData,
       convertor: (rep) {
         return ArticlePo.fromApi(rep['data']);
+      },
+    );
+  }
+
+  @override
+  Future<ApiRet<Hierarchy>> loadArticleTree() {
+    return host.get<Hierarchy>(
+      '/category',
+      convertor: (rep) {
+        return Hierarchy.fromJson(rep['data']);
       },
     );
   }

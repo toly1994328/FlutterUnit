@@ -28,7 +28,7 @@ class ArticleList extends StatelessWidget {
   }
 }
 
-typedef OnUpdateTitle = Function(int id, String title);
+typedef OnUpdateTitle = Function(ArticlePo article, String title);
 
 class ArticleItem extends StatefulWidget {
   final bool active;
@@ -150,7 +150,7 @@ class _ArticleItemState extends State<ArticleItem> {
   void _updateTitle(){
     String value = _ctrl?.text??'';
     if(value.isEmpty) return;
-    widget.onUpdateTitle(widget.article.id,_ctrl?.text??'');
+    widget.onUpdateTitle(widget.article,_ctrl?.text??'');
   }
 
   bool _hovered = false;
