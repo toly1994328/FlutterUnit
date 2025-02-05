@@ -6,5 +6,5 @@ import 'package:app/app.dart';
 class UnitNoteBridge with NoteModuleBridge{
 
   @override
-  Host get host => FxDio()<ScienceHostPure>();
+  Host get host => FxDio()<LightServerHost>();
 }

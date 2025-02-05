@@ -21,13 +21,13 @@ class ScienceHost extends Host {
 }
 
 
-class ScienceHostPure extends Host {
-  const ScienceHostPure();
+class LightServerHost extends Host {
+  const LightServerHost();
 
   @override
   Map<HostEnv, String> get value => {
-    HostEnv.release: 'toly1994.com',
-    HostEnv.dev: '172.26.16.1',
+    HostEnv.release: '82.157.176.209',
+    HostEnv.dev: '127.0.0.1',
   };
 
   @override
@@ -38,7 +38,7 @@ class ScienceHostPure extends Host {
   );
 
   @override
-  HostEnv get env => HostEnv.dev;
+  HostEnv get env => HostEnv.release;
 }
 
 enum ScienceApi {

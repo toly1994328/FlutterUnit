@@ -12,7 +12,7 @@ import 'package:flutter_unit/src/navigation/model/app_tab.dart';
 import 'package:treasure_tools/treasure_tools.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
-
+import 'package:note/note.dart';
 import 'pure_bottom_bar.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
@@ -63,7 +63,8 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
           StandardHomePage(),
           GalleryUnit(),
           AlgoScope(child: ArtifactPage()),
-          MobileToolPage(),
+          ArtSysScope(child: MobileArticlePage()),
+          // MobileToolPage(),
           UserPage(),
         ],
       ),

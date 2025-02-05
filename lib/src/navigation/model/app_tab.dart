@@ -15,6 +15,14 @@ enum AppTab {
   final IconData icon;
   final String path;
 
+  static List<AppTab> get mobileTabs => [
+    widgets,
+    painter,
+    knowledge,
+    note,
+    mine
+  ];
+
   const AppTab(this.path, this.icon);
 
   String label(AppL10n l10n) {
@@ -34,7 +42,7 @@ enum AppTab {
       AppTab.knowledge => l10n.mobileTabKnowledge,
       AppTab.tools => l10n.mobileTabTools,
       AppTab.mine => l10n.mobileTabMine,
-      AppTab.note => '匠心巧记',
+      AppTab.note => '巧记',
     };
   }
 
