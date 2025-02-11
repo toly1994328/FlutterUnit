@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "Tab-Seitenwähler",
+  "info": "Wird normalerweise als Indikator in Verbindung mit TabBarView verwendet und teilt sich einen gemeinsamen TabController. Farbe, Größe und ausgewählte Farbe können angegeben werden.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von TabPageSelector",
+      "desc": [
+        "【controller】 : Controller   【TabController】",
+        "【indicatorSize】: Indikatorgröße   【double】",
+        "【selectedColor】: Ausgewählte Farbe   【Color】",
+        "【color】: Farbe    【Color】"
+      ]
+    }
+  ]
+}

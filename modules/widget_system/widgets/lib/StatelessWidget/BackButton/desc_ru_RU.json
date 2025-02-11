@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "Кнопка возврата",
+  "info": "IconButton с функцией возврата, значок возврата нельзя изменить. По-разному ведет себя в iOS и Android",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Свойства BackButton",
+      "desc": [
+        "【color】: Цвет   【Color】",
+        "【style】: Стиль кнопки   【ButtonStyle?】",
+        "【onPressed】: Событие нажатия   【Function】",
+        "Если onPressed пуст, текущий стек будет завершен"
+      ]
+    }
+  ]
+}

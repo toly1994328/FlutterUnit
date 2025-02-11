@@ -1,0 +1,33 @@
+{
+  "id": 184,
+  "name": "SliverAppBar",
+  "localName": "Barra superior Sliver",
+  "info": "Estructura común de la barra superior de la familia Sliver, que puede especificar componentes izquierdos, centrales y derechos, espacio de contracción, profundidad de sombra, modo fijo, color de fondo, etc.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    196
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SliverAppBar",
+      "desc": [
+        "【leading】 : Componente izquierdo   【Widget】",
+        "【title】 : Componente central   【Widget】",
+        "【actions】 : Lista de componentes finales   【List<Widget>】",
+        "【floating】 : Si flota   【bool】",
+        "【pinned】 : Si se queda en la parte superior   【bool】",
+        "【snap】 : Si se contrae parcialmente   【bool】",
+        "【bottom】 : Componente inferior   【PreferredSizeWidget】",
+        "【expandedHeight】 : Altura extendida   【double】",
+        "【elevation】 : Profundidad de sombra   【double】",
+        "【flexibleSpace】 : Espacio extendido   【FlexibleSpaceBar】",
+        "【backgroundColor】 : Color de fondo   【Color】",
+        "【controller】 : Controlador   【ScrollController】",
+        "   snap debe ser true cuando floating es true"
+      ]
+    }
+  ]
+}

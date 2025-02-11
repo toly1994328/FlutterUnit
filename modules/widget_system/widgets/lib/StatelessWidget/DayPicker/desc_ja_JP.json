@@ -1,0 +1,61 @@
+{
+  "id": 134,
+  "name": "DayPicker",
+  "localName": "日付ピッカー",
+  "info": "日付を選択するコンポーネントで、現在の日付、選択された日付、表示する月などを指定できます。日付が選択されたイベントを受け取ります。",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    135,
+    136
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DayPickerの基本的な使用法",
+      "desc": [
+        "【selectedDate】 : 選択された日付   【DateTime】",
+        "【currentDate】 : 現在の日付   【DateTime】",
+        "【firstDate】 : 最初の日付制限   【DateTime】",
+        "【lastDate】 : 最後の日付制限   【DateTime】",
+        "【displayedMonth】 : 現在表示されている月   【DateTime】",
+        "【onChanged】 : クリックコールバック  【Function(DateTime)】",
+        "    ",
+        "import 'package:flutter/material.dart';",
+        "",
+        "class CustomDayPicker extends StatelessWidget{",
+        "",
+        "  const CustomDayPicker({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'DayPicker 日付ピッカーは Flutter3.0 で歴史の舞台から退場しました。代替として CalendarDatePicker カレンダーピッカーがあります。';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   final DateTime _date = DateTime.now();",
+        "  ",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return SizedBox(",
+        "       height: 350,",
+        "       child: DayPicker(",
+        "           selectedDate: _date,",
+        "           currentDate: DateTime.now(),",
+        "           onChanged: (date)=> setState(() => _date = date),",
+        "           firstDate:  DateTime(2018),",
+        "           lastDate: DateTime(2030),",
+        "           displayedMonth: DateTime.now()",
+        "       ),"
+      ]
+    }
+  ]
+}

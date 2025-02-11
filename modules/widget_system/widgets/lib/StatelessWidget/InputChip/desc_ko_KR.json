@@ -1,0 +1,33 @@
+{
+  "id": 14,
+  "name": "InputChip",
+  "localName": "종합 칩",
+  "info": "Chip 컴포넌트와 유사한 스타일로, 클릭, 삭제, 선택 이벤트를 하나로 통합했습니다. 주의: 클릭 이벤트와 선택 이벤트는 동시에 존재할 수 없습니다.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    13,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "클릭 및 삭제 이벤트를 수신할 수 있음",
+      "desc": [
+        "【onPressed】: 클릭 이벤트   【Function()】",
+        "【onDeleted】: 삭제 이벤트   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "선택 이벤트를 수신할 수 있음",
+      "desc": [
+        "【selected】: 선택 여부   【bool】",
+        "【onSelected】: 선택 이벤트   【Function(bool)】"
+      ]
+    }
+  ]
+}

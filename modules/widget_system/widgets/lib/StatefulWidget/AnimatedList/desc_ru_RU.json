@@ -1,0 +1,23 @@
+{
+  "id": 117,
+  "name": "AnimatedList",
+  "localName": "Анимированный список",
+  "info": "Улучшенная версия ListView, которая позволяет анимировать элементы. Например, анимация при добавлении или удалении элементов.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование AnimatedList",
+      "desc": [
+        "【itemBuilder】 : Конструктор компонента   【AnimatedListItemBuilder】",
+        "【initialItemCount】 : Количество дочерних компонентов   【int】",
+        "【scrollDirection】 : Направление прокрутки   【Axis】",
+        "【controller】 : Контроллер прокрутки   【ScrollController】",
+        "【reverse】 : Обратный порядок данных   【bool】",
+        "【padding】 : Внутренний отступ   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

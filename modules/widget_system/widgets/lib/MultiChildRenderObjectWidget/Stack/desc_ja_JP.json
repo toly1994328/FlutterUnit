@@ -1,0 +1,33 @@
+{
+  "id": 97,
+  "name": "Stack",
+  "localName": "スタックレイアウト",
+  "info": "複数のコンポーネントを収容でき、子コンポーネントをスタック方式で配置し、後者が上に来ます。alignment属性を持ち、Positionedコンポーネントと組み合わせて使用することで、正確な位置指定が可能です。",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    94,
+    95,
+    161
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Stackの基本的な使用",
+      "desc": [
+        "【children】 : コンポーネントリスト   【List<Widget>】",
+        "【textDirection】 : 子要素の配置方向   【MainAxisAlignment】",
+        "【alignment】 : 配置方法   【AlignmentGeometry】",
+        "【overflow】 : オーバーフローモード   【Overflow】",
+        "【fit】 : フィットモード   【StackFit】"
+      ]
+    },
+    {
+      "file": "node2_positioned.dart",
+      "name": "StackとPositionedの組み合わせ使用",
+      "desc": [
+        "PositionedコンポーネントはStack内でのみ使用でき、左上右下の距離を指定して特定のコンポーネントを正確に配置できます。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 166,
+  "name": "CustomPaint",
+  "localName": "그리기 컴포넌트",
+  "info": "CustomPainter를 통해 그리기를 수행하며, 복잡한 사용자 정의 그리기 컴포넌트를 구현할 수 있습니다. Flutter에서 사용자 정의 컴포넌트의 핵심 요소입니다.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_clock.dart",
+      "name": "CustomPaint로 선 그리기",
+      "desc": [
+        "【painter】 : 페인터   【CustomPainter】"
+      ]
+    },
+    {
+      "file": "node2_bezier.dart",
+      "name": "CustomPaint로 베지어 곡선 그리기",
+      "desc": [
+        "Flutter는 베지어 곡선과 같은 복잡한 그리기도 지원합니다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 21,
+  "name": "GridTile",
+  "localName": "Piastrella a griglia",
+  "info": "Una struttura di voci di lista generica fornita da Flutter, che consente di specificare componenti di testa, coda e figlio, comunemente utilizzata nelle liste a griglia.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La rappresentazione di base di GridTile è la seguente",
+      "desc": [
+        "【header】: componente di testa   【Widget】",
+        "【child】: componente figlio   【Widget】",
+        "【footer】: componente di coda   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": 163,
+  "name": "GridView",
+  "localName": "Composant de grille",
+  "info": "Contient plusieurs composants et les organise en grille. Peut être construit via count, extent, custom, builder, etc. Possède des propriétés telles que la marge intérieure, la direction inverse, le contrôleur de défilement, etc.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    21,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Construction de GridView.count",
+      "desc": [
+        "【children】 : Liste des composants enfants   【List<Widget>】",
+        "【crossAxisCount】 : Nombre de boîtes par ligne sur l'axe principal  【int】",
+        "【mainAxisSpacing】 : Espacement entre les lignes sur l'axe principal  【double】",
+        "【crossAxisSpacing】 : Espacement entre les lignes sur l'axe transversal  【double】",
+        "【childAspectRatio】 : Rapport longueur principale/longueur transversale de la boîte  【double】",
+        "【crossAxisCount】 : Nombre de boîtes par ligne sur l'axe principal  【int】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direction de défilement de GridView",
+      "desc": [
+        "【scrollDirection】 : Direction de défilement   【Axis】",
+        "【reverse】 : Défilement inversé   【bool】",
+        "【shrinkWrap】 : Encapsulation lorsque sans limites  【bool】"
+      ]
+    },
+    {
+      "file": "node3_extend.dart",
+      "name": "Direction de défilement de GridView",
+      "desc": [
+        "【scrollDirection】 : Direction de défilement   【Axis】",
+        "【reverse】 : Défilement inversé   【bool】",
+        "【shrinkWrap】 : Encapsulation lorsque sans limites  【bool】"
+      ]
+    },
+    {
+      "file": "node4_builder.dart",
+      "name": "Construction de GridView.builder",
+      "desc": [
+        "【itemCount】 : Nombre d'éléments   【int】",
+        "【gridDelegate】 : Délégué de grille   【SliverGridDelegate】",
+        "【itemBuilder】 : Constructeur d'éléments  【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

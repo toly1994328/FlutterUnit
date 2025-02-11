@@ -1,0 +1,20 @@
+{
+  "id": 190,
+  "name": "SliverPersistentHeader",
+  "localName": "스티커 슬라이드",
+  "info": "일반적으로 CustomScrollView에서 사용되며, 스크롤 중에 상단에 고정되어 사라지지 않도록 하는 컴포넌트입니다.",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverPersistentHeader 기본 사용법",
+      "desc": [
+        "【delegate】 : 대리자   【SliverPersistentHeaderDelegate】",
+        "【floating】 : 플로팅 여부   【bool】",
+        "【pinned】 : 상단 고정 여부   【bool】"
+      ]
+    }
+  ]
+}

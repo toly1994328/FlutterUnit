@@ -1,0 +1,22 @@
+{
+  "id": 20,
+  "name": "GridTileBar",
+  "localName": "Gitterfliesenkopf",
+  "info": "Eine allgemeine Kopfstruktur, die von Flutter bereitgestellt wird, mit einer Struktur von links, Mitte und rechts. Komponenten können an den entsprechenden Positionen eingefügt werden, was eine einfache Handhabung spezifischer Einträge ermöglicht. Im Vergleich zu ListTile gibt es weniger Attribute.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Die grundlegende Darstellung von GridTileBar ist wie folgt",
+      "desc": [
+        "【leading】: Linke Komponente   【Widget】",
+        "【trailing】: Rechte Komponente   【Widget】",
+        "【title】: Obere mittlere Komponente   【Widget】",
+        "【subtitle】: Untere mittlere Komponente   【Widget】",
+        "【backgroundColor】: Hintergrundfarbe   【Color】"
+      ]
+    }
+  ]
+}

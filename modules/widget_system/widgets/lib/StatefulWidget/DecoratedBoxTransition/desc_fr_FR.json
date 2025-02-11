@@ -1,0 +1,20 @@
+{
+  "id": 113,
+  "name": "DecoratedBoxTransition",
+  "localName": "Transition de boîte décorée",
+  "info": "Sous-classe de AnimatedWidget, utilise un animateur de type Decorated pour permettre à un composant enfant de faire une transition animée entre deux objets Decorated.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de DecoratedBoxTransition",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【position】 : Couleur de premier plan/arrière-plan  【DecorationPosition】",
+        "【decoration】 : Animation   【Animation<Decoration>】"
+      ]
+    }
+  ]
+}

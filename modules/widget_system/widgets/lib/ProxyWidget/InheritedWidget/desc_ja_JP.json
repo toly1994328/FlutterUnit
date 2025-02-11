@@ -1,0 +1,36 @@
+{
+  "id": 346,
+  "name": "InheritedWidget",
+  "localName": "継承ウィジェット",
+  "info": "このクラスは抽象クラスで、このコンテキストにデータを保存し、その後のノードのコンテキストでそのデータを共有する役割を果たします。多くの実装クラスがあり、さまざまなテーマウィジェットやMediaQueryなどが含まれます。",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    167,
+    319,
+    328,
+    324,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Columnの基本使用",
+      "desc": [
+        "【children】 : ウィジェットリスト   【List<Widget>】",
+        "【mainAxisAlignment】 : 主軸の整列   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : 交差軸の整列   【CrossAxisAlignment】",
+        "【textBaseline】 : テキストベースライン   【TextBaseline】",
+        "【verticalDirection】 : 垂直方向   【VerticalDirection】",
+        "【mainAxisSize】 : 主軸のサイズ   【MainAxisSize】"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "InheritedWidget の使用例",
+      "desc": [
+        "以下は、色カウンタープロジェクトを通じてInheritedWidgetウィジェットの使用を展示しています。"
+      ]
+    }
+  ]
+}

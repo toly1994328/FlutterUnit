@@ -1,0 +1,18 @@
+{
+  "id": 189,
+  "name": "SliverToBoxAdapter",
+  "localName": "Adaptador Sliver",
+  "info": "Pode acomodar um componente comum e transformá-lo num adaptador para componentes da família Sliver.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do SliverToBoxAdapter",
+      "desc": [
+        "【child】 : Componente filho   【Widget】"
+      ]
+    }
+  ]
+}

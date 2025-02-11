@@ -1,0 +1,21 @@
+{
+  "id": 216,
+  "name": "CupertinoPageTransition",
+  "localName": "페이지 전환 효과",
+  "info": "iOS 스타일의 페이지 전환 애니메이션 효과를 제공합니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoPageTransition 소개",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【linearTransition】 : 선형 변환 여부   【bool】",
+        "【primaryRouteAnimation】 : 초기 라우트 애니메이션   【Animation<double>】",
+        "【secondaryRouteAnimation】 : 두 번째 라우트 애니메이션   【Animation<double>】"
+      ]
+    }
+  ]
+}

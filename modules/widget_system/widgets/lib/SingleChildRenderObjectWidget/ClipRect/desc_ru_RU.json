@@ -1,0 +1,24 @@
+{
+  "id": 67,
+  "name": "ClipRect",
+  "localName": "Прямоугольное обрезание",
+  "info": "Может содержать один дочерний компонент и обрезать его в прямоугольной форме. Может быть ограничен с помощью таких компонентов, как SizedBox, Align, AspectRatio и других.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    66,
+    68,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование ClipRect",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【clipBehavior】 : Поведение обрезания   【Clip】",
+        "【clipper】 : Обрезатель   【CustomClipper<Rect>】"
+      ]
+    }
+  ]
+}

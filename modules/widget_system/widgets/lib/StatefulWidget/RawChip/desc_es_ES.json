@@ -1,0 +1,43 @@
+{
+  "id": 153,
+  "name": "RawChip",
+  "localName": "Chip Nativo",
+  "info": "El antepasado de cada componente Chip, con la capacidad de representar cada comportamiento de Chip, soporta eventos como selección, clic, eliminación, etc. Para más detalles, consulta Chip, FilterChip, ActionChip, InputChip, ChoiceChip.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_press.dart",
+      "name": "Efecto de clic en RawChip",
+      "desc": [
+        "【label】: Componente central   【Widget】",
+        "【padding】 : Relleno interno   【EdgeInsetsGeometry】",
+        "【labelPadding】 : Relleno de la etiqueta   【EdgeInsetsGeometry】",
+        "【shadowColor】: Color de la sombra   【Color】",
+        "【avatar】: Componente izquierdo   【Widget】",
+        "【elevation】: Profundidad de la sombra   【double】",
+        "【pressElevation】: Profundidad de la sombra al hacer clic   【double】",
+        "【onPressed】 : Evento de clic  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Efecto de selección y eliminación en RawChip",
+      "desc": [
+        "【selected】: Si está seleccionado   【bool】",
+        "【deleteIconColor】: Color del icono de eliminación   【Color】",
+        "【selectedColor】: Color de selección   【Color】",
+        "【deleteIcon】: Componente de eliminación   【Widget】",
+        "【onSelected】: Evento de selección   【Function(bool)】",
+        "【onDeleted】 : Evento de eliminación  【Function()】"
+      ]
+    }
+  ]
+}

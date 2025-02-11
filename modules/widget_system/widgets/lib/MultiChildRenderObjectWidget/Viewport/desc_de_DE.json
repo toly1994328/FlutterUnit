@@ -1,0 +1,27 @@
+{
+  "id": 340,
+  "name": "Viewport",
+  "localName": "Ansichtsfenster-Komponente",
+  "info": "Wird normalerweise verwendet, um ein Ansichtsfenster für eine Scroll-Ansicht bereitzustellen, wobei nur die angezeigten und vorab geladenen Teile erstellt werden. Es kann die Länge des Vorladens, die Scroll-Achse usw. angegeben werden. Es ist eine der Kernimplementationskomponenten von ScrollView und wird im Allgemeinen nicht direkt verwendet.",
+  "lever": 1,
+  "family": 3,
+  "linkIds": [
+    253,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Viewport",
+      "desc": [
+        "【offset】: *Ansichtsfenster-Verschiebung   【ViewportOffset】",
+        "【cacheExtentStyle】: Vorladetyp   【CacheExtentStyle】",
+        "【cacheExtent】: Vorlademenge   【double】",
+        "【axisDirection】: Scrollrichtung   【AxisDirection】",
+        "【slivers】: Untergeordnete Sliver-Komponentensammlung   【List<Widget>】",
+        "【anchor】: Ankerpunkt    【double】",
+        "Sie können diesen Code ausführen, um den Aufbau von ColorItem zu überprüfen, 128 Farbbalken werden nicht alle auf einmal erstellt."
+      ]
+    }
+  ]
+}

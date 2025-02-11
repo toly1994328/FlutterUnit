@@ -1,0 +1,20 @@
+{
+  "id": 113,
+  "name": "DecoratedBoxTransition",
+  "localName": "Декорированный переход",
+  "info": "Подкласс AnimatedWidget, использует аниматор типа Decorated для создания переходной анимации между двумя объектами Decorated для дочерних компонентов.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование DecoratedBoxTransition",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【position】 : Передний/фоновый цвет  【DecorationPosition】",
+        "【decoration】 : Анимация   【Animation<Decoration>】"
+      ]
+    }
+  ]
+}

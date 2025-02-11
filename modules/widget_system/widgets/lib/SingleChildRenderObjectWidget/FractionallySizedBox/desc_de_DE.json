@@ -1,0 +1,21 @@
+{
+  "id": 82,
+  "name": "FractionallySizedBox",
+  "localName": "Teilweise Größenbox",
+  "info": "Kann ein Kindelement aufnehmen, gibt die Breiten- und Höhenanteile an, begrenzt den Bereich des Kindelements auf die Breite und Höhe des Elterncontainers * die jeweiligen Anteile sowie die Ausrichtung alignment.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von FractionallySizedBox",
+      "desc": [
+        "【child】 : Kindelement   【Widget】",
+        "【widthFactor】 : Breitenanteil   【double】",
+        "【heightFactor】 : Höhenanteil   【double】",
+        "【alignment】 : Ausrichtung   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

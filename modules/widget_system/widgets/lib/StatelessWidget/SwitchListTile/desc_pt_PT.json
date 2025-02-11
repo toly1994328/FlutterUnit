@@ -1,0 +1,41 @@
+{
+  "id": 18,
+  "name": "SwitchListTile",
+  "localName": "Azulejo de Interruptor",
+  "info": "Uma estrutura de item de lista genérica fornecida pelo Flutter, com uma estrutura de esquerda para o meio, e um Switch no final. Componentes podem ser inseridos nas posições correspondentes, facilitando a adaptação a itens específicos.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "A apresentação básica do SwitchListTile é a seguinte",
+      "desc": [
+        "【secondary】: Componente esquerdo   【Widget】",
+        "【title】: Componente superior central   【Widget】",
+        "【subtitle】: Componente inferior central   【Widget】",
+        "【inactiveThumbColor】: Cor do círculo quando não selecionado   【Color】",
+        "【inactiveTrackColor】: Cor do trilho quando não selecionado   【Color】",
+        "【activeColor】: Cor do círculo quando selecionado   【Color】",
+        "【activeTrackColor】: Cor do trilho quando selecionado   【Color】",
+        "【onChanged】: Evento de seleção   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Efeito de seleção do SwitchListTile",
+      "desc": [
+        "【selected】: Se está selecionado   【bool】",
+        "【inactiveThumbImage】: Imagem do círculo quando não selecionado   【ImageProvider】",
+        "【activeThumbImage】: Imagem do círculo quando selecionado   【ImageProvider】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Propriedade de densidade do SwitchListTile",
+      "desc": [
+        "【dense】: Se é denso   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 82,
+  "name": "FractionallySizedBox",
+  "localName": "Scatola a Frazione",
+  "info": "Può contenere un componente figlio, specifica la frazione di larghezza e altezza, limita l'area del componente figlio alla larghezza e altezza del contenitore padre * ciascuna frazione, e il modo di allineamento alignment.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di FractionallySizedBox",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【widthFactor】 : Frazione di larghezza   【double】",
+        "【heightFactor】 : Frazione di altezza   【double】",
+        "【alignment】 : Modo di allineamento   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

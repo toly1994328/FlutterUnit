@@ -1,0 +1,24 @@
+{
+  "id": 278,
+  "name": "BackdropFilter",
+  "localName": "Hintergrundfilter",
+  "info": "Kann ein Kind aufnehmen und den Hintergrund mit einem Unschärfefilter versehen. Durch Stack kann der Hintergrund unscharf gemacht werden, um den Unschärfeeffekt der Komponente zu erreichen.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    88,
+    97,
+    67
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von BackdropFilter",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】",
+        "【filter】 : Filter   【ImageFilter】",
+        "ImageFilter.blur kann eine Gaußsche Unschärfe erzeugen, indem die x- und y-Unschärfefaktoren angegeben werden."
+      ]
+    }
+  ]
+}

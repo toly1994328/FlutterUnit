@@ -1,0 +1,21 @@
+{
+  "id": 254,
+  "name": "RawKeyboardListener",
+  "localName": "Ascoltatore Tastiera Originale",
+  "info": "Può essere utilizzato per rilevare eventi di pressione e rilascio dei tasti della tastiera, attualmente può rilevare solo tastiere fisiche, può essere utilizzato su desktop.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di RawGestureDetector",
+      "desc": [
+        "【onKey】 : Evento Tastiera   【ValueChanged<RawKeyEvent>】",
+        "【focusNode】 : Nodo Focus   【FocusNode】",
+        "【autofocus】 : Autofocus   【bool】",
+        "【child】 : Componente Figlio   【Widget】"
+      ]
+    }
+  ]
+}

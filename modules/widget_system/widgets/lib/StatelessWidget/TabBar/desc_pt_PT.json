@@ -1,0 +1,37 @@
+{
+  "id": 58,
+  "name": "TabBar",
+  "localName": "Barra de Etiquetas",
+  "info": "Barra de etiquetas deslizável e clicável, geralmente usada na parte inferior do AppBar, pode ser usada em conjunto com o TabBarView para alcançar o efeito de deslizar páginas.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    57,
+    59,
+    148
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do TabBar",
+      "desc": [
+        "【controller】 : Controlador   【TabController】",
+        "【indicatorColor】 : Cor do Indicador   【Cor do Indicador】",
+        "【indicatorWeight】 : Altura do Indicador   【double】",
+        "【indicatorPadding】 : Margem do Indicador   【EdgeInsetsGeometry】",
+        "【labelStyle】 : Estilo do Texto da Etiqueta   【TextStyle】",
+        "【unselectedLabelStyle】 : Estilo do Texto Não Selecionado   【TextStyle】",
+        "【isScrollable】 : Se é Deslizável   【bool】",
+        "【onTap】 : Callback de Clique na Etiqueta   【Function(int)】",
+        "【tabs】 : Componentes das Etiquetas   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_noShadow.dart",
+      "name": "Configuração do Theme para Eliminar Ondulações",
+      "desc": [
+        "Defina a cor das ondulações no Theme como transparente."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": 100,
+  "name": "AnimatedCrossFade",
+  "localName": "컴포넌트 전환",
+  "info": "두 컴포넌트를 전환할 때 애니메이션 효과를 나타내며, 애니메이션 곡선, 지속 시간, 정렬 방식 등의 속성을 지정할 수 있습니다. 매우 유용한 컴포넌트입니다.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedCrossFade 기본 사용",
+      "desc": [
+        "【firstChild】 : 첫 번째 자식   【Widget】",
+        "【secondChild】 : 두 번째 자식   【Widget】",
+        "【crossFadeState】 : 몇 번째를 표시할지   【CrossFadeState】",
+        "【duration】 : 지속 시간   【Duration】"
+      ]
+    },
+    {
+      "file": "node2_curve.dart",
+      "name": "AnimatedCrossFade 애니메이션 곡선",
+      "desc": [
+        "【firstCurve】 : 첫 번째 곡선   【Curve】",
+        "【secondCurve】 : 두 번째 곡선   【Curve】",
+        "【sizeCurve】 : 크기 변화 곡선   【CrossFadeState】"
+      ]
+    }
+  ]
+}

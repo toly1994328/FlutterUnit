@@ -1,0 +1,22 @@
+{
+  "id": 301,
+  "name": "SliverAnimatedList",
+  "localName": "Lista animata Sliver",
+  "info": "Componente sliver che aggiunge effetti animati quando si inseriscono o rimuovono elementi.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di SliverAnimatedList",
+      "desc": [
+        "【itemBuilder】: costruttore di item 【AnimatedListItemBuilder】",
+        "【initialItemCount】: numero iniziale di item 【int】"
+      ]
+    }
+  ]
+}

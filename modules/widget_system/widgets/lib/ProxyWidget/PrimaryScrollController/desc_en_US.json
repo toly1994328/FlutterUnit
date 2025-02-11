@@ -1,0 +1,23 @@
+{
+  "id": 335,
+  "name": "PrimaryScrollController",
+  "localName": "Primary Scroll Controller",
+  "info": "It is a subclass of InheritedWidget, providing a default ScrollController object to scrollable views in the subtree through context.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [
+    349,
+    344,
+    164
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to PrimaryScrollController",
+      "desc": [
+        "【controller】: Scroll Controller   【ScrollController】",
+        "【child】: Child Widget   【Widget】"
+      ]
+    }
+  ]
+}

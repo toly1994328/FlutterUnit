@@ -1,0 +1,31 @@
+{
+  "id": 356,
+  "name": "Autocomplete",
+  "localName": "Remplissage automatique",
+  "info": "Pendant la saisie, fournit une superposition de suggestions pour que l'utilisateur puisse choisir, avec un haut degré de personnalisation.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    54,
+    199
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'Autocomplete",
+      "desc": [
+        "【optionsBuilder】 : Constructeur d'options   【AutocompleteOptionsBuilder<T>】",
+        "【onSelected】 : Rappel lors de la sélection   【AutocompleteOnSelected<T>】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Génériques d'Autocomplete",
+      "desc": [
+        "【optionsViewBuilder】 : Constructeur de panneau   【AutocompleteOptionsViewBuilder<T>】",
+        "【fieldViewBuilder】 : Constructeur de saisie   【AutocompleteFieldViewBuilder】",
+        "【displayStringForOption】 : Affichage de texte   【AutocompleteOptionToString】,"
+      ]
+    }
+  ]
+}

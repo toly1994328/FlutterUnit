@@ -1,0 +1,31 @@
+{
+  "id": 6,
+  "name": "Icon",
+  "localName": "Composant d'icône",
+  "info": "Composant pour l'affichage d'icônes. Permet de spécifier la ressource d'icône, la taille, la couleur. Très simple, mais très utile",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    7,
+    30,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Pour afficher une icône",
+      "desc": [
+        "【Paramètre】 : Données de l'icône 【IconData】",
+        "【size】 : Taille  【double】",
+        "【color】: Couleur   【Color】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Utiliser des icônes personnalisées",
+      "desc": [
+        "Vous pouvez télécharger des polices d'icônes sur le site iconfont pour les utiliser"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 120,
+  "name": "AnimatedAlign",
+  "localName": "Alignment Animation",
+  "info": "Allows child components to perform Align (alignment) animations, with specified duration and curve, and includes an animation end event.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    85,
+    111
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of AnimatedAlign",
+      "desc": [
+        "【child】: Child component 【Widget】",
+        "【duration】: Animation duration 【Duration】",
+        "【onEnd】: Animation end callback 【Function()】",
+        "【alignment】: Alignment method 【AlignmentGeometry】",
+        "【curve】: Animation curve 【Duration】",
+        "【padding】: Padding 【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 45,
+  "name": "Radio",
+  "localName": "Radio Button",
+  "info": "Due to the selected and unselected states of the circular button, multiple Radios can implement single or multiple selection requirements based on logic. The color can be specified, and a callback for state changes is supported.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [19,240],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Radio",
+      "desc": [
+        "【value】: Radio button value   【T】",
+        "【groupValue】: Current matching value   【T】",
+        "【activeColor】: Active color   【Color】",
+        "【onChanged】: Callback on change   【Function(T)】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 247,
+  "name": "AnimatedSlide",
+  "localName": "Gleitende Animation",
+  "info": "Wenn sich der gegebene Versatz ändert, kann die Unterkomponente den relativen Versatz automatisch anpassen, und die vorherigen und nachfolgenden Werte haben eine animierte Veränderung.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Gleitende Animationseffekt",
+      "desc": [
+        "In diesem Fall ziehen Sie die x,y-Parameter, um den Animationseffekt zu sehen. Dabei ist der Versatz = x,y * Breite und Höhe des Rahmens",
+        "【child】 : Kindkomponente   【Widget】",
+        "【duration】 : Animationsdauer   【Duration】",
+        "【onEnd】 : Rückruf beim Ende der Animation   【Function()】",
+        "【curve】 : Animationskurve   【Duration】",
+        "【offset】 : Versatz   【Offset】"
+      ]
+    }
+  ]
+}

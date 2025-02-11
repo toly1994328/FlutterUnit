@@ -1,0 +1,27 @@
+{
+  "id": 10,
+  "name": "Visibility",
+  "localName": "Composant de visibilité",
+  "info": "Contrôle l'affichage ou la dissimulation d'un composant, peut définir un composant de remplacement lorsqu'il est caché. Le composant OffStage a une fonction similaire.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Contrôle l'affichage ou la dissimulation des composants enfants en fonction de visible",
+      "desc": [
+        "【visible】 : Afficher ou non  【bool】",
+        "【child】: Enfant   【Widget】",
+        "Par défaut, l'enfant perd sa zone d'origine lorsqu'il est caché."
+      ]
+    },
+    {
+      "file": "node2_replacement.dart",
+      "name": "replacement peut être utilisé comme espace réservé lors de la dissimulation",
+      "desc": [
+        "【replacement】 : Composant de remplacement lors de la dissimulation  【Widget】"
+      ]
+    }
+  ]
+}

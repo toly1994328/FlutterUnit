@@ -1,0 +1,31 @@
+{
+  "id": 6,
+  "name": "Icon",
+  "localName": "Componente de Ícone",
+  "info": "Componente para exibição de ícones. Pode especificar o recurso do ícone, tamanho e cor. Muito simples, mas muito útil",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    7,
+    30,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Usado para exibir um ícone",
+      "desc": [
+        "【Parâmetro de entrada】: Dados do ícone 【IconData】",
+        "【size】: Tamanho 【double】",
+        "【color】: Cor 【Color】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Usar ícone personalizado",
+      "desc": [
+        "Pode baixar fontes de ícones no site iconfont para uso"
+      ]
+    }
+  ]
+}

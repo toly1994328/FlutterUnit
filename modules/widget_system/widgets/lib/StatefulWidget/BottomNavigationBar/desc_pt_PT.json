@@ -1,0 +1,36 @@
+{
+  "id": 60,
+  "name": "BottomNavigationBar",
+  "localName": "Navegação Inferior",
+  "info": "Uma barra de navegação inferior, normalmente usada na parte inferior de um componente Scaffold, pode especificar cores e modos, aceita callbacks de clique e pode ser usada com PageView para efeitos de mudança de página.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do BottomNavigationBar",
+      "desc": [
+        "【currentIndex】 : Índice atual   【int】",
+        "【elevation】 : Profundidade da sombra   【double】",
+        "【type】 : Tipo*2   【BottomNavigationBarType】",
+        "【fixedColor】 : Cor quando o tipo é fixo   【Color】",
+        "【backgroundColor】 : Cor de fundo   【Color】",
+        "【iconSize】 : Tamanho do ícone   【double】",
+        "【selectedLabelStyle】 : Estilo do texto selecionado   【TextStyle】",
+        "【unselectedLabelStyle】 : Estilo do texto não selecionado   【TextStyle】",
+        "【showUnselectedLabels】 : Mostrar etiquetas não selecionadas   【bool】",
+        "【showSelectedLabels】 : Mostrar etiquetas selecionadas   【bool】",
+        "【items】 : Itens   【List<BottomNavigationBarItem>】",
+        "【onTap】 : Evento de clique   【Function(int)】"
+      ]
+    },
+    {
+      "file": "node2_page.dart",
+      "name": "Pode ser combinado com PageView para mudar de página",
+      "desc": [
+        "Usar o controlador para mudar de página durante o onTap"
+      ]
+    }
+  ]
+}

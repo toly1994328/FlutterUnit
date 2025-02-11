@@ -1,0 +1,32 @@
+{
+  "id": 50,
+  "name": "Tooltip",
+  "localName": "Hinweiswerkzeug",
+  "info": "Eine Komponente zur Anzeige von Hinweistexten, die bei längerem Drücken Informationen anzeigt. Kann Rand, Anzeigedauer, Textstil und Dekorationseigenschaften festlegen.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Tooltip",
+      "desc": [
+        "【preferBelow】 : Bevorzugt unten   【bool】",
+        "【padding】 : Innenabstand   【EdgeInsetsGeometry】",
+        "【margin】 : Außenabstand   【EdgeInsetsGeometry】",
+        "【message】 : Nachrichteninhalt   【String】",
+        "【showDuration】 : Anzeigedauer   【Duration】",
+        "【waitDuration】 : Schwebeerscheinungszeit   【Duration】",
+        "【child】 : Kind   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_decoration.dart",
+      "name": "Dekoration von Tooltip",
+      "desc": [
+        "【decoration】 : Dekorationsobjekt 【Decoration】",
+        "【textStyle】 : Textstil   【double】"
+      ]
+    }
+  ]
+}

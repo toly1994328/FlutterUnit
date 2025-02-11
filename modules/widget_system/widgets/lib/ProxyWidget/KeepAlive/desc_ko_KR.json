@@ -1,0 +1,20 @@
+{
+  "id": 316,
+  "name": "KeepAlive",
+  "localName": "유지",
+  "info": "지연 로딩된 목록에서 자식의 상태를 유지할 필요가 있는지 여부. AutomaticKeepAlive의 기본 구현이며, 일반적으로 단독으로 사용되지 않습니다.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "KeepAlive 소개",
+      "desc": [
+        "【child】 : *자식 위젯   【Widget】",
+        "【keepAlive】 : *유지 여부   【bool】",
+        "flutter 프레임워크 레이어에서는 AutomaticKeepAlive에서만 사용되며, 소스 코드에서도 단독으로 사용하는 경우가 드물다고 언급합니다. 이 예제는 ListView 항목의 상태 유지를 보여줍니다."
+      ]
+    }
+  ]
+}

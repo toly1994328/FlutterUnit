@@ -1,0 +1,24 @@
+{
+  "id": 9,
+  "name": "CircleAvatar",
+  "localName": "Componente Circular",
+  "info": "Puede convertir una imagen en un círculo y colocar un componente en el centro. Puede especificar el radio, el color de primer plano, el color de fondo, etc.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Comportamiento de CircleAvatar",
+      "desc": [
+        "【radius】 : radio  【double】",
+        "【backgroundImage】 : recurso de imagen  【ImageProvider】",
+        "【foregroundColor】: color de primer plano   【Color】",
+        "【backgroundColor】: color de fondo   【Color】",
+        "【minRadius】: radio mínimo   【double】",
+        "【maxRadius】: radio máximo   【double】",
+        "【child】: componente hijo   【Child】"
+      ]
+    }
+  ]
+}

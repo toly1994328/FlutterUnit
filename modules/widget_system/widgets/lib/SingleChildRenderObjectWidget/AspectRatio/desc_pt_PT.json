@@ -1,0 +1,19 @@
+{
+  "id": 77,
+  "name": "AspectRatio",
+  "localName": "Caixa de Proporção",
+  "info": "Pode conter um componente filho, limitando a área do componente filho ao especificar a proporção de aspecto aspectRatio.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do AspectRatio",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【aspectRatio】 : Proporção de largura e altura   【double】"
+      ]
+    }
+  ]
+}

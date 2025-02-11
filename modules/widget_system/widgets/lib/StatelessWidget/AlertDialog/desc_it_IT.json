@@ -1,0 +1,27 @@
+{
+  "id": 127,
+  "name": "AlertDialog",
+  "localName": "Finestra di dialogo pop-up",
+  "info": "Una struttura di dialogo generica che consente di specificare componenti nella parte superiore, centrale e inferiore. Possiede stili di testo e margini per il titolo e il contenuto, oltre a proprietà come profondità dell'ombra, forma, ecc.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di base di AlertDialog",
+      "desc": [
+        "【title】 : Componente superiore   【Widget】",
+        "【content】 : Componente del contenuto  【Widget】",
+        "【titleTextStyle】 : Stile del testo superiore  【TextStyle】",
+        "【contentTextStyle】 : Stile del testo del contenuto  【TextStyle】",
+        "【titlePadding】 : Spaziatura interna superiore  【EdgeInsetsGeometry】",
+        "【contentPadding】 : Spaziatura interna del contenuto  【EdgeInsetsGeometry】",
+        "【actions】 : Lista dei componenti nell'angolo inferiore destro  【List<Widget>】",
+        "【backgroundColor】 : Colore di sfondo  【Color】",
+        "【elevation】 : Profondità dell'ombra  【double】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

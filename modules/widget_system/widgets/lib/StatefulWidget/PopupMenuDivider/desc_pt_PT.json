@@ -1,0 +1,21 @@
+{
+  "id": 174,
+  "name": "PopupMenuDivider",
+  "localName": "Divisor de Menu Pop-up",
+  "info": "Divisor do PopupMenuButton, geralmente não é usado sozinho, pode ser especificada a altura.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    56,
+    34
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do PopupMenuDivider",
+      "desc": [
+        "【height】 : altura  【double】"
+      ]
+    }
+  ]
+}

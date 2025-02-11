@@ -1,0 +1,36 @@
+{
+  "id": 149,
+  "name": "InkResponse",
+  "localName": "Effetto Ripple",
+  "info": "Effetto di clic a ripple, riceve eventi di clic, doppio clic, pressione prolungata, annullamento e cambiamento di evidenziazione. È possibile specificare proprietà come il colore del ripple, il raggio e la forma dell'evidenziazione.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    150,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Eventi di base di InkResponse",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【onTap】 : Evento di clic   【Function()】",
+        "【onDoubleTap】 : Evento di doppio clic   【Function()】",
+        "【onTapCancel】 : Annullamento clic   【Function()】",
+        "【onLongPress】 : Evento di pressione prolungata   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Altre proprietà di InkResponse",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【onHighlightChanged】 : Callback di cambiamento di evidenziazione   【Function(bool)】",
+        "【highlightColor】 : Colore di evidenziazione   【Color】",
+        "【splashColor】 : Colore del ripple   【Color】",
+        "【radius】 : Raggio del ripple   【double】"
+      ]
+    }
+  ]
+}

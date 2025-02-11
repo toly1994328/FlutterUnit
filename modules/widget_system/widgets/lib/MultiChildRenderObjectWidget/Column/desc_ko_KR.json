@@ -1,0 +1,26 @@
+{
+  "id": 96,
+  "name": "Column",
+  "localName": "열 레이아웃",
+  "info": "세로 방향으로 배열되는 Flex 레이아웃으로, 여러 컴포넌트를 수용할 수 있습니다. 다른 속성은 모두 동일하며, 자세한 내용은 Flex를 참조하십시오.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Column 기본 사용",
+      "desc": [
+        "【children】 : 컴포넌트 목록   【List<Widget>】",
+        "【mainAxisAlignment】 : 메인 축 정렬   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : 교차 축 정렬   【CrossAxisAlignment】",
+        "【textBaseline】 : 텍스트 기준선   【TextBaseline】",
+        "【verticalDirection】 : 세로 방향   【VerticalDirection】",
+        "【mainAxisSize】 : 메인 축 크기   【MainAxisSize】"
+      ]
+    }
+  ]
+}

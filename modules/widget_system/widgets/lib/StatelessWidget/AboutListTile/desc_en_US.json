@@ -1,0 +1,26 @@
+{
+  "id": 193,
+  "name": "AboutListTile",
+  "localName": "About App Entry",
+  "info": "A clickable entry that can pop up application-related information when clicked. It can specify the application icon, application name, application version number, and other information, as well as a list of internal child components.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    130,
+    145
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of AboutListTile",
+      "desc": [
+        "【icon】 : Left icon   【Widget】",
+        "【applicationIcon】 : Top-left icon   【Widget】",
+        "【applicationVersion】 : Version number  【String】",
+        "【applicationName】 : Application name  【String】",
+        "【applicationLegalese】 : Application legalese   【String】",
+        "【aboutBoxChildren】 : Dialog content components   【List<Widget>】"
+      ]
+    }
+  ]
+}

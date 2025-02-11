@@ -1,0 +1,25 @@
+{
+  "id": 283,
+  "name": "CallbackShortcuts",
+  "localName": "Raccourcis de rappel",
+  "info": "Vous pouvez définir des combinaisons comme raccourcis clavier, qui répondront aux événements de raccourci après avoir obtenu le focus.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    282,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation des raccourcis",
+      "desc": [
+        "Dans l'exemple, après activation du focus, les combinaisons Ctrl+↑ et Ctrl+↓ peuvent augmenter ou diminuer le nombre",
+        "【enabled】 : Disponible   【bool】",
+        "【onTapOutside】 : Écouteur de clic extérieur   【TapRegionCallback?】",
+        "【onTapInside】 : Écouteur de clic intérieur   【TapRegionCallback?】",
+        "【groupId】 : Identifiant du groupe de zone de clic   【Object?】"
+      ]
+    }
+  ]
+}

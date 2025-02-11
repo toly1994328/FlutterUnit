@@ -1,0 +1,60 @@
+{
+  "id": 27,
+  "name": "OutlineButton",
+  "localName": "Umriss-Schaltfläche",
+  "info": "Schaltfläche mit Rahmenstil, basierend auf MaterialButton implementiert, alle Eigenschaften ähnlich wie MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    23,
+    24,
+    25,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "OutlineButton Klickereignis",
+      "desc": [
+        "【textColor】: Textfarbe der Unterkomponente   【Color】",
+        "【splashColor】: Wasserwellenfarbe   【Color】",
+        "【highlightColor】: Hervorhebungsfarbe bei langem Drücken   【Color】",
+        "【highlightedBorderColor】: Rahmenfarbe bei Hervorhebung   【Color】",
+        "【child】: Unterkomponente   【Widget】",
+        "【padding】: Innenabstand   【EdgeInsetsGeometry】",
+        "【borderSide】: Randlinie   【BorderSide】",
+        "【onPressed】: Klickereignis   【Function】",
+        "    ",
+        "",
+        "class CustomOutlineButton extends StatelessWidget {",
+        "  const CustomOutlineButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'Die OutlineButton-Schaltfläche hat die Bühne in Flutter 3.0 verlassen. Der Ersatz ist die OutlinedButton-Schaltfläche.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return OutlineButton(Umriss-Schaltfläche",
+        "       onPressed: () {,",
+        "       child: const Text(\"OutlineButton\"),",
+        "       padding: const EdgeInsets.all(8),",
+        "       splashColor: Colors.green,",
+        "       highlightColor: Colors.orangeAccent,",
+        "       highlightedBorderColor: Colors.grey,",
+        "       textColor: const Color(0xff000000),",
+        "       borderSide: const BorderSide(color: Color(0xff0A66F8), width: 2),"
+      ]
+    }
+  ]
+}

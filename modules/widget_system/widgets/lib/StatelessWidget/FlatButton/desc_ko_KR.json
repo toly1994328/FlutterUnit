@@ -1,0 +1,58 @@
+{
+  "id": 25,
+  "name": "FlatButton",
+  "localName": "평평한 버튼",
+  "info": "그림자가 없는 평평한 버튼으로, MaterialButton을 기반으로 구현되었으며 모든 속성이 MaterialButton과 유사합니다.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    26,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FlatButton 클릭 이벤트",
+      "desc": [
+        "【color】: 색상   【Color】",
+        "【splashColor】: 물결 효과 색상   【Color】",
+        "【child】: 자식 위젯   【Widget】",
+        "【textColor】: 자식 위젯 텍스트 색상   【Color】",
+        "【highlightColor】: 길게 누를 때 강조 색상   【Color】",
+        "【padding】: 내부 여백   【EdgeInsetsGeometry】",
+        "【onPressed】: 클릭 이벤트   【Function】",
+        "    ",
+        "",
+        "class CustomFlatButton extends StatelessWidget {",
+        "  const CustomFlatButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'FlatButton 버튼은 Flutter3.3에서 더 이상 사용되지 않습니다. 대체 버튼은 ElevatedButton입니다.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        " @override",
+        " Widget build(BuildContext context) {",
+        "   return FlatButton(",
+        "     onPressed: ()=>{,",
+        "     padding: const EdgeInsets.all(8),",
+        "     splashColor: Colors.green,",
+        "     child: const Text(\"FlatButton\"),",
+        "     textColor: const Color(0xffFfffff),",
+        "     color: Colors.blue,",
+        "     highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 81,
+  "name": "UnconstrainedBox",
+  "localName": "無制約ボックス",
+  "info": "子コンポーネントを収容し、そのコンポーネントのすべての領域制約を解除し、自己サイズを表示します。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    80
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "UnconstrainedBoxの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【constrainedAxis】 : 制約を受ける軸*2   【Axis】",
+        "【alignment】 : 整列方式   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

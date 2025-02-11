@@ -1,0 +1,20 @@
+{
+  "id": 87,
+  "name": "FittedBox",
+  "localName": "Anpassungsbox",
+  "info": "Kann ein Kindelement aufnehmen, verwendet die fit-Eigenschaft, um den Anpassungsmodus des Kindelements im Verhältnis zum Elternelement zu bestimmen, und verfügt über die Ausrichtungseigenschaft alignment.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von FittedBox",
+      "desc": [
+        "【child】: Kindelement   【Widget】",
+        "【fit】: Anpassungsmodus   【BoxFit】",
+        "【alignment】: Ausrichtung   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

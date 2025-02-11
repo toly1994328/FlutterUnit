@@ -1,0 +1,22 @@
+{
+  "id": 119,
+  "name": "AnimatedPadding",
+  "localName": "Animation de marge",
+  "info": "Permet à un composant enfant d'animer le Padding (marge intérieure), avec la possibilité de spécifier la durée et la courbe, et un événement de fin d'animation.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'AnimatedPadding",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【duration】 : Durée de l'animation   【Duration】",
+        "【onEnd】 : Rappel de fin d'animation   【Function()】",
+        "【curve】 : Courbe de l'animation   【Duration】",
+        "【padding】 : Marge intérieure   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

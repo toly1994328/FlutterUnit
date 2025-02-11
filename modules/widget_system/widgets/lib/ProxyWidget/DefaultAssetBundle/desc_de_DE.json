@@ -1,0 +1,20 @@
+{
+  "id": 320,
+  "name": "DefaultAssetBundle",
+  "localName": "Standard-Ressourcenpaket",
+  "info": "Ein InheritedWidget, das nach der Einstellung des AssetBundle-Objekts es den Knoten nach diesem Knoten ermöglicht, das AssetBundle-Objekt über DefaultAssetBundle.of(context) zu erhalten, um auf Ressourcendateien zuzugreifen.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in DefaultAssetBundle",
+      "desc": [
+        "【bundle】 : *Ressourcenpaket   【AssetBundle】",
+        "【child】 : *Untergeordnete Komponente  【Widget】",
+        "Wir können unser eigenes DefaultAssetBundle definieren, das von nachfolgenden Knoten verwendet wird, oder direkt das Standardpaket verwenden. Dieses Beispiel zeigt, wie ein Ressourcenbild mithilfe des von Framework bereitgestellten DefaultAssetBundle geladen und angezeigt wird."
+      ]
+    }
+  ]
+}

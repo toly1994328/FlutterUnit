@@ -1,0 +1,53 @@
+{
+  "id": 163,
+  "name": "GridView",
+  "localName": "Componente de cuadrícula",
+  "info": "Contiene múltiples componentes y los organiza en forma de cuadrícula. Se puede construir mediante count, extent, custom, builder, etc. Tiene propiedades como el relleno interno, si es inverso, el controlador de desplazamiento, etc.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    21,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Construcción de GridView.count",
+      "desc": [
+        "【children】 : Lista de componentes hijos   【List<Widget>】",
+        "【crossAxisCount】 : Número de cajas por fila en el eje principal  【int】",
+        "【mainAxisSpacing】 : Espaciado entre filas en el eje principal  【double】",
+        "【crossAxisSpacing】 : Espaciado entre filas en el eje transversal  【double】",
+        "【childAspectRatio】 : Relación entre la longitud principal y la longitud transversal de la caja  【double】",
+        "【crossAxisCount】 : Número de cajas por fila en el eje principal  【int】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Dirección de desplazamiento de GridView",
+      "desc": [
+        "【scrollDirection】 : Dirección de desplazamiento   【Axis】",
+        "【reverse】 : Si el desplazamiento es inverso   【bool】",
+        "【shrinkWrap】 : Si se envuelve cuando no hay límites  【bool】"
+      ]
+    },
+    {
+      "file": "node3_extend.dart",
+      "name": "Dirección de desplazamiento de GridView",
+      "desc": [
+        "【scrollDirection】 : Dirección de desplazamiento   【Axis】",
+        "【reverse】 : Si el desplazamiento es inverso   【bool】",
+        "【shrinkWrap】 : Si se envuelve cuando no hay límites  【bool】"
+      ]
+    },
+    {
+      "file": "node4_builder.dart",
+      "name": "Construcción de GridView.builder",
+      "desc": [
+        "【itemCount】 : Número de elementos   【int】",
+        "【gridDelegate】 : Delegado de cuadrícula   【SliverGridDelegate】",
+        "【itemBuilder】 : Constructor de elementos  【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 330,
+  "name": "PopupMenuTheme",
+  "localName": "팝업 메뉴 스타일",
+  "info": "주로 후손의 PopupMenuButton 컴포넌트에 기본 속성을 통일적으로 설정하기 위해 사용되며, 이 컴포넌트를 통해 기본 PopupMenu의 속성을 얻을 수도 있습니다.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PopupMenuTheme 기본 사용",
+      "desc": [
+        "PopupMenuThemeData 데이터 속성을 지정하여 후손의 PopupMenuButton 컴포넌트에 기본 스타일(예: 모양, 그림자, 색상, 텍스트 스타일 등)을 설정할 수 있습니다. 또한 PopupMenuTheme.of를 사용하여 PopupMenu의 테마 데이터를 얻을 수도 있습니다."
+      ]
+    }
+  ]
+}

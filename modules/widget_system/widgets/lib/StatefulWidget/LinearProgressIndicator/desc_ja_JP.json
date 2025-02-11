@@ -1,0 +1,24 @@
+{
+  "id": 47,
+  "name": "LinearProgressIndicator",
+  "localName": "水平プログレス",
+  "info": "直線型の進捗表示で、色や進捗などの属性を指定できます。valueがnullの場合は回転し続けます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    46,
+    48
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LinearProgressIndicatorの基本使用",
+      "desc": [
+        "【value】 : 進捗   【double】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【valueColor】 : 進捗色   【Animation<Color>】",
+        "    valueがnullの場合はループし続けます"
+      ]
+    }
+  ]
+}

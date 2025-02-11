@@ -1,0 +1,33 @@
+{
+  "id": 152,
+  "name": "Ink",
+  "localName": "Onda de agua",
+  "info": "Hace que las ondas de agua de InkWell e InkResponse sean efectivas, utilizadas para dibujar imágenes u otros componentes decorativos de Material.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Ink",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【padding】 : Relleno interno   【EdgeInsetsGeometry】",
+        "【decoration】 : Decoración   【Decoration】",
+        "【width】 : Ancho   【double】",
+        "【height】 : Alto   【double】",
+        "【color】 : Color   【Color】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Onda de agua con Ink.image",
+      "desc": [
+        "Los atributos son consistentes con el componente Image, consulte el componente Image para más detalles"
+      ]
+    }
+  ]
+}

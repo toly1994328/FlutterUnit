@@ -1,0 +1,25 @@
+{
+  "id": 183,
+  "name": "CustomScrollView",
+  "localName": "汎用スクロールビュー",
+  "info": "汎用的なスクロール構造で、スクロール方向、逆方向かどうか、スクロールコントローラーなどの属性を指定できます。含まれる子コンポーネントはSliverファミリーでなければなりません。",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [
+    184,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CustomScrollViewの基本使用",
+      "desc": [
+        "【slivers】 : 子コンポーネントリスト   【List<Widget>】",
+        "【reverse】 : 逆方向かどうか   【bool】",
+        "【scrollDirection】 : スクロール方向   【Axis】",
+        "【controller】 : コントローラー   【ScrollController】"
+      ]
+    }
+  ]
+}

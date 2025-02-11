@@ -1,0 +1,22 @@
+{
+  "id": 154,
+  "name": "Drawer",
+  "localName": "Barre de glissement",
+  "info": "Généralement utilisé pour les propriétés draw et endDraw dans Scaffold comme barres de glissement gauche et droite, peut contenir un composant enfant, peut spécifier la profondeur de l'ombre.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    64,
+    155
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Drawer",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【elevation】 : Profondeur de l'ombre  【double】"
+      ]
+    }
+  ]
+}

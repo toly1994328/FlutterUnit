@@ -1,0 +1,19 @@
+{
+  "id": 72,
+  "name": "RotatedBox",
+  "localName": "回転ボックス",
+  "info": "1つの子コンポーネントを収容し、それを時計回りにquarterTurns*90°回転させます。",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RotatedBoxの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【quarterTurns】 : 90°回転する回数   【int】"
+      ]
+    }
+  ]
+}

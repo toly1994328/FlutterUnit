@@ -1,0 +1,32 @@
+{
+  "id": 339,
+  "name": "DateRangePickerDialog",
+  "localName": "Plage de dates",
+  "info": "Sélecteur de plage de dates de style Material, prenant en charge la sélection par calendrier et par saisie.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    135,
+    136,
+    137
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de DateRangePickerDialog",
+      "desc": [
+        "【firstDate】 : Date la plus ancienne   【DateTime】",
+        "【lastDate】 : Date la plus récente   【DateTime】",
+        "【initialDateRange】 : Plage initiale   【DateTimeRange?】",
+        "【saveText】 : Texte de sauvegarde  【String?】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Personnalisation de DateRangePickerDialog",
+      "desc": [
+        "Modifiez le code source de DateRangePickerDialog pour afficher un arrière-plan numérique sur les entrées de mois."
+      ]
+    }
+  ]
+}

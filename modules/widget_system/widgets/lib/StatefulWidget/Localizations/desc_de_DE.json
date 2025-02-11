@@ -1,0 +1,21 @@
+{
+  "id": 290,
+  "name": "Localizations",
+  "localName": "Internationalisierung",
+  "info": "Stellt internationalisierte Ressourcen für Teilbaumknoten bereit, basierend auf der Implementierung von InheritedWidget. MaterialApp integriert diese Komponente intern, deren locale- und delegates-Parameter letztendlich für diese Komponente verwendet werden.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    65,
+    346
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Aktuelle Sprache abrufen",
+      "desc": [
+        "Mit Localizations.localeOf(context) können die Locale-Dateninformationen der nächstgelegenen übergeordneten Localizations-Komponente basierend auf dem Kontext abgerufen werden."
+      ]
+    }
+  ]
+}

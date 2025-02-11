@@ -1,0 +1,22 @@
+{
+  "id": 106,
+  "name": "Expanded",
+  "localName": "Extended Component",
+  "info": "The parent class is Flexible, equivalent to a Flexible component with a fit type of tight. It can nest children to utilize the remaining space to extend the placeholder space.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    94,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Expanded",
+      "desc": [
+        "【child】: child   【Widget】",
+        "【flex】: Proportion of remaining space allocation   【int】"
+      ]
+    }
+  ]
+}

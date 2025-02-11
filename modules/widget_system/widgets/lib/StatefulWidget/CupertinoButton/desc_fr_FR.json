@@ -1,0 +1,23 @@
+{
+  "id": 24,
+  "name": "CupertinoButton",
+  "localName": "Bouton iOS",
+  "info": "Bouton de style iOS. Peut spécifier la couleur, l'opacité lors du clic, le remplissage interne, les coins arrondis, etc. Peut recevoir des événements de clic.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Événement de clic CupertinoButton",
+      "desc": [
+        "【color】: Couleur   【Color】",
+        "【pressedOpacity】: Opacité lors de la pression   【double】",
+        "【child】: Composant enfant   【Widget】",
+        "【padding】: Remplissage interne   【EdgeInsetsGeometry】",
+        "【borderRadius】: Rayon des coins arrondis   【BorderRadius】",
+        "【onPressed】: Événement de clic   【Function】"
+      ]
+    }
+  ]
+}

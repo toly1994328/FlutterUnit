@@ -1,0 +1,23 @@
+{
+  "id": 347,
+  "name": "ParentDataWidget",
+  "localName": "親データウィジェット",
+  "info": "抽象クラスで、ParentData情報をRenderObjectWidgetの子ウィジェットにフックするために使用されます。そのサブクラスにはPositioned、Flexible、Expandedなどがあり、これらのウィジェットは特定のコンポーネントの下でのみ使用できます。",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [
+    106,
+    109,
+    108,
+    315
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ParentDataWidget 紹介",
+      "desc": [
+        "【child】 : 子ウィジェット   【Widget】"
+      ]
+    }
+  ]
+}

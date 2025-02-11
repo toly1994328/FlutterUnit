@@ -1,0 +1,22 @@
+{
+  "id": 224,
+  "name": "AnimatedTheme",
+  "localName": "애니메이션 테마",
+  "info": "테마 변경 시 애니메이션 효과가 있는 컴포넌트로, 본질적으로 Theme 컴포넌트와 애니메이션의 결합물입니다. ThemeData, 애니메이션 지속 시간, 곡선, 종료 콜백 등을 지정할 수 있습니다. 강화된 버전의 Theme 컴포넌트에 해당합니다.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedTheme 기본 사용",
+      "desc": [
+        "【data】 : 테마 데이터   【ThemeData】",
+        "【duration】 : 애니메이션 지속 시간   【Duration】",
+        "【onEnd】 : 애니메이션 종료 콜백   【Function()】",
+        "【curve】 : 애니메이션 곡선   【Duration】",
+        "【child】 : 자식 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

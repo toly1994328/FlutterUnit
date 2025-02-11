@@ -1,0 +1,33 @@
+{
+  "id": 55,
+  "name": "DropdownButton",
+  "localName": "Dropdown Button",
+  "info": "A button for dropdown selection, which can specify attributes such as icon, elevation, hint, etc., and receives events for selection changes.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of DropdownButton",
+      "desc": [
+        "【value】 : Current value   【T】",
+        "【items】 : Dropdown items   【List<DropdownMenuItem<T>>】",
+        "【icon】 : Icon   【Widget】",
+        "【elevation】 : Elevation   【double】",
+        "【onChanged】 : Selection change event   【Function(T)】",
+        "【backgroundColor】 : Background color   【Color】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Styling of DropdownButton",
+      "desc": [
+        "【isDense】 : Whether to be dense   【bool】",
+        "【iconSize】 : Icon size   【double】",
+        "【hint】 : Hint widget   【Widget】",
+        "【iconEnabledColor】 : Icon color   【Color】"
+      ]
+    }
+  ]
+}

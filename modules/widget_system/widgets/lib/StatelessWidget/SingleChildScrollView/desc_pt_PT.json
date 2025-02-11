@@ -1,0 +1,27 @@
+{
+  "id": 164,
+  "name": "SingleChildScrollView",
+  "localName": "Deslizamento de Filho Único",
+  "info": "Torna um componente com efeito de deslizamento, podendo especificar a direção do deslizamento, se é reverso, controlador de deslizamento, entre outras propriedades.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do SingleChildScrollView",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【padding】 : Preenchimento interno  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direção de Deslizamento do SingleChildScrollView",
+      "desc": [
+        "【scrollDirection】 : Direção de deslizamento   【Axis】",
+        "【reverse】 : Se é reverso   【Axis】"
+      ]
+    }
+  ]
+}

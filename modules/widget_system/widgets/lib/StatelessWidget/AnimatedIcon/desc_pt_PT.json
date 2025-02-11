@@ -1,0 +1,21 @@
+{
+  "id": 125,
+  "name": "AnimatedIcon",
+  "localName": "Ícone Animado",
+  "info": "Utiliza os dados de ícones de AnimatedIcons para criar efeitos de animação com base em um controlador de animação. Permite especificar o tamanho, cor e outros atributos do ícone.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de AnimatedIcon",
+      "desc": [
+        "【icon】 : Dados do ícone animado   【AnimatedIcons】",
+        "【size】 : Tamanho  【double】",
+        "【color】 : Cor  【Color】",
+        "【progress】 : Animação   【Animation<double>】"
+      ]
+    }
+  ]
+}

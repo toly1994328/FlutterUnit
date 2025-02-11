@@ -1,0 +1,22 @@
+{
+  "id": 20,
+  "name": "GridTileBar",
+  "localName": "Barra della piastrella della griglia",
+  "info": "Una struttura di intestazione generica fornita da Flutter, con una struttura sinistra-centro-destra. I componenti possono essere inseriti nelle posizioni corrispondenti, rendendolo molto conveniente per gestire voci specifiche, con meno attributi rispetto a ListTile.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La rappresentazione di base di GridTileBar è la seguente",
+      "desc": [
+        "【leading】: Componente sinistro   【Widget】",
+        "【trailing】: Componente destro   【Widget】",
+        "【title】: Componente superiore centrale   【Widget】",
+        "【subtitle】: Componente inferiore centrale   【Widget】",
+        "【backgroundColor】: Colore di sfondo   【Color】"
+      ]
+    }
+  ]
+}

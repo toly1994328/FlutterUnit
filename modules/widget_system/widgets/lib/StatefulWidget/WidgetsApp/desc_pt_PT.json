@@ -1,0 +1,24 @@
+{
+  "id": 236,
+  "name": "WidgetsApp",
+  "localName": "Aplicação de Componentes",
+  "info": "Agrega os componentes necessários para uma aplicação, como roteamento, idioma, alguns interruptores de depuração, etc. Também é o componente central para implementar MaterialApp e CupertinoApp.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    65,
+    156
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do WidgetsApp",
+      "desc": [
+        "【pageRouteBuilder】 : *Construtor de Rota   【PageRouteFactory】",
+        "【color】: *Cor    【Color】",
+        "【debugShowWidgetInspector】: Mostrar o inspetor de componentes   【bool】",
+        "Outras propriedades são basicamente as mesmas que MaterialApp, consulte para mais detalhes."
+      ]
+    }
+  ]
+}

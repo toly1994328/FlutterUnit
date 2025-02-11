@@ -1,0 +1,23 @@
+{
+  "id": 24,
+  "name": "CupertinoButton",
+  "localName": "Pulsante iOS",
+  "info": "Pulsante in stile iOS. Puoi specificare colore, opacità al click, padding, bordi arrotondati, ecc. Può ricevere eventi di click.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Evento di click di CupertinoButton",
+      "desc": [
+        "【color】: Colore   【Color】",
+        "【pressedOpacity】: Opacità quando premuto   【double】",
+        "【child】: Componente figlio   【Widget】",
+        "【padding】: Padding   【EdgeInsetsGeometry】",
+        "【borderRadius】: Raggio del bordo arrotondato   【BorderRadius】",
+        "【onPressed】: Evento di click   【Function】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 101,
+  "name": "RichText",
+  "localName": "リッチテキスト",
+  "info": "さまざまなテキストスタイルやコンポーネントを包含できるリッチテキストコンポーネントで、広く使用されています。",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RichTextの基本的な使用",
+      "desc": [
+        "【text】 : テキスト   【TextSpan】",
+        "    他のプロパティはTextと同じです。詳細はそちらを参照してください。"
+      ]
+    },
+    {
+      "file": "node2_widget.dart",
+      "name": "RichTextに他のコンポーネントを含める",
+      "desc": [
+        "WidgetSpanを使用して通常のコンポーネントをリッチテキストの内容として含める"
+      ]
+    }
+  ]
+}

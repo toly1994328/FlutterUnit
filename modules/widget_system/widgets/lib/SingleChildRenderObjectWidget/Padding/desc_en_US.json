@@ -1,0 +1,37 @@
+{
+  "id": 74,
+  "name": "Padding",
+  "localName": "Margin Component",
+  "info": "Can accommodate a child component, adding its own padding to limit the child component's placement. The core property is padding.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    1,
+    191
+  ],
+  "nodes": [
+    {
+      "file": "node1_all.dart",
+      "name": "Padding Equal Margin on All Sides",
+      "desc": [
+        "【child】: Child component 【Widget】",
+        "【padding】: Inner four-sided margin 【EdgeInsetsGeometry】",
+        "EdgeInsets.all is used to define the same margin on all four sides"
+      ]
+    },
+    {
+      "file": "node2_only.dart",
+      "name": "Padding Individual Margin",
+      "desc": [
+        "EdgeInsets.only is used to define the same margin on all four sides"
+      ]
+    },
+    {
+      "file": "node3_symmetric.dart",
+      "name": "Padding Directional Margin",
+      "desc": [
+        "EdgeInsets.symmetric is used to define horizontal and vertical margins"
+      ]
+    }
+  ]
+}

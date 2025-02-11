@@ -1,0 +1,22 @@
+{
+  "id": 79,
+  "name": "LimitedBox",
+  "localName": "Scatola Limitata",
+  "info": "Può contenere un componente figlio, limitando l'area del componente figlio specificando l'altezza e la larghezza massime.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    80
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di LimitedBox",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【maxHeight】 : Altezza massima   【double】",
+        "【maxWidth】 : Larghezza massima   【double】"
+      ]
+    }
+  ]
+}

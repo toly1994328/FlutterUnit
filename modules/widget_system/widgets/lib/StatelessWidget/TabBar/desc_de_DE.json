@@ -1,0 +1,37 @@
+{
+  "id": 58,
+  "name": "TabBar",
+  "localName": "Tab-Leiste",
+  "info": "Eine schiebbare und klickbare Tab-Leiste, die normalerweise am unteren Rand der AppBar verwendet wird. Kann mit TabBarView kombiniert werden, um den Effekt des Seitenwechselns zu erzielen.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    57,
+    59,
+    148
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von TabBar",
+      "desc": [
+        "【controller】 : Controller   【TabController】",
+        "【indicatorColor】 : Indikatorfarbe   【Indikatorfarbe】",
+        "【indicatorWeight】 : Indikatorhöhe   【double】",
+        "【indicatorPadding】 : Indikatorrand   【EdgeInsetsGeometry】",
+        "【labelStyle】 : Textstil der Registerkarte   【TextStyle】",
+        "【unselectedLabelStyle】 : Textstil der nicht ausgewählten Registerkarte   【TextStyle】",
+        "【isScrollable】 : Ob scrollbar   【bool】",
+        "【onTap】 : Rückruf beim Klicken auf die Registerkarte   【Function(int)】",
+        "【tabs】 : Tab-Komponenten   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_noShadow.dart",
+      "name": "Durch das Setzen von Theme kann der Wasserwelleneffekt vermieden werden",
+      "desc": [
+        "Setzen Sie die Farbe der Wasserwelle in Theme auf transparent."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 255,
+  "name": "ValueListenableBuilder",
+  "localName": "Wertüberwachungs-Builder",
+  "info": "Kann einen Wert überwachen und bei Änderungen die Benutzeroberfläche über den Builder-Callback neu aufbauen, wodurch die Verwendung von setState zur Aktualisierung vermieden wird.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ValueListenableBuilder",
+      "desc": [
+        "【builder】: Komponenten-Builder   【ValueWidgetBuilder<T>】",
+        "【valueListenable】: Überwachungswert    【ValueListenable<T>】",
+        "【child】: Untergeordnete Komponente    【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 73,
+  "name": "Opacity",
+  "localName": "Opacidade",
+  "info": "Pode conter um componente filho, alterando a sua opacidade para o valor de opacity, onde opacity está entre 0 e 1.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    89,
+    118
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do Opacity",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【opacity】 : Opacidade 0~1   【double】"
+      ]
+    }
+  ]
+}

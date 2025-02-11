@@ -1,0 +1,29 @@
+{
+  "id": 349,
+  "name": "ScrollView",
+  "localName": "Rolagem de Visualização",
+  "info": "Este componente é usado para suporte de rolagem, esta classe é uma classe abstrata, portanto, não pode ser usada diretamente, tem muitas classes de implementação, como CustomScrollView, BoxScrollView, ListView, GridView.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163,
+    253,
+    340
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introdução ao ScrollView",
+      "desc": [
+        "【reverse】 : Se é reverso   【bool】",
+        "【scrollDirection】 : Direção de rolagem   【Axis】",
+        "【cacheExtent】 : Extensão do cache   【double】",
+        "【dragStartBehavior】 : Comportamento de arrasto   【DragStartBehavior】",
+        "【clipBehavior】 : Comportamento de corte   【ClipBehavior】",
+        "【controller】 : Controlador   【ScrollController】"
+      ]
+    }
+  ]
+}

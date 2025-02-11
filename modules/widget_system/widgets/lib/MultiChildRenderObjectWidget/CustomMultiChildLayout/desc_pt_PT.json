@@ -1,0 +1,22 @@
+{
+  "id": 341,
+  "name": "CustomMultiChildLayout",
+  "localName": "Layout Multi-Filho Personalizado",
+  "info": "Usa uma classe delegada para controlar o layout de um conjunto de componentes filhos, os componentes filhos devem ser identificados usando o componente LayoutId.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    315,
+    285
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Uso Básico do CustomMultiChildLayout",
+      "desc": [
+        "【children】 : Conjunto de componentes filhos   【List<Widget>】",
+        "【delegate】 : Delegado de layout   【MultiChildLayoutDelegate】"
+      ]
+    }
+  ]
+}

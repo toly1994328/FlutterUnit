@@ -1,0 +1,23 @@
+{
+  "id": 110,
+  "name": "Table",
+  "localName": "テーブルコンポーネント",
+  "info": "テーブルを表示するためのコンポーネントで、境界線、列幅、テキストの方向などの属性を指定できます。コアオブジェクトタイプはTableRowです。",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "テーブルの基本使用",
+      "desc": [
+        "【children】 : コンポーネントリスト   【List<Widget>】",
+        "【columnWidths】 : 列幅   【Map<int, TableColumnWidth>】",
+        "【defaultColumnWidth】 : デフォルトの列幅  【TableColumnWidth】",
+        "【border】 : 境界線   【TableBorder】",
+        "【textDirection】 : テキストの方向   【TextDirection】",
+        "【defaultVerticalAlignment】 : セルの垂直方向の整列モード   【TableCellVerticalAlignment】"
+      ]
+    }
+  ]
+}

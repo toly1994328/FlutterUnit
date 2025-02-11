@@ -1,0 +1,52 @@
+{
+  "id": 291,
+  "name": "ListWheelViewport",
+  "localName": "リストホイールビューポート",
+  "info": "子リストを円柱状のホイール上に表示するビューポートで、ListWheelScrollView、CupertinoPickerの基盤となる依存関係です",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [
+    179,
+    139,
+    137,
+    253
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListWheelViewport の簡単な使用",
+      "desc": [
+        "【itemExtent】 : 軸方向のアイテムサイズ   【double】",
+        "【offset】 : ビューポートのオフセット   【ViewportOffset】",
+        "【childDelegate】 : 子デリゲートコンストラクタ   【ListWheelChildDelegate】"
+      ]
+    },
+    {
+      "file": "node2_perspective.dart",
+      "name": "ListWheelViewport の遠近効果",
+      "desc": [
+        "【perspective】 : 遠近パラメータ   【double】",
+        "【squeeze】 : 圧縮値   【double】",
+        "【diameterRatio】 : 直径比率   【double】"
+      ]
+    },
+    {
+      "file": "node3_magnifier.dart",
+      "name": "ListWheelViewport の拡大",
+      "desc": [
+        "【useMagnifier】 : 拡大するかどうか   【bool】",
+        "【magnification】 : 拡大比率   【double】",
+        "【clipBehavior】 : クリップ動作   【Clip】",
+        "【renderChildrenOutsideViewport】 : 視野外の子をレンダリングするか   【bool】"
+      ]
+    },
+    {
+      "file": "node4_opacity.dart",
+      "name": "オフセットと透明度",
+      "desc": [
+        "【offAxisFraction】 : 軸中心のオフセット比率   【double】",
+        "【overAndUnderCenterOpacity】 : 拡大器外の透明度   【double】"
+      ]
+    }
+  ]
+}

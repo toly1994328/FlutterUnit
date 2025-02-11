@@ -1,0 +1,23 @@
+{
+  "id": 24,
+  "name": "CupertinoButton",
+  "localName": "iOSボタン",
+  "info": "iOSスタイルのボタン。色、クリック時の透明度、パディング、角丸などを指定できます。クリックイベントを受け取ることができます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoButtonクリックイベント",
+      "desc": [
+        "【color】: 色   【Color】",
+        "【pressedOpacity】: 押下時の透明度   【double】",
+        "【child】: 子コンポーネント   【Widget】",
+        "【padding】: パディング   【EdgeInsetsGeometry】",
+        "【borderRadius】: 角丸半径   【BorderRadius】",
+        "【onPressed】: クリックイベント   【Function】"
+      ]
+    }
+  ]
+}

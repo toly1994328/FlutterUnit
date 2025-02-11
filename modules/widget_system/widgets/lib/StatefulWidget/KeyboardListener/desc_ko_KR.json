@@ -1,0 +1,26 @@
+{
+  "id": 284,
+  "name": "KeyboardListener",
+  "localName": "키보드 리스너",
+  "info": "포커스를 얻은 후, onKeyEvent를 통해 키보드의 키 이벤트를 감지합니다.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    282,
+    283
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "키보드 이벤트 감지",
+      "desc": [
+        "예제에서 영역을 클릭하여 포커스를 얻은 후, 키보드를 누르면 이벤트 트리거 정보를 볼 수 있습니다.",
+        "【focusNode】 : 포커스   【FocusNode】",
+        "【autofocus】 : 자동 포커스 여부   【bool】",
+        "【includeSemantics】 : 의미 포함 여부   【bool】",
+        "【onKeyEvent】 : 키 이벤트 콜백   【ValueChanged<KeyEvent>?】",
+        "【child】 : 하위 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

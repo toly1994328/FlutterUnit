@@ -1,0 +1,30 @@
+{
+  "id": 37,
+  "name": "GridPaper",
+  "localName": "그리드 라인 컴포넌트",
+  "info": "하나의 컴포넌트를 수용할 수 있으며, 그 위에 그리드를 그립니다. 색상, 선 두께, 간격 등의 속성을 지정할 수 있습니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridPager 기본 속성",
+      "desc": [
+        "【child】: 자식 컴포넌트   【Widget】",
+        "【color】: 색상   【Color】",
+        "【interval】: 작은 블록의 변 길이   【double】"
+      ]
+    },
+    {
+      "file": "node2_divisions.dart",
+      "name": "GridPager 재분할",
+      "desc": [
+        "【child】: 자식 컴포넌트   【Widget】",
+        "【color】: 색상   【Color】",
+        "【subdivisions】: 작은 블록 내의 하위 블록 개수   【int】",
+        "【divisions】: 작은 블록 내의 하위 블록 분할 수   【int】"
+      ]
+    }
+  ]
+}

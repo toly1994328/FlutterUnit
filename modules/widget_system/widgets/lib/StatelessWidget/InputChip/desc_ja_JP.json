@@ -1,0 +1,33 @@
+{
+  "id": 14,
+  "name": "InputChip",
+  "localName": "統合チップ",
+  "info": "Chipコンポーネントと同様のスタイルで、クリック、削除、選択イベントを統合しています。注意: クリックイベントと選択イベントは同時に存在できません。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    13,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "クリック、削除イベントを受け取ることができます",
+      "desc": [
+        "【onPressed】: クリックイベント   【Function()】",
+        "【onDeleted】: 削除イベント   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "選択イベントを受け取ることができます",
+      "desc": [
+        "【selected】: 選択されているかどうか   【bool】",
+        "【onSelected】: 選択イベント   【Function(bool)】"
+      ]
+    }
+  ]
+}

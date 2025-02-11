@@ -1,0 +1,38 @@
+{
+  "id": 282,
+  "name": "Focus",
+  "localName": "Componente Focus",
+  "info": "Un componente che gestisce [FocusNode], utilizzato per consentire che il focus della tastiera venga assegnato a questo widget e ai suoi nodi secondari.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    283,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "FocusNode messa a fuoco e perdita di fuoco",
+      "desc": [
+        "【focusNode】 : focus   【FocusNode?】",
+        "【onFocusChange】 : listener per il cambio di focus   【ValueChanged<bool>?】",
+        "【child】 : componente figlio   【Widget】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Autofocus",
+      "desc": [
+        "【autofocus】 : se mettere a fuoco automaticamente   【bool】",
+        "Il framework Flutter ha scorciatoie integrate per il cambio di focus, ad esempio in una lista scorrevole orizzontalmente ← e → mettono a fuoco rispettivamente l'elemento precedente e successivo. Il tasto Tab può mettere a fuoco il prossimo nodo Focus."
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Callback per eventi della tastiera",
+      "desc": [
+        "【onKeyEvent】 : callback per eventi della tastiera   【FocusOnKeyEventCallback?】"
+      ]
+    }
+  ]
+}

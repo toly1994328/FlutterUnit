@@ -1,0 +1,20 @@
+{
+  "id": 228,
+  "name": "AnimatedBuilder",
+  "localName": "Animated Builder",
+  "info": "By using the builder, the corresponding node of the animation can be updated locally, and the refresh of child components can be avoided, reducing the build time and improving animation performance.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedBuilder Usage Example",
+      "desc": [
+        "【animation】: *Listenable object   【Listenable】",
+        "【builder】: *Component builder   【TransitionBuilder】",
+        "【child】: Child component   【Widget】"
+      ]
+    }
+  ]
+}

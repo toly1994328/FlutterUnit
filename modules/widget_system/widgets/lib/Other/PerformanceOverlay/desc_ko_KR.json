@@ -1,0 +1,18 @@
+{
+  "id": 312,
+  "name": "PerformanceOverlay",
+  "localName": "성능 오버레이",
+  "info": "성능 모니터링을 매우 편리하게 시작할 수 있는 두 개의 막대 그래프로, 화면을 새로 고칠 때 프레임 속도 변화를 쉽게 확인할 수 있습니다.",
+  "lever": 2,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PerformanceOverlay 기본 사용",
+      "desc": [
+        "PerformanceOverlay.allEnabled를 사용하여 모든 모니터링 항목을 시작할 수 있습니다."
+      ]
+    }
+  ]
+}

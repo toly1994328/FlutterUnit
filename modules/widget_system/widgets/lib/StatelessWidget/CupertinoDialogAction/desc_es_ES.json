@@ -1,0 +1,22 @@
+{
+  "id": 352,
+  "name": "CupertinoDialogAction",
+  "localName": "Vista de interacción",
+  "info": "Un botón simple, generalmente utilizado en CupertinoAlertDialog, generalmente no se usa solo.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoDialogAction",
+      "desc": [
+        "【isDefaultAction】: ¿Es una acción predeterminada? 【bool】",
+        "【isDestructiveAction】: ¿Es una acción destructiva? 【bool】",
+        "【textStyle】: Estilo de texto 【TextStyle】",
+        "【onPressed】: Evento de clic 【VoidCallback】",
+        "【child】: Componente hijo 【Widget】"
+      ]
+    }
+  ]
+}

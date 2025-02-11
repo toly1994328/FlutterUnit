@@ -1,0 +1,18 @@
+{
+  "id": 181,
+  "name": "DropdownButtonHideUnderline",
+  "localName": "Кнопка выпадающего списка скрыть подчеркивание",
+  "info": "Используется для удаления подчеркивания у DropdownButton, само по себе не имеет практической ценности.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Использование DropDownButtonHideUnderline",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】,"
+      ]
+    }
+  ]
+}

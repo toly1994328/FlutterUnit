@@ -1,0 +1,24 @@
+{
+  "id": 66,
+  "name": "ClipOval",
+  "localName": "Ovale Zuschneidung",
+  "info": "Kann ein Unterelement aufnehmen und es entlang der Haupt- und Nebenachse der Breite und Höhe elliptisch zuschneiden.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    67,
+    68,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ClipOval",
+      "desc": [
+        "【child】 : Unterelement   【Widget】",
+        "【clipBehavior】 : Zuschneideverhalten   【Clip】",
+        "【clipper】 : Zuschneider   【CustomClipper<RRect>】"
+      ]
+    }
+  ]
+}

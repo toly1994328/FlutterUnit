@@ -1,0 +1,22 @@
+{
+  "id": 214,
+  "name": "NavigationToolbar",
+  "localName": "네비게이션 툴바",
+  "info": "좌중우 모드의 일반 구조 컴포넌트로, 중간 컴포넌트의 왼쪽 여백 및 중앙 정렬 여부를 지정할 수 있습니다. 소스 코드는 AppBar 등 네비게이션 바 구조에서 이를 사용합니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "NavigationToolbar 기본 사용",
+      "desc": [
+        "【leading】 : 왼쪽 컴포넌트   【Widget】",
+        "【middle】: 중간 컴포넌트   【Widget】",
+        "【trailing】: 오른쪽 컴포넌트   【Widget】",
+        "【centerMiddle】: 중간 컴포넌트 중앙 정렬 여부   【bool】",
+        "【middleSpacing】: 중간 컴포넌트의 왼쪽 여백    【double】"
+      ]
+    }
+  ]
+}

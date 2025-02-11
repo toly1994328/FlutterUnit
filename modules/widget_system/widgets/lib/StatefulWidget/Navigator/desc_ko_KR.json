@@ -1,0 +1,21 @@
+{
+  "id": 232,
+  "name": "Navigator",
+  "localName": "네비게이터",
+  "info": "Navigator는 스택 규칙을 사용하여 자식 위젯 그룹을 관리하며, 자식 위젯을 푸시하고 팝하며 스택 이벤트를 수신할 수 있습니다. MaterialApp의 라우팅 관리의 근원은 Navigator를 사용한 것입니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Navigator 기본 사용법",
+      "desc": [
+        "【initialRoute】 : 초기 표시 라우트   【String】",
+        "【onGenerateRoute】 : 라우트 생성기   【RouteFactory】",
+        "【observers】 : 라우트 리스너   【List<NavigatorObserver>】",
+        "【onPopPage】 : 팝 콜백   【PopPageCallback】"
+      ]
+    }
+  ]
+}

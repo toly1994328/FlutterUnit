@@ -1,0 +1,19 @@
+{
+  "id": 221,
+  "name": "DraggableScrollableActuator",
+  "localName": "ドラッグスクロールリセッター",
+  "info": "これは子孫の DraggableScrollableSheet に通知して、その位置を初期状態にリセットすることができます。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "基本的な使用方法",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "DraggableScrollableActuator.reset(context) を使用して、子孫の DraggableScrollableSheet を初期位置にリセットします。"
+      ]
+    }
+  ]
+}

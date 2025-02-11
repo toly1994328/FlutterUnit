@@ -1,0 +1,28 @@
+{
+  "id": 8,
+  "name": "FadeInImage",
+  "localName": "페이드 인 이미지",
+  "info": "이미지를 투명하게 페이드 인하여 로드합니다. 플레이스홀더 이미지, 애니메이션 곡선, 시간, 너비, 높이, fit 유형, 정렬 방식, 반복 방식 등을 지정할 수 있습니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FadeInImage.assetNetwork 네트워크 이미지 로드",
+      "desc": [
+        "【placeholder】 : 플레이스홀더 이미지 주소  【String】",
+        "【image】 : 표시할 이미지 주소  【String】",
+        "【width】: 너비   【double】",
+        "【height】: 높이   【double】",
+        "【fadeInDuration】: 페이드 인 시간   【Duration】",
+        "【fadeOutDuration】: 페이드 아웃 시간   【Duration】",
+        "【fadeInCurve】: 페이드 인 곡선   【Cubic】",
+        "【fadeOutCurve】: 페이드 아웃 곡선   【Cubic】",
+        "【fit】: 적합 모드   【BoxFit】",
+        "【alignment】: 정렬 모드   【Alignment】",
+        "【repeat】: 반복 모드   【ImageRepeat】,"
+      ]
+    }
+  ]
+}

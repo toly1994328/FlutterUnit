@@ -1,0 +1,37 @@
+{
+  "id": 28,
+  "name": "FloatingActionButton",
+  "localName": "플로팅 버튼",
+  "info": "플로팅 버튼은 일반적으로 Scaffold에서 사용되며 특정 위치에 배치할 수 있습니다. 하나의 자식 위젯을 포함할 수 있으며, 클릭 이벤트를 받고 색상, 모양 등을 정의할 수 있습니다.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FloatingActionButton 클릭 이벤트",
+      "desc": [
+        "【child】: 자식 위젯   【Widget】",
+        "【tooltip】: 길게 누를 때 표시되는 텍스트   【String】",
+        "【backgroundColor】: 배경색   【Color】",
+        "【foregroundColor】: 전경색   【Color】",
+        "【elevation】: 그림자 깊이   【double】",
+        "【onPressed】: 클릭 이벤트   【Function】"
+      ]
+    },
+    {
+      "file": "node2_mini.dart",
+      "name": "mini 속성",
+      "desc": [
+        "【mini】: 미니 여부   【bool】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+      "name": "shape 속성",
+      "desc": [
+        "【shape】: 모양   【ShapeBorder】"
+      ]
+    }
+  ]
+}

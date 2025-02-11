@@ -1,0 +1,26 @@
+{
+  "id": 244,
+  "name": "EditableText",
+  "localName": "編集可能なテキスト",
+  "info": "編集可能なテキストで、TextFieldの最もコアなコンポーネントです。通常は単独で使用しません。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    2,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "EditableTextの基本使用",
+      "desc": [
+        "【controller】 : コントローラー   【TextEditingController】",
+        "【focusNode】 : フォーカス   【FocusNode】",
+        "【style】 : テキストスタイル   【TextStyle】",
+        "【backgroundCursorColor】 : 背景カーソルカラー   【Color】",
+        "【cursorColor】 : カーソルカラー   【Color】",
+        "上記の5つはEditableTextの必須属性です。その他はTextFieldと同じで、ここでは列挙しません。"
+      ]
+    }
+  ]
+}

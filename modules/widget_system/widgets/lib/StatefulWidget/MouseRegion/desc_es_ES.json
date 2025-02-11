@@ -1,0 +1,20 @@
+{
+  "id": 293,
+  "name": "MouseRegion",
+  "localName": "Región del Ratón",
+  "info": "Componente utilizado para la escucha de eventos del ratón, comúnmente utilizado en plataformas de escritorio y web, puede escuchar eventos de entrada, salida y movimiento del ratón.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de MouseRegion",
+      "desc": [
+        "【onEnter】 : Evento de entrada   【PointerEnterEventListener】",
+        "【onHover】: Evento de movimiento    【PointerHoverEventListener】",
+        "【onExit】: Evento de salida    【PointerExitEventListener】"
+      ]
+    }
+  ]
+}

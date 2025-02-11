@@ -1,0 +1,20 @@
+{
+  "id": 217,
+  "name": "CupertinoPopupSurface",
+  "localName": "Verschwommene Popup-Ebene",
+  "info": "Runde, rechteckige, verschwommene Hintergründe für iOS-Popups, die in Cupertino-stilisierten Dialogen verwendet werden.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoPopupSurface Verwendung",
+      "desc": [
+        "【isSurfacePainted】 : Ob Weiß gemalt wird   【bool】",
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "Testeffekt links isSurfacePainted = false, rechts isSurfacePainted = true"
+      ]
+    }
+  ]
+}

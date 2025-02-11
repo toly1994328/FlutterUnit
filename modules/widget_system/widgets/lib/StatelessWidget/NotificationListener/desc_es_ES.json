@@ -1,0 +1,25 @@
+{
+  "id": 220,
+  "name": "NotificationListener",
+  "localName": "Escuchador de notificaciones",
+  "info": "Puede especificar el subgenérico T de Notification para escuchar cambios en ese tipo. Flutter tiene muchas notificaciones de desplazamiento integradas, por supuesto, también puedes personalizar las notificaciones para escucharlas.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Escuchar OverscrollIndicatorNotification",
+      "desc": [
+        "Esta notificación se devuelve de llamada después de deslizarse hasta la parte superior e inferior, y se juzga si es la parte superior o la inferior a través de la propiedad leading. Además, a través de notification#disallowGlow(), se puede eliminar la sombra azul de deslizamiento superior e inferior."
+      ]
+    },
+    {
+      "file": "node2_update.dart",
+      "name": "Escuchar ScrollUpdateNotification",
+      "desc": [
+        "Durante el proceso de desplazamiento, se devuelven los datos de desplazamiento, y puedes obtener una gran cantidad de datos para operar."
+      ]
+    }
+  ]
+}

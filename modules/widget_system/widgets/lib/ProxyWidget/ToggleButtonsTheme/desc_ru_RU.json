@@ -1,0 +1,18 @@
+{
+  "id": 332,
+  "name": "ToggleButtonsTheme",
+  "localName": "Тема переключателей",
+  "info": "В основном используется для установки стандартных свойств для компонентов ToggleButtons у потомков, также можно получить свойства по умолчанию для ToggleButtons через этот компонент.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование ToggleButtonsTheme",
+      "desc": [
+        "Можно указать свойства данных ToggleButtonsThemeData для установки стандартных стилей для компонентов ToggleButtons у потомков, таких как стиль границы, цвет, оформление и т.д. Также можно использовать ToggleButtonsTheme.of для получения тематических данных ToggleButtons."
+      ]
+    }
+  ]
+}

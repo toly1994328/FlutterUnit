@@ -1,0 +1,34 @@
+{
+  "id": 355,
+  "name": "OutlinedButton",
+  "localName": "枠線ボタン",
+  "info": "Materialスタイルの枠線ボタンで、OutlineButtonと同様の動作をします。スタイルを変更して、枠線、色、影などのプロパティを変更できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    353,
+    27,
+    354
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "OutlinedButtonの基本使用",
+      "desc": [
+        "【child】 : ボタンの内容   【Widget】",
+        "【onPressed】 : クリックイベント   【VoidCallback】",
+        "【onLongPress】 : 長押しイベント   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "OutlinedButtonのスタイル",
+      "desc": [
+        "【style】 : ボタンのスタイル   【ButtonStyle】",
+        "【focusNode】 : フォーカス   【FocusNode】",
+        "【clipBehavior】 : クリップ動作   【Clip】",
+        "【autofocus】 : 自動フォーカス   【bool】"
+      ]
+    }
+  ]
+}

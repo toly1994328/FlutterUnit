@@ -1,0 +1,23 @@
+{
+  "id": 109,
+  "name": "Flexible",
+  "localName": "Composant Flexible",
+  "info": "Peut uniquement être utilisé dans les dispositions Row, Column et Flex, peut imbriquer des enfants pour étendre l'espace résiduel, et peut également spécifier le type d'adaptation.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    94,
+    106
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Flexible",
+      "desc": [
+        "【child】 : Enfant   【Widget】",
+        "【fit】 : Mode d'adaptation*2   【FlexFit】",
+        "【flex】 : Proportion de l'allocation de l'espace résiduel   【int】"
+      ]
+    }
+  ]
+}

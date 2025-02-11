@@ -1,0 +1,36 @@
+{
+  "id": 60,
+  "name": "BottomNavigationBar",
+  "localName": "하단 네비게이션",
+  "info": "하단 네비게이션 바는 일반적으로 Scaffold 컴포넌트의 하단에 사용되며, 색상과 모드를 지정할 수 있고, 클릭 콜백을 받으며, PageView와 함께 페이지 전환 효과를 구현할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BottomNavigationBar 기본 사용",
+      "desc": [
+        "【currentIndex】 : 현재 인덱스   【int】",
+        "【elevation】 : 그림자 깊이   【double】",
+        "【type】 : 타입*2   【BottomNavigationBarType】",
+        "【fixedColor】 : type이 fix일 때의 색상   【Color】",
+        "【backgroundColor】 : 배경색   【Color】",
+        "【iconSize】 : 아이콘 크기   【double】",
+        "【selectedLabelStyle】 : 선택된 텍스트 스타일   【TextStyle】",
+        "【unselectedLabelStyle】 : 선택되지 않은 텍스트 스타일   【TextStyle】",
+        "【showUnselectedLabels】 : 선택되지 않은 라벨 표시   【bool】",
+        "【showSelectedLabels】 : 선택된 라벨 표시   【bool】",
+        "【items】 : 항목   【List<BottomNavigationBarItem>】",
+        "【onTap】 : 클릭 이벤트   【Function(int)】"
+      ]
+    },
+    {
+      "file": "node2_page.dart",
+      "name": "PageView와 함께 페이지 전환",
+      "desc": [
+        "onTap 시 컨트롤러를 사용하여 페이지 전환"
+      ]
+    }
+  ]
+}

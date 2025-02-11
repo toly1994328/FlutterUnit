@@ -1,0 +1,31 @@
+{
+  "id": 34,
+  "name": "Divider",
+  "localName": "水平分割線",
+  "info": "水平分割線、色、高さ、太さ、左右の余白情報を指定できます。リストのアイテム分割線としてよく使用されます。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    35,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Dividerの色と太さ",
+      "desc": [
+        "【color】: 色   【Color】",
+        "【thickness】: 線の太さ   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "Dividerの高さと空白",
+      "desc": [
+        "【indent】: 前の空白の長さ   【double】",
+        "【endIndent】: 後の空白の長さ   【double】",
+        "【height】: 占める高さ   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": 169,
+  "name": "CupertinoTheme",
+  "localName": "Tema iOS",
+  "info": "È possibile ottenere l'oggetto CupertinoThemeData tramite CupertinoTheme.of. È anche possibile specificare un tema da applicare ai componenti discendenti di CupertinoTheme.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    156,
+    168
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Stile di testo-TextTheme",
+      "desc": [
+        "I componenti discendenti possono ottenere e utilizzare i dati del tema tramite CupertinoTheme.of."
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "Uso di CupertinoThemeData",
+      "desc": [
+        "Come con Theme, è possibile condividere attributi specifici tra i discendenti, anche se gli attributi sono meno numerosi. Nota: se è necessario utilizzare un tema, non è possibile ottenerlo nel contesto corrente."
+      ]
+    }
+  ]
+}

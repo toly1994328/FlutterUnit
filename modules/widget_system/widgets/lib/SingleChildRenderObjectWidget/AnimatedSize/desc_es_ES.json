@@ -1,0 +1,22 @@
+{
+  "id": 201,
+  "name": "AnimatedSize",
+  "localName": "Animación de Tamaño",
+  "info": "Cuando el tamaño del componente hijo cambia, se realiza una transición animada. Se pueden especificar propiedades como la duración, la alineación, la curva, vsync, etc.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico de AnimatedSize",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【duration】 : Duración de la animación   【Duration】",
+        "【alignment】 : Alineación   【AlignmentGeometry】",
+        "【curve】 : Curva de la animación   【Duration】",
+        "【vsync】 : vsync   【TickerProvider】"
+      ]
+    }
+  ]
+}

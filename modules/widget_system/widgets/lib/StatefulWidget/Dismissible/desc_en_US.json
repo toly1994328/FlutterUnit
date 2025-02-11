@@ -1,0 +1,31 @@
+{
+  "id": 176,
+  "name": "Dismissible",
+  "localName": "Swipe to Dismiss",
+  "info": "When swiping, the bottom component can be displayed, and the direction of the swipe and the offset of the cross axis can be specified. Receives callbacks for confirming dismissal and when dismissed.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Dismissible",
+      "desc": [
+        "【child】: Child component 【Widget】",
+        "【background】: Left bottom 【Widget】",
+        "【secondaryBackground】: Right bottom 【Widget】",
+        "【key】: Key 【Key】",
+        "【confirmDismiss】: Confirmation callback 【DismissDirectionCallback】",
+        "【onDismissed】: Dismissal callback 【DismissDirectionCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Basic Usage of Dismissible",
+      "desc": [
+        "【direction】: Direction 【DismissDirection】",
+        "【crossAxisEndOffset】: Offset 【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 288,
+  "name": "AnnotatedRegion",
+  "localName": "Annotation Area",
+  "info": "There is a generic type, which is only used in app_bar and nav_bar in the source code to change the state variables and navigation bar styles. The generic type is usually SystemUiOverlayStyle.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnnotatedRegion Changes State Variables and Styles",
+      "desc": [
+        "【value】 : value   【T】",
+        "【sized】 : whether to provide size   【bool】",
+        "【child】 : child component   【Widget】"
+      ]
+    }
+  ]
+}

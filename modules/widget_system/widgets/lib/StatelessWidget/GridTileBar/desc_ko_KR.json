@@ -1,0 +1,22 @@
+{
+  "id": 20,
+  "name": "GridTileBar",
+  "localName": "그리드 타일 헤더",
+  "info": "Flutter에서 제공하는 일반적인 헤더 구조로, 왼쪽, 중앙, 오른쪽 구조를 가지고 있습니다. 해당 위치에 컴포넌트를 삽입할 수 있어 특정 항목에 쉽게 대응할 수 있으며, ListTile에 비해 속성이 적습니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridTileBar의 기본적인 표현은 다음과 같습니다",
+      "desc": [
+        "【leading】: 왼쪽 컴포넌트   【Widget】",
+        "【trailing】: 오른쪽 컴포넌트   【Widget】",
+        "【title】: 중앙 상단 컴포넌트   【Widget】",
+        "【subtitle】: 중앙 하단 컴포넌트   【Widget】",
+        "【backgroundColor】: 배경색   【Color】"
+      ]
+    }
+  ]
+}

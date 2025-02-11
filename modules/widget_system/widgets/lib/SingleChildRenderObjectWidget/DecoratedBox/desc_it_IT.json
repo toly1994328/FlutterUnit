@@ -1,0 +1,55 @@
+{
+  "id": 70,
+  "name": "DecoratedBox",
+  "localName": "Scatola decorata",
+  "info": "Può contenere un componente figlio e decorarlo. La proprietà principale è decoration, che può impostare bordi, gradienti, ombre, immagini di sfondo, ecc.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di DecoratedBox",
+      "desc": [
+        "【decoration】 : oggetto decorativo   【Decoration】",
+        "【position】 : colore in primo piano (sinistra)/colore di sfondo (destra)   【DecorationPosition】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Decorazione di forma e immagine di DecoratedBox",
+      "desc": [
+        "【shape】 : forma   【BoxShape】",
+        "【image】 : immagine di sfondo   【DecorationImage】,"
+      ]
+    },
+    {
+      "file": "node3_border.dart",
+      "name": "Decorazione del bordo di DecoratedBox",
+      "desc": [
+        "【border】 : bordo   【BoxBorder】,"
+      ]
+    },
+    {
+      "file": "node4_shape.dart",
+      "name": "Decorazione della forma di DecoratedBox",
+      "desc": [
+        "È possibile specificare la forma del bordo tramite l'oggetto ShapeDecoration,"
+      ]
+    },
+    {
+      "file": "node5_line.dart",
+      "name": "Decorazione della linea di base di DecoratedBox",
+      "desc": [
+        "È possibile specificare la linea di base tramite l'oggetto UnderlineTabIndicator,"
+      ]
+    },
+    {
+      "file": "node6_flutterLogo.dart",
+      "name": "Decorazione FlutterLogoDecoration",
+      "desc": [
+        "È possibile specificare la decorazione dell'icona Flutter tramite l'oggetto FlutterLogoDecoration (non ha un grande utilità),"
+      ]
+    }
+  ]
+}

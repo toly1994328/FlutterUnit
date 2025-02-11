@@ -1,0 +1,38 @@
+{
+  "id": 237,
+  "name": "CarouselView",
+  "localName": "Vista Carosello",
+  "info": "Un componente carosello conforme alle specifiche di Material Design. Visualizza un elenco di elementi scorrevoli, ciascuno dei quali può ridimensionarsi dinamicamente in base al layout selezionato.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    253,
+    340,
+    160
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di base di CarouselView",
+      "desc": [
+        "【itemExtent】 : Dimensione forzata nella direzione principale  【double】",
+        "【shrinkExtent】: Dimensione minima dell'elemento nella direzione principale durante lo scorrimento 【double】",
+        "【scrollDirection】 : Direzione di scorrimento   【Axis?】",
+        "【children】: Lista dei componenti figli 【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Configurazione dello stile di CarouselView",
+      "desc": [
+        "【padding】 : Spaziatura interna   【EdgeInsets? 】",
+        "【backgroundColor】 : Colore di sfondo   【Color? 】",
+        "【elevation】 : Profondità dell'ombra   【double?】",
+        "【shape】 : Forma   【ShapeBorder?】",
+        "【controller】 : Controller   【CarouselController?】",
+        "【reverse】 : Scorrimento inverso   【bool】",
+        "【onTap】 : Evento di clic   【ValueChanged<int>? 】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": 358,
+  "name": "NavigationRail",
+  "localName": "Navigazione laterale",
+  "info": "Barra di navigazione laterale, generalmente utilizzata per il menu di navigazione desktop. Supporta l'espansione e la contrazione delle aree, e consente di specificare i componenti nelle posizioni iniziali e finali.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di base di NavigationRail",
+      "desc": [
+        "【destinations】 : Lista dei dati del menu   【List<NavigationRailDestination>】",
+        "【selectedIndex】: Indice attivo    【int】",
+        "【labelType】: Stile dell'etichetta    【NavigationRailLabelType?】",
+        "【onDestinationSelected】: Evento di clic sul menu    【ValueChanged<int>?】"
+      ]
+    },
+    {
+      "file": "node2_extend.dart",
+      "name": "Effetto di collasso di NavigationRail",
+      "desc": [
+        "【elevation】 : Profondità dell'ombra   【double】",
+        "【leading】: Componente iniziale    【Widget?】",
+        "【trailing】: Componente finale    【Widget?】",
+        "【extended】: Se espanso    【bool】"
+      ]
+    },
+    {
+      "file": "node3_dark.dart",
+      "name": "Stile di NavigationRail",
+      "desc": [
+        "【useIndicator】 : Se mostrare l'indicatore   【bool】",
+        "【indicatorColor】: Colore dell'indicatore    【Color?】",
+        "【backgroundColor】: Colore di sfondo    【Color?】",
+        "【labelType】: Stile dell'etichetta    【NavigationRailLabelType?】",
+        "【selectedIconTheme】: Stile dell'icona selezionata    【IconThemeData?】",
+        "【unselectedIconTheme】: Stile dell'icona non selezionata    【IconThemeData?】",
+        "【selectedLabelTextStyle】: Stile del testo selezionato    【TextStyle?】",
+        "【unselectedLabelTextStyle】: Stile del testo non selezionato    【TextStyle?】",
+        "【minExtendedWidth】: Larghezza espansa    【double?】",
+        "【minWidth】: Larghezza non espansa    【double?】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 236,
+  "name": "WidgetsApp",
+  "localName": "Widget-Anwendung",
+  "info": "Sammelt die Komponenten, die eine Anwendung benötigt, wie Routing, Sprache, einige Debug-Schalter usw. Es ist auch die Kernkomponente zur Implementierung von MaterialApp und CupertinoApp.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    65,
+    156
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von WidgetsApp",
+      "desc": [
+        "【pageRouteBuilder】 : *Routing-Konstruktor   【PageRouteFactory】",
+        "【color】: *Farbe    【Color】",
+        "【debugShowWidgetInspector】: Ob der Widget-Inspektor angezeigt werden soll   【bool】",
+        "Andere Eigenschaften sind im Wesentlichen dieselben wie bei MaterialApp, siehe dort für weitere Details."
+      ]
+    }
+  ]
+}

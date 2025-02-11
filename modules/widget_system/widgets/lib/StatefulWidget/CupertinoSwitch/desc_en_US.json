@@ -1,0 +1,20 @@
+{
+  "id": 41,
+  "name": "CupertinoSwitch",
+  "localName": "iOS Switch",
+  "info": "An iOS-style toggle switch, commonly used for configuration toggles, can specify colors, and receives state change callbacks.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoSwitch",
+      "desc": [
+        "【value】: Whether it is selected 【double】",
+        "【activeColor】: Active state color 【Color】",
+        "【onChanged】: Toggle callback 【Function(double)】"
+      ]
+    }
+  ]
+}

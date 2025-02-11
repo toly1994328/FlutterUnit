@@ -1,0 +1,19 @@
+{
+  "id": 218,
+  "name": "CupertinoNavigationBarBackButton",
+  "localName": "iOS-Stil Zurück-Button",
+  "info": "Cupertino-Stil Navigationsleiste Zurück-Button, kann Farbe und Klick-Ereignis angeben, wird normalerweise nicht allein verwendet.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung des Zurück-Buttons",
+      "desc": [
+        "【onPressed】 : Klick-Ereignis   【VoidCallback】",
+        "【color】: Farbe    【Color】"
+      ]
+    }
+  ]
+}

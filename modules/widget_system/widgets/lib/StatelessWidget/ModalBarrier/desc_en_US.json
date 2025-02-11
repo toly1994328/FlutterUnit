@@ -1,0 +1,19 @@
+{
+  "id": 212,
+  "name": "ModalBarrier",
+  "localName": "Modal Barrier",
+  "info": "Equivalent to a curtain layer, preventing users from interacting with the Widget behind it. It can be determined by dismissible whether to trigger the back stack when clicked. Used in the source code for Dialog related components.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to ModalBarrier",
+      "desc": [
+        "【dismissible】: Whether to return when clicked 【bool】",
+        "【color】: Color 【Color】"
+      ]
+    }
+  ]
+}

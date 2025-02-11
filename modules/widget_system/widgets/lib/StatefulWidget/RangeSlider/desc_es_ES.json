@@ -1,0 +1,27 @@
+{
+  "id": 44,
+  "name": "RangeSlider",
+  "localName": "Control deslizante de rango",
+  "info": "Componente de control deslizante de rango, compatible con arrastre de dos puntos para obtener el rango entre ellos. Permite especificar colores, número de segmentos y etiquetas mostradas, y recibe una devolución de llamada para cambios de progreso.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de RangeSlider",
+      "desc": [
+        "【values】 : valores   【RangeValues】",
+        "【min】 : valor mínimo   【double】",
+        "【max】 : valor máximo   【double】",
+        "【divisions】 : número de divisiones   【int】",
+        "【label】 : texto de la burbuja de sugerencia   【String】",
+        "【activeColor】 : color activo   【Color】",
+        "【inactiveColor】 : color inactivo   【Color】",
+        "【onChangeStart】 : escucha al comenzar a deslizar   【Function(RangeValues)】",
+        "【onChangeEnd】 : escucha al finalizar el deslizamiento   【Function(RangeValues)】",
+        "【onChanged】 : devolución de llamada al cambiar   【Function(RangeValues)】"
+      ]
+    }
+  ]
+}

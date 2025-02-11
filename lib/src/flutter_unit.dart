@@ -9,7 +9,7 @@ import 'package:l10n/l10n.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:widget_module/blocs/blocs.dart';
-
+import 'package:note/note.dart';
 import 'l10n/gen/app_l10n.dart';
 import 'navigation/router/app_route.dart';
 
@@ -61,6 +61,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> {
             GlobalMaterialLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
+            FlutterQuillLocalizations.delegate,
           ],
           supportedLocales: l10nLocales,
           locale: state.language.locale,

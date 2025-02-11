@@ -1,0 +1,24 @@
+{
+  "id": 199,
+  "name": "TextFormField",
+  "localName": "텍스트 폼 입력",
+  "info": "TextField 속성과 기본적으로 동일하며, 여기에 필드 검증 및 제출 콜백이 추가되었습니다. FormState의 save는 onSaved 콜백을 트리거합니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    54,
+    198
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TextFormField 기본 사용",
+      "desc": [
+        "기본 속성은 TextField와 동일하며, 자세한 내용은 해당 항목을 참조하세요",
+        "【validator】 : 검증 함수   【FormFieldValidator<String> 】",
+        "【onFieldSubmitted】 : 제출 콜백   【ValueChanged<String>】",
+        "【onSaved】 : 폼 save 시 콜백  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

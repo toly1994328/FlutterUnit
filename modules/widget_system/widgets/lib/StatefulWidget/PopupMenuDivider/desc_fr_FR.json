@@ -1,0 +1,21 @@
+{
+  "id": 174,
+  "name": "PopupMenuDivider",
+  "localName": "Ligne de séparation du menu contextuel",
+  "info": "Ligne de séparation pour PopupMenuButton, généralement pas utilisée seule, peut spécifier la hauteur.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    56,
+    34
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de PopupMenuDivider",
+      "desc": [
+        "【height】 : hauteur  【double】"
+      ]
+    }
+  ]
+}

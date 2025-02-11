@@ -1,0 +1,31 @@
+{
+  "id": 260,
+  "name": "AnimatedFractionallySizedBox",
+  "localName": "アニメーションフラクショナリーボックス",
+  "info": "FractionallySizedBox のアニメーションバージョンで、widthFactor または heightFactor が変化したとき、および alignment が変更されたときに、指定された期間内で子コンポーネントの目標サイズと位置に自動的にスムーズに遷移します。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    82,
+    120,
+    123,
+    121
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "アニメーション遷移効果",
+      "desc": [
+        "このケースでは、クリックすると heightFactor、widthFactor、alignment パラメータが変更され、アニメーションの動きを確認できます。",
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーション時間   【Duration】",
+        "【onEnd】 : アニメーション終了コールバック   【Function()】",
+        "【alignment】 : アニメーション変換中心   【Alignment】",
+        "【curve】 : アニメーションカーブ   【Duration】",
+        "【heightFactor】 : 高さ分率   【double?】",
+        "【widthFactor】 : 幅分率   【double?】",
+        "【turns】 : 回転量   【double】"
+      ]
+    }
+  ]
+}

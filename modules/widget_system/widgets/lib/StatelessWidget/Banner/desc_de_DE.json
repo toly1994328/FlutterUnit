@@ -1,0 +1,22 @@
+{
+  "id": 5,
+  "name": "Banner",
+  "localName": "Banner-Komponente",
+  "info": "Komponente zur Anzeige von Bannern. Kann eine Unterkomponente aufnehmen, ermöglicht die Auswahl der Position für das Banner und den Text sowie die Einstellung der Farbe.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Zur Anzeige eines Banners",
+      "desc": [
+        "【message】 : Angezeigte Textnachricht  【String】",
+        "【location】 : Position*4  【BannerLocation】",
+        "【color】: Bannerfarbe   【Color】",
+        "【child】: Kind   【Widget】",
+        "【textStyle】: Textstil   【TextStyle】"
+      ]
+    }
+  ]
+}

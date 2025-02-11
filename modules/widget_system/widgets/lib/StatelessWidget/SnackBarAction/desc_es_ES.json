@@ -1,0 +1,21 @@
+{
+  "id": 141,
+  "name": "SnackBarAction",
+  "localName": "Botón de barra de información",
+  "info": "Generalmente se usa solo en SnackBar, acepta eventos de clic. Después de hacer clic una vez, el botón se deshabilitará, se puede especificar el color y el color cuando está deshabilitado.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SnackBarAction",
+      "desc": [
+        "【label】 :  Etiqueta  【String】",
+        "【textColor】 :  Color del texto   【Color】",
+        "【disabledTextColor】 :  Color del texto deshabilitado   【Color】",
+        "【onPressed】 :  Callback de clic  【Function()】"
+      ]
+    }
+  ]
+}

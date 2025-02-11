@@ -1,0 +1,27 @@
+{
+  "id": 331,
+  "name": "SliderTheme",
+  "localName": "Stile del cursore",
+  "info": "Può contenere un figlio e specifica lo stile predefinito per i cursori discendenti. Comunemente utilizzato per unificare lo stile dei cursori, evitando di impostarli uno per uno, e consente anche la personalizzazione dello stile del cursore.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di SliderTheme",
+      "desc": [
+        "È possibile ottenere l'oggetto dati del tema del cursore tramite SliderTheme.of, che contiene numerose proprietà per la configurazione del cursore.",
+        "È possibile impostare uno stile predefinito per i componenti del pulsante [discendenti] di ButtonTheme, inclusi colore, forma, dimensioni, ecc."
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Personalizzazione dello stile del cursore con SliderTheme",
+      "desc": [
+        "È possibile personalizzare lo stile del cursore tramite thumbShape e valueIndicatorShape.",
+        "Nota: Questo esempio si riferisce a SlideDemo in flutter-gallery"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 220,
+  "name": "NotificationListener",
+  "localName": "Notification Listener",
+  "info": "You can specify the sub-generic type T of Notification to listen for changes of that type. Flutter has many built-in sliding Notifications, and of course, you can also customize Notifications for listening.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Listen to OverscrollIndicatorNotification",
+      "desc": [
+        "This notification is called back when sliding to the top and bottom, and it is judged whether it is the top or bottom by the leading property. In addition, you can remove the blue shadow at the top and bottom sliding through notification#disallowGlow()."
+      ]
+    },
+    {
+      "file": "node2_update.dart",
+      "name": "Listen to ScrollUpdateNotification",
+      "desc": [
+        "During the sliding process, the sliding data is called back, and you can obtain a large amount of data to operate."
+      ]
+    }
+  ]
+}

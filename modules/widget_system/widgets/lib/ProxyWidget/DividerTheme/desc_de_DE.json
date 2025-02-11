@@ -1,0 +1,22 @@
+{
+  "id": 329,
+  "name": "DividerTheme",
+  "localName": "Trennlinienstil",
+  "info": "Wird hauptsächlich verwendet, um standardmäßige Attribute für Divider-Typ-Komponenten für Nachkommen festzulegen. Es kann auch verwendet werden, um die Standardattribute des Divider zu erhalten.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    34,
+    35
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DividerTheme Verwendung",
+      "desc": [
+        "Die Attributeparameter ähneln denen von Divider. Die Trennlinienthemendaten können über DividerTheme.of abgerufen werden.",
+        "Es kann auch der Standardstil für Trennlinien von DividerTheme [Nachkommen] festgelegt werden, einschließlich Farbe, Dicke, Höhe usw."
+      ]
+    }
+  ]
+}

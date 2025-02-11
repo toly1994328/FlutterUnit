@@ -1,0 +1,22 @@
+{
+  "id": 271,
+  "name": "SliverCrossAxisExpanded",
+  "localName": "クロス軸拡張スライバー",
+  "info": "スライバーコンポーネントのクロス軸方向に、flex比率を指定してスライバーのサイズを制限します。",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    270
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "SliverCrossAxisExpanded 基本使用",
+      "desc": [
+        "【flex】 : 比率   【int】",
+        "【sliver】 : 子コンポーネント   【Widget?】"
+      ]
+    }
+  ]
+}

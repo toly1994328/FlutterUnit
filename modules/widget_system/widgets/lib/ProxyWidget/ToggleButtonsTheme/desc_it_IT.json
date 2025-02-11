@@ -1,0 +1,18 @@
+{
+  "id": 332,
+  "name": "ToggleButtonsTheme",
+  "localName": "Tema dei pulsanti di commutazione",
+  "info": "Utilizzato principalmente per impostare le proprietà predefinite per i componenti ToggleButtons dei discendenti. È anche possibile ottenere le proprietà predefinite dei ToggleButtons tramite questo componente.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di ToggleButtonsTheme",
+      "desc": [
+        "È possibile specificare le proprietà dei dati ToggleButtonsThemeData per impostare lo stile predefinito per i componenti ToggleButtons dei discendenti, come lo stile del bordo, il colore, la decorazione, ecc. È anche possibile utilizzare ToggleButtonsTheme.of per ottenere i dati del tema dei ToggleButtons."
+      ]
+    }
+  ]
+}

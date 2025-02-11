@@ -1,0 +1,25 @@
+{
+  "id": 252,
+  "name": "DraggableScrollableSheet",
+  "localName": "Draggable Sheet",
+  "info": "A sheet that can be dragged and scrolled, with the ability to specify the maximum, minimum, and initial fractions within the scroll range. The builder constructor needs to return a scrollable component.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    221,
+    142
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of DraggableScrollableSheet",
+      "desc": [
+        "【initialChildSize】: Initial fraction   【double】",
+        "【minChildSize】: Minimum fraction   【double】",
+        "【maxChildSize】: Maximum fraction   【double】",
+        "【builder】: Scrollable component builder   【ScrollableWidgetBuilder】",
+        "【expand】: Whether to expand   【bool】"
+      ]
+    }
+  ]
+}

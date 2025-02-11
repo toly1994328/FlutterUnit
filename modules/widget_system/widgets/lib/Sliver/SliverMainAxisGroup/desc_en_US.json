@@ -1,0 +1,19 @@
+{
+  "id": 268,
+  "name": "SliverMainAxisGroup",
+  "localName": "Main Axis Sliver Group",
+  "info": "Can accommodate multiple Sliver components, treating them as a group in the sliding main axis direction.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Basic Usage of SliverMainAxisGroup",
+      "desc": [
+        "【slivers】: List of child components 【List<Widget>】",
+        "Can be combined with SliverPersistentHeader to achieve grouping and sticky header effects."
+      ]
+    }
+  ]
+}

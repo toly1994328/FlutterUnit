@@ -1,0 +1,24 @@
+{
+  "id": 326,
+  "name": "ButtonTheme",
+  "localName": "Schaltflächendesign",
+  "info": "Wird hauptsächlich verwendet, um Standardattribute für nachfolgende Schaltflächenkomponenten festzulegen. Es kann auch verwendet werden, um die Standardattribute der Schaltfläche zu erhalten.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Verwendung von ButtonTheme",
+      "desc": [
+        "Die Attribute sind die gleichen wie bei MaterialButton. Die Schaltflächendesign-Daten können über ButtonTheme.of abgerufen werden.",
+        "Es kann auch das Standarddesign für Schaltflächenkomponenten, die Nachkommen von ButtonTheme sind, festgelegt werden, einschließlich Farbe, Form, Größe usw."
+      ]
+    }
+  ]
+}

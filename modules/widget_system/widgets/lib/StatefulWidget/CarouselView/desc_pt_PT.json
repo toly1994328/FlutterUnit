@@ -1,0 +1,38 @@
+{
+  "id": 237,
+  "name": "CarouselView",
+  "localName": "Visualização de Carrossel",
+  "info": "Um componente de carrossel que segue as especificações do Material Design. Exibe uma lista de itens roláveis, onde cada item pode ser redimensionado dinamicamente com base no layout selecionado.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    253,
+    340,
+    160
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do CarouselView",
+      "desc": [
+        "【itemExtent】 : Tamanho fixo na direção do eixo principal  【double】",
+        "【shrinkExtent】: Tamanho mínimo do item na direção do eixo principal durante o deslize 【double】",
+        "【scrollDirection】 : Direção do deslize   【Axis?】",
+        "【children】: Lista de componentes filhos 【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Configuração de Estilo do CarouselView",
+      "desc": [
+        "【padding】 : Preenchimento interno   【EdgeInsets? 】",
+        "【backgroundColor】 : Cor de fundo   【Color? 】",
+        "【elevation】 : Profundidade da sombra   【double?】",
+        "【shape】 : Forma   【ShapeBorder?】",
+        "【controller】 : Controlador   【CarouselController?】",
+        "【reverse】 : Deslize reverso   【bool】",
+        "【onTap】 : Evento de clique   【ValueChanged<int>? 】"
+      ]
+    }
+  ]
+}

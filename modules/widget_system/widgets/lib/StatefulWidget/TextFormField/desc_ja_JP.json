@@ -1,0 +1,24 @@
+{
+  "id": 199,
+  "name": "TextFormField",
+  "localName": "テキストフォーム入力",
+  "info": "TextFieldの属性と基本的に同じで、それに基づいてフィールドの検証と送信のコールバックが追加されています。FormStateのsaveはonSavedコールバックをトリガーします。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    54,
+    198
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TextFormFieldの基本使用",
+      "desc": [
+        "基本属性はTextFieldと一致します。詳細はそちらをご覧ください",
+        "【validator】 : 検証関数   【FormFieldValidator<String> 】",
+        "【onFieldSubmitted】 : 送信コールバック   【ValueChanged<String>】",
+        "【onSaved】 : フォームsave時のコールバック  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

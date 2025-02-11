@@ -1,0 +1,21 @@
+{
+  "id": 304,
+  "name": "SliverLayoutBuilder",
+  "localName": "Sliverレイアウトビルダー",
+  "info": "Sliverファミリーの一員で、スライド中にコールバックされるSliverConstraintsオブジェクトを使用して子コンポーネントを構築できます。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverLayoutBuilderの基本使用",
+      "desc": [
+        "【builder】 : コンポーネントビルダー   【SliverLayoutWidgetBuilder】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 127,
+  "name": "AlertDialog",
+  "localName": "Cuadro de diálogo emergente",
+  "info": "Una estructura de diálogo genérica que permite especificar componentes en la parte superior, media e inferior. Tiene propiedades como el estilo de texto y los márgenes del título y el contenido, la profundidad de la sombra, la forma, etc.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de AlertDialog",
+      "desc": [
+        "【title】 : Componente superior   【Widget】",
+        "【content】 : Componente de contenido  【Widget】",
+        "【titleTextStyle】 : Estilo de texto del título  【TextStyle】",
+        "【contentTextStyle】 : Estilo de texto del contenido  【TextStyle】",
+        "【titlePadding】 : Relleno superior  【EdgeInsetsGeometry】",
+        "【contentPadding】 : Relleno del contenido  【EdgeInsetsGeometry】",
+        "【actions】 : Lista de componentes en la esquina inferior derecha  【List<Widget>】",
+        "【backgroundColor】 : Color de fondo  【Color】",
+        "【elevation】 : Profundidad de la sombra  【double】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

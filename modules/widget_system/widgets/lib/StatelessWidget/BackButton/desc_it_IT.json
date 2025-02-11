@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "Pulsante Indietro",
+  "info": "Un IconButton con funzionalità di ritorno, l'icona di ritorno non può essere modificata. Si comporta diversamente in iOS e Android.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Proprietà del BackButton",
+      "desc": [
+        "【color】: Colore   【Color】",
+        "【style】: Stile del pulsante   【ButtonStyle?】",
+        "【onPressed】: Evento di clic   【Function】",
+        " Se onPressed è vuoto, uscirà dallo stack corrente"
+      ]
+    }
+  ]
+}

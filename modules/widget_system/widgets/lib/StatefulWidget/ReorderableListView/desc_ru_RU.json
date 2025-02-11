@@ -1,0 +1,29 @@
+{
+  "id": 177,
+  "name": "ReorderableListView",
+  "localName": "Переупорядочиваемый список",
+  "info": "ListView, который можно упорядочивать с помощью длительного нажатия, можно указать направление прокрутки, обратное направление, контроллер прокрутки и другие свойства.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование ReorderableListView",
+      "desc": [
+        "【children】 : Список дочерних компонентов   【List<Widget>】",
+        "【header】 : Верхний компонент   【Widget】",
+        "【padding】 : Внутренний отступ   【EdgeInsets】",
+        "【onReorder】 : Обратный вызов при переупорядочивании  【ReorderCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Направление прокрутки ReorderableListView",
+      "desc": [
+        "【scrollDirection】 : Направление прокрутки   【Axis】",
+        "【reverse】 : Обратное направление  【bool】"
+      ]
+    }
+  ]
+}

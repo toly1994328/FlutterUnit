@@ -1,0 +1,22 @@
+{
+  "id": 48,
+  "name": "CupertinoActivityIndicator",
+  "localName": "Indicatore iOS",
+  "info": "Componente di caricamento in stile iOS, può specificare il raggio e se ruotare.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    46,
+    47
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CupertinoActivityIndicator",
+      "desc": [
+        "【animating】 : Se l'animazione di caricamento è attiva   【bool】",
+        "【radius】 : Raggio   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 250,
+  "name": "GlowingOverscrollIndicator",
+  "localName": "Indicatore di scorrimento oltre i limiti",
+  "info": "Il bambino è una lista scorrevole, con un effetto indicatore quando si scorre verso l'alto e verso il basso, è possibile specificare il colore, ma non è molto utile. È l'effetto di scorrimento predefinito per i sistemi Android e Fuchsia.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base",
+      "desc": [
+        "【showLeading】 : Se la parte superiore è attiva   【bool】",
+        "【showTrailing】 : Se la parte inferiore è attiva   【bool】",
+        "【axisDirection】 : Direzione dell'asse   【AxisDirection】",
+        "【color】 : Colore   【Color】",
+        "【child】 : Componente figlio   【Widget】"
+      ]
+    }
+  ]
+}

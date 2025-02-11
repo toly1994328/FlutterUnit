@@ -1,0 +1,22 @@
+{
+  "id": 130,
+  "name": "AboutDialog",
+  "localName": "Über Dialog",
+  "info": "Ein Dialogfeld zur Anwendungsbeschreibung, in dem das Anwendungssymbol, der Anwendungsname, die Anwendungsversionsnummer und andere Informationen sowie eine Liste von internen Unterkomponenten angegeben werden können. Durch Klicken auf die Schaltfläche auf der linken Seite gelangen Sie zur Zertifikatsseite.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von AboutDialog",
+      "desc": [
+        "【applicationIcon】 : Symbol oben links   【Widget】",
+        "【applicationVersion】 : Versionsnummer  【String】",
+        "【applicationName】 : Anwendungsname  【String】",
+        "【applicationLegalese】 : Anwendungsrecht  【String】",
+        "【children】 : Liste der Unterkomponenten   【List<Widget>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 256,
+  "name": "CupertinoSlidingSegmentedControl",
+  "localName": "Schede scorrevoli iOS",
+  "info": "Schede scorrevoli in stile iOS, supportano il passaggio tramite clic e scorrimento. È possibile specificare proprietà come il colore delle schede, il colore di sfondo, i margini, ecc.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    33,
+    262
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base delle schede scorrevoli iOS",
+      "desc": [
+        "【children】 : Mappa dei componenti   【Map<T, Widget>】",
+        "【onValueChanged】 : Callback per il cambio di valore   【ValueChanged<T>】",
+        "【groupValue】 : Valore selezionato   【T】",
+        "【thumbColor】 : Colore selezionato   【Color】",
+        "【backgroundColor】 : Colore di sfondo   【Color】",
+        "【padding】 : Spaziatura interna   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

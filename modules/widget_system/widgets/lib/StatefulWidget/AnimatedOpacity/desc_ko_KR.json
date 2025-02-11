@@ -1,0 +1,25 @@
+{
+  "id": 118,
+  "name": "AnimatedOpacity",
+  "localName": "투명도 애니메이션",
+  "info": "자식 위젯에 Opacity(투명도) 애니메이션을 적용할 수 있으며, 지속 시간과 곡선을 지정할 수 있고 애니메이션 종료 이벤트가 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    89,
+    73
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedOpacity 기본 사용법",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【duration】 : 애니메이션 지속 시간   【Duration】",
+        "【onEnd】 : 애니메이션 종료 콜백   【Function()】",
+        "【curve】 : 애니메이션 곡선   【Duration】",
+        "【opacity】 : 투명도   【double】"
+      ]
+    }
+  ]
+}

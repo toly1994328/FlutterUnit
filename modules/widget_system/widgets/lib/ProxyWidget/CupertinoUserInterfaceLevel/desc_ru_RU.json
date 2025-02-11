@@ -1,0 +1,18 @@
+{
+  "id": 337,
+  "name": "CupertinoUserInterfaceLevel",
+  "localName": "Уровень пользовательского интерфейса",
+  "info": "Концепция в ios, уровень видимости контента UIUserInterfaceLevel, разделяется на base и elevated. Как InheritedWidget, в основном используется для обмена этими данными.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Введение в CupertinoUserInterfaceLevel",
+      "desc": [
+        "CupertinoUserInterfaceLevel.of(context) может получить данные CupertinoUserInterfaceLevelData. Также можно использовать этот компонент для настройки и обмена этих данных с поддеревом. Подробнее о данных см.: https://developer.apple.com/documentation/uikit/uiuserinterfacelevel"
+      ]
+    }
+  ]
+}

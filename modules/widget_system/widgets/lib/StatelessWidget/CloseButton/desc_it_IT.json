@@ -1,0 +1,21 @@
+{
+  "id": 32,
+  "name": "CloseButton",
+  "localName": "Pulsante di chiusura",
+  "info": "Un IconButton con funzionalità di chiusura, l'icona di chiusura non può essere modificata.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Evento di clic del Pulsante di chiusura",
+      "desc": [
+        "【onPressed】: Evento di clic  【VoidCallback?】",
+        "【style】: Stile del pulsante   【ButtonStyle?】",
+        "【color】: Colore   【Color】",
+        "Quando onPressed è vuoto, il clic chiude l'interfaccia corrente."
+      ]
+    }
+  ]
+}

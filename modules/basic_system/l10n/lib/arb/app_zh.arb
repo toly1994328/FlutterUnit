@@ -5,13 +5,10 @@
   "treasureTools": "工具宝箱",
   "collectCollection": "收藏集录",
   "essentialCollection": "要点集录",
-
   "homeAccount": "应用信息",
-
   "homeAccountTabInfo": "关于应用",
   "homeAccountTabMe": "联系本王",
   "homeAccountSupport": "支持项目",
-
   "searchWidget": "搜索组件",
   "stateless":"无态",
   "stateful":"有态",
@@ -25,12 +22,10 @@
   "homeTabKnowledge": "知识",
   "homeTabTools": "工具",
   "homeTabMine": "我的",
-
   "dataManagement":"数据管理",
   "userCollection":"我的收藏",
   "aboutApplications":"关于应用",
   "contactThisKing":"联系本王",
-
   "appSettings":"应用设置",
   "darkMode":"深色模式",
   "themeColorSetting":"主题色设置",

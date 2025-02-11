@@ -1,0 +1,20 @@
+{
+  "id": 241,
+  "name": "UndoHistory",
+  "localName": "Cronologia Annulla",
+  "info": "Riceve un ValueNotifier per valori osservabili, fornendo funzionalità di annullamento/ripetizione per tale valore; utilizzato nel codice sorgente del componente TextField.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilizzo di UndoHistory in TextField",
+      "desc": [
+        "In questo caso, attraverso un pulsante esterno, si controlla la funzione di annullamento/ripetizione di TextField. Il parametro undoController può essere passato come oggetto UndoHistoryController, utilizzato per controllare e influenzare il contenuto del testo inserito."
+      ]
+    }
+  ]
+}

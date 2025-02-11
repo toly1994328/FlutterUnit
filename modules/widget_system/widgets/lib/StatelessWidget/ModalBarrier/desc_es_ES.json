@@ -1,0 +1,19 @@
+{
+  "id": 212,
+  "name": "ModalBarrier",
+  "localName": "Barrera Modal",
+  "info": "Equivale a una capa de cortina que evita que el usuario interactúe con los Widgets detrás de ella. Se puede decidir si se activa la pila de retorno al hacer clic a través de dismissible. En el código fuente, se utiliza para componentes relacionados con Dialog.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introducción a ModalBarrier",
+      "desc": [
+        "【dismissible】: Si se retorna al hacer clic   【bool】",
+        "【color】: Color   【Color】"
+      ]
+    }
+  ]
+}

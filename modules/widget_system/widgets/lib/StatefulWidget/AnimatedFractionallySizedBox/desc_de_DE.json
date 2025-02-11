@@ -1,0 +1,31 @@
+{
+  "id": 260,
+  "name": "AnimatedFractionallySizedBox",
+  "localName": "Animierte Bruchteilbox",
+  "info": "Animierte Version von FractionallySizedBox, die sich automatisch und sanft innerhalb der angegebenen Dauer zur Zielgröße und Position des Kindelements übergeht, wenn sich widthFactor oder heightFactor ändern sowie wenn sich die Ausrichtung ändert.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    82,
+    120,
+    123,
+    121
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Animationsübergangseffekt",
+      "desc": [
+        "In diesem Fall werden die Parameter heightFactor, widthFactor und alignment beim Klicken geändert, um den Animationseffekt zu sehen.",
+        "【child】 : Kindkomponente   【Widget】",
+        "【duration】 : Animationsdauer   【Duration】",
+        "【onEnd】 : Rückruf bei Animationsende   【Function()】",
+        "【alignment】 : Animationszentrum   【Alignment】",
+        "【curve】 : Animationskurve   【Duration】",
+        "【heightFactor】 : Höhenfaktor   【double?】",
+        "【widthFactor】 : Breitenfaktor   【double?】",
+        "【turns】 : Drehungsmenge   【double】"
+      ]
+    }
+  ]
+}

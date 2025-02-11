@@ -1,0 +1,21 @@
+{
+  "id": 126,
+  "name": "Dialog",
+  "localName": "Finestra di dialogo",
+  "info": "Il pannello di dialogo più semplice, contiene un componente di contenuto, può specificare proprietà come profondità dell'ombra, colore di sfondo, forma, ecc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base di Dialog",
+      "desc": [
+        "【child】 : Dati dell'icona animata   【Widget】",
+        "【elevation】 : Profondità dell'ombra  【double】",
+        "【backgroundColor】 : Colore di sfondo  【Color】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

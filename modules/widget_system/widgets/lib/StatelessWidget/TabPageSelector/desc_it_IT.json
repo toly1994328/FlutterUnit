@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "Selettore di scorrimento delle schede",
+  "info": "Utilizzato solitamente come indicatore insieme a TabBarView, condividendo un TabController. È possibile specificare colore, dimensione e colore selezionato.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base di TabPageSelector",
+      "desc": [
+        "【controller】 : Controller   【TabController】",
+        "【indicatorSize】: Dimensione dell'indicatore   【double】",
+        "【selectedColor】: Colore selezionato   【Color】",
+        "【color】: Colore    【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 284,
+  "name": "KeyboardListener",
+  "localName": "Écouteur de clavier",
+  "info": "Après avoir obtenu le focus, écoute les événements de touche du clavier via onKeyEvent.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    282,
+    283
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Écouter les événements du clavier",
+      "desc": [
+        "Dans l'exemple, cliquez sur la zone pour obtenir le focus, puis tapez sur le clavier pour voir les informations de déclenchement de l'événement.",
+        "【focusNode】 : Focus   【FocusNode】",
+        "【autofocus】 : Mise au point automatique   【bool】",
+        "【includeSemantics】 : Inclure la sémantique   【bool】",
+        "【onKeyEvent】 : Événement de rappel de touche   【ValueChanged<KeyEvent>?】",
+        "【child】 : Composant enfant   【Widget】"
+      ]
+    }
+  ]
+}

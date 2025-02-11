@@ -1,0 +1,22 @@
+{
+  "id": 61,
+  "name": "BottomAppBar",
+  "localName": "Barra di navigazione inferiore",
+  "info": "Una barra di navigazione inferiore incassabile, solitamente utilizzata nella parte inferiore del componente Scaffold, può specificare proprietà come colore, profondità dell'ombra, forma, ecc., e può realizzare l'effetto di cambio pagina con PageView.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di BottomAppBar",
+      "desc": [
+        "【elevation】 : profondità dell'ombra   【double】",
+        "【shape】 : forma   【NotchedShape】",
+        "【notchMargin】 : distanza di intervallo   【double】",
+        "【color】 : colore   【Color】",
+        "【child】 : figlio   【Widget】"
+      ]
+    }
+  ]
+}

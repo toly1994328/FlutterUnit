@@ -1,0 +1,34 @@
+{
+  "id": 40,
+  "name": "Switch",
+  "localName": "Botão de Alternar",
+  "info": "Botão de alternar, frequentemente usado para alternar configurações, pode especificar a cor do círculo pequeno, imagem, cor da faixa deslizante, etc., e recebe uma chamada de retorno para mudanças de estado.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    41,
+    18
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Switch",
+      "desc": [
+        "【inactiveThumbColor】 : Cor do círculo pequeno quando não selecionado   【Color】",
+        "【inactiveTrackColor】 : Cor da faixa deslizante quando não selecionada   【Color】",
+        "【activeColor】 : Cor do círculo pequeno quando selecionado   【Color】",
+        "【activeTrackColor】 : Cor da faixa deslizante quando selecionada   【Color】",
+        "【onChanged】 : Chamada de retorno para alternar   【Function(double)】\"",
+        "  Quando onChanged, retorna três estados: true, null, false"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Imagem do Switch",
+      "desc": [
+        "【inactiveThumbImage】 : Imagem do círculo pequeno quando não selecionado   【ImageProvider】",
+        "【activeThumbImage】 : Imagem do círculo pequeno quando selecionado   【ImageProvider】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 296,
+  "name": "PhysicalModel",
+  "localName": "Physikalisches Modul",
+  "info": "Ermöglicht das Zuschneiden von Unterkomponenten in runder oder quadratischer Form und ermöglicht die Angabe von Hintergrundfarbe, Rundung, Schattentiefe, Schattenfarbe und Zuschneideverhalten.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    279,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von PhysicalModel",
+      "desc": [
+        "【clipBehavior】: Zuschneideverhalten   【Clip】",
+        "【borderRadius】: Rundung   【BorderRadius】",
+        "【child】: Unterkomponente   【Widget】",
+        "【elevation】: Schattentiefe   【double】",
+        "【shadowColor】: Schattenfarbe   【Color】",
+        "【shape】: Form   【BoxShape】",
+        "【color】: Farbe    【Color】"
+      ]
+    }
+  ]
+}

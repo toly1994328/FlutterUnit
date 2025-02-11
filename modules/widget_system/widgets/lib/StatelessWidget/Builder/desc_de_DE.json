@@ -1,0 +1,19 @@
+{
+  "id": 202,
+  "name": "Builder",
+  "localName": "Konstruktor",
+  "info": "Eine Komponente, die den Platzbedarf von Unterkomponenten nicht beeinflusst und keine Anzeigeeigenschaften hat. Ihr einziger Wert besteht darin, den Kontext für das entsprechende Element der aktuellen Komponente bereitzustellen.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Verwendung von Builder",
+      "desc": [
+        "【builder】 : Komponentenkonstruktor   【WidgetBuilder】",
+        "Die Verwendung der Methode `XXX.of(context)` in derselben Klasse, um ein Zustandsobjekt einer bestimmten Klasse zu erhalten, kann zu einem `Kontextverzögerungsfehler` führen. Verwenden Sie Builder, um dies zu beheben."
+      ]
+    }
+  ]
+}

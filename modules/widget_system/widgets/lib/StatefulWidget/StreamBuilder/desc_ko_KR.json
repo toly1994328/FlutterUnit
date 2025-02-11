@@ -1,0 +1,20 @@
+{
+  "id": 173,
+  "name": "StreamBuilder",
+  "localName": "스트림 빌더",
+  "info": "스트림 객체를 지정할 수 있으며, 비동기 실행 상태를 감시하고, 빌더에서 상태에 따라 다른 인터페이스를 구성할 수 있습니다.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "StreamBuilder 기본 사용",
+      "desc": [
+        "【stream】 : 자식 컴포넌트   【Stream<T>】",
+        "【initialData】 : 초기 데이터   【T】",
+        "【builder】 : 클릭 이벤트  【AsyncWidgetBuilder<T>】"
+      ]
+    }
+  ]
+}

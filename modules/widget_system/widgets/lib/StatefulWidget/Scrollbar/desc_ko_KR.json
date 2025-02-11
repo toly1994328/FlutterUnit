@@ -1,0 +1,23 @@
+{
+  "id": 194,
+  "name": "Scrollbar",
+  "localName": "스크롤바",
+  "info": "스크롤 가능한 영역을 감싸야 하며, 스크롤이 가능할 때 스크롤 바가 표시되어 위치를 표시합니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    195,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Scrollbar 기본 사용법",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【controller】 : 컨트롤러  【ScrollController】"
+      ]
+    }
+  ]
+}

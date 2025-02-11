@@ -1,0 +1,20 @@
+{
+  "id": 21,
+  "name": "GridTile",
+  "localName": "グリッドタイル",
+  "info": "Flutterが提供する汎用リストエントリ構造で、ヘッダー、フッター、子コンポーネントを指定でき、グリッドリストでよく使用されます。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridTileの基本的な表現は以下の通りです",
+      "desc": [
+        "【header】: ヘッダーコンポーネント   【Widget】",
+        "【child】: 子コンポーネント   【Widget】",
+        "【footer】: フッターコンポーネント   【Widget】"
+      ]
+    }
+  ]
+}

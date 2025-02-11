@@ -1,0 +1,24 @@
+{
+  "id": 236,
+  "name": "WidgetsApp",
+  "localName": "ウィジェットアプリ",
+  "info": "アプリケーションに必要な部品、例えばルーティング、言語、いくつかのデバッグスイッチなどを集めたものです。また、MaterialAppとCupertinoAppを実現するためのコアコンポーネントでもあります。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    65,
+    156
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "WidgetsApp基本使用",
+      "desc": [
+        "【pageRouteBuilder】 : *ルーティングビルダー   【PageRouteFactory】",
+        "【color】: *色    【Color】",
+        "【debugShowWidgetInspector】: ウィジェットインスペクターを表示するかどうか   【bool】",
+        "その他の属性は基本的にMaterialAppと同じです。詳細はそちらをご覧ください。"
+      ]
+    }
+  ]
+}

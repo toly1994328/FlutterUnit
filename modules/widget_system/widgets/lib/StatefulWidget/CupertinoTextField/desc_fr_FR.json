@@ -1,0 +1,40 @@
+{
+  "id": 245,
+  "name": "CupertinoTextField",
+  "localName": "Champ de saisie de style iOS",
+  "info": "Champ de saisie de style Cupertino, les propriétés sont similaires à TextField, peut spécifier un contrôleur, le style du texte, la décoration, la limite de lignes, le style du curseur, etc. Reçoit des événements tels que les changements d'entrée, la fin de la saisie, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoTextField",
+      "desc": [
+        "【placeholder】 : Texte d'indication   【String】",
+        "【showCursor】 : Afficher le curseur   【bool】",
+        "【minLines】 : Nombre minimum de lignes   【int】",
+        "【maxLines】 : Nombre maximum de lignes   【int】",
+        "【padding】 : Marge intérieure   【EdgeInsetsGeometry】",
+        "【onChanged】 : Écouteur de changement   【ValueChanged<String>】",
+        "【onTap】: Écouteur de clic   【GestureTapCallback】",
+        "【onSubmitted】: Écouteur de soumission    【ValueChanged<String>】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Propriétés de style courantes de CupertinoTextField",
+      "desc": [
+        "【style】 : Style du texte saisi   【TextStyle】",
+        "【prefix】: Composant de préfixe   【Widget】",
+        "【prefixMode】: Mode de préfixe   【OverlayVisibilityMode】",
+        "【suffix】: Composant de suffixe   【Widget】",
+        "【suffixMode】: Mode de suffixe   【OverlayVisibilityMode】",
+        "【cursorColor】: Couleur du curseur   【Color】",
+        "【cursorWidth】: Largeur du curseur   【double】",
+        "【cursorRadius】: Rayon du curseur   【Radius】",
+        "【readOnly】: Lecture seule    【bool】"
+      ]
+    }
+  ]
+}

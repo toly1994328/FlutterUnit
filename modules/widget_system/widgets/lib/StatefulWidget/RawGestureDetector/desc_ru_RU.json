@@ -1,0 +1,20 @@
+{
+  "id": 248,
+  "name": "RawGestureDetector",
+  "localName": "Детектор жестов",
+  "info": "Может использоваться для обнаружения жестов, описанных заданной фабрикой жестов. Очень полезен при разработке собственного распознавателя жестов. Для распространенных жестов используйте GestureRecognizer.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование RawGestureDetector",
+      "desc": [
+        "【behavior】 : Поведение обнаружения   【HitTestBehavior】",
+        "【gestures】 : Сопоставление жестов   【Map<Type, GestureRecognizerFactory>】",
+        "【child】 : Дочерний компонент   【Widget】"
+      ]
+    }
+  ]
+}

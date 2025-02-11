@@ -1,0 +1,34 @@
+{
+  "id": 262,
+  "name": "CupertinoSegmentedControl",
+  "localName": "iOSタブ切り替え",
+  "info": "iOSスタイルのマルチボタンバー、ToggleButtonsと同様の動作をします。内側の余白、選択色、枠線色などの属性を指定できます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    33,
+    256
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "iOSタブの基本使用",
+      "desc": [
+        "【children】 : コンポーネントマップ   【Map<T, Widget>】",
+        "【onValueChanged】 : 値変更コールバック   【ValueChanged<T>】",
+        "【groupValue】 : 選択値   【T】",
+        "【padding】 : 内側の余白   【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "CupertinoSegmentedControlの色",
+      "desc": [
+        "【unselectedColor】 : 未選択色   【Color】",
+        "【selectedColor】 : 選択色   【Color<T>】",
+        "【pressedColor】 : 押下色   【Color】",
+        "【borderColor】 : 枠線色   【Color】"
+      ]
+    }
+  ]
+}

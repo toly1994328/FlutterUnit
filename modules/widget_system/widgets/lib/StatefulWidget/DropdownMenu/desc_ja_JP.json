@@ -1,0 +1,46 @@
+{
+  "id": 370,
+  "name": "DropdownMenu",
+  "localName": "ドロップダウンメニュー",
+  "info": "ドロップダウン選択コンポーネント、テキスト入力フィルタリングをサポートし、メニュー項目をカスタマイズ可能。主にMenuAnchorとTextFiledに依存して実装されています。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "ドロップダウンメニューの簡単な使用",
+      "desc": [
+        "【dropdownMenuEntries】 : メニューエントリリスト   【List<DropdownMenuEntry<T>>】",
+        "【initialSelection】 : フォーム検証コールバック   【T?】",
+        "【onSelected】 : フォーム保存コールバック   【ValueChanged<T?>?】",
+        "【menuHeight】 : メニューの高さ   【double】",
+        "【width】 : 入力ボックスの幅   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "ドロップダウンメニューのスタイル設定",
+      "desc": [
+        "【controller】 : テキスト入力コントローラー   【TextEditingController?】",
+        "【label】 : 入力ボックスのラベル   【Widget?】",
+        "【textStyle】 : 入力ボックスのテキストスタイル   【TextStyle?】",
+        "【inputDecorationTheme】 : 入力ボックスの装飾テーマ   【InputDecorationTheme?】",
+        "【leadingIcon】 : 左側のアイコン   【Widget?】",
+        "【trailingIcon】 : 右側のメニュー展開時のアイコン   【Widget?】",
+        "【selectedTrailingIcon】 : 右側のメニュー展開時のアイコン   【Widget?】",
+        "【hintText】 : 入力ボックスのヒントテキスト   【String?】",
+        "【helperText】 : 入力ボックスの補助テキスト   【String?】",
+        "【errorText】 : 入力ボックスのエラーテキスト   【String?】",
+        "【menuStyle】 : ポップアップメニューのスタイル   【MenuStyle?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "ドロップダウンメニューのカスタムメニュー項目",
+      "desc": [
+        "DropdownMenuEntryのlabelWidgetを使用してメニュー項目をカスタマイズできます。"
+      ]
+    }
+  ]
+}

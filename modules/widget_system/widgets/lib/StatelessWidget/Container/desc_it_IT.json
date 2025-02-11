@@ -1,0 +1,67 @@
+{
+  "id": 1,
+  "name": "Container",
+  "localName": "Componente contenitore",
+  "info": "Un componente contenitore utilizzato per contenere un singolo componente figlio. Integra diverse funzionalità per i componenti figli singoli, come margini interni ed esterni, trasformazioni, decorazioni, vincoli, ecc...",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    74,
+    85,
+    80,
+    78,
+    70,
+    123
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Può essere utilizzato per visualizzare un'area con larghezza e altezza specificate",
+      "desc": [
+        "【width】 : Larghezza   【int】",
+        "【height】: Altezza   【int】",
+        "【color】: Colore    【Color】"
+      ]
+    },
+    {
+      "file": "node2_child.dart",
+      "name": "Può contenere un componente figlio all'interno dell'area",
+      "desc": [
+        "【padding】 : Spaziatura interna   【EdgeInsetsGeometry】",
+        "【margin】: Spaziatura esterna   【EdgeInsetsGeometry】",
+        "【child】: Componente figlio    【Widget】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Può allineare e posizionare il componente figlio",
+      "desc": [
+        "【alignment】 : Allineamento e posizionamento   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node4_decoration.dart",
+      "name": "Può decorare il componente figlio",
+      "desc": [
+        "【decoration】 : Decorazione   【Decoration】",
+        "Può decorare: bordi, angoli arrotondati, colori, gradienti, ombre, immagini, ecc."
+      ]
+    },
+    {
+      "file": "node5_transform.dart",
+      "name": "Container ha anche capacità di trasformazione",
+      "desc": [
+        "【transform】 : Matrice di trasformazione   【Matrix4】",
+        "Trasformazione basata sulla matrice Matrix4, per i dettagli vedere l'algebra lineare"
+      ]
+    },
+    {
+      "file": "node6_constraints.dart",
+      "name": "Vincoli del Container",
+      "desc": [
+        "【constraints】 : Vincoli   【BoxConstraints】",
+        "Vincolerà le dimensioni dell'area, non sarà inferiore alla larghezza e altezza minima specificata, né superiore alla larghezza e altezza massima specificata."
+      ]
+    }
+  ]
+}

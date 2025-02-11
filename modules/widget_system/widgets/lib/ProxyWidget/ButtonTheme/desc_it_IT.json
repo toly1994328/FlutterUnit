@@ -1,0 +1,24 @@
+{
+  "id": 326,
+  "name": "ButtonTheme",
+  "localName": "Tema del pulsante",
+  "info": "Utilizzato principalmente per impostare le proprietà predefinite per i componenti di tipo Button discendenti, o per ottenere le proprietà predefinite del Button attraverso questo componente.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di ButtonTheme",
+      "desc": [
+        "I parametri delle proprietà sono gli stessi di MaterialButton, è possibile ottenere i dati del tema del pulsante tramite ButtonTheme.of, \"",
+        "è anche possibile impostare lo stile predefinito per i componenti pulsante discendenti di ButtonTheme, inclusi colore, forma, dimensione, ecc."
+      ]
+    }
+  ]
+}

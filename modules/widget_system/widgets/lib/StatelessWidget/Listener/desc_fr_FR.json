@@ -1,0 +1,22 @@
+{
+  "id": 147,
+  "name": "Listener",
+  "localName": "Écouteur d'événements",
+  "info": "Un écouteur d'événements pour les composants, capable de recevoir des événements tels que l'appui, le relâchement, le déplacement et l'annulation. Plus primitif que GestureDetector, il permet d'obtenir plus d'informations.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Événements de base de Listener",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【onPointerDown】 : Événement d'appui   【Function(PointerDownEvent)】",
+        "【onPointerMove】 : Événement de déplacement   【Function(PointerMoveEvent)】",
+        "【onPointerMove】 : Événement de relâchement   【Function(PointerUpEvent)】",
+        "【onPointerCancel】 : Événement d'annulation   【Function(PointerUpEvent)】"
+      ]
+    }
+  ]
+}

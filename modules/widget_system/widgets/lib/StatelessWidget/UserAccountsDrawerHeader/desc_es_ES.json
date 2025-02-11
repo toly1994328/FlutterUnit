@@ -1,0 +1,31 @@
+{
+  "id": 22,
+  "name": "UserAccountsDrawerHeader",
+  "localName": "Encabezado de exhibición",
+  "info": "Una estructura de exhibición genérica proporcionada por Flutter, donde se pueden insertar componentes en las posiciones correspondientes, lo que permite manejar fácilmente elementos específicos, comúnmente utilizado en Drawer.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La presentación básica de este componente es la siguiente",
+      "desc": [
+        "【currentAccountPicture】: componente superior   【Widget】",
+        "【accountName】: componente central   【Widget】",
+        "【accountEmail】: componente inferior   【Widget】",
+        "【decoration】: decoración   【Decoration】"
+      ]
+    },
+    {
+      "file": "node2_pro.dart",
+      "name": "Esquina superior derecha y parte inferior",
+      "desc": [
+        "【otherAccountsPictures】: componente superior derecho   【List<Widget>】",
+        "【onDetailsPressed】: evento de clic en la esquina inferior derecha   【Function()】",
+        "【arrowColor】: color del botón en la esquina inferior derecha   【Color】",
+        "【margin】: margen exterior   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

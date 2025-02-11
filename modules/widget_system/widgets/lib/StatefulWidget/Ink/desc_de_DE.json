@@ -1,0 +1,33 @@
+{
+  "id": 152,
+  "name": "Ink",
+  "localName": "Wasserwelle",
+  "info": "Macht die Wasserwellen von InkWell und InkResponse effektiv, verwendet für das Zeichnen von Bildern oder anderen dekorativen Materialkomponenten.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Ink",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【padding】 : Innenabstand   【EdgeInsetsGeometry】",
+        "【decoration】 : Dekoration   【Decoration】",
+        "【width】 : Breite   【double】",
+        "【height】 : Höhe   【double】",
+        "【color】 : Farbe   【Color】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Ink.image Bildwasserwelle",
+      "desc": [
+        "Die Eigenschaften sind identisch mit der Image-Komponente, siehe Image-Komponente für Details"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 215,
+  "name": "CheckedModeBanner",
+  "localName": "etiqueta de depuración",
+  "info": "Solo muestra la esquina superior derecha en el modo de ejecución debug, no tiene mucha utilidad. Tiene un caso de uso en el código fuente del componente MaterialApp.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CheckedModeBanner",
+      "desc": [
+        "【child】 : componente   【Widget】"
+      ]
+    }
+  ]
+}

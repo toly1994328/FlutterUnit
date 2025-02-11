@@ -1,0 +1,53 @@
+{
+  "id": 94,
+  "name": "Flex",
+  "localName": "フレックスレイアウト",
+  "info": "RowとColumnの親クラス、Flutterで最も強力なレイアウト方法。複数のコンポーネントを収容でき、Spacer、Expended、Flexibleコンポーネントと連携して柔軟なレイアウトを実現できます",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    95,
+    96,
+    106,
+    107,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Flexの配置方向",
+      "desc": [
+        "【children】 : コンポーネントリスト   【List<Widget>】",
+        "【direction】 : 方向   【Axis】"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Flex主軸の整列方法",
+      "desc": [
+        "【mainAxisAlignment】 : 主軸整列   【MainAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node_03.dart",
+      "name": "Flex交差軸の整列方法",
+      "desc": [
+        "【crossAxisAlignment】 : 交差軸整列   【CrossAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node_04.dart",
+      "name": "Flex垂直方向の順序",
+      "desc": [
+        "【verticalDirection】 : 垂直方向の順序   【VerticalDirection】"
+      ]
+    },
+    {
+      "file": "node_05.dart",
+      "name": "Flex水平方向の順序",
+      "desc": [
+        "【textDirection】 : 水平方向の順序   【TextDirection】"
+      ]
+    }
+  ]
+}

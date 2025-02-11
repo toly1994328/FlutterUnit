@@ -1,0 +1,22 @@
+{
+  "id": 270,
+  "name": "SliverConstrainedCrossAxis",
+  "localName": "Folha de deslizamento com restrição de tamanho do eixo cruzado",
+  "info": "Especifica o tamanho na direção do eixo cruzado para limitar o tamanho da folha de deslizamento para um componente Sliver.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso básico de SliverConstrainedCrossAxis",
+      "desc": [
+        "【maxExtent】 : Tamanho   【double】",
+        "【sliver】 : Componente filho   【Widget?】"
+      ]
+    }
+  ]
+}

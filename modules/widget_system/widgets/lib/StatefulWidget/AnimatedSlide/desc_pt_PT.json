@@ -1,0 +1,26 @@
+{
+  "id": 247,
+  "name": "AnimatedSlide",
+  "localName": "Animação de Deslize",
+  "info": "Quando o deslocamento fornecido muda, o componente filho pode ajustar automaticamente o deslocamento relativo, e os valores anteriores e posteriores têm uma mudança animada.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Efeito de Animação de Deslize",
+      "desc": [
+        "Neste caso, arraste para ajustar os parâmetros x, y e observe o efeito do movimento da animação. Onde o deslocamento = x, y * largura e altura da caixa",
+        "【child】 : Componente filho   【Widget】",
+        "【duration】 : Duração da animação   【Duration】",
+        "【onEnd】 : Callback de fim de animação   【Function()】",
+        "【curve】 : Curva de animação   【Duration】",
+        "【offset】 : Deslocamento   【Offset】"
+      ]
+    }
+  ]
+}

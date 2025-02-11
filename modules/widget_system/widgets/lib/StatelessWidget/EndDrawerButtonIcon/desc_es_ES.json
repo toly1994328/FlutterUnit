@@ -1,0 +1,18 @@
+{
+  "id": 275,
+  "name": "EndDrawerButtonIcon",
+  "localName": "Icono del botón del cajón derecho",
+  "info": "Un icono de cajón derecho que muestra el icono correspondiente según la plataforma, y se puede personalizar el tema a través de ActionIconTheme.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Efecto de EndDrawerButtonIcon",
+      "desc": [
+        "El componente _ActionIcon adapta el icono del botón del cajón derecho para diferentes plataformas según el tema de ActionIconTheme."
+      ]
+    }
+  ]
+}

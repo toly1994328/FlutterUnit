@@ -1,0 +1,19 @@
+{
+  "id": 191,
+  "name": "SliverPadding",
+  "localName": "Espacement intérieur de Sliver",
+  "info": "Peut contenir un composant enfant de la famille Sliver, ajoute sa propre marge intérieure pour limiter l'emplacement du composant enfant, la propriété principale étant padding.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de SliverPadding",
+      "desc": [
+        "【sliver】 : Composant enfant   【Widget】",
+        "【padding】 : Marge intérieure  【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

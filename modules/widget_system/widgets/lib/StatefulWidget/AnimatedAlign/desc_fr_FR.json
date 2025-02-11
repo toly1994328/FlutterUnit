@@ -1,0 +1,26 @@
+{
+  "id": 120,
+  "name": "AnimatedAlign",
+  "localName": "Animation d'alignement",
+  "info": "Permet à un composant enfant de réaliser une animation d'alignement (Align), avec la possibilité de spécifier la durée et la courbe, et un événement de fin d'animation.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    85,
+    111
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de AnimatedAlign",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【duration】 : Durée de l'animation   【Duration】",
+        "【onEnd】 : Rappel de fin d'animation   【Function()】",
+        "【alignment】 : Mode d'alignement   【AlignmentGeometry】",
+        "【curve】 : Courbe de l'animation   【Duration】",
+        "【padding】 : Marge intérieure   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 80,
+  "name": "ConstrainedBox",
+  "localName": "Constrained Box",
+  "info": "Can contain a child component, and limit the area of the child component by specifying the maximum and minimum width and height.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    1,
+    79,
+    81
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of BoxConstraints",
+      "desc": [
+        "【child】 : Child component   【Widget】",
+        "【minWidth】 : Minimum width   【double】",
+        "【minHeight】 : Minimum height   【double】",
+        "【maxHeight】 : Maximum height   【double】",
+        "【maxWidth】 : Maximum width   【double】"
+      ]
+    }
+  ]
+}

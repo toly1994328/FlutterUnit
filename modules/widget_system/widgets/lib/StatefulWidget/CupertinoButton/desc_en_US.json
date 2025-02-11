@@ -1,0 +1,23 @@
+{
+  "id": 24,
+  "name": "CupertinoButton",
+  "localName": "iOS Button",
+  "info": "A button with iOS style. You can specify color, opacity when pressed, padding, border radius, etc. It can receive click events.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoButton Click Event",
+      "desc": [
+        "【color】: Color   【Color】",
+        "【pressedOpacity】: Opacity when pressed   【double】",
+        "【child】: Child widget   【Widget】",
+        "【padding】: Padding   【EdgeInsetsGeometry】",
+        "【borderRadius】: Border radius   【BorderRadius】",
+        "【onPressed】: Click event   【Function】"
+      ]
+    }
+  ]
+}

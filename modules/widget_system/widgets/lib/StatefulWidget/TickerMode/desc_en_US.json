@@ -1,0 +1,20 @@
+{
+  "id": 246,
+  "name": "TickerMode",
+  "localName": "Timer Mode",
+  "info": "Enable/disable the timer (Ticker) for the subtree, the animation controller is implemented based on Ticker.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    346
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Unified Enable/Disable Animation",
+      "desc": [
+        "The enabled property of TickerMode can uniformly enable/disable the animation effects of the subtree."
+      ]
+    }
+  ]
+}

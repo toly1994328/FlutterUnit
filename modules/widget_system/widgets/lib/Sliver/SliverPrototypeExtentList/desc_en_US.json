@@ -1,0 +1,22 @@
+{
+  "id": 314,
+  "name": "SliverPrototypeExtentList",
+  "localName": "Sliver Prototype Extent List",
+  "info": "The prototypeItem property is a Widget, which is responsible for constraining the size of the item in the main axis direction, but it will not be displayed. The delegate accepts a SliverChildDelegate to complete the creation of the item.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    185,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SliverPrototypeExtentList",
+      "desc": [
+        "【prototypeItem】 : Main axis size component   【Widget】",
+        "【delegate】 : Child delegate   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

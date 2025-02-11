@@ -1,0 +1,40 @@
+{
+  "id": 245,
+  "name": "CupertinoTextField",
+  "localName": "iOS-Stil Eingabefeld",
+  "info": "Cupertino-stilisiertes Eingabefeld, ähnliche Eigenschaften wie TextField, kann Controller, Textstil, Dekorationslinien, Zeilenbegrenzung, Cursor-Stil usw. angeben. Empfängt Ereignisse wie Eingabeänderungen und Eingabeabschluss.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoTextField",
+      "desc": [
+        "【placeholder】 : Hinweistext   【String】",
+        "【showCursor】 : Cursor anzeigen   【bool】",
+        "【minLines】 : Mindestanzahl von Zeilen   【int】",
+        "【maxLines】 : Maximale Anzahl von Zeilen   【int】",
+        "【padding】 : Innenabstand   【EdgeInsetsGeometry】",
+        "【onChanged】 : Änderungsüberwachung   【ValueChanged<String>】",
+        "【onTap】: Klicküberwachung   【GestureTapCallback】",
+        "【onSubmitted】: Übermittlungsüberwachung    【ValueChanged<String>】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Häufig verwendete Stileigenschaften von CupertinoTextField",
+      "desc": [
+        "【style】 : Eingabetextstil   【TextStyle】",
+        "【prefix】: Präfix-Komponente   【Widget】",
+        "【prefixMode】: Präfix-Modus   【OverlayVisibilityMode】",
+        "【suffix】: Suffix-Komponente   【Widget】",
+        "【suffixMode】: Suffix-Modus   【OverlayVisibilityMode】",
+        "【cursorColor】: Cursor-Farbe   【Color】",
+        "【cursorWidth】: Cursor-Breite   【double】",
+        "【cursorRadius】: Cursor-Radius   【Radius】",
+        "【readOnly】: Nur lesen    【bool】"
+      ]
+    }
+  ]
+}

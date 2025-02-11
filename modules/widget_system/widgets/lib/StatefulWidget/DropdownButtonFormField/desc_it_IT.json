@@ -1,0 +1,24 @@
+{
+  "id": 223,
+  "name": "DropdownButtonFormField",
+  "localName": "Campo a discesa del modulo",
+  "info": "Si basa sull'implementazione di DropdownButton, quindi le proprietà di base sono simili. Tuttavia, ha le caratteristiche di FormField, può richiamare i metodi onSaved e validator.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    55,
+    222
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso semplice del campo a discesa del modulo",
+      "desc": [
+        "【items】 : Lista dei componenti figli   【List<DropdownMenuItem<T>>】",
+        "【validator】 : Callback di convalida del modulo   【FormFieldValidator<T>】",
+        "【onSaved】 : Callback di salvataggio del modulo   【FormFieldSetter<T>】",
+        "Per altre proprietà, vedere DropdownButton, per le caratteristiche di convalida del modulo, vedere FormField."
+      ]
+    }
+  ]
+}

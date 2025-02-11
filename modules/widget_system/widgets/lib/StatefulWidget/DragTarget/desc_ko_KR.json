@@ -1,0 +1,24 @@
+{
+  "id": 104,
+  "name": "DragTarget",
+  "localName": "드래그 대상",
+  "info": "드래그 가능한 영역으로, Draggable 컴포넌트의 정보를 받을 수 있습니다. 드래그 시 콜백을 얻을 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    103,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DragTarget 기본 사용",
+      "desc": [
+        "【builder】 : 컴포넌트 빌더   【DragTargetBuilder<T>】",
+        "【onWillAccept】 : 드래그 시   【Function(T)】",
+        "【onAccept】 : 드래그 성공   【Function(T)】",
+        "【onLeave】 : 드래그 후 떼기   【Function(T)】"
+      ]
+    }
+  ]
+}

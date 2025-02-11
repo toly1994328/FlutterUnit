@@ -1,0 +1,22 @@
+{
+  "id": 73,
+  "name": "Opacity",
+  "localName": "不透明度",
+  "info": "子コンポーネントを1つ収容し、その不透明度をopacity値に変更できます。opacityは0〜1の間です。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    89,
+    118
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Opacityの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【opacity】 : 不透明度0〜1   【double】"
+      ]
+    }
+  ]
+}

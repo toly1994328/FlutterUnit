@@ -1,0 +1,22 @@
+{
+  "id": 269,
+  "name": "SliverCrossAxisGroup",
+  "localName": "Groupe de glissières d'axe croisé",
+  "info": "Peut contenir plusieurs composants Sliver, les traitant comme un groupe dans la direction de l'axe principal de défilement.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    268,
+    270,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation de base de SliverCrossAxisGroup",
+      "desc": [
+        "【slivers】 : Liste des composants enfants   【List<Widget>】"
+      ]
+    }
+  ]
+}

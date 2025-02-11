@@ -1,0 +1,20 @@
+{
+  "id": 198,
+  "name": "Form",
+  "localName": "Composant de formulaire",
+  "info": "Le composant de formulaire peut recevoir les rappels de changement des composants FormField qui lui sont associés, intercepter le retour de la page via onWillPop, et enregistrer ou valider les champs du formulaire via FormState.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Form",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【onChanged】 : Rappel de changement de formulaire   【VoidCallback】",
+        "【onWillPop】 : Rappel de retour  【WillPopCallback】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 45,
+  "name": "Radio",
+  "localName": "Pulsante di selezione",
+  "info": "A causa dei pulsanti rotondi per lo stato selezionato e non selezionato, più Radio possono realizzare la necessità di selezione singola o multipla secondo la logica. È possibile specificare il colore e ricevere un callback per i cambiamenti di stato.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [19,240],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di Radio",
+      "desc": [
+        "【value】 : Valore del pulsante di selezione   【T】",
+        "【groupValue】 : Valore di corrispondenza corrente   【T】",
+        "【activeColor】 : Colore attivo   【Color】",
+        "【onChanged】 : Callback al cambiamento   【Function(T)】"
+      ]
+    }
+  ]
+}

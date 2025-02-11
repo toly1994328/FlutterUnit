@@ -1,0 +1,28 @@
+{
+  "id": 122,
+  "name": "AnimatedPositionedDirectional",
+  "localName": "方向定位アニメーション",
+  "info": "子コンポーネントをPositionedDirectional（方向定位）アニメーションさせることができ、時間と曲線を指定でき、アニメーション終了イベントがあります。Stack内でのみ使用できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    121,
+    159
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedPositionedDirectional基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーション時間   【Duration】",
+        "【onEnd】 : アニメーション終了コールバック   【Function()】",
+        "【curve】 : アニメーション曲線   【Duration】",
+        "【top】 : 親の上端までの距離   【double】",
+        "【end】 : 親の右端までの距離   【double】",
+        "【start】 : 親の左端までの距離   【double】",
+        "【bottom】 : 親の下端までの距離   【double】"
+      ]
+    }
+  ]
+}

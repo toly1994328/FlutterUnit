@@ -1,0 +1,31 @@
+{
+  "id": 57,
+  "name": "AppBar",
+  "localName": "앱 상단 바",
+  "info": "앱 상단 바의 일반적인 구조로, 지정된 위치에 해당 컴포넌트를 배치할 수 있으며, 주로 Scaffold 컴포넌트에서 사용됩니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AppBar 기본 사용법",
+      "desc": [
+        "【leading】 : 왼쪽 컴포넌트   【Widget】",
+        "【title】 : 중앙 컴포넌트   【Widget】",
+        "【actions】 : 오른쪽 컴포넌트   【List<Widget>】",
+        "【elevation】 : 그림자 깊이   【double】",
+        "【shape】 : 모양   【ShapeBorder】",
+        "【backgroundColor】 : 배경색   【Color】",
+        "【centerTitle】 : 중앙 제목 정렬 여부   【bool】"
+      ]
+    },
+    {
+      "file": "node2_tab.dart",
+      "name": "AppBar와 TabBar, TabBarView 함께 사용",
+      "desc": [
+        "【bottom】 : 하단 컴포넌트   【PreferredSizeWidget】"
+      ]
+    }
+  ]
+}

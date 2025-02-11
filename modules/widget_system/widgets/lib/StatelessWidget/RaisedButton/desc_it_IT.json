@@ -1,0 +1,60 @@
+{
+  "id": 26,
+  "name": "RaisedButton",
+  "localName": "Pulsante sollevato",
+  "info": "Un pulsante sollevato con ombre, basato su MaterialButton, con proprietà simili a MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    25,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Evento di clic di RaisedButton",
+      "desc": [
+        "【color】: Colore   【Color】",
+        "【splashColor】: Colore dell'effetto splash   【Color】",
+        "【elevation】: Profondità dell'ombra   【double】",
+        "【child】: Widget figlio   【Widget】",
+        "【textColor】: Colore del testo del widget figlio   【Color】",
+        "【highlightColor】: Colore di evidenziazione durante il press lungo   【Color】",
+        "【padding】: Spaziatura interna   【EdgeInsetsGeometry】",
+        "【onPressed】: Evento di clic   【Function】",
+        "    ",
+        "",
+        "class CustomRaisedButton extends StatelessWidget {",
+        "  const CustomRaisedButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'Il pulsante RaisedButton è uscito di scena in Flutter 3.3. Il suo sostituto è il pulsante ElevatedButton.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return RaisedButton(",
+        "       color: Colors.blue,",
+        "       splashColor: Colors.green,",
+        "       onPressed: () {,",
+        "       child: const Text(\"RaisedButton\"),",
+        "       textColor: const Color(0xffFfffff),",
+        "       padding: const EdgeInsets.all(8),",
+        "       elevation: 5,",
+        "       highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

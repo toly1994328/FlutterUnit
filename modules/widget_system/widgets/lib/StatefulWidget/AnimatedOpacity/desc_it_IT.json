@@ -1,0 +1,25 @@
+{
+  "id": 118,
+  "name": "AnimatedOpacity",
+  "localName": "Animazione di opacità",
+  "info": "Consente ai componenti figli di eseguire un'animazione di Opacity (opacità), può specificare la durata e la curva, e ha un evento di fine animazione.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    89,
+    73
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di AnimatedOpacity",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【duration】 : Durata dell'animazione   【Duration】",
+        "【onEnd】 : Callback di fine animazione   【Function()】",
+        "【curve】 : Curva dell'animazione   【Duration】",
+        "【opacity】 : Opacità   【double】"
+      ]
+    }
+  ]
+}

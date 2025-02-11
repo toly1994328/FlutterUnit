@@ -1,0 +1,27 @@
+{
+  "id": 12,
+  "name": "ChoiceChip",
+  "localName": "Selezione Piccola Barra",
+  "info": "Uno stile simile al componente Chip, con alcune proprietà di selezione. È possibile specificare il colore selezionato, il colore dell'ombra e l'evento di selezione.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    11,
+    13,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La performance normale di ChoiceChip è la seguente",
+      "desc": [
+        "【selectedColor】: Colore selezionato   【Color】",
+        "【selectedShadowColor】: Colore dell'ombra selezionato   【Color】",
+        "【onSelected】: Evento di selezione   【Fuction(bool)】",
+        "    Altre proprietà sono le stesse del componente Chip, senza componente a destra."
+      ]
+    }
+  ]
+}

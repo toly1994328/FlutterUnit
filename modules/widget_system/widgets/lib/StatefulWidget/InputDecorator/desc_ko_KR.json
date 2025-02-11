@@ -1,0 +1,20 @@
+{
+  "id": 231,
+  "name": "InputDecorator",
+  "localName": "입력 장식",
+  "info": "입력을 감싸는 외부 장식으로, TextField의 핵심 구성 요소 중 하나이며 일반적으로 단독으로 사용되지 않습니다.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "InputDecorator 기본 사용",
+      "desc": [
+        "【decoration】 : 장식 객체   【InputDecoration】",
+        "【textAlign】 : 텍스트 정렬 방식   【TextAlign】",
+        "【child】 : 자식 위젯   【Widget】"
+      ]
+    }
+  ]
+}

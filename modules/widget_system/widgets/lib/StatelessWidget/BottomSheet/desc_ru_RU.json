@@ -1,0 +1,22 @@
+{
+  "id": 142,
+  "name": "BottomSheet",
+  "localName": "Нижний ящик",
+  "info": "Как компонент, это простая структурная компонента, которая может быть настроена по форме, глубине тени, цвету фона и конструктору внутренних компонентов. Обычно появляется снизу с помощью метода showBottomSheet ScaffoldState.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование BottomSheet",
+      "desc": [
+        "【builder】 : Конструктор компонентов   【WidgetBuilder】",
+        "【backgroundColor】 : Цвет фона   【Color】",
+        "【elevation】 : Глубина тени   【double】",
+        "【shape】 : Форма   【ShapeBorder】",
+        "【onClosing】 : Обратный вызов при закрытии  【Function()】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 293,
+  "name": "MouseRegion",
+  "localName": "Région de souris",
+  "info": "Composant utilisé pour la surveillance des événements de souris, généralement utilisé sur les plateformes de bureau et Web, peut surveiller les événements d'entrée, de sortie et de déplacement de la souris.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de MouseRegion",
+      "desc": [
+        "【onEnter】 : Événement d'entrée   【PointerEnterEventListener】",
+        "【onHover】: Événement de déplacement    【PointerHoverEventListener】",
+        "【onExit】: Événement de sortie    【PointerExitEventListener】"
+      ]
+    }
+  ]
+}

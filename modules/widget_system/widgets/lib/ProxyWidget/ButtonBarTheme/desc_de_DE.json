@@ -1,0 +1,18 @@
+{
+  "id": 338,
+  "name": "ButtonBarTheme",
+  "localName": "Button-Leiste Thema",
+  "info": "Wird hauptsächlich verwendet, um Standardattribute für nachfolgende ButtonBar-Komponenten festzulegen. Es kann auch verwendet werden, um die Attribute des Standard-ButtonBarThemas zu erhalten.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ButtonBarTheme",
+      "desc": [
+        "Kann die ButtonBarThemeData-Attribute festlegen, um Standardstile für nachfolgende ButtonBar-Komponenten zu setzen, wie Ausrichtung, Stil, Ränder usw. Es kann auch ButtonBarTheme.of verwendet werden, um die Theme-Attribute der ButtonBar zu erhalten."
+      ]
+    }
+  ]
+}

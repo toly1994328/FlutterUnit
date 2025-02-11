@@ -1,0 +1,19 @@
+{
+  "id": 91,
+  "name": "ScaleTransition",
+  "localName": "Transição de Escala",
+  "info": "Pode conter um componente filho e fazer com que ele realize uma animação de escala, requer um animador scale, possui o atributo alignment.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do ScaleTransition",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【scale】 : Animação   【Animation<double>】"
+      ]
+    }
+  ]
+}

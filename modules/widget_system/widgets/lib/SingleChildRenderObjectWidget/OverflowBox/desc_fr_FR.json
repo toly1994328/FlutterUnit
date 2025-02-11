@@ -1,0 +1,23 @@
+{
+  "id": 83,
+  "name": "OverflowBox",
+  "localName": "Boîte de débordement",
+  "info": "Peut contenir un composant enfant, et le composant enfant est autorisé à déborder de la zone du composant parent. Il est possible de spécifier les zones maximales et minimales de largeur et de hauteur pour les limiter, et il possède une propriété d'alignement.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de OverflowBox",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【minWidth】 : Largeur minimale   【double】",
+        "【minHeight】 : Hauteur minimale   【double】",
+        "【maxHeight】 : Hauteur maximale   【double】",
+        "【maxWidth】 : Largeur maximale   【double】",
+        "【alignment】 : Alignement   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 296,
+  "name": "PhysicalModel",
+  "localName": "物理モジュール",
+  "info": "子コンポーネントを円形や四角形でクリップし、背景色、角丸、影の深さ、影の色、クリップ動作を指定することができます。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    279,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PhysicalModelの基本的な使用",
+      "desc": [
+        "【clipBehavior】 : クリップ動作   【Clip】",
+        "【borderRadius】 : 角丸   【BorderRadius】",
+        "【child】 : 子コンポーネント   【Widget】",
+        "【elevation】 : 影の深さ   【double】",
+        "【shadowColor】 : 影の色   【Color】",
+        "【shape】 : 形状   【BoxShape】",
+        "【color】: 色    【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 168,
+  "name": "Theme",
+  "localName": "Thema",
+  "info": "Sie können das ThemeData-Objekt über Theme.of abrufen. Sie können auch ein Thema angeben, das auf die Nachkommenkomponenten von Theme angewendet wird.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    65,
+    169,
+    224
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Textstil-ThemeData#TextTheme",
+      "desc": [
+        "Untergeordnete Komponenten können die Daten des Themas über ThemeData.of abrufen und verwenden."
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "Verwendung von Theme",
+      "desc": [
+        "Mit Theme können Sie sehr viele Attribute als Thema angeben, die auf alle Nachkommenkomponenten angewendet werden, wie z. B. Schriftarten, Schieberegler, Karten, Text, Trennlinien, Schaltflächen usw."
+      ]
+    }
+  ]
+}

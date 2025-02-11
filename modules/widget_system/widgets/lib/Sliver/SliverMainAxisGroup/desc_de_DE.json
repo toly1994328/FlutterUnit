@@ -1,0 +1,19 @@
+{
+  "id": 268,
+  "name": "SliverMainAxisGroup",
+  "localName": "Hauptachsen-Sliver-Gruppe",
+  "info": "Kann mehrere Sliver-Komponenten aufnehmen, die in der gleitenden Hauptachsenrichtung als Gruppe behandelt werden.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Grundlegende Verwendung von SliverMainAxisGroup",
+      "desc": [
+        "【slivers】 : Liste der Unterkomponenten   【List<Widget>】",
+        "Kann mit SliverPersistentHeader kombiniert werden, um Gruppierungen und den Effekt von fixierten Überschriften zu erzielen."
+      ]
+    }
+  ]
+}

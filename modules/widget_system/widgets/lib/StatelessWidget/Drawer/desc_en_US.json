@@ -1,0 +1,22 @@
+{
+  "id": 154,
+  "name": "Drawer",
+  "localName": "Drawer",
+  "info": "Generally used as the left and right sliding panels in the Scaffold's draw and endDraw properties. It can contain a child component and can specify the elevation.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    64,
+    155
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Drawer",
+      "desc": [
+        "【child】 : Child component   【Widget】",
+        "【elevation】 : Elevation  【double】"
+      ]
+    }
+  ]
+}

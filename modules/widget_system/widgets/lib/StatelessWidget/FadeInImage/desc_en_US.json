@@ -1,0 +1,28 @@
+{
+  "id": 8,
+  "name": "FadeInImage",
+  "localName": "Fade-in Image",
+  "info": "Load an image with a transparent gradient. You can specify a placeholder image, animation curves for fade in and out, duration, width, height, fit type, alignment, repeat mode, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FadeInImage.assetNetwork Load Network Image",
+      "desc": [
+        "【placeholder】 : Placeholder image address  【String】",
+        "【image】 : Display image address  【String】",
+        "【width】: Width   【double】",
+        "【height】: Height   【double】",
+        "【fadeInDuration】: Fade-in duration   【Duration】",
+        "【fadeOutDuration】: Fade-out duration   【Duration】",
+        "【fadeInCurve】: Fade-in curve   【Cubic】",
+        "【fadeOutCurve】: Fade-out curve   【Cubic】",
+        "【fit】: Fit mode   【BoxFit】",
+        "【alignment】: Alignment mode   【Alignment】",
+        "【repeat】: Repeat mode   【ImageRepeat】,"
+      ]
+    }
+  ]
+}

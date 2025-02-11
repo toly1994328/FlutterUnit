@@ -1,0 +1,23 @@
+{
+  "id": 138,
+  "name": "CupertinoTimerPicker",
+  "localName": "iOS Time Picker",
+  "info": "A high-end rolling time picker that allows you to specify the type of selection, initial time, background color, etc., and receives time selection events.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoTimerPicker",
+      "desc": [
+        "【initialTimerDuration】: Initial time   【Duration】",
+        "【minuteInterval】: Minute interval   【double】",
+        "【secondInterval】: Second interval   【double】",
+        "【alignment】: Alignment   【AlignmentGeometry】",
+        "【backgroundColor】: Background color   【Color】",
+        "【mode】: Mode*3   【CupertinoTimerPickerMode】"
+      ]
+    }
+  ]
+}

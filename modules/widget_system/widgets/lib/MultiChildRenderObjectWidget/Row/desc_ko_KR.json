@@ -1,0 +1,26 @@
+{
+  "id": 95,
+  "name": "Row",
+  "localName": "행 레이아웃",
+  "info": "배치 방향이 가로인 Flex 레이아웃으로, 여러 컴포넌트를 수용할 수 있습니다. 다른 속성은 모두 동일하며, 자세한 내용은 Flex를 참조하세요.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    96
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Row 기본 사용법",
+      "desc": [
+        "【children】 : 컴포넌트 리스트   【List<Widget>】",
+        "【mainAxisAlignment】 : 주축 정렬   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : 교차축 정렬   【CrossAxisAlignment】",
+        "【textBaseline】 : 텍스트 기준선   【TextBaseline】",
+        "【verticalDirection】 : 수직 방향   【VerticalDirection】",
+        "【mainAxisSize】 : 주축 크기   【MainAxisSize】"
+      ]
+    }
+  ]
+}

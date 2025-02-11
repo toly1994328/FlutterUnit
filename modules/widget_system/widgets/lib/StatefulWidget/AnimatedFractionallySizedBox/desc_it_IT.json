@@ -1,0 +1,31 @@
+{
+  "id": 260,
+  "name": "AnimatedFractionallySizedBox",
+  "localName": "Scatola animata frazionata",
+  "info": "Versione animata di FractionallySizedBox, quando widthFactor o heightFactor cambiano, così come quando alignment cambia, si transiziona automaticamente e dolcemente alle dimensioni e posizioni target del componente figlio entro la durata specificata.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    82,
+    120,
+    123,
+    121
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Effetto di transizione animata",
+      "desc": [
+        "In questo caso, cliccando si modificano i parametri heightFactor, widthFactor, alignment, per osservare l'effetto del movimento animato.",
+        "【child】 : Componente figlio   【Widget】",
+        "【duration】 : Durata dell'animazione   【Duration】",
+        "【onEnd】 : Callback di fine animazione   【Function()】",
+        "【alignment】 : Centro di trasformazione dell'animazione   【Alignment】",
+        "【curve】 : Curva dell'animazione   【Duration】",
+        "【heightFactor】 : Fattore di altezza   【double?】",
+        "【widthFactor】 : Fattore di larghezza   【double?】",
+        "【turns】 : Quantità di rotazione   【double】"
+      ]
+    }
+  ]
+}

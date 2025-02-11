@@ -1,0 +1,22 @@
+{
+  "id": 270,
+  "name": "SliverConstrainedCrossAxis",
+  "localName": "Ограничение размера слайдера по поперечной оси",
+  "info": "Задает размер для компонента Sliver в направлении поперечной оси, чтобы ограничить размер слайдера.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Основное использование SliverConstrainedCrossAxis",
+      "desc": [
+        "【maxExtent】 : размер   【double】",
+        "【sliver】 : дочерний компонент   【Widget?】"
+      ]
+    }
+  ]
+}

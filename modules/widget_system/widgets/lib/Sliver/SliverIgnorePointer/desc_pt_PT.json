@@ -1,0 +1,22 @@
+{
+  "id": 305,
+  "name": "SliverIgnorePointer",
+  "localName": "Sliver Ignorar Eventos",
+  "info": "Pode envolver um componente sliver, controlando através de ignoring se este componente sliver pode responder a eventos.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do SliverIgnorePointer",
+      "desc": [
+        "【sliver】: componente sliver   【Widget】",
+        "【ignoring】: ignorar eventos   【bool】,"
+      ]
+    }
+  ]
+}

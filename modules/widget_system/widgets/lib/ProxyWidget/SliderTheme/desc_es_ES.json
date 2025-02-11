@@ -1,0 +1,27 @@
+{
+  "id": 331,
+  "name": "SliderTheme",
+  "localName": "Estilo del deslizador",
+  "info": "Puede contener un hijo y especifica el estilo predeterminado para los Slider descendientes. Se usa comúnmente para unificar el estilo de los Slider, evitando configuraciones individuales, y también permite personalizar el estilo del Slider.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso de SliderTheme",
+      "desc": [
+        "Se puede obtener el objeto de datos del tema Slider a través de SliderTheme.of, que contiene una gran cantidad de propiedades para configurar el Slider.",
+        "Puede establecer el estilo predeterminado para los componentes de botón [descendientes] de ButtonTheme, incluyendo color, forma, tamaño, etc."
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Personalización del estilo del Slider con SliderTheme",
+      "desc": [
+        "Se puede personalizar el estilo del Slider a través de thumbShape y valueIndicatorShape.",
+        "Nota: Este ejemplo se basa en SlideDemo de flutter-gallery"
+      ]
+    }
+  ]
+}

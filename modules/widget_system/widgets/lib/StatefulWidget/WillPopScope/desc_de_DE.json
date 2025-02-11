@@ -1,0 +1,19 @@
+{
+  "id": 170,
+  "name": "WillPopScope",
+  "localName": "Rückkehrblockierung",
+  "info": "Wenn eine Oberfläche eine WillPopScope-Komponente enthält, wird beim Zurückkehren der Seite ein Callback ausgelöst, um zu entscheiden, ob zurückgekehrt werden soll. Kann für Szenarien verwendet werden, in denen ein erneutes Bestätigen des Verlassens erforderlich ist.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "WillPopScope Verwendung",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【onWillPop】 : Rückkehr-Callback  【WillPopCallback】"
+      ]
+    }
+  ]
+}

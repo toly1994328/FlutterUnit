@@ -1,0 +1,29 @@
+{
+  "id": 200,
+  "name": "Stepper",
+  "localName": "ステップコンポーネント",
+  "info": "ステップコンポーネントは、ステップごとの操作を指定でき、ステップの内容、確認と戻るボタン、およびステップの並び方向をカスタマイズできます。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Stepperの基本使用",
+      "desc": [
+        "【steps】 : ステップリスト   【List<Step>】",
+        "【currentStep】 : 現在のステップ   【double】",
+        "【onStepTapped】 : クリックコールバック   【ValueChanged<int>】",
+        "【onStepCancel】 : 前のステップコールバック  【VoidCallback】",
+        "【controlsBuilder】 : コントローラー構築  【ControlsWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Stepperの方向",
+      "desc": [
+        "【type】 : 方向   【StepperType】"
+      ]
+    }
+  ]
+}

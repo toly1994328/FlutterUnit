@@ -1,0 +1,32 @@
+{
+  "id": 85,
+  "name": "Align",
+  "localName": "整列コンポーネント",
+  "info": "1つの子コンポーネントを収容でき、alignmentを使用して子コンポーネントを親コンポーネントの幅と高さの任意の指定された比率に配置できます。",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    1,
+    86,
+    111,
+    120
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Alignの基本的な使用法",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【alignment】 : 整列方法   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node2_other.dart",
+      "name": "Alignのその他の使用法",
+      "desc": [
+        "Alignmentオブジェクトは、親コンテナ内の幅と高さの比率位置を指定できるため",
+        "Alignを使用して、指定された数学的方程式に従って位置を変化させるなど、複雑なレイアウト要件を実現できます"
+      ]
+    }
+  ]
+}

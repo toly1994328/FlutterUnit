@@ -1,0 +1,27 @@
+{
+  "id": 302,
+  "name": "CupertinoSliverNavigationBar",
+  "localName": "Sliver навигационная панель",
+  "info": "Эффект навигационной панели в iOS11, largeTitle отображается при раскрытии, не отображается при прокрутке списка вверх. Если middle пуст, largeTitle будет отображаться как middle с меньшим размером шрифта.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование навигационной панели",
+      "desc": [
+        "【leading】 : Левый компонент   【Widget】",
+        "【middle】 : Средний компонент   【Widget】",
+        "【trailing】 : Хвостовой компонент   【Widget】",
+        "【largeTitle】 : Нижний раскрывающийся компонент   【Widget】",
+        "【border】 : Граница   【Border】",
+        "【backgroundColor】 : Цвет фона   【Color】",
+        "【padding】 : Внутренний отступ   【EdgeInsetsDirectional】"
+      ]
+    }
+  ]
+}

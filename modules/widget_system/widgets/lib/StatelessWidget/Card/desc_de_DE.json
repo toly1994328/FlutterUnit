@@ -1,0 +1,31 @@
+{
+  "id": 3,
+  "name": "Card",
+  "localName": "Kartenkomponente",
+  "info": " Basierend auf Material-Komponenten implementiert, wird verwendet, um eine einzelne Komponente zu karten. Es verleiht ihr einen Schatteneffekt, kann Außenabstände hinzufügen und die Form der Karte anpassen.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Card kann eine Komponente karten",
+      "desc": [
+        "【elevation】 : Schattentiefe  【double】",
+        "【margin】: Außenabstand   【double】",
+        "【color】: Farbe   【Color】",
+        "【child】: Kind   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Kann durch die shape-Eigenschaft einen Zuschneideeffekt erzielen",
+      "desc": [
+        "【shape】 : Form  【ShapeBorder】",
+        "【margin】: Außenabstand   【double】",
+        "【color】: Farbe   【Color】",
+        "【child】: Kind   【Widget】"
+      ]
+    }
+  ]
+}

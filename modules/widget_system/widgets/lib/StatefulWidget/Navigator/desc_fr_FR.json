@@ -1,0 +1,21 @@
+{
+  "id": 232,
+  "name": "Navigator",
+  "localName": "Navigateur",
+  "info": "Navigator gère un ensemble de composants enfants en utilisant des règles de pile, permettant de pousser et de retirer des composants enfants ainsi que d'écouter les événements d'entrée et de sortie de la pile. La gestion des routes de MaterialApp est fondamentalement basée sur l'utilisation de Navigator.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Navigator",
+      "desc": [
+        "【initialRoute】 : Route initiale   【String】",
+        "【onGenerateRoute】 : Générateur de route   【RouteFactory】",
+        "【observers】 : Observateur de route   【List<NavigatorObserver>】",
+        "【onPopPage】 : Rappel de sortie de pile   【PopPageCallback】"
+      ]
+    }
+  ]
+}

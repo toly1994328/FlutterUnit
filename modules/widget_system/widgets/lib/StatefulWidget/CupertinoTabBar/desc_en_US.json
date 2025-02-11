@@ -1,0 +1,25 @@
+{
+  "id": 63,
+  "name": "CupertinoTabBar",
+  "localName": "iOS Tab",
+  "info": "An iOS-style TabBar, typically used in CupertinoTabScaffold. Can specify color, icon size, border, and other data. Receives item click events.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoTabBar",
+      "desc": [
+        "【currentIndex】 : Current active index   【Widget】",
+        "【items】 : Item components   【Widget】",
+        "【backgroundColor】 : Background color   【Color】",
+        "【inactiveColor】 : Inactive color   【Color】",
+        "【activeColor】 : Active color   【Color】",
+        "【iconSize】 : Icon size    【double】",
+        "【border】 : Border   【Border】",
+        "【onTap】 : Click event   【Function(int)】"
+      ]
+    }
+  ]
+}

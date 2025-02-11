@@ -1,0 +1,33 @@
+{
+  "id": 97,
+  "name": "Stack",
+  "localName": "Diseño apilado",
+  "info": "Puede contener múltiples componentes, colocando los componentes hijos de manera apilada, el último encima. Tiene la propiedad de alineación, que se puede usar junto con el componente Positioned para un posicionamiento preciso.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    94,
+    95,
+    161
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Stack",
+      "desc": [
+        "【children】 : Lista de componentes   【List<Widget>】",
+        "【textDirection】 : Dirección de disposición de los hijos   【MainAxisAlignment】",
+        "【alignment】 : Modo de alineación   【AlignmentGeometry】",
+        "【overflow】 : Modo de desbordamiento   【Overflow】",
+        "【fit】 : Modo de ajuste   【StackFit】"
+      ]
+    },
+    {
+      "file": "node2_positioned.dart",
+      "name": "Uso combinado de Stack y Positioned",
+      "desc": [
+        "El componente Positioned solo se puede usar en Stack, y se puede especificar la distancia desde la parte superior, izquierda, derecha e inferior para colocar un componente con precisión."
+      ]
+    }
+  ]
+}

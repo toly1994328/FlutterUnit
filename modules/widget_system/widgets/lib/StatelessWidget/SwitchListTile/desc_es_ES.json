@@ -1,0 +1,41 @@
+{
+  "id": 18,
+  "name": "SwitchListTile",
+  "localName": "Interruptor de Lista",
+  "info": "Estructura de elemento de lista genérica proporcionada por Flutter, con una estructura de izquierda a centro y un Switch en la cola. Se pueden insertar componentes en las posiciones correspondientes, lo que permite manejar elementos específicos de manera conveniente.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "El comportamiento básico de SwitchListTile es el siguiente",
+      "desc": [
+        "【secondary】: Componente izquierdo   【Widget】",
+        "【title】: Componente superior central   【Widget】",
+        "【subtitle】: Componente inferior central   【Widget】",
+        "【inactiveThumbColor】: Color del círculo cuando no está seleccionado   【Color】",
+        "【inactiveTrackColor】: Color de la pista cuando no está seleccionado   【Color】",
+        "【activeColor】: Color del círculo cuando está seleccionado   【Color】",
+        "【activeTrackColor】: Color de la pista cuando está seleccionado   【Color】",
+        "【onChanged】: Evento de selección   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Efecto de selección de SwitchListTile",
+      "desc": [
+        "【selected】: Si está seleccionado   【bool】",
+        "【inactiveThumbImage】: Imagen del círculo cuando no está seleccionado   【ImageProvider】",
+        "【activeThumbImage】: Imagen del círculo cuando está seleccionado   【ImageProvider】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Propiedad de densidad de SwitchListTile",
+      "desc": [
+        "【dense】: Si está en modo denso   【bool】"
+      ]
+    }
+  ]
+}

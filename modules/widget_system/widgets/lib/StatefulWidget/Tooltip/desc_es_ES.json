@@ -1,0 +1,32 @@
+{
+  "id": 50,
+  "name": "Tooltip",
+  "localName": "Herramienta de sugerencia",
+  "info": "Componente para mostrar información de sugerencia, muestra información al mantener presionado. Se pueden especificar márgenes, duración de visualización, estilo de texto, propiedades de decoración.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Tooltip",
+      "desc": [
+        "【preferBelow】 : ¿Prefiere abajo?   【bool】",
+        "【padding】 : Relleno interno   【EdgeInsetsGeometry】",
+        "【margin】 : Margen externo   【EdgeInsetsGeometry】",
+        "【message】 : Contenido del mensaje   【String】",
+        "【showDuration】 : Duración de la visualización   【Duration】",
+        "【waitDuration】 : Tiempo de aparición al flotar   【Duration】",
+        "【child】 : Hijo   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_decoration.dart",
+      "name": "Decoración de Tooltip",
+      "desc": [
+        "【decoration】 : Objeto de decoración 【Decoration】",
+        "【textStyle】 : Estilo de texto   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": 291,
+  "name": "ListWheelViewport",
+  "localName": "List Wheel Viewport",
+  "info": "A viewport that displays a list of children on a cylindrical wheel, which is the underlying dependency of ListWheelScrollView and CupertinoPicker",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [
+    179,
+    139,
+    137,
+    253
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ListWheelViewport",
+      "desc": [
+        "【itemExtent】 : Axial item size   【double】",
+        "【offset】 : Viewport offset   【ViewportOffset】",
+        "【childDelegate】 : Child delegate constructor   【ListWheelChildDelegate】"
+      ]
+    },
+    {
+      "file": "node2_perspective.dart",
+      "name": "Perspective Effect of ListWheelViewport",
+      "desc": [
+        "【perspective】 : Perspective parameter   【double】",
+        "【squeeze】 : Squeeze value   【double】",
+        "【diameterRatio】 : Diameter ratio   【double】"
+      ]
+    },
+    {
+      "file": "node3_magnifier.dart",
+      "name": "Magnification of ListWheelViewport",
+      "desc": [
+        "【useMagnifier】 : Whether to magnify   【bool】",
+        "【magnification】 : Magnification ratio   【double】",
+        "【clipBehavior】 : Clip behavior   【Clip】",
+        "【renderChildrenOutsideViewport】 : Whether to render children outside the viewport   【bool】"
+      ]
+    },
+    {
+      "file": "node4_opacity.dart",
+      "name": "Offset and Opacity",
+      "desc": [
+        "【offAxisFraction】 : Axis center offset ratio   【double】",
+        "【overAndUnderCenterOpacity】 : Opacity outside the magnifier   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 263,
+  "name": "FractionalTranslation",
+  "localName": "Deslocamento Fracionado",
+  "info": "Desloca o componente filho através da propriedade offset, onde o deslocamento é o tamanho do componente filho multiplicado pelo valor horizontal e vertical do Offset.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do FractionalTranslation",
+      "desc": [
+        "【translation】 : Valor de deslocamento fracionado   【Offset】",
+        "【child】: Componente filho    【Widget】"
+      ]
+    }
+  ]
+}

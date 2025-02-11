@@ -1,0 +1,22 @@
+{
+  "id": 314,
+  "name": "SliverPrototypeExtentList",
+  "localName": "Список расширений прототипа Sliver",
+  "info": "Свойство prototypeItem является Widget, оно отвечает за ограничение размера элемента в направлении основной оси, но не отображается. Delegate принимает SliverChildDelegate для создания элементов.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    185,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SliverPrototypeExtentList",
+      "desc": [
+        "【prototypeItem】 : Компонент размера в направлении основной оси   【Widget】",
+        "【delegate】 : Делегат детей   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

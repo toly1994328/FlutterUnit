@@ -1,0 +1,31 @@
+{
+  "id": 57,
+  "name": "AppBar",
+  "localName": "Barra de aplicación",
+  "info": "Una estructura común para la barra superior de una aplicación, que permite colocar componentes correspondientes en áreas específicas, comúnmente utilizada en el componente Scaffold.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de AppBar",
+      "desc": [
+        "【leading】 : Componente izquierdo   【Widget】",
+        "【title】 : Componente central   【Widget】",
+        "【actions】 : Componente derecho   【List<Widget>】",
+        "【elevation】 : Profundidad de sombra   【double】",
+        "【shape】 : Forma   【ShapeBorder】",
+        "【backgroundColor】 : Profundidad de sombra   【Color de fondo】",
+        "【centerTitle】 : Centrar el título   【bool】"
+      ]
+    },
+    {
+      "file": "node2_tab.dart",
+      "name": "Uso combinado de AppBar con TabBar y TabBarView",
+      "desc": [
+        "【bottom】 : Componente inferior   【PreferredSizeWidget】"
+      ]
+    }
+  ]
+}

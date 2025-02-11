@@ -1,0 +1,18 @@
+{
+  "id": 203,
+  "name": "OrientationBuilder",
+  "localName": "方向ビルダー",
+  "info": "親コンポーネントが横向きか縦向きかをコールバックでき、それに応じて異なる子コンポーネントを構築できます。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "OrientationBuilderの基本的な使用",
+      "desc": [
+        "【builder】 : 方向コンポーネントビルダー   【OrientationWidgetBuilder】"
+      ]
+    }
+  ]
+}

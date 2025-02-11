@@ -1,0 +1,22 @@
+{
+  "id": 319,
+  "name": "Directionality",
+  "localName": "Richtungsabhängigkeit",
+  "info": "Ändert den Eigenschaftswert für Komponenten mit textDirection-Attribut einheitlich für Nachkommen. Der aktuelle Standardwert von textDirection kann auch über Directionality.of(context) abgerufen werden.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [
+    2,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Directionality",
+      "desc": [
+        "【textDirection】: Textausrichtung   【TextDirection】",
+        "【child】: Untergeordnete Komponente   【Widget】"
+      ]
+    }
+  ]
+}

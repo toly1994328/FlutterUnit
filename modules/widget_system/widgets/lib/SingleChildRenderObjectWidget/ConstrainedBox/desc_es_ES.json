@@ -1,0 +1,26 @@
+{
+  "id": 80,
+  "name": "ConstrainedBox",
+  "localName": "Caja con restricciones",
+  "info": "Puede contener un componente hijo, limitando el área del componente hijo especificando el ancho y alto máximo y mínimo.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    1,
+    79,
+    81
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de BoxConstraints",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【minWidth】 : Ancho mínimo   【double】",
+        "【minHeight】 : Altura mínima   【double】",
+        "【maxHeight】 : Altura máxima   【double】",
+        "【maxWidth】 : Ancho máximo   【double】"
+      ]
+    }
+  ]
+}

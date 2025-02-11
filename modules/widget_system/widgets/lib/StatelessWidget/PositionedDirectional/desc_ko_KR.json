@@ -1,0 +1,25 @@
+{
+  "id": 159,
+  "name": "PositionedDirectional",
+  "localName": "방향 위치 지정",
+  "info": "Positioned 컴포넌트와 기능이 동일하며, 속성 이름이 다릅니다. Stack에서만 사용할 수 있으며, 상하좌우 거리를 지정하여 특정 컴포넌트를 정확하게 배치할 수 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    108,
+    122
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PositionedDirectional 기본 사용",
+      "desc": [
+        "【child】 : 컴포넌트   【Widget】",
+        "【top】 : 부모 상단까지의 거리   【double】",
+        "【end】 : 부모 오른쪽까지의 거리   【double】",
+        "【start】 : 부모 왼쪽까지의 거리   【double】",
+        "【bottom】 : 부모 하단까지의 거리   【double】"
+      ]
+    }
+  ]
+}

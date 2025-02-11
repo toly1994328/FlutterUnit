@@ -1,0 +1,25 @@
+{
+  "id": 253,
+  "name": "Scrollable",
+  "localName": "스크롤 가능한 컴포넌트",
+  "info": "스크롤 가능한 컴포넌트의 상호작용 모델을 구현하며, viewportBuilder를 통해 viewport를 구성해야 합니다. ScrollView의 핵심 구현 컴포넌트 중 하나로, 일반적으로 직접 사용되지 않습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    340,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Scrollable 기본 사용법",
+      "desc": [
+        "【viewportBuilder】 : 뷰포트 빌더   【ViewportBuilder】",
+        "【axisDirection】: 스크롤 방향   【AxisDirection】",
+        "【controller】: 스크롤 컨트롤러   【ScrollController】",
+        "【dragStartBehavior】: 드래그 시작 동작   【DragStartBehavior】",
+        "【physics】: 스크롤 물리   【ScrollPhysics】,"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 59,
+  "name": "TabBarView",
+  "localName": "Pestañas",
+  "info": "Normalmente se usa junto con TabBar para lograr un efecto de deslizamiento de páginas. Generalmente no se usa por separado.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TabBarView debe usarse junto con TabBar",
+      "desc": [
+        "【controller】 : Controlador   【TabController】",
+        "【children】 : Hijos   【Color del indicador】",
+        "【physics】 : Comportamiento   【ScrollPhysics】"
+      ]
+    }
+  ]
+}

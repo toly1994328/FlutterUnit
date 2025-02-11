@@ -1,0 +1,20 @@
+{
+  "id": 255,
+  "name": "ValueListenableBuilder",
+  "localName": "値リスナービルダー",
+  "info": "値を監視し、その値が変化したときにbuilderコールバックを通じてUIを再構築し、setStateを使用せずに更新を避けることができます。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ValueListenableBuilderの基本使用",
+      "desc": [
+        "【builder】: コンポーネントビルダー   【ValueWidgetBuilder<T>】",
+        "【valueListenable】: 監視値    【ValueListenable<T>】",
+        "【child】: 子コンポーネント    【Widget】"
+      ]
+    }
+  ]
+}

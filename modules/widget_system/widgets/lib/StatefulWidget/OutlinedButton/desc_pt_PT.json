@@ -1,0 +1,34 @@
+{
+  "id": 355,
+  "name": "OutlinedButton",
+  "localName": "Botão com Contorno",
+  "info": "Botão com contorno no estilo Material, semelhante ao OutlineButton. Pode alterar propriedades como contorno, cor, sombra, etc., através de estilos.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    353,
+    27,
+    354
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do OutlinedButton",
+      "desc": [
+        "【child】 : Conteúdo do botão   【Widget】",
+        "【onPressed】 : Evento de clique   【VoidCallback】",
+        "【onLongPress】 : Evento de pressionar longo   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Estilo do OutlinedButton",
+      "desc": [
+        "【style】 : Estilo do botão   【ButtonStyle】",
+        "【focusNode】 : Foco   【FocusNode】",
+        "【clipBehavior】 : Comportamento de corte   【Clip】",
+        "【autofocus】 : Foco automático   【bool】"
+      ]
+    }
+  ]
+}

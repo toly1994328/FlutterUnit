@@ -1,0 +1,21 @@
+{
+  "id": 178,
+  "name": "ExpansionPanelList",
+  "localName": "展開リスト",
+  "info": "展開可能なリストコンポーネントで、ロジックに応じて単一展開または複数展開を実現できます。展開アニメーションの持続時間を指定でき、展開コールバックを受け取ります",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ExpansionPanelList基本使用",
+      "desc": [
+        "【children】 : 子コンポーネントリスト   【List<Widget>】",
+        "【animationDuration】 : アニメーションの持続時間   【Duration】",
+        "【expansionCallback】 : 展開コールバック   【List<Widget>】",
+        "【onPressed】 : クリックイベント  【Function()】"
+      ]
+    }
+  ]
+}

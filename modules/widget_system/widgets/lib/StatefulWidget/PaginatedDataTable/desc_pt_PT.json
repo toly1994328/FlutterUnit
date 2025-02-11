@@ -1,0 +1,30 @@
+{
+  "id": 235,
+  "name": "PaginatedDataTable",
+  "localName": "Tabela Paginada",
+  "info": "Um componente de tabela paginada rico em funcionalidades, que permite especificar o número de páginas, ordenação, e navegação entre páginas.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    110,
+    102
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso do PaginatedDataTable",
+      "desc": [
+        "【header】 : Nome da tabela   【Widget】",
+        "【rowsPerPage】 : Número de registros por página   【int】",
+        "【actions】 : Componentes de ação   【List<Widget>】",
+        "【columns】 : Colunas de dados   【List<DataColumn>】",
+        "【sortColumnIndex】 : Índice da coluna de ordenação   【int】",
+        "【sortAscending】 : Ordenação ascendente   【bool】",
+        "【onSelectAll】 : Callback de seleção total   【ValueSetter<bool>】",
+        "【onRowsPerPageChanged】 : Listener de mudança de paginação   【ValueChanged<int>】",
+        "【availableRowsPerPage】 : Lista de paginação disponível   【List<int>】",
+        "【source】 : Fonte de dados   【DataTableSource】"
+      ]
+    }
+  ]
+}

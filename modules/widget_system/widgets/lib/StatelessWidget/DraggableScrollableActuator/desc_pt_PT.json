@@ -1,0 +1,19 @@
+{
+  "id": 221,
+  "name": "DraggableScrollableActuator",
+  "localName": "Reposicionador de Arrasto e Deslize",
+  "info": "Ele pode notificar o DraggableScrollableSheet descendente para redefinir sua posição para o estado inicial.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Método de Uso Básico",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "Use DraggableScrollableActuator.reset(context) para redefinir a posição inicial do DraggableScrollableSheet descendente."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": 237,
+  "name": "CarouselView",
+  "localName": "캐러셀 뷰",
+  "info": "Material Design 규격에 부합하는 캐러셀 컴포넌트입니다. 스크롤 가능한 항목 목록을 표시하며, 각 항목은 선택된 레이아웃에 따라 동적으로 크기를 조정할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    253,
+    340,
+    160
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CarouselView 기본 사용법",
+      "desc": [
+        "【itemExtent】 : 주축 방향 강제 크기  【double】",
+        "【shrinkExtent】: 스크롤 중, 주축 방향 항목 최소 크기 【double】",
+        "【scrollDirection】 : 스크롤 방향   【Axis?】",
+        "【children】: 하위 컴포넌트 목록 【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "CarouselView 스타일 설정",
+      "desc": [
+        "【padding】 : 안쪽 여백   【EdgeInsets? 】",
+        "【backgroundColor】 : 배경색   【Color? 】",
+        "【elevation】 : 그림자 깊이   【double?】",
+        "【shape】 : 모양   【ShapeBorder?】",
+        "【controller】 : 컨트롤러   【CarouselController?】",
+        "【reverse】 : 역방향 스크롤 여부   【bool】",
+        "【onTap】 : 클릭 이벤트   【ValueChanged<int>? 】"
+      ]
+    }
+  ]
+}

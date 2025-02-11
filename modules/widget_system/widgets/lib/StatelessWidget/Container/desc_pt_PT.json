@@ -1,0 +1,67 @@
+{
+  "id": 1,
+  "name": "Container",
+  "localName": "Componente de Contêiner",
+  "info": "Componente de contêiner usado para acomodar um único componente filho. Integra várias funcionalidades de componentes filhos únicos, como margens internas e externas, transformações, decorações, restrições, etc...",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    74,
+    85,
+    80,
+    78,
+    70,
+    123
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Pode ser usado para exibir uma área com largura e altura especificadas",
+      "desc": [
+        "【width】 : Largura   【int】",
+        "【height】: Altura   【int】",
+        "【color】: Cor    【Color】"
+      ]
+    },
+    {
+      "file": "node2_child.dart",
+      "name": "Pode colocar um componente filho na área",
+      "desc": [
+        "【padding】 : Margem interna   【EdgeInsetsGeometry】",
+        "【margin】: Margem externa   【EdgeInsetsGeometry】",
+        "【child】: Componente filho    【Widget】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Pode alinhar e posicionar o componente filho",
+      "desc": [
+        "【alignment】 : Alinhamento e posicionamento   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node4_decoration.dart",
+      "name": "Pode decorar o componente filho",
+      "desc": [
+        "【decoration】 : Decoração   【Decoration】",
+        "Pode decorar: bordas, arcos, cores, gradientes, sombras, imagens, etc."
+      ]
+    },
+    {
+      "file": "node5_transform.dart",
+      "name": "Container também possui transformações",
+      "desc": [
+        "【transform】 : Matriz de transformação   【Matrix4】",
+        "Transformação de matriz baseada em Matrix4, detalhes da transformação veja álgebra linear"
+      ]
+    },
+    {
+      "file": "node6_constraints.dart",
+      "name": "Restrições do Container",
+      "desc": [
+        "【constraints】 : Restrições   【BoxConstraints】",
+        "Irá restringir o tamanho da área, não será menor que a largura e altura mínima especificada, nem maior que a largura e altura máxima especificada."
+      ]
+    }
+  ]
+}

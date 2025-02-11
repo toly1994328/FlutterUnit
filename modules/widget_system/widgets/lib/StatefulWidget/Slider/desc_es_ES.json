@@ -1,0 +1,37 @@
+{
+  "id": 42,
+  "name": "Slider",
+  "localName": "Control deslizante",
+  "info": "Componente de control deslizante que permite seleccionar arrastrando entre un valor máximo y mínimo especificados. Se puede especificar el color, el número de segmentos y las etiquetas mostradas, y recibe una devolución de llamada para los cambios de progreso.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    43,
+    44,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico del Slider",
+      "desc": [
+        "【value】 : valor   【double】",
+        "【min】 : valor mínimo   【double】",
+        "【max】 : valor máximo   【double】",
+        "【activeColor】 : color activo   【Color】",
+        "【inactiveColor】 : color inactivo   【Color】",
+        "【onChanged】 : devolución de llamada al cambiar   【Function(double)】"
+      ]
+    },
+    {
+      "file": "node2_lable.dart",
+      "name": "Segmentos y etiquetas del Slider",
+      "desc": [
+        "【divisions】 : número de segmentos   【int】",
+        "【label】 : texto de la burbuja de información   【String】",
+        "【onChangeStart】 : escucha al comenzar a deslizar   【Function(double)】",
+        "【onChangeEnd】 : escucha al finalizar el deslizamiento   【Function(double)】"
+      ]
+    }
+  ]
+}

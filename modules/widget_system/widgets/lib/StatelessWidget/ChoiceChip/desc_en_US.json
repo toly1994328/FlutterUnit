@@ -1,0 +1,27 @@
+{
+  "id": 12,
+  "name": "ChoiceChip",
+  "localName": "Choice Strip",
+  "info": "Similar in style to the Chip component, with some selectable properties. You can specify the color when selected, the shadow color, and the selection event.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    11,
+    13,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "The normal performance of ChoiceChip is as follows",
+      "desc": [
+        "【selectedColor】: Color when selected   【Color】",
+        "【selectedShadowColor】: Shadow color when selected   【Color】",
+        "【onSelected】: Selection event   【Fuction(bool)】",
+        "    Other properties are the same as the Chip component, with no right component."
+      ]
+    }
+  ]
+}

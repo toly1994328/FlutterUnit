@@ -1,0 +1,30 @@
+{
+  "id": 235,
+  "name": "PaginatedDataTable",
+  "localName": "ページネーション可能なテーブル",
+  "info": "ページネーション数、並び替え、ページの前後切り替えを指定できる機能豊富なページネーション可能なテーブルコンポーネント。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    110,
+    102
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PaginatedDataTable の使用",
+      "desc": [
+        "【header】 : テーブル名   【Widget】",
+        "【rowsPerPage】 : 1ページあたりのレコード数   【int】",
+        "【actions】 : 操作コンポーネント   【List<Widget>】",
+        "【columns】 : データ列   【List<DataColumn>】",
+        "【sortColumnIndex】 : 並び替え列のインデックス   【int】",
+        "【sortAscending】 : 昇順かどうか   【bool】",
+        "【onSelectAll】 : 全選択コールバック   【ValueSetter<bool>】",
+        "【onRowsPerPageChanged】 : ページネーション変更リスナー   【ValueChanged<int>】",
+        "【availableRowsPerPage】 : 利用可能なページネーションリスト   【List<int>】",
+        "【source】 : データソース   【DataTableSource】"
+      ]
+    }
+  ]
+}

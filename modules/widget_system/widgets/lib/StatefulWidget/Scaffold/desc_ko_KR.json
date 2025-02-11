@@ -1,0 +1,29 @@
+{
+  "id": 64,
+  "name": "Scaffold",
+  "localName": "스캐폴드",
+  "info": "일반적인 앱 구조로, 상단, 하단, 좌측, 우측, 중앙, 플로팅 버튼 부분을 포함하며, 해당 위치에 컴포넌트를 배치할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    57,
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Scaffold 기본 사용법",
+      "desc": [
+        "【appBar】 : 헤더 컴포넌트   【PreferredSizeWidget】",
+        "【bottomNavigationBar】 : 하단 컴포넌트   【Widget】",
+        "【drawer】 : 좌측 슬라이드 컴포넌트   【Widget】",
+        "【endDrawer】 : 우측 슬라이드 컴포넌트   【Widget】",
+        "【body】 : 내용 컴포넌트   【Widget】",
+        "【backgroundColor】 : 배경색   【Color】",
+        "【floatingActionButton】 : 플로팅 버튼   【Widget】",
+        "【floatingActionButtonLocation】 : 플로팅 버튼 위치   【FloatingActionButtonLocation】"
+      ]
+    }
+  ]
+}

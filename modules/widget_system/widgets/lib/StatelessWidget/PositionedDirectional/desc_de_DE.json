@@ -1,0 +1,25 @@
+{
+  "id": 159,
+  "name": "PositionedDirectional",
+  "localName": "Richtungsbasierte Positionierung",
+  "info": "Funktioniert wie die Positioned-Komponente, aber mit unterschiedlichen Eigenschaftsnamen. Kann nur in einem Stack verwendet werden und ermöglicht die präzise Platzierung einer Komponente durch Angabe der Abstände von oben, links, rechts und unten.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    108,
+    122
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von PositionedDirectional",
+      "desc": [
+        "【child】 : Komponente   【Widget】",
+        "【top】 : Abstand zum oberen Rand des Elternelements   【double】",
+        "【end】 : Abstand zum rechten Rand des Elternelements   【double】",
+        "【start】 : Abstand zum linken Rand des Elternelements   【double】",
+        "【bottom】 : Abstand zum unteren Rand des Elternelements   【double】"
+      ]
+    }
+  ]
+}

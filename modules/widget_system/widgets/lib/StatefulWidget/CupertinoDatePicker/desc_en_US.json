@@ -1,0 +1,25 @@
+{
+  "id": 137,
+  "name": "CupertinoDatePicker",
+  "localName": "iOS Date Picker",
+  "info": "A high-end rolling date picker that allows you to specify the type of selection, date range, etc., and receive date selection events.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoDatePicker",
+      "desc": [
+        "【initialDateTime】 : Initial date   【DateTime】",
+        "【minimumYear】 : Minimum year   【int】",
+        "【maximumYear】 : Maximum year   【int】",
+        "【onDateTimeChanged】 : Click callback  【Function(DateTime)】",
+        "【minuteInterval】 : Minute interval  【int】",
+        "【use24hFormat】 : Whether it is 24-hour format  【bool】",
+        "【backgroundColor】 : Background color  【Color】",
+        "【mode】 : Mode*3  【CupertinoDatePickerMode】"
+      ]
+    }
+  ]
+}

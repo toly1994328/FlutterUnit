@@ -1,0 +1,27 @@
+{
+  "id": 44,
+  "name": "RangeSlider",
+  "localName": "Range Slider",
+  "info": "The Range Slider component supports two-point dragging to get the range between them. You can specify the color, number of segments, and displayed labels, and receive progress change callbacks.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of RangeSlider",
+      "desc": [
+        "【values】 : Values   【RangeValues】",
+        "【min】 : Minimum value   【double】",
+        "【max】 : Maximum value   【double】",
+        "【divisions】 : Number of divisions   【int】",
+        "【label】 : Tooltip text   【String】",
+        "【activeColor】 : Active color   【Color】",
+        "【inactiveColor】 : Inactive color   【Color】",
+        "【onChangeStart】 : Listener when sliding starts   【Function(RangeValues)】",
+        "【onChangeEnd】 : Listener when sliding ends   【Function(RangeValues)】",
+        "【onChanged】 : Callback when changed   【Function(RangeValues)】"
+      ]
+    }
+  ]
+}

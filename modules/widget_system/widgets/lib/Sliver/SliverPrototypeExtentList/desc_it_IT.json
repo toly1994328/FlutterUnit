@@ -1,0 +1,22 @@
+{
+  "id": 314,
+  "name": "SliverPrototypeExtentList",
+  "localName": "Lista di estensione del prototipo Sliver",
+  "info": "La proprietà prototypeItem è un Widget, che si occupa di vincolare le dimensioni dell'elemento nella direzione dell'asse principale, ma non viene visualizzato. Il delegate accetta un SliverChildDelegate per completare la creazione dell'elemento.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    185,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di SliverPrototypeExtentList",
+      "desc": [
+        "【prototypeItem】 : Componente di dimensioni nella direzione dell'asse principale   【Widget】",
+        "【delegate】 : Delegato per i figli   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

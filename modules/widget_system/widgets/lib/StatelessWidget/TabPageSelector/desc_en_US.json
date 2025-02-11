@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "Tab Sliding Selector",
+  "info": "Usually used as an indicator with TabBarView, sharing a common TabController. Can specify color, size, and selected color.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of TabPageSelector",
+      "desc": [
+        "【controller】 : Controller   【TabController】",
+        "【indicatorSize】: Indicator Size   【double】",
+        "【selectedColor】: Selected Color   【Color】",
+        "【color】: Color    【Color】"
+      ]
+    }
+  ]
+}

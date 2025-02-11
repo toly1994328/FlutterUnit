@@ -1,0 +1,24 @@
+{
+  "id": 46,
+  "name": "CircularProgressIndicator",
+  "localName": "Indicatore di progresso circolare",
+  "info": "Visualizzazione del progresso circolare, con possibilità di specificare colore, larghezza della linea, progresso, ecc. Ruota continuamente quando il valore è null.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    47,
+    48
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CircularProgressIndicator",
+      "desc": [
+        "【value】 : Progresso   【double】",
+        "【backgroundColor】 : Colore di sfondo   【Color】",
+        "【valueColor】 : Colore del progresso   【Animation<Color>】",
+        "【strokeWidth】 : Larghezza della linea   【double】"
+      ]
+    }
+  ]
+}

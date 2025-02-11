@@ -1,0 +1,25 @@
+{
+  "id": 166,
+  "name": "CustomPaint",
+  "localName": "Componente di disegno",
+  "info": "Attraverso CustomPainter, è possibile realizzare alcuni componenti di disegno personalizzati complessi, che rappresentano l'anima dei componenti personalizzati in Flutter.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_clock.dart",
+      "name": "Disegno di linee con CustomPaint",
+      "desc": [
+        "【painter】 : strumento di disegno   【CustomPainter】"
+      ]
+    },
+    {
+      "file": "node2_bezier.dart",
+      "name": "Curva di Bézier con CustomPaint",
+      "desc": [
+        "Flutter supporta anche disegni complessi come le curve di Bézier."
+      ]
+    }
+  ]
+}

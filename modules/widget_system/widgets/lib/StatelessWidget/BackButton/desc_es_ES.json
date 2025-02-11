@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "Botón de retroceso",
+  "info": "Un IconButton con función de retroceso, el icono de retroceso no se puede cambiar. Se comporta de manera diferente en iOS y Android.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Propiedades de BackButton",
+      "desc": [
+        "【color】: Color   【Color】",
+        "【style】: Estilo del botón   【ButtonStyle?】",
+        "【onPressed】: Evento de clic   【Function】",
+        "Si onPressed está vacío, saldrá de la pila actual."
+      ]
+    }
+  ]
+}

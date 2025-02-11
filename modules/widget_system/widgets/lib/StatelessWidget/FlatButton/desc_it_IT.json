@@ -1,0 +1,58 @@
+{
+  "id": 25,
+  "name": "FlatButton",
+  "localName": "Pulsante piatto",
+  "info": "Pulsante piatto senza ombre, implementato basandosi su MaterialButton, tutte le proprietà sono simili a MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    26,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Evento di clic FlatButton",
+      "desc": [
+        "【color】: Colore   【Color】",
+        "【splashColor】: Colore effetto ondulazione   【Color】",
+        "【child】: Componente figlio   【Widget】",
+        "【textColor】: Colore testo componente figlio   【Color】",
+        "【highlightColor】: Colore evidenziazione pressione prolungata   【Color】",
+        "【padding】: Spaziatura interna   【EdgeInsetsGeometry】",
+        "【onPressed】: Evento clic   【Function】",
+        "    ",
+        "",
+        "class CustomFlatButton extends StatelessWidget {",
+        "  const CustomFlatButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'Il pulsante FlatButton è uscito di scena con Flutter 3.3. Il suo sostituto è il pulsante ElevatedButton.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        " @override",
+        " Widget build(BuildContext context) {",
+        "   return FlatButton(",
+        "     onPressed: ()=>{,",
+        "     padding: const EdgeInsets.all(8),",
+        "     splashColor: Colors.green,",
+        "     child: const Text(\"FlatButton\"),",
+        "     textColor: const Color(0xffFfffff),",
+        "     color: Colors.blue,",
+        "     highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

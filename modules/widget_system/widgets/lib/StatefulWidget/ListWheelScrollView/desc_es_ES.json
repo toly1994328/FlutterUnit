@@ -1,0 +1,24 @@
+{
+  "id": 179,
+  "name": "ListWheelScrollView",
+  "localName": "Lista de rueda de desplazamiento",
+  "info": "Una lista de desplazamiento cilíndrica de alta gama, muy ingeniosa, permite especificar propiedades como la altura del ítem, la perspectiva, la compresión, etc., y recibe eventos de selección al deslizar.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    139,
+    291
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de ListWheelScrollView",
+      "desc": [
+        "【children】 : Lista de componentes hijos   【List<Widget>】",
+        "【perspective】 : Grado de perspectiva   【double】",
+        "【itemExtent】 : Altura del ítem   【EdgeInsets】",
+        "【onSelectedItemChanged】 : Callback de selección  【ValueChanged<int> 】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 195,
+  "name": "CupertinoScrollbar",
+  "localName": "iOS Scroll Indicator",
+  "info": "An iOS-style scroll indicator that needs to wrap a scrollable area. When scrollable, it displays a scroll bar for indication.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    194,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoScrollbar",
+      "desc": [
+        "【child】 : Child widget   【Widget】",
+        "【controller】 : Controller  【ScrollController】"
+      ]
+    }
+  ]
+}

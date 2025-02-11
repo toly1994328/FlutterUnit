@@ -1,0 +1,27 @@
+{
+  "id": 140,
+  "name": "SnackBar",
+  "localName": "정보 알림 바",
+  "info": "컴포넌트로서는 간단한 구조 컴포넌트로, 모양, 그림자 깊이, 배경색 등을 지정할 수 있습니다. 일반적으로 ScaffoldState의 showSnackBar 메소드를 통해 하단에서 팝업됩니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    141,
+    142
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SnackBar 기본 사용",
+      "desc": [
+        "【content】 : 중간 내용 컴포넌트   【Widget】",
+        "【action】 : 오른쪽 버튼   【SnackBarAction】",
+        "【duration】 : 지속 시간   【Widget】",
+        "【backgroundColor】 : 배경색   【Color】",
+        "【elevation】 : 그림자 깊이   【double】",
+        "【shape】 : 모양   【ShapeBorder】",
+        "【onVisible】 : 표시 시 콜백  【Function()】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 136,
+  "name": "YearPicker",
+  "localName": "Sélecteur d'année",
+  "info": "Composant de sélection d'année, d'apparence modeste. Permet de spécifier la plage de dates sélectionnables, la date sélectionnée, etc., et reçoit chaque événement de sélection.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    134,
+    135
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de YearPicker",
+      "desc": [
+        "【selectedDate】 : Date sélectionnée   【DateTime】",
+        "【firstDate】 : Limite de la première date   【DateTime】",
+        "【lastDate】 : Limite de la dernière date   【DateTime】",
+        "【onChanged】 : Rappel au clic  【Function(DateTime)】"
+      ]
+    }
+  ]
+}

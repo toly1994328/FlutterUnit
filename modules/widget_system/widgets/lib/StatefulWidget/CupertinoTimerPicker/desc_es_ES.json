@@ -1,0 +1,23 @@
+{
+  "id": 138,
+  "name": "CupertinoTimerPicker",
+  "localName": "Selector de tiempo de iOS",
+  "info": "Selector de tiempo de desplazamiento de alta gama, que puede especificar el tipo de selección, la hora inicial, el color de fondo, etc., y recibe eventos de selección de tiempo.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoTimerPicker",
+      "desc": [
+        "【initialTimerDuration】 : Hora inicial   【Duration】",
+        "【minuteInterval】 : Intervalo de minutos   【double】",
+        "【secondInterval】 : Intervalo de segundos   【double】",
+        "【alignment】 : Alineación  【AlignmentGeometry】",
+        "【backgroundColor】 : Color de fondo  【Color】",
+        "【mode】 : Modo*3  【CupertinoTimerPickerMode】"
+      ]
+    }
+  ]
+}

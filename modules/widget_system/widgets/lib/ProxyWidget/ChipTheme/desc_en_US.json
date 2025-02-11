@@ -1,0 +1,25 @@
+{
+  "id": 328,
+  "name": "ChipTheme",
+  "localName": "Chip Style",
+  "info": "Mainly used to set default properties for Chip type components of descendants, and can also be used to obtain the default properties of Chip.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    11,
+    153,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ChipTheme",
+      "desc": [
+        "You can specify the ChipThemeData properties to set default styles for Chip type components of descendants. The properties are similar to those of Chip, such as shadow, color, margin, shape, text style, etc. You can also use ChipTheme.of to get the theme data of Chip."
+      ]
+    }
+  ]
+}

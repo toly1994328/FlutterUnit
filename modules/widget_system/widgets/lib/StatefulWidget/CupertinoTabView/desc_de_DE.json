@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Cupertino-Seite",
+  "info": "Kann wie MaterialApp einen Navigationsstapel verwalten. Routen werden über routes und onGenerateRoute erstellt, und die Navigation kann über navigatorObservers überwacht werden.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoTabView",
+      "desc": [
+        "【builder】: Hauptseitenkonstruktor   【WidgetBuilder】",
+        "【navigatorObservers】: Routenbeobachter   【List<NavigatorObserver>】",
+        "【routes】: Routenzuordnung   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】: Routenfabrik   【RouteFactory】"
+      ]
+    }
+  ]
+}

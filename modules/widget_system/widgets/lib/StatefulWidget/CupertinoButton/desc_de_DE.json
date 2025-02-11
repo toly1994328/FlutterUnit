@@ -1,0 +1,23 @@
+{
+  "id": 24,
+  "name": "CupertinoButton",
+  "localName": "iOS-Schaltfläche",
+  "info": "iOS-stilige Schaltfläche. Kann Farbe, Transparenz beim Klicken, Innenabstand, abgerundete Ecken usw. festlegen. Kann Klickereignisse empfangen.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoButton Klickereignis",
+      "desc": [
+        "【color】: Farbe   【Color】",
+        "【pressedOpacity】: Transparenz beim Drücken   【double】",
+        "【child】: Kind-Widget   【Widget】",
+        "【padding】: Innenabstand   【EdgeInsetsGeometry】",
+        "【borderRadius】: Radius der abgerundeten Ecken   【BorderRadius】",
+        "【onPressed】: Klickereignis   【Function】"
+      ]
+    }
+  ]
+}

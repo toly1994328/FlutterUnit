@@ -1,0 +1,22 @@
+{
+  "id": 142,
+  "name": "BottomSheet",
+  "localName": "Gaveta Inferior",
+  "info": "Como componente, é uma estrutura simples que pode especificar forma, profundidade de sombra, cor de fundo, construtor de componentes internos, etc. Geralmente é exibido a partir da parte inferior através do método showBottomSheet do ScaffoldState.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do BottomSheet",
+      "desc": [
+        "【builder】: Construtor de Componentes 【WidgetBuilder】",
+        "【backgroundColor】: Cor de Fundo 【Color】",
+        "【elevation】: Profundidade de Sombra 【double】",
+        "【shape】: Forma 【ShapeBorder】",
+        "【onClosing】: Callback de Fechamento 【Function()】"
+      ]
+    }
+  ]
+}

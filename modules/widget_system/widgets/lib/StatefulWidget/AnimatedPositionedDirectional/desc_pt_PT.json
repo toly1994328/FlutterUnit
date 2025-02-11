@@ -1,0 +1,28 @@
+{
+  "id": 122,
+  "name": "AnimatedPositionedDirectional",
+  "localName": "Animação de Posicionamento Direcional",
+  "info": "Permite que os componentes filhos realizem animações de PositionedDirectional (Posicionamento Direcional), podendo especificar a duração e a curva, com eventos de término da animação. Só pode ser usado dentro de uma Stack.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    121,
+    159
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do AnimatedPositionedDirectional",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【duration】 : Duração da animação   【Duration】",
+        "【onEnd】 : Callback de término da animação   【Function()】",
+        "【curve】 : Curva da animação   【Duration】",
+        "【top】 : Distância até o topo do pai   【double】",
+        "【end】 : Distância até a direita do pai   【double】",
+        "【start】 : Distância até a esquerda do pai   【double】",
+        "【bottom】 : Distância até a base do pai   【double】"
+      ]
+    }
+  ]
+}

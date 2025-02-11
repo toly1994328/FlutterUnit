@@ -1,0 +1,20 @@
+{
+  "id": 209,
+  "name": "DecoratedSliver",
+  "localName": "装飾スライバー",
+  "info": "このコンポーネントはスクロールビューで使用され、子スライバーコンポーネントをラップして、装飾効果を追加します。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "DecoratedSliver の基本使用",
+      "desc": [
+        "【sliver】 : 子コンポーネント   【Widget?】",
+        "【decoration】 : 装飾オブジェクト   【Decoration】",
+        "【position】 : 装飾位置   【DecorationPosition】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 198,
+  "name": "Form",
+  "localName": "Form Component",
+  "info": "Form component, which can receive change callbacks from FormField components below it, intercept page returns through onWillPop, and save or validate form fields through FormState.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Form",
+      "desc": [
+        "【child】 : Child component   【Widget】",
+        "【onChanged】 : Form change callback   【VoidCallback】",
+        "【onWillPop】 : Return callback  【WillPopCallback】"
+      ]
+    }
+  ]
+}

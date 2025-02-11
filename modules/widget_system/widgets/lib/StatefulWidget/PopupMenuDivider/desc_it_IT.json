@@ -1,0 +1,21 @@
+{
+  "id": 174,
+  "name": "PopupMenuDivider",
+  "localName": "Linea di divisione del menu a comparsa",
+  "info": "Linea di divisione per PopupMenuButton, generalmente non utilizzata da sola, può essere specificata l'altezza.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    56,
+    34
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di PopupMenuDivider",
+      "desc": [
+        "【height】 : Altezza  【double】"
+      ]
+    }
+  ]
+}

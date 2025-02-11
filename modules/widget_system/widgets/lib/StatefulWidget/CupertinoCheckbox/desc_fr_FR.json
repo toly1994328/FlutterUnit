@@ -1,0 +1,43 @@
+{
+  "id": 238,
+  "name": "CupertinoCheckbox",
+  "localName": "Case à cocher·Style macOS",
+  "info": "Une case à cocher de style macOS, prenant en charge trois états ; nécessite de fournir une valeur value et une fonction de rappel onChanged lors de l'utilisation.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    39,
+    17
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation de CupertinoCheckbox",
+      "desc": [
+        "【value】 : Est-ce sélectionné   【bool?】",
+        "【onChanged】 : Rappel de changement   【ValueChanged<bool?>?】",
+        "【checkColor】 : Couleur de la coche √ lorsqu'elle est sélectionnée   【Color?】",
+        "【activeColor】 : Couleur de fond lorsqu'elle est sélectionnée   【Color?】",
+        "【activeColor】 : Couleur de fond lorsqu'elle est sélectionnée   【Color?】",
+        "【inactiveColor】 : Couleur de bordure/arrière-plan non activé   【Color?】",
+        "Lorsque onChanged est null, cela signifie qu'il est désactivé."
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Trois états de CupertinoCheckbox",
+      "desc": [
+        "【tristate】 : Activer trois états   【bool】",
+        "En mode tristate, la valeur null représente -"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Bordure et forme de CupertinoCheckbox",
+      "desc": [
+        "【shape】 : Forme   【OutlinedBorder?】",
+        "【side】 : Bordure   【BorderSide?】"
+      ]
+    }
+  ]
+}

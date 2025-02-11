@@ -1,0 +1,72 @@
+{
+  "id": 2,
+  "name": "Text",
+  "localName": "Textkomponente",
+  "info": "Eine Komponente zur Anzeige von Text. Verfügt über eine Vielzahl von Eigenschaften, die Ihren Anforderungen gerecht werden. Der Kernstil wird durch das style-Attribut gesteuert.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    101,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Grundlegende Textstile",
+      "desc": [
+        "【Parameter】 : Text  【String】",
+        "【style】: Textstil   【TextStyle】",
+        "【color】: Textfarbe   【Color】",
+        "【fontSize】: Textgröße   【double】",
+        "【fontWeight】: Schriftstärke   【FontWeight】",
+        "【fontStyle】: Schriftstil   【fontStyle】",
+        "【letterSpacing】: Zeichenabstand   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Textschatten",
+      "desc": [
+        "【shadows】 : Text  【List<Shadow>】",
+        "【backgroundColor】: Hintergrundfarbe   【Color】"
+      ]
+    },
+    {
+      "file": "node3_decoration.dart",
+      "name": "Textdekoration",
+      "desc": [
+        "【fontFamily】 : Schriftart  【String】",
+        "【decoration】: Dekorationslinie   【TextDecoration】",
+        "【decorationColor】: Dekorationslinienfarbe   【Color】",
+        "【decorationThickness】: Dekorationsliniendicke   【double】",
+        "【decorationStyle】: Dekorationslinienstil   【TextDecorationStyle】"
+      ]
+    },
+    {
+      "file": "node4_textAlign.dart",
+      "name": "Textausrichtung",
+      "desc": [
+        "【textAlign】: Ausrichtung   【TextAlign】",
+        "Unten sind in der Reihenfolge: left, right, center, justify, start, end."
+      ]
+    },
+    {
+      "file": "node5_textDirection.dart",
+      "name": "Textrichtung und maximale Zeilenanzahl",
+      "desc": [
+        "【maxLines】 : Maximale Zeilenanzahl  【int】",
+        "【textDirection】 : Textrichtung  【TextDirection】",
+        "Unten sind in der Reihenfolge: rtl, ltr."
+      ]
+    },
+    {
+      "file": "node6_softWrap.dart",
+      "name": "Zeilenumbruch und Überlaufverhalten",
+      "desc": [
+        "【softWrap】 : Zeilenumbruch  【bool】",
+        "【overflow】 : Überlaufverhalten  【TextOverflow】",
+        "Unten softWrap=false; overflow in der Reihenfolge: clip, fade, ellipsis, visible."
+      ]
+    }
+  ]
+}

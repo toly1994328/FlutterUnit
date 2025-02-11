@@ -1,0 +1,33 @@
+{
+  "id": 55,
+  "name": "DropdownButton",
+  "localName": "Botão de dropdown",
+  "info": "Botão para seleção de dropdown, pode especificar ícone, profundidade de sombra, dica e outros atributos, recebe eventos de mudança de seleção.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do DropdownButton",
+      "desc": [
+        "【value】 : Valor atual   【T】",
+        "【items】 : Caixa de seleção de dropdown   【List<DropdownMenuItem<T>>】",
+        "【icon】 : Ícone   【Widget】",
+        "【elevation】 : Profundidade de sombra   【double】",
+        "【onChanged】 : Evento de seleção de item   【Function(T)】",
+        "【backgroundColor】 : Cor de fundo   【Color】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Especificação de estilo do DropdownButton",
+      "desc": [
+        "【isDense】 : Se deve ser compacto   【bool】",
+        "【iconSize】 : Tamanho do ícone   【double】",
+        "【hint】 : Componente de dica   【Widget】",
+        "【iconEnabledColor】 : Cor do ícone   【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 32,
+  "name": "CloseButton",
+  "localName": "Close Button",
+  "info": "An IconButton with close functionality, the close icon cannot be changed.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CloseButton Click Event",
+      "desc": [
+        "【onPressed】: Click event  【VoidCallback?】",
+        "【style】: Button style   【ButtonStyle?】",
+        "【color】: Color   【Color】",
+        "When onPressed is null, clicking will exit the current interface."
+      ]
+    }
+  ]
+}

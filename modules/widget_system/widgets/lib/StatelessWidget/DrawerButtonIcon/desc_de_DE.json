@@ -1,0 +1,18 @@
+{
+  "id": 273,
+  "name": "DrawerButtonIcon",
+  "localName": "Schubladen-Schaltflächensymbol",
+  "info": "Ein Schubladen-Icon-Symbol, das je nach Plattform das entsprechende Symbol anzeigt und über ActionIconTheme angepasst werden kann.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerButtonIcon-Effekt",
+      "desc": [
+        "Passt das Symbol der Schubladenschaltfläche für verschiedene Plattformen über die _ActionIcon-Komponente gemäß dem ActionIconTheme an."
+      ]
+    }
+  ]
+}

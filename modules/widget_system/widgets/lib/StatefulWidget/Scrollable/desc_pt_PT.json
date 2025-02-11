@@ -1,0 +1,25 @@
+{
+  "id": 253,
+  "name": "Scrollable",
+  "localName": "Componente Deslizável",
+  "info": "Implementa um modelo de interação para um componente deslizável, necessitando da construção de um viewport através do viewportBuilder. É um dos componentes principais da implementação do ScrollView, geralmente não utilizado diretamente.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    340,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Scrollable",
+      "desc": [
+        "【viewportBuilder】 : Construtor do viewport   【ViewportBuilder】",
+        "【axisDirection】: Direção do deslize   【AxisDirection】",
+        "【controller】: Controlador de deslize   【ScrollController】",
+        "【dragStartBehavior】: Comportamento de arrasto   【DragStartBehavior】",
+        "【physics】: Fenómeno de rolagem   【ScrollPhysics】,"
+      ]
+    }
+  ]
+}

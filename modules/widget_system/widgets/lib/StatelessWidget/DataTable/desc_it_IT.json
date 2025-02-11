@@ -1,0 +1,28 @@
+{
+  "id": 102,
+  "name": "DataTable",
+  "localName": "Tabella dati",
+  "info": "Un componente tabella che può essere personalizzato con logiche per clic, modifiche, ordinamento e altre operazioni.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di DataTable",
+      "desc": [
+        "【columns】 : colonne   【List<DataColumn>】",
+        "【rows】 : righe  【List<DataRow>】"
+      ]
+    },
+    {
+      "file": "node2_operation.dart",
+      "name": "Ordinamento di DataTable",
+      "desc": [
+        "【sortColumnIndex】 : indice della colonna   【int】",
+        "【columnSpacing】 : spaziatura tra le colonne   【double】",
+        "【sortAscending】 : ordine crescente  【bool】"
+      ]
+    }
+  ]
+}

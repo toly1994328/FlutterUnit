@@ -1,0 +1,41 @@
+{
+  "id": 16,
+  "name": "ListTile",
+  "localName": "리스트 타일",
+  "info": "Flutter에서 제공하는 일반적인 리스트 항목 구조로, 왼쪽, 중앙, 오른쪽 구조를 가지고 있습니다. 해당 위치에 컴포넌트를 삽입할 수 있으며, 특정 항목에 쉽게 대응할 수 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    162,
+    334
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListTile의 기본적인 표현은 다음과 같습니다",
+      "desc": [
+        "【leading】: 왼쪽 컴포넌트   【Widget】",
+        "【title】: 중앙 상단 컴포넌트   【Widget】",
+        "【subtitle】: 중앙 하단 컴포넌트   【Widget】",
+        "【trailing】: 오른쪽 컴포넌트   【Widget】",
+        "【contentPadding】: 내부 여백   【EdgeInsetsGeometry】",
+        "【onLongPress】: 클릭 이벤트   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "ListTile 선택 효과 및 길게 누르기 이벤트",
+      "desc": [
+        "【selected】: 선택 여부   【bool】",
+        "【onTap】: 클릭 이벤트   【Function()】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "ListTile의 밀집 속성",
+      "desc": [
+        "【dense】: 밀집 여부   【bool】"
+      ]
+    }
+  ]
+}

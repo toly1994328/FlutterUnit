@@ -1,0 +1,20 @@
+{
+  "id": 21,
+  "name": "GridTile",
+  "localName": "Rasterkachel",
+  "info": "Eine allgemeine Listenstruktur, die von Flutter bereitgestellt wird, kann Kopf-, Fuß- und Unterkomponenten angeben und wird häufig in Rasterlisten verwendet.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Die grundlegende Darstellung von GridTile ist wie folgt",
+      "desc": [
+        "【header】: Kopfkomponente   【Widget】",
+        "【child】: Unterkomponente   【Widget】",
+        "【footer】: Fußkomponente   【Widget】"
+      ]
+    }
+  ]
+}

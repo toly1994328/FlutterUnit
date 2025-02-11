@@ -1,0 +1,46 @@
+{
+  "id": 162,
+  "name": "ListView",
+  "localName": "Listenkomponente",
+  "info": "Führende Figur bei der Anzeige von Listen, die mehrere Unterkomponenten aufnehmen kann und über Builder, Separated, Custom usw. konstruiert werden kann. Verfügt über Eigenschaften wie Innenabstand, Umkehrung, Scroll-Controller usw.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    16,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ListView",
+      "desc": [
+        "【children】 : Liste der Unterkomponenten   【List<Widget>】",
+        "【padding】 : Innenabstand  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Horizontales Scrollen mit ListView",
+      "desc": [
+        "【scrollDirection】 : Scrollrichtung   【Axis】",
+        "【reverse】 : Umgekehrtes Scrollen   【bool】",
+        "【shrinkWrap】 : Bei fehlenden Grenzen einwickeln  【bool】"
+      ]
+    },
+    {
+      "file": "node3_builder.dart",
+      "name": "ListView.builder Konstruktion",
+      "desc": [
+        "【itemCount】 : Anzahl der Elemente   【int】",
+        "【itemBuilder】 : Elementkonstruktor   【IndexedWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node4_separated.dart",
+      "name": "ListView.separated Konstruktion",
+      "desc": [
+        "【separatorBuilder】 : Elementkonstruktor   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 146,
+  "name": "GestureDetector",
+  "localName": "ジェスチャー検出器",
+  "info": "コンポーネントのジェスチャーイベントを検出するデテクターで、クリック、長押し、ダブルクリック、押下、解放、移動などのイベントを受け取り、タッチポイントの情報を取得できます。家庭や旅行に必須のコンポーネントです。",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    147,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GestureDetector基本イベント",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【onTap】 : クリックイベント   【Function()】",
+        "【onDoubleTap】 : ダブルクリックイベント   【GestureTapCallback】",
+        "【onLongPress】 : 長押しイベント   【GestureLongPressCallback】"
+      ]
+    },
+    {
+      "file": "node2_tap.dart",
+      "name": "GestureDetector詳細情報",
+      "desc": [
+        "【onTapDown】 : 押下コールバック   【GestureTapDownCallback】",
+        "【onTapUp】 : クリック解放コールバック   【GestureTapUpCallback】",
+        "【onTapCancel】 : クリックキャンセル   【GestureTapCancelCallback】"
+      ]
+    },
+    {
+      "file": "node3_pan.dart",
+      "name": "GestureDetectorのPanイベント",
+      "desc": [
+        "【onPanDown】 : 押下コールバック   【GestureDragDownCallback】",
+        "【onPanEnd】 : ドラッグ終了   【GestureDragEndCallback】",
+        "【onPanStart】 : ドラッグ開始   【GestureDragStartCallback】",
+        "【onPanUpdate】 : ドラッグ更新   【GestureDragUpdateCallback】",
+        "【onPanCancel】 : ドラッグキャンセル   【GestureDragCancelCallback】"
+      ]
+    }
+  ]
+}

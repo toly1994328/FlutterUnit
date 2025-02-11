@@ -1,0 +1,72 @@
+{
+  "id": 2,
+  "name": "Text",
+  "localName": "Componente de texto",
+  "info": "Componente utilizado para mostrar texto. Tiene una gran cantidad de propiedades, suficientes para satisfacer tus necesidades de uso. El estilo principal está controlado por la propiedad style.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    101,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Estilo básico del texto",
+      "desc": [
+        "【Parámetro de entrada】 : Texto  【String】",
+        "【style】: Estilo del texto   【TextStyle】",
+        "【color】: Color del texto   【Color】",
+        "【fontSize】: Tamaño del texto   【double】",
+        "【fontWeight】: Peso de la fuente   【FontWeight】",
+        "【fontStyle】: Estilo de la fuente   【fontStyle】",
+        "【letterSpacing】: Espaciado entre letras   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Sombra del texto",
+      "desc": [
+        "【shadows】 : Sombra del texto  【List<Shadow>】",
+        "【backgroundColor】: Color de fondo   【Color】"
+      ]
+    },
+    {
+      "file": "node3_decoration.dart",
+      "name": "Línea decorativa del texto",
+      "desc": [
+        "【fontFamily】 : Fuente del texto  【String】",
+        "【decoration】: Línea decorativa   【TextDecoration】",
+        "【decorationColor】: Color de la línea decorativa   【Color】",
+        "【decorationThickness】: Grosor de la línea decorativa   【double】",
+        "【decorationStyle】: Estilo de la línea decorativa   【TextDecorationStyle】"
+      ]
+    },
+    {
+      "file": "node4_textAlign.dart",
+      "name": "Alineación del texto",
+      "desc": [
+        "【textAlign】: Alineación del texto   【TextAlign】",
+        "A continuación se muestran en orden: izquierda, derecha, centro, justificado, inicio, final."
+      ]
+    },
+    {
+      "file": "node5_textDirection.dart",
+      "name": "Dirección del texto y número máximo de líneas",
+      "desc": [
+        "【maxLines】 : Número máximo de líneas  【int】",
+        "【textDirection】 : Dirección del texto  【TextDirection】",
+        "A continuación se muestran en orden: rtl, ltr."
+      ]
+    },
+    {
+      "file": "node6_softWrap.dart",
+      "name": "Ajuste de línea y efecto de desbordamiento",
+      "desc": [
+        "【softWrap】 : Ajuste de línea  【bool】",
+        "【overflow】 : Efecto de desbordamiento  【TextOverflow】",
+        "A continuación softWrap=false; overflow en orden: recortar, desvanecer, puntos suspensivos, visible."
+      ]
+    }
+  ]
+}

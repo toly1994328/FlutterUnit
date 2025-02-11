@@ -1,0 +1,27 @@
+{
+  "id": 127,
+  "name": "AlertDialog",
+  "localName": "Popup Dialog",
+  "info": "A general dialog structure that can specify components at the head, middle, and tail. It has text styles and margins for the title and content, as well as properties such as elevation and shape.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of AlertDialog",
+      "desc": [
+        "【title】 : Top component   【Widget】",
+        "【content】 : Content component  【Widget】",
+        "【titleTextStyle】 : Top text style  【TextStyle】",
+        "【contentTextStyle】 : Content text style  【TextStyle】",
+        "【titlePadding】 : Top padding  【EdgeInsetsGeometry】",
+        "【contentPadding】 : Content padding  【EdgeInsetsGeometry】",
+        "【actions】 : Bottom right component list  【List<Widget>】",
+        "【backgroundColor】 : Background color  【Color】",
+        "【elevation】 : Elevation  【double】",
+        "【shape】 : Shape   【ShapeBorder】"
+      ]
+    }
+  ]
+}

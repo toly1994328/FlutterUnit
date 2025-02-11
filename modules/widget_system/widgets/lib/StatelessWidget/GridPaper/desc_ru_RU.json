@@ -1,0 +1,30 @@
+{
+  "id": 37,
+  "name": "GridPaper",
+  "localName": "Компонент с сеткой",
+  "info": "Может содержать один компонент, на котором рисуется сетка. Можно указать такие свойства, как цвет, толщина линий, расстояние и т.д.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основные свойства GridPager",
+      "desc": [
+        "【child】: Дочерний компонент   【Widget】",
+        "【color】: Цвет   【Color】",
+        "【interval】: Длина стороны квадрата   【double】"
+      ]
+    },
+    {
+      "file": "node2_divisions.dart",
+      "name": "Разделение GridPager",
+      "desc": [
+        "【child】: Дочерний компонент   【Widget】",
+        "【color】: Цвет   【Color】",
+        "【subdivisions】: Количество подблоков в квадрате   【int】",
+        "【divisions】: Количество разделений подблоков в квадрате   【int】"
+      ]
+    }
+  ]
+}

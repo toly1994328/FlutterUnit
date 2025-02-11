@@ -1,0 +1,19 @@
+{
+  "id": 298,
+  "name": "IntrinsicHeight",
+  "localName": "Intrinsische Höhe",
+  "info": "Eine Komponente, die die Größe ihrer Kindelemente basierend auf deren intrinsischer Höhe anpasst. Sie kann viele Layoutprobleme lösen, ist aber relativ teuer.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von IntrinsicHeight",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】",
+        "Wie im Beispiel: Die Höhe auf der linken Seite ist variabel, die Höhe in der Mitte ist fest, und die Höhe auf der rechten Seite nimmt den höchsten Wert der beiden vorherigen."
+      ]
+    }
+  ]
+}

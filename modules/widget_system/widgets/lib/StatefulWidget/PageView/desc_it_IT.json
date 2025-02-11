@@ -1,0 +1,34 @@
+{
+  "id": 165,
+  "name": "PageView",
+  "localName": "Scorrimento Pagina",
+  "info": "Contiene più componenti di pagina, consente di scorrere tra di essi, è possibile specificare la direzione di scorrimento, se invertire, il controller di scorrimento e altre proprietà.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di PageView",
+      "desc": [
+        "【children】 : Lista dei componenti figli   【List<Widget>】",
+        "【onPageChanged】 : Evento di clic  【ValueChanged<int>】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direzione di scorrimento di PageView",
+      "desc": [
+        "【scrollDirection】 : Direzione di scorrimento   【Axis】",
+        "【reverse】 : Se invertire  【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "Uso semplice del controller di PageView",
+      "desc": [
+        "【controller】 : Controller della pagina   【PageController】"
+      ]
+    }
+  ]
+}

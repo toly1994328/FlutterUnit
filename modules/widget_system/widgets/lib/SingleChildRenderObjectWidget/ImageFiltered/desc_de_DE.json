@@ -1,0 +1,36 @@
+{
+  "id": 357,
+  "name": "ImageFiltered",
+  "localName": "Bildfilter",
+  "info": "Mit dem ImageFilter-Bildfilter können beliebige Komponenten mit Effekten wie Gaußscher Unschärfe, Farbfiltern, Transformationen usw. verarbeitet werden.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    278,
+    88
+  ],
+  "nodes": [
+    {
+      "file": "node1_blur.dart",
+      "name": "ImageFilter Gaußsche Unschärfe",
+      "desc": [
+        "【imageFilter】 : Bildfilter   【ImageFilter】",
+        "【child】 : Untergeordnete Komponente   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "ImageFilter Farbeffekt",
+      "desc": [
+        "Farbfilter wird durch das ColorFilter-Objekt implementiert."
+      ]
+    },
+    {
+      "file": "node3_matrix.dart",
+      "name": "ImageFilter Transformationseffekt",
+      "desc": [
+        "Matrix-Transformation durch ImageFilter.matrix-Konstruktion, aber eher unbrauchbar."
+      ]
+    }
+  ]
+}

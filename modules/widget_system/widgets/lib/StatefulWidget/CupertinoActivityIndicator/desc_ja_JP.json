@@ -1,0 +1,22 @@
+{
+  "id": 48,
+  "name": "CupertinoActivityIndicator",
+  "localName": "iOSインジケーター",
+  "info": "iOSスタイルのローディング表示コンポーネントで、半径と回転の有無を指定できます。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    46,
+    47
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoActivityIndicatorの基本的な使用",
+      "desc": [
+        "【animating】 : ローディングアニメーションの有無   【bool】",
+        "【radius】 : 半径   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 355,
+  "name": "OutlinedButton",
+  "localName": "Umrandeter Button",
+  "info": "Material-stilisiertes Schaltflächenelement mit Rahmen, ähnlich wie OutlineButton. Attribute wie Rahmen, Farbe, Schatten usw. können über Stile geändert werden.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    353,
+    27,
+    354
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von OutlinedButton",
+      "desc": [
+        "【child】 : Schaltflächeninhalt   【Widget】",
+        "【onPressed】 : Klickereignis   【VoidCallback】",
+        "【onLongPress】 : Langdrückereignis   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Stil von OutlinedButton",
+      "desc": [
+        "【style】 : Schaltflächenstil   【ButtonStyle】",
+        "【focusNode】 : Fokus   【FocusNode】",
+        "【clipBehavior】 : Zuschneideverhalten   【Clip】",
+        "【autofocus】 : Autofokus   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 131,
+  "name": "CupertinoActionSheet",
+  "localName": "iOS-Aktionsblatt",
+  "info": "Ein iOS-stiliges Popup-Auswahlmenü, das mehrere Schaltflächen enthalten kann und normalerweise mit CupertinoActionSheetAction verwendet wird.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoActionSheet",
+      "desc": [
+        "【title】 : Erstes Zeilenelement   【Widget】",
+        "【message】 : Zweites Zeilenelement  【Widget】",
+        "【cancelButton】 : Abbrechen-Schaltflächenelement  【Widget】",
+        "【actions】 : Liste der mittleren Elemente  【List<Widget>】"
+      ]
+    }
+  ]
+}

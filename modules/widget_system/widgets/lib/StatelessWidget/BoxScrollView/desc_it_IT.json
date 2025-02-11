@@ -1,0 +1,27 @@
+{
+  "id": 350,
+  "name": "BoxScrollView",
+  "localName": "Vista a scorrimento a scatola",
+  "info": "BoxScrollView è una classe astratta che eredita da ScrollView, quindi non può essere utilizzata direttamente. Le sue sottoclassi includono ListView e GridView. Generalmente non si implementa una sottoclasse per utilizzarla",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduzione a BoxScrollView",
+      "desc": [
+        "【reverse】 : Se invertire   【bool】",
+        "【scrollDirection】 : Direzione di scorrimento   【Axis】",
+        "【cacheExtent】 : Estensione della cache   【double】",
+        "【dragStartBehavior】 : Comportamento di trascinamento   【DragStartBehavior】",
+        "【clipBehavior】 : Comportamento di ritaglio   【ClipBehavior】",
+        "【controller】 : Controller   【ScrollController】"
+      ]
+    }
+  ]
+}

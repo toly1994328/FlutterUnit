@@ -1,0 +1,34 @@
+{
+  "id": 165,
+  "name": "PageView",
+  "localName": "Swipe Page",
+  "info": "It can accommodate multiple component pages, and you can swipe to switch between them. You can specify properties such as the direction of the swipe, whether it is reversed, and the swipe controller.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of PageView",
+      "desc": [
+        "【children】 : List of child components   【List<Widget>】",
+        "【onPageChanged】 : Click event  【ValueChanged<int>】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Swipe Direction of PageView",
+      "desc": [
+        "【scrollDirection】 : Swipe direction   【Axis】",
+        "【reverse】 : Whether to reverse  【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "Simple Use of PageView Controller",
+      "desc": [
+        "【controller】 : Page controller   【PageController】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 108,
+  "name": "Positioned",
+  "localName": "Positionierungskomponente",
+  "info": "Kann nur in einem Stack verwendet werden, ermöglicht die präzise Platzierung einer Komponente durch Angabe der Abstände von oben, links, rechts und unten.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    97,
+    159,
+    121
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Positioned",
+      "desc": [
+        "【child】 : Komponente   【Widget】",
+        "【top】 : Abstand zum oberen Elternteil   【double】",
+        "【right】 : Abstand zum rechten Elternteil   【double】",
+        "【left】 : Abstand zum linken Elternteil   【double】",
+        "【bottom】 : Abstand zum unteren Elternteil   【double】"
+      ]
+    }
+  ]
+}

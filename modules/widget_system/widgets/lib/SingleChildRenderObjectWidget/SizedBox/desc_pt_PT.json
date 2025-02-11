@@ -1,0 +1,20 @@
+{
+  "id": 76,
+  "name": "SizedBox",
+  "localName": "Caixa de Tamanho Fixo",
+  "info": "Pode conter um componente filho, limitando a área do componente filho especificando a largura e altura.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do SizedBox",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【width】 : Largura   【double】",
+        "【height】 : Altura   【double】"
+      ]
+    }
+  ]
+}

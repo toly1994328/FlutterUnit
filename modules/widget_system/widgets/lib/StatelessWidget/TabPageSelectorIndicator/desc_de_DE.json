@@ -1,0 +1,20 @@
+{
+  "id": 206,
+  "name": "TabPageSelectorIndicator",
+  "localName": "Tab-Indikator",
+  "info": "Eine runde Komponente mit Randlinie, bei der Größe, Farbe und Randfarbe angegeben werden können. Es ist Teil des TabPageSelector und wird in der Regel nicht allein verwendet.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von TabPageSelectorIndicator",
+      "desc": [
+        "【size】: Größe   【double】",
+        "【backgroundColor】: Hintergrundfarbe   【Color】",
+        "【borderColor】: Randfarbe    【Color】"
+      ]
+    }
+  ]
+}

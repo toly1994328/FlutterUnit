@@ -1,0 +1,29 @@
+{
+  "id": 160,
+  "name": "Material",
+  "localName": "Composant Matériel",
+  "info": "Le leader des composants de style Material, l'âme centrale. Peut spécifier des attributs tels que la couleur, la profondeur de l'ombre, le type, la couleur de l'ombre, la forme, etc.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Material",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【type】 : Type   【MaterialType】",
+        "【elevation】 : Profondeur de l'ombre   【double】",
+        "【shadowColor】 : Couleur de l'ombre   【Color】",
+        "【color】 : Couleur   【Color】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Attribut de forme de Material",
+      "desc": [
+        "【shape】 : Forme   【ShapeBorder】,"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 238,
+  "name": "CupertinoCheckbox",
+  "localName": "Casilla de verificación·Estilo macOS",
+  "info": "Una casilla de verificación con estilo macOS, compatible con tres estados; se debe proporcionar un valor value y una función de devolución de llamada onChanged al usarla.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    39,
+    17
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso de CupertinoCheckbox",
+      "desc": [
+        "【value】 : Si está seleccionado   【bool?】",
+        "【onChanged】 : Función de devolución de llamada para cambios   【ValueChanged<bool?>?】",
+        "【checkColor】 : Color de la marca de verificación cuando está seleccionado   【Color?】",
+        "【activeColor】 : Color de fondo cuando está seleccionado   【Color?】",
+        "【activeColor】 : Color de fondo cuando está seleccionado   【Color?】",
+        "【inactiveColor】 : Color de borde cuando no está activo/Color de fondo cuando no está disponible   【Color?】",
+        "Cuando onChanged es null, significa que no está disponible."
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Tres estados de CupertinoCheckbox",
+      "desc": [
+        "【tristate】 : Si está habilitado el estado tristate   【bool】",
+        "En el estado tristate, el valor null representa -"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Borde y forma de CupertinoCheckbox",
+      "desc": [
+        "【shape】 : Forma   【OutlinedBorder?】",
+        "【side】 : Borde   【BorderSide?】"
+      ]
+    }
+  ]
+}

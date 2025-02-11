@@ -1,0 +1,53 @@
+{
+  "id": 94,
+  "name": "Flex",
+  "localName": "Flexibles Layout",
+  "info": "Übergeordnete Klasse von Row und Column, die leistungsstärkste Layout-Methode in Flutter. Kann mehrere Komponenten aufnehmen und kann mit Spacer, Expended, Flexible Komponenten für flexibles Layout verwendet werden",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    95,
+    96,
+    106,
+    107,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Ausrichtung von Flex",
+      "desc": [
+        "【children】 : Komponentenliste   【List<Widget>】",
+        "【direction】 : Richtung   【Axis】"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Hauptachsenausrichtung von Flex",
+      "desc": [
+        "【mainAxisAlignment】 : Hauptachsenausrichtung   【MainAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node_03.dart",
+      "name": "Kreuzachsenausrichtung von Flex",
+      "desc": [
+        "【crossAxisAlignment】 : Kreuzachsenausrichtung   【CrossAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node_04.dart",
+      "name": "Vertikale Richtungsreihenfolge von Flex",
+      "desc": [
+        "【verticalDirection】 : Vertikale Richtungsreihenfolge   【VerticalDirection】"
+      ]
+    },
+    {
+      "file": "node_05.dart",
+      "name": "Horizontale Richtungsreihenfolge von Flex",
+      "desc": [
+        "【textDirection】 : Horizontale Richtungsreihenfolge   【TextDirection】"
+      ]
+    }
+  ]
+}

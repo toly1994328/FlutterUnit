@@ -1,0 +1,22 @@
+{
+  "id": 271,
+  "name": "SliverCrossAxisExpanded",
+  "localName": "Glissière d'expansion de l'axe croisé",
+  "info": "Pour un composant Sliver, spécifie la proportion de flex dans la direction de l'axe croisé pour limiter la taille de la glissière.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    270
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation de base de SliverCrossAxisExpanded",
+      "desc": [
+        "【flex】 : proportion   【int】",
+        "【sliver】 : composant enfant   【Widget?】"
+      ]
+    }
+  ]
+}

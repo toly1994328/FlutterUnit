@@ -1,0 +1,52 @@
+{
+  "id": 291,
+  "name": "ListWheelViewport",
+  "localName": "리스트 휠 뷰포트",
+  "info": "자식 리스트를 원통형 휠에 표시하는 뷰포트로, ListWheelScrollView, CupertinoPicker의 기반이 됨",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [
+    179,
+    139,
+    137,
+    253
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListWheelViewport 기본 사용법",
+      "desc": [
+        "【itemExtent】 : 축 방향 아이템 크기   【double】",
+        "【offset】 : 뷰포트 오프셋   【ViewportOffset】",
+        "【childDelegate】 : 자식 위임 생성자   【ListWheelChildDelegate】"
+      ]
+    },
+    {
+      "file": "node2_perspective.dart",
+      "name": "ListWheelViewport 원근 효과",
+      "desc": [
+        "【perspective】 : 원근 매개변수   【double】",
+        "【squeeze】 : 압축 값   【double】",
+        "【diameterRatio】 : 직경 비율   【double】"
+      ]
+    },
+    {
+      "file": "node3_magnifier.dart",
+      "name": "ListWheelViewport 확대",
+      "desc": [
+        "【useMagnifier】 : 확대 여부   【bool】",
+        "【magnification】 : 확대 비율   【double】",
+        "【clipBehavior】 : 클리핑 동작   【Clip】",
+        "【renderChildrenOutsideViewport】 : 시야 밖 렌더링 여부   【bool】"
+      ]
+    },
+    {
+      "file": "node4_opacity.dart",
+      "name": "오프셋과 투명도",
+      "desc": [
+        "【offAxisFraction】 : 축 중심 오프셋 비율   【double】",
+        "【overAndUnderCenterOpacity】 : 확대기 외부 투명도   【double】"
+      ]
+    }
+  ]
+}

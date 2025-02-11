@@ -1,0 +1,23 @@
+{
+  "id": 308,
+  "name": "SliverOverlapInjector",
+  "localName": "オーバーラップインジェクター",
+  "info": "Sliverで、SliverOverlapAbsorberと一緒に使用する必要があり、ビューのオーバーラップ問題を処理します。",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    307
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverOverlapInjectorの基本使用",
+      "desc": [
+        "【sliver】 : 子コンポーネント   【Widget】",
+        "【handle】 : *プロセッサ   【SliverOverlapAbsorberHandle】",
+        "SliverOverlapAbsorberとSliverOverlapInjectorコンポーネントを使用しない場合、NestedScrollViewの内容はヘッダーバーと重なります。"
+      ]
+    }
+  ]
+}

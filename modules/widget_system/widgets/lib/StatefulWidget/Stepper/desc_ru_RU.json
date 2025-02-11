@@ -1,0 +1,29 @@
+{
+  "id": 200,
+  "name": "Stepper",
+  "localName": "Компонент шагов",
+  "info": "Компонент шагов, который позволяет указать шаги выполнения операций, можно настроить содержимое шагов, кнопки подтверждения и возврата, а также направление расположения шагов.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование Stepper",
+      "desc": [
+        "【steps】 : Список шагов   【List<Step>】",
+        "【currentStep】 : Текущий шаг   【double】",
+        "【onStepTapped】 : Обратный вызов при нажатии   【ValueChanged<int>】",
+        "【onStepCancel】 : Обратный вызов для предыдущего шага  【VoidCallback】",
+        "【controlsBuilder】 : Конструктор контроллера  【ControlsWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Направление Stepper",
+      "desc": [
+        "【type】 : Направление   【StepperType】"
+      ]
+    }
+  ]
+}

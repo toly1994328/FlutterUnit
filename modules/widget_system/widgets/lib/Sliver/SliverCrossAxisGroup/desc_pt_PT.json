@@ -1,0 +1,22 @@
+{
+  "id": 269,
+  "name": "SliverCrossAxisGroup",
+  "localName": "Grupo de Slides do Eixo Cruzado",
+  "info": "Pode acomodar vários componentes Sliver, tratando-os como um grupo na direção do eixo principal cruzado durante o deslizamento.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    268,
+    270,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso Básico do SliverCrossAxisGroup",
+      "desc": [
+        "【slivers】 : Lista de componentes filhos   【List<Widget>】"
+      ]
+    }
+  ]
+}

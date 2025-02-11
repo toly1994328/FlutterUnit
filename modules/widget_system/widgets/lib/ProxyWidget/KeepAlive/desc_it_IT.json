@@ -1,0 +1,20 @@
+{
+  "id": 316,
+  "name": "KeepAlive",
+  "localName": "Mantenimento Attivo",
+  "info": "In una lista caricata in modo lazy, lo stato del bambino deve essere mantenuto attivo. È l'implementazione sottostante di AutomaticKeepAlive e generalmente non viene utilizzato da solo.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduzione a KeepAlive",
+      "desc": [
+        "【child】 : *componente figlio   【Widget】",
+        "【keepAlive】 : *se mantenere attivo   【bool】",
+        "Nel livello del framework Flutter, viene utilizzato solo in AutomaticKeepAlive, e il codice sorgente dice che è raramente usato da solo. Questo esempio mostra il mantenimento dello stato degli elementi di ListView."
+      ]
+    }
+  ]
+}

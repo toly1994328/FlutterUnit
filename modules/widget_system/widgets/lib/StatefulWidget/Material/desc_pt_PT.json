@@ -1,0 +1,29 @@
+{
+  "id": 160,
+  "name": "Material",
+  "localName": "Componente de Material",
+  "info": "O líder e núcleo espiritual dos componentes de estilo Material. Pode especificar atributos como cor, profundidade de sombra, tipo, cor da sombra, forma, etc.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do Material",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【type】 : Tipo   【MaterialType】",
+        "【elevation】 : Profundidade de sombra   【double】",
+        "【shadowColor】 : Cor da sombra   【Color】",
+        "【color】 : Cor   【Color】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Propriedade shape do Material",
+      "desc": [
+        "【shape】 : Forma   【ShapeBorder】,"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 170,
+  "name": "WillPopScope",
+  "localName": "戻り防止",
+  "info": "インターフェースにWillPopScopeコンポーネントがある場合、ページが戻るときにコールバックがトリガーされ、戻るかどうかを決定します。二次確認して退出するシナリオに使用できます。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "WillPopScopeの使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【onWillPop】 : 戻りコールバック  【WillPopCallback】"
+      ]
+    }
+  ]
+}

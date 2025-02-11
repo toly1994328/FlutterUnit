@@ -1,0 +1,20 @@
+{
+  "id": 157,
+  "name": "CupertinoPageScaffold",
+  "localName": "iOS страница каркас",
+  "info": "iOS-стиль макета страницы каркасной структуры, можно указать верхнюю навигационную панель и цвет фона страницы.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoPageScaffold базовое использование",
+      "desc": [
+        "【child】 : содержимое   【Widget】",
+        "【backgroundColor】 : цвет фона   【Color】",
+        "【navigationBar】 : верхняя часть   【ObstructingPreferredSizeWidget】"
+      ]
+    }
+  ]
+}

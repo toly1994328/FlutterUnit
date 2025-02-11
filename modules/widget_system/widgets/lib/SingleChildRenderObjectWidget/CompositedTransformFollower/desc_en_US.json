@@ -1,0 +1,26 @@
+{
+  "id": 265,
+  "name": "CompositedTransformFollower",
+  "localName": "Composited Transform Follower",
+  "info": "Generally used in conjunction with the CompositedTransformTarget component to enable the Overlay to follow the target transformation.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    266,
+    182
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Usage of CompositedTransformFollower",
+      "desc": [
+        "【child】 : Child widget   【Widget】",
+        "【link】 : Link   【LayerLink】",
+        "【offset】 : Offset   【Offset】",
+        "【targetAnchor】 : Target anchor   【Alignment】",
+        "【followerAnchor】 : Follower anchor   【Alignment】",
+        "【showWhenUnlinked】 : Whether to show when unlinked   【bool】"
+      ]
+    }
+  ]
+}

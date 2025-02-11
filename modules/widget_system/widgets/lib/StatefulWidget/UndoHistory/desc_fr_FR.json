@@ -1,0 +1,20 @@
+{
+  "id": 241,
+  "name": "UndoHistory",
+  "localName": "Historique d'annulation",
+  "info": "Reçoit une valeur observable ValueNotifier et fournit des fonctionnalités d'annulation/réexécution pour cette valeur ; utilisé dans le code source du composant TextField.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation d'UndoHistory dans TextField",
+      "desc": [
+        "Dans cet exemple, un bouton externe est utilisé pour contrôler les fonctionnalités d'annulation/réexécution de TextField. Le paramètre undoController peut recevoir un objet UndoHistoryController pour contrôler et influencer le contenu du texte saisi."
+      ]
+    }
+  ]
+}

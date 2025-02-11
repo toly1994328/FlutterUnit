@@ -1,0 +1,19 @@
+{
+  "id": 133,
+  "name": "SimpleDialogOption",
+  "localName": "Einfache Dialogoption",
+  "info": "Eine Schaltfläche, die selten verwendet wird und normalerweise in SimpleDialog verwendet wird, um Klickereignisse zu empfangen.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von SimpleDialogOption",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【onPressed】 : Klickereignis  【Function()】"
+      ]
+    }
+  ]
+}

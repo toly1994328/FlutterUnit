@@ -1,0 +1,22 @@
+{
+  "id": 48,
+  "name": "CupertinoActivityIndicator",
+  "localName": "iOS 인디케이터",
+  "info": "iOS 스타일의 로딩 표시 컴포넌트, 반지름 및 회전 여부를 지정할 수 있습니다.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    46,
+    47
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoActivityIndicator 기본 사용",
+      "desc": [
+        "【animating】 : 로딩 애니메이션 여부   【bool】",
+        "【radius】 : 반지름   【double】"
+      ]
+    }
+  ]
+}

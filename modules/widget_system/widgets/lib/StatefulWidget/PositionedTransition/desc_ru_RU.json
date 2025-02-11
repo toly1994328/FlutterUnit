@@ -1,0 +1,20 @@
+{
+  "id": 93,
+  "name": "PositionedTransition",
+  "localName": "Позиционный переход",
+  "info": "Может использоваться только в Stack, может содержать один дочерний компонент, позволяющий ему выполнять анимацию между двумя прямоугольниками, требуется предоставить аниматор rect.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование PositionedTransition",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【rect】 : Анимация   【Animation<RelativeRect>】",
+        "    Компонент PositionedTransition может работать только внутри Stack"
+      ]
+    }
+  ]
+}

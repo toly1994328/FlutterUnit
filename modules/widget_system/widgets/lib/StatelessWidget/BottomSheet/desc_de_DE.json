@@ -1,0 +1,22 @@
+{
+  "id": 142,
+  "name": "BottomSheet",
+  "localName": "Unterer Schublade",
+  "info": "Als Komponente ist es eine einfache Strukturkomponente, die Form, Schattentiefe, Hintergrundfarbe und interne Komponentenkonstruktoren angeben kann. Es wird normalerweise durch die showBottomSheet-Methode von ScaffoldState von unten eingeblendet.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von BottomSheet",
+      "desc": [
+        "【builder】 : Komponentenkonstruktor   【WidgetBuilder】",
+        "【backgroundColor】 : Hintergrundfarbe   【Color】",
+        "【elevation】 : Schattentiefe   【double】",
+        "【shape】 : Form   【ShapeBorder】",
+        "【onClosing】 : Schließrückruf  【Function()】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 349,
+  "name": "ScrollView",
+  "localName": "Scroll View",
+  "info": "This component is used to support scrolling. This class is an abstract class, so it cannot be used directly. It has many implementation classes, such as CustomScrollView, BoxScrollView, ListView, and GridView.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163,
+    253,
+    340
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to ScrollView",
+      "desc": [
+        "【reverse】: Whether to reverse 【bool】",
+        "【scrollDirection】: Scroll direction 【Axis】",
+        "【cacheExtent】: Cache length 【double】",
+        "【dragStartBehavior】: Drag behavior 【DragStartBehavior】",
+        "【clipBehavior】: Clip behavior 【ClipBehavior】",
+        "【controller】: Controller 【ScrollController】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": 339,
+  "name": "DateRangePickerDialog",
+  "localName": "날짜 범위",
+  "info": "Material 스타일의 날짜 범위 선택기로, 캘린더 선택 및 입력 선택을 지원합니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    135,
+    136,
+    137
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DateRangePickerDialog 기본 사용",
+      "desc": [
+        "【firstDate】 : 가장 이른 날짜   【DateTime】",
+        "【lastDate】 : 가장 늦은 날짜   【DateTime】",
+        "【initialDateRange】 : 초기 범위   【DateTimeRange?】",
+        "【saveText】 : 저장 텍스트  【String?】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "DateRangePickerDialog 커스터마이징",
+      "desc": [
+        "DateRangePickerDialog 소스 코드를 수정하여 월 항목에 숫자 배경을 표시합니다."
+      ]
+    }
+  ]
+}

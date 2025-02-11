@@ -1,0 +1,20 @@
+{
+  "id": 76,
+  "name": "SizedBox",
+  "localName": "Größenfestgelegte Box",
+  "info": "Kann ein Kindelement aufnehmen und den Bereich für das Kindelement durch Angabe von Breite und Höhe begrenzen.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von SizedBox",
+      "desc": [
+        "【child】 : Kindelement   【Widget】",
+        "【width】 : Breite   【double】",
+        "【height】 : Höhe   【double】"
+      ]
+    }
+  ]
+}

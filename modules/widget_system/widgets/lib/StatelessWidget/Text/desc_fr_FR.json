@@ -1,0 +1,72 @@
+{
+  "id": 2,
+  "name": "Text",
+  "localName": "Composant de texte",
+  "info": "Un composant pour afficher du texte. Possède de nombreuses propriétés, suffisantes pour répondre à vos besoins d'utilisation. Les styles de base sont contrôlés par l'attribut style.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    101,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Style de base du texte",
+      "desc": [
+        "【Paramètre】 : Texte  【String】",
+        "【style】: Style du texte   【TextStyle】",
+        "【color】: Couleur du texte   【Color】",
+        "【fontSize】: Taille du texte   【double】",
+        "【fontWeight】: Poids de la police   【FontWeight】",
+        "【fontStyle】: Style de la police   【fontStyle】",
+        "【letterSpacing】: Espacement des lettres   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Ombre du texte",
+      "desc": [
+        "【shadows】 : Texte  【List<Shadow>】",
+        "【backgroundColor】: Couleur de fond   【Color】"
+      ]
+    },
+    {
+      "file": "node3_decoration.dart",
+      "name": "Ligne de décoration du texte",
+      "desc": [
+        "【fontFamily】 : Police du texte  【String】",
+        "【decoration】: Ligne de décoration   【TextDecoration】",
+        "【decorationColor】: Couleur de la ligne de décoration   【Color】",
+        "【decorationThickness】: Épaisseur de la ligne de décoration   【double】",
+        "【decorationStyle】: Style de la ligne de décoration   【TextDecorationStyle】"
+      ]
+    },
+    {
+      "file": "node4_textAlign.dart",
+      "name": "Alignement du texte",
+      "desc": [
+        "【textAlign】: Alignement   【TextAlign】",
+        "Les options suivantes sont : left, right, center, justify, start, end"
+      ]
+    },
+    {
+      "file": "node5_textDirection.dart",
+      "name": "Direction du texte et nombre maximum de lignes",
+      "desc": [
+        "【maxLines】 : Nombre maximum de lignes  【int】",
+        "【textDirection】 : Direction du texte  【TextDirection】",
+        "Les options suivantes sont : rtl, ltr"
+      ]
+    },
+    {
+      "file": "node6_softWrap.dart",
+      "name": "Retour à la ligne et effet de débordement",
+      "desc": [
+        "【softWrap】 : Retour à la ligne  【bool】",
+        "【overflow】 : Effet de débordement  【TextOverflow】",
+        "Si softWrap=false; les options overflow sont : clip, fade, ellipsis, visible"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 268,
+  "name": "SliverMainAxisGroup",
+  "localName": "主軸スライダーグループ",
+  "info": "複数のSliverコンポーネントを収容し、それらをスクロールする主軸方向で一つのグループとして扱うことができます。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "SliverMainAxisGroup 基本使用",
+      "desc": [
+        "【slivers】 : 子コンポーネントリスト   【List<Widget>】",
+        "SliverPersistentHeaderと組み合わせて、グループ化やタイトルの吸着効果を実現できます。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 65,
+  "name": "MaterialApp",
+  "localName": "Material-Anwendung",
+  "info": "Die oberste Komponente der Material-Anwendung, enthält Eigenschaften wie Routengenerator, Thema, Sprache, Startseite usw.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von MaterialApp",
+      "desc": [
+        "【theme】 : Thema   【ThemeData】",
+        "【title】 : Titel in der Taskleiste   【String】",
+        "【debugShowCheckedModeBanner】 : Badge aktivieren   【bool】",
+        "【showPerformanceOverlay】 : Leistungsüberlagerung aktivieren   【bool】",
+        "【debugShowMaterialGrid】 : Raster aktivieren   【bool】",
+        "【onGenerateRoute】 : Routengenerator   【RouteFactory】",
+        "【home】 : Startseite   【Widget】"
+      ]
+    }
+  ]
+}

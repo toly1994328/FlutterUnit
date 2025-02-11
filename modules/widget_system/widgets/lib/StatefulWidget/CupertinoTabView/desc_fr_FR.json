@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Page Cupertino",
+  "info": "Peut maintenir une pile de routes comme MaterialApp. Construit les routes via routes et onGenerateRoute, et peut écouter les routes via navigatorObservers.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoTabView",
+      "desc": [
+        "【builder】 : Constructeur de la page d'accueil   【WidgetBuilder】",
+        "【navigatorObservers】 : Observateur de routes   【List<NavigatorObserver>】",
+        "【routes】 : Mappage des routes   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】 : Usine de routes   【RouteFactory】"
+      ]
+    }
+  ]
+}

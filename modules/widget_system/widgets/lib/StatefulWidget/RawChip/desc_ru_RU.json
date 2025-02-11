@@ -1,0 +1,43 @@
+{
+  "id": 153,
+  "name": "RawChip",
+  "localName": "Нативный чип",
+  "info": "Прародитель всех компонентов Chip, обладает способностью отображать различные чипы, поддерживает события выбора, клика, удаления и другие. Подробнее см. Chip, FilterChip, ActionChip, InputChip, ChoiceChip.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_press.dart",
+      "name": "Эффект нажатия RawChip",
+      "desc": [
+        "【label】: Центральный компонент   【Widget】",
+        "【padding】 : Внутренние отступы   【EdgeInsetsGeometry】",
+        "【labelPadding】 : Отступы для label   【EdgeInsetsGeometry】",
+        "【shadowColor】: Цвет тени   【Color】",
+        "【avatar】: Левый компонент   【Widget】",
+        "【elevation】: Глубина тени   【double】",
+        "【pressElevation】: Глубина тени при нажатии   【double】",
+        "【onPressed】 : Событие нажатия  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Эффект выбора и удаления RawChip",
+      "desc": [
+        "【selected】: Выбрано ли   【bool】",
+        "【deleteIconColor】: Цвет иконки удаления   【Color】",
+        "【selectedColor】: Цвет выбора   【Color】",
+        "【deleteIcon】: Компонент в конце   【Widget】",
+        "【onSelected】: Событие выбора   【Function(bool)】",
+        "【onDeleted】 : Событие в конце  【Function()】"
+      ]
+    }
+  ]
+}

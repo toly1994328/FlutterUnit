@@ -1,0 +1,29 @@
+{
+  "id": 200,
+  "name": "Stepper",
+  "localName": "Componente Passaggi",
+  "info": "Componente passaggi, consente di specificare operazioni passo-passo, personalizzare il contenuto dei passaggi, i pulsanti di conferma e ritorno, e la direzione dell'ordinamento dei passaggi.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di Stepper",
+      "desc": [
+        "【steps】 : Lista dei passaggi   【List<Step>】",
+        "【currentStep】 : Passaggio corrente   【double】",
+        "【onStepTapped】 : Callback al click   【ValueChanged<int>】",
+        "【onStepCancel】 : Callback del passaggio precedente  【VoidCallback】",
+        "【controlsBuilder】 : Costruttore del controller  【ControlsWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Direzione di Stepper",
+      "desc": [
+        "【type】 : Direzione   【StepperType】"
+      ]
+    }
+  ]
+}

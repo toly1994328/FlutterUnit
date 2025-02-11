@@ -1,0 +1,24 @@
+{
+  "id": 278,
+  "name": "BackdropFilter",
+  "localName": "Filtro de Fundo",
+  "info": "Pode conter uma criança e aplicar um filtro de desfoque ao fundo. O efeito de desfoque do componente pode ser alcançado através do Stack.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    88,
+    97,
+    67
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do BackdropFilter",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【filter】 : Filtro   【ImageFilter】",
+        "ImageFilter.blur pode realizar um desfoque gaussiano, especificando os fatores de desfoque x e y."
+      ]
+    }
+  ]
+}

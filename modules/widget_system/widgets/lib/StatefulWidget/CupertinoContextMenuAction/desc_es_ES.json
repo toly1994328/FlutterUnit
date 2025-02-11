@@ -1,0 +1,21 @@
+{
+  "id": 144,
+  "name": "CupertinoContextMenuAction",
+  "localName": "Botón de menú emergente de iOS",
+  "info": "Generalmente se usa solo para el botón de clic en CupertinoContextMenu. Se puede especificar el icono del hijo y el icono de la cola, y recibe el evento de clic.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoContextMenuAction",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【isDefaultAction】 : Si está seleccionado por defecto  【bool】",
+        "【trailingIcon】 : Icono de cola  【bool】",
+        "【onPressed】 : Evento de clic  【Function()】"
+      ]
+    }
+  ]
+}

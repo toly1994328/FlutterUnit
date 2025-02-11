@@ -1,0 +1,19 @@
+{
+  "id": 315,
+  "name": "LayoutId",
+  "localName": "Id de diseño",
+  "info": "Solo se puede usar en el componente CustomMultiChildLayout para identificar a sus componentes hijos.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Escenarios de uso de LayoutId",
+      "desc": [
+        "【id】 : Identificador de id   【Object】",
+        "【child】 : Componente hijo   【Widget】"
+      ]
+    }
+  ]
+}

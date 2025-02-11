@@ -1,0 +1,45 @@
+{
+  "id": 351,
+  "name": "InteractiveViewer",
+  "localName": "Interactive Viewer",
+  "info": "Mainly encapsulates gesture interactions such as moving and zooming, simplifies usage, and allows specifying movement boundaries, zoom ratios, gesture monitoring, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    147,
+    146,
+    78
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of InteractiveViewer",
+      "desc": [
+        "【alignPanAxis】: Drag along the axis 【bool】",
+        "【boundaryMargin】: Boundary margin 【EdgeInsets】",
+        "【panEnabled】: Whether panning is enabled 【bool】",
+        "【scaleEnabled】: Whether scaling is enabled 【bool】",
+        "【maxScale】: Maximum zoom scale 【double】",
+        "【minScale】: Minimum zoom scale 【double】",
+        "【onInteractionEnd】: Interaction end callback 【GestureScaleEndCallback】",
+        "【onInteractionStart】: Interaction start callback 【GestureScaleStartCallback】",
+        "【onInteractionUpdate】: Interaction update callback 【GestureScaleUpdateCallback】",
+        "【child】: Cursor color 【Widget】"
+      ]
+    },
+    {
+      "file": "node2_constrained.dart",
+      "name": "Constrained Property Test",
+      "desc": [
+        "【constrained】: Constrained 【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "Usage of Transformation Controller",
+      "desc": [
+        "【transformationController】: Transformation controller 【TransformationController】"
+      ]
+    }
+  ]
+}

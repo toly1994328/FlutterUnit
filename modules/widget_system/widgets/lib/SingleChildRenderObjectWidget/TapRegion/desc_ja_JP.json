@@ -1,0 +1,24 @@
+{
+  "id": 280,
+  "name": "TapRegion",
+  "localName": "タップ範囲",
+  "info": "内部または外部のタップコールバックを検出できるコンポーネントで、groupId を使用して複数の領域を一体として扱うことができます。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    146,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "コンポーネントの内部と外部のタップを監視",
+      "desc": [
+        "【enabled】 : 有効かどうか   【bool】",
+        "【onTapOutside】 : 外部タップ監視   【TapRegionCallback?】",
+        "【onTapInside】 : 内部タップ監視   【TapRegionCallback?】",
+        "【groupId】 : タップ領域グループ識別子   【Object?】"
+      ]
+    }
+  ]
+}

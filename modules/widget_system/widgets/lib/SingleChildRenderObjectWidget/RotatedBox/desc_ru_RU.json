@@ -1,0 +1,19 @@
+{
+  "id": 72,
+  "name": "RotatedBox",
+  "localName": "Повернутый ящик",
+  "info": "Может содержать один дочерний компонент, поворачивая его по часовой стрелке на quarterTurns*90°.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование RotatedBox",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【quarterTurns】 : Сколько раз повернуть на 90°   【int】"
+      ]
+    }
+  ]
+}

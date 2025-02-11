@@ -1,0 +1,20 @@
+{
+  "id": 49,
+  "name": "RefreshIndicator",
+  "localName": "リフレッシュインジケーター",
+  "info": "内部にスライド可能な領域をネストし、下にスライドするとリフレッシュアイコンが表示され、手を離すと指定された非同期メソッドを実行できます。色やトップまでの距離などの属性を指定できます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RefreshIndicatorの基本使用",
+      "desc": [
+        "【child】 : 子(スライド可能)   【Widget】",
+        "【displacement】 : インジケーターの浮遊高さ   【double】",
+        "【color】 : インジケーターの色   【Color】,"
+      ]
+    }
+  ]
+}

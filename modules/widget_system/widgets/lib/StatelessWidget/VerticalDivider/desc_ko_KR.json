@@ -1,0 +1,31 @@
+{
+  "id": 35,
+  "name": "VerticalDivider",
+  "localName": "수직 구분선",
+  "info": "수직 구분선, 색상, 너비, 두께, 상하 여백 정보를 지정할 수 있으며, 주로 리스트의 항목 구분선으로 사용됩니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    34,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "VerticalDivider 색상 및 두께",
+      "desc": [
+        "【color】: 색상   【Color】",
+        "【thickness】: 선 두께   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "VerticalDivider 너비 및 여백",
+      "desc": [
+        "【indent】: 앞쪽 여백 길이   【double】",
+        "【endIndent】: 뒤쪽 여백 길이   【double】",
+        "【width】: 차지하는 너비   【double】"
+      ]
+    }
+  ]
+}

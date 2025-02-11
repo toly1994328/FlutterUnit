@@ -1,0 +1,20 @@
+{
+  "id": 228,
+  "name": "AnimatedBuilder",
+  "localName": "Constructor de Animación",
+  "info": "A través del builder, hace que los nodos correspondientes a la animación se actualicen parcialmente, y evita la actualización de los componentes hijos, reduciendo el tiempo de construcción y mejorando el rendimiento de la animación.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Caso de uso de AnimatedBuilder",
+      "desc": [
+        "【animation】 : *Objeto observable   【Listenable】",
+        "【builder】 : *Constructor de componentes   【TransitionBuilder】",
+        "【child】 : Componente hijo   【Widget】"
+      ]
+    }
+  ]
+}

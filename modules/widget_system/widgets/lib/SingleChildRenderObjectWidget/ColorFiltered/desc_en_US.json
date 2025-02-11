@@ -1,0 +1,22 @@
+{
+  "id": 88,
+  "name": "ColorFiltered",
+  "localName": "Color Filter",
+  "info": "Can accommodate a child component, and can mix the component with any other component using 29 blending modes, so powerful that I don't know what to say. Learn about the one-click grayscale app feature.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    277,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ColorFiltered",
+      "desc": [
+        "【child】: Child component   【Widget】",
+        "【colorFilter】: Color filter   【ColorFilter】"
+      ]
+    }
+  ]
+}

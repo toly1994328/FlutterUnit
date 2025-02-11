@@ -1,0 +1,36 @@
+{
+  "id": 357,
+  "name": "ImageFiltered",
+  "localName": "画像フィルター",
+  "info": "ImageFilter 画像フィルターを使用すると、任意のコンポーネントに特殊効果を適用できます。これには、ガウスぼかし、カラーフィルター、変形などが含まれます。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    278,
+    88
+  ],
+  "nodes": [
+    {
+      "file": "node1_blur.dart",
+      "name": "ImageFilter ガウスぼかし",
+      "desc": [
+        "【imageFilter】 : 画像フィルター   【ImageFilter】",
+        "【child】 : 子コンポーネント   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "ImageFilter カラーフィルター効果",
+      "desc": [
+        "ColorFilter オブジェクトを使用してカラーフィルターを実現します。"
+      ]
+    },
+    {
+      "file": "node3_matrix.dart",
+      "name": "ImageFilter 変形効果",
+      "desc": [
+        "ImageFilter.matrix コンストラクタを使用して行列変換を行いますが、あまり役に立ちません。"
+      ]
+    }
+  ]
+}

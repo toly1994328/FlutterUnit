@@ -1,0 +1,30 @@
+{
+  "id": 235,
+  "name": "PaginatedDataTable",
+  "localName": "Seitenweise Tabelle",
+  "info": "Eine funktionsreiche, seitenweise Tabellenkomponente, die die Seitenzahl, Sortierung und das Wechseln zwischen den Seiten ermöglicht.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    110,
+    102
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Verwendung von PaginatedDataTable",
+      "desc": [
+        "【header】 : Tabellenname   【Widget】",
+        "【rowsPerPage】 : Anzahl der Datensätze pro Seite   【int】",
+        "【actions】 : Aktionskomponenten   【List<Widget>】",
+        "【columns】 : Datenspalten   【List<DataColumn>】",
+        "【sortColumnIndex】 : Index der Sortierspalte   【int】",
+        "【sortAscending】 : Aufsteigend sortieren   【bool】",
+        "【onSelectAll】 : Rückruf für Alle auswählen   【ValueSetter<bool>】",
+        "【onRowsPerPageChanged】 : Listener für Seitenänderungen   【ValueChanged<int>】",
+        "【availableRowsPerPage】 : Verfügbare Seitenlisten   【List<int>】",
+        "【source】 : Datenquelle   【DataTableSource】"
+      ]
+    }
+  ]
+}

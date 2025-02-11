@@ -1,0 +1,20 @@
+{
+  "id": 132,
+  "name": "CupertinoActionSheetAction",
+  "localName": "iOS 액션 시트 버튼",
+  "info": "버튼으로, 사용되는 경우가 드물며 주로 CupertinoActionSheet에서 사용되며 클릭 이벤트를 수신합니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoActionSheetAction 기본 사용법",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【isDefaultAction】 : 기본 선택 여부  【bool】",
+        "【onPressed】 : 클릭 이벤트  【Function()】"
+      ]
+    }
+  ]
+}

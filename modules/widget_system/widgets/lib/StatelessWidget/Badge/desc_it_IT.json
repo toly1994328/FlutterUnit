@@ -1,0 +1,40 @@
+{
+  "id": 258,
+  "name": "Badge",
+  "localName": "Componente Badge",
+  "info": "Badge è un componente in stile Material che aggiunge un segnalino sopra il child, dipendendo dal componente Stack per la sovrapposizione durante la costruzione.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node_1.dart",
+      "name": "Uso del Badge con punto",
+      "desc": [
+        "【backgroundColor】 : Colore di sfondo   【Color?】",
+        "【isLabelVisible】 : Visibilità del segnalino  【bool】",
+        "【smallSize】 : Diametro senza etichetta   【double?】",
+        "【child】 : Componente figlio   【Widget?】"
+      ]
+    },
+    {
+      "file": "node_2.dart",
+      "name": "Badge con etichetta",
+      "desc": [
+        "【label】 : Componente del titolo   【Widget?】",
+        "【textStyle】 : Colore del titolo  【TextStyle?】",
+        "【textColor】 : Stile del titolo  【Color?】",
+        "【padding】 : Margine del titolo  【EdgeInsetsGeometry?】",
+        "【largeSize】 : Altezza con etichetta   【double?】,"
+      ]
+    },
+    {
+      "file": "node_3.dart",
+      "name": "Offset del Badge",
+      "desc": [
+        "【offset】 : Offset del segnalino  【Offset?】",
+        "【alignment】 : Offset del titolo   【AlignmentDirectional?】"
+      ]
+    }
+  ]
+}

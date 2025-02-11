@@ -1,0 +1,19 @@
+{
+  "id": 227,
+  "name": "AnimatedModalBarrier",
+  "localName": "Animated Barrier Module",
+  "info": "Internally relies on ModalBarrier for implementation, with the same functionality, except that this component can accept a color animation for transition display.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to AnimatedModalBarrier",
+      "desc": [
+        "【dismissible】: Whether to return on click   【bool】",
+        "【color】: Color   【Animation<Color>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": 97,
+  "name": "Stack",
+  "localName": "Stapellayout",
+  "info": "Kann mehrere Komponenten aufnehmen, Unterkomponenten werden gestapelt platziert, wobei die letzte oben liegt. Verfügt über eine alignment-Eigenschaft, die in Kombination mit der Positioned-Komponente verwendet werden kann, um eine präzise Positionierung zu erreichen.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    94,
+    95,
+    161
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Stack",
+      "desc": [
+        "【children】: Komponentenliste   【List<Widget>】",
+        "【textDirection】: Ausrichtung der Kinder   【MainAxisAlignment】",
+        "【alignment】: Ausrichtungsmethode   【AlignmentGeometry】",
+        "【overflow】: Überlaufmodus   【Overflow】",
+        "【fit】: Anpassungsmodus   【StackFit】"
+      ]
+    },
+    {
+      "file": "node2_positioned.dart",
+      "name": "Kombinierte Verwendung von Stack und Positioned",
+      "desc": [
+        "Die Positioned-Komponente kann nur innerhalb eines Stacks verwendet werden und ermöglicht die präzise Platzierung einer Komponente durch Angabe der Abstände von oben, links, rechts und unten."
+      ]
+    }
+  ]
+}

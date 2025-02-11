@@ -1,0 +1,27 @@
+{
+  "id": 10,
+  "name": "Visibility",
+  "localName": "Sichtbarkeitskomponente",
+  "info": "Steuert die Anzeige oder Ausblendung einer Komponente und ermöglicht die Festlegung eines Platzhalterkomponente nach dem Ausblenden. Eine ähnliche Funktion bietet die OffStage-Komponente.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Steuert die Sichtbarkeit der internen Unterkomponenten basierend auf visible",
+      "desc": [
+        "【visible】 : Gibt an, ob angezeigt wird  【bool】",
+        "【child】: Kind   【Widget】",
+        "Standardmäßig geht der ursprüngliche Bereich verloren, wenn das Kind ausgeblendet wird."
+      ]
+    },
+    {
+      "file": "node2_replacement.dart",
+      "name": "replacement kann beim Ausblenden als Platzhalter verwendet werden",
+      "desc": [
+        "【replacement】 : Platzhalterkomponente beim Ausblenden  【Widget】"
+      ]
+    }
+  ]
+}

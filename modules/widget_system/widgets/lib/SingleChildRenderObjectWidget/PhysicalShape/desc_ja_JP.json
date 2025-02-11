@@ -1,0 +1,23 @@
+{
+  "id": 279,
+  "name": "PhysicalShape",
+  "localName": "物理形状",
+  "info": "子コンポーネントをパスに沿ってクリップし、背景色、影の深さ、影の色、クリップ動作を指定できます。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PhysicalShapeの基本使用",
+      "desc": [
+        "【clipper】 : クリッパー   【CustomClipper<Path>】",
+        "【clipBehavior】 : クリップ動作   【Clip】",
+        "【child】 : 子コンポーネント   【Widget】",
+        "【elevation】 : 影の深さ   【double】",
+        "【shadowColor】 : 影の色   【Color】",
+        "【color】: 色    【Color】"
+      ]
+    }
+  ]
+}

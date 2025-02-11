@@ -1,0 +1,22 @@
+{
+  "id": 319,
+  "name": "Directionality",
+  "localName": "Direccionalidad",
+  "info": "Establece un valor de propiedad unificado para los componentes con el atributo textDirection para los descendientes, también se puede obtener el valor predeterminado del atributo textDirection actual a través de Directionality.of(context).",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [
+    2,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Directionality",
+      "desc": [
+        "【textDirection】: Dirección de alineación del texto 【TextDirection】",
+        "【child】: Componente hijo 【Widget】"
+      ]
+    }
+  ]
+}

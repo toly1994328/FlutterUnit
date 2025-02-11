@@ -1,0 +1,23 @@
+{
+  "id": 110,
+  "name": "Table",
+  "localName": "Table Component",
+  "info": "A component for displaying tables, which can specify properties such as borders, column widths, text direction, etc. The core object type is TableRow.",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Table",
+      "desc": [
+        "【children】: Component list 【List<Widget>】",
+        "【columnWidths】: Column widths 【Map<int, TableColumnWidth>】",
+        "【defaultColumnWidth】: Default column width 【TableColumnWidth】",
+        "【border】: Border 【TableBorder】",
+        "【textDirection】: Text direction 【TextDirection】",
+        "【defaultVerticalAlignment】: Vertical alignment mode of cells 【TableCellVerticalAlignment】"
+      ]
+    }
+  ]
+}

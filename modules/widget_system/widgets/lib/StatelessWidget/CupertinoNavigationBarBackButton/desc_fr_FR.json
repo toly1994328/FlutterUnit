@@ -1,0 +1,19 @@
+{
+  "id": 218,
+  "name": "CupertinoNavigationBarBackButton",
+  "localName": "Bouton de retour de style iOS",
+  "info": "Bouton de retour de barre de navigation de style Cupertino, peut spécifier la couleur et l'événement de clic, généralement pas utilisé seul.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base du bouton de retour",
+      "desc": [
+        "【onPressed】 : Événement de clic   【VoidCallback】",
+        "【color】: Couleur    【Color】"
+      ]
+    }
+  ]
+}

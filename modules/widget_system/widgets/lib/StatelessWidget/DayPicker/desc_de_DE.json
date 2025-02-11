@@ -1,0 +1,61 @@
+{
+  "id": 134,
+  "name": "DayPicker",
+  "localName": "Datumsauswahl",
+  "info": "Komponente zur Auswahl von Datumsangaben, die das aktuelle Datum, das ausgewählte Datum, den angezeigten Monat usw. festlegen kann und Datumsauswahlereignisse empfängt.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    135,
+    136
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von DayPicker",
+      "desc": [
+        "【selectedDate】 : Ausgewähltes Datum   【DateTime】",
+        "【currentDate】 : Aktuelles Datum   【DateTime】",
+        "【firstDate】 : Frühestes Datum   【DateTime】",
+        "【lastDate】 : Spätestes Datum   【DateTime】",
+        "【displayedMonth】 : Aktuell angezeigter Monat   【DateTime】",
+        "【onChanged】 : Klick-Rückruf  【Function(DateTime)】",
+        "    ",
+        "import 'package:flutter/material.dart';",
+        "",
+        "class CustomDayPicker extends StatelessWidget{",
+        "",
+        "  const CustomDayPicker({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'DayPicker Datumsauswahl ist mit Flutter3.0 ausgelaufen. Der Ersatz ist der CalendarDatePicker Kalenderauswahl.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   final DateTime _date = DateTime.now();",
+        "  ",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return SizedBox(",
+        "       height: 350,",
+        "       child: DayPicker(",
+        "           selectedDate: _date,",
+        "           currentDate: DateTime.now(),",
+        "           onChanged: (date)=> setState(() => _date = date),",
+        "           firstDate:  DateTime(2018),",
+        "           lastDate: DateTime(2030),",
+        "           displayedMonth: DateTime.now()",
+        "       ),"
+      ]
+    }
+  ]
+}

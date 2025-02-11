@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "Выбор вкладок с прокруткой",
+  "info": "Обычно используется как индикатор вместе с TabBarView, используя общий TabController. Можно указать цвет, размер, цвет выбранного элемента.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование TabPageSelector",
+      "desc": [
+        "【controller】 : Контроллер   【TabController】",
+        "【indicatorSize】: Размер индикатора   【double】",
+        "【selectedColor】: Цвет выбранного элемента   【Color】",
+        "【color】: Цвет    【Color】"
+      ]
+    }
+  ]
+}

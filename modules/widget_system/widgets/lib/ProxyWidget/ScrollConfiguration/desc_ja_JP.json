@@ -1,0 +1,24 @@
+{
+  "id": 180,
+  "name": "ScrollConfiguration",
+  "localName": "iosメニューボタン",
+  "info": "スクロール可能なコンポーネントをラップし、behaviorプロパティを通じてスクロール効果を制御します。これにより、スクロール時の青色の影などを取り除くことができます。",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    162,
+    163,
+    164
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ScrollConfigurationの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【behavior】 : スクロール動作  【ScrollBehavior】",
+        "    ScrollConfigurationを使用してListViewの青色の影をなくすことができます"
+      ]
+    }
+  ]
+}

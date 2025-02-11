@@ -1,0 +1,29 @@
+{
+  "id": 64,
+  "name": "Scaffold",
+  "localName": "Échafaudage",
+  "info": "Une structure d'application générique comprenant des parties supérieure, inférieure, gauche, droite, centrale et un bouton flottant, où des composants peuvent être placés aux positions correspondantes.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    57,
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Scaffold",
+      "desc": [
+        "【appBar】 : Composant de tête   【PreferredSizeWidget】",
+        "【bottomNavigationBar】 : Composant de bas   【Widget】",
+        "【drawer】 : Composant de glissement gauche   【Widget】",
+        "【endDrawer】 : Composant de glissement droit   【Widget】",
+        "【body】 : Composant de contenu   【Widget】",
+        "【backgroundColor】 : Couleur de fond   【Color】",
+        "【floatingActionButton】 : Bouton flottant   【Widget】",
+        "【floatingActionButtonLocation】 : Position du bouton flottant   【FloatingActionButtonLocation】"
+      ]
+    }
+  ]
+}

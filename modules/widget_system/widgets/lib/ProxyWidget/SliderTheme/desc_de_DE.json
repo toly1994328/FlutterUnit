@@ -1,0 +1,27 @@
+{
+  "id": 331,
+  "name": "SliderTheme",
+  "localName": "Schieberegler-Stil",
+  "info": "Kann ein Kind enthalten und gibt den Standardstil für nachfolgende Schieberegler an. Wird häufig verwendet, um den Stil von Schiebereglern zu vereinheitlichen und die individuelle Einstellung zu vermeiden. Kann auch verwendet werden, um den Stil von Schiebereglern anzupassen.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliderTheme Verwendung",
+      "desc": [
+        "Kann SliderTheme.of verwenden, um das Slider-Themen-Datenobjekt zu erhalten, das eine Vielzahl von Attributen für die Einstellung des Schiebereglers enthält.",
+        "Kann Standardstile für Schaltflächenkomponenten von ButtonTheme [Nachkommen] festlegen, einschließlich Farbe, Form, Größe usw."
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "SliderTheme Stilanpassung für Schieberegler",
+      "desc": [
+        "Durch thumbShape und valueIndicatorShape kann der Stil des Schiebereglers angepasst werden.",
+        "Hinweis: Dieses Beispiel bezieht sich auf SlideDemo in flutter-gallery"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 280,
+  "name": "TapRegion",
+  "localName": "Area di tocco",
+  "info": "Componente in grado di rilevare i callback di clic interni o esterni, tramite groupId più aree possono essere considerate come una sola.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    146,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Ascolta i clic interni ed esterni del componente",
+      "desc": [
+        "【enabled】 : Se è disponibile   【bool】",
+        "【onTapOutside】 : Ascolta i clic esterni   【TapRegionCallback?】",
+        "【onTapInside】 : Ascolta i clic interni   【TapRegionCallback?】",
+        "【groupId】 : Identificatore del gruppo dell'area di tocco   【Object?】"
+      ]
+    }
+  ]
+}

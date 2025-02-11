@@ -1,0 +1,26 @@
+{
+  "id": 265,
+  "name": "CompositedTransformFollower",
+  "localName": "Synthetischer Transformationsfolger",
+  "info": "Wird in der Regel in Verbindung mit der Komponente CompositedTransformTarget verwendet, um das Overlay an die Zieltransformation anzupassen.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    266,
+    182
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Verwendung von CompositedTransformFollower",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【link】 : Verknüpfung   【LayerLink】",
+        "【offset】 : Versatz   【Offset】",
+        "【targetAnchor】 : Zielankerpunkt   【Alignment】",
+        "【followerAnchor】 : Ankerpunkt des Folgers   【Alignment】",
+        "【showWhenUnlinked】 : Anzeige bei Nichtverknüpfung   【bool】"
+      ]
+    }
+  ]
+}

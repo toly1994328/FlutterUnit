@@ -1,0 +1,27 @@
+{
+  "id": 4,
+  "name": "FlutterLogo",
+  "localName": "Flutter-Logo",
+  "info": "Wird verwendet, um die Flutter-Logo-Komponente anzuzeigen. Kann Farbe, Größe, Anzeigemodus usw. definieren. Es ist eine sehr einfache Komponente.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Wird verwendet, um ein FlutterLogo anzuzeigen",
+      "desc": [
+        "【size】 : Größe  【double】",
+        "【colors】: Farbe   【MaterialColor】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Stil wird verwendet, um Text anzuzeigen",
+      "desc": [
+        "【style】 : Stil-3 Arten von Aufzählungen  【FlutterLogoStyle】",
+        "【textColor】: Textfarbe   【Color】"
+      ]
+    }
+  ]
+}

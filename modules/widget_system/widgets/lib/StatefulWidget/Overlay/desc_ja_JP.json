@@ -1,0 +1,21 @@
+{
+  "id": 182,
+  "name": "Overlay",
+  "localName": "フローティングコンポーネント",
+  "info": "コンポーネントをアプリ全体でフローティング表示することができ、コンポーネントを追加または削除することができます。これらは独立して管理されるスタックを持っています。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    265,
+    266
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Overlayの基本使用",
+      "desc": [
+        "Overlay.of(context).insertでグローバルコンポーネントを挿入"
+      ]
+    }
+  ]
+}

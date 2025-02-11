@@ -1,0 +1,18 @@
+{
+  "id": 181,
+  "name": "DropdownButtonHideUnderline",
+  "localName": "Bouton déroulant masquer le soulignement",
+  "info": "Utilisé pour supprimer le soulignement du DropdownButton, il n'a pas beaucoup de valeur pratique en soi.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de DropDownButtonHideUnderline",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】,"
+      ]
+    }
+  ]
+}

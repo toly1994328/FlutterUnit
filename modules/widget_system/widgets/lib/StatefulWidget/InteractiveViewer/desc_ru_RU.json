@@ -1,0 +1,45 @@
+{
+  "id": 351,
+  "name": "InteractiveViewer",
+  "localName": "Интерактивное представление",
+  "info": "Основная цель - инкапсуляция жестов, таких как перемещение и масштабирование, упрощение использования, возможность указания границ перемещения, масштабирования, прослушивания жестов и т.д.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    147,
+    146,
+    78
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование InteractiveViewer",
+      "desc": [
+        "【alignPanAxis】 : Перетаскивание по оси   【bool】",
+        "【boundaryMargin】 : Отступ границы   【EdgeInsets】",
+        "【panEnabled】 : Возможность панорамирования   【bool】",
+        "【scaleEnabled】 : Возможность масштабирования   【bool】",
+        "【maxScale】 : Максимальный коэффициент увеличения   【double】",
+        "【minScale】 : Минимальный коэффициент уменьшения   【double】",
+        "【onInteractionEnd】 : Обратный вызов завершения взаимодействия   【GestureScaleEndCallback】",
+        "【onInteractionStart】 : Обратный вызов начала взаимодействия   【GestureScaleStartCallback】",
+        "【onInteractionUpdate】 : Обратный вызов обновления взаимодействия   【GestureScaleUpdateCallback】",
+        "【child】 : Цвет курсора   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_constrained.dart",
+      "name": "Тестирование свойства constrained",
+      "desc": [
+        "【constrained】 : Ограниченный   【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "Использование контроллера преобразования",
+      "desc": [
+        "【transformationController】 : Контроллер преобразования   【TransformationController】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": 58,
+  "name": "TabBar",
+  "localName": "Tab Bar",
+  "info": "A slidable and clickable tab bar, usually used at the bottom of the AppBar, can be used in conjunction with TabBarView to achieve a sliding page effect.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    57,
+    59,
+    148
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of TabBar",
+      "desc": [
+        "【controller】 : Controller   【TabController】",
+        "【indicatorColor】 : Indicator Color   【Indicator Color】",
+        "【indicatorWeight】 : Indicator Height   【double】",
+        "【indicatorPadding】 : Indicator Margin   【EdgeInsetsGeometry】",
+        "【labelStyle】 : Tab Text Style   【TextStyle】",
+        "【unselectedLabelStyle】 : Unselected Text Style   【TextStyle】",
+        "【isScrollable】 : Whether Scrollable   【bool】",
+        "【onTap】 : Tab Click Callback   【Function(int)】",
+        "【tabs】 : Tab Components   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_noShadow.dart",
+      "name": "Achieve No Ripple Effect by Setting Theme",
+      "desc": [
+        "Set the ripple color in the Theme to transparent."
+      ]
+    }
+  ]
+}

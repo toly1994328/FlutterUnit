@@ -1,0 +1,24 @@
+{
+  "id": 303,
+  "name": "CupertinoSliverRefreshControl",
+  "localName": "Contrôleur de rafraîchissement Sliver",
+  "info": "Contrôleur de rafraîchissement de style iOS, capable d'exécuter des méthodes de rafraîchissement asynchrones, de personnaliser les composants du contrôleur, la hauteur de séjour de l'indicateur et la hauteur de glissement pour déclencher le chargement.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base du contrôleur de rafraîchissement",
+      "desc": [
+        "【refreshIndicatorExtent】 : Hauteur de l'indicateur de chargement   【double】",
+        "【refreshTriggerPullDistance】 : Hauteur de glissement pour déclencher le chargement   【double】",
+        "【onRefresh】 : Événement de glissement vers le bas   【RefreshCallback】",
+        "【builder】 : Constructeur de l'indicateur   【RefreshControlIndicatorBuilder】"
+      ]
+    }
+  ]
+}

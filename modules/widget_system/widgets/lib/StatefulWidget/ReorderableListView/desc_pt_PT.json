@@ -1,0 +1,29 @@
+{
+  "id": 177,
+  "name": "ReorderableListView",
+  "localName": "Lista Reordenável",
+  "info": "Uma ListView que permite reordenar com um toque longo, podendo especificar a direção de deslize, se é reverso, controlador de deslize, entre outros atributos.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ReorderableListView",
+      "desc": [
+        "【children】 : Lista de componentes filhos   【List<Widget>】",
+        "【header】 : Componente de cabeçalho   【Widget】",
+        "【padding】 : Preenchimento interno   【EdgeInsets】",
+        "【onReorder】 : Callback ao reordenar  【ReorderCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direção de Deslize do ReorderableListView",
+      "desc": [
+        "【scrollDirection】 : Direção de deslize   【Axis】",
+        "【reverse】 : Se é reverso  【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 32,
+  "name": "CloseButton",
+  "localName": "Кнопка закрытия",
+  "info": "IconButton с функцией закрытия, значок закрытия нельзя изменить.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Событие нажатия кнопки CloseButton",
+      "desc": [
+        "【onPressed】 : Событие нажатия  【VoidCallback?】",
+        "【style】: Стиль кнопки   【ButtonStyle?】",
+        "【color】: Цвет   【Color】",
+        "Когда onPressed пуст, нажатие закрывает текущий интерфейс."
+      ]
+    }
+  ]
+}

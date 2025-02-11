@@ -1,0 +1,22 @@
+{
+  "id": 81,
+  "name": "UnconstrainedBox",
+  "localName": "Boîte sans contrainte",
+  "info": "Peut contenir un composant enfant et libère toutes les contraintes de zone de ce composant, montrant sa taille réelle.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    80
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'UnconstrainedBox",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【constrainedAxis】 : Axe toujours contraint*2   【Axis】",
+        "【alignment】 : Mode d'alignement   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "Selector de pestañas deslizante",
+  "info": "Normalmente se utiliza como indicador junto con TabBarView, compartiendo un TabController. Se pueden especificar colores, tamaños y colores seleccionados.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de TabPageSelector",
+      "desc": [
+        "【controller】 : Controlador   【TabController】",
+        "【indicatorSize】: Tamaño del indicador   【double】",
+        "【selectedColor】: Color seleccionado   【Color】",
+        "【color】: Color    【Color】"
+      ]
+    }
+  ]
+}

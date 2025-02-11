@@ -1,0 +1,22 @@
+{
+  "id": 151,
+  "name": "TableRowInkWell",
+  "localName": "테이블 물결 효과",
+  "info": "Table에서만 사용 가능한 물결 효과로, 클릭, 더블 클릭, 롱 프레스, 하이라이트 변경 이벤트를 받습니다. 물결 효과는 테이블의 한 행에 적용됩니다.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TableRowInkWell 기본 이벤트",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【onTap】 : 클릭 이벤트   【Function()】",
+        "【onDoubleTap】 : 더블 클릭 이벤트   【Function()】",
+        "【onLongPress】 : 롱 프레스 이벤트   【Function()】",
+        "【onHighlightChanged】 : 하이라이트 변경 콜백   【Function(bool)】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 276,
+  "name": "DrawerButton",
+  "localName": "Bouton de tiroir",
+  "info": "Un bouton d'icône de tiroir gauche, utilise DrawerButtonIcon pour afficher l'icône. L'événement de clic par défaut peut ouvrir le tiroir gauche.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    273,
+    361
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de DrawerButton",
+      "desc": [
+        "【onPressed】 : Événement de clic  【VoidCallback?】",
+        "【style】: Style du bouton   【ButtonStyle?】",
+        "Lorsque onPressed est vide, un clic ouvrira le tiroir gauche."
+      ]
+    }
+  ]
+}

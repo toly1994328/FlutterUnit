@@ -1,0 +1,20 @@
+{
+  "id": 293,
+  "name": "MouseRegion",
+  "localName": "Mouse Region",
+  "info": "A component for mouse event listening, typically used on desktop and web platforms, can listen to mouse enter, exit, and move events.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of MouseRegion",
+      "desc": [
+        "【onEnter】: Enter event   【PointerEnterEventListener】",
+        "【onHover】: Move event    【PointerHoverEventListener】",
+        "【onExit】: Exit event    【PointerExitEventListener】"
+      ]
+    }
+  ]
+}

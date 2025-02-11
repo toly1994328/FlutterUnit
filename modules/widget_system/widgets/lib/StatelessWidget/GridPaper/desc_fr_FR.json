@@ -1,0 +1,30 @@
+{
+  "id": 37,
+  "name": "GridPaper",
+  "localName": "Composant de grille",
+  "info": "Peut contenir un composant et dessiner une grille dessus. Peut spécifier des propriétés telles que la couleur, l'épaisseur de la ligne, l'espacement, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Propriétés de base de GridPager",
+      "desc": [
+        "【child】: Composant enfant   【Widget】",
+        "【color】: Couleur   【Color】",
+        "【interval】: Longueur du côté d'un petit bloc   【double】"
+      ]
+    },
+    {
+      "file": "node2_divisions.dart",
+      "name": "Subdivision de GridPager",
+      "desc": [
+        "【child】: Composant enfant   【Widget】",
+        "【color】: Couleur   【Color】",
+        "【subdivisions】: Nombre de sous-blocs dans un petit bloc   【int】",
+        "【divisions】: Nombre de subdivisions des sous-blocs dans un petit bloc   【int】"
+      ]
+    }
+  ]
+}

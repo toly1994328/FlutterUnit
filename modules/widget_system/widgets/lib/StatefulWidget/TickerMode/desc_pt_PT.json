@@ -1,0 +1,20 @@
+{
+  "id": 246,
+  "name": "TickerMode",
+  "localName": "Modo de Temporizador",
+  "info": "Desativar/ativar o temporizador (Ticker) da subárvore, o controlador de animação é implementado com base no Ticker.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    346
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Desativar/Ativar Animação Uniformemente",
+      "desc": [
+        "O enabled do TickerMode pode ativar/desativar uniformemente os efeitos de animação da subárvore."
+      ]
+    }
+  ]
+}

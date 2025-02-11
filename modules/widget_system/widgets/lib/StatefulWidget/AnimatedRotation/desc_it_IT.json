@@ -1,0 +1,28 @@
+{
+  "id": 259,
+  "name": "AnimatedRotation",
+  "localName": "Animazione di rotazione",
+  "info": "Quando la quantità di rotazione specificata cambia, il componente figlio può regolarsi automaticamente rispetto al valore di rotazione, con un'animazione che mostra la transizione tra i valori precedenti e successivi.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    247,
+    249
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Effetto di animazione di rotazione",
+      "desc": [
+        "In questo esempio, trascina per regolare il parametro turns e osserva l'effetto dell'animazione. L'angolo di rotazione è: turns*2*pi",
+        "【child】 : componente figlio   【Widget】",
+        "【duration】 : durata dell'animazione   【Duration】",
+        "【onEnd】 : callback alla fine dell'animazione   【Function()】",
+        "【alignment】 : centro di trasformazione dell'animazione   【Alignment】",
+        "【curve】 : curva dell'animazione   【Duration】",
+        "【filterQuality】 : qualità del filtro   【FilterQuality】",
+        "【turns】 : quantità di rotazione   【double】"
+      ]
+    }
+  ]
+}

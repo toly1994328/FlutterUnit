@@ -1,0 +1,25 @@
+{
+  "id": 166,
+  "name": "CustomPaint",
+  "localName": "Zeichnungskomponente",
+  "info": "Durch CustomPainter können komplexe benutzerdefinierte Zeichnungskomponenten erstellt werden, was die Seele der benutzerdefinierten Komponenten in Flutter darstellt.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_clock.dart",
+      "name": "CustomPaint Linienzeichnung",
+      "desc": [
+        "【painter】 : Zeichnungsgerät   【CustomPainter】"
+      ]
+    },
+    {
+      "file": "node2_bezier.dart",
+      "name": "CustomPaint Bézier-Kurven",
+      "desc": [
+        "Flutter unterstützt auch komplexe Zeichnungen wie Bézier-Kurven."
+      ]
+    }
+  ]
+}

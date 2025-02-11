@@ -1,0 +1,30 @@
+{
+  "id": 123,
+  "name": "AnimatedContainer",
+  "localName": "コンテナアニメーション",
+  "info": "alignment、padding、color、decoration、width、height、constraints、margin、transformを集約し、これらのプロパティはすべてアニメーション可能で、時間と曲線を指定でき、アニメーション終了イベントがあります。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedContainerの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーション時間   【Duration】",
+        "【onEnd】 : アニメーション終了コールバック   【Function()】",
+        "【curve】 : アニメーション曲線   【Duration】",
+        "【color】 : 色   【Color】",
+        "【width】 : 幅   【double】",
+        "【height】 : 高さ   【double】",
+        "【alignment】 : 配置   【AlignmentGeometry】",
+        "【decoration】 : 装飾   【Decoration】",
+        "【constraints】 : 制約   【BoxConstraints】",
+        "【transform】 : 変換   【Matrix4】",
+        "【margin】 : 外側の余白   【EdgeInsetsGeometry】",
+        "【padding】 : 内側の余白   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

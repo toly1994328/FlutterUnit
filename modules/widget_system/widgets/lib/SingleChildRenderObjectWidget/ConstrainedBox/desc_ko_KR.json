@@ -1,0 +1,26 @@
+{
+  "id": 80,
+  "name": "ConstrainedBox",
+  "localName": "제한 상자",
+  "info": "하위 위젯을 수용할 수 있으며, 최대 및 최소 너비와 높이를 지정하여 하위 위젯의 영역을 제한합니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    1,
+    79,
+    81
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BoxConstraints 기본 사용",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【minWidth】 : 최소 너비   【double】",
+        "【minHeight】 : 최소 높이   【double】",
+        "【maxHeight】 : 최대 높이   【double】",
+        "【maxWidth】 : 최대 너비   【double】"
+      ]
+    }
+  ]
+}

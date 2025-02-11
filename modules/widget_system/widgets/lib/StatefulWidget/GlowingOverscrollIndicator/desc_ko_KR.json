@@ -1,0 +1,22 @@
+{
+  "id": 250,
+  "name": "GlowingOverscrollIndicator",
+  "localName": "스크롤 오버스크롤 표시기",
+  "info": "자식이 스크롤 가능한 리스트일 때, 상단과 하단으로 스크롤할 때의 표시 효과. 색상을 지정할 수 있지만 큰 의미는 없습니다. Android와 Fuchsia 시스템의 기본 스크롤 효과입니다.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "기본 사용",
+      "desc": [
+        "【showLeading】 : 헤더가 활성화되는지 여부   【bool】",
+        "【showTrailing】 : 하단이 활성화되는지 여부   【bool】",
+        "【axisDirection】 : 축 방향   【AxisDirection】",
+        "【color】 : 색상   【Color】",
+        "【child】 : 자식 위젯   【Widget】"
+      ]
+    }
+  ]
+}

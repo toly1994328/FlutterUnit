@@ -1,0 +1,24 @@
+{
+  "id": 104,
+  "name": "DragTarget",
+  "localName": "Objetivo de Arrastrar",
+  "info": "Un área objetivo para arrastrar, que puede recibir información del componente Draggable. Puede obtener devoluciones de llamada durante el arrastre.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    103,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico de DragTarget",
+      "desc": [
+        "【builder】 : Constructor del componente   【DragTargetBuilder<T>】",
+        "【onWillAccept】 : Al arrastrar hacia adentro   【Function(T)】",
+        "【onAccept】 : Arrastre exitoso   【Function(T)】",
+        "【onLeave】 : Arrastrar hacia adentro y luego hacia afuera   【Function(T)】"
+      ]
+    }
+  ]
+}

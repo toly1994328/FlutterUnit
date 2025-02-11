@@ -1,0 +1,26 @@
+{
+  "id": 225,
+  "name": "AnimatedPhysicalModel",
+  "localName": "Animated Physical Model",
+  "info": "A PhysicalModel component with animation effects when related properties change, essentially a combination of PhysicalModel and animation. Properties such as shadow, elevation, borderRadius, animation duration, and end callback can be specified.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of AnimatedPhysicalModel",
+      "desc": [
+        "【color】: Background color 【Color】",
+        "【duration】: Animation duration 【Duration】",
+        "【onEnd】: Animation end callback 【Function()】",
+        "【curve】: Animation curve 【Duration】",
+        "【shape】: Shape 【BoxShape】",
+        "【elevation】: Elevation 【double】",
+        "【borderRadius】: Border radius 【BorderRadius】",
+        "【shadowColor】: Shadow color 【Color】",
+        "【child】: Child widget 【Widget】"
+      ]
+    }
+  ]
+}

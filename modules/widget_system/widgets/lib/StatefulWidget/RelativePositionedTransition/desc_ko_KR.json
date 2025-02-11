@@ -1,0 +1,21 @@
+{
+  "id": 115,
+  "name": "RelativePositionedTransition",
+  "localName": "사각형 위치 변환",
+  "info": "AnimatedWidget의 하위 클래스, Rect 타입의 애니메이터를 사용하여 자식 위젯이 두 Rect 객체 간에 전환 애니메이션을 수행하도록 합니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RelativePositionedTransition 기본 사용",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【size】 : 왼쪽과 위쪽의 오프셋   【Size】",
+        "【rect】 : 애니메이션   【Animation<Rect>】",
+        "    PositionedTransition 위젯은 Stack 내에서만 작동합니다."
+      ]
+    }
+  ]
+}

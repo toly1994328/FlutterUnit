@@ -1,0 +1,18 @@
+{
+  "id": 312,
+  "name": "PerformanceOverlay",
+  "localName": "Leistungsüberlagerung",
+  "info": "Ermöglicht das einfache Aktivieren von zwei Leistungsüberwachungsdiagrammen, um die Änderungen der Bildrate beim Aktualisieren der Oberfläche zu verfolgen.",
+  "lever": 2,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von PerformanceOverlay",
+      "desc": [
+        "Mit PerformanceOverlay.allEnabled können alle Überwachungsoptionen gestartet werden."
+      ]
+    }
+  ]
+}

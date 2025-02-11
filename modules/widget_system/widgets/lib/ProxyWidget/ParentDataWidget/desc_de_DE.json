@@ -1,0 +1,23 @@
+{
+  "id": 347,
+  "name": "ParentDataWidget",
+  "localName": "Elterndaten-Widget",
+  "info": "Abstrakte Klasse, die verwendet wird, um ParentData-Informationen mit RenderObjectWidget-Kindkomponenten zu verbinden. Seine Unterklassen sind Positioned, Flexible, Expanded usw. Diese Komponenten können nur unter bestimmten Komponenten verwendet werden.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [
+    106,
+    109,
+    108,
+    315
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in ParentDataWidget",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】"
+      ]
+    }
+  ]
+}

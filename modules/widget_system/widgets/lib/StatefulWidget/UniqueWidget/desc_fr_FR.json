@@ -1,0 +1,18 @@
+{
+  "id": 243,
+  "name": "UniqueWidget",
+  "localName": "Widget Unique",
+  "info": "Classe abstraite, doit fournir une GlobalKey pour l'identification. Ce type de widget ne sera instancié qu'une seule fois et aura un seul état à la fois. L'état peut être obtenu via la propriété currentState.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction à UniqueWidget",
+      "desc": [
+        "【child】 : Widget enfant   【Widget】"
+      ]
+    }
+  ]
+}

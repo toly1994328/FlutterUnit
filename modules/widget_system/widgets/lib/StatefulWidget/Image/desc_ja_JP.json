@@ -1,0 +1,58 @@
+{
+  "id": 38,
+  "name": "Image",
+  "localName": "画像コンポーネント",
+  "info": "画像を表示するために使用され、ファイル、メモリ、ネットワーク、リソースからロードできます。適応モード、スタイル、カラーブレンドモード、リピートモードなどを指定できます",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    8,
+    87
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "リソースファイルとネットワークから画像をロードできます",
+      "desc": [
+        "Image.assetでリソース画像をロードします"
+      ]
+    },
+    {
+      "file": "node2_fit.dart",
+      "name": "画像の適応モード",
+      "desc": [
+        "【fit】 : 適応モード*7   【BoxFit】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "画像の整列モード",
+      "desc": [
+        "【alignment】 : カラー   【AlignmentGeometry】",
+        "    一般的にAlignmentクラスの9つの静的定数を使用しますが、位置をカスタマイズすることもできます"
+      ]
+    },
+    {
+      "file": "node4_colorBlendMode.dart",
+      "name": "画像のカラー及びブレンドモード",
+      "desc": [
+        "【color】 : カラー   【Color】",
+        "【colorBlendMode】: ブレンドモード*29 【BlendMode】"
+      ]
+    },
+    {
+      "file": "node5_repeat.dart",
+      "name": "画像のリピートモード",
+      "desc": [
+        "【repeat】 : リピートモード*4   【ImageRepeat】"
+      ]
+    },
+    {
+      "file": "node6_centerSlice.dart",
+      "name": "画像の一部を拡大",
+      "desc": [
+        "【centerSlice】 : 保持する領域   【Rect】"
+      ]
+    }
+  ]
+}

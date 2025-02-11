@@ -1,0 +1,20 @@
+{
+  "id": 93,
+  "name": "PositionedTransition",
+  "localName": "位置変換",
+  "info": "Stack内でのみ使用可能で、1つの子コンポーネントを収容し、2つの矩形間で位置アニメーションを行わせることができます。アニメーターrectを提供する必要があります。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PositionedTransitionの基本的な使用法",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【rect】 : アニメーション   【Animation<RelativeRect>】",
+        "    PositionedTransitionコンポーネントはStack内でのみ機能します"
+      ]
+    }
+  ]
+}

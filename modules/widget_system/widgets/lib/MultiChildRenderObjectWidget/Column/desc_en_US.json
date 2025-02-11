@@ -1,0 +1,26 @@
+{
+  "id": 96,
+  "name": "Column",
+  "localName": "Column Layout",
+  "info": "A Flex layout with a vertical arrangement direction, capable of accommodating multiple components. All other properties are the same, see Flex for details.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Basic Usage of Column",
+      "desc": [
+        "【children】: Component list 【List<Widget>】",
+        "【mainAxisAlignment】: Main axis alignment 【MainAxisAlignment】",
+        "【crossAxisAlignment】: Cross axis alignment 【CrossAxisAlignment】",
+        "【textBaseline】: Text baseline 【TextBaseline】",
+        "【verticalDirection】: Vertical direction 【VerticalDirection】",
+        "【mainAxisSize】: Main axis size 【MainAxisSize】"
+      ]
+    }
+  ]
+}

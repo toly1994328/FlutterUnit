@@ -1,0 +1,19 @@
+{
+  "id": 90,
+  "name": "RotationTransition",
+  "localName": "Transição de Rotação",
+  "info": "Pode conter um componente filho e fazê-lo realizar uma animação de rotação, requer um animador turns e possui a propriedade alignment.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do RotationTransition",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【turns】 : Desaparece ou não   【Animation<double>】"
+      ]
+    }
+  ]
+}

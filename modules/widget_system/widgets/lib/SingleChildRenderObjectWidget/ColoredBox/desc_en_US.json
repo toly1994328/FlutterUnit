@@ -1,0 +1,19 @@
+{
+  "id": 267,
+  "name": "ColoredBox",
+  "localName": "Color Box",
+  "info": "Draws a specified color on the layout area of the child component, then draws the child component on the background color.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ColoredBox",
+      "desc": [
+        "【color】: Component 【Color】",
+        "【child】: Component 【Widget】"
+      ]
+    }
+  ]
+}

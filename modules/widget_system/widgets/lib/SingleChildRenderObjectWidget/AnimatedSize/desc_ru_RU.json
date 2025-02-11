@@ -1,0 +1,22 @@
+{
+  "id": 201,
+  "name": "AnimatedSize",
+  "localName": "Анимация размера",
+  "info": "Когда размер дочернего компонента изменяется, происходит плавная анимация. Можно указать такие свойства, как продолжительность, способ выравнивания, кривая, vsync и другие.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование AnimatedSize",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【duration】 : Продолжительность анимации   【Duration】",
+        "【alignment】 : Способ выравнивания   【AlignmentGeometry】",
+        "【curve】 : Кривая анимации   【Duration】",
+        "【vsync】 : vsync   【TickerProvider】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 112,
+  "name": "SlideTransition",
+  "localName": "Transizione scorrevole",
+  "info": "Sottoclasse di AnimatedWidget, utilizza un animatore di tipo Offset per far sì che i componenti figli eseguano un'animazione di transizione tra due oggetti Offset.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base di SlideTransition",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【textDirection】 : Direzione dell'asse x  【TextDirection】",
+        "【position】 : Animazione   【Animation<Offset>】"
+      ]
+    }
+  ]
+}

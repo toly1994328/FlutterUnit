@@ -1,0 +1,20 @@
+{
+  "id": 188,
+  "name": "SliverGrid",
+  "localName": "Sliver-Gitter",
+  "info": "Ein Gitterlisten-Widget der Sliver-Familie, ähnlich wie GirdView, das durch count und extent konstruiert wird. Wird normalerweise in CustomScrollView verwendet.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von SliverList",
+      "desc": [
+        "SliverGrid.count Konstruktion mit spezifizierter axialer Anzahl",
+        "SliverGrid.extent Konstruktion mit spezifizierter axialer Länge",
+        "Attributeigenschaften sind ähnlich wie bei GridView, siehe dazu"
+      ]
+    }
+  ]
+}

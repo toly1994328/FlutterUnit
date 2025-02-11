@@ -1,0 +1,27 @@
+{
+  "id": 251,
+  "name": "NestedScrollView",
+  "localName": "중첩 스크롤 뷰",
+  "info": "여러 뷰의 스크롤 중첩 처리를 위해 사용되며, 헤더, 스크롤 컨트롤러, 스크롤 방향 등을 지정할 수 있습니다. 이때 body는 반드시 스크롤 가능한 타입의 컴포넌트여야 합니다.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    344
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "NestedScrollView 기본 사용법",
+      "desc": [
+        "【controller】 : 스크롤 컨트롤러   【ScrollController】",
+        "【scrollDirection】 : 스크롤 방향   【Axis】",
+        "【reverse】 : 역방향 여부   【bool】",
+        "【physics】 : 스크롤 스타일   【ScrollPhysics】",
+        "【dragStartBehavior】 : 드래그 시작 동작   【DragStartBehavior】",
+        "【headerSliverBuilder】 : *헤더 빌더   【NestedScrollViewHeaderSliversBuilder】",
+        "【body】 : *내용   【Widget】"
+      ]
+    }
+  ]
+}

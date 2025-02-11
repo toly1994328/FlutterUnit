@@ -1,0 +1,22 @@
+{
+  "id": 106,
+  "name": "Expanded",
+  "localName": "Componente Esteso",
+  "info": "La classe genitore è Flexible, equivalente a un componente Flexible con tipo fit tight. Può annidare figli per espandere lo spazio occupato utilizzando lo spazio rimanente.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    94,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di Expanded",
+      "desc": [
+        "【child】 : figlio   【Widget】",
+        "【flex】 : percentuale di allocazione dello spazio rimanente   【int】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 201,
+  "name": "AnimatedSize",
+  "localName": "Größenanimation",
+  "info": "Wenn sich die Größe der Unterkomponente ändert, erfolgt eine animierte Überblendung. Attribute wie Dauer, Ausrichtung, Kurve, vsync usw. können angegeben werden.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von AnimatedSize",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】",
+        "【duration】 : Animationsdauer   【Duration】",
+        "【alignment】 : Ausrichtung   【AlignmentGeometry】",
+        "【curve】 : Animationskurve   【Duration】",
+        "【vsync】 : vsync   【TickerProvider】"
+      ]
+    }
+  ]
+}

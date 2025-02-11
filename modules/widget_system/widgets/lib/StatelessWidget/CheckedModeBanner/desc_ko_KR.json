@@ -1,0 +1,18 @@
+{
+  "id": 215,
+  "name": "CheckedModeBanner",
+  "localName": "디버그 라벨",
+  "info": "디버그 실행 모드에서만 오른쪽 상단 코너에 표시되며, 특별히 큰 의미는 없습니다. MaterialApp 컴포넌트 소스 코드에서 사용 사례가 있습니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CheckedModeBanner 기본 사용",
+      "desc": [
+        "【child】 : 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

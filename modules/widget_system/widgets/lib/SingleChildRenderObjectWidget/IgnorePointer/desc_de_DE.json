@@ -1,0 +1,25 @@
+{
+  "id": 292,
+  "name": "IgnorePointer",
+  "localName": "Ignoriere Klicks",
+  "info": "Enthält ein Kind-Widget und kann durch Festlegen der Eigenschaft ignoring entscheiden, ob das Kind Gestenereignisse ignoriert. Es selbst empfängt keine Ereignisse.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    295,
+    146,
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von IgnorePointer",
+      "desc": [
+        "【child】 : Kind-Widget   【Widget】",
+        "【ignoring】 : Ob Ereignisse ignoriert werden sollen   【bool】",
+        "Wie unten gezeigt, wenn der Switch ausgewählt ist, ist ignoring true, und die Schaltflächenereignisse werden gesperrt und können nicht geklickt werden."
+      ]
+    }
+  ]
+}

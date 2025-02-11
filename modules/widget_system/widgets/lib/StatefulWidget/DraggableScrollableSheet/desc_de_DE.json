@@ -1,0 +1,25 @@
+{
+  "id": 252,
+  "name": "DraggableScrollableSheet",
+  "localName": "Zieh- und schiebbares Blatt",
+  "info": "Ein Blatt, das gezogen und geschoben werden kann, mit der Möglichkeit, den maximalen, minimalen und anfänglichen Teilungsbereich festzulegen. Der Konstruktor builder muss eine schiebbare Komponente zurückgeben.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    221,
+    142
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von DraggableScrollableSheet",
+      "desc": [
+        "【initialChildSize】 : Anfänglicher Teilungsgrad   【double】",
+        "【minChildSize】 : Minimaler Teilungsgrad   【double】",
+        "【maxChildSize】 : Maximaler Teilungsgrad   【double】",
+        "【builder】 : Schiebbare Komponentenkonstruktor   【ScrollableWidgetBuilder】",
+        "【expand】 : Ob erweitert   【bool】"
+      ]
+    }
+  ]
+}

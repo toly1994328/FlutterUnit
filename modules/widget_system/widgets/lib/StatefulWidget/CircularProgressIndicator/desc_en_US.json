@@ -1,0 +1,24 @@
+{
+  "id": 46,
+  "name": "CircularProgressIndicator",
+  "localName": "Circular Progress",
+  "info": "A circular progress display that can specify properties such as color, line width, and progress. It will keep rotating when value is null.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    47,
+    48
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CircularProgressIndicator",
+      "desc": [
+        "【value】 : Progress   【double】",
+        "【backgroundColor】 : Background Color   【Color】",
+        "【valueColor】 : Progress Color   【Animation<Color>】",
+        "【strokeWidth】 : Line Width   【double】"
+      ]
+    }
+  ]
+}

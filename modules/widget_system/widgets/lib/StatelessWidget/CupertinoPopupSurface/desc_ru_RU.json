@@ -1,0 +1,20 @@
+{
+  "id": 217,
+  "name": "CupertinoPopupSurface",
+  "localName": "Размытый всплывающий слой",
+  "info": "Фон с закругленными углами и размытием для всплывающего окна iOS, используется в диалогах в стиле Cupertino в исходном коде.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Использование CupertinoPopupSurface",
+      "desc": [
+        "【isSurfacePainted】 : Рисовать ли белый цвет   【bool】",
+        "【child】 : Дочерний компонент   【Widget】",
+        "Тестовый эффект: слева isSurfacePainted = false, справа isSurfacePainted = true"
+      ]
+    }
+  ]
+}

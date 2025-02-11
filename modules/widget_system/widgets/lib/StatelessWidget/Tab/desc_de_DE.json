@@ -1,0 +1,21 @@
+{
+  "id": 148,
+  "name": "Tab",
+  "localName": "Tab",
+  "info": "Wird normalerweise für Items in der TabBar verwendet, hat eine obere und untere Struktur und kann ein Symbol und eine Inhaltskomponente angeben.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Tab",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【text】 : Text   【String】",
+        "【icon】 : Untere Komponente  【Widgit】",
+        "    text und child können nicht gleichzeitig existieren"
+      ]
+    }
+  ]
+}

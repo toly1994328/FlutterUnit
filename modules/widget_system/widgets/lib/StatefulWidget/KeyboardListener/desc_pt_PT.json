@@ -1,0 +1,26 @@
+{
+  "id": 284,
+  "name": "KeyboardListener",
+  "localName": "Ouvinte de Teclado",
+  "info": "Após obter o foco, monitora os eventos de teclas através de onKeyEvent.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    282,
+    283
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Monitorar Eventos de Teclado",
+      "desc": [
+        "No exemplo, clique na área para obter o foco e, em seguida, pressione as teclas para ver as informações de acionamento do evento.",
+        "【focusNode】 : Foco   【FocusNode】",
+        "【autofocus】 : Foco automático   【bool】",
+        "【includeSemantics】 : Incluir semântica   【bool】",
+        "【onKeyEvent】 : Evento de retorno de tecla   【ValueChanged<KeyEvent>?】",
+        "【child】 : Componente filho   【Widget】"
+      ]
+    }
+  ]
+}

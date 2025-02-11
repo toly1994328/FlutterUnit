@@ -1,0 +1,23 @@
+{
+  "id": 116,
+  "name": "AnimatedSwitcher",
+  "localName": "Анимированный переключатель",
+  "info": "Выполняет анимацию при изменении дочернего компонента, необходимо указать ключ дочернего компонента для идентификации. Способ анимации может быть настроен, можно указать продолжительность анимации, кривую анимации и другие свойства.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование AnimatedSwitcher",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【duration】 : Продолжительность анимации  【Duration】",
+        "【switchOutCurve】 : Кривая выхода  【Curves】",
+        "【switchInCurve】 : Кривая входа  【Curves】",
+        "【switchInCurve】 : Кривая входа  【Curves】",
+        "【transitionBuilder】 : Конструктор анимации  【Widget Function(Widget, Animation<double>)】"
+      ]
+    }
+  ]
+}

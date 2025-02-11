@@ -1,0 +1,31 @@
+{
+  "id": 6,
+  "name": "Icon",
+  "localName": "Componente Icona",
+  "info": "Componente per la visualizzazione delle icone. Puoi specificare la risorsa dell'icona, la dimensione e il colore. Molto semplice, ma molto utile",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    7,
+    30,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Per visualizzare un'icona",
+      "desc": [
+        "【Parametro】 : Dati dell'icona 【IconData】",
+        "【size】 : Dimensione  【double】",
+        "【color】: Colore   【Color】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Usa icone personalizzate",
+      "desc": [
+        "Puoi scaricare i caratteri delle icone dal sito iconfont per usarli"
+      ]
+    }
+  ]
+}

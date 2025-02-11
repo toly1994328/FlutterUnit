@@ -1,0 +1,21 @@
+{
+  "id": 144,
+  "name": "CupertinoContextMenuAction",
+  "localName": "Pulsante del menu a comparsa iOS",
+  "info": "Generalmente utilizzato solo per i pulsanti di clic in CupertinoContextMenu. È possibile specificare l'icona del figlio e della coda, ricevere eventi di clic.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di base di CupertinoContextMenuAction",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【isDefaultAction】 : Se selezionato per default  【bool】",
+        "【trailingIcon】 : Coda  【bool】",
+        "【onPressed】 : Evento di clic  【Function()】"
+      ]
+    }
+  ]
+}

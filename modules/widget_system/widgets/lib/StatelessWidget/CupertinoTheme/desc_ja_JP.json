@@ -1,0 +1,28 @@
+{
+  "id": 169,
+  "name": "CupertinoTheme",
+  "localName": "iOSテーマ",
+  "info": "CupertinoTheme.ofを使用してCupertinoThemeDataオブジェクトを取得できます。また、テーマを指定してCupertinoThemeの子孫コンポーネントに適用することもできます。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    156,
+    168
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "テキストスタイル-TextTheme",
+      "desc": [
+        "子孫コンポーネントはCupertinoTheme.ofを使用してテーマのデータを取得して使用できます。"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "CupertinoThemeDataの使用",
+      "desc": [
+        "Themeと同様に、指定されたプロパティを使用して子孫で共有できますが、プロパティは少ないです。テーマを使用する必要がある場合、現在のcontextで取得できないことに注意してください。"
+      ]
+    }
+  ]
+}

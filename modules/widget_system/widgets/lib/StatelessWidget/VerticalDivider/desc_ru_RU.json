@@ -1,0 +1,31 @@
+{
+  "id": 35,
+  "name": "VerticalDivider",
+  "localName": "Вертикальный разделитель",
+  "info": "Вертикальный разделитель, можно указать цвет, ширину, толщину, отступы сверху и снизу, часто используется для разделения элементов списка.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    34,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Цвет и толщина VerticalDivider",
+      "desc": [
+        "【color】: цвет   【Color】",
+        "【thickness】: толщина линии   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "Ширина и отступы VerticalDivider",
+      "desc": [
+        "【indent】: длина отступа спереди   【double】",
+        "【endIndent】: длина отступа сзади   【double】",
+        "【width】: ширина занимаемого места   【double】"
+      ]
+    }
+  ]
+}

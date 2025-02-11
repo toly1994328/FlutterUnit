@@ -1,0 +1,24 @@
+{
+  "id": 9,
+  "name": "CircleAvatar",
+  "localName": "Rundes Widget",
+  "info": "Kann ein Bild in einen Kreis verwandeln und in der Mitte ein Widget platzieren. Es können Radius, Vordergrundfarbe, Hintergrundfarbe usw. angegeben werden.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Darstellung von CircleAvatar",
+      "desc": [
+        "【radius】 : Radius  【double】",
+        "【backgroundImage】 : Bildressource  【ImageProvider】",
+        "【foregroundColor】: Vordergrundfarbe   【Color】",
+        "【backgroundColor】: Hintergrundfarbe   【Color】",
+        "【minRadius】: Minimaler Radius   【double】",
+        "【maxRadius】: Maximaler Radius   【double】",
+        "【child】: Kind-Widget   【Child】"
+      ]
+    }
+  ]
+}

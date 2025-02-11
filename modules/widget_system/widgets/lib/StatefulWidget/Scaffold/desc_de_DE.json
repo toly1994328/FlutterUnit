@@ -1,0 +1,29 @@
+{
+  "id": 64,
+  "name": "Scaffold",
+  "localName": "Gerüst",
+  "info": "Eine allgemeine App-Struktur, die obere, untere, linke, rechte, mittlere und schwebende Button-Bereiche umfasst, in denen Komponenten platziert werden können.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    57,
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Scaffold",
+      "desc": [
+        "【appBar】 : Kopfkomponente   【PreferredSizeWidget】",
+        "【bottomNavigationBar】 : Fußkomponente   【Widget】",
+        "【drawer】 : Linke Schiebekomponente   【Widget】",
+        "【endDrawer】 : Rechte Schiebekomponente   【Widget】",
+        "【body】 : Inhaltkomponente   【Widget】",
+        "【backgroundColor】 : Hintergrundfarbe   【Color】",
+        "【floatingActionButton】 : Schwebender Button   【Widget】",
+        "【floatingActionButtonLocation】 : Position des schwebenden Buttons   【FloatingActionButtonLocation】"
+      ]
+    }
+  ]
+}

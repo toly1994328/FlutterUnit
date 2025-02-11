@@ -1,0 +1,60 @@
+{
+  "id": 26,
+  "name": "RaisedButton",
+  "localName": "떠오르는 버튼",
+  "info": "그림자가 있는 떠오르는 버튼, MaterialButton을 기반으로 구현되었으며 모든 속성은 MaterialButton과 유사합니다.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    25,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RaisedButton 클릭 이벤트",
+      "desc": [
+        "【color】: 색상   【Color】",
+        "【splashColor】: 물결 효과 색상   【Color】",
+        "【elevation】: 그림자 깊이   【double】",
+        "【child】: 자식 위젯   【Widget】",
+        "【textColor】: 자식 위젯 텍스트 색상   【Color】",
+        "【highlightColor】: 길게 누를 때 강조 색상   【Color】",
+        "【padding】: 안쪽 여백   【EdgeInsetsGeometry】",
+        "【onPressed】: 클릭 이벤트   【Function】",
+        "    ",
+        "",
+        "class CustomRaisedButton extends StatelessWidget {",
+        "  const CustomRaisedButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'RaisedButton 버튼은 Flutter3.3에서 역사의 뒤안길로 사라졌습니다. 대체 버튼은 ElevatedButton입니다.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return RaisedButton(",
+        "       color: Colors.blue,",
+        "       splashColor: Colors.green,",
+        "       onPressed: () {,",
+        "       child: const Text(\"RaisedButton\"),",
+        "       textColor: const Color(0xffFfffff),",
+        "       padding: const EdgeInsets.all(8),",
+        "       elevation: 5,",
+        "       highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

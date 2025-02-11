@@ -1,0 +1,20 @@
+{
+  "id": 41,
+  "name": "CupertinoSwitch",
+  "localName": "Interruttore iOS",
+  "info": "Interruttore in stile iOS, comunemente utilizzato per il cambio di configurazione, può specificare il colore e riceve un callback per i cambiamenti di stato.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CupertinoSwitch",
+      "desc": [
+        "【value】 : Se è selezionato   【double】",
+        "【activeColor】 : Colore dello stato attivo   【Color】",
+        "【onChanged】 : Callback di cambio   【Function(double)】"
+      ]
+    }
+  ]
+}

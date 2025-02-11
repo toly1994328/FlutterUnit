@@ -1,0 +1,20 @@
+{
+  "id": 208,
+  "name": "Title",
+  "localName": "Título de la aplicación",
+  "info": "Este componente se utiliza para describir el nombre de la aplicación en el sistema operativo, y se puede ver el efecto en la lista de la barra de aplicaciones. El origen del efecto del campo title en MaterialApp es este componente.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Title",
+      "desc": [
+        "【title】 : Nombre   【int】",
+        "【color】: Color   【Color】",
+        "【child】: Componente hijo    【Widget】"
+      ]
+    }
+  ]
+}

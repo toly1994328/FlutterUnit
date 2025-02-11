@@ -1,0 +1,33 @@
+{
+  "id": 359,
+  "name": "FilledButton",
+  "localName": "Bouton rempli",
+  "info": "Un bouton rempli conforme au Material Design, configurable via FilledButtonTheme.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    354,
+    355,
+    353
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation de base",
+      "desc": [
+        "【child】 : Contenu du bouton   【Widget】",
+        "【onPressed】 : Événement de clic   【VoidCallback】",
+        "【onHover】 : Événement de survol   【ValueChanged<bool>? 】",
+        "【onLongPress】 : Événement de pression longue   【VoidCallback?】",
+        "Le bouton rempli est visuellement secondaire au [FloatingActionButton], utilisé pour des actions importantes et finales, comme : sauvegarder, rejoindre immédiatement ou confirmer."
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Variante tonale",
+      "desc": [
+        "FilledButton.tonal est un bouton rempli tonal, visuellement entre [FilledButton] et [OutlinedButton], adapté pour des scénarios nécessitant une emphase légèrement plus forte que le bouton contour mais avec une priorité moindre. Par exemple, le bouton [Suivant]"
+      ]
+    }
+  ]
+}

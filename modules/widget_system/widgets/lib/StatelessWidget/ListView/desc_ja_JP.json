@@ -1,0 +1,46 @@
+{
+  "id": 162,
+  "name": "ListView",
+  "localName": "リストコンポーネント",
+  "info": "リスト表示のリーダーであり、複数の子コンポーネントを収容し、builder、separated、customなどを介して構築できます。内側の余白、反転の有無、スクロールコントローラーなどの属性があります。",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    16,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListViewの基本使用",
+      "desc": [
+        "【children】 : 子コンポーネントリスト   【List<Widget>】",
+        "【padding】 : 内側の余白  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "ListViewの横方向スクロール",
+      "desc": [
+        "【scrollDirection】 : スクロール方向   【Axis】",
+        "【reverse】 : 反転スクロールの有無   【bool】",
+        "【shrinkWrap】 : 境界がない場合にラップするかどうか  【bool】"
+      ]
+    },
+    {
+      "file": "node3_builder.dart",
+      "name": "ListView.builderの構築",
+      "desc": [
+        "【itemCount】 : アイテムの数   【int】",
+        "【itemBuilder】 : アイテムビルダー   【IndexedWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node4_separated.dart",
+      "name": "ListView.separatedの構築",
+      "desc": [
+        "【separatorBuilder】 : アイテムビルダー   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

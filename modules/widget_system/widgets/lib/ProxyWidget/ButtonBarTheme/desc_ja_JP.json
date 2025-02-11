@@ -1,0 +1,18 @@
+{
+  "id": 338,
+  "name": "ButtonBarTheme",
+  "localName": "ボタンバーテーマ",
+  "info": "主に子孫のButtonBarコンポーネントにデフォルトのプロパティを統一して設定するために使用されます。また、このコンポーネントを通じてデフォルトのButtonBarThemeのプロパティを取得することもできます。",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ButtonBarThemeの基本的な使用",
+      "desc": [
+        "ButtonBarThemeDataデータ属性を指定して、子孫のButtonBarコンポーネントにデフォルトのスタイルを設定できます。例えば、配置、スタイル、余白などです。また、ButtonBarTheme.ofを使用してButtonBarのテーマプロパティを取得することもできます。"
+      ]
+    }
+  ]
+}

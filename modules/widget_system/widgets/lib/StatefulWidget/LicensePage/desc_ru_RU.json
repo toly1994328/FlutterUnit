@@ -1,0 +1,24 @@
+{
+  "id": 145,
+  "name": "LicensePage",
+  "localName": "Страница лицензии",
+  "info": "Страница лицензии приложения, где можно указать значок приложения, имя приложения, версию приложения и другую информацию, остальное автоматически генерируется Flutter.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    130,
+    193
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование LicensePage",
+      "desc": [
+        "【applicationIcon】 : Иконка в верхнем левом углу   【Widget】",
+        "【applicationVersion】 : Версия  【String】",
+        "【applicationName】 : Имя приложения  【String】",
+        "【applicationLegalese】 : Юридическая информация приложения   【String】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 87,
+  "name": "FittedBox",
+  "localName": "Boîte ajustée",
+  "info": "Peut contenir un composant enfant, utilise la propriété fit pour déterminer le mode d'adaptation de la zone du composant enfant par rapport au composant parent, possède la propriété d'alignement alignment.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de FittedBox",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【fit】 : Mode d'adaptation   【BoxFit】",
+        "【alignment】 : Mode d'alignement   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 156,
+  "name": "CupertinoApp",
+  "localName": "iOS 앱",
+  "info": "iOS 스타일 앱의 최상위 컴포넌트로, 라우트 생성기, 테마, 언어, 홈페이지 등의 속성을 포함합니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    157,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoApp 기본 사용법",
+      "desc": [
+        "【theme】 : 테마   【ThemeData】",
+        "【title】 : 작업 표시줄 제목   【String】",
+        "【onGenerateRoute】 : 라우트 생성기   【RouteFactory】",
+        "【home】 : 홈페이지   【Widget】"
+      ]
+    }
+  ]
+}

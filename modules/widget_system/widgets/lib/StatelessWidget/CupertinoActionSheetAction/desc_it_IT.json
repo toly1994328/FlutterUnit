@@ -1,0 +1,20 @@
+{
+  "id": 132,
+  "name": "CupertinoActionSheetAction",
+  "localName": "Pulsante iOS Action Sheet",
+  "info": "Un pulsante, utilizzato raramente, solitamente all'interno di CupertinoActionSheet, che riceve eventi di clic.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CupertinoActionSheetAction",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【isDefaultAction】 : Selezionato per impostazione predefinita  【bool】",
+        "【onPressed】 : Evento di clic  【Function()】"
+      ]
+    }
+  ]
+}

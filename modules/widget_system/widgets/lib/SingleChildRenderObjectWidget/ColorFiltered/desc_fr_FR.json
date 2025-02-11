@@ -1,0 +1,22 @@
+{
+  "id": 88,
+  "name": "ColorFiltered",
+  "localName": "Filtre de couleur",
+  "info": "Peut contenir un composant enfant et peut mélanger le composant avec n'importe quel composant selon 29 modes de superposition de couleurs, si puissant que je ne sais pas quoi dire. Découvrez comment rendre toute l'application en niveaux de gris en un clic.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    277,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ColorFiltered",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【colorFilter】 : Filtre de couleur   【ColorFilter】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 194,
+  "name": "Scrollbar",
+  "localName": "Barre de défilement",
+  "info": "Doit envelopper une zone défilable. Lorsqu'elle est défilable, une barre de défilement est affichée pour l'indication.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    195,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Scrollbar",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【controller】 : Contrôleur  【ScrollController】"
+      ]
+    }
+  ]
+}

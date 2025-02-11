@@ -1,0 +1,24 @@
+{
+  "id": 67,
+  "name": "ClipRect",
+  "localName": "Ritaglio rettangolare",
+  "info": "Può contenere un componente figlio e ritagliarlo in forma rettangolare. Può essere delimitato utilizzando componenti come SizedBox, Align, AspectRadio, ecc.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    66,
+    68,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base di ClipRect",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【clipBehavior】 : Comportamento di ritaglio   【Clip】",
+        "【clipper】 : Ritagliatore   【CustomClipper<Rect>】"
+      ]
+    }
+  ]
+}

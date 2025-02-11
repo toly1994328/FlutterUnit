@@ -1,0 +1,20 @@
+{
+  "id": 112,
+  "name": "SlideTransition",
+  "localName": "슬라이드 전환",
+  "info": "AnimatedWidget의 하위 클래스로, Offset 타입의 애니메이터를 사용하여 자식 위젯이 두 Offset 객체 간의 전환 애니메이션을 수행하도록 합니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SlideTransition 기본 사용법",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【textDirection】 : x축 방향  【TextDirection】",
+        "【position】 : 애니메이션   【Animation<Offset>】"
+      ]
+    }
+  ]
+}

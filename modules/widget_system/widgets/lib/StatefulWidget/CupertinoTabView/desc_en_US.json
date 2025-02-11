@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Cupertino Page",
+  "info": "Can maintain a routing stack like MaterialApp. Build routes through routes and onGenerateRoute, and listen to routes through navigatorObservers.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoTabView",
+      "desc": [
+        "【builder】 : Homepage builder   【WidgetBuilder】",
+        "【navigatorObservers】 : Route observers   【List<NavigatorObserver>】",
+        "【routes】 : Route mapping   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】 : Route factory   【RouteFactory】"
+      ]
+    }
+  ]
+}

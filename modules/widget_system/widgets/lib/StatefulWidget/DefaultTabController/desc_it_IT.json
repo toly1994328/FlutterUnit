@@ -1,0 +1,23 @@
+{
+  "id": 230,
+  "name": "DefaultTabController",
+  "localName": "Controllore di schede predefinito",
+  "info": "Quando si utilizza TabBar e TabBarView, è necessario che lo stesso controllore gestisca sia le schede che le pagine. DefaultTabController fornisce un controllore predefinito quando non ne viene specificato uno, semplificando l'uso.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    148,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di DefaultTabController",
+      "desc": [
+        "【length】 : Numero di schede   【int】",
+        "【initialIndex】 : Indice della scheda iniziale   【int】",
+        "【child】 : Componente   【Widget】"
+      ]
+    }
+  ]
+}

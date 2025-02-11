@@ -1,0 +1,22 @@
+{
+  "id": 147,
+  "name": "Listener",
+  "localName": "Слушатель событий",
+  "info": "Слушатель событий компонента, который может принимать события нажатия, отпускания, перемещения, отмены и т.д. Более примитивен, чем GestureDetector, но предоставляет больше информации.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основные события Listener",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【onPointerDown】 : Событие нажатия   【Function(PointerDownEvent)】",
+        "【onPointerMove】 : Событие перемещения   【Function(PointerMoveEvent)】",
+        "【onPointerMove】 : Событие отпускания   【Function(PointerUpEvent)】",
+        "【onPointerCancel】 : Событие отмены   【Function(PointerUpEvent)】"
+      ]
+    }
+  ]
+}

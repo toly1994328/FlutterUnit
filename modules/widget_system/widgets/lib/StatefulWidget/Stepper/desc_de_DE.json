@@ -1,0 +1,29 @@
+{
+  "id": 200,
+  "name": "Stepper",
+  "localName": "Schrittkomponente",
+  "info": "Schrittkomponente, die schrittweise Operationen festlegen kann, kann den Inhalt der Schritte, die Bestätigungs- und Rückgängig-Buttons sowie die Ausrichtung der Schritte anpassen.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Stepper",
+      "desc": [
+        "【steps】 : Schrittliste   【List<Step>】",
+        "【currentStep】 : Aktueller Schritt   【double】",
+        "【onStepTapped】 : Klick-Rückruf   【ValueChanged<int>】",
+        "【onStepCancel】 : Rückgängig-Rückruf  【VoidCallback】",
+        "【controlsBuilder】 : Controller-Konstruktion  【ControlsWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Ausrichtung des Steppers",
+      "desc": [
+        "【type】 : Ausrichtung   【StepperType】"
+      ]
+    }
+  ]
+}

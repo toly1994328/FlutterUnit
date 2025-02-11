@@ -1,0 +1,21 @@
+{
+  "id": 126,
+  "name": "Dialog",
+  "localName": "대화 상자",
+  "info": "가장 간단한 대화 상자 패널로, 내용 컴포넌트를 포함하며, 그림자 깊이, 배경색, 모양 등의 속성을 지정할 수 있습니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Dialog 기본 사용",
+      "desc": [
+        "【child】 : 애니메이션 아이콘 데이터   【Widget】",
+        "【elevation】 : 그림자 깊이  【double】",
+        "【backgroundColor】 : 배경색  【Color】",
+        "【shape】 : 모양   【ShapeBorder】"
+      ]
+    }
+  ]
+}

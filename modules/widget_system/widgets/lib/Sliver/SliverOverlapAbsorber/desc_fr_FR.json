@@ -1,0 +1,23 @@
+{
+  "id": 307,
+  "name": "SliverOverlapAbsorber",
+  "localName": "Absorbeur de chevauchement",
+  "info": "Enveloppe un autre sliver et force sa plage de disposition à être considérée comme un chevauchement. Doit être utilisé avec SliverOverlapInjector.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    308
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de SliverOverlapAbsorber",
+      "desc": [
+        "【sliver】 : Composant enfant   【Widget】",
+        "【handle】 : *Gestionnaire   【SliverOverlapAbsorberHandle】",
+        "Si vous n'utilisez pas les composants SliverOverlapAbsorber et SliverOverlapInjector, le contenu de NestedScrollView se chevauchera avec la barre d'en-tête."
+      ]
+    }
+  ]
+}

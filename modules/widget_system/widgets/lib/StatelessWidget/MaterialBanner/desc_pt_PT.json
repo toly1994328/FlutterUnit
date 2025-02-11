@@ -1,0 +1,32 @@
+{
+  "id": 211,
+  "name": "MaterialBanner",
+  "localName": "Componente de Banner",
+  "info": "Componente de banner no estilo Material, suporta estruturas esquerda-centro-direita ou esquerda-centro-abaixo, pode especificar margens, cor de fundo, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_one_btn.dart",
+      "name": "Uso de uma linha do MaterialBanner",
+      "desc": [
+        "【content】: Componente do meio   【Widget】",
+        "【leading】: Componente esquerdo   【Widget】",
+        "【actions】: Lista de componentes direitos   【List<Widget>】",
+        "【padding】: Margem interna   【EdgeInsetsGeometry】",
+        "【forceActionsBelow】: Se os botões estão abaixo   【bool】",
+        "【backgroundColor】: Cor de fundo    【Color】"
+      ]
+    },
+    {
+      "file": "node2_two_btn.dart",
+      "name": "Uso de duas linhas do MaterialBanner",
+      "desc": [
+        "【contentTextStyle】: Estilo da posição central   【TextStyle】",
+        "【leadingPadding】: Margem do componente esquerdo    【EdgeInsetsGeometry】",
+        "Quando o número de componentes finais é maior que 1, a estrutura do componente é esquerda-centro-abaixo."
+      ]
+    }
+  ]
+}

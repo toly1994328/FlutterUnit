@@ -1,0 +1,40 @@
+{
+  "id": 258,
+  "name": "Badge",
+  "localName": "배지 컴포넌트",
+  "info": "Badge는 Material 스타일의 컴포넌트로, child 위에 배지를 추가할 수 있으며, Stack 컴포넌트를 사용하여 겹쳐서 구성됩니다.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node_1.dart",
+      "name": "Badge 점 표시 사용",
+      "desc": [
+        "【backgroundColor】 : 배경색   【Color?】",
+        "【isLabelVisible】 : 표시 여부  【bool】",
+        "【smallSize】 : 라벨 없을 때 직경   【double?】",
+        "【child】 : 하위 컴포넌트   【Widget?】"
+      ]
+    },
+    {
+      "file": "node_2.dart",
+      "name": "Badge 라벨 표시",
+      "desc": [
+        "【label】 : 제목 컴포넌트   【Widget?】",
+        "【textStyle】 : 제목 색상  【TextStyle?】",
+        "【textColor】 : 제목 스타일  【Color?】",
+        "【padding】 : 제목 여백  【EdgeInsetsGeometry?】",
+        "【largeSize】 : 라벨 있을 때 높이   【double?】,"
+      ]
+    },
+    {
+      "file": "node_3.dart",
+      "name": "Badge의 오프셋",
+      "desc": [
+        "【offset】 : 배지 오프셋  【Offset?】",
+        "【alignment】 : 제목 오프셋   【AlignmentDirectional?】"
+      ]
+    }
+  ]
+}

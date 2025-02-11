@@ -1,0 +1,25 @@
+{
+  "id": 348,
+  "name": "SliverWithKeepAliveWidget",
+  "localName": "Recipiente Sliver com KeepAlive",
+  "info": "É uma classe abstrata e não pode ser usada sozinha. Apenas suas subclasses podem conter filhos KeepAlive.",
+  "lever": 1,
+  "family": 4,
+  "linkIds": [
+    316,
+    239,
+    188,
+    185,
+    314,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introdução ao SliverWithKeepAliveWidget",
+      "desc": [
+        "【key】 : chave   【Key】"
+      ]
+    }
+  ]
+}

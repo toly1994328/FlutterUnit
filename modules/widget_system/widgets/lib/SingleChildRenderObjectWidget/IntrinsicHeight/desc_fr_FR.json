@@ -1,0 +1,19 @@
+{
+  "id": 298,
+  "name": "IntrinsicHeight",
+  "localName": "Hauteur intrinsèque",
+  "info": "Un composant qui ajuste la taille de ses enfants en fonction de leur hauteur intrinsèque, résout de nombreux problèmes de mise en page, mais est relativement coûteux.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'IntrinsicHeight",
+      "desc": [
+        "【child】 : Enfant   【Widget】",
+        "Comme dans l'exemple : la hauteur de gauche est variable, la hauteur du milieu est fixe, la hauteur de droite prend la valeur maximale des deux premières."
+      ]
+    }
+  ]
+}

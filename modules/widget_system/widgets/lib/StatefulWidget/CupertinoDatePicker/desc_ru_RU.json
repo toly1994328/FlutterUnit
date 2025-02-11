@@ -1,0 +1,25 @@
+{
+  "id": 137,
+  "name": "CupertinoDatePicker",
+  "localName": "iOS-выбор даты",
+  "info": "Стильный колесный выбор даты, который позволяет указать тип выбора, диапазон дат и т.д., получает событие выбора даты.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование CupertinoDatePicker",
+      "desc": [
+        "【initialDateTime】 : Начальная дата   【DateTime】",
+        "【minimumYear】 : Минимальный год   【int】",
+        "【maximumYear】 : Максимальный год   【int】",
+        "【onDateTimeChanged】 : Обратный вызов при нажатии  【Function(DateTime)】",
+        "【minuteInterval】 : Интервал минут  【int】",
+        "【use24hFormat】 : Используется ли 24-часовой формат  【bool】",
+        "【backgroundColor】 : Цвет фона  【Color】",
+        "【mode】 : Режим*3  【CupertinoDatePickerMode】"
+      ]
+    }
+  ]
+}

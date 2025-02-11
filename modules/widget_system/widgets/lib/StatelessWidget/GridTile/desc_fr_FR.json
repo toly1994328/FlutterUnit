@@ -1,0 +1,20 @@
+{
+  "id": 21,
+  "name": "GridTile",
+  "localName": "Tuile de grille",
+  "info": "Une structure d'élément de liste générique fournie par Flutter, permettant de spécifier des composants de tête, de queue et enfants, souvent utilisée dans les listes en grille.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La représentation de base de GridTile est la suivante",
+      "desc": [
+        "【header】: Composant de tête   【Widget】",
+        "【child】: Composant enfant   【Widget】",
+        "【footer】: Composant de pied   【Widget】"
+      ]
+    }
+  ]
+}

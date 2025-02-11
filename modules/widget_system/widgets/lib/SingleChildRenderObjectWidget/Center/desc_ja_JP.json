@@ -1,0 +1,18 @@
+{
+  "id": 86,
+  "name": "Center",
+  "localName": "中央コンポーネント",
+  "info": "一つの子コンポーネントを収容し、それを親コンポーネントの中央に配置します。Alignコンポーネントの簡易版です。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Centerの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 261,
+  "name": "MergeableMaterial",
+  "localName": "Mergeable Material",
+  "info": "Used to display a list of MergeableMaterialItem, including MaterialSlice (main body) and MaterialGap (separator).",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of MergeableMaterial",
+      "desc": [
+        "【elevation】 : Shadow depth   【double】",
+        "【hasDividers】 : Whether there are dividers   【bool】",
+        "【dividerColor】 : Divider color   【Color】",
+        "【mainAxis】 : Axis direction   【Axis】",
+        "【children】 : Child components collection   【List<MergeableMaterialItem>】"
+      ]
+    }
+  ]
+}

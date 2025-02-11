@@ -1,0 +1,19 @@
+{
+  "id": 191,
+  "name": "SliverPadding",
+  "localName": "Sliver 내부 여백",
+  "info": "Sliver 가족의 하위 구성 요소를 수용할 수 있으며, 자체 내부 여백을 추가하여 자식 구성 요소의 위치를 제한합니다. 핵심 속성은 padding입니다.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverPadding 기본 사용",
+      "desc": [
+        "【sliver】 : 하위 구성 요소   【Widget】",
+        "【padding】 : 내부 여백  【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

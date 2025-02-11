@@ -1,0 +1,24 @@
+{
+  "id": 56,
+  "name": "PopupMenuButton",
+  "localName": "Кнопка меню",
+  "info": "Всплывающее меню, можно указать смещение, цвет, глубину тени, форму и другие атрибуты. Принимает события выбора элемента и отмены выбора.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование PopupMenuButton",
+      "desc": [
+        "【itemBuilder】 : Конструктор   【PopupMenuItemBuilder<T>】",
+        "【offset】 : Смещение   【Offset】",
+        "【color】 : Цвет фона   【Color】",
+        "【shape】 : Форма   【ShapeBorder】",
+        "【elevation】 : Глубина тени   【double】",
+        "【onCanceled】 : Событие отмены   【Function()】",
+        "【onSelected】 : Событие выбора   【Function(T)】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 244,
+  "name": "EditableText",
+  "localName": "Texto editable",
+  "info": "Texto que se puede editar, es el componente central subyacente de TextField, generalmente no se usa solo.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    2,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de EditableText",
+      "desc": [
+        "【controller】: Controlador 【TextEditingController】",
+        "【focusNode】: Foco 【FocusNode】",
+        "【style】: Estilo de texto 【TextStyle】",
+        "【backgroundCursorColor】: Color del cursor de fondo 【Color】",
+        "【cursorColor】: Color del cursor 【Color】",
+        "Los cinco anteriores son atributos obligatorios de EditableText, otros son iguales a TextField, no se enumeran aquí."
+      ]
+    }
+  ]
+}

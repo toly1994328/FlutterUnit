@@ -1,0 +1,26 @@
+{
+  "id": 80,
+  "name": "ConstrainedBox",
+  "localName": "Scatola Vincolata",
+  "info": "Può contenere un componente figlio, limitando l'area del componente figlio specificando larghezza e altezza massime e minime.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    1,
+    79,
+    81
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di BoxConstraints",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【minWidth】 : Larghezza minima   【double】",
+        "【minHeight】 : Altezza minima   【double】",
+        "【maxHeight】 : Altezza massima   【double】",
+        "【maxWidth】 : Larghezza massima   【double】"
+      ]
+    }
+  ]
+}

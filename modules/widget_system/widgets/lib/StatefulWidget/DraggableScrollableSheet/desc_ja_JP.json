@@ -1,0 +1,25 @@
+{
+  "id": 252,
+  "name": "DraggableScrollableSheet",
+  "localName": "ドラッグ可能なシート",
+  "info": "ドラッグおよびスクロール可能なシートで、最大、最小、および初期の分割位置を指定できます。ビルダーはスクロール可能なコンポーネントを返す必要があります。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    221,
+    142
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DraggableScrollableSheetの基本使用",
+      "desc": [
+        "【initialChildSize】 : 初期分割位置   【double】",
+        "【minChildSize】 : 最小分割位置   【double】",
+        "【maxChildSize】 : 最大分割位置   【double】",
+        "【builder】 : スクロールコンポーネントビルダー   【ScrollableWidgetBuilder】",
+        "【expand】 : 拡張するかどうか   【bool】"
+      ]
+    }
+  ]
+}

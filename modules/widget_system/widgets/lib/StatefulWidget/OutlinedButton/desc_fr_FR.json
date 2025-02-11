@@ -1,0 +1,34 @@
+{
+  "id": 355,
+  "name": "OutlinedButton",
+  "localName": "Bouton bordé",
+  "info": "Bouton de style Material avec bordure, similaire à OutlineButton. Les propriétés telles que la bordure, la couleur, l'ombre, etc., peuvent être modifiées via le style.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    353,
+    27,
+    354
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de OutlinedButton",
+      "desc": [
+        "【child】 : Contenu du bouton   【Widget】",
+        "【onPressed】 : Événement de clic   【VoidCallback】",
+        "【onLongPress】 : Événement de pression longue   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Style de OutlinedButton",
+      "desc": [
+        "【style】 : Style du bouton   【ButtonStyle】",
+        "【focusNode】 : Focus   【FocusNode】",
+        "【clipBehavior】 : Comportement de découpage   【Clip】",
+        "【autofocus】 : Mise au point automatique   【bool】"
+      ]
+    }
+  ]
+}

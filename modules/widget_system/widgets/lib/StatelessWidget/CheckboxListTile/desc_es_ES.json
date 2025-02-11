@@ -1,0 +1,37 @@
+{
+  "id": 17,
+  "name": "CheckboxListTile",
+  "localName": "Casilla de verificación",
+  "info": "Una estructura de lista genérica proporcionada por Flutter, con una estructura de izquierda a centro, y un CheckBox al final. Se pueden insertar componentes en las posiciones correspondientes, lo que permite manejar fácilmente elementos específicos.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "El comportamiento básico de CheckBoxListTile es el siguiente",
+      "desc": [
+        "【secondary】: Componente izquierdo   【Widget】",
+        "【checkColor】: Color del ✔️   【Color】",
+        "【activeColor】: Color del borde cuando está seleccionado   【Color】",
+        "【title】: Componente superior central   【Widget】",
+        "【subtitle】: Componente inferior central   【Widget】",
+        "【onChanged】: Evento de selección   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Efecto de selección de CheckBoxListTile",
+      "desc": [
+        "【selected】: Si está seleccionado   【bool】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Propiedad de densidad de CheckBoxListTile",
+      "desc": [
+        "【dense】: Si está en modo denso   【bool】"
+      ]
+    }
+  ]
+}

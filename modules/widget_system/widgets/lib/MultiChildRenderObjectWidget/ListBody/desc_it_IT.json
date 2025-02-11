@@ -1,0 +1,20 @@
+{
+  "id": 342,
+  "name": "ListBody",
+  "localName": "Corpo della lista",
+  "info": "Dispone diversi componenti figli lungo un asse, con poche proprietà configurabili. Viene utilizzato raramente, preferendo invece l'uso di ListView.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di ListView",
+      "desc": [
+        "【mainAxis】 : Direzione dell'asse principale   【Axis】",
+        "【reverse】: Inversione   【bool】",
+        "【children】: Insieme di componenti figli   【List<Widget>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 302,
+  "name": "CupertinoSliverNavigationBar",
+  "localName": "Sliver Navigation Bar",
+  "info": "The navigation bar effect in iOS11, the largeTitle is displayed when expanded, and it is not displayed when the list is scrolled up. If the middle is empty, the largeTitle will be displayed as the middle in a smaller font size.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Navigation Bar",
+      "desc": [
+        "【leading】: Left component 【Widget】",
+        "【middle】: Middle component 【Widget】",
+        "【trailing】: Trailing component 【Widget】",
+        "【largeTitle】: Bottom expandable component 【Widget】",
+        "【border】: Border 【Border】",
+        "【backgroundColor】: Background color 【Color】",
+        "【padding】: Padding 【EdgeInsetsDirectional】"
+      ]
+    }
+  ]
+}

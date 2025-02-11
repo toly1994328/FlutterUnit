@@ -1,0 +1,22 @@
+{
+  "id": 270,
+  "name": "SliverConstrainedCrossAxis",
+  "localName": "Kreuzachsen-Größenbeschränkung für Sliver",
+  "info": "Legt die Größe für eine Sliver-Komponente in der Kreuzachsenrichtung fest, um die Größe des Slivers zu begrenzen.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Grundlegende Verwendung von SliverConstrainedCrossAxis",
+      "desc": [
+        "【maxExtent】 : Größe   【double】",
+        "【sliver】 : Untergeordnete Komponente   【Widget?】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 242,
+  "name": "StatefulBuilder",
+  "localName": "Statuskonstruktor",
+  "info": "Es muss das builder-Attribut übergeben werden, um die Komponente zu konstruieren. Im builder kann StateSetter verwendet werden, um den Zustand der Unterkomponenten zu ändern, d.h. es ist möglich, eine lokal aktualisierte Komponente zu erstellen, ohne eine Klasse zu erstellen.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    202,
+    203,
+    280,
+    255
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von StatefulBuilder",
+      "desc": [
+        "【builder】 : Komponentenkonstruktor   【StatefulWidgetBuilder】"
+      ]
+    }
+  ]
+}

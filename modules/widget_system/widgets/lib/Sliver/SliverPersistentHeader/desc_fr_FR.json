@@ -1,0 +1,20 @@
+{
+  "id": 190,
+  "name": "SliverPersistentHeader",
+  "localName": "En-tête persistant",
+  "info": "Utilisé généralement dans CustomScrollView, il permet à un composant de rester en haut lors du défilement sans disparaître.",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de SliverPersistentHeader",
+      "desc": [
+        "【delegate】 : Délégué   【SliverPersistentHeaderDelegate】",
+        "【floating】 : Flottant   【bool】",
+        "【pinned】 : Reste en haut   【bool】"
+      ]
+    }
+  ]
+}

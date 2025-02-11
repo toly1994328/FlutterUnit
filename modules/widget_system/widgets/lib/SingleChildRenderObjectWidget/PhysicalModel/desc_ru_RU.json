@@ -1,0 +1,27 @@
+{
+  "id": 296,
+  "name": "PhysicalModel",
+  "localName": "Физический модуль",
+  "info": "Позволяет обрезать дочерние компоненты по кругу или квадрату, а также можно указать цвет фона, радиус скругления, глубину тени, цвет тени и поведение обрезки.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    279,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование PhysicalModel",
+      "desc": [
+        "【clipBehavior】 : Поведение обрезки   【Clip】",
+        "【borderRadius】 : Радиус скругления   【BorderRadius】",
+        "【child】 : Дочерний компонент   【Widget】",
+        "【elevation】 : Глубина тени   【double】",
+        "【shadowColor】 : Цвет тени   【Color】",
+        "【shape】 : Форма   【BoxShape】",
+        "【color】: Цвет    【Color】"
+      ]
+    }
+  ]
+}

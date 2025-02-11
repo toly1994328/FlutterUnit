@@ -1,0 +1,23 @@
+{
+  "id": 307,
+  "name": "SliverOverlapAbsorber",
+  "localName": "Absorvedor de Sobreposição",
+  "info": "Envolve outro sliver e força que o seu alcance de layout seja considerado sobreposto. Precisa ser usado em conjunto com o SliverOverlapInjector.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    308
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do SliverOverlapAbsorber",
+      "desc": [
+        "【sliver】 : Componente filho   【Widget】",
+        "【handle】 : *Manipulador   【SliverOverlapAbsorberHandle】",
+        "Se os componentes SliverOverlapAbsorber e SliverOverlapInjector não forem usados, o conteúdo do NestedScrollView sobreporá a barra de cabeçalho."
+      ]
+    }
+  ]
+}

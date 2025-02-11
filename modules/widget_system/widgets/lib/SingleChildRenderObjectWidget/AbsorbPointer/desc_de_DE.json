@@ -1,0 +1,25 @@
+{
+  "id": 295,
+  "name": "AbsorbPointer",
+  "localName": "Klicks absorbieren",
+  "info": "Enthält ein Kind-Widget und kann durch das Festlegen des Attributs ignoring entscheiden, ob das Kind Gestenereignisse ignoriert, während es selbst Ereignisse akzeptiert.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    146,
+    149,
+    150,
+    292
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von AbsorbPointer",
+      "desc": [
+        "【child】 : Kind-Widget   【Widget】",
+        "【absorbing】 : Ob Ereignisse absorbiert werden   【bool】",
+        "Wie unten gezeigt, wenn der Switch ausgewählt ist, ist absorbing true, und die Schaltflächenereignisse werden absorbiert und können nicht geklickt werden."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 284,
+  "name": "KeyboardListener",
+  "localName": "Escuchador de teclado",
+  "info": "Después de obtener el foco, escucha los eventos de teclado a través de onKeyEvent.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    282,
+    283
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Escuchar eventos de teclado",
+      "desc": [
+        "En el ejemplo, al hacer clic en el área se obtiene el foco, y luego al presionar el teclado se pueden ver los mensajes de eventos activados.",
+        "【focusNode】 : Foco   【FocusNode】",
+        "【autofocus】 : Si se enfoca automáticamente   【bool】",
+        "【includeSemantics】 : Incluir semántica   【bool】",
+        "【onKeyEvent】 : Evento de devolución de llamada de tecla   【ValueChanged<KeyEvent>?】",
+        "【child】 : Componente hijo   【Widget】"
+      ]
+    }
+  ]
+}

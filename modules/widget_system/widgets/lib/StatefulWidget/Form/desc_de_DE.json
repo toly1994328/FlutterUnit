@@ -1,0 +1,20 @@
+{
+  "id": 198,
+  "name": "Form",
+  "localName": "Formular-Komponente",
+  "info": "Die Formular-Komponente kann Rückrufe für Änderungen der darunter liegenden FormField-Komponenten empfangen, den Seitenrückruf über onWillPop abfangen und Formularfelder über FormState speichern oder validieren.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Form",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【onChanged】 : Rückruf bei Formularänderungen   【VoidCallback】",
+        "【onWillPop】 : Rückruf bei Rückkehr  【WillPopCallback】"
+      ]
+    }
+  ]
+}

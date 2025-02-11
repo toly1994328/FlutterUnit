@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+    <defs>
+        <!-- 渐变定义 -->
+        <linearGradient id="pageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#A3B8FF"/>
+            <stop offset="100%" stop-color="#8FA3E0"/>
+        </linearGradient>
+    </defs>
+
+    <!-- 背景 -->
+    <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+
+    <!-- 页面1（最底层） -->
+    <rect x="24" y="48" width="56" height="56" rx="8"
+        fill="url(#pageGradient)" filter="url(#shadow)" opacity="0.4"/>
+
+    <!-- 页面2（中层） -->
+    <rect x="36" y="36" width="56" height="56" rx="8"
+        fill="url(#pageGradient)" filter="url(#shadow)" opacity="0.6"/>
+
+    <!-- 页面3（最上层） -->
+    <rect x="48" y="24" width="56" height="56" rx="8"
+        fill="url(#pageGradient)" filter="url(#shadow)" opacity="0.8"/>
+</svg>

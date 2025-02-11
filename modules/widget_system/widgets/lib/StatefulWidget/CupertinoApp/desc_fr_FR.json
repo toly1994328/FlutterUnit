@@ -1,0 +1,24 @@
+{
+  "id": 156,
+  "name": "CupertinoApp",
+  "localName": "Application iOS",
+  "info": "Composant de haut niveau pour les applications de style iOS, incluant un générateur de routes, un thème, une langue, une page d'accueil, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    157,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoApp",
+      "desc": [
+        "【theme】 : Thème   【ThemeData】",
+        "【title】 : Titre de la barre des tâches   【String】",
+        "【onGenerateRoute】 : Générateur de routes   【RouteFactory】",
+        "【home】 : Page d'accueil   【Widget】"
+      ]
+    }
+  ]
+}

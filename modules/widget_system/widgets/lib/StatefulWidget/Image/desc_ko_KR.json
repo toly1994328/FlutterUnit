@@ -1,0 +1,58 @@
+{
+  "id": 38,
+  "name": "Image",
+  "localName": "이미지 컴포넌트",
+  "info": "이미지를 표시하는 데 사용되며, 파일, 메모리, 네트워크, 리소스에서 로드할 수 있습니다. 적응 방식, 스타일, 색상 혼합 모드, 반복 모드 등을 지정할 수 있습니다.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    8,
+    87
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "리소스 파일 및 네트워크에서 이미지 로드",
+      "desc": [
+        "Image.asset로 리소스 이미지 로드"
+      ]
+    },
+    {
+      "file": "node2_fit.dart",
+      "name": "이미지 적응 모드",
+      "desc": [
+        "【fit】 : 적응 모드*7   【BoxFit】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "이미지 정렬 모드",
+      "desc": [
+        "【alignment】 : 색상   【AlignmentGeometry】",
+        "    일반적으로 Alignment 클래스의 9개 정적 상수를 사용하지만, 위치를 사용자 정의할 수도 있음"
+      ]
+    },
+    {
+      "file": "node4_colorBlendMode.dart",
+      "name": "이미지 색상 및 혼합 모드",
+      "desc": [
+        "【color】 : 색상   【Color】",
+        "【colorBlendMode】: 혼합 모드*29 【BlendMode】"
+      ]
+    },
+    {
+      "file": "node5_repeat.dart",
+      "name": "이미지 반복 모드",
+      "desc": [
+        "【repeat】 : 반복 모드*4   【ImageRepeat】"
+      ]
+    },
+    {
+      "file": "node6_centerSlice.dart",
+      "name": "이미지 부분 확대",
+      "desc": [
+        "【centerSlice】 : 보존 영역   【Rect】"
+      ]
+    }
+  ]
+}

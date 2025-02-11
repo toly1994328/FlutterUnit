@@ -1,0 +1,21 @@
+{
+  "id": 131,
+  "name": "CupertinoActionSheet",
+  "localName": "Foglio di azione iOS",
+  "info": "Struttura di selezione pop-up in stile iOS, può contenere molti pulsanti, generalmente utilizzato insieme a CupertinoActionSheetAction.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CupertinoActionSheet",
+      "desc": [
+        "【title】 : Componente della prima riga   【Widget】",
+        "【message】 : Componente della seconda riga  【Widget】",
+        "【cancelButton】 : Componente del pulsante di annullamento  【Widget】",
+        "【actions】 : Lista dei componenti centrali  【List<Widget>】"
+      ]
+    }
+  ]
+}

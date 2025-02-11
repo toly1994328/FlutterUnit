@@ -1,0 +1,23 @@
+{
+  "id": 24,
+  "name": "CupertinoButton",
+  "localName": "Кнопка iOS",
+  "info": "Кнопка в стиле iOS. Можно указать цвет, прозрачность при нажатии, внутренние отступы, радиус скругления и т.д. Может принимать события нажатия.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Событие нажатия CupertinoButton",
+      "desc": [
+        "【color】: Цвет   【Color】",
+        "【pressedOpacity】: Прозрачность при нажатии   【double】",
+        "【child】: Дочерний виджет   【Widget】",
+        "【padding】: Внутренние отступы   【EdgeInsetsGeometry】",
+        "【borderRadius】: Радиус скругления   【BorderRadius】",
+        "【onPressed】: Событие нажатия   【Function】"
+      ]
+    }
+  ]
+}

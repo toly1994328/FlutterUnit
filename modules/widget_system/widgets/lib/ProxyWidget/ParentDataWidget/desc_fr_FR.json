@@ -1,0 +1,23 @@
+{
+  "id": 347,
+  "name": "ParentDataWidget",
+  "localName": "Widget de données parentales",
+  "info": "Classe abstraite utilisée pour associer des informations ParentData à des widgets enfants RenderObjectWidget. Ses sous-classes incluent Positioned, Flexible, Expanded, etc., ces widgets ne peuvent être utilisés que sous des composants spécifiques.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [
+    106,
+    109,
+    108,
+    315
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction à ParentDataWidget",
+      "desc": [
+        "【child】 : widget enfant   【Widget】"
+      ]
+    }
+  ]
+}

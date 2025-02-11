@@ -1,0 +1,23 @@
+{
+  "id": 230,
+  "name": "DefaultTabController",
+  "localName": "Controlador de Abas Padrão",
+  "info": "Ao usar TabBar e TabBarView, é necessário que o mesmo controlador implemente o controle das abas e das páginas. O DefaultTabController fornece um controlador padrão quando nenhum controlador é especificado, simplificando o uso.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    148,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do DefaultTabController",
+      "desc": [
+        "【length】 : Número de abas   【int】",
+        "【initialIndex】 : Índice inicial da aba   【int】",
+        "【child】 : Componente   【Widget】"
+      ]
+    }
+  ]
+}

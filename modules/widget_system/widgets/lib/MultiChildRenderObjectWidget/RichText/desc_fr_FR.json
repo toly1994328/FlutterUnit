@@ -1,0 +1,26 @@
+{
+  "id": 101,
+  "name": "RichText",
+  "localName": "Texte enrichi",
+  "info": "Un composant de texte enrichi qui peut contenir divers styles de texte ou divers composants, largement utilisé.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de RichText",
+      "desc": [
+        "【text】 : texte   【TextSpan】",
+        "    Les autres propriétés sont les mêmes que Text, voir pour plus de détails."
+      ]
+    },
+    {
+      "file": "node2_widget.dart",
+      "name": "RichText contenant d'autres composants",
+      "desc": [
+        "Utilisez WidgetSpan pour contenir des composants ordinaires, en tant que contenu de RichText"
+      ]
+    }
+  ]
+}

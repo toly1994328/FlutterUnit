@@ -1,0 +1,21 @@
+{
+  "id": 148,
+  "name": "Tab",
+  "localName": "Separador",
+  "info": "Geralmente utilizado como item na TabBar, com uma estrutura de cima para baixo, pode especificar um ícone e um componente de conteúdo.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do Tab",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【text】 : Texto   【String】",
+        "【icon】 : Componente inferior  【Widgit】",
+        "    text e child não podem coexistir"
+      ]
+    }
+  ]
+}

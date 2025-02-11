@@ -1,0 +1,25 @@
+{
+  "id": 68,
+  "name": "ClipRRect",
+  "localName": "Обрезка прямоугольника с закругленными углами",
+  "info": "Может содержать один дочерний компонент и обрезать его в форме прямоугольника с закругленными углами. Укажите borderRadius как радиус углов.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    66,
+    67,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование ClipRRect",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【borderRadius】 : Радиус границы   【BorderRadius】",
+        "【clipBehavior】 : Поведение обрезки   【Clip】",
+        "【clipper】 : Обрезчик   【CustomClipper<Rect>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 268,
+  "name": "SliverMainAxisGroup",
+  "localName": "Groupe d'axe principal glissant",
+  "info": "Peut contenir plusieurs composants Sliver, les considérant comme un groupe dans la direction de l'axe principal de défilement.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation de base de SliverMainAxisGroup",
+      "desc": [
+        "【slivers】 : Liste des composants enfants   【List<Widget>】",
+        "Peut être combiné avec SliverPersistentHeader pour réaliser un effet de regroupement et de fixation du titre en haut."
+      ]
+    }
+  ]
+}

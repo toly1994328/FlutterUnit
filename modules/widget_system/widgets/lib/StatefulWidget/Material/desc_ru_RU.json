@@ -1,0 +1,29 @@
+{
+  "id": 160,
+  "name": "Material",
+  "localName": "Компонент материала",
+  "info": "Лидер компонентов в стиле Material, ядро и душа. Можно указать такие атрибуты, как цвет, глубина тени, тип, цвет тени, форма и другие.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование Material",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【type】 : Тип   【MaterialType】",
+        "【elevation】 : Глубина тени   【double】",
+        "【shadowColor】 : Цвет тени   【Color】",
+        "【color】 : Цвет   【Color】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Атрибут shape Material",
+      "desc": [
+        "【shape】 : Форма   【ShapeBorder】,"
+      ]
+    }
+  ]
+}

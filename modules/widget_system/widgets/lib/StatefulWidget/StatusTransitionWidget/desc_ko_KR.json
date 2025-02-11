@@ -1,0 +1,19 @@
+{
+  "id": 233,
+  "name": "StatusTransitionWidget",
+  "localName": "상태 전환 위젯",
+  "info": "추상 클래스로, 제공된 애니메이터 상태 변화에 따라 새로고침을 트리거할 수 있습니다. Flutter 프레임워크 레벨에서 구현된 하위 클래스도 없고, 사용 사례도 없어서 유용성이 크지 않아 보입니다.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "StatusTransitionWidget 소개",
+      "desc": [
+        "【animation】 : 자식 위젯   【Animation<double>】",
+        "여기서 사용자 정의 ColorStatusTransitionWidget을 사용하여 애니메이터의 상태가 변경될 때 다른 색상을 구성합니다."
+      ]
+    }
+  ]
+}

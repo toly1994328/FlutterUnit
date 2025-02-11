@@ -1,0 +1,22 @@
+{
+  "id": 106,
+  "name": "Expanded",
+  "localName": "Componente Expandido",
+  "info": "A classe pai é Flexible, equivalente a um componente Flexible com o tipo fit como tight. Pode aninhar filhos para utilizar o espaço restante e expandir o espaço ocupado.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    94,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Expanded",
+      "desc": [
+        "【child】 : filho   【Widget】",
+        "【flex】 : proporção de distribuição do espaço restante   【int】"
+      ]
+    }
+  ]
+}

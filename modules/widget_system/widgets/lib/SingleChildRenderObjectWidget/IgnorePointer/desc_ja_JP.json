@@ -1,0 +1,25 @@
+{
+  "id": 292,
+  "name": "IgnorePointer",
+  "localName": "クリックを無視",
+  "info": "子コンポーネントを含み、ignoring属性を指定することで、子がジェスチャーイベントを無視するかどうかを決定できます。それ自体はイベントを受け取りません。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    295,
+    146,
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "IgnorePointerの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【ignoring】 : イベントを無視するかどうか   【bool】",
+        "以下のように、Switchが選択されている場合、ignoringがtrueになり、ボタンイベントがロックされ、クリックできなくなります。"
+      ]
+    }
+  ]
+}

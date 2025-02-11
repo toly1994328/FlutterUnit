@@ -1,0 +1,46 @@
+{
+  "id": 162,
+  "name": "ListView",
+  "localName": "List Component",
+  "info": "The leader in list display, accommodating multiple sub-components, can be constructed through builder, separated, custom, etc. It has properties such as padding, whether to reverse, scroll controller, etc.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    16,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ListView",
+      "desc": [
+        "【children】 : List of child components   【List<Widget>】",
+        "【padding】 : Padding  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Horizontal Scrolling of ListView",
+      "desc": [
+        "【scrollDirection】 : Scroll direction   【Axis】",
+        "【reverse】 : Whether to scroll in reverse   【bool】",
+        "【shrinkWrap】 : Whether to wrap when unbounded  【bool】"
+      ]
+    },
+    {
+      "file": "node3_builder.dart",
+      "name": "ListView.builder Construction",
+      "desc": [
+        "【itemCount】 : Number of items   【int】",
+        "【itemBuilder】 : Item builder   【IndexedWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node4_separated.dart",
+      "name": "ListView.separated Construction",
+      "desc": [
+        "【separatorBuilder】 : Item builder   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

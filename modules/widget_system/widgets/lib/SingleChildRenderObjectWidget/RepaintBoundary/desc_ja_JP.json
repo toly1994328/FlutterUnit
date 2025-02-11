@@ -1,0 +1,26 @@
+{
+  "id": 264,
+  "name": "RepaintBoundary",
+  "localName": "再描画境界",
+  "info": "子コンポーネントのための別個の表示リストを作成し、パフォーマンスを向上させます。ソースコードではTextField、DrawerController、Scrollbar、Sliverなどのコンポーネントに適用されています",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RepaintBoundaryの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "例えば、上記の描画ビューでは、shouldRepaintがfalseであっても、スクロール中にpaintメソッドが繰り返し実行されます。RepaintBoundaryを使用することで、不要な描画を避けることができます。"
+      ]
+    },
+    {
+      "file": "node2_save.dart",
+      "name": "Widgetを画像として保存",
+      "desc": [
+        "RenderRepaintBoundaryを使用して、子コンポーネントのImage情報を取得し、バイトとして画像ファイルに保存することができます。"
+      ]
+    }
+  ]
+}

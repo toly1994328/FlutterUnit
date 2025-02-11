@@ -1,0 +1,37 @@
+{
+  "id": 74,
+  "name": "Padding",
+  "localName": "Abstandskomponente",
+  "info": "Kann ein Kindelement aufnehmen und fügt seinen eigenen Innenabstand hinzu, um den Platz des Kindelements zu begrenzen. Die Kerneigenschaft ist padding.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    1,
+    191
+  ],
+  "nodes": [
+    {
+      "file": "node1_all.dart",
+      "name": "Padding gleicher Abstand auf allen Seiten",
+      "desc": [
+        "【child】 : Kindelement   【Widget】",
+        "【padding】 : Innenabstand auf allen vier Seiten   【EdgeInsetsGeometry】",
+        "EdgeInsets.all wird verwendet, um den gleichen Abstand auf allen vier Seiten festzulegen"
+      ]
+    },
+    {
+      "file": "node2_only.dart",
+      "name": "Padding einzelner Abstand",
+      "desc": [
+        "EdgeInsets.only wird verwendet, um den gleichen Abstand auf allen vier Seiten festzulegen"
+      ]
+    },
+    {
+      "file": "node3_symmetric.dart",
+      "name": "Padding Richtungsabstand",
+      "desc": [
+        "EdgeInsets.symmetric wird verwendet, um den horizontalen und vertikalen Abstand festzulegen"
+      ]
+    }
+  ]
+}

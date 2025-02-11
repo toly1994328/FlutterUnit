@@ -1,0 +1,20 @@
+{
+  "id": 231,
+  "name": "InputDecorator",
+  "localName": "入力デコレータ",
+  "info": "入力の外側を包むデコレーションで、TextFieldのコアコンポーネントの一つです。通常は単独で使用しません。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "InputDecoratorの基本使用",
+      "desc": [
+        "【decoration】 : デコレーションオブジェクト   【InputDecoration】",
+        "【textAlign】 : テキストの配置   【TextAlign】",
+        "【child】 : 子コンポーネント   【Widget】"
+      ]
+    }
+  ]
+}

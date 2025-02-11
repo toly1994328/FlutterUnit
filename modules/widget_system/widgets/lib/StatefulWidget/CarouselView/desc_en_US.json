@@ -1,0 +1,38 @@
+{
+  "id": 237,
+  "name": "CarouselView",
+  "localName": "Carousel View",
+  "info": "A carousel component that conforms to Material Design specifications. Displays a scrollable list of items, each of which can dynamically resize based on the selected layout.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    253,
+    340,
+    160
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CarouselView Basic Usage",
+      "desc": [
+        "【itemExtent】 : Forced size in the main axis direction 【double】",
+        "【shrinkExtent】: Minimum size of the item in the main axis direction during scrolling 【double】",
+        "【scrollDirection】 : Scroll axis direction 【Axis?】",
+        "【children】: List of child components 【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "CarouselView Style Configuration",
+      "desc": [
+        "【padding】 : Padding 【EdgeInsets? 】",
+        "【backgroundColor】 : Background color 【Color? 】",
+        "【elevation】 : Shadow depth 【double?】",
+        "【shape】 : Shape 【ShapeBorder?】",
+        "【controller】 : Controller 【CarouselController?】",
+        "【reverse】 : Whether to scroll in reverse 【bool】",
+        "【onTap】 : Click event 【ValueChanged<int>? 】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 233,
+  "name": "StatusTransitionWidget",
+  "localName": "Componente de Transición de Estado",
+  "info": "Clase abstracta que puede desencadenar una actualización basada en los cambios de estado del animador proporcionado. No hay subclases implementadas en el nivel del framework Flutter, ni escenarios de uso, parece no ser muy útil.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introducción a StatusTransitionWidget",
+      "desc": [
+        "【animation】 : Componente hijo   【Animation<double>】",
+        "Aquí se personaliza ColorStatusTransitionWidget para su uso, construyendo diferentes colores cuando cambia el estado del animador."
+      ]
+    }
+  ]
+}

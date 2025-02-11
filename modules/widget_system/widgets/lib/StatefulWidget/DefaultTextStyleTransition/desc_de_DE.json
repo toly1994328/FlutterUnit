@@ -1,0 +1,26 @@
+{
+  "id": 114,
+  "name": "DefaultTextStyleTransition",
+  "localName": "Textstilübergang",
+  "info": "Eine Unterklasse von AnimatedWidget, die einen Animator vom Typ TextStyle verwendet, um Textkomponenten zwischen zwei TextStyle-Objekten zu animieren.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    124,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von DefaultTextStyleTransition",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】",
+        "【textAlign】 : Textausrichtung  【TextAlign】",
+        "【softWrap】 : Umbrüche aktivieren  【bool】",
+        "【maxLines】 : Maximale Zeilenanzahl  【int】",
+        "【overflow】 : Überlaufmodus  【TextOverflow】",
+        "【style】 : Animation   【Animation<TextStyle>】"
+      ]
+    }
+  ]
+}

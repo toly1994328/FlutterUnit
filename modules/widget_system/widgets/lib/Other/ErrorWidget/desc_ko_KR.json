@@ -1,0 +1,18 @@
+{
+  "id": 197,
+  "name": "ErrorWidget",
+  "localName": "에러 위젯",
+  "info": "에러 메시지를 표시하는 위젯으로, 빨간 배경에 노란 글씨로 표시되며, 개발 과정에서 자주 보이지만 일반적으로 사용되지 않습니다.",
+  "lever": 1,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ErrorWidget 기본 사용법",
+      "desc": [
+        "입력 매개변수 : 표시할 정보   【Object】"
+      ]
+    }
+  ]
+}

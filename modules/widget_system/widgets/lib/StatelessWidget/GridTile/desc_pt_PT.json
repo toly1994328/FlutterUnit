@@ -1,0 +1,20 @@
+{
+  "id": 21,
+  "name": "GridTile",
+  "localName": "Azulejo de Grade",
+  "info": "Uma estrutura de item de lista genérica fornecida pelo Flutter, que permite especificar componentes de cabeçalho, rodapé e filhos, comumente usada em listas de grade.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "A apresentação básica do GridTile é a seguinte",
+      "desc": [
+        "【header】: Componente de cabeçalho   【Widget】",
+        "【child】: Componente filho   【Widget】",
+        "【footer】: Componente de rodapé   【Widget】"
+      ]
+    }
+  ]
+}

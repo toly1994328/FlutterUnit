@@ -1,0 +1,26 @@
+{
+  "id": 95,
+  "name": "Row",
+  "localName": "Строка",
+  "info": "Горизонтальная компоновка Flex, которая может содержать несколько компонентов. Все остальные свойства такие же, как у Flex. Подробнее см. Flex.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    96
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование Row",
+      "desc": [
+        "【children】: Список компонентов   【List<Widget>】",
+        "【mainAxisAlignment】: Выравнивание по главной оси   【MainAxisAlignment】",
+        "【crossAxisAlignment】: Выравнивание по поперечной оси   【CrossAxisAlignment】",
+        "【textBaseline】: Базовая линия текста   【TextBaseline】",
+        "【verticalDirection】: Вертикальное направление   【VerticalDirection】",
+        "【mainAxisSize】: Размер главной оси   【MainAxisSize】"
+      ]
+    }
+  ]
+}

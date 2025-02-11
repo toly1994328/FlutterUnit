@@ -1,0 +1,26 @@
+{
+  "id": 281,
+  "name": "TextFieldTapRegion",
+  "localName": "テキストフィールドタップ範囲",
+  "info": "groupId が EditableText の TapRegion で、他のコンポーネントのタップ範囲をテキストフィールドと一体化させることができます。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    280,
+    54,
+    245
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "クリックコンポーネントの内部と外部を監視",
+      "desc": [
+        "ケースでプラスとマイナスをクリックしても、テキストフィールドのフォーカスは解除されず、キーボードで入力が可能です。",
+        "【enabled】 : 有効かどうか   【bool】",
+        "【onTapOutside】 : 外部クリック監視   【TapRegionCallback?】",
+        "【onTapInside】 : 内部クリック監視   【TapRegionCallback?】",
+        "【groupId】 : タップ領域グループ識別子   【Object?】"
+      ]
+    }
+  ]
+}

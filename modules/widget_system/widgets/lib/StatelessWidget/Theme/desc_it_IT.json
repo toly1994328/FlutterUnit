@@ -1,0 +1,29 @@
+{
+  "id": 168,
+  "name": "Theme",
+  "localName": "Tema",
+  "info": "Puoi ottenere l'oggetto ThemeData tramite Theme.of. Puoi anche specificare un tema da applicare ai componenti discendenti di Theme.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    65,
+    169,
+    224
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Stile del testo-ThemeData#TextTheme",
+      "desc": [
+        "I componenti figli possono ottenere i dati del tema tramite ThemeData.of e utilizzarli."
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "Uso di Theme",
+      "desc": [
+        "Utilizzando Theme, puoi specificare molte proprietà come tema, che verranno applicate a tutti i componenti discendenti, come font, slider, card, testo, linee divisorie, pulsanti, ecc."
+      ]
+    }
+  ]
+}

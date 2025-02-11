@@ -1,0 +1,36 @@
+{
+  "id": 357,
+  "name": "ImageFiltered",
+  "localName": "Filtro de imagen",
+  "info": "Con el filtro de imagen ImageFilter, se pueden aplicar efectos especiales a cualquier componente, incluyendo pero no limitado a desenfoque gaussiano, filtros de color, transformaciones, etc.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    278,
+    88
+  ],
+  "nodes": [
+    {
+      "file": "node1_blur.dart",
+      "name": "Desenfoque gaussiano ImageFilter",
+      "desc": [
+        "【imageFilter】 : Filtro de imagen   【ImageFilter】",
+        "【child】 : Componente hijo   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Efecto de filtro de color ImageFilter",
+      "desc": [
+        "Se implementa un filtro de color a través del objeto ColorFilter."
+      ]
+    },
+    {
+      "file": "node3_matrix.dart",
+      "name": "Efecto de transformación ImageFilter",
+      "desc": [
+        "Se realiza una transformación de matriz a través de la construcción ImageFilter.matrix, pero es bastante limitado."
+      ]
+    }
+  ]
+}

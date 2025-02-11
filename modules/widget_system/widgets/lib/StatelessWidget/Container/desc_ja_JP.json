@@ -1,0 +1,67 @@
+{
+  "id": 1,
+  "name": "Container",
+  "localName": "コンテナコンポーネント",
+  "info": "単一の子コンポーネントを収容するためのコンテナコンポーネントです。内部および外部の余白、変形、装飾、制約など、複数の単一子コンポーネントの機能を統合しています...",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    74,
+    85,
+    80,
+    78,
+    70,
+    123
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "指定された幅と高さの領域を表示するために使用できます",
+      "desc": [
+        "【width】 : 幅   【int】",
+        "【height】: 高さ   【int】",
+        "【color】: 色    【Color】"
+      ]
+    },
+    {
+      "file": "node2_child.dart",
+      "name": "領域内に子コンポーネントを配置できます",
+      "desc": [
+        "【padding】 : 内側の余白   【EdgeInsetsGeometry】",
+        "【margin】: 外側の余白   【EdgeInsetsGeometry】",
+        "【child】: 子コンポーネント    【Widget】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "子コンポーネントを整列および配置できます",
+      "desc": [
+        "【alignment】 : 整列および配置   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node4_decoration.dart",
+      "name": "子コンポーネントを装飾できます",
+      "desc": [
+        "【decoration】 : 装飾   【Decoration】",
+        "装飾可能: ボーダー、角丸、色、グラデーション、シャドウ、画像など"
+      ]
+    },
+    {
+      "file": "node5_transform.dart",
+      "name": "Containerは変形性も持っています",
+      "desc": [
+        "【transform】 : 変換行列   【Matrix4】",
+        "Matrix4に基づく行列変換、変換の詳細は線形代数を参照してください"
+      ]
+    },
+    {
+      "file": "node6_constraints.dart",
+      "name": "Containerの制約性",
+      "desc": [
+        "【constraints】 : 制約   【BoxConstraints】",
+        "この領域のサイズを制約し、指定された最小幅と高さより小さくならないようにし、指定された最大幅と高さより大きくならないようにします。"
+      ]
+    }
+  ]
+}

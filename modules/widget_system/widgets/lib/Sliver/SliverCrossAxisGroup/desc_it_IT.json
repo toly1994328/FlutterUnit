@@ -1,0 +1,22 @@
+{
+  "id": 269,
+  "name": "SliverCrossAxisGroup",
+  "localName": "Gruppo di scorrimento dell'asse trasversale",
+  "info": "Può contenere più componenti Sliver, considerandoli come un gruppo nella direzione dell'asse trasversale durante lo scorrimento.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    268,
+    270,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso di base di SliverCrossAxisGroup",
+      "desc": [
+        "【slivers】 : Lista dei componenti figli   【List<Widget>】"
+      ]
+    }
+  ]
+}

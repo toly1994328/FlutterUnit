@@ -1,0 +1,29 @@
+{
+  "id": 177,
+  "name": "ReorderableListView",
+  "localName": "Lista riordinabile",
+  "info": "Una ListView che può essere riordinata con un lungo tocco, con la possibilità di specificare la direzione di scorrimento, se invertire, il controller di scorrimento e altre proprietà.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di ReorderableListView",
+      "desc": [
+        "【children】 : Lista dei componenti figli   【List<Widget>】",
+        "【header】 : Componente di intestazione   【Widget】",
+        "【padding】 : Spaziatura interna   【EdgeInsets】",
+        "【onReorder】 : Callback per lo scambio  【ReorderCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direzione di scorrimento di ReorderableListView",
+      "desc": [
+        "【scrollDirection】 : Direzione di scorrimento   【Axis】",
+        "【reverse】 : Se invertire  【bool】"
+      ]
+    }
+  ]
+}

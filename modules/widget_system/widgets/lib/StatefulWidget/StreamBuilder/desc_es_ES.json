@@ -1,0 +1,20 @@
+{
+  "id": 173,
+  "name": "StreamBuilder",
+  "localName": "Constructor de Flujo",
+  "info": "Puede especificar un objeto stream, capaz de escuchar el estado de ejecución asíncrona y construir diferentes interfaces en el constructor según el estado.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de StreamBuilder",
+      "desc": [
+        "【stream】 : componente hijo   【Stream<T>】",
+        "【initialData】 : datos iniciales   【T】",
+        "【builder】 : evento de clic  【AsyncWidgetBuilder<T>】"
+      ]
+    }
+  ]
+}

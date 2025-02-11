@@ -1,0 +1,25 @@
+{
+  "id": 183,
+  "name": "CustomScrollView",
+  "localName": "일반 스크롤 뷰",
+  "info": "일반적인 스크롤 구조로, 스크롤 방향, 역방향 여부, 스크롤 컨트롤러 등의 속성을 지정할 수 있습니다. 포함된 하위 컴포넌트들은 반드시 Sliver 패밀리여야 합니다.",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [
+    184,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CustomScrollView 기본 사용법",
+      "desc": [
+        "【slivers】 : 하위 컴포넌트 목록   【List<Widget>】",
+        "【reverse】 : 역방향 여부   【bool】",
+        "【scrollDirection】 : 스크롤 방향   【Axis】",
+        "【controller】 : 컨트롤러   【ScrollController】"
+      ]
+    }
+  ]
+}

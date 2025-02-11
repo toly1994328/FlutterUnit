@@ -1,0 +1,23 @@
+{
+  "id": 335,
+  "name": "PrimaryScrollController",
+  "localName": "Controllore di scorrimento iniziale",
+  "info": "È una sottoclasse di InheritedWidget, che fornisce un oggetto ScrollController predefinito alle viste scorrevoli nel sottoalbero tramite il contesto.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [
+    349,
+    344,
+    164
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduzione a PrimaryScrollController",
+      "desc": [
+        "【controller】 : Controllore di scorrimento   【ScrollController】",
+        "【child】 : Componente figlio   【Widget】"
+      ]
+    }
+  ]
+}

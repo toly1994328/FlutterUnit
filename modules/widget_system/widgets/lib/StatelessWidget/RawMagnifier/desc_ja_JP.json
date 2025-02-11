@@ -1,0 +1,29 @@
+{
+  "id": 360,
+  "name": "RawMagnifier",
+  "localName": "原拡大鏡",
+  "info": "任意のコンポーネントを拡大する拡大鏡で、装飾形状、サイズ、オフセットなどのプロパティを設定できます。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RawMagnifier の簡単な使用",
+      "desc": [
+        "【size】 : サイズ  【Size】",
+        "【magnificationScale】 : 倍率  【double】",
+        "【focalPointOffset】: 拡大内容のオフセット   【Offset】",
+        "【decoration】: 装飾を発見   【MagnifierDecoration】",
+        "【child】: 子コンポーネント   【Widget?】,"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "RawMagnifier カスタム装飾形状",
+      "desc": [
+        "ここで五角形の装飾形状をカスタマイズします"
+      ]
+    }
+  ]
+}

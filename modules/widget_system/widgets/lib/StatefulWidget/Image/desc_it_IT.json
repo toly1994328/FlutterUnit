@@ -1,0 +1,58 @@
+{
+  "id": 38,
+  "name": "Image",
+  "localName": "Componente immagine",
+  "info": "Utilizzato per visualizzare un'immagine, può essere caricata da file, memoria, rete o risorse. È possibile specificare modalità di adattamento, stile, modalità di fusione del colore, modalità di ripetizione, ecc.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    8,
+    87
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Può caricare immagini da file di risorse e dalla rete",
+      "desc": [
+        "Image.asset carica immagini da risorse,"
+      ]
+    },
+    {
+      "file": "node2_fit.dart",
+      "name": "Modalità di adattamento dell'immagine",
+      "desc": [
+        "【fit】 : modalità di adattamento*7   【BoxFit】,"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Modalità di allineamento dell'immagine",
+      "desc": [
+        "【alignment】 : colore   【AlignmentGeometry】",
+        "    Nove costanti statiche della classe Alignment, ma è anche possibile personalizzare la posizione"
+      ]
+    },
+    {
+      "file": "node4_colorBlendMode.dart",
+      "name": "Colore e modalità di fusione dell'immagine",
+      "desc": [
+        "【color】 : colore   【Color】",
+        "【colorBlendMode】: modalità di fusione*29 【BlendMode】"
+      ]
+    },
+    {
+      "file": "node5_repeat.dart",
+      "name": "Modalità di ripetizione dell'immagine",
+      "desc": [
+        "【repeat】 : modalità di ripetizione*4   【ImageRepeat】"
+      ]
+    },
+    {
+      "file": "node6_centerSlice.dart",
+      "name": "Ingrandimento locale dell'immagine",
+      "desc": [
+        "【centerSlice】 : area conservata   【Rect】"
+      ]
+    }
+  ]
+}

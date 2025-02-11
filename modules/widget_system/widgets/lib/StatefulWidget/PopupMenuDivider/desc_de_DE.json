@@ -1,0 +1,21 @@
+{
+  "id": 174,
+  "name": "PopupMenuDivider",
+  "localName": "Popup-Menü-Trennlinie",
+  "info": "Die Trennlinie des PopupMenuButton, wird normalerweise nicht allein verwendet und kann in der Höhe angegeben werden.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    56,
+    34
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von PopupMenuDivider",
+      "desc": [
+        "【height】 : Höhe  【double】"
+      ]
+    }
+  ]
+}

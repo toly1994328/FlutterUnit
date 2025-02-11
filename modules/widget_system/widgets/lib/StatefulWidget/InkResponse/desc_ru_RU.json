@@ -1,0 +1,36 @@
+{
+  "id": 149,
+  "name": "InkResponse",
+  "localName": "Эффект ряби",
+  "info": "Эффект нажатия с рябью, принимает события нажатия, двойного нажатия, долгого нажатия, отмены и изменения выделения. Можно указать цвет ряби, радиус, форму выделения и другие свойства.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    150,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основные события InkResponse",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【onTap】 : Событие нажатия   【Function()】",
+        "【onDoubleTap】 : Событие двойного нажатия   【Function()】",
+        "【onTapCancel】 : Отмена нажатия   【Function()】",
+        "【onLongPress】 : Событие долгого нажатия   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Другие свойства InkResponse",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【onHighlightChanged】 : Обратный вызов изменения выделения   【Function(bool)】",
+        "【highlightColor】 : Цвет выделения   【Color】",
+        "【splashColor】 : Цвет ряби   【Color】",
+        "【radius】 : Радиус ряби   【double】"
+      ]
+    }
+  ]
+}

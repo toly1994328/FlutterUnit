@@ -1,0 +1,20 @@
+{
+  "id": 241,
+  "name": "UndoHistory",
+  "localName": "取り消し履歴",
+  "info": "ValueNotifierの監視可能な値を受け取り、その値に取り消し/やり直し機能を提供します；TextFieldコンポーネントのソースコードで使用されています。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "TextFieldでのUndoHistoryの使用",
+      "desc": [
+        "このケースでは、外部ボタンを使用してTextFieldの取り消し/やり直し機能を制御します。undoControllerパラメータにUndoHistoryControllerオブジェクトを渡すことができ、入力テキストの内容を制御および影響を与えるために使用されます。"
+      ]
+    }
+  ]
+}

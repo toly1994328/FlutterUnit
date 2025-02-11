@@ -1,0 +1,24 @@
+{
+  "id": 223,
+  "name": "DropdownButtonFormField",
+  "localName": "Champ de formulaire déroulant",
+  "info": "Basé sur DropdownButton, donc les propriétés de base sont similaires. Mais il possède les caractéristiques de FormField, permettant de rappeler les méthodes onSaved et validator.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    55,
+    222
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation simple du champ de formulaire déroulant",
+      "desc": [
+        "【items】 : Liste des composants enfants   【List<DropdownMenuItem<T>>】",
+        "【validator】 : Rappel de validation du formulaire   【FormFieldValidator<T>】",
+        "【onSaved】 : Rappel de sauvegarde du formulaire   【FormFieldSetter<T>】",
+        "Pour les autres propriétés, voir DropdownButton. Pour les caractéristiques de validation du formulaire, voir FormField."
+      ]
+    }
+  ]
+}

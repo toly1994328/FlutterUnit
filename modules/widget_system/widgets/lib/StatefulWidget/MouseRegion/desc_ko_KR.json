@@ -1,0 +1,20 @@
+{
+  "id": 293,
+  "name": "MouseRegion",
+  "localName": "마우스 영역",
+  "info": "마우스 이벤트를 감지하는 컴포넌트로, 주로 데스크톱 및 웹 플랫폼에서 사용되며, 마우스 진입, 이동, 이탈 이벤트를 감지할 수 있습니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "MouseRegion 기본 사용",
+      "desc": [
+        "【onEnter】 : 진입 이벤트   【PointerEnterEventListener】",
+        "【onHover】: 이동 이벤트    【PointerHoverEventListener】",
+        "【onExit】: 이탈 이벤트    【PointerExitEventListener】"
+      ]
+    }
+  ]
+}

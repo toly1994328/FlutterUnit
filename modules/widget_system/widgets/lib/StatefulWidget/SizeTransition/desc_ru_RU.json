@@ -1,0 +1,20 @@
+{
+  "id": 92,
+  "name": "SizeTransition",
+  "localName": "Изменение размера",
+  "info": "Может содержать один дочерний компонент и анимировать его размер. Требуется предоставить аниматор sizeFactor, можно указать ось изменения размера и выравнивание оси axisAlignment.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SizeTransition",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【axis】 : Ось*2   【Axis】",
+        "【sizeFactor】 : Анимация   【Animation<double>】"
+      ]
+    }
+  ]
+}

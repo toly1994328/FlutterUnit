@@ -1,0 +1,23 @@
+{
+  "id": 276,
+  "name": "DrawerButton",
+  "localName": "Schubladenknopf",
+  "info": "Ein linker Schubladensymbolknopf, der das Symbol mit DrawerButtonIcon anzeigt. Das Standardklickereignis kann die linke Schublade öffnen.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    273,
+    361
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von DrawerButton",
+      "desc": [
+        "【onPressed】: Klickereignis 【VoidCallback?】",
+        "【style】: Schaltflächenstil 【ButtonStyle?】",
+        "Wenn onPressed leer ist, wird beim Klicken die linke Schublade geöffnet."
+      ]
+    }
+  ]
+}

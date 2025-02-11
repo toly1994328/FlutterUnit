@@ -1,0 +1,22 @@
+{
+  "id": 79,
+  "name": "LimitedBox",
+  "localName": "제한 상자",
+  "info": "하나의 하위 구성 요소를 수용할 수 있으며, 최대 너비와 높이를 지정하여 하위 구성 요소의 영역을 제한합니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    80
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LimitedBox 기본 사용",
+      "desc": [
+        "【child】 : 자식 구성 요소   【Widget】",
+        "【maxHeight】 : 최대 높이   【double】",
+        "【maxWidth】 : 최대 너비   【double】"
+      ]
+    }
+  ]
+}

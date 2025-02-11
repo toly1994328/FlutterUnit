@@ -1,0 +1,24 @@
+{
+  "id": 52,
+  "name": "ExpansionTile",
+  "localName": "Panel Expandible",
+  "info": "Un panel expandible genérico que permite colocar componentes en áreas específicas. Al hacer clic, se pliega o despliega para mostrar u ocultar los componentes inferiores. Recibe eventos al plegarse.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de ExpansionTile",
+      "desc": [
+        "【children】: Contenido expandido   【List<Widget>】",
+        "【leading】: Componente izquierdo del encabezado   【Widget】",
+        "【title】: Componente central del encabezado   【Widget】",
+        "【trailing】: Componente derecho del encabezado   【Widget】",
+        "【backgroundColor】: Color de fondo   【Color】",
+        "【onExpansionChanged】: Evento de plegado   【Function(bool)】",
+        "【initiallyExpanded】: Si está inicialmente expandido   【bool】"
+      ]
+    }
+  ]
+}

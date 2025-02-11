@@ -1,0 +1,18 @@
+{
+  "id": 272,
+  "name": "BackButtonIcon",
+  "localName": "戻るボタンアイコン",
+  "info": "戻るアイコンで、プラットフォームに応じたアイコンを表示し、ActionIconThemeでテーマをカスタマイズできます。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BackButtonIcon 効果",
+      "desc": [
+        "_ActionIconコンポーネントを使用して、ActionIconThemeテーマに基づいて、異なるプラットフォームの戻るボタンアイコンを適応させます。"
+      ]
+    }
+  ]
+}

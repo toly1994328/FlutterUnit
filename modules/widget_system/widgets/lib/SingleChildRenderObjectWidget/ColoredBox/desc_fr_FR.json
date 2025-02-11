@@ -1,0 +1,19 @@
+{
+  "id": 267,
+  "name": "ColoredBox",
+  "localName": "Boîte de couleur",
+  "info": "Dessine une couleur spécifiée sur la zone de mise en page du composant enfant, puis dessine le composant enfant sur la couleur de fond.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ColoredBox",
+      "desc": [
+        "【color】 : composant   【Color】",
+        "【child】 : composant   【Widget】"
+      ]
+    }
+  ]
+}

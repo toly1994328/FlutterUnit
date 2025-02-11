@@ -1,0 +1,22 @@
+{
+  "id": 61,
+  "name": "BottomAppBar",
+  "localName": "Untere Navigationsleiste",
+  "info": "Eine einbettbare untere Navigationsleiste, die normalerweise am unteren Ende des Scaffold-Widgets verwendet wird. Kann Eigenschaften wie Farbe, Schattentiefe, Form usw. angeben und kann mit PageView einen Seitenwechsel-Effekt erzielen.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von BottomAppBar",
+      "desc": [
+        "【elevation】 : Schattentiefe   【double】",
+        "【shape】 : Form   【NotchedShape】",
+        "【notchMargin】 : Abstand   【double】",
+        "【color】 : Farbe   【Color】",
+        "【child】 : Kind   【Widget】"
+      ]
+    }
+  ]
+}

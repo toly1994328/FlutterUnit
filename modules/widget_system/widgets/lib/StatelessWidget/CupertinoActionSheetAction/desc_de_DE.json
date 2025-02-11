@@ -1,0 +1,20 @@
+{
+  "id": 132,
+  "name": "CupertinoActionSheetAction",
+  "localName": "iOS-Aktionsblatt-Schaltfläche",
+  "info": "Eine Schaltfläche, die selten verwendet wird und normalerweise in CupertinoActionSheet verwendet wird, um Klickereignisse zu empfangen.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoActionSheetAction",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【isDefaultAction】 : Standardmäßig ausgewählt  【bool】",
+        "【onPressed】 : Klickereignis  【Function()】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 52,
+  "name": "ExpansionTile",
+  "localName": "Tuile d'expansion",
+  "info": "Un panneau d'expansion générique qui peut placer des composants dans une partie spécifiée. Cliquez pour plier ou déplier les composants ci-dessous. Reçoit un événement lors du pliage.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'ExpansionTile",
+      "desc": [
+        "【children】 : Contenu déplié   【List<Widget>】",
+        "【leading】 : Composant gauche de la tête   【Widget】",
+        "【title】 : Composant central de la tête   【Widget】",
+        "【trailing】 : Composant droit de la tête   【Widget】",
+        "【backgroundColor】 : Couleur de fond   【Color】",
+        "【onExpansionChanged】 : Événement de pliage   【Function(bool)】",
+        "【initiallyExpanded】 : Déplié initialement   【bool】"
+      ]
+    }
+  ]
+}

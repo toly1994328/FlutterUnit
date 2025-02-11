@@ -1,0 +1,24 @@
+{
+  "id": 145,
+  "name": "LicensePage",
+  "localName": "Página de Licença",
+  "info": "Página de licença da aplicação, onde pode especificar o ícone da aplicação, o nome da aplicação, o número da versão da aplicação, entre outras informações, geradas automaticamente pelo Flutter.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    130,
+    193
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico da LicensePage",
+      "desc": [
+        "【applicationIcon】 : Ícone no canto superior esquerdo   【Widget】",
+        "【applicationVersion】 : Número da versão  【String】",
+        "【applicationName】 : Nome da aplicação  【String】",
+        "【applicationLegalese】 : Legalidade da aplicação   【String】"
+      ]
+    }
+  ]
+}

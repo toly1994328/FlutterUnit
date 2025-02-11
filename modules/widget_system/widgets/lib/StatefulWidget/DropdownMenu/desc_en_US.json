@@ -1,0 +1,46 @@
+{
+  "id": 370,
+  "name": "DropdownMenu",
+  "localName": "Dropdown Menu",
+  "info": "Dropdown selection component, supports text input filtering, and allows custom menu items. It mainly relies on MenuAnchor and TextField for implementation.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Simple Usage of Dropdown Menu",
+      "desc": [
+        "【dropdownMenuEntries】 : Menu item list   【List<DropdownMenuEntry<T>>】",
+        "【initialSelection】 : Form validation callback   【T?】",
+        "【onSelected】 : Form save callback   【ValueChanged<T?>?】",
+        "【menuHeight】 : Menu height   【double】",
+        "【width】 : Input box width   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Dropdown Menu Style Settings",
+      "desc": [
+        "【controller】 : Text input controller   【TextEditingController?】",
+        "【label】 : Input box label   【Widget?】",
+        "【textStyle】 : Input box text style   【TextStyle?】",
+        "【inputDecorationTheme】 : Input box decoration theme   【InputDecorationTheme?】",
+        "【leadingIcon】 : Left icon   【Widget?】",
+        "【trailingIcon】 : Right icon when menu is expanded   【Widget?】",
+        "【selectedTrailingIcon】 : Right icon when menu is expanded   【Widget?】",
+        "【hintText】 : Input box hint text   【String?】",
+        "【helperText】 : Input box helper text   【String?】",
+        "【errorText】 : Input box error text   【String?】",
+        "【menuStyle】 : Popup menu style   【MenuStyle?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Custom Menu Items for Dropdown Menu",
+      "desc": [
+        "You can customize the menu items by using the labelWidget of DropdownMenuEntry."
+      ]
+    }
+  ]
+}

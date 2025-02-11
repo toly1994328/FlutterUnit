@@ -1,0 +1,23 @@
+{
+  "id": 361,
+  "name": "EndDrawerButton",
+  "localName": "Rechte Schubladen-Schaltfläche",
+  "info": "Eine rechte Schubladen-Icon-Schaltfläche, die das EndDrawerButtonIcon verwendet, um das Icon anzuzeigen. Standardmäßig öffnet ein Klick die rechte Schublade.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    275,
+    276
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von EndDrawerButton",
+      "desc": [
+        "【onPressed】 : Klick-Ereignis  【VoidCallback?】",
+        "【style】: Schaltflächenstil   【ButtonStyle?】",
+        "Wenn onPressed leer ist, wird beim Klicken die rechte Schublade geöffnet."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 294,
+  "name": "SizeChangedLayoutNotifier",
+  "localName": "Notification de changement de taille",
+  "info": "Utiliser SizeChangedLayoutNotifier permet d'émettre une notification lorsque la zone de mise en page d'un composant enfant change. Utilisez NotificationListener pour écouter ces notifications.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base",
+      "desc": [
+        "【child】 : Composant   【Widget】"
+      ]
+    }
+  ]
+}

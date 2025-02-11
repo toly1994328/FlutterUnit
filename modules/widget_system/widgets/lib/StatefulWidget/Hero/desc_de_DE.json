@@ -1,0 +1,18 @@
+{
+  "id": 171,
+  "name": "Hero",
+  "localName": "Geteilter Animationseffekt",
+  "info": "Es kann ein Labelname angegeben werden. Wenn zwei Schnittstellen umgeschaltet werden, führen Komponenten mit demselben Label einen gemeinsamen Animationseffekt aus. In einer Schnittstelle können nicht zwei Hero-Labels mit demselben Namen existieren.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Hero",
+      "desc": [
+        "【tag】 : Label   【String】,"
+      ]
+    }
+  ]
+}

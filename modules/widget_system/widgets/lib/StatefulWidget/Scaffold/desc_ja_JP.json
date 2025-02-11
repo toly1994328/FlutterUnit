@@ -1,0 +1,29 @@
+{
+  "id": 64,
+  "name": "Scaffold",
+  "localName": "足場",
+  "info": "一般的なアプリの構造で、上部、下部、左側、右側、中央、フローティングボタンの部分を含み、対応する位置にコンポーネントを配置できます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    57,
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Scaffoldの基本的な使い方",
+      "desc": [
+        "【appBar】 : ヘッダーコンポーネント   【PreferredSizeWidget】",
+        "【bottomNavigationBar】 : フッターコンポーネント   【Widget】",
+        "【drawer】 : 左スライドコンポーネント   【Widget】",
+        "【endDrawer】 : 右スライドコンポーネント   【Widget】",
+        "【body】 : コンテンツコンポーネント   【Widget】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【floatingActionButton】 : フローティングボタン   【Widget】",
+        "【floatingActionButtonLocation】 : フローティングボタンの位置   【FloatingActionButtonLocation】"
+      ]
+    }
+  ]
+}

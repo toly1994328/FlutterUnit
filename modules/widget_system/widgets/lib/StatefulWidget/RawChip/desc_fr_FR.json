@@ -1,0 +1,43 @@
+{
+  "id": 153,
+  "name": "RawChip",
+  "localName": "Petite barre native",
+  "info": "L'ancêtre de chaque composant Chip, possédant la capacité de représenter chaque Chip, prend en charge des événements tels que la sélection, le clic, la suppression, etc. Voir Chip, FilterChip, ActionChip, InputChip, ChoiceChip pour plus de détails.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_press.dart",
+      "name": "Effet de clic de RawChip",
+      "desc": [
+        "【label】: Composant central   【Widget】",
+        "【padding】 : Marge intérieure   【EdgeInsetsGeometry】",
+        "【labelPadding】 : Marge du label   【EdgeInsetsGeometry】",
+        "【shadowColor】: Couleur de l'ombre   【Color】",
+        "【avatar】: Composant gauche   【Widget】",
+        "【elevation】: Profondeur de l'ombre   【double】",
+        "【pressElevation】: Profondeur de l'ombre lors du clic   【double】",
+        "【onPressed】 : Événement de clic  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Effet de sélection et de suppression de RawChip",
+      "desc": [
+        "【selected】: Est sélectionné   【bool】",
+        "【deleteIconColor】: Couleur de l'icône de fin   【Color】",
+        "【selectedColor】: Couleur de sélection   【Color】",
+        "【deleteIcon】: Composant de fin   【Widget】",
+        "【onSelected】: Événement de sélection   【Function(bool)】",
+        "【onDeleted】 : Événement de fin  【Function()】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 89,
+  "name": "FadeTransition",
+  "localName": "フェードトランジション",
+  "info": "1つの子コンポーネントを収容し、透明度の変化アニメーションを行わせることができます。アニメーターopacityを提供する必要があります。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    73,
+    118
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FadeTransitionの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【opacity】 : アニメーション   【Animation<double>】"
+      ]
+    }
+  ]
+}

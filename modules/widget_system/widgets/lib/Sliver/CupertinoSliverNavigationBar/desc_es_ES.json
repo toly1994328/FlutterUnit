@@ -1,0 +1,27 @@
+{
+  "id": 302,
+  "name": "CupertinoSliverNavigationBar",
+  "localName": "Barra de navegación Sliver",
+  "info": "Efecto de la barra de navegación en iOS11, el largeTitle se muestra cuando se expande, no se muestra cuando la lista se desliza hacia arriba. Si el middle está vacío, el largeTitle se mostrará como middle con un tamaño de fuente pequeño.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de la barra de navegación",
+      "desc": [
+        "【leading】 : Componente izquierdo   【Widget】",
+        "【middle】 : Componente central   【Widget】",
+        "【trailing】 : Componente derecho   【Widget】",
+        "【largeTitle】 : Componente de expansión inferior   【Widget】",
+        "【border】 : Borde   【Border】",
+        "【backgroundColor】 : Color de fondo   【Color】",
+        "【padding】 : Relleno interno   【EdgeInsetsDirectional】"
+      ]
+    }
+  ]
+}

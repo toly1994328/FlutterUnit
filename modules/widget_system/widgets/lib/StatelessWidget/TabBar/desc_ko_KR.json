@@ -1,0 +1,37 @@
+{
+  "id": 58,
+  "name": "TabBar",
+  "localName": "탭 바",
+  "info": "탭 바를 스와이프하고 클릭할 수 있으며, 일반적으로 AppBar의 하단에 사용됩니다. TabBarView와 함께 사용하여 페이지 슬라이딩 효과를 구현할 수 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    57,
+    59,
+    148
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TabBar 기본 사용",
+      "desc": [
+        "【controller】 : 컨트롤러   【TabController】",
+        "【indicatorColor】 : 인디케이터 색상   【인디케이터 색상】",
+        "【indicatorWeight】 : 인디케이터 높이   【double】",
+        "【indicatorPadding】 : 인디케이터 여백   【EdgeInsetsGeometry】",
+        "【labelStyle】 : 탭 텍스트 스타일   【TextStyle】",
+        "【unselectedLabelStyle】 : 선택되지 않은 텍스트 스타일   【TextStyle】",
+        "【isScrollable】 : 스와이프 가능 여부   【bool】",
+        "【onTap】 : 탭 클릭 콜백   【Function(int)】",
+        "【tabs】 : 탭 위젯   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_noShadow.dart",
+      "name": "Theme 설정을 통해 물결 효과 없이 구현",
+      "desc": [
+        "Theme에서 물결 효과 색상을 투명으로 설정하면 됩니다."
+      ]
+    }
+  ]
+}

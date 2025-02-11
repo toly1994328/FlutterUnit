@@ -1,0 +1,33 @@
+{
+  "id": 152,
+  "name": "Ink",
+  "localName": "Onde",
+  "info": "Active les ondulations d'eau pour InkWell et InkResponse, utilisé pour dessiner des images ou d'autres composants de décoration Material.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'Ink",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【padding】 : Marge intérieure   【EdgeInsetsGeometry】",
+        "【decoration】 : Décoration   【Decoration】",
+        "【width】 : Largeur   【double】",
+        "【height】 : Hauteur   【double】",
+        "【color】 : Couleur   【Color】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Onde d'image avec Ink.image",
+      "desc": [
+        "Les propriétés sont identiques à celles du composant Image, voir le composant Image pour plus de détails"
+      ]
+    }
+  ]
+}

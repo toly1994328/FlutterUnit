@@ -1,0 +1,18 @@
+{
+  "id": 272,
+  "name": "BackButtonIcon",
+  "localName": "Иконка кнопки возврата",
+  "info": "Иконка возврата, которая отображает соответствующую иконку в зависимости от платформы. Можно настроить тему через ActionIconTheme.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Эффект BackButtonIcon",
+      "desc": [
+        "Компонент _ActionIcon адаптирует иконку кнопки возврата для разных платформ в соответствии с темой ActionIconTheme."
+      ]
+    }
+  ]
+}

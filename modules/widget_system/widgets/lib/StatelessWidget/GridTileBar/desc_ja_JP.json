@@ -1,0 +1,22 @@
+{
+  "id": 20,
+  "name": "GridTileBar",
+  "localName": "グリッドタイルバー",
+  "info": "Flutterが提供する一般的なヘッダー構造で、左中右の構造です。対応する位置にコンポーネントを挿入でき、特定の項目に簡単に対応できます。ListTileと比較して、属性が少ないです。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridTileBarの基本的な表現は以下の通りです",
+      "desc": [
+        "【leading】: 左側のコンポーネント   【Widget】",
+        "【trailing】: 右側のコンポーネント   【Widget】",
+        "【title】: 中央上部のコンポーネント   【Widget】",
+        "【subtitle】: 中央下部のコンポーネント   【Widget】",
+        "【backgroundColor】: 背景色   【Color】"
+      ]
+    }
+  ]
+}

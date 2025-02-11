@@ -1,0 +1,21 @@
+{
+  "id": 32,
+  "name": "CloseButton",
+  "localName": "閉じるボタン",
+  "info": "閉じる機能を持つIconButtonで、閉じるアイコンは変更できません。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CloseButtonクリックイベント",
+      "desc": [
+        "【onPressed】 : クリックイベント  【VoidCallback?】",
+        "【style】: ボタンスタイル   【ButtonStyle?】",
+        "【color】: 色   【Color】",
+        "onPressedが空の場合、クリックすると現在の画面が閉じます。"
+      ]
+    }
+  ]
+}

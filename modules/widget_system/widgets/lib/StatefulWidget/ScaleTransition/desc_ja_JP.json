@@ -1,0 +1,19 @@
+{
+  "id": 91,
+  "name": "ScaleTransition",
+  "localName": "スケールトランジション",
+  "info": "子コンポーネントを収容し、スケールアニメーションを行わせることができます。アニメーターscaleを提供する必要があり、alignment属性を持っています。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ScaleTransitionの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【scale】 : アニメーション   【Animation<double>】"
+      ]
+    }
+  ]
+}

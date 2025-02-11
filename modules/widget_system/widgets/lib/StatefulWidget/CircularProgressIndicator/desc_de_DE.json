@@ -1,0 +1,24 @@
+{
+  "id": 46,
+  "name": "CircularProgressIndicator",
+  "localName": "Rundes Fortschrittsanzeige",
+  "info": "Runde Fortschrittsanzeige, bei der Eigenschaften wie Farbe, Linienstärke, Fortschritt usw. angegeben werden können. Wenn der Wert null ist, dreht sie sich ununterbrochen.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    47,
+    48
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CircularProgressIndicator",
+      "desc": [
+        "【value】 : Fortschritt   【double】",
+        "【backgroundColor】 : Hintergrundfarbe   【Color】",
+        "【valueColor】 : Fortschrittsfarbe   【Animation<Color>】",
+        "【strokeWidth】 : Linienstärke   【double】"
+      ]
+    }
+  ]
+}

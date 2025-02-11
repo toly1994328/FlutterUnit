@@ -1,0 +1,34 @@
+{
+  "id": 287,
+  "name": "LayoutBuilder",
+  "localName": "Layout-Builder",
+  "info": "Kann die Größe des übergeordneten Containers erkennen und eine benutzerdefinierte Layout basierend auf den Abmessungen des übergeordneten Containers erstellen. Es ist ein sehr nützliches Layout-Komponente.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegendes Verständnis von LayoutBuilder",
+      "desc": [
+        "【builder】: Layout-Builder   【LayoutWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node2_fit.dart",
+      "name": "Anpassungsfähiges Layout von LayoutBuilder",
+      "desc": [
+        "Kann das Design der Komponentenanzeige basierend auf der Größe des Bereichs durchführen.",
+        "Zum Beispiel können unterschiedliche Layout-Strukturen in verschiedenen Breitenbereichen angezeigt werden.",
+        "Schließlich ist es an vielen Stellen nicht einfach, den Bereich der übergeordneten Komponente zu erhalten, und die Verwendung von LayoutBuilder wird sehr angenehm sein."
+      ]
+    },
+    {
+      "file": "node3_expend.dart",
+      "name": "Erweiterte Verwendung von LayoutBuilder",
+      "desc": [
+        "Verwenden Sie TextPainter, um die Anzahl der Textzeilen zu überprüfen und die Funktion zum Erweitern oder Reduzieren zu implementieren."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 147,
+  "name": "Listener",
+  "localName": "Ereignis-Listener",
+  "info": "Der Listener für Komponentenereignisse kann Ereignisse wie Drücken, Loslassen, Bewegen, Abbrechen usw. akzeptieren. Im Vergleich zu GestureDetector ist es primitiver und kann mehr Informationen liefern.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Listener-Ereignisse",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【onPointerDown】 : Drücken-Ereignis   【Function(PointerDownEvent)】",
+        "【onPointerMove】 : Bewegen-Ereignis   【Function(PointerMoveEvent)】",
+        "【onPointerMove】 : Loslassen-Ereignis   【Function(PointerUpEvent)】",
+        "【onPointerCancel】 : Abbrechen-Ereignis   【Function(PointerUpEvent)】"
+      ]
+    }
+  ]
+}

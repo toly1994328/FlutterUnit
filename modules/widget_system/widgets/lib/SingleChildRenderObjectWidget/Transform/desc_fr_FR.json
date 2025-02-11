@@ -1,0 +1,53 @@
+{
+  "id": 78,
+  "name": "Transform",
+  "localName": "Transformation",
+  "info": "Peut contenir un composant enfant, et peut transformer le composant enfant via une matrice de transformation 4*4.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_skew.dart",
+      "name": "Transformation en biais skew",
+      "desc": [
+        "Le biais x est contrôlé par le nombre R0C1, l'entrée est une valeur en radians, représentant l'angle de biais",
+        "Le biais y est contrôlé par le nombre R1C0, l'entrée est une valeur en radians, représentant l'angle de biais"
+      ]
+    },
+    {
+      "file": "node2_translation.dart",
+      "name": "Transformation de translation translationValues",
+      "desc": [
+        "La translation x est contrôlée par le nombre R0C3, l'entrée est une valeur numérique, représentant la longueur de la translation",
+        "La translation y est contrôlée par le nombre R1C3, l'entrée est une valeur numérique, représentant la longueur de la translation",
+        "La translation z est contrôlée par le nombre R2C3, l'entrée est une valeur numérique, représentant la longueur de la translation"
+      ]
+    },
+    {
+      "file": "node3_scale.dart",
+      "name": "Transformation de mise à l'échelle diagonal3Values",
+      "desc": [
+        "La mise à l'échelle x est contrôlée par le nombre R0C0, l'entrée est une valeur numérique, représentant le facteur de mise à l'échelle",
+        "La mise à l'échelle y est contrôlée par le nombre R1C2, l'entrée est une valeur numérique, représentant le facteur de mise à l'échelle",
+        "La mise à l'échelle z est contrôlée par le nombre R2C2, l'entrée est une valeur numérique, représentant le facteur de mise à l'échelle"
+      ]
+    },
+    {
+      "file": "node4_rotate.dart",
+      "name": "Transformation de rotation rotation",
+      "desc": [
+        "La rotation x est contrôlée par R1C1, R1C2, R2C1, R2C2, l'entrée représente des radians",
+        "La rotation y est contrôlée par R0C0, R0C2, R2C0, R2C2, l'entrée représente des radians",
+        "La rotation z est contrôlée par R0C0, R0C1, R1C0, R1C1"
+      ]
+    },
+    {
+      "file": "node5_perspective.dart",
+      "name": "Transformation de perspective rotation",
+      "desc": [
+        "La perspective est contrôlée par R3C1, R3C2, R3C3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 49,
+  "name": "RefreshIndicator",
+  "localName": "Refresh Indicator",
+  "info": "Internally nested scrollable area, displaying a refresh icon when pulled down, and executing a specified asynchronous method upon release. Properties such as color and distance to the top can be specified.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of RefreshIndicator",
+      "desc": [
+        "【child】 : Child (scrollable)   【Widget】",
+        "【displacement】 : Indicator floating height   【double】",
+        "【color】 : Indicator color   【Color】"
+      ]
+    }
+  ]
+}

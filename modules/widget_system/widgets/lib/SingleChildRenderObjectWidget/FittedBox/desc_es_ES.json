@@ -1,0 +1,20 @@
+{
+  "id": 87,
+  "name": "FittedBox",
+  "localName": "Caja ajustada",
+  "info": "Puede contener un componente hijo, utiliza la propiedad fit para determinar el modo de adaptación del área del componente hijo en relación con el componente padre, y tiene la propiedad de alineación alignment.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de FittedBox",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【fit】 : Modo de adaptación   【BoxFit】",
+        "【alignment】 : Modo de alineación   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

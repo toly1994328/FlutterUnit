@@ -1,0 +1,18 @@
+{
+  "id": 312,
+  "name": "PerformanceOverlay",
+  "localName": "パフォーマンスオーバーレイ",
+  "info": "パフォーマンスモニタリングの2つの柱グラフを非常に簡単に有効にでき、インターフェースのリフレッシュ時のフレームレートの変化を簡単に確認できます。",
+  "lever": 2,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PerformanceOverlayの基本使用",
+      "desc": [
+        "PerformanceOverlay.allEnabledを使用してすべての監視項目を開始できます。"
+      ]
+    }
+  ]
+}

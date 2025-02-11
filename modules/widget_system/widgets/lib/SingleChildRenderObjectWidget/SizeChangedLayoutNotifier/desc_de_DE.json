@@ -1,0 +1,18 @@
+{
+  "id": 294,
+  "name": "SizeChangedLayoutNotifier",
+  "localName": "Größenänderungsbenachrichtigung",
+  "info": "Mit SizeChangedLayoutNotifier kann eine Benachrichtigung gesendet werden, nachdem sich der Layoutbereich eines Kindelements ändert. Die Benachrichtigung kann mit NotificationListener überwacht werden.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung",
+      "desc": [
+        "【child】 : Komponente   【Widget】"
+      ]
+    }
+  ]
+}

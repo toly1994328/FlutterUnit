@@ -1,0 +1,20 @@
+{
+  "id": 289,
+  "name": "RenderObjectToWidgetAdapter",
+  "localName": "루트 컴포넌트",
+  "info": "RenderObject와 Element 트리의 다리.",
+  "lever": 1,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RenderObjectToWidgetAdapter 소개",
+      "desc": [
+        "【container】 : 렌더링 객체   【RenderObjectWithChildMixin<T>】",
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【debugShortDescription】 : 디버그 간략 설명   【String】"
+      ]
+    }
+  ]
+}

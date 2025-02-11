@@ -1,0 +1,29 @@
+{
+  "id": 39,
+  "name": "Checkbox",
+  "localName": "Casilla de verificación",
+  "info": "Componente de casilla de verificación, comúnmente utilizado para alternar configuraciones, puede especificar colores, recibir devoluciones de llamada de cambios de estado, y también puede especificar tres estados.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [326,17],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Checkbox",
+      "desc": [
+        "【value】 : Si está seleccionado   【double】",
+        "【checkColor】: Color de la marca ✔️ cuando está seleccionado 【Color】",
+        "【activeColor】: Color dentro del cuadro cuando está seleccionado 【Color】",
+        "【onChanged】: Evento de cambio de estado 【Function(bool)】,"
+      ]
+    },
+    {
+      "file": "node2_tristate.dart",
+      "name": "Tres estados de Checkbox",
+      "desc": [
+        "【tristate】 : Si tiene tres estados   【double】",
+        "  en onChanged,"
+      ]
+    }
+  ]
+}

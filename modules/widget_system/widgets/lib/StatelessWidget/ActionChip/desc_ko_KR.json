@@ -1,0 +1,26 @@
+{
+  "id": 13,
+  "name": "ActionChip",
+  "localName": "이벤트 칩",
+  "info": "Chip 컴포넌트와 유사한 스타일로, 클릭 속성이 있습니다. 클릭 시 그림자 깊이와 클릭 이벤트를 지정할 수 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ActionChip의 일반적인 표현은 다음과 같습니다",
+      "desc": [
+        "【onPressed】: 클릭 이벤트   【Function】",
+        "【pressElevation】: 눌렀을 때 그림자 깊이   【double】",
+        "기타 속성은 Chip 컴포넌트와 동일하며, 오른쪽 컴포넌트가 없습니다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 146,
+  "name": "GestureDetector",
+  "localName": "Детектор жестов",
+  "info": "Детектор событий жестов компонента, который может принимать события, такие как нажатие, долгое нажатие, двойное нажатие, нажатие, отпускание, перемещение и т.д., а также может получать информацию о точках касания. Незаменимый компонент для домашнего использования и путешествий.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    147,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основные события GestureDetector",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【onTap】 : Событие нажатия   【Function()】",
+        "【onDoubleTap】 : Событие двойного нажатия   【GestureTapCallback】",
+        "【onLongPress】 : Событие долгого нажатия   【GestureLongPressCallback】"
+      ]
+    },
+    {
+      "file": "node2_tap.dart",
+      "name": "Детальная информация GestureDetector",
+      "desc": [
+        "【onTapDown】 : Обратный вызов нажатия   【GestureTapDownCallback】",
+        "【onTapUp】 : Обратный вызов отпускания нажатия   【GestureTapUpCallback】",
+        "【onTapCancel】 : Отмена нажатия   【GestureTapCancelCallback】"
+      ]
+    },
+    {
+      "file": "node3_pan.dart",
+      "name": "События Pan GestureDetector",
+      "desc": [
+        "【onPanDown】 : Обратный вызов нажатия   【GestureDragDownCallback】",
+        "【onPanEnd】 : Завершение перетаскивания   【GestureDragEndCallback】",
+        "【onPanStart】 : Начало перетаскивания   【GestureDragStartCallback】",
+        "【onPanUpdate】 : Обновление перетаскивания   【GestureDragUpdateCallback】",
+        "【onPanCancel】 : Отмена перетаскивания   【GestureDragCancelCallback】"
+      ]
+    }
+  ]
+}

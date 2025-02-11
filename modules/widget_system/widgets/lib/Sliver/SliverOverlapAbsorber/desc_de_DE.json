@@ -1,0 +1,23 @@
+{
+  "id": 307,
+  "name": "SliverOverlapAbsorber",
+  "localName": "Überlappungsabsorber",
+  "info": "Wickelt einen anderen Sliver ein und zwingt ihn, seinen Layoutbereich als überlappend zu betrachten. Muss in Verbindung mit SliverOverlapInjector verwendet werden.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    308
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von SliverOverlapAbsorber",
+      "desc": [
+        "【sliver】 : Untergeordnete Komponente   【Widget】",
+        "【handle】 : *Handler   【SliverOverlapAbsorberHandle】",
+        "Wenn die Komponenten SliverOverlapAbsorber und SliverOverlapInjector nicht verwendet werden, überlappt der Inhalt von NestedScrollView die Kopfleiste."
+      ]
+    }
+  ]
+}

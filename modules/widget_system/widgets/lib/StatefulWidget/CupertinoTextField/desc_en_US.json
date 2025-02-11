@@ -1,0 +1,40 @@
+{
+  "id": 245,
+  "name": "CupertinoTextField",
+  "localName": "iOS Style Input Box",
+  "info": "Cupertino style input box, properties are similar to TextField, can specify controller, text style, decoration line, line limit, cursor style, etc. Receives input change, input completion and other events.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoTextField",
+      "desc": [
+        "【placeholder】 : Hint text   【String】",
+        "【showCursor】 : Whether to show cursor   【bool】",
+        "【minLines】 : Minimum number of lines   【int】",
+        "【maxLines】 : Maximum number of lines   【int】",
+        "【padding】 : Padding   【EdgeInsetsGeometry】",
+        "【onChanged】 : Change listener   【ValueChanged<String>】",
+        "【onTap】: Tap listener   【GestureTapCallback】",
+        "【onSubmitted】: Submit listener    【ValueChanged<String>】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Common Style Properties of CupertinoTextField",
+      "desc": [
+        "【style】 : Input text style   【TextStyle】",
+        "【prefix】: Prefix component   【Widget】",
+        "【prefixMode】: Prefix mode   【OverlayVisibilityMode】",
+        "【suffix】: Suffix component   【Widget】",
+        "【suffixMode】: Suffix mode   【OverlayVisibilityMode】",
+        "【cursorColor】: Cursor color   【Color】",
+        "【cursorWidth】: Cursor width   【double】",
+        "【cursorRadius】: Cursor radius   【Radius】",
+        "【readOnly】: Whether read-only    【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 81,
+  "name": "UnconstrainedBox",
+  "localName": "Unconstrained Box",
+  "info": "Can contain a child component and remove all area constraints of the component, displaying its own size.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    80
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of UnconstrainedBox",
+      "desc": [
+        "【child】: Child component 【Widget】",
+        "【constrainedAxis】: Axes still constrained*2 【Axis】",
+        "【alignment】: Alignment method 【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

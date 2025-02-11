@@ -1,0 +1,20 @@
+{
+  "id": 342,
+  "name": "ListBody",
+  "localName": "리스트 바디",
+  "info": "여러 하위 컴포넌트를 축 방향으로 배열하며, 설정 가능한 속성이 적어 일반적으로 잘 사용되지 않고, 대신 ListView를 선택하여 사용합니다.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListView의 기본 사용법",
+      "desc": [
+        "【mainAxis】 : 주축 방향   【Axis】",
+        "【reverse】: 역방향 여부   【bool】",
+        "【children】: 하위 컴포넌트 집합   【List<Widget>】"
+      ]
+    }
+  ]
+}

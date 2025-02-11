@@ -1,0 +1,23 @@
+{
+  "id": 276,
+  "name": "DrawerButton",
+  "localName": "Pulsante Cassetto",
+  "info": "Un pulsante con icona del cassetto sinistro, utilizza DrawerButtonIcon per mostrare l'icona, l'evento di clic predefinito può aprire il cassetto sinistro.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    273,
+    361
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di DrawerButton",
+      "desc": [
+        "【onPressed】 : Evento di clic  【VoidCallback?】",
+        "【style】: Stile del pulsante   【ButtonStyle?】",
+        "Quando onPressed è vuoto, il clic aprirà il cassetto sinistro."
+      ]
+    }
+  ]
+}

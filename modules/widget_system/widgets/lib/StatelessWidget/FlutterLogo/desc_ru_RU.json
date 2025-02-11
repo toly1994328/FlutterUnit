@@ -1,0 +1,27 @@
+{
+  "id": 4,
+  "name": "FlutterLogo",
+  "localName": "Логотип Flutter",
+  "info": "Используется для отображения компонента логотипа Flutter. Можно определить цвет, размер, режим отображения и другую информацию. Это очень простой компонент.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Используется для отображения логотипа Flutter",
+      "desc": [
+        "【size】 : Размер  【double】",
+        "【colors】: Цвет   【MaterialColor】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Стиль для отображения текста",
+      "desc": [
+        "【style】 : Стиль-3 типа перечисления  【FlutterLogoStyle】",
+        "【textColor】: Цвет текста   【Color】"
+      ]
+    }
+  ]
+}

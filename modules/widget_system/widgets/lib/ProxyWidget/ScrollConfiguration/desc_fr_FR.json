@@ -1,0 +1,24 @@
+{
+  "id": 180,
+  "name": "ScrollConfiguration",
+  "localName": "Bouton de menu iOS",
+  "info": "Doit envelopper un composant défilable et contrôler l'effet de défilement via la propriété behavior, peut supprimer l'ombre bleue du défilement, etc.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    162,
+    163,
+    164
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ScrollConfiguration",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【behavior】 : Comportement de défilement  【ScrollBehavior】",
+        "    Peut utiliser ScrollConfiguration pour supprimer l'ombre bleue de ListView"
+      ]
+    }
+  ]
+}

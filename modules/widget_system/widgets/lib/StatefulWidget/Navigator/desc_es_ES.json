@@ -1,0 +1,21 @@
+{
+  "id": 232,
+  "name": "Navigator",
+  "localName": "Navegador",
+  "info": "Navigator gestiona un grupo de componentes secundarios utilizando reglas de pila, permitiendo empujar y sacar componentes secundarios, así como escuchar eventos de entrada y salida de la pila. La gestión de rutas de MaterialApp se basa en el uso de Navigator.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Navigator",
+      "desc": [
+        "【initialRoute】 : Ruta inicial   【String】",
+        "【onGenerateRoute】 : Generador de rutas   【RouteFactory】",
+        "【observers】 : Observador de rutas   【List<NavigatorObserver>】",
+        "【onPopPage】 : Callback de salida de pila   【PopPageCallback】"
+      ]
+    }
+  ]
+}

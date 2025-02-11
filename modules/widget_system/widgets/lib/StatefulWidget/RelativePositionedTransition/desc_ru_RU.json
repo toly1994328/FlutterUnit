@@ -1,0 +1,21 @@
+{
+  "id": 115,
+  "name": "RelativePositionedTransition",
+  "localName": "Прямоугольное позиционное преобразование",
+  "info": "Подкласс AnimatedWidget, использующий аниматор типа Rect для создания переходной анимации между двумя объектами Rect для дочернего компонента.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование RelativePositionedTransition",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【size】 : Смещение по левому и верхнему краю   【Size】",
+        "【rect】 : Анимация   【Animation<Rect>】",
+        "    Компонент PositionedTransition может работать только внутри Stack"
+      ]
+    }
+  ]
+}

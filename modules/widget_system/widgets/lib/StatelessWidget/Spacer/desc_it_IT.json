@@ -1,0 +1,25 @@
+{
+  "id": 107,
+  "name": "Spacer",
+  "localName": "Componente Spaziatore",
+  "info": "Può essere utilizzato solo nei layout Row, Column e Flex, occupa lo spazio rimanente e può distribuire lo spazio a più Spacer in proporzione utilizzando la proprietà flex.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di Spacer",
+      "desc": [
+        "Un Spacer occuperà l'area estensibile"
+      ]
+    },
+    {
+      "file": "node2_flex.dart",
+      "name": "Distribuzione dello spazio con più Spacer",
+      "desc": [
+        "【flex】 : percentuale di distribuzione dello spazio rimanente   【int】"
+      ]
+    }
+  ]
+}

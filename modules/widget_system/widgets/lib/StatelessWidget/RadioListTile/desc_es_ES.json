@@ -1,0 +1,32 @@
+{
+  "id": 19,
+  "name": "RadioListTile",
+  "localName": "Elemento de lista de radio",
+  "info": "Una estructura de elemento de lista genérica proporcionada por Flutter, con una estructura de centro-derecha y un Radio al final. Se pueden insertar componentes en las posiciones correspondientes, lo que permite manejar elementos específicos de manera conveniente.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RadioListTile requiere un tipo genérico T",
+      "desc": [
+        "【value】 : Objeto del elemento  【T】",
+        "【groupValue】 : Objeto seleccionado  【T】",
+        "【selected】: Si está seleccionado   【bool】",
+        "【secondary】: Componente derecho   【Widget】",
+        "【title】: Componente superior central   【Widget】",
+        "【subtitle】: Componente inferior central   【Widget】",
+        "【onChanged】: Evento de cambio   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2_dense.dart",
+      "name": "Color de selección y disposición densa de RadioListTile",
+      "desc": [
+        "【activeColor】 : Color cuando está seleccionado  【Color】",
+        "【dense】: Si está en disposición densa   【bool】"
+      ]
+    }
+  ]
+}

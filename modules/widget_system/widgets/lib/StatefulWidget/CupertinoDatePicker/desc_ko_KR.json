@@ -1,0 +1,25 @@
+{
+  "id": 137,
+  "name": "CupertinoDatePicker",
+  "localName": "iOS 날짜 선택기",
+  "info": "고급스러운 스크롤 날짜 선택기로, 선택 유형, 날짜 범위 등을 지정할 수 있으며, 날짜 선택 이벤트를 수신합니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoDatePicker 기본 사용",
+      "desc": [
+        "【initialDateTime】 : 초기 날짜   【DateTime】",
+        "【minimumYear】 : 최소 연도   【int】",
+        "【maximumYear】 : 최대 연도   【int】",
+        "【onDateTimeChanged】 : 클릭 콜백  【Function(DateTime)】",
+        "【minuteInterval】 : 분 간격  【int】",
+        "【use24hFormat】 : 24시간 형식 여부  【bool】",
+        "【backgroundColor】 : 배경색  【Color】",
+        "【mode】 : 모드*3  【CupertinoDatePickerMode】"
+      ]
+    }
+  ]
+}

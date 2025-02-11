@@ -1,0 +1,25 @@
+{
+  "id": 283,
+  "name": "CallbackShortcuts",
+  "localName": "Atalhos de Teclado",
+  "info": "Pode definir combinações como atalhos de teclado, que respondem a eventos de atalhos após obter o foco.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    282,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso de Atalhos",
+      "desc": [
+        "No exemplo, após ativar o foco, as combinações de teclas Ctrl+↑ e Ctrl+↓ podem aumentar ou diminuir o número",
+        "【enabled】 : Disponível   【bool】",
+        "【onTapOutside】 : Ouvinte de clique externo   【TapRegionCallback?】",
+        "【onTapInside】 : Ouvinte de clique interno   【TapRegionCallback?】",
+        "【groupId】 : Identificador do grupo de área de clique   【Object?】"
+      ]
+    }
+  ]
+}

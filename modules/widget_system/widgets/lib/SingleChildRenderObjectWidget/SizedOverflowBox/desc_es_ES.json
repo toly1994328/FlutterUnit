@@ -1,0 +1,20 @@
+{
+  "id": 84,
+  "name": "SizedOverflowBox",
+  "localName": "Caja de desbordamiento de tamaño",
+  "info": "Puede contener un componente hijo, y el componente hijo puede desbordar el área del componente padre. Se puede desplazar el componente hijo mediante la propiedad size y tiene la propiedad de alineación alignment.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SizedOverflowBox",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【size】 : Desplazamiento de tamaño   【Size】",
+        "【alignment】 : Método de alineación   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

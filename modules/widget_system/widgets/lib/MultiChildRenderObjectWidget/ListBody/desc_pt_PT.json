@@ -1,0 +1,20 @@
+{
+  "id": 342,
+  "name": "ListBody",
+  "localName": "Corpo da Lista",
+  "info": "Organiza vários subcomponentes ao longo de um eixo, com poucas propriedades configuráveis, geralmente pouco utilizado, optando-se por usar ListView.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ListView",
+      "desc": [
+        "【mainAxis】 : Direção do eixo principal   【Axis】",
+        "【reverse】: Se é invertido   【bool】",
+        "【children】: Conjunto de subcomponentes   【List<Widget>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 240,
+  "name": "CupertinoRadio",
+  "localName": "Radio Button·macOS Style",
+  "info": "A macOS-style radio button, where the value and groupValue together determine whether the radio button is selected; the onChanged callback handles click events.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    19,
+    45
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "CupertinoRadio Usage",
+      "desc": [
+        "【value】: Radio button value 【T】",
+        "【groupValue】: Current matching value 【T】",
+        "【onChanged】: Callback when changed 【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "CupertinoRadio Colors",
+      "desc": [
+        "【activeColor】: Active background color 【Color?】",
+        "【fillColor】: Fill color 【Color?】",
+        "【inactiveColor】: Inactive background color 【Color?】",
+        "【focusColor】: Focus color 【Color?】",
+        "【mouseCursor】: Mouse cursor style 【MouseCursor?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Toggle Support",
+      "desc": [
+        "【toggleable】: Whether toggle is supported 【bool】",
+        "toggleable defaults to false. When set to true, clicking an active radio button will call back null data, supporting the need for toggling between selected and unselected states."
+      ]
+    }
+  ]
+}

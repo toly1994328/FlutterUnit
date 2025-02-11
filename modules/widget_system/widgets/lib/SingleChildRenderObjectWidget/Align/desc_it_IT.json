@@ -1,0 +1,32 @@
+{
+  "id": 85,
+  "name": "Align",
+  "localName": "Componente Allineamento",
+  "info": "Può contenere un componente figlio, e può posizionare il componente figlio in qualsiasi frazione specificata della larghezza e altezza del componente genitore tramite l'allineamento.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    1,
+    86,
+    111,
+    120
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di Align",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【alignment】 : Modalità di allineamento   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node2_other.dart",
+      "name": "Altri usi di Align",
+      "desc": [
+        "Poiché l'oggetto Alignment può specificare la posizione della frazione di larghezza e altezza nel contenitore genitore",
+        "è possibile utilizzare Align per soddisfare alcune esigenze di layout complesse, come cambiare posizione secondo equazioni matematiche specificate"
+      ]
+    }
+  ]
+}

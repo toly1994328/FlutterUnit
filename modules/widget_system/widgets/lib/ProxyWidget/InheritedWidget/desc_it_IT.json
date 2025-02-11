@@ -1,0 +1,36 @@
+{
+  "id": 346,
+  "name": "InheritedWidget",
+  "localName": "Componente Ereditato",
+  "info": "Questa classe è astratta e ha la funzione di memorizzare dati nel contesto corrente e condividerli nei contesti dei nodi successivi. Ci sono molte classi di implementazione, inclusi vari componenti tematici, MediaQuery, ecc.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    167,
+    319,
+    328,
+    324,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di Column",
+      "desc": [
+        "【children】 : Lista di componenti   【List<Widget>】",
+        "【mainAxisAlignment】 : Allineamento dell'asse principale   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : Allineamento dell'asse trasversale   【CrossAxisAlignment】",
+        "【textBaseline】 : Linea di base del testo   【TextBaseline】",
+        "【verticalDirection】 : Direzione verticale   【VerticalDirection】",
+        "【mainAxisSize】 : Dimensione dell'asse principale   【MainAxisSize】"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "Esempio di InheritedWidget",
+      "desc": [
+        "Di seguito è mostrato l'uso del componente InheritedWidget attraverso un progetto di contatore di colori."
+      ]
+    }
+  ]
+}

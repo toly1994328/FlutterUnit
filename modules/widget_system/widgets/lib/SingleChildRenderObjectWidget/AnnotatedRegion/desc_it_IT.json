@@ -1,0 +1,20 @@
+{
+  "id": 288,
+  "name": "AnnotatedRegion",
+  "localName": "Area Annotata",
+  "info": "Ha un generico, nel codice sorgente viene utilizzato solo in app_bar, nav_bar per modificare lo stato e lo stile della barra di navigazione, il generico è solitamente SystemUiOverlayStyle.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnnotatedRegion cambia lo stile dello stato",
+      "desc": [
+        "【value】 : valore   【T】",
+        "【sized】 : se fornisce dimensione   【bool】",
+        "【child】 : componente figlio   【Widget】"
+      ]
+    }
+  ]
+}

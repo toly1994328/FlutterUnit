@@ -1,0 +1,22 @@
+{
+  "id": 154,
+  "name": "Drawer",
+  "localName": "Seitenleiste",
+  "info": "Wird im Allgemeinen für die draw- und endDraw-Eigenschaften in Scaffold als linke und rechte Seitenleiste verwendet. Kann ein Kindelement aufnehmen und die Schattentiefe angeben.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    64,
+    155
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Drawer",
+      "desc": [
+        "【child】 : Kindelement   【Widget】",
+        "【elevation】 : Schattentiefe  【double】"
+      ]
+    }
+  ]
+}

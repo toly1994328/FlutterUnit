@@ -1,0 +1,27 @@
+{
+  "id": 44,
+  "name": "RangeSlider",
+  "localName": "Controlo deslizante de intervalo",
+  "info": "Componente de controlo deslizante de intervalo, suporta arrasto de dois pontos para obter o intervalo entre eles. Pode especificar a cor, o número de segmentos e as etiquetas exibidas, e recebe uma chamada de retorno para alterações no progresso.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do RangeSlider",
+      "desc": [
+        "【values】 : valores   【RangeValues】",
+        "【min】 : valor mínimo   【double】",
+        "【max】 : valor máximo   【double】",
+        "【divisions】 : número de segmentos   【int】",
+        "【label】 : texto da bolha de dica   【String】",
+        "【activeColor】 : cor ativa   【Color】",
+        "【inactiveColor】 : cor inativa   【Color】",
+        "【onChangeStart】 : ouvinte ao iniciar o deslize   【Function(RangeValues)】",
+        "【onChangeEnd】 : ouvinte ao terminar o deslize   【Function(RangeValues)】",
+        "【onChanged】 : chamada de retorno ao alterar   【Function(RangeValues)】"
+      ]
+    }
+  ]
+}

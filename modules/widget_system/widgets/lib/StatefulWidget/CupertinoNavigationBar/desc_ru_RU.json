@@ -1,0 +1,23 @@
+{
+  "id": 62,
+  "name": "CupertinoNavigationBar",
+  "localName": "iOS навигация",
+  "info": "Универсальная структура для верхней панели приложения в стиле iOS, позволяющая размещать соответствующие компоненты в указанных местах. Можно указать такие свойства, как цвет фона, отступы, границы и т.д.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование CupertinoNavigationBar",
+      "desc": [
+        "【leading】 : Левый компонент   【Widget】",
+        "【middle】 : Центральный компонент   【Widget】",
+        "【trailing】 : Правый компонент   【Widget】",
+        "【backgroundColor】 : Цвет фона   【Color】",
+        "【padding】 : Внутренние отступы   【EdgeInsetsDirectional】",
+        "【border】 : Граница   【Border】"
+      ]
+    }
+  ]
+}

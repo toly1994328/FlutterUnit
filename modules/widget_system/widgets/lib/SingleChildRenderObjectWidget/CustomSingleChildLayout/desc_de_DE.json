@@ -1,0 +1,25 @@
+{
+  "id": 285,
+  "name": "CustomSingleChildLayout",
+  "localName": "Allgemeines Einzelkind-Layout",
+  "info": "Kann ein Unterelement aufnehmen und eine Delegiertenklasse angeben, um das Unterelement anzuordnen. Die Delegiertenklasse kann den Bereich des übergeordneten Containers und die Bereichsgröße des Unterelements sowie die Bereichsbeschränkungen abrufen.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CustomSingleChildLayout",
+      "desc": [
+        "【delegate】 : Delegat   【SingleChildLayoutDelegate】"
+      ]
+    },
+    {
+      "file": "node2_offset.dart",
+      "name": "Verschiebungsverwendung von CustomSingleChildLayout",
+      "desc": [
+        "Kann die Verschiebungsfähigkeit des Delegaten nutzen, um das Unterelement zu positionieren."
+      ]
+    }
+  ]
+}

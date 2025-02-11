@@ -1,0 +1,32 @@
+{
+  "id": 50,
+  "name": "Tooltip",
+  "localName": "Ferramenta de Dica",
+  "info": "Componente que exibe informações de dica, exibindo informações ao pressionar e segurar. Pode especificar margens, duração de exibição, estilo de texto, propriedades de decoração, etc.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Tooltip",
+      "desc": [
+        "【preferBelow】 : Preferir abaixo   【bool】",
+        "【padding】 : Preenchimento interno   【EdgeInsetsGeometry】",
+        "【margin】 : Margem externa   【EdgeInsetsGeometry】",
+        "【message】 : Conteúdo da mensagem   【String】",
+        "【showDuration】 : Duração da exibição   【Duration】",
+        "【waitDuration】 : Tempo de aparecimento ao pairar   【Duration】",
+        "【child】 : Filho   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_decoration.dart",
+      "name": "Decoração do Tooltip",
+      "desc": [
+        "【decoration】 : Objeto de decoração 【Decoration】",
+        "【textStyle】 : Estilo de texto   【double】"
+      ]
+    }
+  ]
+}

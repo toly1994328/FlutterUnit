@@ -1,0 +1,24 @@
+{
+  "id": 180,
+  "name": "ScrollConfiguration",
+  "localName": "Botão de menu ios",
+  "info": "Precisa envolver um componente deslizável e controlar o efeito de deslize através da propriedade behavior, podendo remover a sombra azul do deslize, entre outros.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    162,
+    163,
+    164
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do ScrollConfiguration",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【behavior】 : Comportamento de deslize  【ScrollBehavior】",
+        "    Pode usar o ScrollConfiguration para remover a sombra azul do ListView"
+      ]
+    }
+  ]
+}

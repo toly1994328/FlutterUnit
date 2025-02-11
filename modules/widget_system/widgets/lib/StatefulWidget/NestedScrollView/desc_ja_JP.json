@@ -1,0 +1,27 @@
+{
+  "id": 251,
+  "name": "NestedScrollView",
+  "localName": "ネストされたスクロールビュー",
+  "info": "複数のビューのスクロールネスト処理に使用されます。ヘッダー、スクロールコントローラー、スクロール方向などを指定できます。bodyはスクロール可能なタイプのコンポーネントでなければなりません。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    344
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "NestedScrollViewの基本使い方",
+      "desc": [
+        "【controller】 : スクロールコントローラー   【ScrollController】",
+        "【scrollDirection】 : スクロール方向   【Axis】",
+        "【reverse】 : 逆方向かどうか   【bool】",
+        "【physics】 : スクロールスタイル   【ScrollPhysics】",
+        "【dragStartBehavior】 : ドラッグ開始動作   【DragStartBehavior】",
+        "【headerSliverBuilder】 : *ヘッダービルダー   【NestedScrollViewHeaderSliversBuilder】",
+        "【body】 : *コンテンツ   【Widget】"
+      ]
+    }
+  ]
+}

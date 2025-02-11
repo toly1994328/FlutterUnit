@@ -1,0 +1,37 @@
+{
+  "id": 28,
+  "name": "FloatingActionButton",
+  "localName": "フローティングボタン",
+  "info": "フローティングボタンは、一般にScaffold内で使用され、特定の位置に配置できます。子コンポーネントを収容し、クリックを受け取り、色や形状などを定義できます。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FloatingActionButtonクリックイベント",
+      "desc": [
+        "【child】: 子コンポーネント   【Widget】",
+        "【tooltip】: 長押し時のヒントテキスト   【String】",
+        "【backgroundColor】: 背景色   【Color】",
+        "【foregroundColor】: 前景色   【Color】",
+        "【elevation】: 影の深さ   【double】",
+        "【onPressed】: クリックイベント   【Function】"
+      ]
+    },
+    {
+      "file": "node2_mini.dart",
+      "name": "miniプロパティ",
+      "desc": [
+        "【mini】: ミニかどうか   【bool】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+      "name": "shapeプロパティ",
+      "desc": [
+        "【shape】: 形状   【ShapeBorder】"
+      ]
+    }
+  ]
+}

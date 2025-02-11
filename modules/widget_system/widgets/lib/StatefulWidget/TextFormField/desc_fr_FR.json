@@ -1,0 +1,24 @@
+{
+  "id": 199,
+  "name": "TextFormField",
+  "localName": "Champ de formulaire de texte",
+  "info": "Les propriétés sont fondamentalement les mêmes que celles de TextField, avec en plus des validations de champ et des rappels de soumission. Le save de FormState déclenche le rappel onSaved.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    54,
+    198
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de TextFormField",
+      "desc": [
+        "Les propriétés de base sont les mêmes que celles de TextField, voir les détails",
+        "【validator】 : Fonction de validation   【FormFieldValidator<String> 】",
+        "【onFieldSubmitted】 : Rappel de soumission   【ValueChanged<String>】",
+        "【onSaved】 : Rappel lors de la sauvegarde du formulaire  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

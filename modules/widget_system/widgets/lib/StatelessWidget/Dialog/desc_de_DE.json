@@ -1,0 +1,21 @@
+{
+  "id": 126,
+  "name": "Dialog",
+  "localName": "Dialogfeld",
+  "info": "Das einfachste Dialogfeld-Panel, das eine Inhaltskomponente enthält und Eigenschaften wie Schattentiefe, Hintergrundfarbe, Form usw. angeben kann.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung des Dialogs",
+      "desc": [
+        "【child】: Animationssymboldaten   【Widget】",
+        "【elevation】: Schattentiefe  【double】",
+        "【backgroundColor】: Hintergrundfarbe  【Color】",
+        "【shape】: Form   【ShapeBorder】"
+      ]
+    }
+  ]
+}

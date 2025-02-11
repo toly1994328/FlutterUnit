@@ -1,0 +1,26 @@
+{
+  "id": 51,
+  "name": "ExpandIcon",
+  "localName": "Expand Icon",
+  "info": "An expand button that performs a 180-degree rotation animation when clicked. Can specify color, size, margin, and receive click events.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    66,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ExpandIcon",
+      "desc": [
+        "【isExpanded】 : Whether expanded 【bool】",
+        "【padding】 : Padding 【EdgeInsetsGeometry】,",
+        "【size】 : Icon size 【double】",
+        "【color】 : Color when not expanded 【Color】",
+        "【expandedColor】 : Color when expanded 【Color】",
+        "【onPressed】 : Click event 【Function(bool)】"
+      ]
+    }
+  ]
+}

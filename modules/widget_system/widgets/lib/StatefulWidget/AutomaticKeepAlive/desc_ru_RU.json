@@ -1,0 +1,26 @@
+{
+  "id": 239,
+  "name": "AutomaticKeepAlive",
+  "localName": "Автоматическое поддержание активности",
+  "info": "В лениво загружаемых списках позволяет поддеревьям запрашивать сохранение состояния. Само по себе не имеет эффекта, необходимо использовать вместе с KeepAliveNotification.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    59,
+    162,
+    163,
+    165,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Введение в AutomaticKeepAlive",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "Компонент AutomaticKeepAlive используется в исходном коде списков и страничных компонентов, таких как ListView, SliverList, GridView, SliverGrid, PageView, TabBarView и других. Для поддержания активности определенного State можно использовать AutomaticKeepAliveClientMixin, который представляет собой простую обертку для использования KeepAliveNotification. Этот пример демонстрирует поддержание состояния элементов ListView."
+      ]
+    }
+  ]
+}

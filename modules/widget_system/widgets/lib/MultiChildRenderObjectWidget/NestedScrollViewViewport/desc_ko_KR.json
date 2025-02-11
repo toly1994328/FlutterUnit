@@ -1,0 +1,24 @@
+{
+  "id": 344,
+  "name": "NestedScrollViewViewport",
+  "localName": "중첩 스크롤 뷰포트",
+  "info": "NestedScrollView에서 사용되는 뷰포트로, 이 뷰포트는 SliverOverlapAbsorberHandle을 보유하고 있으며, 뷰포트가 레이아웃을 다시 계산해야 할 때 이를 알립니다. 예를 들어, 스크롤할 때.",
+  "lever": 1,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "NestedScrollViewViewport 소개",
+      "desc": [
+        "【offset】 : *오프셋   【ViewportOffset】",
+        "【handle】 : *핸들러   【SliverOverlapAbsorberHandle】",
+        "【axisDirection】 : 축 방향   【AxisDirection】",
+        "【crossAxisDirection】 : 교차 축 방향   【AxisDirection】",
+        "【slivers】 : 자식 위젯   【List<Widget>】",
+        "【clipBehavior】 : 클립 동작   【Clip】",
+        "【anchor】 : 앵커   【double】"
+      ]
+    }
+  ]
+}

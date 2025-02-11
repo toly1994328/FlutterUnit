@@ -1,0 +1,29 @@
+{
+  "id": 160,
+  "name": "Material",
+  "localName": "Materialkomponente",
+  "info": "Der führende Vertreter von Material-Stil-Komponenten, das Herzstück. Kann Attribute wie Farbe, Schattentiefe, Typ, Schattenfarbe, Form usw. festlegen.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Material",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【type】 : Typ   【MaterialType】",
+        "【elevation】 : Schattentiefe   【double】",
+        "【shadowColor】 : Schattenfarbe   【Color】",
+        "【color】 : Farbe   【Color】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Shape-Attribut von Material",
+      "desc": [
+        "【shape】 : Form   【ShapeBorder】,"
+      ]
+    }
+  ]
+}

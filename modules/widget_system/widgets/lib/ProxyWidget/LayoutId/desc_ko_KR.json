@@ -1,0 +1,19 @@
+{
+  "id": 315,
+  "name": "LayoutId",
+  "localName": "레이아웃 Id",
+  "info": "CustomMultiChildLayout 컴포넌트에서만 사용할 수 있으며, 자식 컴포넌트의 신원을 식별하는 데 사용됩니다.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LayoutId 사용 사례",
+      "desc": [
+        "【id】 : 식별 id   【Object】",
+        "【child】 : 자식 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 107,
+  "name": "Spacer",
+  "localName": "スペーサー",
+  "info": "Row、Column、Flexレイアウトでのみ使用可能で、残りのスペースを占めるために使用されます。flexプロパティを使用して、複数のSpacerに比例してスペースを分配できます。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Spacerの基本使用",
+      "desc": [
+        "1つのSpacerが拡張可能な領域を占めます"
+      ]
+    },
+    {
+      "file": "node2_flex.dart",
+      "name": "複数のSpacerスペース分配",
+      "desc": [
+        "【flex】 : 残りのスペースの分配比率   【int】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": 291,
+  "name": "ListWheelViewport",
+  "localName": "Vista de rueda de lista",
+  "info": "Una vista que muestra una lista de hijos en una rueda cilíndrica, es la dependencia subyacente de ListWheelScrollView y CupertinoPicker",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [
+    179,
+    139,
+    137,
+    253
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso simple de ListWheelViewport",
+      "desc": [
+        "【itemExtent】 : Tamaño del ítem en el eje   【double】",
+        "【offset】 : Desplazamiento de la vista   【ViewportOffset】",
+        "【childDelegate】 : Delegado de construcción de hijos   【ListWheelChildDelegate】"
+      ]
+    },
+    {
+      "file": "node2_perspective.dart",
+      "name": "Efecto de perspectiva en ListWheelViewport",
+      "desc": [
+        "【perspective】 : Parámetro de perspectiva   【double】",
+        "【squeeze】 : Valor de compresión   【double】",
+        "【diameterRatio】 : Relación de diámetro   【double】"
+      ]
+    },
+    {
+      "file": "node3_magnifier.dart",
+      "name": "Ampliación en ListWheelViewport",
+      "desc": [
+        "【useMagnifier】 : Si se amplía   【bool】",
+        "【magnification】 : Proporción de ampliación   【double】",
+        "【clipBehavior】 : Comportamiento de recorte   【Clip】",
+        "【renderChildrenOutsideViewport】 : Si se renderiza fuera de la vista   【bool】"
+      ]
+    },
+    {
+      "file": "node4_opacity.dart",
+      "name": "Desplazamiento y opacidad",
+      "desc": [
+        "【offAxisFraction】 : Relación de desplazamiento del centro del eje   【double】",
+        "【overAndUnderCenterOpacity】 : Opacidad fuera del amplificador   【double】"
+      ]
+    }
+  ]
+}

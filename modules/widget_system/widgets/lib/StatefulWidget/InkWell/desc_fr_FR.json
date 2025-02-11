@@ -1,0 +1,36 @@
+{
+  "id": 150,
+  "name": "InkWell",
+  "localName": "Effet de vague",
+  "info": "Sous-classe de InkResponse, les propriétés de base sont les mêmes que InkResponse. Une zone rectangulaire avec un effet de vague, permet de connaître le rayon des coins arrondis, la forme de la bordure, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    149,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Événements de base d'InkWell",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【onTap】 : Événement de clic   【Function()】",
+        "【onDoubleTap】 : Événement de double clic   【Function()】",
+        "【onTapCancel】 : Annulation de clic   【Function()】",
+        "【onLongPress】 : Événement de pression longue   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Autres propriétés d'InkWell",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【onHighlightChanged】 : Rappel de changement de surbrillance   【Function(bool)】",
+        "【highlightColor】 : Couleur de surbrillance   【Color】",
+        "【splashColor】 : Couleur de l'effet de vague   【Color】",
+        "【radius】 : Rayon de l'effet de vague   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 132,
+  "name": "CupertinoActionSheetAction",
+  "localName": "Botão de ação iOS",
+  "info": "Um botão, usado raramente, normalmente usado em CupertinoActionSheet, que recebe eventos de clique.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do CupertinoActionSheetAction",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【isDefaultAction】 : Se selecionado por padrão  【bool】",
+        "【onPressed】 : Evento de clique  【Function()】"
+      ]
+    }
+  ]
+}

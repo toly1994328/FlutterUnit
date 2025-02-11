@@ -1,0 +1,26 @@
+{
+  "id": 96,
+  "name": "Column",
+  "localName": "Disposición de columna",
+  "info": "Disposición Flex con dirección vertical, puede contener múltiples componentes. Todas las demás propiedades son iguales, consulte Flex para más detalles.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Uso básico de Column",
+      "desc": [
+        "【children】 : Lista de componentes   【List<Widget>】",
+        "【mainAxisAlignment】 : Alineación del eje principal   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : Alineación del eje transversal   【CrossAxisAlignment】",
+        "【textBaseline】 : Línea base del texto   【TextBaseline】",
+        "【verticalDirection】 : Dirección vertical   【VerticalDirection】",
+        "【mainAxisSize】 : Tamaño del eje principal   【MainAxisSize】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": 53,
+  "name": "SelectableText",
+  "localName": "Выбираемый текст",
+  "info": "Текст, который можно выбирать и копировать. Можно указать цвет курсора, размер, стиль текста, выравнивание и т.д.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SelectableText",
+      "desc": [
+        "【Параметр】 : Отображаемый текст   【String】",
+        "【style】 : Стиль текста   【TextStyle】",
+        "【cursorRadius】 : Радиус курсора   【Radius】",
+        "【cursorColor】 : Цвет курсора   【Color】",
+        "【cursorWidth】 : Ширина курсора   【double】",
+        "【showCursor】 : Показывать ли курсор   【bool】",
+        "【autofocus】 : Автофокус   【bool】"
+      ]
+    },
+    {
+      "file": "node2_align.dart",
+      "name": "Свойства выравнивания SelectableText",
+      "desc": [
+        "【textAlign】 : Способ выравнивания*6   【textAlign】",
+        "【textDirection】 : Направление текста*2   【TextDirection】"
+      ]
+    }
+  ]
+}

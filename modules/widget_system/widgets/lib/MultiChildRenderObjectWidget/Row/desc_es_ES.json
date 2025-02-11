@@ -1,0 +1,26 @@
+{
+  "id": 95,
+  "name": "Row",
+  "localName": "Disposición de fila",
+  "info": "Disposición Flex con dirección horizontal, puede contener múltiples componentes. Todas las demás propiedades son iguales, consulte Flex para más detalles.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    96
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Row",
+      "desc": [
+        "【children】: Lista de componentes   【List<Widget>】",
+        "【mainAxisAlignment】: Alineación del eje principal   【MainAxisAlignment】",
+        "【crossAxisAlignment】: Alineación del eje transversal   【CrossAxisAlignment】",
+        "【textBaseline】: Línea base del texto   【TextBaseline】",
+        "【verticalDirection】: Dirección vertical   【VerticalDirection】",
+        "【mainAxisSize】: Tamaño del eje principal   【MainAxisSize】"
+      ]
+    }
+  ]
+}

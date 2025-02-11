@@ -1,0 +1,32 @@
+{
+  "id": 19,
+  "name": "RadioListTile",
+  "localName": "Auswahlkachel",
+  "info": "Eine allgemeine Listenelementstruktur, die von Flutter bereitgestellt wird, mit einer mittel-rechten Struktur und einem Radio am Ende. Komponenten können an den entsprechenden Positionen eingefügt werden, wodurch spezifische Elemente leicht angepasst werden können.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RadioListTile benötigt einen generischen Typ T",
+      "desc": [
+        "【value】 : Elementobjekt  【T】",
+        "【groupValue】 : Ausgewähltes Objekt  【T】",
+        "【selected】: Ob ausgewählt   【bool】",
+        "【secondary】: Rechte Komponente   【Widget】",
+        "【title】: Obere mittlere Komponente   【Widget】",
+        "【subtitle】: Untere mittlere Komponente   【Widget】",
+        "【onChanged】: Wechselereignis   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2_dense.dart",
+      "name": "RadioListTile Auswahlfarbe und dichte Anordnung",
+      "desc": [
+        "【activeColor】 : Farbe bei Auswahl  【Color】",
+        "【dense】: Ob dichte Anordnung   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 103,
+  "name": "Draggable",
+  "localName": "Componente Arrastrable",
+  "info": "Permite arrastrar el componente en la interfaz, puede almacenar datos de un tipo genérico T. Normalmente se usa en combinación con DragTarget para lograr el efecto de arrastre.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    104,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Draggable",
+      "desc": [
+        "【child】 : hijo   【Widget】",
+        "【feedback】 : hijo durante el arrastre   【Widget】",
+        "【axis】 : eje de arrastre   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_data.dart",
+      "name": "Uso combinado de Draggable y DragTarget",
+      "desc": [
+        "【data】 : datos   【T】",
+        "【onDragStarted】 : inicio del arrastre   【Function()】",
+        "【onDragEnd】 : fin del arrastre   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : arrastre completado   【Function()】",
+        "【onDraggableCanceled】 : arrastre cancelado   【Function(Velocity,Offset)】",
+        "【onChanged】 : devolución de llamada al cambiar   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node3_use.dart",
+      "name": "Otros usos de Draggable",
+      "desc": [
+        "Puede manejar algunos eventos según el arrastre. Como eliminar, consultar, mostrar cuadros de diálogo, etc."
+      ]
+    }
+  ]
+}

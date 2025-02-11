@@ -1,0 +1,29 @@
+{
+  "id": 349,
+  "name": "ScrollView",
+  "localName": "Scorrimento Vista",
+  "info": "Questo componente è utilizzato per supportare lo scorrimento, questa classe è una classe astratta, quindi non può essere utilizzata direttamente, ha molte classi di implementazione, come CustomScrollView, BoxScrollView, ListView, GridView.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163,
+    253,
+    340
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduzione a ScrollView",
+      "desc": [
+        "【reverse】 : Se inverso   【bool】",
+        "【scrollDirection】 : Direzione di scorrimento   【Axis】",
+        "【cacheExtent】 : Estensione della cache   【double】",
+        "【dragStartBehavior】 : Comportamento di trascinamento   【DragStartBehavior】",
+        "【clipBehavior】 : Comportamento di ritaglio   【ClipBehavior】",
+        "【controller】 : Controller   【ScrollController】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 161,
+  "name": "IndexedStack",
+  "localName": "Indexierter Stapel",
+  "info": "Unterklasse der Stack-Komponente, kann mehrere Komponenten stapeln und durch den Index die anzuzeigende Komponente angeben, die anderen werden ausgeblendet.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von IndexedStack",
+      "desc": [
+        "【children】 : Liste der Unterkomponenten   【Lis<Widget>】",
+        "【alignment】 : Ausrichtung   【AlignmentGeometry】",
+        "【index】 : Aktuell angezeigte Komponente  【int】"
+      ]
+    }
+  ]
+}

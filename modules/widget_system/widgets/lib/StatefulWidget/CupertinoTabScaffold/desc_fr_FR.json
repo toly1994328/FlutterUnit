@@ -1,0 +1,21 @@
+{
+  "id": 158,
+  "name": "CupertinoTabScaffold",
+  "localName": "Échafaudage d'onglets iOS",
+  "info": "Structure d'échafaudage de mise en page de style iOS, permettant de spécifier la barre de navigation en bas et la page de contenu principal.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoTabScaffold",
+      "desc": [
+        "【tabBar】 : Barre d'onglets   【CupertinoTabBar】",
+        "【backgroundColor】 : Couleur de fond   【Color】",
+        "【controller】 : Contrôleur   【CupertinoTabController】",
+        "【tabBuilder】 : Constructeur de page   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

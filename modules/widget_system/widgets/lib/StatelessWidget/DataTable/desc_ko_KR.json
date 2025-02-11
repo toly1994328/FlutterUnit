@@ -1,0 +1,28 @@
+{
+  "id": 102,
+  "name": "DataTable",
+  "localName": "데이터 테이블",
+  "info": "테이블 컴포넌트로, 클릭, 수정, 정렬 등의 작업을 위한 로직을 지정할 수 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DataTable 기본 사용",
+      "desc": [
+        "【columns】 : 열   【List<DataColumn>】",
+        "【rows】 : 행  【List<DataRow>】"
+      ]
+    },
+    {
+      "file": "node2_operation.dart",
+      "name": "DataTable의 정렬",
+      "desc": [
+        "【sortColumnIndex】 : 열 번호   【int】",
+        "【columnSpacing】 : 열 간격   【double】",
+        "【sortAscending】 : 순서 여부  【bool】"
+      ]
+    }
+  ]
+}

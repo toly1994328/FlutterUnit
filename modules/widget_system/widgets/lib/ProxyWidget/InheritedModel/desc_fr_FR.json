@@ -1,0 +1,19 @@
+{
+  "id": 336,
+  "name": "InheritedModel",
+  "localName": "Modèle partagé",
+  "info": "Il s'agit d'une sous-classe abstraite de InheritedWidget, qui transmet des données au sous-arbre via le contexte, et contrôle la granularité des notifications de dépendance via l'aspect Aspect.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [346],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilisation de InheritedModel",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "Voici un InheritedModel personnalisé, qui permet le partage de données dans le sous-arbre ; et définit deux aspects, la couleur et la valeur, pour contrôler la granularité des notifications de dépendance."
+      ]
+    }
+  ]
+}

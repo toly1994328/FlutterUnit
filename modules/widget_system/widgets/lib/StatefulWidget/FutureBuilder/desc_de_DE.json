@@ -1,0 +1,20 @@
+{
+  "id": 172,
+  "name": "FutureBuilder",
+  "localName": "Asynchroner Konstruktor",
+  "info": "Kann ein Future-Objekt angeben, das den Status der asynchronen Ausführung überwachen kann und im Konstruktor unterschiedliche Schnittstellen basierend auf dem Status erstellt. Beachten Sie, dass das Future-Objekt nicht gleichzeitig mit dem FutureBuilder erstellt werden kann, da dies zu übermäßigen Aktualisierungen führen kann.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von FutureBuilder",
+      "desc": [
+        "【builder】 : Unterkomponente   【AsyncWidgetBuilder<T>】",
+        "【initialData】 : Initialdaten   【T】",
+        "【future】 : Asynchrone Aufgabe  【Future<T>】"
+      ]
+    }
+  ]
+}

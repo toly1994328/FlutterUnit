@@ -1,0 +1,46 @@
+{
+  "id": 162,
+  "name": "ListView",
+  "localName": "Компонент списка",
+  "info": "Лидер в отображении списков, вмещает несколько дочерних компонентов, может быть построен с помощью builder, separated, custom и других. Имеет такие свойства, как внутренние отступы, обратное направление, контроллер прокрутки и другие.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    16,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование ListView",
+      "desc": [
+        "【children】 : Список дочерних компонентов   【List<Widget>】",
+        "【padding】 : Внутренние отступы  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Горизонтальная прокрутка ListView",
+      "desc": [
+        "【scrollDirection】 : Направление прокрутки   【Axis】",
+        "【reverse】 : Обратное направление прокрутки   【bool】",
+        "【shrinkWrap】 : Обернуть ли при отсутствии границ  【bool】"
+      ]
+    },
+    {
+      "file": "node3_builder.dart",
+      "name": "Конструкция ListView.builder",
+      "desc": [
+        "【itemCount】 : Количество элементов   【int】",
+        "【itemBuilder】 : Конструктор элементов   【IndexedWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node4_separated.dart",
+      "name": "Конструкция ListView.separated",
+      "desc": [
+        "【separatorBuilder】 : Конструктор элементов   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

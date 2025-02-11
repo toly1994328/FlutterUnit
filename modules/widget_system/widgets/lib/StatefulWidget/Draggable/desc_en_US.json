@@ -1,0 +1,42 @@
+{
+  "id": 103,
+  "name": "Draggable",
+  "localName": "Draggable Component",
+  "info": "Allows the component to be dragged anywhere on the interface, and can store data of a generic type T. It is usually used in combination with DragTarget to achieve the drag effect.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    104,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Draggable",
+      "desc": [
+        "【child】 : child   【Widget】",
+        "【feedback】 : child during dragging   【Widget】",
+        "【axis】 : axis of dragging   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_data.dart",
+      "name": "Combined Usage of Draggable and DragTarget",
+      "desc": [
+        "【data】 : data   【T】",
+        "【onDragStarted】 : start dragging   【Function()】",
+        "【onDragEnd】 : end dragging   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : drag completed   【Function()】",
+        "【onDraggableCanceled】 : drag canceled   【Function(Velocity,Offset)】",
+        "【onChanged】 : callback when changed   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node3_use.dart",
+      "name": "Other Usages of Draggable",
+      "desc": [
+        "Some events can be handled based on dragging, such as deletion, querying, pop-ups, etc."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 126,
+  "name": "Dialog",
+  "localName": "Caixa de Diálogo",
+  "info": "O painel de diálogo mais simples, contendo um componente de conteúdo, pode especificar propriedades como profundidade de sombra, cor de fundo, forma, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Dialog",
+      "desc": [
+        "【child】 : Dados do ícone de animação   【Widget】",
+        "【elevation】 : Profundidade de sombra  【double】",
+        "【backgroundColor】 : Cor de fundo  【Color】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 190,
+  "name": "SliverPersistentHeader",
+  "localName": "Прилипающий заголовок",
+  "info": "Обычно используется в CustomScrollView, позволяет компоненту оставаться вверху при прокрутке и не исчезать.",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SliverPersistentHeader",
+      "desc": [
+        "【delegate】 : делегат   【SliverPersistentHeaderDelegate】",
+        "【floating】 : плавающий   【bool】",
+        "【pinned】 : закреплённый вверху   【bool】"
+      ]
+    }
+  ]
+}

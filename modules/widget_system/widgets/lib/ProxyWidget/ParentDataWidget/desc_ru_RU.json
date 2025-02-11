@@ -1,0 +1,23 @@
+{
+  "id": 347,
+  "name": "ParentDataWidget",
+  "localName": "Родительский виджет данных",
+  "info": "Абстрактный класс, используемый для привязки информации ParentData к дочерним виджетам RenderObjectWidget. Его подклассы включают Positioned, Flexible, Expanded и другие, которые могут использоваться только под определенными компонентами.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [
+    106,
+    109,
+    108,
+    315
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Введение в ParentDataWidget",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】"
+      ]
+    }
+  ]
+}

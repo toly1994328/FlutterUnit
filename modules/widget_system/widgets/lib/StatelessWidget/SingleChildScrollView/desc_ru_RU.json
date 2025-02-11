@@ -1,0 +1,27 @@
+{
+  "id": 164,
+  "name": "SingleChildScrollView",
+  "localName": "Одиночный скролл",
+  "info": "Делает компонент прокручиваемым, позволяет указать направление прокрутки, обратное направление, контроллер прокрутки и другие свойства.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SingleChildScrollView",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【padding】 : Внутренний отступ  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Направление прокрутки SingleChildScrollView",
+      "desc": [
+        "【scrollDirection】 : Направление прокрутки   【Axis】",
+        "【reverse】 : Обратное направление   【Axis】"
+      ]
+    }
+  ]
+}

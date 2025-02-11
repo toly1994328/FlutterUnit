@@ -1,0 +1,22 @@
+{
+  "id": 111,
+  "name": "AlignTransition",
+  "localName": "Transição de Alinhamento",
+  "info": "Subclasse de AnimatedWidget, usa um animador do tipo Alignment para permitir que um componente filho faça uma animação de transição entre dois objetos Alignment.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    85,
+    120
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do AlignTransition",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【alignment】 : Animação de alinhamento   【Animation<AlignmentGeometry>】"
+      ]
+    }
+  ]
+}

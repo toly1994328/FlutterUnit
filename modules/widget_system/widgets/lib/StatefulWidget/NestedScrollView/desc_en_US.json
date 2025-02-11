@@ -1,0 +1,27 @@
+{
+  "id": 251,
+  "name": "NestedScrollView",
+  "localName": "Nested Scroll View",
+  "info": "Used for handling nested scrolling of multiple views, can specify the header, scroll controller, scroll direction, etc., where the body must be a scrollable type of component.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    344
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of NestedScrollView",
+      "desc": [
+        "【controller】 : Scroll Controller   【ScrollController】",
+        "【scrollDirection】 : Scroll Direction   【Axis】",
+        "【reverse】 : Whether to Reverse   【bool】",
+        "【physics】 : Scroll Physics   【ScrollPhysics】",
+        "【dragStartBehavior】 : Drag Start Behavior   【DragStartBehavior】",
+        "【headerSliverBuilder】 : *Header Builder   【NestedScrollViewHeaderSliversBuilder】",
+        "【body】 : *Content   【Widget】"
+      ]
+    }
+  ]
+}

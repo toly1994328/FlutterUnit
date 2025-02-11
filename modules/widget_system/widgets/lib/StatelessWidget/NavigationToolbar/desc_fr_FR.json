@@ -1,0 +1,22 @@
+{
+  "id": 214,
+  "name": "NavigationToolbar",
+  "localName": "Barre d'outils de navigation",
+  "info": "Un composant structurel universel avec un modèle gauche-centre-droit, qui permet de spécifier la marge gauche du composant central et s'il est centré. Le code source est utilisé dans des structures de barres de navigation comme AppBar.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de NavigationToolbar",
+      "desc": [
+        "【leading】 : Composant gauche   【Widget】",
+        "【middle】: Composant central   【Widget】",
+        "【trailing】: Composant droit   【Widget】",
+        "【centerMiddle】: Si le composant central est centré   【bool】",
+        "【middleSpacing】: Distance du composant central par rapport à la gauche    【double】"
+      ]
+    }
+  ]
+}

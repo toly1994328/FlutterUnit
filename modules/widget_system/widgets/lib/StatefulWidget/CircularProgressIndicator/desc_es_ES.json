@@ -1,0 +1,24 @@
+{
+  "id": 46,
+  "name": "CircularProgressIndicator",
+  "localName": "Indicador de progreso circular",
+  "info": "Muestra de progreso circular, se pueden especificar propiedades como color, ancho de línea, progreso, etc. Si el valor es nulo, girará continuamente.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    47,
+    48
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CircularProgressIndicator",
+      "desc": [
+        "【value】 : progreso   【double】",
+        "【backgroundColor】 : color de fondo   【Color】",
+        "【valueColor】 : color de progreso   【Animation<Color>】",
+        "【strokeWidth】 : ancho de línea   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 238,
+  "name": "CupertinoCheckbox",
+  "localName": "Checkbox·macOS Style",
+  "info": "A macOS-style checkbox that supports three states; requires providing a value and an onChanged callback function when used.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    39,
+    17
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "CupertinoCheckbox Usage",
+      "desc": [
+        "【value】: Whether it is selected   【bool?】",
+        "【onChanged】: Change callback   【ValueChanged<bool?>?】",
+        "【checkColor】: Checkmark color when selected   【Color?】",
+        "【activeColor】: Background color when selected   【Color?】",
+        "【activeColor】: Background color when selected   【Color?】",
+        "【inactiveColor】: Border color when inactive/background color when disabled   【Color?】",
+        "When onChanged is null, it means it is disabled."
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "CupertinoCheckbox Three States",
+      "desc": [
+        "【tristate】: Whether to enable three states   【bool】",
+        "In three states, the value is null for -"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "CupertinoCheckbox Border and Shape",
+      "desc": [
+        "【shape】: Shape   【OutlinedBorder?】",
+        "【side】: Border   【BorderSide?】"
+      ]
+    }
+  ]
+}

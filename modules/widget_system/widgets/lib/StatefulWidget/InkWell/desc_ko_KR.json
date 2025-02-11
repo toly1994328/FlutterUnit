@@ -1,0 +1,36 @@
+{
+  "id": 150,
+  "name": "InkWell",
+  "localName": "물결무늬",
+  "info": "InkResponse의 하위 클래스로, 기본 속성은 InkResponse와 동일합니다. 둥근 모서리 반경, 테두리 모양 등을 알 수 있는 직사각형 영역의 물결무늬입니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    149,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "InkWell 기본 이벤트",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【onTap】 : 탭 이벤트   【Function()】",
+        "【onDoubleTap】 : 더블 탭 이벤트   【Function()】",
+        "【onTapCancel】 : 탭 취소   【Function()】",
+        "【onLongPress】 : 롱 프레스 이벤트   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "InkWell 기타 속성",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【onHighlightChanged】 : 하이라이트 변경 콜백   【Function(bool)】",
+        "【highlightColor】 : 하이라이트 색상   【Color】",
+        "【splashColor】 : 물결무늬 색상   【Color】",
+        "【radius】 : 물결 반경   【double】"
+      ]
+    }
+  ]
+}

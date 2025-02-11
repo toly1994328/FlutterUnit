@@ -1,0 +1,37 @@
+{
+  "id": 58,
+  "name": "TabBar",
+  "localName": "Barre d'onglets",
+  "info": "Barre d'onglets glissable et cliquable, généralement utilisée en bas de l'AppBar, peut être utilisée avec TabBarView pour réaliser un effet de glissement de page.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    57,
+    59,
+    148
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de TabBar",
+      "desc": [
+        "【controller】 : Contrôleur   【TabController】",
+        "【indicatorColor】 : Couleur de l'indicateur   【Couleur de l'indicateur】",
+        "【indicatorWeight】 : Hauteur de l'indicateur   【double】",
+        "【indicatorPadding】 : Marge de l'indicateur   【EdgeInsetsGeometry】",
+        "【labelStyle】 : Style de texte de l'onglet   【TextStyle】",
+        "【unselectedLabelStyle】 : Style de texte non sélectionné   【TextStyle】",
+        "【isScrollable】 : Peut être glissé   【bool】",
+        "【onTap】 : Rappel de clic sur l'onglet   【Function(int)】",
+        "【tabs】 : Composant d'onglet   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_noShadow.dart",
+      "name": "Réaliser sans ondulation en définissant Theme",
+      "desc": [
+        "Définissez simplement la couleur de l'ondulation dans Theme comme transparente."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 195,
+  "name": "CupertinoScrollbar",
+  "localName": "iOS-Scrollbalken",
+  "info": "Ein iOS-stil Scrollbalken, der einen scrollbaren Bereich umschließen muss. Wenn der Bereich scrollbar ist, wird ein Scrollbalken angezeigt, um die Position anzuzeigen.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    194,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoScrollbar",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【controller】 : Controller  【ScrollController】"
+      ]
+    }
+  ]
+}

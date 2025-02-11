@@ -1,0 +1,31 @@
+{
+  "id": 176,
+  "name": "Dismissible",
+  "localName": "Glissement pour disparaître",
+  "info": "Lors du glissement, le composant inférieur peut être affiché. Il est possible de spécifier la direction du glissement et le décalage de l'axe croisé. Reçoit des rappels de confirmation de disparition et de disparition.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Dismissible",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【background】 : Fond gauche  【Widget】",
+        "【secondaryBackground】 : Fond droit  【Widget】",
+        "【key】 : Clé  【Key】",
+        "【confirmDismiss】 : Rappel de confirmation  【DismissDirectionCallback】",
+        "【onDismissed】 : Rappel de disparition  【DismissDirectionCallback】,"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Utilisation de base de Dismissible",
+      "desc": [
+        "【direction】 : Direction   【DismissDirection】",
+        "【crossAxisEndOffset】 : Décalage  【double】,"
+      ]
+    }
+  ]
+}

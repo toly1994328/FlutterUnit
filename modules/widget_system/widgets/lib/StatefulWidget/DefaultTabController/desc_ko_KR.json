@@ -1,0 +1,23 @@
+{
+  "id": 230,
+  "name": "DefaultTabController",
+  "localName": "기본 탭 컨트롤러",
+  "info": "TabBar와 TabBarView를 사용할 때, 동일한 컨트롤러가 탭과 페이지를 제어해야 합니다. DefaultTabController는 컨트롤러가 지정되지 않았을 때 기본 컨트롤러를 제공하여 사용을 단순화합니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    148,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DefaultTabController 기본 사용",
+      "desc": [
+        "【length】 : 탭 수   【int】",
+        "【initialIndex】 : 초기 탭 인덱스   【int】",
+        "【child】 : 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

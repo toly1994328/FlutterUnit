@@ -1,0 +1,18 @@
+{
+  "id": 330,
+  "name": "PopupMenuTheme",
+  "localName": "Tema del menú emergente",
+  "info": "Se utiliza principalmente para establecer propiedades predeterminadas unificadas para los componentes PopupMenuButton descendientes, también se puede obtener las propiedades predeterminadas de PopupMenu a través de este componente.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de PopupMenuTheme",
+      "desc": [
+        "Se pueden especificar las propiedades de datos de PopupMenuThemeData para establecer estilos predeterminados para los componentes PopupMenuButton descendientes, como forma, profundidad de sombra, color, estilo de texto, etc. También se puede usar PopupMenuTheme.of para obtener los datos del tema de PopupMenu."
+      ]
+    }
+  ]
+}

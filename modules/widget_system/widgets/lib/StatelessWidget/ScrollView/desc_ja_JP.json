@@ -1,0 +1,29 @@
+{
+  "id": 349,
+  "name": "ScrollView",
+  "localName": "スクロールビュー",
+  "info": "このコンポーネントはスクロールをサポートするために使用されます。このクラスは抽象クラスであるため、直接使用することはできません。CustomScrollView、BoxScrollView、ListView、GridViewなどの多くの実装クラスがあります。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163,
+    253,
+    340
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ScrollView 紹介",
+      "desc": [
+        "【reverse】 : 逆方向かどうか   【bool】",
+        "【scrollDirection】 : スクロール方向   【Axis】",
+        "【cacheExtent】 : キャッシュ長   【double】",
+        "【dragStartBehavior】 : ドラッグ動作   【DragStartBehavior】",
+        "【clipBehavior】 : クリップ動作   【ClipBehavior】",
+        "【controller】 : コントローラー   【ScrollController】"
+      ]
+    }
+  ]
+}

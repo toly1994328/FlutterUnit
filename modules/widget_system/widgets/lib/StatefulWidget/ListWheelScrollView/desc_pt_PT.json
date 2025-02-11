@@ -1,0 +1,24 @@
+{
+  "id": 179,
+  "name": "ListWheelScrollView",
+  "localName": "Lista de Rolagem de Roda",
+  "info": "Uma lista de rolagem cilíndrica de alta classe, cheia de sofisticação, permite especificar propriedades como altura do item, perspetiva, esmagamento, e recebe eventos de seleção durante a rolagem.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    139,
+    291
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ListWheelScrollView",
+      "desc": [
+        "【children】 : Lista de componentes filhos   【List<Widget>】",
+        "【perspective】 : Grau de perspetiva   【double】",
+        "【itemExtent】 : Altura do item   【EdgeInsets】",
+        "【onSelectedItemChanged】 : Callback de seleção  【ValueChanged<int> 】"
+      ]
+    }
+  ]
+}

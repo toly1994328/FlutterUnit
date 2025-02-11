@@ -1,0 +1,24 @@
+{
+  "id": 303,
+  "name": "CupertinoSliverRefreshControl",
+  "localName": "Sliver 새로고침 컨트롤러",
+  "info": "iOS 스타일의 풀다운 새로고침 컨트롤러로, 비동기 새로고침 메소드 실행, 사용자 정의 컨트롤러 컴포넌트, 인디케이터 고정 높이 및 로딩을 트리거하는 스와이프 높이를 설정할 수 있습니다.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "새로고침 컨트롤러 기본 사용",
+      "desc": [
+        "【refreshIndicatorExtent】 : 로딩 중 인디케이터 높이   【double】",
+        "【refreshTriggerPullDistance】 : 로딩을 트리거하는 스와이프 높이   【double】",
+        "【onRefresh】 : 풀다운 이벤트   【RefreshCallback】",
+        "【builder】 : 인디케이터 빌더   【RefreshControlIndicatorBuilder】"
+      ]
+    }
+  ]
+}

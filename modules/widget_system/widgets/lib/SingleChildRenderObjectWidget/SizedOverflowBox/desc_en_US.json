@@ -1,0 +1,20 @@
+{
+  "id": 84,
+  "name": "SizedOverflowBox",
+  "localName": "Sized Overflow Box",
+  "info": "Can contain a child component, and the child component is allowed to overflow the parent component area. The child component can be offset through the size property, and has the alignment property.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SizedOverflowBox",
+      "desc": [
+        "【child】: Child component   【Widget】",
+        "【size】: Size offset   【Size】",
+        "【alignment】: Alignment method   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

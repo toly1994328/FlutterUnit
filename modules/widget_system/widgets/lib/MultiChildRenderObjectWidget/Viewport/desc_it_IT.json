@@ -1,0 +1,27 @@
+{
+  "id": 340,
+  "name": "Viewport",
+  "localName": "Componente Viewport",
+  "info": "Utilizzato solitamente per fornire una finestra di visualizzazione per le viste scorrevoli, costruendo solo le parti visibili e precaricate. È possibile specificare la lunghezza del precaricamento, l'asse di scorrimento, ecc. È uno dei componenti di implementazione centrale di ScrollView e generalmente non viene utilizzato direttamente.",
+  "lever": 1,
+  "family": 3,
+  "linkIds": [
+    253,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di Viewport",
+      "desc": [
+        "【offset】 : *Offset della finestra di visualizzazione   【ViewportOffset】",
+        "【cacheExtentStyle】: Tipo di precaricamento   【CacheExtentStyle】",
+        "【cacheExtent】: Quantità di precaricamento   【double】",
+        "【axisDirection】: Direzione di scorrimento   【AxisDirection】",
+        "【slivers】: Insieme di componenti Sliver figli   【List<Widget>】",
+        "【anchor】: Punto di ancoraggio    【double】",
+        "Puoi eseguire questi codici per vedere come viene costruito ColorItem, i 128 barre di colore non vengono costruiti tutti in una volta."
+      ]
+    }
+  ]
+}

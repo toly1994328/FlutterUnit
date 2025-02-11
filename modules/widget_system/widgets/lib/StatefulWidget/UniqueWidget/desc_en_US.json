@@ -1,0 +1,18 @@
+{
+  "id": 243,
+  "name": "UniqueWidget",
+  "localName": "Unique Component",
+  "info": "Abstract class, must provide a GlobalKey for identification. This type of component will only inflate one instance and will only have one state at any given time. The state can be obtained through the currentState property.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to UniqueWidget",
+      "desc": [
+        "【child】 : Child component   【Widget】"
+      ]
+    }
+  ]
+}

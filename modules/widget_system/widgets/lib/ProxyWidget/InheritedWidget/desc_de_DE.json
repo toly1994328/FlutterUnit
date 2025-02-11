@@ -1,0 +1,36 @@
+{
+  "id": 346,
+  "name": "InheritedWidget",
+  "localName": "Vererbte Komponente",
+  "info": "Diese Klasse ist eine abstrakte Klasse, deren Funktion darin besteht, Daten im aktuellen Kontext zu speichern und diese Daten in den Kontexten der nachfolgenden Knoten gemeinsam zu nutzen. Es gibt viele Implementierungsklassen, einschließlich verschiedener Themenkomponenten, MediaQuery usw.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    167,
+    319,
+    328,
+    324,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Column",
+      "desc": [
+        "【children】 : Komponentenliste   【List<Widget>】",
+        "【mainAxisAlignment】 : Hauptachsenausrichtung   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : Kreuzachsenausrichtung   【CrossAxisAlignment】",
+        "【textBaseline】 : Textbaseline   【TextBaseline】",
+        "【verticalDirection】 : Vertikale Richtung   【VerticalDirection】",
+        "【mainAxisSize】 : Hauptachsengröße   【MainAxisSize】"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "InheritedWidget Beispiel",
+      "desc": [
+        "Unten wird die Verwendung der InheritedWidget-Komponente anhand eines Farbzählerprojekts gezeigt."
+      ]
+    }
+  ]
+}

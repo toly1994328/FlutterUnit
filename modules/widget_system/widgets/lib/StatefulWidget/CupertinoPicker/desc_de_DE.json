@@ -1,0 +1,24 @@
+{
+  "id": 139,
+  "name": "CupertinoPicker",
+  "localName": "iOS-Auswahl",
+  "info": "Hochwertiger zylindrischer Schieberegler, äußerst raffiniert, kann viele Konfigurationsattribute angeben und empfängt ausgewählte Ereignisse beim Schieben.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoPicker Grundlegende Verwendung",
+      "desc": [
+        "【children】 : Liste der Unterkomponenten   【List<Widget>】",
+        "【offAxisFraction】 : Achsversatzrate   【double】",
+        "【squeeze】 : Quetschrate   【double】",
+        "【diameterRatio】 : Verhältnis von Höhe zu Zylinderdurchmesser   【double】",
+        "【itemExtent】 : Abstand   【double】",
+        "【backgroundColor】 : Hintergrundfarbe   【Color】",
+        "【onSelectedItemChanged】 : Ausgewähltes Ereignis  【Function(int)】"
+      ]
+    }
+  ]
+}

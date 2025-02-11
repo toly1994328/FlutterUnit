@@ -1,0 +1,31 @@
+{
+  "id": 22,
+  "name": "UserAccountsDrawerHeader",
+  "localName": "Anzeigekopf",
+  "info": "Eine allgemeine Anzeigestruktur, die von Flutter bereitgestellt wird. Komponenten können an entsprechenden Positionen eingefügt werden, um spezifische Einträge einfach zu handhaben. Wird häufig in Drawern verwendet.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Die grundlegende Darstellung dieser Komponente ist wie folgt",
+      "desc": [
+        "【currentAccountPicture】: Obere Komponente   【Widget】",
+        "【accountName】: Mittlere Komponente   【Widget】",
+        "【accountEmail】: Untere Komponente   【Widget】",
+        "【decoration】: Dekoration   【Decoration】"
+      ]
+    },
+    {
+      "file": "node2_pro.dart",
+      "name": "Obere rechte Ecke und Unterseite",
+      "desc": [
+        "【otherAccountsPictures】: Obere rechte Komponente   【List<Widget>】",
+        "【onDetailsPressed】: Klickereignis in der unteren rechten Ecke   【Function()】",
+        "【arrowColor】: Farbe der Schaltfläche in der unteren rechten Ecke   【Color】",
+        "【margin】: Außenabstand   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

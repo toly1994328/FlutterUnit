@@ -1,0 +1,22 @@
+{
+  "id": 30,
+  "name": "IconButton",
+  "localName": "Symbolschaltfläche",
+  "info": "Klickbare Symbolschaltfläche, die Symbolinformationen, Innenabstand, Größe, Farbe usw. angeben kann und Klickereignisse empfängt.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "IconButton-Eigenschaften",
+      "desc": [
+        "【icon】: Symbolkomponente   【Widget】",
+        "【tooltip】: Langzeitdruck-Hinweistext   【String】",
+        "【highlightColor】: Langzeitdruck-Highlight-Farbe   【Color】",
+        "【splashColor】: Wasserwellenfarbe   【Color】",
+        "【onPressed】: Klickereignis   【Function】"
+      ]
+    }
+  ]
+}

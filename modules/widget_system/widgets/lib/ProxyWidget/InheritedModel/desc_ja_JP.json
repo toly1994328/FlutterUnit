@@ -1,0 +1,19 @@
+{
+  "id": 336,
+  "name": "InheritedModel",
+  "localName": "共有モデル",
+  "info": "これは InheritedWidget の抽象サブクラスで、context を介してサブツリーにデータを渡し、Aspect の側面を介して依存通知の粒度を制御します。",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [346],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "InheritedModel の使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "以下はカスタム InheritedModel で、データのサブツリー共有を実装し、色と数値の二つの側面を定義して、依存通知の粒度を制御します。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 217,
+  "name": "CupertinoPopupSurface",
+  "localName": "Fond flou de la fenêtre contextuelle",
+  "info": "Fond flou rectangulaire avec coins arrondis pour les boîtes de dialogue de style Cupertino, utilisé dans les dialogues de style Cupertino dans le code source.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de CupertinoPopupSurface",
+      "desc": [
+        "【isSurfacePainted】 : Si le blanc est dessiné   【bool】",
+        "【child】 : Composant enfant   【Widget】",
+        "Effet de test : isSurfacePainted = false à gauche, isSurfacePainted = true à droite"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 319,
+  "name": "Directionality",
+  "localName": "Направленность",
+  "info": "Устанавливает значение атрибута для компонентов с атрибутом textDirection для потомков, также можно получить текущее значение по умолчанию textDirection через Directionality.of(context).",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [
+    2,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование Directionality",
+      "desc": [
+        "【textDirection】 : Направление текста   【TextDirection】",
+        "【child】 : Дочерний компонент   【Widget】"
+      ]
+    }
+  ]
+}

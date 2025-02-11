@@ -1,0 +1,18 @@
+{
+  "id": 334,
+  "name": "ListTileTheme",
+  "localName": "ListTile-Thema",
+  "info": "Wird hauptsächlich verwendet, um Standardeigenschaften für nachfolgende ListTile-Komponenten festzulegen. Es kann auch verwendet werden, um die Standardeigenschaften von ListTile abzurufen.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ListTileTheme",
+      "desc": [
+        "Kann die ListTileThemeData-Dateneigenschaften angeben, um Standardstile für nachfolgende ListTile-Komponenten festzulegen, wie Stile, Farben, Dekorationen, Ränder usw. Es kann auch ListTileTheme.of verwendet werden, um die Theme-Eigenschaften von ListTile abzurufen."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 115,
+  "name": "RelativePositionedTransition",
+  "localName": "Rechteckpositionsübergang",
+  "info": "Eine Unterklasse von AnimatedWidget, die einen Animator vom Typ Rect verwendet, um Übergangsanimationen zwischen zwei Rect-Objekten für die Kindkomponente zu ermöglichen.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von RelativePositionedTransition",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】",
+        "【size】 : Versatz von links und oben   【Size】",
+        "【rect】 : Animation   【Animation<Rect>】",
+        "    Die PositionedTransition-Komponente funktioniert nur innerhalb eines Stacks"
+      ]
+    }
+  ]
+}

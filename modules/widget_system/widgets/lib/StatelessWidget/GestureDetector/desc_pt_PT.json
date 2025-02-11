@@ -1,0 +1,44 @@
+{
+  "id": 146,
+  "name": "GestureDetector",
+  "localName": "Detector de Gestos",
+  "info": "Detector de eventos de gestos do componente, pode aceitar eventos como clique, pressionamento longo, duplo clique, pressionar, soltar, mover, etc., e pode obter informações de toque, um componente essencial para viagens e uso doméstico.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    147,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Eventos Básicos do GestureDetector",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【onTap】 : Evento de clique   【Function()】",
+        "【onDoubleTap】 : Evento de duplo clique   【GestureTapCallback】",
+        "【onLongPress】 : Evento de pressionamento longo   【GestureLongPressCallback】"
+      ]
+    },
+    {
+      "file": "node2_tap.dart",
+      "name": "Detalhes do GestureDetector",
+      "desc": [
+        "【onTapDown】 : Callback de pressionar   【GestureTapDownCallback】",
+        "【onTapUp】 : Callback de soltar o clique   【GestureTapUpCallback】",
+        "【onTapCancel】 : Cancelamento do clique   【GestureTapCancelCallback】"
+      ]
+    },
+    {
+      "file": "node3_pan.dart",
+      "name": "Eventos de Pan do GestureDetector",
+      "desc": [
+        "【onPanDown】 : Callback de pressionar   【GestureDragDownCallback】",
+        "【onPanEnd】 : Fim do arrasto   【GestureDragEndCallback】",
+        "【onPanStart】 : Início do arrasto   【GestureDragStartCallback】",
+        "【onPanUpdate】 : Atualização do arrasto   【GestureDragUpdateCallback】",
+        "【onPanCancel】 : Cancelamento do arrasto   【GestureDragCancelCallback】"
+      ]
+    }
+  ]
+}

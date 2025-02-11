@@ -1,0 +1,27 @@
+{
+  "id": 44,
+  "name": "RangeSlider",
+  "localName": "Ползунок диапазона",
+  "info": "Компонент ползунка диапазона, поддерживает перетаскивание двух точек для получения диапазона между ними. Можно указать цвет, количество сегментов и отображаемые метки, а также получать обратные вызовы при изменении прогресса.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование RangeSlider",
+      "desc": [
+        "【values】 : Значения   【RangeValues】",
+        "【min】 : Минимальное значение   【double】",
+        "【max】 : Максимальное значение   【double】",
+        "【divisions】 : Количество сегментов   【int】",
+        "【label】 : Текст подсказки   【String】",
+        "【activeColor】 : Активный цвет   【Color】",
+        "【inactiveColor】 : Неактивный цвет   【Color】",
+        "【onChangeStart】 : Слушатель начала перетаскивания   【Function(RangeValues)】",
+        "【onChangeEnd】 : Слушатель окончания перетаскивания   【Function(RangeValues)】",
+        "【onChanged】 : Обратный вызов при изменении   【Function(RangeValues)】"
+      ]
+    }
+  ]
+}

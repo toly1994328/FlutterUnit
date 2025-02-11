@@ -1,0 +1,18 @@
+{
+  "id": 327,
+  "name": "MaterialBannerTheme",
+  "localName": "Banner-Stil",
+  "info": "Wird hauptsächlich verwendet, um Standardeigenschaften für nachfolgende MaterialBanner-Komponenten festzulegen. Es kann auch verwendet werden, um die Standardeigenschaften von MaterialBanner abzurufen.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von MaterialBannerTheme",
+      "desc": [
+        "Kann die MaterialBannerThemeData-Dateneigenschaften verwenden, um Standardstile für nachfolgende MaterialBanner-Komponenten festzulegen, wie Hintergrundfarbe, Abstände, Textstile usw. Es kann auch MaterialBannerTheme.of verwenden, um die Themedaten von MaterialBanner abzurufen."
+      ]
+    }
+  ]
+}

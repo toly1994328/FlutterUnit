@@ -1,0 +1,20 @@
+{
+  "id": 248,
+  "name": "RawGestureDetector",
+  "localName": "Detetor de Gestos Bruto",
+  "info": "Pode ser usado para detetar gestos descritos por uma fábrica de gestos fornecida, sendo muito útil ao desenvolver o seu próprio reconhecedor de gestos. Para gestos comuns, use o GestureRecognizer.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do RawGestureDetector",
+      "desc": [
+        "【behavior】 : Comportamento de deteção   【HitTestBehavior】",
+        "【gestures】 : Mapeamento de gestos   【Map<Type, GestureRecognizerFactory>】",
+        "【child】 : Componente filho   【Widget】"
+      ]
+    }
+  ]
+}

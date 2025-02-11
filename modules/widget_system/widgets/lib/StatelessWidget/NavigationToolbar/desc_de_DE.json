@@ -1,0 +1,22 @@
+{
+  "id": 214,
+  "name": "NavigationToolbar",
+  "localName": "Navigationsleiste",
+  "info": "Allgemeine Strukturkomponente mit links, mittig und rechts Modus, kann den Abstand der mittleren Komponente zum linken Rand und ob sie zentriert ist, festlegen. Der Quellcode wird in Strukturen wie der AppBar verwendet.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung der NavigationToolbar",
+      "desc": [
+        "【leading】 : Linke Komponente   【Widget】",
+        "【middle】: Mittlere Komponente   【Widget】",
+        "【trailing】: Rechte Komponente   【Widget】",
+        "【centerMiddle】: Ob die mittlere Komponente zentriert ist   【bool】",
+        "【middleSpacing】: Abstand der mittleren Komponente zum linken Rand    【double】"
+      ]
+    }
+  ]
+}

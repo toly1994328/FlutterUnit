@@ -1,0 +1,32 @@
+{
+  "id": 211,
+  "name": "MaterialBanner",
+  "localName": "Banner Component",
+  "info": "A Material-style banner component that supports left-center-right or left-center-bottom structures, and allows specifying margins, background colors, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_one_btn.dart",
+      "name": "Usage of MaterialBanner in a Single Line",
+      "desc": [
+        "【content】: Middle component   【Widget】",
+        "【leading】: Left component   【Widget】",
+        "【actions】: List of right components   【List<Widget>】",
+        "【padding】: Padding   【EdgeInsetsGeometry】",
+        "【forceActionsBelow】: Whether buttons are below   【bool】",
+        "【backgroundColor】: Background color    【Color】"
+      ]
+    },
+    {
+      "file": "node2_two_btn.dart",
+      "name": "Usage of MaterialBanner in Two Lines",
+      "desc": [
+        "【contentTextStyle】: Style for the middle position   【TextStyle】",
+        "【leadingPadding】: Padding for the left component    【EdgeInsetsGeometry】",
+        "When the number of trailing components is greater than 1, the component structure is left-center-bottom."
+      ]
+    }
+  ]
+}
