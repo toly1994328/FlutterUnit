@@ -1,0 +1,46 @@
+{
+  "id": 370,
+  "name": "DropdownMenu",
+  "localName": "Menú desplegable",
+  "info": "Componente de selección desplegable, admite filtrado de entrada de texto y permite personalizar los elementos del menú. Depende principalmente de MenuAnchor y TextFiled para su implementación.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso básico del menú desplegable",
+      "desc": [
+        "【dropdownMenuEntries】 : Lista de entradas del menú   【List<DropdownMenuEntry<T>>】",
+        "【initialSelection】 : Callback de validación del formulario   【T?】",
+        "【onSelected】 : Callback de guardado del formulario   【ValueChanged<T?>?】",
+        "【menuHeight】 : Altura del menú   【double】",
+        "【width】 : Ancho del campo de entrada   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Configuración de estilo del menú desplegable",
+      "desc": [
+        "【controller】 : Controlador de entrada de texto   【TextEditingController?】",
+        "【label】 : Etiqueta del campo de entrada   【Widget?】",
+        "【textStyle】 : Estilo del texto del campo de entrada   【TextStyle?】",
+        "【inputDecorationTheme】 : Tema de decoración del campo de entrada   【InputDecorationTheme?】",
+        "【leadingIcon】 : Icono izquierdo   【Widget?】",
+        "【trailingIcon】 : Icono derecho cuando el menú está colapsado   【Widget?】",
+        "【selectedTrailingIcon】 : Icono derecho cuando el menú está expandido   【Widget?】",
+        "【hintText】 : Texto de sugerencia del campo de entrada   【String?】",
+        "【helperText】 : Texto auxiliar del campo de entrada   【String?】",
+        "【errorText】 : Texto de error del campo de entrada   【String?】",
+        "【menuStyle】 : Estilo del menú emergente   【MenuStyle?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Personalización de elementos del menú desplegable",
+      "desc": [
+        "Puede personalizar la construcción de los elementos del menú utilizando labelWidget de DropdownMenuEntry."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 148,
+  "name": "Tab",
+  "localName": "Scheda",
+  "info": "Generalmente utilizzato per gli elementi in TabBar, struttura verticale, può specificare un'icona e un componente di contenuto.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base di Tab",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【text】 : Testo   【String】",
+        "【icon】 : Componente inferiore  【Widgit】",
+        "    text e child non possono esistere contemporaneamente"
+      ]
+    }
+  ]
+}

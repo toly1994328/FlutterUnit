@@ -1,0 +1,22 @@
+{
+  "id": 207,
+  "name": "SafeArea",
+  "localName": "Área segura",
+  "info": "Adapta los problemas de diseño causados por las características especiales de algunos teléfonos (esquinas redondeadas, muescas, etc.) mediante la adición de relleno.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Prueba de uso de SafeArea",
+      "desc": [
+        "【left】 : Si está habilitado en el lado izquierdo   【bool】",
+        "【top】 : Si está habilitado en la parte superior   【bool】",
+        "【bottom】 : Si está habilitado en la parte inferior   【bool】",
+        "【right】 : Si está habilitado en el lado derecho   【bool】",
+        "【child】 : Componente hijo   【Widget】"
+      ]
+    }
+  ]
+}

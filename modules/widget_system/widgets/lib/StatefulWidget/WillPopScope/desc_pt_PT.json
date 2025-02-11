@@ -1,0 +1,19 @@
+{
+  "id": 170,
+  "name": "WillPopScope",
+  "localName": "Interceptar Retorno",
+  "info": "Quando há um componente WillPopScope numa interface, o callback é acionado ao retornar à página, decidindo se deve retornar. Pode ser usado em cenários de confirmação secundária de saída.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso do WillPopScope",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【onWillPop】 : Callback de retorno  【WillPopCallback】"
+      ]
+    }
+  ]
+}

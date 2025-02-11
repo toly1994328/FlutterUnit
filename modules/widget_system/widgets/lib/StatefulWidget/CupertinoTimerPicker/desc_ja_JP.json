@@ -1,0 +1,23 @@
+{
+  "id": 138,
+  "name": "CupertinoTimerPicker",
+  "localName": "iOSタイムピッカー",
+  "info": "高級感のあるスクロールタイムピッカーで、選択するタイプ、初期時間、背景色などを指定でき、時間選択イベントを受け取ります。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTimerPickerの基本使用",
+      "desc": [
+        "【initialTimerDuration】 : 初期時間   【Duration】",
+        "【minuteInterval】 : 分間隔数   【double】",
+        "【secondInterval】 : 秒間隔数   【double】",
+        "【alignment】 : 配置方法  【AlignmentGeometry】",
+        "【backgroundColor】 : 背景色  【Color】",
+        "【mode】 : モード*3  【CupertinoTimerPickerMode】"
+      ]
+    }
+  ]
+}

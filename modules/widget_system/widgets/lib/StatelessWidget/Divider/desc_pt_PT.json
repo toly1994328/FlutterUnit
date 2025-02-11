@@ -1,0 +1,31 @@
+{
+  "id": 34,
+  "name": "Divider",
+  "localName": "Linha divisória horizontal",
+  "info": "Linha divisória horizontal, pode especificar cor, altura, espessura, margens esquerda e direita, comumente usada como linha divisória de itens de lista.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    35,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Cor e espessura do Divider",
+      "desc": [
+        "【color】: Cor   【Color】",
+        "【thickness】: Espessura da linha   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "Altura e lacuna do Divider",
+      "desc": [
+        "【indent】: Comprimento da lacuna frontal   【double】",
+        "【endIndent】: Comprimento da lacuna traseira   【double】",
+        "【height】: Altura do espaço ocupado   【double】"
+      ]
+    }
+  ]
+}

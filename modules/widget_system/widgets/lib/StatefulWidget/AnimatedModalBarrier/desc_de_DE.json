@@ -1,0 +1,19 @@
+{
+  "id": 227,
+  "name": "AnimatedModalBarrier",
+  "localName": "Animierte Modalschranke",
+  "info": "Intern basiert es auf ModalBarrier und bietet die gleiche Funktionalität, jedoch kann dieser Komponente eine Farbanimation übergeben werden, um einen Übergangseffekt zu erzielen.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in AnimatedModalBarrier",
+      "desc": [
+        "【dismissible】 : Gibt an, ob ein Klick zurückkehrt   【bool】",
+        "【color】 : Farbe   【Animation<Color>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 47,
+  "name": "LinearProgressIndicator",
+  "localName": "Progresso Orizzontale",
+  "info": "Visualizzazione del progresso in linea retta, è possibile specificare attributi come colore e progresso. Quando il valore è null, continua a ruotare.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    46,
+    48
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di LinearProgressIndicator",
+      "desc": [
+        "【value】 : Progresso   【double】",
+        "【backgroundColor】 : Colore di sfondo   【Color】",
+        "【valueColor】 : Colore del progresso   【Animation<Color>】",
+        "    Quando il valore è null, continua a ciclare"
+      ]
+    }
+  ]
+}

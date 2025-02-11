@@ -1,0 +1,22 @@
+{
+  "id": 30,
+  "name": "IconButton",
+  "localName": "Bouton d'icône",
+  "info": "Bouton d'icône cliquable, peut spécifier des informations d'icône, un remplissage, une taille, une couleur, etc., et reçoit des événements de clic.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Propriétés d'IconButton",
+      "desc": [
+        "【icon】: Composant d'icône   【Widget】",
+        "【tooltip】: Texte d'info-bulle lors d'un appui long   【String】",
+        "【highlightColor】: Couleur de surbrillance lors d'un appui long   【Color】",
+        "【splashColor】: Couleur de l'effet de vague   【Color】",
+        "【onPressed】: Événement de clic   【Function】"
+      ]
+    }
+  ]
+}

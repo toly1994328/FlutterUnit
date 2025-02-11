@@ -1,0 +1,22 @@
+{
+  "id": 106,
+  "name": "Expanded",
+  "localName": "Erweitertes Widget",
+  "info": "Die übergeordnete Klasse ist Flexible, entspricht einem Flexible-Widget mit dem Fit-Typ tight. Kann verschachtelte Kinder verwenden, um den verbleibenden Platz zu erweitern.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    94,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Expanded",
+      "desc": [
+        "【child】 : Kind   【Widget】",
+        "【flex】 : Verhältnis der verbleibenden Platzverteilung   【int】"
+      ]
+    }
+  ]
+}

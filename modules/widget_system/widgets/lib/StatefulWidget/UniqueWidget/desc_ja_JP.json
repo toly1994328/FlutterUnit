@@ -1,0 +1,18 @@
+{
+  "id": 243,
+  "name": "UniqueWidget",
+  "localName": "ユニークウィジェット",
+  "info": "抽象クラス、GlobalKeyを提供して識別する必要があります。このタイプのウィジェットは1つのインスタンスのみがinflatedされ、同時に1つの状態のみを持ちます。currentStateプロパティを通じて状態を取得できます。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "UniqueWidget 紹介",
+      "desc": [
+        "【child】 : 子ウィジェット   【Widget】"
+      ]
+    }
+  ]
+}

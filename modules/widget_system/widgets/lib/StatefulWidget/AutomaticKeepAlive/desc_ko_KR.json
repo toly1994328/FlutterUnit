@@ -1,0 +1,26 @@
+{
+  "id": 239,
+  "name": "AutomaticKeepAlive",
+  "localName": "자동 생존 유지",
+  "info": "지연 로드 목록에서 하위 트리가 상태를 유지하도록 요청할 수 있으며, 단독으로 사용할 경우 효과가 없으며 KeepAliveNotification과 함께 사용해야 합니다.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    59,
+    162,
+    163,
+    165,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AutomaticKeepAlive 소개",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "ListView, SliverList, GridView, SliverGrid, PageView, TabBarView 등의 목록 및 페이지 전환 위젯 소스 코드에는 AutomaticKeepAlive 위젯이 사용됩니다. 특정 State를 생존 유지할 때 AutomaticKeepAliveClientMixin을 사용하여 작업할 수 있으며, 이는 KeepAliveNotification 사용을 간단하게 캡슐화한 것입니다. 이 예제는 ListView 항목의 상태 생존 유지를 보여줍니다."
+      ]
+    }
+  ]
+}

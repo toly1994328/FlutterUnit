@@ -1,0 +1,34 @@
+{
+  "id": 354,
+  "name": "ElevatedButton",
+  "localName": "Botón elevado",
+  "info": "Botón elevado de estilo Material, similar en comportamiento a RaisedButton. Se pueden cambiar propiedades como el borde, el color, la sombra, etc., mediante estilos.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    353,
+    26,
+    355
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de ElevatedButton",
+      "desc": [
+        "【child】 : Si tiene un cuerpo desplazable   【Widget】",
+        "【onPressed】 : Evento de clic   【VoidCallback】",
+        "【onLongPress】 : Evento de pulsación prolongada   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Estilo de ElevatedButton",
+      "desc": [
+        "【style】 : Estilo del botón   【ButtonStyle】",
+        "【focusNode】 : Foco   【FocusNode】",
+        "【clipBehavior】 : Comportamiento de recorte   【Clip】",
+        "【autofocus】 : Enfoque automático   【bool】"
+      ]
+    }
+  ]
+}

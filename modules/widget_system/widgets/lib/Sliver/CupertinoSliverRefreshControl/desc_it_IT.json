@@ -1,0 +1,24 @@
+{
+  "id": 303,
+  "name": "CupertinoSliverRefreshControl",
+  "localName": "Controller di aggiornamento Sliver",
+  "info": "Controller di aggiornamento a stile iOS, esegue metodi di aggiornamento asincroni, personalizza i componenti del controller, l'altezza di sosta dell'indicatore e l'altezza di scorrimento per attivare il caricamento.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base del controller di aggiornamento",
+      "desc": [
+        "【refreshIndicatorExtent】 : Altezza dell'indicatore di caricamento   【double】",
+        "【refreshTriggerPullDistance】 : Altezza di scorrimento per attivare il caricamento   【double】",
+        "【onRefresh】 : Evento di trascinamento verso il basso   【RefreshCallback】",
+        "【builder】 : Costruttore dell'indicatore   【RefreshControlIndicatorBuilder】"
+      ]
+    }
+  ]
+}

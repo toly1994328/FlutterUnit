@@ -1,0 +1,18 @@
+{
+  "id": 332,
+  "name": "ToggleButtonsTheme",
+  "localName": "スライダースタイル",
+  "info": "主に子孫のToggleButtonsコンポーネントにデフォルトのプロパティを統一して設定するために使用されます。また、このコンポーネントを通じてデフォルトのToggleButtonsのプロパティを取得することもできます。",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ToggleButtonsThemeの基本使用",
+      "desc": [
+        "ToggleButtonsThemeDataデータプロパティを指定して、子孫のToggleButtonsコンポーネントにデフォルトのスタイル（ボーダースタイル、色、装飾など）を設定できます。また、ToggleButtonsTheme.ofを使用してToggleButtonsのテーマデータを取得することもできます。"
+      ]
+    }
+  ]
+}

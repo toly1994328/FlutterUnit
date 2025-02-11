@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "タブページセレクター",
+  "info": "通常、インジケーターとしてTabBarViewと連携して使用され、同じTabControllerを共有します。色、サイズ、選択色を指定できます。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TabPageSelectorの基本的な使用",
+      "desc": [
+        "【controller】 : コントローラー   【TabController】",
+        "【indicatorSize】: インジケーターサイズ   【double】",
+        "【selectedColor】: 選択色   【Color】",
+        "【color】: 色    【Color】"
+      ]
+    }
+  ]
+}

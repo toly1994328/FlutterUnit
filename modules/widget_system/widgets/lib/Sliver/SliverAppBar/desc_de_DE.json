@@ -1,0 +1,33 @@
+{
+  "id": 184,
+  "name": "SliverAppBar",
+  "localName": "Sliver-Kopfleiste",
+  "info": "Die allgemeine Struktur der oberen Leiste der Sliver-Familie, die linke, mittlere und rechte Komponenten, Schrumpfraum, Schattentiefe, Festmodus, Hintergrundfarbe usw. angeben kann.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    196
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von SliverAppBar",
+      "desc": [
+        "【leading】 : Linke Komponente   【Widget】",
+        "【title】 : Mittlere Komponente   【Widget】",
+        "【actions】 : Liste der rechten Komponenten   【List<Widget>】",
+        "【floating】 : Ob schwebend   【bool】",
+        "【pinned】 : Ob oben verbleibend   【bool】",
+        "【snap】 : Ob halb zusammengeklappt   【bool】",
+        "【bottom】 : Untere Komponente   【PreferredSizeWidget】",
+        "【expandedHeight】 : Erweiterungshöhe   【double】",
+        "【elevation】 : Schattentiefe   【double】",
+        "【flexibleSpace】 : Erweiterungsraum   【FlexibleSpaceBar】",
+        "【backgroundColor】 : Hintergrundfarbe   【Color】",
+        "【controller】 : Controller   【ScrollController】",
+        "   Wenn snap true ist, muss floating true sein"
+      ]
+    }
+  ]
+}

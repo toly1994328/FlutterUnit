@@ -1,0 +1,31 @@
+{
+  "id": 6,
+  "name": "Icon",
+  "localName": "Symbolkomponente",
+  "info": "Komponente zur Anzeige von Symbolen. Ermöglicht die Angabe von Symbolressourcen, Größe und Farbe. Sehr einfach, aber sehr nützlich",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    7,
+    30,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Zum Anzeigen eines Symbols",
+      "desc": [
+        "【Eingabeparameter】 : Symboldaten 【IconData】",
+        "【size】 : Größe  【double】",
+        "【color】: Farbe   【Color】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Verwendung von benutzerdefinierten Symbolen",
+      "desc": [
+        "Symbolschriftarten können von der iconfont-Website heruntergeladen und verwendet werden"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 210,
+  "name": "PageStorage",
+  "localName": "Stockage de page",
+  "info": "Permet de stocker l'état de la page, ce qui permet de maintenir l'état lors du changement de page. Il est utilisé dans le code source de ScrollView, PageView, ExpansionTile, etc.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    52,
+    165
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de PageStorage",
+      "desc": [
+        "【bucket】 : Zone de stockage   【PageStorageBucket】",
+        "【child】: Composant enfant   【Widget】",
+        "Lors de l'initialisation des composants en changeant d'interface, l'état n'est pas réinitialisé. Comme dans CountWidget, le composant enfant doit lire l'état du stockage lors de l'initialisation et écrire l'état dans le stockage lors du changement d'état. De plus, si vous utilisez MaterialApp, PageStorage est déjà intégré, mais vous pouvez également créer un PageStorage."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 356,
+  "name": "Autocomplete",
+  "localName": "Automatische Vervollständigung",
+  "info": "Bietet während der Eingabe eine Überlagerung mit Vorschlägen an, damit Benutzer auswählen können, und bietet ein hohes Maß an Anpassbarkeit.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    54,
+    199
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Autocomplete",
+      "desc": [
+        "【optionsBuilder】: Optionen-Builder   【AutocompleteOptionsBuilder<T>】",
+        "【onSelected】: Rückruf bei Auswahl   【AutocompleteOnSelected<T>】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Generika von Autocomplete",
+      "desc": [
+        "【optionsViewBuilder】: Panel-Builder   【AutocompleteOptionsViewBuilder<T>】",
+        "【fieldViewBuilder】: Eingabe-Builder   【AutocompleteFieldViewBuilder】",
+        "【displayStringForOption】: Textanzeige   【AutocompleteOptionToString】,"
+      ]
+    }
+  ]
+}

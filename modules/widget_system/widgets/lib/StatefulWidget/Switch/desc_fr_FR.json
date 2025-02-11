@@ -1,0 +1,34 @@
+{
+  "id": 40,
+  "name": "Switch",
+  "localName": "Bouton de commutation",
+  "info": "Bouton de commutation, souvent utilisé pour changer les configurations, peut spécifier la couleur du petit cercle, l'image, la couleur de la glissière, etc., et reçoit un rappel de changement d'état.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    41,
+    18
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Switch",
+      "desc": [
+        "【inactiveThumbColor】 : Couleur du petit cercle non sélectionné   【Color】",
+        "【inactiveTrackColor】 : Couleur de la glissière non sélectionnée   【Color】",
+        "【activeColor】 : Couleur du petit cercle sélectionné   【Color】",
+        "【activeTrackColor】 : Couleur de la glissière sélectionnée   【Color】",
+        "【onChanged】 : Rappel de commutation   【Function(double)】",
+        "  Lors de onChanged, rappelle trois états : true, null, false"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Image de Switch",
+      "desc": [
+        "【inactiveThumbImage】 : Image du petit cercle non sélectionné   【ImageProvider】",
+        "【activeThumbImage】 : Image du petit cercle sélectionné   【ImageProvider】"
+      ]
+    }
+  ]
+}

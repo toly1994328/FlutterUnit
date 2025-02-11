@@ -1,0 +1,19 @@
+{
+  "id": 72,
+  "name": "RotatedBox",
+  "localName": "Boîte Rotée",
+  "info": "Peut contenir un composant enfant, le faisant pivoter dans le sens horaire de quarterTurns*90°.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de RotatedBox",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【quarterTurns】 : Nombre de rotations de 90°   【int】"
+      ]
+    }
+  ]
+}

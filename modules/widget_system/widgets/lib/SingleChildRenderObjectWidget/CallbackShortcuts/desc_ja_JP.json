@@ -1,0 +1,25 @@
+{
+  "id": 283,
+  "name": "CallbackShortcuts",
+  "localName": "ショートカットコールバック",
+  "info": "組み合わせをショートカットとして設定し、フォーカスを取得した後にショートカットイベントに応答できます。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    282,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "ショートカットの使用",
+      "desc": [
+        "ケースでフォーカスをアクティブにした後、Ctrl+↑ と Ctrl+↓ の組み合わせキーで数字を増減できます",
+        "【enabled】 : 使用可能かどうか   【bool】",
+        "【onTapOutside】 : 外部クリックリスナー   【TapRegionCallback?】",
+        "【onTapInside】 : 内部クリックリスナー   【TapRegionCallback?】",
+        "【groupId】 : クリック領域グループ識別子   【Object?】"
+      ]
+    }
+  ]
+}

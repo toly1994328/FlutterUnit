@@ -1,0 +1,19 @@
+{
+  "id": 192,
+  "name": "SliverOpacity",
+  "localName": "Sliver透明度",
+  "info": "Sliverファミリーの子コンポーネントを収容でき、opacityを通じて子コンポーネントの透明度を指定できます。",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverOpacityの基本使用",
+      "desc": [
+        "【opacity】 : 透明度   【double】",
+        "【sliver】 : 子コンポーネント  【Function()】"
+      ]
+    }
+  ]
+}

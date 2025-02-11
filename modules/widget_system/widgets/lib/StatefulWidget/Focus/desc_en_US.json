@@ -1,0 +1,38 @@
+{
+  "id": 282,
+  "name": "Focus",
+  "localName": "Focus Component",
+  "info": "A component that manages [FocusNode], used to allow keyboard focus to be assigned to this widget and its subtree nodes.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    283,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "FocusNode Focus and Blur",
+      "desc": [
+        "【focusNode】 : Focus   【FocusNode?】",
+        "【onFocusChange】 : Focus change listener   【ValueChanged<bool>?】",
+        "【child】 : Child widget   【Widget】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Auto Focus",
+      "desc": [
+        "【autofocus】 : Whether to auto focus   【bool】",
+        "The Flutter framework has built-in shortcuts for focus switching, such as ← and → for horizontal sliding lists to focus on the previous and next items respectively. The Tab key can focus on the next Focus node."
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Keyboard Event Callback",
+      "desc": [
+        "【onKeyEvent】 : Keyboard event callback   【FocusOnKeyEventCallback?】"
+      ]
+    }
+  ]
+}

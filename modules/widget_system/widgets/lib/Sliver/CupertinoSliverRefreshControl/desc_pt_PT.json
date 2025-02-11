@@ -1,0 +1,24 @@
+{
+  "id": 303,
+  "name": "CupertinoSliverRefreshControl",
+  "localName": "Controlador de Atualização Sliver",
+  "info": "Controlador de atualização de deslizar para baixo no estilo iOS, capaz de executar métodos de atualização assíncronos, personalizar componentes do controlador, altura de permanência do indicador e altura de deslize para acionar o carregamento.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Controlador de Atualização",
+      "desc": [
+        "【refreshIndicatorExtent】 : Altura do indicador de carregamento   【double】",
+        "【refreshTriggerPullDistance】 : Altura de deslize para acionar o carregamento   【double】",
+        "【onRefresh】 : Evento de deslizar para baixo   【RefreshCallback】",
+        "【builder】 : Construtor do indicador   【RefreshControlIndicatorBuilder】"
+      ]
+    }
+  ]
+}

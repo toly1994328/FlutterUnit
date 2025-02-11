@@ -1,0 +1,18 @@
+{
+  "id": 294,
+  "name": "SizeChangedLayoutNotifier",
+  "localName": "Size Change Notification",
+  "info": "Using SizeChangedLayoutNotifier can send a notification after the layout area of the child component changes. NotificationListener can be used to monitor it.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage",
+      "desc": [
+        "【child】 : Component   【Widget】"
+      ]
+    }
+  ]
+}

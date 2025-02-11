@@ -1,0 +1,19 @@
+{
+  "id": 77,
+  "name": "AspectRatio",
+  "localName": "비율 상자",
+  "info": "하위 컴포넌트를 포함할 수 있으며, aspectRatio를 지정하여 하위 컴포넌트의 영역을 제한합니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AspectRatio 기본 사용",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【aspectRatio】 : 너비 높이 비율   【double】"
+      ]
+    }
+  ]
+}

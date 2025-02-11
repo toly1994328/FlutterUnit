@@ -1,0 +1,23 @@
+{
+  "id": 313,
+  "name": "RawImage",
+  "localName": "Originalbild",
+  "info": "Ist die Kernkomponente zur Implementierung der Image-Komponente, kann das Image der UI anzeigen, die grundlegenden Eigenschaften sind identisch mit Image, wird selten allein verwendet.",
+  "lever": 2,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von RawImage",
+      "desc": [
+        "【image】 : Bild   【ui.Image】",
+        "【width】 : Breite   【int】",
+        "【height】: Höhe   【int】",
+        "【isAntiAlias】: Anti-Aliasing   【bool】",
+        "【filterQuality】: Filterqualität   【FilterQuality】",
+        "Viele Eigenschaften sind identisch mit Image, siehe dort."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 243,
+  "name": "UniqueWidget",
+  "localName": "Einzigartige Komponente",
+  "info": "Abstrakte Klasse, muss einen GlobalKey zur Identifikation bereitstellen. Diese Art von Komponente wird nur als eine Instanz inflated und hat zu jedem Zeitpunkt nur einen Zustand, der über die currentState-Eigenschaft abgerufen werden kann.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in UniqueWidget",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】"
+      ]
+    }
+  ]
+}

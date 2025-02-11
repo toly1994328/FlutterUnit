@@ -1,0 +1,20 @@
+{
+  "id": 172,
+  "name": "FutureBuilder",
+  "localName": "Construtor Assíncrono",
+  "info": "Pode especificar um objeto Future, que pode monitorar o estado da execução assíncrona e construir diferentes interfaces no construtor com base no estado. Observe que o objeto Future não pode ser criado ao mesmo tempo que o FutureBuilder, caso contrário, pode ocorrer uma atualização excessiva.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do FutureBuilder",
+      "desc": [
+        "【builder】 : Componente Filho   【AsyncWidgetBuilder<T>】",
+        "【initialData】 : Dados Iniciais   【T】",
+        "【future】 : Tarefa Assíncrona  【Future<T>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 199,
+  "name": "TextFormField",
+  "localName": "Campo di input di testo",
+  "info": "Le proprietà sono fondamentalmente le stesse di TextField, con l'aggiunta di callback per la validazione e l'invio dei campi. Il save di FormState attiverà la callback onSaved.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    54,
+    198
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di TextFormField",
+      "desc": [
+        "Le proprietà di base sono le stesse di TextField, vedi dettagli",
+        "【validator】 : funzione di validazione   【FormFieldValidator<String> 】",
+        "【onFieldSubmitted】 : callback di invio   【ValueChanged<String>】",
+        "【onSaved】 : callback quando il modulo viene salvato  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

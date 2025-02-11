@@ -1,0 +1,19 @@
+{
+  "id": 263,
+  "name": "FractionalTranslation",
+  "localName": "분할 오프셋",
+  "info": "offset 속성을 통해 자식 컴포넌트를 오프셋하며, 오프셋량은 OffSet의 가로 및 세로 * 자식 컴포넌트 크기입니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FractionalTranslation 기본 사용",
+      "desc": [
+        "【translation】 : 오프셋 분할 값   【Offset】",
+        "【child】: 자식 컴포넌트    【Widget】"
+      ]
+    }
+  ]
+}

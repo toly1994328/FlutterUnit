@@ -1,0 +1,20 @@
+{
+  "id": 172,
+  "name": "FutureBuilder",
+  "localName": "Asynchronous Constructor",
+  "info": "You can specify a Future object, which can monitor the status of asynchronous execution and build different interfaces in the constructor based on the status. Note that the Future object cannot be created simultaneously with the FutureBuilder, otherwise it may cause excessive refreshing.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of FutureBuilder",
+      "desc": [
+        "【builder】 : Subcomponent   【AsyncWidgetBuilder<T>】",
+        "【initialData】 : Initial Data   【T】",
+        "【future】 : Asynchronous Task  【Future<T>】"
+      ]
+    }
+  ]
+}

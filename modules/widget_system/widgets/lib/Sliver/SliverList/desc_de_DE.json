@@ -1,0 +1,22 @@
+{
+  "id": 185,
+  "name": "SliverList",
+  "localName": "Sliver-Liste",
+  "info": "Eine Listenkomponente der Sliver-Familie, die durch die Angabe eines Delegaten Unterkomponenten erstellt. Wird normalerweise in CustomScrollView verwendet.",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [
+    183,
+    186,
+    187
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von SliverList",
+      "desc": [
+        "【delegate】 : Kinderdelegierter   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

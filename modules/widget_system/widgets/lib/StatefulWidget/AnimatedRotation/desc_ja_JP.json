@@ -1,0 +1,28 @@
+{
+  "id": 259,
+  "name": "AnimatedRotation",
+  "localName": "回転アニメーション",
+  "info": "指定された回転量が変化した場合、子コンポーネントは回転値に応じて自動的に調整され、前後の値にアニメーションの変化があります。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    247,
+    249
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "回転アニメーション効果",
+      "desc": [
+        "このケースでは、turns パラメータをドラッグして調整し、アニメーションの動きを確認します。回転角度は: turns*2*pi",
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーションの時間   【Duration】",
+        "【onEnd】 : アニメーション終了時のコールバック   【Function()】",
+        "【alignment】 : アニメーションの変換中心   【Alignment】",
+        "【curve】 : アニメーション曲線   【Duration】",
+        "【filterQuality】 : フィルター品質   【FilterQuality】",
+        "【turns】 : 回転量   【double】"
+      ]
+    }
+  ]
+}

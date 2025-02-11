@@ -1,0 +1,23 @@
+{
+  "id": 279,
+  "name": "PhysicalShape",
+  "localName": "물리적 모양",
+  "info": "자식 위젯이 경로에 따라 잘릴 수 있도록 하고, 배경색, 그림자 깊이, 그림자 색상, 클리핑 동작을 지정할 수 있습니다.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PhysicalShape 기본 사용",
+      "desc": [
+        "【clipper】 : 클리퍼   【CustomClipper<Path>】",
+        "【clipBehavior】 : 클리핑 동작   【Clip】",
+        "【child】 : 자식 위젯   【Widget】",
+        "【elevation】 : 그림자 깊이   【double】",
+        "【shadowColor】 : 그림자 색상   【Color】",
+        "【color】: 색상    【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 288,
+  "name": "AnnotatedRegion",
+  "localName": "Область аннотации",
+  "info": "Имеет обобщение, в исходном коде используется только в app_bar, nav_bar для изменения состояния и стиля навигационной панели, обобщение обычно SystemUiOverlayStyle.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnnotatedRegion изменяет состояние и стиль",
+      "desc": [
+        "【value】 : значение   【T】",
+        "【sized】 : предоставляет ли размер   【bool】",
+        "【child】 : дочерний компонент   【Widget】"
+      ]
+    }
+  ]
+}

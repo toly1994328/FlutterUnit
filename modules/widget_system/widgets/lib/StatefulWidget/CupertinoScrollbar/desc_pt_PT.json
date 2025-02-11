@@ -1,0 +1,23 @@
+{
+  "id": 195,
+  "name": "CupertinoScrollbar",
+  "localName": "Barra de rolagem iOS",
+  "info": "Barra de rolagem no estilo iOS, precisa envolver uma área rolável. Quando a área é rolável, uma barra de rolagem é exibida para indicar.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    194,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do CupertinoScrollbar",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【controller】 : Controlador  【ScrollController】"
+      ]
+    }
+  ]
+}

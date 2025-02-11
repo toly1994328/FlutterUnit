@@ -1,0 +1,32 @@
+{
+  "id": 277,
+  "name": "ShaderMask",
+  "localName": "Masque de nuance",
+  "info": "Peut contenir un enfant et appliquer une teinte à l'enfant via un nuanceur, avec la possibilité de spécifier un mode de mélange. Couramment utilisé pour le traitement des dégradés de composants.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    88,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_radial.dart",
+      "name": "Teinte de dégradé radial",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【shaderCallback】 : Rappel du nuanceur   【ShaderCallback】",
+        "【blendMode】 : Mode de mélange   【BlendMode】",
+        "    Crée un nuanceur de dégradé radial via RadialGradient#createShader."
+      ]
+    },
+    {
+      "file": "node2_linear.dart",
+      "name": "Teinte de dégradé linéaire",
+      "desc": [
+        "Crée un nuanceur de dégradé linéaire via LinearGradient#createShader",
+        "Pour plus d'informations sur les nuanceurs, voir 【Album de dessin】"
+      ]
+    }
+  ]
+}

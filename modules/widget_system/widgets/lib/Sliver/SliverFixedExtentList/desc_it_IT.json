@@ -1,0 +1,23 @@
+{
+  "id": 186,
+  "name": "SliverFixedExtentList",
+  "localName": "Lista estensibile fissa Sliver",
+  "info": "Componente della lista della famiglia Sliver, che costruisce i componenti figli tramite il delegate, consente di specificare l'altezza dell'elemento. Solitamente utilizzato in CustomScrollView.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    185,
+    187
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di SliverFixedExtentList",
+      "desc": [
+        "【itemExtent】 : Lunghezza forzata nella direzione dell'asse principale   【double】",
+        "【delegate】 : Delegato dei figli   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

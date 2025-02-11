@@ -1,0 +1,24 @@
+{
+  "id": 179,
+  "name": "ListWheelScrollView",
+  "localName": "Lista a rotella",
+  "info": "Una lista di scorrimento cilindrica di alto livello, molto raffinata, con la possibilità di specificare proprietà come l'altezza degli item, la prospettiva, la compressione, e di ricevere eventi di selezione durante lo scorrimento.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    139,
+    291
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di ListWheelScrollView",
+      "desc": [
+        "【children】 : Lista dei componenti figli   【List<Widget>】",
+        "【perspective】 : Prospettiva   【double】",
+        "【itemExtent】 : Altezza dell'item   【EdgeInsets】",
+        "【onSelectedItemChanged】 : Callback di selezione  【ValueChanged<int> 】"
+      ]
+    }
+  ]
+}

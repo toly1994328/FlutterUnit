@@ -1,0 +1,22 @@
+{
+  "id": 319,
+  "name": "Directionality",
+  "localName": "방향성",
+  "info": "후손을 위해 textDirection 속성이 있는 컴포넌트의 속성 값을 통일적으로 설정할 수 있으며, Directionality.of(context)를 통해 현재 textDirection의 기본 속성을 얻을 수 있습니다.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [
+    2,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Directionality 기본 사용",
+      "desc": [
+        "【textDirection】 : 텍스트 배열 방향   【TextDirection】",
+        "【child】 : 자식 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 320,
+  "name": "DefaultAssetBundle",
+  "localName": "Пакет ресурсов по умолчанию",
+  "info": "InheritedWidget, который устанавливает объект AssetBundle, после чего контекст узлов после этого узла может получить объект AssetBundle с помощью DefaultAssetBundle.of(context) для доступа к файлам ресурсов.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Введение в DefaultAssetBundle",
+      "desc": [
+        "【bundle】 : *Пакет ресурсов   【AssetBundle】",
+        "【child】 : *Дочерний компонент  【Widget】",
+        "Мы можем определить собственный DefaultAssetBundle для использования последующими узлами или использовать предоставленный по умолчанию. Этот пример демонстрирует загрузку и отображение изображения ресурса с помощью DefaultAssetBundle, предоставленного фреймворком."
+      ]
+    }
+  ]
+}

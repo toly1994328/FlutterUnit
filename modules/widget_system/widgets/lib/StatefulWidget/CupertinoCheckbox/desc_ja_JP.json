@@ -1,0 +1,43 @@
+{
+  "id": 238,
+  "name": "CupertinoCheckbox",
+  "localName": "チェックボックス・macOSスタイル",
+  "info": "macOSスタイルのチェックボックスで、三態をサポートしています。使用時にはvalue値とonChangedコールバック関数を提供する必要があります。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    39,
+    17
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "CupertinoCheckbox 使用",
+      "desc": [
+        "【value】 : 選択されているかどうか   【bool?】",
+        "【onChanged】 : 変更コールバック   【ValueChanged<bool?>?】",
+        "【checkColor】 : 選択時の√色   【Color?】",
+        "【activeColor】 : 選択時の背景色   【Color?】",
+        "【activeColor】 : 選択時の背景色   【Color?】",
+        "【inactiveColor】 : 非アクティブ時の枠線色/無効な背景色   【Color?】",
+        "onChangedがnullの場合、無効であることを示します。"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "CupertinoCheckbox 三態",
+      "desc": [
+        "【tristate】 : 三態を有効にするかどうか   【bool】",
+        "三態の場合、値がnullの場合は - です"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "CupertinoCheckbox 枠線と形状",
+      "desc": [
+        "【shape】 : 形状   【OutlinedBorder?】",
+        "【side】 : 枠線   【BorderSide?】"
+      ]
+    }
+  ]
+}

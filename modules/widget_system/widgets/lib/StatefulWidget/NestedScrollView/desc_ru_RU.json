@@ -1,0 +1,27 @@
+{
+  "id": 251,
+  "name": "NestedScrollView",
+  "localName": "Вложенное прокручиваемое представление",
+  "info": "Используется для обработки вложенной прокрутки нескольких представлений, можно указать заголовок, контроллер прокрутки, направление прокрутки и т.д., где тело должно быть компонентом с возможностью прокрутки.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    344
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование NestedScrollView",
+      "desc": [
+        "【controller】 : Контроллер прокрутки   【ScrollController】",
+        "【scrollDirection】 : Направление прокрутки   【Axis】",
+        "【reverse】 : Обратное направление   【bool】",
+        "【physics】 : Стиль прокрутки   【ScrollPhysics】",
+        "【dragStartBehavior】 : Поведение начала перетаскивания   【DragStartBehavior】",
+        "【headerSliverBuilder】 : *Конструктор заголовка   【NestedScrollViewHeaderSliversBuilder】",
+        "【body】 : *Содержимое   【Widget】"
+      ]
+    }
+  ]
+}

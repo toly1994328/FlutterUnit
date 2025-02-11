@@ -1,0 +1,27 @@
+{
+  "id": 10,
+  "name": "Visibility",
+  "localName": "표시/숨김 컴포넌트",
+  "info": "컴포넌트의 표시 또는 숨김을 제어하며, 숨김 후의 자리 표시 컴포넌트를 설정할 수 있습니다. 이와 유사한 기능을 가진 OffStage 컴포넌트가 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "visible에 따라 내부 자식 컴포넌트의 표시/숨김 상태를 제어",
+      "desc": [
+        "【visible】 : 표시 여부  【bool】",
+        "【child】: 자식   【Widget】",
+        "기본적으로 자식이 숨겨지면 원래 영역을 잃습니다."
+      ]
+    },
+    {
+      "file": "node2_replacement.dart",
+      "name": "replacement는 숨김 시 자리 표시를 할 수 있습니다",
+      "desc": [
+        "【replacement】 : 숨김 시의 자리 표시 컴포넌트  【Widget】"
+      ]
+    }
+  ]
+}

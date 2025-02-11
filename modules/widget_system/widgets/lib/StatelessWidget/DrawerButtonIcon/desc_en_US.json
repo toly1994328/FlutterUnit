@@ -1,0 +1,18 @@
+{
+  "id": 273,
+  "name": "DrawerButtonIcon",
+  "localName": "Drawer Button Icon",
+  "info": "A drawer Icon, which displays the corresponding icon according to the platform, and can be customized with ActionIconTheme.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerButtonIcon Effect",
+      "desc": [
+        "The _ActionIcon component adapts the drawer button icon for different platforms based on the ActionIconTheme."
+      ]
+    }
+  ]
+}

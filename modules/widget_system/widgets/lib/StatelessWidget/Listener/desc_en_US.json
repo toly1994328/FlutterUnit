@@ -1,0 +1,22 @@
+{
+  "id": 147,
+  "name": "Listener",
+  "localName": "Event Listener",
+  "info": "A listener for component events, which can accept events such as press, release, move, cancel, etc. It is more primitive compared to GestureDetector and can obtain more information.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Events of Listener",
+      "desc": [
+        "【child】 : Child component   【Widget】",
+        "【onPointerDown】 : Press event   【Function(PointerDownEvent)】",
+        "【onPointerMove】 : Move event   【Function(PointerMoveEvent)】",
+        "【onPointerMove】 : Release event   【Function(PointerUpEvent)】",
+        "【onPointerCancel】 : Cancel event   【Function(PointerUpEvent)】"
+      ]
+    }
+  ]
+}

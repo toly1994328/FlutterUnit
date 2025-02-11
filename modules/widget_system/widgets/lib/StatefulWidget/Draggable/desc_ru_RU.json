@@ -1,0 +1,42 @@
+{
+  "id": 103,
+  "name": "Draggable",
+  "localName": "Перетаскиваемый компонент",
+  "info": "Позволяет компоненту перетаскиваться на интерфейсе, может хранить данные типа T. Обычно используется в сочетании с DragTarget для достижения эффекта перетаскивания.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    104,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование Draggable",
+      "desc": [
+        "【child】 : Дочерний элемент   【Widget】",
+        "【feedback】 : Дочерний элемент при перетаскивании   【Widget】",
+        "【axis】 : Ось перетаскивания   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_data.dart",
+      "name": "Использование Draggable с DragTarget",
+      "desc": [
+        "【data】 : Данные   【T】",
+        "【onDragStarted】 : Начало перетаскивания   【Function()】",
+        "【onDragEnd】 : Конец перетаскивания   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : Завершение перетаскивания   【Function()】",
+        "【onDraggableCanceled】 : Отмена перетаскивания   【Function(Velocity,Offset)】",
+        "【onChanged】 : Обратный вызов при изменении   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node3_use.dart",
+      "name": "Другое использование Draggable",
+      "desc": [
+        "Можно обрабатывать некоторые события на основе перетаскивания. Например, удаление, поиск, всплывающие окна и т.д."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 83,
+  "name": "OverflowBox",
+  "localName": "Scatola di overflow",
+  "info": "Può contenere un componente figlio e consente al componente figlio di fuoriuscire dall'area del componente padre. È possibile specificare le aree massime e minime di larghezza e altezza per i limiti e ha la proprietà di allineamento alignment.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di OverflowBox",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【minWidth】 : Larghezza minima   【double】",
+        "【minHeight】 : Altezza minima   【double】",
+        "【maxHeight】 : Altezza massima   【double】",
+        "【maxWidth】 : Larghezza massima   【double】",
+        "【alignment】 : Modalità di allineamento   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

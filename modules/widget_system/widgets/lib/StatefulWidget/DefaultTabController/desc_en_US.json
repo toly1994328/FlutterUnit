@@ -1,0 +1,23 @@
+{
+  "id": 230,
+  "name": "DefaultTabController",
+  "localName": "Default Tab Controller",
+  "info": "When using TabBar and TabBarView, the same controller is needed to control both the tabs and the pages. DefaultTabController provides a default controller when no controller is specified, simplifying usage.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    148,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of DefaultTabController",
+      "desc": [
+        "【length】: Number of tabs   【int】",
+        "【initialIndex】: Initial tab index   【int】",
+        "【child】: Component   【Widget】"
+      ]
+    }
+  ]
+}

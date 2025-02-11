@@ -1,0 +1,23 @@
+{
+  "id": 276,
+  "name": "DrawerButton",
+  "localName": "Кнопка ящика",
+  "info": "Кнопка с иконкой левого ящика, использует DrawerButtonIcon для отображения иконки, по умолчанию при нажатии открывает левый ящик.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    273,
+    361
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование DrawerButton",
+      "desc": [
+        "【onPressed】: Событие нажатия  【VoidCallback?】",
+        "【style】: Стиль кнопки   【ButtonStyle?】",
+        "Если onPressed пуст, при нажатии открывается левый ящик."
+      ]
+    }
+  ]
+}

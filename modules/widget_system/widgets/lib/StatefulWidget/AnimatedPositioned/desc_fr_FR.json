@@ -1,0 +1,29 @@
+{
+  "id": 121,
+  "name": "AnimatedPositioned",
+  "localName": "Animation de positionnement",
+  "info": "Permet à un composant enfant d'effectuer une animation Positioned (positionnement), avec une durée et une courbe spécifiables, et un événement de fin d'animation. Ne peut être utilisé que dans un Stack.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    108,
+    93,
+    122
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'AnimatedPositioned",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【duration】 : Durée de l'animation   【Duration】",
+        "【onEnd】 : Rappel de fin d'animation   【Function()】",
+        "【curve】 : Courbe de l'animation   【Duration】",
+        "【top】 : Distance par rapport au haut du parent   【double】",
+        "【right】 : Distance par rapport à la droite du parent   【double】",
+        "【left】 : Distance par rapport à la gauche du parent   【double】",
+        "【bottom】 : Distance par rapport au bas du parent   【double】"
+      ]
+    }
+  ]
+}

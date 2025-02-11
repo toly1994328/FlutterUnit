@@ -1,0 +1,23 @@
+{
+  "id": 187,
+  "name": "SliverFillViewport",
+  "localName": "Lista de visualização de preenchimento Sliver",
+  "info": "Componente de lista da família Sliver, que constrói subcomponentes através de um delegate. A altura do item preencherá a viewport, e pode-se especificar a fração de preenchimento.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    185,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do SliverFillViewport",
+      "desc": [
+        "【viewportFraction】 : Fração da viewport   【double】",
+        "【delegate】 : Delegado dos filhos   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

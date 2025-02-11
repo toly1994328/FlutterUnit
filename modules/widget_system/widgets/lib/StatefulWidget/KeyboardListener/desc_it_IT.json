@@ -1,0 +1,26 @@
+{
+  "id": 284,
+  "name": "KeyboardListener",
+  "localName": "Ascoltatore Tastiera",
+  "info": "Dopo aver ottenuto il focus, ascolta gli eventi dei tasti della tastiera tramite onKeyEvent.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    282,
+    283
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Ascolta Eventi Tastiera",
+      "desc": [
+        "Nell'esempio, clicca sull'area per ottenere il focus, quindi premi un tasto per vedere le informazioni sull'evento attivato.",
+        "【focusNode】 : Focus   【FocusNode】",
+        "【autofocus】 : Autofocus   【bool】",
+        "【includeSemantics】 : Includi Semantica   【bool】",
+        "【onKeyEvent】 : Evento di Richiamata Tasto   【ValueChanged<KeyEvent>?】",
+        "【child】 : Componente Figlio   【Widget】"
+      ]
+    }
+  ]
+}

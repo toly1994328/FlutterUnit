@@ -1,0 +1,23 @@
+{
+  "id": 195,
+  "name": "CupertinoScrollbar",
+  "localName": "Barra di scorrimento iOS",
+  "info": "Barra di scorrimento in stile iOS, deve avvolgere un'area scorrevole. Quando è possibile scorrere, viene visualizzata una barra di scorrimento per indicare.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    194,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CupertinoScrollbar",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【controller】 : Controller  【ScrollController】"
+      ]
+    }
+  ]
+}

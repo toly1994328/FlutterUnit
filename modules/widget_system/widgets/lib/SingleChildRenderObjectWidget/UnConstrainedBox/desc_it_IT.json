@@ -1,0 +1,22 @@
+{
+  "id": 81,
+  "name": "UnconstrainedBox",
+  "localName": "Scatola senza vincoli",
+  "info": "Può contenere un componente figlio e rimuove tutti i vincoli di area di quel componente, mostrando le proprie dimensioni.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    80
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di UnconstrainedBox",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【constrainedAxis】 : Asse ancora vincolato*2   【Axis】",
+        "【alignment】 : Allineamento   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

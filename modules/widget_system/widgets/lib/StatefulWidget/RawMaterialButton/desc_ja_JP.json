@@ -1,0 +1,37 @@
+{
+  "id": 175,
+  "name": "RawMaterialButton",
+  "localName": "オリジナルボタン",
+  "info": "オリジナルのMaterialボタン、ボタン界の裏の大物、クリック、長押し、ハイライト変更イベントを受け入れ、色、形状、影の深さ、内側の余白などの属性を指定できます。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RawMaterialButtonの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【elevation】 : 影の深さ   【double】",
+        "【fillColor】 : 塗りつぶし色   【Color】",
+        "【splashColor】 : 波紋色   【Color】",
+        "【textStyle】 : テキストスタイル   【TextStyle】",
+        "【onLongPress】 : 長押しイベント   【Function()】",
+        "【onPressed】 : クリックイベント  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "RawMaterialButtonのハイライトと形状",
+      "desc": [
+        "【highlightElevation】 : ハイライトの影の深さ   【double】",
+        "【shape】 : 形状   【ShapeBorder】"
+      ]
+    }
+  ]
+}

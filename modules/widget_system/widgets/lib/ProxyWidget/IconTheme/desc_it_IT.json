@@ -1,0 +1,18 @@
+{
+  "id": 325,
+  "name": "IconTheme",
+  "localName": "Tema Icona",
+  "info": "Può contenere un figlio, specifica lo stile predefinito per le icone dei discendenti. Comunemente utilizzato per uniformare lo stile di più icone identiche, evitando di impostarle una per una.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di IconTheme",
+      "desc": [
+        "È possibile ottenere i dati del tema dell'icona tramite IconTheme.of, oppure impostare lo stile predefinito per i componenti icona dei discendenti di IconTheme, inclusi colore, trasparenza e dimensione."
+      ]
+    }
+  ]
+}

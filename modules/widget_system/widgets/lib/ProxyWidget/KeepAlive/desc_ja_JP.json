@@ -1,0 +1,20 @@
+{
+  "id": 316,
+  "name": "KeepAlive",
+  "localName": "キープアライブ",
+  "info": "レイジーロードのリストで、子の状態をキープアライブする必要があるかどうか。AutomaticKeepAliveの基盤実装であり、通常は単独で使用しません。",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "KeepAlive 紹介",
+      "desc": [
+        "【child】 : *子コンポーネント   【Widget】",
+        "【keepAlive】 : *キープアライブするかどうか   【bool】",
+        "Flutterフレームワーク層では、AutomaticKeepAliveでのみ使用され、ソースコードでも単独で使用することはほとんどないとされています。この例は、ListViewアイテムの状態をキープアライブすることを示しています。"
+      ]
+    }
+  ]
+}

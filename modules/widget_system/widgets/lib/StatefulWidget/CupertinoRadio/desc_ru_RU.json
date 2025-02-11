@@ -1,0 +1,42 @@
+{
+  "id": 240,
+  "name": "CupertinoRadio",
+  "localName": "Радиокнопка·macOS стиль",
+  "info": "Радиокнопка в стиле macOS, value и groupValue вместе определяют, выбрана ли эта радиокнопка; onChanged обратный вызов события клика.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    19,
+    45
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Использование CupertinoRadio",
+      "desc": [
+        "【value】 : Значение радиокнопки   【T】",
+        "【groupValue】 : Текущее совпадающее значение   【T】",
+        "【onChanged】 : Обратный вызов при изменении   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Цвета CupertinoRadio",
+      "desc": [
+        "【activeColor】 : Цвет активного фона   【Color?】",
+        "【fillColor】 : Заполнение   【Color?】",
+        "【inactiveColor】 : Цвет неактивного фона   【Color?】",
+        "【focusColor】 : Цвет фокуса   【Color?】",
+        "【mouseCursor】 : Стиль указателя мыши   【MouseCursor?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Поддержка переключения",
+      "desc": [
+        "【toggleable】 : Поддержка переключения   【bool】",
+        "toggleable по умолчанию false, если true, при нажатии на активную радиокнопку будет возвращаться null, чтобы поддерживать переключение между выбором и отменой выбора."
+      ]
+    }
+  ]
+}

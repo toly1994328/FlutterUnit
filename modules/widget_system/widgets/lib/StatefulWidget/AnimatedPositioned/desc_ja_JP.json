@@ -1,0 +1,29 @@
+{
+  "id": 121,
+  "name": "AnimatedPositioned",
+  "localName": "位置アニメーション",
+  "info": "子コンポーネントをPositioned（位置）アニメーションさせることができ、時間と曲線を指定でき、アニメーション終了イベントがあります。Stack内でのみ使用できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    108,
+    93,
+    122
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedPositionedの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーション時間   【Duration】",
+        "【onEnd】 : アニメーション終了コールバック   【Function()】",
+        "【curve】 : アニメーション曲線   【Duration】",
+        "【top】 : 親の上端までの距離   【double】",
+        "【right】 : 親の右端までの距離   【double】",
+        "【left】 : 親の左端までの距離   【double】",
+        "【bottom】 : 親の下端までの距離   【double】"
+      ]
+    }
+  ]
+}

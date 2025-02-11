@@ -1,0 +1,30 @@
+{
+  "id": 100,
+  "name": "AnimatedCrossFade",
+  "localName": "Transizione Componenti",
+  "info": "Presenta un effetto animato quando si passa da un componente all'altro, è possibile specificare proprietà come la curva di animazione, la durata, l'allineamento, ecc. È un componente molto utile.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di AnimatedCrossFade",
+      "desc": [
+        "【firstChild】 : Primo figlio   【Widget】",
+        "【secondChild】 : Secondo figlio   【Widget】",
+        "【crossFadeState】 : Mostra quale   【CrossFadeState】",
+        "【duration】 : Durata   【Duration】"
+      ]
+    },
+    {
+      "file": "node2_curve.dart",
+      "name": "Curva di Animazione di AnimatedCrossFade",
+      "desc": [
+        "【firstCurve】 : Prima curva   【Curve】",
+        "【secondCurve】 : Seconda curva   【Curve】",
+        "【sizeCurve】 : Curva di variazione dimensionale   【CrossFadeState】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 116,
+  "name": "AnimatedSwitcher",
+  "localName": "애니메이션 전환",
+  "info": "자식 컴포넌트가 변경될 때 애니메이션을 실행하며, 자식 컴포넌트의 key를 지정하여 식별해야 합니다. 애니메이션 방식은 사용자 정의가 가능하며, 애니메이션 지속 시간, 애니메이션 곡선 등의 속성을 지정할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedSwitcher 기본 사용법",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【duration】 : 애니메이션 지속 시간  【Duration】",
+        "【switchOutCurve】 : 전환 아웃 곡선  【Curves】",
+        "【switchInCurve】 : 전환 인 곡선  【Curves】",
+        "【switchInCurve】 : 전환 인 곡선  【Curves】",
+        "【transitionBuilder】 : 애니메이션 빌더  【Widget Function(Widget, Animation<double>)】"
+      ]
+    }
+  ]
+}

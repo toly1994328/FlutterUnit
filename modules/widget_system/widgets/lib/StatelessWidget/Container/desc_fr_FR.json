@@ -1,0 +1,67 @@
+{
+  "id": 1,
+  "name": "Container",
+  "localName": "Composant conteneur",
+  "info": "Composant conteneur utilisé pour contenir un seul composant enfant. Intègre plusieurs fonctionnalités de composants enfants uniques, telles que les marges intérieures et extérieures, la transformation, la décoration, les contraintes, etc...",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    74,
+    85,
+    80,
+    78,
+    70,
+    123
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Peut être utilisé pour afficher une zone de largeur et de hauteur spécifiées",
+      "desc": [
+        "【width】 : Largeur   【int】",
+        "【height】: Hauteur   【int】",
+        "【color】: Couleur    【Color】"
+      ]
+    },
+    {
+      "file": "node2_child.dart",
+      "name": "Peut contenir un composant enfant dans la zone",
+      "desc": [
+        "【padding】 : Marge intérieure   【EdgeInsetsGeometry】",
+        "【margin】: Marge extérieure   【EdgeInsetsGeometry】",
+        "【child】: Composant enfant    【Widget】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Peut aligner et positionner le composant enfant",
+      "desc": [
+        "【alignment】 : Alignement et positionnement   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node4_decoration.dart",
+      "name": "Peut décorer le composant enfant",
+      "desc": [
+        "【decoration】 : Décoration   【Decoration】",
+        "Peut décorer : bordures, coins arrondis, couleurs, dégradés, ombres, images, etc."
+      ]
+    },
+    {
+      "file": "node5_transform.dart",
+      "name": "Le Container a également des propriétés de transformation",
+      "desc": [
+        "【transform】 : Matrice de transformation   【Matrix4】",
+        "Transformation matricielle basée sur Matrix4, voir l'algèbre linéaire pour plus de détails sur les transformations"
+      ]
+    },
+    {
+      "file": "node6_constraints.dart",
+      "name": "Les contraintes du Container",
+      "desc": [
+        "【constraints】 : Contraintes   【BoxConstraints】",
+        "Contraint la taille de la zone, ne sera pas plus petite que la largeur et la hauteur minimales spécifiées, ni plus grande que la largeur et la hauteur maximales spécifiées."
+      ]
+    }
+  ]
+}

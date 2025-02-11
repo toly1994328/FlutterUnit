@@ -1,0 +1,19 @@
+{
+  "id": 263,
+  "name": "FractionalTranslation",
+  "localName": "Traduzione Frazionaria",
+  "info": "Sposta il componente figlio tramite la proprietà offset, dove lo spostamento è determinato da OffSet orizzontale e verticale moltiplicato per la dimensione del componente figlio.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di FractionalTranslation",
+      "desc": [
+        "【translation】 : Valore di spostamento frazionario   【Offset】",
+        "【child】: Componente figlio    【Widget】"
+      ]
+    }
+  ]
+}

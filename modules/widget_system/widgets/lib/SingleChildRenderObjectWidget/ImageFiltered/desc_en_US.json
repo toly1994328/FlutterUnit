@@ -1,0 +1,36 @@
+{
+  "id": 357,
+  "name": "ImageFiltered",
+  "localName": "Image Filter",
+  "info": "Through the ImageFilter image filter, any component can be processed with special effects, including but not limited to Gaussian blur, color filter, transformation, etc.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    278,
+    88
+  ],
+  "nodes": [
+    {
+      "file": "node1_blur.dart",
+      "name": "ImageFilter Gaussian Blur",
+      "desc": [
+        "【imageFilter】 : Image filter   【ImageFilter】",
+        "【child】 : Child component   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "ImageFilter Color Effect",
+      "desc": [
+        "Achieve color filter through the ColorFilter object."
+      ]
+    },
+    {
+      "file": "node3_matrix.dart",
+      "name": "ImageFilter Transformation Effect",
+      "desc": [
+        "Perform matrix transformation through the ImageFilter.matrix constructor, but it is relatively weak."
+      ]
+    }
+  ]
+}

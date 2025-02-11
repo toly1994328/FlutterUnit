@@ -1,0 +1,61 @@
+{
+  "id": 134,
+  "name": "DayPicker",
+  "localName": "날짜 선택기",
+  "info": "날짜 선택 컴포넌트로, 현재 날짜, 선택된 날짜, 표시할 월 등을 지정할 수 있으며, 날짜 선택 이벤트를 수신합니다.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    135,
+    136
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DayPicker 기본 사용",
+      "desc": [
+        "【selectedDate】 : 선택된 날짜   【DateTime】",
+        "【currentDate】 : 현재 날짜   【DateTime】",
+        "【firstDate】 : 가장 이른 날짜 제한   【DateTime】",
+        "【lastDate】 : 가장 늦은 날짜 제한   【DateTime】",
+        "【displayedMonth】 : 현재 표시되는 월   【DateTime】",
+        "【onChanged】 : 클릭 콜백  【Function(DateTime)】",
+        "    ",
+        "import 'package:flutter/material.dart';",
+        "",
+        "class CustomDayPicker extends StatelessWidget{",
+        "",
+        "  const CustomDayPicker({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'DayPicker 날짜 선택기는 Flutter3.0에서 역사의 뒤안길로 사라졌습니다. 이를 대체하는 것은 CalendarDatePicker 캘린더 선택기입니다.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   final DateTime _date = DateTime.now();",
+        "  ",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return SizedBox(",
+        "       height: 350,",
+        "       child: DayPicker(",
+        "           selectedDate: _date,",
+        "           currentDate: DateTime.now(),",
+        "           onChanged: (date)=> setState(() => _date = date),",
+        "           firstDate:  DateTime(2018),",
+        "           lastDate: DateTime(2030),",
+        "           displayedMonth: DateTime.now()",
+        "       ),"
+      ]
+    }
+  ]
+}

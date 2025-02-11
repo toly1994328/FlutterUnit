@@ -1,0 +1,27 @@
+{
+  "id": 164,
+  "name": "SingleChildScrollView",
+  "localName": "Single Child Scroll",
+  "info": "Makes a component scrollable, allowing you to specify properties such as the scroll direction, whether to reverse the direction, the scroll controller, etc.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SingleChildScrollView",
+      "desc": [
+        "【child】: Child widget 【Widget】",
+        "【padding】: Padding 【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Scroll Direction of SingleChildScrollView",
+      "desc": [
+        "【scrollDirection】: Scroll direction 【Axis】",
+        "【reverse】: Whether to reverse 【Axis】"
+      ]
+    }
+  ]
+}

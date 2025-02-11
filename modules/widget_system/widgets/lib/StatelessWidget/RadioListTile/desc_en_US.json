@@ -1,0 +1,32 @@
+{
+  "id": 19,
+  "name": "RadioListTile",
+  "localName": "Radio Tile",
+  "info": "A general list item structure provided by Flutter, with a middle-right structure, and a Radio at the end. Components can be inserted at corresponding positions, making it easy to handle specific items.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RadioListTile requires a generic type T",
+      "desc": [
+        "【value】 : Item object  【T】",
+        "【groupValue】 : Selected object  【T】",
+        "【selected】: Whether selected   【bool】",
+        "【secondary】: Right component   【Widget】",
+        "【title】: Middle top component   【Widget】",
+        "【subtitle】: Middle bottom component   【Widget】",
+        "【onChanged】: Switch event   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2_dense.dart",
+      "name": "RadioListTile selection color and dense layout",
+      "desc": [
+        "【activeColor】 : Color when selected  【Color】",
+        "【dense】: Whether dense layout   【bool】"
+      ]
+    }
+  ]
+}

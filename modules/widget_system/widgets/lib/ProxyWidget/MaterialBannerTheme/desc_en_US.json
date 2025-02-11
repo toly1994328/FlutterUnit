@@ -1,0 +1,18 @@
+{
+  "id": 327,
+  "name": "MaterialBannerTheme",
+  "localName": "Banner Style",
+  "info": "Mainly used to set default properties for descendant MaterialBanner components uniformly, and it can also be used to obtain the default properties of MaterialBanner.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of MaterialBannerTheme",
+      "desc": [
+        "You can specify the MaterialBannerThemeData properties to set default styles for descendant MaterialBanner components, such as background color, margins, text styles, etc. You can also use MaterialBannerTheme.of to get the theme data of MaterialBanner."
+      ]
+    }
+  ]
+}

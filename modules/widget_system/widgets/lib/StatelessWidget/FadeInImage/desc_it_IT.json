@@ -1,0 +1,28 @@
+{
+  "id": 8,
+  "name": "FadeInImage",
+  "localName": "Immagine dissolvenza",
+  "info": "Carica un'immagine con una dissolvenza trasparente. È possibile specificare un'immagine segnaposto, curve di animazione per l'entrata e l'uscita, durata, larghezza, altezza, tipo di adattamento, allineamento, modalità di ripetizione, ecc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FadeInImage.assetNetwork carica immagini dalla rete",
+      "desc": [
+        "【placeholder】 : Indirizzo dell'immagine segnaposto  【String】",
+        "【image】 : Indirizzo dell'immagine da visualizzare  【String】",
+        "【width】: Larghezza   【double】",
+        "【height】: Altezza   【double】",
+        "【fadeInDuration】: Durata della dissolvenza in entrata   【Duration】",
+        "【fadeOutDuration】: Durata della dissolvenza in uscita   【Duration】",
+        "【fadeInCurve】: Curva della dissolvenza in entrata   【Cubic】",
+        "【fadeOutCurve】: Curva della dissolvenza in uscita   【Cubic】",
+        "【fit】: Modalità di adattamento   【BoxFit】",
+        "【alignment】: Modalità di allineamento   【Alignment】",
+        "【repeat】: Modalità di ripetizione   【ImageRepeat】,"
+      ]
+    }
+  ]
+}

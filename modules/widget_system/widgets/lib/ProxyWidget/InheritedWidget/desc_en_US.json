@@ -1,0 +1,36 @@
+{
+  "id": 346,
+  "name": "InheritedWidget",
+  "localName": "Inherited Widget",
+  "info": "This class is an abstract class, which can store data in this context and share that data in the context of its subsequent nodes. There are many implementation classes, including various theme components, MediaQuery, etc.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    167,
+    319,
+    328,
+    324,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Column",
+      "desc": [
+        "【children】: Component list   【List<Widget>】",
+        "【mainAxisAlignment】: Main axis alignment   【MainAxisAlignment】",
+        "【crossAxisAlignment】: Cross axis alignment   【CrossAxisAlignment】",
+        "【textBaseline】: Text baseline   【TextBaseline】",
+        "【verticalDirection】: Vertical direction   【VerticalDirection】",
+        "【mainAxisSize】: Main axis size   【MainAxisSize】"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "InheritedWidget Example",
+      "desc": [
+        "Below is an example of using the InheritedWidget component through a color counter project."
+      ]
+    }
+  ]
+}

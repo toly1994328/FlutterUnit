@@ -1,0 +1,19 @@
+{
+  "id": 234,
+  "name": "WidgetInspector",
+  "localName": "위젯 인스펙터",
+  "info": "이 컴포넌트는 하위 컴포넌트 계층 구조를 쉽게 확인할 수 있게 해주며, Flutter Inspector 플러그인의 기능 중 하나입니다.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "WidgetInspector 기본 사용법",
+      "desc": [
+        "【child】 : 하위 컴포넌트   【Widget】",
+        "【selectButtonBuilder】: *선택 버튼 생성기   【InspectorSelectButtonBuilder】"
+      ]
+    }
+  ]
+}

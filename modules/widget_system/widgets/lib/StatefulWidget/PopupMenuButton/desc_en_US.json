@@ -1,0 +1,24 @@
+{
+  "id": 56,
+  "name": "PopupMenuButton",
+  "localName": "Menu Button",
+  "info": "A pop-up menu bar that can specify attributes such as offset, color, elevation, and shape. Receives item selection and deselection events.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of PopupMenuButton",
+      "desc": [
+        "【itemBuilder】: Constructor 【PopupMenuItemBuilder<T>】",
+        "【offset】: Offset 【Offset】",
+        "【color】: Background Color 【Color】",
+        "【shape】: Shape 【ShapeBorder】",
+        "【elevation】: Elevation 【double】",
+        "【onCanceled】: Cancel Event 【Function()】",
+        "【onSelected】: Selection Event 【Function(T)】"
+      ]
+    }
+  ]
+}

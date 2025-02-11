@@ -1,0 +1,23 @@
+{
+  "id": 276,
+  "name": "DrawerButton",
+  "localName": "Botão de Gaveta",
+  "info": "Um botão de ícone de gaveta esquerda, usando DrawerButtonIcon para exibir o ícone, o evento de clique padrão pode abrir a gaveta esquerda.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    273,
+    361
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do DrawerButton",
+      "desc": [
+        "【onPressed】 : Evento de clique  【VoidCallback?】",
+        "【style】: Estilo do botão   【ButtonStyle?】",
+        "Quando onPressed estiver vazio, ao clicar, a gaveta esquerda será aberta."
+      ]
+    }
+  ]
+}

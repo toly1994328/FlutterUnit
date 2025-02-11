@@ -1,0 +1,26 @@
+{
+  "id": 96,
+  "name": "Column",
+  "localName": "Disposition en colonne",
+  "info": "Une disposition Flex avec une orientation verticale, capable de contenir plusieurs composants. Toutes les autres propriétés sont identiques, voir Flex pour plus de détails.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Utilisation de base de Column",
+      "desc": [
+        "【children】 : Liste des composants   【List<Widget>】",
+        "【mainAxisAlignment】 : Alignement de l'axe principal   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : Alignement de l'axe secondaire   【CrossAxisAlignment】",
+        "【textBaseline】 : Ligne de base du texte   【TextBaseline】",
+        "【verticalDirection】 : Direction verticale   【VerticalDirection】",
+        "【mainAxisSize】 : Taille de l'axe principal   【MainAxisSize】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": 105,
+  "name": "LongPressDraggable",
+  "localName": "Цель для перетаскивания",
+  "info": "Позволяет компоненту перетаскиваться по интерфейсу при длительном нажатии, может хранить данные типа T. Обычно используется в сочетании с DragTarget для достижения эффекта перетаскивания.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    103,
+    104
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Использование LongPressDraggable с DragTarget",
+      "desc": [
+        "【child】 : Дочерний элемент   【Widget】",
+        "【feedback】 : Дочерний элемент при перетаскивании   【Widget】",
+        "【axis】 : Ось перетаскивания   【Axis】",
+        "【data】 : Данные   【T】",
+        "【onDragStarted】 : Начало перетаскивания   【Function()】",
+        "【onDragEnd】 : Конец перетаскивания   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : Перетаскивание завершено   【Function()】",
+        "【onDraggableCanceled】 : Перетаскивание отменено   【Function(Velocity,Offset)】"
+      ]
+    }
+  ]
+}

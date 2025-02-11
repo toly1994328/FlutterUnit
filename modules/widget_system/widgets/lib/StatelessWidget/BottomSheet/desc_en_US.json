@@ -1,0 +1,22 @@
+{
+  "id": 142,
+  "name": "BottomSheet",
+  "localName": "Bottom Drawer",
+  "info": "As a component, it is a simple structural component that can specify shape, shadow depth, background color, and internal component constructors. It generally pops up from the bottom through the showBottomSheet method of ScaffoldState.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of BottomSheet",
+      "desc": [
+        "【builder】: Component constructor 【WidgetBuilder】",
+        "【backgroundColor】: Background color 【Color】",
+        "【elevation】: Shadow depth 【double】",
+        "【shape】: Shape 【ShapeBorder】",
+        "【onClosing】: Closing callback 【Function()】"
+      ]
+    }
+  ]
+}

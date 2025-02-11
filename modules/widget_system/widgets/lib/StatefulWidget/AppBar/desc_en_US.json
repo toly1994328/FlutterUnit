@@ -1,0 +1,31 @@
+{
+  "id": 57,
+  "name": "AppBar",
+  "localName": "App Header",
+  "info": "A common structure for the top bar of an application, where corresponding components can be placed in specified areas, often used in the Scaffold component.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of AppBar",
+      "desc": [
+        "【leading】 : Left component   【Widget】",
+        "【title】 : Middle component   【Widget】",
+        "【actions】 : Right component   【List<Widget>】",
+        "【elevation】 : Shadow depth   【double】",
+        "【shape】 : Shape   【ShapeBorder】",
+        "【backgroundColor】 : Background color   【Color】",
+        "【centerTitle】 : Whether the title is centered   【bool】"
+      ]
+    },
+    {
+      "file": "node2_tab.dart",
+      "name": "Using AppBar with TabBar and TabBarView",
+      "desc": [
+        "【bottom】 : Bottom component   【PreferredSizeWidget】"
+      ]
+    }
+  ]
+}

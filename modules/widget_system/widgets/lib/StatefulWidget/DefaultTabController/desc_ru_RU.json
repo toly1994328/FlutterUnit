@@ -1,0 +1,23 @@
+{
+  "id": 230,
+  "name": "DefaultTabController",
+  "localName": "Контроллер вкладок по умолчанию",
+  "info": "При использовании TabBar и TabBarView требуется один и тот же контроллер для управления вкладками и страницами. DefaultTabController предоставляет контроллер по умолчанию, если он не указан, что упрощает использование.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    148,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование DefaultTabController",
+      "desc": [
+        "【length】 : Количество вкладок   【int】",
+        "【initialIndex】 : Начальный индекс вкладки   【int】",
+        "【child】 : Компонент   【Widget】"
+      ]
+    }
+  ]
+}

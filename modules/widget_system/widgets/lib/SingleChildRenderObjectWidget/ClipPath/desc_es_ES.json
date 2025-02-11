@@ -1,0 +1,24 @@
+{
+  "id": 69,
+  "name": "ClipPath",
+  "localName": "Recorte de ruta",
+  "info": "Puede contener un componente hijo y recortarlo según la ruta especificada. Se puede personalizar la forma de la ruta, es un componente de recorte muy flexible.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    66,
+    67,
+    68
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de ClipPath",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【clipBehavior】 : Comportamiento de recorte   【Clip】",
+        "【clipper】 : Recortador   【CustomClipper<Path>】"
+      ]
+    }
+  ]
+}

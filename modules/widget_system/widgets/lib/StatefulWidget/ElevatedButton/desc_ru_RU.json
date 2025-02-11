@@ -1,0 +1,34 @@
+{
+  "id": 354,
+  "name": "ElevatedButton",
+  "localName": "Поднятая кнопка",
+  "info": "Кнопка в стиле Material, похожая на RaisedButton. Можно изменить свойства, такие как граница, цвет, тень и т.д., через стили.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    353,
+    26,
+    355
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование ElevatedButton",
+      "desc": [
+        "【child】 : Имеет ли прокручиваемое содержимое   【Widget】",
+        "【onPressed】 : Событие нажатия   【VoidCallback】",
+        "【onLongPress】 : Событие долгого нажатия   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Стиль ElevatedButton",
+      "desc": [
+        "【style】 : Стиль кнопки   【ButtonStyle】",
+        "【focusNode】 : Фокус   【FocusNode】",
+        "【clipBehavior】 : Поведение обрезки   【Clip】",
+        "【autofocus】 : Автофокус   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Página Cupertino",
+  "info": "Pode manter uma pilha de rotas como o MaterialApp. Constrói rotas através de routes e onGenerateRoute, e pode monitorar rotas com navigatorObservers.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do CupertinoTabView",
+      "desc": [
+        "【builder】 : Construtor da página inicial   【WidgetBuilder】",
+        "【navigatorObservers】 : Observador de rotas   【List<NavigatorObserver>】",
+        "【routes】 : Mapeamento de rotas   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】 : Fábrica de rotas   【RouteFactory】"
+      ]
+    }
+  ]
+}

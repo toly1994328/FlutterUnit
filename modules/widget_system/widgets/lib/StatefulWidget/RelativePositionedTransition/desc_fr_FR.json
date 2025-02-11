@@ -1,0 +1,21 @@
+{
+  "id": 115,
+  "name": "RelativePositionedTransition",
+  "localName": "Transition de position rectangulaire",
+  "info": "Sous-classe de AnimatedWidget, utilise un animateur de type Rect pour permettre à un composant enfant de faire une transition animée entre deux objets Rect.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de RelativePositionedTransition",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【size】 : Décalage gauche et haut   【Size】",
+        "【rect】 : Animation   【Animation<Rect>】",
+        "    Le composant PositionedTransition ne fonctionne que dans une Stack"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 295,
+  "name": "AbsorbPointer",
+  "localName": "Absorber Clics",
+  "info": "Contiene un componente hijo y puede decidir si el hijo ignora los eventos de gestos especificando la propiedad ignoring, mientras que él mismo acepta los eventos.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    146,
+    149,
+    150,
+    292
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de AbsorbPointer",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【absorbing】 : Si absorbe eventos   【bool】",
+        "Como se muestra a continuación, cuando el Switch está seleccionado, absorbing es true y los eventos del botón serán absorbidos, no se podrá hacer clic."
+      ]
+    }
+  ]
+}

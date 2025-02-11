@@ -1,0 +1,24 @@
+{
+  "id": 179,
+  "name": "ListWheelScrollView",
+  "localName": "Колесо списка",
+  "info": "Высококлассный цилиндрический список с прокруткой, изысканный и утонченный, позволяет задавать такие свойства, как высота элемента, перспектива, сжатие и т.д., принимает события выбора при прокрутке.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    139,
+    291
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование ListWheelScrollView",
+      "desc": [
+        "【children】 : Список дочерних компонентов   【List<Widget>】",
+        "【perspective】 : Перспектива   【double】",
+        "【itemExtent】 : Высота элемента   【EdgeInsets】",
+        "【onSelectedItemChanged】 : Обратный вызов при выборе  【ValueChanged<int> 】"
+      ]
+    }
+  ]
+}

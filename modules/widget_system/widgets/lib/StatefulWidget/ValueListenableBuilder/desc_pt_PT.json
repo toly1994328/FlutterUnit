@@ -1,0 +1,20 @@
+{
+  "id": 255,
+  "name": "ValueListenableBuilder",
+  "localName": "Construtor de Valor Escutável",
+  "info": "Pode escutar um valor e, quando ele muda, reconstruir a interface através do callback do builder, evitando o uso de setState para atualizar.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ValueListenableBuilder",
+      "desc": [
+        "【builder】: Construtor de Componentes   【ValueWidgetBuilder<T>】",
+        "【valueListenable】: Valor Escutável    【ValueListenable<T>】",
+        "【child】: Componente Filho    【Widget】"
+      ]
+    }
+  ]
+}

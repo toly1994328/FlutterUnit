@@ -1,0 +1,20 @@
+{
+  "id": 228,
+  "name": "AnimatedBuilder",
+  "localName": "애니메이션 빌더",
+  "info": "빌더를 통해 애니메이션에 해당하는 노드를 부분적으로 업데이트하고, 하위 컴포넌트의 새로고침을 방지하여 빌드 시간을 줄이고 애니메이션 성능을 향상시킵니다.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedBuilder 사용 예제",
+      "desc": [
+        "【animation】 : *리스너 가능 객체   【Listenable】",
+        "【builder】 : *컴포넌트 빌더   【TransitionBuilder】",
+        "【child】 : 하위 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

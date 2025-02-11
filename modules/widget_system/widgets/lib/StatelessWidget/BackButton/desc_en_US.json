@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "Back Button",
+  "info": "An IconButton with a back function, the back icon cannot be changed. It behaves differently in iOS and Android.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BackButton Properties",
+      "desc": [
+        "【color】: Color   【Color】",
+        "【style】: Button Style   【ButtonStyle?】",
+        "【onPressed】: Click Event   【Function】",
+        " If onPressed is empty, it will exit the current stack."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 116,
+  "name": "AnimatedSwitcher",
+  "localName": "アニメーション切り替え",
+  "info": "子コンポーネントが変更されたときにアニメーションを実行します。子コンポーネントのkeyを指定して識別する必要があります。アニメーションの方法はカスタマイズ可能で、アニメーションの時間やアニメーションカーブなどの属性を指定できます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedSwitcherの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーション時間  【Duration】",
+        "【switchOutCurve】 : 切り出しカーブ  【Curves】",
+        "【switchInCurve】 : 切り込みカーブ  【Curves】",
+        "【switchInCurve】 : 切り込みカーブ  【Curves】",
+        "【transitionBuilder】 : アニメーションビルダー  【Widget Function(Widget, Animation<double>)】"
+      ]
+    }
+  ]
+}

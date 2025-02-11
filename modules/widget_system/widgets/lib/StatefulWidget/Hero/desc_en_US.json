@@ -1,0 +1,18 @@
+{
+  "id": 171,
+  "name": "Hero",
+  "localName": "Shared Animation",
+  "info": "You can specify a tag name, and components with the same tag will perform a shared animation when transitioning between two interfaces. There cannot be two Hero tags with the same name in one interface.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Hero",
+      "desc": [
+        "【tag】 : tag   【String】,"
+      ]
+    }
+  ]
+}

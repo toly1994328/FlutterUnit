@@ -1,0 +1,23 @@
+{
+  "id": 109,
+  "name": "Flexible",
+  "localName": "Componente Flessibile",
+  "info": "Può essere utilizzato solo nei layout Row, Column e Flex, può annidare figli per espandere lo spazio rimanente, e può anche specificare il tipo di adattamento.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    94,
+    106
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di Flexible",
+      "desc": [
+        "【child】 : Figlio   【Widget】",
+        "【fit】 : Modalità di adattamento*2   【FlexFit】",
+        "【flex】 : Percentuale di allocazione dello spazio rimanente   【int】"
+      ]
+    }
+  ]
+}

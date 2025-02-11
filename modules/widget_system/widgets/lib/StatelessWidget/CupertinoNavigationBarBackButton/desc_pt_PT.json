@@ -1,0 +1,19 @@
+{
+  "id": 218,
+  "name": "CupertinoNavigationBarBackButton",
+  "localName": "Botão de Voltar no Estilo iOS",
+  "info": "Botão de voltar da barra de navegação no estilo Cupertino, pode especificar a cor e o evento de clique, geralmente não é usado sozinho.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Botão de Voltar",
+      "desc": [
+        "【onPressed】 : Evento de clique   【VoidCallback】",
+        "【color】: Cor    【Color】"
+      ]
+    }
+  ]
+}

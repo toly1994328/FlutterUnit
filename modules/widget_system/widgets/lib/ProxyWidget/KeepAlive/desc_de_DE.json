@@ -1,0 +1,20 @@
+{
+  "id": 316,
+  "name": "KeepAlive",
+  "localName": "Lebendig halten",
+  "info": "Ob der Zustand der Kinder in einer faul geladenen Liste lebendig gehalten werden soll. Ist die zugrunde liegende Implementierung von AutomaticKeepAlive und wird normalerweise nicht alleine verwendet.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in KeepAlive",
+      "desc": [
+        "【child】 : *Kindkomponente   【Widget】",
+        "【keepAlive】 : *Ob lebendig gehalten wird   【bool】",
+        "In der Flutter-Framework-Ebene wird es nur in AutomaticKeepAlive verwendet, und im Quellcode wird auch gesagt, dass es selten alleine verwendet wird. Dieses Beispiel zeigt die Zustandserhaltung der ListView-Einträge."
+      ]
+    }
+  ]
+}

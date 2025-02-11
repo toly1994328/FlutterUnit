@@ -1,0 +1,43 @@
+{
+  "id": 153,
+  "name": "RawChip",
+  "localName": "원본 칩",
+  "info": "각 Chip 컴포넌트의 조상으로, 각 Chip의 표현 능력을 가지고 있으며, 선택, 클릭, 삭제 등의 이벤트를 지원합니다. 자세한 내용은 Chip, FilterChip, ActionChip, InputChip, ChoiceChip을 참조하세요.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_press.dart",
+      "name": "RawChip 클릭 효과",
+      "desc": [
+        "【label】: 중간 컴포넌트   【Widget】",
+        "【padding】 : 내부 여백   【EdgeInsetsGeometry】",
+        "【labelPadding】 : 라벨 여백   【EdgeInsetsGeometry】",
+        "【shadowColor】: 그림자 색상   【Color】",
+        "【avatar】: 왼쪽 컴포넌트   【Widget】",
+        "【elevation】: 그림자 깊이   【double】",
+        "【pressElevation】: 클릭 시 그림자 깊이   【double】",
+        "【onPressed】 : 클릭 이벤트  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "RawChip 선택 및 삭제 효과",
+      "desc": [
+        "【selected】: 선택 여부   【bool】",
+        "【deleteIconColor】: 끝 아이콘 색상   【Color】",
+        "【selectedColor】: 선택 색상   【Color】",
+        "【deleteIcon】: 끝 컴포넌트   【Widget】",
+        "【onSelected】: 선택 이벤트   【Function(bool)】",
+        "【onDeleted】 : 끝 이벤트  【Function()】"
+      ]
+    }
+  ]
+}

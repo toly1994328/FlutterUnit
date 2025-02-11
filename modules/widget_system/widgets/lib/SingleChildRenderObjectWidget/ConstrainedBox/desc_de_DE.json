@@ -1,0 +1,26 @@
+{
+  "id": 80,
+  "name": "ConstrainedBox",
+  "localName": "Eingeschränkte Box",
+  "info": "Kann ein Unterelement aufnehmen und durch die Angabe von maximaler und minimaler Breite und Höhe den Bereich des Unterelements begrenzen.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    1,
+    79,
+    81
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von BoxConstraints",
+      "desc": [
+        "【child】 : Kind-Komponente   【Widget】",
+        "【minWidth】 : Minimale Breite   【double】",
+        "【minHeight】 : Minimale Höhe   【double】",
+        "【maxHeight】 : Maximale Höhe   【double】",
+        "【maxWidth】 : Maximale Breite   【double】"
+      ]
+    }
+  ]
+}

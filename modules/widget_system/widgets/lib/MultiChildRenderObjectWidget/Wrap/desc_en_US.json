@@ -1,0 +1,52 @@
+{
+  "id": 98,
+  "name": "Wrap",
+  "localName": "Wrap Layout",
+  "info": "Can accommodate multiple components, arranged in a specified direction, and can easily handle the spacing between children. It can automatically wrap when out of bounds. It has flexible alignment methods for the main axis and cross axis.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Wrap",
+      "desc": [
+        "【children】: Component list   【List<Widget>】",
+        "【spacing】: Main axis spacing between items   【double】",
+        "【runSpacing】: Cross axis spacing between items   【double】",
+        "【direction】: Main axis alignment   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_alignment.dart",
+      "name": "Wrap's alignment Property",
+      "desc": [
+        "【alignment】: Main axis alignment   【WrapAlignment】"
+      ]
+    },
+    {
+      "file": "node3_crossAxisAlignment.dart",
+      "name": "Wrap's crossAxisAlignment Property",
+      "desc": [
+        "【crossAxisAlignment】: Cross axis alignment   【CrossAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node4_textDirection.dart",
+      "name": "Wrap's textDirection Property",
+      "desc": [
+        "【textDirection】: Text direction   【TextDirection】"
+      ]
+    },
+    {
+      "file": "node5_verticalDirection.dart",
+      "name": "Wrap's verticalDirection Property",
+      "desc": [
+        "【verticalDirection】: Vertical direction   【VerticalDirection】"
+      ]
+    }
+  ]
+}

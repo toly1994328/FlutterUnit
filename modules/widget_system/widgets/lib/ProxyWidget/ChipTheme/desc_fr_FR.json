@@ -1,0 +1,25 @@
+{
+  "id": 328,
+  "name": "ChipTheme",
+  "localName": "Style de la petite barre",
+  "info": "Principalement utilisé pour définir les propriétés par défaut des composants de type Chip pour les descendants, il est également possible d'obtenir les propriétés par défaut de Chip via ce composant.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    11,
+    153,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ChipTheme",
+      "desc": [
+        "Il est possible de spécifier les propriétés de données ChipThemeData pour définir le style par défaut des composants de type Chip pour les descendants, les propriétés sont similaires à celles de Chip, telles que l'ombre, la couleur, la marge, la forme, le style de texte, etc. Il est également possible d'obtenir les données de thème de Chip en utilisant ChipTheme.of."
+      ]
+    }
+  ]
+}

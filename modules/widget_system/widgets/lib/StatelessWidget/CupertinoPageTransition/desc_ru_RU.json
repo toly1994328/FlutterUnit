@@ -1,0 +1,21 @@
+{
+  "id": 216,
+  "name": "CupertinoPageTransition",
+  "localName": "Переход страницы",
+  "info": "Предоставляет анимацию перехода страницы в стиле iOS.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Введение в CupertinoPageTransition",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【linearTransition】 : Линейное преобразование   【bool】",
+        "【primaryRouteAnimation】 : Начальная анимация маршрута   【Animation<double>】",
+        "【secondaryRouteAnimation】 : Вторичная анимация маршрута   【Animation<double>】"
+      ]
+    }
+  ]
+}

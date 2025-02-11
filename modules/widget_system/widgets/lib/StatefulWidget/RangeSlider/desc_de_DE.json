@@ -1,0 +1,27 @@
+{
+  "id": 44,
+  "name": "RangeSlider",
+  "localName": "Bereichs-Schieberegler",
+  "info": "Bereichs-Schieberegler-Komponente, unterstützt das Ziehen von zwei Punkten, um den Bereich dazwischen zu erhalten. Ermöglicht die Angabe von Farbe, Anzahl der Abschnitte und angezeigte Labels, empfängt Rückrufe bei Fortschrittsänderungen.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von RangeSlider",
+      "desc": [
+        "【values】 : Werte   【RangeValues】",
+        "【min】 : Mindestwert   【double】",
+        "【max】 : Höchstwert   【double】",
+        "【divisions】 : Anzahl der Abschnitte   【int】",
+        "【label】 : Text der Hinweisblase   【String】",
+        "【activeColor】 : Aktive Farbe   【Color】",
+        "【inactiveColor】 : Inaktive Farbe   【Color】",
+        "【onChangeStart】 : Listener beim Start des Ziehens   【Function(RangeValues)】",
+        "【onChangeEnd】 : Listener beim Ende des Ziehens   【Function(RangeValues)】",
+        "【onChanged】 : Rückruf bei Änderung   【Function(RangeValues)】"
+      ]
+    }
+  ]
+}

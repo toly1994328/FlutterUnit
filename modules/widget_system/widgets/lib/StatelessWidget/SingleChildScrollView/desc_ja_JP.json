@@ -1,0 +1,27 @@
+{
+  "id": 164,
+  "name": "SingleChildScrollView",
+  "localName": "シングルチャイルドスクロール",
+  "info": "コンポーネントにスクロール効果を持たせ、スクロールの方向、反転、スクロールコントローラーなどのプロパティを指定できます。",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SingleChildScrollViewの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【padding】 : 内側の余白  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "SingleChildScrollViewのスクロール方向",
+      "desc": [
+        "【scrollDirection】 : スクロール方向   【Axis】",
+        "【reverse】 : 反転するかどうか   【Axis】"
+      ]
+    }
+  ]
+}

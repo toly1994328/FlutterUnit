@@ -1,0 +1,23 @@
+{
+  "id": 226,
+  "name": "TweenAnimationBuilder",
+  "localName": "Costruttore di animazione a interpolazione",
+  "info": "Esegue un'animazione a interpolazione sulle proprietà correlate tramite l'interpolatore Tween, costruendo localmente tramite il builder per ridurre l'ambito di aggiornamento. Non è necessario un animatore personalizzato, è possibile specificare la durata dell'animazione, la curva e il callback di fine.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Esempio di utilizzo di TweenAnimationBuilder",
+      "desc": [
+        "【tween】 : *interpolatore   【Tween<T>】",
+        "【duration】 : *durata   【Duration】",
+        "【builder】 : *costruttore   【ValueWidgetBuilder<T>】",
+        "【curve】 : curva di animazione   【Curve】",
+        "【onEnd】 : callback di fine   【VoidCallback】",
+        "【child】 : componente figlio   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 254,
+  "name": "RawKeyboardListener",
+  "localName": "원시 키보드 리스너",
+  "info": "키보드 키 누름 및 해제 이벤트를 감지하는 데 사용할 수 있으며, 현재는 물리적 키보드만 감지할 수 있으며 데스크톱에서 사용할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RawGestureDetector 기본 사용",
+      "desc": [
+        "【onKey】 : 키보드 이벤트   【ValueChanged<RawKeyEvent>】",
+        "【focusNode】 : 포커스   【FocusNode】",
+        "【autofocus】 : 자동 포커스 여부   【bool】",
+        "【child】 : 자식 위젯   【Widget】"
+      ]
+    }
+  ]
+}

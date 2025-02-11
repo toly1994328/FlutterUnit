@@ -1,0 +1,20 @@
+{
+  "id": 84,
+  "name": "SizedOverflowBox",
+  "localName": "Boîte de débordement dimensionnée",
+  "info": "Peut contenir un composant enfant, et le composant enfant est autorisé à déborder de la zone du composant parent. Il est possible de décaler le composant enfant à l'aide de la propriété size, et il possède la propriété d'alignement alignment.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de SizedOverflowBox",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【size】 : Décalage de taille   【Size】",
+        "【alignment】 : Méthode d'alignement   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

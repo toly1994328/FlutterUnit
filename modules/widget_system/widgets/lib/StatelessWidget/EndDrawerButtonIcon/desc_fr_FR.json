@@ -1,0 +1,18 @@
+{
+  "id": 275,
+  "name": "EndDrawerButtonIcon",
+  "localName": "Icône de bouton de tiroir droit",
+  "info": "Une icône de tiroir droit, affichant l'icône correspondante selon la plateforme, peut être personnalisée avec ActionIconTheme.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Effet de l'icône EndDrawerButtonIcon",
+      "desc": [
+        "Le composant _ActionIcon adapte l'icône du bouton de tiroir droit pour différentes plateformes selon le thème ActionIconTheme."
+      ]
+    }
+  ]
+}

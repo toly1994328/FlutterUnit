@@ -1,0 +1,25 @@
+{
+  "id": 68,
+  "name": "ClipRRect",
+  "localName": "Abgerundetes Rechteck zuschneiden",
+  "info": "Kann ein Kindelement aufnehmen und es mit abgerundeten Ecken zuschneiden. Geben Sie borderRadius als Eckradius an.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    66,
+    67,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ClipRRect",
+      "desc": [
+        "【child】 : Kindelement   【Widget】",
+        "【borderRadius】 : Randradius   【BorderRadius】",
+        "【clipBehavior】 : Zuschneideverhalten   【Clip】",
+        "【clipper】 : Zuschneider   【CustomClipper<Rect>】"
+      ]
+    }
+  ]
+}

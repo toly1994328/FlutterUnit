@@ -1,0 +1,37 @@
+{
+  "id": 175,
+  "name": "RawMaterialButton",
+  "localName": "Botão Original",
+  "info": "O botão Material original, o grande mestre nos bastidores dos botões, pode aceitar eventos de clique, pressão longa e mudanças de destaque, e pode especificar cor, forma, profundidade de sombra, preenchimento interno e outros atributos.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do RawMaterialButton",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【elevation】 : Profundidade de sombra   【double】",
+        "【fillColor】 : Cor de preenchimento   【Color】",
+        "【splashColor】 : Cor do efeito de ondulação   【Color】",
+        "【textStyle】 : Estilo de texto   【TextStyle】",
+        "【onLongPress】 : Evento de pressão longa   【Function()】",
+        "【onPressed】 : Evento de clique  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Destaque e Forma do RawMaterialButton",
+      "desc": [
+        "【highlightElevation】 : Profundidade de sombra em destaque   【double】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

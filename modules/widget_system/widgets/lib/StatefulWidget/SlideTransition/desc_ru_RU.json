@@ -1,0 +1,20 @@
+{
+  "id": 112,
+  "name": "SlideTransition",
+  "localName": "Скользящий переход",
+  "info": "Подкласс AnimatedWidget, использует аниматор типа Offset для создания анимации перехода между двумя объектами Offset для дочернего компонента.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SlideTransition",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【textDirection】 : Направление оси x   【TextDirection】",
+        "【position】 : Анимация   【Animation<Offset>】"
+      ]
+    }
+  ]
+}

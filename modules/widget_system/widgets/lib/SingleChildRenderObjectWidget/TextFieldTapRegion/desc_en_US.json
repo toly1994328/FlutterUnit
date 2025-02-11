@@ -1,0 +1,26 @@
+{
+  "id": 281,
+  "name": "TextFieldTapRegion",
+  "localName": "TextField Tap Region",
+  "info": "The TapRegion with groupId as EditableText allows the clickable area of other components to be considered as one with the input field.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    280,
+    54,
+    245
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Monitor Clicks Inside and Outside the Component",
+      "desc": [
+        "In the example, clicking the plus and minus signs does not cancel the focus of the input field, and the keyboard can still be used for input.",
+        "【enabled】 : Whether it is available   【bool】",
+        "【onTapOutside】 : External click listener   【TapRegionCallback?】",
+        "【onTapInside】 : Internal click listener   【TapRegionCallback?】",
+        "【groupId】 : Clickable area group identifier   【Object?】"
+      ]
+    }
+  ]
+}

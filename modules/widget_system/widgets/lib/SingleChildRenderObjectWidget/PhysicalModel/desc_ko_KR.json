@@ -1,0 +1,27 @@
+{
+  "id": 296,
+  "name": "PhysicalModel",
+  "localName": "물리 모듈",
+  "info": "자식 위젯을 원형 또는 사각형으로 자를 수 있으며, 배경색, 모서리 반경, 그림자 깊이, 그림자 색상, 클리핑 동작을 지정할 수 있습니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    279,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PhysicalModel 기본 사용",
+      "desc": [
+        "【clipBehavior】 : 클리핑 동작   【Clip】",
+        "【borderRadius】 : 모서리 반경   【BorderRadius】",
+        "【child】 : 자식 위젯   【Widget】",
+        "【elevation】 : 그림자 깊이   【double】",
+        "【shadowColor】 : 그림자 색상   【Color】",
+        "【shape】 : 모양   【BoxShape】",
+        "【color】: 색상    【Color】"
+      ]
+    }
+  ]
+}

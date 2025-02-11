@@ -1,0 +1,27 @@
+{
+  "id": 140,
+  "name": "SnackBar",
+  "localName": "SnackBar",
+  "info": "As a component, it is a simple structural component that can specify shape, shadow depth, background color, etc. It usually pops up from the bottom through the showSnackBar method of ScaffoldState.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    141,
+    142
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SnackBar",
+      "desc": [
+        "【content】: Middle content component 【Widget】",
+        "【action】: Right side button 【SnackBarAction】",
+        "【duration】: Duration 【Widget】",
+        "【backgroundColor】: Background color 【Color】",
+        "【elevation】: Shadow depth 【double】",
+        "【shape】: Shape 【ShapeBorder】",
+        "【onVisible】: Callback when shown 【Function()】"
+      ]
+    }
+  ]
+}

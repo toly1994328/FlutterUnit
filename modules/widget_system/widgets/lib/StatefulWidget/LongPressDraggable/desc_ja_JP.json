@@ -1,0 +1,28 @@
+{
+  "id": 105,
+  "name": "LongPressDraggable",
+  "localName": "ドラッグターゲット",
+  "info": "長押しでコンポーネントをインターフェース上で自由にドラッグできるようにし、ジェネリック型Tのデータを格納できます。通常、DragTargetと組み合わせてドラッグ効果を実現します。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    103,
+    104
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LongPressDraggableとDragTargetの連携",
+      "desc": [
+        "【child】 : 子   【Widget】",
+        "【feedback】 : ドラッグ時の子   【Widget】",
+        "【axis】 : ドラッグ軸   【Axis】",
+        "【data】 : データ   【T】",
+        "【onDragStarted】 : ドラッグ開始   【Function()】",
+        "【onDragEnd】 : ドラッグ終了   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : ドラッグ完了   【Function()】",
+        "【onDraggableCanceled】 : ドラッグキャンセル   【Function(Velocity,Offset)】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 13,
+  "name": "ActionChip",
+  "localName": "Chip di Azione",
+  "info": "Uno stile simile al componente Chip, con alcune proprietà di clic. È possibile specificare la profondità dell'ombra al clic e l'evento di clic.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La rappresentazione normale di ActionChip è la seguente",
+      "desc": [
+        "【onPressed】: Evento di clic   【Function】",
+        "【pressElevation】: Profondità dell'ombra al clic   【double】",
+        "Altre proprietà sono simili al componente Chip, senza componente a destra."
+      ]
+    }
+  ]
+}

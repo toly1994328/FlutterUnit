@@ -1,0 +1,38 @@
+{
+  "id": 282,
+  "name": "Focus",
+  "localName": "Fokus-Komponente",
+  "info": "Eine Komponente zur Verwaltung von [FocusNode], die es ermöglicht, den Tastaturfokus auf dieses Widget und seine Unterbaumknoten zu setzen.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    283,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "FocusNode Fokussierung und Defokussierung",
+      "desc": [
+        "【focusNode】 : Fokus   【FocusNode?】",
+        "【onFocusChange】 : Fokusänderungsüberwachung   【ValueChanged<bool>?】",
+        "【child】 : Untergeordnete Komponente   【Widget】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Automatische Fokussierung",
+      "desc": [
+        "【autofocus】 : Automatische Fokussierung   【bool】",
+        "Das Flutter-Framework verfügt über integrierte Tastenkombinationen für den Fokuswechsel, z. B. ← und → für die horizontale Bildlaufleiste, um den Fokus auf das vorherige bzw. nächste Element zu setzen. Die Tab-Taste kann den Fokus auf den nächsten Focus-Knoten setzen."
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Tastaturereignis-Rückruf",
+      "desc": [
+        "【onKeyEvent】 : Tastaturereignis-Rückruf   【FocusOnKeyEventCallback?】"
+      ]
+    }
+  ]
+}

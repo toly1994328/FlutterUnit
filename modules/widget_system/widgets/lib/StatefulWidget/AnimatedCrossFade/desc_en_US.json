@@ -1,0 +1,30 @@
+{
+  "id": 100,
+  "name": "AnimatedCrossFade",
+  "localName": "Component Switch",
+  "info": "Presents animation effects when switching between two components, allowing you to specify properties such as animation curves, duration, alignment, etc. It is a very useful component.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of AnimatedCrossFade",
+      "desc": [
+        "【firstChild】 : First Child   【Widget】",
+        "【secondChild】 : Second Child   【Widget】",
+        "【crossFadeState】 : Which to Display   【CrossFadeState】",
+        "【duration】 : Duration   【Duration】"
+      ]
+    },
+    {
+      "file": "node2_curve.dart",
+      "name": "Animation Curves of AnimatedCrossFade",
+      "desc": [
+        "【firstCurve】 : First Curve   【Curve】",
+        "【secondCurve】 : Second Curve   【Curve】",
+        "【sizeCurve】 : Size Change Curve   【CrossFadeState】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 43,
+  "name": "CupertinoSlider",
+  "localName": "iOS Slider",
+  "info": "An iOS-style slider component that allows dragging to select between a specified maximum and minimum value. You can specify colors and receive callbacks for progress changes.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoSlider",
+      "desc": [
+        "【value】: value   【double】",
+        "【min】: minimum value   【double】",
+        "【max】: maximum value   【double】",
+        "【activeColor】: active color   【Color】",
+        "【thumbColor】: thumb color   【Color】",
+        "【divisions】: number of divisions   【int】",
+        "【onChangeStart】: callback when sliding starts   【Function(double)】",
+        "【onChangeEnd】: callback when sliding ends   【Function(double)】",
+        "【onChanged】: callback when value changes   【Function(double)】"
+      ]
+    }
+  ]
+}

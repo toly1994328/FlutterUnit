@@ -1,0 +1,20 @@
+{
+  "id": 143,
+  "name": "CupertinoContextMenu",
+  "localName": "iOS Pop-up Menu",
+  "info": "A gorgeous iOS-style button pop-up box. When long-pressed, a menu panel will pop up in an animated form. It is usually used in conjunction with CupertinoContextMenuAction.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoContextMenu",
+      "desc": [
+        "【child】 : Child Component   【Widget】",
+        "【actions】 : Action Components Set   【List<Widget>】",
+        "【previewBuilder】 : Animation Builder  【ContextMenuPreviewBuilder】"
+      ]
+    }
+  ]
+}

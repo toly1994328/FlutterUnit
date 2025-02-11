@@ -1,0 +1,37 @@
+{
+  "id": 28,
+  "name": "FloatingActionButton",
+  "localName": "Botão Flutuante",
+  "info": "Botão flutuante, geralmente usado em Scaffold, pode ser colocado em uma posição específica. Pode conter um componente filho, receber cliques, e definir cor, forma, etc.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Evento de clique do FloatingActionButton",
+      "desc": [
+        "【child】: Componente filho   【Widget】",
+        "【tooltip】: Texto de dica ao pressionar   【String】",
+        "【backgroundColor】: Cor de fundo   【Color】",
+        "【foregroundColor】: Cor de frente   【Color】",
+        "【elevation】: Profundidade da sombra   【double】",
+        "【onPressed】: Evento de clique   【Function】"
+      ]
+    },
+    {
+      "file": "node2_mini.dart",
+      "name": "Propriedade mini",
+      "desc": [
+        "【mini】: É mini   【bool】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+      "name": "Propriedade shape",
+      "desc": [
+        "【shape】: Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

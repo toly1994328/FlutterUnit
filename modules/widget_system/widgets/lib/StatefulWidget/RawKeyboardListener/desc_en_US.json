@@ -1,0 +1,21 @@
+{
+  "id": 254,
+  "name": "RawKeyboardListener",
+  "localName": "Raw Keyboard Listener",
+  "info": "Can be used to detect keyboard key press and release events, currently only physical keyboards can be detected, and can be used on desktop.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of RawGestureDetector",
+      "desc": [
+        "【onKey】 : Keyboard event   【ValueChanged<RawKeyEvent>】",
+        "【focusNode】 : Focus   【FocusNode】",
+        "【autofocus】 : Whether to auto focus   【bool】",
+        "【child】 : Child widget   【Widget】"
+      ]
+    }
+  ]
+}

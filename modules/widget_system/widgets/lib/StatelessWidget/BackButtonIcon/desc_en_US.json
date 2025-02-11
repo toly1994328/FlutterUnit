@@ -1,0 +1,18 @@
+{
+  "id": 272,
+  "name": "BackButtonIcon",
+  "localName": "Back Button Icon",
+  "info": "A return Icon icon, displaying the corresponding icon according to the platform, and the theme can be customized through ActionIconTheme.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BackButtonIcon Effect",
+      "desc": [
+        "The _ActionIcon component adapts the back button icon for different platforms according to the ActionIconTheme."
+      ]
+    }
+  ]
+}

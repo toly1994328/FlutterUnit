@@ -1,0 +1,23 @@
+{
+  "id": 335,
+  "name": "PrimaryScrollController",
+  "localName": "기본 스크롤 컨트롤러",
+  "info": "이것은 InheritedWidget의 하위 클래스로, context를 통해 하위 트리의 스크롤 가능한 뷰에 기본 ScrollController 객체를 제공합니다.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [
+    349,
+    344,
+    164
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PrimaryScrollController 소개",
+      "desc": [
+        "【controller】 : 스크롤 컨트롤러   【ScrollController】",
+        "【child】 : 하위 위젯   【Widget】"
+      ]
+    }
+  ]
+}

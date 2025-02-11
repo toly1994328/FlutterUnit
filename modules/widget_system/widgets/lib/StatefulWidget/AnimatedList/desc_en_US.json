@@ -1,0 +1,23 @@
+{
+  "id": 117,
+  "name": "AnimatedList",
+  "localName": "Animated List",
+  "info": "An enhanced version of ListView, which can animate items. For example, animations for adding or deleting items.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of AnimatedList",
+      "desc": [
+        "【itemBuilder】: Component builder 【AnimatedListItemBuilder】",
+        "【initialItemCount】: Number of child components 【int】",
+        "【scrollDirection】: Scroll direction 【Axis】",
+        "【controller】: Scroll controller 【ScrollController】",
+        "【reverse】: Whether the data is reversed 【bool】",
+        "【padding】: Padding 【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

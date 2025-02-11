@@ -1,0 +1,27 @@
+{
+  "id": 164,
+  "name": "SingleChildScrollView",
+  "localName": "Scorrimento singolo figlio",
+  "info": "Rende un componente scorrevole, è possibile specificare la direzione di scorrimento, se invertire, il controller di scorrimento e altre proprietà.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di SingleChildScrollView",
+      "desc": [
+        "【child】 : componente figlio   【Widget】",
+        "【padding】 : spaziatura interna  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direzione di scorrimento di SingleChildScrollView",
+      "desc": [
+        "【scrollDirection】 : direzione di scorrimento   【Axis】",
+        "【reverse】 : invertire   【Axis】"
+      ]
+    }
+  ]
+}

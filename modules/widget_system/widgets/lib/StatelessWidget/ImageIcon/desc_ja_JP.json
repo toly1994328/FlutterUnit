@@ -1,0 +1,24 @@
+{
+  "id": 7,
+  "name": "ImageIcon",
+  "localName": "コンテナ",
+  "info": "画像を単色に変えるためのコンポーネントです。サイズや色を指定できます。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    6,
+    30,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "単色の画像を表示するために使用",
+      "desc": [
+        "【入参】 : 画像リソース  【ImageProvider】",
+        "【size】 : サイズ  【double】",
+        "【color】: バッジの色   【Color】"
+      ]
+    }
+  ]
+}

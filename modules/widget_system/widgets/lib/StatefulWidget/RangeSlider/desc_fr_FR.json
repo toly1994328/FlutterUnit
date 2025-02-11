@@ -1,0 +1,27 @@
+{
+  "id": 44,
+  "name": "RangeSlider",
+  "localName": "Curseur de plage",
+  "info": "Composant de curseur de plage, prend en charge le glissement à deux points pour obtenir la plage entre eux. Peut spécifier la couleur, le nombre de segments et les étiquettes affichées, reçoit un rappel de changement de progression.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de RangeSlider",
+      "desc": [
+        "【values】 : valeurs   【RangeValues】",
+        "【min】 : valeur minimale   【double】",
+        "【max】 : valeur maximale   【double】",
+        "【divisions】 : nombre de segments   【int】",
+        "【label】 : texte de la bulle d'information   【String】",
+        "【activeColor】 : couleur active   【Color】",
+        "【inactiveColor】 : couleur inactive   【Color】",
+        "【onChangeStart】 : écouteur au début du glissement   【Function(RangeValues)】",
+        "【onChangeEnd】 : écouteur à la fin du glissement   【Function(RangeValues)】",
+        "【onChanged】 : rappel lors du changement   【Function(RangeValues)】"
+      ]
+    }
+  ]
+}

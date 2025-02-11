@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "뒤로 가기 버튼",
+  "info": "뒤로 가기 기능을 가진 IconButton, 뒤로 가기 아이콘은 변경할 수 없습니다. iOS와 Android에서 다르게 동작합니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BackButton 속성",
+      "desc": [
+        "【color】: 색상   【Color】",
+        "【style】: 버튼 스타일   【ButtonStyle?】",
+        "【onPressed】: 클릭 이벤트   【Function】",
+        "onPressed가 비어 있으면 현재 스택에서 빠져나옵니다."
+      ]
+    }
+  ]
+}

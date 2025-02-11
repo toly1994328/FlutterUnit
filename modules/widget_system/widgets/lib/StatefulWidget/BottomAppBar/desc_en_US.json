@@ -1,0 +1,22 @@
+{
+  "id": 61,
+  "name": "BottomAppBar",
+  "localName": "Bottom Navigation",
+  "info": "A recessed bottom navigation bar, typically used at the bottom of a Scaffold component, can specify properties such as color, elevation, shape, etc., and can achieve page-switching effects with PageView.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of BottomAppBar",
+      "desc": [
+        "【elevation】: Elevation 【double】",
+        "【shape】: Shape 【NotchedShape】",
+        "【notchMargin】: Notch Margin 【double】",
+        "【color】: Color 【Color】",
+        "【child】: Child 【Widget】"
+      ]
+    }
+  ]
+}

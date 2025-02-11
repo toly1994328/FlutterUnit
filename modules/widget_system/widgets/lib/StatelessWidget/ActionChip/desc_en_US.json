@@ -1,0 +1,26 @@
+{
+  "id": 13,
+  "name": "ActionChip",
+  "localName": "Action Chip",
+  "info": "Similar style to the Chip component, with some clickable properties. You can specify the shadow depth and click event when pressed.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "The normal performance of ActionChip is as follows",
+      "desc": [
+        "【onPressed】: Click event   【Function】",
+        "【pressElevation】: Shadow depth when pressed   【double】",
+        "Other properties are the same as the Chip component, no right component."
+      ]
+    }
+  ]
+}

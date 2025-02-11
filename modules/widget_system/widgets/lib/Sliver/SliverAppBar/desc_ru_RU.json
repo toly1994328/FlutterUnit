@@ -1,0 +1,33 @@
+{
+  "id": 184,
+  "name": "SliverAppBar",
+  "localName": "Sliver заголовок",
+  "info": "Общая структура верхней панели семейства Sliver, которая может указывать левый, центральный и правый компоненты, пространство сжатия, глубину тени, фиксированный режим, цвет фона и другие атрибуты.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    196
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SliverAppBar",
+      "desc": [
+        "【leading】 : Левый компонент   【Widget】",
+        "【title】 : Центральный компонент   【Widget】",
+        "【actions】 : Список конечных компонентов   【List<Widget>】",
+        "【floating】 : Плавающий ли   【bool】",
+        "【pinned】 : Остается ли наверху   【bool】",
+        "【snap】 : Полузакрытый ли   【bool】",
+        "【bottom】 : Нижний компонент   【PreferredSizeWidget】",
+        "【expandedHeight】 : Высота расширения   【double】",
+        "【elevation】 : Глубина тени   【double】",
+        "【flexibleSpace】 : Пространство расширения   【FlexibleSpaceBar】",
+        "【backgroundColor】 : Цвет фона   【Color】",
+        "【controller】 : Контроллер   【ScrollController】",
+        "   snap true, необходимо floating true"
+      ]
+    }
+  ]
+}

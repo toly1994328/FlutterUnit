@@ -1,0 +1,41 @@
+{
+  "id": 18,
+  "name": "SwitchListTile",
+  "localName": "스위치 리스트 타일",
+  "info": "Flutter에서 제공하는 일반적인 리스트 항목 구조로, 왼쪽과 중앙 구조이며, 끝에는 스위치가 있습니다. 해당 위치에 컴포넌트를 삽입할 수 있어 특정 항목에 쉽게 대응할 수 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SwitchListTile의 기본 표현은 다음과 같습니다",
+      "desc": [
+        "【secondary】: 왼쪽 컴포넌트   【Widget】",
+        "【title】: 중앙 상단 컴포넌트   【Widget】",
+        "【subtitle】: 중앙 하단 컴포넌트   【Widget】",
+        "【inactiveThumbColor】: 선택되지 않았을 때 원 색상   【Color】",
+        "【inactiveTrackColor】: 선택되지 않았을 때 트랙 색상   【Color】",
+        "【activeColor】: 선택되었을 때 원 색상   【Color】",
+        "【activeTrackColor】: 선택되었을 때 트랙 색상   【Color】",
+        "【onChanged】: 선택 이벤트   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "SwitchListTile의 선택 효과",
+      "desc": [
+        "【selected】: 선택 여부   【bool】",
+        "【inactiveThumbImage】: 선택되지 않았을 때 원 이미지   【ImageProvider】",
+        "【activeThumbImage】: 선택되었을 때 원 이미지   【ImageProvider】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "SwitchListTile의 밀집 속성",
+      "desc": [
+        "【dense】: 밀집 여부   【bool】"
+      ]
+    }
+  ]
+}

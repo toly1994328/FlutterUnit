@@ -1,0 +1,18 @@
+{
+  "id": 312,
+  "name": "PerformanceOverlay",
+  "localName": "Camada de Desempenho",
+  "info": "Permite ativar de forma muito conveniente dois gráficos de barras para monitorizar o desempenho, facilitando a visualização das mudanças na taxa de frames ao atualizar a interface.",
+  "lever": 2,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do PerformanceOverlay",
+      "desc": [
+        "Usar PerformanceOverlay.allEnabled permite iniciar todos os itens de monitorização."
+      ]
+    }
+  ]
+}

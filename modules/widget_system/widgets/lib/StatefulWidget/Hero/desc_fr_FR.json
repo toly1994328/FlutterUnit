@@ -1,0 +1,18 @@
+{
+  "id": 171,
+  "name": "Hero",
+  "localName": "Animation partagée",
+  "info": "Vous pouvez spécifier un nom de tag, les composants avec le même tag effectueront une animation partagée lors du changement d'interface. Il ne peut pas y avoir deux tags Hero avec le même nom dans une même interface.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Hero",
+      "desc": [
+        "【tag】 : étiquette   【String】,"
+      ]
+    }
+  ]
+}

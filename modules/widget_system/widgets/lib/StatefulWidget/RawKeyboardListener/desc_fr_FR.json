@@ -1,0 +1,21 @@
+{
+  "id": 254,
+  "name": "RawKeyboardListener",
+  "localName": "Écouteur de clavier brut",
+  "info": "Peut être utilisé pour détecter les événements de pression et de relâchement des touches du clavier. Actuellement, il ne peut détecter que les claviers physiques et peut être utilisé sur les plateformes de bureau.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de RawGestureDetector",
+      "desc": [
+        "【onKey】 : Événement de clavier   【ValueChanged<RawKeyEvent>】",
+        "【focusNode】 : Point focal   【FocusNode】",
+        "【autofocus】 : Mise au point automatique   【bool】",
+        "【child】 : Composant enfant   【Widget】"
+      ]
+    }
+  ]
+}

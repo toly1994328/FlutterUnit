@@ -1,0 +1,22 @@
+{
+  "id": 270,
+  "name": "SliverConstrainedCrossAxis",
+  "localName": "Restricción de tamaño en el eje cruzado para Sliver",
+  "info": "Especifica un tamaño en la dirección del eje cruzado para limitar el tamaño de un componente Sliver.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso básico de SliverConstrainedCrossAxis",
+      "desc": [
+        "【maxExtent】 : tamaño   【double】",
+        "【sliver】 : componente hijo   【Widget?】"
+      ]
+    }
+  ]
+}

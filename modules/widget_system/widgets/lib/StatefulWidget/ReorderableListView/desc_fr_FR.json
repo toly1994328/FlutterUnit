@@ -1,0 +1,29 @@
+{
+  "id": 177,
+  "name": "ReorderableListView",
+  "localName": "Liste réorganisable",
+  "info": "ListView qui permet de réorganiser les éléments par un appui long. Peut spécifier la direction de défilement, l'inversion, le contrôleur de défilement, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ReorderableListView",
+      "desc": [
+        "【children】 : Liste des composants enfants   【List<Widget>】",
+        "【header】 : Composant d'en-tête   【Widget】",
+        "【padding】 : Marge intérieure   【EdgeInsets】",
+        "【onReorder】 : Rappel lors de la réorganisation  【ReorderCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direction de défilement de ReorderableListView",
+      "desc": [
+        "【scrollDirection】 : Direction de défilement   【Axis】",
+        "【reverse】 : Inversion  【bool】"
+      ]
+    }
+  ]
+}

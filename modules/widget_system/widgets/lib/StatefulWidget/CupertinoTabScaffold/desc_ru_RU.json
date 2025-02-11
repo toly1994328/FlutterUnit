@@ -1,0 +1,21 @@
+{
+  "id": 158,
+  "name": "CupertinoTabScaffold",
+  "localName": "iOS каркас вкладок",
+  "info": "iOS-стиль каркаса макета страницы, который позволяет указать нижнюю панель навигации и основную страницу контента.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование CupertinoTabScaffold",
+      "desc": [
+        "【tabBar】 : Панель вкладок   【CupertinoTabBar】",
+        "【backgroundColor】 : Цвет фона   【Color】",
+        "【controller】 : Контроллер   【CupertinoTabController】",
+        "【tabBuilder】 : Конструктор страницы   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

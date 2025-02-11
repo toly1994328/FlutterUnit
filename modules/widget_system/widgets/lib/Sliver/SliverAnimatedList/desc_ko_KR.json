@@ -1,0 +1,22 @@
+{
+  "id": 301,
+  "name": "SliverAnimatedList",
+  "localName": "Sliver 애니메이션 리스트",
+  "info": "항목을 삽입하거나 삭제할 때 애니메이션 효과를 주는 sliver 컴포넌트입니다.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverAnimatedList 기본 사용",
+      "desc": [
+        "【itemBuilder】 : 아이템 생성기   【AnimatedListItemBuilder】",
+        "【initialItemCount】 : 초기 아이템 개수   【int】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 351,
+  "name": "InteractiveViewer",
+  "localName": "Visor Interactivo",
+  "info": "Principalmente encapsula interacciones gestuales como mover y hacer zoom, simplificando su uso. Puede especificar límites de movimiento, proporciones de zoom, escucha de gestos, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    147,
+    146,
+    78
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de InteractiveViewer",
+      "desc": [
+        "【alignPanAxis】 : Arrastrar a lo largo del eje   【bool】",
+        "【boundaryMargin】 : Margen del borde   【EdgeInsets】",
+        "【panEnabled】 : Si se puede desplazar   【bool】",
+        "【scaleEnabled】 : Si se puede hacer zoom   【bool】",
+        "【maxScale】 : Máximo aumento   【double】",
+        "【minScale】 : Mínima reducción   【double】",
+        "【onInteractionEnd】 : Callback al finalizar la interacción   【GestureScaleEndCallback】",
+        "【onInteractionStart】 : Callback al iniciar la interacción   【GestureScaleStartCallback】",
+        "【onInteractionUpdate】 : Callback al actualizar la interacción   【GestureScaleUpdateCallback】",
+        "【child】 : Color del cursor   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_constrained.dart",
+      "name": "Prueba de la propiedad constrained",
+      "desc": [
+        "【constrained】 :  Restringido  【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "Uso del controlador de transformación",
+      "desc": [
+        "【transformationController】 : Controlador de transformación   【TransformationController】"
+      ]
+    }
+  ]
+}

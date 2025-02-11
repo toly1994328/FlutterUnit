@@ -1,0 +1,25 @@
+{
+  "id": 283,
+  "name": "CallbackShortcuts",
+  "localName": "Scorciatoie di callback",
+  "info": "È possibile impostare combinazioni come scorciatoie da tastiera, che rispondono agli eventi delle scorciatoie dopo aver ottenuto il focus.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    282,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso delle scorciatoie",
+      "desc": [
+        "Nel caso attivato, le combinazioni Ctrl+↑ e Ctrl+↓ possono aumentare o diminuire il numero",
+        "【enabled】 : Disponibile   【bool】",
+        "【onTapOutside】 : Ascolto del clic esterno   【TapRegionCallback?】",
+        "【onTapInside】 : Ascolto del clic interno   【TapRegionCallback?】",
+        "【groupId】 : Identificatore del gruppo di area di clic   【Object?】"
+      ]
+    }
+  ]
+}

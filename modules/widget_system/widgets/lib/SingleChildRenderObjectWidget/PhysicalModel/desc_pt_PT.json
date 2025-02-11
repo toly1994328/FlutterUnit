@@ -1,0 +1,27 @@
+{
+  "id": 296,
+  "name": "PhysicalModel",
+  "localName": "Módulo Físico",
+  "info": "Permite que os subcomponentes sejam cortados de acordo com formas circulares ou quadradas, e pode especificar a cor de fundo, cantos arredondados, profundidade da sombra, cor da sombra e comportamento de corte.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    279,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do PhysicalModel",
+      "desc": [
+        "【clipBehavior】 : Comportamento de corte   【Clip】",
+        "【borderRadius】 : Cantos arredondados   【BorderRadius】",
+        "【child】 : Subcomponente   【Widget】",
+        "【elevation】 : Profundidade da sombra   【double】",
+        "【shadowColor】 : Cor da sombra   【Color】",
+        "【shape】 : Forma   【BoxShape】",
+        "【color】: Cor    【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 51,
+  "name": "ExpandIcon",
+  "localName": "Erweitern-Symbol",
+  "info": "Ein Erweitern-Button, der beim Klicken eine 180-Grad-Drehanimation ausführt. Kann Farbe, Größe, Rand angeben und Klickereignisse empfangen.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    66,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ExpandIcon",
+      "desc": [
+        "【isExpanded】 : Ob erweitert   【bool】",
+        "【padding】 : Innenabstand   【EdgeInsetsGeometry】",
+        "【size】 : Symbolgröße   【double】",
+        "【color】 : Farbe wenn nicht erweitert   【Color】",
+        "【expandedColor】 : Farbe wenn erweitert   【Color】",
+        "【onPressed】 : Klickereignis   【Function(bool)】"
+      ]
+    }
+  ]
+}

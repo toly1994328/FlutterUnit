@@ -1,0 +1,19 @@
+{
+  "id": 317,
+  "name": "TableCell",
+  "localName": "테이블 셀",
+  "info": "Table 컴포넌트의 후손에서 사용해야 하며, 테이블 자식의 수직 정렬 방식을 제어하는 데 사용되며 큰 역할은 없습니다.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TableCell 기본 사용",
+      "desc": [
+        "【child】 : 컴포넌트   【Widget】",
+        "【verticalAlignment】 : 수직 정렬 방식   【TableCellVerticalAlignment】"
+      ]
+    }
+  ]
+}

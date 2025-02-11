@@ -1,0 +1,23 @@
+{
+  "id": 62,
+  "name": "CupertinoNavigationBar",
+  "localName": "iOSナビゲーション",
+  "info": "iOSスタイルのアプリトップバーの一般的な構造で、指定された部分に適切なコンポーネントを配置できます。背景色、間隔、ボーダーなどの属性を指定できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoNavigationBar基本使用法",
+      "desc": [
+        "【leading】 : 左側のコンポーネント   【Widget】",
+        "【middle】 : 中央のコンポーネント   【Widget】",
+        "【trailing】 : 右側のコンポーネント   【Widget】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【padding】 : パディング   【EdgeInsetsDirectional】",
+        "【border】 : ボーダー   【Border】"
+      ]
+    }
+  ]
+}

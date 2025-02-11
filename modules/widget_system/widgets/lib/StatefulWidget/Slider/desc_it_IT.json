@@ -1,0 +1,37 @@
+{
+  "id": 42,
+  "name": "Slider",
+  "localName": "Cursore",
+  "info": "Componente cursore, consente di selezionare trascinando tra un valore massimo e minimo specificato. È possibile specificare il colore, il numero di segmenti e le etichette visualizzate, e ricevere un callback per le variazioni di avanzamento.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    43,
+    44,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base del cursore",
+      "desc": [
+        "【value】 : valore   【double】",
+        "【min】 : valore minimo   【double】",
+        "【max】 : valore massimo   【double】",
+        "【activeColor】 : colore attivo   【Color】",
+        "【inactiveColor】 : colore inattivo   【Color】",
+        "【onChanged】 : callback al cambiamento   【Function(double)】"
+      ]
+    },
+    {
+      "file": "node2_lable.dart",
+      "name": "Segmentazione ed etichette del cursore",
+      "desc": [
+        "【divisions】 : numero di segmenti   【int】",
+        "【label】 : testo della bolla di suggerimento   【String】",
+        "【onChangeStart】 : ascolto all'inizio dello scorrimento   【Function(double)】",
+        "【onChangeEnd】 : ascolto alla fine dello scorrimento   【Function(double)】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 340,
+  "name": "Viewport",
+  "localName": "Viewport Component",
+  "info": "Typically used to provide a viewport for a scrolling view, only building the displayed and preloaded parts. The preload length, scrolling axis, etc., can be specified. It is one of the core implementation components of ScrollView and is generally not used directly.",
+  "lever": 1,
+  "family": 3,
+  "linkIds": [
+    253,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Viewport",
+      "desc": [
+        "【offset】: *Viewport offset   【ViewportOffset】",
+        "【cacheExtentStyle】: Preload type   【CacheExtentStyle】",
+        "【cacheExtent】: Preload amount   【double】",
+        "【axisDirection】: Scrolling direction   【AxisDirection】",
+        "【slivers】: Child Sliver component set   【List<Widget>】",
+        "【anchor】: Anchor point   【double】",
+        "You can run this code to see how the ColorItem is constructed, the 128 color bars are not all constructed at once."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": 163,
+  "name": "GridView",
+  "localName": "Grid Component",
+  "info": "Accommodates multiple components in a grid manner. Can be constructed via count, extent, custom, builder, etc. Has properties such as padding, whether to reverse, scroll controller, etc.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    21,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridView.count Construction",
+      "desc": [
+        "【children】 : List of child components   【List<Widget>】",
+        "【crossAxisCount】 : Number of boxes per row on the main axis  【int】",
+        "【mainAxisSpacing】 : Spacing between rows on the main axis  【double】",
+        "【crossAxisSpacing】 : Spacing between rows on the cross axis  【double】",
+        "【childAspectRatio】 : Main length/cross length of the box  【double】",
+        "【crossAxisCount】 : Number of boxes per row on the main axis  【int】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "GridView Scroll Direction",
+      "desc": [
+        "【scrollDirection】 : Scroll direction   【Axis】",
+        "【reverse】 : Whether to scroll in reverse   【bool】",
+        "【shrinkWrap】 : Whether to wrap when there is no boundary  【bool】"
+      ]
+    },
+    {
+      "file": "node3_extend.dart",
+      "name": "GridView Scroll Direction",
+      "desc": [
+        "【scrollDirection】 : Scroll direction   【Axis】",
+        "【reverse】 : Whether to scroll in reverse   【bool】",
+        "【shrinkWrap】 : Whether to wrap when there is no boundary  【bool】"
+      ]
+    },
+    {
+      "file": "node4_builder.dart",
+      "name": "GridView.builder Construction",
+      "desc": [
+        "【itemCount】 : Number of items   【int】",
+        "【gridDelegate】 : Grid delegate   【SliverGridDelegate】",
+        "【itemBuilder】 : Item builder  【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

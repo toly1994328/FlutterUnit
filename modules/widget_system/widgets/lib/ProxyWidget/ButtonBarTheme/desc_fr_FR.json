@@ -1,0 +1,18 @@
+{
+  "id": 338,
+  "name": "ButtonBarTheme",
+  "localName": "Thème de la barre de boutons",
+  "info": "Principalement utilisé pour définir les propriétés par défaut des composants ButtonBar descendants. Il est également possible d'obtenir les propriétés du ButtonBarTheme par défaut via ce composant.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ButtonBarTheme",
+      "desc": [
+        "Vous pouvez spécifier les propriétés de données de ButtonBarThemeData pour définir le style par défaut des composants ButtonBar descendants, tels que l'alignement, le style, les marges, etc. Vous pouvez également utiliser ButtonBarTheme.of pour obtenir les propriétés du thème ButtonBar."
+      ]
+    }
+  ]
+}

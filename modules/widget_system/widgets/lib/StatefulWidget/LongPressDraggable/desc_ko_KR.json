@@ -1,0 +1,28 @@
+{
+  "id": 105,
+  "name": "LongPressDraggable",
+  "localName": "드래그 대상",
+  "info": "길게 누르면 컴포넌트를 화면에서 자유롭게 드래그할 수 있으며, 제네릭 T 타입의 데이터를 저장할 수 있습니다. 일반적으로 DragTarget과 조합하여 드래그 효과를 완성합니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    103,
+    104
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LongPressDraggable과 DragTarget 함께 사용",
+      "desc": [
+        "【child】 : 자식   【Widget】",
+        "【feedback】 : 드래그 시 자식   【Widget】",
+        "【axis】 : 드래그 축   【Axis】",
+        "【data】 : 데이터   【T】",
+        "【onDragStarted】 : 드래그 시작   【Function()】",
+        "【onDragEnd】 : 드래그 종료   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : 드래그 완료   【Function()】",
+        "【onDraggableCanceled】 : 드래그 취소   【Function(Velocity,Offset)】"
+      ]
+    }
+  ]
+}

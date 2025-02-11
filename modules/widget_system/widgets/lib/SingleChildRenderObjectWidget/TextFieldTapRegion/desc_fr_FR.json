@@ -1,0 +1,26 @@
+{
+  "id": 281,
+  "name": "TextFieldTapRegion",
+  "localName": "Zone de clic du champ de saisie",
+  "info": "Le TapRegion avec groupId pour EditableText permet de considérer la zone de clic d'autres composants comme faisant partie du champ de saisie.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    280,
+    54,
+    245
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Écouter les clics à l'intérieur et à l'extérieur du composant",
+      "desc": [
+        "Dans l'exemple, cliquer sur les boutons plus et moins ne supprime pas le focus du champ de saisie, le clavier reste actif pour la saisie.",
+        "【enabled】 : Actif ou non   【bool】",
+        "【onTapOutside】 : Écouteur de clic à l'extérieur   【TapRegionCallback?】",
+        "【onTapInside】 : Écouteur de clic à l'intérieur   【TapRegionCallback?】",
+        "【groupId】 : Identifiant du groupe de la zone de clic   【Object?】"
+      ]
+    }
+  ]
+}

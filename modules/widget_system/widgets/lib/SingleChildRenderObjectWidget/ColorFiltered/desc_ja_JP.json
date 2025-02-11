@@ -1,0 +1,22 @@
+{
+  "id": 88,
+  "name": "ColorFiltered",
+  "localName": "カラーフィルター",
+  "info": "1つの子コンポーネントを収容でき、29種類のオーバーレイモードと任意のコンポーネントを混合できます。その強力さに言葉を失います。アプリのワンクリックで全体をグレーにする機能もご覧ください。",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    277,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ColorFilteredの基本的な使用法",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【colorFilter】 : カラーフィルター   【ColorFilter】"
+      ]
+    }
+  ]
+}

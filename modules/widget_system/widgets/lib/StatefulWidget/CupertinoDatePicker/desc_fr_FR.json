@@ -1,0 +1,25 @@
+{
+  "id": 137,
+  "name": "CupertinoDatePicker",
+  "localName": "Sélecteur de date iOS",
+  "info": "Sélecteur de date élégant à défilement, permettant de spécifier le type de sélection, la plage de dates, etc., et de recevoir des événements de sélection de date.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoDatePicker",
+      "desc": [
+        "【initialDateTime】 : Date initiale   【DateTime】",
+        "【minimumYear】 : Année minimale   【int】",
+        "【maximumYear】 : Année maximale   【int】",
+        "【onDateTimeChanged】 : Rappel au clic  【Function(DateTime)】",
+        "【minuteInterval】 : Intervalle des minutes  【int】",
+        "【use24hFormat】 : Format 24 heures  【bool】",
+        "【backgroundColor】 : Couleur de fond  【Color】",
+        "【mode】 : Mode*3  【CupertinoDatePickerMode】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": 8,
+  "name": "FadeInImage",
+  "localName": "Einblendendes Bild",
+  "info": "Lädt ein Bild mit transparentem Übergang. Kann Platzhalterbild, Animationskurven für Ein- und Ausblenden, Zeit, Breite, Höhe, Fit-Typ, Ausrichtung, Wiederholungsmodus usw. angeben.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FadeInImage.assetNetwork lädt Netzwerkbild",
+      "desc": [
+        "【placeholder】 : Platzhalterbild-Adresse  【String】",
+        "【image】 : Anzeigebild-Adresse  【String】",
+        "【width】: Breite   【double】",
+        "【height】: Höhe   【double】",
+        "【fadeInDuration】: Einblenddauer   【Duration】",
+        "【fadeOutDuration】: Ausblenddauer   【Duration】",
+        "【fadeInCurve】: Einblendkurve   【Cubic】",
+        "【fadeOutCurve】: Ausblendkurve   【Cubic】",
+        "【fit】: Anpassungsmodus   【BoxFit】",
+        "【alignment】: Ausrichtungsmodus   【Alignment】",
+        "【repeat】: Wiederholungsmodus   【ImageRepeat】,"
+      ]
+    }
+  ]
+}

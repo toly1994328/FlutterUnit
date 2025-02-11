@@ -1,0 +1,24 @@
+{
+  "id": 56,
+  "name": "PopupMenuButton",
+  "localName": "메뉴 버튼",
+  "info": "팝업 메뉴 바를 표시하며, 오프셋, 색상, 그림자 깊이, 모양 등의 속성을 지정할 수 있습니다. 아이템 선택 이벤트와 선택 취소 이벤트를 수신합니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PopupMenuButton 기본 사용",
+      "desc": [
+        "【itemBuilder】 : 생성자   【PopupMenuItemBuilder<T>】",
+        "【offset】 : 오프셋   【Offset】",
+        "【color】 : 배경색   【Color】",
+        "【shape】 : 모양   【ShapeBorder】",
+        "【elevation】 : 그림자 깊이   【double】",
+        "【onCanceled】 : 취소 이벤트   【Function()】",
+        "【onSelected】 : 선택 이벤트   【Function(T)】"
+      ]
+    }
+  ]
+}

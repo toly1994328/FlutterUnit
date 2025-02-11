@@ -1,0 +1,37 @@
+{
+  "id": 17,
+  "name": "CheckboxListTile",
+  "localName": "Checkbox Tile",
+  "info": "A common list item structure provided by Flutter, featuring a left-middle structure with a CheckBox at the end. Components can be inserted at the corresponding positions, making it easy to handle specific items.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic representation of CheckBoxListTile",
+      "desc": [
+        "【secondary】: Left component   【Widget】",
+        "【checkColor】: ✔️ color   【Color】",
+        "【activeColor】: Frame color when selected   【Color】",
+        "【title】: Top middle component   【Widget】",
+        "【subtitle】: Bottom middle component   【Widget】",
+        "【onChanged】: Selection event   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Selection effect of CheckBoxListTile",
+      "desc": [
+        "【selected】: Whether selected   【bool】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Dense property of CheckBoxListTile",
+      "desc": [
+        "【dense】: Whether dense   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 86,
+  "name": "Center",
+  "localName": "Zentrierungskomponente",
+  "info": "Kann ein Unterelement aufnehmen und es im übergeordneten Element zentrieren. Es ist eine vereinfachte Version der Align-Komponente.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Center",
+      "desc": [
+        "【child】 : Unterelement   【Widget】"
+      ]
+    }
+  ]
+}

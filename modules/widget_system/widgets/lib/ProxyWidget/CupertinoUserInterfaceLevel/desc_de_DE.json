@@ -1,0 +1,18 @@
+{
+  "id": 337,
+  "name": "CupertinoUserInterfaceLevel",
+  "localName": "Benutzeroberflächenebene",
+  "info": "Ein Konzept in iOS, die visuelle Ebene der Benutzeroberfläche UIUserInterfaceLevel, unterteilt in base und elevated. Als InheritedWidget dient es hauptsächlich dazu, diese Daten zu teilen.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in CupertinoUserInterfaceLevel",
+      "desc": [
+        "CupertinoUserInterfaceLevel.of(context) kann CupertinoUserInterfaceLevelData-Daten abrufen. Mit dieser Komponente können auch diese Daten eingerichtet und mit Unterbäumen geteilt werden. Weitere Informationen zur Datenquelle finden Sie unter: https://developer.apple.com/documentation/uikit/uiuserinterfacelevel"
+      ]
+    }
+  ]
+}

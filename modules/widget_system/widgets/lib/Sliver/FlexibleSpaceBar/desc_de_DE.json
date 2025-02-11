@@ -1,0 +1,23 @@
+{
+  "id": 196,
+  "name": "FlexibleSpaceBar",
+  "localName": "Dehnbarer Raumleiste",
+  "info": "Wird normalerweise im dehnbaren Bereich von SliverAppBar verwendet und kann Titel, Titelabstand, Hintergrund, Faltmodus usw. angeben.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von FlexibleSpaceBar",
+      "desc": [
+        "【title】 : Titelkomponente   【Widget】",
+        "【titlePadding】 : Titelabstand   【EdgeInsetsGeometry】",
+        "【collapseMode】 : Faltmodus   【CollapseMode】",
+        "【stretchModes】 : Dehnmodi   【List<StretchMode>】",
+        "【background】 : Hintergrundkomponente   【Widget】",
+        "【centerTitle】 : Zentralisiert   【bool】"
+      ]
+    }
+  ]
+}

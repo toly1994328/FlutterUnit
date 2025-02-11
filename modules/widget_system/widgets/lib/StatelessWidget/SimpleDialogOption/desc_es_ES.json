@@ -1,0 +1,19 @@
+{
+  "id": 133,
+  "name": "SimpleDialogOption",
+  "localName": "Opción de diálogo simple",
+  "info": "Un botón que se usa en pocas ocasiones, generalmente en SimpleDialog, que recibe eventos de clic.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SimpleDialogOption",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【onPressed】 : Evento de clic  【Function()】"
+      ]
+    }
+  ]
+}

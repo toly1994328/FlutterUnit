@@ -1,0 +1,26 @@
+{
+  "id": 95,
+  "name": "Row",
+  "localName": "Disposition en ligne",
+  "info": "Une disposition Flex avec une orientation horizontale, capable de contenir plusieurs composants. Toutes les autres propriétés sont identiques, voir Flex pour plus de détails.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    96
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Row",
+      "desc": [
+        "【children】 : Liste des composants   【List<Widget>】",
+        "【mainAxisAlignment】 : Alignement de l'axe principal   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : Alignement de l'axe secondaire   【CrossAxisAlignment】",
+        "【textBaseline】 : Ligne de base du texte   【TextBaseline】",
+        "【verticalDirection】 : Direction verticale   【VerticalDirection】",
+        "【mainAxisSize】 : Taille de l'axe principal   【MainAxisSize】"
+      ]
+    }
+  ]
+}

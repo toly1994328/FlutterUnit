@@ -1,0 +1,23 @@
+{
+  "id": 242,
+  "name": "StatefulBuilder",
+  "localName": "Construtor de Estado",
+  "info": "É necessário passar a propriedade builder para construir o componente. No builder, pode-se usar o StateSetter para alterar o estado do subcomponente, o que permite implementar um componente com atualização local sem a necessidade de criar uma classe.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    202,
+    203,
+    280,
+    255
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do StatefulBuilder",
+      "desc": [
+        "【builder】: Construtor de Componentes   【StatefulWidgetBuilder】"
+      ]
+    }
+  ]
+}

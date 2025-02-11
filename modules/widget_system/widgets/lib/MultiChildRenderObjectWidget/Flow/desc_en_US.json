@@ -1,0 +1,29 @@
+{
+  "id": 99,
+  "name": "Flow",
+  "localName": "Flow Layout",
+  "info": "Can accommodate multiple components, requires custom arrangement agents, allows high customization of component arrangement, achieving effects that ordinary layouts cannot. The king of layouts, well-deserved.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    98,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Flow Circular Arrangement",
+      "desc": [
+        "【children】: Component list   【List<Widget>】",
+        "【delegate】: Agent   【FlowDelegate】"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Flow Circular with Animation",
+      "desc": [
+        "Achieve effects by changing the position of surrounding components through animation"
+      ]
+    }
+  ]
+}

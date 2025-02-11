@@ -1,0 +1,32 @@
+{
+  "id": 339,
+  "name": "DateRangePickerDialog",
+  "localName": "Selector de rango de fechas",
+  "info": "Selector de rango de fechas al estilo Material, compatible con selección de calendario y selección de entrada.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    135,
+    136,
+    137
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de DateRangePickerDialog",
+      "desc": [
+        "【firstDate】 : Fecha más temprana   【DateTime】",
+        "【lastDate】 : Fecha más tardía   【DateTime】",
+        "【initialDateRange】 : Rango inicial   【DateTimeRange?】",
+        "【saveText】 : Texto de guardar  【String?】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Modificación de DateRangePickerDialog",
+      "desc": [
+        "Modifica el código fuente de DateRangePickerDialog para que los elementos del mes muestren un fondo numérico."
+      ]
+    }
+  ]
+}

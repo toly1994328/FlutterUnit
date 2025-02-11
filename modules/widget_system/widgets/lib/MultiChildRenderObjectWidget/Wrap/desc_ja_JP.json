@@ -1,0 +1,52 @@
+{
+  "id": 98,
+  "name": "Wrap",
+  "localName": "ラップレイアウト",
+  "info": "複数のコンポーネントを収容でき、指定された方向に順番に配置し、子要素の間隔を簡単に処理できます。オーバーフロー時に自動的に折り返すことができます。主軸と交差軸の配置方法を持ち、比較的柔軟です。",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Wrapの基本的な使い方",
+      "desc": [
+        "【children】 : コンポーネントリスト   【List<Widget>】",
+        "【spacing】 : 主軸アイテム間隔   【double】",
+        "【runSpacing】 : 交差軸アイテム間隔   【double】",
+        "【direction】 : 主軸整列   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_alignment.dart",
+      "name": "Wrapのalignment属性",
+      "desc": [
+        "【alignment】 : 主軸整列   【WrapAlignment】"
+      ]
+    },
+    {
+      "file": "node3_crossAxisAlignment.dart",
+      "name": "WrapのcrossAxisAlignment属性",
+      "desc": [
+        "【crossAxisAlignment】 : 交差軸整列   【CrossAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node4_textDirection.dart",
+      "name": "WrapのtextDirection属性",
+      "desc": [
+        "【textDirection】 : テキスト方向   【TextDirection】"
+      ]
+    },
+    {
+      "file": "node5_verticalDirection.dart",
+      "name": "WrapのverticalDirection属性",
+      "desc": [
+        "【verticalDirection】 : 垂直方向  【VerticalDirection】"
+      ]
+    }
+  ]
+}

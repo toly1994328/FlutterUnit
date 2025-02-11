@@ -1,0 +1,31 @@
+{
+  "id": 22,
+  "name": "UserAccountsDrawerHeader",
+  "localName": "Display Header",
+  "info": "A common display structure provided by Flutter, where components can be inserted in corresponding positions, making it easy to handle specific items, commonly used in Drawers.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "The basic performance of this component is as follows",
+      "desc": [
+        "【currentAccountPicture】: Top component   【Widget】",
+        "【accountName】: Middle component   【Widget】",
+        "【accountEmail】: Bottom component   【Widget】",
+        "【decoration】: Decoration   【Decoration】"
+      ]
+    },
+    {
+      "file": "node2_pro.dart",
+      "name": "Top right corner and bottom",
+      "desc": [
+        "【otherAccountsPictures】: Top right component   【List<Widget>】",
+        "【onDetailsPressed】: Bottom right click event   【Function()】",
+        "【arrowColor】: Bottom right button color   【Color】",
+        "【margin】: Margin   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 326,
+  "name": "ButtonTheme",
+  "localName": "버튼 스타일",
+  "info": "주로 후손 Button 유형의 컴포넌트에 기본 속성을 통일적으로 설정하기 위해 사용되며, 이 컴포넌트를 통해 기본 Button의 속성을 얻을 수도 있습니다.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ButtonTheme 사용",
+      "desc": [
+        "속성 매개변수는 MaterialButton과 동일하며, ButtonTheme.of를 통해 버튼 테마 데이터를 얻을 수 있습니다.",
+        "또한 ButtonTheme의 【후손】 버튼 컴포넌트에 기본 스타일(색상, 모양, 크기 등)을 설정할 수 있습니다."
+      ]
+    }
+  ]
+}

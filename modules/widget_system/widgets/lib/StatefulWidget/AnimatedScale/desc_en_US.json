@@ -1,0 +1,29 @@
+{
+  "id": 249,
+  "name": "AnimatedScale",
+  "localName": "Scaling Animation",
+  "info": "When the given scaling amount changes, the child component can automatically adjust relative to the scaling value, and there is an animation change between the previous and next values.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    247,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Scaling Animation Effect",
+      "desc": [
+        "In this case, drag to adjust the scale parameter to view the animation effect.",
+        "【child】: Child component 【Widget】",
+        "【duration】: Animation duration 【Duration】",
+        "【onEnd】: Animation end callback 【Function()】",
+        "【curve】: Animation curve 【Duration】",
+        "【alignment】: Animation transformation center 【Alignment】",
+        "【filterQuality】: Filter quality 【FilterQuality】",
+        "【scale】: Scaling amount 【double】"
+      ]
+    }
+  ]
+}

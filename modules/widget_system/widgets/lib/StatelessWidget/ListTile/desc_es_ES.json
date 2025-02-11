@@ -1,0 +1,41 @@
+{
+  "id": 16,
+  "name": "ListTile",
+  "localName": "Lista de fichas",
+  "info": "Una estructura de elementos de lista común proporcionada por Flutter, con una estructura de izquierda, centro y derecha. Se pueden insertar componentes en las posiciones correspondientes, lo que permite manejar elementos específicos de manera conveniente.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    162,
+    334
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La representación básica de ListTile es la siguiente",
+      "desc": [
+        "【leading】: Componente izquierdo   【Widget】",
+        "【title】: Componente superior central   【Widget】",
+        "【subtitle】: Componente inferior central   【Widget】",
+        "【trailing】: Componente final   【Widget】",
+        "【contentPadding】: Relleno interno   【EdgeInsetsGeometry】",
+        "【onLongPress】: Evento de clic   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Efecto de selección y evento de pulsación prolongada de ListTile",
+      "desc": [
+        "【selected】: Si está seleccionado   【bool】",
+        "【onTap】: Evento de clic   【Function()】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Propiedad de disposición densa de ListTile",
+      "desc": [
+        "【dense】: Si está en disposición densa   【bool】"
+      ]
+    }
+  ]
+}

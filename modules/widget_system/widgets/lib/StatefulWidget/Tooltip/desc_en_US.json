@@ -1,0 +1,32 @@
+{
+  "id": 50,
+  "name": "Tooltip",
+  "localName": "Tooltip",
+  "info": "A component that displays tooltip information, showing the information when long-pressed. You can specify margins, display duration, text style, and decoration properties.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Tooltip",
+      "desc": [
+        "【preferBelow】: Whether to prefer below 【bool】",
+        "【padding】: Padding 【EdgeInsetsGeometry】",
+        "【margin】: Margin 【EdgeInsetsGeometry】",
+        "【message】: Message content 【String】",
+        "【showDuration】: Display duration 【Duration】",
+        "【waitDuration】: Hover appearance time 【Duration】",
+        "【child】: Child 【Widget】"
+      ]
+    },
+    {
+      "file": "node2_decoration.dart",
+      "name": "Decoration of Tooltip",
+      "desc": [
+        "【decoration】: Decoration object 【Decoration】",
+        "【textStyle】: Text style 【double】"
+      ]
+    }
+  ]
+}

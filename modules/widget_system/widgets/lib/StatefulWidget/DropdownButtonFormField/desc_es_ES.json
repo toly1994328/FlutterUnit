@@ -1,0 +1,24 @@
+{
+  "id": 223,
+  "name": "DropdownButtonFormField",
+  "localName": "Campo de selección de formulario",
+  "info": "Depende de DropdownButton en su implementación subyacente, por lo que las propiedades básicas son similares. Sin embargo, tiene características de FormField, lo que permite devolver los métodos onSaved y validator.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    55,
+    222
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso simple del campo de selección de formulario",
+      "desc": [
+        "【items】: Lista de componentes secundarios   【List<DropdownMenuItem<T>>】",
+        "【validator】: Devolución de llamada de validación de formulario   【FormFieldValidator<T>】",
+        "【onSaved】: Devolución de llamada de guardado de formulario   【FormFieldSetter<T>】",
+        "Para otras propiedades, consulte DropdownButton, y para las características de validación de formularios, consulte FormField."
+      ]
+    }
+  ]
+}

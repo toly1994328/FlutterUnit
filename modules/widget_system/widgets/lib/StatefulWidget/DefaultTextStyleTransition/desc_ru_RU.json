@@ -1,0 +1,26 @@
+{
+  "id": 114,
+  "name": "DefaultTextStyleTransition",
+  "localName": "Анимация стиля текста",
+  "info": "Подкласс AnimatedWidget, использует аниматор типа TextStyle для создания анимации перехода между двумя объектами TextStyle в текстовых компонентах.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    124,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование DefaultTextStyleTransition",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【textAlign】 : Выравнивание текста  【TextAlign】",
+        "【softWrap】 : Обернуть ли текст  【bool】",
+        "【maxLines】 : Максимальное количество строк  【int】",
+        "【overflow】 : Режим переполнения  【TextOverflow】",
+        "【style】 : Анимация   【Animation<TextStyle>】"
+      ]
+    }
+  ]
+}

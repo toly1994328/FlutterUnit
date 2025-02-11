@@ -18,6 +18,8 @@ class WidgetLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 110,
+      height: 110,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: background,
         gradient: LinearGradient(
@@ -30,7 +32,7 @@ class WidgetLogo extends StatelessWidget {
             topLeft: Radius.circular(6), bottomLeft: Radius.circular(6)),
       ),
       child:
-          SvgPicture.asset('assets/images/widgets/${widgetLogo(widgetName)}'),
+          SvgPicture.asset('assets/images/widgets/${widgetLogo(widgetName)}',width: 100,),
     );
   }
 }
@@ -42,6 +44,9 @@ String widgetLogo(String widgetName) {
     'GestureDetector' => 'GestureDetector.svg',
     'Card' => 'Card.svg',
     'ListView' => 'ListView.svg',
+    'GridView' => 'GridView.svg',
+    'SingleChildScrollView' => 'SingleChildScrollView.svg',
+    'PageView' => 'PageView.svg',
     _ => 'Widget.svg',
   };
 }

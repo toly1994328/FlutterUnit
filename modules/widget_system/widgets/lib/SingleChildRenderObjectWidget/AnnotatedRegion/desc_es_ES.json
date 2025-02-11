@@ -1,0 +1,20 @@
+{
+  "id": 288,
+  "name": "AnnotatedRegion",
+  "localName": "Región Anotada",
+  "info": "Tiene un genérico, en el código fuente solo se usa este componente en app_bar, nav_bar para cambiar el estado y el estilo de la barra de navegación, el genérico suele ser SystemUiOverlayStyle.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnnotatedRegion cambia el estilo del estado",
+      "desc": [
+        "【value】 : valor   【T】",
+        "【sized】 : si proporciona tamaño   【bool】",
+        "【child】 : componente hijo   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Cupertino 페이지",
+  "info": "MaterialApp과 같이 라우팅 스택을 유지할 수 있습니다. routes, onGenerateRoute를 통해 라우팅을 구성하고, navigatorObservers를 통해 라우팅을 모니터링할 수 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTabView 기본 사용법",
+      "desc": [
+        "【builder】 : 홈페이지 빌더   【WidgetBuilder】",
+        "【navigatorObservers】 : 라우팅 리스너   【List<NavigatorObserver>】",
+        "【routes】 : 라우팅 매핑   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】 : 라우팅 팩토리   【RouteFactory】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 227,
+  "name": "AnimatedModalBarrier",
+  "localName": "アニメーションバリアモジュール",
+  "info": "内部的にModalBarrierに依存して実装されており、機能は同じですが、このコンポーネントにはカラーアニメーションを渡して、トランジションを表示することができます。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedModalBarrier 紹介",
+      "desc": [
+        "【dismissible】 : クリックで戻るかどうか   【bool】",
+        "【color】 : 色   【Animation<Color>】"
+      ]
+    }
+  ]
+}

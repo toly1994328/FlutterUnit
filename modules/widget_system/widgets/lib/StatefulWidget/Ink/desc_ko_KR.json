@@ -1,0 +1,33 @@
+{
+  "id": 152,
+  "name": "Ink",
+  "localName": "물결",
+  "info": "InkWell 및 InkResponse의 물결 효과를 활성화하고, 이미지 또는 기타 장식을 그리기 위한 Material 컴포넌트입니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Ink 기본 사용",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【padding】 : 안쪽 여백   【EdgeInsetsGeometry】",
+        "【decoration】 : 장식   【Decoration】",
+        "【width】 : 너비   【double】",
+        "【height】 : 높이   【double】",
+        "【color】 : 색상   【Color】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Ink.image 이미지 물결",
+      "desc": [
+        "속성은 Image 컴포넌트와 동일하며, 자세한 내용은 Image 컴포넌트를 참조하세요"
+      ]
+    }
+  ]
+}

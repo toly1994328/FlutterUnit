@@ -1,0 +1,20 @@
+{
+  "id": 49,
+  "name": "RefreshIndicator",
+  "localName": "Indicador de actualización",
+  "info": "Área deslizante anidada internamente, muestra un ícono de actualización al deslizar hacia abajo y ejecuta un método asíncrono especificado al soltar. Se pueden especificar propiedades como el color y la distancia desde la parte superior.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de RefreshIndicator",
+      "desc": [
+        "【child】 : Hijo (deslizable)   【Widget】",
+        "【displacement】 : Altura flotante del indicador   【double】",
+        "【color】 : Color del indicador   【Color】,"
+      ]
+    }
+  ]
+}

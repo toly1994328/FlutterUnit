@@ -1,0 +1,23 @@
+{
+  "id": 110,
+  "name": "Table",
+  "localName": "Tabellenkomponente",
+  "info": "Eine Komponente zur Anzeige von Tabellen, bei der Eigenschaften wie Rahmen, Spaltenbreite, Textrichtung usw. angegeben werden können. Der Kernobjekttyp ist TableRow.",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Table",
+      "desc": [
+        "【children】: Widget-Liste   【List<Widget>】",
+        "【columnWidths】: Spaltenbreite   【Map<int, TableColumnWidth>】",
+        "【defaultColumnWidth】: Standardspaltenbreite  【TableColumnWidth】",
+        "【border】: Rahmen   【TableBorder】",
+        "【textDirection】: Textrichtung   【TextDirection】",
+        "【defaultVerticalAlignment】: Vertikale Ausrichtung der Zellen   【TableCellVerticalAlignment】"
+      ]
+    }
+  ]
+}

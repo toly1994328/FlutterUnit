@@ -1,0 +1,25 @@
+{
+  "id": 183,
+  "name": "CustomScrollView",
+  "localName": "Visão de Rolagem Universal",
+  "info": "Uma estrutura de rolagem universal que pode especificar a direção de rolagem, se é reversa, o controlador de rolagem e outras propriedades. Os componentes filhos incluídos devem ser da família Sliver.",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [
+    184,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do CustomScrollView",
+      "desc": [
+        "【slivers】 : Lista de componentes filhos   【List<Widget>】",
+        "【reverse】 : Se é reverso   【bool】",
+        "【scrollDirection】 : Direção de rolagem   【Axis】",
+        "【controller】 : Controlador   【ScrollController】"
+      ]
+    }
+  ]
+}

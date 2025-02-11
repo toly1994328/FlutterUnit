@@ -1,0 +1,25 @@
+{
+  "id": 159,
+  "name": "PositionedDirectional",
+  "localName": "Positionnement directionnel",
+  "info": "Fonctionne comme le composant Positioned, mais avec des noms de propriétés différents. Ne peut être utilisé que dans une Stack, permet de positionner précisément un composant en spécifiant les distances par rapport au haut, à gauche, à droite et au bas.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    108,
+    122
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de PositionedDirectional",
+      "desc": [
+        "【child】 : Composant   【Widget】",
+        "【top】 : Distance par rapport au haut du parent   【double】",
+        "【end】 : Distance par rapport à la droite du parent   【double】",
+        "【start】 : Distance par rapport à la gauche du parent   【double】",
+        "【bottom】 : Distance par rapport au bas du parent   【double】"
+      ]
+    }
+  ]
+}

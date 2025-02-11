@@ -1,0 +1,21 @@
+{
+  "id": 155,
+  "name": "DrawerHeader",
+  "localName": "ドロワーヘッダー",
+  "info": "一般的にDrawer内で使用され、ドロワーのヘッダーとして機能します。内外の余白、装飾、子コンポーネントなどのプロパティを指定できます。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerHeaderの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【decoration】 : 装飾   【Decoration】",
+        "【margin】 : 外側の余白   【EdgeInsetsGeometry】",
+        "【padding】 : 内側の余白   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

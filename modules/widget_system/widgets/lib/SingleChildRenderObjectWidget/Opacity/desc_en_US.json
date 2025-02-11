@@ -1,0 +1,22 @@
+{
+  "id": 73,
+  "name": "Opacity",
+  "localName": "Transparency",
+  "info": "Can contain a child component, changing its transparency to the opacity value, where opacity is between 0 and 1.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    89,
+    118
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Opacity",
+      "desc": [
+        "【child】 : Child component   【Widget】",
+        "【opacity】 : Transparency 0~1   【double】"
+      ]
+    }
+  ]
+}

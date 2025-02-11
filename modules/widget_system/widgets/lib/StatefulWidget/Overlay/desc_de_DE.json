@@ -1,0 +1,21 @@
+{
+  "id": 182,
+  "name": "Overlay",
+  "localName": "Schwebende Komponente",
+  "info": "Ermöglicht die schwebende Anzeige von Komponenten in der gesamten Anwendung, Komponenten können hinzugefügt oder entfernt werden, sie haben einen unabhängig verwalteten Stack.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    265,
+    266
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Overlay",
+      "desc": [
+        "Overlay.of(context).insert fügt eine globale Komponente ein"
+      ]
+    }
+  ]
+}

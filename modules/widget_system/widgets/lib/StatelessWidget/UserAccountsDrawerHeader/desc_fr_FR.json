@@ -1,0 +1,31 @@
+{
+  "id": 22,
+  "name": "UserAccountsDrawerHeader",
+  "localName": "En-tête d'affichage",
+  "info": "Une structure d'affichage générique fournie par Flutter, où des composants peuvent être insérés à des positions spécifiques, permettant de répondre facilement à des éléments spécifiques, souvent utilisé dans les Drawer.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La présentation de base de ce composant est la suivante",
+      "desc": [
+        "【currentAccountPicture】: Composant supérieur   【Widget】",
+        "【accountName】: Composant central   【Widget】",
+        "【accountEmail】: Composant inférieur   【Widget】",
+        "【decoration】: Décoration   【Decoration】"
+      ]
+    },
+    {
+      "file": "node2_pro.dart",
+      "name": "Coin supérieur droit et bas",
+      "desc": [
+        "【otherAccountsPictures】: Composant supérieur droit   【List<Widget>】",
+        "【onDetailsPressed】: Événement de clic en bas à droite   【Function()】",
+        "【arrowColor】: Couleur du bouton en bas à droite   【Color】",
+        "【margin】: Marge extérieure   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

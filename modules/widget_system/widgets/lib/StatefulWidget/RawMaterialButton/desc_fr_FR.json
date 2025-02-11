@@ -1,0 +1,37 @@
+{
+  "id": 175,
+  "name": "RawMaterialButton",
+  "localName": "Bouton Brut",
+  "info": "Le bouton Material original, le grand maître derrière les boutons, peut accepter des événements de clic, de pression longue et de changement de surbrillance, et peut spécifier la couleur, la forme, l'ombre, la marge intérieure et d'autres attributs.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de RawMaterialButton",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【elevation】 : Profondeur de l'ombre   【double】",
+        "【fillColor】 : Couleur de remplissage   【Color】",
+        "【splashColor】 : Couleur de l'effet de vague   【Color】",
+        "【textStyle】 : Style du texte   【TextStyle】",
+        "【onLongPress】 : Événement de pression longue   【Function()】",
+        "【onPressed】 : Événement de clic  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Surbrillance et forme de RawMaterialButton",
+      "desc": [
+        "【highlightElevation】 : Profondeur de l'ombre en surbrillance   【double】",
+        "【shape】 : Forme   【ShapeBorder】"
+      ]
+    }
+  ]
+}

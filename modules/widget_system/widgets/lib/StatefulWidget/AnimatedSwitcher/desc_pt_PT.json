@@ -1,0 +1,23 @@
+{
+  "id": 116,
+  "name": "AnimatedSwitcher",
+  "localName": "Alternância Animada",
+  "info": "Executa uma animação quando o componente filho muda, é necessário especificar a chave do componente filho para identificação. O modo de animação pode ser personalizado, podendo especificar a duração da animação, a curva da animação, entre outros atributos.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do AnimatedSwitcher",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【duration】 : Duração da animação  【Duration】",
+        "【switchOutCurve】 : Curva de saída  【Curves】",
+        "【switchInCurve】 : Curva de entrada  【Curves】",
+        "【switchInCurve】 : Curva de entrada  【Curves】",
+        "【transitionBuilder】 : Construtor de animação  【Widget Function(Widget, Animation<double>)】"
+      ]
+    }
+  ]
+}

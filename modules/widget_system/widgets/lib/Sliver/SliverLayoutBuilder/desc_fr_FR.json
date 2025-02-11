@@ -1,0 +1,21 @@
+{
+  "id": 304,
+  "name": "SliverLayoutBuilder",
+  "localName": "Constructeur de mise en page Sliver",
+  "info": "Membre de la famille Sliver, il permet de construire des composants enfants via l'objet SliverConstraints rappelé pendant le défilement.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de SliverLayoutBuilder",
+      "desc": [
+        "【builder】 : Constructeur de composant   【SliverLayoutWidgetBuilder】"
+      ]
+    }
+  ]
+}

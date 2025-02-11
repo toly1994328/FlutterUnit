@@ -1,0 +1,26 @@
+{
+  "id": 225,
+  "name": "AnimatedPhysicalModel",
+  "localName": "Modello Fisico Animato",
+  "info": "Componente PhysicalModel con effetti di animazione quando cambiano le proprietà relative, essenzialmente una combinazione di PhysicalModel e animazione. È possibile specificare proprietà come ombre, profondità dell'ombra, angoli arrotondati, durata dell'animazione, callback di fine, ecc.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di AnimatedPhysicalModel",
+      "desc": [
+        "【color】 : Colore di sfondo   【Color】",
+        "【duration】 : Durata dell'animazione   【Duration】",
+        "【onEnd】 : Callback di fine animazione   【Function()】",
+        "【curve】 : Curva dell'animazione   【Duration】",
+        "【shape】 : Forma   【BoxShape】",
+        "【elevation】 : Profondità dell'ombra   【double】",
+        "【borderRadius】 : Angoli arrotondati   【BorderRadius】",
+        "【shadowColor】 : Colore dell'ombra   【Color】",
+        "【child】 : Componente figlio   【Widget】"
+      ]
+    }
+  ]
+}

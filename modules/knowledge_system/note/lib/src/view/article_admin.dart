@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:note/note.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:app/app.dart';
@@ -150,6 +151,7 @@ class _ArticleAdminState extends State<ArticleAdmin> {
                 ),
               ),
               Divider(),
+              // Expanded(child: RichEditor()),
               Expanded(
                 child: TextField(
                   style: TextStyle(fontSize: 14),
@@ -239,4 +241,32 @@ class _ArticleAdminState extends State<ArticleAdmin> {
     );
   }
 
+}
+
+class RichEditor extends StatefulWidget {
+  const RichEditor({super.key});
+
+  @override
+  State<RichEditor> createState() => _RichEditorState();
+}
+
+class _RichEditorState extends State<RichEditor> {
+  QuillController _controller = QuillController.basic();
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        QuillSimpleToolbar(
+          controller: _controller,
+          config: const QuillSimpleToolbarConfig(),
+        ),
+        Expanded(
+          child: QuillEditor.basic(
+            controller: _controller,
+            config: const QuillEditorConfig(),
+          ),
+        )
+      ],
+    );
+  }
 }

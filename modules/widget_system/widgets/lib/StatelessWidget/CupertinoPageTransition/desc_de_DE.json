@@ -1,0 +1,21 @@
+{
+  "id": 216,
+  "name": "CupertinoPageTransition",
+  "localName": "Seitenübergangsanimation",
+  "info": "Bietet eine iOS-ähnliche Seitenübergangsanimation.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in CupertinoPageTransition",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【linearTransition】 : Lineare Transformation   【bool】",
+        "【primaryRouteAnimation】 : Anfängliche Routenanimation   【Animation<double>】",
+        "【secondaryRouteAnimation】 : Zweite Routenanimation   【Animation<double>】"
+      ]
+    }
+  ]
+}

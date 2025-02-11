@@ -1,0 +1,33 @@
+{
+  "id": 152,
+  "name": "Ink",
+  "localName": "Onda d'acqua",
+  "info": "Rende efficace l'effetto ondulato dell'acqua di InkWell e InkResponse, utilizzato per disegnare immagini o altri componenti decorativi di Material.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di Ink",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【padding】 : Spaziatura interna   【EdgeInsetsGeometry】",
+        "【decoration】 : Decorazione   【Decoration】",
+        "【width】 : Larghezza   【double】",
+        "【height】 : Altezza   【double】",
+        "【color】 : Colore   【Color】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Ink.image effetto ondulato dell'immagine",
+      "desc": [
+        "Le proprietà sono coerenti con il componente Image, vedi il componente Image per i dettagli"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 329,
+  "name": "DividerTheme",
+  "localName": "Thème de séparateur",
+  "info": "Principalement utilisé pour définir les propriétés par défaut des composants de type Divider pour les descendants, ou pour obtenir les propriétés par défaut du Divider via ce composant.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    34,
+    35
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de DividerTheme",
+      "desc": [
+        "Les paramètres d'attributs sont similaires à ceux de Divider, vous pouvez obtenir les données du thème de séparateur via DividerTheme.of, \"",
+        "vous pouvez également définir le style par défaut pour les séparateurs des descendants de DividerTheme, y compris la couleur, l'épaisseur, la hauteur, etc."
+      ]
+    }
+  ]
+}

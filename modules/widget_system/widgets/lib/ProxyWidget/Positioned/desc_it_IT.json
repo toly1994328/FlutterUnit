@@ -1,0 +1,26 @@
+{
+  "id": 108,
+  "name": "Positioned",
+  "localName": "Componente di posizionamento",
+  "info": "Può essere utilizzato solo in Stack, consente di posizionare con precisione un componente specificando le distanze da sinistra, destra, alto e basso.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    97,
+    159,
+    121
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di Positioned",
+      "desc": [
+        "【child】 : Componente   【Widget】",
+        "【top】 : Distanza dal bordo superiore del genitore   【double】",
+        "【right】 : Distanza dal bordo destro del genitore   【double】",
+        "【left】 : Distanza dal bordo sinistro del genitore   【double】",
+        "【bottom】 : Distanza dal bordo inferiore del genitore   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 139,
+  "name": "CupertinoPicker",
+  "localName": "Selector iOS",
+  "info": "Selector de deslizamiento cilíndrico de alta gama, muy ingenioso, con muchas propiedades de configuración, recibe eventos de selección al deslizar.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoPicker",
+      "desc": [
+        "【children】 : Lista de componentes hijos   【List<Widget>】",
+        "【offAxisFraction】 : Tasa de desplazamiento del eje   【double】",
+        "【squeeze】 : Tasa de compresión   【double】",
+        "【diameterRatio】 : Relación entre la altura y el diámetro del cilindro   【double】",
+        "【itemExtent】 : Espaciado   【double】",
+        "【backgroundColor】 : Color de fondo   【Color】",
+        "【onSelectedItemChanged】 : Evento de selección  【Function(int)】"
+      ]
+    }
+  ]
+}

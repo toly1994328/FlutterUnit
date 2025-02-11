@@ -1,0 +1,37 @@
+{
+  "id": 42,
+  "name": "Slider",
+  "localName": "Slider",
+  "info": "Slider component, allows dragging to select between a specified maximum and minimum value. Can specify color, number of segments, and displayed labels, and receives progress change callbacks.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    43,
+    44,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Slider",
+      "desc": [
+        "【value】 : value   【double】",
+        "【min】 : minimum value   【double】",
+        "【max】 : maximum value   【double】",
+        "【activeColor】 : active color   【Color】",
+        "【inactiveColor】 : inactive color   【Color】",
+        "【onChanged】 : callback when changed   【Function(double)】"
+      ]
+    },
+    {
+      "file": "node2_lable.dart",
+      "name": "Slider Segments and Labels",
+      "desc": [
+        "【divisions】 : number of segments   【int】",
+        "【label】 : tooltip text   【String】",
+        "【onChangeStart】 : listener when sliding starts   【Function(double)】",
+        "【onChangeEnd】 : listener when sliding ends   【Function(double)】"
+      ]
+    }
+  ]
+}

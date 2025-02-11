@@ -1,0 +1,31 @@
+{
+  "id": 57,
+  "name": "AppBar",
+  "localName": "アプリケーションバー",
+  "info": "アプリの上部バーの一般的な構造で、指定された部分に適切なコンポーネントを配置できます。Scaffoldコンポーネントでよく使用されます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AppBarの基本使用",
+      "desc": [
+        "【leading】 : 左側コンポーネント   【Widget】",
+        "【title】 : 中央コンポーネント   【Widget】",
+        "【actions】 : 右側コンポーネント   【List<Widget>】",
+        "【elevation】 : 影の深さ   【double】",
+        "【shape】 : 形状   【ShapeBorder】",
+        "【backgroundColor】 : 背景色   【背景色】",
+        "【centerTitle】 : 中央を中央揃えにするか   【bool】"
+      ]
+    },
+    {
+      "file": "node2_tab.dart",
+      "name": "AppBarとTabBar、TabBarViewの連携使用",
+      "desc": [
+        "【bottom】 : 下部コンポーネント   【PreferredSizeWidget】"
+      ]
+    }
+  ]
+}

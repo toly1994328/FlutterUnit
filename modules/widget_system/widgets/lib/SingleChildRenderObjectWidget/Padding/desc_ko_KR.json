@@ -1,0 +1,37 @@
+{
+  "id": 74,
+  "name": "Padding",
+  "localName": "여백 컴포넌트",
+  "info": "하나의 자식 컴포넌트를 수용할 수 있으며, 자체 내부 여백을 추가하여 자식 컴포넌트의 공간을 제한합니다. 핵심 속성은 padding입니다.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    1,
+    191
+  ],
+  "nodes": [
+    {
+      "file": "node1_all.dart",
+      "name": "Padding 사면 동일 여백",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【padding】 : 내부 사면 여백   【EdgeInsetsGeometry】\"",
+        "EdgeInsets.all은 동일한 사면 여백을 지정하는 데 사용됩니다."
+      ]
+    },
+    {
+      "file": "node2_only.dart",
+      "name": "Padding 개별 여백",
+      "desc": [
+        "EdgeInsets.only는 동일한 사면 여백을 지정하는 데 사용됩니다."
+      ]
+    },
+    {
+      "file": "node3_symmetric.dart",
+      "name": "Padding 방향 여백",
+      "desc": [
+        "EdgeInsets.symmetric는 수평 및 수직 방향의 여백을 지정하는 데 사용됩니다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 294,
+  "name": "SizeChangedLayoutNotifier",
+  "localName": "크기 변경 알림",
+  "info": "SizeChangedLayoutNotifier를 사용하면 하위 구성 요소 레이아웃 영역이 변경된 후 알림을 보낼 수 있습니다. NotificationListener를 사용하여 이를 감지할 수 있습니다.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "기본 사용",
+      "desc": [
+        "【child】 : 구성 요소   【Widget】"
+      ]
+    }
+  ]
+}

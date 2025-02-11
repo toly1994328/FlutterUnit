@@ -1,0 +1,31 @@
+{
+  "id": 35,
+  "name": "VerticalDivider",
+  "localName": "垂直分割線",
+  "info": "垂直分割線、色、幅、太さ、上下の余白情報を指定でき、リストのアイテム分割線としてよく使われます。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    34,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "VerticalDividerの色と太さ",
+      "desc": [
+        "【color】: 色   【Color】",
+        "【thickness】: 線の太さ   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "VerticalDividerの幅と空白",
+      "desc": [
+        "【indent】: 前の空白の長さ   【double】",
+        "【endIndent】: 後の空白の長さ   【double】",
+        "【width】: 占める幅   【double】"
+      ]
+    }
+  ]
+}

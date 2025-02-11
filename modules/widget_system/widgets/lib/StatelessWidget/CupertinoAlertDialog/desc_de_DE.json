@@ -1,0 +1,20 @@
+{
+  "id": 129,
+  "name": "CupertinoAlertDialog",
+  "localName": "iOS-Dialog",
+  "info": "Ein universelles Dialogfeld im iOS-Stil, das Komponenten für Kopf, Mitte und Ende angeben kann.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoActionSheetAction",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【isDefaultAction】 : Standardmäßig ausgewählt  【bool】",
+        "【onPressed】 : Klickereignis  【Function()】"
+      ]
+    }
+  ]
+}

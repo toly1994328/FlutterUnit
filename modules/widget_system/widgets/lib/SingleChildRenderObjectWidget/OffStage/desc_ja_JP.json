@@ -1,0 +1,21 @@
+{
+  "id": 71,
+  "name": "Offstage",
+  "localName": "非表示コンポーネント",
+  "info": "1つの子コンポーネントを収容でき、その表示・非表示を変更できます。offstage属性がtrueの場合、非表示になります。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    10
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LimitedBoxの基本的な使用法",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【offstage】 : 非表示かどうか   【bool】"
+      ]
+    }
+  ]
+}

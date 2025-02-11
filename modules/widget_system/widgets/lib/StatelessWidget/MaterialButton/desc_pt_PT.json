@@ -1,0 +1,47 @@
+{
+  "id": 23,
+  "name": "MaterialButton",
+  "localName": "Botão de Material",
+  "info": "Botão Material genérico implementado com base no RawMaterialButton. Pode conter um componente filho, permite definir cor, forma e outras aparências, e pode receber eventos de clique e pressão longa.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    25,
+    26,
+    27,
+    326,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Evento de clique do MaterialButton",
+      "desc": [
+        "【color】: Cor   【Color】",
+        "【splashColor】: Cor do efeito de ondulação   【Color】",
+        "【height】: Altura   【double】",
+        "【elevation】: Profundidade da sombra   【double】",
+        "【child】: Componente filho   【Widget】",
+        "【textColor】: Cor do texto do componente filho   【Color】",
+        "【highlightColor】: Cor de destaque ao pressionar   【Color】",
+        "【padding】: Preenchimento interno   【EdgeInsetsGeometry】",
+        "【onPressed】: Evento de clique   【Function】"
+      ]
+    },
+    {
+      "file": "node2_onLongPress.dart",
+      "name": "Evento de pressão longa do MaterialButton",
+      "desc": [
+        "【highlightColor】: Cor de destaque ao pressionar   【Color】",
+        "【onLongPress】: Evento de pressão longa   【Function】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+      "name": "Forma personalizada do MaterialButton",
+      "desc": [
+        "【shape】: Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

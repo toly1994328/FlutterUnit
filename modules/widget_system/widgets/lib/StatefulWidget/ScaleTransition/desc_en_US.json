@@ -1,0 +1,19 @@
+{
+  "id": 91,
+  "name": "ScaleTransition",
+  "localName": "Scale Transition",
+  "info": "Can contain a child component and make it perform a scaling animation. Requires providing an animator scale and has the alignment property.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ScaleTransition",
+      "desc": [
+        "【child】: Child component   【Widget】",
+        "【scale】: Animation   【Animation<double>】"
+      ]
+    }
+  ]
+}

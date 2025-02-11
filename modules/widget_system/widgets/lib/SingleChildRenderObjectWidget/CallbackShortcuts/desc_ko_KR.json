@@ -1,0 +1,25 @@
+{
+  "id": 283,
+  "name": "CallbackShortcuts",
+  "localName": "단축키 콜백",
+  "info": "조합을 단축키로 설정할 수 있으며, 포커스를 얻은 후 단축키 이벤트에 응답합니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    282,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "단축키 사용",
+      "desc": [
+        "예제에서 포커스를 활성화한 후, Ctrl+↑ 및 Ctrl+↓ 조합키로 숫자를 증가 또는 감소시킬 수 있습니다.",
+        "【enabled】 : 사용 가능 여부   【bool】",
+        "【onTapOutside】 : 외부 클릭 리스너   【TapRegionCallback?】",
+        "【onTapInside】 : 내부 클릭 리스너   【TapRegionCallback?】",
+        "【groupId】 : 클릭 영역 그룹 식별자   【Object?】"
+      ]
+    }
+  ]
+}

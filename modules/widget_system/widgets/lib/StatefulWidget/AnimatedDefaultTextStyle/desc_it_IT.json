@@ -1,0 +1,29 @@
+{
+  "id": 124,
+  "name": "AnimatedDefaultTextStyle",
+  "localName": "Animazione del contenitore",
+  "info": "Consente ai componenti di testo figlio di animare lo stile del testo (TextStyle), con la possibilità di specificare durata e curva, e un evento di fine animazione.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    114,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di AnimatedDefaultTextStyle",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【duration】 : Durata dell'animazione   【Duration】",
+        "【onEnd】 : Callback di fine animazione   【Function()】",
+        "【curve】 : Curva dell'animazione   【Duration】",
+        "【textAlign】 : Allineamento del testo  【TextAlign】",
+        "【softWrap】 : Avvolgimento del testo  【bool】",
+        "【maxLines】 : Numero massimo di righe  【int】",
+        "【overflow】 : Modalità di overflow  【TextOverflow】",
+        "【style】 : Stile del testo   【TextStyle】"
+      ]
+    }
+  ]
+}

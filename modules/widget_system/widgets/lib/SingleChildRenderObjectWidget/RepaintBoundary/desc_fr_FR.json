@@ -1,0 +1,26 @@
+{
+  "id": 264,
+  "name": "RepaintBoundary",
+  "localName": "Limite de Repaint",
+  "info": "Crée une liste d'affichage séparée pour les composants enfants, améliorant ainsi les performances. Utilisé dans les composants tels que TextField, DrawerController, Scrollbar, Sliver, etc. dans le code source.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de RepaintBoundary",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "Par exemple, dans la vue de dessin ci-dessus, même si shouldRepaint est false, la méthode paint sera constamment exécutée lors du défilement. L'utilisation de RepaintBoundary peut éviter les peintures inutiles."
+      ]
+    },
+    {
+      "file": "node2_save.dart",
+      "name": "Sauvegarder un Widget en tant qu'image",
+      "desc": [
+        "Grâce à RenderRepaintBoundary, il est possible d'obtenir les informations d'image du composant enfant, puis de les sauvegarder sous forme de fichier image."
+      ]
+    }
+  ]
+}

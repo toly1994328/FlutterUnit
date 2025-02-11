@@ -1,0 +1,18 @@
+{
+  "id": 197,
+  "name": "ErrorWidget",
+  "localName": "Error Component",
+  "info": "A component used to display an error message, with a red background and yellow text, often seen during development, generally not used.",
+  "lever": 1,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ErrorWidget",
+      "desc": [
+        "Parameters: Display Message   【Object】"
+      ]
+    }
+  ]
+}

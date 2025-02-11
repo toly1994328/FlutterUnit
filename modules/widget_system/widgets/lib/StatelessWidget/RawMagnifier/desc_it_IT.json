@@ -1,0 +1,29 @@
+{
+  "id": 360,
+  "name": "RawMagnifier",
+  "localName": "Lente d'ingrandimento originale",
+  "info": "Una lente d'ingrandimento che può ingrandire qualsiasi componente sottostante, con proprietà come forma decorativa, dimensioni, offset, ecc.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso semplice di RawMagnifier",
+      "desc": [
+        "【size】 : Dimensioni  【Size】",
+        "【magnificationScale】 : Fattore di ingrandimento  【double】",
+        "【focalPointOffset】: Offset del contenuto ingrandito   【Offset】",
+        "【decoration】: Decorazione scoperta   【MagnifierDecoration】",
+        "【child】: Componente figlio   【Widget?】,"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Forma decorativa personalizzata di RawMagnifier",
+      "desc": [
+        "Qui viene personalizzata la forma decorativa a stella a cinque punte"
+      ]
+    }
+  ]
+}

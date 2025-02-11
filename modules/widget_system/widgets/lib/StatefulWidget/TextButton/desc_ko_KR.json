@@ -1,0 +1,33 @@
+{
+  "id": 353,
+  "name": "TextButton",
+  "localName": "텍스트 버튼",
+  "info": "Material 스타일의 텍스트 버튼으로, 기본적으로 텍스트만 있으며 클릭 시 물결 효과가 있습니다. 스타일을 통해 테두리, 색상, 그림자 등의 속성을 변경할 수 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    354,
+    355
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TextButton 기본 사용법",
+      "desc": [
+        "【child】 : 스크롤 가능한 주체 여부   【Widget】",
+        "【onPressed】 : 클릭 이벤트   【VoidCallback】",
+        "【onLongPress】 : 길게 누르기 이벤트   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "TextButton 스타일",
+      "desc": [
+        "【style】 : 버튼 스타일   【ButtonStyle】",
+        "【focusNode】 : 포커스   【FocusNode】",
+        "【clipBehavior】 : 클리핑 동작   【Clip】",
+        "【autofocus】 : 자동 포커스   【bool】"
+      ]
+    }
+  ]
+}

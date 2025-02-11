@@ -1,0 +1,54 @@
+{
+  "id": 135,
+  "name": "MonthPicker",
+  "localName": "Выбор месяца",
+  "info": "Компонент выбора месяца с встроенным прослушиванием переключения на предыдущий и следующий месяц. Можно указать диапазон выбора дат, выбранную дату и т.д., принимает событие выбора даты.",
+  "lever": 3,
+  "family": 1,
+  "deprecated": -1,
+  "linkIds": [
+    134,
+    136
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование MonthPicker",
+      "desc": [
+        "【selectedDate】 : Выбранная дата   【DateTime】",
+        "【firstDate】 : Ограничение на самую раннюю дату   【DateTime】",
+        "【lastDate】 : Ограничение на самую позднюю дату   【DateTime】",
+        "【onChanged】 : Обратный вызов при клике  【Function(DateTime)】",
+        "    ",
+        "class CustomMonthPicker extends StatelessWidget{",
+        "  const CustomMonthPicker({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'MonthPicker, компонент выбора месяца, ушел в историю с выходом Flutter 3.0. Его заменил CalendarDatePicker, компонент выбора даты.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   final DateTime _date = DateTime.now();",
+        "  ",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return SizedBox(",
+        "       height: 350,",
+        "       child: MonthPicker(",
+        "         selectedDate: _date,",
+        "         onChanged: (date) => setState(() => _date = date),",
+        "         firstDate: DateTime(2018),",
+        "         lastDate: DateTime(2030),",
+        "       ),"
+      ]
+    }
+  ]
+}

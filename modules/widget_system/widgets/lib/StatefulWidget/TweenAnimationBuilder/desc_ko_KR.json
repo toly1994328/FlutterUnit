@@ -1,0 +1,23 @@
+{
+  "id": 226,
+  "name": "TweenAnimationBuilder",
+  "localName": "트윈 애니메이션 빌더",
+  "info": "트윈을 사용하여 관련 속성에 대한 애니메이션을 생성하고, 빌더를 통해 부분적으로 빌드하여 새로고침 범위를 줄입니다. 사용자 정의 애니메이터가 필요 없으며, 애니메이션 지속 시간, 곡선, 종료 콜백을 지정할 수 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TweenAnimationBuilder 사용 예제",
+      "desc": [
+        "【tween】 : *트윈   【Tween<T>】",
+        "【duration】 : *지속 시간   【Duration】",
+        "【builder】 : *빌더   【ValueWidgetBuilder<T>】",
+        "【curve】 : 애니메이션 곡선   【Curve】",
+        "【onEnd】 : 종료 콜백   【VoidCallback】",
+        "【child】 : 자식 위젯   【Widget】"
+      ]
+    }
+  ]
+}

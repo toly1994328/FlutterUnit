@@ -1,0 +1,24 @@
+{
+  "id": 139,
+  "name": "CupertinoPicker",
+  "localName": "iOS Picker",
+  "info": "A high-end cylindrical sliding picker, very sophisticated, with many configurable attributes, and it receives the selected event when sliding.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoPicker",
+      "desc": [
+        "【children】 : List of child components   【List<Widget>】",
+        "【offAxisFraction】 : Axis offset rate   【double】",
+        "【squeeze】 : Squeeze rate   【double】",
+        "【diameterRatio】 : Ratio of height to cylinder diameter   【double】",
+        "【itemExtent】 : Spacing   【double】",
+        "【backgroundColor】 : Background color   【Color】",
+        "【onSelectedItemChanged】 : Selected event  【Function(int)】"
+      ]
+    }
+  ]
+}

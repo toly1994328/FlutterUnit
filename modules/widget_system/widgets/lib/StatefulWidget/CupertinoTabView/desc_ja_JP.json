@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Cupertinoページ",
+  "info": "MaterialAppのようにルートスタックを維持できます。routes、onGenerateRouteを使用してルートを構築し、navigatorObserversでルートを監視できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTabViewの基本使用",
+      "desc": [
+        "【builder】 : ホームページビルダー   【WidgetBuilder】",
+        "【navigatorObservers】 : ルート監視者   【List<NavigatorObserver>】",
+        "【routes】 : ルートマッピング   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】 : ルートファクトリ   【RouteFactory】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 299,
+  "name": "CupertinoTextSelectionToolbar",
+  "localName": "iOSテキスト選択ツールバー",
+  "info": "テキスト選択に応答するiOSスタイルのツールバー",
+  "lever": 1,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "このコンポーネントは使用できません",
+      "desc": [
+        "【-】 : -   【-】"
+      ]
+    }
+  ]
+}

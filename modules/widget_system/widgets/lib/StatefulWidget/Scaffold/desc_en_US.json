@@ -1,0 +1,29 @@
+{
+  "id": 64,
+  "name": "Scaffold",
+  "localName": "Scaffold",
+  "info": "A general app structure, including top, bottom, left, right, middle, and floating button parts, where components can be placed in corresponding positions.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    57,
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Scaffold",
+      "desc": [
+        "【appBar】: Header component 【PreferredSizeWidget】",
+        "【bottomNavigationBar】: Bottom component 【Widget】",
+        "【drawer】: Left sliding component 【Widget】",
+        "【endDrawer】: Right sliding component 【Widget】",
+        "【body】: Content component 【Widget】",
+        "【backgroundColor】: Background color 【Color】",
+        "【floatingActionButton】: Floating button 【Widget】",
+        "【floatingActionButtonLocation】: Floating button position 【FloatingActionButtonLocation】"
+      ]
+    }
+  ]
+}

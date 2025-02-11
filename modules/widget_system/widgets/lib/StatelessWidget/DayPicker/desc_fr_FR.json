@@ -1,0 +1,61 @@
+{
+  "id": 134,
+  "name": "DayPicker",
+  "localName": "Sélecteur de date",
+  "info": "Composant de sélection de date, permet de spécifier la date actuelle, la date sélectionnée, le mois affiché, etc., et reçoit les événements de sélection de date.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    135,
+    136
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de DayPicker",
+      "desc": [
+        "【selectedDate】 : Date sélectionnée   【DateTime】",
+        "【currentDate】 : Date actuelle   【DateTime】",
+        "【firstDate】 : Limite de la première date   【DateTime】",
+        "【lastDate】 : Limite de la dernière date   【DateTime】",
+        "【displayedMonth】 : Mois actuellement affiché   【DateTime】",
+        "【onChanged】 : Rappel de clic  【Function(DateTime)】",
+        "    ",
+        "import 'package:flutter/material.dart';",
+        "",
+        "class CustomDayPicker extends StatelessWidget{",
+        "",
+        "  const CustomDayPicker({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'Le sélecteur de date DayPicker a quitté la scène historique avec Flutter 3.0. Il est remplacé par le sélecteur de calendrier CalendarDatePicker.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   final DateTime _date = DateTime.now();",
+        "  ",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return SizedBox(",
+        "       height: 350,",
+        "       child: DayPicker(",
+        "           selectedDate: _date,",
+        "           currentDate: DateTime.now(),",
+        "           onChanged: (date)=> setState(() => _date = date),",
+        "           firstDate:  DateTime(2018),",
+        "           lastDate: DateTime(2030),",
+        "           displayedMonth: DateTime.now()",
+        "       ),"
+      ]
+    }
+  ]
+}

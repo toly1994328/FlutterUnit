@@ -1,0 +1,40 @@
+{
+  "id": 245,
+  "name": "CupertinoTextField",
+  "localName": "iOS 스타일 입력 필드",
+  "info": "Cupertino 스타일의 입력 필드, 속성은 TextField와 유사하며, 컨트롤러, 텍스트 스타일, 장식선, 줄 수 제한, 커서 스타일 등을 지정할 수 있습니다. 입력 변화, 입력 완료 등의 이벤트를 수신합니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTextField 기본 사용",
+      "desc": [
+        "【placeholder】 : 힌트 텍스트   【String】",
+        "【showCursor】 : 커서 표시 여부   【bool】",
+        "【minLines】 : 최소 줄 수   【int】",
+        "【maxLines】 : 최대 줄 수   【int】",
+        "【padding】 : 내부 여백   【EdgeInsetsGeometry】",
+        "【onChanged】 : 변경 감지   【ValueChanged<String>】",
+        "【onTap】: 클릭 감지   【GestureTapCallback】",
+        "【onSubmitted】: 제출 감지    【ValueChanged<String>】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "CupertinoTextField 일반 스타일 속성",
+      "desc": [
+        "【style】 : 입력 텍스트 스타일   【TextStyle】",
+        "【prefix】: 접두사 컴포넌트   【Widget】",
+        "【prefixMode】: 접두사 모드   【OverlayVisibilityMode】",
+        "【suffix】: 접미사 컴포넌트   【Widget】",
+        "【suffixMode】: 접미사 모드   【OverlayVisibilityMode】",
+        "【cursorColor】: 커서 색상   【Color】",
+        "【cursorWidth】: 커서 너비   【double】",
+        "【cursorRadius】: 커서 모서리 반경   【Radius】",
+        "【readOnly】: 읽기 전용 여부    【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 44,
+  "name": "RangeSlider",
+  "localName": "Cursore di intervallo",
+  "info": "Componente cursore di intervallo, supporta il trascinamento di due punti per ottenere l'intervallo tra di essi. Può specificare il colore, il numero di segmenti e le etichette visualizzate, riceve un callback per le modifiche di avanzamento.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di RangeSlider",
+      "desc": [
+        "【values】 : Valori   【RangeValues】",
+        "【min】 : Valore minimo   【double】",
+        "【max】 : Valore massimo   【double】",
+        "【divisions】 : Numero di segmenti   【int】",
+        "【label】 : Testo del tooltip   【String】",
+        "【activeColor】 : Colore attivo   【Color】",
+        "【inactiveColor】 : Colore inattivo   【Color】",
+        "【onChangeStart】 : Ascolta quando inizia lo scorrimento   【Function(RangeValues)】",
+        "【onChangeEnd】 : Ascolta quando finisce lo scorrimento   【Function(RangeValues)】",
+        "【onChanged】 : Callback al cambiamento   【Function(RangeValues)】"
+      ]
+    }
+  ]
+}

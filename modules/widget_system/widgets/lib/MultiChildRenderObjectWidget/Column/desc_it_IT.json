@@ -1,0 +1,26 @@
+{
+  "id": 96,
+  "name": "Column",
+  "localName": "Layout Colonna",
+  "info": "Un layout Flex con direzione di disposizione verticale, in grado di contenere più componenti. Tutte le altre proprietà sono le stesse, vedi Flex per maggiori dettagli.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Uso di base di Column",
+      "desc": [
+        "【children】 : Lista di componenti   【List<Widget>】",
+        "【mainAxisAlignment】 : Allineamento dell'asse principale   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : Allineamento dell'asse trasversale   【CrossAxisAlignment】",
+        "【textBaseline】 : Linea di base del testo   【TextBaseline】",
+        "【verticalDirection】 : Direzione verticale   【VerticalDirection】",
+        "【mainAxisSize】 : Dimensione dell'asse principale   【MainAxisSize】"
+      ]
+    }
+  ]
+}

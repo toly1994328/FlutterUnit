@@ -1,0 +1,20 @@
+{
+  "id": 49,
+  "name": "RefreshIndicator",
+  "localName": "새로고침 표시기",
+  "info": "내부에 스크롤 가능한 영역을 포함하고 있으며, 아래로 스크롤할 때 새로고침 아이콘이 표시되고, 손을 떼면 지정된 비동기 메서드를 실행할 수 있습니다. 색상, 상단까지의 거리 등의 속성을 지정할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RefreshIndicator 기본 사용법",
+      "desc": [
+        "【child】 : 자식(스크롤 가능)   【Widget】",
+        "【displacement】 : 표시기 부유 높이   【double】",
+        "【color】 : 표시기 색상   【Color】"
+      ]
+    }
+  ]
+}

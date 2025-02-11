@@ -1,0 +1,25 @@
+{
+  "id": 257,
+  "name": "DrawerController",
+  "localName": "iOS Sliding Tabs",
+  "info": "Provides interactive behavior for the Drawer component, which is rarely used. It is used in the source code of the Scaffold component.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    154,
+    64
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of DrawerController",
+      "desc": [
+        "【drawerCallback】: Event callback 【DrawerCallback】",
+        "【enableOpenDragGesture】: Whether to slide open from the side 【bool】",
+        "【alignment】: Alignment 【DrawerAlignment】",
+        "【scrimColor】: Background color 【Color】",
+        "【child】: Drawer component 【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": 37,
+  "name": "GridPaper",
+  "localName": "Rasterlinien-Komponente",
+  "info": "Kann eine Komponente aufnehmen und ein Raster darauf zeichnen. Eigenschaften wie Farbe, Linienstärke, Abstand usw. können angegeben werden.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridPager Grundlegende Eigenschaften",
+      "desc": [
+        "【child】: Untergeordnete Komponente   【Widget】",
+        "【color】: Farbe   【Color】",
+        "【interval】: Seitenlänge des kleinen Blocks   【double】"
+      ]
+    },
+    {
+      "file": "node2_divisions.dart",
+      "name": "GridPager Unterteilung",
+      "desc": [
+        "【child】: Untergeordnete Komponente   【Widget】",
+        "【color】: Farbe   【Color】",
+        "【subdivisions】: Anzahl der Unterblöcke im kleinen Block   【int】",
+        "【divisions】: Anzahl der Unterteilungen der Unterblöcke im kleinen Block   【int】"
+      ]
+    }
+  ]
+}

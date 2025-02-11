@@ -1,0 +1,40 @@
+{
+  "id": 245,
+  "name": "CupertinoTextField",
+  "localName": "iOSスタイルの入力ボックス",
+  "info": "Cupertinoスタイルの入力ボックス。プロパティはTextFieldと類似しており、コントローラー、テキストスタイル、デコレーションライン、行数制限、カーソルスタイルなどを指定できます。入力変更や入力完了などのイベントを受け取ります。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTextFieldの基本使用",
+      "desc": [
+        "【placeholder】 : ヒントテキスト   【String】",
+        "【showCursor】 : カーソルを表示するかどうか   【bool】",
+        "【minLines】 : 最小行数   【int】",
+        "【maxLines】 : 最大行数   【int】",
+        "【padding】 : パディング   【EdgeInsetsGeometry】",
+        "【onChanged】 : 変更リスナー   【ValueChanged<String>】",
+        "【onTap】: クリックリスナー   【GestureTapCallback】",
+        "【onSubmitted】: 送信リスナー    【ValueChanged<String>】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "CupertinoTextFieldの一般的なスタイルプロパティ",
+      "desc": [
+        "【style】 : 入力テキストスタイル   【TextStyle】",
+        "【prefix】: プレフィックスコンポーネント   【Widget】",
+        "【prefixMode】: プレフィックスモード   【OverlayVisibilityMode】",
+        "【suffix】: サフィックスコンポーネント   【Widget】",
+        "【suffixMode】: サフィックスモード   【OverlayVisibilityMode】",
+        "【cursorColor】: カーソルカラー   【Color】",
+        "【cursorWidth】: カーソル幅   【double】",
+        "【cursorRadius】: カーソルの角丸   【Radius】",
+        "【readOnly】: 読み取り専用かどうか    【bool】"
+      ]
+    }
+  ]
+}

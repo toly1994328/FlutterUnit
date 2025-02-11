@@ -1,0 +1,26 @@
+{
+  "id": 264,
+  "name": "RepaintBoundary",
+  "localName": "Neulackgrenze",
+  "info": "Erstellt eine separate Anzeigeliste für Unterkomponenten, um die Leistung zu verbessern. Im Quellcode wird es in Komponenten wie TextField, DrawerController, Scrollbar, Sliver usw. verwendet.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von RepaintBoundary",
+      "desc": [
+        "【child】 : Unterkomponente   【Widget】",
+        "Zum Beispiel wird in der obigen Zeichenansicht die paint-Methode auch dann kontinuierlich ausgeführt, wenn shouldRepaint false ist. Die Verwendung von RepaintBoundary kann unnötiges Zeichnen vermeiden."
+      ]
+    },
+    {
+      "file": "node2_save.dart",
+      "name": "Speichern eines Widgets als Bild",
+      "desc": [
+        "Mit RenderRepaintBoundary können Bildinformationen der Unterkomponente abgerufen werden, um sie als Bilddatei zu speichern."
+      ]
+    }
+  ]
+}

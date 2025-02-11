@@ -1,0 +1,24 @@
+{
+  "id": 104,
+  "name": "DragTarget",
+  "localName": "Obiettivo di trascinamento",
+  "info": "Un'area di destinazione per il trascinamento, in grado di ricevere informazioni dal componente Draggable. È possibile ottenere callback durante il trascinamento.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    103,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di DragTarget",
+      "desc": [
+        "【builder】 : Costruttore del componente   【DragTargetBuilder<T>】",
+        "【onWillAccept】 : Durante il trascinamento   【Function(T)】",
+        "【onAccept】 : Trascinamento riuscito   【Function(T)】",
+        "【onLeave】 : Trascinato e poi rilasciato   【Function(T)】"
+      ]
+    }
+  ]
+}

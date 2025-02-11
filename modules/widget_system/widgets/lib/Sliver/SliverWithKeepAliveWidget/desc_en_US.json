@@ -1,0 +1,25 @@
+{
+  "id": 348,
+  "name": "SliverWithKeepAliveWidget",
+  "localName": "Sliver Keep-Alive Container",
+  "info": "It is an abstract class and cannot be used alone. Only its subclasses can accommodate KeepAlive children.",
+  "lever": 1,
+  "family": 4,
+  "linkIds": [
+    316,
+    239,
+    188,
+    185,
+    314,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to SliverWithKeepAliveWidget",
+      "desc": [
+        "【key】 : key   【Key】"
+      ]
+    }
+  ]
+}

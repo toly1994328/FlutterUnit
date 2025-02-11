@@ -1,0 +1,24 @@
+{
+  "id": 66,
+  "name": "ClipOval",
+  "localName": "楕円クリップ",
+  "info": "1つの子コンポーネントを収容し、幅と高さを長軸と短軸として楕円形にクリップします。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    67,
+    68,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ClipOvalの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【clipBehavior】 : クリップ動作   【Clip】",
+        "【clipper】 : クリッパー   【CustomClipper<RRect>】"
+      ]
+    }
+  ]
+}

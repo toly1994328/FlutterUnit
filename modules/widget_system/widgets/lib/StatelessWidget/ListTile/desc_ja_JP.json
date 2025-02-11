@@ -1,0 +1,41 @@
+{
+  "id": 16,
+  "name": "ListTile",
+  "localName": "リストタイル",
+  "info": "Flutterが提供する一般的なリスト項目構造で、左中右の構造を持っています。対応する位置にコンポーネントを挿入することができ、特定の項目に簡単に対応できます。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    162,
+    334
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListTileの基本的な表現は以下の通りです",
+      "desc": [
+        "【leading】: 左側のコンポーネント   【Widget】",
+        "【title】: 中央上部のコンポーネント   【Widget】",
+        "【subtitle】: 中央下部のコンポーネント   【Widget】",
+        "【trailing】: 末尾のコンポーネント   【Widget】",
+        "【contentPadding】: 内側の余白   【EdgeInsetsGeometry】",
+        "【onLongPress】: クリックイベント   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "ListTileの選択効果と長押しイベント",
+      "desc": [
+        "【selected】: 選択されているかどうか   【bool】",
+        "【onTap】: クリックイベント   【Function()】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "ListTileの密排属性",
+      "desc": [
+        "【dense】: 密排かどうか   【bool】"
+      ]
+    }
+  ]
+}

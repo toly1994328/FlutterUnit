@@ -1,0 +1,23 @@
+{
+  "id": 195,
+  "name": "CupertinoScrollbar",
+  "localName": "Barra de desplazamiento de iOS",
+  "info": "Barra de desplazamiento al estilo de iOS, necesita envolver un área desplazable. Cuando es desplazable, muestra una barra de desplazamiento para indicar.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    194,
+    164,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoScrollbar",
+      "desc": [
+        "【child】 : Widget hijo   【Widget】",
+        "【controller】 : Controlador  【ScrollController】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 168,
+  "name": "Theme",
+  "localName": "テーマ",
+  "info": "Theme.ofを使用してThemeDataオブジェクトを取得できます。また、テーマをThemeの子孫コンポーネントに適用することもできます。",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    65,
+    169,
+    224
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "テキストスタイル-ThemeData#TextTheme",
+      "desc": [
+        "子コンポーネントはThemeData.ofを使用してテーマのデータを取得して使用できます。"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "Themeの使い方",
+      "desc": [
+        "Themeを使用すると、フォント、スライダー、カード、テキスト、分割線、ボタンなどの属性をテーマとして指定でき、これらの属性はすべての子孫コンポーネントに適用されます。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 45,
+  "name": "Radio",
+  "localName": "ラジオボタン",
+  "info": "選択状態と未選択状態の円形ボタンであり、複数のRadioを論理的に使用することで、単一選択または複数選択の要件を実現できます。色を指定でき、状態変化のコールバックを受け取ります。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [19,240],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Radioの基本的な使用法",
+      "desc": [
+        "【value】 : ラジオボタンの値   【T】",
+        "【groupValue】 : 現在のマッチ値   【T】",
+        "【activeColor】 : アクティブな色   【Color】",
+        "【onChanged】 : 変更時のコールバック   【Function(T)】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 205,
+  "name": "TabPageSelector",
+  "localName": "Sélecteur de page à onglets",
+  "info": "Utilisé généralement comme indicateur avec TabBarView, partageant un TabController commun. Peut spécifier la couleur, la taille, la couleur sélectionnée.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    206,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de TabPageSelector",
+      "desc": [
+        "【controller】 : Contrôleur   【TabController】",
+        "【indicatorSize】: Taille de l'indicateur   【double】",
+        "【selectedColor】: Couleur sélectionnée   【Color】",
+        "【color】: Couleur    【Color】"
+      ]
+    }
+  ]
+}

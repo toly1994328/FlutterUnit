@@ -1,0 +1,27 @@
+{
+  "id": 29,
+  "name": "ButtonBar",
+  "localName": "Schaltflächenleiste",
+  "info": "Empfängt eine Liste von Komponenten, die häufig verwendet wird, um mehrere Schaltflächen zu enthalten. Kann Ausrichtung, Ränder usw. angeben.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ButtonBar-Ausrichtung",
+      "desc": [
+        "【alignment】: Ausrichtung   【MainAxisAlignment】",
+        "【children】: Untergeordnete Komponenten   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_padding.dart",
+      "name": "ButtonBar-Ränder und Höhe",
+      "desc": [
+        "【buttonPadding】: Innenabstand   【EdgeInsetsGeometry】",
+        "【buttonHeight】: Höhe   【double】"
+      ]
+    }
+  ]
+}

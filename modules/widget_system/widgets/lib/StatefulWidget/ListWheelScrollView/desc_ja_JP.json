@@ -1,0 +1,24 @@
+{
+  "id": 179,
+  "name": "ListWheelScrollView",
+  "localName": "ホイールリスト",
+  "info": "高級感あふれる円柱状のスライドリストで、精巧な仕様です。アイテムの高さ、パースペクティブ、圧縮などの属性を指定でき、スライド時の選択イベントを受け取ります。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    139,
+    291
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListWheelScrollViewの基本使用",
+      "desc": [
+        "【children】 : 子コンポーネントリスト   【List<Widget>】",
+        "【perspective】 : パースペクティブ   【double】",
+        "【itemExtent】 : アイテムの高さ   【EdgeInsets】",
+        "【onSelectedItemChanged】 : 選択コールバック  【ValueChanged<int> 】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 342,
+  "name": "ListBody",
+  "localName": "Corps de liste",
+  "info": "Dispose plusieurs sous-composants selon un axe, avec peu de propriétés configurables, rarement utilisé, on préfère généralement utiliser ListView.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ListView",
+      "desc": [
+        "【mainAxis】 : Direction de l'axe principal   【Axis】",
+        "【reverse】: Inverser ou non   【bool】",
+        "【children】: Ensemble de sous-composants   【List<Widget>】"
+      ]
+    }
+  ]
+}

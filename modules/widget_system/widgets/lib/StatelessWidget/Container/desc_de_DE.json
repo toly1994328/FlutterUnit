@@ -1,0 +1,67 @@
+{
+  "id": 1,
+  "name": "Container",
+  "localName": "Container-Komponente",
+  "info": "Eine Container-Komponente, die ein einzelnes Unterelement aufnehmen kann. Integriert mehrere Funktionen von Unterelementen wie Innen- und Außenabstände, Transformationen, Dekorationen, Einschränkungen usw...",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    74,
+    85,
+    80,
+    78,
+    70,
+    123
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Kann verwendet werden, um einen Bereich mit einer bestimmten Breite und Höhe anzuzeigen",
+      "desc": [
+        "【width】 : Breite   【int】",
+        "【height】: Höhe   【int】",
+        "【color】: Farbe    【Color】"
+      ]
+    },
+    {
+      "file": "node2_child.dart",
+      "name": "Kann ein Unterelement in den Bereich einfügen",
+      "desc": [
+        "【padding】 : Innenabstand   【EdgeInsetsGeometry】",
+        "【margin】: Außenabstand   【EdgeInsetsGeometry】",
+        "【child】: Unterelement    【Widget】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Kann das Unterelement ausrichten und positionieren",
+      "desc": [
+        "【alignment】 : Ausrichtung und Positionierung   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node4_decoration.dart",
+      "name": "Kann das Unterelement dekorieren",
+      "desc": [
+        "【decoration】 : Dekoration   【Decoration】",
+        "Kann dekorieren: Rahmen, abgerundete Ecken, Farbe, Verlauf, Schatten, Bilder usw."
+      ]
+    },
+    {
+      "file": "node5_transform.dart",
+      "name": "Container hat auch Transformationsfähigkeiten",
+      "desc": [
+        "【transform】 : Transformationsmatrix   【Matrix4】",
+        "Matrix-Transformation basierend auf Matrix4, Details siehe lineare Algebra"
+      ]
+    },
+    {
+      "file": "node6_constraints.dart",
+      "name": "Einschränkungen des Containers",
+      "desc": [
+        "【constraints】 : Einschränkungen   【BoxConstraints】",
+        "Schränkt die Größe des Bereichs ein, nicht kleiner als die angegebene minimale Breite und Höhe, und nicht größer als die angegebene maximale Breite und Höhe."
+      ]
+    }
+  ]
+}

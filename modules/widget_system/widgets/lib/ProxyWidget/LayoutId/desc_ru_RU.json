@@ -1,0 +1,19 @@
+{
+  "id": 315,
+  "name": "LayoutId",
+  "localName": "Идентификатор макета",
+  "info": "Может использоваться только в компоненте CustomMultiChildLayout для идентификации его дочерних компонентов.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Сценарии использования LayoutId",
+      "desc": [
+        "【id】 : Идентификатор   【Object】",
+        "【child】 : Дочерний компонент   【Widget】"
+      ]
+    }
+  ]
+}

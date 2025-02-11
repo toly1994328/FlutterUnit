@@ -1,0 +1,22 @@
+{
+  "id": 151,
+  "name": "TableRowInkWell",
+  "localName": "Onda de tabla",
+  "info": "Solo se puede usar para la onda de la tabla, recibe eventos de clic, doble clic, pulsación larga y cambios de resaltado, la onda actuará en una fila de la tabla.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Eventos básicos de TableRowInkWell",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【onTap】 : Evento de clic   【Function()】",
+        "【onDoubleTap】 : Evento de doble clic   【Function()】",
+        "【onLongPress】 : Evento de pulsación larga   【Function()】",
+        "【onHighlightChanged】 : Callback de cambio de resaltado   【Function(bool)】"
+      ]
+    }
+  ]
+}

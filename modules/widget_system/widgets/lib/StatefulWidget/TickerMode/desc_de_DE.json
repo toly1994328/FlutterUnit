@@ -1,0 +1,20 @@
+{
+  "id": 246,
+  "name": "TickerMode",
+  "localName": "Timer-Modus",
+  "info": "Deaktiviert/Aktiviert den Timer (Ticker) des Unterbaums, der Animationscontroller basiert auf Ticker.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    346
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Animation einheitlich deaktivieren/aktivieren",
+      "desc": [
+        "Das enabled von TickerMode kann die Animationseffekte des Unterbaums einheitlich aktivieren/deaktivieren."
+      ]
+    }
+  ]
+}

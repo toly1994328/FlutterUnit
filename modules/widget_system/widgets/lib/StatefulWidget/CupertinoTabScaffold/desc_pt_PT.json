@@ -1,0 +1,21 @@
+{
+  "id": 158,
+  "name": "CupertinoTabScaffold",
+  "localName": "Estrutura de Scaffold de Abas iOS",
+  "info": "Estrutura de scaffold de layout de página no estilo iOS, que permite especificar a barra de navegação no fundo e a página de conteúdo principal.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do CupertinoTabScaffold",
+      "desc": [
+        "【tabBar】 : Barra de Abas   【CupertinoTabBar】",
+        "【backgroundColor】 : Cor de Fundo   【Color】",
+        "【controller】 : Controlador   【CupertinoTabController】",
+        "【tabBuilder】 : Construtor de Páginas   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

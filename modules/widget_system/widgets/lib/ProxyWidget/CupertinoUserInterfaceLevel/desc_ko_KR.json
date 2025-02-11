@@ -1,0 +1,18 @@
+{
+  "id": 337,
+  "name": "CupertinoUserInterfaceLevel",
+  "localName": "사용자 인터페이스 레벨",
+  "info": "iOS의 개념으로, 콘텐츠 가시성 레벨인 UIUserInterfaceLevel을 의미하며, base와 elevated로 나뉩니다. InheritedWidget으로서, 주로 이 데이터를 공유하는 역할을 합니다.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoUserInterfaceLevel 소개",
+      "desc": [
+        "CupertinoUserInterfaceLevel.of(context)를 통해 CupertinoUserInterfaceLevelData 데이터를 얻을 수 있습니다. 또한 이 컴포넌트를 사용하여 해당 데이터를 설정하고 서브트리와 공유할 수 있습니다. 데이터 원본에 대한 자세한 내용은 다음을 참조하세요: https://developer.apple.com/documentation/uikit/uiuserinterfacelevel"
+      ]
+    }
+  ]
+}

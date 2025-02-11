@@ -1,0 +1,58 @@
+{
+  "id": 38,
+  "name": "Image",
+  "localName": "Componente de Imagem",
+  "info": "Usado para exibir uma imagem, pode ser carregada a partir de arquivos, memória, rede ou recursos. Pode especificar o modo de ajuste, estilo, modo de mistura de cores, modo de repetição, etc.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    8,
+    87
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Pode carregar imagens de arquivos de recursos e da rede",
+      "desc": [
+        "Image.asset carrega imagens de recursos,"
+      ]
+    },
+    {
+      "file": "node2_fit.dart",
+      "name": "Modo de ajuste da imagem",
+      "desc": [
+        "【fit】 : modo de ajuste*7   【BoxFit】,"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Modo de alinhamento da imagem",
+      "desc": [
+        "【alignment】 : cor   【AlignmentGeometry】",
+        "    Nove constantes estáticas comuns da classe Alignment, mas também pode personalizar a posição"
+      ]
+    },
+    {
+      "file": "node4_colorBlendMode.dart",
+      "name": "Cor e modo de mistura da imagem",
+      "desc": [
+        "【color】 : cor   【Color】",
+        "【colorBlendMode】: modo de mistura*29 【BlendMode】"
+      ]
+    },
+    {
+      "file": "node5_repeat.dart",
+      "name": "Modo de repetição da imagem",
+      "desc": [
+        "【repeat】 : modo de repetição*4   【ImageRepeat】"
+      ]
+    },
+    {
+      "file": "node6_centerSlice.dart",
+      "name": "Ampliação local da imagem",
+      "desc": [
+        "【centerSlice】 : área retida   【Rect】"
+      ]
+    }
+  ]
+}

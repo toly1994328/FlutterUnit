@@ -1,0 +1,36 @@
+{
+  "id": 346,
+  "name": "InheritedWidget",
+  "localName": "상속 위젯",
+  "info": "이 클래스는 추상 클래스로, 본 컨텍스트에서 데이터를 저장하고, 그 후속 노드의 컨텍스트에서 해당 데이터를 공유할 수 있습니다. 다양한 구현 클래스가 있으며, 다양한 테마 위젯, MediaQuery 등이 포함됩니다.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    167,
+    319,
+    328,
+    324,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Column 기본 사용",
+      "desc": [
+        "【children】 : 위젯 리스트   【List<Widget>】",
+        "【mainAxisAlignment】 : 메인 축 정렬   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : 교차 축 정렬   【CrossAxisAlignment】",
+        "【textBaseline】 : 텍스트 기준선   【TextBaseline】",
+        "【verticalDirection】 : 수직 방향   【VerticalDirection】",
+        "【mainAxisSize】 : 메인 축 크기   【MainAxisSize】"
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "InheritedWidget 예제",
+      "desc": [
+        "아래는 색상 카운터 프로젝트를 통해 InheritedWidget 위젯의 사용을 보여줍니다."
+      ]
+    }
+  ]
+}

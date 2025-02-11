@@ -1,0 +1,24 @@
+{
+  "id": 303,
+  "name": "CupertinoSliverRefreshControl",
+  "localName": "Sliver контроллер обновления",
+  "info": "Контроллер обновления в стиле iOS, который может выполнять асинхронные методы обновления, настраивать компоненты контроллера, высоту остановки индикатора и высоту скольжения для запуска загрузки.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование контроллера обновления",
+      "desc": [
+        "【refreshIndicatorExtent】 : Высота индикатора загрузки   【double】",
+        "【refreshTriggerPullDistance】 : Высота скольжения для запуска загрузки   【double】",
+        "【onRefresh】 : Событие прокрутки вниз   【RefreshCallback】",
+        "【builder】 : Конструктор индикатора   【RefreshControlIndicatorBuilder】"
+      ]
+    }
+  ]
+}

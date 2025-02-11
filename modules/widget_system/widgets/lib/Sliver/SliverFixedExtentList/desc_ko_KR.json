@@ -1,0 +1,23 @@
+{
+  "id": 186,
+  "name": "SliverFixedExtentList",
+  "localName": "Sliver 고정 확장 리스트",
+  "info": "Sliver 패밀리의 리스트 컴포넌트로, delegate를 통해 자식 컴포넌트를 구성하고, 아이템의 높이를 지정할 수 있습니다. 일반적으로 CustomScrollView에서 사용됩니다.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    185,
+    187
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverFixedExtentList 기본 사용",
+      "desc": [
+        "【itemExtent】 : 주축 방향 강제 길이   【double】",
+        "【delegate】 : 자식 대리자   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

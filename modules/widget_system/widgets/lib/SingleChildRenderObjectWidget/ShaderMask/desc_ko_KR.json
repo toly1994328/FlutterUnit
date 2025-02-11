@@ -1,0 +1,32 @@
+{
+  "id": 277,
+  "name": "ShaderMask",
+  "localName": "셰이더 마스크",
+  "info": "하나의 자식을 포함할 수 있으며, 셰이더를 통해 자식에 색상을 입힐 수 있습니다. 혼합 모드를 지정할 수 있습니다. 일반적으로 컴포넌트 그라데이션 처리에 사용됩니다.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    88,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_radial.dart",
+      "name": "방사형 그라데이션 색상",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【shaderCallback】 : 셰이더 콜백   【ShaderCallback】",
+        "【blendMode】 : 혼합 모드   【BlendMode】",
+        "    RadialGradient#createShader를 통해 방사형 그라데이션 셰이더를 생성합니다."
+      ]
+    },
+    {
+      "file": "node2_linear.dart",
+      "name": "선형 그라데이션 색상",
+      "desc": [
+        "LinearGradient#createShader를 통해 선형 그라데이션 셰이더를 생성합니다",
+        "셰이더 관련 지식은 【그리기 앨범】을 참조하세요"
+      ]
+    }
+  ]
+}

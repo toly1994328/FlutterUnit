@@ -1,0 +1,27 @@
+{
+  "id": 350,
+  "name": "BoxScrollView",
+  "localName": "Vue de défilement de boîte",
+  "info": "BoxScrollView est une classe abstraite héritée de ScrollView, donc elle ne peut pas être utilisée directement. Ses sous-classes incluent ListView et GridView. Généralement, on ne l'utilise pas en implémentant une sous-classe soi-même.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction à BoxScrollView",
+      "desc": [
+        "【reverse】 : Inverser ou non   【bool】",
+        "【scrollDirection】 : Direction de défilement   【Axis】",
+        "【cacheExtent】 : Longueur du cache   【double】",
+        "【dragStartBehavior】 : Comportement de glissement   【DragStartBehavior】",
+        "【clipBehavior】 : Comportement de découpage   【ClipBehavior】",
+        "【controller】 : Contrôleur   【ScrollController】"
+      ]
+    }
+  ]
+}

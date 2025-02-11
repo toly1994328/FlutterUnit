@@ -1,0 +1,43 @@
+{
+  "id": 33,
+  "name": "ToggleButtons",
+  "localName": "Grupo de botones de conmutación",
+  "info": "Recibe una lista de componentes y permite especificar propiedades como el borde, el radio de las esquinas, el color, etc. Según la lógica específica, se puede implementar la necesidad de selección única o múltiple de varios botones.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    332,
+    262
+  ],
+  "nodes": [
+    {
+      "file": "node1_single.dart",
+      "name": "Conmutación única de ToggleButtons",
+      "desc": [
+        "【children】: Conjunto de componentes hijos   【List<Widget>】",
+        "【borderWidth】: Ancho del borde   【double】",
+        "【borderRadius】: Radio de las esquinas   【BorderRadius】",
+        "【isSelected】: Conjunto de selección   【List<bool>】",
+        "【onPressed】: Evento de clic   【Function(int)】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Propiedades de color de ToggleButtons",
+      "desc": [
+        "【borderColor】: Color del borde   【Color】",
+        "【selectedBorderColor】: Color del borde seleccionado   【Color】",
+        "【selectedColor】: Color del componente cuando está seleccionado   【Color】",
+        "【fillColor】: Color de relleno cuando está seleccionado   【Color】",
+        "【splashColor】: Color de la onda   【Color】"
+      ]
+    },
+    {
+      "file": "node3_multi.dart",
+      "name": "Conmutación múltiple de ToggleButtons",
+      "desc": [
+        "Puede controlar la lógica de transformación de estado para crear diferentes efectos."
+      ]
+    }
+  ]
+}

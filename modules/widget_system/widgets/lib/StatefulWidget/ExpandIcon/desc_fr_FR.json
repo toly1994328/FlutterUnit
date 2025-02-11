@@ -1,0 +1,26 @@
+{
+  "id": 51,
+  "name": "ExpandIcon",
+  "localName": "Icône de déploiement",
+  "info": "Un bouton de déploiement qui exécute une animation de rotation de 180 degrés lorsqu'il est cliqué. Peut spécifier la couleur, la taille, la marge et recevoir des événements de clic.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    66,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de ExpandIcon",
+      "desc": [
+        "【isExpanded】 : Déployé ou non   【bool】",
+        "【padding】 : Marge intérieure   【EdgeInsetsGeometry】,",
+        "【size】 : Taille de l'icône   【double】",
+        "【color】 : Couleur lorsqu'il n'est pas déployé   【Color】",
+        "【expandedColor】 : Couleur lorsqu'il est déployé   【Color】",
+        "【onPressed】 : Événement de clic   【Function(bool)】"
+      ]
+    }
+  ]
+}

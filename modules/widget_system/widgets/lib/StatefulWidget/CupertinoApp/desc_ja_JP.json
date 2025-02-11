@@ -1,0 +1,24 @@
+{
+  "id": 156,
+  "name": "CupertinoApp",
+  "localName": "iOSアプリ",
+  "info": "iOSスタイルのアプリのトップレベルコンポーネントで、ルートジェネレーター、テーマ、言語、ホームなどの属性を含みます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    157,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoAppの基本使用法",
+      "desc": [
+        "【theme】 : テーマ   【ThemeData】",
+        "【title】 : タスクバータイトル   【String】",
+        "【onGenerateRoute】 : ルートジェネレーター   【RouteFactory】",
+        "【home】 : ホーム   【Widget】"
+      ]
+    }
+  ]
+}

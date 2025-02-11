@@ -1,0 +1,32 @@
+{
+  "id": 277,
+  "name": "ShaderMask",
+  "localName": "シェーダーマスク",
+  "info": "1つの子要素を保持し、シェーダーを使用して子要素に色を付けることができます。ブレンドモードを指定できます。通常、コンポーネントのグラデーション処理に使用されます。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    88,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_radial.dart",
+      "name": "ラジアルグラデーションシェーダー",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【shaderCallback】 : シェーダーコールバック   【ShaderCallback】",
+        "【blendMode】 : ブレンドモード   【BlendMode】",
+        "    RadialGradient#createShaderを使用してラジアルグラデーションシェーダーを作成します。"
+      ]
+    },
+    {
+      "file": "node2_linear.dart",
+      "name": "リニアグラデーションシェーダー",
+      "desc": [
+        "LinearGradient#createShaderを使用してリニアグラデーションシェーダーを作成します",
+        "シェーダーに関する詳細は【描画アルバム】を参照してください"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": 149,
+  "name": "InkResponse",
+  "localName": "Respuesta de ondas",
+  "info": "Efecto de clic de ondas, recibe eventos de clic, doble clic, pulsación larga, cancelación y cambio de resaltado. Se pueden especificar propiedades como el color de las ondas, el radio, la forma de resaltado, etc.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    150,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Eventos básicos de InkResponse",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【onTap】 : Evento de clic   【Function()】",
+        "【onDoubleTap】 : Evento de doble clic   【Function()】",
+        "【onTapCancel】 : Cancelación de clic   【Function()】",
+        "【onLongPress】 : Evento de pulsación larga   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Otras propiedades de InkResponse",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【onHighlightChanged】 : Callback de cambio de resaltado   【Function(bool)】",
+        "【highlightColor】 : Color de resaltado   【Color】",
+        "【splashColor】 : Color de las ondas   【Color】",
+        "【radius】 : Radio de las ondas   【double】"
+      ]
+    }
+  ]
+}

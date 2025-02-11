@@ -1,0 +1,23 @@
+{
+  "id": 313,
+  "name": "RawImage",
+  "localName": "Imagem Original",
+  "info": "É o componente central que implementa o componente Image, pode exibir a Image da ui, as propriedades básicas são as mesmas que a Image, raramente é usado sozinho.",
+  "lever": 2,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do RawImage",
+      "desc": [
+        "【image】 : Imagem   【ui.Image】",
+        "【width】 : Largura   【int】",
+        "【height】: Altura   【int】",
+        "【isAntiAlias】: Anti-aliasing   【bool】",
+        "【filterQuality】: Qualidade do Filtro   【FilterQuality】",
+        "Muitas propriedades são as mesmas que a Image, consulte para mais detalhes."
+      ]
+    }
+  ]
+}

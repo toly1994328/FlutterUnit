@@ -1,0 +1,19 @@
+{
+  "id": 191,
+  "name": "SliverPadding",
+  "localName": "Spaziatura interna Sliver",
+  "info": "Può contenere un componente figlio della famiglia Sliver, aggiungendo il proprio padding interno per limitare il posizionamento del componente figlio, la proprietà principale è padding.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base di SliverPadding",
+      "desc": [
+        "【sliver】 : Componente figlio   【Widget】",
+        "【padding】 : Padding interno  【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

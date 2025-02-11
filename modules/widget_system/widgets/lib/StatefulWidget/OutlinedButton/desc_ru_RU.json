@@ -1,0 +1,34 @@
+{
+  "id": 355,
+  "name": "OutlinedButton",
+  "localName": "Кнопка с контуром",
+  "info": "Кнопка в стиле Material с контуром, аналогичная OutlineButton. Свойства, такие как контур, цвет, тень, могут быть изменены через стили.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    353,
+    27,
+    354
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование OutlinedButton",
+      "desc": [
+        "【child】 : Содержимое кнопки   【Widget】",
+        "【onPressed】 : Событие нажатия   【VoidCallback】",
+        "【onLongPress】 : Событие длительного нажатия   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Стиль OutlinedButton",
+      "desc": [
+        "【style】 : Стиль кнопки   【ButtonStyle】",
+        "【focusNode】 : Фокус   【FocusNode】",
+        "【clipBehavior】 : Поведение обрезки   【Clip】",
+        "【autofocus】 : Автофокус   【bool】"
+      ]
+    }
+  ]
+}

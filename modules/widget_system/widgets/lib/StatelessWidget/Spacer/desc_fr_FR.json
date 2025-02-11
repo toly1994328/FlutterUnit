@@ -1,0 +1,25 @@
+{
+  "id": 107,
+  "name": "Spacer",
+  "localName": "Composant d'espace",
+  "info": "Ne peut être utilisé que dans les dispositions Row, Column et Flex, il occupe l'espace restant. La propriété flex permet de distribuer l'espace entre plusieurs Spacer proportionnellement.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Spacer",
+      "desc": [
+        "Un Spacer occupe une zone extensible"
+      ]
+    },
+    {
+      "file": "node2_flex.dart",
+      "name": "Répartition de l'espace entre plusieurs Spacer",
+      "desc": [
+        "【flex】 : Proportion de répartition de l'espace restant   【int】"
+      ]
+    }
+  ]
+}

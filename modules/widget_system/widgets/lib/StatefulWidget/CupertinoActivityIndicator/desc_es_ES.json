@@ -1,0 +1,22 @@
+{
+  "id": 48,
+  "name": "CupertinoActivityIndicator",
+  "localName": "Indicador de iOS",
+  "info": "Componente de visualización de carga con estilo iOS, que permite especificar el radio y si gira.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    46,
+    47
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoActivityIndicator",
+      "desc": [
+        "【animating】 : Si la animación está cargando   【bool】",
+        "【radius】 : Radio   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 190,
+  "name": "SliverPersistentHeader",
+  "localName": "Cabecera persistente",
+  "info": "Se utiliza normalmente en CustomScrollView para permitir que un componente permanezca en la parte superior durante el desplazamiento y no desaparezca.",
+  "lever": 5,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SliverPersistentHeader",
+      "desc": [
+        "【delegate】 : delegado   【SliverPersistentHeaderDelegate】",
+        "【floating】 : si flota   【bool】",
+        "【pinned】 : si se queda en la parte superior   【bool】"
+      ]
+    }
+  ]
+}

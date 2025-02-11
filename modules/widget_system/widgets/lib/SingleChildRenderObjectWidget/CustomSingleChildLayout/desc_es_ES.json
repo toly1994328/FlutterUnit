@@ -1,0 +1,25 @@
+{
+  "id": 285,
+  "name": "CustomSingleChildLayout",
+  "localName": "Diseño de un solo hijo personalizado",
+  "info": "Puede contener un componente hijo y especificar una clase delegada para organizar el componente hijo. La clase delegada puede obtener el área del contenedor padre y el tamaño del área del componente hijo, así como las restricciones del área.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CustomSingleChildLayout",
+      "desc": [
+        "【delegate】 : delegado   【SingleChildLayoutDelegate】"
+      ]
+    },
+    {
+      "file": "node2_offset.dart",
+      "name": "Uso de desplazamiento en CustomSingleChildLayout",
+      "desc": [
+        "Se puede utilizar la capacidad de desplazamiento del delegado para posicionar el componente hijo."
+      ]
+    }
+  ]
+}

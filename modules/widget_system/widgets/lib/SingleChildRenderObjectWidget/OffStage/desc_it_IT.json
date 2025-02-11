@@ -1,0 +1,21 @@
+{
+  "id": 71,
+  "name": "Offstage",
+  "localName": "Componente Scomparso",
+  "info": "Può contenere un componente figlio e può cambiarne la visibilità. L'attributo offstage è true per indicare che è nascosto.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    10
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di LimitedBox",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【offstage】 : Se è nascosto   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 35,
+  "name": "VerticalDivider",
+  "localName": "Ligne de séparation verticale",
+  "info": "Ligne de séparation verticale, peut spécifier la couleur, la largeur, l'épaisseur, les marges supérieure et inférieure, couramment utilisée pour les lignes de séparation des éléments de liste.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    34,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Couleur et épaisseur de VerticalDivider",
+      "desc": [
+        "【color】: Couleur   【Color】",
+        "【thickness】: Épaisseur de la ligne   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "Largeur et espacement de VerticalDivider",
+      "desc": [
+        "【indent】: Longueur de l'espacement avant   【double】",
+        "【endIndent】: Longueur de l'espacement arrière   【double】",
+        "【width】: Largeur occupée   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 333,
+  "name": "TooltipTheme",
+  "localName": "ツールチップテーマ",
+  "info": "主に、子孫のTooltipコンポーネントにデフォルトのプロパティを統一して設定するために使用されます。また、このコンポーネントを通じてデフォルトのTooltipThemeのプロパティを取得することもできます。",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TooltipThemeの基本使用",
+      "desc": [
+        "TooltipThemeDataデータプロパティを指定して、【子孫】のTooltipコンポーネントにデフォルトのスタイルを設定できます。例えば、装飾、テキストスタイル、表示時間、余白など。また、TooltipTheme.ofを使用してTooltipのテーマプロパティを取得することもできます。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 270,
+  "name": "SliverConstrainedCrossAxis",
+  "localName": "Vincolo dimensionale dell'asse trasversale per Sliver",
+  "info": "Specifica una dimensione per limitare la dimensione di un componente Sliver nella direzione dell'asse trasversale.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso di base di SliverConstrainedCrossAxis",
+      "desc": [
+        "【maxExtent】 : dimensione   【double】",
+        "【sliver】 : componente figlio   【Widget?】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 212,
+  "name": "ModalBarrier",
+  "localName": "Barrière modale",
+  "info": "Équivaut à une couche de rideau, empêchant l'utilisateur d'interagir avec les Widgets derrière. Peut être configuré pour déclencher ou non la pile de retour lors d'un clic via dismissible. Utilisé dans les composants liés à Dialog dans le code source.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction à ModalBarrier",
+      "desc": [
+        "【dismissible】 : Retour au clic   【bool】",
+        "【color】 : Couleur   【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 82,
+  "name": "FractionallySizedBox",
+  "localName": "FractionallySizedBox",
+  "info": "Can contain a child component, specify width and height fractions, limit the child component area to the parent container's width and height * each fraction, and alignment.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of FractionallySizedBox",
+      "desc": [
+        "【child】 : Child component   【Widget】",
+        "【widthFactor】 : Width fraction   【double】",
+        "【heightFactor】 : Height fraction   【double】",
+        "【alignment】 : Alignment   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

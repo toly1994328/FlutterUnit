@@ -1,0 +1,20 @@
+{
+  "id": 206,
+  "name": "TabPageSelectorIndicator",
+  "localName": "Indicatore del selettore di pagine",
+  "info": "Un componente circolare con bordi, che può essere specificato per dimensioni, colore e colore del bordo. Fa parte del TabPageSelector e generalmente non viene utilizzato da solo.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di TabPageSelectorIndicator",
+      "desc": [
+        "【size】: dimensione   【double】",
+        "【backgroundColor】: colore di sfondo   【Color】",
+        "【borderColor】: colore del bordo    【Color】"
+      ]
+    }
+  ]
+}

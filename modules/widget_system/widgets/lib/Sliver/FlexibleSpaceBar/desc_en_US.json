@@ -1,0 +1,23 @@
+{
+  "id": 196,
+  "name": "FlexibleSpaceBar",
+  "localName": "Stretch Space Bar",
+  "info": "Typically used in the stretchable area of SliverAppBar, it can specify the title, title spacing, background, collapse mode, etc.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of FlexibleSpaceBar",
+      "desc": [
+        "【title】 : Title component   【Widget】",
+        "【titlePadding】 : Title spacing   【EdgeInsetsGeometry】",
+        "【collapseMode】 : Collapse mode   【CollapseMode】",
+        "【stretchModes】 : Stretch modes   【List<StretchMode>】",
+        "【background】 : Background component   【Widget】",
+        "【centerTitle】 : Whether to center   【bool】"
+      ]
+    }
+  ]
+}

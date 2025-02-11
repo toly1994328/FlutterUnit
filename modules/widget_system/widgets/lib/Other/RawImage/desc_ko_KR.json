@@ -1,0 +1,23 @@
+{
+  "id": 313,
+  "name": "RawImage",
+  "localName": "원본 이미지",
+  "info": "Image 컴포넌트를 구현하는 핵심 컴포넌트로, ui의 Image를 표시할 수 있으며, 기본 속성은 Image와 동일하며, 일반적으로 단독으로 사용되지 않습니다.",
+  "lever": 2,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RawImage 기본 사용",
+      "desc": [
+        "【image】 : 이미지   【ui.Image】",
+        "【width】 : 너비   【int】",
+        "【height】: 높이   【int】",
+        "【isAntiAlias】: 안티앨리어싱 여부   【bool】",
+        "【filterQuality】: 필터 품질   【FilterQuality】",
+        "많은 속성이 Image와 동일하니, 자세한 내용은 해당 항목을 참조하세요."
+      ]
+    }
+  ]
+}

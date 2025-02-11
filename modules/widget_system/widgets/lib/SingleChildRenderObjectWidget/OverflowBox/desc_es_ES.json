@@ -1,0 +1,23 @@
+{
+  "id": 83,
+  "name": "OverflowBox",
+  "localName": "Caja de desbordamiento",
+  "info": "Puede contener un componente hijo, y el componente hijo puede desbordar el área del componente padre. Se pueden especificar áreas máximas y mínimas de ancho y alto para limitar, y tiene la propiedad de alineación alignment.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de OverflowBox",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【minWidth】 : Ancho mínimo   【double】",
+        "【minHeight】 : Altura mínima   【double】",
+        "【maxHeight】 : Altura máxima   【double】",
+        "【maxWidth】 : Ancho máximo   【double】",
+        "【alignment】 : Modo de alineación   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

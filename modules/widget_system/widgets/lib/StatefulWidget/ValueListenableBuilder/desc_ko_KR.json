@@ -1,0 +1,20 @@
+{
+  "id": 255,
+  "name": "ValueListenableBuilder",
+  "localName": "값 리스너 빌더",
+  "info": "값을 리스닝하고, 값이 변경될 때 builder 콜백을 통해 UI를 재구성할 수 있으며, setState를 사용하지 않고도 화면을 갱신할 수 있습니다.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ValueListenableBuilder 기본 사용법",
+      "desc": [
+        "【builder】: 컴포넌트 빌더   【ValueWidgetBuilder<T>】",
+        "【valueListenable】: 리스닝 값    【ValueListenable<T>】",
+        "【child】: 자식 컴포넌트    【Widget】"
+      ]
+    }
+  ]
+}

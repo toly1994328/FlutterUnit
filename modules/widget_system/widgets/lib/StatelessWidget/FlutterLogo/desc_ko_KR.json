@@ -1,0 +1,27 @@
+{
+  "id": 4,
+  "name": "FlutterLogo",
+  "localName": "Flutter 로고",
+  "info": "Flutter 로고 컴포넌트를 표시하는 데 사용됩니다. 색상, 크기, 표시 모드 등을 정의할 수 있는 매우 간단한 컴포넌트입니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FlutterLogo를 표시하는 데 사용",
+      "desc": [
+        "【size】 : 크기  【double】",
+        "【colors】: 색상   【MaterialColor】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "텍스트 표시를 위한 스타일",
+      "desc": [
+        "【style】 : 스타일-3가지 열거  【FlutterLogoStyle】",
+        "【textColor】: 텍스트 색상   【Color】"
+      ]
+    }
+  ]
+}

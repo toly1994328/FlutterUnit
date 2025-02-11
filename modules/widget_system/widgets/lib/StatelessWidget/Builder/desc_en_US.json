@@ -1,0 +1,19 @@
+{
+  "id": 202,
+  "name": "Builder",
+  "localName": "Constructor",
+  "info": "A component that does not affect the space occupied by child components and has no display properties. Its sole value is to provide the context for the corresponding element of the current component.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Usage of Builder",
+      "desc": [
+        "【builder】: Component Constructor   【WidgetBuilder】",
+        "Using `XXX.of(context)` to obtain a state object of a certain class within the same class may result in a 'context lag' error, which can be resolved using Builder."
+      ]
+    }
+  ]
+}

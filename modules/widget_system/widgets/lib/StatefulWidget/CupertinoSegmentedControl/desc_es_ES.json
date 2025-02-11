@@ -1,0 +1,34 @@
+{
+  "id": 262,
+  "name": "CupertinoSegmentedControl",
+  "localName": "Control de segmentos iOS",
+  "info": "Barra de múltiples botones al estilo iOS, similar a ToggleButtons, se pueden especificar propiedades como el relleno interno, el color seleccionado, el color del borde, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    33,
+    256
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de pestañas iOS",
+      "desc": [
+        "【children】 : Mapa de componentes   【Map<T, Widget>】",
+        "【onValueChanged】 : Callback de cambio de valor   【ValueChanged<T>】",
+        "【groupValue】 : Valor seleccionado   【T】",
+        "【padding】 : Relleno interno   【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Colores de CupertinoSegmentedControl",
+      "desc": [
+        "【unselectedColor】 : Color no seleccionado   【Color】",
+        "【selectedColor】 : Color seleccionado   【Color<T>】",
+        "【pressedColor】 : Color al presionar   【Color】",
+        "【borderColor】 : Color del borde   【Color】"
+      ]
+    }
+  ]
+}

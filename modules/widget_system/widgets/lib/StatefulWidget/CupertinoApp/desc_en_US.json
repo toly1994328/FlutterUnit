@@ -1,0 +1,24 @@
+{
+  "id": 156,
+  "name": "CupertinoApp",
+  "localName": "iOS App",
+  "info": "Top-level component for iOS-style apps, including route generator, theme, language, home page, and other attributes.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    157,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoApp",
+      "desc": [
+        "【theme】 : Theme   【ThemeData】",
+        "【title】 : Taskbar Title   【String】",
+        "【onGenerateRoute】 : Route Generator   【RouteFactory】",
+        "【home】 : Home Page   【Widget】"
+      ]
+    }
+  ]
+}

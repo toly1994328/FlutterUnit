@@ -1,0 +1,36 @@
+{
+  "id": 150,
+  "name": "InkWell",
+  "localName": "波紋",
+  "info": "InkResponseのサブクラスで、基本属性はInkResponseと同じです。矩形領域の波紋で、角丸半径や辺の形状などを知ることができます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    149,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "InkWell基本イベント",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【onTap】 : タップイベント   【Function()】",
+        "【onDoubleTap】 : ダブルタップイベント   【Function()】",
+        "【onTapCancel】 : タップキャンセル   【Function()】",
+        "【onLongPress】 : 長押しイベント   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "InkWellその他の属性",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【onHighlightChanged】 : ハイライト変更コールバック   【Function(bool)】",
+        "【highlightColor】 : ハイライト色   【Color】",
+        "【splashColor】 : 波紋色   【Color】",
+        "【radius】 : 波紋半径   【double】"
+      ]
+    }
+  ]
+}

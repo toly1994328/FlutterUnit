@@ -1,0 +1,33 @@
+{
+  "id": 184,
+  "name": "SliverAppBar",
+  "localName": "Sliverヘッダーバー",
+  "info": "Sliverファミリーのトップバー共通構造。左中右のコンポーネント、収縮スペース、影の深さ、固定モード、背景色などの属性を指定できます。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    196
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverAppBar基本使用",
+      "desc": [
+        "【leading】 : 左側コンポーネント   【Widget】",
+        "【title】 : 中央コンポーネント   【Widget】",
+        "【actions】 : 末尾コンポーネントリスト   【List<Widget>】",
+        "【floating】 : フローティングするか   【bool】",
+        "【pinned】 : トップに留まるか   【bool】",
+        "【snap】 : 半収展するか   【bool】",
+        "【bottom】 : 底部コンポーネント   【PreferredSizeWidget】",
+        "【expandedHeight】 : 拡張高さ   【double】",
+        "【elevation】 : 影の深さ   【double】",
+        "【flexibleSpace】 : 拡張スペース   【FlexibleSpaceBar】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【controller】 : コントローラー   【ScrollController】",
+        "   snapがtrueの場合、floatingはtrueである必要があります"
+      ]
+    }
+  ]
+}

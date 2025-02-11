@@ -1,0 +1,32 @@
+{
+  "id": 53,
+  "name": "SelectableText",
+  "localName": "선택 가능한 텍스트",
+  "info": "선택 가능한 텍스트로, 선택 및 복사가 가능합니다. 커서의 색상, 크기, 텍스트 스타일, 정렬 방식 등을 지정할 수 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SelectableText 기본 사용법",
+      "desc": [
+        "【입력 매개변수】 : 표시할 텍스트   【String】",
+        "【style】 : 텍스트 스타일   【TextStyle】",
+        "【cursorRadius】 : 커서 반지름   【Radius】",
+        "【cursorColor】 : 커서 색상   【Color】",
+        "【cursorWidth】 : 커서 너비   【double】",
+        "【showCursor】 : 커서 표시 여부   【bool】",
+        "【autofocus】 : 자동 포커스   【bool】"
+      ]
+    },
+    {
+      "file": "node2_align.dart",
+      "name": "SelectableText 정렬 속성",
+      "desc": [
+        "【textAlign】 : 정렬 방식*6   【textAlign】",
+        "【textDirection】 : 텍스트 방향*2   【TextDirection】"
+      ]
+    }
+  ]
+}

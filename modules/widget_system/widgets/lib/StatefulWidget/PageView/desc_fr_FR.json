@@ -1,0 +1,34 @@
+{
+  "id": 165,
+  "name": "PageView",
+  "localName": "Glissement de page",
+  "info": "Contient plusieurs pages de composants, permet de les faire glisser pour les changer, et permet de spécifier la direction du glissement, l'inversion, le contrôleur de glissement, etc.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de PageView",
+      "desc": [
+        "【children】 : Liste des composants enfants   【List<Widget>】",
+        "【onPageChanged】 : Événement de clic  【ValueChanged<int>】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Direction de glissement de PageView",
+      "desc": [
+        "【scrollDirection】 : Direction de glissement   【Axis】",
+        "【reverse】 : Inversion  【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "Utilisation simple du contrôleur de PageView",
+      "desc": [
+        "【controller】 : Contrôleur de page   【PageController】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": 116,
+  "name": "AnimatedSwitcher",
+  "localName": "Animierter Wechsel",
+  "info": "Führt eine Animation aus, wenn sich das Kind-Widget ändert. Der Schlüssel des Kind-Widgets muss angegeben werden. Die Animationsart kann angepasst werden, und Eigenschaften wie Animationsdauer und Animationskurve können festgelegt werden.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von AnimatedSwitcher",
+      "desc": [
+        "【child】 : Kind-Widget   【Widget】",
+        "【duration】 : Animationsdauer  【Duration】",
+        "【switchOutCurve】 : Ausblendkurve  【Curves】",
+        "【switchInCurve】 : Einblendkurve  【Curves】",
+        "【switchInCurve】 : Einblendkurve  【Curves】",
+        "【transitionBuilder】 : Animationsgenerator  【Widget Function(Widget, Animation<double>)】"
+      ]
+    }
+  ]
+}

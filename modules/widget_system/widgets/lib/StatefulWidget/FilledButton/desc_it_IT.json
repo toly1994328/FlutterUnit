@@ -1,0 +1,33 @@
+{
+  "id": 359,
+  "name": "FilledButton",
+  "localName": "Pulsante Riempito",
+  "info": "Un pulsante conforme a Material Design che utilizza FilledButtonTheme per impostare lo stile del pulsante.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    354,
+    355,
+    353
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso di Base",
+      "desc": [
+        "【child】 : Contenuto del pulsante   【Widget】",
+        "【onPressed】 : Evento di clic   【VoidCallback】",
+        "【onHover】 : Evento di pressione prolungata   【ValueChanged<bool>? 】",
+        "【onLongPress】 : Evento di pressione prolungata   【VoidCallback?】",
+        "Il pulsante riempito è visivamente secondario solo a [FloatingActionButton] e viene utilizzato per operazioni importanti e finali del flusso, come: salvare, unirsi immediatamente o confermare."
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Variante Tonale",
+      "desc": [
+        "FilledButton.tonal è un pulsante riempito tonale, visivamente intermedio tra [FilledButton] e [OutlinedButton], adatto per scenari che richiedono un'enfasi leggermente maggiore rispetto ai pulsanti contornati ma con priorità inferiore. Ad esempio il pulsante [Avanti]"
+      ]
+    }
+  ]
+}

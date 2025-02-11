@@ -1,0 +1,33 @@
+{
+  "id": 14,
+  "name": "InputChip",
+  "localName": "Puce Intégrée",
+  "info": "Un style similaire au composant Chip, intégrant les événements de clic, de suppression et de sélection en un seul. Remarque : les événements de clic et de sélection ne peuvent pas coexister.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    11,
+    12,
+    13,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Peut accepter les événements de clic et de suppression",
+      "desc": [
+        "【onPressed】: Événement de clic   【Function()】",
+        "【onDeleted】: Événement de suppression   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Peut accepter l'événement de sélection",
+      "desc": [
+        "【selected】: Est sélectionné   【bool】",
+        "【onSelected】: Événement de sélection   【Function(bool)】"
+      ]
+    }
+  ]
+}

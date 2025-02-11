@@ -1,0 +1,26 @@
+{
+  "id": 222,
+  "name": "FormField",
+  "localName": "Campo del modulo",
+  "info": "Un campo del modulo, deve essere utilizzato nel componente Form, contiene un campo di tipo generico T come stato, gli aggiornamenti e le validazioni del campo attivano i rispettivi callback.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    198,
+    199,
+    223
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduzione a FormField",
+      "desc": [
+        "【builder】 : Costruttore del contenuto   【FormFieldBuilder<T>】",
+        "【initialValue】 : Valore iniziale   【T】",
+        "【validator】 : Funzione di validazione   【FormFieldValidator<String> 】",
+        "【enabled】 : Se è abilitato   【bool】",
+        "【onSaved】 : Callback quando il modulo viene salvato  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 178,
+  "name": "ExpansionPanelList",
+  "localName": "확장 목록",
+  "info": "확장 가능한 목록 컴포넌트로, 로직에 따라 단일 확장 또는 다중 확장을 구현할 수 있습니다. 확장 애니메이션 지속 시간을 지정할 수 있으며, 확장 콜백을 받습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ExpansionPanelList 기본 사용",
+      "desc": [
+        "【children】 : 자식 컴포넌트 목록   【List<Widget>】",
+        "【animationDuration】 : 애니메이션 지속 시간   【Duration】",
+        "【expansionCallback】 : 확장 콜백   【List<Widget>】",
+        "【onPressed】 : 클릭 이벤트  【Function()】"
+      ]
+    }
+  ]
+}

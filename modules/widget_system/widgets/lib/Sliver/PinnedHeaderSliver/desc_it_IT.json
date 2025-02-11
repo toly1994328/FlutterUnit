@@ -1,0 +1,38 @@
+{
+  "id": 309,
+  "name": "PinnedHeaderSliver",
+  "localName": "Sliver con intestazione fissa",
+  "info": "Uno sliver che può rimanere nella parte superiore della viewport, per ottenere facilmente l'effetto di adesione in cima.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    190
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Esempio ufficiale di PinnedHeaderSliver",
+      "display": "new_page",
+      "desc": [
+        "【child】 : Componente figlio   【Widget?】",
+        "PinnedHeaderSliver può essere utilizzato solo in una viewport scorrevole, dove il componente figlio, quando scorre verso l'alto, non esce dalla viewport, rimanendo così nella parte superiore della viewport."
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Intestazione adesiva",
+      "display": "new_page",
+      "desc": [
+        "Effetto di intestazione adesiva realizzato con PinnedHeaderSliver, nota che anche la linea di separazione sotto ha un effetto adesivo."
+      ]
+    },
+    {
+      "file": "node_03.dart",
+      "name": "Intestazione + ricerca adesiva",
+      "display": "new_page",
+      "desc": [
+        "Effetto di intestazione e casella di ricerca adesiva realizzato con PinnedHeaderSliver."
+      ]
+    }
+  ]
+}

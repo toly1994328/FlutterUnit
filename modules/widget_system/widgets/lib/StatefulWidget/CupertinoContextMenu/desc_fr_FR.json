@@ -1,0 +1,20 @@
+{
+  "id": 143,
+  "name": "CupertinoContextMenu",
+  "localName": "Menu contextuel iOS",
+  "info": "Un magnifique bouton contextuel de style iOS, qui affiche un panneau de menu animé lors d'un appui long, généralement utilisé avec CupertinoContextMenuAction.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoContextMenu",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【actions】 : Ensemble de composants d'action   【List<Widget>】",
+        "【previewBuilder】 : Constructeur d'animation  【ContextMenuPreviewBuilder】"
+      ]
+    }
+  ]
+}

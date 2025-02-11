@@ -1,0 +1,26 @@
+{
+  "id": 239,
+  "name": "AutomaticKeepAlive",
+  "localName": "自動キープアライブ",
+  "info": "遅延読み込みのリストで、サブツリーが状態を維持することを許可します。単独で使用しても効果はなく、KeepAliveNotification と併用する必要があります。",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    59,
+    162,
+    163,
+    165,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AutomaticKeepAlive 紹介",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "ListView、SliverList、GridView、SliverGrid、PageView、TabBarView などのリストやページ切り替えコンポーネントのソースコードでは、AutomaticKeepAlive コンポーネントが使用されています。特定の State をキープアライブする場合、AutomaticKeepAliveClientMixin を使用して操作できます。これは KeepAliveNotification を使用するための簡易なラッパーです。この例では、ListView の項目の状態をキープアライブする方法を示しています。"
+      ]
+    }
+  ]
+}

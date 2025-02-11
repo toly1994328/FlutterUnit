@@ -1,0 +1,37 @@
+{
+  "id": 175,
+  "name": "RawMaterialButton",
+  "localName": "Botón Original",
+  "info": "El botón original de Material, el gran jefe detrás de los botones, puede aceptar eventos de clic, pulsación larga, cambios de resaltado, y puede especificar color, forma, profundidad de sombra, relleno interno y otros atributos.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de RawMaterialButton",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【elevation】 : Profundidad de sombra   【double】",
+        "【fillColor】 : Color de relleno   【Color】",
+        "【splashColor】 : Color de efecto de ondas   【Color】",
+        "【textStyle】 : Estilo de texto   【TextStyle】",
+        "【onLongPress】 : Evento de pulsación larga   【Function()】",
+        "【onPressed】 : Evento de clic  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Resaltado y forma de RawMaterialButton",
+      "desc": [
+        "【highlightElevation】 : Profundidad de sombra resaltada   【double】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

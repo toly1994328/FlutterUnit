@@ -1,0 +1,29 @@
+{
+  "id": 64,
+  "name": "Scaffold",
+  "localName": "Impalcatura",
+  "info": "Una struttura generica per app, che include parti superiore, inferiore, sinistra, destra, centrale e un pulsante fluttuante, dove è possibile posizionare componenti nelle posizioni corrispondenti.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    57,
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base di Scaffold",
+      "desc": [
+        "【appBar】 : Componente superiore   【PreferredSizeWidget】",
+        "【bottomNavigationBar】 : Componente inferiore   【Widget】",
+        "【drawer】 : Componente scorrevole a sinistra   【Widget】",
+        "【endDrawer】 : Componente scorrevole a destra   【Widget】",
+        "【body】 : Componente principale   【Widget】",
+        "【backgroundColor】 : Colore di sfondo   【Color】",
+        "【floatingActionButton】 : Pulsante fluttuante   【Widget】",
+        "【floatingActionButtonLocation】 : Posizione del pulsante fluttuante   【FloatingActionButtonLocation】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 35,
+  "name": "VerticalDivider",
+  "localName": "Divisore Verticale",
+  "info": "Divisore verticale, può specificare colore, larghezza, spessore, margini superiore e inferiore, comunemente usato come divisore per gli elementi di una lista.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    34,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Colore e Spessore del VerticalDivider",
+      "desc": [
+        "【color】: Colore   【Color】",
+        "【thickness】: Spessore della linea   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "Larghezza e Spaziature del VerticalDivider",
+      "desc": [
+        "【indent】: Lunghezza dello spazio anteriore   【double】",
+        "【endIndent】: Lunghezza dello spazio posteriore   【double】",
+        "【width】: Larghezza occupata   【double】"
+      ]
+    }
+  ]
+}

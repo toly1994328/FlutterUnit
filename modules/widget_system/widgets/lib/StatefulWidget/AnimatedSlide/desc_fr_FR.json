@@ -1,0 +1,26 @@
+{
+  "id": 247,
+  "name": "AnimatedSlide",
+  "localName": "Animation de glissement",
+  "info": "Lorsque l'offset donné change, le composant enfant peut ajuster automatiquement l'offset relatif, et les valeurs avant et après ont une animation.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Effet d'animation de glissement",
+      "desc": [
+        "Dans ce cas, faites glisser pour ajuster les paramètres x, y et observez l'effet de l'animation. Où l'offset = x, y * largeur et hauteur de la boîte",
+        "【child】 : Composant enfant   【Widget】",
+        "【duration】 : Durée de l'animation   【Duration】",
+        "【onEnd】 : Rappel de fin d'animation   【Function()】",
+        "【curve】 : Courbe d'animation   【Duration】",
+        "【offset】 : Offset   【Offset】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 84,
+  "name": "SizedOverflowBox",
+  "localName": "Scatola di dimensioni eccessive",
+  "info": "Può contenere un componente figlio e il componente figlio può fuoriuscire dall'area del componente genitore. È possibile spostare il componente figlio tramite la proprietà size e ha la proprietà di allineamento alignment.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di SizedOverflowBox",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【size】 : Spostamento delle dimensioni   【Size】",
+        "【alignment】 : Modalità di allineamento   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

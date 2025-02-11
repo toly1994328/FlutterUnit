@@ -1,0 +1,24 @@
+{
+  "id": 69,
+  "name": "ClipPath",
+  "localName": "Pfadausschnitt",
+  "info": "Kann ein Kindelement aufnehmen und es entlang eines angegebenen Pfads zuschneiden. Ermöglicht die Anpassung der Pfadform und ist ein sehr flexibles Zuschneidelement.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    66,
+    67,
+    68
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ClipPath",
+      "desc": [
+        "【child】 : Kindelement   【Widget】",
+        "【clipBehavior】 : Zuschneideverhalten   【Clip】",
+        "【clipper】 : Zuschneider   【CustomClipper<Path>】"
+      ]
+    }
+  ]
+}

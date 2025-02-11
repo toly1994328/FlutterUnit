@@ -1,0 +1,20 @@
+{
+  "id": 59,
+  "name": "TabBarView",
+  "localName": "Tab",
+  "info": "Wird normalerweise mit TabBar verwendet, um den Slide-Effekt zu erzielen. Wird normalerweise nicht allein verwendet.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TabBarView muss mit TabBar verwendet werden",
+      "desc": [
+        "【controller】 : Controller   【TabController】",
+        "【children】 : Kinder   【Indikatorfarbe】",
+        "【physics】 : Verhalten   【ScrollPhysics】"
+      ]
+    }
+  ]
+}

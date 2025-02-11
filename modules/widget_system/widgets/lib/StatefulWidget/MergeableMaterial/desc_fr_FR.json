@@ -1,0 +1,22 @@
+{
+  "id": 261,
+  "name": "MergeableMaterial",
+  "localName": "Matériau Fusionnable",
+  "info": "Utilisé pour afficher une liste de MergeableMaterialItem, comprenant MaterialSlice (corps principal) et MaterialGap (séparateur).",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de MergeableMaterial",
+      "desc": [
+        "【elevation】 : Profondeur d'ombre   【double】",
+        "【hasDividers】 : Présence de lignes de séparation   【bool】",
+        "【dividerColor】 : Couleur de la ligne de séparation   【Color】",
+        "【mainAxis】 : Axe principal   【Axis】",
+        "【children】 : Ensemble de composants enfants   【List<MergeableMaterialItem>】"
+      ]
+    }
+  ]
+}

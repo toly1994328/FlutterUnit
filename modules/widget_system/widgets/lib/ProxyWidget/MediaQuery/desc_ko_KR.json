@@ -1,0 +1,18 @@
+{
+  "id": 167,
+  "name": "MediaQuery",
+  "localName": "미디어 쿼리",
+  "info": "MediaQuery.of를 통해 화면 크기, 기기 밀도, 텍스트 확대 비율, 여백 등의 정보를 얻을 수 있습니다.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "MediaQuery 데이터 정보 가져오기",
+      "desc": [
+        "MediaQuery.of(context)를 통해 MediaQueryData를 얻을 수 있습니다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 229,
+  "name": "CupertinoTabView",
+  "localName": "Cupertino страница",
+  "info": "Может поддерживать стек маршрутов, как MaterialApp. Маршруты строятся через routes и onGenerateRoute, можно отслеживать маршруты через navigatorObservers.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    65,
+    158
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование CupertinoTabView",
+      "desc": [
+        "【builder】 : Конструктор главной страницы   【WidgetBuilder】",
+        "【navigatorObservers】 : Наблюдатель маршрутов   【List<NavigatorObserver>】",
+        "【routes】 : Карта маршрутов   【Map<String, WidgetBuilder>】",
+        "【onGenerateRoute】 : Фабрика маршрутов   【RouteFactory】"
+      ]
+    }
+  ]
+}

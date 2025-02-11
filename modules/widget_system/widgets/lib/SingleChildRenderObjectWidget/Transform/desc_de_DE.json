@@ -1,0 +1,53 @@
+{
+  "id": 78,
+  "name": "Transform",
+  "localName": "Transformation",
+  "info": "Kann ein Unterelement aufnehmen und kann das Unterelement über eine 4*4-Transformationsmatrix transformieren.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_skew.dart",
+      "name": "Schieftransformation skew",
+      "desc": [
+        "Die Schiefe x wird durch die Zahl R0C1 gesteuert, der Eingabeparameter ist ein Bogenmaßwert, der den Schiefewinkel darstellt",
+        "Die Schiefe y wird durch die Zahl R1C0 gesteuert, der Eingabeparameter ist ein Bogenmaßwert, der den Schiefewinkel darstellt"
+      ]
+    },
+    {
+      "file": "node2_translation.dart",
+      "name": "Verschiebungstransformation translationValues",
+      "desc": [
+        "Die Verschiebung x wird durch die Zahl R0C3 gesteuert, der Eingabeparameter ist ein numerischer Wert, der die Verschiebungslänge darstellt",
+        "Die Verschiebung y wird durch die Zahl R1C3 gesteuert, der Eingabeparameter ist ein numerischer Wert, der die Verschiebungslänge darstellt",
+        "Die Verschiebung z wird durch die Zahl R2C3 gesteuert, der Eingabeparameter ist ein numerischer Wert, der die Verschiebungslänge darstellt"
+      ]
+    },
+    {
+      "file": "node3_scale.dart",
+      "name": "Skalierungstransformation diagonal3Values",
+      "desc": [
+        "Die Skalierung x wird durch die Zahl R0C0 gesteuert, der Eingabeparameter ist ein numerischer Wert, der den Skalierungsfaktor darstellt",
+        "Die Skalierung y wird durch die Zahl R1C2 gesteuert, der Eingabeparameter ist ein numerischer Wert, der den Skalierungsfaktor darstellt",
+        "Die Skalierung z wird durch die Zahl R2C2 gesteuert, der Eingabeparameter ist ein numerischer Wert, der den Skalierungsfaktor darstellt"
+      ]
+    },
+    {
+      "file": "node4_rotate.dart",
+      "name": "Rotationstransformation rotation",
+      "desc": [
+        "Die x-Rotation wird durch R1C1, R1C2, R2C1, R2C2 gesteuert, der Eingabeparameter stellt ein Bogenmaß dar",
+        "Die y-Rotation wird durch R0C0, R0C2, R2C0, R2C2 gesteuert, der Eingabeparameter stellt ein Bogenmaß dar",
+        "Die z-Rotation wird durch R0C0, R0C1, R1C0, R1C1 gesteuert"
+      ]
+    },
+    {
+      "file": "node5_perspective.dart",
+      "name": "Perspektivtransformation rotation",
+      "desc": [
+        "Die Perspektive wird durch R3C1, R3C2, R3C3 gesteuert"
+      ]
+    }
+  ]
+}

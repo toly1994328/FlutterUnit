@@ -1,0 +1,19 @@
+{
+  "id": 234,
+  "name": "WidgetInspector",
+  "localName": "ウィジェットインスペクター",
+  "info": "このコンポーネントは、子コンポーネントの階層構造を簡単に確認できるようにするもので、Flutter Inspectorプラグインの機能の一つです。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "WidgetInspectorの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【selectButtonBuilder】: *選択ボタンビルダー   【InspectorSelectButtonBuilder】"
+      ]
+    }
+  ]
+}

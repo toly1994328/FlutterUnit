@@ -1,0 +1,24 @@
+{
+  "id": 9,
+  "name": "CircleAvatar",
+  "localName": "원형 컴포넌트",
+  "info": "이미지를 원형으로 만들고 중앙에 컴포넌트를 배치할 수 있습니다. 반지름, 전경색, 배경색 등을 지정할 수 있습니다.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CircleAvatar의 표현",
+      "desc": [
+        "【radius】 : 반지름  【double】",
+        "【backgroundImage】 : 이미지 리소스  【ImageProvider】",
+        "【foregroundColor】: 전경색   【Color】",
+        "【backgroundColor】: 배경색   【Color】",
+        "【minRadius】: 최소 반지름   【double】",
+        "【maxRadius】: 최대 반지름   【double】",
+        "【child】: 자식 컴포넌트   【Child】"
+      ]
+    }
+  ]
+}

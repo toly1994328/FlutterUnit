@@ -1,0 +1,24 @@
+{
+  "id": 223,
+  "name": "DropdownButtonFormField",
+  "localName": "フォームドロップダウン",
+  "info": "基盤は DropdownButton に依存して実装されているため、基本的な属性は似ています。ただし、FormField の特性を持っており、onSaved や validator メソッドをコールバックできます。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    55,
+    222
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "フォームドロップダウンの簡単な使用",
+      "desc": [
+        "【items】 : 子コンポーネントリスト   【List<DropdownMenuItem<T>>】",
+        "【validator】 : フォーム検証コールバック   【FormFieldValidator<T>】",
+        "【onSaved】 : フォーム保存コールバック   【FormFieldSetter<T>】",
+        "その他の属性については DropdownButton を参照し、フォーム検証の特性については FormField を参照してください。"
+      ]
+    }
+  ]
+}

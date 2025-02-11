@@ -1,0 +1,53 @@
+{
+  "id": 163,
+  "name": "GridView",
+  "localName": "Rasterkomponente",
+  "info": "Enthält mehrere Komponenten und organisiert sie in einem Raster. Kann über count, extent, custom, builder usw. konstruiert werden. Hat Eigenschaften wie Innenabstand, ob umgekehrt, Scroll-Controller usw.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    21,
+    162
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridView.count Konstruktion",
+      "desc": [
+        "【children】 : Liste der Unterkomponenten   【List<Widget>】",
+        "【crossAxisCount】 : Anzahl der Boxen pro Zeile in der Hauptachse  【int】",
+        "【mainAxisSpacing】 : Abstand zwischen den Zeilen in der Hauptachse  【double】",
+        "【crossAxisSpacing】 : Abstand zwischen den Zeilen in der Querachse  【double】",
+        "【childAspectRatio】 : Verhältnis von Hauptlänge zu Querlänge der Box  【double】",
+        "【crossAxisCount】 : Anzahl der Boxen pro Zeile in der Hauptachse  【int】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "GridView Scrollrichtung",
+      "desc": [
+        "【scrollDirection】 : Scrollrichtung   【Axis】",
+        "【reverse】 : Ob umgekehrt gescrollt wird   【bool】",
+        "【shrinkWrap】 : Ob bei fehlenden Grenzen umwickelt wird  【bool】"
+      ]
+    },
+    {
+      "file": "node3_extend.dart",
+      "name": "GridView Scrollrichtung",
+      "desc": [
+        "【scrollDirection】 : Scrollrichtung   【Axis】",
+        "【reverse】 : Ob umgekehrt gescrollt wird   【bool】",
+        "【shrinkWrap】 : Ob bei fehlenden Grenzen umwickelt wird  【bool】"
+      ]
+    },
+    {
+      "file": "node4_builder.dart",
+      "name": "GridView.builder Konstruktion",
+      "desc": [
+        "【itemCount】 : Anzahl der Einträge   【int】",
+        "【gridDelegate】 : Rasterdelegat   【SliverGridDelegate】",
+        "【itemBuilder】 : Eintragskonstruktor  【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

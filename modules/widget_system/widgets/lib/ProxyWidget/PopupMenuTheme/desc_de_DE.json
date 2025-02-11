@@ -1,0 +1,18 @@
+{
+  "id": 330,
+  "name": "PopupMenuTheme",
+  "localName": "Popup-Menü-Stil",
+  "info": "Wird hauptsächlich verwendet, um Standardeigenschaften für die nachfolgenden PopupMenuButton-Komponenten festzulegen. Es kann auch verwendet werden, um die Standardeigenschaften des PopupMenu zu erhalten.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von PopupMenuTheme",
+      "desc": [
+        "Kann die PopupMenuThemeData-Dateneigenschaften verwenden, um Standardstile für die nachfolgenden PopupMenuButton-Komponenten festzulegen, wie Form, Schattentiefe, Farbe, Textstil usw. Kann auch PopupMenuTheme.of verwenden, um die Themedaten des PopupMenu zu erhalten."
+      ]
+    }
+  ]
+}

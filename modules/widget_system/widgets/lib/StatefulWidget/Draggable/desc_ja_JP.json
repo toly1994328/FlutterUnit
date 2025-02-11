@@ -1,0 +1,42 @@
+{
+  "id": 103,
+  "name": "Draggable",
+  "localName": "ドラッグ可能なコンポーネント",
+  "info": "コンポーネントをインターフェース上で自由にドラッグできるようにし、ジェネリック型Tのデータを格納できます。通常、DragTargetと組み合わせて使用し、ドラッグ効果を実現します。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    104,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Draggableの基本使用",
+      "desc": [
+        "【child】 : 子   【Widget】",
+        "【feedback】 : ドラッグ時の子   【Widget】",
+        "【axis】 : ドラッグ軸   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_data.dart",
+      "name": "DraggableとDragTargetの連携使用",
+      "desc": [
+        "【data】 : データ   【T】",
+        "【onDragStarted】 : ドラッグ開始   【Function()】",
+        "【onDragEnd】 : ドラッグ終了   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : ドラッグ完了   【Function()】",
+        "【onDraggableCanceled】 : ドラッグキャンセル   【Function(Velocity,Offset)】",
+        "【onChanged】 : 変更時のコールバック   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node3_use.dart",
+      "name": "Draggableのその他の使用",
+      "desc": [
+        "ドラッグに基づいていくつかのイベントを処理できます。例えば、削除、検索、ポップアップなど"
+      ]
+    }
+  ]
+}

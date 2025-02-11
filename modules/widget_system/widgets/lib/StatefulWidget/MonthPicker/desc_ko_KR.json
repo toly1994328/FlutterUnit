@@ -1,0 +1,54 @@
+{
+  "id": 135,
+  "name": "MonthPicker",
+  "localName": "월 선택기",
+  "info": "월을 선택하는 컴포넌트로, 상하월 전환을 자동으로 감지합니다. 선택 가능한 날짜 범위, 선택된 날짜 등을 지정할 수 있으며, 날짜 선택 이벤트를 수신합니다.",
+  "lever": 3,
+  "family": 1,
+  "deprecated": -1,
+  "linkIds": [
+    134,
+    136
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "MonthPicker 기본 사용법",
+      "desc": [
+        "【selectedDate】 : 선택된 날짜   【DateTime】",
+        "【firstDate】 : 최초 날짜 제한   【DateTime】",
+        "【lastDate】 : 마지막 날짜 제한   【DateTime】",
+        "【onChanged】 : 클릭 콜백  【Function(DateTime)】",
+        "    ",
+        "class CustomMonthPicker extends StatelessWidget{",
+        "  const CustomMonthPicker({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'MonthPicker 월 선택기는 Flutter3.0에서 역사 속으로 사라졌습니다. 이를 대체하는 것은 CalendarDatePicker 달력 선택기입니다.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   final DateTime _date = DateTime.now();",
+        "  ",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return SizedBox(",
+        "       height: 350,",
+        "       child: MonthPicker(",
+        "         selectedDate: _date,",
+        "         onChanged: (date) => setState(() => _date = date),",
+        "         firstDate: DateTime(2018),",
+        "         lastDate: DateTime(2030),",
+        "       ),"
+      ]
+    }
+  ]
+}

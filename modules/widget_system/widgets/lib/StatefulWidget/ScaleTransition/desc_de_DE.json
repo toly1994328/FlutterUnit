@@ -1,0 +1,19 @@
+{
+  "id": 91,
+  "name": "ScaleTransition",
+  "localName": "Skalierungstransformation",
+  "info": "Kann ein Kindelement aufnehmen und es mit einer Skalierungsanimation versehen. Erfordert einen Animator 'scale' und besitzt das Attribut 'alignment'.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von ScaleTransition",
+      "desc": [
+        "【child】 : Kindelement   【Widget】",
+        "【scale】 : Animation   【Animation<double>】"
+      ]
+    }
+  ]
+}

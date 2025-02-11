@@ -1,0 +1,19 @@
+{
+  "id": 212,
+  "name": "ModalBarrier",
+  "localName": "バリアモード",
+  "info": "これは一種のカーテン層に相当し、ユーザーがその背後にあるウィジェットとやり取りするのを防ぎます。dismissibleを介して、クリック時に戻るスタックをトリガーするかどうかを決定できます。ソースコードではDialog関連のコンポーネントに使用されています。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ModalBarrier 紹介",
+      "desc": [
+        "【dismissible】 : クリック時に戻るかどうか   【bool】",
+        "【color】 : 色   【Color】"
+      ]
+    }
+  ]
+}

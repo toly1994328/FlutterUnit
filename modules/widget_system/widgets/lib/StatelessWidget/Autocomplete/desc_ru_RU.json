@@ -1,0 +1,31 @@
+{
+  "id": 356,
+  "name": "Autocomplete",
+  "localName": "Автозаполнение",
+  "info": "Во время ввода предоставляет всплывающий слой с подсказками для выбора пользователем, обладает высокой степенью настройки.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    54,
+    199
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование Autocomplete",
+      "desc": [
+        "【optionsBuilder】 : конструктор опций   【AutocompleteOptionsBuilder<T>】",
+        "【onSelected】 : обратный вызов при выборе   【AutocompleteOnSelected<T>】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Обобщение Autocomplete",
+      "desc": [
+        "【optionsViewBuilder】 : конструктор панели   【AutocompleteOptionsViewBuilder<T>】",
+        "【fieldViewBuilder】 : конструктор ввода   【AutocompleteFieldViewBuilder】",
+        "【displayStringForOption】 : отображение текста   【AutocompleteOptionToString】,"
+      ]
+    }
+  ]
+}

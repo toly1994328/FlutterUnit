@@ -1,0 +1,28 @@
+{
+  "id": 8,
+  "name": "FadeInImage",
+  "localName": "Изображение с плавным появлением",
+  "info": "Загрузка изображения с плавным появлением. Можно указать изображение-заполнитель, кривые анимации появления и исчезновения, время, ширину, высоту, тип подгонки, выравнивание, режим повторения и т.д.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FadeInImage.assetNetwork загрузка изображения из сети",
+      "desc": [
+        "【placeholder】 : Адрес изображения-заполнителя  【String】",
+        "【image】 : Адрес отображаемого изображения  【String】",
+        "【width】: Ширина   【double】",
+        "【height】: Высота   【double】",
+        "【fadeInDuration】: Длительность появления   【Duration】",
+        "【fadeOutDuration】: Длительность исчезновения   【Duration】",
+        "【fadeInCurve】: Кривая появления   【Cubic】",
+        "【fadeOutCurve】: Кривая исчезновения   【Cubic】",
+        "【fit】: Режим подгонки   【BoxFit】",
+        "【alignment】: Режим выравнивания   【Alignment】",
+        "【repeat】: Режим повторения   【ImageRepeat】,"
+      ]
+    }
+  ]
+}

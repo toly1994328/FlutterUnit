@@ -1,0 +1,21 @@
+{
+  "id": 232,
+  "name": "Navigator",
+  "localName": "Navigator",
+  "info": "The Navigator manages a group of child components using stack rules, allowing child components to be pushed and popped, and listening to stack events. The origin of MaterialApp's route management is the use of Navigator.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Navigator",
+      "desc": [
+        "【initialRoute】: Initial display route 【String】",
+        "【onGenerateRoute】: Route generator 【RouteFactory】",
+        "【observers】: Route observers 【List<NavigatorObserver>】",
+        "【onPopPage】: Pop page callback 【PopPageCallback】"
+      ]
+    }
+  ]
+}

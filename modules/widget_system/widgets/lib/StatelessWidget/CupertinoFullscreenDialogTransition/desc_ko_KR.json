@@ -1,0 +1,21 @@
+{
+  "id": 219,
+  "name": "CupertinoFullscreenDialogTransition",
+  "localName": "전체 페이지 전환",
+  "info": "전체 화면 대화 상자를 불러오기 위한 iOS 스타일의 전환을 생성합니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "컴포넌트 소개",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【linearTransition】 : 선형 전환 여부   【bool】",
+        "【primaryRouteAnimation】 : 초기 라우트 애니메이션   【Animation<double>】",
+        "【secondaryRouteAnimation】 : 두 번째 라우트 애니메이션   【Animation<double>】"
+      ]
+    }
+  ]
+}

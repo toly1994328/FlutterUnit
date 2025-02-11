@@ -1,0 +1,27 @@
+{
+  "id": 350,
+  "name": "BoxScrollView",
+  "localName": "Vista de desplazamiento de caja",
+  "info": "BoxScrollView es una clase abstracta que hereda de ScrollView, por lo que no se puede usar directamente. Sus subclases son ListView y GridView. Generalmente no se implementa una subclase para usarla",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introducción a BoxScrollView",
+      "desc": [
+        "【reverse】 : ¿Invertido?   【bool】",
+        "【scrollDirection】 : Dirección de desplazamiento   【Axis】",
+        "【cacheExtent】 : Longitud de caché   【double】",
+        "【dragStartBehavior】 : Comportamiento de arrastre   【DragStartBehavior】",
+        "【clipBehavior】 : Comportamiento de recorte   【ClipBehavior】",
+        "【controller】 : Controlador   【ScrollController】"
+      ]
+    }
+  ]
+}

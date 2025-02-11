@@ -1,0 +1,25 @@
+{
+  "id": 257,
+  "name": "DrawerController",
+  "localName": "iOSスライドタブ",
+  "info": "Drawerコンポーネントにインタラクションを提供しますが、一般的にはあまり使用されません。Scaffoldコンポーネントのソースコードで使用されることがあります。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    154,
+    64
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerControllerの基本的な使用法",
+      "desc": [
+        "【drawerCallback】 : イベントコールバック   【DrawerCallback】",
+        "【enableOpenDragGesture】 : サイドスワイプを有効にするか   【bool】",
+        "【alignment】 : 配置方法   【DrawerAlignment】",
+        "【scrimColor】 : 背景色   【Color】",
+        "【child】 : Drawerコンポーネント   【Widget】"
+      ]
+    }
+  ]
+}

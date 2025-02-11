@@ -1,0 +1,27 @@
+{
+  "id": 251,
+  "name": "NestedScrollView",
+  "localName": "Verschachtelte Scrollansicht",
+  "info": "Wird zur Behandlung des verschachtelten Scrollens mehrerer Ansichten verwendet. Es können Kopf, Scroll-Controller, Scrollrichtung usw. angegeben werden. Dabei muss der Körper eine scrollbare Komponente sein.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    183,
+    344
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von NestedScrollView",
+      "desc": [
+        "【controller】 : Scroll-Controller   【ScrollController】",
+        "【scrollDirection】 : Scrollrichtung   【Axis】",
+        "【reverse】 : Umgekehrt   【bool】",
+        "【physics】 : Scrollstil   【ScrollPhysics】",
+        "【dragStartBehavior】 : Startverhalten beim Ziehen   【DragStartBehavior】",
+        "【headerSliverBuilder】 : *Kopfkonstruktor   【NestedScrollViewHeaderSliversBuilder】",
+        "【body】 : *Inhalt   【Widget】"
+      ]
+    }
+  ]
+}

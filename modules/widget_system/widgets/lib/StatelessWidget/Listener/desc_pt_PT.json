@@ -1,0 +1,22 @@
+{
+  "id": 147,
+  "name": "Listener",
+  "localName": "Ouvinte de Eventos",
+  "info": "Ouvinte de eventos do componente, pode aceitar eventos como pressionar, soltar, mover, cancelar, etc. Comparado ao GestureDetector, é mais primitivo e pode obter mais informações.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Eventos Básicos do Listener",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【onPointerDown】 : Evento de pressionar   【Function(PointerDownEvent)】",
+        "【onPointerMove】 : Evento de mover   【Function(PointerMoveEvent)】",
+        "【onPointerMove】 : Evento de soltar   【Function(PointerUpEvent)】",
+        "【onPointerCancel】 : Evento de cancelar   【Function(PointerUpEvent)】"
+      ]
+    }
+  ]
+}

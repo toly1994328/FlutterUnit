@@ -1,0 +1,47 @@
+{
+  "id": 23,
+  "name": "MaterialButton",
+  "localName": "Material Button",
+  "info": "A general Material button implemented based on RawMaterialButton. It can contain a child component, define colors, shapes, etc., and can receive click and long press events.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    25,
+    26,
+    27,
+    326,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "MaterialButton Click Event",
+      "desc": [
+        "【color】: Color   【Color】",
+        "【splashColor】: Ripple Color   【Color】",
+        "【height】: Height   【double】",
+        "【elevation】: Elevation   【double】",
+        "【child】: Child Component   【Widget】",
+        "【textColor】: Child Component Text Color   【Color】",
+        "【highlightColor】: Long Press Highlight Color   【Color】",
+        "【padding】: Padding   【EdgeInsetsGeometry】",
+        "【onPressed】: Click Event   【Function】"
+      ]
+    },
+    {
+      "file": "node2_onLongPress.dart",
+      "name": "MaterialButton Long Press Event",
+      "desc": [
+        "【highlightColor】: Long Press Highlight Color   【Color】",
+        "【onLongPress】: Long Press Event   【Function】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+      "name": "MaterialButton Custom Shape",
+      "desc": [
+        "【shape】: Shape   【ShapeBorder】"
+      ]
+    }
+  ]
+}

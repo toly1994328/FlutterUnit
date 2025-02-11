@@ -1,0 +1,20 @@
+{
+  "id": 246,
+  "name": "TickerMode",
+  "localName": "Modo Ticker",
+  "info": "Deshabilitar/habilitar el Ticker del subárbol, el controlador de animación se basa en Ticker.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    346
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Deshabilitar/Habilitar Animación Unificada",
+      "desc": [
+        "El enabled de TickerMode puede habilitar/deshabilitar uniformemente los efectos de animación del subárbol."
+      ]
+    }
+  ]
+}

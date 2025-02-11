@@ -1,0 +1,23 @@
+{
+  "id": 361,
+  "name": "EndDrawerButton",
+  "localName": "Pulsante cassetto destro",
+  "info": "Un pulsante icona per il cassetto destro, utilizza EndDrawerButtonIcon per visualizzare l'icona. L'evento di clic predefinito apre il cassetto destro.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    275,
+    276
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di EndDrawerButton",
+      "desc": [
+        "【onPressed】 : Evento di clic  【VoidCallback?】",
+        "【style】: Stile del pulsante   【ButtonStyle?】",
+        "Quando onPressed è vuoto, cliccando si apre il cassetto destro."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 155,
+  "name": "DrawerHeader",
+  "localName": "슬라이드 페이지 헤더",
+  "info": "일반적으로 Drawer에서 사용되며, 슬라이드 페이지의 헤더로 사용됩니다. 내부 및 외부 여백, 장식, 하위 구성 요소 등의 속성을 지정할 수 있습니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerHeader 기본 사용",
+      "desc": [
+        "【child】 : 하위 구성 요소   【Widget】",
+        "【decoration】 : 장식   【Decoration】",
+        "【margin】 : 외부 여백   【EdgeInsetsGeometry】",
+        "【padding】 : 내부 여백   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

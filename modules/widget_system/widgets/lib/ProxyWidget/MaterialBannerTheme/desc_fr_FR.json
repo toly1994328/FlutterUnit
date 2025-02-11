@@ -1,0 +1,18 @@
+{
+  "id": 327,
+  "name": "MaterialBannerTheme",
+  "localName": "Thème de bannière",
+  "info": "Principalement utilisé pour définir les propriétés par défaut des composants MaterialBanner descendants, ou pour obtenir les propriétés par défaut de MaterialBanner via ce composant.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de MaterialBannerTheme",
+      "desc": [
+        "Vous pouvez spécifier les propriétés de MaterialBannerThemeData pour définir le style par défaut des composants MaterialBanner descendants, tels que la couleur de fond, les marges, le style du texte, etc. Vous pouvez également utiliser MaterialBannerTheme.of pour obtenir les données de thème de MaterialBanner."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 178,
+  "name": "ExpansionPanelList",
+  "localName": "Lista Expansível",
+  "info": "Componente de lista expansível, pode implementar expansão única ou múltipla de acordo com a lógica. Pode especificar a duração da animação de expansão e receber um callback de expansão.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do ExpansionPanelList",
+      "desc": [
+        "【children】 : Lista de componentes filhos   【List<Widget>】",
+        "【animationDuration】 : Duração da animação   【Duration】",
+        "【expansionCallback】 : Callback de expansão   【List<Widget>】",
+        "【onPressed】 : Evento de clique  【Function()】"
+      ]
+    }
+  ]
+}

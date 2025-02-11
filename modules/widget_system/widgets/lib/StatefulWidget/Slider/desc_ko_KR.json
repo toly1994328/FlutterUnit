@@ -1,0 +1,37 @@
+{
+  "id": 42,
+  "name": "Slider",
+  "localName": "슬라이더",
+  "info": "슬라이더 컴포넌트는 지정된 최대값과 최소값 사이에서 드래그하여 선택할 수 있습니다. 색상, 분할 수 및 표시된 라벨을 지정할 수 있으며, 진행률 변경 콜백을 받습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    43,
+    44,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Slider 기본 사용",
+      "desc": [
+        "【value】 : 값   【double】",
+        "【min】 : 최소값   【double】",
+        "【max】 : 최대값   【double】",
+        "【activeColor】 : 활성화 색상   【Color】",
+        "【inactiveColor】 : 비활성화 색상   【Color】",
+        "【onChanged】 : 변경 시 콜백   【Function(double)】"
+      ]
+    },
+    {
+      "file": "node2_lable.dart",
+      "name": "Slider의 분할과 라벨",
+      "desc": [
+        "【divisions】 : 분할 수   【int】",
+        "【label】 : 툴팁 텍스트   【String】",
+        "【onChangeStart】 : 슬라이드 시작 시 리스너   【Function(double)】",
+        "【onChangeEnd】 : 슬라이드 종료 시 리스너   【Function(double)】"
+      ]
+    }
+  ]
+}

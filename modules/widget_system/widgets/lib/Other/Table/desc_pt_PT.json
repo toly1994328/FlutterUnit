@@ -1,0 +1,23 @@
+{
+  "id": 110,
+  "name": "Table",
+  "localName": "Componente de Tabela",
+  "info": "Componente utilizado para exibir tabelas, pode especificar propriedades como bordas, largura das colunas, direção do texto, etc., o tipo de objeto principal é TableRow.",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico da Tabela",
+      "desc": [
+        "【children】 : Lista de componentes   【List<Widget>】",
+        "【columnWidths】 : Largura das colunas   【Map<int, TableColumnWidth>】",
+        "【defaultColumnWidth】 : Largura padrão da coluna  【TableColumnWidth】",
+        "【border】 : Borda   【TableBorder】",
+        "【textDirection】 : Direção do texto   【TextDirection】",
+        "【defaultVerticalAlignment】 : Modo de alinhamento vertical das células   【TableCellVerticalAlignment】"
+      ]
+    }
+  ]
+}

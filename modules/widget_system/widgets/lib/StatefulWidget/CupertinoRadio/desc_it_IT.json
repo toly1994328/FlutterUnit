@@ -1,0 +1,42 @@
+{
+  "id": 240,
+  "name": "CupertinoRadio",
+  "localName": "Pulsante di scelta·Stile macOS",
+  "info": "Un pulsante di scelta in stile macOS, value e groupValue determinano insieme se questo pulsante di scelta è selezionato; onChanged richiama l'evento di clic.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    19,
+    45
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Utilizzo di CupertinoRadio",
+      "desc": [
+        "【value】 : Valore del pulsante di scelta   【T】",
+        "【groupValue】 : Valore corrente corrispondente   【T】",
+        "【onChanged】 : Richiama quando cambia   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Colori di CupertinoRadio",
+      "desc": [
+        "【activeColor】 : Colore di sfondo attivo   【Color?】",
+        "【fillColor】 : Riempimento   【Color?】",
+        "【inactiveColor】 : Colore di sfondo inattivo   【Color?】",
+        "【focusColor】 : Colore di messa a fuoco   【Color?】",
+        "【mouseCursor】 : Stile del puntatore del mouse   【MouseCursor?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Supporto per il passaggio",
+      "desc": [
+        "【toggleable】 : Supporto per il passaggio   【bool】",
+        "toggleable è impostato su false per impostazione predefinita, quando è true, cliccando sul pulsante di scelta attivo, richiamerà i dati null, supportando così la necessità di passare tra selezionato e non selezionato."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": 152,
+  "name": "Ink",
+  "localName": "水波",
+  "info": "InkWellとInkResponseの水の波紋を有効にし、画像やその他の装飾を描画するためのMaterialコンポーネントです。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    149,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Inkの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【padding】 : パディング   【EdgeInsetsGeometry】",
+        "【decoration】 : 装飾   【Decoration】",
+        "【width】 : 幅   【double】",
+        "【height】 : 高さ   【double】",
+        "【color】 : 色   【Color】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "Ink.image画像の水波",
+      "desc": [
+        "その属性はImageコンポーネントと一致し、詳細はImageコンポーネントを参照してください"
+      ]
+    }
+  ]
+}

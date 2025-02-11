@@ -1,0 +1,32 @@
+{
+  "id": 277,
+  "name": "ShaderMask",
+  "localName": "Maschera Shader",
+  "info": "Può contenere un figlio e colorare il figlio attraverso uno shader, specificando la modalità di fusione. Solitamente utilizzato per il trattamento della gradazione dei componenti.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    88,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_radial.dart",
+      "name": "Sfumatura Radiale",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【shaderCallback】 : Callback dello shader   【ShaderCallback】",
+        "【blendMode】 : Modalità di fusione   【BlendMode】",
+        "    Crea uno shader di sfumatura radiale attraverso RadialGradient#createShader."
+      ]
+    },
+    {
+      "file": "node2_linear.dart",
+      "name": "Sfumatura Lineare",
+      "desc": [
+        "Crea uno shader di sfumatura lineare attraverso LinearGradient#createShader",
+        "Per ulteriori informazioni sugli shader, consulta 【Album di disegno】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 249,
+  "name": "AnimatedScale",
+  "localName": "Animación de escala",
+  "info": "Cuando cambia la cantidad de escala dada, el componente hijo puede ajustarse automáticamente en relación con el valor de escala, y hay una animación entre los valores anteriores y posteriores.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    247,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Efecto de animación de escala",
+      "desc": [
+        "En este caso, arrastre para ajustar el parámetro scale y observe el efecto de movimiento de la animación.",
+        "【child】 : Componente hijo   【Widget】",
+        "【duration】 : Duración de la animación   【Duration】",
+        "【onEnd】 : Devolución de llamada al finalizar la animación   【Function()】",
+        "【curve】 : Curva de animación   【Duration】",
+        "【alignment】 : Centro de transformación de la animación   【Alignment】",
+        "【filterQuality】 : Calidad del filtro   【FilterQuality】",
+        "【scale】 : Cantidad de escala   【double】"
+      ]
+    }
+  ]
+}

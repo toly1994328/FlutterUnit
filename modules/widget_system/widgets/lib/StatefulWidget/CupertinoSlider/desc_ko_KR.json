@@ -1,0 +1,26 @@
+{
+  "id": 43,
+  "name": "CupertinoSlider",
+  "localName": "iOS 슬라이더",
+  "info": "iOS 스타일의 슬라이더 컴포넌트로, 지정된 최대값과 최소값 사이에서 드래그하여 선택할 수 있습니다. 색상을 지정할 수 있으며, 진행 상황 변화 콜백을 받을 수 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoSlider 기본 사용",
+      "desc": [
+        "【value】 : 값   【double】",
+        "【min】 : 최소값   【double】",
+        "【max】 : 최대값   【double】",
+        "【activeColor】 : 활성 색상   【Color】",
+        "【thumbColor】 : 원형 색상   【Color】",
+        "【divisions】 : 분할 수   【int】",
+        "【onChangeStart】 : 슬라이드 시작 콜백   【Function(double)】",
+        "【onChangeEnd】 : 슬라이드 종료 콜백   【Function(double)】",
+        "【onChanged】 : 변경 시 콜백   【Function(double)】"
+      ]
+    }
+  ]
+}

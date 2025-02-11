@@ -1,0 +1,23 @@
+{
+  "id": 307,
+  "name": "SliverOverlapAbsorber",
+  "localName": "Поглотитель перекрытия",
+  "info": "Обертывает другой sliver и заставляет его область макета считаться перекрывающейся. Необходимо использовать вместе с SliverOverlapInjector.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    308
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SliverOverlapAbsorber",
+      "desc": [
+        "【sliver】 : Дочерний компонент   【Widget】",
+        "【handle】 : *Обработчик   【SliverOverlapAbsorberHandle】",
+        "Если не использовать компоненты SliverOverlapAbsorber и SliverOverlapInjector, содержимое NestedScrollView будет перекрываться с заголовком."
+      ]
+    }
+  ]
+}

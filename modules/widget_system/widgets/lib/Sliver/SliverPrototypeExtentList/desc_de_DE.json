@@ -1,0 +1,22 @@
+{
+  "id": 314,
+  "name": "SliverPrototypeExtentList",
+  "localName": "Sliver-Prototyp-Erweiterungsliste",
+  "info": "Die Eigenschaft prototypeItem ist ein Widget, das die Größe der Elemente in der Hauptachsenrichtung einschränkt, aber nicht angezeigt wird. Der delegate akzeptiert einen SliverChildDelegate, um die Erstellung der Elemente abzuschließen.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    185,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von SliverPrototypeExtentList",
+      "desc": [
+        "【prototypeItem】 : Hauptachsenrichtungsgrößenkomponente   【Widget】",
+        "【delegate】 : Kind-Delegate   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

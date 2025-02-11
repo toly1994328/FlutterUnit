@@ -1,0 +1,23 @@
+{
+  "id": 83,
+  "name": "OverflowBox",
+  "localName": "オーバーフローボックス",
+  "info": "子コンポーネントを収容でき、子コンポーネントは親コンポーネントの領域をオーバーフローすることができます。幅と高さの最大最小領域を指定して制限することができ、アライメント属性alignmentを持っています。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "OverflowBoxの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【minWidth】 : 最小幅   【double】",
+        "【minHeight】 : 最小高さ   【double】",
+        "【maxHeight】 : 最大高さ   【double】",
+        "【maxWidth】 : 最大幅   【double】",
+        "【alignment】 : アライメント方法   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

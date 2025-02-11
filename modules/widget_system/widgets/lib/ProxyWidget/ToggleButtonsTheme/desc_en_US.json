@@ -1,0 +1,18 @@
+{
+  "id": 332,
+  "name": "ToggleButtonsTheme",
+  "localName": "Slider Style",
+  "info": "Mainly used to set default properties for descendant ToggleButtons components uniformly. You can also get the default properties of ToggleButtons through this component.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ToggleButtonsTheme",
+      "desc": [
+        "You can specify the ToggleButtonsThemeData properties to set default styles for descendant ToggleButtons components, such as border style, color, decoration, etc. You can also use ToggleButtonsTheme.of to get the theme data of ToggleButtons."
+      ]
+    }
+  ]
+}

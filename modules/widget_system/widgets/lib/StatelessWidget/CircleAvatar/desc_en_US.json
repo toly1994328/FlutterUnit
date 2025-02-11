@@ -1,0 +1,24 @@
+{
+  "id": 9,
+  "name": "CircleAvatar",
+  "localName": "Circular Component",
+  "info": "Can turn an image into a circle, and a component can be placed in the center. You can specify the radius, foreground color, background color, etc.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CircleAvatar Performance",
+      "desc": [
+        "【radius】: radius 【double】",
+        "【backgroundImage】: image resource 【ImageProvider】",
+        "【foregroundColor】: foreground color 【Color】",
+        "【backgroundColor】: background color 【Color】",
+        "【minRadius】: minimum radius 【double】",
+        "【maxRadius】: maximum radius 【double】",
+        "【child】: child component 【Child】"
+      ]
+    }
+  ]
+}

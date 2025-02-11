@@ -1,0 +1,25 @@
+{
+  "id": 257,
+  "name": "DrawerController",
+  "localName": "Pestañas deslizantes de iOS",
+  "info": "Proporciona comportamiento interactivo para el componente Drawer, generalmente se usa poco. Tiene un caso de uso en el código fuente del componente Scaffold.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    154,
+    64
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de DrawerController",
+      "desc": [
+        "【drawerCallback】 : devolución de llamada de evento   【DrawerCallback】",
+        "【enableOpenDragGesture】 : si se puede deslizar hacia un lado   【bool】",
+        "【alignment】 : alineación   【DrawerAlignment】",
+        "【scrimColor】 : color de fondo   【Color】",
+        "【child】 : componente Drawer   【Widget】"
+      ]
+    }
+  ]
+}

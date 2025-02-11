@@ -1,0 +1,24 @@
+{
+  "id": 199,
+  "name": "TextFormField",
+  "localName": "Текстовое поле формы",
+  "info": "Свойства аналогичны TextField, с добавлением проверки поля и обратного вызова отправки. Сохранение FormState вызовет обратный вызов onSaved.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    54,
+    198
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование TextFormField",
+      "desc": [
+        "Основные свойства аналогичны TextField, подробнее см. там",
+        "【validator】 : Функция проверки   【FormFieldValidator<String> 】",
+        "【onFieldSubmitted】 : Обратный вызов отправки   【ValueChanged<String>】",
+        "【onSaved】 : Обратный вызов при сохранении формы  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

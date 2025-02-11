@@ -1,0 +1,33 @@
+{
+  "id": 55,
+  "name": "DropdownButton",
+  "localName": "Pulsante a discesa",
+  "info": "Pulsante per la selezione a discesa, può specificare attributi come icona, profondità dell'ombra, suggerimento, ecc., e riceve eventi di cambiamento di selezione.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di base di DropdownButton",
+      "desc": [
+        "【value】 : Valore corrente   【T】",
+        "【items】 : Casella di selezione a discesa   【List<DropdownMenuItem<T>>】",
+        "【icon】 : Icona   【Widget】",
+        "【elevation】 : Profondità dell'ombra   【double】",
+        "【onChanged】 : Evento di selezione dell'elemento   【Function(T)】",
+        "【backgroundColor】 : Colore di sfondo   【Color】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Specifica dello stile di DropdownButton",
+      "desc": [
+        "【isDense】 : Se è compatto   【bool】",
+        "【iconSize】 : Dimensione dell'icona   【double】",
+        "【hint】 : Componente di suggerimento   【Widget】",
+        "【iconEnabledColor】 : Colore dell'icona   【Color】"
+      ]
+    }
+  ]
+}

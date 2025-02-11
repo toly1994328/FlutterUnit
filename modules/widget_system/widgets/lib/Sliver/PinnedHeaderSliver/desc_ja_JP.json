@@ -1,0 +1,38 @@
+{
+  "id": 309,
+  "name": "PinnedHeaderSliver",
+  "localName": "固定ヘッダースライバー",
+  "info": "ビューポート上部に留まるスライバーで、簡単に吸着効果を実現できます。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    190
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "PinnedHeaderSliver 公式サンプル",
+      "display": "new_page",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget?】",
+        "PinnedHeaderSliver はスクロールビューポートでのみ使用でき、子コンポーネントはトップにスクロールしてもビューポートから出ず、ビューポート上部に留まります。"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "タイトル吸着",
+      "display": "new_page",
+      "desc": [
+        "PinnedHeaderSliver に基づいて実装されたタイトル吸着効果です。下の分割線にも吸着効果があることに注意してください。"
+      ]
+    },
+    {
+      "file": "node_03.dart",
+      "name": "タイトル+検索吸着",
+      "display": "new_page",
+      "desc": [
+        "PinnedHeaderSliver に基づいて実装されたタイトル+検索ボックスの吸着効果です。"
+      ]
+    }
+  ]
+}

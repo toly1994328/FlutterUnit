@@ -1,0 +1,27 @@
+{
+  "id": 331,
+  "name": "SliderTheme",
+  "localName": "Estilo do Controlo Deslizante",
+  "info": "Pode conter um filho, especificando o estilo padrão para o Controlo Deslizante descendente. Comumente usado para unificar o estilo do Controlo Deslizante, evitando a configuração individual, também pode personalizar o estilo do Controlo Deslizante.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso do SliderTheme",
+      "desc": [
+        "Pode obter o objeto de dados do tema do Controlo Deslizante através de SliderTheme.of, que contém uma grande quantidade de propriedades para configurar o Controlo Deslizante.",
+        "Pode definir o estilo padrão para os componentes de botão [descendentes] do ButtonTheme, incluindo cor, forma, tamanho, etc."
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Personalização do estilo do Controlo Deslizante com SliderTheme",
+      "desc": [
+        "Através de thumbShape e valueIndicatorShape, pode personalizar o estilo do Controlo Deslizante.",
+        "Nota: Este exemplo é baseado no SlideDemo do flutter-gallery"
+      ]
+    }
+  ]
+}

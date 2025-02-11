@@ -1,0 +1,38 @@
+{
+  "id": 309,
+  "name": "PinnedHeaderSliver",
+  "localName": "Glissière d'en-tête fixe",
+  "info": "Une glissière qui peut rester en haut de la vue, permettant de réaliser facilement un effet de fixation en haut.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    190
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Exemple officiel de PinnedHeaderSliver",
+      "display": "new_page",
+      "desc": [
+        "【child】 : Composant enfant   【Widget?】",
+        "PinnedHeaderSliver ne peut être utilisé que dans une vue défilante, où le composant enfant ne sort pas de la vue lorsqu'il est glissé vers le haut, restant ainsi en haut de la vue."
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Titre fixé en haut",
+      "display": "new_page",
+      "desc": [
+        "Effet de titre fixé en haut basé sur PinnedHeaderSliver, notez que la ligne de séparation en dessous a également un effet de fixation en haut."
+      ]
+    },
+    {
+      "file": "node_03.dart",
+      "name": "Titre + recherche fixés en haut",
+      "display": "new_page",
+      "desc": [
+        "Effet de titre + boîte de recherche fixés en haut basé sur PinnedHeaderSliver."
+      ]
+    }
+  ]
+}

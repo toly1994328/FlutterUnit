@@ -1,0 +1,19 @@
+{
+  "id": 297,
+  "name": "IntrinsicWidth",
+  "localName": "Largeur intrinsèque",
+  "info": "Un composant qui ajuste la taille de ses enfants en fonction de leur largeur intrinsèque, résout de nombreux problèmes de mise en page, mais est relativement coûteux.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base d'IntrinsicWidth",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "Comme dans l'exemple : la largeur du haut peut varier, celle du milieu est fixe, et celle du bas prend la valeur maximale des deux précédentes."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 241,
+  "name": "UndoHistory",
+  "localName": "Undo History",
+  "info": "Receives ValueNotifier to listen to the value, providing undo/redo functionality for that value; used in the source code of the TextField component.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Using UndoHistory in TextField",
+      "desc": [
+        "In this example, the undo/redo functionality of the TextField is controlled via an external button. The undoController parameter can be passed an UndoHistoryController object to control and influence the input text content."
+      ]
+    }
+  ]
+}

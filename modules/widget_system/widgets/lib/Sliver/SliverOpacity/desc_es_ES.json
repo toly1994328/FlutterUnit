@@ -1,0 +1,19 @@
+{
+  "id": 192,
+  "name": "SliverOpacity",
+  "localName": "Opacidad de Sliver",
+  "info": "Puede contener un componente hijo de la familia Sliver y especificar la opacidad del componente hijo a través de opacity.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SliverOpacity",
+      "desc": [
+        "【opacity】 : Opacidad   【double】",
+        "【sliver】 : Componente hijo  【Function()】"
+      ]
+    }
+  ]
+}

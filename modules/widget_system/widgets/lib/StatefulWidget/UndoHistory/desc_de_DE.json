@@ -1,0 +1,20 @@
+{
+  "id": 241,
+  "name": "UndoHistory",
+  "localName": "Verlauf rückgängig machen",
+  "info": "Empfängt einen ValueNotifier, um den Wert zu überwachen und bietet die Funktionen Rückgängig/Wiederholen für diesen Wert; wird in der Quellcode der TextField-Komponente verwendet.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Verwendung von UndoHistory in TextField",
+      "desc": [
+        "In diesem Beispiel wird die Rückgängig/Wiederholen-Funktion von TextField über eine externe Schaltfläche gesteuert. Der Parameter undoController kann ein UndoHistoryController-Objekt übernehmen, um den eingegebenen Textinhalt zu steuern und zu beeinflussen."
+      ]
+    }
+  ]
+}

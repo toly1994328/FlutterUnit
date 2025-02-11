@@ -1,0 +1,31 @@
+{
+  "id": 356,
+  "name": "Autocomplete",
+  "localName": "Autocompletado",
+  "info": "Proporciona una capa de sugerencias durante la entrada para que el usuario pueda seleccionar, con un alto grado de personalización.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    54,
+    199
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Autocomplete",
+      "desc": [
+        "【optionsBuilder】: Constructor de opciones 【AutocompleteOptionsBuilder<T>】",
+        "【onSelected】: Devolución de llamada al seleccionar 【AutocompleteOnSelected<T>】"
+      ]
+    },
+    {
+      "file": "node2_type.dart",
+      "name": "Genéricos de Autocomplete",
+      "desc": [
+        "【optionsViewBuilder】: Constructor del panel 【AutocompleteOptionsViewBuilder<T>】",
+        "【fieldViewBuilder】: Constructor de entrada 【AutocompleteFieldViewBuilder】",
+        "【displayStringForOption】: Visualización de texto 【AutocompleteOptionToString】"
+      ]
+    }
+  ]
+}

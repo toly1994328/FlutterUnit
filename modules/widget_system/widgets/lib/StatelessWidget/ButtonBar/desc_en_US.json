@@ -1,0 +1,27 @@
+{
+  "id": 29,
+  "name": "ButtonBar",
+  "localName": "Button Bar",
+  "info": "Receives a list of components, often used to hold several buttons. You can specify alignment, margins, and other information.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ButtonBar Alignment",
+      "desc": [
+        "【alignment】: Alignment   【MainAxisAlignment】",
+        "【children】: Child components   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_padding.dart",
+      "name": "ButtonBar Margin and Height",
+      "desc": [
+        "【buttonPadding】: Padding   【EdgeInsetsGeometry】",
+        "【buttonHeight】: Height   【double】"
+      ]
+    }
+  ]
+}

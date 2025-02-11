@@ -1,0 +1,21 @@
+{
+  "id": 144,
+  "name": "CupertinoContextMenuAction",
+  "localName": "Botão de menu pop-up iOS",
+  "info": "Geralmente usado apenas para botões de clique em CupertinoContextMenu. Pode especificar ícones de criança e cauda, e receber eventos de clique.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoContextMenuAction",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【isDefaultAction】 : Selecionado por padrão  【bool】",
+        "【trailingIcon】 : Ícone de cauda  【bool】",
+        "【onPressed】 : Evento de clique  【Function()】"
+      ]
+    }
+  ]
+}

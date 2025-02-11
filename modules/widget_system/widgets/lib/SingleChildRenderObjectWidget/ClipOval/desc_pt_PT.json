@@ -1,0 +1,24 @@
+{
+  "id": 66,
+  "name": "ClipOval",
+  "localName": "Recorte Oval",
+  "info": "Pode conter um componente filho e cortá-lo em forma de elipse com os eixos maior e menor como largura e altura.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    67,
+    68,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ClipOval",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【clipBehavior】 : Comportamento de corte   【Clip】",
+        "【clipper】 : Cortador   【CustomClipper<RRect>】"
+      ]
+    }
+  ]
+}

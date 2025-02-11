@@ -1,0 +1,23 @@
+{
+  "id": 109,
+  "name": "Flexible",
+  "localName": "フレキシブルコンポーネント",
+  "info": "Row、Column、Flexレイアウトでのみ使用可能で、ネストされた子要素を使用して残りのスペースを拡張したり、適応タイプを指定したりできます。",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    94,
+    106
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Flexibleの基本使用",
+      "desc": [
+        "【child】 : 子要素   【Widget】",
+        "【fit】 : 適応モード*2   【FlexFit】",
+        "【flex】 : 残りスペースの分配比率   【int】"
+      ]
+    }
+  ]
+}

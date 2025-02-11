@@ -1,0 +1,18 @@
+{
+  "id": 86,
+  "name": "Center",
+  "localName": "Componente Centrado",
+  "info": "Puede contener un componente hijo y centrarlo en el componente padre, es un modo simplificado del componente Align.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Center",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】"
+      ]
+    }
+  ]
+}

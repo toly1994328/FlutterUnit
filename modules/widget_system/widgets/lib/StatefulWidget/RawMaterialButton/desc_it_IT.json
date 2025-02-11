@@ -1,0 +1,37 @@
+{
+  "id": 175,
+  "name": "RawMaterialButton",
+  "localName": "Pulsante Originale",
+  "info": "Il pulsante Material originale, il grande capo dietro le quinte dei pulsanti, può accettare eventi di clic, pressione prolungata, cambiamenti di evidenziazione, e può specificare colore, forma, profondità dell'ombra, spaziatura interna e altre proprietà.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    23,
+    25,
+    26,
+    27
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di RawMaterialButton",
+      "desc": [
+        "【child】 : Componente Figlio   【Widget】",
+        "【elevation】 : Profondità dell'Ombra   【double】",
+        "【fillColor】 : Colore di Riempimento   【Color】",
+        "【splashColor】 : Colore dell'Onda   【Color】",
+        "【textStyle】 : Stile del Testo   【TextStyle】",
+        "【onLongPress】 : Evento di Pressione Prolungata   【Function()】",
+        "【onPressed】 : Evento di Clic  【Function()】"
+      ]
+    },
+    {
+      "file": "node2_shape.dart",
+      "name": "Evidenziazione e Forma di RawMaterialButton",
+      "desc": [
+        "【highlightElevation】 : Profondità dell'Ombra in Evidenza   【double】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

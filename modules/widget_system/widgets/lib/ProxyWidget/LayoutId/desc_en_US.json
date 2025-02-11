@@ -1,0 +1,19 @@
+{
+  "id": 315,
+  "name": "LayoutId",
+  "localName": "Layout Id",
+  "info": "Can only be used in the CustomMultiChildLayout component to identify its child components.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "LayoutId Usage Scenarios",
+      "desc": [
+        "【id】 : Identifier id   【Object】",
+        "【child】 : Child component   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 294,
+  "name": "SizeChangedLayoutNotifier",
+  "localName": "Уведомление об изменении размера",
+  "info": "Использование SizeChangedLayoutNotifier позволяет отправлять уведомления после изменения области макета дочернего компонента. Для прослушивания можно использовать NotificationListener.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование",
+      "desc": [
+        "【child】 : Компонент   【Widget】"
+      ]
+    }
+  ]
+}

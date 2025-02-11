@@ -1,0 +1,25 @@
+{
+  "id": 285,
+  "name": "CustomSingleChildLayout",
+  "localName": "Layout Singolo Figlio Personalizzato",
+  "info": "Può contenere un componente figlio e specificare una classe delegata per disporre il componente figlio. La classe delegata può ottenere l'area del contenitore padre e le dimensioni dell'area del componente figlio, nonché i vincoli dell'area.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CustomSingleChildLayout",
+      "desc": [
+        "【delegate】 : delegato   【SingleChildLayoutDelegate】"
+      ]
+    },
+    {
+      "file": "node2_offset.dart",
+      "name": "Uso dello spostamento in CustomSingleChildLayout",
+      "desc": [
+        "È possibile utilizzare la capacità di spostamento del delegato per posizionare il componente figlio."
+      ]
+    }
+  ]
+}

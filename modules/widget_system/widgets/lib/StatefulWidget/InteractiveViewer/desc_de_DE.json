@@ -1,0 +1,45 @@
+{
+  "id": 351,
+  "name": "InteractiveViewer",
+  "localName": "Interaktiver Viewer",
+  "info": "Kapselt hauptsächlich Gesteninteraktionen wie Verschieben und Zoomen, vereinfacht die Verwendung und ermöglicht die Angabe von Verschiebegrenzen, Zoomverhältnissen, Gestenerkennung usw.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    147,
+    146,
+    78
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von InteractiveViewer",
+      "desc": [
+        "【alignPanAxis】 : Entlang der Achse ziehen   【bool】",
+        "【boundaryMargin】 : Randabstand   【EdgeInsets】",
+        "【panEnabled】 : Verschiebung aktiviert   【bool】",
+        "【scaleEnabled】 : Skalierung aktiviert   【bool】",
+        "【maxScale】 : Maximale Vergrößerung   【double】",
+        "【minScale】 : Minimale Verkleinerung   【double】",
+        "【onInteractionEnd】 : Rückruf bei Interaktionsende   【GestureScaleEndCallback】",
+        "【onInteractionStart】 : Rückruf bei Interaktionsstart   【GestureScaleStartCallback】",
+        "【onInteractionUpdate】 : Rückruf bei Interaktionsaktualisierung   【GestureScaleUpdateCallback】",
+        "【child】 : Cursorfarbe   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_constrained.dart",
+      "name": "Test der constrained-Eigenschaft",
+      "desc": [
+        "【constrained】 :  Eingeschränkt   【bool】"
+      ]
+    },
+    {
+      "file": "node3_controller.dart",
+      "name": "Verwendung des Transformationscontrollers",
+      "desc": [
+        "【transformationController】 : Transformationscontroller   【TransformationController】"
+      ]
+    }
+  ]
+}

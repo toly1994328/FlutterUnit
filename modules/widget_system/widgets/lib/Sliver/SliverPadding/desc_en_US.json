@@ -1,0 +1,19 @@
+{
+  "id": 191,
+  "name": "SliverPadding",
+  "localName": "Sliver Padding",
+  "info": "Can accommodate a child component of the Sliver family, adding its own padding to limit the placement of the child component, with the core property being padding.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SliverPadding",
+      "desc": [
+        "【sliver】: Child component   【Widget】",
+        "【padding】: Padding  【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

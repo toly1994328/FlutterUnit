@@ -1,0 +1,50 @@
+{
+  "id": 358,
+  "name": "NavigationRail",
+  "localName": "Боковая навигация",
+  "info": "Боковая панель навигации, обычно используется для навигационного меню на рабочем столе. Поддерживает расширение и сворачивание области, можно указать компоненты в начале и конце.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    60,
+    61
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование NavigationRail",
+      "desc": [
+        "【destinations】 : Список данных меню   【List<NavigationRailDestination>】",
+        "【selectedIndex】: Активный индекс    【int】",
+        "【labelType】: Стиль метки    【NavigationRailLabelType?】",
+        "【onDestinationSelected】: Событие клика по меню    【ValueChanged<int>?】"
+      ]
+    },
+    {
+      "file": "node2_extend.dart",
+      "name": "Эффект сворачивания NavigationRail",
+      "desc": [
+        "【elevation】 : Глубина тени   【double】",
+        "【leading】: Начальный компонент    【Widget?】",
+        "【trailing】: Конечный компонент    【Widget?】",
+        "【extended】: Развернуто ли    【bool】"
+      ]
+    },
+    {
+      "file": "node3_dark.dart",
+      "name": "Стиль NavigationRail",
+      "desc": [
+        "【useIndicator】 : Показывать ли индикатор   【bool】",
+        "【indicatorColor】: Цвет индикатора    【Color?】",
+        "【backgroundColor】: Цвет фона    【Color?】",
+        "【labelType】: Стиль метки    【NavigationRailLabelType?】",
+        "【selectedIconTheme】: Стиль выбранной иконки    【IconThemeData?】",
+        "【unselectedIconTheme】: Стиль невыбранной иконки    【IconThemeData?】",
+        "【selectedLabelTextStyle】: Стиль выбранного текста    【TextStyle?】",
+        "【unselectedLabelTextStyle】: Стиль невыбранного текста    【TextStyle?】",
+        "【minExtendedWidth】: Ширина в развернутом состоянии    【double?】",
+        "【minWidth】: Ширина в свернутом состоянии    【double?】"
+      ]
+    }
+  ]
+}

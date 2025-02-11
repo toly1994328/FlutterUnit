@@ -1,0 +1,19 @@
+{
+  "id": 234,
+  "name": "WidgetInspector",
+  "localName": "Widget-Inspektor",
+  "info": "Diese Komponente ermöglicht es Ihnen, die Hierarchie der Unterkomponenten bequem anzuzeigen und ist eine der Funktionen des Flutter Inspector-Plugins.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung des WidgetInspectors",
+      "desc": [
+        "【child】 : Unterkomponente   【Widget】",
+        "【selectButtonBuilder】: *Auswahlschalter-Builder   【InspectorSelectButtonBuilder】"
+      ]
+    }
+  ]
+}

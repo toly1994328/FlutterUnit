@@ -1,0 +1,22 @@
+{
+  "id": 48,
+  "name": "CupertinoActivityIndicator",
+  "localName": "iOS-Indikator",
+  "info": "iOS-stilisiertes Ladeanzeige-Widget, kann Radius und Drehung angeben.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    46,
+    47
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoActivityIndicator",
+      "desc": [
+        "【animating】 : Ob Ladeanimation aktiviert ist   【bool】",
+        "【radius】 : Radius   【double】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": 98,
+  "name": "Wrap",
+  "localName": "Wrap-Layout",
+  "info": "Kann mehrere Komponenten aufnehmen und sie in einer bestimmten Richtung anordnen. Es kann den Abstand zwischen den Kindern leicht verarbeiten und automatisch umbrechen, wenn die Grenze überschritten wird. Es hat Ausrichtungsmethoden für die Haupt- und Querachse und ist relativ flexibel.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    94,
+    95
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von Wrap",
+      "desc": [
+        "【children】 : Komponentenliste   【List<Widget>】",
+        "【spacing】 : Abstand zwischen den Einträgen auf der Hauptachse   【double】",
+        "【runSpacing】 : Abstand zwischen den Einträgen auf der Querachse   【double】",
+        "【direction】 : Ausrichtung der Hauptachse   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_alignment.dart",
+      "name": "Alignment-Eigenschaft von Wrap",
+      "desc": [
+        "【alignment】 : Ausrichtung der Hauptachse   【WrapAlignment】"
+      ]
+    },
+    {
+      "file": "node3_crossAxisAlignment.dart",
+      "name": "CrossAxisAlignment-Eigenschaft von Wrap",
+      "desc": [
+        "【crossAxisAlignment】 : Ausrichtung der Querachse   【CrossAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node4_textDirection.dart",
+      "name": "TextDirection-Eigenschaft von Wrap",
+      "desc": [
+        "【textDirection】 : Textrichtung   【TextDirection】"
+      ]
+    },
+    {
+      "file": "node5_verticalDirection.dart",
+      "name": "VerticalDirection-Eigenschaft von Wrap",
+      "desc": [
+        "【verticalDirection】 : Vertikale Richtung  【VerticalDirection】"
+      ]
+    }
+  ]
+}

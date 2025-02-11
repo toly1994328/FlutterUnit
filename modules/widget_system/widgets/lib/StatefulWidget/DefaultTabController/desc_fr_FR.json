@@ -1,0 +1,23 @@
+{
+  "id": 230,
+  "name": "DefaultTabController",
+  "localName": "Contrôleur d'onglets par défaut",
+  "info": "Lors de l'utilisation de TabBar et TabBarView, il est nécessaire qu'un même contrôleur gère à la fois les onglets et les pages. DefaultTabController fournit un contrôleur par défaut lorsqu'aucun contrôleur n'est spécifié, simplifiant ainsi son utilisation.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    148,
+    59
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de DefaultTabController",
+      "desc": [
+        "【length】 : Nombre d'onglets   【int】",
+        "【initialIndex】 : Index de l'onglet initial   【int】",
+        "【child】 : Composant   【Widget】"
+      ]
+    }
+  ]
+}

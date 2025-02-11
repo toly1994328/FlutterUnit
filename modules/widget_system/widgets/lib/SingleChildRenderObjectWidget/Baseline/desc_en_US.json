@@ -1,0 +1,20 @@
+{
+  "id": 75,
+  "name": "Baseline",
+  "localName": "Baseline Component",
+  "info": "Can contain a child component, and control the position of the child component by adjusting the baseline height. Generally used for text components.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Baseline",
+      "desc": [
+        "【child】 : Child component   【Widget】",
+        "【baseline】 : Baseline position   【double】",
+        "【baselineType】 : Baseline type   【TextBaseline】"
+      ]
+    }
+  ]
+}

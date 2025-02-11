@@ -1,0 +1,24 @@
+{
+  "id": 65,
+  "name": "MaterialApp",
+  "localName": "Aplicação Material",
+  "info": "Componente de topo da aplicação Material, que inclui gerador de rotas, tema, idioma, página inicial, entre outros atributos.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do MaterialApp",
+      "desc": [
+        "【theme】 : Tema   【ThemeData】",
+        "【title】 : Título da barra de tarefas   【String】",
+        "【debugShowCheckedModeBanner】 : Ativar insígnia   【bool】",
+        "【showPerformanceOverlay】 : Ativar sobreposição de desempenho   【bool】",
+        "【debugShowMaterialGrid】 : Ativar grelha   【bool】",
+        "【onGenerateRoute】 : Gerador de rotas   【RouteFactory】",
+        "【home】 : Página inicial   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 228,
+  "name": "AnimatedBuilder",
+  "localName": "Animations-Builder",
+  "info": "Durch den Builder werden die entsprechenden Knoten der Animation lokal aktualisiert, und es wird vermieden, dass untergeordnete Komponenten aktualisiert werden, wodurch die Bauzeit reduziert und die Animationsleistung verbessert wird.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Anwendungsbeispiel für AnimatedBuilder",
+      "desc": [
+        "【animation】 : *beobachtbares Objekt   【Listenable】",
+        "【builder】 : *Komponenten-Builder   【TransitionBuilder】",
+        "【child】 : untergeordnete Komponente   【Widget】"
+      ]
+    }
+  ]
+}

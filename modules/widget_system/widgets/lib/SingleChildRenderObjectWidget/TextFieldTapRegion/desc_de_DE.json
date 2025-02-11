@@ -1,0 +1,26 @@
+{
+  "id": 281,
+  "name": "TextFieldTapRegion",
+  "localName": "Eingabefeld-Klickbereich",
+  "info": "TapRegion mit der groupId EditableText, der den Klickbereich anderer Komponenten als Teil des Eingabefelds behandelt.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    280,
+    54,
+    245
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Klicks innerhalb und außerhalb der Komponente überwachen",
+      "desc": [
+        "Im Beispiel wird der Fokus des Eingabefelds nicht aufgehoben, wenn auf das Plus- oder Minuszeichen geklickt wird, und die Tastatur kann weiterhin verwendet werden.",
+        "【enabled】 : Verfügbar   【bool】",
+        "【onTapOutside】 : Überwachung von Klicks außerhalb   【TapRegionCallback?】",
+        "【onTapInside】 : Überwachung von Klicks innerhalb   【TapRegionCallback?】",
+        "【groupId】 : Gruppenkennung des Klickbereichs   【Object?】"
+      ]
+    }
+  ]
+}

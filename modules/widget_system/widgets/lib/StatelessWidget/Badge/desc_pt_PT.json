@@ -1,0 +1,40 @@
+{
+  "id": 258,
+  "name": "Badge",
+  "localName": "Componente de Marcação",
+  "info": "O Badge é um componente de estilo Material que pode adicionar uma marcação sobreposta a um filho, dependendo do componente Stack para sobreposição durante a construção.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node_1.dart",
+      "name": "Uso do Badge com Marcação de Ponto",
+      "desc": [
+        "【backgroundColor】 : Cor de fundo   【Color?】",
+        "【isLabelVisible】 : Se a marcação é visível  【bool】",
+        "【smallSize】 : Diâmetro sem etiqueta   【double?】",
+        "【child】 : Componente filho   【Widget?】"
+      ]
+    },
+    {
+      "file": "node_2.dart",
+      "name": "Badge com Marcação de Etiqueta",
+      "desc": [
+        "【label】 : Componente de título   【Widget?】",
+        "【textStyle】 : Cor do título  【TextStyle?】",
+        "【textColor】 : Estilo do título  【Color?】",
+        "【padding】 : Margem do título  【EdgeInsetsGeometry?】",
+        "【largeSize】 : Altura com etiqueta   【double?】,"
+      ]
+    },
+    {
+      "file": "node_3.dart",
+      "name": "Deslocamento do Badge",
+      "desc": [
+        "【offset】 : Deslocamento da marcação  【Offset?】",
+        "【alignment】 : Deslocamento do título   【AlignmentDirectional?】"
+      ]
+    }
+  ]
+}

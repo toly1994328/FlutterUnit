@@ -1,0 +1,21 @@
+{
+  "id": 219,
+  "name": "CupertinoFullscreenDialogTransition",
+  "localName": "Переход на полный экран",
+  "info": "Создает переход в стиле iOS для вызова диалогового окна на весь экран.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Введение в компонент",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【linearTransition】 : Линейный переход   【bool】",
+        "【primaryRouteAnimation】 : Анимация начального маршрута   【Animation<double>】",
+        "【secondaryRouteAnimation】 : Анимация второго маршрута   【Animation<double>】"
+      ]
+    }
+  ]
+}

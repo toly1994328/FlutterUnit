@@ -1,0 +1,18 @@
+{
+  "id": 325,
+  "name": "IconTheme",
+  "localName": "Tema de Ícones",
+  "info": "Pode conter um filho, especificando o estilo padrão para ícones descendentes. Frequentemente usado para unificar o estilo de vários ícones idênticos, evitando a configuração individual.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso do IconTheme",
+      "desc": [
+        "Pode obter os dados do tema do ícone através de IconTheme.of, e também pode definir o estilo padrão para componentes de ícone descendentes de IconTheme, incluindo cor, transparência e tamanho."
+      ]
+    }
+  ]
+}

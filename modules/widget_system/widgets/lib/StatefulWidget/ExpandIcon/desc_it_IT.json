@@ -1,0 +1,26 @@
+{
+  "id": 51,
+  "name": "ExpandIcon",
+  "localName": "Icona Espandi",
+  "info": "Un pulsante di espansione che esegue un'animazione di rotazione di 180 gradi quando viene cliccato. È possibile specificare colore, dimensione, margine e ricevere eventi di clic.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    66,
+    125
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Base di ExpandIcon",
+      "desc": [
+        "【isExpanded】 : Se è espanso   【bool】",
+        "【padding】 : Spaziatura interna   【EdgeInsetsGeometry】,",
+        "【size】 : Dimensione dell'icona   【double】",
+        "【color】 : Colore quando non è espanso   【Color】",
+        "【expandedColor】 : Colore quando è espanso   【Color】",
+        "【onPressed】 : Evento di clic   【Function(bool)】"
+      ]
+    }
+  ]
+}

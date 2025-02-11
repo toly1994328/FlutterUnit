@@ -1,0 +1,26 @@
+{
+  "id": 244,
+  "name": "EditableText",
+  "localName": "Редактируемый текст",
+  "info": "Редактируемый текст, это основной компонент TextField, обычно не используется отдельно.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    2,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование EditableText",
+      "desc": [
+        "【controller】 : Контроллер   【TextEditingController】",
+        "【focusNode】 : Фокус   【FocusNode】",
+        "【style】 : Стиль текста   【TextStyle】",
+        "【backgroundCursorColor】 : Цвет фонового курсора   【Color】",
+        "【cursorColor】 : Цвет курсора   【Color】",
+        "Эти пять свойств являются обязательными для EditableText, остальные аналогичны TextField и здесь не перечисляются."
+      ]
+    }
+  ]
+}

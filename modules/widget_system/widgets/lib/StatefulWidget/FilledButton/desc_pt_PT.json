@@ -1,0 +1,33 @@
+{
+  "id": 359,
+  "name": "FilledButton",
+  "localName": "Botão Preenchido",
+  "info": "Um botão preenchido que segue o Material Design, com o estilo definido pelo FilledButtonTheme.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    354,
+    355,
+    353
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso Básico",
+      "desc": [
+        "【child】 : Conteúdo do botão   【Widget】",
+        "【onPressed】 : Evento de clique   【VoidCallback】",
+        "【onHover】 : Evento de passar o mouse   【ValueChanged<bool>? 】",
+        "【onLongPress】 : Evento de pressionar e segurar   【VoidCallback?】",
+        "O botão preenchido é visualmente inferior apenas ao [FloatingActionButton], sendo usado para ações importantes e finais do processo, como: salvar, juntar-se imediatamente ou confirmar."
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Variante de Tom",
+      "desc": [
+        "FilledButton.tonal é um botão preenchido com tom, visualmente entre [FilledButton] e [OutlinedButton], adequado para cenários que precisam de um pouco mais de ênfase do que um botão de contorno, mas com menor prioridade. Por exemplo, o botão [Próximo]"
+      ]
+    }
+  ]
+}

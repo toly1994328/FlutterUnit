@@ -1,0 +1,38 @@
+{
+  "id": 282,
+  "name": "Focus",
+  "localName": "フォーカスコンポーネント",
+  "info": "[FocusNode]を管理するコンポーネントで、キーボードフォーカスをこのウィジェットとそのサブツリーノードに与えることを可能にします。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    283,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "FocusNode フォーカスとフォーカス解除",
+      "desc": [
+        "【focusNode】 : フォーカス   【FocusNode?】",
+        "【onFocusChange】 : フォーカス変更リスナー   【ValueChanged<bool>?】",
+        "【child】 : 子コンポーネント   【Widget】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "自動フォーカス",
+      "desc": [
+        "【autofocus】 : 自動フォーカスするかどうか   【bool】",
+        "Flutterフレームワークには、フォーカス切り替えのショートカットキーが組み込まれており、例えば横方向にスクロールするリストでは ←、→ で前後の項目にフォーカスが移動します。Tabキーで次のFocusノードにフォーカスを移動できます"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "キーボードイベントコールバック",
+      "desc": [
+        "【onKeyEvent】 : キーボードイベントコールバック   【FocusOnKeyEventCallback?】"
+      ]
+    }
+  ]
+}

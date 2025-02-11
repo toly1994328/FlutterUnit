@@ -1,0 +1,20 @@
+{
+  "id": 217,
+  "name": "CupertinoPopupSurface",
+  "localName": "Blur Popup Layer",
+  "info": "The rounded rectangle blur background of the ios popup box, applied in the source code to the dialog box of the Cupertino style.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoPopupSurface Usage",
+      "desc": [
+        "【isSurfacePainted】: Whether to paint white   【bool】",
+        "【child】: Child component   【Widget】",
+        "Test effect: left isSurfacePainted = false, right isSurfacePainted = true"
+      ]
+    }
+  ]
+}

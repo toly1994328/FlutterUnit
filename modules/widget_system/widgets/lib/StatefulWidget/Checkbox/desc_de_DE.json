@@ -1,0 +1,29 @@
+{
+  "id": 39,
+  "name": "Checkbox",
+  "localName": "Checkbox",
+  "info": "Checkbox-Komponente, häufig für Konfigurationswechsel verwendet, kann Farben angeben, empfängt Statusänderungsrückrufe und kann auch einen dreistufigen Zustand angeben.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [326,17],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung der Checkbox",
+      "desc": [
+        "【value】 : Ob ausgewählt 【double】",
+        "【checkColor】: Farbe des Häkchens ✔️, wenn ausgewählt 【Color】",
+        "【activeColor】: Farbe innerhalb des Rahmens, wenn ausgewählt 【Color】",
+        "【onChanged】: Ereignis bei Zustandsänderung 【Function(bool)】,"
+      ]
+    },
+    {
+      "file": "node2_tristate.dart",
+      "name": "Dreistufige Checkbox",
+      "desc": [
+        "【tristate】 : Ob dreistufig 【double】",
+        "  bei onChanged,"
+      ]
+    }
+  ]
+}

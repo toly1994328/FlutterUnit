@@ -1,0 +1,24 @@
+{
+  "id": 52,
+  "name": "ExpansionTile",
+  "localName": "Azulejo de Expansão",
+  "info": "Uma barra de expansão genérica que pode ser usada para colocar componentes em uma área especificada. Clicar nela irá expandir ou recolher os componentes abaixo. Recebe eventos quando recolhida.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ExpansionTile",
+      "desc": [
+        "【children】: Conteúdo expandido   【List<Widget>】",
+        "【leading】: Componente à esquerda do cabeçalho   【Widget】",
+        "【title】: Componente no centro do cabeçalho   【Widget】",
+        "【trailing】: Componente à direita do cabeçalho   【Widget】",
+        "【backgroundColor】: Cor de fundo   【Color】",
+        "【onExpansionChanged】: Evento de recolhimento   【Function(bool)】",
+        "【initiallyExpanded】: Expandido inicialmente   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 222,
+  "name": "FormField",
+  "localName": "Champ de formulaire",
+  "info": "Un champ de formulaire, à utiliser dans le composant Form, contenant un champ de type générique T comme état, les mises à jour et les validations du champ déclenchent des rappels correspondants.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    198,
+    199,
+    223
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction à FormField",
+      "desc": [
+        "【builder】 : Constructeur de contenu   【FormFieldBuilder<T>】",
+        "【initialValue】 : Valeur initiale   【T】",
+        "【validator】 : Fonction de validation   【FormFieldValidator<String> 】",
+        "【enabled】 : Est activé   【bool】",
+        "【onSaved】 : Rappel lors de la sauvegarde du formulaire  【FormFieldSetter<String>】"
+      ]
+    }
+  ]
+}

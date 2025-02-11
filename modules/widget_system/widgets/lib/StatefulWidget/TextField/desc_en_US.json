@@ -1,0 +1,52 @@
+{
+  "id": 54,
+  "name": "TextField",
+  "localName": "Input Box",
+  "info": "A component for input, with complex properties. Can specify controller, text style, decoration, line limit, cursor style, etc. Receives input change, input completion, and other events.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of TextField",
+      "desc": [
+        "【controller】 : Controller   【TextEditingController】",
+        "【style】 : Text Style   【TextStyle】",
+        "【decoration】 : Decoration   【InputDecoration】",
+        "【onEditingComplete】 : Input Completion Event   【Function()】",
+        "【onSubmitted】 : Submission Event   【Function(String)】",
+        "【onChanged】 : Input Event   【Function(String)】"
+      ]
+    },
+    {
+      "file": "node2_cursor.dart",
+      "name": "Line Number and Cursor of TextField",
+      "desc": [
+        "【minLines】 : Minimum Lines   【int】",
+        "【maxLines】 : Maximum Lines   【int】",
+        "【cursorRadius】 : Cursor Radius   【Radius】",
+        "【cursorColor】 : Cursor Color   【Color】",
+        "【cursorWidth】 : Cursor Width   【double】",
+        "【showCursor】 : Whether to Show Cursor   【bool】",
+        "【autofocus】 : Auto Focus   【bool】"
+      ]
+    },
+    {
+      "file": "node3_decoration.dart",
+      "name": "Complex Decoration of Decoration",
+      "desc": [
+        "InputDecoration has many decoration points, corresponding to the code:",
+        "border: Border related",
+        "helper: Bottom left corner related hints",
+        "counter: Bottom right corner related hints",
+        "prefix: Innermost left side of the input box",
+        "suffix: Innermost right side of the input box",
+        "label: Text when no focus",
+        "label: Text when no focus",
+        "hint: Hint text related",
+        "border: Border related"
+      ]
+    }
+  ]
+}

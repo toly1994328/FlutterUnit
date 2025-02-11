@@ -1,0 +1,18 @@
+{
+  "id": 215,
+  "name": "CheckedModeBanner",
+  "localName": "etichetta di debug",
+  "info": "Mostra l'etichetta nell'angolo superiore destro solo in modalità debug, non ha molto uso. È utilizzato nel codice sorgente del componente MaterialApp.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di CheckedModeBanner",
+      "desc": [
+        "【child】 : componente   【Widget】"
+      ]
+    }
+  ]
+}

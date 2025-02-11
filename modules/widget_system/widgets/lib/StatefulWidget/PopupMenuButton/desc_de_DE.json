@@ -1,0 +1,24 @@
+{
+  "id": 56,
+  "name": "PopupMenuButton",
+  "localName": "Menüschaltfläche",
+  "info": "Zeigt ein Popup-Menü an, kann Attribute wie Versatz, Farbe, Schattentiefe, Form usw. angeben. Empfängt Ereignisse für die Auswahl von Elementen und die Abwahl.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von PopupMenuButton",
+      "desc": [
+        "【itemBuilder】 : Builder   【PopupMenuItemBuilder<T>】",
+        "【offset】 : Versatz   【Offset】",
+        "【color】 : Hintergrundfarbe   【Color】",
+        "【shape】 : Form   【ShapeBorder】",
+        "【elevation】 : Schattentiefe   【double】",
+        "【onCanceled】 : Abwahlereignis   【Function()】",
+        "【onSelected】 : Auswahlereignis   【Function(T)】"
+      ]
+    }
+  ]
+}

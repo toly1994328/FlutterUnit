@@ -1,0 +1,29 @@
+{
+  "id": 124,
+  "name": "AnimatedDefaultTextStyle",
+  "localName": "Container-Animation",
+  "info": "Ermöglicht die Animation von TextStyle (Textstil) für untergeordnete Textkomponenten, gibt Dauer und Kurve an und verfügt über ein Ereignis zum Ende der Animation.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    114,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von AnimatedDefaultTextStyle",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】",
+        "【duration】 : Animationsdauer   【Duration】",
+        "【onEnd】 : Rückruf bei Ende der Animation   【Function()】",
+        "【curve】 : Animationskurve   【Duration】",
+        "【textAlign】 : Textausrichtung  【TextAlign】",
+        "【softWrap】 : Umhüllung  【bool】",
+        "【maxLines】 : Maximale Zeilenanzahl  【int】",
+        "【overflow】 : Überlaufmodus  【TextOverflow】",
+        "【style】 : Textstil   【TextStyle】"
+      ]
+    }
+  ]
+}

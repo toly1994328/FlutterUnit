@@ -1,0 +1,23 @@
+{
+  "id": 110,
+  "name": "Table",
+  "localName": "Composant de tableau",
+  "info": "Composant utilisé pour afficher des tableaux, permettant de spécifier des propriétés telles que les bordures, la largeur des colonnes, la direction du texte, etc. Le type d'objet principal est TableRow.",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Table",
+      "desc": [
+        "【children】 : Liste des composants   【List<Widget>】",
+        "【columnWidths】 : Largeur des colonnes   【Map<int, TableColumnWidth>】",
+        "【defaultColumnWidth】 : Largeur de colonne par défaut  【TableColumnWidth】",
+        "【border】 : Bordure   【TableBorder】",
+        "【textDirection】 : Direction du texte   【TextDirection】",
+        "【defaultVerticalAlignment】 : Mode d'alignement vertical des cellules   【TableCellVerticalAlignment】"
+      ]
+    }
+  ]
+}

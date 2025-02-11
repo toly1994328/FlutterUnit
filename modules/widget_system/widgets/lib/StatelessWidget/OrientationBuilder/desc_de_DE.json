@@ -1,0 +1,18 @@
+{
+  "id": 203,
+  "name": "OrientationBuilder",
+  "localName": "Ausrichtungs-Builder",
+  "info": "Kann zurückmelden, ob das übergeordnete Element horizontal oder vertikal ist, und kann darauf basierend verschiedene untergeordnete Elemente erstellen.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von OrientationBuilder",
+      "desc": [
+        "【builder】 : Ausrichtungskomponenten-Builder   【OrientationWidgetBuilder】"
+      ]
+    }
+  ]
+}

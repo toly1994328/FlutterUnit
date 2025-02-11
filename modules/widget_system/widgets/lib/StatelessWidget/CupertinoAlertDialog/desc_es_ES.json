@@ -1,0 +1,20 @@
+{
+  "id": 129,
+  "name": "CupertinoAlertDialog",
+  "localName": "Cuadro de diálogo de iOS",
+  "info": "Estructura de cuadro de diálogo genérico al estilo de iOS, que permite especificar componentes en la parte superior, media e inferior.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoActionSheetAction",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【isDefaultAction】 : Si está seleccionado por defecto  【bool】",
+        "【onPressed】 : Evento de clic  【Function()】"
+      ]
+    }
+  ]
+}

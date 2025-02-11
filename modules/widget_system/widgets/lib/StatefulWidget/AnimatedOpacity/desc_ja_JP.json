@@ -1,0 +1,25 @@
+{
+  "id": 118,
+  "name": "AnimatedOpacity",
+  "localName": "透明度アニメーション",
+  "info": "子コンポーネントにOpacity（透明度）アニメーションを適用でき、時間と曲線を指定でき、アニメーション終了イベントがあります。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    89,
+    73
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedOpacityの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーション時間   【Duration】",
+        "【onEnd】 : アニメーション終了コールバック   【Function()】",
+        "【curve】 : アニメーション曲線   【Duration】",
+        "【opacity】 : 透明度   【double】"
+      ]
+    }
+  ]
+}

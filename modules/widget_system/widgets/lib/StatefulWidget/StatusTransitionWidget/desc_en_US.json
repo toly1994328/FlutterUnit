@@ -1,0 +1,19 @@
+{
+  "id": 233,
+  "name": "StatusTransitionWidget",
+  "localName": "Status Transition Widget",
+  "info": "Abstract class that can trigger refresh based on the state changes of the provided animator. There are no implemented subclasses in the Flutter framework layer, nor any usage scenarios, so it doesn't seem very useful.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to StatusTransitionWidget",
+      "desc": [
+        "【animation】 : Child component   【Animation<double>】",
+        "Here, a custom ColorStatusTransitionWidget is used to build different colors when the state of the animator changes."
+      ]
+    }
+  ]
+}

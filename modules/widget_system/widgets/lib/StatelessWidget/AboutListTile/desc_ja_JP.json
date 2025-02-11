@@ -1,0 +1,26 @@
+{
+  "id": 193,
+  "name": "AboutListTile",
+  "localName": "アプリについてのリストアイテム",
+  "info": "クリックするとアプリの関連情報をポップアップ表示するアイテムで、アプリアイコン、アプリ名、アプリバージョン番号などの情報と内部のサブコンポーネントリストを指定できます。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    130,
+    145
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AboutListTileの基本的な使用",
+      "desc": [
+        "【icon】 : 左アイコン   【Widget】",
+        "【applicationIcon】 : 左上アイコン   【Widget】",
+        "【applicationVersion】 : バージョン番号  【String】",
+        "【applicationName】 : アプリ名  【String】",
+        "【applicationLegalese】 : アプリの法律情報   【String】",
+        "【aboutBoxChildren】 : ポップアップボックスの内容コンポーネント   【List<Widget>】"
+      ]
+    }
+  ]
+}

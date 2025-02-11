@@ -1,0 +1,20 @@
+{
+  "id": 143,
+  "name": "CupertinoContextMenu",
+  "localName": "ios 팝업 메뉴",
+  "info": "화려한 iOS 스타일 버튼 팝업 상자로, 길게 누르면 애니메이션 형태로 메뉴 패널이 팝업됩니다. 일반적으로 CupertinoContextMenuAction와 함께 사용됩니다.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoContextMenu 기본 사용",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【actions】 : 액션 위젯 집합   【List<Widget>】",
+        "【previewBuilder】 : 애니메이션 빌더  【ContextMenuPreviewBuilder】"
+      ]
+    }
+  ]
+}

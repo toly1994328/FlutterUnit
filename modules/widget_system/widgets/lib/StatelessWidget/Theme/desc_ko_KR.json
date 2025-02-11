@@ -1,0 +1,29 @@
+{
+  "id": 168,
+  "name": "Theme",
+  "localName": "테마",
+  "info": "Theme.of를 통해 ThemeData 객체를 얻을 수 있습니다. 또한 테마를 지정하여 Theme의 하위 구성 요소에 적용할 수 있습니다.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    65,
+    169,
+    224
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "텍스트 스타일-ThemeData#TextTheme",
+      "desc": [
+        "하위 구성 요소는 ThemeData.of를 통해 테마 데이터를 얻어 사용할 수 있습니다."
+      ]
+    },
+    {
+      "file": "node2_use.dart",
+      "name": "Theme 사용법",
+      "desc": [
+        "Theme를 사용하면 매우 많은 속성을 테마로 지정할 수 있으며, 이러한 속성은 모든 하위 구성 요소에 적용됩니다. 예를 들어 글꼴, 슬라이더, 카드, 텍스트, 구분선, 버튼 등의 속성을 지정할 수 있습니다."
+      ]
+    }
+  ]
+}

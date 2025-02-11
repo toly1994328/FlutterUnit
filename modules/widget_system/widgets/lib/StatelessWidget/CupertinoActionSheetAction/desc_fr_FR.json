@@ -1,0 +1,20 @@
+{
+  "id": 132,
+  "name": "CupertinoActionSheetAction",
+  "localName": "Bouton iOS Action Sheet",
+  "info": "Un bouton, rarement utilisé, généralement utilisé dans CupertinoActionSheet, qui reçoit les événements de clic.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoActionSheetAction",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【isDefaultAction】 : Est-ce l'action par défaut  【bool】",
+        "【onPressed】 : Événement de clic  【Function()】"
+      ]
+    }
+  ]
+}

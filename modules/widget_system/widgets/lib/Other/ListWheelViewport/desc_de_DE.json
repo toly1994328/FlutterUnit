@@ -1,0 +1,52 @@
+{
+  "id": 291,
+  "name": "ListWheelViewport",
+  "localName": "Listenradansicht",
+  "info": "Ein Ansichtsfenster, das eine Liste von Kindern in einem zylindrischen Rad anzeigt. Es ist die zugrunde liegende Abhängigkeit von ListWheelScrollView und CupertinoPicker",
+  "lever": 4,
+  "family": 6,
+  "linkIds": [
+    179,
+    139,
+    137,
+    253
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einfache Verwendung von ListWheelViewport",
+      "desc": [
+        "【itemExtent】 : Axiale Item-Größe   【double】",
+        "【offset】 : Ansichtsfenster-Versatz   【ViewportOffset】",
+        "【childDelegate】 : Kinderdelegat-Konstruktor   【ListWheelChildDelegate】"
+      ]
+    },
+    {
+      "file": "node2_perspective.dart",
+      "name": "Perspektivische Effekte von ListWheelViewport",
+      "desc": [
+        "【perspective】 : Perspektivparameter   【double】",
+        "【squeeze】 : Quetschwert   【double】",
+        "【diameterRatio】 : Durchmesserverhältnis   【double】"
+      ]
+    },
+    {
+      "file": "node3_magnifier.dart",
+      "name": "Vergrößerung von ListWheelViewport",
+      "desc": [
+        "【useMagnifier】 : Ob vergrößert wird   【bool】",
+        "【magnification】 : Vergrößerungsverhältnis   【double】",
+        "【clipBehavior】 : Schneidverhalten   【Clip】",
+        "【renderChildrenOutsideViewport】 : Ob außerhalb des Sichtfelds gerendert wird   【bool】"
+      ]
+    },
+    {
+      "file": "node4_opacity.dart",
+      "name": "Versatz und Transparenz",
+      "desc": [
+        "【offAxisFraction】 : Achsenzentrum-Versatzverhältnis   【double】",
+        "【overAndUnderCenterOpacity】 : Transparenz außerhalb des Vergrößerers   【double】"
+      ]
+    }
+  ]
+}

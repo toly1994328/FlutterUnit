@@ -1,0 +1,26 @@
+{
+  "id": 265,
+  "name": "CompositedTransformFollower",
+  "localName": "Seguace di Trasformazione Composta",
+  "info": "Generalmente utilizzato in combinazione con il componente CompositedTransformTarget, consente a Overlay di seguire le trasformazioni dell'obiettivo.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    266,
+    182
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di CompositedTransformFollower",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【link】 : Collegamento   【LayerLink】",
+        "【offset】 : Offset   【Offset】",
+        "【targetAnchor】 : Ancoraggio obiettivo   【Alignment】",
+        "【followerAnchor】 : Ancoraggio seguace   【Alignment】",
+        "【showWhenUnlinked】 : Mostra quando non collegato   【bool】"
+      ]
+    }
+  ]
+}

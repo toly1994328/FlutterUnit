@@ -1,0 +1,23 @@
+{
+  "id": 210,
+  "name": "PageStorage",
+  "localName": "ページストレージ",
+  "info": "ページの状態を保存することができ、ページを切り替える際に状態を保持することができます。ソースコードでは、ScrollView、PageView、ExpansionTileなどに適用されています。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    52,
+    165
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "PageStorageの基本使用",
+      "desc": [
+        "【bucket】 : ストレージエリア   【PageStorageBucket】",
+        "【child】: 子コンポーネント   【Widget】",
+        "上記のインターフェースを切り替える際、コンポーネントの初期化時に状態がリセットされることはありません。例えばCountWidgetでは、子コンポーネントは初期化時にストレージから状態を読み取り、状態を変更する際に状態をストレージに書き込む必要があります。また、MaterialAppを使用すると、すでにPageStorageが組み込まれていますが、自分でPageStorageを作成することもできます。"
+      ]
+    }
+  ]
+}

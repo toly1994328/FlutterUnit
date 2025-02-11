@@ -1,0 +1,22 @@
+{
+  "id": 266,
+  "name": "CompositedTransformTarget",
+  "localName": "Цель составного преобразования",
+  "info": "Обычно используется совместно с компонентом CompositedTransformFollower, что позволяет Overlay следовать за преобразованием цели.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    265,
+    182
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Использование CompositedTransformTarget",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【link】 : Ссылка   【LayerLink】"
+      ]
+    }
+  ]
+}

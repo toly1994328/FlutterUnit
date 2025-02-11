@@ -1,0 +1,21 @@
+{
+  "id": 115,
+  "name": "RelativePositionedTransition",
+  "localName": "Rectangle Position Transition",
+  "info": "A subclass of AnimatedWidget, using a Rect type animator to allow child components to transition between two Rect objects.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of RelativePositionedTransition",
+      "desc": [
+        "【child】: Child component   【Widget】",
+        "【size】: Left and top offset   【Size】",
+        "【rect】: Animation   【Animation<Rect>】",
+        "    PositionedTransition component only works within a Stack"
+      ]
+    }
+  ]
+}

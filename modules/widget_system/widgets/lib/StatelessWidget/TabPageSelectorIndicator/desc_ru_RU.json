@@ -1,0 +1,20 @@
+{
+  "id": 206,
+  "name": "TabPageSelectorIndicator",
+  "localName": "Индикатор вкладки",
+  "info": "Круглый компонент с границей, который можно настроить по размеру, цвету и цвету границы. Является частью TabPageSelector и обычно не используется отдельно.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование TabPageSelectorIndicator",
+      "desc": [
+        "【size】: Размер   【double】",
+        "【backgroundColor】: Цвет фона   【Color】",
+        "【borderColor】: Цвет границы    【Color】"
+      ]
+    }
+  ]
+}

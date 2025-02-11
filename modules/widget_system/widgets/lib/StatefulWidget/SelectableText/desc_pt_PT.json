@@ -1,0 +1,32 @@
+{
+  "id": 53,
+  "name": "SelectableText",
+  "localName": "Texto Selecionável",
+  "info": "Texto que pode ser selecionado e copiado. Pode especificar a cor do cursor, tamanho, estilo de texto, alinhamento, etc.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do SelectableText",
+      "desc": [
+        "【Parâmetro】 : Texto a ser exibido   【String】",
+        "【style】 : Estilo do texto   【TextStyle】",
+        "【cursorRadius】 : Raio do cursor   【Radius】",
+        "【cursorColor】 : Cor do cursor   【Color】",
+        "【cursorWidth】 : Largura do cursor   【double】",
+        "【showCursor】 : Mostrar cursor   【bool】",
+        "【autofocus】 : Foco automático   【bool】"
+      ]
+    },
+    {
+      "file": "node2_align.dart",
+      "name": "Propriedades de Alinhamento do SelectableText",
+      "desc": [
+        "【textAlign】 : Método de alinhamento*6   【textAlign】",
+        "【textDirection】 : Direção do texto*2   【TextDirection】"
+      ]
+    }
+  ]
+}

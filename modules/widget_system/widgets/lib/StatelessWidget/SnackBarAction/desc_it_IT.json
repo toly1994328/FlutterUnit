@@ -1,0 +1,21 @@
+{
+  "id": 141,
+  "name": "SnackBarAction",
+  "localName": "Pulsante della barra di notifica",
+  "info": "Generalmente utilizzato solo in SnackBar, accetta eventi di clic. Dopo un clic, il pulsante viene disabilitato. È possibile specificare il colore e il colore quando è disabilitato.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di SnackBarAction",
+      "desc": [
+        "【label】 :  Etichetta  【String】",
+        "【textColor】 : Colore del testo   【Color】",
+        "【disabledTextColor】 : Colore del testo disabilitato   【Color】",
+        "【onPressed】 : Callback del clic  【Function()】"
+      ]
+    }
+  ]
+}

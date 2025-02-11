@@ -1,0 +1,41 @@
+{
+  "id": 16,
+  "name": "ListTile",
+  "localName": "Listenkachel",
+  "info": "Eine allgemeine Listenstruktur, die von Flutter bereitgestellt wird, mit einer Struktur von links, Mitte und rechts. An den entsprechenden Positionen können Komponenten eingefügt werden, was es sehr einfach macht, bestimmte Einträge zu verarbeiten.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    162,
+    334
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Darstellung von ListTile",
+      "desc": [
+        "【leading】: Linke Komponente   【Widget】",
+        "【title】: Obere mittlere Komponente   【Widget】",
+        "【subtitle】: Untere mittlere Komponente   【Widget】",
+        "【trailing】: Rechte Komponente   【Widget】",
+        "【contentPadding】: Innenabstand   【EdgeInsetsGeometry】",
+        "【onLongPress】: Klick-Ereignis   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Auswahl-Effekt und Long-Press-Ereignis von ListTile",
+      "desc": [
+        "【selected】: Ist ausgewählt   【bool】",
+        "【onTap】: Klick-Ereignis   【Function()】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Dichte Eigenschaft von ListTile",
+      "desc": [
+        "【dense】: Ist dicht   【bool】"
+      ]
+    }
+  ]
+}

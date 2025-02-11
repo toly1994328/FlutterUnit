@@ -1,0 +1,25 @@
+{
+  "id": 328,
+  "name": "ChipTheme",
+  "localName": "Estilo de Chip",
+  "info": "Principalmente usado para definir propriedades padrão para componentes do tipo Chip descendentes, também pode ser usado para obter as propriedades padrão do Chip.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    11,
+    153,
+    12,
+    13,
+    14,
+    15
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ChipTheme",
+      "desc": [
+        "Pode especificar as propriedades de dados do ChipThemeData para definir o estilo padrão para componentes do tipo Chip descendentes, as propriedades são semelhantes às do Chip, como sombra, cor, margem, forma, estilo de texto, etc. Também pode usar ChipTheme.of para obter os dados do tema do Chip."
+      ]
+    }
+  ]
+}

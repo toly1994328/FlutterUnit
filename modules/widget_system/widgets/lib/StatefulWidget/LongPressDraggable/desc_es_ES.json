@@ -1,0 +1,28 @@
+{
+  "id": 105,
+  "name": "LongPressDraggable",
+  "localName": "Objetivo de arrastre",
+  "info": "Permite que el componente se arrastre libremente en la interfaz cuando se mantiene presionado, y puede almacenar datos de un tipo genérico T. Generalmente se usa en combinación con DragTarget para completar el efecto de arrastre.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    103,
+    104
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso combinado de LongPressDraggable y DragTarget",
+      "desc": [
+        "【child】 : Hijo   【Widget】",
+        "【feedback】 : Hijo durante el arrastre   【Widget】",
+        "【axis】 : Eje de arrastre   【Axis】",
+        "【data】 : Datos   【T】",
+        "【onDragStarted】 : Inicio del arrastre   【Function()】",
+        "【onDragEnd】 : Fin del arrastre   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : Arrastre completado   【Function()】",
+        "【onDraggableCanceled】 : Arrastre cancelado   【Function(Velocity,Offset)】"
+      ]
+    }
+  ]
+}

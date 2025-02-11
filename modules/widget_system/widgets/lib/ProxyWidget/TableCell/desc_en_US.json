@@ -1,0 +1,19 @@
+{
+  "id": 317,
+  "name": "TableCell",
+  "localName": "Table Cell",
+  "info": "Must be used within the descendants of a Table component to control the vertical alignment of table children, and it doesn't have much significant function.",
+  "lever": 1,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of TableCell",
+      "desc": [
+        "【child】: Component   【Widget】",
+        "【verticalAlignment】: Vertical Alignment   【TableCellVerticalAlignment】"
+      ]
+    }
+  ]
+}

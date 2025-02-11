@@ -1,0 +1,24 @@
+{
+  "id": 69,
+  "name": "ClipPath",
+  "localName": "パスクリップ",
+  "info": "子コンポーネントを1つ収容し、指定されたパスに従ってクリップします。パスの形状をカスタマイズでき、非常に柔軟なクリップコンポーネントです。",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    66,
+    67,
+    68
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ClipPathの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【clipBehavior】 : クリップ動作   【Clip】",
+        "【clipper】 : クリッパー   【CustomClipper<Path>】"
+      ]
+    }
+  ]
+}

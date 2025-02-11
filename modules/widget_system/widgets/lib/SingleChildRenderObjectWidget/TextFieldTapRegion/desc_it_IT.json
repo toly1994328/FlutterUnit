@@ -1,0 +1,26 @@
+{
+  "id": 281,
+  "name": "TextFieldTapRegion",
+  "localName": "Area di clic del campo di testo",
+  "info": "Il TapRegion con groupId EditableText consente di considerare l'area di clic di altri componenti come parte integrante del campo di testo.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    280,
+    54,
+    245
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Ascolta i clic all'interno e all'esterno del componente",
+      "desc": [
+        "Nell'esempio, cliccando sui pulsanti più e meno, il focus del campo di testo non viene perso e la tastiera rimane attiva per l'input.",
+        "【enabled】 : Se è abilitato   【bool】",
+        "【onTapOutside】 : Ascolta i clic all'esterno   【TapRegionCallback?】",
+        "【onTapInside】 : Ascolta i clic all'interno   【TapRegionCallback?】",
+        "【groupId】 : Identificatore del gruppo dell'area di clic   【Object?】"
+      ]
+    }
+  ]
+}

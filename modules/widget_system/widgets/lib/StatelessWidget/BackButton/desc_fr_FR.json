@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "Bouton Retour",
+  "info": "Un IconButton avec une fonction de retour, l'icône de retour ne peut pas être modifiée. Se comporte différemment sur iOS et Android.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Propriétés du BackButton",
+      "desc": [
+        "【color】: Couleur   【Color】",
+        "【style】: Style du bouton   【ButtonStyle?】",
+        "【onPressed】: Événement de clic   【Function】",
+        " Si onPressed est vide, la pile actuelle sera quittée"
+      ]
+    }
+  ]
+}

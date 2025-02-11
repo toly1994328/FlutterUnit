@@ -1,0 +1,21 @@
+{
+  "id": 158,
+  "name": "CupertinoTabScaffold",
+  "localName": "iOSタブスキャフォールド",
+  "info": "iOSスタイルのページレイアウトスキャフォールド構造で、最下部のナビゲーションバーとメインコンテンツページを指定できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoTabScaffold基本使用法",
+      "desc": [
+        "【tabBar】 : タブバー   【CupertinoTabBar】",
+        "【backgroundColor】 : 背景色   【Color】",
+        "【controller】 : コントローラー   【CupertinoTabController】",
+        "【tabBuilder】 : ページビルダー   【IndexedWidgetBuilder】"
+      ]
+    }
+  ]
+}

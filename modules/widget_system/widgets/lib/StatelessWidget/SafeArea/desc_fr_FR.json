@@ -1,0 +1,22 @@
+{
+  "id": 207,
+  "name": "SafeArea",
+  "localName": "Zone de sécurité",
+  "info": "Adapte les problèmes de mise en page causés par les particularités de certains téléphones (coins arrondis, encoche, etc.) en ajoutant des marges intérieures.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Test d'utilisation de SafeArea",
+      "desc": [
+        "【left】 : Activer à gauche   【bool】",
+        "【top】 : Activer en haut   【bool】",
+        "【bottom】 : Activer en bas   【bool】",
+        "【right】 : Activer à droite   【bool】",
+        "【child】 : Composant enfant   【Widget】"
+      ]
+    }
+  ]
+}

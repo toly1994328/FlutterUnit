@@ -1,0 +1,40 @@
+{
+  "id": 258,
+  "name": "Badge",
+  "localName": "バッジコンポーネント",
+  "info": "Badge は Material スタイルのコンポーネントで、child の上にマーカーを追加できます。構築時には Stack コンポーネントに依存して重ねられます。",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node_1.dart",
+      "name": "Badge ドットマーカーの使用",
+      "desc": [
+        "【backgroundColor】 : 背景色   【Color?】",
+        "【isLabelVisible】 : マーカーを表示するかどうか  【bool】",
+        "【smallSize】 : ラベルがない場合の直径   【double?】",
+        "【child】 : 子コンポーネント   【Widget?】"
+      ]
+    },
+    {
+      "file": "node_2.dart",
+      "name": "Badge ラベルマーカー",
+      "desc": [
+        "【label】 : タイトルコンポーネント   【Widget?】",
+        "【textStyle】 : タイトルの色  【TextStyle?】",
+        "【textColor】 : タイトルのスタイル  【Color?】",
+        "【padding】 : タイトルの余白  【EdgeInsetsGeometry?】",
+        "【largeSize】 : ラベルがある場合の高さ   【double?】,"
+      ]
+    },
+    {
+      "file": "node_3.dart",
+      "name": "Badge のオフセット",
+      "desc": [
+        "【offset】 : マーカーのオフセット  【Offset?】",
+        "【alignment】 : タイトルのオフセット   【AlignmentDirectional?】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": 38,
+  "name": "Image",
+  "localName": "Bildkomponente",
+  "info": "Wird verwendet, um ein Bild anzuzeigen, das aus einer Datei, dem Speicher, dem Netzwerk oder Ressourcen geladen werden kann. Kann Anpassungsmodus, Stil, Farbmischmodus, Wiederholungsmodus usw. angeben.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    8,
+    87
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Kann Bilder aus Ressourcendateien und dem Netzwerk laden",
+      "desc": [
+        "Image.asset lädt Ressourcenbilder."
+      ]
+    },
+    {
+      "file": "node2_fit.dart",
+      "name": "Anpassungsmodus des Bildes",
+      "desc": [
+        "【fit】 : Anpassungsmodus*7   【BoxFit】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Ausrichtungsmodus des Bildes",
+      "desc": [
+        "【alignment】 : Farbe   【AlignmentGeometry】",
+        "    Neun statische Konstanten der Alignment-Klasse werden häufig verwendet, aber die Position kann auch angepasst werden."
+      ]
+    },
+    {
+      "file": "node4_colorBlendMode.dart",
+      "name": "Farbe und Mischmodus des Bildes",
+      "desc": [
+        "【color】 : Farbe   【Color】",
+        "【colorBlendMode】: Mischmodus*29 【BlendMode】"
+      ]
+    },
+    {
+      "file": "node5_repeat.dart",
+      "name": "Wiederholungsmodus des Bildes",
+      "desc": [
+        "【repeat】 : Wiederholungsmodus*4   【ImageRepeat】"
+      ]
+    },
+    {
+      "file": "node6_centerSlice.dart",
+      "name": "Lokale Vergrößerung des Bildes",
+      "desc": [
+        "【centerSlice】 : Beibehaltener Bereich   【Rect】"
+      ]
+    }
+  ]
+}

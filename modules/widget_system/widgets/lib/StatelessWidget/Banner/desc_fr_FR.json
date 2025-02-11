@@ -1,0 +1,22 @@
+{
+  "id": 5,
+  "name": "Banner",
+  "localName": "Composant de badge",
+  "info": "Composant pour l'affichage de badges. Peut contenir un composant enfant, permet de choisir l'emplacement pour ajouter un badge et du texte d'information, et de définir la couleur.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisé pour afficher un badge",
+      "desc": [
+        "【message】 : Informations textuelles affichées  【String】",
+        "【location】 : Position*4  【BannerLocation】",
+        "【color】: Couleur du badge   【Color】",
+        "【child】: Enfant   【Widget】",
+        "【textStyle】: Style de texte   【TextStyle】"
+      ]
+    }
+  ]
+}

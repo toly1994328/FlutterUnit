@@ -1,0 +1,37 @@
+{
+  "id": 74,
+  "name": "Padding",
+  "localName": "余白コンポーネント",
+  "info": "一つの子コンポーネントを収容し、自身の内側の余白を追加して子コンポーネントの占めるスペースを制限します。コア属性はpaddingです。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    1,
+    191
+  ],
+  "nodes": [
+    {
+      "file": "node1_all.dart",
+      "name": "Padding四面等余白",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【padding】 : 内側の四辺の余白   【EdgeInsetsGeometry】",
+        "EdgeInsets.allは同じ四辺の余白を制限するために使用されます"
+      ]
+    },
+    {
+      "file": "node2_only.dart",
+      "name": "Padding単独余白",
+      "desc": [
+        "EdgeInsets.onlyは同じ四辺の余白を制限するために使用されます"
+      ]
+    },
+    {
+      "file": "node3_symmetric.dart",
+      "name": "Padding方向余白",
+      "desc": [
+        "EdgeInsets.symmetricは水平方向と垂直方向の余白を制限するために使用されます"
+      ]
+    }
+  ]
+}

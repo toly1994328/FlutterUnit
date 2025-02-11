@@ -1,0 +1,23 @@
+{
+  "id": 276,
+  "name": "DrawerButton",
+  "localName": "ドロワーボタン",
+  "info": "左ドロワーアイコンボタンで、DrawerButtonIconを使用してアイコンを表示します。デフォルトのクリックイベントで左ドロワーを開きます。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    273,
+    361
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerButton 基本使用",
+      "desc": [
+        "【onPressed】 : クリックイベント  【VoidCallback?】",
+        "【style】: ボタンスタイル   【ButtonStyle?】",
+        "onPressedが空の場合、クリックすると左ドロワーが開きます。"
+      ]
+    }
+  ]
+}

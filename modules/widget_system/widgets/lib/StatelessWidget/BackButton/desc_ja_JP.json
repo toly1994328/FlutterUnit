@@ -1,0 +1,21 @@
+{
+  "id": 31,
+  "name": "BackButton",
+  "localName": "戻るボタン",
+  "info": "戻る機能を持つIconButtonで、戻るアイコンは変更できません。iOSとAndroidでは異なる動作をします。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BackButton属性",
+      "desc": [
+        "【color】: 色   【Color】",
+        "【style】: ボタンスタイル   【ButtonStyle?】",
+        "【onPressed】: クリックイベント   【Function】",
+        " onPressedが空の場合、現在のスタックを終了します"
+      ]
+    }
+  ]
+}

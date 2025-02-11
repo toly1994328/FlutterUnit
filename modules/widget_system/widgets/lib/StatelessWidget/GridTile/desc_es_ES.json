@@ -1,0 +1,20 @@
+{
+  "id": 21,
+  "name": "GridTile",
+  "localName": "Mosaico de cuadrícula",
+  "info": "Una estructura de lista genérica proporcionada por Flutter que permite especificar componentes de cabecera, pie y secundarios, comúnmente utilizada en listas de cuadrícula.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La representación básica de GridTile es la siguiente",
+      "desc": [
+        "【header】: Componente de cabecera   【Widget】",
+        "【child】: Componente secundario   【Widget】",
+        "【footer】: Componente de pie   【Widget】"
+      ]
+    }
+  ]
+}

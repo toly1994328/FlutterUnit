@@ -1,0 +1,36 @@
+{
+  "id": 357,
+  "name": "ImageFiltered",
+  "localName": "Filtre d'image",
+  "info": "Avec le filtre d'image ImageFilter, vous pouvez appliquer des effets spéciaux à n'importe quel composant, y compris mais sans s'y limiter, le flou gaussien, les filtres de couleur, les transformations, etc.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    278,
+    88
+  ],
+  "nodes": [
+    {
+      "file": "node1_blur.dart",
+      "name": "ImageFilter Flou Gaussien",
+      "desc": [
+        "【imageFilter】 : Filtre d'image   【ImageFilter】",
+        "【child】 : Composant enfant   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "ImageFilter Effet de Filtre de Couleur",
+      "desc": [
+        "Réalisez un filtre de couleur via l'objet ColorFilter."
+      ]
+    },
+    {
+      "file": "node3_matrix.dart",
+      "name": "ImageFilter Effet de Transformation",
+      "desc": [
+        "Effectuez une transformation matricielle via la construction ImageFilter.matrix, mais c'est assez limité."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": 26,
+  "name": "RaisedButton",
+  "localName": "Erhobener Button",
+  "info": "Ein Button mit Schatten, basierend auf MaterialButton, alle Eigenschaften ähneln MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    25,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RaisedButton Klick-Ereignis",
+      "desc": [
+        "【color】: Farbe   【Color】",
+        "【splashColor】: Wasserwellenfarbe   【Color】",
+        "【elevation】: Schattentiefe   【double】",
+        "【child】: Untergeordnete Komponente   【Widget】",
+        "【textColor】: Textfarbe der Untergeordneten Komponente   【Color】",
+        "【highlightColor】: Hervorhebungsfarbe bei langem Drücken   【Color】",
+        "【padding】: Innenabstand   【EdgeInsetsGeometry】",
+        "【onPressed】: Klick-Ereignis   【Function】",
+        "    ",
+        "",
+        "class CustomRaisedButton extends StatelessWidget {",
+        "  const CustomRaisedButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'RaisedButton wurde in Flutter 3.3 aus dem Verkehr gezogen. Der Ersatz ist der ElevatedButton.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return RaisedButton(",
+        "       color: Colors.blue,",
+        "       splashColor: Colors.green,",
+        "       onPressed: () {,",
+        "       child: const Text(\"RaisedButton\"),",
+        "       textColor: const Color(0xffFfffff),",
+        "       padding: const EdgeInsets.all(8),",
+        "       elevation: 5,",
+        "       highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

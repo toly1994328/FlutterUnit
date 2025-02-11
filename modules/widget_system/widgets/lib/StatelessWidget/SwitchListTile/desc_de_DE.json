@@ -1,0 +1,41 @@
+{
+  "id": 18,
+  "name": "SwitchListTile",
+  "localName": "Schalterkachel",
+  "info": "Eine allgemeine Listenstruktur, die von Flutter bereitgestellt wird, mit einer linken und mittleren Struktur und einem Schalter am Ende. Komponenten können an den entsprechenden Positionen eingefügt werden, um spezifische Einträge einfach zu handhaben.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Darstellung von SwitchListTile",
+      "desc": [
+        "【secondary】: Linke Komponente   【Widget】",
+        "【title】: Obere mittlere Komponente   【Widget】",
+        "【subtitle】: Untere mittlere Komponente   【Widget】",
+        "【inactiveThumbColor】: Farbe des Kreises, wenn nicht ausgewählt   【Color】",
+        "【inactiveTrackColor】: Farbe der Schiene, wenn nicht ausgewählt   【Color】",
+        "【activeColor】: Farbe des Kreises, wenn ausgewählt   【Color】",
+        "【activeTrackColor】: Farbe der Schiene, wenn ausgewählt   【Color】",
+        "【onChanged】: Ereignis bei Auswahl   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Auswahleffekt von SwitchListTile",
+      "desc": [
+        "【selected】: Ob ausgewählt   【bool】",
+        "【inactiveThumbImage】: Bild des Kreises, wenn nicht ausgewählt   【ImageProvider】",
+        "【activeThumbImage】: Bild des Kreises, wenn ausgewählt   【ImageProvider】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Dichte Eigenschaft von SwitchListTile",
+      "desc": [
+        "【dense】: Ob dicht   【bool】"
+      ]
+    }
+  ]
+}

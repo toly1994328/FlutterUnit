@@ -1,0 +1,37 @@
+{
+  "id": 28,
+  "name": "FloatingActionButton",
+  "localName": "Floating Button",
+  "info": "Floating button, generally used in Scaffold, can be placed in a specific position. It can contain a child widget, receive clicks, and define colors, shapes, etc.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FloatingActionButton Click Event",
+      "desc": [
+        "【child】: Child widget   【Widget】",
+        "【tooltip】: Tooltip text when long pressed   【String】",
+        "【backgroundColor】: Background color   【Color】",
+        "【foregroundColor】: Foreground color   【Color】",
+        "【elevation】: Elevation   【double】",
+        "【onPressed】: Click event   【Function】"
+      ]
+    },
+    {
+      "file": "node2_mini.dart",
+      "name": "mini Property",
+      "desc": [
+        "【mini】: Whether it is mini   【bool】"
+      ]
+    },
+    {
+      "file": "node3_shape.dart",
+  "name": "shape Property",
+  "desc": [
+    "【shape】: Shape   【ShapeBorder】"
+  ]
+}
+  ]
+}

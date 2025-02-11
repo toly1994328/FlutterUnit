@@ -1,0 +1,20 @@
+{
+  "id": 342,
+  "name": "ListBody",
+  "localName": "リストボディ",
+  "info": "複数の子コンポーネントを軸方向に並べ替えます。設定可能な属性は少なく、通常はあまり使用されず、代わりにListViewが選択されます。",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ListViewの基本的な使用",
+      "desc": [
+        "【mainAxis】 : 主軸方向   【Axis】",
+        "【reverse】: 逆方向かどうか   【bool】",
+        "【children】: 子コンポーネント集   【List<Widget>】"
+      ]
+    }
+  ]
+}

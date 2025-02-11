@@ -1,0 +1,21 @@
+{
+  "id": 131,
+  "name": "CupertinoActionSheet",
+  "localName": "iOSアクションシート",
+  "info": "iOSスタイルのポップアップ選択構造で、多くのボタンを配置でき、通常はCupertinoActionSheetActionと併用されます。",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CupertinoActionSheetの基本的な使用",
+      "desc": [
+        "【title】 : 最初の行のコンポーネント   【Widget】",
+        "【message】 : 2行目のコンポーネント  【Widget】",
+        "【cancelButton】 : キャンセルボタンのコンポーネント  【Widget】",
+        "【actions】 : 中間のコンポーネントリスト  【List<Widget>】"
+      ]
+    }
+  ]
+}

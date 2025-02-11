@@ -1,0 +1,29 @@
+{
+  "id": 99,
+  "name": "Flow",
+  "localName": "Fließendes Layout",
+  "info": "Kann mehrere Komponenten aufnehmen, erfordert die Festlegung eines Delegaten für die Anordnung, ermöglicht eine hochgradige Anpassung der Komponentenanordnung und erreicht Effekte, die mit normalen Layouts nicht möglich sind. Der König der Layouts, zu Recht.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    98,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Runde Anordnung mit Flow",
+      "desc": [
+        "【children】 : Komponentenliste   【List<Widget>】",
+        "【delegate】 : Delegat   【FlowDelegate】"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Runde Anordnung mit Flow und Animation",
+      "desc": [
+        "Erzielt Effekte durch die Änderung der Position umliegender Komponenten mittels Animation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 144,
+  "name": "CupertinoContextMenuAction",
+  "localName": "ios всплывающее меню кнопка",
+  "info": "Обычно используется только для кнопки нажатия в CupertinoContextMenu. Можно указать дочерний элемент и значок в конце, принимает событие нажатия.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование CupertinoContextMenuAction",
+      "desc": [
+        "【child】 : Дочерний компонент   【Widget】",
+        "【isDefaultAction】 : Выбрано ли по умолчанию  【bool】",
+        "【trailingIcon】 : Конечный значок  【bool】",
+        "【onPressed】 : Событие нажатия  【Function()】"
+      ]
+    }
+  ]
+}

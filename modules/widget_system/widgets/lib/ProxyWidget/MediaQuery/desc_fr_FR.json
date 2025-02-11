@@ -1,0 +1,18 @@
+{
+  "id": 167,
+  "name": "MediaQuery",
+  "localName": "Requête média",
+  "info": "Vous pouvez obtenir des informations telles que la taille de l'écran, la densité de l'appareil, le facteur de zoom du texte, les marges, etc. via MediaQuery.of.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Obtenir des informations de données avec MediaQuery",
+      "desc": [
+        "MediaQuery.of(context) peut obtenir MediaQueryData"
+      ]
+    }
+  ]
+}

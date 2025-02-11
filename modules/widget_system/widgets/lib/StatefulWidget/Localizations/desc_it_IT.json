@@ -1,0 +1,21 @@
+{
+  "id": 290,
+  "name": "Localizations",
+  "localName": "Internazionalizzazione",
+  "info": "Fornisce risorse di internazionalizzazione per i nodi del sottoalbero, implementato tramite InheritedWidget. Questo componente è già integrato all'interno di MaterialApp, e i parametri locale e delegates vengono utilizzati per questo componente.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    65,
+    346
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Ottieni la lingua corrente",
+      "desc": [
+        "Utilizzando Localizations.localeOf(context), è possibile ottenere le informazioni di Locale memorizzate nel componente Localizations più vicino in base al contesto."
+      ]
+    }
+  ]
+}

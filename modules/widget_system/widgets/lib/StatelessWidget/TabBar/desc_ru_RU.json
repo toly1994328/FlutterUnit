@@ -1,0 +1,37 @@
+{
+  "id": 58,
+  "name": "TabBar",
+  "localName": "Панель вкладок",
+  "info": "Скользящая и кликабельная панель вкладок, обычно используется в нижней части AppBar, может использоваться вместе с TabBarView для создания эффекта скользящих страниц.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    57,
+    59,
+    148
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование TabBar",
+      "desc": [
+        "【controller】 : Контроллер   【TabController】",
+        "【indicatorColor】 : Цвет индикатора   【Цвет индикатора】",
+        "【indicatorWeight】 : Высота индикатора   【double】",
+        "【indicatorPadding】 : Отступы индикатора   【EdgeInsetsGeometry】",
+        "【labelStyle】 : Стиль текста вкладки   【TextStyle】",
+        "【unselectedLabelStyle】 : Стиль текста невыбранной вкладки   【TextStyle】",
+        "【isScrollable】 : Возможность прокрутки   【bool】",
+        "【onTap】 : Обратный вызов при нажатии на вкладку   【Function(int)】",
+        "【tabs】 : Компоненты вкладок   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_noShadow.dart",
+      "name": "Реализация без водяных волн через настройку Theme",
+      "desc": [
+        "Просто установите цвет водяных волн в Theme на прозрачный."
+      ]
+    }
+  ]
+}

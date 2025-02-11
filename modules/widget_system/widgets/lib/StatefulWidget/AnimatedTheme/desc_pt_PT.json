@@ -1,0 +1,22 @@
+{
+  "id": 224,
+  "name": "AnimatedTheme",
+  "localName": "Tema Animado",
+  "info": "Componente com efeitos de animação durante a mudança de tema, essencialmente uma combinação do componente Theme com animação. Pode especificar ThemeData, duração da animação, curva, callback de término, etc. Equivalente a uma versão aprimorada do componente Theme.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do AnimatedTheme",
+      "desc": [
+        "【data】 : Dados do tema   【ThemeData】",
+        "【duration】 : Duração da animação   【Duration】",
+        "【onEnd】 : Callback de término da animação   【Function()】",
+        "【curve】 : Curva da animação   【Duration】",
+        "【child】 : Componente filho   【Widget】"
+      ]
+    }
+  ]
+}

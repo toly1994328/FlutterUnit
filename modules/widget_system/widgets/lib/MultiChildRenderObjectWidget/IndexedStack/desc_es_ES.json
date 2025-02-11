@@ -1,0 +1,20 @@
+{
+  "id": 161,
+  "name": "IndexedStack",
+  "localName": "Pila indexada",
+  "info": "Subclase del componente Stack, puede apilar múltiples componentes y especificar el índice del componente que se mostrará a través del índice, el resto se ocultará.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de IndexedStack",
+      "desc": [
+        "【children】 : Lista de componentes hijos   【Lis<Widget>】",
+        "【alignment】 : Alineación   【AlignmentGeometry】",
+        "【index】 : Componente actualmente visible  【int】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 344,
+  "name": "NestedScrollViewViewport",
+  "localName": "Ventana de desplazamiento anidado",
+  "info": "Ventana utilizada en NestedScrollView que contiene un SliverOverlapAbsorberHandle y lo notifica cuando la ventana necesita recalcular su diseño. Por ejemplo, cuando se desplaza.",
+  "lever": 1,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introducción a NestedScrollViewViewport",
+      "desc": [
+        "【offset】 : *desplazamiento   【ViewportOffset】",
+        "【handle】 : *manejador   【SliverOverlapAbsorberHandle】",
+        "【axisDirection】 : dirección del eje   【AxisDirection】",
+        "【crossAxisDirection】 : dirección del eje cruzado   【AxisDirection】",
+        "【slivers】 : componentes hijos   【List<Widget>】",
+        "【clipBehavior】 : comportamiento de recorte   【Clip】",
+        "【anchor】 : punto de anclaje   【double】"
+      ]
+    }
+  ]
+}

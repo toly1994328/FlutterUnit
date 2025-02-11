@@ -1,0 +1,26 @@
+{
+  "id": 244,
+  "name": "EditableText",
+  "localName": "Bearbarer Text",
+  "info": "Bearbarer Text ist die grundlegendste Komponente von TextField und wird in der Regel nicht allein verwendet.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    2,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von EditableText",
+      "desc": [
+        "【controller】 : Controller   【TextEditingController】",
+        "【focusNode】 : Fokus   【FocusNode】",
+        "【style】 : Textstil   【TextStyle】",
+        "【backgroundCursorColor】 : Hintergrundcursorfarbe   【Color】",
+        "【cursorColor】 : Cursorfarbe   【Color】",
+        "Die oben genannten fünf Attribute sind für EditableText obligatorisch, andere sind identisch mit TextField und werden hier nicht aufgeführt."
+      ]
+    }
+  ]
+}

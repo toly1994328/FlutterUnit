@@ -1,0 +1,23 @@
+{
+  "id": 62,
+  "name": "CupertinoNavigationBar",
+  "localName": "Navegación iOS",
+  "info": "Una estructura común para la barra superior de aplicaciones con estilo iOS, donde se pueden colocar componentes correspondientes en las partes especificadas. Se pueden especificar propiedades como el color de fondo, el espaciado, el borde, etc.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoNavigationBar",
+      "desc": [
+        "【leading】 : Componente izquierdo   【Widget】",
+        "【middle】 : Componente central   【Widget】",
+        "【trailing】 : Componente derecho   【Widget】",
+        "【backgroundColor】 : Color de fondo   【Color】",
+        "【padding】 : Relleno interno   【EdgeInsetsDirectional】",
+        "【border】 : Borde   【Border】"
+      ]
+    }
+  ]
+}

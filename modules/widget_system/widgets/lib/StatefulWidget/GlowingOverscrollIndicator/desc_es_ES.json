@@ -1,0 +1,22 @@
+{
+  "id": 250,
+  "name": "GlowingOverscrollIndicator",
+  "localName": "Indicador de desplazamiento fuera de límites",
+  "info": "El niño es una lista deslizable, el efecto indicador cuando se desliza hacia la parte superior e inferior, se puede especificar el color, no es muy útil. Es el efecto de deslizamiento predeterminado del sistema Android y Fuchsia.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico",
+      "desc": [
+        "【showLeading】 : Si la cabeza es efectiva   【bool】",
+        "【showTrailing】 : Si la parte inferior es efectiva   【bool】",
+        "【axisDirection】 : Dirección del eje   【AxisDirection】",
+        "【color】 : Color   【Color】",
+        "【child】 : Componente hijo   【Widget】"
+      ]
+    }
+  ]
+}

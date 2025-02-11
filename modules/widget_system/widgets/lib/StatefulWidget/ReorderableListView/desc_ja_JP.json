@@ -1,0 +1,29 @@
+{
+  "id": 177,
+  "name": "ReorderableListView",
+  "localName": "並べ替え可能なリスト",
+  "info": "長押しで並べ替え可能なListViewで、スワイプ方向、逆方向かどうか、スワイプコントローラーなどの属性を指定できます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ReorderableListViewの基本使用",
+      "desc": [
+        "【children】 : 子コンポーネントリスト   【List<Widget>】",
+        "【header】 : ヘッダーコンポーネント   【Widget】",
+        "【padding】 : 内側の余白   【EdgeInsets】",
+        "【onReorder】 : 並べ替え時のコールバック  【ReorderCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "ReorderableListViewのスワイプ方向",
+      "desc": [
+        "【scrollDirection】 : スワイプ方向   【Axis】",
+        "【reverse】 : 逆方向かどうか  【bool】"
+      ]
+    }
+  ]
+}

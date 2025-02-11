@@ -1,0 +1,25 @@
+{
+  "id": 253,
+  "name": "Scrollable",
+  "localName": "Scrollable Component",
+  "info": "Implements an interactive model for a scrollable component, requiring the construction of a viewport via viewportBuilder. It is one of the core implementation components of ScrollView and is generally not used directly.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    340,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Scrollable",
+      "desc": [
+        "【viewportBuilder】: Viewport Constructor   【ViewportBuilder】",
+        "【axisDirection】: Scroll Direction   【AxisDirection】",
+        "【controller】: Scroll Controller   【ScrollController】",
+        "【dragStartBehavior】: Drag Behavior   【DragStartBehavior】",
+        "【physics】: Scroll Physics   【ScrollPhysics】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 243,
+  "name": "UniqueWidget",
+  "localName": "Componente Único",
+  "info": "Classe abstrata, deve fornecer uma GlobalKey para identificação, este tipo de componente só será inflated uma instância, e terá apenas um estado de cada vez, o estado pode ser obtido através da propriedade currentState.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introdução ao UniqueWidget",
+      "desc": [
+        "【child】 : Componente filho   【Widget】"
+      ]
+    }
+  ]
+}

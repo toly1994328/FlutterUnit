@@ -1,0 +1,22 @@
+{
+  "id": 151,
+  "name": "TableRowInkWell",
+  "localName": "Effetto Riga Tabella",
+  "info": "Può essere utilizzato solo per l'effetto ondulato nelle tabelle, riceve eventi di clic, doppio clic, pressione prolungata e cambiamenti di evidenziazione, l'effetto ondulato agirà su una riga della tabella.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Eventi Base di TableRowInkWell",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【onTap】 : Evento di clic   【Function()】",
+        "【onDoubleTap】 : Evento di doppio clic   【Function()】",
+        "【onLongPress】 : Evento di pressione prolungata   【Function()】",
+        "【onHighlightChanged】 : Callback di cambiamento di evidenziazione   【Function(bool)】"
+      ]
+    }
+  ]
+}

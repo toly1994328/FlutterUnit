@@ -1,0 +1,41 @@
+{
+  "id": 16,
+  "name": "ListTile",
+  "localName": "Piastrella della lista",
+  "info": "Una struttura comune per gli elementi della lista fornita da Flutter, con una struttura sinistra-centro-destra. I componenti possono essere inseriti nelle posizioni corrispondenti, rendendo facile adattarsi a elementi specifici.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    162,
+    334
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La rappresentazione di base di ListTile è la seguente",
+      "desc": [
+        "【leading】: Componente sinistro   【Widget】",
+        "【title】: Componente superiore centrale   【Widget】",
+        "【subtitle】: Componente inferiore centrale   【Widget】",
+        "【trailing】: Componente finale   【Widget】",
+        "【contentPadding】: Spaziatura interna   【EdgeInsetsGeometry】",
+        "【onLongPress】: Evento di clic   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Effetto di selezione e evento di pressione prolungata di ListTile",
+      "desc": [
+        "【selected】: Selezionato   【bool】",
+        "【onTap】: Evento di clic   【Function()】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Proprietà di disposizione compatta di ListTile",
+      "desc": [
+        "【dense】: Disposizione compatta   【bool】"
+      ]
+    }
+  ]
+}

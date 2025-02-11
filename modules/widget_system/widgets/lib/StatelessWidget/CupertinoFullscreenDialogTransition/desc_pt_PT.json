@@ -1,0 +1,21 @@
+{
+  "id": 219,
+  "name": "CupertinoFullscreenDialogTransition",
+  "localName": "Transição de Diálogo em Tela Cheia",
+  "info": "Cria uma transição no estilo iOS para exibir um diálogo em tela cheia.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introdução ao Componente",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【linearTransition】 : Transição linear   【bool】",
+        "【primaryRouteAnimation】 : Animação de rota inicial   【Animation<double>】",
+        "【secondaryRouteAnimation】 : Animação de rota secundária   【Animation<double>】"
+      ]
+    }
+  ]
+}

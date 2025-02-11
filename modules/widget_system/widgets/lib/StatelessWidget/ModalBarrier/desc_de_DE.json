@@ -1,0 +1,19 @@
+{
+  "id": 212,
+  "name": "ModalBarrier",
+  "localName": "Barriere Modul",
+  "info": "Entspricht einer Vorhangschicht, die verhindert, dass der Benutzer mit den dahinter liegenden Widgets interagiert. Es kann durch dismissible festgelegt werden, ob beim Klicken der Rückgabestapel ausgelöst wird. Im Quellcode wird es für Dialog-bezogene Komponenten verwendet.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ModalBarrier Einführung",
+      "desc": [
+        "【dismissible】 : Klicken, um zurückzukehren   【bool】",
+        "【color】 : Farbe   【Color】"
+      ]
+    }
+  ]
+}

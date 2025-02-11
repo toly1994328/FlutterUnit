@@ -1,0 +1,26 @@
+{
+  "id": 225,
+  "name": "AnimatedPhysicalModel",
+  "localName": "Animiertes Physikalisches Modell",
+  "info": "Eine PhysicalModel-Komponente mit Animationseffekten bei Änderungen der relevanten Eigenschaften, im Wesentlichen eine Kombination aus PhysicalModel und Animation. Es können Eigenschaften wie Schatten, Schattentiefe, abgerundete Ecken, Animationsdauer, Endrückruf usw. angegeben werden.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von AnimatedPhysicalModel",
+      "desc": [
+        "【color】 : Hintergrundfarbe   【Color】",
+        "【duration】 : Animationsdauer   【Duration】",
+        "【onEnd】 : Rückruf nach Abschluss der Animation   【Function()】",
+        "【curve】 : Animationskurve   【Duration】",
+        "【shape】 : Form   【BoxShape】",
+        "【elevation】 : Schattentiefe   【double】",
+        "【borderRadius】 : Abgerundete Ecken   【BorderRadius】",
+        "【shadowColor】 : Schattenfarbe   【Color】",
+        "【child】 : Untergeordnete Komponente   【Widget】"
+      ]
+    }
+  ]
+}

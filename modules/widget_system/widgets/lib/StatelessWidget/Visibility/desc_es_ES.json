@@ -1,0 +1,27 @@
+{
+  "id": 10,
+  "name": "Visibility",
+  "localName": "Componente de Visibilidad",
+  "info": "Controla si un componente se muestra o se oculta, y permite configurar un componente de marcador de posición cuando está oculto. Un componente similar en funcionalidad es el componente OffStage.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Controla la visibilidad de los componentes hijos internos según visible",
+      "desc": [
+        "【visible】 : Si se muestra o no  【bool】",
+        "【child】: Hijo   【Widget】",
+        "Por defecto, cuando el hijo está oculto, pierde el área original donde estaba."
+      ]
+    },
+    {
+      "file": "node2_replacement.dart",
+      "name": "replacement puede ocupar el lugar cuando está oculto",
+      "desc": [
+        "【replacement】 : Componente de marcador de posición cuando está oculto  【Widget】"
+      ]
+    }
+  ]
+}

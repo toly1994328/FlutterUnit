@@ -1,0 +1,26 @@
+{
+  "id": 95,
+  "name": "Row",
+  "localName": "Layout de Linha",
+  "info": "Um layout Flex com direção de disposição horizontal, que pode acomodar vários componentes. Todas as outras propriedades são as mesmas, consulte Flex para mais detalhes.",
+  "lever": 4,
+  "family": 3,
+  "linkIds": [
+    94,
+    96
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do Row",
+      "desc": [
+        "【children】 : Lista de componentes   【List<Widget>】",
+        "【mainAxisAlignment】 : Alinhamento do eixo principal   【MainAxisAlignment】",
+        "【crossAxisAlignment】 : Alinhamento do eixo transversal   【CrossAxisAlignment】",
+        "【textBaseline】 : Linha de base do texto   【TextBaseline】",
+        "【verticalDirection】 : Direção vertical   【VerticalDirection】",
+        "【mainAxisSize】 : Tamanho do eixo principal   【MainAxisSize】"
+      ]
+    }
+  ]
+}

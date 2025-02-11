@@ -1,0 +1,20 @@
+{
+  "id": 206,
+  "name": "TabPageSelectorIndicator",
+  "localName": "タブインジケーター",
+  "info": "枠線付きの円形コンポーネントで、サイズ、色、枠線の色を指定できます。TabPageSelectorの一部であり、通常は単独で使用しません。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TabPageSelectorIndicatorの基本使用",
+      "desc": [
+        "【size】: サイズ   【double】",
+        "【backgroundColor】: 背景色   【Color】",
+        "【borderColor】: 枠線の色    【Color】"
+      ]
+    }
+  ]
+}

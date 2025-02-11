@@ -1,0 +1,20 @@
+{
+  "id": 49,
+  "name": "RefreshIndicator",
+  "localName": "Aktualisierungsanzeige",
+  "info": "Enthält einen verschachtelten, scrollbaren Bereich, der beim Herunterziehen ein Aktualisierungssymbol anzeigt und beim Loslassen eine spezifizierte asynchrone Methode ausführt. Eigenschaften wie Farbe und Abstand zur Oberseite können angegeben werden.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von RefreshIndicator",
+      "desc": [
+        "【child】 : Kind (scrollbar)   【Widget】",
+        "【displacement】 : Höhe des schwebenden Indikators   【double】",
+        "【color】 : Farbe des Indikators   【Color】,"
+      ]
+    }
+  ]
+}

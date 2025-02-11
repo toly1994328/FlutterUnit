@@ -1,0 +1,27 @@
+{
+  "id": 140,
+  "name": "SnackBar",
+  "localName": "Информационная панель",
+  "info": "Как компонент, это простая структурная компонента, которая может указывать форму, глубину тени, цвет фона и т.д. Обычно вызывается методом showSnackBar из ScaffoldState, появляясь снизу.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    141,
+    142
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование SnackBar",
+      "desc": [
+        "【content】 : Промежуточный компонент содержимого   【Widget】",
+        "【action】 : Правая кнопка   【SnackBarAction】",
+        "【duration】 : Продолжительность   【Widget】",
+        "【backgroundColor】 : Цвет фона   【Color】",
+        "【elevation】 : Глубина тени   【double】",
+        "【shape】 : Форма   【ShapeBorder】",
+        "【onVisible】 : Обратный вызов при отображении  【Function()】"
+      ]
+    }
+  ]
+}

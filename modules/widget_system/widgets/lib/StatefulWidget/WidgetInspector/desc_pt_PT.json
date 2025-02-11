@@ -1,0 +1,19 @@
+{
+  "id": 234,
+  "name": "WidgetInspector",
+  "localName": "Inspetor de Componentes",
+  "info": "Este componente permite visualizar facilmente a estrutura hierárquica dos componentes filhos, sendo uma das funcionalidades do plugin Flutter Inspector.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do WidgetInspector",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【selectButtonBuilder】: *Construtor do botão de seleção   【InspectorSelectButtonBuilder】"
+      ]
+    }
+  ]
+}

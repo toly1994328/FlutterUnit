@@ -1,0 +1,33 @@
+{
+  "id": 353,
+  "name": "TextButton",
+  "localName": "テキストボタン",
+  "info": "Materialスタイルのテキストボタンで、デフォルトではテキストのみが表示され、クリック時に波紋効果があります。スタイルを変更することで、枠線、色、影などのプロパティを変更できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    354,
+    355
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "TextButtonの基本的な使用",
+      "desc": [
+        "【child】 : スクロール主体を持つかどうか   【Widget】",
+        "【onPressed】 : クリックイベント   【VoidCallback】",
+        "【onLongPress】 : 長押しイベント   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "TextButtonのスタイル",
+      "desc": [
+        "【style】 : ボタンのスタイル   【ButtonStyle】",
+        "【focusNode】 : フォーカス   【FocusNode】",
+        "【clipBehavior】 : クリップ動作   【Clip】",
+        "【autofocus】 : 自動フォーカス   【bool】"
+      ]
+    }
+  ]
+}

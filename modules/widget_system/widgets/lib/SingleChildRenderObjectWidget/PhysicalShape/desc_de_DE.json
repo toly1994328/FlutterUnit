@@ -1,0 +1,23 @@
+{
+  "id": 279,
+  "name": "PhysicalShape",
+  "localName": "Physikalische Form",
+  "info": "Ermöglicht es den Unterkomponenten, entlang eines Pfads beschnitten zu werden, und ermöglicht die Angabe von Hintergrundfarbe, Schattentiefe, Schattenfarbe und Schneidverhalten.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von PhysicalShape",
+      "desc": [
+        "【clipper】 : Clipper   【CustomClipper<Path>】",
+        "【clipBehavior】 : Schneidverhalten   【Clip】",
+        "【child】 : Unterkomponente   【Widget】",
+        "【elevation】 : Schattentiefe   【double】",
+        "【shadowColor】 : Schattenfarbe   【Color】",
+        "【color】: Farbe    【Color】"
+      ]
+    }
+  ]
+}

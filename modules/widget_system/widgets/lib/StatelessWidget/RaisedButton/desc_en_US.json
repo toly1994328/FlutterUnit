@@ -1,0 +1,60 @@
+{
+  "id": 26,
+  "name": "RaisedButton",
+  "localName": "Raised Button",
+  "info": "A raised button with shadow, implemented based on MaterialButton, with all properties similar to MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    25,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RaisedButton Click Event",
+      "desc": [
+        "【color】: Color   【Color】",
+        "【splashColor】: Ripple Color   【Color】",
+        "【elevation】: Shadow Depth   【double】",
+        "【child】: Child Widget   【Widget】",
+        "【textColor】: Child Widget Text Color   【Color】",
+        "【highlightColor】: Long Press Highlight Color   【Color】",
+        "【padding】: Padding   【EdgeInsetsGeometry】",
+        "【onPressed】: Click Event   【Function】",
+        "    ",
+        "",
+        "class CustomRaisedButton extends StatelessWidget {",
+        "  const CustomRaisedButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'RaisedButton button has exited the stage in Flutter 3.3. The replacement is the ElevatedButton button.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return RaisedButton(",
+        "       color: Colors.blue,",
+        "       splashColor: Colors.green,",
+        "       onPressed: () {,",
+        "       child: const Text(\"RaisedButton\"),",
+        "       textColor: const Color(0xffFfffff),",
+        "       padding: const EdgeInsets.all(8),",
+        "       elevation: 5,",
+        "       highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

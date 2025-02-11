@@ -1,0 +1,23 @@
+{
+  "id": 196,
+  "name": "FlexibleSpaceBar",
+  "localName": "Barre d'espace flexible",
+  "info": "Utilisé généralement dans la zone extensible de SliverAppBar, permet de spécifier le titre, l'espacement du titre, l'arrière-plan, le mode de repli, etc.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de FlexibleSpaceBar",
+      "desc": [
+        "【title】 : Composant de titre   【Widget】",
+        "【titlePadding】 : Espacement du titre   【EdgeInsetsGeometry】",
+        "【collapseMode】 : Mode de repli   【CollapseMode】",
+        "【stretchModes】 : Modes d'extension   【List<StretchMode>】",
+        "【background】 : Composant d'arrière-plan   【Widget】",
+        "【centerTitle】 : Centré ou non   【bool】"
+      ]
+    }
+  ]
+}

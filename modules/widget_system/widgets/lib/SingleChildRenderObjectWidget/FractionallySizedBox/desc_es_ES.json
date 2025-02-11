@@ -1,0 +1,21 @@
+{
+  "id": 82,
+  "name": "FractionallySizedBox",
+  "localName": "Caja de tamaño fraccional",
+  "info": "Puede contener un componente hijo, especifica la proporción de ancho y alto, limita el área del componente hijo al ancho y alto del contenedor padre multiplicado por cada proporción, y la alineación.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de FractionallySizedBox",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【widthFactor】 : Proporción de ancho   【double】",
+        "【heightFactor】 : Proporción de alto   【double】",
+        "【alignment】 : Alineación   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

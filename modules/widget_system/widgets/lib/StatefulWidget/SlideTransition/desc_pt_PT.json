@@ -1,0 +1,20 @@
+{
+  "id": 112,
+  "name": "SlideTransition",
+  "localName": "Transição de Deslizamento",
+  "info": "Subclasse de AnimatedWidget, usa um animador do tipo Offset para fazer com que os componentes filhos realizem uma animação de transição entre dois objetos Offset.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do SlideTransition",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【textDirection】 : Direção do eixo x  【TextDirection】",
+        "【position】 : Animação   【Animation<Offset>】"
+      ]
+    }
+  ]
+}

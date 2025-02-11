@@ -1,0 +1,27 @@
+{
+  "id": 29,
+  "name": "ButtonBar",
+  "localName": "버튼 바",
+  "info": "컴포넌트 리스트를 받아들이며, 주로 여러 버튼을 담는 데 사용됩니다. 정렬 방식, 여백 등을 지정할 수 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ButtonBar 정렬 방식",
+      "desc": [
+        "【alignment】: 정렬 방식   【MainAxisAlignment】",
+        "【children】: 자식 컴포넌트 집합   【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2_padding.dart",
+      "name": "ButtonBar 여백과 높이",
+      "desc": [
+        "【buttonPadding】: 안쪽 여백   【EdgeInsetsGeometry】",
+        "【buttonHeight】: 높이   【double】"
+      ]
+    }
+  ]
+}

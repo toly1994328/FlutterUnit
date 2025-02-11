@@ -1,0 +1,60 @@
+{
+  "id": 26,
+  "name": "RaisedButton",
+  "localName": "Bouton surélevé",
+  "info": "Bouton surélevé avec ombre, basé sur MaterialButton, toutes les propriétés sont similaires à MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    25,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Événement de clic sur RaisedButton",
+      "desc": [
+        "【color】: Couleur   【Color】",
+        "【splashColor】: Couleur de l'effet de vague   【Color】",
+        "【elevation】: Profondeur de l'ombre   【double】",
+        "【child】: Composant enfant   【Widget】",
+        "【textColor】: Couleur du texte du composant enfant   【Color】",
+        "【highlightColor】: Couleur de surbrillance lors d'un appui long   【Color】",
+        "【padding】: Marge intérieure   【EdgeInsetsGeometry】",
+        "【onPressed】: Événement de clic   【Function】",
+        "    ",
+        "",
+        "class CustomRaisedButton extends StatelessWidget {",
+        "  const CustomRaisedButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'Le bouton RaisedButton a quitté la scène historique avec Flutter 3.3. Il est remplacé par le bouton ElevatedButton.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return RaisedButton(",
+        "       color: Colors.blue,",
+        "       splashColor: Colors.green,",
+        "       onPressed: () {,",
+        "       child: const Text(\"RaisedButton\"),",
+        "       textColor: const Color(0xffFfffff),",
+        "       padding: const EdgeInsets.all(8),",
+        "       elevation: 5,",
+        "       highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 16,
+  "name": "ListTile",
+  "localName": "Tuile de liste",
+  "info": "Une structure d'élément de liste générique fournie par Flutter, avec une structure gauche-centre-droite. Des composants peuvent être insérés aux positions correspondantes, ce qui permet de répondre facilement à des éléments spécifiques.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [
+    162,
+    334
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La performance de base de ListTile est la suivante",
+      "desc": [
+        "【leading】: Composant de gauche   【Widget】",
+        "【title】: Composant du haut au centre   【Widget】",
+        "【subtitle】: Composant du bas au centre   【Widget】",
+        "【trailing】: Composant de fin   【Widget】",
+        "【contentPadding】: Marge intérieure   【EdgeInsetsGeometry】",
+        "【onLongPress】: Événement de clic   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Effet de sélection et événement de pression longue de ListTile",
+      "desc": [
+        "【selected】: Est sélectionné   【bool】",
+        "【onTap】: Événement de clic   【Function()】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Propriété de densité de ListTile",
+      "desc": [
+        "【dense】: Est dense   【bool】"
+      ]
+    }
+  ]
+}

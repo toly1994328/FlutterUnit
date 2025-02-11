@@ -1,0 +1,18 @@
+{
+  "id": 332,
+  "name": "ToggleButtonsTheme",
+  "localName": "Tema de botones de alternancia",
+  "info": "Se utiliza principalmente para establecer propiedades predeterminadas unificadas para los componentes ToggleButtons descendientes, también se puede obtener las propiedades predeterminadas de ToggleButtons a través de este componente.",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de ToggleButtonsTheme",
+      "desc": [
+        "Se puede especificar la propiedad de datos ToggleButtonsThemeData para establecer estilos predeterminados para los componentes ToggleButtons descendientes, como estilos de borde, colores, decoraciones, etc. También se puede usar ToggleButtonsTheme.of para obtener los datos del tema de ToggleButtons."
+      ]
+    }
+  ]
+}

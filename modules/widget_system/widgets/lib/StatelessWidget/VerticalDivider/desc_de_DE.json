@@ -1,0 +1,31 @@
+{
+  "id": 35,
+  "name": "VerticalDivider",
+  "localName": "Vertikale Trennlinie",
+  "info": "Vertikale Trennlinie, kann Farbe, Breite, Dicke und Abstände oben und unten angeben, wird häufig als Trennlinie für Listenelemente verwendet.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    34,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "VerticalDivider Farbe und Dicke",
+      "desc": [
+        "【color】: Farbe   【Color】",
+        "【thickness】: Linienstärke   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "VerticalDivider Breite und Abstand",
+      "desc": [
+        "【indent】: Abstand vorne   【double】",
+        "【endIndent】: Abstand hinten   【double】",
+        "【width】: Platzhalterbreite   【double】"
+      ]
+    }
+  ]
+}

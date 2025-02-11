@@ -1,0 +1,25 @@
+{
+  "id": 285,
+  "name": "CustomSingleChildLayout",
+  "localName": "汎用シングルチャイルドレイアウト",
+  "info": "1つの子コンポーネントを収容し、代理クラスを指定して子コンポーネントをレイアウトします。代理クラスは、親コンテナ領域と子コンポーネントの領域サイズ、および領域の制約状況を取得できます。",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "CustomSingleChildLayoutの基本使用",
+      "desc": [
+        "【delegate】 : 代理   【SingleChildLayoutDelegate】"
+      ]
+    },
+    {
+      "file": "node2_offset.dart",
+      "name": "CustomSingleChildLayoutのオフセット使用",
+      "desc": [
+        "代理のオフセット能力を利用して、子コンポーネントをオフセット位置に配置できます。"
+      ]
+    }
+  ]
+}

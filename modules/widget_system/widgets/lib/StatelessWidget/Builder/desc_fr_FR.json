@@ -1,0 +1,19 @@
+{
+  "id": 202,
+  "name": "Builder",
+  "localName": "Constructeur",
+  "info": "Un composant qui n'affecte pas l'espace occupé par les composants enfants et n'a pas de visibilité, dont la seule valeur est de fournir le contexte de l'élément correspondant au composant actuel.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de Builder",
+      "desc": [
+        "【builder】 : Constructeur de composant   【WidgetBuilder】",
+        "L'utilisation de la méthode `XXX.of(context)` pour obtenir un objet d'état dans la même classe peut entraîner une erreur de `contexte en retard`, résolue en utilisant Builder."
+      ]
+    }
+  ]
+}

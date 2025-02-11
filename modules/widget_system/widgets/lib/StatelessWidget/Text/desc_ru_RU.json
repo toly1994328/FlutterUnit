@@ -1,0 +1,72 @@
+{
+  "id": 2,
+  "name": "Text",
+  "localName": "Текстовый компонент",
+  "info": "Компонент для отображения текста. Имеет множество свойств, достаточных для удовлетворения ваших потребностей. Основные стили управляются свойством style.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    101,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Основные стили текста",
+      "desc": [
+        "【Входные параметры】 : текст  【String】",
+        "【style】: стиль текста   【TextStyle】",
+        "【color】: цвет текста   【Color】",
+        "【fontSize】: размер текста   【double】",
+        "【fontWeight】: толщина шрифта   【FontWeight】",
+        "【fontStyle】: стиль шрифта   【fontStyle】",
+        "【letterSpacing】: межбуквенный интервал   【double】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Тень текста",
+      "desc": [
+        "【shadows】 : тень текста  【List<Shadow>】",
+        "【backgroundColor】: цвет фона   【Color】"
+      ]
+    },
+    {
+      "file": "node3_decoration.dart",
+      "name": "Декоративные линии текста",
+      "desc": [
+        "【fontFamily】 : шрифт текста  【String】",
+        "【decoration】: декоративная линия   【TextDecoration】",
+        "【decorationColor】: цвет декоративной линии   【Color】",
+        "【decorationThickness】: толщина декоративной линии   【double】",
+        "【decorationStyle】: стиль декоративной линии   【TextDecorationStyle】"
+      ]
+    },
+    {
+      "file": "node4_textAlign.dart",
+      "name": "Выравнивание текста",
+      "desc": [
+        "【textAlign】: выравнивание   【TextAlign】",
+        "Ниже приведены: left, right, center, justify, start, end,"
+      ]
+    },
+    {
+      "file": "node5_textDirection.dart",
+      "name": "Направление текста и максимальное количество строк",
+      "desc": [
+        "【maxLines】 : максимальное количество строк  【int】",
+        "【textDirection】 : направление текста  【TextDirection】",
+        "Ниже приведены: rtl, ltr,"
+      ]
+    },
+    {
+      "file": "node6_softWrap.dart",
+      "name": "Перенос строк и эффект переполнения",
+      "desc": [
+        "【softWrap】 : перенос строк  【bool】",
+        "【overflow】 : эффект переполнения  【TextOverflow】",
+        "Ниже softWrap=false;  overflow: clip, fade, ellipsis, visible,"
+      ]
+    }
+  ]
+}

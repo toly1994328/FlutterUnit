@@ -1,0 +1,32 @@
+{
+  "id": 53,
+  "name": "SelectableText",
+  "localName": "選択可能なテキスト",
+  "info": "選択可能なテキストで、選択やコピーが可能です。カーソルの色、サイズ、テキストスタイル、配置などを指定できます。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SelectableTextの基本使用",
+      "desc": [
+        "【入参】 : 表示テキスト   【String】",
+        "【style】 : テキストスタイル   【TextStyle】",
+        "【cursorRadius】 : カーソル半径   【Radius】",
+        "【cursorColor】 : カーソル色   【Color】",
+        "【cursorWidth】 : カーソル幅   【double】",
+        "【showCursor】 : カーソル表示の有無   【bool】",
+        "【autofocus】 : 自動フォーカス   【bool】"
+      ]
+    },
+    {
+      "file": "node2_align.dart",
+      "name": "SelectableTextの配置属性",
+      "desc": [
+        "【textAlign】 : 配置方法*6   【textAlign】",
+        "【textDirection】 : テキスト方向*2   【TextDirection】"
+      ]
+    }
+  ]
+}

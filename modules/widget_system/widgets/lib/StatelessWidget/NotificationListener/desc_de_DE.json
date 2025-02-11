@@ -1,0 +1,25 @@
+{
+  "id": 220,
+  "name": "NotificationListener",
+  "localName": "Benachrichtigungs-Listener",
+  "info": "Sie können den generischen Typ T von Notification angeben, um Änderungen dieses Typs zu überwachen. Flutter bietet viele integrierte Benachrichtigungen für das Scrollen, aber Sie können auch benutzerdefinierte Benachrichtigungen erstellen und überwachen.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Überwachung von OverscrollIndicatorNotification",
+      "desc": [
+        "Diese Benachrichtigung wird nur dann zurückgerufen, wenn bis zum obersten oder untersten Rand gescrollt wird. Die Eigenschaft 'leading' bestimmt, ob es sich um den oberen oder unteren Rand handelt. Darüber hinaus kann die blaue Schattierung beim Scrollen am oberen und unteren Rand durch notification#disallowGlow() entfernt werden."
+      ]
+    },
+    {
+      "file": "node2_update.dart",
+      "name": "Überwachung von ScrollUpdateNotification",
+      "desc": [
+        "Während des Scrollvorgangs werden die Scroll-Daten zurückgerufen, sodass Sie eine Vielzahl von Daten für Operationen erhalten können."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 155,
+  "name": "DrawerHeader",
+  "localName": "Encabezado del cajón",
+  "info": "Generalmente se utiliza en Drawer, como encabezado del cajón. Se pueden especificar propiedades como márgenes internos y externos, decoración, componentes secundarios, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de DrawerHeader",
+      "desc": [
+        "【child】 : Componente secundario   【Widget】",
+        "【decoration】 : Decoración   【Decoration】",
+        "【margin】 : Margen externo   【EdgeInsetsGeometry】",
+        "【padding】 : Margen interno   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

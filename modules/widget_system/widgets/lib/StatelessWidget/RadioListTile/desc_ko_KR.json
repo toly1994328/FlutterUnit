@@ -1,0 +1,32 @@
+{
+  "id": 19,
+  "name": "RadioListTile",
+  "localName": "라디오 타일",
+  "info": "Flutter에서 제공하는 일반적인 목록 항목 구조로, 중앙-오른쪽 구조이며 끝에 라디오 버튼이 있습니다. 해당 위치에 컴포넌트를 삽입할 수 있어 특정 항목에 쉽게 대응할 수 있습니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "RadioListTile은 제네릭 T가 필요합니다",
+      "desc": [
+        "【value】 : 항목 객체  【T】",
+        "【groupValue】 : 선택된 객체  【T】",
+        "【selected】: 선택 여부   【bool】",
+        "【secondary】: 오른쪽 컴포넌트   【Widget】",
+        "【title】: 중앙 상단 컴포넌트   【Widget】",
+        "【subtitle】: 중앙 하단 컴포넌트   【Widget】",
+        "【onChanged】: 전환 이벤트   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2_dense.dart",
+      "name": "RadioListTile 선택 색상 및 밀집 배치",
+      "desc": [
+        "【activeColor】 : 선택 시 색상  【Color】",
+        "【dense】: 밀집 배치 여부   【bool】"
+      ]
+    }
+  ]
+}

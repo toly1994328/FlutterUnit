@@ -1,0 +1,26 @@
+{
+  "id": 43,
+  "name": "CupertinoSlider",
+  "localName": "Control deslizante de iOS",
+  "info": "Componente de control deslizante al estilo de iOS, que permite seleccionar arrastrando entre un valor máximo y mínimo especificados. Se puede especificar el color y recibir una devolución de llamada para los cambios de progreso.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de CupertinoSlider",
+      "desc": [
+        "【value】 : valor   【double】",
+        "【min】 : valor mínimo   【double】",
+        "【max】 : valor máximo   【double】",
+        "【activeColor】 : color activo   【Color】",
+        "【thumbColor】 : color del círculo   【Color】",
+        "【divisions】 : número de divisiones   【int】",
+        "【onChangeStart】 : devolución de llamada al comenzar a deslizar   【Function(double)】",
+        "【onChangeEnd】 : devolución de llamada al finalizar el deslizamiento   【Function(double)】",
+        "【onChanged】 : devolución de llamada al cambiar   【Function(double)】"
+      ]
+    }
+  ]
+}

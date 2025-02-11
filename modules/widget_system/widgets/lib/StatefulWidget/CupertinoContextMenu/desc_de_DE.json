@@ -1,0 +1,20 @@
+{
+  "id": 143,
+  "name": "CupertinoContextMenu",
+  "localName": "iOS-Popup-Menü",
+  "info": "Ein beeindruckendes iOS-stilisiertes Popup-Menü, das bei langem Drücken animiert erscheint. Wird oft in Verbindung mit CupertinoContextMenuAction verwendet.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoContextMenu",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【actions】 : Aktionen-Komponentensammlung   【List<Widget>】",
+        "【previewBuilder】 : Animationskonstruktor  【ContextMenuPreviewBuilder】"
+      ]
+    }
+  ]
+}

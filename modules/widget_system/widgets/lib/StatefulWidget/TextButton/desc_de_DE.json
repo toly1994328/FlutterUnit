@@ -1,0 +1,33 @@
+{
+  "id": 353,
+  "name": "TextButton",
+  "localName": "Textschaltfläche",
+  "info": "Materialstil-Textschaltfläche, standardmäßig nur mit Text, bei Klick mit Wasserwelleneffekt. Eigenschaften wie Rahmen, Farbe, Schatten können durch Stile geändert werden.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    354,
+    355
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von TextButton",
+      "desc": [
+        "【child】 : Hat es ein scrollbares Hauptelement   【Widget】",
+        "【onPressed】 : Klickereignis   【VoidCallback】",
+        "【onLongPress】 : Langklickereignis   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "TextButton-Stil",
+      "desc": [
+        "【style】 : Schaltflächenstil   【ButtonStyle】",
+        "【focusNode】 : Fokus   【FocusNode】",
+        "【clipBehavior】 : Beschneidungsverhalten   【Clip】",
+        "【autofocus】 : Autofokus   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": 1,
+  "name": "Container",
+  "localName": "Componente Contenedor",
+  "info": "Componente contenedor utilizado para albergar un único componente hijo. Integra varias funciones de componentes hijos únicos, como márgenes internos y externos, transformaciones, decoraciones, restricciones, etc...",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    74,
+    85,
+    80,
+    78,
+    70,
+    123
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Puede usarse para mostrar un área con un ancho y alto especificados",
+      "desc": [
+        "【width】 : Ancho   【int】",
+        "【height】: Alto   【int】",
+        "【color】: Color    【Color】"
+      ]
+    },
+    {
+      "file": "node2_child.dart",
+      "name": "Puede colocar un componente hijo dentro del área",
+      "desc": [
+        "【padding】 : Relleno interno   【EdgeInsetsGeometry】",
+        "【margin】: Margen externo   【EdgeInsetsGeometry】",
+        "【child】: Componente hijo    【Widget】"
+      ]
+    },
+    {
+      "file": "node3_alignment.dart",
+      "name": "Puede alinear y posicionar el componente hijo",
+      "desc": [
+        "【alignment】 : Alineación y posicionamiento   【AlignmentGeometry】"
+      ]
+    },
+    {
+      "file": "node4_decoration.dart",
+      "name": "Puede decorar el componente hijo",
+      "desc": [
+        "【decoration】 : Decoración   【Decoration】",
+        "Se puede decorar: bordes, esquinas redondeadas, colores, degradados, sombras, imágenes, etc."
+      ]
+    },
+    {
+      "file": "node5_transform.dart",
+      "name": "Container también tiene capacidad de transformación",
+      "desc": [
+        "【transform】 : Matriz de transformación   【Matrix4】",
+        "Transformación basada en la matriz Matrix4, los detalles de la transformación se pueden ver en álgebra lineal"
+      ]
+    },
+    {
+      "file": "node6_constraints.dart",
+      "name": "Restricciones de Container",
+      "desc": [
+        "【constraints】 : Restricciones   【BoxConstraints】",
+        "Restringirá el tamaño del área, no será menor que el ancho y alto mínimo especificados, ni mayor que el ancho y alto máximo especificados."
+      ]
+    }
+  ]
+}

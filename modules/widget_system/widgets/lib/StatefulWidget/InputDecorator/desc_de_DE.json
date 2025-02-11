@@ -1,0 +1,20 @@
+{
+  "id": 231,
+  "name": "InputDecorator",
+  "localName": "Eingabedekor",
+  "info": "Eine Dekoration, die die Eingabe umhüllt, ist eine der Kernkomponenten von TextField und wird normalerweise nicht alleine verwendet.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von InputDecorator",
+      "desc": [
+        "【decoration】: Dekorationsobjekt 【InputDecoration】",
+        "【textAlign】: Textausrichtung 【TextAlign】",
+        "【child】: Untergeordnete Komponente 【Widget】"
+      ]
+    }
+  ]
+}

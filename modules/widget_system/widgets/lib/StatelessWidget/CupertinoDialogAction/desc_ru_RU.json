@@ -1,0 +1,22 @@
+{
+  "id": 352,
+  "name": "CupertinoDialogAction",
+  "localName": "Интерактивное представление",
+  "info": "Простая кнопка, обычно используется в CupertinoAlertDialog, как правило, не используется отдельно.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование CupertinoDialogAction",
+      "desc": [
+        "【isDefaultAction】: Является ли действие по умолчанию   【bool】",
+        "【isDestructiveAction】: Является ли действие разрушительным   【bool】",
+        "【textStyle】: Стиль текста   【TextStyle】",
+        "【onPressed】: Событие нажатия   【VoidCallback】",
+        "【child】: Дочерний компонент   【Widget】"
+      ]
+    }
+  ]
+}

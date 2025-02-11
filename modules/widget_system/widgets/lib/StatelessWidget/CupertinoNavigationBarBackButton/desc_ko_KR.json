@@ -1,0 +1,19 @@
+{
+  "id": 218,
+  "name": "CupertinoNavigationBarBackButton",
+  "localName": "iOS 스타일 뒤로 가기 버튼",
+  "info": "Cupertino 스타일의 네비게이션 바 뒤로 가기 버튼, 색상과 클릭 이벤트를 지정할 수 있으며, 일반적으로 단독으로 사용되지 않습니다.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "뒤로 가기 버튼 기본 사용",
+      "desc": [
+        "【onPressed】 : 클릭 이벤트   【VoidCallback】",
+        "【color】: 색상    【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 290,
+  "name": "Localizations",
+  "localName": "국제화",
+  "info": "하위 트리 노드에 국제화 리소스를 제공하며, 내부적으로 InheritedWidget에 의존하여 구현됩니다. MaterialApp 내부에 이 컴포넌트가 통합되어 있으며, locale 및 delegates 매개변수는 최종적으로 이 컴포넌트에 사용됩니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    65,
+    346
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "현재 언어 가져오기",
+      "desc": [
+        "Localizations.localeOf(context)를 통해 컨텍스트에서 가장 가까운 상위 Localizations 컴포넌트에 저장된 Locale 데이터 정보를 가져올 수 있습니다."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": 340,
+  "name": "Viewport",
+  "localName": "Componente de ventana gráfica",
+  "info": "Normalmente se utiliza para proporcionar una ventana gráfica a las vistas deslizantes, construyendo solo las partes visibles y precargadas. Se puede especificar la longitud de precarga, la dirección de deslizamiento, etc. Es uno de los componentes centrales de la implementación de ScrollView y generalmente no se utiliza directamente.",
+  "lever": 1,
+  "family": 3,
+  "linkIds": [
+    253,
+    349
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Viewport",
+      "desc": [
+        "【offset】: *Desplazamiento de la ventana gráfica   【ViewportOffset】",
+        "【cacheExtentStyle】: Tipo de precarga   【CacheExtentStyle】",
+        "【cacheExtent】: Cantidad de precarga   【double】",
+        "【axisDirection】: Dirección de deslizamiento   【AxisDirection】",
+        "【slivers】: Conjunto de componentes Sliver hijos   【List<Widget>】",
+        "【anchor】: Punto de anclaje    【double】",
+        "Puedes ejecutar este código para ver cómo se construye ColorItem, las 128 barras de color no se construyen todas a la vez."
+      ]
+    }
+  ]
+}

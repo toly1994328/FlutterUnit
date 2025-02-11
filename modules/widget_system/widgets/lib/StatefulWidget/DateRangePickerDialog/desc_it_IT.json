@@ -1,0 +1,32 @@
+{
+  "id": 339,
+  "name": "DateRangePickerDialog",
+  "localName": "Intervallo di date",
+  "info": "Selettore di intervalli di date in stile Material, supporta la selezione tramite calendario e input.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    135,
+    136,
+    137
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di base di DateRangePickerDialog",
+      "desc": [
+        "【firstDate】 : Data più antica   【DateTime】",
+        "【lastDate】 : Data più recente   【DateTime】",
+        "【initialDateRange】 : Intervallo iniziale   【DateTimeRange?】",
+        "【saveText】 : Testo di salvataggio  【String?】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Modifica di DateRangePickerDialog",
+      "desc": [
+        "Modifica il codice sorgente di DateRangePickerDialog per mostrare uno sfondo numerico per le voci dei mesi."
+      ]
+    }
+  ]
+}

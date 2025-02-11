@@ -1,0 +1,42 @@
+{
+  "id": 103,
+  "name": "Draggable",
+  "localName": "드래그 가능한 컴포넌트",
+  "info": "컴포넌트를 인터페이스 상에서 자유롭게 드래그할 수 있으며, 제네릭 T 데이터를 저장할 수 있습니다. 일반적으로 DragTarget과 함께 사용되어 드래그 효과를 완성합니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    104,
+    105
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Draggable 기본 사용",
+      "desc": [
+        "【child】 : 자식   【Widget】",
+        "【feedback】 : 드래그 시의 자식   【Widget】",
+        "【axis】 : 드래그 축   【Axis】"
+      ]
+    },
+    {
+      "file": "node2_data.dart",
+      "name": "Draggable과 DragTarget 연동",
+      "desc": [
+        "【data】 : 데이터   【T】",
+        "【onDragStarted】 : 드래그 시작   【Function()】",
+        "【onDragEnd】 : 드래그 종료   【Function(DraggableDetails)】",
+        "【onDragCompleted】 : 드래그 완료   【Function()】",
+        "【onDraggableCanceled】 : 드래그 취소   【Function(Velocity,Offset)】",
+        "【onChanged】 : 변경 시 콜백   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node3_use.dart",
+      "name": "Draggable 기타 사용",
+      "desc": [
+        "드래그를 통해 일부 이벤트를 처리할 수 있습니다. 예를 들어 삭제, 조회, 팝업 등"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 30,
+  "name": "IconButton",
+  "localName": "Icon Button",
+  "info": "A clickable icon button that can specify icon information, padding, size, color, etc., and receives click events.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "IconButton Properties",
+      "desc": [
+        "【icon】: Icon component   【Widget】",
+        "【tooltip】: Long press tooltip text   【String】",
+        "【highlightColor】: Long press highlight color   【Color】",
+        "【splashColor】: Ripple color   【Color】",
+        "【onPressed】: Click event   【Function】"
+      ]
+    }
+  ]
+}

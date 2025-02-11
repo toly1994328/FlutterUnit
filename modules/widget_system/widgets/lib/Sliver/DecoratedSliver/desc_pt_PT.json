@@ -1,0 +1,20 @@
+{
+  "id": 209,
+  "name": "DecoratedSliver",
+  "localName": "Slider Decorado",
+  "info": "Este componente é aplicado em portas de visualização deslizantes, pode envolver um componente Sliver filho, adicionando um efeito de decoração Decoration.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso Básico do DecoratedSliver",
+      "desc": [
+        "【sliver】 : Componente filho   【Widget?】",
+        "【decoration】 : Objeto de decoração   【Decoration】",
+        "【position】 : Posição da decoração   【DecorationPosition】"
+      ]
+    }
+  ]
+}

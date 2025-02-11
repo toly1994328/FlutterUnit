@@ -1,0 +1,22 @@
+{
+  "id": 319,
+  "name": "Directionality",
+  "localName": "Direcionalidade",
+  "info": "Define o valor do atributo uniformemente para componentes com o atributo textDirection para os descendentes, ou pode obter o valor padrão do textDirection atual através de Directionality.of(context).",
+  "lever": 2,
+  "family": 5,
+  "linkIds": [
+    2,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de Directionality",
+      "desc": [
+        "【textDirection】 : Direção de disposição do texto   【TextDirection】",
+        "【child】 : Componente filho   【Widget】"
+      ]
+    }
+  ]
+}

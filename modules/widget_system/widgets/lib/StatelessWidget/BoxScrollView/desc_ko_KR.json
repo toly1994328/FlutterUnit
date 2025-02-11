@@ -1,0 +1,27 @@
+{
+  "id": 350,
+  "name": "BoxScrollView",
+  "localName": "박스 스크롤 뷰",
+  "info": "BoxScrollView는 ScrollView에서 상속된 추상 클래스이므로 직접 사용할 수 없습니다. 그 하위 클래스로는 ListView, GridView가 있습니다. 일반적으로 직접 하위 클래스를 구현하여 사용하지 않습니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BoxScrollView 소개",
+      "desc": [
+        "【reverse】 : 역방향 여부   【bool】",
+        "【scrollDirection】 : 스크롤 방향   【Axis】",
+        "【cacheExtent】 : 캐시 길이   【double】",
+        "【dragStartBehavior】 : 드래그 시작 동작   【DragStartBehavior】",
+        "【clipBehavior】 : 클리핑 동작   【ClipBehavior】",
+        "【controller】 : 컨트롤러   【ScrollController】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 213,
+  "name": "HtmlElementView",
+  "localName": "vue d'élément html",
+  "info": "Intégrer un élément HTML dans la hiérarchie des Widgets de Flutter Web.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction à HtmlElementView",
+      "desc": [
+        "【child】 : composant enfant   【child】",
+        "【viewType】 : identifiant unique de l'élément html   【String】"
+      ]
+    }
+  ]
+}

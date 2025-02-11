@@ -1,0 +1,29 @@
+{
+  "id": 99,
+  "name": "Flow",
+  "localName": "Layout di Flusso",
+  "info": "Può contenere più componenti, richiede la definizione di un delegato per la disposizione, permette un alto livello di personalizzazione della disposizione dei componenti, raggiungendo effetti che i layout comuni non possono ottenere. Il re dei layout, a pieno titolo.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    98,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Disposizione Circolare di Flow",
+      "desc": [
+        "【children】 : Lista dei componenti   【List<Widget>】",
+        "【delegate】 : Delegato   【FlowDelegate】"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Combinazione di Flow Circolare e Animazione",
+      "desc": [
+        "Modifica la posizione dei componenti circostanti attraverso l'animazione per ottenere l'effetto desiderato"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 128,
+  "name": "SimpleDialog",
+  "localName": "Simple Dialog",
+  "info": "A simple dialog structure that allows specifying components for the header and middle sections. It has properties such as text styles and margins for the title and content, as well as shadow depth and shape. Often used in conjunction with SimpleDialogOption.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SimpleDialog",
+      "desc": [
+        "【title】 : Top component   【Widget】",
+        "【children】 : List of child components  【List<Widget>】",
+        "【titlePadding】 : Top padding  【EdgeInsetsGeometry】",
+        "【contentPadding】 : Content padding  【EdgeInsetsGeometry】",
+        "【backgroundColor】 : Background color  【Color】",
+        "【elevation】 : Shadow depth  【double】",
+        "【shape】 : Shape   【ShapeBorder】"
+      ]
+    }
+  ]
+}

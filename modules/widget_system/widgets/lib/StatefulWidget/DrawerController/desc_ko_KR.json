@@ -1,0 +1,25 @@
+{
+  "id": 257,
+  "name": "DrawerController",
+  "localName": "iOS 슬라이드 탭",
+  "info": "Drawer 컴포넌트에 상호 작용을 제공하며, 일반적으로 잘 사용되지 않습니다. Scaffold 컴포넌트 소스 코드에서 사용 사례가 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    154,
+    64
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DrawerController 기본 사용",
+      "desc": [
+        "【drawerCallback】 : 이벤트 콜백   【DrawerCallback】",
+        "【enableOpenDragGesture】 : 측면 슬라이드 열기   【bool】",
+        "【alignment】 : 정렬 방식   【DrawerAlignment】",
+        "【scrimColor】 : 배경 색상   【Color】",
+        "【child】 : Drawer 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

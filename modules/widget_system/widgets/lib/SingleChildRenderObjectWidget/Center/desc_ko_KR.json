@@ -1,0 +1,18 @@
+{
+  "id": 86,
+  "name": "Center",
+  "localName": "중앙 컴포넌트",
+  "info": "하나의 자식 컴포넌트를 수용하고 부모 컴포넌트의 중앙에 위치시킬 수 있습니다. Align 컴포넌트의 간소화된 모드입니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Center 기본 사용",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】"
+      ]
+    }
+  ]
+}

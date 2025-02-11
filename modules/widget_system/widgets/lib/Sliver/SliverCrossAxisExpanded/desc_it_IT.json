@@ -1,0 +1,22 @@
+{
+  "id": 271,
+  "name": "SliverCrossAxisExpanded",
+  "localName": "Cursore Espanso sull'Asse Incrociato",
+  "info": "Specifica la proporzione flex per limitare le dimensioni del cursore in direzione dell'asse incrociato per un componente Sliver.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    270
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso di base di SliverCrossAxisExpanded",
+      "desc": [
+        "【flex】 : proporzione   【int】",
+        "【sliver】 : componente figlio   【Widget?】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 264,
+  "name": "RepaintBoundary",
+  "localName": "Confine di ridisegno",
+  "info": "Crea una lista di visualizzazione separata per i componenti figli, migliorando le prestazioni. Nel codice sorgente, viene utilizzato in componenti come TextField, DrawerController, Scrollbar, Sliver, ecc.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di RepaintBoundary",
+      "desc": [
+        "【child】 : componente figlio   【Widget】",
+        "Ad esempio, nella vista di disegno sopra, anche se shouldRepaint è false, il metodo paint verrà eseguito continuamente durante lo scorrimento. L'uso di RepaintBoundary può evitare ridisegni non necessari."
+      ]
+    },
+    {
+      "file": "node2_save.dart",
+      "name": "Salvare un Widget come immagine",
+      "desc": [
+        "Attraverso RenderRepaintBoundary è possibile ottenere le informazioni sull'immagine del componente figlio, ottenendo così i byte per salvarli come file immagine."
+      ]
+    }
+  ]
+}

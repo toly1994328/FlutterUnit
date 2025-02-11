@@ -1,0 +1,41 @@
+{
+  "id": 18,
+  "name": "SwitchListTile",
+  "localName": "Switch Tile",
+  "info": "A common list item structure provided by Flutter, with a left-center structure and a Switch at the end. Components can be inserted at the corresponding positions, making it easy to handle specific items.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic representation of SwitchListTile",
+      "desc": [
+        "【secondary】: Left component   【Widget】",
+        "【title】: Top middle component   【Widget】",
+        "【subtitle】: Bottom middle component   【Widget】",
+        "【inactiveThumbColor】: Circle color when not selected   【Color】",
+        "【inactiveTrackColor】: Track color when not selected   【Color】",
+        "【activeColor】: Circle color when selected   【Color】",
+        "【activeTrackColor】: Track color when selected   【Color】",
+        "【onChanged】: Selection event   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Selection effect of SwitchListTile",
+      "desc": [
+        "【selected】: Whether selected   【bool】",
+        "【inactiveThumbImage】: Circle image when not selected   【ImageProvider】",
+        "【activeThumbImage】: Circle image when selected   【ImageProvider】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Dense property of SwitchListTile",
+      "desc": [
+        "【dense】: Whether dense   【bool】"
+      ]
+    }
+  ]
+}

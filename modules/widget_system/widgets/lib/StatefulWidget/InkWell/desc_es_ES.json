@@ -1,0 +1,36 @@
+{
+  "id": 150,
+  "name": "InkWell",
+  "localName": "Ondulación",
+  "info": "Subclase de InkResponse, con propiedades básicas similares a InkResponse. Una región rectangular de ondulación, que puede conocer el radio de las esquinas redondeadas, la forma del borde, etc.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    149,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Eventos básicos de InkWell",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【onTap】 : Evento de clic   【Function()】",
+        "【onDoubleTap】 : Evento de doble clic   【Function()】",
+        "【onTapCancel】 : Cancelación de clic   【Function()】",
+        "【onLongPress】 : Evento de pulsación larga   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Otras propiedades de InkWell",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【onHighlightChanged】 : Callback de cambio de resaltado   【Function(bool)】",
+        "【highlightColor】 : Color de resaltado   【Color】",
+        "【splashColor】 : Color de la ondulación   【Color】",
+        "【radius】 : Radio de la ondulación   【double】"
+      ]
+    }
+  ]
+}

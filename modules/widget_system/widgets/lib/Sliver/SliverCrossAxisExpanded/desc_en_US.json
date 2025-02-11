@@ -1,0 +1,22 @@
+{
+  "id": 271,
+  "name": "SliverCrossAxisExpanded",
+  "localName": "Cross Axis Expanded Sliver",
+  "info": "Specifies the flex ratio in the cross-axis direction for a Sliver component to constrain the size of the sliver.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    269,
+    270
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Basic Usage of SliverCrossAxisExpanded",
+      "desc": [
+        "【flex】: Ratio   【int】",
+        "【sliver】: Child Component   【Widget?】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 287,
+  "name": "LayoutBuilder",
+  "localName": "Constructeur de mise en page",
+  "info": "Peut détecter la taille de la zone du conteneur parent et compléter la mise en page personnalisée en fonction des informations de taille du conteneur parent. C'est un composant de mise en page très pratique.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Connaissance de base de LayoutBuilder",
+      "desc": [
+        "【builder】 : Constructeur de mise en page   【LayoutWidgetBuilder】"
+      ]
+    },
+    {
+      "file": "node2_fit.dart",
+      "name": "Adaptation de la mise en page de LayoutBuilder",
+      "desc": [
+        "Peut concevoir l'affichage des composants en fonction de la taille de la zone.",
+        "Par exemple, afficher différentes structures de mise en page dans des zones de largeur différente.",
+        "Après tout, il n'est pas facile d'obtenir la zone du composant parent dans de nombreux endroits, l'utilisation de LayoutBuilder sera très agréable."
+      ]
+    },
+    {
+      "file": "node3_expend.dart",
+      "name": "Utilisation étendue de LayoutBuilder",
+      "desc": [
+        "Utilisez TextPainter pour détecter le nombre de lignes de texte et implémenter la fonction d'expansion ou de réduction."
+      ]
+    }
+  ]
+}

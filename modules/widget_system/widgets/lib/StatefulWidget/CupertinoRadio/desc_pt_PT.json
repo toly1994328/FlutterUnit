@@ -1,0 +1,42 @@
+{
+  "id": 240,
+  "name": "CupertinoRadio",
+  "localName": "Botão de Rádio·Estilo macOS",
+  "info": "Um botão de rádio no estilo macOS, onde value e groupValue determinam se o botão de rádio está selecionado; onChanged é o callback para o evento de clique.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    19,
+    45
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso do CupertinoRadio",
+      "desc": [
+        "【value】 : Valor do botão de rádio   【T】",
+        "【groupValue】 : Valor correspondente atual   【T】",
+        "【onChanged】 : Callback de mudança   【Function(T)】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Cores do CupertinoRadio",
+      "desc": [
+        "【activeColor】 : Cor de fundo ativa   【Color?】",
+        "【fillColor】 : Preenchimento   【Color?】",
+        "【inactiveColor】 : Cor de fundo inativa   【Color?】",
+        "【focusColor】 : Cor de foco   【Color?】",
+        "【mouseCursor】 : Estilo do cursor do mouse   【MouseCursor?】"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Suporte a Alternância",
+      "desc": [
+        "【toggleable】 : Suporta alternância   【bool】",
+        "toggleable é false por padrão, quando true, clicar no botão de rádio ativo retorna dados nulos, suportando a necessidade de alternar entre selecionado e não selecionado."
+      ]
+    }
+  ]
+}

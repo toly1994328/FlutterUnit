@@ -1,0 +1,25 @@
+{
+  "id": 257,
+  "name": "DrawerController",
+  "localName": "Schede scorrevoli iOS",
+  "info": "Fornisce comportamenti interattivi per il componente Drawer, generalmente usato raramente. Ci sono scenari di utilizzo nel codice sorgente del componente Scaffold.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    154,
+    64
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di DrawerController",
+      "desc": [
+        "【drawerCallback】 : callback dell'evento   【DrawerCallback】",
+        "【enableOpenDragGesture】 : se scorrere lateralmente per aprire   【bool】",
+        "【alignment】 : allineamento   【DrawerAlignment】",
+        "【scrimColor】 : colore di sfondo   【Color】",
+        "【child】 : componente Drawer   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 131,
+  "name": "CupertinoActionSheet",
+  "localName": "iOS Action Sheet",
+  "info": "A pop-up selection structure in iOS style that can hold multiple buttons, generally used in conjunction with CupertinoActionSheetAction.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of CupertinoActionSheet",
+      "desc": [
+        "【title】: First row component 【Widget】",
+        "【message】: Second row component 【Widget】",
+        "【cancelButton】: Component at the cancel button 【Widget】",
+        "【actions】: List of middle components 【List<Widget>】"
+      ]
+    }
+  ]
+}

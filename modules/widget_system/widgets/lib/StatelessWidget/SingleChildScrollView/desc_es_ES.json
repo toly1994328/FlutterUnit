@@ -1,0 +1,27 @@
+{
+  "id": 164,
+  "name": "SingleChildScrollView",
+  "localName": "Desplazamiento de un solo hijo",
+  "info": "Hace que un componente tenga un efecto de desplazamiento, y se pueden especificar propiedades como la dirección del desplazamiento, si es inverso, el controlador de desplazamiento, etc.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SingleChildScrollView",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【padding】 : Relleno interno  【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Dirección de desplazamiento de SingleChildScrollView",
+      "desc": [
+        "【scrollDirection】 : Dirección de desplazamiento   【Axis】",
+        "【reverse】 : Si es inverso   【Axis】"
+      ]
+    }
+  ]
+}

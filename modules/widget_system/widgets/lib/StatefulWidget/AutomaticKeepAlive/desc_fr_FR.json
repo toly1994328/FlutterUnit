@@ -1,0 +1,26 @@
+{
+  "id": 239,
+  "name": "AutomaticKeepAlive",
+  "localName": "Maintien automatique en vie",
+  "info": "Dans les listes chargées de manière paresseuse, permet aux sous-arbres de demander à maintenir leur état. Utilisé seul, il n'a aucun effet. Doit être utilisé avec KeepAliveNotification.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [
+    59,
+    162,
+    163,
+    165,
+    185,
+    188
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction à AutomaticKeepAlive",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "Le composant AutomaticKeepAlive est utilisé dans les composants de liste et de pagination tels que ListView, SliverList, GridView, SliverGrid, PageView, TabBarView, etc. Pour maintenir en vie un certain State, on peut utiliser AutomaticKeepAliveClientMixin, qui est un enrobage simplifié de l'utilisation de KeepAliveNotification. Cet exemple montre le maintien en vie de l'état des entrées de ListView."
+      ]
+    }
+  ]
+}

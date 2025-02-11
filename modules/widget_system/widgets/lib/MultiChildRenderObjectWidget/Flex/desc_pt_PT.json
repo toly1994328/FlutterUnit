@@ -1,0 +1,53 @@
+{
+  "id": 94,
+  "name": "Flex",
+  "localName": "Layout Flexível",
+  "info": "Classe pai de Row e Column, o método de layout mais poderoso no Flutter. Pode conter vários componentes e pode ser usado em conjunto com os componentes Spacer, Expended e Flexible para um layout flexível",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    95,
+    96,
+    106,
+    107,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Direção de disposição do Flex",
+      "desc": [
+        "【children】 : Lista de componentes   【List<Widget>】",
+        "【direction】 : Direção   【Axis】"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Alinhamento do eixo principal do Flex",
+      "desc": [
+        "【mainAxisAlignment】 : Alinhamento do eixo principal   【MainAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node_03.dart",
+      "name": "Alinhamento do eixo cruzado do Flex",
+      "desc": [
+        "【crossAxisAlignment】 : Alinhamento do eixo cruzado   【CrossAxisAlignment】"
+      ]
+    },
+    {
+      "file": "node_04.dart",
+      "name": "Ordem vertical do Flex",
+      "desc": [
+        "【verticalDirection】 : Ordem vertical   【VerticalDirection】"
+      ]
+    },
+    {
+      "file": "node_05.dart",
+      "name": "Ordem horizontal do Flex",
+      "desc": [
+        "【textDirection】 : Ordem horizontal   【TextDirection】"
+      ]
+    }
+  ]
+}

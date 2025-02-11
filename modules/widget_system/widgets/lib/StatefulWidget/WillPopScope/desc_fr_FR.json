@@ -1,0 +1,19 @@
+{
+  "id": 170,
+  "name": "WillPopScope",
+  "localName": "Interception de retour",
+  "info": "Lorsqu'un composant WillPopScope est présent dans une interface, un rappel est déclenché lors du retour à la page pour décider si le retour doit être effectué. Peut être utilisé pour des scénarios de confirmation de sortie.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de WillPopScope",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【onWillPop】 : Rappel de retour  【WillPopCallback】"
+      ]
+    }
+  ]
+}

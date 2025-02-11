@@ -1,0 +1,21 @@
+{
+  "id": 148,
+  "name": "Tab",
+  "localName": "탭",
+  "info": "일반적으로 TabBar의 항목으로 사용되며, 상하 구조로 아이콘과 내용 컴포넌트를 지정할 수 있습니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "탭 기본 사용법",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【text】 : 텍스트   【String】",
+        "【icon】 : 하단 컴포넌트  【Widget】",
+        "    text와 child는 동시에 존재할 수 없습니다."
+      ]
+    }
+  ]
+}

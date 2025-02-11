@@ -1,0 +1,31 @@
+{
+  "id": 34,
+  "name": "Divider",
+  "localName": "Horizontal Divider",
+  "info": "A horizontal divider that can specify color, height, thickness, and left and right margin information, commonly used as a divider for list items.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    35,
+    329
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Divider Color and Thickness",
+      "desc": [
+        "【color】: Color   【Color】",
+        "【thickness】: Line thickness   【double】"
+      ]
+    },
+    {
+      "file": "node2_height.dart",
+      "name": "Divider Height and Indent",
+      "desc": [
+        "【indent】: Front indent length   【double】",
+        "【endIndent】: Rear indent length   【double】",
+        "【height】: Placeholder height   【double】"
+      ]
+    }
+  ]
+}

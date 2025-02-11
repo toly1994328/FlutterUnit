@@ -1,0 +1,30 @@
+{
+  "id": 123,
+  "name": "AnimatedContainer",
+  "localName": "Contenedor Animado",
+  "info": "Combina alignment, padding, color, decoration, width, height, constraints, margin, transform en uno solo. Todas estas propiedades pueden animarse, se pueden especificar la duración y la curva, y tiene un evento de finalización de animación.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de AnimatedContainer",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【duration】 : Duración de la animación   【Duration】",
+        "【onEnd】 : Callback al finalizar la animación   【Function()】",
+        "【curve】 : Curva de la animación   【Duration】",
+        "【color】 : Color   【Color】",
+        "【width】 : Ancho   【double】",
+        "【height】 : Alto   【double】",
+        "【alignment】 : Alineación   【AlignmentGeometry】",
+        "【decoration】 : Decoración   【Decoration】",
+        "【constraints】 : Restricciones   【BoxConstraints】",
+        "【transform】 : Transformación   【Matrix4】",
+        "【margin】 : Margen exterior   【EdgeInsetsGeometry】",
+        "【padding】 : Margen interior   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

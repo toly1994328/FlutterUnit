@@ -1,0 +1,24 @@
+{
+  "id": 128,
+  "name": "SimpleDialog",
+  "localName": "Cuadro de diálogo simple",
+  "info": "Una estructura de cuadro de diálogo simple que permite especificar componentes en la parte superior y central. Tiene estilos de texto y márgenes para el título y el contenido, así como propiedades como profundidad de sombra, forma, etc. A menudo se usa junto con SimpleDialogOption.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SimpleDialog",
+      "desc": [
+        "【title】 : Componente superior   【Widget】",
+        "【children】 : Lista de componentes hijos  【List<Widget>】",
+        "【titlePadding】 : Relleno superior  【EdgeInsetsGeometry】",
+        "【contentPadding】 : Relleno del contenido  【EdgeInsetsGeometry】",
+        "【backgroundColor】 : Color de fondo  【Color】",
+        "【elevation】 : Profundidad de sombra  【double】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

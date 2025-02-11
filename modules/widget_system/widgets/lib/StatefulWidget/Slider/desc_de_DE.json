@@ -1,0 +1,37 @@
+{
+  "id": 42,
+  "name": "Slider",
+  "localName": "Schieberegler",
+  "info": "Schieberegler-Komponente, die es ermöglicht, zwischen einem festgelegten Minimum und Maximum zu wählen. Kann Farbe, Anzahl der Segmente und angezeigte Labels angeben und erhält einen Rückruf bei Fortschrittsänderungen.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    43,
+    44,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung des Sliders",
+      "desc": [
+        "【value】 : Wert   【double】",
+        "【min】 : Mindestwert   【double】",
+        "【max】 : Höchstwert   【double】",
+        "【activeColor】 : Aktive Farbe   【Color】",
+        "【inactiveColor】 : Inaktive Farbe   【Color】",
+        "【onChanged】 : Rückruf bei Änderung   【Function(double)】"
+      ]
+    },
+    {
+      "file": "node2_lable.dart",
+      "name": "Segmente und Labels des Sliders",
+      "desc": [
+        "【divisions】 : Anzahl der Segmente   【int】",
+        "【label】 : Text des Hinweisblasens   【String】",
+        "【onChangeStart】 : Überwachung beim Start des Schiebens   【Function(double)】",
+        "【onChangeEnd】 : Überwachung beim Ende des Schiebens   【Function(double)】"
+      ]
+    }
+  ]
+}

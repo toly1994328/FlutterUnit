@@ -1,0 +1,23 @@
+{
+  "id": 187,
+  "name": "SliverFillViewport",
+  "localName": "Lista de vista de relleno Sliver",
+  "info": "Componente de lista de la familia Sliver, construye subcomponentes a través de delegate, la altura del elemento llenará la ventana gráfica, se puede especificar si es una fracción.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    183,
+    185,
+    186
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico de SliverFillViewport",
+      "desc": [
+        "【viewportFraction】 : Fracción de la ventana gráfica   【double】",
+        "【delegate】 : Delegado de hijos   【SliverChildDelegate】"
+      ]
+    }
+  ]
+}

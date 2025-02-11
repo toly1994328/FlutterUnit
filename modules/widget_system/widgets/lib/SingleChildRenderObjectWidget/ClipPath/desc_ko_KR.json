@@ -1,0 +1,24 @@
+{
+  "id": 69,
+  "name": "ClipPath",
+  "localName": "경로 클리핑",
+  "info": "하위 컴포넌트를 수용하고 지정된 경로에 따라 클리핑할 수 있습니다. 경로 모양을 사용자 정의할 수 있어 매우 유연한 클리핑 컴포넌트입니다.",
+  "lever": 5,
+  "family": 2,
+  "linkIds": [
+    66,
+    67,
+    68
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ClipPath 기본 사용",
+      "desc": [
+        "【child】 : 하위 컴포넌트   【Widget】",
+        "【clipBehavior】 : 클리핑 동작   【Clip】",
+        "【clipper】 : 클리퍼   【CustomClipper<Path>】"
+      ]
+    }
+  ]
+}

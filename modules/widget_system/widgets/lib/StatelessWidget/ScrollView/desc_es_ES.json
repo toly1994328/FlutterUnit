@@ -1,0 +1,29 @@
+{
+  "id": 349,
+  "name": "ScrollView",
+  "localName": "Vista de desplazamiento",
+  "info": "Este componente se utiliza para soportar el desplazamiento, esta clase es una clase abstracta, por lo que no se puede usar directamente, tiene muchas clases de implementación, como CustomScrollView, BoxScrollView, ListView, GridView.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163,
+    253,
+    340
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introducción a ScrollView",
+      "desc": [
+        "【reverse】 : Si es inverso   【bool】",
+        "【scrollDirection】 : Dirección de desplazamiento   【Axis】",
+        "【cacheExtent】 : Extensión de caché   【double】",
+        "【dragStartBehavior】 : Comportamiento de arrastre   【DragStartBehavior】",
+        "【clipBehavior】 : Comportamiento de recorte   【ClipBehavior】",
+        "【controller】 : Controlador   【ScrollController】"
+      ]
+    }
+  ]
+}

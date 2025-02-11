@@ -1,0 +1,22 @@
+{
+  "id": 154,
+  "name": "Drawer",
+  "localName": "スライドバー",
+  "info": "一般的にScaffoldのdrawおよびendDrawプロパティで左右のスライドバーとして使用され、1つの子コンポーネントを収容でき、影の深さを指定できます。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [
+    64,
+    155
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Drawerの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【elevation】 : 影の深さ  【double】"
+      ]
+    }
+  ]
+}

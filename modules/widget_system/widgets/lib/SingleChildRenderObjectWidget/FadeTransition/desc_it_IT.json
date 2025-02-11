@@ -1,0 +1,22 @@
+{
+  "id": 89,
+  "name": "FadeTransition",
+  "localName": "Transizione di trasparenza",
+  "info": "Può contenere un componente figlio e fargli eseguire un'animazione di dissolvenza della trasparenza, richiede un animatore opacity.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    73,
+    118
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di FadeTransition",
+      "desc": [
+        "【child】 : Componente figlio   【Widget】",
+        "【opacity】 : Animazione   【Animation<double>】"
+      ]
+    }
+  ]
+}

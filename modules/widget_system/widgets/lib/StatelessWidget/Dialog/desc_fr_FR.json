@@ -1,0 +1,21 @@
+{
+  "id": 126,
+  "name": "Dialog",
+  "localName": "Boîte de dialogue",
+  "info": "Le panneau de boîte de dialogue le plus simple, contenant un composant de contenu, peut spécifier des propriétés telles que la profondeur d'ombre, la couleur de fond, la forme, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de la boîte de dialogue",
+      "desc": [
+        "【child】 : Données de l'icône animée   【Widget】",
+        "【elevation】 : Profondeur d'ombre  【double】",
+        "【backgroundColor】 : Couleur de fond  【Color】",
+        "【shape】 : Forme   【ShapeBorder】"
+      ]
+    }
+  ]
+}

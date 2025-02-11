@@ -1,0 +1,27 @@
+{
+  "id": 350,
+  "name": "BoxScrollView",
+  "localName": "Box Scroll View",
+  "info": "BoxScrollView is an abstract class that inherits from ScrollView, so it cannot be used directly. Its subclasses include ListView and GridView. Generally, you do not implement subclasses to use it.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [
+    183,
+    162,
+    163
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Introduction to BoxScrollView",
+      "desc": [
+        "【reverse】 : Whether to reverse   【bool】",
+        "【scrollDirection】 : Scroll direction   【Axis】",
+        "【cacheExtent】 : Cache length   【double】",
+        "【dragStartBehavior】 : Drag start behavior   【DragStartBehavior】",
+        "【clipBehavior】 : Clip behavior   【ClipBehavior】",
+        "【controller】 : Controller   【ScrollController】"
+      ]
+    }
+  ]
+}

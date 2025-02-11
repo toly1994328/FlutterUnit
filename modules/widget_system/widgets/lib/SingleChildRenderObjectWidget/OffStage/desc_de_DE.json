@@ -1,0 +1,21 @@
+{
+  "id": 71,
+  "name": "Offstage",
+  "localName": "Verschwindende Komponente",
+  "info": "Kann eine Unterkomponente aufnehmen und deren Verschwinden ändern. Das Attribut offstage auf true bedeutet versteckt.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    10
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von LimitedBox",
+      "desc": [
+        "【child】 : Kindkomponente   【Widget】",
+        "【offstage】 : Ob verschwunden   【bool】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 82,
+  "name": "FractionallySizedBox",
+  "localName": "Boîte à taille fractionnée",
+  "info": "Peut contenir un composant enfant, spécifie le taux de largeur et de hauteur, limite la zone du composant enfant à la largeur et à la hauteur du conteneur parent * chaque taux, ainsi que l'alignement.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de FractionallySizedBox",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【widthFactor】 : Taux de largeur   【double】",
+        "【heightFactor】 : Taux de hauteur   【double】",
+        "【alignment】 : Mode d'alignement   【AlignmentGeometry】"
+      ]
+    }
+  ]
+}

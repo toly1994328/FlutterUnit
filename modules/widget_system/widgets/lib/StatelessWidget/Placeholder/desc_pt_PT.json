@@ -1,0 +1,28 @@
+{
+  "id": 36,
+  "name": "Placeholder",
+  "localName": "Componente de Espaço Reservado",
+  "info": "Um componente de espaço reservado com um retângulo e um X, que permite especificar propriedades como cor, largura da linha, altura e largura.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Propriedades Básicas do Placeholder",
+      "desc": [
+        "【color】: Cor   【Color】",
+        "【strokeWidth】: Espessura da Linha   【double】"
+      ]
+    },
+    {
+      "file": "node2_fallback.dart",
+      "name": "Propriedades Fallback do Placeholder",
+      "desc": [
+        "Quando a área não tem restrições de altura e largura, a altura e largura do componente de espaço reservado.",
+        "【fallbackHeight】: Altura   【double】",
+        "【fallbackWidth】: Largura   【double】"
+      ]
+    }
+  ]
+}

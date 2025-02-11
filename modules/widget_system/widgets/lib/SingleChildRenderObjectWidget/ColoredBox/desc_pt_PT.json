@@ -1,0 +1,19 @@
+{
+  "id": 267,
+  "name": "ColoredBox",
+  "localName": "Caixa de Cores",
+  "info": "Desenha uma cor especificada na área de layout do componente filho e, em seguida, desenha o componente filho sobre a cor de fundo.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do ColoredBox",
+      "desc": [
+        "【color】 : componente   【Color】",
+        "【child】 : componente   【Widget】"
+      ]
+    }
+  ]
+}

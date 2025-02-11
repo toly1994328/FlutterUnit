@@ -1,0 +1,22 @@
+{
+  "id": 352,
+  "name": "CupertinoDialogAction",
+  "localName": "Interaktive Ansicht",
+  "info": "Ein einfacher Button, der normalerweise in CupertinoAlertDialog verwendet wird und im Allgemeinen nicht allein verwendet wird.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von CupertinoDialogAction",
+      "desc": [
+        "【isDefaultAction】 : Ist es die Standardaktion?   【bool】",
+        "【isDestructiveAction】 : Ist es eine zerstörerische Aktion?   【bool】",
+        "【textStyle】: Textstil   【TextStyle】",
+        "【onPressed】: Klickereignis   【VoidCallback】",
+        "【child】: Untergeordnete Komponente   【Widget】"
+      ]
+    }
+  ]
+}

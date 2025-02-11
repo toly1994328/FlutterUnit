@@ -1,0 +1,41 @@
+{
+  "id": 18,
+  "name": "SwitchListTile",
+  "localName": "Bouton de Commutation Tuile",
+  "info": "Une structure de liste générique fournie par Flutter, de structure gauche-centre, avec un Switch à la fin. Des composants peuvent être insérés aux positions correspondantes, ce qui permet de répondre facilement à des entrées spécifiques.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "La performance de base de SwitchListTile est la suivante",
+      "desc": [
+        "【secondary】: Composant gauche   【Widget】",
+        "【title】: Composant supérieur central   【Widget】",
+        "【subtitle】: Composant inférieur central   【Widget】",
+        "【inactiveThumbColor】: Couleur du cercle lorsqu'il n'est pas sélectionné   【Color】",
+        "【inactiveTrackColor】: Couleur de la piste lorsqu'elle n'est pas sélectionnée   【Color】",
+        "【activeColor】: Couleur du cercle lorsqu'il est sélectionné   【Color】",
+        "【activeTrackColor】: Couleur de la piste lorsqu'elle est sélectionnée   【Color】",
+        "【onChanged】: Événement de sélection   【Function(bool)】"
+      ]
+    },
+    {
+      "file": "node2_select.dart",
+      "name": "Effet de sélection de SwitchListTile",
+      "desc": [
+        "【selected】: Est sélectionné   【bool】",
+        "【inactiveThumbImage】: Image du cercle lorsqu'il n'est pas sélectionné   【ImageProvider】",
+        "【activeThumbImage】: Image du cercle lorsqu'il est sélectionné   【ImageProvider】"
+      ]
+    },
+    {
+      "file": "node3_dense.dart",
+      "name": "Propriété de densité de SwitchListTile",
+      "desc": [
+        "【dense】: Est dense   【bool】"
+      ]
+    }
+  ]
+}

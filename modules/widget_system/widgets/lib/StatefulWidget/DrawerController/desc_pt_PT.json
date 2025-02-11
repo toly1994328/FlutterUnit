@@ -1,0 +1,25 @@
+{
+  "id": 257,
+  "name": "DrawerController",
+  "localName": "Separador deslizante iOS",
+  "info": "Fornece comportamento interativo para o componente Drawer, geralmente raramente usado. Há cenários de uso no código-fonte do componente Scaffold.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    154,
+    64
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do DrawerController",
+      "desc": [
+        "【drawerCallback】 : Callback de evento   【DrawerCallback】",
+        "【enableOpenDragGesture】 : Se o deslizar lateral está ativado   【bool】",
+        "【alignment】 : Alinhamento   【DrawerAlignment】",
+        "【scrimColor】 : Cor de fundo   【Color】",
+        "【child】 : Componente Drawer   【Widget】"
+      ]
+    }
+  ]
+}

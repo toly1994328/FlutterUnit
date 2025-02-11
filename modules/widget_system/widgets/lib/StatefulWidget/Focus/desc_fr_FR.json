@@ -1,0 +1,38 @@
+{
+  "id": 282,
+  "name": "Focus",
+  "localName": "Composant de mise au point",
+  "info": "Un composant qui gère [FocusNode], utilisé pour permettre au focus clavier d'être attribué à ce widget et à ses nœuds enfants.",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [
+    283,
+    284
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Mise au point et perte de focus de FocusNode",
+      "desc": [
+        "【focusNode】 : focus   【FocusNode?】",
+        "【onFocusChange】 : écouteur de changement de focus   【ValueChanged<bool>?】",
+        "【child】 : composant enfant   【Widget】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Mise au point automatique",
+      "desc": [
+        "【autofocus】 : mise au point automatique   【bool】",
+        "Le framework Flutter intègre des raccourcis clavier pour changer le focus, par exemple, dans une liste défilable horizontalement, ← et → permettent de se concentrer respectivement sur l'élément précédent et suivant. La touche Tab permet de se concentrer sur le nœud Focus suivant"
+      ]
+    },
+    {
+      "file": "node3.dart",
+      "name": "Rappel d'événement clavier",
+      "desc": [
+        "【onKeyEvent】 : rappel d'événement clavier   【FocusOnKeyEventCallback?】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": 26,
+  "name": "RaisedButton",
+  "localName": "Botão Elevado",
+  "info": "Um botão elevado com sombra, baseado no MaterialButton, com todas as propriedades semelhantes ao MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    25,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Evento de Clique do RaisedButton",
+      "desc": [
+        "【color】: Cor   【Color】",
+        "【splashColor】: Cor do efeito de onda   【Color】",
+        "【elevation】: Profundidade da sombra   【double】",
+        "【child】: Widget filho   【Widget】",
+        "【textColor】: Cor do texto do widget filho   【Color】",
+        "【highlightColor】: Cor de destaque ao pressionar   【Color】",
+        "【padding】: Espaçamento interno   【EdgeInsetsGeometry】",
+        "【onPressed】: Evento de clique   【Function】",
+        "    ",
+        "",
+        "class CustomRaisedButton extends StatelessWidget {",
+        "  const CustomRaisedButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'O botão RaisedButton foi descontinuado no Flutter 3.3. O substituto é o botão ElevatedButton.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        "   @override",
+        "   Widget build(BuildContext context) {",
+        "     return RaisedButton(",
+        "       color: Colors.blue,",
+        "       splashColor: Colors.green,",
+        "       onPressed: () {,",
+        "       child: const Text(\"RaisedButton\"),",
+        "       textColor: const Color(0xffFfffff),",
+        "       padding: const EdgeInsets.all(8),",
+        "       elevation: 5,",
+        "       highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

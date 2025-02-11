@@ -1,0 +1,20 @@
+{
+  "id": 92,
+  "name": "SizeTransition",
+  "localName": "Size Transition",
+  "info": "Can accommodate a child component and animate its size. Requires an animator sizeFactor, and can specify the axis of size change and the axis alignment.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SizeTransition",
+      "desc": [
+        "【child】: Child component   【Widget】",
+        "【axis】: Axis*2   【Axis】",
+        "【sizeFactor】: Animation   【Animation<double>】"
+      ]
+    }
+  ]
+}

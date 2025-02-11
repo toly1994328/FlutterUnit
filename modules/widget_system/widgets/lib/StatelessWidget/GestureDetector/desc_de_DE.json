@@ -1,0 +1,44 @@
+{
+  "id": 146,
+  "name": "GestureDetector",
+  "localName": "Gesten-Erkenner",
+  "info": "Komponente zur Erkennung von Gestenereignissen, kann Klicks, lange Drücke, Doppelklicks, Drücken, Loslassen, Bewegen usw. erkennen und kann Informationen über die Berührungspunkte abrufen. Ein unverzichtbares Werkzeug für zu Hause und unterwegs.",
+  "lever": 5,
+  "family": 0,
+  "linkIds": [
+    147,
+    150
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Ereignisse von GestureDetector",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【onTap】 : Klick-Ereignis   【Function()】",
+        "【onDoubleTap】 : Doppelklick-Ereignis   【GestureTapCallback】",
+        "【onLongPress】 : Langer Druck-Ereignis   【GestureLongPressCallback】"
+      ]
+    },
+    {
+      "file": "node2_tap.dart",
+      "name": "Details von GestureDetector",
+      "desc": [
+        "【onTapDown】 : Rückruf beim Drücken   【GestureTapDownCallback】",
+        "【onTapUp】 : Rückruf beim Loslassen   【GestureTapUpCallback】",
+        "【onTapCancel】 : Klick abbrechen   【GestureTapCancelCallback】"
+      ]
+    },
+    {
+      "file": "node3_pan.dart",
+      "name": "Pan-Ereignisse von GestureDetector",
+      "desc": [
+        "【onPanDown】 : Rückruf beim Drücken   【GestureDragDownCallback】",
+        "【onPanEnd】 : Ende des Ziehens   【GestureDragEndCallback】",
+        "【onPanStart】 : Beginn des Ziehens   【GestureDragStartCallback】",
+        "【onPanUpdate】 : Aktualisierung des Ziehens   【GestureDragUpdateCallback】",
+        "【onPanCancel】 : Ziehen abbrechen   【GestureDragCancelCallback】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": 217,
+  "name": "CupertinoPopupSurface",
+  "localName": "Livello popup sfocato",
+  "info": "Sfondo sfocato rettangolare con angoli arrotondati per le finestre popup iOS, utilizzato nei dialoghi in stile Cupertino nel codice sorgente.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilizzo di CupertinoPopupSurface",
+      "desc": [
+        "【isSurfacePainted】 : Se disegnare in bianco   【bool】",
+        "【child】 : Componente figlio   【Widget】",
+        "Testare l'effetto: a sinistra isSurfacePainted = false, a destra isSurfacePainted = true"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 99,
+  "name": "Flow",
+  "localName": "Disposition fluide",
+  "info": "Peut contenir plusieurs composants, nécessite de définir un délégué pour l'agencement, permet une personnalisation élevée de l'agencement des composants, atteignant des effets impossibles avec des dispositions ordinaires. Le roi des dispositions, sans aucun doute.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [
+    98,
+    94
+  ],
+  "nodes": [
+    {
+      "file": "node_01.dart",
+      "name": "Disposition circulaire Flow",
+      "desc": [
+        "【children】 : Liste des composants   【List<Widget>】",
+        "【delegate】 : Délégué   【FlowDelegate】"
+      ]
+    },
+    {
+      "file": "node_02.dart",
+      "name": "Combinaison de Flow circulaire et animation",
+      "desc": [
+        "Modifier la position des composants environnants via une animation pour obtenir l'effet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 218,
+  "name": "CupertinoNavigationBarBackButton",
+  "localName": "Pulsante Indietro in stile iOS",
+  "info": "Pulsante Indietro per barra di navigazione in stile Cupertino, può specificare colore ed evento di clic, generalmente non utilizzato da solo.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso base del pulsante Indietro",
+      "desc": [
+        "【onPressed】 : Evento di clic   【VoidCallback】",
+        "【color】: Colore    【Color】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 91,
+  "name": "ScaleTransition",
+  "localName": "스케일 변환",
+  "info": "하나의 자식 위젯을 포함하고, 스케일 애니메이션을 수행할 수 있습니다. 애니메이션 스케일을 제공해야 하며, alignment 속성을 가지고 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ScaleTransition 기본 사용법",
+      "desc": [
+        "【child】 : 자식 위젯   【Widget】",
+        "【scale】 : 애니메이션   【Animation<double>】"
+      ]
+    }
+  ]
+}

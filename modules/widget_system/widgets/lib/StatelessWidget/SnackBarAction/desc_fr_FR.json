@@ -1,0 +1,21 @@
+{
+  "id": 141,
+  "name": "SnackBarAction",
+  "localName": "Bouton de barre de message",
+  "info": "Généralement utilisé uniquement dans SnackBar, accepte les événements de clic. Après un clic, le bouton est désactivé, et vous pouvez spécifier la couleur et la couleur désactivée.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de SnackBarAction",
+      "desc": [
+        "【label】 :  Étiquette  【String】",
+        "【textColor】 :  Couleur du texte   【Color】",
+        "【disabledTextColor】 :  Couleur du texte désactivé   【Color】",
+        "【onPressed】 :  Rappel de clic  【Function()】"
+      ]
+    }
+  ]
+}

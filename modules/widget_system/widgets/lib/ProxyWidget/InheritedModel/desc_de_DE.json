@@ -1,0 +1,19 @@
+{
+  "id": 336,
+  "name": "InheritedModel",
+  "localName": "Gemeinsames Modell",
+  "info": "Es ist eine abstrakte Unterklasse von InheritedWidget, die Daten über den Kontext an den Unterbaum weiterleitet und die Granularität der Abhängigkeitsbenachrichtigung über den Aspekt Aspect steuert.",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [346],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Verwendung von InheritedModel",
+      "desc": [
+        "【child】: Unterkomponente 【Widget】",
+        "Unten ist ein benutzerdefiniertes InheritedModel, das die gemeinsame Nutzung von Daten im Unterbaum implementiert; und definiert zwei Aspekte, Farbe und Wert, um die Granularität der Abhängigkeitsbenachrichtigung zu steuern."
+      ]
+    }
+  ]
+}

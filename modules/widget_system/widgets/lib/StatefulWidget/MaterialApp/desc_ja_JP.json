@@ -1,0 +1,24 @@
+{
+  "id": 65,
+  "name": "MaterialApp",
+  "localName": "Materialアプリ",
+  "info": "Materialアプリのトップレベルのコンポーネントで、ルートジェネレータ、テーマ、言語、ホームページなどの属性を含みます。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "MaterialAppの基本使い方",
+      "desc": [
+        "【theme】 : テーマ   【ThemeData】",
+        "【title】 : タスクバーのタイトル   【String】",
+        "【debugShowCheckedModeBanner】 : バッジを表示する   【bool】",
+        "【showPerformanceOverlay】 : パフォーマンスオーバーレイを表示する   【bool】",
+        "【debugShowMaterialGrid】 : グリッドを表示する   【bool】",
+        "【onGenerateRoute】 : ルートジェネレータ   【RouteFactory】",
+        "【home】 : ホームページ   【Widget】"
+      ]
+    }
+  ]
+}

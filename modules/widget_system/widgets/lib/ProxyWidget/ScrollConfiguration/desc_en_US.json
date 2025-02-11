@@ -1,0 +1,24 @@
+{
+  "id": 180,
+  "name": "ScrollConfiguration",
+  "localName": "iOS Menu Button",
+  "info": "Needs to wrap a scrollable component and control the scrolling effect through the behavior property, which can remove the blue shadow of the scrolling, etc.",
+  "lever": 3,
+  "family": 5,
+  "linkIds": [
+    162,
+    163,
+    164
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of ScrollConfiguration",
+      "desc": [
+        "【child】: Child component 【Widget】",
+        "【behavior】: Scroll behavior 【ScrollBehavior】",
+        "    ScrollConfiguration can be used to remove the blue shadow of ListView"
+      ]
+    }
+  ]
+}

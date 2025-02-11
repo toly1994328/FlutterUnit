@@ -1,0 +1,32 @@
+{
+  "id": 277,
+  "name": "ShaderMask",
+  "localName": "Máscara de sombreado",
+  "info": "Puede contener un hijo y aplicar sombreado al hijo a través de un sombreador, se puede especificar el modo de mezcla. Normalmente se utiliza para el procesamiento de gradientes de color en componentes.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    88,
+    38
+  ],
+  "nodes": [
+    {
+      "file": "node1_radial.dart",
+      "name": "Sombreado de gradiente radial",
+      "desc": [
+        "【child】 : Componente hijo   【Widget】",
+        "【shaderCallback】 : Callback del sombreador   【ShaderCallback】",
+        "【blendMode】 : Modo de mezcla   【BlendMode】",
+        "    Crea un sombreador de gradiente radial a través de RadialGradient#createShader."
+      ]
+    },
+    {
+      "file": "node2_linear.dart",
+      "name": "Sombreado de gradiente lineal",
+      "desc": [
+        "Crea un sombreador de gradiente lineal a través de LinearGradient#createShader",
+        "Para más información sobre sombreadores, consulte el 【Álbum de dibujo】"
+      ]
+    }
+  ]
+}

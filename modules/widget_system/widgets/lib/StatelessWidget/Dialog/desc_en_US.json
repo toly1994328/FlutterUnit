@@ -1,0 +1,21 @@
+{
+  "id": 126,
+  "name": "Dialog",
+  "localName": "Dialog Box",
+  "info": "The simplest dialog panel, containing a content component, with properties such as shadow depth, background color, shape, etc.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Dialog",
+      "desc": [
+        "【child】: Animation icon data 【Widget】",
+        "【elevation】: Shadow depth 【double】",
+        "【backgroundColor】: Background color 【Color】",
+        "【shape】: Shape 【ShapeBorder】"
+      ]
+    }
+  ]
+}

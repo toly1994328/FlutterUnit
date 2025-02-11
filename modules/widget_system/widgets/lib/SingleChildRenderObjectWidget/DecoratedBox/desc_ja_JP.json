@@ -1,0 +1,55 @@
+{
+  "id": 70,
+  "name": "DecoratedBox",
+  "localName": "装飾ボックス",
+  "info": "子コンポーネントを収容し、装飾することができます。コアプロパティはdecorationで、枠線、グラデーション、影、背景画像などを設定できます。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DecoratedBoxの基本使用",
+      "desc": [
+        "【decoration】 : 装飾オブジェクト   【Decoration】",
+        "【position】 : 前景色(左)/背景色(右)   【DecorationPosition】"
+      ]
+    },
+    {
+      "file": "node2_image.dart",
+      "name": "DecoratedBoxの形状と画像装飾",
+      "desc": [
+        "【shape】 : 形状   【BoxShape】",
+        "【image】 : 背景画像   【DecorationImage】,"
+      ]
+    },
+    {
+      "file": "node3_border.dart",
+      "name": "DecoratedBoxの枠線装飾",
+      "desc": [
+        "【border】 : 枠線   【BoxBorder】,"
+      ]
+    },
+    {
+      "file": "node4_shape.dart",
+      "name": "DecoratedBoxの形状装飾",
+      "desc": [
+        "ShapeDecorationオブジェクトを使用して枠線の形状を指定できます,"
+      ]
+    },
+    {
+      "file": "node5_line.dart",
+      "name": "DecoratedBoxの下線装飾",
+      "desc": [
+        "UnderlineTabIndicatorオブジェクトを使用して下線を指定できます,"
+      ]
+    },
+    {
+      "file": "node6_flutterLogo.dart",
+      "name": "FlutterLogoDecoration装飾",
+      "desc": [
+        "FlutterLogoDecorationオブジェクトを使用してFlutterアイコン装飾を指定できます（特に大きな効果はありません）,"
+      ]
+    }
+  ]
+}

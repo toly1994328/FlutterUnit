@@ -1,0 +1,28 @@
+{
+  "id": 36,
+  "name": "Placeholder",
+  "localName": "플레이스홀더 컴포넌트",
+  "info": "사각형과 엑스 표시가 있는 플레이스홀더 컴포넌트로, 색상, 선 두께, 너비 및 높이 등의 속성을 지정할 수 있습니다.",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Placeholder 기본 속성",
+      "desc": [
+        "【color】: 색상   【Color】",
+        "【strokeWidth】: 선 두께   【double】"
+      ]
+    },
+    {
+      "file": "node2_fallback.dart",
+      "name": "Placeholder의 fallback 속성",
+      "desc": [
+        "해당 영역에 너비와 높이 제약이 없을 때 플레이스홀더 컴포넌트의 너비와 높이.",
+        "【fallbackHeight】: 높이   【double】",
+        "【fallbackWidth】: 너비   【double】"
+      ]
+    }
+  ]
+}

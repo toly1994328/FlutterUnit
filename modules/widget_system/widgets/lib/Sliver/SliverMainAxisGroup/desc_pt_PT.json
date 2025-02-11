@@ -1,0 +1,19 @@
+{
+  "id": 268,
+  "name": "SliverMainAxisGroup",
+  "localName": "Grupo de Slides do Eixo Principal",
+  "info": "Pode conter vários componentes Sliver, permitindo que sejam tratados como um grupo na direção do eixo de deslizamento.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Uso Básico do SliverMainAxisGroup",
+      "desc": [
+        "【slivers】 : Lista de componentes filhos   【List<Widget>】",
+        "Pode ser combinado com SliverPersistentHeader para alcançar efeitos de agrupamento e fixação de títulos no topo."
+      ]
+    }
+  ]
+}

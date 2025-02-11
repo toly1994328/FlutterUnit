@@ -1,0 +1,37 @@
+{
+  "id": 42,
+  "name": "Slider",
+  "localName": "Deslizador",
+  "info": "Componente deslizante que permite selecionar arrastando entre um valor máximo e mínimo especificados. Pode especificar a cor, o número de segmentos e as etiquetas exibidas, e recebe uma chamada de retorno para alterações de progresso.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    43,
+    44,
+    331
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso básico do Slider",
+      "desc": [
+        "【value】 : valor   【double】",
+        "【min】 : valor mínimo   【double】",
+        "【max】 : valor máximo   【double】",
+        "【activeColor】 : cor ativa   【Color】",
+        "【inactiveColor】 : cor inativa   【Color】",
+        "【onChanged】 : chamada de retorno ao alterar   【Function(double)】"
+      ]
+    },
+    {
+      "file": "node2_lable.dart",
+      "name": "Segmentação e etiquetas do Slider",
+      "desc": [
+        "【divisions】 : número de segmentos   【int】",
+        "【label】 : texto da bolha de dica   【String】",
+        "【onChangeStart】 : ouvinte ao iniciar o deslize   【Function(double)】",
+        "【onChangeEnd】 : ouvinte ao terminar o deslize   【Function(double)】"
+      ]
+    }
+  ]
+}

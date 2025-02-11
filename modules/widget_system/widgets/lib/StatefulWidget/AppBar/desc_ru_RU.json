@@ -1,0 +1,31 @@
+{
+  "id": 57,
+  "name": "AppBar",
+  "localName": "Верхняя панель приложения",
+  "info": "Общая структура верхней панели приложения, в которой можно разместить соответствующие компоненты в указанных местах, часто используется в компоненте Scaffold.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование AppBar",
+      "desc": [
+        "【leading】 : Левый компонент   【Widget】",
+        "【title】 : Центральный компонент   【Widget】",
+        "【actions】 : Правый компонент   【List<Widget>】",
+        "【elevation】 : Глубина тени   【double】",
+        "【shape】 : Форма   【ShapeBorder】",
+        "【backgroundColor】 : Цвет фона   【Цвет】",
+        "【centerTitle】 : Центрирование заголовка   【bool】"
+      ]
+    },
+    {
+      "file": "node2_tab.dart",
+      "name": "Использование AppBar с TabBar и TabBarView",
+      "desc": [
+        "【bottom】 : Нижний компонент   【PreferredSizeWidget】"
+      ]
+    }
+  ]
+}

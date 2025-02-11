@@ -1,0 +1,23 @@
+{
+  "id": 307,
+  "name": "SliverOverlapAbsorber",
+  "localName": "オーバーラップアブソーバー",
+  "info": "別のsliverをラップし、そのレイアウト範囲をオーバーラップとして扱うように強制します。SliverOverlapInjectorと一緒に使用する必要があります。",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    308
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverOverlapAbsorberの基本的な使用法",
+      "desc": [
+        "【sliver】 : 子コンポーネント   【Widget】",
+        "【handle】 : *ハンドラ   【SliverOverlapAbsorberHandle】",
+        "SliverOverlapAbsorberとSliverOverlapInjectorコンポーネントを使用しない場合、NestedScrollViewの内容がヘッダーバーと重なります。"
+      ]
+    }
+  ]
+}

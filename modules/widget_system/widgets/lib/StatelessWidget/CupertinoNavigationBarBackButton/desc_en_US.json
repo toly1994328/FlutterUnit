@@ -1,0 +1,19 @@
+{
+  "id": 218,
+  "name": "CupertinoNavigationBarBackButton",
+  "localName": "iOS Style Back Button",
+  "info": "A Cupertino-style navigation bar back button, which can specify color and click events, and is generally not used alone.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of Back Button",
+      "desc": [
+        "【onPressed】: Click event 【VoidCallback】",
+        "【color】: Color 【Color】"
+      ]
+    }
+  ]
+}

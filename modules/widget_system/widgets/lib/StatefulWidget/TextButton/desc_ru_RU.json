@@ -1,0 +1,33 @@
+{
+  "id": 353,
+  "name": "TextButton",
+  "localName": "Текстовая кнопка",
+  "info": "Текстовая кнопка в стиле Material, по умолчанию имеет только текст, при нажатии появляется эффект волны. Можно изменить свойства границы, цвета, тени и другие через стили.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    354,
+    355
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование TextButton",
+      "desc": [
+        "【child】 : Имеет ли прокручиваемое содержимое   【Widget】",
+        "【onPressed】 : Событие нажатия   【VoidCallback】",
+        "【onLongPress】 : Событие долгого нажатия   【VoidCallback】"
+      ]
+    },
+    {
+      "file": "node2_style.dart",
+      "name": "Стиль TextButton",
+      "desc": [
+        "【style】 : Стиль кнопки   【ButtonStyle】",
+        "【focusNode】 : Фокус   【FocusNode】",
+        "【clipBehavior】 : Поведение обрезки   【Clip】",
+        "【autofocus】 : Автофокус   【bool】"
+      ]
+    }
+  ]
+}

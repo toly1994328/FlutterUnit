@@ -1,0 +1,43 @@
+{
+  "id": 33,
+  "name": "ToggleButtons",
+  "localName": "Groupe de boutons de bascule",
+  "info": "Reçoit une liste de composants, peut spécifier des propriétés telles que la bordure, le rayon, la couleur, etc. Selon la logique spécifique, il peut répondre à la demande de sélection unique ou multiple de plusieurs boutons.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    332,
+    262
+  ],
+  "nodes": [
+    {
+      "file": "node1_single.dart",
+      "name": "Basculement unique de ToggleButtons",
+      "desc": [
+        "【children】: Ensemble de composants enfants   【List<Widget>】",
+        "【borderWidth】: Largeur de la bordure   【double】",
+        "【borderRadius】: Rayon   【BorderRadius】",
+        "【isSelected】: Ensemble de sélection   【List<bool>】",
+        "【onPressed】: Événement de clic   【Function(int)】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Propriétés de couleur de ToggleButtons",
+      "desc": [
+        "【borderColor】: Couleur de la bordure   【Color】",
+        "【selectedBorderColor】: Couleur de la bordure sélectionnée   【Color】",
+        "【selectedColor】: Couleur du composant sélectionné   【Color】",
+        "【fillColor】: Couleur de remplissage sélectionnée   【Color】",
+        "【splashColor】: Couleur de l'effet de vague   【Color】"
+      ]
+    },
+    {
+      "file": "node3_multi.dart",
+      "name": "Basculement multiple de ToggleButtons",
+      "desc": [
+        "Peut contrôler la logique de transformation d'état pour créer différents effets."
+      ]
+    }
+  ]
+}

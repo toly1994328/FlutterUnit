@@ -1,0 +1,22 @@
+{
+  "id": 106,
+  "name": "Expanded",
+  "localName": "拡張コンポーネント",
+  "info": "親クラスはFlexibleで、fitタイプがtightのFlexibleコンポーネントに相当します。ネストされた子要素が残りのスペースを使用して占有スペースを拡張します。",
+  "lever": 4,
+  "family": 5,
+  "linkIds": [
+    94,
+    109
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Expandedの基本的な使用法",
+      "desc": [
+        "【child】 : 子要素   【Widget】",
+        "【flex】 : 残りスペースの配分比率   【int】"
+      ]
+    }
+  ]
+}

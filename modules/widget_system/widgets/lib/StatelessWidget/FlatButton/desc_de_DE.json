@@ -1,0 +1,58 @@
+{
+  "id": 25,
+  "name": "FlatButton",
+  "localName": "Flacher Button",
+  "info": "Ein flacher Button ohne Schatten, basierend auf MaterialButton. Alle Eigenschaften ähneln denen von MaterialButton.",
+  "lever": 3,
+  "family": 0,
+  "deprecated": -1,
+  "linkIds": [
+    24,
+    26,
+    27,
+    175
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "FlatButton-Klickereignis",
+      "desc": [
+        "【color】: Farbe   【Color】",
+        "【splashColor】: Wasserwellenfarbe   【Color】",
+        "【child】: Untergeordnete Komponente   【Widget】",
+        "【textColor】: Textfarbe der untergeordneten Komponente   【Color】",
+        "【highlightColor】: Hervorhebungsfarbe beim Langdrücken   【Color】",
+        "【padding】: Innenabstand   【EdgeInsetsGeometry】",
+        "【onPressed】: Klickereignis   【Function】",
+        "    ",
+        "",
+        "class CustomFlatButton extends StatelessWidget {",
+        "  const CustomFlatButton({Key? key) : super(key: key);",
+        "",
+        "  final String info =",
+        "      'FlatButton wurde in Flutter 3.3 ausgemustert. Der Ersatz ist der ElevatedButton.';",
+        "",
+        "  @override",
+        "  Widget build(BuildContext context) {",
+        "    return Container(",
+        "      color: Colors.blue.withOpacity(0.1),",
+        "      padding: const EdgeInsets.all(10),",
+        "      margin: const EdgeInsets.all(10),",
+        "      child: Text(info),",
+        "    );",
+        "  ",
+        "",
+        " @override",
+        " Widget build(BuildContext context) {",
+        "   return FlatButton(",
+        "     onPressed: ()=>{,",
+        "     padding: const EdgeInsets.all(8),",
+        "     splashColor: Colors.green,",
+        "     child: const Text(\"FlatButton\"),",
+        "     textColor: const Color(0xffFfffff),",
+        "     color: Colors.blue,",
+        "     highlightColor: const Color(0xffF88B0A),"
+      ]
+    }
+  ]
+}

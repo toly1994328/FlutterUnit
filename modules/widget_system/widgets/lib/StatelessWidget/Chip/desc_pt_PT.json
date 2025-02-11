@@ -1,0 +1,45 @@
+{
+  "id": 11,
+  "name": "Chip",
+  "localName": "Componente de Barra Pequena",
+  "info": "Uma pequena barra horizontal com bordas arredondadas que pode conter três componentes: esquerdo, central e direito. Pode especificar a cor, a cor da sombra e o evento de clique.",
+  "lever": 4,
+  "family": 0,
+  "linkIds": [
+    12,
+    13,
+    14,
+    15,
+    153
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "O comportamento normal do Chip é o seguinte",
+      "desc": [
+        "【avatar】: Componente esquerdo   【Widget】",
+        "【label】: Componente central   【Widget】",
+        "【padding】 : Espaçamento interno  【EdgeInsetsGeometry】",
+        "【labelPadding】: Espaçamento do label   【EdgeInsetsGeometry】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Pode definir cor e sombra",
+      "desc": [
+        "【backgroundColor】: Cor de fundo   【Color】",
+        "【shadowColor】: Cor da sombra   【Color】",
+        "【elevation】: Profundidade da sombra   【double】"
+      ]
+    },
+    {
+      "file": "node3_delete.dart",
+      "name": "Pode definir um botão de clique à direita",
+      "desc": [
+        "【deleteIcon】: Componente direito (normalmente um ícone)   【Widget】",
+        "【deleteIconColor】: Cor do componente direito   【Color】",
+        "【onDeleted】: Evento de clique do componente direito   【Function】"
+      ]
+    }
+  ]
+}

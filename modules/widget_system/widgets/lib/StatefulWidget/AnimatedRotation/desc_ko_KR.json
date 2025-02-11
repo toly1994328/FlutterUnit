@@ -1,0 +1,28 @@
+{
+  "id": 259,
+  "name": "AnimatedRotation",
+  "localName": "회전 애니메이션",
+  "info": "주어진 회전량이 변경될 때, 자식 구성 요소가 회전 값에 따라 자동으로 조정되며, 이전 값과 이후 값 사이에 애니메이션 변화가 있습니다.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    247,
+    249
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "회전 애니메이션 효과",
+      "desc": [
+        "이 예제에서는 turns 매개변수를 드래그하여 조정하고 애니메이션 효과를 확인합니다. 회전 각도는: turns*2*pi",
+        "【child】 : 자식 구성 요소   【Widget】",
+        "【duration】 : 애니메이션 지속 시간   【Duration】",
+        "【onEnd】 : 애니메이션 종료 콜백   【Function()】",
+        "【alignment】 : 애니메이션 변환 중심   【Alignment】",
+        "【curve】 : 애니메이션 곡선   【Duration】",
+        "【filterQuality】 : 필터 품질   【FilterQuality】",
+        "【turns】 : 회전량   【double】"
+      ]
+    }
+  ]
+}

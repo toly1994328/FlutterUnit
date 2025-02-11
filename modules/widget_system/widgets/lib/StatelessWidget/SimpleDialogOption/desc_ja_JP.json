@@ -1,0 +1,19 @@
+{
+  "id": 133,
+  "name": "SimpleDialogOption",
+  "localName": "シンプルダイアログオプション",
+  "info": "ボタンで、使用シナリオが少なく、通常はSimpleDialogで使用され、クリックイベントを受け取ります。",
+  "lever": 1,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SimpleDialogOptionの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【onPressed】 : クリックイベント  【Function()】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 177,
+  "name": "ReorderableListView",
+  "localName": "재정렬 가능한 리스트",
+  "info": "길게 눌러 정렬할 수 있는 ListView, 스크롤 방향, 반대 방향 여부, 스크롤 컨트롤러 등의 속성을 지정할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "ReorderableListView 기본 사용법",
+      "desc": [
+        "【children】 : 자식 위젯 리스트   【List<Widget>】",
+        "【header】 : 헤더 위젯   【Widget】",
+        "【padding】 : 내부 여백   【EdgeInsets】",
+        "【onReorder】 : 재정렬 시 콜백  【ReorderCallback】"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "ReorderableListView 스크롤 방향",
+      "desc": [
+        "【scrollDirection】 : 스크롤 방향   【Axis】",
+        "【reverse】 : 반대 방향 여부  【bool】"
+      ]
+    }
+  ]
+}

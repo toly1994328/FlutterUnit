@@ -1,0 +1,32 @@
+{
+  "id": 339,
+  "name": "DateRangePickerDialog",
+  "localName": "Date Range",
+  "info": "Material style date range picker, supports calendar selection and input selection.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    135,
+    136,
+    137
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of DateRangePickerDialog",
+      "desc": [
+        "【firstDate】 : Earliest date   【DateTime】",
+        "【lastDate】 : Latest date   【DateTime】",
+        "【initialDateRange】 : Initial range   【DateTimeRange?】",
+        "【saveText】 : Save text  【String?】"
+      ]
+    },
+    {
+      "file": "node2_diy.dart",
+      "name": "Customize DateRangePickerDialog",
+      "desc": [
+        "Modify the source code of DateRangePickerDialog to display a numerical background for month entries."
+      ]
+    }
+  ]
+}

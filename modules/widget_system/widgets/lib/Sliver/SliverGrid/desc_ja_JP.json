@@ -1,0 +1,20 @@
+{
+  "id": 188,
+  "name": "SliverGrid",
+  "localName": "Sliverグリッド",
+  "info": "Sliverファミリーのグリッドリストコンポーネントで、GirdViewと類似しており、countとextentで構築されます。通常はCustomScrollViewで使用されます。",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SliverListの基本的な使用",
+      "desc": [
+        "SliverGrid.count 軸方向の数を指定して構築",
+        "SliverGrid.extent 軸方向の長さを指定して構築",
+        "属性特性はGridViewと同じで、詳細はそちらを参照してください"
+      ]
+    }
+  ]
+}

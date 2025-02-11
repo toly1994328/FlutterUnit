@@ -1,0 +1,31 @@
+{
+  "id": 176,
+  "name": "Dismissible",
+  "localName": "スワイプで消える",
+  "info": "スワイプ時に下部コンポーネントを表示でき、スワイプの方向と交差軸のオフセットを指定できます。確認消失と消失時のコールバックを受け取ります。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Dismissibleの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【background】 : 左底  【Widget】",
+        "【secondaryBackground】 : 右底  【Widget】",
+        "【key】 : キー  【Key】",
+        "【confirmDismiss】 : 確認コールバック  【DismissDirectionCallback】",
+        "【onDismissed】 : 消失コールバック  【DismissDirectionCallback】,"
+      ]
+    },
+    {
+      "file": "node2_direction.dart",
+      "name": "Dismissibleの基本使用",
+      "desc": [
+        "【direction】 : 方向   【DismissDirection】",
+        "【crossAxisEndOffset】 : オフセット  【double】,"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": 141,
+  "name": "SnackBarAction",
+  "localName": "Snack Bar Button",
+  "info": "Generally used only in SnackBar, accepts click events. The button will be disabled after one click, and the color and disabled color can be specified.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SnackBarAction",
+      "desc": [
+        "【label】 :  Label  【String】",
+        "【textColor】 :  Text Color   【Color】",
+        "【disabledTextColor】 :  Disabled Text Color   【Color】",
+        "【onPressed】 :  Click Callback  【Function()】"
+      ]
+    }
+  ]
+}

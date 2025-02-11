@@ -1,0 +1,18 @@
+{
+  "id": 203,
+  "name": "OrientationBuilder",
+  "localName": "Orientation Builder",
+  "info": "Can callback whether the parent component is horizontal or vertical, and can build different child components based on this.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of OrientationBuilder",
+      "desc": [
+        "【builder】: Orientation component builder   【OrientationWidgetBuilder】"
+      ]
+    }
+  ]
+}

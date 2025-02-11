@@ -1,0 +1,21 @@
+{
+  "id": 232,
+  "name": "Navigator",
+  "localName": "Navigator",
+  "info": "Der Navigator verwaltet eine Gruppe von Unterkomponenten nach Stack-Regeln, kann Unterkomponenten ein- und ausblenden und Ereignisse beim Ein- und Ausstapeln überwachen. Die Routenverwaltung von MaterialApp basiert auf dem Navigator.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung des Navigators",
+      "desc": [
+        "【initialRoute】: Anfangsroute   【String】",
+        "【onGenerateRoute】: Routengenerator   【RouteFactory】",
+        "【observers】: Routenbeobachter   【List<NavigatorObserver>】",
+        "【onPopPage】: Rückruf beim Entfernen aus dem Stack   【PopPageCallback】"
+      ]
+    }
+  ]
+}

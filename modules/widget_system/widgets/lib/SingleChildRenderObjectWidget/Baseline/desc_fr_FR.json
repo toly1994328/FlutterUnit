@@ -1,0 +1,20 @@
+{
+  "id": 75,
+  "name": "Baseline",
+  "localName": "Composant de base",
+  "info": "Peut contenir un composant enfant, en contrôlant la hauteur de la ligne de base pour positionner le composant enfant. Généralement utilisé pour les composants de texte.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de Baseline",
+      "desc": [
+        "【child】 : Composant enfant   【Widget】",
+        "【baseline】 : Position de la ligne de base   【double】",
+        "【baselineType】 : Type de ligne de base   【TextBaseline】"
+      ]
+    }
+  ]
+}

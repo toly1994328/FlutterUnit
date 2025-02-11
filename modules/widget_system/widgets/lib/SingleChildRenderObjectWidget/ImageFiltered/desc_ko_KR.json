@@ -1,0 +1,36 @@
+{
+  "id": 357,
+  "name": "ImageFiltered",
+  "localName": "이미지 필터",
+  "info": "ImageFilter 이미지 필터를 통해 모든 컴포넌트에 효과를 적용할 수 있습니다. 이는 가우시안 블러, 색상 필터, 변환 등을 포함하지만 이에 국한되지 않습니다.",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    278,
+    88
+  ],
+  "nodes": [
+    {
+      "file": "node1_blur.dart",
+      "name": "ImageFilter 가우시안 블러",
+      "desc": [
+        "【imageFilter】 : 이미지 필터   【ImageFilter】",
+        "【child】 : 자식 컴포넌트   【Widget】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "ImageFilter 색상 필터 효과",
+      "desc": [
+        "ColorFilter 객체를 통해 색상 필터를 구현합니다."
+      ]
+    },
+    {
+      "file": "node3_matrix.dart",
+      "name": "ImageFilter 변환 효과",
+      "desc": [
+        "ImageFilter.matrix 생성자를 통해 매트릭스 변환을 수행하지만, 다소 실용성이 떨어집니다."
+      ]
+    }
+  ]
+}

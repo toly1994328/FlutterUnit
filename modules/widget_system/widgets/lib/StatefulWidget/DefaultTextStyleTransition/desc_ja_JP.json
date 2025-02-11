@@ -1,0 +1,26 @@
+{
+  "id": 114,
+  "name": "DefaultTextStyleTransition",
+  "localName": "テキストスタイルの切り替え",
+  "info": "AnimatedWidgetのサブクラスで、TextStyleタイプのアニメーターを使用して、テキストコンポーネントが2つのTextStyleオブジェクト間でトランジションアニメーションを行います。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    124,
+    324
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "DefaultTextStyleTransitionの基本使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【textAlign】 : テキストの配置   【TextAlign】",
+        "【softWrap】 : ラップするかどうか   【bool】",
+        "【maxLines】 : 最大行数   【int】",
+        "【overflow】 : オーバーフローモード   【TextOverflow】",
+        "【style】 : アニメーション   【Animation<TextStyle>】"
+      ]
+    }
+  ]
+}

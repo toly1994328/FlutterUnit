@@ -1,0 +1,36 @@
+{
+  "id": 150,
+  "name": "InkWell",
+  "localName": "Wasserwelle",
+  "info": "Unterklasse von InkResponse, grundlegende Eigenschaften wie InkResponse. Eine rechteckige Wasserwelle, die den Radius der abgerundeten Ecken, die Form der Umrandung usw. kennt.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    149,
+    152
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Ereignisse von InkWell",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【onTap】 : Klickereignis   【Function()】",
+        "【onDoubleTap】 : Doppelklickereignis   【Function()】",
+        "【onTapCancel】 : Klick abbrechen   【Function()】",
+        "【onLongPress】 : Langdrücken   【Function()】"
+      ]
+    },
+    {
+      "file": "node2_color.dart",
+      "name": "Weitere Eigenschaften von InkWell",
+      "desc": [
+        "【child】 : Untergeordnete Komponente   【Widget】",
+        "【onHighlightChanged】 : Rückruf bei Hervorhebungsänderung   【Function(bool)】",
+        "【highlightColor】 : Hervorhebungsfarbe   【Color】",
+        "【splashColor】 : Wasserwellenfarbe   【Color】",
+        "【radius】 : Wasserwellenradius   【double】"
+      ]
+    }
+  ]
+}

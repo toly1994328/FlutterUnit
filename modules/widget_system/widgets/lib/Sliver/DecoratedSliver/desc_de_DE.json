@@ -1,0 +1,20 @@
+{
+  "id": 209,
+  "name": "DecoratedSliver",
+  "localName": "Dekorierte Gleitfläche",
+  "info": "Diese Komponente wird in einem Scroll-Viewport verwendet und kann ein untergeordnetes Sliver-Element umhüllen, um ihm einen Dekorationseffekt hinzuzufügen.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Grundlegende Verwendung von DecoratedSliver",
+      "desc": [
+        "【sliver】 : Kindkomponente   【Widget?】",
+        "【decoration】 : Dekorationsobjekt   【Decoration】",
+        "【position】 : Dekorationsposition   【DecorationPosition】"
+      ]
+    }
+  ]
+}

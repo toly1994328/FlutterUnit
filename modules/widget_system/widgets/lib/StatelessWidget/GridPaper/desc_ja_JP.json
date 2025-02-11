@@ -1,0 +1,30 @@
+{
+  "id": 37,
+  "name": "GridPaper",
+  "localName": "グリッド線コンポーネント",
+  "info": "1つのコンポーネントを収容し、その上にグリッドを描画します。色、線幅、間隔などの属性を指定できます。",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "GridPager 基本属性",
+      "desc": [
+        "【child】: 子コンポーネント   【Widget】",
+        "【color】: 色   【Color】",
+        "【interval】: 小片の辺の長さ   【double】"
+      ]
+    },
+    {
+      "file": "node2_divisions.dart",
+      "name": "GridPager 再分割",
+      "desc": [
+        "【child】: 子コンポーネント   【Widget】",
+        "【color】: 色   【Color】",
+        "【subdivisions】: 小片中の中片の数   【int】",
+        "【divisions】: 小片中の中片の分割数   【int】"
+      ]
+    }
+  ]
+}

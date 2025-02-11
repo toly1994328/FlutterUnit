@@ -1,0 +1,27 @@
+{
+  "id": 296,
+  "name": "PhysicalModel",
+  "localName": "Modulo Fisico",
+  "info": "Permette di ritagliare i componenti figli in base a forme circolari o quadrate, e di specificare il colore di sfondo, gli angoli arrotondati, la profondità dell'ombra, il colore dell'ombra e il comportamento di ritaglio.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    279,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso di base di PhysicalModel",
+      "desc": [
+        "【clipBehavior】 : Comportamento di ritaglio   【Clip】",
+        "【borderRadius】 : Angoli arrotondati   【BorderRadius】",
+        "【child】 : Componente figlio   【Widget】",
+        "【elevation】 : Profondità dell'ombra   【double】",
+        "【shadowColor】 : Colore dell'ombra   【Color】",
+        "【shape】 : Forma   【BoxShape】",
+        "【color】: Colore    【Color】"
+      ]
+    }
+  ]
+}

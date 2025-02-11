@@ -1,0 +1,30 @@
+{
+  "id": 100,
+  "name": "AnimatedCrossFade",
+  "localName": "コンポーネント切り替え",
+  "info": "2つのコンポーネントを切り替える際にアニメーション効果を表示し、アニメーションカーブ、時間、配置方法などの属性を指定できます。非常に便利なコンポーネントです。",
+  "lever": 5,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AnimatedCrossFadeの基本使用",
+      "desc": [
+        "【firstChild】 : 最初の子   【Widget】",
+        "【secondChild】 : 2番目の子   【Widget】",
+        "【crossFadeState】 : 表示する番号   【CrossFadeState】",
+        "【duration】 : 時間   【Duration】"
+      ]
+    },
+    {
+      "file": "node2_curve.dart",
+      "name": "AnimatedCrossFadeのアニメーションカーブ",
+      "desc": [
+        "【firstCurve】 : 最初のカーブ   【Curve】",
+        "【secondCurve】 : 2番目のカーブ   【Curve】",
+        "【sizeCurve】 : サイズ変化カーブ   【CrossFadeState】"
+      ]
+    }
+  ]
+}

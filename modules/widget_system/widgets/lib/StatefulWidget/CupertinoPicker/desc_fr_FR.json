@@ -1,0 +1,24 @@
+{
+  "id": 139,
+  "name": "CupertinoPicker",
+  "localName": "Sélecteur iOS",
+  "info": "Un sélecteur cylindrique haut de gamme, très sophistiqué, avec de nombreuses propriétés configurables, recevant des événements de sélection lors du glissement.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CupertinoPicker",
+      "desc": [
+        "【children】 : Liste des composants enfants   【List<Widget>】",
+        "【offAxisFraction】 : Taux de décalage de l'axe   【double】",
+        "【squeeze】 : Taux de compression   【double】",
+        "【diameterRatio】 : Rapport hauteur/diamètre du cylindre   【double】",
+        "【itemExtent】 : Espacement   【double】",
+        "【backgroundColor】 : Couleur de fond   【Color】",
+        "【onSelectedItemChanged】 : Événement de sélection  【Function(int)】"
+      ]
+    }
+  ]
+}

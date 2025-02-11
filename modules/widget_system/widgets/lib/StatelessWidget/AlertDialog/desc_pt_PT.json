@@ -1,0 +1,27 @@
+{
+  "id": 127,
+  "name": "AlertDialog",
+  "localName": "Diálogo de Alerta",
+  "info": "Uma estrutura de diálogo genérica que permite especificar componentes no topo, meio e fim. Possui estilos de texto e margens para o título e conteúdo, além de propriedades como profundidade de sombra, forma, etc.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do AlertDialog",
+      "desc": [
+        "【title】 : Componente do topo   【Widget】",
+        "【content】 : Componente de conteúdo  【Widget】",
+        "【titleTextStyle】 : Estilo de texto do topo  【TextStyle】",
+        "【contentTextStyle】 : Estilo de texto do conteúdo  【TextStyle】",
+        "【titlePadding】 : Margem interna do topo  【EdgeInsetsGeometry】",
+        "【contentPadding】 : Margem interna do conteúdo  【EdgeInsetsGeometry】",
+        "【actions】 : Lista de componentes no canto inferior direito  【List<Widget>】",
+        "【backgroundColor】 : Cor de fundo  【Color】",
+        "【elevation】 : Profundidade de sombra  【double】",
+        "【shape】 : Forma   【ShapeBorder】"
+      ]
+    }
+  ]
+}

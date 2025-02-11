@@ -1,0 +1,19 @@
+{
+  "id": 72,
+  "name": "RotatedBox",
+  "localName": "Caixa Giratória",
+  "info": "Pode conter um componente filho, girando-o no sentido horário em quarterTurns*90°.",
+  "lever": 2,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do RotatedBox",
+      "desc": [
+        "【child】 : Componente filho   【Widget】",
+        "【quarterTurns】 : Quantos 90° para girar   【int】"
+      ]
+    }
+  ]
+}

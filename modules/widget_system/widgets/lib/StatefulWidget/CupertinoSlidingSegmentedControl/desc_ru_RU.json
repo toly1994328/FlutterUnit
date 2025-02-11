@@ -1,0 +1,26 @@
+{
+  "id": 256,
+  "name": "CupertinoSlidingSegmentedControl",
+  "localName": "iOS слайдер вкладок",
+  "info": "Слайдер вкладок в стиле iOS, поддерживает переключение по клику и скольжению. Можно указать цвет вкладок, цвет фона, отступы и другие свойства.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    33,
+    262
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование iOS слайдера вкладок",
+      "desc": [
+        "【children】 : Карта компонентов   【Map<T, Widget>】",
+        "【onValueChanged】 : Обратный вызов при изменении значения   【ValueChanged<T>】",
+        "【groupValue】 : Выбранное значение   【T】",
+        "【thumbColor】 : Цвет выбранного элемента   【Color】",
+        "【backgroundColor】 : Цвет фона   【Color】",
+        "【padding】 : Внутренние отступы   【EdgeInsetsGeometry】"
+      ]
+    }
+  ]
+}

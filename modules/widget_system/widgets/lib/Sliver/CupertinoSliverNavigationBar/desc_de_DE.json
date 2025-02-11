@@ -1,0 +1,27 @@
+{
+  "id": 302,
+  "name": "CupertinoSliverNavigationBar",
+  "localName": "Sliver-Navigationsleiste",
+  "info": "Navigationsleisten-Effekt in iOS11, der largeTitle beim Ausklappen anzeigt, beim Hochscrollen der Liste jedoch nicht. Wenn middle leer ist, wird der largeTitle in kleiner Schriftgröße als middle angezeigt.",
+  "lever": 2,
+  "family": 4,
+  "linkIds": [
+    183,
+    251
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung der Navigationsleiste",
+      "desc": [
+        "【leading】 : Linke Komponente   【Widget】",
+        "【middle】 : Mittlere Komponente   【Widget】",
+        "【trailing】 : Rechte Komponente   【Widget】",
+        "【largeTitle】 : Untere ausklappbare Komponente   【Widget】",
+        "【border】 : Randlinie   【Border】",
+        "【backgroundColor】 : Hintergrundfarbe   【Color】",
+        "【padding】 : Innenabstand   【EdgeInsetsDirectional】"
+      ]
+    }
+  ]
+}

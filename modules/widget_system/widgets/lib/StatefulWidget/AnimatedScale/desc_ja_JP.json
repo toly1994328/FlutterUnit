@@ -1,0 +1,29 @@
+{
+  "id": 249,
+  "name": "AnimatedScale",
+  "localName": "スケーリングアニメーション",
+  "info": "指定されたスケーリング量が変化すると、子コンポーネントは自動的にスケーリング値に応じて調整され、前後の値にアニメーションの変化があります。",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    247,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "スケーリングアニメーション効果",
+      "desc": [
+        "このケースでは、scaleパラメータをドラッグして調整し、アニメーションの動き効果を確認します。",
+        "【child】 : 子コンポーネント   【Widget】",
+        "【duration】 : アニメーションの持続時間   【Duration】",
+        "【onEnd】 : アニメーション終了時のコールバック   【Function()】",
+        "【curve】 : アニメーション曲線   【Duration】",
+        "【alignment】 : アニメーションの変形中心   【Alignment】",
+        "【filterQuality】 : フィルター品質   【FilterQuality】",
+        "【scale】 : スケーリング量   【double】"
+      ]
+    }
+  ]
+}

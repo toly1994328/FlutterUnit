@@ -1,0 +1,26 @@
+{
+  "id": 244,
+  "name": "EditableText",
+  "localName": "편집 가능한 텍스트",
+  "info": "편집 가능한 텍스트는 TextField의 가장 핵심적인 구성 요소로, 일반적으로 단독으로 사용되지 않습니다.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    2,
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "EditableText 기본 사용법",
+      "desc": [
+        "【controller】 : 컨트롤러   【TextEditingController】",
+        "【focusNode】 : 포커스   【FocusNode】",
+        "【style】 : 텍스트 스타일   【TextStyle】",
+        "【backgroundCursorColor】 : 배경 커서 색상   【Color】",
+        "【cursorColor】 : 커서 색상   【Color】",
+        "위 다섯 가지는 EditableText의 필수 속성이며, 나머지는 TextField와 동일하므로 여기서는 더 이상 열거하지 않습니다."
+      ]
+    }
+  ]
+}

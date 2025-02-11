@@ -1,0 +1,25 @@
+{
+  "id": 68,
+  "name": "ClipRRect",
+  "localName": "Recorte de Retângulo com Cantos Arredondados",
+  "info": "Pode conter um componente filho e aplica um recorte de retângulo com cantos arredondados. Especifique o borderRadius como o raio dos cantos.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    66,
+    67,
+    69
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Uso Básico do ClipRRect",
+      "desc": [
+        "【child】 : Componente Filho   【Widget】",
+        "【borderRadius】 : Raio da Borda   【BorderRadius】",
+        "【clipBehavior】 : Comportamento de Recorte   【Clip】",
+        "【clipper】 : Recortador   【CustomClipper<Rect>】"
+      ]
+    }
+  ]
+}

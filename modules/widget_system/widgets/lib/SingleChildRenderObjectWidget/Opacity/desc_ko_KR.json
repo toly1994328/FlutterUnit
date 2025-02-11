@@ -1,0 +1,22 @@
+{
+  "id": 73,
+  "name": "Opacity",
+  "localName": "투명도",
+  "info": "하위 컴포넌트를 포함할 수 있으며, 그 투명도를 opacity 값으로 변경합니다. opacity는 0~1 사이입니다.",
+  "lever": 3,
+  "family": 2,
+  "linkIds": [
+    89,
+    118
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Opacity 기본 사용법",
+      "desc": [
+        "【child】 : 자식 컴포넌트   【Widget】",
+        "【opacity】 : 투명도 0~1   【double】"
+      ]
+    }
+  ]
+}

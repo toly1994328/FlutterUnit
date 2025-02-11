@@ -1,0 +1,20 @@
+{
+  "id": 241,
+  "name": "UndoHistory",
+  "localName": "Histórico de Desfazer",
+  "info": "Recebe um ValueNotifier para monitorar valores, fornecendo funcionalidades de desfazer/refazer para esse valor; utilizado no código-fonte do componente TextField.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [
+    54
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Usando UndoHistory no TextField",
+      "desc": [
+        "Neste exemplo, um botão externo é usado para controlar as funcionalidades de desfazer/refazer do TextField. O parâmetro undoController pode receber um objeto UndoHistoryController, que é usado para controlar e influenciar o conteúdo do texto inserido."
+      ]
+    }
+  ]
+}

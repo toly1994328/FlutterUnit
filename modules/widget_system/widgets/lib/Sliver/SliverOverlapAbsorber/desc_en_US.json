@@ -1,0 +1,23 @@
+{
+  "id": 307,
+  "name": "SliverOverlapAbsorber",
+  "localName": "Overlap Absorber",
+  "info": "Wraps another sliver and forces its layout extent to be treated as overlapping. Needs to be used in conjunction with SliverOverlapInjector.",
+  "lever": 3,
+  "family": 4,
+  "linkIds": [
+    251,
+    308
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SliverOverlapAbsorber",
+      "desc": [
+        "【sliver】 : Child component   【Widget】",
+        "【handle】 : *Handler   【SliverOverlapAbsorberHandle】",
+        "If the SliverOverlapAbsorber and SliverOverlapInjector components are not used, the content of the NestedScrollView will overlap with the header bar."
+      ]
+    }
+  ]
+}

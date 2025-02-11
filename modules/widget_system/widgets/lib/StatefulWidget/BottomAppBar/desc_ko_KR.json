@@ -1,0 +1,22 @@
+{
+  "id": 61,
+  "name": "BottomAppBar",
+  "localName": "하단 네비게이션",
+  "info": "들여쓰기 가능한 하단 네비게이션 바로, 일반적으로 Scaffold 컴포넌트의 하단에 사용되며, 색상, 그림자 깊이, 모양 등 속성을 지정할 수 있으며, PageView와 함께 페이지 전환 효과를 구현할 수 있습니다.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "BottomAppBar 기본 사용법",
+      "desc": [
+        "【elevation】 : 그림자 깊이   【double】",
+        "【shape】 : 모양   【NotchedShape】",
+        "【notchMargin】 : 간격 거리   【double】",
+        "【color】 : 색상   【Color】",
+        "【child】 : 자식   【Widget】"
+      ]
+    }
+  ]
+}

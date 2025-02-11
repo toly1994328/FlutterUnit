@@ -1,0 +1,26 @@
+{
+  "id": 101,
+  "name": "RichText",
+  "localName": "RichText",
+  "info": "Eine RichText-Komponente, die verschiedene Textstile oder verschiedene Komponenten aufnehmen kann und weit verbreitet ist.",
+  "lever": 5,
+  "family": 3,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Grundlegende Verwendung von RichText",
+      "desc": [
+        "【text】: Text   【TextSpan】",
+        "    Andere Eigenschaften sind identisch mit Text, siehe dazu."
+      ]
+    },
+    {
+      "file": "node2_widget.dart",
+      "name": "RichText enthält andere Komponenten",
+      "desc": [
+        "Verwenden Sie WidgetSpan, um normale Komponenten zu tragen, als Inhalt von RichText"
+      ]
+    }
+  ]
+}

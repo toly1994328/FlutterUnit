@@ -1,0 +1,22 @@
+{
+  "id": 269,
+  "name": "SliverCrossAxisGroup",
+  "localName": "Kreuzachsen-Gruppe",
+  "info": "Kann mehrere Sliver-Komponenten aufnehmen und sie in der gleitenden Querhauptachse als Gruppe behandeln.",
+  "lever": 4,
+  "family": 4,
+  "linkIds": [
+    268,
+    270,
+    271
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Grundlegende Verwendung von SliverCrossAxisGroup",
+      "desc": [
+        "【slivers】 : Liste der Unterkomponenten   【List<Widget>】"
+      ]
+    }
+  ]
+}

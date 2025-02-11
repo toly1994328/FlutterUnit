@@ -1,0 +1,38 @@
+{
+  "id": 237,
+  "name": "CarouselView",
+  "localName": "Vue Carrousel",
+  "info": "Un composant de carrousel conforme aux normes Material Design. Affiche une liste d'éléments défilables, chaque élément pouvant être redimensionné dynamiquement en fonction de la mise en page sélectionnée.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [
+    253,
+    340,
+    160
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de CarouselView",
+      "desc": [
+        "【itemExtent】 : Taille forcée dans la direction de l'axe principal  【double】",
+        "【shrinkExtent】: Taille minimale des éléments dans la direction de l'axe principal pendant le défilement 【double】",
+        "【scrollDirection】 : Direction de défilement   【Axis?】",
+        "【children】: Liste des composants enfants 【List<Widget>】"
+      ]
+    },
+    {
+      "file": "node2.dart",
+      "name": "Configuration du style de CarouselView",
+      "desc": [
+        "【padding】 : Marge intérieure   【EdgeInsets? 】",
+        "【backgroundColor】 : Couleur de fond   【Color? 】",
+        "【elevation】 : Profondeur de l'ombre   【double?】",
+        "【shape】 : Forme   【ShapeBorder?】",
+        "【controller】 : Contrôleur   【CarouselController?】",
+        "【reverse】 : Défilement inversé   【bool】",
+        "【onTap】 : Événement de clic   【ValueChanged<int>? 】"
+      ]
+    }
+  ]
+}

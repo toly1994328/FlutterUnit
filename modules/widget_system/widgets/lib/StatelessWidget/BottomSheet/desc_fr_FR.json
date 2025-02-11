@@ -1,0 +1,22 @@
+{
+  "id": 142,
+  "name": "BottomSheet",
+  "localName": "Tiroir inférieur",
+  "info": "En tant que composant, il s'agit d'un composant structurel simple qui peut spécifier la forme, la profondeur de l'ombre, la couleur de fond, le constructeur de composants internes, etc. Il est généralement affiché à partir du bas via la méthode showBottomSheet de ScaffoldState.",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Utilisation de base de BottomSheet",
+      "desc": [
+        "【builder】 : Constructeur de composant   【WidgetBuilder】",
+        "【backgroundColor】 : Couleur de fond   【Color】",
+        "【elevation】 : Profondeur de l'ombre   【double】",
+        "【shape】 : Forme   【ShapeBorder】",
+        "【onClosing】 : Rappel de fermeture  【Function()】"
+      ]
+    }
+  ]
+}

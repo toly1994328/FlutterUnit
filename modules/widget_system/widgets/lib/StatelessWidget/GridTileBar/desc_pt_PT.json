@@ -1,0 +1,22 @@
+{
+  "id": 20,
+  "name": "GridTileBar",
+  "localName": "Barra de Azulejo de Grade",
+  "info": "Uma estrutura de cabeçalho genérica fornecida pelo Flutter, com uma estrutura de esquerda, centro e direita. Componentes podem ser inseridos nas posições correspondentes, o que facilita a adaptação a itens específicos, com menos atributos em comparação com o ListTile.",
+  "lever": 2,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "A representação básica do GridTileBar é a seguinte",
+      "desc": [
+        "【leading】: Componente esquerdo   【Widget】",
+        "【trailing】: Componente direito   【Widget】",
+        "【title】: Componente superior central   【Widget】",
+        "【subtitle】: Componente inferior central   【Widget】",
+        "【backgroundColor】: Cor de fundo   【Color】"
+      ]
+    }
+  ]
+}

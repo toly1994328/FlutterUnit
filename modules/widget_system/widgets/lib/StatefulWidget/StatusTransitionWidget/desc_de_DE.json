@@ -1,0 +1,19 @@
+{
+  "id": 233,
+  "name": "StatusTransitionWidget",
+  "localName": "Statusübergangskomponente",
+  "info": "Abstrakte Klasse, die Aktualisierungen basierend auf den bereitgestellten Animatorstatusänderungen auslösen kann. Es gibt keine implementierten Unterklassen auf der Flutter-Framework-Ebene und keine Anwendungsfälle, daher scheint sie nicht sehr nützlich zu sein.",
+  "lever": 1,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Einführung in StatusTransitionWidget",
+      "desc": [
+        "【animation】 : Unterkomponente   【Animation<double>】",
+        "Hier wird ein benutzerdefiniertes ColorStatusTransitionWidget verwendet, das beim Zustandswechsel des Animators verschiedene Farben erstellt."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 39,
+  "name": "Checkbox",
+  "localName": "チェックボックス",
+  "info": "チェックボックスコンポーネントは、設定の切り替えによく使用され、色を指定でき、状態変化のコールバックを受け取り、三状態も指定できます。",
+  "lever": 4,
+  "family": 1,
+  "linkIds": [326,17],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "チェックボックスの基本使用法",
+      "desc": [
+        "【value】 : 選択されているかどうか   【double】",
+        "【checkColor】: 選択時の✔️チェックマークの色 【Color】",
+        "【activeColor】: 選択時のボックス内の色 【Color】",
+        "【onChanged】: 状態変更イベント 【Function(bool)】,"
+      ]
+    },
+    {
+      "file": "node2_tristate.dart",
+      "name": "チェックボックスの三状態",
+      "desc": [
+        "【tristate】 : 三状態かどうか   【double】",
+        "  onChanged時,"
+      ]
+    }
+  ]
+}

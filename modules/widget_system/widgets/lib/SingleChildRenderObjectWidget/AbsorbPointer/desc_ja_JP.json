@@ -1,0 +1,25 @@
+{
+  "id": 295,
+  "name": "AbsorbPointer",
+  "localName": "クリックを吸収",
+  "info": "子コンポーネントを含み、ignoring属性を指定することで、子がジェスチャーイベントを無視するかどうかを決定し、それ自体がイベントを受け取ります。",
+  "lever": 4,
+  "family": 2,
+  "linkIds": [
+    146,
+    149,
+    150,
+    292
+  ],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "AbsorbPointerの基本的な使用",
+      "desc": [
+        "【child】 : 子コンポーネント   【Widget】",
+        "【absorbing】 : イベントを吸収するかどうか   【bool】",
+        "以下の例では、Switchが選択されている場合、absorbingがtrueになり、ボタンのイベントが吸収され、クリックできなくなります。"
+      ]
+    }
+  ]
+}

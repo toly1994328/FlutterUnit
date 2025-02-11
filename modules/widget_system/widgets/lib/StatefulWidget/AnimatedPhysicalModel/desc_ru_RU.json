@@ -1,0 +1,26 @@
+{
+  "id": 225,
+  "name": "AnimatedPhysicalModel",
+  "localName": "Анимация физического модуля",
+  "info": "Компонент PhysicalModel с анимацией при изменении связанных свойств, по сути, представляет собой комбинацию PhysicalModel и анимации. Можно указать такие свойства, как тень, глубина тени, скругление углов, длительность анимации, обратный вызов по завершении и другие.",
+  "lever": 2,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Основное использование AnimatedPhysicalModel",
+      "desc": [
+        "【color】 : Цвет фона   【Color】",
+        "【duration】 : Длительность анимации   【Duration】",
+        "【onEnd】 : Обратный вызов по завершении анимации   【Function()】",
+        "【curve】 : Кривая анимации   【Duration】",
+        "【shape】 : Форма   【BoxShape】",
+        "【elevation】 : Глубина тени   【double】",
+        "【borderRadius】 : Скругление углов   【BorderRadius】",
+        "【shadowColor】 : Цвет тени   【Color】",
+        "【child】 : Дочерний компонент   【Widget】"
+      ]
+    }
+  ]
+}

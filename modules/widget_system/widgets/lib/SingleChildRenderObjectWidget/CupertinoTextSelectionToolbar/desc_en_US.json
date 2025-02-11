@@ -1,0 +1,18 @@
+{
+  "id": 299,
+  "name": "CupertinoTextSelectionToolbar",
+  "localName": "iOS Text Selection Toolbar",
+  "info": "An iOS-style toolbar that responds to text selection",
+  "lever": 1,
+  "family": 2,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "This component is not available",
+      "desc": [
+        "【-】 : -   【-】"
+      ]
+    }
+  ]
+}

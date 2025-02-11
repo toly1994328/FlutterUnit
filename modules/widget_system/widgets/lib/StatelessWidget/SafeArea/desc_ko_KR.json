@@ -1,0 +1,22 @@
+{
+  "id": 207,
+  "name": "SafeArea",
+  "localName": "안전 영역",
+  "info": "일부 휴대폰의 특수성(둥근 모서리, 노치 등)으로 인한 레이아웃 문제를 해결하기 위해 패딩을 추가합니다.",
+  "lever": 3,
+  "family": 0,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "SafeArea 사용 테스트",
+      "desc": [
+        "【left】 : 왼쪽 활성화 여부   【bool】",
+        "【top】 : 상단 활성화 여부   【bool】",
+        "【bottom】 : 하단 활성화 여부   【bool】",
+        "【right】 : 오른쪽 활성화 여부   【bool】",
+        "【child】 : 자식 위젯   【Widget】"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": 53,
+  "name": "SelectableText",
+  "localName": "Selectable Text",
+  "info": "Selectable text that can be selected and copied. You can specify the color, size, text style, alignment, etc. of the cursor.",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [],
+  "nodes": [
+    {
+      "file": "node1_base.dart",
+      "name": "Basic Usage of SelectableText",
+      "desc": [
+        "【Parameter】 : Display text   【String】",
+        "【style】 : Text style   【TextStyle】",
+        "【cursorRadius】 : Cursor radius   【Radius】",
+        "【cursorColor】 : Cursor color   【Color】",
+        "【cursorWidth】 : Cursor width   【double】",
+        "【showCursor】 : Whether to show the cursor   【bool】",
+        "【autofocus】 : Auto focus   【bool】"
+      ]
+    },
+    {
+      "file": "node2_align.dart",
+      "name": "Alignment Properties of SelectableText",
+      "desc": [
+        "【textAlign】 : Alignment method*6   【textAlign】",
+        "【textDirection】 : Text direction*2   【TextDirection】"
+      ]
+    }
+  ]
+}
