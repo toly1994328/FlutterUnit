@@ -39,35 +39,43 @@ class _FlutterUnit3State extends State<FlutterUnit3> {
     _initWeb();
   }
 
+  void _onLocaleChange(BuildContext context, AppConfig state){
+    BlocProvider.of<WidgetsBloc>(context).changeLocale(state.language.locale);
+  }
+
   @override
   Widget build(BuildContext context) {
     AppConfig state = context.watch<AppConfigBloc>().state;
     ThemeData dark = darkTheme(state);
     ThemeData light = lightTheme(state);
-    return DefaultTextStyle(
-      style: TextStyle(fontFamily: state.fontFamily),
-      child: TolyMessage(
-        themeMode: state.themeMode,
-        darkTheme: dark,
-        theme:light,
-        child: MaterialApp.router(
-          routerConfig: _router,
-          showPerformanceOverlay: state.showPerformanceOverlay,
-          title: StrUnit.appName,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: const [
-            AppL10n.delegate,
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            FlutterQuillLocalizations.delegate,
-          ],
-          supportedLocales: l10nLocales,
-          locale: state.language.locale,
+    return BlocListener<AppConfigBloc,AppConfig>(
+      listenWhen: (p,n)=>p.language!=n.language,
+      listener: _onLocaleChange,
+      child: DefaultTextStyle(
+        style: TextStyle(fontFamily: state.fontFamily),
+        child: TolyMessage(
           themeMode: state.themeMode,
           darkTheme: dark,
           theme:light,
+          child: MaterialApp.router(
+            routerConfig: _router,
+            showPerformanceOverlay: state.showPerformanceOverlay,
+            title: StrUnit.appName,
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+              AppL10n.delegate,
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              FlutterQuillLocalizations.delegate,
+            ],
+            supportedLocales: l10nLocales,
+            locale: state.language.locale,
+            themeMode: state.themeMode,
+            darkTheme: dark,
+            theme:light,
+          ),
         ),
       ),
     );

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_repository/widget_repository.dart';
@@ -22,9 +24,9 @@ class WidgetDetailBloc extends Cubit<DetailState> {
 
   WidgetModel get currentWidget => _modelStack.last;
 
-  void push(WidgetModel model) {
+  void push(WidgetModel model,{String? locale}) {
     _modelStack.add(model);
-    queryDetail(model);
+    queryDetail(model,locale: locale);
   }
 
   Future<bool> pop() async {
@@ -40,10 +42,10 @@ class WidgetDetailBloc extends Cubit<DetailState> {
     }
   }
 
-  void queryDetail(WidgetModel widget) async {
+  void queryDetail(WidgetModel widget,{String? locale}) async {
     emit(DetailLoading());
     try {
-      final List<NodeModel> nodes = await nodeRepo.loadNode(widget.id);
+      final List<NodeModel> nodes = await nodeRepo.loadNode(widget.id,locale: locale);
       final List<WidgetModel> links = await widgetRepo.loadWidget(widget.links);
       if (nodes.isEmpty) {
         emit(DetailEmpty());
@@ -54,5 +56,10 @@ class WidgetDetailBloc extends Cubit<DetailState> {
       print("queryDetail=error===${e}=$s==");
       emit(DetailFailed());
     }
+  }
+
+  void changeLocale(Locale locale) {
+    String localeStr = '${locale.languageCode}-${locale.countryCode}'.toLowerCase();
+    queryDetail(currentWidget,locale:localeStr);
   }
 }

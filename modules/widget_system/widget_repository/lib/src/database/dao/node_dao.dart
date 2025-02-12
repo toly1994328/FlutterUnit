@@ -27,11 +27,21 @@ class NodeDao with HasDatabase, DbTable {
       database.rawQuery("SELECT * FROM node");
 
   //根据 id 查询组件 node
-  Future<List<Map<String, dynamic>>> queryById(int id) async {
-    return await database.rawQuery(
-        "SELECT name,subtitle,code,priority "
-        "FROM node "
-        "WHERE widgetId = ? ORDER BY priority",
-        [id]);
+  Future<List<Map<String, dynamic>>> queryById(int id, {String? locale}) async {
+    String sql = """
+SELECT 
+  node.priority,
+  node.code,
+  node_desc.name, 
+  node_desc.subtitle 
+FROM node 
+INNER JOIN node_desc 
+  ON node.id = node_desc.node_id
+WHERE node_desc.locale = ? 
+AND node.widgetId = ?  
+ORDER BY priority
+""";
+
+    return await database.rawQuery(sql, [locale ?? 'pt-pt', id]);
   }
 }

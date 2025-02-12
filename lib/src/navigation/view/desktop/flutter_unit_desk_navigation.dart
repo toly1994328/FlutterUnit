@@ -41,7 +41,7 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
   Widget build(BuildContext context) {
     return TolyRailMenuBar(
       cellBuilder: FlutterUnitMenuCell.create,
-      width: 130,
+      width: 140,
       gap: 8,
       padding: EdgeInsets.zero,
       backgroundColor: const Color(0xff2C3036),

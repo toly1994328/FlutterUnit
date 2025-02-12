@@ -1,52 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-    <defs>
-        <!-- 渐变定义 -->
-        <linearGradient id="mainGradient" x1="30%" y1="0%" x2="70%" y2="100%">
-            <stop offset="0%" stop-color="#7C9BFE"/>
-            <stop offset="100%" stop-color="#5B7CDB"/>
-        </linearGradient>
+    <!-- 外层容器：保留边距 -->
+    <rect x="24" y="20" width="80" height="88" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2" filter="url(#shadow)"/>
 
-        <!-- 阴影滤镜 -->
-        <filter id="avatarShadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="4" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.12)"/>
-        </filter>
-    </defs>
-
-    <!-- 背景圆形 -->
-    <circle cx="64" cy="64" r="56" fill="white" stroke="#E8EDF7" stroke-width="2"/>
-
-    <!-- 底层弧 -->
-    <path d="M64 16
-           A48 48 0 1 1 64 112
-           A48 48 0 1 1 64 16
-           M64 32
-           A32 32 0 1 0 64 96
-           A32 32 0 1 0 64 32Z"
-        fill="url(#mainGradient)"
-        filter="url(#avatarShadow)"
-        opacity="0.4"
-        transform="rotate(-15 64 64)"/>
-
-    <!-- 中层弧 -->
-    <path d="M64 24
-           A40 40 0 1 1 64 104
-           A40 40 0 1 1 64 24
-           M64 36
-           A28 28 0 1 0 64 92
-           A28 28 0 1 0 64 36Z"
-        fill="url(#mainGradient)"
-        filter="url(#avatarShadow)"
-        opacity="0.6"
-        transform="rotate(-5 64 64)"/>
-
-    <!-- 顶层弧 -->
-    <path d="M64 32
-           A32 32 0 1 1 64 96
-           A32 32 0 1 1 64 32
-           M64 44
-           A20 20 0 1 0 64 84
-           A20 20 0 1 0 64 44Z"
-        fill="url(#mainGradient)"
-        filter="url(#avatarShadow)"
-        opacity="0.8"/>
+    <!-- 内部网格区域：整体居中，四周留有边距 -->
+    <!-- 计算：容器内部宽度 = 80，左右各留 10 单位，则网格区域宽度为 60；
+         网格区域高度 = 60（网格为正方形），容器高度 88 顶部与底部分别留 (88-60)/2=14 单位 -->
+    <g transform="translate(34,34)">
+        <!-- 第一行 -->
+        <rect x="0"  y="0"  width="18" height="18" rx="3" fill="#4D77FF" opacity="0.9"/>
+        <rect x="21" y="0"  width="18" height="18" rx="3" fill="#4D77FF" opacity="0.8"/>
+        <rect x="42" y="0"  width="18" height="18" rx="3" fill="#4D77FF" opacity="0.7"/>
+        <!-- 第二行 -->
+        <rect x="0"  y="21" width="18" height="18" rx="3" fill="#4D77FF" opacity="0.6"/>
+        <rect x="21" y="21" width="18" height="18" rx="3" fill="#4D77FF" opacity="0.5"/>
+        <rect x="42" y="21" width="18" height="18" rx="3" fill="#4D77FF" opacity="0.4"/>
+        <!-- 第三行 -->
+        <rect x="0"  y="42" width="18" height="18" rx="3" fill="#4D77FF" opacity="0.3"/>
+        <rect x="21" y="42" width="18" height="18" rx="3" fill="#4D77FF" opacity="0.2"/>
+        <rect x="42" y="42" width="18" height="18" rx="3" fill="#4D77FF" opacity="0.1"/>
+    </g>
 </svg>

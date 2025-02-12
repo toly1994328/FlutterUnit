@@ -55,12 +55,17 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
   Widget build(BuildContext context) {
     if (_model == null)
       return const Center(child: CupertinoActivityIndicator());
+    Locale locale =  context.read<AppConfigBloc>().state.language.locale;
+    // Locale locale = Localizations.localeOf(context);
+    // String? countryCode = locale.countryCode;
+    // if (countryCode == null) {}
+    String localeStr = '${locale.languageCode}-${locale.countryCode}'.toLowerCase();
 
     return BlocProvider<WidgetDetailBloc>(
       create: (_) => WidgetDetailBloc(
         widgetRepo: widgetRepository,
         nodeRepo: nodeRepository,
-      )..push(_model!),
+      )..push(_model!, locale: localeStr),
       child: DeskWidgetDetailPage(
         model: widget.model,
       ),
@@ -78,12 +83,19 @@ class DeskWidgetDetailPage extends StatelessWidget {
     WidgetDetailBloc bloc = context.watch<WidgetDetailBloc>();
     DetailState state = context.watch<WidgetDetailBloc>().state;
     WidgetModel widget = bloc.currentWidget;
-    return Scaffold(
-      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-      endDrawer: CategoryEndDrawer(widget: widget),
-      body: Builder(builder: (ctx) {
-        return _buildContent(ctx, bloc, state);
-      }),
+    return BlocListener<AppConfigBloc, AppConfig>(
+      listenWhen: (p, n) => p.language != n.language,
+      listener: (_, state) {
+        BlocProvider.of<WidgetDetailBloc>(context)
+            .changeLocale(state.language.locale);
+      },
+      child: Scaffold(
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        endDrawer: CategoryEndDrawer(widget: widget),
+        body: Builder(builder: (ctx) {
+          return _buildContent(ctx, bloc, state);
+        }),
+      ),
     );
   }
 
@@ -147,5 +159,4 @@ class DeskWidgetDetailPage extends StatelessWidget {
     }
     return detailBloc.pop();
   }
-
 }

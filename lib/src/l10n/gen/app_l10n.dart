@@ -5,7 +5,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_l10n_de.dart';
 import 'app_l10n_en.dart';
+import 'app_l10n_es.dart';
+import 'app_l10n_fr.dart';
+import 'app_l10n_it.dart';
+import 'app_l10n_ja.dart';
+import 'app_l10n_ko.dart';
+import 'app_l10n_pt.dart';
+import 'app_l10n_ru.dart';
 import 'app_l10n_zh.dart';
 
 // ignore_for_file: type=lint
@@ -91,7 +99,15 @@ abstract class AppL10n {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('de'),
     Locale('en'),
+    Locale('es'),
+    Locale('fr'),
+    Locale('it'),
+    Locale('ja'),
+    Locale('ko'),
+    Locale('pt'),
+    Locale('ru'),
     Locale('zh')
   ];
 
@@ -165,7 +181,7 @@ class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'pt', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppL10nDelegate old) => false;
@@ -176,7 +192,15 @@ AppL10n lookupAppL10n(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'de': return AppL10nDe();
     case 'en': return AppL10nEn();
+    case 'es': return AppL10nEs();
+    case 'fr': return AppL10nFr();
+    case 'it': return AppL10nIt();
+    case 'ja': return AppL10nJa();
+    case 'ko': return AppL10nKo();
+    case 'pt': return AppL10nPt();
+    case 'ru': return AppL10nRu();
     case 'zh': return AppL10nZh();
   }
 

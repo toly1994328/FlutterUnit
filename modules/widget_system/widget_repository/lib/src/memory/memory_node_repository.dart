@@ -24,7 +24,7 @@ class MemoryNodeRepository implements NodeRepository {
   }
 
   @override
-  Future<List<NodeModel>> loadNode(int widgetId) async {
+  Future<List<NodeModel>> loadNode(int widgetId,{String? locale}) async {
     await initData();
     return _nodeCache!
         .where((element) => element.widgetId == widgetId)
