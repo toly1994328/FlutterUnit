@@ -1,0 +1,12 @@
+{
+    "deskTabWidgets": "Widget-Sammlung",
+    "deskTabPainter": "Zeichnungssammlung",
+    "deskTabKnowledge": "Wissensdatenbank",
+    "deskTabTools": "Werkzeugkasten",
+    "deskTabMine": "App-Info",
+    "mobileTabWidgets": "Widgets",
+    "mobileTabPainter": "Malen",
+    "mobileTabKnowledge": "Wissen",
+    "mobileTabTools": "Werkzeuge",
+    "mobileTabMine": "Mein"
+  }

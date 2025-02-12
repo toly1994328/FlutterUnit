@@ -127,7 +127,7 @@ class DeskWidgetItem extends StatelessWidget {
         model.info,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(fontSize: 14, color: textColor),
+        style: TextStyle(fontSize: 13, color: textColor),
       ),
     );
   }
@@ -141,11 +141,14 @@ class DeskWidgetItem extends StatelessWidget {
           margin: const EdgeInsets.only(right: 6),
           decoration: const BoxDecoration(color: Color(0xff86909c), shape: BoxShape.circle),
         ),
-        Text(
-          model.nameCN,
-          style: const TextStyle(fontSize: 12, height: 1, color: Color(0xff86909c)),
+        Expanded(
+          child: Text(
+            model.nameCN,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(fontSize: 12, height: 1, color: Color(0xff86909c)),
+          ),
         ),
-        const Spacer(),
         Wrapper.just(
           radius: 4,
           color: isDark ? Color(0xff292A2D) : const Color(0xffF3F3F5),

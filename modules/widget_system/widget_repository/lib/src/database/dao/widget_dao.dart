@@ -10,8 +10,7 @@ class WidgetDao with HasDatabase, DbTable {
   String get name => 'widget';
 
   Future<int> insert(WidgetPo widget) async {
-    String addSql =
-        "INSERT INTO "
+    String addSql = "INSERT INTO "
         "widget(id,name,nameCN,deprecated,family,lever,linkWidget,info) "
         "VALUES (?,?,?,?,?,?,?,?);";
     return database.transaction((tran) async => await tran.rawInsert(addSql, [
@@ -30,7 +29,10 @@ class WidgetDao with HasDatabase, DbTable {
     return database.rawQuery("SELECT * FROM widget");
   }
 
-  Future<List<Map<String, dynamic>>> queryByFamily(WidgetFamily family) async {
+  Future<List<Map<String, dynamic>>> queryByFamily(
+    WidgetFamily family, {
+    String locale = 'zh-cn',
+  }) async {
     return database.rawQuery(
         "SELECT * "
         "FROM widget WHERE family = ? ORDER BY lever DESC",
@@ -63,10 +65,31 @@ class WidgetDao with HasDatabase, DbTable {
     if (arguments.stars.reduce((a, b) => a + b) == -5) {
       starArg = [1, 2, 3, 4, 5];
     }
-    return database.rawQuery(
-        "SELECT * "
-        "FROM widget WHERE (name LIKE ? OR info LIKE ? OR nameCN LIKE ?) $familySql  AND lever IN(?,?,?,?,?) ORDER BY lever DESC LIMIT ? OFFSET ?",
+
+    String searchSql = """
+SELECT 
+  widget.id, 
+  widget.name,
+  widget.family,
+  widget.linkWidget,
+  widget.lever,
+  widget_desc.name AS nameCN, 
+  widget_desc.info
+FROM widget
+INNER JOIN widget_desc 
+  ON widget.id = widget_desc.widget_id
+WHERE 
+widget_desc.locale = ? 
+AND (widget.name LIKE ? OR widget_desc.info LIKE ? OR widget_desc.name LIKE ?) 
+$familySql 
+AND lever IN(?,?,?,?,?) 
+ORDER BY lever DESC LIMIT ? OFFSET ? 
+;
+    """;
+
+    return database.rawQuery(searchSql,
         [
+          arguments.locale?? 'zh-cn',
           "%$name%",
           "%$name%",
           "%$name%",

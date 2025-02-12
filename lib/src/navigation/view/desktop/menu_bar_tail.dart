@@ -14,6 +14,7 @@ import 'package:go_router/go_router.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:tolyui/basic/basic.dart';
 
+import 'locale_change_menu.dart';
 import 'theme_model_switch_icon.dart';
 import 'package:app_update/app_update.dart';
 
@@ -33,6 +34,8 @@ class MenuBarTail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        LocaleChangeMenu(),
+        const SizedBox(height: 10,),
         const Divider(indent: 20, color: Colors.white, height: 1),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),

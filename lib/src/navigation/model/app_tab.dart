@@ -33,7 +33,7 @@ enum AppTab {
         AppTab.knowledge => l10n.deskTabKnowledge,
         AppTab.tools => l10n.deskTabTools,
         AppTab.mine => l10n.deskTabMine,
-        AppTab.note => '匠心巧记',
+        AppTab.note => '留言板',
       };
     }
     return switch (this) {

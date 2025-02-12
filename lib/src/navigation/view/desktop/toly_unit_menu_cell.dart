@@ -19,7 +19,8 @@ class FlutterUnitMenuCell extends StatelessWidget {
 
   const FlutterUnitMenuCell.create(this.menu, this.display, {super.key});
 
-  Color? get foregroundColor => display.selected ? Colors.white : Colors.white70;
+  Color? get foregroundColor =>
+      display.selected ? Colors.white : Colors.white70;
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +42,23 @@ class FlutterUnitMenuCell extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        alignment: Alignment.center,
+        padding: EdgeInsets.only(left: 12),
+        alignment: Alignment.centerLeft,
         decoration: BoxDecoration(color: color, borderRadius: br),
-        width: _widthTween.transform(anim) * 130,
+        width: _widthTween.transform(anim) * 140,
         height: height,
-        child: Wrap(
+        child: Row(
           spacing: 6,
-          crossAxisAlignment: WrapCrossAlignment.center,
+          // crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Icon(menu.icon, color: foregroundColor, size: iconSize),
-            Text(menu.label, style: style),
+            Expanded(
+                child: Text(
+              menu.label,
+              style: style,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            )),
           ],
         ),
       ),

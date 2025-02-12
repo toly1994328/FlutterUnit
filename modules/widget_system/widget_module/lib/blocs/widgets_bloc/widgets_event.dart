@@ -12,8 +12,9 @@ abstract class WidgetsEvent extends Equatable {
 
 class EventTabTap extends WidgetsEvent {
   final WidgetFamily family;
+  final String? locale;
 
-  const EventTabTap(this.family);
+  const EventTabTap(this.family,{this.locale});
 
   @override
   List<Object> get props => [family];

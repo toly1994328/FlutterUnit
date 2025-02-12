@@ -50,25 +50,26 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     super.dispose();
   }
 
+
   /// extendBody = true 凹嵌透明，需要处理底部 边距
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      endDrawer: const HomeRightDrawer(),
-      body: PageView(
-        physics: _neverScroll,
-        controller: _controller,
-        children: [
-          StandardHomePage(),
-          GalleryUnit(),
-          AlgoScope(child: ArtifactPage()),
-          ArtSysScope(child: MobileArticlePage()),
-          // MobileToolPage(),
-          UserPage(),
-        ],
-      ),
-      bottomNavigationBar: _buildBottomNav(context),
+    return  Scaffold(
+        extendBody: true,
+        endDrawer: const HomeRightDrawer(),
+        body: PageView(
+          physics: _neverScroll,
+          controller: _controller,
+          children: [
+            StandardHomePage(),
+            GalleryUnit(),
+            AlgoScope(child: ArtifactPage()),
+            ArtSysScope(child: MobileArticlePage()),
+            // MobileToolPage(),
+            UserPage(),
+          ],
+        ),
+        bottomNavigationBar: _buildBottomNav(context),
     );
   }
 
