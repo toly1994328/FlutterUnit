@@ -22,6 +22,9 @@ class AppL10nJa extends AppL10n {
   String get deskTabMine => 'アプリ情報';
 
   @override
+  String get messageBoard => '掲示板';
+
+  @override
   String get mobileTabWidgets => 'ウィジェット';
 
   @override

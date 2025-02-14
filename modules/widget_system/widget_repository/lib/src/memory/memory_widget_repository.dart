@@ -44,7 +44,7 @@ class MemoryWidgetRepository implements WidgetRepository {
   }
 
   @override
-  Future<List<WidgetModel>> loadWidget(List<int> id) async {
+  Future<List<WidgetModel>> loadWidget(List<int> id,String? locale) async {
     await _initData();
     var data = widgets.where((element) => id.contains(element.id));
     return data.map(WidgetModel.fromPo).toList();

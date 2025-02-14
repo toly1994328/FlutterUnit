@@ -22,6 +22,9 @@ class AppL10nRu extends AppL10n {
   String get deskTabMine => 'Информация';
 
   @override
+  String get messageBoard => 'Доска сообщений';
+
+  @override
   String get mobileTabWidgets => 'Виджеты';
 
   @override

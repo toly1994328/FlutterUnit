@@ -7,7 +7,7 @@ import '../model/model.dart';
 abstract class WidgetRepository {
   // Future<List<WidgetModel>> loadWidgets(WidgetFamily family);
 
-  Future<List<WidgetModel>> loadWidget(List<int> ids);
+  Future<List<WidgetModel>> loadWidget(List<int> ids,String? locale);
 
   Future<WidgetModel?> queryWidgetByName(String? name);
 

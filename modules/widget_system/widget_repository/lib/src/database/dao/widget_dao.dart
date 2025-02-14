@@ -39,14 +39,30 @@ class WidgetDao with HasDatabase, DbTable {
         [family.index]);
   }
 
-  Future<List<Map<String, dynamic>>> queryByIds(List<int> ids) async {
+  Future<List<Map<String, dynamic>>> queryByIds(List<int> ids, String? locale) async {
     if (ids.isEmpty) {
       return [];
     }
-    String sql = "SELECT * "
-        "FROM widget WHERE id in (${'?,' * (ids.length - 1)}?) ";
+    String searchSql = """
+SELECT 
+  widget.id, 
+  widget.name,
+  widget.family,
+  widget.linkWidget,
+  widget.lever,
+  widget_desc.name AS nameCN, 
+  widget_desc.info
+FROM widget
+INNER JOIN widget_desc 
+  ON widget.id = widget_desc.widget_id
+WHERE 
+  widget_desc.locale = ? AND 
+  widget.id in (${'?,' * (ids.length - 1)}?)
+ORDER BY 
+  lever DESC, widget.id ASC;
+    """;
 
-    return database.rawQuery(sql, [...ids]);
+    return database.rawQuery(searchSql, [(locale?? 'zh-cn'), ...ids]);
   }
 
   Future<List<Map<String, dynamic>>> search(WidgetFilter arguments) async {
@@ -83,7 +99,9 @@ widget_desc.locale = ?
 AND (widget.name LIKE ? OR widget_desc.info LIKE ? OR widget_desc.name LIKE ?) 
 $familySql 
 AND lever IN(?,?,?,?,?) 
-ORDER BY lever DESC LIMIT ? OFFSET ? 
+ORDER BY 
+  lever DESC, widget.id ASC 
+LIMIT ? OFFSET ? 
 ;
     """;
 

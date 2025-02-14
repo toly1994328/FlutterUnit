@@ -33,7 +33,7 @@ enum AppTab {
         AppTab.knowledge => l10n.deskTabKnowledge,
         AppTab.tools => l10n.deskTabTools,
         AppTab.mine => l10n.deskTabMine,
-        AppTab.note => '留言板',
+        AppTab.note => l10n.messageBoard,
       };
     }
     return switch (this) {
@@ -42,7 +42,7 @@ enum AppTab {
       AppTab.knowledge => l10n.mobileTabKnowledge,
       AppTab.tools => l10n.mobileTabTools,
       AppTab.mine => l10n.mobileTabMine,
-      AppTab.note => '巧记',
+      AppTab.note => l10n.messageBoard,
     };
   }
 

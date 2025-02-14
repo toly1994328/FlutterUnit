@@ -22,6 +22,9 @@ class AppL10nZh extends AppL10n {
   String get deskTabMine => '应用信息';
 
   @override
+  String get messageBoard => '留言板';
+
+  @override
   String get mobileTabWidgets => '组件';
 
   @override

@@ -12,6 +12,7 @@ part of 'widgets_bloc.dart';
 sealed class WidgetsState extends Equatable {
   final WidgetFilter filter;
   final LoadOperate operate;
+
   const WidgetsState({required this.filter, required this.operate});
 
   @override
@@ -19,8 +20,10 @@ sealed class WidgetsState extends Equatable {
 }
 
 class WidgetsLoading extends WidgetsState {
-  const WidgetsLoading(
-      {super.filter = const WidgetFilter(), super.operate = LoadOperate.load});
+  const WidgetsLoading({
+    super.filter = const WidgetFilter(),
+    super.operate = LoadOperate.load,
+  });
 }
 
 /// [full] 是否已满，用于加载更多到底的标识
@@ -39,7 +42,7 @@ class WidgetsLoaded extends WidgetsState {
   });
 
   @override
-  List<Object> get props => [widgets,full,filter,operate,fetchTime];
+  List<Object> get props => [widgets, full, filter, operate, fetchTime];
 
   @override
   String toString() {
@@ -52,16 +55,15 @@ class WidgetsLoaded extends WidgetsState {
     LoadOperate? operate,
     WidgetFilter? filter,
     int? fetchTime,
-}){
+  }) {
     return WidgetsLoaded(
-        widgets:widgets??this.widgets,
-      full:full??this.full,
-      operate:operate??this.operate,
-      filter:filter??this.filter,
-      fetchTime:fetchTime??this.fetchTime,
+      widgets: widgets ?? this.widgets,
+      full: full ?? this.full,
+      operate: operate ?? this.operate,
+      filter: filter ?? this.filter,
+      fetchTime: fetchTime ?? this.fetchTime,
     );
   }
-
 }
 
 class WidgetsLoadFailed extends WidgetsState {

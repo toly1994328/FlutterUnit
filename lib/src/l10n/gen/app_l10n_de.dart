@@ -22,6 +22,9 @@ class AppL10nDe extends AppL10n {
   String get deskTabMine => 'App-Info';
 
   @override
+  String get messageBoard => 'Pinnwand';
+
+  @override
   String get mobileTabWidgets => 'Widgets';
 
   @override

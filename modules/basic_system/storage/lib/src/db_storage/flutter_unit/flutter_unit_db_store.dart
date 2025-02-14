@@ -16,7 +16,6 @@ class FlutterUnitDbStore extends FxDb {
   @override
   int get version => 1;
 
-
   @override
   void afterOpen(String dbpath) {
     super.afterOpen(dbpath);
@@ -25,6 +24,5 @@ class FlutterUnitDbStore extends FxDb {
 
   @override
   Iterable<(int, MigrationOperation)> get migrations => [];
-
 
 }

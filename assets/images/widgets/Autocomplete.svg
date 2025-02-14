@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+    <!-- 输入框容器 -->
+    <rect x="24" y="28" width="80" height="40" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+
+    <!-- 输入框 -->
+    <rect x="32" y="36" width="56" height="24" rx="4" fill="#F8FAFF" stroke="#4D77FF" stroke-width="1.5"/>
+
+    <!-- 搜索图标 -->
+    <path d="M88 44l-4.5 4.5m2-7a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"
+        stroke="#4D77FF" stroke-width="2" fill="none"/>
+
+    <!-- 下拉列表容器 -->
+    <rect x="24" y="68" width="80" height="60" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+
+    <!-- 建议选项（带间距分布） -->
+    <rect x="32" y="76" width="64" height="16" rx="4" fill="#4D77FF" opacity="0.9"/>
+    <rect x="32" y="96" width="64" height="16" rx="4" fill="#4D77FF" opacity="0.6"/>
+    <rect x="32" y="116" width="64" height="16" rx="4" fill="#4D77FF" opacity="0.3"/>
+
+    <!-- 动态交互指示器 -->
+    <path d="M96 48l-8 8 8 8" stroke="#4D77FF" stroke-width="2" fill="none"/>
+
+    <!-- 滚动渐变遮罩 -->
+    <linearGradient id="autocompleteGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="white" stop-opacity="0.8"/>
+        <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <rect x="24" y="68" width="80" height="16" fill="url(#autocompleteGradient)"/>
+    <rect x="24" y="112" width="80" height="16" fill="url(#autocompleteGradient)" transform="rotate(180 64 120)"/>
+</svg>

@@ -141,6 +141,12 @@ abstract class AppL10n {
   /// **'应用信息'**
   String get deskTabMine;
 
+  /// No description provided for @messageBoard.
+  ///
+  /// In zh, this message translates to:
+  /// **'留言板'**
+  String get messageBoard;
+
   /// No description provided for @mobileTabWidgets.
   ///
   /// In zh, this message translates to:

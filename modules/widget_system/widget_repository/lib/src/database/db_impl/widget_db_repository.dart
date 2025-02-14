@@ -18,9 +18,9 @@ class WidgetDbRepository implements WidgetRepository {
 
   @override
   Future<List<WidgetModel>> loadLikeWidgets() async {
-    return [];
+    // return [];
     List<int> likeIds = await likeDao.likeWidgetIds();
-    List<Map<String, dynamic>> data = await widgetDao.queryByIds(likeIds);
+    List<Map<String, dynamic>> data = await widgetDao.queryByIds(likeIds, null);
     List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();
   }
@@ -33,10 +33,10 @@ class WidgetDbRepository implements WidgetRepository {
   }
 
   @override
-  Future<List<WidgetModel>> loadWidget(List<int> id) async {
-    // List<Map<String, dynamic>> data = await widgetDao.queryByIds(id);
-    // List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
-    // if (widgets.isNotEmpty) return widgets.map(WidgetModel.fromPo).toList();
+  Future<List<WidgetModel>> loadWidget(List<int> id,String? locale) async {
+    List<Map<String, dynamic>> data = await widgetDao.queryByIds(id,locale);
+    List<WidgetPo> widgets = data.map((e) => WidgetPo.fromJson(e)).toList();
+    if (widgets.isNotEmpty) return widgets.map(WidgetModel.fromPo).toList();
     return [];
   }
 
