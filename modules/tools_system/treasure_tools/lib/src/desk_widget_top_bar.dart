@@ -17,7 +17,7 @@ class DeskCodeGenTopBar extends StatefulWidget {
 class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>  with SingleTickerProviderStateMixin {
   late TabController tabController;
 
-  static const List<String> _tabs = ['IconFont', '数据类' , '状态管理', 'Json 解析',];
+  static const List<String> _tabs = ['IconFont','Json 解析', '数据类' , '状态管理',];
 
   @override
   void initState() {
@@ -30,6 +30,7 @@ class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>  with SingleTicke
     Color themeColor = Theme.of(context).primaryColor;
 
     bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return DragToMoveWrapper(
       child: Container(
         height: 64,

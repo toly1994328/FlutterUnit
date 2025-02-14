@@ -34,11 +34,11 @@ class MenuBarTail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        LocaleChangeMenu(),
-        const SizedBox(height: 10,),
         const Divider(indent: 20, color: Colors.white, height: 1),
+        const SizedBox(height: 8,),
+        const LocaleChangeMenu(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          padding: const EdgeInsets.only(left: 8, right: 8,bottom: 8,top: 2),
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
             spacing: 8,

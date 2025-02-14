@@ -22,6 +22,9 @@ class AppL10nIt extends AppL10n {
   String get deskTabMine => 'Info App';
 
   @override
+  String get messageBoard => 'Bacheca';
+
+  @override
   String get mobileTabWidgets => 'Widget';
 
   @override

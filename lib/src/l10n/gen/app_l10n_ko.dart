@@ -22,6 +22,9 @@ class AppL10nKo extends AppL10n {
   String get deskTabMine => '앱 정보';
 
   @override
+  String get messageBoard => '게시판';
+
+  @override
   String get mobileTabWidgets => '위젯';
 
   @override

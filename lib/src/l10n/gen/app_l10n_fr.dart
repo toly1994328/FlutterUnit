@@ -22,6 +22,9 @@ class AppL10nFr extends AppL10n {
   String get deskTabMine => 'Infos App';
 
   @override
+  String get messageBoard => 'Tableau de messages';
+
+  @override
   String get mobileTabWidgets => 'Widgets';
 
   @override

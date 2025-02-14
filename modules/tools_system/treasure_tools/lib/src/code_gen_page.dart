@@ -8,6 +8,7 @@ import 'model/class.dart';
 import 'model/field.dart';
 import 'popable/class_gen_field.dart';
 import 'popable/toly_select.dart';
+import 'view/json_display/json_display.dart';
 
 class A {}
 
@@ -58,11 +59,7 @@ class _CodeGenPageState extends State<CodeGenPage> {
             controller:_ctrl,
             children: [
               IconFontGenPage(),
-              Center(
-                child: Text(
-                    '敬请期待'
-                ),
-              ),
+              JsonAnalysisTool(),
               Center(
                 child: Text(
                     '敬请期待'

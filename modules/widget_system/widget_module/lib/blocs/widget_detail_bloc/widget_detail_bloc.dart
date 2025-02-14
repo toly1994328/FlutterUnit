@@ -20,13 +20,13 @@ class WidgetDetailBloc extends Cubit<DetailState> {
     required this.nodeRepo,
   }) : super(DetailLoading());
 
-  final List<WidgetModel> _modelStack = [];
+  List<WidgetModel> _modelStack = [];
 
   WidgetModel get currentWidget => _modelStack.last;
 
-  void push(WidgetModel model,{String? locale}) {
+  void push(WidgetModel model, {String? locale}) {
     _modelStack.add(model);
-    queryDetail(model,locale: locale);
+    queryDetail(model, locale: locale);
   }
 
   Future<bool> pop() async {
@@ -42,11 +42,13 @@ class WidgetDetailBloc extends Cubit<DetailState> {
     }
   }
 
-  void queryDetail(WidgetModel widget,{String? locale}) async {
+  void queryDetail(WidgetModel widget, {String? locale}) async {
     emit(DetailLoading());
     try {
-      final List<NodeModel> nodes = await nodeRepo.loadNode(widget.id,locale: locale);
-      final List<WidgetModel> links = await widgetRepo.loadWidget(widget.links);
+      final List<NodeModel> nodes =
+          await nodeRepo.loadNode(widget.id, locale: locale);
+      final List<WidgetModel> links =
+          await widgetRepo.loadWidget(widget.links, locale);
       if (nodes.isEmpty) {
         emit(DetailEmpty());
       } else {
@@ -58,8 +60,11 @@ class WidgetDetailBloc extends Cubit<DetailState> {
     }
   }
 
-  void changeLocale(Locale locale) {
-    String localeStr = '${locale.languageCode}-${locale.countryCode}'.toLowerCase();
-    queryDetail(currentWidget,locale:localeStr);
+  void changeLocale(Locale locale) async {
+    String localeStr =
+        '${locale.languageCode}-${locale.countryCode}'.toLowerCase();
+    List<int> ids = _modelStack.map((e) => e.id).toList();
+    _modelStack = await widgetRepo.loadWidget(ids, localeStr);
+    queryDetail(currentWidget, locale: localeStr);
   }
 }

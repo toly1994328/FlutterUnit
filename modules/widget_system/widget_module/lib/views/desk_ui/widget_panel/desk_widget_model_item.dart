@@ -1,5 +1,6 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:widget_module/blocs/blocs.dart';
@@ -7,7 +8,7 @@ import 'package:widget_module/views/components/collected_tag.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wrapper/wrapper.dart';
-
+import 'package:tolyui/tolyui.dart';
 import '../../components/widget_logo_map.dart';
 import '../like_tag.dart';
 
@@ -97,15 +98,21 @@ class DeskWidgetItem extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.center,
               spacing: 8,
               children: [
-                Text(
-                  model.name,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: textColor,
-                    fontWeight: FontWeight.bold,
+                GestureDetector(
+                  child: Text(
+                    model.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: textColor,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                  onLongPress: () async{
+                    await Clipboard.setData(ClipboardData(text: model.name));
+                    $message.success(message: '名称复制成功!');
+                  },
                 ),
 
               ],
