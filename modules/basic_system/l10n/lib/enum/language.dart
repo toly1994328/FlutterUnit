@@ -13,6 +13,8 @@ enum Language {
   es_ES(locale: Locale('es','ES'), label: 'Español'),
   ;
 
+  String get code => '${locale.languageCode}-${locale.countryCode}'.toLowerCase();
+
   final Locale locale;
   final String label;
 

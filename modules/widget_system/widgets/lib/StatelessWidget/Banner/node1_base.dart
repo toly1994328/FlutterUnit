@@ -9,9 +9,10 @@ class CustomBanner extends StatelessWidget {
 
   Map<BannerLocation, Color> get data => {
     BannerLocation.topStart: Colors.red,
-    BannerLocation.topEnd: Colors.blue,
     BannerLocation.bottomStart: Colors.green,
-    BannerLocation.bottomEnd: Colors.yellow,
+    BannerLocation.bottomEnd: Colors.orange,
+    BannerLocation.topEnd: Colors.blue,
+
   };
 
   @override
@@ -25,8 +26,9 @@ class CustomBanner extends StatelessWidget {
                   width: 150,
                   height: 150 * 0.618,
                   child: Banner(
-                    message: "Flutter 2.2.3发布",
+                    message: "Flutter 3.29.0 发布",
                     location: location,
+                    textStyle: TextStyle(fontSize: 8,height: 1),
                     color: data[location]!,
                     child: const Padding(
                         padding: EdgeInsets.all(20),

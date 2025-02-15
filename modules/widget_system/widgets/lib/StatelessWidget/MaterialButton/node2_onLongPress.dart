@@ -15,9 +15,13 @@ class LongPressMaterialButton extends StatelessWidget {
         color: Colors.blue,
         highlightColor: Colors.green,
         textColor: Colors.white,
-        padding: const EdgeInsets.all(8),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         child: const Text("MaterialButton"),
-        onLongPress: () =>  Navigator.of(context).pushNamed('AboutMePage'),
-        onPressed: () => Navigator.of(context).pushNamed('AboutMePage'));
+        onLongPress: () {
+          // Navigator.of(context).pushNamed('AboutMePage');
+        },
+        onPressed: () {
+          // Navigator.of(context).pushNamed('AboutMePage');
+        });
   }
 }

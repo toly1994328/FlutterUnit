@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:storage/storage.dart';
+import 'package:widget_module/widget_module.dart';
 
 class CircleImage extends StatelessWidget {
 
@@ -36,13 +38,19 @@ class CircleImage extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.all(borderSize),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: image,
-                fit: BoxFit.cover,
-                filterQuality: FilterQuality.low),
-            shape: BoxShape.circle,
+        child: GestureDetector(
+          onTap: () async{
+           var data = await AppStorage().flutter<WidgetDao>().queryWidgetByName('Container');
+           print(data);
+          },
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: image,
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.low),
+              shape: BoxShape.circle,
+            ),
           ),
         ),
       ),

@@ -84,6 +84,6 @@ class _FlutterUnit3State extends State<FlutterUnit3> {
   void _initWeb() {
     if (!kAppEnv.isWeb) return;
     GoRouter.optionURLReflectsImperativeAPIs = true;
-    context.read<WidgetsBloc>().add(const EventTabTap(WidgetFamily.statelessWidget));
+    context.initWidgetData();
   }
 }

@@ -73,7 +73,6 @@ dependencies:
   webview_flutter: ^4.2.4 # webview
   flutter_markdown: ^0.7.2+1 # markdown
   flutter_svg: ^2.0.17 # svg 展示
-
   # 逻辑处理
   image: ^4.0.17 # 图像处理
   equatable: ^2.0.5 # 相等辅助

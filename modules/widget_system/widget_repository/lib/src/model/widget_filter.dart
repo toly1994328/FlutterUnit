@@ -1,10 +1,10 @@
 enum WidgetFamily {
-  statelessWidget,
-  statefulWidget,
-  singleChildRenderObjectWidget,
-  multiChildRenderObjectWidget,
+  stateless,
+  stateful,
+  singleChildRender,
+  multiChildRender,
   sliver,
-  proxyWidget,
+  proxy,
   other,
 }
 

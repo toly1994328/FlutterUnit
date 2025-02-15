@@ -31,12 +31,12 @@ class Cons {
   ];
 
   static const Map<WidgetFamily,String> kWidgetFamilyLabelMap = {
-    WidgetFamily.statelessWidget: "Stateless",
-    WidgetFamily.statefulWidget: "Stateful",
-    WidgetFamily.singleChildRenderObjectWidget: "SingleChild",
-    WidgetFamily.multiChildRenderObjectWidget: "MultiChild",
+    WidgetFamily.stateless: "Stateless",
+    WidgetFamily.stateful: "Stateful",
+    WidgetFamily.singleChildRender: "SingleChild",
+    WidgetFamily.multiChildRender: "MultiChild",
     WidgetFamily.sliver: "Sliver",
-    WidgetFamily.proxyWidget: "Proxy",
+    WidgetFamily.proxy: "Proxy",
     WidgetFamily.other: "Other",
   };
 

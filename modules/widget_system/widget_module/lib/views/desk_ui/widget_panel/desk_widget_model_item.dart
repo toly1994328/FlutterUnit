@@ -11,7 +11,7 @@ import 'package:wrapper/wrapper.dart';
 import 'package:tolyui/tolyui.dart';
 import '../../components/widget_logo_map.dart';
 import '../like_tag.dart';
-
+import 'package:l10n/l10n.dart';
 class DeskWidgetItem extends StatelessWidget {
   final WidgetModel model;
   final VoidCallback onTap;
@@ -52,7 +52,9 @@ class DeskWidgetItem extends StatelessWidget {
                   onLongPress: (){
                     context.read<LikeWidgetBloc>().add(ToggleLikeWidgetEvent(id: model.id));
                   },
-                  child: WidgetLogo(background: color, widgetName: model.name,),
+                  child: Hero(
+                      tag: "hero_widget_image_${model.id}",
+                      child: WidgetLogo(background: color, widgetName: model.name,)),
                 ),
                 Expanded(
                   child: Padding(
@@ -88,7 +90,15 @@ class DeskWidgetItem extends StatelessWidget {
       ],
     );
   }
-
+  Widget linkText(BuildContext context) => Row(
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(left: 15, right: 5),
+        child: Icon(Icons.link, color: Colors.blue),
+      ),
+      Text(context.l10n.relatedComponents, style: UnitTextStyle.labelBold),
+    ],
+  );
   Widget _buildTitle(Color color, Color? textColor, bool isDark) {
     return Row(
       children: [

@@ -119,27 +119,8 @@ class DeskWidgetDetailPage extends StatelessWidget {
             SliverToBoxAdapter(
               child: Column(
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: DeskWidgetDetailPanel(model: bloc.currentWidget),
-                      ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 16),
-                          linkText(context),
-                          if (state is DetailWithData)
-                            LinkWidgetButtons(
-                                links: state.links, onSelect: bloc.push)
-                        ],
-                      ))
-                    ],
-                  ),
-                  const Divider()
+                  DeskWidgetDetailPanel(model: bloc.currentWidget, state: state,),
+                  const Divider(height: 18,)
                 ],
               ),
             ),
