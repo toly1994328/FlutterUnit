@@ -26,9 +26,7 @@ class FxApplication with FxStarter<AppConfig> {
   void onLoaded(BuildContext context, int cost, AppConfig state) {
     debugPrint("App启动耗时:$cost ms");
     context.read<AppConfigBloc>().init(state);
-    context
-        .read<WidgetsBloc>()
-        .add(const EventTabTap(WidgetFamily.statelessWidget));
+    context.initWidgetData();
     if (!kAppEnv.isWeb) {
       context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
       context.read<CategoryBloc>().add(const EventLoadCategory());

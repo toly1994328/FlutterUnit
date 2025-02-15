@@ -9,35 +9,6 @@ class WidgetDao with HasDatabase, DbTable {
   @override
   String get name => 'widget';
 
-  Future<int> insert(WidgetPo widget) async {
-    String addSql = "INSERT INTO "
-        "widget(id,name,nameCN,deprecated,family,lever,linkWidget,info) "
-        "VALUES (?,?,?,?,?,?,?,?);";
-    return database.transaction((tran) async => await tran.rawInsert(addSql, [
-          widget.id,
-          widget.name,
-          widget.nameCN,
-          widget.deprecated,
-          widget.family,
-          widget.lever,
-          widget.linkWidget,
-          widget.info
-        ]));
-  }
-
-  Future<List<Map<String, dynamic>>> queryAll() async {
-    return database.rawQuery("SELECT * FROM widget");
-  }
-
-  Future<List<Map<String, dynamic>>> queryByFamily(
-    WidgetFamily family, {
-    String locale = 'zh-cn',
-  }) async {
-    return database.rawQuery(
-        "SELECT * "
-        "FROM widget WHERE family = ? ORDER BY lever DESC",
-        [family.index]);
-  }
 
   Future<List<Map<String, dynamic>>> queryByIds(List<int> ids, String? locale) async {
     if (ids.isEmpty) {
@@ -77,11 +48,9 @@ ORDER BY
     String familySql = hasFamily ? ' AND family = ?' : '';
     List<int> familyArg = hasFamily ? [arguments.family!.index] : [];
     List<int> starArg = arguments.stars;
-    // 保证在星级参数是 [-1,-1,-1,-1,-1] 时，搜索全星级
     if (arguments.stars.reduce((a, b) => a + b) == -5) {
       starArg = [1, 2, 3, 4, 5];
     }
-
     String searchSql = """
 SELECT 
   widget.id, 
@@ -132,9 +101,25 @@ LIMIT ? OFFSET ?
     return 0;
   }
 
-  Future<Map<String, dynamic>?> queryWidgetByName(String name) async {
-    String sql = "SELECT * FROM widget WHERE name = ?";
-    List<Map<String, Object?>> result = await database.rawQuery(sql, [name]);
+  Future<Map<String, dynamic>?> queryWidgetByName(String name, {String? locale}) async {
+    String querySql = """
+SELECT 
+  widget.id, 
+  widget.name,
+  widget.family,
+  widget.linkWidget,
+  widget.lever,
+  widget_desc.name AS nameCN, 
+  widget_desc.info
+FROM widget
+INNER JOIN widget_desc 
+  ON widget.id = widget_desc.widget_id
+WHERE 
+widget.name = ? AND 
+widget_desc.locale = ? 
+;
+""";
+    List<Map<String, Object?>> result = await database.rawQuery(querySql, [name,locale??'zh-cn']);
     if (result.isNotEmpty) {
       return result.first;
     }

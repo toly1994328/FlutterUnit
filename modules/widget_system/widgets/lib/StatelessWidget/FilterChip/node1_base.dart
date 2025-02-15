@@ -21,11 +21,12 @@ class _CustomFilterChipState extends State<CustomFilterChip> {
 
   @override
   Widget build(BuildContext context) {
+    Color themeColor = Theme.of(context).primaryColor;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Wrap(
-          children: map.keys.map((key) => _buildChild(key)).toList(),
+          children: map.keys.map((key) => _buildChild(themeColor,key)).toList(),
         ),
         Container(
             padding: const EdgeInsets.all(10),
@@ -34,20 +35,30 @@ class _CustomFilterChipState extends State<CustomFilterChip> {
     );
   }
 
-  Padding _buildChild(String key) => Padding(
+  Padding _buildChild( Color themeColor,String key) {
+    bool select =  _selected.contains(map[key]);
+    return Padding(
         padding: const EdgeInsets.all(4.0),
         child: FilterChip(
-          selectedColor: Colors.orange.withAlpha(55),
+          selectedColor: themeColor,
           selectedShadowColor: Colors.blue,
-          shadowColor: Colors.orangeAccent,
+          side: BorderSide.none,
+          shadowColor: themeColor,
           pressElevation: 5,
-          elevation: 3,
-          avatar: CircleAvatar(child: Text(key)),
-          label: Text(map[key]!),
-          selected: _selected.contains(map[key]),
+          elevation: 2,
+          avatarBoxConstraints: BoxConstraints(
+            maxWidth: 22,maxHeight: 22
+          ),
+            checkmarkColor: select?Colors.white:null,
+          avatar: CircleAvatar(
+            backgroundColor:  select?Colors.blueAccent:null,
+              child: Text(key,style: TextStyle(fontSize: 12,color: select?Colors.transparent:null),)),
+          label: Text(map[key]!,style: TextStyle(color: select?Colors.white:null),),
+          selected: select,
           onSelected: (bool value) => _onSelected(value, key),
         ),
       );
+  }
 
   void _onSelected(bool value, String key) {
     setState(() {

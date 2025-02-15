@@ -1,4 +1,5 @@
 import 'package:l10n/ext.dart';
+import 'package:widget_module/blocs/action/widget_action.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 import 'package:toly_ui/toly_ui.dart';
@@ -6,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
-
 import 'home_drawer.dart';
 import 'standard_home_search.dart';
 import 'widget_page.dart';
@@ -51,10 +51,10 @@ class _StandardHomePageState extends State<StandardHomePage>
 
   void _switchTab(int index) {
     WidgetFamily widgetFamily = WidgetFamily.values[index];
-    WidgetsBloc bloc = BlocProvider.of<WidgetsBloc>(context);
+    WidgetsBloc bloc = context.read<WidgetsBloc>();
     if (bloc.state.filter.family == widgetFamily) return;
     PrimaryScrollController.of(context).jumpTo(0);
-    BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
+    context.switchWidgetFamily(widgetFamily);
   }
 
   @override

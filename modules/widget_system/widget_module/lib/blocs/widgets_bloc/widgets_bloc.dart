@@ -130,7 +130,7 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
 
   void changeLocale(Locale locale) {
     add(EventTabTap(
-      state.filter.family??WidgetFamily.statelessWidget,
+      state.filter.family??WidgetFamily.stateless,
       locale: '${locale.languageCode}-${locale.countryCode}'.toLowerCase()
     ));
   }

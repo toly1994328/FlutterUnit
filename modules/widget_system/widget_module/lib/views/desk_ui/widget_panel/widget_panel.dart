@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/event/widget_event.dart';
+import 'package:widget_module/widget_module.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:fx_trace/fx_trace.dart';
 
@@ -43,7 +44,7 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel> {
 
   void _switchTab(int index) {
     WidgetFamily widgetFamily = WidgetFamily.values[index];
-    BlocProvider.of<WidgetsBloc>(context).add(EventTabTap(widgetFamily));
+    context.switchWidgetFamily(widgetFamily);
   }
 }
 

@@ -12,11 +12,14 @@ class CustomMaterialButton extends StatelessWidget {
     return MaterialButton(
         height: 40,
         elevation: 5,
-        color: Colors.orangeAccent,
+        color: Colors.blue,
         textColor: Colors.white,
-        splashColor: Colors.blue,
-        padding: const EdgeInsets.all(8),
+        splashColor: Colors.orangeAccent,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         child: const Text("MaterialButton"),
-        onPressed: () => Navigator.of(context).pushNamed('AboutMePage'));
+        onPressed: () {
+
+          // Navigator.of(context).pushNamed('AboutMePage');
+        });
   }
 }

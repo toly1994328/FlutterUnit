@@ -91,21 +91,21 @@ class WidgetModel extends Equatable {
   static WidgetFamily toFamily(int id) {
     switch (id) {
       case 0:
-        return WidgetFamily.statelessWidget;
+        return WidgetFamily.stateless;
       case 1:
-        return WidgetFamily.statefulWidget;
+        return WidgetFamily.stateful;
       case 2:
-        return WidgetFamily.singleChildRenderObjectWidget;
+        return WidgetFamily.singleChildRender;
       case 3:
-        return WidgetFamily.multiChildRenderObjectWidget;
+        return WidgetFamily.multiChildRender;
       case 4:
         return WidgetFamily.sliver;
       case 5:
-        return WidgetFamily.proxyWidget;
+        return WidgetFamily.proxy;
       case 6:
         return WidgetFamily.other;
       default:
-        return WidgetFamily.statelessWidget;
+        return WidgetFamily.stateless;
     }
   }
 }
