@@ -20,20 +20,17 @@ class StandardHomePage extends StatefulWidget {
 
 class _StandardHomePageState extends State<StandardHomePage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-
-  List<String> get _tabs =>[
-    context.l10n.stateless,
-    context.l10n.stateful,
-    context.l10n.single,
-    context.l10n.multi,
-    context.l10n.sliver,
-    context.l10n.proxy,
-    context.l10n.other,
-  ];
+  List<String> get _tabs => [
+        context.l10n.stateless,
+        context.l10n.stateful,
+        context.l10n.single,
+        context.l10n.multi,
+        context.l10n.sliver,
+        context.l10n.proxy,
+        context.l10n.other,
+      ];
 
   late TabController tabController;
-
-
 
   @override
   void initState() {
@@ -95,7 +92,11 @@ class _StandardHomePageState extends State<StandardHomePage>
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return [
-      const SliverSnapHeader(child: StandardHomeSearch()),
+      // const SliverSnapHeader(child: StandardHomeSearch()),
+      const SliverFloatingHeader(
+        snapMode: FloatingHeaderSnapMode.scroll,
+        child: StandardHomeSearch(),
+      ),
       // SliverOverlapAbsorber(
       //   sliver:
       SliverPinnedHeader(

@@ -9,39 +9,49 @@ class TweenAnimationBuilderDemo extends StatefulWidget {
   const TweenAnimationBuilderDemo({Key? key}) : super(key: key);
 
   @override
-  _TweenAnimationBuilderDemoState createState() =>
+  State<TweenAnimationBuilderDemo> createState() =>
       _TweenAnimationBuilderDemoState();
 }
 
 class _TweenAnimationBuilderDemoState extends State<TweenAnimationBuilderDemo> {
-  Color _value = Colors.red;
+  List<Color> get colors => const [
+    Colors.red,
+    Colors.orange,
+    Colors.yellow,
+    Colors.green,
+    Colors.blue,
+    Colors.indigo,
+    Colors.purple
+  ];
+
+  int _activeIndex = 0;
+
+  Color get begin => colors[_activeIndex % colors.length];
+
+  Color get end => colors[(_activeIndex + 1) % colors.length];
+
+  void nextColor(){
+    _activeIndex++;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
-    return TweenAnimationBuilder(
-      tween: ColorTween(begin: Colors.blue, end: _value),
-      duration: const Duration(milliseconds: 800),
-      builder: (BuildContext context, Color? color, Widget? child) {
-        return GestureDetector(
-          onTap: () {
-            setState(() {
-              _value = _value == Colors.red ? Colors.blue : Colors.red;
-            });
-          },
-          child: Container(
+    return GestureDetector(
+      onTap: nextColor,
+      child: TweenAnimationBuilder(
+        tween: ColorTween(begin: begin, end: end),
+        duration: const Duration(milliseconds: 800),
+        builder: (BuildContext context, Color? color, Widget? child) {
+          return Container(
             width: 40,
             height: 40,
-            child: child,
             decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(5)
-            ),
-          ),
-        );
-      },
-      child: const Icon(
-        Icons.android_outlined,
-        color: Colors.white,
+                color: color, borderRadius: BorderRadius.circular(5)),
+            child: child,
+          );
+        },
+        child: const Icon(Icons.android_outlined, color: Colors.white),
       ),
     );
   }
