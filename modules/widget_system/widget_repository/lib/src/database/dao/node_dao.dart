@@ -42,6 +42,6 @@ AND node.widgetId = ?
 ORDER BY priority
 """;
 
-    return await database.rawQuery(sql, [locale ?? 'pt-pt', id]);
+    return await database.rawQuery(sql, [locale ?? 'zh-cn', id]);
   }
 }
