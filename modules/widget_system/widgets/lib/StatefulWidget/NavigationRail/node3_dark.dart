@@ -1,7 +1,4 @@
-
 import 'package:flutter/material.dart';
-
-
 
 //       minWidth: 72,
 //       minExtendedWidth: 200 ,
@@ -12,8 +9,6 @@ import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2022/7/23
 /// contact me by email 1981462002@qq.com
-
-
 
 class DarkNavigationRail extends StatefulWidget {
   const DarkNavigationRail({Key? key}) : super(key: key);
@@ -27,24 +22,27 @@ class _DarkNavigationRailState extends State<DarkNavigationRail> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-            children: [
-              DarkExtendableNavigation(
-                onDestinationSelected: _onDestinationSelected,
-              ),
-              Expanded(
-                  child: PageView(
-                    controller: _controller,
-                    children: const [
-                      _TestContent(content: '消息'),
-                      _TestContent(content: '视频会议'),
-                      _TestContent(content: '通讯录'),
-                      _TestContent(content: '云文档'),
-                      _TestContent(content: '工作台'),
-                      _TestContent(content: '日历'),
-                    ],
-                  ))
+    return Scaffold(
+      appBar: AppBar(),
+      body: Row(
+        children: [
+          DarkExtendableNavigation(
+            onDestinationSelected: _onDestinationSelected,
+          ),
+          Expanded(
+              child: PageView(
+            controller: _controller,
+            children: const [
+              _TestContent(content: '消息'),
+              _TestContent(content: '视频会议'),
+              _TestContent(content: '通讯录'),
+              _TestContent(content: '云文档'),
+              _TestContent(content: '工作台'),
+              _TestContent(content: '日历'),
             ],
+          ))
+        ],
+      ),
     );
   }
 
@@ -68,9 +66,9 @@ class _TestContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Text(
-          content,
-          style: const TextStyle(fontSize: 26),
-        ));
+      content,
+      style: const TextStyle(fontSize: 26),
+    ));
   }
 }
 
@@ -81,7 +79,8 @@ class DarkExtendableNavigation extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<DarkExtendableNavigation> createState() => _DarkExtendableNavigationState();
+  State<DarkExtendableNavigation> createState() =>
+      _DarkExtendableNavigationState();
 }
 
 class _DarkExtendableNavigationState extends State<DarkExtendableNavigation> {
@@ -114,9 +113,9 @@ class _DarkExtendableNavigationState extends State<DarkExtendableNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    const Color textColor =  Color(0xffcfd1d7);
-    const  Color activeColor =  Colors.white;
-    const TextStyle labelStyle =  TextStyle(color: textColor,fontSize: 11);
+    const Color textColor = Color(0xffcfd1d7);
+    const Color activeColor = Colors.white;
+    const TextStyle labelStyle = TextStyle(color: textColor, fontSize: 11);
 
     return NavigationRail(
       leading: buildLeading(),
@@ -127,9 +126,9 @@ class _DarkExtendableNavigationState extends State<DarkExtendableNavigation> {
       elevation: 1,
       backgroundColor: const Color(0xff324465),
       minWidth: 72,
-      minExtendedWidth: 200 ,
-      unselectedIconTheme: const IconThemeData(color: textColor) ,
-      selectedIconTheme: const IconThemeData(color: activeColor) ,
+      minExtendedWidth: 200,
+      unselectedIconTheme: const IconThemeData(color: textColor),
+      selectedIconTheme: const IconThemeData(color: activeColor),
       unselectedLabelTextStyle: labelStyle,
       selectedLabelTextStyle: labelStyle,
       trailing: const Expanded(

@@ -35,9 +35,8 @@ class FxApplication with FxStarter<AppConfig> {
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
-    context
-        .read<UpgradeBloc>()
-        .add(CheckUpdate(appId: 1, locale: state.language.locale.toString()));
+    CheckUpdate event = CheckUpdate(appId: 1, locale: state.localeValue);
+    context.read<UpgradeBloc>().add(event);
     context.go(AppRoute.widget.url);
   }
 

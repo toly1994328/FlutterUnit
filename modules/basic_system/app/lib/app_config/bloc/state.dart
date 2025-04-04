@@ -4,15 +4,13 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:l10n/l10n.dart';
 import 'package:storage/storage.dart';
-import 'package:toly_ui/code/code.dart' ;
-
+import 'package:toly_ui/code/code.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
 /// contact me by email 1981462002@qq.com
 /// 说明: 全局状态类
 
 class AppConfig extends Equatable {
-
   /// [fontFamily] 文字字体
   final String fontFamily;
 
@@ -54,19 +52,21 @@ class AppConfig extends Equatable {
     this.netConnect = ConnectivityResult.none,
   });
 
+  String get localeValue => language.locale.toString();
+
   @override
   List<Object> get props => [
-    fontFamily,
-    themeColor,
-    showBackGround,
-    codeStyleIndex,
-    itemStyleIndex,
-    themeMode,
-    showOverlayTool,
-    showPerformanceOverlay,
-    netConnect,
-    language,
-  ];
+        fontFamily,
+        themeColor,
+        showBackGround,
+        codeStyleIndex,
+        itemStyleIndex,
+        themeMode,
+        showOverlayTool,
+        showPerformanceOverlay,
+        netConnect,
+        language,
+      ];
 
   AppConfig copyWith({
     String? fontFamily,
@@ -90,23 +90,23 @@ class AppConfig extends Equatable {
         showOverlayTool: showOverlayTool ?? this.showOverlayTool,
         itemStyleIndex: itemStyleIndex ?? this.itemStyleIndex,
         themeMode: themeMode ?? this.themeMode,
-        showPerformanceOverlay: showPerformanceOverlay ?? this.showPerformanceOverlay,
+        showPerformanceOverlay:
+            showPerformanceOverlay ?? this.showPerformanceOverlay,
         netConnect: netConnect ?? this.netConnect,
       );
 
-
   // 将 AppState 状态数据转换为配置对象，以便存储
   AppConfigPo toAppConfigPo() => AppConfigPo(
-    showBackGround : showBackGround,
-    showOverlayTool : showOverlayTool,
-    showPerformanceOverlay : showPerformanceOverlay,
-    fontFamilyIndex : Cons.kFontFamilySupport.indexOf(fontFamily),
-    themeColorIndex : themeColor.index,
-    codeStyleIndex : codeStyleIndex,
-    themeModeIndex : themeMode.index,
-    itemStyleIndex : itemStyleIndex,
-    languageIndex: language.index,
-  );
+        showBackGround: showBackGround,
+        showOverlayTool: showOverlayTool,
+        showPerformanceOverlay: showPerformanceOverlay,
+        fontFamilyIndex: Cons.kFontFamilySupport.indexOf(fontFamily),
+        themeColorIndex: themeColor.index,
+        codeStyleIndex: codeStyleIndex,
+        themeModeIndex: themeMode.index,
+        itemStyleIndex: itemStyleIndex,
+        languageIndex: language.index,
+      );
 
   // 根据存储的配置信息对象，形成 AppState 状态数据
   factory AppConfig.fromPo(AppConfigPo po) {
@@ -115,7 +115,7 @@ class AppConfig extends Equatable {
       themeColor: ThemeColor.values[po.themeColorIndex],
       showBackGround: po.showBackGround,
       language: Language.values[po.languageIndex],
-      codeStyleIndex:  po.codeStyleIndex,
+      codeStyleIndex: po.codeStyleIndex,
       itemStyleIndex: po.itemStyleIndex,
       showPerformanceOverlay: po.showPerformanceOverlay,
       showOverlayTool: po.showOverlayTool,
@@ -123,8 +123,8 @@ class AppConfig extends Equatable {
     );
   }
 
-  HighlighterStyle get codeStyle => Cons.codeThemeSupport.keys.toList()[codeStyleIndex];
-
+  HighlighterStyle get codeStyle =>
+      Cons.codeThemeSupport.keys.toList()[codeStyleIndex];
 
   @override
   String toString() {

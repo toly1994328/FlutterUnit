@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 /// create by 张风捷特烈 on 2022/7/23
 /// contact me by email 1981462002@qq.com
 
-
 class CustomNavigationRail extends StatefulWidget {
   const CustomNavigationRail({Key? key}) : super(key: key);
 
@@ -16,24 +15,27 @@ class _CustomNavigationRailState extends State<CustomNavigationRail> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        _NavigationRailDemo(
-          onDestinationSelected: _onDestinationSelected,
-        ),
-        Expanded(
-            child: PageView(
-              controller: _controller,
-              children: const [
-                _TestContent(content: '消息'),
-                _TestContent(content: '视频会议'),
-                _TestContent(content: '通讯录'),
-                _TestContent(content: '云文档'),
-                _TestContent(content: '工作台'),
-                _TestContent(content: '日历'),
-              ],
-            ))
-      ],
+    return Scaffold(
+      appBar: AppBar(),
+      body: Row(
+        children: [
+          _NavigationRailDemo(
+            onDestinationSelected: _onDestinationSelected,
+          ),
+          Expanded(
+              child: PageView(
+            controller: _controller,
+            children: const [
+              _TestContent(content: '消息'),
+              _TestContent(content: '视频会议'),
+              _TestContent(content: '通讯录'),
+              _TestContent(content: '云文档'),
+              _TestContent(content: '工作台'),
+              _TestContent(content: '日历'),
+            ],
+          ))
+        ],
+      ),
     );
   }
 
