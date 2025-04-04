@@ -1,15 +1,14 @@
-
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2022/7/23
 /// contact me by email 1981462002@qq.com
 
-
 class ExtendableNavigationRail extends StatefulWidget {
   const ExtendableNavigationRail({Key? key}) : super(key: key);
 
   @override
-  State<ExtendableNavigationRail> createState() => _ExtendableNavigationRailState();
+  State<ExtendableNavigationRail> createState() =>
+      _ExtendableNavigationRailState();
 }
 
 class _ExtendableNavigationRailState extends State<ExtendableNavigationRail> {
@@ -17,25 +16,28 @@ class _ExtendableNavigationRailState extends State<ExtendableNavigationRail> {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
-            children: [
-              ExtendableNavigation(
-                onDestinationSelected: _onDestinationSelected,
-              ),
-              Expanded(
-                  child: PageView(
-                    controller: _controller,
-                    children: const [
-                      _TestContent(content: '消息'),
-                      _TestContent(content: '视频会议'),
-                      _TestContent(content: '通讯录'),
-                      _TestContent(content: '云文档'),
-                      _TestContent(content: '工作台'),
-                      _TestContent(content: '日历'),
-                    ],
-                  ))
+    return Scaffold(
+      appBar: AppBar(),
+      body: Row(
+        children: [
+          ExtendableNavigation(
+            onDestinationSelected: _onDestinationSelected,
+          ),
+          Expanded(
+              child: PageView(
+            controller: _controller,
+            children: const [
+              _TestContent(content: '消息'),
+              _TestContent(content: '视频会议'),
+              _TestContent(content: '通讯录'),
+              _TestContent(content: '云文档'),
+              _TestContent(content: '工作台'),
+              _TestContent(content: '日历'),
             ],
-          );
+          ))
+        ],
+      ),
+    );
   }
 
   void _onDestinationSelected(int value) {
@@ -58,9 +60,9 @@ class _TestContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Text(
-          content,
-          style: const TextStyle(fontSize: 26),
-        ));
+      content,
+      style: const TextStyle(fontSize: 26),
+    ));
   }
 }
 

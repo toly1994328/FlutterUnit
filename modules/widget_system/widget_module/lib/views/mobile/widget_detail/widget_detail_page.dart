@@ -137,8 +137,8 @@ class SliverNodeList extends StatelessWidget {
   }
 
   Widget _nodeMapper(NodeModel node) {
-    NodeType type = node.type(model.name);
-    Widget display = mapNodeDisplay(model.id,node.priority);
+    NodeType type = node.type(model.name, node.priority);
+    Widget display = mapNodeDisplay(model.id, node.priority);
     return switch (type) {
       NodeType.display => display,
       NodeType.newPage => newPageDisplay(display),
@@ -161,6 +161,7 @@ Widget newPageDisplay(Widget page) {
           Icon(
             Icons.open_in_new,
             size: 16,
+            color: Colors.white,
           ),
           Text('新界面打开'),
         ],

@@ -11,24 +11,36 @@ class AppStartErrorPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredDragToMoveWrapper(
         child: AppBar(
-          title: const Text("App 启动异常",style: TextStyle(fontFamily: '宋体'),),
+          title: const Text(
+            "App 启动异常",
+            style: TextStyle(fontFamily: '宋体'),
+          ),
           actions: const [WindowButtons()],
         ),
       ),
       body: Center(
         child: Column(
           children: [
-            Expanded(child: Center(child: Wrap(
+            Expanded(
+                child: Center(
+                    child: Wrap(
               direction: Axis.vertical,
               children: [
                 const Text('应用启动异常:'),
-                Text(error.toString(),style: const TextStyle(color: Colors.redAccent),),
+                Text(
+                  error.toString(),
+                  style: const TextStyle(color: Colors.redAccent),
+                ),
               ],
             ))),
-            TolyLink(href: 'https://github.com/toly1994328/', text: 'Github 开源地址: FlutterUnit', onTap: (l){}),
+            TolyLink(
+                href: 'https://github.com/toly1994328/',
+                text: 'Github 开源地址: FlutterUnit',
+                onTap: (l) {}),
             const Text("联系邮箱: 1981462002@qq.com"),
-            const SizedBox(height: 12,),
-
+            const SizedBox(
+              height: 12,
+            ),
           ],
         ),
       ),

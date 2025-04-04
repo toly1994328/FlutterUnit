@@ -47,7 +47,7 @@ dependencies:
   fx_dao: 0.0.1+2 # 数据库
   fx_dio: 0.0.4+2
   fx_boot_starter: 0.1.1 # app 启动器
-  fx_trace: 0.0.3 # 异常追踪/监听
+  fx_trace: 0.0.5+5 # 异常追踪/监听
 
   # 数据与持久化
   dio: ^5.4.3+1 # 网络请求

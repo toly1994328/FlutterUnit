@@ -28,8 +28,11 @@ class NodeModel extends Equatable {
   @override
   List<Object> get props => [name, subtitle, code, priority];
 
-  NodeType type(String widget) {
+  NodeType type(String widget, int priority) {
     if (widget == 'PinnedHeaderSliver') {
+      return NodeType.newPage;
+    }
+    if (widget == 'NavigationRail') {
       return NodeType.newPage;
     }
     return NodeType.display;

@@ -425,10 +425,10 @@ packages:
     dependency: "direct main"
     description:
       name: fx_dio
-      sha256: "480b529e516c1eb24bef3671761fad84c79e31384d393a7d1d4280d3dcfab2cb"
+      sha256: "1d4818360a9251d6d0664d017f6d51f363db259ea5debdd0294a9af46f1cea9d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.4+2"
   fx_go_router_ext:
     dependency: "direct main"
     description:
@@ -449,10 +449,10 @@ packages:
     dependency: "direct main"
     description:
       name: fx_trace
-      sha256: bba16febf583d4464cd5cae11bd19d441c82d9ca6a7d9bb71c05cae7379a619a
+      sha256: a1fb64b1a6bfc53609fe55e6d56a9c00e76250818eb5a8cfac280a051e33911c
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.3"
+    version: "0.0.5+5"
   go_router:
     dependency: "direct main"
     description:
@@ -1121,6 +1121,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  stream_transform:
+    dependency: transitive
+    description:
+      name: stream_transform
+      sha256: ad47125e588cfd37a9a7f86c7d6356dde8dfe89d071d293f80ca9e9273a33871
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
   string_scanner:
     dependency: transitive
     description:
