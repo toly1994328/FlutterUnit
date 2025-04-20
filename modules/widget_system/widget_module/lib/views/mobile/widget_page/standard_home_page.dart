@@ -76,8 +76,9 @@ class _StandardHomePageState extends State<StandardHomePage>
           Expanded(
             child: NestedScrollView(
                 floatHeaderSlivers: true,
+                physics: const BouncingScrollPhysics(),
                 headerSliverBuilder: _buildHeader,
-                body: WidgetPage()),
+                body: const WidgetPage()),
           ),
           SizedBox(
             height: bottom,

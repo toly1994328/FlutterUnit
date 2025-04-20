@@ -5,16 +5,17 @@ import 'package:widget_module/blocs/blocs.dart';
 
 import '../../widget_module.dart';
 
-
-extension WidgetContext on BuildContext{
-
-  void initWidgetData(){
+extension WidgetContext on BuildContext {
+  void initWidgetData() {
     switchWidgetFamily(WidgetFamily.stateless);
   }
 
-  void switchWidgetFamily(WidgetFamily family){
+  void switchWidgetFamily(WidgetFamily family) {
     String locale = read<AppConfigBloc>().state.language.code;
-    read<WidgetsBloc>().add(EventTabTap(family,locale: locale));
+    read<WidgetsBloc>().add(EventTabTap(family, locale: locale));
   }
 
+  void toggleLike(int widgetId) {
+    read<LikeWidgetBloc>().add(ToggleLikeWidgetEvent(id: widgetId));
+  }
 }

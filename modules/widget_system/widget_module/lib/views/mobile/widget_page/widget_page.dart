@@ -14,10 +14,8 @@ class WidgetPage extends StatefulWidget {
 }
 
 class _WidgetPageState extends State<WidgetPage> {
-
   final RefreshController _refreshController =
-  RefreshController(initialRefresh: false);
-
+      RefreshController(initialRefresh: false);
 
   @override
   void dispose() {
@@ -27,23 +25,20 @@ class _WidgetPageState extends State<WidgetPage> {
 
   @override
   Widget build(BuildContext context) {
-    const Color themeColor = Color(0xff007ACB);
-
-    return BlocListener<WidgetsBloc,WidgetsState>(
+    return BlocListener<WidgetsBloc, WidgetsState>(
       listener: _listenStateChange,
       child: RefreshConfigWrapper(
         child: SmartRefresher(
+          physics: BouncingScrollPhysics(),
           controller: _refreshController,
           onRefresh: _onRefresh,
           enablePullUp: true,
           onLoading: _onLoadMore,
           child: CustomScrollView(
-
+            physics: BouncingScrollPhysics(),
             // key: PageStorageKey<String>(name),
             slivers: <Widget>[
-
               const WidgetListPanel(),
-
             ],
           ),
         ),
@@ -51,7 +46,7 @@ class _WidgetPageState extends State<WidgetPage> {
     );
   }
 
-  void _onRefresh() async{
+  void _onRefresh() async {
     context.read<WidgetsBloc>().add(EventRefresh());
   }
 
@@ -59,7 +54,7 @@ class _WidgetPageState extends State<WidgetPage> {
     context.read<WidgetsBloc>().add(EventLoadMore());
   }
 
-  void _listenStateChange(BuildContext context, WidgetsState state) async{
+  void _listenStateChange(BuildContext context, WidgetsState state) async {
     if (state is WidgetsLoaded) {
       if (state.operate == LoadOperate.refresh) {
         _refreshController.refreshCompleted();

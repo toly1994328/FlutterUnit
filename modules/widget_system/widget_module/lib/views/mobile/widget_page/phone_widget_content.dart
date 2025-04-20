@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 
 import 'package:widget_repository/widget_repository.dart';
 
-import 'widget_model_item.dart';
+import 'mobile_widget_tiled.dart';
+
+
 
 class PhoneWidgetContent extends StatelessWidget {
   final List<WidgetModel> items;
@@ -15,7 +17,7 @@ class PhoneWidgetContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (_, int index) => StandardWidgetItem(
+        (_, int index) => MobileWidgetTiled(
           model:  items[index],
           onTap: () => _toDetail(context,  items[index]),
         ),

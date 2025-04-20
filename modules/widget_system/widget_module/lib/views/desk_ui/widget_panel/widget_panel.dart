@@ -10,8 +10,8 @@ import 'package:widget_module/widget_module.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:fx_trace/fx_trace.dart';
 
-import 'desk_widget_model_item.dart';
 import 'desk_widget_top_bar.dart';
+import 'widget_tiled.dart';
 
 class DeskWidgetPanel extends StatefulWidget {
   const DeskWidgetPanel({super.key});
@@ -34,7 +34,8 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel> {
             child: switch (state) {
               WidgetsLoading() => const CupertinoActivityIndicator(),
               WidgetsLoaded() => WidgetList(state: state),
-              WidgetsLoadFailed() => Center(child: Text("${state.runtimeType}")),
+              WidgetsLoadFailed() =>
+                Center(child: Text("${state.runtimeType}")),
             },
           ),
         ],
@@ -55,7 +56,8 @@ class WidgetList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SliverGridDelegate gridDelegate = const SliverGridDelegateWithMaxCrossAxisExtent(
+    SliverGridDelegate gridDelegate =
+        const SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 400,
       mainAxisSpacing: 10,
       mainAxisExtent: 110,
@@ -72,7 +74,7 @@ class WidgetList extends StatelessWidget {
 
   Widget _buildItem(BuildContext context, int index) {
     WidgetModel model = state.widgets[index];
-    return DeskWidgetItem(
+    return WidgetTiled(
       model: model,
       onTap: () {
         context.push('${AppRoute.widgetDetail.url}${model.name}', extra: model);

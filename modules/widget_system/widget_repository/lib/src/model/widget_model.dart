@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import '../../widget_repository.dart';
 import '../database/po/widget_po.dart';
 
-
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
 /// 说明: 组件信息-展示-数据模型
@@ -32,20 +31,20 @@ class WidgetModel extends Equatable {
   final ImageProvider? image;
   final String info;
 
+  String get heroId => 'hero_widget_image_$id';
 
   const WidgetModel(
-      {
-        required this.id,
-        required  this.name,
-        required this.nameCN,
-        required  this.family,
-         this.deprecated =false,
-         this.death =false,
-        required this.links,
-        // required this.type,
-        required this.lever,
+      {required this.id,
+      required this.name,
+      required this.nameCN,
+      required this.family,
+      this.deprecated = false,
+      this.death = false,
+      required this.links,
+      // required this.type,
+      required this.lever,
       this.image,
-        required this.info});
+      required this.info});
 
   @override
   List<Object> get props => [id];
@@ -72,20 +71,19 @@ class WidgetModel extends Equatable {
     return null;
   }
 
-
   @override
   String toString() {
     return 'WidgetModel{id: $id, name: $name, nameCN: $nameCN, family: $family, deprecated: $deprecated, links: $links, lever: $lever, image: $image, info: $info}';
   }
 
   static List<int> formatLinkTo(String links) {
-    if(links.isEmpty){
+    if (links.isEmpty) {
       return [];
     }
-    if(!links.contains(',')){
+    if (!links.contains(',')) {
       return [int.parse(links)];
     }
-    return links.split(',').map<int>((e)=>int.parse(e)).toList();
+    return links.split(',').map<int>((e) => int.parse(e)).toList();
   }
 
   static WidgetFamily toFamily(int id) {
