@@ -8,7 +8,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:l10n/l10n.dart';
 
 import 'package:widget_repository/widget_repository.dart';
-import '../widget_page/widget_model_item.dart';
+import '../widget_page/mobile_widget_tiled.dart';
 import 'standard_search_bar.dart';
 
 // SearchPage 可以复用 WidgetsBloc，进行局部的 Bloc
@@ -41,7 +41,11 @@ class StandardSearchPage extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).padding.top,
             width: MediaQuery.of(context).size.width,
-            child:  ColoredBox(color: isDark?Theme.of(context).appBarTheme.backgroundColor??Colors.black:Colors.white),
+            child: ColoredBox(
+                color: isDark
+                    ? Theme.of(context).appBarTheme.backgroundColor ??
+                        Colors.black
+                    : Colors.white),
           ),
           const StandardSearchBarInner(),
           Expanded(
@@ -53,20 +57,22 @@ class StandardSearchPage extends StatelessWidget {
   }
 
   Widget _buildBodyByState(BuildContext context, WidgetsState state) {
-    Widget noSearchArg = NotSearchPage(tips: context.l10n.searchSomething,);
+    Widget noSearchArg = NotSearchPage(
+      tips: context.l10n.searchSomething,
+    );
     if (state.filter.name.isEmpty) {
       return noSearchArg;
     }
 
     if (state is WidgetsLoaded) {
       if (state.widgets.isEmpty) {
-        return  EmptyShower(
+        return EmptyShower(
           message: context.l10n.emptySearch,
         );
       }
       return ListView.builder(
         padding: EdgeInsets.zero,
-        itemBuilder: (_, index) => StandardWidgetItem(
+        itemBuilder: (_, index) => MobileWidgetTiled(
             searchArg: state.filter.name,
             model: state.widgets[index],
             onTap: () => _toDetail(context, state.widgets[index])),
@@ -87,6 +93,6 @@ class StandardSearchPage extends StatelessWidget {
 
   void _toDetail(BuildContext context, WidgetModel model) {
     // BlocProvider.of<WidgetDetailBloc>(context).add(FetchWidgetDetail(model));
-    context.push('/widget/detail/${model.name}',extra: model);
+    context.push('/widget/detail/${model.name}', extra: model);
   }
 }

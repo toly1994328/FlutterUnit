@@ -79,8 +79,7 @@ ThemeData lightTheme(AppConfig state) {
     chipTheme:
         const ChipThemeData(padding: EdgeInsets.symmetric(horizontal: 10)),
     listTileTheme: const ListTileThemeData(
-      tileColor: Colors.white,
-    ),
+        tileColor: Colors.white, textColor: Color(0xff333333)),
 
     ///设置选中的文本颜色
     textSelectionTheme: TextSelectionThemeData(

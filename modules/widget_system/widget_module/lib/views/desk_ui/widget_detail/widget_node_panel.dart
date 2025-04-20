@@ -3,10 +3,8 @@ import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 import 'package:toggle_rotate/toggle_rotate.dart';
 import 'package:utils/utils.dart';
-
 
 /// create by 张风捷特烈 on 2020-04-13
 /// contact me by email 1981462002@qq.com
@@ -22,13 +20,15 @@ class DeskWidgetNodePanel extends StatefulWidget {
   final bool death;
 
   const DeskWidgetNodePanel(
-      {Key? key, this.text='',
-      this.subText='',
-      this.code='',
-      this.death=false,
+      {Key? key,
+      this.text = '',
+      this.subText = '',
+      this.code = '',
+      this.death = false,
       this.show,
-     required this.codeStyle,
-      this.codeFamily}) : super(key: key);
+      required this.codeStyle,
+      this.codeFamily})
+      : super(key: key);
 
   @override
   _DeskWidgetNodePanelState createState() => _DeskWidgetNodePanelState();
@@ -49,7 +49,6 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           buildNodeTitle(),
-
           const SizedBox(
             height: 20,
           ),
@@ -65,13 +64,12 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
                   ),
                 ),
               ),
-              if(!widget.death)
-                Expanded(child: _buildNodeInfo()),
+              if (!widget.death) Expanded(child: _buildNodeInfo()),
             ],
           ),
-
-          const SizedBox(height: 16,),
-
+          const SizedBox(
+            height: 16,
+          ),
           const Divider(),
         ],
       ),
@@ -101,11 +99,11 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
   Widget _buildNodeInfo() => SizedBox(
         width: double.infinity,
         child: Panel(
-          color: Color(0x33E5EAE1),
+            color: Color(0x33E5EAE1),
             child: Text(
-          widget.subText,
-          style: const TextStyle(fontSize: 12),
-        )),
+              widget.subText,
+              style: const TextStyle(fontSize: 12),
+            )),
       );
 
   Widget _buildCodeButton() => Padding(
@@ -142,7 +140,7 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
           width: MediaQuery.of(context).size.width,
           child: CodeWidget(
             fontFamily: widget.codeFamily,
-            code: isFirst?'':widget.code,
+            code: isFirst ? '' : widget.code,
             style: widget.codeStyle ??
                 HighlighterStyle.fromColors(HighlighterStyle.lightColor),
           ),
@@ -152,14 +150,14 @@ class _DeskWidgetNodePanelState extends State<DeskWidgetNodePanel> {
       );
 
   //执行分享
-  _doShare() async{
+  void _doShare() async {
     // Share.share(widget.code);
-   await Clipboard.setData(ClipboardData(text: widget.code));
-   Toast.success(context, '代码复制成功!');
+    await Clipboard.setData(ClipboardData(text: widget.code));
+    Toast.success(context, '代码复制成功!');
   }
 
   // 折叠代码面板
-  _toggleCodePanel() {
+  void _toggleCodePanel() {
     setState(() {
       _crossFadeState =
           !isFirst ? CrossFadeState.showFirst : CrossFadeState.showSecond;

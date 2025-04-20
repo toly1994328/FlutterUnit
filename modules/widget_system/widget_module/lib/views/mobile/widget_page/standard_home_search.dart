@@ -53,13 +53,10 @@ class StandardHomeSearch extends StatelessWidget
           color: Colors.grey,
           size: 20,
         ),
-
-        prefixIconConstraints: const BoxConstraints(
-            maxHeight: 24,
-            minWidth: 36
-        ),
+        prefixIconConstraints:
+            const BoxConstraints(maxHeight: 24, minWidth: 36),
         isCollapsed: true,
-        contentPadding: const EdgeInsets.only(top: 4,bottom: 4,right: 8),
+        contentPadding: const EdgeInsets.only(top: 4, bottom: 4, right: 8),
         border: const UnderlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -83,7 +80,6 @@ class StandardHomeSearch extends StatelessWidget
 
   Widget _buildCollectIcon(BuildContext context) {
     return IconButton(
-      // splashRadius: 20,
       onPressed: () => context.push(AppRoute.collection.url),
       icon: const Icon(TolyIcon.icon_collect),
     );
