@@ -15,24 +15,25 @@ class WidgetLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-        width: 110,
-        height: 110,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: background,
-          gradient: LinearGradient(
-              transform: const GradientRotation(270 * 180 / pi),
-              colors: [
-                background.withValues(alpha: 0.9),
-                background.withValues(alpha: 0.5)
-              ]),
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(6), bottomLeft: Radius.circular(6)),
-        ),
-        child:
-            SvgPicture.asset('assets/images/widgets/${widgetLogo(widgetName)}',width: 90,),
-
+    return Container(
+      width: 110,
+      height: 110,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: background,
+        gradient: LinearGradient(
+            transform: const GradientRotation(270 * 180 / pi),
+            colors: [
+              background.withValues(alpha: 0.9),
+              background.withValues(alpha: 0.5)
+            ]),
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(6), bottomLeft: Radius.circular(6)),
+      ),
+      child: SvgPicture.asset(
+        'assets/images/widgets/${widgetLogo(widgetName)}',
+        width: 90,
+      ),
     );
   }
 }
@@ -54,6 +55,7 @@ String widgetLogo(String widgetName) {
     'MaterialButton' => 'MaterialButton.svg',
     'FlutterLogo' => 'FlutterLogo.svg',
     'RichText' => 'RichText.svg',
+    'FloatingActionButton' => 'FloatingActionButton.svg',
     'Banner' => 'Banner.svg',
     'Icon' => 'Icon.svg',
     _ => 'Widget.svg',
