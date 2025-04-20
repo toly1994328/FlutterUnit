@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/gen_l10n/app_localizations.dart';
 import 'package:l10n/l10n.dart';
+import 'package:tolyui/app/toly_ui.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:widget_module/blocs/blocs.dart';
@@ -50,22 +51,17 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
       listener: _onLocaleChange,
       child: DefaultTextStyle(
         style: TextStyle(fontFamily: state.fontFamily),
-        child: TolyMessage(
+        child: TolyUiApp.router(
+          routerConfig: _router,
+          showPerformanceOverlay: state.showPerformanceOverlay,
+          title: StrUnit.appName,
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: localizationsDelegates,
+          supportedLocales: supportedLocales,
+          locale: state.language.locale,
           themeMode: state.themeMode,
           darkTheme: dark,
           theme: light,
-          child: MaterialApp.router(
-            routerConfig: _router,
-            showPerformanceOverlay: state.showPerformanceOverlay,
-            title: StrUnit.appName,
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: localizationsDelegates,
-            supportedLocales: supportedLocales,
-            locale: state.language.locale,
-            themeMode: state.themeMode,
-            darkTheme: dark,
-            theme: light,
-          ),
         ),
       ),
     );

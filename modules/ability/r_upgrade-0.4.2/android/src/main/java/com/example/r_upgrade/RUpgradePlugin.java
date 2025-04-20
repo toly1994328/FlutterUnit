@@ -16,7 +16,7 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+//import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * RUpgradePlugin
@@ -42,18 +42,18 @@ public class RUpgradePlugin implements FlutterPlugin, ActivityAware {
         _channel.setMethodCallHandler(new RUpgradeMethodCallHandler(upgradeManager));
     }
 
-    /**
-     * Plugin registration.
-     */
-    public static void registerWith(final Registrar registrar) {
-
-        new RUpgradePlugin(registrar.activity(), registrar.messenger(), new DownloadPermissions.PermissionsRegistry() {
-            @Override
-            public void addListener(PluginRegistry.RequestPermissionsResultListener handler) {
-                registrar.addRequestPermissionsResultListener(handler);
-            }
-        });
-    }
+//    /**
+//     * Plugin registration.
+//     */
+//    public static void registerWith(final Registrar registrar) {
+//
+//        new RUpgradePlugin(registrar.activity(), registrar.messenger(), new DownloadPermissions.PermissionsRegistry() {
+//            @Override
+//            public void addListener(PluginRegistry.RequestPermissionsResultListener handler) {
+//                registrar.addRequestPermissionsResultListener(handler);
+//            }
+//        });
+//    }
 
 
     @Override

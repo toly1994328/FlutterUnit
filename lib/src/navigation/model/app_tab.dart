@@ -46,9 +46,8 @@ enum AppTab {
     };
   }
 
-  MenuMeta menu(AppL10n l10n) => MenuMeta(
+  IconMenu menu(AppL10n l10n) => IconMenu(icon,
         label: label(l10n),
-        icon: icon,
-        router: path,
+        route: path,
       );
 }

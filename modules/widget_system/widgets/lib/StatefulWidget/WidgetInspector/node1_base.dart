@@ -12,12 +12,14 @@ class WidgetInspectorDemo extends StatelessWidget {
       height: 200,
       child: WidgetInspector(
         child: const HomePage(),
-        selectButtonBuilder: _selectButtonBuilder,
+        exitWidgetSelectionButtonBuilder: null,
+        moveExitWidgetSelectionButtonBuilder: _selectButtonBuilder,
       ),
     );
   }
 
-  Widget _selectButtonBuilder(BuildContext context, onPressed) {
+  Widget _selectButtonBuilder(BuildContext context,
+      {required VoidCallback onPressed, bool? isLeftAligned}) {
     onPressed();
     return Container();
   }
