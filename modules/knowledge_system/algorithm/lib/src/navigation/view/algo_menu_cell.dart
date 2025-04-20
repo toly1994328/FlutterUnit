@@ -12,7 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tolyui/tolyui.dart';
 
-class AlgoMenuMetaExt extends MenuMateExt {
+class AlgoMenuMetaExt extends Extra {
   final String? subtitle;
   final String? tag;
   final bool? isFlutter;
@@ -45,7 +45,8 @@ class AlgoMenuCell extends StatelessWidget {
   });
 
   MenuTreeCellStyle get effectStyle =>
-      style ?? (display.isDark ? MenuTreeCellStyle.dark() : MenuTreeCellStyle.light());
+      style ??
+      (display.isDark ? MenuTreeCellStyle.dark() : MenuTreeCellStyle.light());
 
   Color? effectForegroundColor(MenuTreeCellStyle style) {
     if (display.selected) {
@@ -76,13 +77,17 @@ class AlgoMenuCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MenuTreeCellStyle effectStyle =
-        style ?? (display.isDark ? MenuTreeCellStyle.dark() : MenuTreeCellStyle.light());
+    MenuTreeCellStyle effectStyle = style ??
+        (display.isDark ? MenuTreeCellStyle.dark() : MenuTreeCellStyle.light());
 
     Color? bgColor = backgroundColor(effectStyle);
     Color? fgColor = effectForegroundColor(effectStyle);
     EdgeInsets padding = const EdgeInsets.symmetric(horizontal: 8, vertical: 2);
 
+    IconData? icon;
+    if (menuNode.data is IconMenu) {
+      icon = (menuNode.data as IconMenu).icon;
+    }
     Widget cell = DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
@@ -101,10 +106,10 @@ class AlgoMenuCell extends StatelessWidget {
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-                  if (menuNode.data.icon != null)
+                  if (icon != null)
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
-                      child: Icon(menuNode.data.icon, size: 20, color: fgColor),
+                      child: Icon(icon, size: 20, color: fgColor),
                     ),
                   _buildTitle(fgColor)
                 ],
@@ -112,7 +117,8 @@ class AlgoMenuCell extends StatelessWidget {
             ),
           ),
           if (ext?.tag != null) _buildTag(ext),
-          if (menuNode.children.isNotEmpty) _buildExpandIndicator(display.expanded, fgColor)
+          if (menuNode.children.isNotEmpty)
+            _buildExpandIndicator(display.expanded, fgColor)
         ],
       ),
     );
@@ -156,15 +162,17 @@ class AlgoMenuCell extends StatelessWidget {
   }
 
   Widget _buildTag(AlgoMenuMetaExt? ext) {
-    TextStyle tagStyle = const TextStyle(color: Colors.white, height: 1, fontSize: 10);
-    Widget child =
-        Text('${ext?.tag}', overflow: TextOverflow.ellipsis, maxLines: 1, style: tagStyle);
+    TextStyle tagStyle =
+        const TextStyle(color: Colors.white, height: 1, fontSize: 10);
+    Widget child = Text('${ext?.tag}',
+        overflow: TextOverflow.ellipsis, maxLines: 1, style: tagStyle);
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
       child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
           decoration: BoxDecoration(
-              color: Colors.blue.withOpacity(0.8), borderRadius: BorderRadius.circular(4)),
+              color: Colors.blue.withOpacity(0.8),
+              borderRadius: BorderRadius.circular(4)),
           child: child),
     );
   }

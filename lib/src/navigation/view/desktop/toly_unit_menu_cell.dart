@@ -37,7 +37,10 @@ class FlutterUnitMenuCell extends StatelessWidget {
 
     double iconSize = _sizeTween.transform(anim);
     double fontSize = _fontSizeTween.transform(anim);
-
+    IconData? icon;
+    if (menu is IconMenu) {
+      icon = (menu as IconMenu).icon;
+    }
     TextStyle style = TextStyle(color: foregroundColor, fontSize: fontSize);
     Radius radius = Radius.circular(height / 2);
     BorderRadius br = BorderRadius.only(topRight: radius, bottomRight: radius);
@@ -51,7 +54,7 @@ class FlutterUnitMenuCell extends StatelessWidget {
         spacing: 6,
         // crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          Icon(menu.icon, color: foregroundColor, size: iconSize),
+          Icon(icon, color: foregroundColor, size: iconSize),
           Expanded(
             child: Text(
               menu.label,
