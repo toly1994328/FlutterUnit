@@ -37,7 +37,8 @@ mixin TimeoutCache<V> on Cacheable<V> {
         await remove();
         return null;
       }
-      return convertor(jsonDecode(jsonValue));
+      List<dynamic> v = jsonDecode(jsonValue);
+      return convertor(v);
     } catch (e) {
       print(e);
     }
