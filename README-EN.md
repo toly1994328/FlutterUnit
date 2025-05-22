@@ -34,10 +34,11 @@ FlutterUnit is a cross-platform experience app, Here, you can fully explore the 
 #### Flutter Version
 
 ```
-Flutter 3.29.2 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision c236373904 (5 weeks ago) • 2025-03-13 16:17:06 -0400
-Engine • revision 18b71d647a
-Tools • Dart 3.7.2 • DevTools 2.42.3
+·]>>  flutter --version
+Flutter 3.32.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision be698c48a6 (2 days ago) • 2025-05-19 12:59:14 -0700
+Engine • revision 1881800949 (2 days ago) • 2025-05-19 10:54:07 -0700
+Tools • Dart 3.8.0 • DevTools 2.45.1
 ```
 
 #### Build Application
