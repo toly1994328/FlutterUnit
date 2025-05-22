@@ -9,8 +9,6 @@ import 'mobile_article_list.dart';
 import 'mobile_editor.dart';
 import 'note.dart';
 
-
-
 class MobileArticlePage extends StatefulWidget {
   const MobileArticlePage({super.key});
 
@@ -40,10 +38,10 @@ class _MobileArticlePageState extends State<MobileArticlePage> {
     setState(() {
       status = const TaskLoading();
     });
-    ApiRet<PaginateList<ArticlePo>> ret = await _repository.list(SizeFilter());
+    ApiRet<List<ArticlePo>> ret = await _repository.list(SizeFilter());
     if (ret.success) {
-      articles = ret.data.list;
-      total = ret.data.total;
+      articles = ret.data;
+      total = ret.paginate?.total ?? 0;
       setState(() {
         status = TaskSuccess();
       });
@@ -55,7 +53,7 @@ class _MobileArticlePageState extends State<MobileArticlePage> {
 
   @override
   Widget build(BuildContext context) {
-return PinnedHeaderSliverNode2();
+    return PinnedHeaderSliverNode2();
     Widget body = switch (status) {
       TaskNone() => SizedBox(),
       TaskLoading() => const CupertinoActivityIndicator(),
@@ -64,8 +62,10 @@ return PinnedHeaderSliverNode2();
           activeId: active?.id ?? -1,
           onTap: (ArticlePo article) {
             if (article.type == 1) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
-                return MobileEditor(article: article,);
+              Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
+                return MobileEditor(
+                  article: article,
+                );
               }));
               // _loadArticleContent(article.id);
             } else {}
@@ -88,7 +88,6 @@ return PinnedHeaderSliverNode2();
         shape: StadiumBorder(),
         mini: true,
         elevation: 4,
-
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         onPressed: () {},

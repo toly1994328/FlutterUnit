@@ -3,19 +3,18 @@ import 'package:sqflite/sqflite.dart';
 
 import '../model/article.dart';
 
-class ArticleDao with HasDatabase, DbTable{
+class ArticleDao extends Dao {
   @override
   String get createSql => '';
 
   @override
   String get name => 'article';
 
-
   Future<int> insert(Article po) => database.insert(
-    name,
-    po.toJson(),
-    conflictAlgorithm: ConflictAlgorithm.replace,
-  );
+        name,
+        po.toJson(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
 
   Future<int> insertOrUpdate(Article po) async {
     bool canUpdate = await shouldUpdate(po.id, po.update);
@@ -23,7 +22,7 @@ class ArticleDao with HasDatabase, DbTable{
       name,
       po.toJson(),
       conflictAlgorithm:
-      canUpdate ? ConflictAlgorithm.replace : ConflictAlgorithm.ignore,
+          canUpdate ? ConflictAlgorithm.replace : ConflictAlgorithm.ignore,
     );
   }
 
@@ -42,20 +41,20 @@ class ArticleDao with HasDatabase, DbTable{
   Future<List<Article>> query(ArticleFilter filter) async {
     String queryArgs = '';
     List<dynamic> args = [];
-    if(filter.filter !=null){
-      queryArgs+="AND filter = ? ";
+    if (filter.filter != null) {
+      queryArgs += "AND filter = ? ";
       args.add(filter.filter);
     }
-    if(filter.groupId !=null){
-      if(queryArgs.isEmpty){
-        queryArgs +='WHERE groupId = ? ';
-      }else{
-        queryArgs+="AND groupId = ? ";
+    if (filter.groupId != null) {
+      if (queryArgs.isEmpty) {
+        queryArgs += 'WHERE groupId = ? ';
+      } else {
+        queryArgs += "AND groupId = ? ";
       }
       args.add(filter.groupId);
     }
     queryArgs += 'LIMIT ? OFFSET ?';
-    args.addAll([filter.pageSize,filter.offset]);
+    args.addAll([filter.pageSize, filter.offset]);
 
     List<Map<String, dynamic>> data = await database.rawQuery(
       "SELECT * FROM $name $queryArgs",
@@ -66,17 +65,25 @@ class ArticleDao with HasDatabase, DbTable{
     return result;
   }
 
-  Future<int> total(ArticleFilter filter) async{
+  Future<int> total(ArticleFilter filter) async {
     bool hasGroupId = filter.groupId != null;
     String familySql = hasGroupId ? 'WHERE groupId = ?' : '';
     List<int> familyArg = hasGroupId ? [filter.groupId!] : [];
 
     String sql = "SELECT count(id) as `count` FROM article $familySql";
 
-    List<Map<String, Object?>> result = await database.rawQuery(sql,familyArg);
-    if(result.isNotEmpty){
-      return result.first['count'] as int ??0;
+    List<Map<String, Object?>> result = await database.rawQuery(sql, familyArg);
+    if (result.isNotEmpty) {
+      return result.first['count'] as int ?? 0;
     }
+    return 0;
+  }
+
+  @override
+  Convertor<Article> get convertor => Article.fromDb;
+
+  @override
+  Future<int> update(String id, Article frame) async {
     return 0;
   }
 }

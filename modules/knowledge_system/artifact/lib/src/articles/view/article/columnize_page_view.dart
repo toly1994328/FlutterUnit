@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:app/app.dart';
@@ -48,7 +47,7 @@ class _ColumnizePageViewState extends State<ColumnizePageView> {
     double value = ((_position - _firstOffset + 1) % 5) / 5;
     factor.value = value == 0 ? 1 : value;
     _ctrl = PageController(
-      viewportFraction: 0.9,
+      viewportFraction: kAppEnv.isDesktopUI ? 0.5 : 0.9,
       initialPage: _position,
     )..addListener(() {
         if (_ctrl.page != null) {
@@ -79,24 +78,24 @@ class _ColumnizePageViewState extends State<ColumnizePageView> {
   @override
   Widget build(BuildContext context) {
     List<Columnize> data = context.watch<ColumnizeBloc>().state.data;
-    Widget child =  PageView.builder(
-        controller: _ctrl, // itemCount: 7,
-        itemBuilder: (_, index) {
-          return AnimatedBuilder(
-            child: _buildByIndex(context, index, data),
-            animation: _ctrl,
-            builder: (context, child) => _buildAnimItemByIndex(
-              context,
-              child,
-              index,
-            ),
-          );
-        },
-        onPageChanged: (index) {
-          _position = index;
-        },
+    Widget child = PageView.builder(
+      controller: _ctrl, // itemCount: 7,
+      itemBuilder: (_, index) {
+        return AnimatedBuilder(
+          child: _buildByIndex(context, index, data),
+          animation: _ctrl,
+          builder: (context, child) => _buildAnimItemByIndex(
+            context,
+            child,
+            index,
+          ),
+        );
+      },
+      onPageChanged: (index) {
+        _position = index;
+      },
     );
-    if(!kIsDesk){
+    if (!kIsDesk) {
       return child;
     }
 
@@ -111,16 +110,24 @@ class _ColumnizePageViewState extends State<ColumnizePageView> {
               child: child),
           Positioned(
               right: 0,
-              child: IconButton(onPressed: (){
-                _position+=1;
-                _ctrl.animateToPage(_position, duration: Duration(milliseconds: 500),curve: Curves.easeIn);
-              }, icon: Icon(Icons.navigate_next_outlined))),
+              child: IconButton(
+                  onPressed: () {
+                    _position += 1;
+                    _ctrl.animateToPage(_position,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeIn);
+                  },
+                  icon: Icon(Icons.navigate_next_outlined))),
           Positioned(
               left: 0,
-              child: IconButton(onPressed: (){
-                _position-=1;
-                _ctrl.animateToPage(_position, duration: Duration(milliseconds: 500),curve: Curves.easeIn);
-              }, icon: Icon(Icons.navigate_before))),
+              child: IconButton(
+                  onPressed: () {
+                    _position -= 1;
+                    _ctrl.animateToPage(_position,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeIn);
+                  },
+                  icon: Icon(Icons.navigate_before))),
         ],
       ),
     );
@@ -189,7 +196,8 @@ class ColumnizeItem extends StatelessWidget {
             child: MultiBlocProvider(providers: [
           BlocProvider<ArticleBloc>(
             create: (_) =>
-                ArticleBloc(repository, groupId: columnize.id,pageSize: 100)..init(),
+                ArticleBloc(repository, groupId: columnize.id, pageSize: 100)
+                  ..init(),
           ),
         ], child: ColumnDetailPage(columnize: columnize))));
       },

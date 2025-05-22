@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
   equatable: ^2.0.5 # 相等辅助
   intl: ^0.19.0 # 相等辅助
-  fx_dao: 0.0.1+2 # 数据库
+  fx_dao: 0.0.3+3 # 数据库
   storage:
     path: ../../basic_system/storage
   utils:

@@ -14,7 +14,8 @@ import 'desk_widget_top_bar.dart';
 import 'widget_tiled.dart';
 
 class DeskWidgetPanel extends StatefulWidget {
-  const DeskWidgetPanel({super.key});
+  final Widget? header;
+  const DeskWidgetPanel({super.key, this.header});
 
   @override
   State<DeskWidgetPanel> createState() => _DeskWidgetPanelState();
@@ -33,7 +34,10 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel> {
           Expanded(
             child: switch (state) {
               WidgetsLoading() => const CupertinoActivityIndicator(),
-              WidgetsLoaded() => WidgetList(state: state),
+              WidgetsLoaded() => WidgetList(
+                  state: state,
+                  header: widget.header,
+                ),
               WidgetsLoadFailed() =>
                 Center(child: Text("${state.runtimeType}")),
             },
@@ -50,9 +54,11 @@ class _DeskWidgetPanelState extends State<DeskWidgetPanel> {
 }
 
 class WidgetList extends StatelessWidget {
+  final Widget? header;
+
   final WidgetsLoaded state;
 
-  const WidgetList({super.key, required this.state});
+  const WidgetList({super.key, required this.state, this.header});
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +68,29 @@ class WidgetList extends StatelessWidget {
       mainAxisSpacing: 10,
       mainAxisExtent: 110,
       crossAxisSpacing: 10,
+    );
+
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            margin: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(8)),
+            height: 180,
+            child: header,
+          ),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.only(left: 14, right: 14, bottom: 8),
+          sliver: SliverGrid.builder(
+            gridDelegate: gridDelegate,
+            itemBuilder: _buildItem,
+            itemCount: state.widgets.length,
+          ),
+        )
+      ],
     );
 
     return GridView.builder(

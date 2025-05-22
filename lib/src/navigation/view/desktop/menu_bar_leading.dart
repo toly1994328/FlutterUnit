@@ -27,7 +27,9 @@ class MenuBarLeading extends StatelessWidget {
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               GestureDetector(
-                onDoubleTap: () {},
+                onDoubleTap: () {
+                  sendEvent(1);
+                },
                 child: const CircleImage(
                   image: AssetImage('assets/images/icon_head.webp'),
                   size: 60,

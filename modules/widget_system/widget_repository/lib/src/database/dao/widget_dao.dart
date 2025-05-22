@@ -1,16 +1,15 @@
 import 'package:fx_dao/fx_dao.dart';
 import '../../model/widget_filter.dart';
-import '../po/widget_po.dart';
 
-class WidgetDao with HasDatabase, DbTable {
+class WidgetDao extends Dao {
   @override
   String get createSql => '';
 
   @override
   String get name => 'widget';
 
-
-  Future<List<Map<String, dynamic>>> queryByIds(List<int> ids, String? locale) async {
+  Future<List<Map<String, dynamic>>> queryByIds(
+      List<int> ids, String? locale) async {
     if (ids.isEmpty) {
       return [];
     }
@@ -33,7 +32,7 @@ ORDER BY
   lever DESC, widget.id ASC;
     """;
 
-    return database.rawQuery(searchSql, [(locale?? 'zh-cn'), ...ids]);
+    return database.rawQuery(searchSql, [(locale ?? 'zh-cn'), ...ids]);
   }
 
   Future<List<Map<String, dynamic>>> search(WidgetFilter arguments) async {
@@ -74,17 +73,16 @@ LIMIT ? OFFSET ?
 ;
     """;
 
-    return database.rawQuery(searchSql,
-        [
-          arguments.locale?? 'zh-cn',
-          "%$name%",
-          "%$name%",
-          "%$name%",
-          ...familyArg,
-          ...starArg,
-          arguments.pageSize,
-          arguments.offset
-        ]);
+    return database.rawQuery(searchSql, [
+      arguments.locale ?? 'zh-cn',
+      "%$name%",
+      "%$name%",
+      "%$name%",
+      ...familyArg,
+      ...starArg,
+      arguments.pageSize,
+      arguments.offset
+    ]);
   }
 
   Future<int> total(WidgetFilter args) async {
@@ -101,7 +99,8 @@ LIMIT ? OFFSET ?
     return 0;
   }
 
-  Future<Map<String, dynamic>?> queryWidgetByName(String name, {String? locale}) async {
+  Future<Map<String, dynamic>?> queryWidgetByName(String name,
+      {String? locale}) async {
     String querySql = """
 SELECT 
   widget.id, 
@@ -119,7 +118,8 @@ widget.name = ? AND
 widget_desc.locale = ? 
 ;
 """;
-    List<Map<String, Object?>> result = await database.rawQuery(querySql, [name,locale??'zh-cn']);
+    List<Map<String, Object?>> result =
+        await database.rawQuery(querySql, [name, locale ?? 'zh-cn']);
     if (result.isNotEmpty) {
       return result.first;
     }

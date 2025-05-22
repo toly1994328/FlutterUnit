@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
-
+import 'package:note/note.dart';
 import 'widget_list_panel.dart';
 
 class WidgetPage extends StatefulWidget {
@@ -48,6 +48,7 @@ class _WidgetPageState extends State<WidgetPage> {
 
   void _onRefresh() async {
     context.read<WidgetsBloc>().add(EventRefresh());
+    await context.read<NewsBloc>().refreshFromNet();
   }
 
   void _onLoadMore() {

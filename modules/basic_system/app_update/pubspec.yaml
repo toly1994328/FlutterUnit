@@ -23,7 +23,7 @@ dependencies:
   url_launcher: ^6.3.0 # url
   package_info_plus: ^8.1.4
   path_provider: ^2.1.5
-  fx_dio: 0.0.4+2
+  fx_dio: 0.0.4+3
 
   utils:
     path: ../utils

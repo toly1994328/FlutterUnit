@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-
 import 'package:authentication/views/authentic_widget.dart';
 import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/blocs.dart';
@@ -17,7 +15,6 @@ import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart';
 import 'package:widget_module/views/mobile/category_page/sync/category_api.dart';
 import 'package:widget_module/widget_module.dart';
-
 
 /// create by 张风捷特烈 on 2021/2/26
 /// contact me by email 1981462002@qq.com
@@ -31,12 +28,14 @@ class DataManagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text(context.l10n.dataManagement),
+        title: Text(context.l10n.dataManagement),
       ),
       body: Builder(
         builder: (ctx) => ListView(
           children: <Widget>[
-            const SizedBox(height: 8,),
+            const SizedBox(
+              height: 8,
+            ),
             AuthenticWidget.just(
               ListTile(
                 trailing: Icon(
@@ -87,22 +86,22 @@ class DataManagePage extends StatelessWidget {
   }
 
   void _doUploadCategoryData(BuildContext context) async {
-    CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
-    List<CategoryTo> loadCategories = await rep.loadCategoryData();
-
-    List<int> likeData = await AppStorage().flutter<LikeDao>().likeWidgetIds();
-
-    String json = jsonEncode(loadCategories);
-    String likeJson = jsonEncode(likeData);
-
-    TaskResult<bool> result =
-        await CategoryApi.uploadCategoryData(data: json, likeData: likeJson);
-
-    if (result.success) {
-      Toast.toast(context, '数据集备份成功!');
-    } else {
-      Toast.toast(context, '数据集备份失败!');
-    }
+    // CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
+    // List<CategoryTo> loadCategories = await rep.loadCategoryData();
+    //
+    // List<int> likeData = await AppStorage().flutter<LikeDao>().likeWidgetIds();
+    //
+    // String json = jsonEncode(loadCategories);
+    // String likeJson = jsonEncode(likeData);
+    //
+    // TaskResult<bool> result =
+    //     await CategoryApi.uploadCategoryData(data: json, likeData: likeJson);
+    //
+    // if (result.success) {
+    //   Toast.toast(context, '数据集备份成功!');
+    // } else {
+    //   Toast.toast(context, '数据集备份失败!');
+    // }
   }
 
   void _doSync(BuildContext context) async {
@@ -121,14 +120,14 @@ class DataManagePage extends StatelessWidget {
       } else {
         // 说明还没有后台数据，
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。
-        CategoryRepository rep =
-            BlocProvider.of<CategoryBloc>(context).repository;
-        List<CategoryTo> loadCategories = await rep.loadCategoryData();
-        List<int> likeData = await AppStorage().flutter<LikeDao>().likeWidgetIds();
-
-        String json = jsonEncode(loadCategories);
-        String likeJson = jsonEncode(likeData);
-        await CategoryApi.uploadCategoryData(data: json, likeData: likeJson);
+        // CategoryRepository rep =
+        //     BlocProvider.of<CategoryBloc>(context).repository;
+        // List<CategoryTo> loadCategories = await rep.loadCategoryData();
+        // List<int> likeData = await AppStorage().flutter<LikeDao>().likeWidgetIds();
+        //
+        // String json = jsonEncode(loadCategories);
+        // String likeJson = jsonEncode(likeData);
+        // await CategoryApi.uploadCategoryData(data: json, likeData: likeJson);
       }
       Toast.toast(context, '数据同步份成功!');
     } else {

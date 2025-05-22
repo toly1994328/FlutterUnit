@@ -5,11 +5,12 @@ import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:widget_module/blocs/blocs.dart';
-
 import '../flutter_unit.dart';
 import '../navigation/view/app_bloc_provider.dart';
 import 'start_repository.dart';
 import 'package:app_update/app_update.dart';
+import 'package:note/note.dart';
+
 export 'view/splash/Flutter_unit_splash.dart';
 export 'view/error/app_start_error.dart';
 
@@ -30,6 +31,7 @@ class FxApplication with FxStarter<AppConfig> {
     if (!kAppEnv.isWeb) {
       context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
       context.read<CategoryBloc>().add(const EventLoadCategory());
+      context.read<NewsBloc>().load();
     }
   }
 
@@ -38,6 +40,7 @@ class FxApplication with FxStarter<AppConfig> {
     CheckUpdate event = CheckUpdate(appId: 1, locale: state.localeValue);
     context.read<UpgradeBloc>().add(event);
     context.go(AppRoute.widget.url);
+    sendEvent(1);
   }
 
   @override

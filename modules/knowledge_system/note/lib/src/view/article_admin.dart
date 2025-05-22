@@ -7,6 +7,7 @@ import 'package:tolyui/tolyui.dart';
 import 'package:app/app.dart';
 import 'article_editor.dart';
 import 'article_list.dart';
+import 'desktop/article_display.dart';
 
 class ArticleAdmin extends StatefulWidget {
   const ArticleAdmin({super.key});
@@ -16,7 +17,6 @@ class ArticleAdmin extends StatefulWidget {
 }
 
 class _ArticleAdminState extends State<ArticleAdmin> {
-
   @override
   Widget build(BuildContext context) {
     ArtSysBloc bloc = context.watch<ArtSysBloc>();
@@ -71,7 +71,7 @@ class _ArticleAdminState extends State<ArticleAdmin> {
                             size: 20,
                             color: Color(0xff242a39),
                           ),
-                          onTap: () async{
+                          onTap: () async {
                             bloc.loadFirstFrame();
                           },
                         ),
@@ -152,20 +152,7 @@ class _ArticleAdminState extends State<ArticleAdmin> {
               ),
               Divider(),
               // Expanded(child: RichEditor()),
-              Expanded(
-                child: TextField(
-                  style: TextStyle(fontSize: 14),
-                  onChanged: bloc.write,
-                  maxLines: null,
-                  minLines: null,
-                  controller: bloc.ctrl,
-                  expands: true,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 8, vertical: 8)),
-                ),
-              ),
+              Expanded(child: ArticleDisplay()),
             ],
           ))
           // Expanded(
@@ -240,7 +227,6 @@ class _ArticleAdminState extends State<ArticleAdmin> {
       },
     );
   }
-
 }
 
 class RichEditor extends StatefulWidget {
@@ -252,6 +238,7 @@ class RichEditor extends StatefulWidget {
 
 class _RichEditorState extends State<RichEditor> {
   QuillController _controller = QuillController.basic();
+
   @override
   Widget build(BuildContext context) {
     return Column(

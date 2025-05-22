@@ -12,6 +12,7 @@ import 'article/sliver_article.dart';
 import 'article/sliver_columnize.dart';
 import 'building/building_panel.dart';
 import 'package:l10n/l10n.dart';
+
 class DeskKnowledgePage extends StatefulWidget {
   const DeskKnowledgePage({super.key});
 
@@ -19,8 +20,8 @@ class DeskKnowledgePage extends StatefulWidget {
   State<DeskKnowledgePage> createState() => _DeskKnowledgePageState();
 }
 
-class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTickerProviderStateMixin,AutomaticKeepAliveClientMixin{
-
+class _DeskKnowledgePageState extends State<DeskKnowledgePage>
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late TabController controller;
   List<String> data = [];
   int _curIndex = 0;
@@ -28,41 +29,48 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 4, vsync: this);
+    controller = TabController(length: 3, vsync: this);
     controller.addListener(_listen);
     data = List.generate(5, (index) => 'Init $index');
   }
+
   ArticleRepository aRepository = const ArticleRepository();
   ColumnizeRepository cRepository = const ColumnizeRepository();
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    AppLocalizations l10n = context.l10n;
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ColumnizeBloc>(create: (_) => ColumnizeBloc(cRepository)..init()),
-        BlocProvider<ArticleBloc>(create: (_) => ArticleBloc(aRepository,pageSize: 1000)..init()),
+        BlocProvider<ColumnizeBloc>(
+            create: (_) => ColumnizeBloc(cRepository)..init()),
+        BlocProvider<ArticleBloc>(
+            create: (_) => ArticleBloc(aRepository, pageSize: 1000)..init()),
       ],
       child: Scaffold(
         endDrawer: SortSettings(),
         body: Column(
           children: [
-            DeskKnowledgeTabTopBar(onTabPressed: (int value) {
-              controller.index = value;
-            }, tabs: [
-              context.l10n.knowledgeTabLayout,
-              context.l10n.knowledgeTabAlgo,
-              context.l10n.knowledgeTabToly,
-              context.l10n.knowledgeTabPoint,
-            ],),
-            Expanded(child: TabBarView(
+            DeskKnowledgeTabTopBar(
+              onTabPressed: (int value) {
+                controller.index = value;
+              },
+              tabs: [
+                l10n.knowledgeTabLayout,
+                l10n.knowledgeTabAlgo,
+                l10n.knowledgeTabToly,
+              ],
+            ),
+            Expanded(
+                child: TabBarView(
               controller: controller,
               children: [
                 LayoutRouterPage(),
                 AlgoRouterPage(),
                 TolyArticlesPage(),
-                DeskPointPage(),
+                // DeskPointPage(),
               ],
             ))
           ],
@@ -70,7 +78,6 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>  with SingleTicke
       ),
     );
   }
-
 
   void _listen() {
     print('${controller.index}');
@@ -91,17 +98,16 @@ class TolyArticlesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-
       slivers: [
         SliverPadding(
-          padding: EdgeInsets.only(top: 10,bottom: 10,right: 36,left: 36),
+          padding: EdgeInsets.only(top: 10, bottom: 10, right: 36, left: 36),
           sliver: const SliverToBoxAdapter(
             child: ColumnizeViewPage(),
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.only(right: 36,left:36),
-          sliver:    SliverArticlePanel(),
+          padding: EdgeInsets.only(right: 36, left: 36),
+          sliver: SliverArticlePanel(),
         ),
       ],
     );
@@ -121,10 +127,10 @@ class SoreAlgoPage extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-
               GestureDetector(
                   onTap: () {
-                    _launchURL('https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart');
+                    _launchURL(
+                        'https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart');
                   },
                   child: Text(
                     '查看排序源码',
@@ -135,9 +141,13 @@ class SoreAlgoPage extends StatelessWidget {
                   )),
               Spacer(),
               SortButton(),
-              const SizedBox(width: 12,),
+              const SizedBox(
+                width: 12,
+              ),
               SortSelector(),
-              const SizedBox(width: 12,),
+              const SizedBox(
+                width: 12,
+              ),
               GestureDetector(
                   onTap: () {
                     Scaffold.of(context).openEndDrawer();
@@ -154,10 +164,9 @@ class SoreAlgoPage extends StatelessWidget {
   void _launchURL(String url) async {
     Uri uri = Uri.parse(url);
     if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(uri,mode: LaunchMode.externalApplication);
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
       debugPrint('Could not launch $url');
     }
   }
-
 }
