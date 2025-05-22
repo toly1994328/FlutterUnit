@@ -42,7 +42,7 @@ class NewsBloc extends Cubit<NewsState>
 
   @override
   ConvertorList<List<ArticlePo>> get convertor => (e) {
-        return e.map(ArticlePo.fromCache).toList();
+        return e.map<ArticlePo>(ArticlePo.fromCache).toList();
       };
 }
 
