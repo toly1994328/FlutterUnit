@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:note/note.dart';
 import 'package:app_update/app_update.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
@@ -6,7 +7,6 @@ import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/widget_module.dart';
-
 
 /// create by 张风捷特烈 on 2020/4/28
 /// contact me by email 1981462002@qq.com
@@ -27,12 +27,16 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
     return MultiBlocProvider(
       providers: [
         // 全局 bloc : 维护应用存储状态、更新、认证
-        BlocProvider<AuthBloc>(create: (_) => AuthBloc(repository: HttpAuthRepository())),
+        BlocProvider<AuthBloc>(
+            create: (_) => AuthBloc(repository: HttpAuthRepository())),
         BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
-        BlocProvider<UpgradeBloc>(create: (_) => UpgradeBloc(api: UnitUpgradeApi())),
+        BlocProvider<UpgradeBloc>(
+            create: (_) => UpgradeBloc(api: UnitUpgradeApi())),
         BlocProvider<UserBloc>(create: (_) => UserBloc()),
+        BlocProvider<NewsBloc>(create: (_) => NewsBloc()..initByCache()),
 
-        BlocProvider<GalleryUnitBloc>(create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
+        BlocProvider<GalleryUnitBloc>(
+            create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
       ],
       child: WidgetsBlocProvider(child: widget.child),
     );

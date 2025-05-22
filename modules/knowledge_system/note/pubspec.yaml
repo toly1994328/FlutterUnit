@@ -12,7 +12,8 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  fx_dio: 0.0.4+2
+  fx_dio: 0.0.4+3
+  fx_dao: 0.0.3+3
   flutter_bloc: ^8.1.6 # 状态管理
   two_dimensional_scrollables: ^0.3.3
   flutter_quill: ^11.0.0-dev.21

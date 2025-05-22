@@ -15,7 +15,7 @@ linter:
      file_names: false
 
 analyzer:
-  exclude:
+#  exclude:
 #    - modules/widget_system/widgets/**
 
 

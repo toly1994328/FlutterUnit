@@ -2,7 +2,7 @@ import 'package:fx_dao/fx_dao.dart';
 
 import '../model/columnize.dart';
 
-class ColumnizeDao with HasDatabase, DbTable{
+class ColumnizeDao extends Dao {
   @override
   String get createSql => '';
 
@@ -10,10 +10,10 @@ class ColumnizeDao with HasDatabase, DbTable{
   String get name => 'columnize';
 
   Future<int> insert(Columnize po) => database.insert(
-    name,
-    po.toJson(),
-    conflictAlgorithm: ConflictAlgorithm.replace,
-  );
+        name,
+        po.toJson(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
 
   Future<int> insertOrUpdate(Columnize po) async {
     bool canUpdate = await shouldUpdate(po.id, po.update);
@@ -21,7 +21,7 @@ class ColumnizeDao with HasDatabase, DbTable{
       name,
       po.toJson(),
       conflictAlgorithm:
-      canUpdate ? ConflictAlgorithm.replace : ConflictAlgorithm.ignore,
+          canUpdate ? ConflictAlgorithm.replace : ConflictAlgorithm.ignore,
     );
   }
 
@@ -44,8 +44,8 @@ class ColumnizeDao with HasDatabase, DbTable{
   }) async {
     String queryArgs = '';
     List<dynamic> args = [];
-    if(filter!=null){
-      queryArgs+="AND filter = ? ";
+    if (filter != null) {
+      queryArgs += "AND filter = ? ";
       args.add(filter);
     }
     queryArgs += 'LIMIT ? OFFSET ?';

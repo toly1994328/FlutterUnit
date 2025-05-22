@@ -6,7 +6,6 @@ import 'package:app_update/repository/api/upgrade_api.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_file/open_file.dart';
 
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:r_upgrade/r_upgrade.dart';
 import 'package:fx_dio/fx_dio.dart';
@@ -28,15 +27,14 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
 
   void _onCheckUpdate(CheckUpdate event, Emitter<UpdateState> emit) async {
     emit(const CheckLoadingState());
-    ApiRet<AppInfo> ret = await api.fetch(event.appId,event.locale);
+    ApiRet<AppInfo> ret = await api.fetch(event.appId, event.locale);
     if (ret.failed) {
       emit(UpdateErrorState(error: ret.msg));
       return;
     }
     AppInfo result = ret.data;
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    if (result.shouldUpgrade(packageInfo.version)) {
-      emit(ShouldUpdateState(oldVersion: packageInfo.version, info: result));
+    if (result.shouldUpgrade(kAppVersion)) {
+      emit(ShouldUpdateState(oldVersion: kAppVersion, info: result));
     } else {
       int time = DateTime.now().millisecondsSinceEpoch;
       emit(NoUpdateState(isChecked: true, checkTime: time));
@@ -48,7 +46,7 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
     if (curState is! ShouldUpdateState) return;
     String url = event.appInfo.url;
 
-    if(kAppEnv.isMacOS){
+    if (kAppEnv.isMacOS) {
       launchUrl(Uri.parse(url));
       return;
     }
@@ -80,7 +78,6 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
     }
   }
 
-
   late int? id;
   StreamSubscription<DownloadInfo>? subscription;
 
@@ -96,7 +93,8 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
     });
   }
 
-  FutureOr<void> _onProgressChangeEvent(ProgressChangeEvent event, Emitter<UpdateState> emit) async{
+  FutureOr<void> _onProgressChangeEvent(
+      ProgressChangeEvent event, Emitter<UpdateState> emit) async {
     UpdateState curState = state;
     if (curState is! ShouldUpdateState) return;
     emit(curState.copyWith(progress: event.progress));

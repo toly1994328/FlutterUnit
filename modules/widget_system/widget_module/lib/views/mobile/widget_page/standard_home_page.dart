@@ -12,7 +12,8 @@ import 'standard_home_search.dart';
 import 'widget_page.dart';
 
 class StandardHomePage extends StatefulWidget {
-  const StandardHomePage({Key? key}) : super(key: key);
+  final Widget? heard;
+  const StandardHomePage({super.key, this.heard});
 
   @override
   State<StandardHomePage> createState() => _StandardHomePageState();
@@ -62,7 +63,6 @@ class _StandardHomePageState extends State<StandardHomePage>
     double bottom = MediaQuery.of(context).padding.bottom;
     return Scaffold(
       extendBody: true,
-      // backgroundColor: const Color(0xffF3F4F6),
       drawer: const HomeDrawer(),
       body: Column(
         children: [
@@ -80,9 +80,7 @@ class _StandardHomePageState extends State<StandardHomePage>
                 headerSliverBuilder: _buildHeader,
                 body: const WidgetPage()),
           ),
-          SizedBox(
-            height: bottom,
-          )
+          SizedBox(height: bottom)
         ],
       ),
     );
@@ -98,8 +96,14 @@ class _StandardHomePageState extends State<StandardHomePage>
         snapMode: FloatingHeaderSnapMode.scroll,
         child: StandardHomeSearch(),
       ),
-      // SliverOverlapAbsorber(
-      //   sliver:
+      if (widget.heard != null)
+        SliverToBoxAdapter(
+          child: Container(
+            height: 168,
+            color: Colors.white,
+            child: widget.heard,
+          ),
+        ),
       SliverPinnedHeader(
           color: isDark ? Colors.black : Colors.white,
           child: TabBar(

@@ -9,20 +9,20 @@ import '../repository/model/model.dart';
 class ArtSysBloc extends Cubit<ArtSysState> {
   ArtSysBloc() : super(ArtSysState(articles: []));
 
-  ArticleRepository _repository = HttpArticleRepository();
+  final ArticleRepository _repository = HttpArticleRepository();
 
   TextEditingController titleCtrl = TextEditingController();
   TextEditingController ctrl = TextEditingController();
 
   Future<void> loadFirstFrame() async {
-    if(state.articles.isEmpty){
+    if (state.articles.isEmpty) {
       emit(state.copyWith(status: const LoadingStatus()));
     }
-    ApiRet<PaginateList<ArticlePo>> ret = await _repository.list(SizeFilter());
+    ApiRet<List<ArticlePo>> ret = await _repository.list(SizeFilter());
     if (ret.success) {
       ArtSysState newState = state.copyWith(
-        articles: ret.data.list,
-        status: SuccessStatus(ret.data.total),
+        articles: ret.data,
+        status: SuccessStatus(ret.paginate?.total ?? 0),
       );
       emit(newState);
       _openCurrent();
@@ -99,14 +99,12 @@ class ArtSysBloc extends Cubit<ArtSysState> {
     }
   }
 
-  Future<void> delete() async{
+  Future<void> delete() async {
     int? id = state.active?.id;
     if (id != null) {
       ApiRet<bool> ret = await _repository.delete(id);
       await loadFirstFrame();
-
     }
-
   }
 }
 
@@ -136,10 +134,11 @@ class ArtSysState {
   final ArticlePo? active;
   final ListStatus status;
 
-  ArtSysState(
-      {required this.articles,
-      this.active,
-      this.status = const LoadingStatus()});
+  ArtSysState({
+    required this.articles,
+    this.active,
+    this.status = const LoadingStatus(),
+  });
 
   ArtSysState copyWith({
     List<ArticlePo>? articles,

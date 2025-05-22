@@ -2,13 +2,16 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:widget_module/widget_module.dart';
 
+import '../../view/mobile/news.dart';
 import '../../view/mobile/unit_navigation.dart';
 
 GoRoute get widgetsRoute => GoRoute(
       path: AppRoute.widget.path,
       builder: (_, __) {
-        if (kAppEnv.isDesktopUI){
-          return const DeskWidgetPanel();
+        if (kAppEnv.isDesktopUI) {
+          return const DeskWidgetPanel(
+            header: CarouselNode2(),
+          );
         }
         return const UnitPhoneNavigation();
       },

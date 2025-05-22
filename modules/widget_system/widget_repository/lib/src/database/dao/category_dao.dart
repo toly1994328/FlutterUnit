@@ -15,7 +15,7 @@ import '../../../widget_repository.dart';
 //     );
 //""";
 
-class CategoryDao with HasDatabase, DbTable {
+class CategoryDao extends Dao {
   @override
   String get createSql => '';
 

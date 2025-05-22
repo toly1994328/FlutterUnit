@@ -10,7 +10,7 @@ class CustomTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
         data: ThemeData(
-            cardTheme: const CardTheme(
+            cardTheme: const CardThemeData(
               color: Colors.red,
               elevation: 4,
             ),

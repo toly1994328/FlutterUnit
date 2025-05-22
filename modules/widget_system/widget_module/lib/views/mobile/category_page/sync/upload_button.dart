@@ -12,9 +12,6 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:widget_repository/widget_repository.dart';
 
-
-
-
 /// create by 张风捷特烈 on 2021/2/24
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -72,18 +69,18 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
         onPressed: _doUploadCategoryData);
   }
 
-  void _doUploadCategoryData() async{
+  void _doUploadCategoryData() async {
     setState(() => state = AsyncType.loading);
 
     CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
     List<CategoryTo> loadCategories = await rep.loadCategoryData();
-    List<int> likeData = await  AppStorage().flutter<LikeDao>()!.likeWidgetIds();
-
+    List<int> likeData = await AppStorage().flutter<LikeDao>().likeWidgetIds();
 
     String json = jsonEncode(loadCategories);
     String likeJson = jsonEncode(likeData);
 
-    TaskResult<bool> result = await CategoryApi.uploadCategoryData(data: json,likeData: likeJson);
+    TaskResult<bool> result =
+        await CategoryApi.uploadCategoryData(data: json, likeData: likeJson);
 
     if (result.success) {
       setState(() => state = AsyncType.success);

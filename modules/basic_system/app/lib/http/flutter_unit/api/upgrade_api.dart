@@ -5,7 +5,7 @@ import 'package:app/app.dart';
 
 class UnitUpgradeApi implements UpgradeApi {
   @override
-  Future<ApiRet<AppInfo>> fetch(int appId,String locale) async {
+  Future<ApiRet<AppInfo>> fetch(int appId, String locale) async {
     Host host = FxDio()<ScienceHost>();
     String path = ScienceApi.appVersion.path;
     return host.get<AppInfo>(
@@ -15,7 +15,7 @@ class UnitUpgradeApi implements UpgradeApi {
         'os': kAppEnv.os.name,
         'locale': locale,
       },
-      convertor: AppInfo.fromMap,
+      convertor: (data) => AppInfo.fromMap(data),
     );
   }
 }

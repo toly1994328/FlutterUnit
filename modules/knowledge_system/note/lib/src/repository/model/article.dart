@@ -1,11 +1,16 @@
+import 'package:fx_dao/fx_dao.dart';
 import 'package:intl/intl.dart';
-
 
 DateFormat _noteTimeShort = DateFormat('yyyy/M/d');
 DateFormat _noteTimeLong = DateFormat('yyyy/M/d HH:mm:ss');
 Duration offset = DateTime.now().timeZoneOffset;
 
-class ArticlePo {
+enum ArticleType {
+  net,
+  custom,
+}
+
+class ArticlePo implements Po {
   final String title;
   final String? subtitle;
   final String url;
@@ -29,13 +34,12 @@ class ArticlePo {
   });
 
   String get updateDate {
-    return _noteTimeLong.format(DateTime.fromMillisecondsSinceEpoch(update).add(offset));
+    return _noteTimeLong
+        .format(DateTime.fromMillisecondsSinceEpoch(update).add(offset));
   }
 
-
-  String get createDate =>
-      _noteTimeShort.format(DateTime.fromMillisecondsSinceEpoch(create).add(offset));
-
+  String get createDate => _noteTimeShort
+      .format(DateTime.fromMillisecondsSinceEpoch(create).add(offset));
 
   factory ArticlePo.fromApi(dynamic map) => ArticlePo(
         id: map['article_id'] ?? 0,
@@ -48,6 +52,32 @@ class ArticlePo {
         url: map['url'] ?? '',
         cover: map['cover'] ?? '',
       );
+
+  factory ArticlePo.fromCache(dynamic map) => ArticlePo(
+        id: map['article_id'] ?? 0,
+        title: map['title'] ?? '',
+        type: map['type'] ?? '',
+        status: map['status'] ?? '',
+        create: map['create_at'],
+        update: map['update'],
+        subtitle: map['subtitle'] ?? '',
+        url: map['url'] ?? '',
+        cover: map['cover'] ?? '',
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      'article_id': id,
+      'title': title,
+      'type': type,
+      'status': status,
+      'create_at': create,
+      'update': update,
+      'url': url,
+      'cover': cover,
+    };
+  }
 }
 
 class ArticleCreatePayload {

@@ -13,6 +13,7 @@ import 'package:treasure_tools/treasure_tools.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:note/note.dart';
+import 'news.dart';
 import 'pure_bottom_bar.dart';
 
 /// create by 张风捷特烈 on 2020-04-11
@@ -50,26 +51,25 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     super.dispose();
   }
 
-
   /// extendBody = true 凹嵌透明，需要处理底部 边距
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        extendBody: true,
-        endDrawer: const HomeRightDrawer(),
-        body: PageView(
-          physics: _neverScroll,
-          controller: _controller,
-          children: [
-            StandardHomePage(),
-            GalleryUnit(),
-            AlgoScope(child: ArtifactPage()),
-            ArtSysScope(child: MobileArticlePage()),
-            // MobileToolPage(),
-            UserPage(),
-          ],
-        ),
-        bottomNavigationBar: _buildBottomNav(context),
+    return Scaffold(
+      extendBody: true,
+      endDrawer: const HomeRightDrawer(),
+      body: PageView(
+        physics: _neverScroll,
+        controller: _controller,
+        children: [
+          StandardHomePage(heard: CarouselNode2()),
+          GalleryUnit(),
+          AlgoScope(child: ArtifactPage()),
+          ArtSysScope(child: MobileArticlePage()),
+          // MobileToolPage(),
+          UserPage(),
+        ],
+      ),
+      bottomNavigationBar: _buildBottomNav(context),
     );
   }
 

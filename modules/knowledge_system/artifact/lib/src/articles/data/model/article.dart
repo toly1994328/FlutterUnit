@@ -1,5 +1,6 @@
+import 'package:fx_dao/fx_dao.dart';
 
-class Article {
+class Article implements Po{
   final String? username;
   final String title;
   final String? subtitle;

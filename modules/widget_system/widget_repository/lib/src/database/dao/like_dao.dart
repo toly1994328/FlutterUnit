@@ -1,6 +1,6 @@
 import 'package:fx_dao/fx_dao.dart';
 
-class LikeDao with HasDatabase, DbTable {
+class LikeDao extends Dao {
   @override
   String get createSql => '';
 

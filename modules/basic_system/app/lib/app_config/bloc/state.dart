@@ -1,5 +1,8 @@
+import 'dart:io';
+
+import 'package:app/app.dart';
 import 'package:app/app/cons/cons.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+// import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:l10n/l10n.dart';
@@ -35,7 +38,7 @@ class AppConfig extends Equatable {
   /// [appStyle] app 深色样式;
   final ThemeMode themeMode;
 
-  final ConnectivityResult netConnect;
+  // final ConnectivityResult netConnect;
 
   final Language language;
 
@@ -49,7 +52,7 @@ class AppConfig extends Equatable {
     this.itemStyleIndex = 0,
     this.showPerformanceOverlay = false,
     this.showOverlayTool = true,
-    this.netConnect = ConnectivityResult.none,
+    // this.netConnect = ConnectivityResult.none,
   });
 
   String get localeValue => language.locale.toString();
@@ -64,7 +67,7 @@ class AppConfig extends Equatable {
         themeMode,
         showOverlayTool,
         showPerformanceOverlay,
-        netConnect,
+        // netConnect,
         language,
       ];
 
@@ -79,7 +82,7 @@ class AppConfig extends Equatable {
     bool? showPerformanceOverlay,
     bool? showOverlayTool,
     ThemeMode? themeMode,
-    ConnectivityResult? netConnect,
+    // ConnectivityResult? netConnect,
   }) =>
       AppConfig(
         fontFamily: fontFamily ?? this.fontFamily,
@@ -92,7 +95,7 @@ class AppConfig extends Equatable {
         themeMode: themeMode ?? this.themeMode,
         showPerformanceOverlay:
             showPerformanceOverlay ?? this.showPerformanceOverlay,
-        netConnect: netConnect ?? this.netConnect,
+        // netConnect: netConnect ?? this.netConnect,
       );
 
   // 将 AppState 状态数据转换为配置对象，以便存储

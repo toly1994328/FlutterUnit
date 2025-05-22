@@ -1,12 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-
+import 'package:fx_env/fx_env.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class WidgetLogo extends StatelessWidget {
   final Color background;
   final String widgetName;
+
   const WidgetLogo({
     super.key,
     required this.background,
@@ -32,7 +33,7 @@ class WidgetLogo extends StatelessWidget {
       ),
       child: SvgPicture.asset(
         'assets/images/widgets/${widgetLogo(widgetName)}',
-        width: 90,
+        width: kApp.isDesktopUI ? 90 : 80,
       ),
     );
   }

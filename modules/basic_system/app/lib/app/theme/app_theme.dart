@@ -20,7 +20,7 @@ ThemeData darkTheme(AppConfig state) {
       TargetPlatform.windows: FadePageTransitionsBuilder(),
       TargetPlatform.linux: FadePageTransitionsBuilder(),
     }),
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       dividerColor: Colors.transparent,
     ),
     fontFamily: state.fontFamily,
@@ -97,7 +97,7 @@ ThemeData lightTheme(AppConfig state) {
       TargetPlatform.windows: FadePageTransitionsBuilder(),
       TargetPlatform.linux: FadePageTransitionsBuilder(),
     }),
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       dividerColor: Colors.transparent,
       // labelStyle: TextStyle(fontFamily: fontFamily),
       // unselectedLabelStyle: TextStyle(fontFamily: fontFamily),

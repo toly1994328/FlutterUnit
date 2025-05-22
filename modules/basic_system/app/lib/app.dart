@@ -26,3 +26,6 @@ export 'app/action/action.dart';
 export 'app/router/app_route.dart';
 export 'view/view.dart';
 export 'http/http.dart';
+export 'event/api.dart';
+export 'news/news_bloc.dart';
+export 'news/cacheable.dart';

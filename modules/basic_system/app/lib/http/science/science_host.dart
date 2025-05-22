@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:fx_dio/fx_dio.dart';
 
 class ScienceHost extends Host {
@@ -6,29 +7,8 @@ class ScienceHost extends Host {
   @override
   Map<HostEnv, String> get value => {
         HostEnv.release: 'toly1994.com',
-        HostEnv.dev: '127.0.0.1',
-      };
-
-  @override
-  HostConfig get config => const HostConfig(
-        scheme: 'http',
-        port: 3000,
-        apiNest: '/api/v1',
-      );
-
-  @override
-  HostEnv get env => HostEnv.dev;
-}
-
-// 轻量服务器
-// 笔记
-class LightServerHost extends Host {
-  const LightServerHost();
-
-  @override
-  Map<HostEnv, String> get value => {
-        HostEnv.release: '82.157.176.209',
-        HostEnv.dev: '127.0.0.1',
+        HostEnv.dev: '172.20.10.4',
+        // HostEnv.dev: '192.168.1.107',
       };
 
   @override

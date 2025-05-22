@@ -2,7 +2,7 @@ import 'package:fx_dao/fx_dao.dart';
 
 import '../po/node_po.dart';
 
-class NodeDao with HasDatabase, DbTable {
+class NodeDao extends Dao {
   @override
   String get createSql => '';
 

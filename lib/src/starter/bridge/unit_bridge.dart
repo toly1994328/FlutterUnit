@@ -3,8 +3,7 @@ import 'package:fx_dio/src/client/host.dart';
 import 'package:note/note.dart';
 import 'package:app/app.dart';
 
-class UnitNoteBridge with NoteModuleBridge{
-
+class UnitNoteBridge with NoteModuleBridge {
   @override
-  Host get host => FxDio()<LightServerHost>();
+  Host get host => FxDio()<ScienceHost>();
 }

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:app/app.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+// import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
@@ -12,25 +12,26 @@ import 'package:storage/storage.dart';
 /// 说明: 全局信息的bloc
 
 class AppConfigBloc extends Cubit<AppConfig> {
-  final Connectivity _connectivity = Connectivity();
+  // final Connectivity _connectivity = Connectivity();
 
-  late StreamSubscription<List<ConnectivityResult>> _subscription;
+  // late StreamSubscription<List<ConnectivityResult>> _subscription;
 
   AppConfigBloc() : super(const AppConfig()) {
-    _subscription = _connectivity.onConnectivityChanged.listen(_onNetConnectChange);
+    // _subscription =
+    //     _connectivity.onConnectivityChanged.listen(_onNetConnectChange);
   }
 
-  void _onNetConnectChange(List<ConnectivityResult> event) {
-    if (event.isNotEmpty) {
-      emit(state.copyWith(
-        netConnect: event.first,
-      ));
-    }
-  }
+  // void _onNetConnectChange(List<ConnectivityResult> event) {
+  //   if (event.isNotEmpty) {
+  //     emit(state.copyWith(
+  //       netConnect: event.first,
+  //     ));
+  //   }
+  // }
 
   @override
   Future<void> close() async {
-    _subscription.cancel();
+    // _subscription.cancel();
     super.close();
   }
 

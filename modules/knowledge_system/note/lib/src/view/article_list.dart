@@ -13,7 +13,8 @@ class ArticleList extends StatelessWidget {
       {super.key,
       required this.articles,
       required this.activeId,
-      required this.onTap, required this.onUpdateTitle});
+      required this.onTap,
+      required this.onUpdateTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,8 @@ class ArticleList extends StatelessWidget {
       itemBuilder: (_, index) => ArticleItem(
         onTap: onTap,
         active: articles[index].id == activeId,
-        article: articles[index], onUpdateTitle: onUpdateTitle,
+        article: articles[index],
+        onUpdateTitle: onUpdateTitle,
       ),
     );
   }
@@ -113,12 +115,12 @@ class _ArticleItemState extends State<ArticleItem> {
               if (_hovered)
                 TolyAction(
                     child: Icon(
-                     _editMode?Icons.check: Icons.edit,
+                      _editMode ? Icons.check : Icons.edit,
                       size: 16,
                       color: Color(0xff4e5a70),
                     ),
                     onTap: () {
-                      if(_editMode){
+                      if (_editMode) {
                         _updateTitle();
                         setState(() {
                           _editMode = false;
@@ -147,10 +149,10 @@ class _ArticleItemState extends State<ArticleItem> {
     );
   }
 
-  void _updateTitle(){
-    String value = _ctrl?.text??'';
-    if(value.isEmpty) return;
-    widget.onUpdateTitle(widget.article,_ctrl?.text??'');
+  void _updateTitle() {
+    String value = _ctrl?.text ?? '';
+    if (value.isEmpty) return;
+    widget.onUpdateTitle(widget.article, _ctrl?.text ?? '');
   }
 
   bool _hovered = false;
@@ -169,28 +171,3 @@ class _ArticleItemState extends State<ArticleItem> {
     });
   }
 }
-
-//          Container(
-//                   alignment: Alignment.centerLeft,
-//                   padding: EdgeInsets.symmetric(horizontal: 8),
-//                   margin: EdgeInsets.symmetric(horizontal: 6),
-//                   height: 32,
-//                   width: 200,
-//                   decoration: BoxDecoration(
-//                     color: Color(0xffd7e2ff),
-//                     borderRadius: BorderRadius.circular(4)
-//                   ),
-//                   child: Text('第一篇',style: TextStyle(fontWeight: FontWeight.bold,color: Color(0xff5b89fe)),),
-//                 ),
-//                 Container(
-//                   alignment: Alignment.centerLeft,
-//                   padding: EdgeInsets.symmetric(horizontal: 8),
-//                   margin: EdgeInsets.symmetric(horizontal: 6),
-//                   height: 32,
-//                   width: 200,
-//                   decoration: BoxDecoration(
-//                     // color: Color(0xffd7e2ff),
-//                     borderRadius: BorderRadius.circular(4)
-//                   ),
-//                   child: Text('第二篇',style: TextStyle(color: Colors.black),),
-//                 ),
