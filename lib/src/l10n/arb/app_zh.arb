@@ -5,10 +5,12 @@
   "deskTabTools": "工具宝箱",
   "deskTabMine": "应用信息",
   "messageBoard": "留言板",
-
   "mobileTabWidgets": "组件",
   "mobileTabPainter": "绘制",
   "mobileTabKnowledge": "知识",
   "mobileTabTools": "工具",
-  "mobileTabMine": "我的"
+  "mobileTabMine": "我的",
+  "newBoard": "新建 ",
+  "news": "最新资讯",
+  "moreNews": "查看更多"
 }

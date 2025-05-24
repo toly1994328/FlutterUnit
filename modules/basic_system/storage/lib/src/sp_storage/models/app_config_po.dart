@@ -29,7 +29,7 @@ class AppConfigPo {
       showOverlayTool: map['showOverlayTool'] ?? false,
       showPerformanceOverlay: map['showPerformanceOverlay'] ?? false,
       fontFamilyIndex: map['fontFamilyIndex'] ?? 1,
-      themeColorIndex: map['themeColorIndex'] ?? 4,
+      themeColorIndex: map['themeColorIndex'] ?? 5,
       codeStyleIndex: map['codeStyleIndex'] ?? 0,
       themeModeIndex: map['themeModeIndex'] ?? 0,
       itemStyleIndex: map['itemStyleIndex'] ?? 0,

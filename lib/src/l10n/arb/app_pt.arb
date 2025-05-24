@@ -1,13 +1,16 @@
 {
-    "deskTabWidgets": "Coleção de widgets",
-    "deskTabPainter": "Coleção de desenhos",
-    "deskTabKnowledge": "Hub de conhecimento",
-    "deskTabTools": "Caixa de ferramentas",
-    "deskTabMine": "Info App",
-    "messageBoard": "Quadro de Mensagens",
-    "mobileTabWidgets": "Widgets",
-    "mobileTabPainter": "Desenho",
-    "mobileTabKnowledge": "Conhecimento",
-    "mobileTabTools": "Ferramentas",
-    "mobileTabMine": "Meu"
-  }
+  "deskTabWidgets": "Coleção de widgets",
+  "deskTabPainter": "Coleção de desenhos",
+  "deskTabKnowledge": "Hub de conhecimento",
+  "deskTabTools": "Caixa de ferramentas",
+  "deskTabMine": "Info App",
+  "messageBoard": "Quadro de Mensagens",
+  "mobileTabWidgets": "Widgets",
+  "mobileTabPainter": "Desenho",
+  "mobileTabKnowledge": "Conhecimento",
+  "mobileTabTools": "Ferramentas",
+  "mobileTabMine": "Meu",
+  "newBoard": "Novo",
+  "news": "Novidades",
+  "moreNews": "Mais novidades"
+}

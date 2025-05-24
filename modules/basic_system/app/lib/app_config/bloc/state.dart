@@ -45,7 +45,7 @@ class AppConfig extends Equatable {
   const AppConfig({
     this.fontFamily = '宋体',
     this.language = Language.zh_CN,
-    this.themeColor = ThemeColor.blue,
+    this.themeColor = ThemeColor.indigo,
     this.themeMode = ThemeMode.system,
     this.showBackGround = true,
     this.codeStyleIndex = 0,

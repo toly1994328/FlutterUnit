@@ -1,13 +1,16 @@
 {
-    "deskTabWidgets": "위젯 모음집",
-    "deskTabPainter": "그림 모음집",
-    "deskTabKnowledge": "지식 허브",
-    "deskTabTools": "도구 상자",
-    "deskTabMine": "앱 정보",
-    "messageBoard": "게시판",
-    "mobileTabWidgets": "위젯",
-    "mobileTabPainter": "그리기",
-    "mobileTabKnowledge": "지식",
-    "mobileTabTools": "도구",
-    "mobileTabMine": "내 정보"
-  }
+  "deskTabWidgets": "위젯 모음집",
+  "deskTabPainter": "그림 모음집",
+  "deskTabKnowledge": "지식 허브",
+  "deskTabTools": "도구 상자",
+  "deskTabMine": "앱 정보",
+  "messageBoard": "게시판",
+  "mobileTabWidgets": "위젯",
+  "mobileTabPainter": "그리기",
+  "mobileTabKnowledge": "지식",
+  "mobileTabTools": "도구",
+  "mobileTabMine": "내 정보",
+  "newBoard": "새 글",
+  "news": "최신 소식",
+  "moreNews": "더 보기"
+}

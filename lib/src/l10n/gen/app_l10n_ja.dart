@@ -40,4 +40,13 @@ class AppL10nJa extends AppL10n {
 
   @override
   String get mobileTabMine => 'マイ';
+
+  @override
+  String get newBoard => '新規作成';
+
+  @override
+  String get news => '最新情報';
+
+  @override
+  String get moreNews => 'もっと見る';
 }

@@ -40,4 +40,13 @@ class AppL10nZh extends AppL10n {
 
   @override
   String get mobileTabMine => '我的';
+
+  @override
+  String get newBoard => '新建 ';
+
+  @override
+  String get news => '最新资讯';
+
+  @override
+  String get moreNews => '查看更多';
 }

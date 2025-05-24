@@ -40,4 +40,13 @@ class AppL10nKo extends AppL10n {
 
   @override
   String get mobileTabMine => '내 정보';
+
+  @override
+  String get newBoard => '새 글';
+
+  @override
+  String get news => '최신 소식';
+
+  @override
+  String get moreNews => '더 보기';
 }

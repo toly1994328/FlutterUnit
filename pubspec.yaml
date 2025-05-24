@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.2.0
+version: 3.2.0+2002
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -64,7 +64,7 @@ dependencies:
   package_info_plus: 8.1.4
 
   # 视图展示
-  tolyui: 0.0.4+9   # tolyui
+  tolyui: 0.0.4+10   # tolyui
   refresh: ^1.0.1 # 下拉刷新
   dash_painter: ^1.0.2 # 虚线
   flutter_star: ^1.0.2 # 星星组件

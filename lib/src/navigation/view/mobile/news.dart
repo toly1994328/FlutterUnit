@@ -3,19 +3,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note/note.dart';
 import 'package:tolyui/basic/basic.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../l10n/gen/app_l10n.dart';
 import 'carousel.dart';
 import 'package:app/app.dart';
 
-class CarouselNode2 extends StatefulWidget {
-  const CarouselNode2({super.key});
+class NewsHeader extends StatefulWidget {
+  const NewsHeader({super.key});
 
   @override
-  State<CarouselNode2> createState() => _CarouselNode2State();
+  State<NewsHeader> createState() => _NewsHeaderState();
 }
 
-class _CarouselNode2State extends State<CarouselNode2> {
+class _NewsHeaderState extends State<NewsHeader> {
   @override
   Widget build(BuildContext context) {
+    AppL10n l10n = AppL10n.of(context);
+
     List<ArticlePo> data =
         context.select((NewsBloc bloc) => bloc.state.headerNews);
     return ConstrainedBox(
@@ -29,7 +32,7 @@ class _CarouselNode2State extends State<CarouselNode2> {
             child: Row(
               children: [
                 Text(
-                  "最新资讯",
+                  l10n.news,
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
                 if (kAppEnv.isDesktopUI)
@@ -43,9 +46,17 @@ class _CarouselNode2State extends State<CarouselNode2> {
                         context.read<NewsBloc>().refreshFromNet();
                       }),
                 Spacer(),
-                Text(
-                  '查看更多',
-                  style: TextStyle(fontSize: 12, color: Color(0xff999999)),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      context.push('/more_news');
+                    },
+                    child: Text(
+                      l10n.moreNews,
+                      style: TextStyle(fontSize: 12, color: Color(0xff999999)),
+                    ),
+                  ),
                 )
               ],
             ),

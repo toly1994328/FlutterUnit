@@ -1,13 +1,16 @@
 {
-    "deskTabWidgets": "Коллекция виджетов",
-    "deskTabPainter": "Коллекция рисунков",
-    "deskTabKnowledge": "База знаний",
-    "deskTabTools": "Инструменты",
-    "deskTabMine": "Информация",
-    "messageBoard": "Доска сообщений",
-    "mobileTabWidgets": "Виджеты",
-    "mobileTabPainter": "Рисование",
-    "mobileTabKnowledge": "Знания",
-    "mobileTabTools": "Инструменты",
-    "mobileTabMine": "Мои"
-  }
+  "deskTabWidgets": "Коллекция виджетов",
+  "deskTabPainter": "Коллекция рисунков",
+  "deskTabKnowledge": "База знаний",
+  "deskTabTools": "Инструменты",
+  "deskTabMine": "Информация",
+  "messageBoard": "Доска сообщений",
+  "mobileTabWidgets": "Виджеты",
+  "mobileTabPainter": "Рисование",
+  "mobileTabKnowledge": "Знания",
+  "mobileTabTools": "Инструменты",
+  "mobileTabMine": "Мои",
+  "newBoard": "Создать",
+  "news": "Новости",
+  "moreNews": "Больше новостей"
+}

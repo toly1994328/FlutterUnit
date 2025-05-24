@@ -9,5 +9,8 @@
   "mobileTabPainter": "Painter",
   "mobileTabKnowledge": "Knowledge",
   "mobileTabTools": "Treasure",
-  "mobileTabMine": "Mine"
+  "mobileTabMine": "Mine",
+  "newBoard": "New",
+  "news": "News",
+  "moreNews": "More News"
 }

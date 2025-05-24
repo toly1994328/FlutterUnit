@@ -10,7 +10,7 @@ GoRoute get widgetsRoute => GoRoute(
       builder: (_, __) {
         if (kAppEnv.isDesktopUI) {
           return const DeskWidgetPanel(
-            header: CarouselNode2(),
+            header: NewsHeader(),
           );
         }
         return const UnitPhoneNavigation();
