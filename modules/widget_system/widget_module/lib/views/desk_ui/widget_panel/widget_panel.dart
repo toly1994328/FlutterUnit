@@ -9,7 +9,7 @@ import 'package:widget_module/event/widget_event.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:fx_trace/fx_trace.dart';
-
+import 'package:toly_ui/toly_ui.dart';
 import 'desk_widget_top_bar.dart';
 import 'widget_tiled.dart';
 
@@ -69,7 +69,6 @@ class WidgetList extends StatelessWidget {
       mainAxisExtent: 110,
       crossAxisSpacing: 10,
     );
-
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
@@ -77,7 +76,8 @@ class WidgetList extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             margin: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(8)),
+                color: Theme.of(context).listTileTheme.tileColor,
+                borderRadius: BorderRadius.circular(8)),
             height: 180,
             child: header,
           ),

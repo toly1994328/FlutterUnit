@@ -178,6 +178,24 @@ abstract class AppL10n {
   /// In zh, this message translates to:
   /// **'我的'**
   String get mobileTabMine;
+
+  /// No description provided for @newBoard.
+  ///
+  /// In zh, this message translates to:
+  /// **'新建 '**
+  String get newBoard;
+
+  /// No description provided for @news.
+  ///
+  /// In zh, this message translates to:
+  /// **'最新资讯'**
+  String get news;
+
+  /// No description provided for @moreNews.
+  ///
+  /// In zh, this message translates to:
+  /// **'查看更多'**
+  String get moreNews;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {

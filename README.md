@@ -17,10 +17,10 @@ FlutterUnit 是一个全平台体验应用，你可以在这里尽情体验 Flut
 
 <p align="center">
     <b> 下载 App: </b>
-    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnit.apk"><b> [Android] </b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.2.0/FlutterUnit.apk"><b> [Android] </b></a> •
     <a href="https://apps.apple.com/cn/app/flutter-unit/id6450545123"><b>[iOS]</b></a> •
-    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitMac.zip"><b>[MacOS]</b></a> •
-    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.0.0/FlutterUnitWin.zip"><b>[Windows]</b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.2.0/FlutterUnit.dmg"><b>[MacOS]</b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.2.0/FlutterUnit.exe"><b>[Windows]</b></a> •
     <a href="http://toly1994.com/flutter/"><b>[Web]</b></a>
 </p>
 

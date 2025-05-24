@@ -40,4 +40,13 @@ class AppL10nRu extends AppL10n {
 
   @override
   String get mobileTabMine => 'Мои';
+
+  @override
+  String get newBoard => 'Создать';
+
+  @override
+  String get news => 'Новости';
+
+  @override
+  String get moreNews => 'Больше новостей';
 }

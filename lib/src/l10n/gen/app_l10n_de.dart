@@ -40,4 +40,13 @@ class AppL10nDe extends AppL10n {
 
   @override
   String get mobileTabMine => 'Mein';
+
+  @override
+  String get newBoard => 'Neu';
+
+  @override
+  String get news => 'Neuigkeiten';
+
+  @override
+  String get moreNews => 'Mehr News';
 }

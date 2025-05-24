@@ -32,7 +32,12 @@ class NewsBloc extends Cubit<NewsState>
   }
 
   Future<void> refreshFromNet() async {
-    ApiRet<List<ArticlePo>> ret = await _repository.getArticlesByTag(1);
+    SizeFilter filter = const SizeFilter(
+      page: 1,
+      pageSize: 8,
+    );
+    ApiRet<List<ArticlePo>> ret =
+        await _repository.getArticlesByTag(1, filter: filter);
     print("=====load in net=========");
     if (ret.success) {
       save(ret.data);

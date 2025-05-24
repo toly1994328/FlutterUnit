@@ -1,13 +1,16 @@
 {
-    "deskTabWidgets": "Raccolta widget",
-    "deskTabPainter": "Raccolta disegni",
-    "deskTabKnowledge": "Hub conoscitivo",
-    "deskTabTools": "Cassetta degli attrezzi",
-    "deskTabMine": "Info App",
-    "messageBoard": "Bacheca",
-    "mobileTabWidgets": "Widget",
-    "mobileTabPainter": "Disegno",
-    "mobileTabKnowledge": "Conoscenza",
-    "mobileTabTools": "Strumenti",
-    "mobileTabMine": "Io"
-  }
+  "deskTabWidgets": "Raccolta widget",
+  "deskTabPainter": "Raccolta disegni",
+  "deskTabKnowledge": "Hub conoscitivo",
+  "deskTabTools": "Cassetta degli attrezzi",
+  "deskTabMine": "Info App",
+  "messageBoard": "Bacheca",
+  "mobileTabWidgets": "Widget",
+  "mobileTabPainter": "Disegno",
+  "mobileTabKnowledge": "Conoscenza",
+  "mobileTabTools": "Strumenti",
+  "mobileTabMine": "Io",
+  "newBoard": "Nuovo",
+  "news": "Notizie",
+  "moreNews": "Altre notizie"
+}

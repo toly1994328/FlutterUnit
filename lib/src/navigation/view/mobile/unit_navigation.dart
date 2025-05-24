@@ -61,7 +61,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
         physics: _neverScroll,
         controller: _controller,
         children: [
-          StandardHomePage(heard: CarouselNode2()),
+          StandardHomePage(heard: NewsHeader()),
           GalleryUnit(),
           AlgoScope(child: ArtifactPage()),
           ArtSysScope(child: MobileArticlePage()),

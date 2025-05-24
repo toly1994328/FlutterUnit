@@ -40,4 +40,13 @@ class AppL10nPt extends AppL10n {
 
   @override
   String get mobileTabMine => 'Meu';
+
+  @override
+  String get newBoard => 'Novo';
+
+  @override
+  String get news => 'Novidades';
+
+  @override
+  String get moreNews => 'Mais novidades';
 }

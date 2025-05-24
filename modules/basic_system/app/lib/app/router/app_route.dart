@@ -11,6 +11,7 @@ enum AppRoute {
   collectionDetail('widgets/:id', url: '/collection/widgets/'),
 
   note('note', url: '/note'),
+  moreNews('more_news', url: '/more_news'),
   painter('painter', url: '/painter'),
   knowledge('knowledge', url: '/knowledge'),
   tools('tools', url: '/tools'),
