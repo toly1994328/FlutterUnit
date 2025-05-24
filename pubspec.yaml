@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.2.0+2002
+version: 3.1.0+2002
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -44,7 +44,7 @@ dependencies:
   ## fx 架构
   fx_platform_adapter: 0.0.3 # 平台适配器
   fx_go_router_ext: 0.0.6+1 # 路由
-  fx_dao: 0.0.3+3
+  fx_dao: 0.0.3+4
   fx_dio: 0.0.4+3
   fx_boot_starter: 0.1.1 # app 启动器
   fx_trace: 0.0.5+5 # 异常追踪/监听
