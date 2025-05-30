@@ -5,12 +5,9 @@ import 'cao/app_config_cao.dart';
 class SpStorage {
   SpStorage._();
 
-  static SpStorage? _storage;
+  static final SpStorage _instance = SpStorage._();
 
-  static SpStorage get instance {
-    _storage = _storage ?? SpStorage._();
-    return _storage!;
-  }
+  factory SpStorage() => _instance;
 
   SharedPreferences? _sp;
 

@@ -17,7 +17,7 @@ mixin TimeoutCache<V> on Cacheable<V> {
 
   int get maxCacheMs => 1000 * 60 * 30;
 
-  SharedPreferences get spf => SpStorage.instance.spf;
+  SharedPreferences get spf => SpStorage().spf;
 
   ConvertorList<V> get convertor;
 

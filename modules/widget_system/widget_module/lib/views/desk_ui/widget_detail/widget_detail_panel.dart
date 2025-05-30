@@ -10,6 +10,7 @@ import '../../components/widget_logo_map.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:l10n/l10n.dart';
 import 'link_widget_buttons.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DeskWidgetDetailPanel extends StatelessWidget {
   final WidgetModel model;
@@ -54,14 +55,15 @@ class DeskWidgetDetailPanel extends StatelessWidget {
             Panel(
               color: Color(0x33E5EAE1),
               child: Text(model.info),
-
             ),
             const SizedBox(height: 16),
             linkText(context),
             if (state is DetailWithData)
               LinkWidgetButtons(
                   links: (state as DetailWithData).links,
-                  onSelect: (v) {})
+                  onSelect: (v) {
+                    context.read<WidgetDetailBloc>().push(v);
+                  })
           ],
         ),
       );
@@ -82,7 +84,7 @@ class DeskWidgetDetailPanel extends StatelessWidget {
           ),
           StarScore(
             score: model.lever,
-            star:  Star(size: 15, fillColor:color),
+            star: Star(size: 15, fillColor: color),
           )
         ],
       );
@@ -96,7 +98,8 @@ class WidgetLogo extends StatelessWidget {
   const WidgetLogo({
     super.key,
     required this.background,
-    required this.widgetName, required this.widgetId,
+    required this.widgetName,
+    required this.widgetId,
   });
 
   @override
