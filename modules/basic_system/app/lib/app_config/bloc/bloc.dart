@@ -12,22 +12,7 @@ import 'package:storage/storage.dart';
 /// 说明: 全局信息的bloc
 
 class AppConfigBloc extends Cubit<AppConfig> {
-  // final Connectivity _connectivity = Connectivity();
-
-  // late StreamSubscription<List<ConnectivityResult>> _subscription;
-
-  AppConfigBloc() : super(const AppConfig()) {
-    // _subscription =
-    //     _connectivity.onConnectivityChanged.listen(_onNetConnectChange);
-  }
-
-  // void _onNetConnectChange(List<ConnectivityResult> event) {
-  //   if (event.isNotEmpty) {
-  //     emit(state.copyWith(
-  //       netConnect: event.first,
-  //     ));
-  //   }
-  // }
+  AppConfigBloc() : super(const AppConfig());
 
   @override
   Future<void> close() async {
@@ -39,7 +24,7 @@ class AppConfigBloc extends Cubit<AppConfig> {
     emit(state);
   }
 
-  AppConfigCao get cao => SpStorage.instance.appConfig;
+  AppConfigCao get cao => SpStorage().appConfig;
 
   // 切换字体事件处理 : 固化索引 + 产出新状态
   void switchFontFamily(String family) async {

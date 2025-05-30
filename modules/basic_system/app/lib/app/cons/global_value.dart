@@ -31,10 +31,10 @@ class AppMeta {
 }
 
 Future<void> initAppMeta() async {
-  String? uuid = SpStorage.instance.spf.getString('uuid');
+  String? uuid = SpStorage().spf.getString('uuid');
   if (uuid == null) {
     uuid = const Uuid().v4();
-    SpStorage.instance.spf.setString('uuid', uuid);
+    SpStorage().spf.setString('uuid', uuid);
   }
   String version = kAppVersion;
   String appId = '1';

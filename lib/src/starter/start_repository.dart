@@ -6,9 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
-// import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
-import 'package:fx_dio/fx_dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
@@ -20,36 +18,29 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
   const FlutterUnitStartRepo();
 
   /// 初始化 app 的异步任务
-  /// 返回本地持久化的 AppConfigState 对象
+  /// 返回本地持久化的 AppConfig 对象
   @override
   Future<AppConfig> initApp() async {
     WidgetsFlutterBinding.ensureInitialized();
     // 滚动性能优化 1.22.0
     GestureBinding.instance.resamplingEnabled = true;
     WindowSizeAdapter.setSize();
-    // throw 'Test Debug Start Error';
-    await SpStorage.instance.initSp();
+    await SpStorage().initSp();
     await initAppMeta();
 
     registerHttpClient();
     NoteEnv().attachBridge(UnitNoteBridge());
     if (!kAppEnv.isWeb) await initDb();
     HttpUtil.instance.rebase(PathUnit.baseUrl);
-    AppConfigPo po = await SpStorage.instance.appConfig.read();
-    // List<ConnectivityResult> netConnect =
-    //     await (Connectivity().checkConnectivity());
+    AppConfigPo po = await SpStorage().appConfig.read();
     AppConfig state = AppConfig.fromPo(po);
-    // if (netConnect.isNotEmpty) {
-    //   state = state.copyWith(netConnect: netConnect.first);
-    // }
     return state;
   }
 
   Future<void> initDb() async {
     //数据库不存在，执行拷贝
     String dbPath = await AppStorage().flutter.dbpath;
-    await SpStorage.instance.initSp();
-    bool shouldCopy = await _checkShouldCopy(dbPath, SpStorage.instance.spf);
+    bool shouldCopy = await _checkShouldCopy(dbPath, SpStorage().spf);
     if (shouldCopy) {
       await _doCopyAssetsDb(dbPath);
     } else {
