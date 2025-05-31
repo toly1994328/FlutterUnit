@@ -1,6 +1,5 @@
 
 import 'package:app/app.dart';
-import 'package:app_update/app_update.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
@@ -83,8 +82,6 @@ class VersionInfo extends StatelessWidget {
               trailing: _nextIcon(context),
               onTap: () => context.push('/about_app'),
             ),
-            const Divider(height: 1,indent: 10),
-            const AppUpdatePanel(),
             const Divider(height: 1,indent: 10),
             ListTile(
               title:  Text(context.l10n.checkDatabaseNewVersion,style: labelStyle),

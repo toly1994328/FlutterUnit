@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.1.0+2002
+version: 3.1.0+2003
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -9,7 +9,7 @@ environment:
   sdk: ">=3.5.0 <4.0.0"
 workspace:
   - modules/basic_system/app
-  - modules/basic_system/app_update
+#  - modules/basic_system/app_update
   - modules/basic_system/authentication
   - modules/basic_system/components
   - modules/basic_system/l10n

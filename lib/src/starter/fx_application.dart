@@ -8,7 +8,6 @@ import 'package:widget_module/blocs/blocs.dart';
 import '../flutter_unit.dart';
 import '../navigation/view/app_bloc_provider.dart';
 import 'start_repository.dart';
-import 'package:app_update/app_update.dart';
 import 'package:note/note.dart';
 
 export 'view/splash/Flutter_unit_splash.dart';
@@ -37,8 +36,6 @@ class FxApplication with FxStarter<AppConfig> {
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
-    CheckUpdate event = CheckUpdate(appId: 1, locale: state.localeValue);
-    context.read<UpgradeBloc>().add(event);
     context.go(AppRoute.widget.url);
     sendEvent(1);
   }

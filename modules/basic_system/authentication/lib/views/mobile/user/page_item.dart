@@ -1,5 +1,4 @@
 import 'package:app/app.dart';
-import 'package:app_update/views/update_red_point.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
@@ -28,15 +27,19 @@ class MePageItem extends StatelessWidget {
             height: 10,
           ),
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_them, context.l10n.appSettings, AppRoute.settings.url),
+          _buildItem(context, TolyIcon.icon_them, context.l10n.appSettings,
+              AppRoute.settings.url),
+          const Divider(),
+          _buildItem(context, TolyIcon.icon_layout, context.l10n.dataManagement,
+              AppRoute.dataManage.url),
           const Divider(),
           _buildItem(
-              context, TolyIcon.icon_layout, context.l10n.dataManagement, AppRoute.dataManage.url),
-          const Divider(),
-          _buildItem(
-              context, TolyIcon.icon_collect, context.l10n.userCollection, AppRoute.collection.url,),
+            context,
+            TolyIcon.icon_collect,
+            context.l10n.userCollection,
+            AppRoute.collection.url,
+          ),
           Gap.sfl10,
-
           Stack(
             children: [
               _buildItem(
@@ -45,16 +48,17 @@ class MePageItem extends StatelessWidget {
                 context.l10n.versionInformation,
                 AppRoute.version.url,
               ),
-              const Positioned(left: 40, top: 10, child: UpdateRedPoint())
             ],
           ),
           const Divider(),
-          _buildItem(context, Icons.info, context.l10n.aboutApplications, AppRoute.aboutApp.url),
-
+          _buildItem(context, Icons.info, context.l10n.aboutApplications,
+              AppRoute.aboutApp.url),
           Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing, AppRoute.aboutMe.url),
+          _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing,
+              AppRoute.aboutMe.url),
           const Divider(),
-          _buildItem(context, Icons.sanitizer, context.l10n.homeAccountSupport,  AppRoute.supportMe.url),
+          _buildItem(context, Icons.sanitizer, context.l10n.homeAccountSupport,
+              AppRoute.supportMe.url),
         ],
       ),
     );
@@ -68,7 +72,7 @@ class MePageItem extends StatelessWidget {
           icon,
           color: Theme.of(context).primaryColor,
         ),
-        title: Text(title, style:  const TextStyle(fontSize: 16)),
+        title: Text(title, style: const TextStyle(fontSize: 16)),
         trailing:
             Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
         onTap: () {
