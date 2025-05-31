@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:algorithm/algorithm.dart';
 import 'package:app/app.dart';
-import 'package:app_update/app_update.dart';
 import 'package:artifact/artifact.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
@@ -41,7 +40,6 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     if (Platform.isAndroid || Platform.isIOS) {}
     String locale =
         context.read<AppConfigBloc>().state.language.locale.toString();
-    context.read<UpgradeBloc>().add(CheckUpdate(appId: 1, locale: locale));
   }
 
   @override
@@ -86,7 +84,6 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
                   onTap: _onTapBottomNav,
                   activeTab: value,
                 )),
-        const Positioned(right: 22, top: 8, child: UpdateRedPoint())
       ],
     );
   }

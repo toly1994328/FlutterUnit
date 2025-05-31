@@ -16,7 +16,6 @@ import 'package:tolyui/basic/basic.dart';
 
 import 'locale_change_menu.dart';
 import 'theme_model_switch_icon.dart';
-import 'package:app_update/app_update.dart';
 
 enum ActionType {
   settings(path: '/settings'),
@@ -67,16 +66,12 @@ class SettingIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UpdateState state = context.watch<UpgradeBloc>().state;
     Color tipColor = Colors.redAccent;
     Widget child = TolyAction(
       style: const ActionStyle.dark(),
       onTap: () => context.push(ActionType.settings.path),
       child: const Icon(Icons.settings, color: Colors.white, size: 22),
     );
-    return switch (state) {
-      ShouldUpdateState() => Badge(backgroundColor: tipColor, child: child),
-      _ => child,
-    };
+    return child;
   }
 }

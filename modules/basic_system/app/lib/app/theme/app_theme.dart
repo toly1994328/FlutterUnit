@@ -6,10 +6,10 @@ ThemeData darkTheme(AppConfig state) {
   Color scaffoldBackgroundColor = const Color(0xff010201);
 
   SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarBrightness: Brightness.dark,
-    statusBarIconBrightness: Brightness.light,
-  );
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
+      systemNavigationBarColor: Colors.transparent);
 
   return ThemeData(
     scaffoldBackgroundColor: scaffoldBackgroundColor,
@@ -61,10 +61,10 @@ ThemeData darkTheme(AppConfig state) {
 
 ThemeData lightTheme(AppConfig state) {
   SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarBrightness: Brightness.light,
-    statusBarIconBrightness: Brightness.dark,
-  );
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.transparent);
 
   String fontFamily = state.fontFamily;
   if (kAppEnv.isWindows) {

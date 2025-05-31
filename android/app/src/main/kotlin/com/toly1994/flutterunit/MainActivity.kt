@@ -1,4 +1,4 @@
-package com.toly1994.flutter_unit
+package com.toly1994.flutterunit
 
 import io.flutter.embedding.android.FlutterActivity
 

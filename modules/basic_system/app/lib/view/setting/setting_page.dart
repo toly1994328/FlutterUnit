@@ -5,7 +5,6 @@ import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'language_setting.dart';
-import 'package:app_update/app_update.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -134,15 +133,6 @@ class VersionTiled extends StatelessWidget {
     Color themeColor = Theme.of(context).primaryColor;
     Widget title = Text(context.l10n.versionInformation, style: TextStyle(fontSize: 16));
 
-    UpdateState state = context.watch<UpgradeBloc>().state;
-
-    if (state is ShouldUpdateState) {
-      title = Wrap(
-        spacing: 8,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        children: [title, AppUpgradeTips(state: state)],
-      );
-    }
 
     return ListTile(
       leading: Icon(Icons.info, color: themeColor),
@@ -153,24 +143,3 @@ class VersionTiled extends StatelessWidget {
   }
 }
 
-class AppUpgradeTips extends StatelessWidget {
-  final ShouldUpdateState state;
-
-  const AppUpgradeTips({super.key, required this.state});
-
-  @override
-  Widget build(BuildContext context) {
-    Color themeColor = Theme.of(context).primaryColor;
-    bool downloading = state.isDownloading;
-    String text = downloading ? state.progressDisplay : '新版本';
-    Color color = downloading ? themeColor : Colors.redAccent;
-    return Container(
-        decoration:
-            BoxDecoration(color: color, borderRadius: BorderRadius.circular(4)),
-        padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-        child: Text(
-          text,
-          style: TextStyle(color: Colors.white, fontSize: 10, height: 1),
-        ));
-  }
-}

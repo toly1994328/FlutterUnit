@@ -1,6 +1,5 @@
 import 'package:app/app.dart';
 import 'package:note/note.dart';
-import 'package:app_update/app_update.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:storage/storage.dart';
@@ -30,8 +29,6 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
         BlocProvider<AuthBloc>(
             create: (_) => AuthBloc(repository: HttpAuthRepository())),
         BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
-        BlocProvider<UpgradeBloc>(
-            create: (_) => UpgradeBloc(api: UnitUpgradeApi())),
         BlocProvider<UserBloc>(create: (_) => UserBloc()),
         BlocProvider<NewsBloc>(create: (_) => NewsBloc()..initByCache()),
 
