@@ -65,7 +65,7 @@ dependencies:
 
   # 视图展示
   tolyui: 0.0.4+10   # tolyui
-  refresh: ^1.0.1 # 下拉刷新
+  tolyui_refresh: 0.0.1+1 # 下拉刷新
   dash_painter: ^1.0.2 # 虚线
   flutter_star: ^1.0.2 # 星星组件
   flutter_spinkit: ^5.2.0 # loading

@@ -876,14 +876,6 @@ packages:
       relative: true
     source: path
     version: "0.4.2"
-  refresh:
-    dependency: "direct main"
-    description:
-      name: refresh
-      sha256: cbf2254cd1a54135855c9a544af1e1c25472781a9f2c973e56b2068907d669dc
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.1"
   screen_retriever:
     dependency: transitive
     description:
@@ -1193,6 +1185,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.2.0+3"
+  tolyui_refresh:
+    dependency: "direct main"
+    description:
+      path: "D:\\Projects\\Flutter\\Fx\\toly_ui\\modules\\tolyui_refresh"
+      relative: false
+    source: path
+    version: "0.0.1+1"
   tolyui_rx_layout:
     dependency: transitive
     description:

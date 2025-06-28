@@ -76,7 +76,6 @@ class _StandardHomePageState extends State<StandardHomePage>
           Expanded(
             child: NestedScrollView(
                 floatHeaderSlivers: true,
-                physics: const BouncingScrollPhysics(),
                 headerSliverBuilder: _buildHeader,
                 body: const WidgetPage()),
           ),
@@ -100,7 +99,7 @@ class _StandardHomePageState extends State<StandardHomePage>
         SliverToBoxAdapter(
           child: Container(
             height: 168,
-            color: Colors.white,
+            color: isDark ? Colors.black : Colors.white,
             child: widget.heard,
           ),
         ),
