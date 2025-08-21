@@ -1,1 +1,0 @@
-{"name":"ShortcutRegistrar","path":"/src/widgets/shortcuts.dart","parents":["StatefulWidget","Widget"],"desc":" A widget that holds a [ShortcutRegistry] which allows descendants to add, remove, or replace shortcuts.","fields":[{"name":"child","type":"Widget","required":true,"desc":"The widget below this widget in the tree."}],"id":512,"lever":3,"family":3,"linkIds":[],"nodes":[]}

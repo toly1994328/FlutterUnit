@@ -1,1 +1,0 @@
-{"name":"Center","path":"/src/widgets/basic.dart","parents":["Align","SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"将其子项在自身内居中的小部件。","fields":[],"id":86,"localName":"居中组件","lever":3,"family":2,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"Center基本使用","desc":["【child】 : 孩子组件   【Widget】"]}]}

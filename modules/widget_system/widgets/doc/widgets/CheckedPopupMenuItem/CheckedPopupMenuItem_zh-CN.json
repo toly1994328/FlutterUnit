@@ -1,1 +1,0 @@
-{"name":"CheckedPopupMenuItem","path":"/src/material/popup_menu.dart","parents":["PopupMenuItem","PopupMenuEntry","StatefulWidget","Widget"],"desc":"Material Design 弹出菜单中带有勾选标记的项目。","fields":[{"name":"checked","type":"bool","required":true,"desc":"是否在菜单项旁边显示勾选标记。"}],"id":377,"localName":"CheckedPopupMenuItem","lever":3,"family":3,"linkIds":[],"nodes":[]}

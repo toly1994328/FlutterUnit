@@ -1,1 +1,0 @@
-{"name":"CheckboxTheme","path":"/src/material/checkbox_theme.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"将复选框主题应用于后代 [Checkbox] 小部件。","fields":[{"name":"data","type":"CheckboxThemeData","required":true,"desc":"用于所有后代 [Checkbox] 小部件的属性。"}],"id":376,"localName":"CheckboxTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

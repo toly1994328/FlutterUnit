@@ -1,1 +1,0 @@
-{"name":"AbstractLayoutBuilder","path":"/src/widgets/layout_builder.dart","abstract":true,"parents":["RenderObjectWidget","Widget"],"desc":" An abstract superclass for widgets that defer their building until layout.","fields":[],"id":286,"lever":3,"family":3,"linkIds":[],"nodes":[]}

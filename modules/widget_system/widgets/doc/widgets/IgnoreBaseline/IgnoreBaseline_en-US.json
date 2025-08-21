@@ -1,1 +1,0 @@
-{"name":"IgnoreBaseline","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":" A widget that causes the parent to ignore the [child] for the purposes of baseline alignment.","fields":[],"id":428,"lever":3,"family":3,"linkIds":[],"nodes":[]}

@@ -1,1 +1,0 @@
-{"name":"ScrollNotificationObserver","path":"/src/widgets/scroll_notification_observer.dart","parents":["StatefulWidget","Widget"],"desc":"当后代滚动时通知其监听器。","fields":[{"name":"child","type":"Widget","required":true,"desc":"此小部件下方的子树。"}],"id":495,"localName":"ScrollNotificationObserver","lever":3,"family":3,"linkIds":[],"nodes":[]}

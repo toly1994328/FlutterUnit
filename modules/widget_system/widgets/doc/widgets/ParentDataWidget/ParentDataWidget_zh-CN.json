@@ -1,1 +1,0 @@
-{"name":"ParentDataWidget","path":"/src/widgets/framework.dart","abstract":true,"parents":["ProxyWidget","Widget"],"desc":"将 [ParentData] 信息挂钩到 [RenderObjectWidget] 子项的小部件的基类。","fields":[],"id":347,"localName":"父数据组件","lever":1,"family":5,"linkIds":[106,109,108,315],"nodes":[{"file":"node1_base.dart","name":"ParentDataWidget 介绍","desc":["【child】 : 子组件   【Widget】"]}]}

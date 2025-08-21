@@ -1,1 +1,0 @@
-{"name":"IndexedSemantics","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":" A widget that annotates the child semantics with an index.","fields":[{"name":"index","type":"int","required":true,"desc":"The index used to annotate the first child semantics node."}],"id":431,"lever":3,"family":3,"linkIds":[],"nodes":[]}

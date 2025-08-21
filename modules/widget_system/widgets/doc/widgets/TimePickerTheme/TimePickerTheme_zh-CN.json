@@ -1,1 +1,0 @@
-{"name":"TimePickerTheme","path":"/src/material/time_picker_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"为此小部件子树中使用 [showTimePicker] 显示的时间选择器定义配置的继承小部件。","fields":[{"name":"data","type":"TimePickerThemeData","required":true,"desc":"后代时间选择器小部件的属性。"}],"id":547,"localName":"TimePickerTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

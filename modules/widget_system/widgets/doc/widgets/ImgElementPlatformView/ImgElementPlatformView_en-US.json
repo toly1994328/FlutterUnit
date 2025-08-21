@@ -1,1 +1,0 @@
-{"name":"ImgElementPlatformView","path":"/src/widgets/_web_image_web.dart","parents":["StatelessWidget","Widget"],"desc":" Displays an `<img>` element with `src` set to [src].","fields":[{"name":"src","type":"String?","desc":"The `src` URL for the `<img>` tag."}],"id":429,"lever":3,"family":3,"linkIds":[],"nodes":[]}

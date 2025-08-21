@@ -1,1 +1,0 @@
-{"name":"SearchBarTheme","path":"/src/material/search_bar_theme.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"将搜索栏主题应用于后代 [SearchBar] 小部件。","fields":[{"name":"data","type":"SearchBarThemeData","required":true,"desc":"用于所有后代 [SearchBar] 小部件的属性。"}],"id":499,"localName":"SearchBarTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}
