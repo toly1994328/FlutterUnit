@@ -1,1 +1,0 @@
-{"name":"DrawerTheme","path":"/src/material/drawer_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"为此小部件子树中的 [Drawer] 定义视觉属性的继承小部件。","fields":[{"name":"data","type":"DrawerThemeData","required":true,"desc":"指定后代 [Drawer] 小部件的背景颜色、纱幕颜色、高度和形状。"}],"id":409,"localName":"DrawerTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

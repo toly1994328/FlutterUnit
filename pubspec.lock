@@ -1216,6 +1216,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.4.0"
+  unit_widgets_display:
+    dependency: transitive
+    description:
+      name: unit_widgets_display
+      sha256: f5a70c4933f324e944d71a405f61c907a5dc0c5f7c0eedaf260d823963856b82
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1"
   url_launcher:
     dependency: "direct main"
     description:

@@ -1,1 +1,0 @@
-{"name":"BadgeTheme","path":"/src/material/badge_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"一个继承小部件，用于覆盖此小部件子树中 [Badge] 的默认颜色样式和大小参数。","fields":[{"name":"data","type":"BadgeThemeData","required":true,"desc":"为后代 [Badge] 小部件指定默认颜色和大小覆盖。"}],"id":368,"localName":"BadgeTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

@@ -1,1 +1,0 @@
-{"name":"SingleChildRenderObjectWidget","path":"/src/widgets/framework.dart","abstract":true,"parents":["RenderObjectWidget","Widget"],"desc":"配置具有单个子插槽的 [RenderObject] 子类的 [RenderObjectWidget] 的超类。","fields":[{"name":"child","type":"Widget?","desc":"树中此小部件下方的小部件。"}],"id":514,"localName":"SingleChildRenderObjectWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

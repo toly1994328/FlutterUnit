@@ -1,1 +1,0 @@
-{"name":"DataTableTheme","path":"/src/material/data_table_theme.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"将数据表主题应用于后代 [DataTable] 小部件。","fields":[{"name":"data","type":"DataTableThemeData","required":true,"desc":"用于所有后代 [DataTable] 小部件的属性。"}],"id":398,"localName":"DataTableTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

@@ -1,1 +1,0 @@
-{"name":"BackButtonIcon","path":"/src/material/action_buttons.dart","parents":["StatelessWidget","Widget"],"desc":"适合当前 [TargetPlatform] 的\"返回\"图标。","fields":[],"id":272,"localName":"返回按钮图标","lever":1,"family":0,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"BackButtonIcon 效果","desc":["通过 _ActionIcon 组件根据 ActionIconTheme 主题，来适配不同平台的返回按钮图标。"]}]}

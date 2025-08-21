@@ -1,1 +1,0 @@
-{"name":"ExcludeSemantics","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"丢弃其所有后代语义的小部件。","fields":[{"name":"excluding","type":"bool","required":true,"desc":"此小部件是否在语义树中被排除。"}],"id":416,"localName":"ExcludeSemantics","lever":3,"family":3,"linkIds":[],"nodes":[]}

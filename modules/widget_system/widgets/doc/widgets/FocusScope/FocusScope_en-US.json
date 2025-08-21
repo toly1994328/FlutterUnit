@@ -1,1 +1,0 @@
-{"name":"FocusScope","path":"/src/widgets/focus_scope.dart","parents":["Focus","StatefulWidget","Widget"],"desc":" A [FocusScope] is similar to a [Focus], but also serves as a scope for its descendants, restricting focus traversal to the scoped controls.","fields":[],"id":421,"lever":3,"family":3,"linkIds":[],"nodes":[]}

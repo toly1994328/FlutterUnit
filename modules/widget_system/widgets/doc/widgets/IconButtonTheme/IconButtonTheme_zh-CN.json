@@ -1,1 +1,0 @@
-{"name":"IconButtonTheme","path":"/src/material/icon_button_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"覆盖其 [IconButton] 后代的默认 [ButtonStyle]。","fields":[{"name":"data","type":"IconButtonThemeData","required":true,"desc":"此主题的配置。"}],"id":427,"localName":"IconButtonTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

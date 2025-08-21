@@ -1,1 +1,0 @@
-{"name":"TextMagnifier","path":"/src/material/magnifier.dart","parents":["StatefulWidget","Widget"],"desc":"由原生 Android 放大镜规则决定位置的 [Magnifier]。","fields":[{"name":"magnifierInfo","type":"ValueNotifier<MagnifierInfo>","required":true,"desc":"用户触摸的当前状态。"}],"id":540,"localName":"TextMagnifier","lever":3,"family":3,"linkIds":[],"nodes":[]}

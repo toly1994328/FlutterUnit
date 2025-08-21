@@ -27,7 +27,6 @@ workspace:
   - modules/tools_system/treasure_tools
 
   - modules/widget_system/widget_module
-  - modules/widget_system/widgets
   - modules/knowledge_system/note
 
 dependencies:

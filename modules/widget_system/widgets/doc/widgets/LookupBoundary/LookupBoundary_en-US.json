@@ -1,1 +1,0 @@
-{"name":"LookupBoundary","path":"/src/widgets/lookup_boundary.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":" A lookup boundary controls what entities are visible to descendants of the boundary via the static lookup methods provided by the boundary.","fields":[],"id":439,"lever":3,"family":3,"linkIds":[],"nodes":[]}

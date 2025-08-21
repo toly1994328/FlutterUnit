@@ -1,1 +1,0 @@
-{"name":"SliverToBoxAdapter","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":" A sliver that contains a single box widget.","fields":[],"id":189,"lever":4,"family":4,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"Basic Usage of SliverToBoxAdapter","desc":["【child】: Child component   【Widget】"]}]}

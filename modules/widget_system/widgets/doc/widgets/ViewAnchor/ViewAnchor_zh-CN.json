@@ -1,1 +1,0 @@
-{"name":"ViewAnchor","path":"/src/widgets/view.dart","parents":["StatelessWidget","Widget"],"desc":"用侧边 [View] 装饰 [child] 小部件。","fields":[{"name":"view","type":"Widget?","desc":"定义锚定到此小部件的视图的小部件。"},{"name":"child","type":"Widget","required":true,"desc":"树中此小部件下方的小部件。"}],"id":556,"localName":"ViewAnchor","lever":3,"family":3,"linkIds":[],"nodes":[]}

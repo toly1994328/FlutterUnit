@@ -11,6 +11,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  unit_widgets_display: ^0.0.1
   widget_repository:
     path: ../widget_repository
 

@@ -1,1 +1,0 @@
-{"name":"ObstructingPreferredSizeWidget","path":"/src/cupertino/page_scaffold.dart","abstract":true,"parents":["Object","PreferredSizeWidget","Widget"],"desc":" Widget that has a preferred size and reports whether it fully obstructs widgets behind it.","fields":[],"id":462,"lever":3,"family":3,"linkIds":[],"nodes":[]}

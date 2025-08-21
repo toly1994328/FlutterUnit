@@ -1,1 +1,0 @@
-{"name":"HeroControllerScope","path":"/src/widgets/navigator.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"托管英雄控制器的继承小部件。","fields":[{"name":"controller","type":"HeroController?","desc":"托管在此小部件内的英雄控制器。"}],"id":425,"localName":"HeroControllerScope","lever":3,"family":3,"linkIds":[],"nodes":[]}

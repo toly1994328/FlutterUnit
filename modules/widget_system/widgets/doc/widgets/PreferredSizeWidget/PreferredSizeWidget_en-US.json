@@ -1,1 +1,0 @@
-{"name":"PreferredSizeWidget","path":"/src/widgets/preferred_size.dart","abstract":true,"parents":["Object","Widget"],"desc":" An interface for widgets that can return the size this widget would prefer if it were otherwise unconstrained.","fields":[],"id":473,"lever":3,"family":3,"linkIds":[],"nodes":[]}

@@ -1,1 +1,0 @@
-{"name":"Expanded","path":"/src/widgets/basic.dart","parents":["Flexible","ParentDataWidget","ProxyWidget","Widget"],"desc":"扩展 [Row]、[Column] 或 [Flex] 的子项，使子项填充可用空间的小部件。","fields":[],"id":106,"localName":"延展组件","lever":4,"family":5,"linkIds":[94,109],"nodes":[{"file":"node1_base.dart","name":"Expanded基本使用","desc":["【child】 : 孩子   【Widget】","【flex】 : 剩余空间分配占比   【int】"]}]}

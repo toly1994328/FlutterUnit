@@ -1,1 +1,0 @@
-{"name":"TextMagnifier","path":"/src/material/magnifier.dart","parents":["StatefulWidget","Widget"],"desc":" A [Magnifier] positioned by rules dictated by the native Android magnifier.","fields":[{"name":"magnifierInfo","type":"ValueNotifier<MagnifierInfo>","required":true,"desc":"The current status of the user's touch."}],"id":540,"lever":3,"family":3,"linkIds":[],"nodes":[]}

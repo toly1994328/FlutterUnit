@@ -1,1 +1,0 @@
-{"name":"ProxyWidget","path":"/src/widgets/framework.dart","abstract":true,"parents":["Widget"],"desc":"具有提供给它的子小部件的小部件，而不是构建新小部件。","fields":[{"name":"child","type":"Widget","required":true,"desc":"树中此小部件下方的小部件。"}],"id":476,"localName":"ProxyWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}
