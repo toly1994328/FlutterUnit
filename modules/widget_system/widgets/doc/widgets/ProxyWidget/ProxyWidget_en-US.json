@@ -1,0 +1,1 @@
+{"name":"ProxyWidget","path":"/src/widgets/framework.dart","abstract":true,"parents":["Widget"],"desc":" A widget that has a child widget provided to it, instead of building a new widget.","fields":[{"name":"child","type":"Widget","required":true,"desc":"The widget below this widget in the tree."}],"id":476,"lever":3,"family":3,"linkIds":[],"nodes":[]}

@@ -1,0 +1,1 @@
+{"name":"SliverEnsureSemantics","path":"/src/widgets/sliver.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":" A sliver that ensures its sliver child is included in the semantics tree.","fields":[],"id":517,"lever":3,"family":3,"linkIds":[],"nodes":[]}

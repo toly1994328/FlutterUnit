@@ -19,23 +19,19 @@ class WidgetInspectorDemo extends StatelessWidget {
     );
   }
 
-  // Widget _selectButtonBuilder(BuildContext context,
-  //     {required VoidCallback onPressed, bool? isLeftAligned}) {
-  //   onPressed();
-  //   return Container();
-  // }
-
-  Widget _tapBehaviorButtonBuilder(BuildContext context,
-      {required VoidCallback onPressed,
-      required bool selectionOnTapEnabled,
-      required String semanticLabel}) {
+  Widget _tapBehaviorButtonBuilder(
+    BuildContext context, {
+    required VoidCallback onPressed,
+    required bool selectionOnTapEnabled,
+    required String semanticsLabel,
+  }) {
     return Container();
   }
 
   Widget _selectButtonBuilder(BuildContext context,
-      {bool? isLeftAligned,
-      required VoidCallback onPressed,
-      required String semanticLabel}) {
+      {required VoidCallback onPressed,
+      required String semanticsLabel,
+      bool? usesDefaultAlignment}) {
     return Container();
   }
 }

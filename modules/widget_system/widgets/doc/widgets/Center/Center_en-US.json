@@ -1,0 +1,1 @@
+{"name":"Center","path":"/src/widgets/basic.dart","parents":["Align","SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":" A widget that centers its child within itself.","fields":[],"id":86,"lever":3,"family":2,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"Basic Usage of Center","desc":["【child】: Child component   【Widget】"]}]}

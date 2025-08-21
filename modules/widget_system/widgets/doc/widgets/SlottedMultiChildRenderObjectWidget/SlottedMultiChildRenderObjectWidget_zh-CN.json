@@ -1,0 +1,1 @@
+{"name":"SlottedMultiChildRenderObjectWidget","path":"/src/widgets/slotted_render_object_widget.dart","abstract":true,"parents":["RenderObjectWidget","Widget"],"desc":"配置在不同插槽中组织其子项的 [RenderObject] 子类的 [RenderObjectWidget] 的超类。","fields":[],"id":527,"localName":"SlottedMultiChildRenderObjectWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

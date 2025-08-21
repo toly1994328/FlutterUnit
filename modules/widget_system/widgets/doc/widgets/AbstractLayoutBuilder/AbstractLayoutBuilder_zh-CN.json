@@ -1,0 +1,1 @@
+{"name":"AbstractLayoutBuilder","path":"/src/widgets/layout_builder.dart","abstract":true,"parents":["RenderObjectWidget","Widget"],"desc":"将其构建推迟到布局的小部件的抽象超类。","fields":[],"id":286,"localName":"AbstractLayoutBuilder","lever":3,"family":3,"linkIds":[],"nodes":[]}

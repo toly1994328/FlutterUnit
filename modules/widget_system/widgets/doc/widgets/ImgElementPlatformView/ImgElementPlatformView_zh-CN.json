@@ -1,0 +1,1 @@
+{"name":"ImgElementPlatformView","path":"/src/widgets/_web_image_web.dart","parents":["StatelessWidget","Widget"],"desc":"显示 `src` 设置为 [src] 的 `<img>` 元素。","fields":[{"name":"src","type":"String?","desc":"`<img>` 标签的 `src` URL。"}],"id":429,"localName":"ImgElementPlatformView","lever":3,"family":3,"linkIds":[],"nodes":[]}

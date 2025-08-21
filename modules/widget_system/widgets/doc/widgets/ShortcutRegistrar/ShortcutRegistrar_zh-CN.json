@@ -1,0 +1,1 @@
+{"name":"ShortcutRegistrar","path":"/src/widgets/shortcuts.dart","parents":["StatefulWidget","Widget"],"desc":"持有 [ShortcutRegistry] 的小部件，允许后代添加、删除或替换快捷方式。","fields":[{"name":"child","type":"Widget","required":true,"desc":"树中此小部件下方的小部件。"}],"id":512,"localName":"ShortcutRegistrar","lever":3,"family":3,"linkIds":[],"nodes":[]}

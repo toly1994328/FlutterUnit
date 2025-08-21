@@ -1,0 +1,1 @@
+{"name":"MergeSemantics","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"合并其后代语义的小部件。","fields":[],"id":450,"localName":"MergeSemantics","lever":3,"family":3,"linkIds":[],"nodes":[]}

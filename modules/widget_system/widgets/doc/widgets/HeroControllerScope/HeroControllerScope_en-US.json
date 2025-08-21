@@ -1,0 +1,1 @@
+{"name":"HeroControllerScope","path":"/src/widgets/navigator.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":" An inherited widget to host a hero controller.","fields":[{"name":"controller","type":"HeroController?","desc":"The hero controller that is hosted inside this widget."}],"id":425,"lever":3,"family":3,"linkIds":[],"nodes":[]}

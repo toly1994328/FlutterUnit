@@ -1,0 +1,1 @@
+{"name":"LeafRenderObjectWidget","path":"/src/widgets/framework.dart","abstract":true,"parents":["RenderObjectWidget","Widget"],"desc":"配置没有子项的 [RenderObject] 子类的 [RenderObjectWidget] 的超类。","fields":[],"id":437,"localName":"LeafRenderObjectWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

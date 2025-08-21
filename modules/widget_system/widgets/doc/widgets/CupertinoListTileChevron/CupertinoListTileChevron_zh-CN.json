@@ -1,0 +1,1 @@
+{"name":"CupertinoListTileChevron","path":"/src/cupertino/list_tile.dart","parents":["StatelessWidget","Widget"],"desc":"用于表示 `CupertinoListTile` 是带有操作的按钮的典型 iOS 尾随小部件。","fields":[],"id":388,"localName":"CupertinoListTileChevron","lever":3,"family":3,"linkIds":[],"nodes":[]}

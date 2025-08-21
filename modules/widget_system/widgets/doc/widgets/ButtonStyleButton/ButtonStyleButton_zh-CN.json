@@ -1,0 +1,84 @@
+{
+  "name": "ButtonStyleButton",
+  "path": "/src/material/button_style_button.dart",
+  "abstract": true,
+  "parents": [
+    "StatefulWidget",
+    "Widget"
+  ],
+  "desc": "样式由 [ButtonStyle] 对象定义的按钮的基础 [StatefulWidget] 类。",
+  "fields": [
+    {
+      "name": "onPressed",
+      "type": "VoidCallback?",
+      "desc": "点击或以其他方式激活按钮时调用。"
+    },
+    {
+      "name": "onLongPress",
+      "type": "VoidCallback?",
+      "desc": "长按按钮时调用。"
+    },
+    {
+      "name": "onHover",
+      "type": "ValueChanged<bool>?",
+      "desc": "指针进入或退出按钮响应区域时调用。"
+    },
+    {
+      "name": "onFocusChange",
+      "type": "ValueChanged<bool>?",
+      "desc": "焦点改变时调用的处理程序。"
+    },
+    {
+      "name": "style",
+      "type": "ButtonStyle?",
+      "desc": "自定义此按钮的外观。"
+    },
+    {
+      "name": "clipBehavior",
+      "type": "Clip?",
+      "desc": "{@macro flutter.material.Material.clipBehavior}"
+    },
+    {
+      "name": "focusNode",
+      "type": "FocusNode?",
+      "desc": "{@macro flutter.widgets.Focus.focusNode}"
+    },
+    {
+      "name": "autofocus",
+      "type": "bool",
+      "required": true,
+      "desc": "{@macro flutter.widgets.Focus.autofocus}"
+    },
+    {
+      "name": "statesController",
+      "type": "MaterialStatesController?",
+      "desc": "{@macro flutter.material.inkwell.statesController}"
+    },
+    {
+      "name": "isSemanticButton",
+      "type": "bool?",
+      "desc": "确定此子树是否表示按钮。"
+    },
+    {
+      "name": "iconAlignment",
+      "type": "IconAlignment?",
+      "desc": "{@macro flutter.material.ButtonStyleButton.iconAlignment}"
+    },
+    {
+      "name": "tooltip",
+      "type": "String?",
+      "desc": "描述按下或悬停按钮时将发生的操作的文本。"
+    },
+    {
+      "name": "child",
+      "type": "Widget?",
+      "desc": "通常是按钮的标签。"
+    }
+  ],
+  "id": 372,
+  "localName": "ButtonStyleButton",
+  "lever": 3,
+  "family": 3,
+  "linkIds": [],
+  "nodes": []
+}

@@ -1,0 +1,1 @@
+{"name":"SelectionRegistrarScope","path":"/src/widgets/selection_container.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"为子树托管 [SelectionRegistrar] 的继承小部件。","fields":[{"name":"registrar","type":"SelectionRegistrar?","desc":"此小部件托管的 [SelectionRegistrar]。"}],"id":508,"localName":"SelectionRegistrarScope","lever":3,"family":3,"linkIds":[],"nodes":[]}

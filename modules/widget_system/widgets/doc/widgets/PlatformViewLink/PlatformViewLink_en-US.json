@@ -1,0 +1,1 @@
+{"name":"PlatformViewLink","path":"/src/widgets/platform_view.dart","parents":["StatefulWidget","Widget"],"desc":" Links a platform view with the Flutter framework.","fields":[{"name":"viewType","type":"String","required":true,"desc":"The unique identifier for the view type to be embedded."}],"id":468,"lever":3,"family":3,"linkIds":[],"nodes":[]}

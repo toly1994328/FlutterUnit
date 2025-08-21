@@ -1,0 +1,1 @@
+{"name":"RootWidget","path":"/src/widgets/binding.dart","parents":["Widget"],"desc":"小部件树根部的小部件。","fields":[{"name":"child","type":"Widget?","desc":"树中此小部件下方的小部件。"},{"name":"debugShortDescription","type":"String?","desc":"调试辅助工具使用的此小部件的简短描述。"}],"id":492,"localName":"RootWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

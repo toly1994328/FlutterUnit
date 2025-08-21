@@ -1,0 +1,1 @@
+{"name":"FocusTraversalOrder","path":"/src/widgets/focus_traversal.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"描述其子子树应遍历顺序的继承小部件。","fields":[{"name":"order","type":"FocusOrder","required":true,"desc":"此 [FocusTraversalOrder] 的小部件后代的顺序。"}],"id":423,"localName":"FocusTraversalOrder","lever":3,"family":3,"linkIds":[],"nodes":[]}

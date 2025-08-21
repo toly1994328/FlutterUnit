@@ -1,0 +1,1 @@
+{"name":"ScaleTransition","path":"/src/widgets/transitions.dart","parents":["MatrixTransition","AnimatedWidget","StatefulWidget","Widget"],"desc":"对变换小部件的缩放进行动画处理。","fields":[],"id":91,"localName":"缩放变换","lever":3,"family":1,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"ScaleTransition基本使用","desc":["【child】 : 孩子组件   【Widget】","【scale】 : 动画   【Animation<double>】"]}]}

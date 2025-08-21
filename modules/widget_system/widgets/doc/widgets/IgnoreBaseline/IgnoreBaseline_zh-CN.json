@@ -1,0 +1,1 @@
+{"name":"IgnoreBaseline","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"导致父级为了基线对齐目的而忽略 [child] 的小部件。","fields":[],"id":428,"localName":"IgnoreBaseline","lever":3,"family":3,"linkIds":[],"nodes":[]}

@@ -1,0 +1,1 @@
+{"name":"SlottedMultiChildRenderObjectWidget","path":"/src/widgets/slotted_render_object_widget.dart","abstract":true,"parents":["RenderObjectWidget","Widget"],"desc":" A superclass for [RenderObjectWidget]s that configure [RenderObject] subclasses that organize their children in different slots.","fields":[],"id":527,"lever":3,"family":3,"linkIds":[],"nodes":[]}

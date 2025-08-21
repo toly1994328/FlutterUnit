@@ -1,0 +1,1 @@
+{"name":"MergeSemantics","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":" A widget that merges the semantics of its descendants.","fields":[],"id":450,"lever":3,"family":3,"linkIds":[],"nodes":[]}

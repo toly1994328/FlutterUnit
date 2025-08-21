@@ -1,0 +1,1 @@
+{"name":"AnimatedWidget","path":"/src/widgets/transitions.dart","abstract":true,"parents":["StatefulWidget","Widget"],"desc":" A widget that rebuilds when the given [Listenable] changes value.","fields":[{"name":"listenable","type":"Listenable","required":true,"desc":"The [Listenable] to which this widget is listening."}],"id":362,"lever":3,"family":3,"linkIds":[],"nodes":[]}

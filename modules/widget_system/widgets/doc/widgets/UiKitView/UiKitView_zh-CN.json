@@ -1,0 +1,1 @@
+{"name":"UiKitView","path":"/src/widgets/platform_view.dart","parents":["_DarwinView","StatefulWidget","Widget"],"desc":"在小部件层次结构中嵌入 iOS 视图。","fields":[],"id":553,"localName":"UiKitView","lever":3,"family":3,"linkIds":[],"nodes":[]}

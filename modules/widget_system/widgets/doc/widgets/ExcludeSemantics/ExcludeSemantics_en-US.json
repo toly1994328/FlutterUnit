@@ -1,0 +1,1 @@
+{"name":"ExcludeSemantics","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":" A widget that drops all the semantics of its descendants.","fields":[{"name":"excluding","type":"bool","required":true,"desc":"Whether this widget is excluded in the semantics tree."}],"id":416,"lever":3,"family":3,"linkIds":[],"nodes":[]}

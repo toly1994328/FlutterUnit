@@ -58,7 +58,7 @@ class _StandardHomePageState extends State<StandardHomePage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final AppBarTheme appBarTheme = AppBarTheme.of(context);
+    final AppBarThemeData appBarTheme = AppBarTheme.of(context);
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     double bottom = MediaQuery.of(context).padding.bottom;
     return Scaffold(

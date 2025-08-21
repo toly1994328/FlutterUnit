@@ -1,0 +1,1 @@
+{"name":"LookupBoundary","path":"/src/widgets/lookup_boundary.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"查找边界控制通过边界提供的静态查找方法对边界后代可见的实体。","fields":[],"id":439,"localName":"LookupBoundary","lever":3,"family":3,"linkIds":[],"nodes":[]}
