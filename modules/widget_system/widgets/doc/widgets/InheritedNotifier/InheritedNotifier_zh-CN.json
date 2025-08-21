@@ -1,0 +1,1 @@
+{"name":"InheritedNotifier","path":"/src/widgets/inherited_notifier.dart","abstract":true,"parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"[Listenable] [notifier] 的继承小部件，当 [notifier] 被触发时更新其依赖项。","fields":[{"name":"notifier","type":"T?","desc":"要监听的 [Listenable] 对象。"}],"id":433,"localName":"InheritedNotifier","lever":3,"family":3,"linkIds":[],"nodes":[]}

@@ -1,0 +1,1 @@
+{"name":"CheckboxTheme","path":"/src/material/checkbox_theme.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":" Applies a checkbox theme to descendant [Checkbox] widgets.","fields":[{"name":"data","type":"CheckboxThemeData","required":true,"desc":"The properties used for all descendant [Checkbox] widgets."}],"id":376,"lever":3,"family":3,"linkIds":[],"nodes":[]}

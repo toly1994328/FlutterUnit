@@ -1,0 +1,1 @@
+{"name":"TextButtonTheme","path":"/src/material/text_button_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"覆盖其 [TextButton] 后代的默认 [ButtonStyle]。","fields":[{"name":"data","type":"TextButtonThemeData","required":true,"desc":"此主题的配置。"}],"id":539,"localName":"TextButtonTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

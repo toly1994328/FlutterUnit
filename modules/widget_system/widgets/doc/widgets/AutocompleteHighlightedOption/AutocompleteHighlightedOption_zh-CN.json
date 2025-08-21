@@ -1,0 +1,1 @@
+{"name":"AutocompleteHighlightedOption","path":"/src/widgets/autocomplete.dart","parents":["InheritedNotifier","InheritedWidget","ProxyWidget","Widget"],"desc":"用于指示应为键盘导航突出显示哪个自动完成选项的继承小部件。","fields":[],"id":364,"localName":"AutocompleteHighlightedOption","lever":3,"family":3,"linkIds":[],"nodes":[]}

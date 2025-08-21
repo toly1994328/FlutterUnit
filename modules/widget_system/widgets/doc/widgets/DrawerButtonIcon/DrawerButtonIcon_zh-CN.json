@@ -1,0 +1,1 @@
+{"name":"DrawerButtonIcon","path":"/src/material/action_buttons.dart","parents":["StatelessWidget","Widget"],"desc":"适合当前 [TargetPlatform] 的\"抽屉\"图标。","fields":[],"id":273,"localName":"抽屉按钮图标","lever":1,"family":0,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"DrawerButtonIcon 效果","desc":["通过 _ActionIcon 组件根据 ActionIconTheme 主题，来适配不同平台的抽屉按钮图标。"]}]}

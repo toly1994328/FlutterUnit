@@ -1,0 +1,44 @@
+{
+  "name": "AnimatedSlide",
+  "path": "/src/widgets/implicit_animations.dart",
+  "parents": [
+    "ImplicitlyAnimatedWidget",
+    "StatefulWidget",
+    "Widget"
+  ],
+  "desc": " Widget which automatically transitions the child's offset relative to its normal position whenever the given offset changes.",
+  "fields": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "desc": "The widget below this widget in the tree."
+    },
+    {
+      "name": "offset",
+      "type": "Offset",
+      "required": true,
+      "desc": "The target offset. The child will be translated horizontally by `width * dx` and vertically by `height * dy`"
+    }
+  ],
+  "id": 247,
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "Slide Animation Effect",
+      "desc": [
+        "In this case, drag to adjust the x, y parameters to view the animation effect. The offset = x, y * the width and height of the box.",
+        "【child】: child component   【Widget】",
+        "【duration】: animation duration   【Duration】",
+        "【onEnd】: animation end callback   【Function()】",
+        "【curve】: animation curve   【Duration】",
+        "【offset】: offset   【Offset】"
+      ]
+    }
+  ]
+}

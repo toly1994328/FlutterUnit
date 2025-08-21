@@ -1,0 +1,1 @@
+{"name":"InheritedCupertinoTheme","path":"/src/cupertino/theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"为所有后代提供 [CupertinoTheme]。","fields":[{"name":"theme","type":"CupertinoTheme","required":true,"desc":"提供给树中较低小部件的 [CupertinoTheme]。"}],"id":432,"localName":"InheritedCupertinoTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

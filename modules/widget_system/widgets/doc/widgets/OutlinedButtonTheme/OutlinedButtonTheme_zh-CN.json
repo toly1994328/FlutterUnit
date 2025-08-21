@@ -1,0 +1,1 @@
+{"name":"OutlinedButtonTheme","path":"/src/material/outlined_button_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"覆盖其 [OutlinedButton] 后代的默认 [ButtonStyle]。","fields":[{"name":"data","type":"OutlinedButtonThemeData","required":true,"desc":"此主题的配置。"}],"id":463,"localName":"OutlinedButtonTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

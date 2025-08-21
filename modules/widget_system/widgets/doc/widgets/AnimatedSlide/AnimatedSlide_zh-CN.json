@@ -1,0 +1,45 @@
+{
+  "name": "AnimatedSlide",
+  "path": "/src/widgets/implicit_animations.dart",
+  "parents": [
+    "ImplicitlyAnimatedWidget",
+    "StatefulWidget",
+    "Widget"
+  ],
+  "desc": "当给定偏移量发生变化时，自动过渡子项相对于其正常位置的偏移量的小部件。",
+  "fields": [
+    {
+      "name": "child",
+      "type": "Widget?",
+      "desc": "树中此小部件下方的小部件。"
+    },
+    {
+      "name": "offset",
+      "type": "Offset",
+      "required": true,
+      "desc": "目标偏移量。子项将水平平移 `width * dx`，垂直平移 `height * dy`"
+    }
+  ],
+  "id": 247,
+  "localName": "滑动动画",
+  "lever": 3,
+  "family": 1,
+  "linkIds": [
+    120,
+    201
+  ],
+  "nodes": [
+    {
+      "file": "node1.dart",
+      "name": "滑动动画效果",
+      "desc": [
+        "该案例中，拖拽调节 x,y 参数，查看动画运动效果。其中偏移量 = x,y * 方框宽高",
+        "【child】 : 孩子组件   【Widget】",
+        "【duration】 : 动画时长   【Duration】",
+        "【onEnd】 : 动画结束回调   【Function()】",
+        "【curve】 : 动画曲线   【Duration】",
+        "【offset】 : 偏移量   【Offset】"
+      ]
+    }
+  ]
+}

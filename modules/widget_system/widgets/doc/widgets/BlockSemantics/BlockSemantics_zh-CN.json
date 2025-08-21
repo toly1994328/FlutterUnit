@@ -1,0 +1,1 @@
+{"name":"BlockSemantics","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"一个小部件，用于丢弃在同一语义容器中在其之前绘制的所有小部件的语义。","fields":[{"name":"blocking","type":"bool","required":true,"desc":"此小部件是否阻止在同一语义容器中在其之前绘制的所有小部件的语义。"}],"id":369,"localName":"BlockSemantics","lever":3,"family":3,"linkIds":[],"nodes":[]}

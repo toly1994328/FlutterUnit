@@ -1,0 +1,1 @@
+{"name":"CardTheme","path":"/src/material/card_theme.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"为后代 [Card] 小部件定义默认属性值。","fields":[],"id":374,"localName":"CardTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

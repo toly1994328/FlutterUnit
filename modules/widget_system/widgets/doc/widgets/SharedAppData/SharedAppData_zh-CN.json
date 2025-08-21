@@ -1,0 +1,1 @@
+{"name":"SharedAppData","path":"/src/widgets/shared_app_data.dart","parents":["StatefulWidget","Widget"],"desc":"允许与其 `child` 及所有子项的后代共享键/值数据。","fields":[{"name":"child","type":"Widget","required":true,"desc":"树中此小部件下方的小部件。"}],"id":511,"localName":"SharedAppData","lever":3,"family":3,"linkIds":[],"nodes":[]}

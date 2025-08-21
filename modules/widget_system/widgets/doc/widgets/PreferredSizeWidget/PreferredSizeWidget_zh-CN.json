@@ -1,0 +1,1 @@
+{"name":"PreferredSizeWidget","path":"/src/widgets/preferred_size.dart","abstract":true,"parents":["Object","Widget"],"desc":"可以返回此小部件在其他情况下不受约束时首选大小的小部件接口。","fields":[],"id":473,"localName":"PreferredSizeWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

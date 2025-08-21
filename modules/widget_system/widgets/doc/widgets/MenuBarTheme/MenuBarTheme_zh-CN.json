@@ -1,0 +1,1 @@
+{"name":"MenuBarTheme","path":"/src/material/menu_bar_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"为此小部件后代中的 [MenuBar] 小部件定义配置的继承小部件。","fields":[{"name":"data","type":"MenuBarThemeData","required":true,"desc":"为此小部件后代中的 [MenuBar] 设置的属性。"}],"id":446,"localName":"MenuBarTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

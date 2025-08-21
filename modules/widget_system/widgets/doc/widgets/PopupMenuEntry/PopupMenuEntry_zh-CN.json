@@ -1,0 +1,1 @@
+{"name":"PopupMenuEntry","path":"/src/material/popup_menu.dart","abstract":true,"parents":["StatefulWidget","Widget"],"desc":"Material Design 弹出菜单中条目的基类。","fields":[],"id":471,"localName":"PopupMenuEntry","lever":3,"family":3,"linkIds":[],"nodes":[]}

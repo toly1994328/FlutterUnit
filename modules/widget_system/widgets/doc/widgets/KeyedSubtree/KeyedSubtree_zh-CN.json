@@ -1,0 +1,1 @@
+{"name":"KeyedSubtree","path":"/src/widgets/basic.dart","parents":["StatelessWidget","Widget"],"desc":"构建其子项的小部件。","fields":[{"name":"child","type":"Widget","required":true,"desc":"树中此小部件下方的小部件。"}],"id":436,"localName":"KeyedSubtree","lever":3,"family":3,"linkIds":[],"nodes":[]}

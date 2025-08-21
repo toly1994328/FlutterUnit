@@ -1,0 +1,1 @@
+{"name":"EndDrawerButtonIcon","path":"/src/material/action_buttons.dart","parents":["StatelessWidget","Widget"],"desc":"适合当前 [TargetPlatform] 的\"末端抽屉\"图标。","fields":[],"id":275,"localName":"右抽屉按钮图标","lever":1,"family":0,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"EndDrawerButtonIcon 效果","desc":["通过 _ActionIcon 组件根据 ActionIconTheme 主题，来适配不同平台的右抽屉按钮图标。"]}]}

@@ -1,0 +1,1 @@
+{"name":"ObstructingPreferredSizeWidget","path":"/src/cupertino/page_scaffold.dart","abstract":true,"parents":["Object","PreferredSizeWidget","Widget"],"desc":"具有首选大小并报告是否完全阻挡其后面小部件的小部件。","fields":[],"id":462,"localName":"ObstructingPreferredSizeWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

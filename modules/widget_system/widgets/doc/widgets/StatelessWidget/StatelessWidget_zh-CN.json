@@ -1,0 +1,1 @@
+{"name":"StatelessWidget","path":"/src/widgets/framework.dart","abstract":true,"parents":["Widget"],"desc":"不需要可变状态的小部件。","fields":[],"id":531,"localName":"StatelessWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

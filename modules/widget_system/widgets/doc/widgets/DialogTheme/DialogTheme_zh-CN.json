@@ -1,0 +1,1 @@
+{"name":"DialogTheme","path":"/src/material/dialog_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"为 [Dialog] 小部件定义主题。","fields":[],"id":406,"localName":"DialogTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

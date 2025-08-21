@@ -1,0 +1,1 @@
+{"name":"UniqueWidget","path":"/src/widgets/unique_widget.dart","abstract":true,"parents":["StatefulWidget","Widget"],"desc":"在树中恰好有一个膨胀实例的有状态小部件的基类。","fields":[],"id":243,"localName":"唯一组件","lever":1,"family":1,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"UniqueWidget 介绍","desc":["【child】 : 子组件   【Widget】"]}]}

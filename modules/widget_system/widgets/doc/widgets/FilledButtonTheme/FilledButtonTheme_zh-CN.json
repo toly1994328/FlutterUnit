@@ -1,0 +1,1 @@
+{"name":"FilledButtonTheme","path":"/src/material/filled_button_theme.dart","parents":["InheritedTheme","InheritedWidget","ProxyWidget","Widget"],"desc":"覆盖其 [FilledButton] 后代的默认 [ButtonStyle]。","fields":[{"name":"data","type":"FilledButtonThemeData","required":true,"desc":"此主题的配置。"}],"id":419,"localName":"FilledButtonTheme","lever":3,"family":3,"linkIds":[],"nodes":[]}

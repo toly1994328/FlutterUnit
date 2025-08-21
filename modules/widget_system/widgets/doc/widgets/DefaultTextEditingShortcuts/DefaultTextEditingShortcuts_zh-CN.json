@@ -1,0 +1,1 @@
+{"name":"DefaultTextEditingShortcuts","path":"/src/widgets/default_text_editing_shortcuts.dart","parents":["StatelessWidget","Widget"],"desc":"具有用于默认文本编辑行为的快捷键的小部件。","fields":[{"name":"child","type":"Widget","required":true,"desc":"{@macro flutter.widgets.ProxyWidget.child}"}],"id":402,"localName":"DefaultTextEditingShortcuts","lever":3,"family":3,"linkIds":[],"nodes":[]}
