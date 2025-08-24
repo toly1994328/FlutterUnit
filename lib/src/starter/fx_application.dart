@@ -24,12 +24,12 @@ class FxApplication with FxStarter<AppConfig> {
   AppStartRepository<AppConfig> get repository => const FlutterUnitStartRepo();
 
   @override
-  void onLoaded(BuildContext context, int cost, AppConfig state) {
+  void onLoaded(BuildContext context, int cost, AppConfig state) async {
     debugPrint("App启动耗时:$cost ms");
     context.read<AppConfigBloc>().init(state);
     context.initWidgetData();
     if (!kAppEnv.isWeb) {
-      context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
+      context.read<LikeWidgetBloc>().loadLikeData();
       context.read<CategoryBloc>().add(const EventLoadCategory());
       context.read<NewsBloc>().load();
     }

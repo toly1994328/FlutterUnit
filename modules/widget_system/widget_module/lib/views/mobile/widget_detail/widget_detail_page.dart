@@ -15,6 +15,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'category_end_drawer.dart';
 import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
+import 'widget_fields_sliver.dart';
 import 'package:tolyui/tolyui.dart';
 
 // 用于组件详情不需要在一开始就加载
@@ -88,10 +89,12 @@ class WidgetDetailPage extends StatelessWidget {
               ),
             ),
             if (state is DetailWithData)
-              SliverNodeList(
-                nodes: state.nodes,
-                model: state.widgetModel,
-              ),
+              state.nodes.isNotEmpty
+                  ? SliverNodeList(
+                      nodes: state.nodes,
+                      model: state.widgetModel,
+                    )
+                  : SliverWidgetFieldsList(widgetId: model.id),
           ],
         ));
   }

@@ -1383,6 +1383,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  widget_ui:
+    dependency: transitive
+    description:
+      path: "modules/widget_system/widget_ui"
+      relative: true
+    source: path
+    version: "0.0.1"
   win32:
     dependency: transitive
     description:

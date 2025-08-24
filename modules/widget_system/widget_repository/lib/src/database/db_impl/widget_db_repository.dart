@@ -64,4 +64,10 @@ class WidgetDbRepository implements WidgetRepository {
     }
     return null;
   }
+
+  @override
+  Future<List<WidgetFieldModel>> loadWidgetFields(int widgetId) async {
+    List<Map<String, dynamic>> data = await widgetDao.queryWidgetFields(widgetId);
+    return data.map((e) => WidgetFieldModel.fromJson(e)).toList();
+  }
 }

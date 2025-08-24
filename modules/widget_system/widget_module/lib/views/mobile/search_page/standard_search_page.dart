@@ -6,9 +6,10 @@ import 'package:go_router/go_router.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:l10n/l10n.dart';
+import 'package:widget_module/widget_module.dart';
 
 import 'package:widget_repository/widget_repository.dart';
-import '../widget_page/mobile_widget_tiled.dart';
+import 'package:widget_ui/widget_ui.dart';
 import 'standard_search_bar.dart';
 
 // SearchPage 可以复用 WidgetsBloc，进行局部的 Bloc
@@ -72,10 +73,19 @@ class StandardSearchPage extends StatelessWidget {
       }
       return ListView.builder(
         padding: EdgeInsets.zero,
-        itemBuilder: (_, index) => MobileWidgetTiled(
-            searchArg: state.filter.name,
+        itemBuilder: (_, index) => Padding(
+          padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8),
+          child: WidgetItem(
             model: state.widgets[index],
-            onTap: () => _toDetail(context, state.widgets[index])),
+            onWidget: context.handleWidgetAction,
+          ),
+        ),
+
+        //     MobileWidgetTiled(
+        //   searchArg: state.filter.name,
+        //   model: state.widgets[index],
+        //   onTap: () => _toDetail(context, state.widgets[index]),
+        // ),
         itemCount: state.widgets.length,
       );
     }

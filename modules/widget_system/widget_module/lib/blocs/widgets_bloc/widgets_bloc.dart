@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:app/app.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_platform_adapter/fx_platform_adapter.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 part 'widgets_event.dart';
@@ -27,8 +27,9 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   /// 切换页签，以 [family] 为过滤项
   void _onEventTabTap(EventTabTap event, Emitter<WidgetsState> emit) async {
     // emit(const WidgetsLoading(operate: LoadOperate.load));
-    int size = kIsDesk ? 1000 : 20;
-    WidgetFilter filter = WidgetFilter.family(event.family, pageSize: size,locale: event.locale);
+    int size = kAppEnv.isDesktop ? 1000 : 20;
+    WidgetFilter filter =
+        WidgetFilter.family(event.family, pageSize: size, locale: event.locale);
     try {
       final List<WidgetModel> widgets = await repository.searchWidgets(filter);
       emit(WidgetsLoaded(
@@ -129,9 +130,7 @@ class WidgetsBloc extends Bloc<WidgetsEvent, WidgetsState> {
   }
 
   void changeLocale(Locale locale) {
-    add(EventTabTap(
-      state.filter.family??WidgetFamily.stateless,
-      locale: '${locale.languageCode}-${locale.countryCode}'.toLowerCase()
-    ));
+    add(EventTabTap(state.filter.family ?? WidgetFamily.stateless,
+        locale: '${locale.languageCode}-${locale.countryCode}'.toLowerCase()));
   }
 }
