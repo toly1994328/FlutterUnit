@@ -11,7 +11,7 @@ import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:storage/storage.dart';
 import 'package:widget_repository/widget_repository.dart';
-
+import 'package:widget_ui/widget_ui.dart';
 
 
 import 'package:toly_ui/toly_ui.dart';
@@ -85,7 +85,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
         CategoryRepository repository = BlocProvider.of<CategoryBloc>(context).repository;
         await repository.syncCategoryByData(result.data!.data,result.data!.likeData);
         BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
-        BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
+        context.read<LikeWidgetBloc>().loadLikeData();
       } else {
         // 说明还没有后台数据，
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。

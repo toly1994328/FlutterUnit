@@ -1,27 +1,42 @@
-import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_star/flutter_star.dart';
-import 'package:widget_module/blocs/action/widget_action.dart';
+import 'package:flutter_star/star.dart';
+import 'package:flutter_star/star_score.dart';
+import 'package:tolyui_message/tolyui_message.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:wrapper/wrapper.dart';
-import 'package:tolyui/tolyui.dart';
-import '../../components/widget_logo_map.dart';
-import '../like_tag.dart';
-import 'package:l10n/l10n.dart';
 
-import 'widget_id_view.dart';
+import '../../../widget_ui.dart';
 
-class WidgetTiled extends StatelessWidget {
+sealed class WidgetAction {}
+
+class JumpWidgetDetail extends WidgetAction {
+  final int? widgetId;
+  final String? widgetName;
+  final WidgetModel? model;
+
+  JumpWidgetDetail({
+    this.widgetId,
+    this.model,
+    this.widgetName,
+  });
+}
+
+class ToggleLikeWidget extends WidgetAction {
+  final int widgetId;
+
+  ToggleLikeWidget(this.widgetId);
+}
+
+/// 组价主页单体的样式
+class WidgetItem extends StatelessWidget {
   final WidgetModel model;
-  final VoidCallback onTap;
-  final String? searchArg;
+  final ValueChanged<WidgetAction> onWidget;
 
-  const WidgetTiled({
+  const WidgetItem({
     super.key,
     required this.model,
-    required this.onTap,
-    this.searchArg,
+    required this.onWidget,
   });
 
   @override
@@ -33,14 +48,16 @@ class WidgetTiled extends StatelessWidget {
     bool isDark = theme.brightness == Brightness.dark;
     textColor = isDark ? textColor : const Color(0xff2F3032);
     Color color = theme.primaryColor;
-    EdgeInsetsGeometry padding =
-        const EdgeInsets.symmetric(horizontal: 12, vertical: 8);
+    EdgeInsetsGeometry padding = const EdgeInsets.symmetric(
+      horizontal: 12,
+      vertical: 8,
+    );
 
     return Stack(
       children: [
         InkWell(
           borderRadius: BorderRadius.circular(6),
-          onTap: onTap,
+          onTap: () => onWidget.call(JumpWidgetDetail(model: model)),
           child: Ink(
             decoration: BoxDecoration(
               color: tileColor,
@@ -55,11 +72,14 @@ class WidgetTiled extends StatelessWidget {
             child: Row(
               children: [
                 GestureDetector(
-                  onLongPress: () => context.toggleLike(model.id),
+                  onLongPress: () => onWidget.call(ToggleLikeWidget(model.id)),
                   child: Hero(
                       tag: model.heroId,
                       child: WidgetLogo(
-                          background: color, widgetName: model.name)),
+                          lever: model.lever,
+                          background: color,
+                          widgetName: model.name,
+                          widgetId: model.id)),
                 ),
                 Expanded(
                   child: Padding(
@@ -68,7 +88,7 @@ class WidgetTiled extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        _buildTitle(color, textColor, isDark),
+                        listTitle(textColor),
                         _buildContent(textColor),
                         _buildFoot(isDark)
                       ],
@@ -79,21 +99,22 @@ class WidgetTiled extends StatelessWidget {
             ),
           ),
         ),
-        LikeTag(widget: model),
-        Positioned(bottom: 2, left: 6, child: WidgetIdView(model: model))
+        LikeTag(model: model, onWidget: onWidget),
       ],
     );
   }
 
-  Widget linkText(BuildContext context) => Row(
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 15, right: 5),
-            child: Icon(Icons.link, color: Colors.blue),
-          ),
-          Text(context.l10n.relatedComponents, style: UnitTextStyle.labelBold),
-        ],
-      );
+  Widget _buildTitle(Color color, Color? textColor, bool isDark) {
+    return Row(
+      children: [
+        Expanded(child: listTitle(textColor)),
+        StarScore(
+          star: Star(emptyColor: Colors.white, size: 12, fillColor: color),
+          score: model.lever,
+        ),
+      ],
+    );
+  }
 
   Widget listTitle(Color? textColor) {
     return GestureDetector(
@@ -111,24 +132,6 @@ class WidgetTiled extends StatelessWidget {
         await Clipboard.setData(ClipboardData(text: model.name));
         $message.success(message: '名称复制成功!');
       },
-    );
-  }
-
-  Widget _buildTitle(Color color, Color? textColor, bool isDark) {
-    Widget title;
-    if (searchArg == null) {
-      title = listTitle(textColor);
-    } else {
-      title = Text.rich(formSpan(model.name, searchArg!));
-    }
-    return Row(
-      children: [
-        Expanded(child: title),
-        StarScore(
-          star: Star(emptyColor: Colors.white, size: 12, fillColor: color),
-          score: model.lever,
-        ),
-      ],
     );
   }
 
@@ -168,7 +171,7 @@ class WidgetTiled extends StatelessWidget {
           color: isDark ? const Color(0xff292A2D) : const Color(0xffF3F3F5),
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: Text(
-            Cons.kWidgetFamilyLabelMap[model.family]!,
+            kWidgetFamilyLabelMap[model.family]!,
             style: TextStyle(
                 color:
                     isDark ? const Color(0xffCCCCCC) : const Color(0xff878D96),
@@ -185,25 +188,14 @@ class WidgetTiled extends StatelessWidget {
       ],
     );
   }
-
-  final TextStyle lightTextStyle = const TextStyle(
-    color: Colors.red,
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-  );
-
-  InlineSpan formSpan(String src, String pattern) {
-    List<TextSpan> span = [];
-    RegExp regExp = RegExp(pattern, caseSensitive: false);
-    src.splitMapJoin(regExp, onMatch: (Match match) {
-      span.add(TextSpan(text: match.group(0), style: lightTextStyle));
-      return '';
-    }, onNonMatch: (str) {
-      span.add(TextSpan(
-          text: str,
-          style: lightTextStyle.copyWith(color: const Color(0xff2F3032))));
-      return '';
-    });
-    return TextSpan(children: span);
-  }
 }
+
+Map<WidgetFamily, String> get kWidgetFamilyLabelMap => {
+      WidgetFamily.stateless: "Stateless",
+      WidgetFamily.stateful: "Stateful",
+      WidgetFamily.singleChildRender: "SingleChild",
+      WidgetFamily.multiChildRender: "MultiChild",
+      WidgetFamily.sliver: "Sliver",
+      WidgetFamily.proxy: "Proxy",
+      WidgetFamily.other: "Other",
+    };

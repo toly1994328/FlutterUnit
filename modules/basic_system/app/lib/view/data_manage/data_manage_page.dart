@@ -81,7 +81,7 @@ class DataManagePage extends StatelessWidget {
     await File(dbPath).writeAsBytes(bytes, flush: true);
     print("==== debug ===== assets ======拷贝完成====");
     BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
-    BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
+    context.read<LikeWidgetBloc>().loadLikeData();
     Toast.toast(context, '重置成功!');
   }
 
@@ -116,7 +116,7 @@ class DataManagePage extends StatelessWidget {
         await repository.syncCategoryByData(
             result.data!.data, result.data!.likeData);
         BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
-        BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
+        context.read<LikeWidgetBloc>().loadLikeData();
       } else {
         // 说明还没有后台数据，
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。

@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
-
+import 'package:widget_module/blocs/action/widget_action.dart';
+import 'package:widget_ui/widget_ui.dart';
 
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
-
 
 class DeskSliverWidgetDetailBar extends StatelessWidget {
   final WidgetModel model;
@@ -25,13 +25,16 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     Color? appBarColor = Theme.of(context).appBarTheme.backgroundColor;
-    Color? appBarTextColor = Theme.of(context).appBarTheme.titleTextStyle?.color;
+    Color? appBarTextColor =
+        Theme.of(context).appBarTheme.titleTextStyle?.color;
 
     return SliverAppBar(
       pinned: true,
-      backgroundColor: isDark? appBarColor:backgroundColor,
-      titleTextStyle:  TextStyle(color: isDark?appBarTextColor:Color(0xff696969)),
-      iconTheme:  IconThemeData(color: isDark?appBarTextColor:Color(0xff696969)),
+      backgroundColor: isDark ? appBarColor : backgroundColor,
+      titleTextStyle:
+          TextStyle(color: isDark ? appBarTextColor : Color(0xff696969)),
+      iconTheme:
+          IconThemeData(color: isDark ? appBarTextColor : Color(0xff696969)),
       expandedHeight: 120.0,
       scrolledUnderElevation: 0.5,
       flexibleSpace: DragToMoveWrapper(
@@ -44,13 +47,16 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
           ),
           fixedSubtitle: Text(
             model.name,
-            style:  TextStyle(color:isDark?appBarTextColor:Color(0xff696969), fontSize: 12),
+            style: TextStyle(
+                color: isDark ? appBarTextColor : Color(0xff696969),
+                fontSize: 12),
           ),
           title: Padding(
             padding: const EdgeInsets.only(bottom: 3),
             child: Text(
               model.nameCN,
-              style:  TextStyle(color:isDark?appBarTextColor: textColor, fontSize: 16),
+              style: TextStyle(
+                  color: isDark ? appBarTextColor : textColor, fontSize: 16),
             ),
           ),
           //伸展处布局
@@ -61,32 +67,25 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
       ),
       elevation: 0,
       actions: [
-
-         WindowButtons(
-           actions: [
-             _buildToHome(context),
-             FeedbackWidget(
-               onPressed: () => _toggleLikeState(context),
-               child: BlocConsumer<LikeWidgetBloc, LikeWidgetState>(
-                 listener: _listenLikeStateChange,
-                 builder: _buildByLikeState,
-               ),
-             ),
-           ],
-         )
+        WindowButtons(
+          actions: [
+            _buildToHome(context),
+            FeedbackWidget(
+              onPressed: () => context.toggleLike(model.id),
+              child: BlocConsumer<LikeWidgetBloc, List<WidgetModel>>(
+                listener: _listenLikeStateChange,
+                builder: _buildByLikeState,
+              ),
+            ),
+          ],
+        )
       ],
     );
   }
 
-  void _toggleLikeState(BuildContext context) {
-    BlocProvider.of<LikeWidgetBloc>(context).add(
-      ToggleLikeWidgetEvent(id: model.id),
-    );
-  }
-
   // 监听 LikeWidgetBloc 伺机弹出 toast
-  void _listenLikeStateChange(BuildContext context, LikeWidgetState state) {
-    bool collected = state.widgets.contains(model);
+  void _listenLikeStateChange(BuildContext context, List<WidgetModel> state) {
+    bool collected = state.contains(model);
     String msg =
         collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
     Toast.toast(
@@ -103,8 +102,8 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
   }
 
   // 根据 [LikeWidgetState ] 构建图标
-  Widget _buildByLikeState(BuildContext context, LikeWidgetState state) {
-    bool liked = state.widgets.contains(model);
+  Widget _buildByLikeState(BuildContext context, List<WidgetModel> state) {
+    bool liked = state.contains(model);
     return SizedBox(
       width: 30,
       height: 30,
@@ -117,10 +116,13 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
 
   Widget _buildToHome(BuildContext context) => GestureDetector(
       onLongPress: () => Scaffold.of(context).openEndDrawer(),
-      child:const SizedBox(
+      child: const SizedBox(
         width: 30,
         height: 30,
-        child: Icon(Icons.home,size: 20,),
+        child: Icon(
+          Icons.home,
+          size: 20,
+        ),
       ),
       onTap: () => Navigator.of(context).pop());
 }

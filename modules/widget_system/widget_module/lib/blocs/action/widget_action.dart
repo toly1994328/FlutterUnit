@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:app/app.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
+import 'package:widget_ui/widget_ui.dart';
 
 import '../../widget_module.dart';
 
@@ -16,6 +17,17 @@ extension WidgetContext on BuildContext {
   }
 
   void toggleLike(int widgetId) {
-    read<LikeWidgetBloc>().add(ToggleLikeWidgetEvent(id: widgetId));
+    read<LikeWidgetBloc>().toggle(widgetId);
+  }
+
+  void handleWidgetAction(WidgetAction value) {
+    switch (value) {
+      case JumpWidgetDetail():
+        String? name = value.widgetName ?? value.model?.name;
+        push('${AppRoute.widgetDetail.url}$name', extra: value.model);
+        return;
+      case ToggleLikeWidget():
+        toggleLike(value.widgetId);
+    }
   }
 }

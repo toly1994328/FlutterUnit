@@ -97,6 +97,7 @@ flutter:
     - assets/images/head_icon/
     - assets/images/widgets/
     - assets/flutter.db
+    - assets/article.db
     - assets/version.json
 
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源
