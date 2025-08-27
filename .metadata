@@ -1,11 +1,11 @@
 # This file tracks properties of this Flutter project.
 # Used by Flutter tool to assess capabilities and perform upgrades etc.
 #
-# This file should be version controlled.
+# This file should be version controlled and should not be manually edited.
 
 version:
-  revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-  channel: stable
+  revision: "de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f"
+  channel: "[user-branch]"
 
 project_type: app
 
@@ -13,26 +13,29 @@ project_type: app
 migration:
   platforms:
     - platform: root
-      create_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-      base_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
     - platform: android
-      create_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-      base_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
     - platform: ios
-      create_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-      base_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
     - platform: linux
-      create_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-      base_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
     - platform: macos
-      create_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-      base_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
     - platform: web
-      create_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-      base_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
     - platform: windows
-      create_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
-      base_revision: fb57da5f945d02ef4f98dfd9409a72b7cce74268
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+    - platform: ohos
+      create_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
+      base_revision: de5350c1b4fef7f60bf716e97fbfc0d8f2ff171f
 
   # User provided section
 

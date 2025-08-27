@@ -6,11 +6,9 @@ import 'dart:math' as math;
 import 'dart:math';
 import 'dart:ui' as ui;
 
-
 import 'package:flutter/foundation.dart' show clampDouble;
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
 
 /// The part of a Material Design [AppBar] that expands, collapses, and
 /// stretches.
@@ -65,7 +63,7 @@ class DiyFlexibleSpaceBar extends StatefulWidget {
     this.collapseMode = CollapseMode.parallax,
     this.stretchModes = const <StretchMode>[StretchMode.zoomBackground],
     this.expandedTitleScale = 1.5,
-  }) : assert(collapseMode != null),
+  })  : assert(collapseMode != null),
         assert(expandedTitleScale >= 1);
 
   /// The primary contents of the flexible space bar when expanded.
@@ -116,7 +114,6 @@ class DiyFlexibleSpaceBar extends StatefulWidget {
   /// Defaults to 1.5 and must be greater than 1.
   final double expandedTitleScale;
 
-
   @override
   State<DiyFlexibleSpaceBar> createState() => _DiyFlexibleSpaceBarState();
 }
@@ -135,6 +132,8 @@ class _DiyFlexibleSpaceBarState extends State<DiyFlexibleSpaceBar> {
         return false;
       case TargetPlatform.iOS:
       case TargetPlatform.macOS:
+        return true;
+      default:
         return true;
     }
   }
@@ -169,10 +168,11 @@ class _DiyFlexibleSpaceBarState extends State<DiyFlexibleSpaceBar> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        final FlexibleSpaceBarSettings settings = context.dependOnInheritedWidgetOfExactType<FlexibleSpaceBarSettings>()!;
+        final FlexibleSpaceBarSettings settings = context
+            .dependOnInheritedWidgetOfExactType<FlexibleSpaceBarSettings>()!;
         assert(
-        settings != null,
-        'A FlexibleSpaceBar must be wrapped in the widget returned by FlexibleSpaceBar.createSettings().',
+          settings != null,
+          'A FlexibleSpaceBar must be wrapped in the widget returned by FlexibleSpaceBar.createSettings().',
         );
 
         final List<Widget> children = <Widget>[];
@@ -181,12 +181,16 @@ class _DiyFlexibleSpaceBarState extends State<DiyFlexibleSpaceBar> {
 
         // 0.0 -> Expanded
         // 1.0 -> Collapsed to toolbar
-        final double t = clampDouble(1.0 - (settings.currentExtent - settings.minExtent) / deltaExtent, 0.0, 1.0);
+        final double t = clampDouble(
+            1.0 - (settings.currentExtent - settings.minExtent) / deltaExtent,
+            0.0,
+            1.0);
         // print("=======build=======$t========");
 
         // background
         if (widget.background != null) {
-          final double fadeStart = math.max(0.0, 1.0 - kToolbarHeight / deltaExtent);
+          final double fadeStart =
+              math.max(0.0, 1.0 - kToolbarHeight / deltaExtent);
           const double fadeEnd = 1.0;
           assert(fadeStart <= fadeEnd);
           // If the min and max extent are the same, the app bar cannot collapse
@@ -218,7 +222,8 @@ class _DiyFlexibleSpaceBarState extends State<DiyFlexibleSpaceBar> {
           // StretchMode.blurBackground
           if (widget.stretchModes.contains(StretchMode.blurBackground) &&
               constraints.maxHeight > settings.maxExtent) {
-            final double blurAmount = (constraints.maxHeight - settings.maxExtent) / 10;
+            final double blurAmount =
+                (constraints.maxHeight - settings.maxExtent) / 10;
             children.add(Positioned.fill(
               child: BackdropFilter(
                 filter: ui.ImageFilter.blur(
@@ -243,25 +248,22 @@ class _DiyFlexibleSpaceBarState extends State<DiyFlexibleSpaceBar> {
             case TargetPlatform.macOS:
               title = widget.title;
               break;
-            case TargetPlatform.android:
-            case TargetPlatform.fuchsia:
-            case TargetPlatform.linux:
-            case TargetPlatform.windows:
+            default:
               title = Semantics(
                 namesRoute: true,
                 child: widget.title,
               );
-              break;
+            // defauilt:
+
+            //   break;
           }
 
           // StretchMode.fadeTitle
           if (widget.stretchModes.contains(StretchMode.fadeTitle) &&
               constraints.maxHeight > settings.maxExtent) {
             final double stretchOpacity = 1 -
-                clampDouble(
-                    (constraints.maxHeight - settings.maxExtent) / 100,
-                    0.0,
-                    1.0);
+                clampDouble((constraints.maxHeight - settings.maxExtent) / 100,
+                    0.0, 1.0);
             title = Opacity(
               opacity: stretchOpacity,
               child: title,
@@ -280,53 +282,60 @@ class _DiyFlexibleSpaceBarState extends State<DiyFlexibleSpaceBar> {
                   start: effectiveCenterTitle ? 0.0 : 72.0,
                   bottom: 16.0,
                 );
-            final double scaleValue = Tween<double>(begin: widget.expandedTitleScale, end: 1.0).transform(t);
+            final double scaleValue =
+                Tween<double>(begin: widget.expandedTitleScale, end: 1.0)
+                    .transform(t);
             final Matrix4 scaleTransform = Matrix4.identity()
-              ..scale(scaleValue, scaleValue, 1.0)..translate(t*30);
+              ..scale(scaleValue, scaleValue, 1.0)
+              ..translate(t * 30);
             final Matrix4 translateTransform = Matrix4.identity()
-              ..translate(t*30);
-            final Alignment titleAlignment = _getTitleAlignment(effectiveCenterTitle);
-            children.add(Container(
-              padding: padding,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Transform(
-                    alignment: titleAlignment,
-                    transform: scaleTransform,
-                    child: Align(
+              ..translate(t * 30);
+            final Alignment titleAlignment =
+                _getTitleAlignment(effectiveCenterTitle);
+            children.add(
+              Container(
+                padding: padding,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Transform(
                       alignment: titleAlignment,
-                      child: DefaultTextStyle(
-                        style: titleStyle,
-                        child: LayoutBuilder(
-                          builder: (BuildContext context, BoxConstraints constraints) {
-                            return Container(
-                              width: constraints.maxWidth / scaleValue,
-                              alignment: titleAlignment,
-                              child: Wrap(
-                                crossAxisAlignment: WrapCrossAlignment.center,
-                                spacing: 5,
-                                children: [
-                                  title!,
-                                  if(widget.titleIconBuilder!=null)
-                                  widget.titleIconBuilder!(t)
-                                ],
-                              ),
-                            );
-                          },
+                      transform: scaleTransform,
+                      child: Align(
+                        alignment: titleAlignment,
+                        child: DefaultTextStyle(
+                          style: titleStyle,
+                          child: LayoutBuilder(
+                            builder: (BuildContext context,
+                                BoxConstraints constraints) {
+                              return Container(
+                                width: constraints.maxWidth / scaleValue,
+                                alignment: titleAlignment,
+                                child: Wrap(
+                                  crossAxisAlignment: WrapCrossAlignment.center,
+                                  spacing: 5,
+                                  children: [
+                                    title!,
+                                    if (widget.titleIconBuilder != null)
+                                      widget.titleIconBuilder!(t)
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  if(widget.fixedSubtitle!=null)
-                    Transform(
-                        alignment: titleAlignment,
-                        transform: translateTransform,
-                        child: widget.fixedSubtitle!)
-                ],
+                    if (widget.fixedSubtitle != null)
+                      Transform(
+                          alignment: titleAlignment,
+                          transform: translateTransform,
+                          child: widget.fixedSubtitle!)
+                  ],
+                ),
               ),
-            ),);
+            );
           }
         }
 
@@ -335,4 +344,3 @@ class _DiyFlexibleSpaceBarState extends State<DiyFlexibleSpaceBar> {
     );
   }
 }
-

@@ -11,6 +11,7 @@ import '../../bloc/exp.dart';
 import '../../data/exp.dart';
 import 'article_detail_page.dart';
 import 'columnize_page_view.dart';
+import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
 
 class SliverArticlePanel extends StatelessWidget {
   const SliverArticlePanel({Key? key}) : super(key: key);
@@ -75,24 +76,35 @@ class ArticlePanel extends StatelessWidget {
   const ArticlePanel({Key? key, required this.article}) : super(key: key);
 
   void toArticleDetail(BuildContext context) {
-    if (Platform.isAndroid || Platform.isIOS) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => ArticleDetailPage(article: article),
-        ),
-      );
-    }
+    // if (Platform.isAndroid || Platform.isIOS) {
+    //   Navigator.of(context).push(
+    //     MaterialPageRoute(
+    //       builder: (_) => ArticleDetailPage(article: article),
+    //     ),
+    //   );
+    // }
     _launchURL('https://juejin.cn${article.url}');
   }
 
   void _launchURL(String url) async {
     print(url);
-    Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
-      debugPrint('Could not launch $url');
+    // Uri uri = Uri.parse(url);
+    if (!await UrlLauncherPlatform.instance.launch(
+      url,
+      useSafariVC: false,
+      useWebView: false,
+      enableJavaScript: false,
+      enableDomStorage: false,
+      universalLinksOnly: false,
+      headers: <String, String>{},
+    )) {
+      throw Exception('Could not launch $url');
     }
+    // if (await canLaunchUrl(Uri.parse(url))) {
+    //   await launchUrl(uri, mode: LaunchMode.externalApplication);
+    // } else {
+    //   debugPrint('Could not launch $url');
+    // }
   }
 
   @override

@@ -63,15 +63,15 @@ class _WidgetFieldsPageState extends State<WidgetFieldsPage> {
   Widget _buildContent() {
     if (_isLoading) return const Center(child: CircularProgressIndicator());
     if (_fields!.isEmpty) return const Center(child: Text('暂无属性信息'));
-
+    bool isZh = Localizations.localeOf(context).languageCode == 'zh';
     return ListView.separated(
       separatorBuilder: (_, __) => Divider(),
       itemCount: _fields!.length,
-      itemBuilder: (context, index) => _buildFieldItem(_fields![index]),
+      itemBuilder: (context, index) => _buildFieldItem(_fields![index], isZh),
     );
   }
 
-  Widget _buildFieldItem(WidgetFieldModel field) {
+  Widget _buildFieldItem(WidgetFieldModel field, bool isZh) {
     return Container(
       color: Colors.white,
       child: Padding(
@@ -126,7 +126,7 @@ class _WidgetFieldsPageState extends State<WidgetFieldsPage> {
             if (field.fieldDescZh != null) ...[
               const SizedBox(height: 8),
               Text(
-                field.fieldDescZh!,
+                isZh ? field.fieldDescZh! : '${field.fieldDesc}',
                 style: const TextStyle(
                   fontSize: 13,
                   color: Colors.grey,

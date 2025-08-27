@@ -60,8 +60,14 @@ class ArticleDao extends Dao {
       "SELECT * FROM $name $queryArgs",
       args,
     );
-
-    List<Article> result = data.map(Article.fromDb).toList();
+    List<Article> result = [];
+    try {
+      result = data.map(Article.fromDb).toList();
+    } catch (e) {
+      print('=====query======$e====');
+      return [];
+      print(e);
+    }
     return result;
   }
 

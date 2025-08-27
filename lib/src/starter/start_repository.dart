@@ -12,8 +12,12 @@ import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
 import 'package:utils/utils.dart';
 import 'package:path/path.dart' as p;
+import 'package:sqflite/sqflite.dart';
 import 'bridge/unit_bridge.dart';
 import 'package:widget_module/widget_module.dart';
+import 'package:storage/storage.dart';
+
+ValueNotifier<double> dbInstallProgress = ValueNotifier(0);
 
 class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
   const FlutterUnitStartRepo();
@@ -42,6 +46,8 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
 
   Future<void> initDb() async {
     //数据库不存在，执行拷贝
+    await AppStorage().init();
+
     String dbPath = await AppStorage().flutter.dbpath;
     bool shouldCopy = await _checkShouldCopy(dbPath, SpStorage().spf);
     if (shouldCopy) {
@@ -49,27 +55,14 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     } else {
       print("=====flutter.db 已存在====");
     }
-    await AppStorage().init();
   }
 
   Future<void> _doCopyAssetsDb(String dbPath) async {
-    Directory dir = Directory(path.dirname(dbPath));
-    if (!dir.existsSync()) {
-      await dir.create(recursive: true);
-    }
-    {
-      ByteData data = await rootBundle.load("assets/flutter.db");
-      List<int> bytes =
-          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-      await File(dbPath).writeAsBytes(bytes, flush: true);
-    }
-    {
-      ByteData data = await rootBundle.load("assets/article.db");
-      List<int> bytes =
-          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-      await File(p.join(dir.path, 'article.db'))
-          .writeAsBytes(bytes, flush: true);
-    }
+    print("=====flutter.db==== assets ======开始拷贝====");
+    importArticleSqlFromAssets(AppStorage().article);
+    await importSqlFromAssets(AppStorage().flutter, onProgress: (progress) {
+      dbInstallProgress.value = progress;
+    });
     print("=====flutter.db==== assets ======拷贝完成====");
   }
 
@@ -96,5 +89,111 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     }
 
     return shouldCopy;
+  }
+
+  /// 读取 assets/flutter.sql 文件并插入数据到数据库
+  /// [flutter] 数据库存储对象
+  /// [onProgress] 进度回调，参数为当前进度 (0.0-1.0)
+  Future<void> importSqlFromAssets(FlutterDbStore flutter,
+      {Function(double)? onProgress}) async {
+    try {
+      await flutter.clearOldData();
+      String sqlContent = await rootBundle.loadString('assets/flutter.sql');
+
+      List<String> sqlStatements = _parseSqlStatements(sqlContent);
+      if (sqlStatements.isEmpty) return;
+
+      Database db = flutter.database;
+      const int batchSize = 120;
+
+      for (int i = 0; i < sqlStatements.length; i += batchSize) {
+        Batch batch = db.batch();
+        int end = (i + batchSize < sqlStatements.length)
+            ? i + batchSize
+            : sqlStatements.length;
+
+        for (int j = i; j < end; j++) {
+          String statement = sqlStatements[j];
+          if (statement.toUpperCase().startsWith('INSERT')) {
+            batch.rawInsert(statement);
+          } else {
+            batch.execute(statement);
+          }
+        }
+
+        await batch.commit(noResult: true);
+        onProgress?.call(end / sqlStatements.length);
+      }
+    } catch (e) {
+      print('导入 SQL 文件失败: $e');
+      rethrow;
+    }
+  }
+
+  /// 读取 assets/flutter.sql 文件并插入数据到数据库
+  /// [flutter] 数据库存储对象
+  /// [onProgress] 进度回调，参数为当前进度 (0.0-1.0)
+  Future<void> importArticleSqlFromAssets(ArticleDbStore flutter,
+      {Function(double)? onProgress}) async {
+    try {
+      await flutter.clearOldData();
+      String sqlContent = await rootBundle.loadString('assets/article.sql');
+
+      List<String> sqlStatements = _parseSqlStatements(sqlContent);
+      if (sqlStatements.isEmpty) return;
+
+      Database db = flutter.database;
+      const int batchSize = 120;
+
+      for (int i = 0; i < sqlStatements.length; i += batchSize) {
+        Batch batch = db.batch();
+        int end = (i + batchSize < sqlStatements.length)
+            ? i + batchSize
+            : sqlStatements.length;
+
+        for (int j = i; j < end; j++) {
+          String statement = sqlStatements[j];
+          if (statement.toUpperCase().startsWith('INSERT')) {
+            batch.rawInsert(statement);
+          } else {
+            batch.execute(statement);
+          }
+        }
+
+        await batch.commit(noResult: true);
+        onProgress?.call(end / sqlStatements.length);
+      }
+    } catch (e) {
+      print('导入 SQL 文件失败: $e');
+      rethrow;
+    }
+  }
+
+  List<String> _parseSqlStatements(String sqlContent) {
+    List<String> statements = [];
+    List<String> lines = sqlContent.split('\n');
+    StringBuffer buffer = StringBuffer();
+
+    for (String line in lines) {
+      line = line.trim();
+      if (line.isEmpty) continue;
+
+      buffer.writeln(line);
+      String current = buffer.toString().trim().toUpperCase();
+
+      bool isComplete = false;
+      if (current.startsWith('CREATE') || current.startsWith('INSERT')) {
+        isComplete = line.endsWith(');');
+      } else {
+        isComplete = line.endsWith(';');
+      }
+
+      if (isComplete) {
+        statements.add(buffer.toString().trim());
+        buffer.clear();
+      }
+    }
+
+    return statements;
   }
 }

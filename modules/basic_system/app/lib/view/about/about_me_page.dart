@@ -13,52 +13,51 @@ class AboutMePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Theme(
-        data: ThemeData(
-        brightness: Brightness.light
-    ),
-    child:Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
+        data: ThemeData(brightness: Brightness.light),
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 180,
-                width: MediaQuery.of(context).size.width,
-                margin:const EdgeInsets.only(bottom: 50),
-                child: Image.asset(
-                  'assets/images/sabar.webp',
-                  fit: BoxFit.cover,
+              Stack(
+                children: [
+                  Container(
+                    height: 180,
+                    width: MediaQuery.of(context).size.width,
+                    margin: const EdgeInsets.only(bottom: 50),
+                    child: Image.asset(
+                      'assets/images/sabar.webp',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  _buildBar(context),
+                  Positioned(
+                      bottom: 0,
+                      left: 50,
+                      child: CircleImage(
+                        size: 100,
+                        shadowColor: Theme.of(context).primaryColor,
+                        image: const AssetImage('assets/images/icon_head.webp'),
+                      )),
+                ],
+              ),
+              Expanded(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
+                  child: Stack(children: <Widget>[
+                    Positioned(
+                      right: 10,
+                      top: 0,
+                      child: _buildLinkIcon(),
+                    ),
+                    _buildInfo()
+                  ]),
                 ),
               ),
-              _buildBar(context),
-              Positioned(
-                  bottom: 0,
-                  left: 50,
-                  child: CircleImage(
-                    size: 100,
-                    shadowColor: Theme.of(context).primaryColor,
-                    image: const AssetImage('assets/images/icon_head.webp'),
-                  )),
             ],
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
-              child: Stack(children: <Widget>[
-                Positioned(
-                  right: 10,
-                  top: 0,
-                  child: _buildLinkIcon(),
-                ),
-                _buildInfo()
-              ]),
-            ),
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 
   Widget _buildBar(BuildContext context) {
@@ -149,7 +148,7 @@ class AboutMePage extends StatelessWidget {
             child: Wrap(
               direction: Axis.vertical,
               crossAxisAlignment: WrapCrossAlignment.center,
-              children:const [
+              children: const [
                 Icon(
                   TolyIcon.icon_juejin,
                   size: 35,
@@ -159,17 +158,18 @@ class AboutMePage extends StatelessWidget {
               ],
             )),
         FeedbackWidget(
-            onPressed: () =>
-                _launchURL("https://github.com/toly1994328"),
+            onPressed: () => _launchURL("https://github.com/toly1994328"),
             child: Wrap(
               direction: Axis.vertical,
               crossAxisAlignment: WrapCrossAlignment.center,
-              children: const[
+              children: const [
                 Icon(
                   TolyIcon.icon_github,
                   size: 35,
                 ),
-                SizedBox(height: 4,),
+                SizedBox(
+                  height: 4,
+                ),
                 Text('Github')
               ],
             )),

@@ -1,0 +1,65 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "D:/Files/configs/HuaWei/FlutterUnit/dev/.p12",
+          "storePassword": "0000001817440A8F112603882BBD74511523E61CE0586164E3AEB09B6523EDB0D5A6B64CD348B1BF",
+          "keyAlias": "jtjx",
+          "keyPassword": "000000180EEFDC2B1E74288DBD15CF2CA2F861ACDB71E1B375EC66BFD405DF37FD674A5D0BA4FCAF",
+          "signAlg": "SHA256withECDSA",
+          "profile": "D:/Files/configs/HuaWei/FlutterUnit/dev/flutter_unit_devDebug.p7b",
+          "certpath": "D:/Files/configs/HuaWei/FlutterUnit/dev/flutter_unit.cer"
+        }
+      },
+      {
+        "name": "release",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "D:/Files/configs/HuaWei/FlutterUnit/release/.p12",
+          "storePassword": "00000018A1DA99746FA5760535E49D90E96A06C51658795FF101752F0DE3F98EF3D4851916E84CAD",
+          "keyAlias": "jtjx",
+          "keyPassword": "00000018A524C6F901928A9C736EC1F35E836DA9574DF066F511813E143D8B894B3044FAD29F0936",
+          "signAlg": "SHA256withECDSA",
+          "profile": "D:/Files/configs/HuaWei/FlutterUnit/release/FlutterUnitReleaseRelease.p7b",
+          "certpath": "D:/Files/configs/HuaWei/FlutterUnit/release/flutter_unit_release.cer"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "release",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "profile"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

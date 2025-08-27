@@ -8,16 +8,13 @@ import 'package:fx_go_router_ext/fx_go_router_ext.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class AboutAppPage extends StatelessWidget {
   const AboutAppPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ThemeData(
-        brightness: Brightness.light
-      ),
+      data: ThemeData(brightness: Brightness.light),
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -39,8 +36,9 @@ class AboutAppPage extends StatelessWidget {
                     bottom: 0,
                     left: 50,
                     child: FeedbackWidget(
-                      onEnd : (){
-                        Navigator.push(context, SlidePageRoute(child: const FlutterUnitTimeLine()));
+                      onEnd: () {
+                        Navigator.push(context,
+                            SlidePageRoute(child: const FlutterUnitTimeLine()));
                       },
                       child: CircleImage(
                         size: 100,
@@ -82,15 +80,15 @@ class AboutAppPage extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          FeedbackWidget(
-            onPressed: () =>
-                _launchURL("mailto:1981462002@qq.com?subject=来自Flutter Unit"),
-            child: Icon(
-              TolyIcon.icon_email,
-              size: 20,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
+          // FeedbackWidget(
+          //   onPressed: () =>
+          //       _launchURL("mailto:1981462002@qq.com?subject=来自Flutter Unit"),
+          //   child: Icon(
+          //     TolyIcon.icon_email,
+          //     size: 20,
+          //     color: Theme.of(context).primaryColor,
+          //   ),
+          // ),
           const SizedBox(
             width: 20,
           )
@@ -102,37 +100,35 @@ class AboutAppPage extends StatelessWidget {
   _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
-    } else {
-
-    }
+    } else {}
   }
 
   Widget _buildInfo() {
     return Stack(
       children: <Widget>[
-        Positioned(
-          right: 10,
-          top: 0,
-          child: Wrap(
-            spacing: 20,
-            children: <Widget>[
-              FeedbackWidget(
-                  onPressed: () =>
-                      _launchURL("https://github.com/toly1994328/FlutterUnit"),
-                  child: Wrap(
-                    direction: Axis.vertical,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: const [
-                      Icon(
-                        TolyIcon.icon_github,
-                        size: 35,
-                      ),
-                      Text('Github')
-                    ],
-                  )),
-            ],
-          ),
-        ),
+        // Positioned(
+        //   right: 10,
+        //   top: 0,
+        //   child: Wrap(
+        //     spacing: 20,
+        //     children: <Widget>[
+        //       FeedbackWidget(
+        //           onPressed: () =>
+        //               _launchURL("https://github.com/toly1994328/FlutterUnit"),
+        //           child: Wrap(
+        //             direction: Axis.vertical,
+        //             crossAxisAlignment: WrapCrossAlignment.center,
+        //             children: const [
+        //               Icon(
+        //                 TolyIcon.icon_github,
+        //                 size: 35,
+        //               ),
+        //               Text('Github')
+        //             ],
+        //           )),
+        //     ],
+        //   ),
+        // ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
@@ -179,14 +175,19 @@ class AboutAppPage extends StatelessWidget {
               height: 20,
             ),
             InfoPanel(
-              title: 'Flutter Unit 2.0 ',
-              info:
-                  '○  317 个 Flutter 组件收录和详情介绍。\n'
-                  '○  绘制集录用于收录绘制相关的优秀示例。\n'
-                  '○  要点集录用于收录 Flutter 相关的小知识。\n'
-                  '○  时光轴，查看 FlutterUnit 重要事件。\n'
-                  '○  实现应用内更新功能，方便使用者及时更新到最新版体验。'
-            )
+                title: 'Flutter Unit 2.0 ',
+                info: '○  317 个 Flutter 组件收录和详情介绍。\n'
+                    '○  绘制集录用于收录绘制相关的优秀示例。\n'
+                    '○  要点集录用于收录 Flutter 相关的小知识。\n'
+                    '○  时光轴，查看 FlutterUnit 重要事件。\n'
+                    '○  实现应用内更新功能，方便使用者及时更新到最新版体验。'),
+            Divider(
+              height: 20,
+            ),
+            InfoPanel(
+                title: 'Flutter Unit 3.0 ',
+                info: '○  组件数据国际化。\n'
+                    '○  支持组件属性查看。')
           ],
         ),
       ],
@@ -198,8 +199,8 @@ class InfoPanel extends StatelessWidget {
   final String title;
   final String info;
 
-
-  const InfoPanel({Key? key, required this.title,required this.info}) : super(key: key);
+  const InfoPanel({Key? key, required this.title, required this.info})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -211,23 +212,23 @@ class InfoPanel extends StatelessWidget {
           children: <Widget>[
             Circle(color: Theme.of(context).primaryColor),
             Padding(
-              padding: const EdgeInsets.only(left: 15,top: 15,bottom: 15),
-              child: Text(title,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+              padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
+              child: Text(
+                title,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             )
           ],
         ),
         Panel(
-        color: Theme.of(context).primaryColor.withAlpha(33),
+          color: Theme.of(context).primaryColor.withAlpha(33),
           child: Text(
             info,
-            style: const TextStyle(color: Colors.grey,
+            style: const TextStyle(
+                color: Colors.grey,
                 fontSize: 13,
-                shadows: [
-                  Shadow(
-                      color: Colors.white,
-                      offset: Offset(1,1)
-                  )
-                ]),
+                shadows: [Shadow(color: Colors.white, offset: Offset(1, 1))]),
           ),
         ),
       ],

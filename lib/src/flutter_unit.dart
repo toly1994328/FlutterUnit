@@ -83,7 +83,6 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-        FlutterQuillLocalizations.delegate,
       ];
 
   @override

@@ -1,6 +1,6 @@
 import 'package:fx_dao/fx_dao.dart';
 
-class Article implements Po{
+class Article implements Po {
   final String? username;
   final String title;
   final String? subtitle;
@@ -23,11 +23,9 @@ class Article implements Po{
     required this.userId,
     this.id = -1,
     required this.groupId,
-
   });
 
-  Map<String, dynamic> toJson() =>
-      {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "userId": userId,
         "groupId": groupId,
@@ -40,36 +38,37 @@ class Article implements Po{
         "updateAt": update,
       };
 
-  factory Article.fromMap(dynamic map)=>
-      Article(
+  factory Article.fromMap(dynamic map) => Article(
         id: map['articleId'] ?? '',
         username: map['userName'] ?? '',
         userId: map['userId'] ?? '',
         title: map['title'] ?? '',
         create: DateTime.parse(map['createAt']).millisecondsSinceEpoch,
-        update:  DateTime.parse(map['updateAt']).millisecondsSinceEpoch,
+        update: DateTime.parse(map['updateAt']).millisecondsSinceEpoch,
         subtitle: map['subtitle'] ?? '',
         url: map['url'] ?? '',
         groupId: map['groupId'] ?? 1,
         cover: map['caver'] ?? '',
       );
 
-  factory Article.fromDb(dynamic map)=>
-      Article(
-        id: map['id'] ?? '',
-        username: map['username'] ?? '',
-        userId: map['userId'] ?? '',
-        title: map['title'] ?? '',
-        create: map['createAt'] ?? 0 ,
-        update: map['updateAt'] ?? 0,
-        subtitle: map['subtitle'] ?? '',
-        url: map['url'] ?? '',
-        groupId: map['groupId'] ?? 1,
-        cover: map['cover'] ?? '',
-      );
+  factory Article.fromDb(dynamic map) {
+    print(map);
+    return Article(
+      id: (map['id'] ?? 0).toInt(),
+      username: map['username'] ?? '',
+      userId: map['userId'] ?? '',
+      title: map['title'] ?? '',
+      create: map['createAt'] ?? 0,
+      update: map['updateAt'] ?? 0,
+      subtitle: map['subtitle'] ?? '',
+      url: map['url'] ?? '',
+      groupId: map['groupId'] ?? 1,
+      cover: map['cover'] ?? '',
+    );
+  }
 }
 
-class ArticleFilter{
+class ArticleFilter {
   final String? filter;
   final int? groupId;
   final int page;
@@ -82,7 +81,7 @@ class ArticleFilter{
     this.pageSize = 20,
   });
 
-  int get offset =>pageSize*(page-1);
+  int get offset => pageSize * (page - 1);
 
   ArticleFilter copyWith({
     String? filter,
@@ -90,11 +89,10 @@ class ArticleFilter{
     int? page,
   }) {
     return ArticleFilter(
-      filter: filter ?? this.filter,
-      groupId: groupId ?? this.groupId,
-      page: page ?? this.page,
-      pageSize: pageSize
-    );
+        filter: filter ?? this.filter,
+        groupId: groupId ?? this.groupId,
+        page: page ?? this.page,
+        pageSize: pageSize);
   }
 
   @override

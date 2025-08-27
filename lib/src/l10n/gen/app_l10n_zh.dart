@@ -1,5 +1,3 @@
-// ignore: unused_import
-import 'package:intl/intl.dart' as intl;
 import 'app_l10n.dart';
 
 // ignore_for_file: type=lint
@@ -43,6 +41,9 @@ class AppL10nZh extends AppL10n {
 
   @override
   String get newBoard => '新建 ';
+
+  @override
+  String get collect => '收藏';
 
   @override
   String get news => '最新资讯';
