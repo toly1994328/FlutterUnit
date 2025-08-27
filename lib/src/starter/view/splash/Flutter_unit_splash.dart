@@ -7,6 +7,7 @@ import 'package:fx_boot_starter/fx_boot_starter.dart';
 
 import 'dart:ui' as ui;
 
+import '../../start_repository.dart';
 import 'flutter_unit_text.dart';
 
 /// create by 张风捷特烈 on 2020-03-07
@@ -60,23 +61,45 @@ class _SplashBody extends StatelessWidget {
               text: StrUnit.appName,
               color: color,
             ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: 260,
+              child: ValueListenableBuilder<double>(
+                  valueListenable: dbInstallProgress,
+                  builder: (_, v, __) {
+                    if (v > 0 && v < 1) {
+                      return Column(
+                        spacing: 10,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          LinearProgressIndicator(
+                            value: v,
+                          ),
+                          Text(
+                              '正在初始化数据 ${(v * 100).toStringAsFixed(0).padLeft(2, '0')}%  ')
+                        ],
+                      );
+                    }
+                    return SizedBox();
+                  }),
+            ),
           ],
         )),
         const Expanded(
             child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            Positioned(
-                bottom: 15,
-                child: Wrap(
-                  direction: Axis.vertical,
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    Text("Power By 张风捷特烈", style: shadowStyle),
-                    Text("· 2021 ·  @编程之王 ", style: shadowStyle),
-                  ],
-                )),
+            // Positioned(
+            //     bottom: 15,
+            //     child: Wrap(
+            //       direction: Axis.vertical,
+            //       alignment: WrapAlignment.center,
+            //       crossAxisAlignment: WrapCrossAlignment.center,
+            //       children: [
+            //         Text("Power By 张风捷特烈", style: shadowStyle),
+            //         Text("· 2021 ·  @编程之王 ", style: shadowStyle),
+            //       ],
+            //     )),
           ],
         ))
       ],
@@ -101,7 +124,11 @@ class ColorfulText extends StatelessWidget {
       );
     return Text(
       "U",
-      style: TextStyle(fontSize: 26, height: 1, fontWeight: FontWeight.bold, foreground: paint),
+      style: TextStyle(
+          fontSize: 26,
+          height: 1,
+          fontWeight: FontWeight.bold,
+          foreground: paint),
     );
   }
 }

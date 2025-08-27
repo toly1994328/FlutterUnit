@@ -1727,10 +1727,7 @@ class _CalendarDateRangePickerState extends State<_CalendarDateRangePicker> {
       case TargetPlatform.fuchsia:
         HapticFeedback.vibrate();
         break;
-      case TargetPlatform.iOS:
-      case TargetPlatform.linux:
-      case TargetPlatform.macOS:
-      case TargetPlatform.windows:
+      default:
         break;
     }
   }
@@ -2998,7 +2995,7 @@ class _InputDateRangePickerState extends State<_InputDateRangePicker> {
   Widget build(BuildContext context) {
     final MaterialLocalizations localizations =
         MaterialLocalizations.of(context);
-    final InputDecorationThemeData inputTheme =
+    final InputDecorationTheme inputTheme =
         Theme.of(context).inputDecorationTheme;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,

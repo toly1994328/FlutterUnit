@@ -10,9 +10,6 @@ import 'package:widget_module/blocs/blocs.dart';
 
 import 'package:widget_repository/widget_repository.dart';
 
-
-
-
 import 'category_list_item.dart';
 import 'delete_category_dialog.dart';
 import 'edit_category_panel.dart';
@@ -21,22 +18,23 @@ import 'empty_category.dart';
 class CategoryPage extends StatelessWidget {
   final SliverGridDelegateWithMaxCrossAxisExtent gridDelegate =
       const SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
-        mainAxisExtent: 200,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
+    maxCrossAxisExtent: 200,
+    mainAxisExtent: 200,
+    mainAxisSpacing: 8,
+    crossAxisSpacing: 8,
     // crossAxisCount: 2,
 
     // childAspectRatio: 0.8,
   );
 
-  final SliverGridDelegateWithFixedCrossAxisCount deskGridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
+  final SliverGridDelegateWithFixedCrossAxisCount deskGridDelegate =
+      const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 3,
     mainAxisSpacing: 10,
     crossAxisSpacing: 10,
     childAspectRatio: 0.9,
   );
-  
+
   const CategoryPage({Key? key}) : super(key: key);
 
   @override
@@ -61,14 +59,14 @@ class CategoryPage extends StatelessWidget {
     double bottom = MediaQuery.of(context).padding.bottom;
 
     return SliverPadding(
-      padding:  EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 20+bottom),
-      sliver: SliverLayoutBuilder(
-          builder: (_,c){
-            SliverGridDelegate delegate = gridDelegate;
-            if(c.crossAxisExtent>500){
-              delegate = deskGridDelegate;
-            }
-            return SliverGrid(
+      padding:
+          EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 20 + bottom),
+      sliver: SliverLayoutBuilder(builder: (_, c) {
+        SliverGridDelegate delegate = gridDelegate;
+        if (c.crossAxisExtent > 500) {
+          delegate = deskGridDelegate;
+        }
+        return SliverGrid(
             delegate: SliverChildBuilderDelegate(
                 (_, index) => GestureDetector(
                     onTap: () =>
@@ -77,12 +75,11 @@ class CategoryPage extends StatelessWidget {
                       data: state.categories[index],
                       onDeleteItemClick: (model) =>
                           _deleteCollect(context, model),
-                      onEditItemClick: (model) =>
-                          _editCollect(context, model),
+                      onEditItemClick: (model) => _editCollect(context, model),
                     )),
                 childCount: state.categories.length),
-            gridDelegate: delegate); }
-      ),
+            gridDelegate: delegate);
+      }),
     );
   }
 
@@ -139,7 +136,10 @@ class CategoryPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: EditCategoryPanel(model: model,type: EditType.update,),
+                    child: EditCategoryPanel(
+                      model: model,
+                      type: EditType.update,
+                    ),
                   ),
                 ],
               ),
@@ -147,9 +147,9 @@ class CategoryPage extends StatelessWidget {
   }
 
   void _toDetailPage(BuildContext context, CategoryModel model) {
-    BlocProvider.of<CategoryWidgetBloc>(context).add(EventLoadCategoryWidget(model.id!));
-    context.push('/collection_widgets/${model.id}',extra: model);
+    String locale = context.read<AppConfig>().language.code;
+    BlocProvider.of<CategoryWidgetBloc>(context)
+        .add(EventLoadCategoryWidget(model.id!, locale));
+    context.push('/collection/widgets/${model.id}', extra: model);
   }
-
-
 }

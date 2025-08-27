@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:toly_ui/toly_ui.dart';
 
-
 import '../../../authentication.dart';
 import 'page_item.dart';
 
@@ -21,12 +20,12 @@ class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    String image = isDark?'anim_draw.webp':'base_draw.webp';
+    String image = isDark ? 'anim_draw.webp' : 'base_draw.webp';
     return Scaffold(
         body: AnnotatedRegion<SystemUiOverlayStyle>(
-          value:Theme.of(context).appBarTheme.systemOverlayStyle!,
-          child: Column(
-      children: [
+      value: Theme.of(context).appBarTheme.systemOverlayStyle!,
+      child: Column(
+        children: [
           Stack(
             children: [
               Container(
@@ -34,24 +33,24 @@ class UserPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.only(bottom: 40),
                 child: Image.asset(
-               'assets/images/$image',
+                  'assets/images/$image',
                   fit: BoxFit.cover,
                 ),
               ),
-              Positioned(
-                top: 50,
-                right: 20,
-                child: Container(
-                  padding: const EdgeInsets.all(6),
-                    decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(4)),
-                    child: const Icon(
-                      Icons.color_lens_outlined,
-                      color: Colors.white,
-                      size: 20,
-                    )),
-              ),
+              // Positioned(
+              //   top: 50,
+              //   right: 20,
+              //   child: Container(
+              //     padding: const EdgeInsets.all(6),
+              //       decoration: BoxDecoration(
+              //           color: Colors.black.withOpacity(0.5),
+              //           borderRadius: BorderRadius.circular(4)),
+              //       child: const Icon(
+              //         Icons.color_lens_outlined,
+              //         color: Colors.white,
+              //         size: 20,
+              //       )),
+              // ),
               Positioned(
                 bottom: 0,
                 left: 40,
@@ -68,9 +67,9 @@ class UserPage extends StatelessWidget {
             ],
           ),
           const Expanded(child: MePageItem())
-      ],
-    ),
-        ));
+        ],
+      ),
+    ));
   }
 
   Widget _buildByState(BuildContext context, AuthState state) {
@@ -85,7 +84,7 @@ class UserPage extends StatelessWidget {
       );
     }
     return Text(
-      '张风捷特烈',
+      'FlutterUnit',
       style: TextStyle(
           fontSize: 18,
           color: Theme.of(context).primaryColor,

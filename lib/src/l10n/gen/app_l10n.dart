@@ -5,15 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'app_l10n_de.dart';
 import 'app_l10n_en.dart';
-import 'app_l10n_es.dart';
-import 'app_l10n_fr.dart';
-import 'app_l10n_it.dart';
-import 'app_l10n_ja.dart';
-import 'app_l10n_ko.dart';
-import 'app_l10n_pt.dart';
-import 'app_l10n_ru.dart';
 import 'app_l10n_zh.dart';
 
 // ignore_for_file: type=lint
@@ -70,8 +62,7 @@ import 'app_l10n_zh.dart';
 /// be consistent with the languages listed in the AppL10n.supportedLocales
 /// property.
 abstract class AppL10n {
-  AppL10n(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppL10n(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -91,8 +82,7 @@ abstract class AppL10n {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -101,15 +91,7 @@ abstract class AppL10n {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('de'),
     Locale('en'),
-    Locale('es'),
-    Locale('fr'),
-    Locale('it'),
-    Locale('ja'),
-    Locale('ko'),
-    Locale('pt'),
-    Locale('ru'),
     Locale('zh')
   ];
 
@@ -185,6 +167,12 @@ abstract class AppL10n {
   /// **'新建 '**
   String get newBoard;
 
+  /// No description provided for @collect.
+  ///
+  /// In zh, this message translates to:
+  /// **'收藏'**
+  String get collect;
+
   /// No description provided for @news.
   ///
   /// In zh, this message translates to:
@@ -207,51 +195,25 @@ class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {
   }
 
   @override
-  bool isSupported(Locale locale) => <String>[
-        'de',
-        'en',
-        'es',
-        'fr',
-        'it',
-        'ja',
-        'ko',
-        'pt',
-        'ru',
-        'zh'
-      ].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppL10nDelegate old) => false;
 }
 
 AppL10n lookupAppL10n(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'de':
-      return AppL10nDe();
-    case 'en':
-      return AppL10nEn();
-    case 'es':
-      return AppL10nEs();
-    case 'fr':
-      return AppL10nFr();
-    case 'it':
-      return AppL10nIt();
-    case 'ja':
-      return AppL10nJa();
-    case 'ko':
-      return AppL10nKo();
-    case 'pt':
-      return AppL10nPt();
-    case 'ru':
-      return AppL10nRu();
-    case 'zh':
-      return AppL10nZh();
+    case 'en': return AppL10nEn();
+    case 'zh': return AppL10nZh();
   }
 
   throw FlutterError(
-      'AppL10n.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'AppL10n.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.'
+  );
 }

@@ -24,7 +24,7 @@ class WidgetDetailLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (kApp.isMobile) {
+    if (!kApp.isDesktop) {
       return Padding(
         padding: const EdgeInsets.only(right: 8.0, top: 0),
         child: WidgetLogo(

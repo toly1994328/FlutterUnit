@@ -1,5 +1,3 @@
-// ignore: unused_import
-import 'package:intl/intl.dart' as intl;
 import 'app_l10n.dart';
 
 // ignore_for_file: type=lint
@@ -43,6 +41,9 @@ class AppL10nEn extends AppL10n {
 
   @override
   String get newBoard => 'New';
+
+  @override
+  String get collect => 'collect';
 
   @override
   String get news => 'News';

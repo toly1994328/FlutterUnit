@@ -33,4 +33,15 @@ class FlutterDbStore extends FxDb {
         NodeDao(),
         LikeDao(),
       ];
+
+  Future<void> clearOldData() async {
+    await database.execute('DROP TABLE IF EXISTS category_widget');
+    await database.execute('DROP TABLE IF EXISTS category');
+    await database.execute('DROP TABLE IF EXISTS widget_fields');
+    await database.execute('DROP TABLE IF EXISTS widget_inheritance');
+    await database.execute('DROP TABLE IF EXISTS widget_desc');
+    await database.execute('DROP TABLE IF EXISTS node_desc');
+    await database.execute('DROP TABLE IF EXISTS node');
+    await database.execute('DROP TABLE IF EXISTS widget');
+  }
 }

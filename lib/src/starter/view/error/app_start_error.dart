@@ -21,18 +21,17 @@ class AppStartErrorPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Expanded(
-                child: Center(
-                    child: Wrap(
-              direction: Axis.vertical,
+            Row(
               children: [
-                const Text('应用启动异常:'),
-                Text(
-                  error.toString(),
-                  style: const TextStyle(color: Colors.redAccent),
+                Expanded(
+                  child: Text(
+                    error.toString(),
+                    style: const TextStyle(color: Colors.redAccent),
+                  ),
                 ),
               ],
-            ))),
+            ),
+            Spacer(),
             TolyLink(
                 href: 'https://github.com/toly1994328/',
                 text: 'Github 开源地址: FlutterUnit',

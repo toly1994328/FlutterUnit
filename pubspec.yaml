@@ -55,9 +55,8 @@ dependencies:
   path_provider: ^2.1.5  # 路径
 
   # 平台功能
-#  connectivity_plus: ^6.1.4 # 网络状态
   url_launcher: ^6.3.1 # url
-  archive: ^4.0.6 # 解压
+#  archive: ^4.0.6 # 解压
   file_picker: ^10.1.9 # 文件选择器
   share_plus: ^10.1.4 # 文字分享
   package_info_plus: 8.1.4
@@ -86,7 +85,39 @@ dev_dependencies:
 dependency_overrides:
   web: ^1.0.0
   intl: 0.20.2
+  sqflite:
+    git:
+      url: "https://gitee.com/openharmony-sig/flutter_sqflite.git"
+      path: "sqflite"
+      ref: master
+  sqflite_common:
+    git:
+      url: "https://gitee.com/openharmony-sig/flutter_sqflite.git"
+      path: "sqflite_common"
+      ref: master
 
+  sqflite_common_ffi:
+    git:
+      url: "https://gitee.com/openharmony-sig/flutter_sqflite.git"
+      path: "sqflite_common_ffi"
+      ref: master
+
+  #  url_launcher:
+  #    git:
+  #      url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
+  #      path: "packages/url_launcher/url_launcher"
+  #      ref: master
+
+  path_provider:
+    git:
+      url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
+      path: "packages/path_provider/path_provider"
+
+  shared_preferences:
+    git:
+      url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
+      path: "packages/shared_preferences/shared_preferences"
+  win32: 5.5.5
 flutter:
   generate: true
   uses-material-design: true
@@ -96,8 +127,8 @@ flutter:
 #    - assets/data/web/
     - assets/images/head_icon/
     - assets/images/widgets/
-    - assets/flutter.db
-    - assets/article.db
+    - assets/flutter.sql
+    - assets/article.sql
     - assets/version.json
 
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源

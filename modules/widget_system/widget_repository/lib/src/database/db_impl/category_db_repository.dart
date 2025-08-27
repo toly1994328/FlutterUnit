@@ -38,9 +38,10 @@ class CategoryDbRepository implements CategoryRepository {
   }
 
   @override
-  Future<List<WidgetModel>> loadCategoryWidgets({int categoryId = 0}) async {
+  Future<List<WidgetModel>> loadCategoryWidgets(
+      {int categoryId = 0, String locale = 'zh-cn'}) async {
     List<Map<String, dynamic>> rawData =
-        await categoryDao.loadCollectWidgets(categoryId);
+        await categoryDao.loadCollectWidgets(categoryId, locale);
     List<WidgetPo> widgets = rawData.map((e) => WidgetPo.fromJson(e)).toList();
     return widgets.map(WidgetModel.fromPo).toList();
   }
@@ -74,7 +75,8 @@ class CategoryDbRepository implements CategoryRepository {
 
     for (int i = 0; i < data.length; i++) {
       List<int> ids = await categoryDao.loadCollectWidgetIds(data[i]['id']);
-      collects.add(CategoryTo(widgetIds: ids, model: CategoryPo.fromJson(data[i])));
+      collects
+          .add(CategoryTo(widgetIds: ids, model: CategoryPo.fromJson(data[i])));
       if (i == data.length - 1) {
         completer.complete(collects);
       }

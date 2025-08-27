@@ -24,4 +24,9 @@ class ArticleDbStore extends FxDb {
         ColumnizeDao(),
         ArticleDao(),
       ];
+
+  Future<void> clearOldData() async {
+    await database.execute('DROP TABLE IF EXISTS columnize');
+    await database.execute('DROP TABLE IF EXISTS article');
+  }
 }
