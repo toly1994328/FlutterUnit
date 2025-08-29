@@ -21,4 +21,6 @@ abstract class WidgetRepository {
   Future<List<WidgetModel>> loadLikeWidgets();
 
   Future<int> collected(int id);
+
+  Future<List<WidgetFieldModel>> loadWidgetFields(int widgetId);
 }

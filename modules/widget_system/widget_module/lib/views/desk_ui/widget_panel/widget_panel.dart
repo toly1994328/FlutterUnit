@@ -1,20 +1,15 @@
-import 'package:app/app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:widget_module/blocs/blocs.dart';
-import 'package:widget_module/event/widget_event.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:widget_repository/widget_repository.dart';
-import 'package:fx_trace/fx_trace.dart';
-import 'package:toly_ui/toly_ui.dart';
 import 'desk_widget_top_bar.dart';
-import 'widget_tiled.dart';
+import 'package:widget_ui/widget_ui.dart';
 
 class DeskWidgetPanel extends StatefulWidget {
   final Widget? header;
+
   const DeskWidgetPanel({super.key, this.header});
 
   @override
@@ -86,28 +81,14 @@ class WidgetList extends StatelessWidget {
           padding: const EdgeInsets.only(left: 14, right: 14, bottom: 8),
           sliver: SliverGrid.builder(
             gridDelegate: gridDelegate,
-            itemBuilder: _buildItem,
+            itemBuilder: (_, index) => WidgetItem(
+              model: state.widgets[index],
+              onWidget: context.handleWidgetAction,
+            ),
             itemCount: state.widgets.length,
           ),
         )
       ],
-    );
-
-    return GridView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-      gridDelegate: gridDelegate,
-      itemBuilder: _buildItem,
-      itemCount: state.widgets.length,
-    );
-  }
-
-  Widget _buildItem(BuildContext context, int index) {
-    WidgetModel model = state.widgets[index];
-    return WidgetTiled(
-      model: model,
-      onTap: () {
-        context.push('${AppRoute.widgetDetail.url}${model.name}', extra: model);
-      },
     );
   }
 }

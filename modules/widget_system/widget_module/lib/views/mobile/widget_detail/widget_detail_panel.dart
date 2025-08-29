@@ -2,7 +2,7 @@ import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_star/flutter_star.dart';
 import 'package:widget_repository/widget_repository.dart';
-
+import 'package:widget_ui/widget_ui.dart';
 
 class WidgetDetailPanel extends StatelessWidget {
   final WidgetModel model;
@@ -11,43 +11,31 @@ class WidgetDetailPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color color = Theme.of(context).primaryColor;
+
     return Row(
       children: <Widget>[
         _buildLeft(model, context),
-        _buildRight(model),
+        Hero(
+          tag: "hero_widget_image_${model.id}",
+          child: WidgetDetailLogo(
+            model: model,
+            background: color,
+            widgetName: model.name,
+          ),
+        )
       ],
     );
   }
 
   Widget _buildLeft(WidgetModel model, BuildContext context) => Expanded(
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Panel(
-          color: Theme.of(context).scaffoldBackgroundColor,
-          child: Text(model.info)),
-    ),
-  );
-
-  Widget _buildRight(WidgetModel model) => Column(
-    mainAxisSize: MainAxisSize.min,
-    children: <Widget>[
-      SizedBox(
-        height: 100,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Hero(
-              tag: "hero_widget_image_${model.id}",
-              child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  child: model.image == null
-                      ? Image.asset('assets/images/caver.webp')
-                      : Image(image: model.image!))),
+          child: Panel(
+              constraints: BoxConstraints(minHeight: 110),
+              alignment: Alignment.topLeft,
+              color: Theme.of(context).scaffoldBackgroundColor,
+              child: Text(model.info)),
         ),
-      ),
-      StarScore(
-        score: model.lever,
-        star: const Star(size: 15, fillColor: Colors.blue),
-      )
-    ],
-  );
+      );
 }

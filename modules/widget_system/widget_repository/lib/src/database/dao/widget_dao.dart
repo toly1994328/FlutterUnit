@@ -125,4 +125,14 @@ widget_desc.locale = ?
     }
     return null;
   }
+
+  Future<List<Map<String, dynamic>>> queryWidgetFields(int widgetId) async {
+    String sql = """
+SELECT *
+FROM widget_fields
+WHERE widget_id = ?
+ORDER BY is_required DESC, field_order ASC
+""";
+    return database.rawQuery(sql, [widgetId]);
+  }
 }

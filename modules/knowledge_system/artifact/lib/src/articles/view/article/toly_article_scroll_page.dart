@@ -1,11 +1,10 @@
-
 import 'package:artifact/artifact.dart';
 import 'package:components/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:refresh/refresh.dart';
+import 'package:tolyui_refresh/tolyui_refresh.dart';
 
 import '../../bloc/exp.dart';
 
@@ -20,7 +19,6 @@ class TolyArticleScrollPage extends StatefulWidget {
 }
 
 class _TolyArticleScrollPageState extends State<TolyArticleScrollPage> {
-
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
@@ -35,7 +33,7 @@ class _TolyArticleScrollPageState extends State<TolyArticleScrollPage> {
   @override
   Widget build(BuildContext context) {
     return RefreshConfigWrapper(
-      child: SmartRefresher(
+      child: TolyRefresh(
           enablePullUp: true,
           onRefresh: _onRefresh,
           onLoading: _loadMore,
@@ -46,7 +44,7 @@ class _TolyArticleScrollPageState extends State<TolyArticleScrollPage> {
               //   handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               // ),
               SliverPadding(
-                padding: EdgeInsets.only(top: 10,bottom: 10),
+                padding: EdgeInsets.only(top: 10, bottom: 10),
                 sliver: const SliverToBoxAdapter(
                   child: ColumnizeViewPage(),
                 ),
@@ -76,7 +74,7 @@ class _TolyArticleScrollPageState extends State<TolyArticleScrollPage> {
     await context.read<ArticleBloc>().loadNextPageMore();
     // int length = data.length;
     ArticleState state = bloc.state;
-    if(state is ArticleWithData){
+    if (state is ArticleWithData) {
       if (state.data.length >= state.total) {
         _refreshController.loadNoData();
         await Future.delayed(Duration(milliseconds: 2000));
@@ -86,8 +84,5 @@ class _TolyArticleScrollPageState extends State<TolyArticleScrollPage> {
 
       _refreshController.loadComplete();
     }
-
   }
-
-
 }

@@ -11,16 +11,6 @@
     <path d="M80.5759 74.6807L83.0759 76.124V73.2373L80.5759 74.6807ZM93.2199 74.6807L90.7199 73.2373V76.124L93.2199 74.6807ZM82.8259 74.9307H90.9699V74.4307H82.8259V74.9307Z" fill="#F50057"/>
     <path d="M39.7539 73.958L42.2539 75.4014L42.2539 72.5146L39.7539 73.958ZM52.0367 73.958L49.5367 72.5146L49.5367 75.4014L52.0367 73.958ZM42.0039 74.208L49.7867 74.208L49.7867 73.708L42.0039 73.708L42.0039 74.208Z" fill="#F50057"/>
     <defs>
-        <filter id="filter0_d_18_27" x="29.649" y="45.0576" width="73.351" height="51.712" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="2"/>
-            <feComposite in2="hardAlpha" operator="out"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_27"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_27" result="shape"/>
-        </filter>
         <linearGradient id="paint0_linear_18_27" x1="78.589" y1="62.0366" x2="82.2016" y2="87.3246" gradientUnits="userSpaceOnUse">
             <stop stop-color="white"/>
             <stop offset="1" stop-color="#EDD0EA"/>

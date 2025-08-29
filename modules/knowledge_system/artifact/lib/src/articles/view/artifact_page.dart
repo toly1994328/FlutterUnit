@@ -47,7 +47,7 @@ class _ArtifactPageState extends State<ArtifactPage>
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 4, vsync: this);
+    controller = TabController(length: 2, vsync: this);
     controller.addListener(_listen);
     data = List.generate(5, (index) => 'Init $index');
   }
@@ -70,8 +70,10 @@ class _ArtifactPageState extends State<ArtifactPage>
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ColumnizeBloc>(create: (_) => ColumnizeBloc(cRepository)..init()),
-        BlocProvider<ArticleBloc>(create: (_) => ArticleBloc(aRepository)..init()),
+        BlocProvider<ColumnizeBloc>(
+            create: (_) => ColumnizeBloc(cRepository)..init()),
+        BlocProvider<ArticleBloc>(
+            create: (_) => ArticleBloc(aRepository)..init()),
       ],
       child: Scaffold(
         endDrawer: SortSettings(),
@@ -92,7 +94,8 @@ class _ArtifactPageState extends State<ArtifactPage>
                       children: [
                         GestureDetector(
                             onTap: () {
-                              _launchURL('https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart');
+                              _launchURL(
+                                  'https://github.com/toly1994328/FlutterUnit/blob/master/packages/algorithm/lib/src/algorithm/sort/functions/${name}.dart');
                             },
                             child: Text(
                               '查看排序源码',
@@ -109,8 +112,8 @@ class _ArtifactPageState extends State<ArtifactPage>
                   Expanded(child: SortPaper()),
                 ],
               ),
-              BuildingPanel(),
-              BuildingPanel(),
+              // BuildingPanel(),
+              // BuildingPanel(),
             ],
           ),
         ),
@@ -121,13 +124,11 @@ class _ArtifactPageState extends State<ArtifactPage>
   _launchURL(String url) async {
     Uri uri = Uri.parse(url);
     if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(uri,mode: LaunchMode.externalApplication);
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
       debugPrint('Could not launch $url');
     }
   }
-
-
 
   List<Widget> _buildAppBar(BuildContext context, bool innerBoxIsScrolled) {
     // print('innerBoxIsScrolled:$innerBoxIsScrolled');
@@ -203,8 +204,7 @@ class _ArtifactPageState extends State<ArtifactPage>
         // ),
         bottom: TabBar(
           controller: controller,
-          tabs:
-          [
+          tabs: [
             Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
               text: context.l10n.knowledgeTabToly,
@@ -213,14 +213,14 @@ class _ArtifactPageState extends State<ArtifactPage>
               // icon: Icon(Icons.account_balance_wallet_outlined),
               text: context.l10n.knowledgeTabAlgo,
             ),
-            Tab(
-              // icon: Icon(Icons.account_balance_wallet_outlined),
-              text:context.l10n.knowledgeTabLayout,
-            ),
-            Tab(
-              // icon: Icon(Icons.account_balance_wallet_outlined),
-              text:context.l10n.knowledgeTabPoint,
-            ),
+            // Tab(
+            //   // icon: Icon(Icons.account_balance_wallet_outlined),
+            //   text:context.l10n.knowledgeTabLayout,
+            // ),
+            // Tab(
+            //   // icon: Icon(Icons.account_balance_wallet_outlined),
+            //   text:context.l10n.knowledgeTabPoint,
+            // ),
           ],
         ),
       ), // )
