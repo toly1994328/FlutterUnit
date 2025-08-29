@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
+import 'package:unit_widgets_display/unit_widgets_display.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 import '../../desk_ui/widget_detail/link_widget_buttons.dart';
@@ -14,7 +15,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'category_end_drawer.dart';
 import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
-import 'package:widgets/widgets.dart';
+import 'widget_fields_sliver.dart';
 import 'package:tolyui/tolyui.dart';
 
 // 用于组件详情不需要在一开始就加载
@@ -88,10 +89,12 @@ class WidgetDetailPage extends StatelessWidget {
               ),
             ),
             if (state is DetailWithData)
-              SliverNodeList(
-                nodes: state.nodes,
-                model: state.widgetModel,
-              ),
+              state.nodes.isNotEmpty
+                  ? SliverNodeList(
+                      nodes: state.nodes,
+                      model: state.widgetModel,
+                    )
+                  : SliverWidgetFieldsList(widgetId: model.id),
           ],
         ));
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:refresh/refresh.dart';
+import 'package:tolyui_refresh/tolyui_refresh.dart';
 
 import 'toly_refresh_indicator.dart';
 
@@ -11,10 +11,15 @@ class RefreshConfigWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color themeColor = Theme.of(context).primaryColor;
-    return RefreshConfiguration(
+    return RefreshConfigScope(
       headerTriggerDistance: 60,
       topHitBoundary: 20,
       child: child,
+      springDescription: SpringDescription.withDampingRatio(
+        mass: 0.5,
+        stiffness: 100.0,
+        ratio: 1.1,
+      ),
       headerBuilder: () => const TolyRefreshIndicator(),
       footerBuilder: () => CustomFooter(
         builder: (BuildContext context, LoadStatus? mode) {
@@ -25,8 +30,7 @@ class RefreshConfigWrapper extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 Icon(Icons.arrow_upward, color: themeColor),
-                Text("上拉加载",
-                    style: TextStyle(color: themeColor, height: 1)),
+                Text("上拉加载", style: TextStyle(color: themeColor, height: 1)),
               ],
             );
           } else if (mode == LoadStatus.loading) {

@@ -11,8 +11,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
 import 'package:utils/utils.dart';
-
+import 'package:path/path.dart' as p;
 import 'bridge/unit_bridge.dart';
+import 'package:widget_module/widget_module.dart';
 
 class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
   const FlutterUnitStartRepo();
@@ -31,6 +32,8 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     registerHttpClient();
     NoteEnv().attachBridge(UnitNoteBridge());
     if (!kAppEnv.isWeb) await initDb();
+    await initWidgetStatistics(); // 加载统计数据
+
     HttpUtil.instance.rebase(PathUnit.baseUrl);
     AppConfigPo po = await SpStorage().appConfig.read();
     AppConfig state = AppConfig.fromPo(po);
@@ -54,11 +57,19 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     if (!dir.existsSync()) {
       await dir.create(recursive: true);
     }
-    ByteData data = await rootBundle.load("assets/flutter.db");
-    List<int> bytes =
-        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-    await File(dbPath).writeAsBytes(bytes, flush: true);
-
+    {
+      ByteData data = await rootBundle.load("assets/flutter.db");
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      await File(dbPath).writeAsBytes(bytes, flush: true);
+    }
+    {
+      ByteData data = await rootBundle.load("assets/article.db");
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      await File(p.join(dir.path, 'article.db'))
+          .writeAsBytes(bytes, flush: true);
+    }
     print("=====flutter.db==== assets ======拷贝完成====");
   }
 

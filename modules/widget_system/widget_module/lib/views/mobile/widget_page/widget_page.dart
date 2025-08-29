@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:note/note.dart';
 import 'widget_list_panel.dart';
+import 'package:tolyui_refresh/tolyui_refresh.dart';
 
 class WidgetPage extends StatefulWidget {
   const WidgetPage({Key? key}) : super(key: key);
@@ -28,14 +29,13 @@ class _WidgetPageState extends State<WidgetPage> {
     return BlocListener<WidgetsBloc, WidgetsState>(
       listener: _listenStateChange,
       child: RefreshConfigWrapper(
-        child: SmartRefresher(
+        child: TolyRefresh(
           physics: BouncingScrollPhysics(),
           controller: _refreshController,
           onRefresh: _onRefresh,
           enablePullUp: true,
           onLoading: _onLoadMore,
           child: CustomScrollView(
-            physics: BouncingScrollPhysics(),
             // key: PageStorageKey<String>(name),
             slivers: <Widget>[
               const WidgetListPanel(),

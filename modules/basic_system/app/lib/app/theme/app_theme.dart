@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 ThemeData darkTheme(AppConfig state) {
-  Color scaffoldBackgroundColor = const Color(0xff010201);
+  const Color scaffoldBackgroundColor = Color(0xff010201);
 
   SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark,
       statusBarIconBrightness: Brightness.light,
-      systemNavigationBarColor: Colors.transparent);
+      systemNavigationBarColor: Color(0xff181818));
 
   return ThemeData(
     scaffoldBackgroundColor: scaffoldBackgroundColor,

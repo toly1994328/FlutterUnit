@@ -8,7 +8,13 @@ class LikeDao extends Dao {
   String get name => 'like_widget';
 
   Future<List<int>> likeWidgetIds() async {
-    var result = await database.rawQuery("SELECT widget_id FROM like_widget");
+    String sql = """
+SELECT cw.widgetId as widget_id
+FROM category c 
+JOIN category_widget cw ON c.id = cw.categoryId 
+WHERE c.type = 1;
+    """;
+    var result = await database.rawQuery(sql);
     var ids = result.map<int>((e) => e['widget_id'] as int).toList();
     return ids;
   }
@@ -31,12 +37,12 @@ class LikeDao extends Dao {
       bool liked = await isLiked(widgetId);
       if (liked) return 0;
     }
+    String sql = """
+INSERT INTO category_widget (categoryId, widgetId)
+SELECT id, ? FROM category WHERE type = 1;
+    """;
 
-    return await database.rawInsert(
-        "INSERT INTO "
-        "like_widget(widget_id) "
-        "VALUES (?);",
-        [widgetId]);
+    return await database.rawInsert(sql, [widgetId]);
   }
 
   Future<void> unlike(int widgetId, {bool check = true}) async {
@@ -45,21 +51,28 @@ class LikeDao extends Dao {
       bool liked = await isLiked(widgetId);
       if (!liked) return;
     }
-    await database.execute(
-        "DELETE FROM like_widget "
-        "WHERE widget_id = ?",
-        [widgetId]);
+    String sql = """
+DELETE FROM category_widget 
+WHERE categoryId IN (SELECT id FROM category WHERE type = 1) 
+AND widgetId = ?;
+    """;
+    await database.execute(sql, [widgetId]);
   }
 
   // 判断组件是否已 liked
   Future<bool> isLiked(int widgetId) async {
-    var data = await database.rawQuery(
-        "Select count(id) as `count` FROM like_widget "
-        "WHERE widget_id = ?",
-        [widgetId]);
+    String sql = """
+SELECT EXISTS(
+    SELECT 1 
+    FROM category c 
+    JOIN category_widget cw ON c.id = cw.categoryId 
+    WHERE c.type = 1 AND cw.widgetId = ?
+) as is_liked;
+    """;
+    var data = await database.rawQuery(sql, [widgetId]);
     if (data.isNotEmpty) {
       var result = data[0];
-      return result['count'] as int > 0;
+      return result['is_liked'] != 0;
     }
     return false;
   }

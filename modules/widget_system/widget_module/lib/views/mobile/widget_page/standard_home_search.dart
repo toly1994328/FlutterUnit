@@ -18,7 +18,7 @@ class StandardHomeSearch extends StatelessWidget
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ColoredBox(
-      color: isDark ? Colors.transparent : Colors.white,
+      color: isDark ? Colors.black : Colors.white,
       child: Row(
         children: [
           _buildHead(context),

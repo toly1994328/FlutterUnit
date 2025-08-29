@@ -1,15 +1,12 @@
-
 import 'package:storage/storage.dart';
 
 import '../exp.dart';
 
 // 仓储: 提供数据
 class ColumnizeRepository {
-
   const ColumnizeRepository();
 
-  ColumnizeDao get dao => AppStorage().flutter<ColumnizeDao>();
-
+  ColumnizeDao get dao => AppStorage().article<ColumnizeDao>();
 
   // 从数据库加载资源
   Future<List<Columnize>> queryByDb({
@@ -22,6 +19,4 @@ class ColumnizeRepository {
     );
     return caches;
   }
-
-
 }

@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
     hide RefreshIndicator, RefreshIndicatorState;
 import 'package:flutter/services.dart';
-import 'package:refresh/refresh.dart';
+import 'package:tolyui_refresh/tolyui_refresh.dart';
 
 class TolyRefreshIndicator extends RefreshIndicator {
   const TolyRefreshIndicator({super.key});
@@ -22,8 +22,8 @@ class _TolyRefreshIndicatorState
   @override
   void initState() {
     super.initState();
-    _iconRotateCtrl =
-        AnimationController(vsync: this, duration: const Duration(milliseconds: 250));
+    _iconRotateCtrl = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 250));
     rotateAnima = Tween(begin: 0.0, end: -0.5).animate(_iconRotateCtrl);
   }
 
@@ -63,8 +63,13 @@ class _TolyRefreshIndicatorState
   @override
   Widget buildContent(BuildContext context, RefreshStatus mode) {
     Widget child = switch (mode) {
-      RefreshStatus.refreshing => const CupertinoActivityIndicator(radius: 10,),
-      RefreshStatus.completed => const Icon(Icons.check,color: Colors.green,),
+      RefreshStatus.refreshing => const CupertinoActivityIndicator(
+          radius: 10,
+        ),
+      RefreshStatus.completed => const Icon(
+          Icons.check,
+          color: Colors.green,
+        ),
       RefreshStatus.idle || RefreshStatus.canRefresh => RotationTransition(
           turns: rotateAnima,
           child: Icon(
