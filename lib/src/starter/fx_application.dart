@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_unit/src/starter/bridge/widget_display_impl.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_module/widget_module.dart';
@@ -12,6 +13,7 @@ import 'package:note/note.dart';
 
 export 'view/splash/Flutter_unit_splash.dart';
 export 'view/error/app_start_error.dart';
+import 'package:unit_widgets_display/unit_widgets_display.dart';
 
 class FxApplication with FxStarter<AppConfig> {
   const FxApplication();
@@ -24,6 +26,7 @@ class FxApplication with FxStarter<AppConfig> {
 
   @override
   void onLoaded(BuildContext context, int cost, AppConfig state) async {
+    DisplayPlugin().register(WidgetDisplayImpl());
     debugPrint("App启动耗时:$cost ms");
     context.read<AppConfigBloc>().init(state);
     context.initWidgetData();

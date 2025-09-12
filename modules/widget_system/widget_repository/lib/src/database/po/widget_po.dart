@@ -1,4 +1,3 @@
-
 /// create by 张风捷特烈 on 2020-03-04
 /// contact me by email 1981462002@qq.com
 /// 说明: 组件信息-数据库-数据模型
@@ -28,12 +27,12 @@ class WidgetPo {
     return WidgetPo(
         id: map['id'],
         name: map['name'],
-        nameCN: map["nameCN"],
-        family: map["family"],
+        nameCN: map["nameCN"] ?? map['localeName'] ?? '',
+        family: map["family"] ?? '',
         deprecated: map["deprecated"] ?? 0,
         lever: map["lever"].toDouble(),
-        linkWidget: map["linkWidget"],
-        info: map["info"]);
+        linkWidget: map["linkWidget"] ?? '',
+        info: map["info"] ?? '');
   }
 
   factory WidgetPo.fromDesc(Map<String, dynamic> map) {
@@ -70,4 +69,3 @@ class WidgetPo {
   List<Object> get props =>
       [id, name, nameCN, deprecated, family, linkWidget, lever, info];
 }
-

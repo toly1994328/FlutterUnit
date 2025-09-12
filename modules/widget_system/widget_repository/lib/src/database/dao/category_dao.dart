@@ -168,13 +168,15 @@ class CategoryDao extends Dao {
     await toggleCollect(1, widgetId);
   }
 
-  Future<List<Map<String, dynamic>>> loadCollectWidgets(int categoryId) async {
+  Future<List<Map<String, dynamic>>> loadCollectWidgets(int categoryId, [String locale = 'zh-cn']) async {
     String querySql =
-        "SELECT * FROM widget "
-        "WHERE id IN (SELECT widgetId FROM category_widget WHERE categoryId = ?) "
-        "ORDER BY lever DESC";
+        "SELECT w.*, wd.name as localeName, wd.info as info "
+        "FROM widget w "
+        "LEFT JOIN widget_desc wd ON w.id = wd.widget_id AND wd.locale = ? "
+        "WHERE w.id IN (SELECT widgetId FROM category_widget WHERE categoryId = ?) "
+        "ORDER BY w.lever DESC";
 
-    return await database.rawQuery(querySql, [categoryId]);
+    return await database.rawQuery(querySql, [locale, categoryId]);
   }
 
   Future<List<int>> loadCollectWidgetIds(int categoryId) async {

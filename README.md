@@ -48,6 +48,7 @@ Tools • Dart 3.9.0 • DevTools 2.48.0
 
 Build Android:
 ·]>>  flutter build apk --target-platform --split-per-abi
+·]>> flutter build appbundle --release # 打包谷歌
 Build iOS:
 ·]>>  flutter build ios
 Build Windows:
