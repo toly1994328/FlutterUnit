@@ -562,7 +562,7 @@ packages:
     description:
       path: "packages/path_provider/path_provider"
       ref: HEAD
-      resolved-ref: "2804fe116ffd69ef62519e50b6cbb2a4c647ca16"
+      resolved-ref: b1c37da9bebccd5f920fc20e69019378881074e5
       url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
     source: git
     version: "2.1.0"
@@ -595,7 +595,7 @@ packages:
     description:
       path: "packages/path_provider/path_provider_ohos"
       ref: HEAD
-      resolved-ref: "2804fe116ffd69ef62519e50b6cbb2a4c647ca16"
+      resolved-ref: b1c37da9bebccd5f920fc20e69019378881074e5
       url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
     source: git
     version: "2.2.1"
@@ -747,7 +747,7 @@ packages:
     description:
       path: "packages/shared_preferences/shared_preferences"
       ref: HEAD
-      resolved-ref: "2804fe116ffd69ef62519e50b6cbb2a4c647ca16"
+      resolved-ref: b1c37da9bebccd5f920fc20e69019378881074e5
       url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
     source: git
     version: "2.2.0"
@@ -780,7 +780,7 @@ packages:
     description:
       path: "packages/shared_preferences/shared_preferences_ohos"
       ref: HEAD
-      resolved-ref: "2804fe116ffd69ef62519e50b6cbb2a4c647ca16"
+      resolved-ref: b1c37da9bebccd5f920fc20e69019378881074e5
       url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
     source: git
     version: "2.2.0"
@@ -1017,10 +1017,11 @@ packages:
   unit_widgets_display:
     dependency: "direct overridden"
     description:
-      path: "D:\\Projects\\Flutter\\toly1994\\FlutterPackages\\unit_widgets_display"
-      relative: false
-    source: path
-    version: "0.0.1"
+      name: unit_widgets_display
+      sha256: "397e5d0c1175c21da786fef58c9e1edf5c98617b585fa17d93b84a04fb4b19e2"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1+1"
   url_launcher:
     dependency: "direct main"
     description:

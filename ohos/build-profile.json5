@@ -6,9 +6,9 @@
         "type": "HarmonyOS",
         "material": {
           "storeFile": "D:/Files/configs/HuaWei/FlutterUnit/dev/.p12",
-          "storePassword": "0000001817440A8F112603882BBD74511523E61CE0586164E3AEB09B6523EDB0D5A6B64CD348B1BF",
+          "storePassword": "00000018E5592CAB5C5CED62868FDC0E64E289B974918DE36049D4A0E7C159FA2CB72C936D200BE1",
           "keyAlias": "jtjx",
-          "keyPassword": "000000180EEFDC2B1E74288DBD15CF2CA2F861ACDB71E1B375EC66BFD405DF37FD674A5D0BA4FCAF",
+          "keyPassword": "000000188584DE4C7CEC5DA9B6A783DDFF64EDED6818145A4F4F66E3EF278180C7ADB8CE2A5F0B5D",
           "signAlg": "SHA256withECDSA",
           "profile": "D:/Files/configs/HuaWei/FlutterUnit/dev/flutter_unit_devDebug.p7b",
           "certpath": "D:/Files/configs/HuaWei/FlutterUnit/dev/flutter_unit.cer"
@@ -19,9 +19,9 @@
         "type": "HarmonyOS",
         "material": {
           "storeFile": "D:/Files/configs/HuaWei/FlutterUnit/release/.p12",
-          "storePassword": "00000018A1DA99746FA5760535E49D90E96A06C51658795FF101752F0DE3F98EF3D4851916E84CAD",
+          "storePassword": "000000185820940DDAA6B749CB38728FC5E5D2A2DAA32C01E017A061D2B8E35F91FA7A6816F9D226",
           "keyAlias": "jtjx",
-          "keyPassword": "00000018A524C6F901928A9C736EC1F35E836DA9574DF066F511813E143D8B894B3044FAD29F0936",
+          "keyPassword": "000000185206AD8C2BABA176B52607D277191E12A85742BB6ADA899B5787315A10681CCEC9B8E45D",
           "signAlg": "SHA256withECDSA",
           "profile": "D:/Files/configs/HuaWei/FlutterUnit/release/FlutterUnitReleaseRelease.p7b",
           "certpath": "D:/Files/configs/HuaWei/FlutterUnit/release/flutter_unit_release.cer"
