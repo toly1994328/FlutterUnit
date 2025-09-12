@@ -7,9 +7,11 @@ import 'package:widget_module/widget_module.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import '../flutter_unit.dart';
 import '../navigation/view/app_bloc_provider.dart';
+import 'bridge/widget_display_impl.dart';
 import 'start_repository.dart';
 import 'package:app_update/app_update.dart';
 import 'package:note/note.dart';
+import 'package:unit_widgets_display/unit_widgets_display.dart';
 
 export 'view/splash/Flutter_unit_splash.dart';
 export 'view/error/app_start_error.dart';
@@ -27,6 +29,7 @@ class FxApplication with FxStarter<AppConfig> {
   void onLoaded(BuildContext context, int cost, AppConfig state) async {
     debugPrint("App启动耗时:$cost ms");
     context.read<AppConfigBloc>().init(state);
+    DisplayPlugin().register(WidgetDisplayImpl());
     context.initWidgetData();
     if (!kAppEnv.isWeb) {
       context.read<LikeWidgetBloc>().loadLikeData();

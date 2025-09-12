@@ -34,15 +34,7 @@
       }
     ],
     "requestPermissions": [
-      {"name" :  "ohos.permission.INTERNET",
-        "usedScene": {
-          "abilities": [
-            "EntryAbility"
-          ],
-          "when":"inuse"
-        }
-      },
-
+      {"name" :  "ohos.permission.INTERNET"},
     ]
   }
 }

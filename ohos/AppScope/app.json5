@@ -3,7 +3,7 @@
     "bundleName": "com.toly1994.flutter_unit",
     "vendor": "example",
     "versionCode": 1000000,
-    "versionName": "1.0.0",
+    "versionName": "3.2.2",
     "icon": "$media:app_icon",
     "label": "$string:app_name"
   }
