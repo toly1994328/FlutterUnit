@@ -15,6 +15,7 @@ dependencies:
   tolyui_message: ^0.2.6+1
   flutter_star: ^1.0.2 # 星星组件
   wrapper: ^1.0.2 # 气泡包裹
+  tolyui_text: ^0.0.1+4
 
   fx_platform_adapter: 0.0.3 # 平台适配器
   flutter_svg: ^2.0.17 # svg 展示

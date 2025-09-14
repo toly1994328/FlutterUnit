@@ -11,15 +11,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-#  flutter_bloc: ^8.1.6 # 状态管理
-#  fx_trace: 0.0.5+5 # 异常追踪/监听
-#  fx_platform_adapter: 0.0.3 # 平台适配器
-#  flutter_svg: ^2.0.17 # svg 展示
-#
-#  # 视图展示
-#  tolyui: 0.0.4+10   # tolyui
-#  tolyui_refresh: 0.0.1+1 # 下拉刷新
-  unit_widgets_display: ^0.0.1
+  unit_widgets_display: ^0.0.1+2
   widget_ui:
     path: ../widget_ui
   widget_repository:

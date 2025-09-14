@@ -94,6 +94,6 @@ class StandardHomeSearch extends StatelessWidget
   }
 
   void _openDrawer(BuildContext context) {
-    Scaffold.of(context).openDrawer();
+    // Scaffold.of(context).openDrawer();
   }
 }

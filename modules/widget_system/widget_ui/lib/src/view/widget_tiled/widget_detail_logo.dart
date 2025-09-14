@@ -7,8 +7,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:fx_env/fx_env.dart';
 import 'package:widget_ui/widget_ui.dart';
-import 'widget_fields_dialog.dart';
-import 'widget_fields_page.dart';
 
 class WidgetDetailLogo extends StatelessWidget {
   final Color background;
@@ -24,7 +22,7 @@ class WidgetDetailLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (kApp.isMobile) {
+    if (!kApp.isDesktop) {
       return Padding(
         padding: const EdgeInsets.only(right: 8.0, top: 0),
         child: WidgetLogo(
