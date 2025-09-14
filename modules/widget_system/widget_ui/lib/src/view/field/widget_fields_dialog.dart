@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:widget_repository/widget_repository.dart';
-import 'package:storage/storage.dart';
 
 class WidgetFieldsDialog extends StatefulWidget {
   final int widgetId;
@@ -134,21 +133,6 @@ class _WidgetFieldsDialogState extends State<WidgetFieldsDialog> {
             ),
           ],
         ],
-      ),
-    );
-  }
-
-  Widget _buildRequiredBadge() {
-    return Container(
-      margin: const EdgeInsets.only(left: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-      decoration: BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: const Text(
-        '必需',
-        style: TextStyle(color: Colors.white, fontSize: 10),
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:widget_repository/widget_repository.dart';
 
 class WidgetIdView extends StatelessWidget {
   final int id;

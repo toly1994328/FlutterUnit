@@ -1122,6 +1122,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
+  tolyui_text:
+    dependency: transitive
+    description:
+      name: tolyui_text
+      sha256: "881c40567724ed059377d3a9c58bf4e840017ad3e7b5f5476df2bc7a147cb7d5"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1+4"
   two_dimensional_scrollables:
     dependency: transitive
     description:

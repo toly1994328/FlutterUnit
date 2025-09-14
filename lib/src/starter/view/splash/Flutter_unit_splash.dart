@@ -22,6 +22,7 @@ class FlutterUnitSplash extends StatelessWidget {
         value: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.transparent,
         ),
         child: Material(color: Colors.white, child: _SplashBody()),
       ),
@@ -74,7 +75,7 @@ class _SplashBody extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Text("Power By 张风捷特烈", style: shadowStyle),
-                    Text("· 2021 ·  @编程之王 ", style: shadowStyle),
+                    Text("· 2025 ·  @编程之王 ", style: shadowStyle),
                   ],
                 )),
           ],
@@ -101,7 +102,11 @@ class ColorfulText extends StatelessWidget {
       );
     return Text(
       "U",
-      style: TextStyle(fontSize: 26, height: 1, fontWeight: FontWeight.bold, foreground: paint),
+      style: TextStyle(
+          fontSize: 26,
+          height: 1,
+          fontWeight: FontWeight.bold,
+          foreground: paint),
     );
   }
 }

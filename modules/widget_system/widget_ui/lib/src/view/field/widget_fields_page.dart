@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:widget_repository/widget_repository.dart';
-import 'package:storage/storage.dart';
 
 class WidgetFieldsPage extends StatefulWidget {
   final int widgetId;
@@ -72,6 +71,7 @@ class _WidgetFieldsPageState extends State<WidgetFieldsPage> {
   }
 
   Widget _buildFieldItem(WidgetFieldModel field, bool isZh) {
+    Color color = Theme.of(context).primaryColor;
     return Container(
       color: Colors.white,
       child: Padding(
@@ -85,9 +85,7 @@ class _WidgetFieldsPageState extends State<WidgetFieldsPage> {
                   width: 4,
                   height: 20,
                   decoration: BoxDecoration(
-                    color: field.isRequired
-                        ? Colors.red
-                        : Theme.of(context).primaryColor,
+                    color: color,
                     borderRadius: BorderRadius.circular(2),
                   ),
                 ),
@@ -135,24 +133,6 @@ class _WidgetFieldsPageState extends State<WidgetFieldsPage> {
               ),
             ],
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildRequiredBadge() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: const Text(
-        '必需',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 11,
-          fontWeight: FontWeight.w500,
         ),
       ),
     );
