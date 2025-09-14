@@ -1,1 +1,0 @@
-{"name":"IndexedSemantics","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"使用索引注释子语义的小部件。","fields":[{"name":"index","type":"int","required":true,"desc":"用于注释第一个子语义节点的索引。"}],"id":431,"localName":"IndexedSemantics","lever":3,"family":3,"linkIds":[],"nodes":[]}

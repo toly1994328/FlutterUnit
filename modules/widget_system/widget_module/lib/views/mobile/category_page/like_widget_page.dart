@@ -3,14 +3,13 @@ import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:widget_module/blocs/action/widget_action.dart';
 import 'package:widget_repository/widget_repository.dart';
-
+import 'package:widget_ui/widget_ui.dart';
 import 'package:widget_module/blocs/blocs.dart';
 
 import '../widget_detail/collect_widget_list_item.dart';
 import '../widget_detail/widget_detail_page.dart';
-
-
 
 /// create by 张风捷特烈 on 2020/6/16
 /// contact me by email 1981462002@qq.com
@@ -28,7 +27,7 @@ class LikeWidgetPage extends StatelessWidget {
   );
 
   final SliverGridDelegate deskGridDelegate =
-  const SliverGridDelegateWithFixedCrossAxisCount(
+      const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 3,
     mainAxisSpacing: 10,
     crossAxisSpacing: 10,
@@ -37,7 +36,8 @@ class LikeWidgetPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LikeWidgetBloc, LikeWidgetState>(builder: (ctx, state) {
+    return BlocBuilder<LikeWidgetBloc, List<WidgetModel>>(
+        builder: (ctx, state) {
       return CustomScrollView(
         slivers: <Widget>[
           SliverOverlapInjector(
@@ -52,35 +52,32 @@ class LikeWidgetPage extends StatelessWidget {
     });
   }
 
-  Widget _buildContent(BuildContext context, LikeWidgetState state) {
+  Widget _buildContent(BuildContext context, List<WidgetModel> state) {
     return SliverPadding(
-      padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
-      sliver: SliverLayoutBuilder(
-          builder: (_,c){
+        padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
+        sliver: SliverLayoutBuilder(
+          builder: (_, c) {
             SliverGridDelegate delegate = gridDelegate;
-            if(c.crossAxisExtent>500){
+            if (c.crossAxisExtent > 500) {
               delegate = deskGridDelegate;
             }
             return SliverGrid(
-          delegate: SliverChildBuilderDelegate(
-              (_, index) => GestureDetector(
-                  onTap: () =>
-                      _toDetailPage(context, state.widgets[index]),
-                  child: CollectWidgetListItem(
-                    data: state.widgets[index],
-                    onDeleteItemClick: (model) =>
-                        _deleteCollect(context, model),
-                  )),
-              childCount: state.widgets.length),
-          gridDelegate: delegate);},
-    ));
+                delegate: SliverChildBuilderDelegate(
+                    (_, index) => GestureDetector(
+                        onTap: () => _toDetailPage(context, state[index]),
+                        child: CollectWidgetListItem(
+                          data: state[index],
+                          onDeleteItemClick: (model) =>
+                              context.toggleLike(model.id),
+                        )),
+                    childCount: state.length),
+                gridDelegate: delegate);
+          },
+        ));
   }
 
-  _deleteCollect(BuildContext context, WidgetModel model) =>
-      BlocProvider.of<LikeWidgetBloc>(context)
-          .add(ToggleLikeWidgetEvent(id: model.id));
-
   _toDetailPage(BuildContext context, WidgetModel model) {
-    Navigator.push(context, SlidePageRoute(child: WidgetDetailPageScope(model: model)));
+    Navigator.push(
+        context, SlidePageRoute(child: WidgetDetailPageScope(model: model)));
   }
 }

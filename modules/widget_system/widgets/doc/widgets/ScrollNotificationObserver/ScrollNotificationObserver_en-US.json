@@ -1,1 +1,0 @@
-{"name":"ScrollNotificationObserver","path":"/src/widgets/scroll_notification_observer.dart","parents":["StatefulWidget","Widget"],"desc":" Notifies its listeners when a descendant scrolls.","fields":[{"name":"child","type":"Widget","required":true,"desc":"The subtree below this widget."}],"id":495,"lever":3,"family":3,"linkIds":[],"nodes":[]}

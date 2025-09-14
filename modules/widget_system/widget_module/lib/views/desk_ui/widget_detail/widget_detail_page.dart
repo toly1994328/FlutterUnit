@@ -10,6 +10,7 @@ import 'package:widget_repository/widget_repository.dart';
 import '../../mobile/mobile_ui.dart';
 import '../../mobile/widget_detail/category_end_drawer.dart';
 import '../../mobile/widget_detail/node_display/node_display.dart';
+import '../../mobile/widget_detail/widget_fields_sliver.dart';
 import 'link_widget_buttons.dart';
 import 'widget_detail_bar.dart';
 import 'widget_detail_panel.dart';
@@ -55,11 +56,12 @@ class _DeskWidgetDetailPageScopeState extends State<DeskWidgetDetailPageScope> {
   Widget build(BuildContext context) {
     if (_model == null)
       return const Center(child: CupertinoActivityIndicator());
-    Locale locale =  context.read<AppConfigBloc>().state.language.locale;
+    Locale locale = context.read<AppConfigBloc>().state.language.locale;
     // Locale locale = Localizations.localeOf(context);
     // String? countryCode = locale.countryCode;
     // if (countryCode == null) {}
-    String localeStr = '${locale.languageCode}-${locale.countryCode}'.toLowerCase();
+    String localeStr =
+        '${locale.languageCode}-${locale.countryCode}'.toLowerCase();
 
     return BlocProvider<WidgetDetailBloc>(
       create: (_) => WidgetDetailBloc(
@@ -119,16 +121,23 @@ class DeskWidgetDetailPage extends StatelessWidget {
             SliverToBoxAdapter(
               child: Column(
                 children: [
-                  DeskWidgetDetailPanel(model: bloc.currentWidget, state: state,),
-                  const Divider(height: 18,)
+                  DeskWidgetDetailPanel(
+                    model: bloc.currentWidget,
+                    state: state,
+                  ),
+                  const Divider(
+                    height: 18,
+                  )
                 ],
               ),
             ),
             if (state is DetailWithData)
-              SliverNodeList(
-                nodes: state.nodes,
-                model: state.widgetModel,
-              )
+              state.nodes.isNotEmpty
+                  ? SliverNodeList(
+                      nodes: state.nodes,
+                      model: state.widgetModel,
+                    )
+                  : SliverWidgetFieldsList(widgetId: model!.id),
           ],
         ));
   }

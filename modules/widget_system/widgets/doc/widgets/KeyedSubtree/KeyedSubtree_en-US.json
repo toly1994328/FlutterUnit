@@ -1,1 +1,0 @@
-{"name":"KeyedSubtree","path":"/src/widgets/basic.dart","parents":["StatelessWidget","Widget"],"desc":" A widget that builds its child.","fields":[{"name":"child","type":"Widget","required":true,"desc":"The widget below this widget in the tree."}],"id":436,"lever":3,"family":3,"linkIds":[],"nodes":[]}

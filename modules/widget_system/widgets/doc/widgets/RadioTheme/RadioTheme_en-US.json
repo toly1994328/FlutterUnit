@@ -1,1 +1,0 @@
-{"name":"RadioTheme","path":"/src/material/radio_theme.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":" Applies a radio theme to descendant [Radio] widgets.","fields":[{"name":"data","type":"RadioThemeData","required":true,"desc":"The properties used for all descendant [Radio] widgets."}],"id":478,"lever":3,"family":3,"linkIds":[],"nodes":[]}

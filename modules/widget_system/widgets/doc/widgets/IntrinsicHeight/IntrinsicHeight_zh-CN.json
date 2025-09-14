@@ -1,1 +1,0 @@
-{"name":"IntrinsicHeight","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"将其子项大小调整为子项固有高度的小部件。","fields":[],"id":298,"localName":"固有高","lever":4,"family":2,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"IntrinsicHeight基本使用","desc":["【child】 : 子组件   【Widget】","如示例:左侧高可变动，中间高固定,右侧高取前两者的最高值。"]}]}

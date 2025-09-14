@@ -96,7 +96,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     _controller.jumpToPage(index);
     _activeTab.value = AppTab.values[index];
     if (index == 3) {
-      BlocProvider.of<LikeWidgetBloc>(context).add(const EventLoadLikeData());
+      context.read<LikeWidgetBloc>().loadLikeData();
     }
   }
 }

@@ -1,1 +1,0 @@
-{"name":"HeroMode","path":"/src/widgets/heroes.dart","parents":["StatelessWidget","Widget"],"desc":"启用或禁用小部件子树中的 [Hero]。","fields":[{"name":"child","type":"Widget","required":true,"desc":"放置在 [HeroMode] 内的子树。"},{"name":"enabled","type":"bool","required":true,"desc":"此子树中是否启用 [Hero]。"}],"id":426,"localName":"HeroMode","lever":3,"family":3,"linkIds":[],"nodes":[]}

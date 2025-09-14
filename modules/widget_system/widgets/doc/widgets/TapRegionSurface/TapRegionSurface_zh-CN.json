@@ -1,1 +1,0 @@
-{"name":"TapRegionSurface","path":"/src/widgets/tap_region.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"提供一组注册区域内部或外部点击通知的小部件，而不参与[手势消歧](https://flutter.dev/to/gesture-disambiguation)系统。","fields":[],"id":538,"localName":"TapRegionSurface","lever":3,"family":3,"linkIds":[],"nodes":[]}

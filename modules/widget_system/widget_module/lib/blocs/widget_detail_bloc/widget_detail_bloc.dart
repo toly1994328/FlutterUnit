@@ -49,11 +49,7 @@ class WidgetDetailBloc extends Cubit<DetailState> {
           await nodeRepo.loadNode(widget.id, locale: locale);
       final List<WidgetModel> links =
           await widgetRepo.loadWidget(widget.links, locale);
-      if (nodes.isEmpty) {
-        emit(DetailEmpty());
-      } else {
-        emit(DetailWithData(widgetModel: widget, nodes: nodes, links: links));
-      }
+      emit(DetailWithData(widgetModel: widget, nodes: nodes, links: links));
     } catch (e, s) {
       print("queryDetail=error===${e}=$s==");
       emit(DetailFailed());

@@ -1,1 +1,0 @@
-{"name":"ReorderableDelayedDragStartListener","path":"/src/widgets/reorderable_list.dart","parents":["ReorderableDragStartListener","StatelessWidget","Widget"],"desc":"通过寻找长按事件来识别拖动操作开始的包装器小部件。一旦识别，它将在可重新排序列表中的包装项目上开始拖动操作。","fields":[],"id":487,"localName":"ReorderableDelayedDragStartListener","lever":3,"family":3,"linkIds":[],"nodes":[]}

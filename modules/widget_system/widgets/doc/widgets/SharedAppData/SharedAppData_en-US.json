@@ -1,1 +1,0 @@
-{"name":"SharedAppData","path":"/src/widgets/shared_app_data.dart","parents":["StatefulWidget","Widget"],"desc":" Enables sharing key/value data with its `child` and all of the child's descendants.","fields":[{"name":"child","type":"Widget","required":true,"desc":"The widget below this widget in the tree."}],"id":511,"lever":3,"family":3,"linkIds":[],"nodes":[]}

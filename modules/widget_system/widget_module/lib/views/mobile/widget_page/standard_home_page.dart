@@ -13,6 +13,7 @@ import 'widget_page.dart';
 
 class StandardHomePage extends StatefulWidget {
   final Widget? heard;
+
   const StandardHomePage({super.key, this.heard});
 
   @override
@@ -21,7 +22,12 @@ class StandardHomePage extends StatefulWidget {
 
 class _StandardHomePageState extends State<StandardHomePage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  List<String> get _tabs => [
+  List<String> get _tabs {
+    final provider = WidgetStatisticsProvider();
+    final stats = provider.statistics;
+
+    if (stats == null) {
+      return [
         context.l10n.stateless,
         context.l10n.stateful,
         context.l10n.single,
@@ -30,6 +36,68 @@ class _StandardHomePageState extends State<StandardHomePage>
         context.l10n.proxy,
         context.l10n.other,
       ];
+    }
+
+    return [
+      context.l10n.stateless,
+      context.l10n.stateful,
+      context.l10n.single,
+      context.l10n.multi,
+      context.l10n.sliver,
+      context.l10n.proxy,
+      context.l10n.other,
+    ];
+  }
+
+  ValueNotifier<int> indexValue = ValueNotifier(0);
+
+  List<Widget> _buildTabWidgets() {
+    final provider = WidgetStatisticsProvider();
+    final stats = provider.statistics;
+    final counts = [
+      stats?.familyCount[WidgetFamily.stateless] ?? 0,
+      stats?.familyCount[WidgetFamily.stateful] ?? 0,
+      stats?.familyCount[WidgetFamily.singleChildRender] ?? 0,
+      stats?.familyCount[WidgetFamily.multiChildRender] ?? 0,
+      stats?.familyCount[WidgetFamily.sliver] ?? 0,
+      stats?.familyCount[WidgetFamily.proxy] ?? 0,
+      stats?.familyCount[WidgetFamily.other] ?? 0,
+    ];
+
+    return List.generate(
+        _tabs.length,
+        (index) => ValueListenableBuilder<int>(
+            valueListenable: indexValue,
+            builder: (context, value, __) {
+              return Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Text(_tabs[index]),
+                  if (value == index)
+                    Positioned(
+                      right: -10,
+                      top: -6,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context)
+                              .primaryColor
+                              .withValues(alpha: 0.6),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Text('${counts[index]}',
+                            style: const TextStyle(
+                                fontFamily: '黑体',
+                                height: 1,
+                                fontSize: 9,
+                                color: Colors.white)),
+                      ),
+                    ),
+                ],
+              );
+            }));
+  }
 
   late TabController tabController;
 
@@ -37,12 +105,15 @@ class _StandardHomePageState extends State<StandardHomePage>
   void initState() {
     super.initState();
     tabController = TabController(length: 7, vsync: this);
+    tabController.addListener(_onChange);
   }
 
   int maxCount = 60;
 
   @override
   void dispose() {
+    tabController.removeListener(_onChange);
+
     tabController.dispose();
     super.dispose();
   }
@@ -122,7 +193,9 @@ class _StandardHomePageState extends State<StandardHomePage>
             indicatorWeight: 3,
             unselectedLabelColor: Colors.grey,
             indicatorColor: themeColor,
-            tabs: _tabs.map((String name) => Tab(text: name)).toList(),
+            tabs: _buildTabWidgets()
+                .map((Widget widget) => Tab(child: widget))
+                .toList(),
           )),
       // handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
       // ),
@@ -131,4 +204,8 @@ class _StandardHomePageState extends State<StandardHomePage>
 
   @override
   bool get wantKeepAlive => true;
+
+  void _onChange() {
+    indexValue.value = tabController.index;
+  }
 }

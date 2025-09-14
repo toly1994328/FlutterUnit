@@ -1,1 +1,0 @@
-{"name":"SliverEnsureSemantics","path":"/src/widgets/sliver.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"确保其 sliver 子项包含在语义树中的 sliver。","fields":[],"id":517,"localName":"SliverEnsureSemantics","lever":3,"family":3,"linkIds":[],"nodes":[]}

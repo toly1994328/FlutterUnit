@@ -1,1 +1,0 @@
-{"name":"ScaffoldMessenger","path":"/src/material/scaffold.dart","parents":["StatefulWidget","Widget"],"desc":" Manages [SnackBar]s and [MaterialBanner]s for descendant [Scaffold]s.","fields":[{"name":"child","type":"Widget","required":true,"desc":"The widget below this widget in the tree."}],"id":494,"lever":3,"family":3,"linkIds":[],"nodes":[]}

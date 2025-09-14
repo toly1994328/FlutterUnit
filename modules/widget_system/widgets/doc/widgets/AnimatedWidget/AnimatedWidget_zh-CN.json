@@ -1,1 +1,0 @@
-{"name":"AnimatedWidget","path":"/src/widgets/transitions.dart","abstract":true,"parents":["StatefulWidget","Widget"],"desc":"当给定的 [Listenable] 值发生变化时重建的小部件。","fields":[{"name":"listenable","type":"Listenable","required":true,"desc":"此小部件正在监听的 [Listenable]。"}],"id":362,"localName":"AnimatedWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}

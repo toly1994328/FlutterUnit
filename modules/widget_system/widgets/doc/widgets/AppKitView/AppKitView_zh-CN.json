@@ -1,1 +1,0 @@
-{"name":"AppKitView","path":"/src/widgets/platform_view.dart","parents":["_DarwinView","StatefulWidget","Widget"],"desc":"包含 macOS AppKit 视图的小部件。","fields":[],"id":363,"localName":"AppKitView","lever":3,"family":3,"linkIds":[],"nodes":[]}

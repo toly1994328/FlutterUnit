@@ -29,7 +29,7 @@ class FxApplication with FxStarter<AppConfig> {
     context.read<AppConfigBloc>().init(state);
     context.initWidgetData();
     if (!kAppEnv.isWeb) {
-      context.read<LikeWidgetBloc>().add(const EventLoadLikeData());
+      context.read<LikeWidgetBloc>().loadLikeData();
       context.read<CategoryBloc>().add(const EventLoadCategory());
       context.read<NewsBloc>().load();
     }

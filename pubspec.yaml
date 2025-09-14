@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.1.0+2002
+version: 3.2.3+2006
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -27,7 +27,6 @@ workspace:
   - modules/tools_system/treasure_tools
 
   - modules/widget_system/widget_module
-  - modules/widget_system/widgets
   - modules/knowledge_system/note
 
 dependencies:
@@ -66,6 +65,7 @@ dependencies:
   # 视图展示
   tolyui: 0.0.4+10   # tolyui
   tolyui_refresh: 0.0.1+1 # 下拉刷新
+
   dash_painter: ^1.0.2 # 虚线
   flutter_star: ^1.0.2 # 星星组件
   flutter_spinkit: ^5.2.0 # loading
@@ -98,6 +98,7 @@ flutter:
     - assets/images/head_icon/
     - assets/images/widgets/
     - assets/flutter.db
+    - assets/article.db
     - assets/version.json
 
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源

@@ -1,1 +1,0 @@
-{"name":"SliverToBoxAdapter","path":"/src/widgets/basic.dart","parents":["SingleChildRenderObjectWidget","RenderObjectWidget","Widget"],"desc":"包含单个框小部件的 sliver。","fields":[],"id":189,"localName":"Sliver适配器","lever":4,"family":4,"linkIds":[],"nodes":[{"file":"node1_base.dart","name":"SliverToBoxAdapter基本使用","desc":["【child】 : 子组件   【Widget】"]}]}
