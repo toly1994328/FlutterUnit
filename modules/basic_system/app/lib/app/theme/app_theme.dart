@@ -51,12 +51,19 @@ ThemeData darkTheme(AppConfig state) {
     dividerTheme: DividerThemeData(
       color: const Color(0xff2F2F2F),
       space: px1,
-      thickness: px1,
+      thickness: divHeight,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Color(0xff181818),
         selectedItemColor: Color(0xff4699FB)),
   );
+}
+
+double get divHeight {
+  if (kAppEnv.isAndroid) {
+    return 0.2;
+  }
+  return px1;
 }
 
 ThemeData lightTheme(AppConfig state) {
@@ -70,6 +77,7 @@ ThemeData lightTheme(AppConfig state) {
   if (kAppEnv.isWindows) {
     fontFamily = '宋体';
   }
+
   return ThemeData(
     fontFamily: fontFamily,
     primaryColor: state.themeColor.color,
@@ -88,7 +96,7 @@ ThemeData lightTheme(AppConfig state) {
     dividerTheme: DividerThemeData(
       color: const Color(0xffDEE0E2),
       space: px1,
-      thickness: px1,
+      thickness: divHeight,
     ),
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.android: SlidePageTransitionsBuilder(),
