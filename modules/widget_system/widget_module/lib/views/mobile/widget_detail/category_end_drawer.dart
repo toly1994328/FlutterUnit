@@ -131,8 +131,10 @@ class _CategoryInfoState extends State<CategoryInfo> {
         onSelected: (v) async {
           await repository.toggleCategory(category.id!, widget.id);
           _loadCategoryIds();
+          String locale = context.read<AppConfig>().language.code;
+
           BlocProvider.of<CategoryWidgetBloc>(context)
-              .add(EventLoadCategoryWidget(category.id!));
+              .add(EventLoadCategoryWidget(category.id!, locale));
         });
   }
 

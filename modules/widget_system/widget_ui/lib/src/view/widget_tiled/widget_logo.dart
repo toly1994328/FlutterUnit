@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_star/star.dart';
@@ -7,8 +8,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:fx_env/fx_env.dart';
 import 'package:widget_ui/widget_ui.dart';
-import 'widget_fields_dialog.dart';
-import 'widget_fields_page.dart';
 
 class WidgetLogo extends StatelessWidget {
   final Color background;
@@ -147,4 +146,101 @@ String widgetLogo(String widgetName) {
     'Icon' => 'Icon.svg',
     _ => 'Widget.svg',
   };
+}
+
+class GlassSquare extends StatelessWidget {
+  final Color color; // 主颜色
+  final double size; // 边长
+  final Widget? child; // 子组件
+
+  const GlassSquare({
+    super.key,
+    required this.color,
+    this.size = 300,
+    this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // 背景渐变层
+          Container(
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  color,
+                  Color.lerp(color, Colors.white, 0.4)!,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.4),
+                  blurRadius: 25,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+          ),
+
+          // 毛玻璃效果层
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+            child: Container(
+              width: size,
+              height: size,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white.withOpacity(0.2)),
+                color: Colors.white.withOpacity(0.05),
+              ),
+            ),
+          ),
+
+          // 高光层
+          Container(
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: RadialGradient(
+                colors: [
+                  Colors.white.withOpacity(0.45),
+                  Colors.transparent,
+                ],
+                radius: 0.6,
+                center: const Alignment(-0.6, -0.6),
+              ),
+            ),
+          ),
+
+          // 柔光层
+          Container(
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromRGBO(255, 255, 255, 0.15),
+                  Color.fromRGBO(0, 0, 0, 0.25),
+                ],
+              ),
+            ),
+          ),
+
+          // 子组件
+          if (child != null) child!,
+        ],
+      ),
+    );
+  }
 }

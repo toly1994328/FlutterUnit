@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_star/star.dart';
 import 'package:flutter_star/star_score.dart';
 import 'package:tolyui_message/tolyui_message.dart';
+import 'package:tolyui_text/tolyui_text.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:wrapper/wrapper.dart';
 
@@ -31,11 +32,14 @@ class ToggleLikeWidget extends WidgetAction {
 /// 组价主页单体的样式
 class WidgetItem extends StatelessWidget {
   final WidgetModel model;
+  final String? searchArgs;
+
   final ValueChanged<WidgetAction> onWidget;
 
   const WidgetItem({
     super.key,
     required this.model,
+    this.searchArgs,
     required this.onWidget,
   });
 
@@ -104,29 +108,22 @@ class WidgetItem extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle(Color color, Color? textColor, bool isDark) {
-    return Row(
-      children: [
-        Expanded(child: listTitle(textColor)),
-        StarScore(
-          star: Star(emptyColor: Colors.white, size: 12, fillColor: color),
-          score: model.lever,
-        ),
-      ],
-    );
-  }
-
   Widget listTitle(Color? textColor) {
+    TextStyle style = TextStyle(
+      fontSize: 14,
+      color: textColor,
+      fontWeight: FontWeight.bold,
+    );
+
     return GestureDetector(
-      child: Text(
+      child: HighlightText.withArg(
         model.name,
+        arg: searchArgs,
+        caseSensitive: false,
+        highlightStyle: style.copyWith(color: Colors.red),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: TextStyle(
-          fontSize: 14,
-          color: textColor,
-          fontWeight: FontWeight.bold,
-        ),
+        style: style,
       ),
       onLongPress: () async {
         await Clipboard.setData(ClipboardData(text: model.name));
@@ -136,10 +133,15 @@ class WidgetItem extends StatelessWidget {
   }
 
   Widget _buildContent(Color? textColor) {
+    TextStyle style = TextStyle(fontSize: 13, color: textColor);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Text(
+      child: HighlightText.withArg(
         model.info,
+        arg: searchArgs,
+        caseSensitive: false,
+        highlightStyle: style.copyWith(color: Colors.red),
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
         style: TextStyle(fontSize: 13, color: textColor),
@@ -148,6 +150,8 @@ class WidgetItem extends StatelessWidget {
   }
 
   Widget _buildFoot(bool isDark) {
+    TextStyle style =
+        const TextStyle(fontSize: 12, height: 1, color: Color(0xff86909c));
     return Row(
       children: [
         Container(
@@ -158,12 +162,14 @@ class WidgetItem extends StatelessWidget {
               color: Color(0xff86909c), shape: BoxShape.circle),
         ),
         Expanded(
-          child: Text(
+          child: HighlightText.withArg(
             model.nameCN,
+            arg: searchArgs,
+            caseSensitive: false,
+            highlightStyle: style.copyWith(color: Colors.red),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-                fontSize: 12, height: 1, color: Color(0xff86909c)),
+            style: style,
           ),
         ),
         Wrapper.just(
