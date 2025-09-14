@@ -1,1 +1,0 @@
-{"name":"BackdropGroup","path":"/src/widgets/basic.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"为所有选择使用它的子 [BackdropFilter] 小部件建立共享背景层的小部件。","fields":[{"name":"backdropKey","type":"BackdropKey","required":true,"desc":"此背景组将与共享子层一起使用的背景键。"}],"id":367,"localName":"BackdropGroup","lever":3,"family":3,"linkIds":[],"nodes":[]}

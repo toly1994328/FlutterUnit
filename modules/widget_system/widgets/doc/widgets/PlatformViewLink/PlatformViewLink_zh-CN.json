@@ -1,1 +1,0 @@
-{"name":"PlatformViewLink","path":"/src/widgets/platform_view.dart","parents":["StatefulWidget","Widget"],"desc":"将平台视图与 Flutter 框架链接。","fields":[{"name":"viewType","type":"String","required":true,"desc":"要嵌入的视图类型的唯一标识符。"}],"id":468,"localName":"PlatformViewLink","lever":3,"family":3,"linkIds":[],"nodes":[]}

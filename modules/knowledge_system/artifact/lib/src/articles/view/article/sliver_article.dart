@@ -81,8 +81,9 @@ class ArticlePanel extends StatelessWidget {
           builder: (_) => ArticleDetailPage(article: article),
         ),
       );
+    } else {
+      _launchURL('https://juejin.cn${article.url}');
     }
-    _launchURL('https://juejin.cn${article.url}');
   }
 
   void _launchURL(String url) async {

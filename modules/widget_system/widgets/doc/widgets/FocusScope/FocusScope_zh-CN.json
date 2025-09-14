@@ -1,1 +1,0 @@
-{"name":"FocusScope","path":"/src/widgets/focus_scope.dart","parents":["Focus","StatefulWidget","Widget"],"desc":"[FocusScope] 类似于 [Focus]，但也作为其后代的范围，将焦点遍历限制为范围内的控件。","fields":[],"id":421,"localName":"FocusScope","lever":3,"family":3,"linkIds":[],"nodes":[]}

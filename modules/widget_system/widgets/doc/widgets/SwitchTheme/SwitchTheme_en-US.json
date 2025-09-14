@@ -1,1 +1,0 @@
-{"name":"SwitchTheme","path":"/src/material/switch_theme.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":" Applies a switch theme to descendant [Switch] widgets.","fields":[{"name":"data","type":"SwitchThemeData","required":true,"desc":"The properties used for all descendant [Switch] widgets."}],"id":535,"lever":3,"family":3,"linkIds":[],"nodes":[]}

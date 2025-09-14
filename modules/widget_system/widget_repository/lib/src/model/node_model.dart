@@ -38,12 +38,12 @@ class NodeModel extends Equatable {
     return NodeType.display;
   }
 
-  factory NodeModel.fromJson(Map<String, dynamic> map) {
+  factory NodeModel.fromJson(Map<String, dynamic> map, int index) {
     return NodeModel(
         name: map['name'],
         subtitle: map["subtitle"],
         code: map["code"],
-        priority: map['priority']);
+        priority: index);
   }
 
   @override

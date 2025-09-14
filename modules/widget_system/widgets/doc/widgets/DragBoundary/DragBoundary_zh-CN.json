@@ -1,1 +1,0 @@
-{"name":"DragBoundary","path":"/src/widgets/drag_boundary.dart","parents":["InheritedWidget","ProxyWidget","Widget"],"desc":"为其后代提供 [DragBoundaryDelegate]，其边界由此小部件定义。","fields":[],"id":408,"localName":"DragBoundary","lever":3,"family":3,"linkIds":[],"nodes":[]}

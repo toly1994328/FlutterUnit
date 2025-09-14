@@ -1,1 +1,0 @@
-{"name":"ScaffoldMessenger","path":"/src/material/scaffold.dart","parents":["StatefulWidget","Widget"],"desc":"为后代 [Scaffold] 管理 [SnackBar] 和 [MaterialBanner]。","fields":[{"name":"child","type":"Widget","required":true,"desc":"树中此小部件下方的小部件。"}],"id":494,"localName":"ScaffoldMessenger","lever":3,"family":3,"linkIds":[],"nodes":[]}

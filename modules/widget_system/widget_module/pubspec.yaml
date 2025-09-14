@@ -11,10 +11,14 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  unit_widgets_display: ^0.0.1+2
+  widget_ui:
+    path: ../widget_ui
   widget_repository:
     path: ../widget_repository
 
-
+#dependency_overrides:
+#  intl: 0.19.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

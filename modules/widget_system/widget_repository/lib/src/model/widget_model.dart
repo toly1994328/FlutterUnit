@@ -33,18 +33,19 @@ class WidgetModel extends Equatable {
 
   String get heroId => 'hero_widget_image_$id';
 
-  const WidgetModel(
-      {required this.id,
-      required this.name,
-      required this.nameCN,
-      required this.family,
-      this.deprecated = false,
-      this.death = false,
-      required this.links,
-      // required this.type,
-      required this.lever,
-      this.image,
-      required this.info});
+  const WidgetModel({
+    required this.id,
+    required this.name,
+    required this.nameCN,
+    required this.family,
+    this.deprecated = false,
+    this.death = false,
+    required this.links,
+    // required this.type,
+    required this.lever,
+    this.image,
+    required this.info,
+  });
 
   @override
   List<Object> get props => [id];

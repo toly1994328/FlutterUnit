@@ -1,1 +1,0 @@
-{"name":"SliverWithKeepAliveWidget","path":"/src/widgets/sliver.dart","abstract":true,"parents":["RenderObjectWidget","Widget"],"desc":"具有 [KeepAlive] 子项的 sliver 的基类。","fields":[],"id":348,"localName":"Sliver保活容器","lever":1,"family":4,"linkIds":[316,239,188,185,314,186],"nodes":[{"file":"node1_base.dart","name":"SliverWithKeepAliveWidget 介绍","desc":["【key】 : 键   【Key】"]}]}

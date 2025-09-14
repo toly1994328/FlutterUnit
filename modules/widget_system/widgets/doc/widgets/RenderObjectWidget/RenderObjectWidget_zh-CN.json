@@ -1,1 +1,0 @@
-{"name":"RenderObjectWidget","path":"/src/widgets/framework.dart","abstract":true,"parents":["Widget"],"desc":"[RenderObjectWidget] 为 [RenderObjectElement] 提供配置，后者包装 [RenderObject]，提供应用程序的实际渲染。","fields":[],"id":486,"localName":"RenderObjectWidget","lever":3,"family":3,"linkIds":[],"nodes":[]}
