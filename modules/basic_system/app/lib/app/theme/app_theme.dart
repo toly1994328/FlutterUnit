@@ -79,7 +79,7 @@ ThemeData lightTheme(AppConfig state) {
   }
 
   return ThemeData(
-    fontFamily: fontFamily,
+    fontFamily: '',
     primaryColor: state.themeColor.color,
     scaffoldBackgroundColor: const Color(0xffF3F4F6),
     useMaterial3: true,

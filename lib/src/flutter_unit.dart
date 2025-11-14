@@ -49,7 +49,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
       listenWhen: (p, n) => p.language != n.language,
       listener: _onLocaleChange,
       child: DefaultTextStyle(
-        style: TextStyle(fontFamily: state.fontFamily),
+        style: TextStyle(fontFamily: ''),
         child: TolyUiApp.router(
           routerConfig: _router,
           showPerformanceOverlay: state.showPerformanceOverlay,

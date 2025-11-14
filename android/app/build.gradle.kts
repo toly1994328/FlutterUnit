@@ -9,7 +9,14 @@ android {
     namespace = "com.toly1994.flutter_unit"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
-
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+        dex {
+            useLegacyPackaging = true
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -18,7 +25,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
-
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.toly1994.flutter_unit"
