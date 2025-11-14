@@ -9,6 +9,7 @@ import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/src/navigation/model/app_tab.dart';
+import 'package:pkg_player/pkg_player.dart';
 import 'package:treasure_tools/treasure_tools.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
@@ -64,8 +65,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
           StandardHomePage(heard: NewsHeader()),
           GalleryUnit(),
           AlgoScope(child: ArtifactPage()),
-          ArtSysScope(child: MobileArticlePage()),
-          // MobileToolPage(),
+          PkgPlayerPage(),
           UserPage(),
         ],
       ),

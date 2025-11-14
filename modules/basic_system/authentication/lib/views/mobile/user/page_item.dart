@@ -42,6 +42,13 @@ class MePageItem extends StatelessWidget {
             context.l10n.userCollection,
             AppRoute.collection.url,
           ),
+          divider,
+          _buildItem(
+            context,
+            TolyIcon.icon_collect,
+            '留言板',
+            AppRoute.note.url,
+          ),
           Gap.sfl10,
           Stack(
             children: [

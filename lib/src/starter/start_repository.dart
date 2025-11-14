@@ -7,6 +7,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:flutter/services.dart';
+import 'package:pkg_player/pkg_player.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
@@ -36,6 +37,7 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
 
     HttpUtil.instance.rebase(PathUnit.baseUrl);
     AppConfigPo po = await SpStorage().appConfig.read();
+
     AppConfig state = AppConfig.fromPo(po);
     return state;
   }
@@ -49,6 +51,9 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     } else {
       print("=====flutter.db 已存在====");
     }
+
+    String pkgPath = path.join(path.dirname(dbPath), 'packages.db');
+    PkgDatabaseHelper().setDbPath(pkgPath);
     await AppStorage().init();
   }
 
@@ -68,6 +73,14 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
       List<int> bytes =
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(p.join(dir.path, 'article.db'))
+          .writeAsBytes(bytes, flush: true);
+    }
+    {
+      ByteData data = await rootBundle.load("assets/packages.db");
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+
+      await File(p.join(dir.path, 'packages.db'))
           .writeAsBytes(bytes, flush: true);
     }
     print("=====flutter.db==== assets ======拷贝完成====");

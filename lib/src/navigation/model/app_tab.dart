@@ -6,7 +6,7 @@ import 'package:tolyui/tolyui.dart';
 
 enum AppTab {
   widgets('/widget', TolyIcon.icon_layout),
-  note('/note', Icons.note_alt_outlined),
+  packages('/packages', Icons.batch_prediction_rounded),
   knowledge('/knowledge', TolyIcon.icon_artifact),
   painter('/painter', TolyIcon.dingzhi1),
   tools('/tools', TolyIcon.icon_fast),
@@ -15,13 +15,8 @@ enum AppTab {
   final IconData icon;
   final String path;
 
-  static List<AppTab> get mobileTabs => [
-    widgets,
-    painter,
-    knowledge,
-    note,
-    mine
-  ];
+  static List<AppTab> get mobileTabs =>
+      [widgets, painter, knowledge, packages, mine];
 
   const AppTab(this.path, this.icon);
 
@@ -33,7 +28,7 @@ enum AppTab {
         AppTab.knowledge => l10n.deskTabKnowledge,
         AppTab.tools => l10n.deskTabTools,
         AppTab.mine => l10n.deskTabMine,
-        AppTab.note => l10n.messageBoard,
+        AppTab.packages => '三方库',
       };
     }
     return switch (this) {
@@ -42,11 +37,12 @@ enum AppTab {
       AppTab.knowledge => l10n.mobileTabKnowledge,
       AppTab.tools => l10n.mobileTabTools,
       AppTab.mine => l10n.mobileTabMine,
-      AppTab.note => l10n.messageBoard,
+      AppTab.packages => '三方库',
     };
   }
 
-  IconMenu menu(AppL10n l10n) => IconMenu(icon,
+  IconMenu menu(AppL10n l10n) => IconMenu(
+        icon,
         label: label(l10n),
         route: path,
       );

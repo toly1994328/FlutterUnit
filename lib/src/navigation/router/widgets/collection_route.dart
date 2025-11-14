@@ -4,20 +4,28 @@ import 'package:widget_module/widget_module.dart';
 import 'package:note/note.dart';
 
 GoRoute get collectRoute => GoRoute(
-  path: AppRoute.collection.path,
-  builder: (_, __) => const CollectPageAdapter(),
-  routes: [
-    GoRoute(path: AppRoute.collectionDetail.path, builder: collectionDetailBuilder),
-  ],
-);
+      path: AppRoute.collection.path,
+      builder: (_, __) => const CollectPageAdapter(),
+      routes: [
+        GoRoute(
+            path: AppRoute.collectionDetail.path,
+            builder: collectionDetailBuilder),
+      ],
+    );
 
 GoRoute get noteRoute => GoRoute(
-  path: AppRoute.note.path,
-  builder: (_, __) => ArtSysScope(child: const ArticleAdmin()),
-  // routes: [
-  //   GoRoute(path: AppRoute.collectionDetail.path, builder: collectionDetailBuilder),
-  // ],
-);
+      path: AppRoute.note.path,
+      builder: (_, __) {
+        return ArtSysScope(
+          child: kAppEnv.isDesktopUI
+              ? const ArticleAdmin()
+              : const MobileArticlePage(),
+        );
+      },
+      // routes: [
+      //   GoRoute(path: AppRoute.collectionDetail.path, builder: collectionDetailBuilder),
+      // ],
+    );
 
 Widget collectionDetailBuilder(BuildContext context, GoRouterState state) {
   Object? extra = state.extra;
