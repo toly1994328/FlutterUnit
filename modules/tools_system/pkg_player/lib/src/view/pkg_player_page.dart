@@ -6,6 +6,7 @@ import '../bloc/bloc.dart';
 import '../repository/api/request.dart';
 
 import 'plugin_item.dart';
+import 'recommendation_page.dart';
 
 class PkgPlayerPage extends StatelessWidget {
   @override
@@ -65,6 +66,12 @@ class _PkgPlayerViewState extends State<_PkgPlayerView>
             return Scaffold(
               appBar: AppBar(
                 title: Text('Flutter插件库'),
+                actions: [
+                  IconButton(
+                    icon: Icon(Icons.recommend),
+                    onPressed: () => _navigateToRecommendation(context),
+                  ),
+                ],
                 bottom: categories.isNotEmpty
                     ? TabBar(
                         controller: _tabController,
@@ -170,6 +177,15 @@ class _PkgPlayerViewState extends State<_PkgPlayerView>
       context.read<PackageCubit>().clearPackages();
       context.read<PackageCubit>().loadPackagesForCategory(categoryKey);
     }
+  }
+
+  void _navigateToRecommendation(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => RecommendationPage(),
+      ),
+    );
   }
 
   @override
