@@ -128,15 +128,14 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
 
   Widget _buildStatItem(String label, int value, IconData icon, Color color) {
     return Column(
+      spacing: 2,
       children: [
         Icon(icon, color: color, size: 24),
-        SizedBox(height: 6),
         Text(
           _formatNumber(value),
           style: TextStyle(
               fontSize: 16, fontWeight: FontWeight.bold, color: color),
         ),
-        SizedBox(height: 2),
         Text(label, style: TextStyle(color: Colors.grey[600], fontSize: 12)),
       ],
     );
@@ -195,7 +194,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
                     SizedBox(height: 4),
                     Wrap(
                       spacing: 6,
-                      runSpacing: 4,
+                      runSpacing: 6,
                       children: entry.value
                           .map((tag) => Container(
                                 padding: EdgeInsets.symmetric(
@@ -203,7 +202,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
                                 decoration: BoxDecoration(
                                   color: _getCategoryColor(entry.key)
                                       .withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(6),
                                   border: Border.all(
                                     color: _getCategoryColor(entry.key)
                                         .withOpacity(0.3),
@@ -234,7 +233,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
     final Map<String, List<String>> categorized = {};
 
     for (String tag in tags) {
-      String category = 'other';
+      String category = '';
 
       if (tag.startsWith('platform:')) {
         category = 'platform';
@@ -242,6 +241,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
         category = 'sdk';
       } else if (tag.startsWith('is:')) {
         category = 'is';
+        continue;
       } else if (tag.startsWith('topic:')) {
         category = 'topic';
       } else if (tag.startsWith('license:')) {
@@ -343,44 +343,32 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Column(
-            spacing: 8,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: widget.plugin.dependencies!.entries.map((entry) {
-              return Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.blue.shade50, Colors.blue.shade100],
-                      ),
-                      borderRadius: BorderRadius.circular(6),
-                      border: Border.all(
-                        color: Colors.blue.withOpacity(0.2),
-                        width: 0.5,
-                      ),
-                    ),
-                    child: Text(
-                      entry.key,
-                      style: TextStyle(
-                        fontSize: 12,
-                        height: 1,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blue[700],
-                      ),
-                    ),
+              return                   Container(
+                padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.blue.shade50, Colors.blue.shade100],
                   ),
-                  SizedBox(width: 8),
-                  Text(
-                    entry.value.toString(),
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.grey[700],
-                    ),
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(
+                    color: Colors.blue.withOpacity(0.2),
+                    width: 0.5,
                   ),
-                ],
-              );
+                ),
+                child: Text(
+                  entry.key+": ${entry.value.toString()}",
+                  style: TextStyle(
+                    fontSize: 12,
+                    height: 1,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.blue[700],
+                  ),
+                ),);
             }).toList(),
           ),
         ),
