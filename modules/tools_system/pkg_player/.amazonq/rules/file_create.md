@@ -1,0 +1,1 @@
+dart 脚本放在 test/scripts 下

@@ -34,124 +34,188 @@ class PluginItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle style = TextStyle(
-        color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold);
-    TextStyle subStyle = TextStyle(fontSize: 12, color: Color(0xff6d7278));
-    return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border(bottom: BorderSide(color: Colors.grey[300]!)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  plugin.name,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        color: Theme.of(context).primaryColor,
+        fontWeight: FontWeight.bold,
+        fontSize: 12);
+    Color subColor = Color(0xff6d7278);
+    TextStyle subStyle = TextStyle(fontSize: 10, color: subColor);
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PluginDetailPage(plugin: plugin),
+          ),
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(bottom: BorderSide(color: Colors.grey[300]!)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    spacing: 2,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        plugin.name,
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w600),
+                      ),
+                      Row(
+                        children: [
+                          Text.rich(TextSpan(children: [
+                            TextSpan(
+                                text: 'v ', style: TextStyle(fontSize: 10)),
+                            TextSpan(
+                                text: plugin.lastVersion,
+                                style: TextStyle(
+                                    color: Colors.blue[700], fontSize: 12)),
+                            TextSpan(
+                                text: ' (${_formatDate(plugin.lastPublish)})',
+                                style: TextStyle(fontSize: 12,color: subColor)),
+                          ])),
+                          SizedBox(width: 4),
+                          Icon(Icons.verified_outlined,
+                              size: 14, color: Colors.grey[500]),
+                          SizedBox(width: 4),
+                          Text(
+                            plugin.publisher ?? '',
+                            style: TextStyle(color: Colors.blue, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Column(
-                children: [
-                  Text('${_formatNumber(plugin.statistics.likes)}',
-                      style: style),
-                  Text(
-                    '喜欢',
-                    style: subStyle,
-                  ),
-                ],
-              ),
-              SizedBox(width: 12),
-              Column(
-                children: [
-                  Text('${_formatNumber(plugin.statistics.points)}',
-                      style: style),
-                  Text(
-                    '分数',
-                    style: subStyle,
-                  ),
-                ],
-              ),
-              SizedBox(width: 12),
-              Column(
-                children: [
-                  Text('${_formatNumber(plugin.statistics.downloads)}',
-                      style: style),
-                  Text(
-                    '下载量',
-                    style: subStyle,
-                  ),
-                ],
-              ),
-            ],
-          ),
-          SizedBox(height: 8),
-          Text(
-            plugin.desc ?? '',
-            style: TextStyle(color: Colors.grey[600], fontSize: 14),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(height: 8),
-          Row(
-            children: [
-              Text.rich(TextSpan(children: [
-                TextSpan(text: 'v ', style: TextStyle(fontSize: 10)),
-                TextSpan(
-                    text: plugin.lastVersion,
-                    style: TextStyle(color: Colors.blue[700], fontSize: 12)),
-                TextSpan(
-                    text: ' (${_formatDate(plugin.lastPublish)})',
-                    style: TextStyle(fontSize: 12)),
-              ])),
-              SizedBox(width: 4),
-              Icon(Icons.person, size: 14, color: Colors.grey[500]),
-              SizedBox(width: 4),
-              Text(
-                plugin.publisher ?? '',
-                style: TextStyle(color: Colors.grey[500], fontSize: 12),
-              ),
-              Spacer(),
-              if (plugin.lastPublish.isNotEmpty) ...[
-                SizedBox(height: 4),
-                Row(
+                Column(
                   children: [
-                    Icon(Icons.access_time, size: 12, color: Colors.grey[400]),
-                    SizedBox(width: 4),
+                    Text('${_formatNumber(plugin.statistics.likes)}',
+                        style: style),
                     Text(
-                      '更新: ${_formatDate(plugin.lastPublish)}',
-                      style: TextStyle(color: Colors.grey[400], fontSize: 11),
+                      '喜欢',
+                      style: subStyle,
+                    ),
+                  ],
+                ),
+                SizedBox(width: 8),
+                Column(
+                  children: [
+                    Text('${_formatNumber(plugin.statistics.points)}',
+                        style: style),
+                    Text(
+                      '分数',
+                      style: subStyle,
+                    ),
+                  ],
+                ),
+                SizedBox(width: 8),
+                Column(
+                  children: [
+                    Text('${_formatNumber(plugin.statistics.downloads)}',
+                        style: style),
+                    Text(
+                      '下载量',
+                      style: subStyle,
                     ),
                   ],
                 ),
               ],
+            ),
+            SizedBox(height: 6),
+
+            if (plugin.tags.isNotEmpty) ...[
+              PackageTagsView(
+                type: 'Platform',
+                platforms: plugin.platforms
+                    .map((e) => e.replaceAll('platform:', ''))
+                    .toList(),
+              ),
+              SizedBox(height: 4),
+
+              Wrap(
+                spacing: 4,
+                children: [
+                  PackageTagsView(
+                    type: 'sdk',
+                    platforms: plugin.sdks
+                        .map((e) => e.replaceAll('sdk:', ''))
+                        .toList(),
+                  ),
+                  PackageTagsView(
+                    type: 'license',
+                    platforms: plugin.license
+                        .map((e) => e.replaceAll('license:', ''))
+                        .toList(),
+                  ),
+                ],
+              )
+            ],
+            SizedBox(height: 6),
+
+            Text(
+              plugin.desc ?? '',
+              style: TextStyle(color: Colors.grey[600], fontSize: 14),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class PackageTagsView extends StatelessWidget {
+  final List<String> platforms;
+  final String type;
+
+  const PackageTagsView({
+    super.key,
+    required this.platforms,
+    required this.type,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    Color themeColor = Theme.of(context).primaryColor;
+    return Container(
+      color: themeColor.withValues(alpha: 0.1),
+      padding: EdgeInsets.only(right: 4),
+      child: Wrap(
+        spacing: 6,
+        children: [
+          Wrap(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    // color: themeColor.withValues(alpha: 0.1),
+                    border: Border(right: BorderSide(color: themeColor.withValues(alpha: 0.5)))),
+                padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                child: Text(
+                  type.toUpperCase(),
+                  style: TextStyle(fontSize: 10, height: 1),
+                ),
+              ),
             ],
           ),
-          if (plugin.tags.isNotEmpty) ...[
-            SizedBox(height: 8),
-            Wrap(
-              spacing: 6,
-              runSpacing: 4,
-              children: plugin.tags
-                  .take(3)
-                  .map((tag) => Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          tag,
-                          style:
-                              TextStyle(fontSize: 10, color: Colors.grey[700]),
-                        ),
-                      ))
-                  .toList(),
+          ...platforms.map(
+                (e) => Container(
+              padding: EdgeInsets.only( top: 4,bottom: 4),
+              child: Text(
+                e.toLowerCase(),
+                style: TextStyle(fontSize: 10, height: 1, color: themeColor),
+              ),
             ),
-          ]
+          )
         ],
       ),
     );

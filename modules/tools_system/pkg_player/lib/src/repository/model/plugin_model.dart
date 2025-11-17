@@ -8,6 +8,11 @@ class PluginModel {
 
   List<String> get platforms =>
       tags.where((e) => e.startsWith('platform:')).toList();
+  List<String> get sdks =>
+      tags.where((e) => e.startsWith('sdk:')).toList();
+
+  List<String> get license =>
+      tags.where((e) => e.startsWith('license:')).toList();
   final String? desc;
   final String? publisher;
   final String? repository;
