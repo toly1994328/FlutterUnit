@@ -11,10 +11,18 @@ dependencies:
   flutter:
     sdk: flutter
   sqflite: 2.4.0
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+  path_provider: ^2.1.1
+  permission_handler: ^11.0.1
+  image_gallery_saver: ^2.0.3
+  unit_env:
+    path: ../../basic_system/unit_env
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  http: ^1.1.0
   flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the

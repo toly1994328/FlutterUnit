@@ -1,0 +1,50 @@
+[
+  {
+    "key": "state_management",
+    "name": "状态管理",
+    "priority": 999,
+    "description": "管理界面显示与业务逻辑之间的数据同步。通过 Bloc、Riverpod、Provider 等模型确保数据流清晰、可预测，提高可维护性，是中大型 Flutter 项目的基础架构核心部分。"
+  },
+  {
+    "key": "ui",
+    "name": "UI 组件",
+    "priority": 998,
+    "description": "包含界面组件、布局系统、手势交互与视觉表现，是应用前端体验的核心。负责构建整体界面结构、列表、表单、弹窗、滚动效果等，决定用户对应用的第一印象与交互舒适度。"
+  },
+  {
+    "key": "network",
+    "name": "网络通信",
+    "priority": 997,
+    "description": "负责 API 请求、实时通信和服务器交互，包括 HTTP、WebSocket 等协议。决定数据交互效率、稳定性与安全性，是大多数应用必不可少的底层功能。"
+  },
+  {
+    "key": "data_storage",
+    "name": "数据存储",
+    "priority": 996,
+    "description": "用于本地保存用户数据、数据库信息、缓存和配置。包括 SQLite、Hive、Isar 等方案，支持离线模式与性能优化，是提升应用稳定性的重要能力。"
+  },
+  {
+    "key": "platform_access",
+    "name": "平台能力",
+    "priority": 995,
+    "description": "提供对系统或硬件功能的访问，如相机、定位、传感器、权限、电池信息等。让应用具备更接近原生的设备能力，增强功能扩展范围。"
+  },
+  {
+    "key": "media",
+    "name": "媒体处理",
+    "priority": 994,
+    "description": "涵盖图片、音频、视频的采集、播放、编辑与压缩能力。适用于内容类应用、社交平台、多媒体播放器等场景，是丰富应用功能的重要模块。"
+  },
+  {
+    "key": "framework",
+    "name": "应用基础",
+    "priority": 993,
+    "description": "应用程序的基础功能，比如架构设计、引擎、认证、路由、支付等应用级通用功能。"
+  },
+  {
+    "key": "data_handler",
+    "name": "数据处理",
+    "priority": 992,
+    "description": "数据的加解密、转换、文件操作等逻辑处理。"
+  }
+]
