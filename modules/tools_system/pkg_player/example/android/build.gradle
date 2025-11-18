@@ -10,7 +10,45 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
-    project.evaluationDependsOn(":app")
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin('com.android.library') || project.plugins.hasPlugin('com.android.application')) {
+            println "project: ${project.name} Namespace get: ${project.android.namespace}"
+            def packageName = project.android.namespace ?: project.android.defaultConfig.applicationId ?: project.android.sourceSets.main.manifest.srcFile.text.find(/package="([^"]*)"/) ?: project.group
+            project.android.namespace = packageName
+            println "Namespace set to: ${packageName} for project: ${project.name}"
+            def manifestFile = file("${project.projectDir}/src/main/AndroidManifest.xml")
+            if (manifestFile.exists()) {
+                def manifestText = manifestFile.text.replaceAll(/package="[^"]*"/, "")
+                manifestFile.text = manifestText
+                println "Removed package attribute in ${project.name}"
+            }
+        }
+
+        // ✅ 添加统一 Java 编译配置
+        if (project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')) {
+            if (project.name == 'app') {
+                project.android.compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                    coreLibraryDesugaringEnabled true
+                }
+                project.dependencies.add("coreLibraryDesugaring", "com.android.tools:desugar_jdk_libs:2.0.4")
+            } else {
+                project.android.compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                    // 不启用 desugaring，避免插件强制启用 MultiDex
+                }
+            }
+        }
+    }
+    // ✅ 添加统一 Kotlin 编译设置（适用于所有 Kotlin 子模块）
+    project.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+    project.evaluationDependsOn(':app')
 }
 
 tasks.register("clean", Delete) {

@@ -8,11 +8,11 @@ class PackageRequest with ScienceHostMixin {
   }
 
   Future<ApiRet<dynamic>> insertPackage(Map<String, dynamic> data) async {
-    return host.post('/packages/import', data: data);
+    return host.post('/packages/import', data: data, convertor: (e) => e);
   }
 
   Future<ApiRet<dynamic>> deletePackages(String name) async {
-    return host.delete('/packages/$name');
+    return host.delete('/packages/$name', convertor: (e) => e);
   }
 
   Future<ApiRet<dynamic>> addCategories({
@@ -39,17 +39,19 @@ class PackageRequest with ScienceHostMixin {
   }
 
   Future<ApiRet<dynamic>> addCategoriesRaw(Map<String, dynamic> data) async {
-    return host.post('/categories', data: data);
+    return host.post('/categories', data: data, convertor: (e) => e);
   }
 
   Future<ApiRet<dynamic>> addToCategories(
     String categoryKey,
     List<String> packageNames,
   ) async {
-    return host.post('/packages/add_to_category', data: {
-      "category_key": categoryKey,
-      "package_names": packageNames,
-    });
+    return host.post('/packages/add_to_category',
+        data: {
+          "category_key": categoryKey,
+          "package_names": packageNames,
+        },
+        convertor: (e) => e);
   }
 
   Future<ApiRet<List<Category>>> getCategories() async {
@@ -62,6 +64,11 @@ class PackageRequest with ScienceHostMixin {
           list.map<Category>((json) => Category.fromJson(json)).toList();
       return value;
     });
+  }
+
+  Future<ApiRet<CommentsResponse>> getPackageComments(int packageId) async {
+    return host.get('/packages/$packageId/comments', 
+        convertor: (data) => CommentsResponse.fromJson(data));
   }
 
   Future<void> insertPackages(String category, List<dynamic> jsonData) async {
