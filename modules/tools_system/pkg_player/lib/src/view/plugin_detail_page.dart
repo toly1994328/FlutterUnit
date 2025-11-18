@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pkg_player/pkg_player.dart';
 
 import 'detail/detail_flexible_bar.dart';
+import 'detail/comments_section.dart';
 
 class PluginDetailPage extends StatefulWidget {
   final PluginModel plugin;
@@ -19,8 +20,9 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 180,
+            expandedHeight: 200,
             pinned: true,
+            centerTitle: true,
             backgroundColor: getDetailGradientColors(widget.plugin.name)[0],
             elevation: 0,
             iconTheme: IconThemeData(color: Colors.white),
@@ -66,7 +68,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
               ),
             ],
             flexibleSpace: DetailFlexibleBar(
-              desc: widget.plugin.desc??'',
+              desc: widget.plugin.desc ?? '',
               name: widget.plugin.name,
               version: widget.plugin.lastVersion,
             ),
@@ -77,11 +79,12 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
               child: Column(
                 children: [
                   _buildInfo(context),
-
                   SizedBox(height: 16),
                   _buildDependencies(context),
                   SizedBox(height: 16),
                   _buildTags(context),
+                  SizedBox(height: 16),
+                  CommentsSection(packageId: widget.plugin.id),
                 ],
               ),
             ),
@@ -93,11 +96,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
 
   Widget _buildDescription(BuildContext context) {
     return Text(widget.plugin.desc?.trim() ?? '暂无描述',
-        style: TextStyle(
-          fontSize: 15,
-          height: 1.5,
-          color: Color(0xff999999)
-        ));
+        style: TextStyle(fontSize: 15, height: 1.5, color: Color(0xff999999)));
   }
 
   Widget _buildStatistics(BuildContext context) {
@@ -338,7 +337,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
         SizedBox(height: 12),
         Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 12,vertical: 12),
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
@@ -348,7 +347,7 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
             runSpacing: 6,
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: widget.plugin.dependencies!.entries.map((entry) {
-              return                   Container(
+              return Container(
                 padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -361,14 +360,15 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
                   ),
                 ),
                 child: Text(
-                  entry.key+": ${entry.value.toString()}",
+                  entry.key + ": ${entry.value.toString()}",
                   style: TextStyle(
                     fontSize: 12,
                     height: 1,
                     fontWeight: FontWeight.w500,
                     color: Colors.blue[700],
                   ),
-                ),);
+                ),
+              );
             }).toList(),
           ),
         ),
@@ -399,16 +399,22 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
               _buildInfoRow(Icons.schedule, '最后发布',
                   _formatDate(widget.plugin.lastPublish)),
               SizedBox(height: 4),
-Divider(),
+              Divider(),
               SizedBox(height: 8),
               Row(
                 children: [
                   Expanded(
-                      child: _buildStatItem('喜欢人数', widget.plugin.statistics.likes,
-                          Icons.favorite, Colors.red)),
+                      child: _buildStatItem(
+                          '喜欢人数',
+                          widget.plugin.statistics.likes,
+                          Icons.favorite,
+                          Colors.red)),
                   Expanded(
-                      child: _buildStatItem('插件分数', widget.plugin.statistics.points,
-                          Icons.bar_chart, Colors.orange)),
+                      child: _buildStatItem(
+                          '插件分数',
+                          widget.plugin.statistics.points,
+                          Icons.bar_chart,
+                          Colors.orange)),
                   Expanded(
                       child: _buildStatItem(
                           '30 日下载量',
@@ -420,7 +426,6 @@ Divider(),
             ],
           ),
         ),
-
       ],
     );
   }

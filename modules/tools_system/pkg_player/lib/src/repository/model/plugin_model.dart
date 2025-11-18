@@ -1,4 +1,5 @@
 class PluginModel {
+  final int? id;
   final String name;
   final String lastVersion;
   final String lastPublish;
@@ -20,6 +21,7 @@ class PluginModel {
   final List<String> topics;
 
   PluginModel({
+    this.id,
     required this.name,
     required this.lastVersion,
     required this.lastPublish,
@@ -35,6 +37,7 @@ class PluginModel {
 
   factory PluginModel.fromJson(Map<String, dynamic> json) {
     return PluginModel(
+      id: json['id'],
       name: json['name'] ?? '',
       lastVersion: json['last_version'] ?? '',
       lastPublish: json['last_publish'] ?? '',
@@ -51,6 +54,7 @@ class PluginModel {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'last_version': lastVersion,
       'last_publish': lastPublish,

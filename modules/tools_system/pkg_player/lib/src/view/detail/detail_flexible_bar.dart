@@ -7,13 +7,18 @@ class DetailFlexibleBar extends StatefulWidget {
   final String desc;
   final String version;
 
-  const DetailFlexibleBar({super.key, required this.name, required this.version, required this.desc});
+  const DetailFlexibleBar(
+      {super.key,
+      required this.name,
+      required this.version,
+      required this.desc});
 
   @override
   State<DetailFlexibleBar> createState() => _DetailFlexibleBarState();
 }
 
-class _DetailFlexibleBarState extends State<DetailFlexibleBar> with TickerProviderStateMixin  {
+class _DetailFlexibleBarState extends State<DetailFlexibleBar>
+    with TickerProviderStateMixin {
   late Animation<double> _rotationAnimation;
   late AnimationController _controller;
 
@@ -25,9 +30,9 @@ class _DetailFlexibleBarState extends State<DetailFlexibleBar> with TickerProvid
       vsync: this,
     )..repeat();
 
-    _rotationAnimation = Tween<double>(begin: 0, end: 2 * math.pi).animate(_controller);
+    _rotationAnimation =
+        Tween<double>(begin: 0, end: 2 * math.pi).animate(_controller);
   }
-
 
   @override
   void dispose() {
@@ -35,11 +40,11 @@ class _DetailFlexibleBarState extends State<DetailFlexibleBar> with TickerProvid
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return FlexibleSpaceBar(
-titlePadding:EdgeInsets.only(bottom: 8) ,
+      centerTitle: true,
+      titlePadding: EdgeInsets.only(bottom: 8),
       title: ShaderMask(
         shaderCallback: (bounds) => LinearGradient(
           colors: [Colors.white, Colors.white70],
@@ -61,7 +66,13 @@ titlePadding:EdgeInsets.only(bottom: 8) ,
                 ],
               ),
             ),
-            Text(widget.desc,style: TextStyle(fontSize: 8,color: Colors.white),)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Text(
+                widget.desc,
+                style: TextStyle(fontSize: 8, color: Colors.white),
+              ),
+            )
           ],
         ),
       ),
@@ -165,17 +176,21 @@ titlePadding:EdgeInsets.only(bottom: 8) ,
 
               // 闪烁粒子效果
               ...List.generate(3, (index) {
-                final angle = (index * 2 * math.pi / 3) + _rotationAnimation.value * 2;
-                final radius = 60 + math.sin(_rotationAnimation.value * 3 + index) * 15;
+                final angle =
+                    (index * 2 * math.pi / 3) + _rotationAnimation.value * 2;
+                final radius =
+                    60 + math.sin(_rotationAnimation.value * 3 + index) * 15;
                 return Positioned(
-                  left: MediaQuery.of(context).size.width / 2 + math.cos(angle) * radius,
+                  left: MediaQuery.of(context).size.width / 2 +
+                      math.cos(angle) * radius,
                   top: 90 + math.sin(angle) * radius,
                   child: Container(
                     width: 2,
                     height: 2,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.6 + 0.4 * math.sin(_rotationAnimation.value * 4 + index)),
+                      color: Colors.white.withOpacity(0.6 +
+                          0.4 * math.sin(_rotationAnimation.value * 4 + index)),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.white.withOpacity(0.3),
@@ -192,11 +207,11 @@ titlePadding:EdgeInsets.only(bottom: 8) ,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 20),
                     Stack(
                       children: [
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 26,vertical: 16),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 26, vertical: 16),
                           decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.2),
                             borderRadius: BorderRadius.circular(12),
@@ -204,11 +219,10 @@ titlePadding:EdgeInsets.only(bottom: 8) ,
                               color: Colors.white.withOpacity(0.3),
                               width: 2,
                             ),
-
                           ),
                           child: Icon(
                             Icons.extension,
-                            size: 50,
+                            size: 40,
                             color: Colors.white,
                           ),
                         ),
@@ -216,7 +230,8 @@ titlePadding:EdgeInsets.only(bottom: 8) ,
                           top: -4,
                           right: -4,
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 6, vertical: 4),
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: getDetailGradientColors(widget.name),
@@ -224,10 +239,12 @@ titlePadding:EdgeInsets.only(bottom: 8) ,
                                 end: Alignment.bottomRight,
                               ),
                               borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: Colors.white, width: 1.5),
+                              border:
+                                  Border.all(color: Colors.white, width: 1.5),
                               boxShadow: [
                                 BoxShadow(
-                                  color: getDetailGradientColors(widget.name)[0].withOpacity(0.3),
+                                  color: getDetailGradientColors(widget.name)[0]
+                                      .withOpacity(0.3),
                                   blurRadius: 8,
                                   offset: Offset(0, 3),
                                 ),
@@ -264,7 +281,6 @@ titlePadding:EdgeInsets.only(bottom: 8) ,
     );
   }
 }
-
 
 List<Color> getDetailGradientColors(String name) {
   final colorSets = [
