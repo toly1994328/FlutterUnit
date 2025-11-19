@@ -29,9 +29,13 @@ class PackageRequest with ScienceHostMixin {
 
   Future<ApiRet<List<PluginModel>>> getCategoriesPackage({
     required String key,
+    int page = 1,
+    int pageSize = 10,
   }) async {
     return host.get('/categories/$key/export', queryParameters: {
       'sort_by': 'downloads',
+      'page': page,
+      'page_size': pageSize,
     }, convertor: (data) {
       List<dynamic> list = data['data'] as List<dynamic>;
       return list.map((json) => PluginModel.fromJson(json)).toList();
@@ -66,9 +70,31 @@ class PackageRequest with ScienceHostMixin {
     });
   }
 
-  Future<ApiRet<CommentsResponse>> getPackageComments(int packageId) async {
-    return host.get('/packages/$packageId/comments', 
+  Future<ApiRet<CommentsResponse>> getPackageComments(
+    int packageId, {
+    int page = 1,
+    int pageSize = 10,
+  }) async {
+    return host.get('/packages/$packageId/comments',
+        queryParameters: {
+          'page': page,
+          'page_size': pageSize,
+        },
         convertor: (data) => CommentsResponse.fromJson(data));
+  }
+
+  Future<ApiRet<dynamic>> sendComment(
+      int packageId, String content, String guestName,
+      {int? parentId}) async {
+    Map<String, dynamic> data = {
+      'content': content,
+      'guest_name': guestName,
+    };
+    if (parentId != null && parentId != -1) {
+      data['parent_id'] = parentId;
+    }
+    return host.post('/packages/$packageId/comments',
+        data: data, convertor: (e) => e);
   }
 
   Future<void> insertPackages(String category, List<dynamic> jsonData) async {

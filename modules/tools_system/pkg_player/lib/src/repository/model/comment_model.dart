@@ -2,7 +2,7 @@ class Comment {
   final int id;
   final int packageId;
   final int? parentId;
-  final int userId;
+  final int? userId;
   final String guestName;
   final String content;
   final String contentType;
