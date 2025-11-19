@@ -9,8 +9,7 @@ class PluginModel {
 
   List<String> get platforms =>
       tags.where((e) => e.startsWith('platform:')).toList();
-  List<String> get sdks =>
-      tags.where((e) => e.startsWith('sdk:')).toList();
+  List<String> get sdks => tags.where((e) => e.startsWith('sdk:')).toList();
 
   List<String> get license =>
       tags.where((e) => e.startsWith('license:')).toList();
@@ -51,6 +50,8 @@ class PluginModel {
       topics: List<String>.from(json['topics'] ?? []),
     );
   }
+
+  bool get isFavorite => tags.contains('is:flutter-favorite');
 
   Map<String, dynamic> toJson() {
     return {

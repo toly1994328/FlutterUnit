@@ -144,14 +144,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.1.2"
-  image_gallery_saver:
-    dependency: transitive
-    description:
-      name: image_gallery_saver
-      sha256: "0aba74216a4d9b0561510cb968015d56b701ba1bd94aace26aacdd8ae5761816"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.3"
   leak_tracker:
     dependency: transitive
     description:
@@ -452,6 +444,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.7.3"
+  tolyui_refresh:
+    dependency: transitive
+    description:
+      name: tolyui_refresh
+      sha256: "7249643bbe67e12af38841737c1968e27a21436070acd254097c8b279bc643a9"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1+1"
   typed_data:
     dependency: transitive
     description:

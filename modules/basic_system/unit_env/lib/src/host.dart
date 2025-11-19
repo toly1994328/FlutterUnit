@@ -7,8 +7,8 @@ class ScienceHost extends Host {
   Map<HostEnv, String> get value => {
         HostEnv.release: 'toly1994.com',
         // HostEnv.dev: '192.168.1.61',
-        // HostEnv.dev: '192.168.0.40',
-        HostEnv.dev: '172.29.240.1',
+        HostEnv.dev: '192.168.0.40',
+        // HostEnv.dev: '172.29.240.1',
       };
 
   @override

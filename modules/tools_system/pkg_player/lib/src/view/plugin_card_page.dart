@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+// import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:pkg_player/pkg_player.dart';
 import 'plugin_card.dart';
@@ -12,7 +12,7 @@ class PluginCardPage extends StatelessWidget {
   final PluginModel plugin;
   final GlobalKey _cardKey = GlobalKey();
 
-   PluginCardPage({Key? key, required this.plugin}) : super(key: key);
+  PluginCardPage({Key? key, required this.plugin}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +44,9 @@ class PluginCardPage extends StatelessWidget {
                       child: PluginCard(plugin: plugin)),
                 ),
               ),
-              
+
               SizedBox(height: 32),
-              
+
               // 操作按钮
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -133,30 +133,32 @@ class PluginCardPage extends StatelessWidget {
       }
 
       // 获取卡片的RenderRepaintBoundary
-      RenderRepaintBoundary boundary = _cardKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
-      
+      RenderRepaintBoundary boundary =
+          _cardKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+
       // 转换为图片
       ui.Image image = await boundary.toImage(pixelRatio: 3.0);
-      ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+      ByteData? byteData =
+          await image.toByteData(format: ui.ImageByteFormat.png);
       Uint8List pngBytes = byteData!.buffer.asUint8List();
 
       // 保存到相册
-      final result = await ImageGallerySaver.saveImage(
-        pngBytes,
-        name: 'plugin_${plugin.name}_${DateTime.now().millisecondsSinceEpoch}',
-        quality: 100,
-      );
+      // final result = await ImageGallerySaver.saveImage(
+      //   pngBytes,
+      //   name: 'plugin_${plugin.name}_${DateTime.now().millisecondsSinceEpoch}',
+      //   quality: 100,
+      // );
 
-      if (result['isSuccess']) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('图片已保存到相册'),
-            backgroundColor: Colors.green,
-          ),
-        );
-      } else {
-        throw Exception('保存失败');
-      }
+      // if (result['isSuccess']) {
+      //   ScaffoldMessenger.of(context).showSnackBar(
+      //     SnackBar(
+      //       content: Text('图片已保存到相册'),
+      //       backgroundColor: Colors.green,
+      //     ),
+      //   );
+      // } else {
+      //   throw Exception('保存失败');
+      // }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

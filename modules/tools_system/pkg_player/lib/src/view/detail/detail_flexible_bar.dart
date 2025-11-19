@@ -51,10 +51,12 @@ class _DetailFlexibleBarState extends State<DetailFlexibleBar>
         ).createShader(bounds),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          spacing: 4,
           children: [
             Text(
               widget.name,
               style: TextStyle(
+                fontSize: 16,
                 fontWeight: FontWeight.w900,
                 color: Colors.white,
                 shadows: [
