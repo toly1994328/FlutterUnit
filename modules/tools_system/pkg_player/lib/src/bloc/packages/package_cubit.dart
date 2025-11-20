@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../repository/api/request.dart';
-import '../repository/model/model.dart';
-import 'package_state.dart';
+import 'package:pkg_player/src/bloc/packages/package_state.dart';
+import '../../repository/api/request.dart';
+import '../../repository/model/model.dart';
 
 class PackageCubit extends Cubit<PackageState> {
   final PackageRequest _request;
@@ -12,16 +12,18 @@ class PackageCubit extends Cubit<PackageState> {
 
   Future<void> loadPackagesForCategory(String categoryKey,
       {bool isRefresh = false}) async {
-    if (!isRefresh) {
-      if (_categoryPackages.containsKey(categoryKey)) return;
-      _loadingCategories.add(categoryKey);
+    // 检查是否需要加载
+    if (!isRefresh && _categoryPackages.containsKey(categoryKey)) {
+      return;
     }
-    emit(
-      PackageLoaded(
-        _categoryPackages,
-        loadingCategories: Set.from(_loadingCategories),
-      ),
+
+    // 添加loading状态并立即emit
+    _loadingCategories.add(categoryKey);
+    final loadingState = PackageLoaded(
+      _categoryPackages,
+      loadingCategories: _loadingCategories,
     );
+    emit(loadingState);
 
     try {
       final result = await _request.getCategoriesPackage(key: categoryKey);
@@ -36,16 +38,17 @@ class PackageCubit extends Cubit<PackageState> {
       }
 
       _loadingCategories.remove(categoryKey);
-      emit(PackageLoaded(
+      final completedState = PackageLoaded(
         _categoryPackages,
-        loadingCategories: Set.from(_loadingCategories),
-      ));
+        loadingCategories: _loadingCategories,
+      );
+      emit(completedState);
     } catch (e) {
       _loadingCategories.remove(categoryKey);
       _categoryPackages[categoryKey] = PackageResult.empty;
       ;
-      emit(PackageLoaded(Map.from(_categoryPackages),
-          loadingCategories: Set.from(_loadingCategories)));
+      emit(PackageLoaded(_categoryPackages,
+          loadingCategories: _loadingCategories));
     }
   }
 
@@ -69,8 +72,8 @@ class PackageCubit extends Cubit<PackageState> {
       _categoryPackages[key] = PackageResult(total: total, data: newModels);
       emit(
         PackageLoaded(
-          _categoryPackages,
-          loadingCategories: _loadingCategories,
+          Map.from(_categoryPackages),
+          loadingCategories: Set.from(_loadingCategories),
         ),
       );
     } else {}

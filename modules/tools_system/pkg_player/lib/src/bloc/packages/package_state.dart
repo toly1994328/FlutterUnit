@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import '../repository/model/model.dart';
+import '../../../pkg_player.dart';
 
 abstract class PackageState {
   const PackageState();
@@ -33,5 +32,5 @@ class PackageResult {
     required this.total,
     required this.data,
   });
-  static PackageResult empty = PackageResult(total: 0, data: []);
+  static PackageResult get empty => PackageResult(total: 0, data: []);
 }

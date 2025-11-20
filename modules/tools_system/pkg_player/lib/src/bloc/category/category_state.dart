@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import '../repository/model/model.dart';
+
+import '../../../pkg_player.dart';
 
 abstract class CategoryState extends Equatable {
   const CategoryState();

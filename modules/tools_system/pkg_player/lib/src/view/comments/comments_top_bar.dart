@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/comments_cubit.dart';
-import '../../bloc/comments_state.dart';
+import '../../bloc/comments/comments_cubit.dart';
+import '../../bloc/comments/comments_state.dart';
 
 class CommentsTopBar extends StatelessWidget {
   final VoidCallback onTapComment;

@@ -3,13 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pkg_player/pkg_player.dart';
 import 'package:pkg_player/src/view/detail/plugin_tags.dart';
 
+import '../bloc/comments/comments_cubit.dart';
+import '../bloc/comments/comments_state.dart';
 import 'comments/comments_top_bar.dart';
+import 'comments/comment_replies_page.dart';
 import 'detail/detail_flexible_bar.dart';
 import 'detail/comments_section.dart';
 import 'detail/plugin_info_section.dart';
 import 'detail/plugin_dependencies_section.dart';
-import '../bloc/comments_cubit.dart';
-import '../bloc/comments_state.dart';
 
 class PluginDetailPage extends StatefulWidget {
   final PluginModel plugin;
@@ -104,7 +105,9 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
           ),
           CommentsSection(
             packageId: widget.plugin.id,
+            packageName: widget.plugin.name,
             onReplay: _showReplyInput,
+            onViewMoreDetail: _onViewMoreDetail,
           )
         ],
       ),
@@ -179,5 +182,35 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
     ).whenComplete(() {
       _commentController.clear();
     });
+  }
+
+  void _onViewMoreDetail(int commentId) {
+    // 需要先获取评论对象，这里简化处理
+    final currentState = context.read<CommentsCubit>().state;
+    if (currentState is CommentsLoaded) {
+      final comment = currentState.comments.data.firstWhere(
+        (c) => c.id == commentId,
+        orElse: () => Comment(
+          id: commentId,
+          packageId: widget.plugin.id!,
+          userId: 0,
+          guestName: '未知用户',
+          content: '评论内容',
+          contentType: 'text',
+          createAt: DateTime.now().toString(),
+          replies: [],
+          repliesTotal: 0,
+        ),
+      );
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => CommentRepliesPage(
+            parentComment: comment,
+          ),
+        ),
+      );
+    }
   }
 }
