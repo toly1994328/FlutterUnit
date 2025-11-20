@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pkg_player/pkg_player.dart';
-import '../../bloc/comments_cubit.dart';
-import '../../bloc/comments_state.dart';
+import '../../../pkg_player.dart';
+import '../../bloc/comments/comments_cubit.dart';
+import '../../bloc/comments/comments_state.dart';
 import '../comments/comments_empty.dart';
 import '../comments/comments_error.dart';
 import '../comments/comments_loading.dart';
 import '../comments/comments_with_data.dart';
+import '../comments/comments_detail_page.dart';
 
 class CommentsSection extends StatelessWidget {
   final int? packageId;
+  final String? packageName;
   final OnReplay onReplay;
+  final ValueChanged<int> onViewMoreDetail;
 
   const CommentsSection({
     super.key,
     required this.packageId,
+    this.packageName,
     required this.onReplay,
+    required this.onViewMoreDetail,
   });
 
   @override
@@ -40,8 +45,11 @@ class CommentsSection extends StatelessWidget {
         );
       }
       return SliverCommentsWithData(
+        total: state.comments.total,
         comments: state.comments.data,
+        onViewAll: () => _onViewAll(context),
         onReplay: onReplay,
+        onViewMoreDetail: onViewMoreDetail,
       );
     }
 
@@ -56,12 +64,20 @@ class CommentsSection extends StatelessWidget {
     );
   }
 
-// void _sendComment({int? parentId}) {
-//   if (_commentController.text.trim().isEmpty) return;
-//
-//   if (widget.onSendComment != null) {
-//     widget.onSendComment!(_commentController.text.trim(), parentId: parentId);
-//   }
-//   Navigator.pop(context);
-// }
+  void _onViewAll(BuildContext context) {
+    if (packageId == null) return;
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) =>
+                CommentsCubit(PackageRequest(), packageId!)..loadComments(),
+            child: CommentsDetailPage(
+              packageId: packageId!,
+              packageName: packageName ?? '插件',
+            ),
+          ),
+        ));
+  }
 }

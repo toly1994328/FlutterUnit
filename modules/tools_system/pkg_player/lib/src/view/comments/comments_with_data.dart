@@ -5,31 +5,58 @@ typedef OnReplay = void Function(int commentId);
 
 class SliverCommentsWithData extends StatelessWidget {
   final List<Comment> comments;
+  final VoidCallback onViewAll;
+  final int total;
   final OnReplay onReplay;
+  final ValueChanged<int> onViewMoreDetail;
 
   const SliverCommentsWithData({
     super.key,
     required this.comments,
     required this.onReplay,
+    required this.total,
+    required this.onViewAll,
+    required this.onViewMoreDetail,
   });
 
   @override
   Widget build(BuildContext context) {
     Color color = Theme.of(context).primaryColor;
+    bool hasMore = total > 10;
+    int length = comments.length;
     return DecoratedSliver(
       decoration: BoxDecoration(color: Colors.white),
       sliver: SliverPadding(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
         sliver: SliverList.separated(
-            separatorBuilder: (_, __) => SizedBox(
-                  height: 10,
-                ),
-            itemCount: comments.length,
+            separatorBuilder: (_, __) => SizedBox(height: 10),
+            itemCount: hasMore ? length + 1 : length,
             itemBuilder: (_, index) {
+              if (hasMore && index == length) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor: color),
+                      onPressed: onViewAll,
+                      icon: Icon(
+                        Icons.view_kanban,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        '查看所有',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                );
+              }
               return CommentItemView(
                 comment: comments[index],
                 theme: color,
                 onReplay: onReplay,
+                onViewMoreDetail: onViewMoreDetail,
               );
             }),
       ),
@@ -41,12 +68,14 @@ class CommentItemView extends StatelessWidget {
   final Comment comment;
   final Color theme;
   final OnReplay onReplay;
+  final ValueChanged<int> onViewMoreDetail;
 
   const CommentItemView({
     super.key,
     required this.comment,
     required this.theme,
     required this.onReplay,
+    required this.onViewMoreDetail,
   });
 
   @override
@@ -188,7 +217,7 @@ class CommentItemView extends StatelessWidget {
             SizedBox(height: 8),
             GestureDetector(
               onTap: () {
-                // TODO: 实现查看更多回复
+                onViewMoreDetail(comment.id);
               },
               child: Text(
                 '查看更多 ${comment.repliesTotal - 2} 条回复',

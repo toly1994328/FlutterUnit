@@ -4,6 +4,7 @@ import 'package:pkg_player/pkg_player.dart';
 import 'package:tolyui_refresh/tolyui_refresh.dart' hide RefreshIndicator;
 
 import '../bloc/bloc.dart';
+import '../bloc/packages/package_state.dart';
 import '../repository/api/request.dart';
 
 import 'pkg_list/pkg_list_with_data.dart';
@@ -76,12 +77,6 @@ class _PkgPlayerViewState extends State<_PkgPlayerView>
                   icon: Icon(Icons.upload),
                   onPressed: () => _navigateToRecommendation(context),
                 ),
-                // actions: [
-                //   IconButton(
-                //     icon: Icon(Icons.upload),
-                //     onPressed: () => _navigateToRecommendation(context),
-                //   ),
-                // ],
                 bottom: categories.isNotEmpty
                     ? TabBar(
                         controller: _tabController,
@@ -104,22 +99,27 @@ class _PkgPlayerViewState extends State<_PkgPlayerView>
                             packageState is PackageLoaded
                                 ? packageState.categoryPackages
                                 : <String, PackageResult>{};
-                        final loadingCategories = packageState is PackageLoaded
-                            ? packageState.loadingCategories
-                            : <String>{};
 
                         return TabBarView(
                           controller: _tabController,
                           children: categories.map((category) {
-                            PackageResult? packages =
-                                categoryPackages[category.key];
-                            if (packages == null) return SizedBox();
+                            final loadingCategories =
+                                packageState is PackageLoaded
+                                    ? packageState.loadingCategories
+                                    : <String>{};
                             final isLoading =
                                 loadingCategories.contains(category.key);
-                            final hasBeenLoaded =
-                                categoryPackages.containsKey(category.key);
-                            if (isLoading) {
+                            // 再检查数据
+                            PackageResult? packages =
+                                categoryPackages[category.key];
+
+                            // 先检查loading状态
+                            if (isLoading || packages == null) {
                               return Center(child: CircularProgressIndicator());
+                            }
+
+                            if (packages.data.isEmpty) {
+                              return Center(child: Text('暂无数据'));
                             }
 
                             if (packages.data.isNotEmpty) {
@@ -223,7 +223,6 @@ class _PkgPlayerViewState extends State<_PkgPlayerView>
   }
 
   void _refresh(BuildContext context, String key) async {
-    // context.read<PackageCubit>().clearPackages();
     await context
         .read<PackageCubit>()
         .loadPackagesForCategory(key, isRefresh: true);

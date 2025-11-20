@@ -1,4 +1,4 @@
-import '../repository/model/model.dart';
+import '../../repository/model/model.dart';
 
 abstract class CommentsState {}
 

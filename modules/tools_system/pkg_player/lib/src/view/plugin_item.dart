@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pkg_player/pkg_player.dart';
 
-import '../bloc/comments_cubit.dart';
+import '../bloc/comments/comments_cubit.dart';
 
 class PluginItem extends StatelessWidget {
   final PluginModel plugin;

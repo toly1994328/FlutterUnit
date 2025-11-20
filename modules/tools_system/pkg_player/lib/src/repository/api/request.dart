@@ -97,6 +97,22 @@ class PackageRequest with ScienceHostMixin {
         data: data, convertor: (e) => e);
   }
 
+  Future<ApiRet<List<Comment>>> getCommentReplies(
+    int commentId, {
+    int page = 1,
+    int pageSize = 15,
+  }) async {
+    return host.get('/comments/$commentId/replies',
+        queryParameters: {
+          'page': page,
+          'page_size': pageSize,
+        },
+        convertor: (data) {
+          List<dynamic> list = data['data'] as List<dynamic>;
+          return list.map((json) => Comment.fromJson(json)).toList();
+        });
+  }
+
   Future<void> insertPackages(String category, List<dynamic> jsonData) async {
     List<String> packageNames = [];
     for (dynamic data in jsonData) {
