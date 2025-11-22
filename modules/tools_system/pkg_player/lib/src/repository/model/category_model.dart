@@ -16,8 +16,13 @@ class Category {
       id: json['id'],
       key: json['key'],
       name: json['name'],
-      description: json['description']??'',
+      description: json['description'] ?? '',
     );
+  }
+
+  String label(bool isZh) {
+    if (isZh) return name;
+    return key.replaceAll('_', ' ');
   }
 
   Map<String, dynamic> toJson() {

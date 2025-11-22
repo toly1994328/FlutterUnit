@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/gen_l10n/app_localizations.dart';
 import 'package:l10n/l10n.dart';
+import 'package:pkg_player/pkg_player.dart';
 import 'package:tolyui/app/toly_ui.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:widget_module/blocs/blocs.dart';
@@ -74,6 +75,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
 
   void _onLocaleChange(BuildContext context, AppConfig state) {
     context.read<WidgetsBloc>().changeLocale(state.language.locale);
+    FxDio().auth<Unit3Host>(UnitApiAuth(state.language.isZh));
   }
 
   @override
@@ -84,6 +86,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         FlutterQuillLocalizations.delegate,
+        PkgL10n.delegate,
       ];
 
   @override

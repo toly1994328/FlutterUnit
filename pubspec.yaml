@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.2.3+2006
+version: 3.4.0+2008
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -103,7 +103,6 @@ flutter:
     - assets/images/widgets/
     - assets/flutter.db
     - assets/article.db
-    - assets/packages.db
     - assets/version.json
 
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源

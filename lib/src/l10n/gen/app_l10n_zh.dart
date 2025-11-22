@@ -45,6 +45,9 @@ class AppL10nZh extends AppL10n {
   String get newBoard => '新建 ';
 
   @override
+  String get package => '三方库 ';
+
+  @override
   String get news => '最新资讯';
 
   @override

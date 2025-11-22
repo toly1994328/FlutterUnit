@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pkg_player/pkg_player.dart';
 
+import '../home/plugin_item.dart';
+
 typedef OnReplay = void Function(int commentId);
 
 class SliverCommentsWithData extends StatelessWidget {
@@ -24,8 +26,10 @@ class SliverCommentsWithData extends StatelessWidget {
     Color color = Theme.of(context).primaryColor;
     bool hasMore = total > 10;
     int length = comments.length;
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
+    PkgL10n l10n = context.pkgL10n;
     return DecoratedSliver(
-      decoration: BoxDecoration(color: Colors.white),
+      decoration: BoxDecoration(color: tileColor),
       sliver: SliverPadding(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
         sliver: SliverList.separated(
@@ -45,7 +49,7 @@ class SliverCommentsWithData extends StatelessWidget {
                         color: Colors.white,
                       ),
                       label: Text(
-                        '查看所有',
+                        l10n.viewAll,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
@@ -53,6 +57,7 @@ class SliverCommentsWithData extends StatelessWidget {
                 );
               }
               return CommentItemView(
+                l10n: l10n,
                 comment: comments[index],
                 theme: color,
                 onReplay: onReplay,
@@ -68,18 +73,21 @@ class CommentItemView extends StatelessWidget {
   final Comment comment;
   final Color theme;
   final OnReplay onReplay;
+  final PkgL10n l10n;
   final ValueChanged<int> onViewMoreDetail;
 
   const CommentItemView({
     super.key,
     required this.comment,
     required this.theme,
+    required this.l10n,
     required this.onReplay,
     required this.onViewMoreDetail,
   });
 
   @override
   Widget build(BuildContext context) {
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -94,14 +102,28 @@ class CommentItemView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        comment.guestName,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                          color: Colors.grey[600],
+                      Expanded(
+                        child: Text(
+                          comment.guestName,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
                         ),
                       ),
+                      if (comment.rating == 100)
+                        Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 4),
+                            decoration: BoxDecoration(
+                                color: Colors.blue.withValues(alpha: 0.5),
+                                borderRadius: BorderRadius.circular(4)),
+                            child: Text(
+                              l10n.highlightAnswer,
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
+                            ))
                     ],
                   ),
                   SizedBox(height: 6),
@@ -117,7 +139,7 @@ class CommentItemView extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        _formatCommentDate(comment.createAt),
+                        formatDate(comment.createAt, l10n),
                         style: TextStyle(
                           color: Colors.grey[500],
                           fontSize: 12,
@@ -125,12 +147,16 @@ class CommentItemView extends StatelessWidget {
                       ),
                       Spacer(),
                       GestureDetector(
+                        behavior: HitTestBehavior.opaque,
                         onTap: () => onReplay(comment.id),
-                        child: Text(
-                          '回复',
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 12,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text(
+                            l10n.reply,
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                       ),
@@ -143,7 +169,7 @@ class CommentItemView extends StatelessWidget {
         ),
         if (comment.replies.isNotEmpty) ...[
           SizedBox(height: 12),
-          _buildReplies(comment),
+          _buildReplies(comment, tileColor),
         ],
       ],
     );
@@ -188,7 +214,7 @@ class CommentItemView extends StatelessWidget {
     return colors[name.hashCode % colors.length];
   }
 
-  Widget _buildReplies(Comment comment) {
+  Widget _buildReplies(Comment comment, Color? tileColor) {
     final displayReplies = comment.replies.take(2).toList();
     final hasMore = comment.repliesTotal > 2;
 
@@ -196,9 +222,9 @@ class CommentItemView extends StatelessWidget {
       margin: EdgeInsets.only(left: 36),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.grey[50],
+        color: tileColor,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey[200]!),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,7 +246,7 @@ class CommentItemView extends StatelessWidget {
                 onViewMoreDetail(comment.id);
               },
               child: Text(
-                '查看更多 ${comment.repliesTotal - 2} 条回复',
+                l10n.viewMoreReplies(comment.repliesTotal - 2),
                 style: TextStyle(
                   color: theme,
                   fontSize: 12,
@@ -274,7 +300,7 @@ class CommentItemView extends StatelessWidget {
                   ),
                   SizedBox(width: 6),
                   Text(
-                    _formatCommentDate(reply.createAt),
+                    formatDate(reply.createAt, l10n),
                     style: TextStyle(
                       color: Colors.grey[500],
                       fontSize: 10,
@@ -296,22 +322,5 @@ class CommentItemView extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  String _formatCommentDate(String dateStr) {
-    try {
-      final date = DateTime.parse(dateStr.replaceAll(' ', 'T'));
-      final now = DateTime.now();
-      final diff = now.difference(date);
-
-      if (diff.inMinutes < 1) return '刚刚';
-      if (diff.inHours < 1) return '${diff.inMinutes}分钟前';
-      if (diff.inDays < 1) return '${diff.inHours}小时前';
-      if (diff.inDays < 7) return '${diff.inDays}天前';
-      if (diff.inDays < 30) return '${(diff.inDays / 7).floor()}周前';
-      return dateStr.split(' ')[0];
-    } catch (e) {
-      return dateStr;
-    }
   }
 }

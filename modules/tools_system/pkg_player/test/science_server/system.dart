@@ -5,7 +5,7 @@ void main() async {
   late Host host;
 
   setUpAll(() async {
-    host = ScienceHost();
+    host = Unit3Host();
     FxDio().register(host);
     // initHttp(app);
     // request = HouseDetailRequest();

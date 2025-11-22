@@ -18,7 +18,7 @@ void main() async {
   );
 
   setUpAll(() async {
-    FxDio().register(ScienceHost());
+    FxDio().register(Unit3Host());
   });
 
   Future<void> getAllPackages() async {
@@ -43,10 +43,10 @@ void main() async {
   }
 
   Future<void> addCategories() async {
-    File file = File(p.join(mockDir,'category.json') );
+    File file = File(p.join(mockDir, 'category.json'));
     String data = await file.readAsString();
     List<dynamic> jsonData = jsonDecode(data);
-    for(dynamic e in jsonData){
+    for (dynamic e in jsonData) {
       ApiRet<dynamic> ret = await request.addCategoriesRaw(e);
       if (ret.success) {
         print(ret.data);
@@ -55,20 +55,23 @@ void main() async {
   }
 
   Future<void> getCategories() async {
-    File file = File(p.join(mockDir,'api_category.json') );
+    File file = File(p.join(mockDir, 'api_category.json'));
     ApiRet<dynamic> ret = await request.getCategories();
     if (ret.success) {
-      String formattedJson = const JsonEncoder.withIndent('  ').convert(ret.data);
+      String formattedJson =
+          const JsonEncoder.withIndent('  ').convert(ret.data);
       await file.writeAsString(formattedJson);
       print('Categories saved to ${file.path}');
     }
   }
 
   Future<void> getCategoriesPackage() async {
-    File file = File(p.join(mockDir,'api_category_packages.json') );
-    ApiRet<dynamic> ret = await request.getCategoriesPackage(key: 'state_management');
+    File file = File(p.join(mockDir, 'api_category_packages.json'));
+    ApiRet<dynamic> ret =
+        await request.getCategoriesPackage(key: 'state_management');
     if (ret.success) {
-      String formattedJson = const JsonEncoder.withIndent('  ').convert(ret.data);
+      String formattedJson =
+          const JsonEncoder.withIndent('  ').convert(ret.data);
       await file.writeAsString(formattedJson);
       print('Categories saved to ${file.path}');
     }

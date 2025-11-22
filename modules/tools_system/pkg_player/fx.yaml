@@ -1,0 +1,14 @@
+# L10n Checker 配置文件
+l10n_check:
+  ignore:    # 忽略特定文件
+    - "*test.dart"
+    - "*debug*.dart"
+
+  show_checking: false
+  # 输出到文件（支持相对路径）
+  output_file: 'l10n_issues.json'
+  output_format: 'json'
+  ignore_print: true
+
+  ignore_chars:
+    - "、"

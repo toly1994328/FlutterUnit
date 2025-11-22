@@ -5,6 +5,7 @@ import 'package:tolyui_refresh/tolyui_refresh.dart';
 
 import '../../bloc/comments/comment_replies_cubit.dart';
 import '../../bloc/comments/comment_replies_state.dart';
+import '../home/plugin_item.dart';
 
 class CommentRepliesPage extends StatefulWidget {
   final Comment parentComment;
@@ -20,84 +21,89 @@ class CommentRepliesPage extends StatefulWidget {
 
 class _CommentRepliesPageState extends State<CommentRepliesPage> {
   final RefreshController _refreshController = RefreshController();
+  late PkgL10n l10n;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    l10n = context.pkgL10n;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          CommentRepliesCubit(PackageRequest(), widget.parentComment.id)
-            ..loadReplies(),
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('回复详情'),
-        ),
-        body: Column(
-          children: [
-            _buildParentComment(),
-            Expanded(
-              child: BlocBuilder<CommentRepliesCubit, CommentRepliesState>(
-                builder: (context, state) {
-                  if (state is CommentRepliesLoading) {
-                    return Center(child: CircularProgressIndicator());
-                  }
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
 
-                  if (state is CommentRepliesError) {
-                    return Center(child: Text('加载失败: ${state.message}'));
-                  }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(l10n.replyDetails),
+      ),
+      body: Column(
+        children: [
+          _buildParentComment(tileColor),
+          Expanded(
+            child: BlocBuilder<CommentRepliesCubit, CommentRepliesState>(
+              builder: (context, state) {
+                if (state is CommentRepliesLoading) {
+                  return Center(child: CircularProgressIndicator());
+                }
 
-                  if (state is CommentRepliesLoaded) {
-                    if (state.replies.isEmpty) {
-                      return TolyRefresh(
-                        controller: _refreshController,
-                        onRefresh: _onRefresh,
-                        child: SingleChildScrollView(
-                          physics: AlwaysScrollableScrollPhysics(),
-                          child: Container(
-                            height: MediaQuery.of(context).size.height - 300,
-                            child: Center(child: Text('暂无回复')),
-                          ),
-                        ),
-                      );
-                    }
+                if (state is CommentRepliesError) {
+                  return Center(
+                      child: Text(l10n.loadFailedWithMessage(state.message)));
+                }
 
+                if (state is CommentRepliesLoaded) {
+                  if (state.replies.isEmpty) {
                     return TolyRefresh(
                       controller: _refreshController,
-                      enablePullUp: true,
                       onRefresh: _onRefresh,
-                      onLoading: _onLoading,
-                      child: ListView.separated(
-                        padding: EdgeInsets.all(16),
-                        itemCount: state.replies.length,
-                        separatorBuilder: (context, index) =>
-                            SizedBox(height: 12),
-                        itemBuilder: (context, index) {
-                          final reply = state.replies[index];
-                          return _buildReplyItem(reply);
-                        },
+                      child: SingleChildScrollView(
+                        physics: AlwaysScrollableScrollPhysics(),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height - 300,
+                          child: Center(child: Text(l10n.noReply)),
+                        ),
                       ),
                     );
                   }
 
-                  return Center(child: Text('暂无回复'));
-                },
-              ),
+                  return TolyRefresh(
+                    controller: _refreshController,
+                    enablePullUp: true,
+                    enablePullDown: false,
+                    onRefresh: _onRefresh,
+                    onLoading: _onLoading,
+                    child: ListView.separated(
+                      padding: EdgeInsets.all(16),
+                      itemCount: state.replies.length,
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 12),
+                      itemBuilder: (context, index) {
+                        final reply = state.replies[index];
+                        return _buildReplyItem(reply, tileColor);
+                      },
+                    ),
+                  );
+                }
+
+                return Center(child: Text(l10n.noComments));
+              },
             ),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => _showAddReplyDialog(context),
-          child: Icon(Icons.reply),
-        ),
+          ),
+        ],
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () => _showAddReplyDialog(context),
+      //   child: Icon(Icons.reply),
+      // ),
     );
   }
 
-  Widget _buildParentComment() {
+  Widget _buildParentComment(Color? color) {
     return Container(
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border(bottom: BorderSide(color: Colors.grey[200]!)),
+        color: color,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,7 +126,7 @@ class _CommentRepliesPageState extends State<CommentRepliesPage> {
                     ),
                     SizedBox(width: 8),
                     Text(
-                      _formatDate(widget.parentComment.createAt),
+                      formatDate(widget.parentComment.createAt, l10n),
                       style: TextStyle(
                         color: Colors.grey[500],
                         fontSize: 12,
@@ -145,11 +151,11 @@ class _CommentRepliesPageState extends State<CommentRepliesPage> {
     );
   }
 
-  Widget _buildReplyItem(Comment reply) {
+  Widget _buildReplyItem(Comment reply, Color? color) {
     return Container(
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: color,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -192,7 +198,7 @@ class _CommentRepliesPageState extends State<CommentRepliesPage> {
                     ),
                     SizedBox(width: 8),
                     Text(
-                      _formatDate(reply.createAt),
+                      formatDate(reply.createAt, l10n),
                       style: TextStyle(
                         color: Colors.grey[500],
                         fontSize: 11,
@@ -256,23 +262,6 @@ class _CommentRepliesPageState extends State<CommentRepliesPage> {
     return colors[name.hashCode % colors.length];
   }
 
-  String _formatDate(String dateStr) {
-    try {
-      final date = DateTime.parse(dateStr.replaceAll(' ', 'T'));
-      final now = DateTime.now();
-      final diff = now.difference(date);
-
-      if (diff.inMinutes < 1) return '刚刚';
-      if (diff.inHours < 1) return '${diff.inMinutes}分钟前';
-      if (diff.inDays < 1) return '${diff.inHours}小时前';
-      if (diff.inDays < 7) return '${diff.inDays}天前';
-      if (diff.inDays < 30) return '${(diff.inDays / 7).floor()}周前';
-      return dateStr.split(' ')[0];
-    } catch (e) {
-      return dateStr;
-    }
-  }
-
   void _onRefresh() async {
     await context.read<CommentRepliesCubit>().loadReplies(isRefresh: true);
     _refreshController.refreshCompleted();
@@ -290,33 +279,100 @@ class _CommentRepliesPageState extends State<CommentRepliesPage> {
   void _showAddReplyDialog(BuildContext context) {
     final controller = TextEditingController();
 
-    showDialog(
+    showModalBottomSheet(
       context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text('回复评论'),
-        content: TextField(
-          controller: controller,
-          decoration: InputDecoration(
-            hintText: '写下你的回复...',
-            border: OutlineInputBorder(),
-          ),
-          maxLines: 3,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Padding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(dialogContext),
-            child: Text('取消'),
+        child: Container(
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
-          TextButton(
-            onPressed: () {
-              if (controller.text.trim().isNotEmpty) {
-                // TODO: 实现发送回复
-                Navigator.pop(dialogContext);
-              }
-            },
-            child: Text('发送'),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    '回复 @${widget.parentComment.guestName}',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Spacer(),
+                  IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    icon: Icon(Icons.close, size: 20),
+                    padding: EdgeInsets.zero,
+                    constraints: BoxConstraints(),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[50],
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey[200]!),
+                ),
+                child: TextField(
+                  controller: controller,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    hintText: '写下你的回复...',
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(16),
+                    hintStyle: TextStyle(color: Colors.grey[500]),
+                  ),
+                  maxLines: 4,
+                  minLines: 3,
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () => Navigator.pop(context),
+                      style: OutlinedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Text('取消'),
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (controller.text.trim().isNotEmpty) {
+                          // TODO: 实现发送回复
+                          Navigator.pop(context);
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Text('发送'),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

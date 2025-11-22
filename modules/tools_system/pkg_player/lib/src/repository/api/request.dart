@@ -31,9 +31,10 @@ class PackageRequest with ScienceHostMixin {
     required String key,
     int page = 1,
     int pageSize = 10,
+    String? sortBy,
   }) async {
     return host.get('/categories/$key/export', queryParameters: {
-      'sort_by': 'downloads',
+      'sort_by': sortBy ?? 'downloads',
       'page': page,
       'page_size': pageSize,
     }, convertor: (data) {
@@ -111,6 +112,20 @@ class PackageRequest with ScienceHostMixin {
           List<dynamic> list = data['data'] as List<dynamic>;
           return list.map((json) => Comment.fromJson(json)).toList();
         });
+  }
+
+  Future<ApiRet<dynamic>> submitFeedback({
+    required String feedbackType,
+    required String title,
+    required String content,
+  }) async {
+    return host.post('/feedback',
+        data: {
+          'feedback_type': feedbackType,
+          'title': title,
+          'content': content,
+        },
+        convertor: (e) => e);
   }
 
   Future<void> insertPackages(String category, List<dynamic> jsonData) async {

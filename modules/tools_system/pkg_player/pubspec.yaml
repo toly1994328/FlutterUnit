@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   sqflite: 2.4.0
   flutter_bloc: ^8.1.6
   equatable: ^2.0.5
