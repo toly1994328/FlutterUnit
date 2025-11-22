@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/src/l10n/gen/app_l10n.dart';
+import 'package:pkg_player/pkg_player.dart';
 import '../view/desktop/flutter_unit_desk_navigation.dart';
 
 import 'system/app.dart';
@@ -15,6 +16,15 @@ RouteBase get appRoute {
     widgetsRoute,
     noteRoute,
     collectRoute,
+    GoRoute(
+      path: AppRoute.packages.path,
+      builder: (_, __) {
+        return PkgPlayerPage();
+      },
+      // routes: [
+      //   GoRoute(path: AppRoute.collectionDetail.path, builder: collectionDetailBuilder),
+      // ],
+    ),
     settingsRoute,
     GoRoute(
       path: AppRoute.moreNews.path,

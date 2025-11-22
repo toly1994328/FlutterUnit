@@ -5,8 +5,10 @@ class CommentsLoadingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
+
     return Container(
-      color: Colors.white,
+      color: tileColor,
       height: 120,
       child: Center(
         child: Column(

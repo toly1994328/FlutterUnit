@@ -31,6 +31,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeAccountTabInfo => 'About App';
 
   @override
+  String get messageBoard => 'Message Board';
+
+  @override
   String get homeAccountTabMe => 'Contact Me';
 
   @override

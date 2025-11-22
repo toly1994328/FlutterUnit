@@ -17,7 +17,7 @@ void main() async {
   );
 
   setUpAll(() async {
-    FxDio().register(ScienceHost());
+    FxDio().register(Unit3Host());
   });
 
   Future<void> getPackageComments() async {

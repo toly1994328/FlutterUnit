@@ -5,19 +5,18 @@ import 'package:pkg_player/pkg_player.dart';
 
 import 'app_theme.dart';
 
-class UnitApiAuth extends ApiAuth{
+class UnitApiAuth extends ApiAuth {
   @override
   FutureOr<Map<String, dynamic>> get buildHeaders => {
-    // 'locale': 'en'
-    'locale': 'zh-CN'
-  };
-
+        // 'locale': 'en'
+        'locale': 'zh-CN'
+      };
 }
 
 void main() {
   runApp(const MyApp());
-  FxDio().register(ScienceHost());
-  FxDio().auth<ScienceHost>(UnitApiAuth());
+  FxDio().register(Unit3Host());
+  FxDio().auth<Unit3Host>(UnitApiAuth());
 }
 
 class MyApp extends StatelessWidget {

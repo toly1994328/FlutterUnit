@@ -31,6 +31,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get homeAccountTabInfo => '关于应用';
 
   @override
+  String get messageBoard => '留言板';
+
+  @override
   String get homeAccountTabMe => '联系本王';
 
   @override

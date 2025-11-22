@@ -45,6 +45,9 @@ class AppL10nEn extends AppL10n {
   String get newBoard => 'New';
 
   @override
+  String get package => 'packages ';
+
+  @override
   String get news => 'News';
 
   @override

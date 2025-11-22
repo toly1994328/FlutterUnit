@@ -29,16 +29,16 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     WindowSizeAdapter.setSize();
     await SpStorage().initSp();
     await initAppMeta();
+    AppConfigPo po = await SpStorage().appConfig.read();
 
-    registerHttpClient();
+    AppConfig state = AppConfig.fromPo(po);
+    registerHttpClient(state.language.isZh);
     NoteEnv().attachBridge(UnitNoteBridge());
     if (!kAppEnv.isWeb) await initDb();
     await initWidgetStatistics(); // 加载统计数据
 
     HttpUtil.instance.rebase(PathUnit.baseUrl);
-    AppConfigPo po = await SpStorage().appConfig.read();
 
-    AppConfig state = AppConfig.fromPo(po);
     return state;
   }
 
@@ -75,14 +75,14 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
       await File(p.join(dir.path, 'article.db'))
           .writeAsBytes(bytes, flush: true);
     }
-    {
-      ByteData data = await rootBundle.load("assets/packages.db");
-      List<int> bytes =
-          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-
-      await File(p.join(dir.path, 'packages.db'))
-          .writeAsBytes(bytes, flush: true);
-    }
+    // {
+    //   ByteData data = await rootBundle.load("assets/packages.db");
+    //   List<int> bytes =
+    //       data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    //
+    //   await File(p.join(dir.path, 'packages.db'))
+    //       .writeAsBytes(bytes, flush: true);
+    // }
     print("=====flutter.db==== assets ======拷贝完成====");
   }
 

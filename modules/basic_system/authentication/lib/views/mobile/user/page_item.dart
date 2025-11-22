@@ -45,8 +45,8 @@ class MePageItem extends StatelessWidget {
           divider,
           _buildItem(
             context,
-            TolyIcon.icon_collect,
-            '留言板',
+            Icons.note_alt,
+            context.l10n.messageBoard,
             AppRoute.note.url,
           ),
           Gap.sfl10,

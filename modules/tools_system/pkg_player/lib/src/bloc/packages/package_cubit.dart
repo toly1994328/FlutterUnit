@@ -11,22 +11,27 @@ class PackageCubit extends Cubit<PackageState> {
   PackageCubit(this._request) : super(PackageInitial());
 
   Future<void> loadPackagesForCategory(String categoryKey,
-      {bool isRefresh = false}) async {
+      {bool isRefresh = false, String? sortBy}) async {
     // 检查是否需要加载
     if (!isRefresh && _categoryPackages.containsKey(categoryKey)) {
       return;
     }
 
     // 添加loading状态并立即emit
-    _loadingCategories.add(categoryKey);
-    final loadingState = PackageLoaded(
-      _categoryPackages,
-      loadingCategories: _loadingCategories,
-    );
-    emit(loadingState);
+    if (!isRefresh) {
+      _loadingCategories.add(categoryKey);
+      final loadingState = PackageLoaded(
+        _categoryPackages,
+        loadingCategories: _loadingCategories,
+      );
+      emit(loadingState);
+    }
 
     try {
-      final result = await _request.getCategoriesPackage(key: categoryKey);
+      final result = await _request.getCategoriesPackage(
+        key: categoryKey,
+        sortBy: sortBy,
+      );
 
       if (result.success) {
         _categoryPackages[categoryKey] = PackageResult(

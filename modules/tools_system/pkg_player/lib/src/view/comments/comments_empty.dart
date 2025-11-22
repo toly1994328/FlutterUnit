@@ -5,9 +5,11 @@ class CommentsEmptyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
+
     return Container(
       height: 140,
-      color: Colors.white,
+      color: tileColor,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

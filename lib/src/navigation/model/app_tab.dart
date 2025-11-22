@@ -28,7 +28,7 @@ enum AppTab {
         AppTab.knowledge => l10n.deskTabKnowledge,
         AppTab.tools => l10n.deskTabTools,
         AppTab.mine => l10n.deskTabMine,
-        AppTab.packages => '三方库',
+        AppTab.packages => l10n.package,
       };
     }
     return switch (this) {
@@ -37,7 +37,7 @@ enum AppTab {
       AppTab.knowledge => l10n.mobileTabKnowledge,
       AppTab.tools => l10n.mobileTabTools,
       AppTab.mine => l10n.mobileTabMine,
-      AppTab.packages => '三方库',
+      AppTab.packages => l10n.package,
     };
   }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pkg_player/pkg_player.dart';
 
 import '../../bloc/comments/comments_cubit.dart';
 import '../../bloc/comments/comments_state.dart';
@@ -21,13 +22,14 @@ class CommentsTopBar extends StatelessWidget {
       }
       return -1;
     });
+    Color? tileColor = Theme.of(context).listTileTheme.tileColor;
 
     return Container(
-      color: Colors.white,
+      color: tileColor,
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       child: Row(
         children: [
-          Text('全部评论',
+          Text(context.pkgL10n.allComments,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           SizedBox(width: 8),
           if (total > 0)
@@ -61,7 +63,7 @@ class CommentsTopBar extends StatelessWidget {
                   Icon(Icons.edit, color: Colors.white, size: 14),
                   SizedBox(width: 4),
                   Text(
-                    '写评论',
+                    context.pkgL10n.writeComment,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,

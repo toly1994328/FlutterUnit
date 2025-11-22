@@ -19,6 +19,8 @@ enum Language {
   final Locale locale;
   final String label;
 
+  bool get isZh => this == Language.zh_CN;
+
   const Language({
     required this.locale,
     required this.label,

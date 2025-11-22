@@ -20,7 +20,7 @@ void main() {
     late PackageRepository repository;
     setUp(() {
       repository = PubPackageRepository();
-      FxDio().register(ScienceHost());
+      FxDio().register(Unit3Host());
     });
 
     /// 插入所有的分类
@@ -61,9 +61,8 @@ void main() {
         if (file is File) {
           String data = await file.readAsString();
           List<dynamic> jsonData = jsonDecode(data);
-          String category =  p.basenameWithoutExtension(file.path);
-          await request.insertPackages(
-              category, jsonData);
+          String category = p.basenameWithoutExtension(file.path);
+          await request.insertPackages(category, jsonData);
           print('同步成功:$category');
         }
       }

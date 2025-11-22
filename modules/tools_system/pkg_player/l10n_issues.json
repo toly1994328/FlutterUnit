@@ -1,0 +1,936 @@
+{
+  "issues": [
+    {
+      "file": "lib/src/bloc/comments/comments_cubit.dart",
+      "line": 75,
+      "column": 56,
+      "content": "'游客'",
+      "context": "String guestName = username ?? UnitEnv.userName ?? '游客';"
+    },
+    {
+      "file": "lib/src/repository/database/dao/package_service.dart",
+      "line": 89,
+      "column": 15,
+      "content": "'未知分类'",
+      "context": "'desc': '未知分类',"
+    },
+    {
+      "file": "lib/src/repository/model/sort_type.dart",
+      "line": 2,
+      "column": 26,
+      "content": "'下载量'",
+      "context": "downloads('downloads', '下载量'),"
+    },
+    {
+      "file": "lib/src/repository/model/sort_type.dart",
+      "line": 3,
+      "column": 18,
+      "content": "'喜欢数'",
+      "context": "likes('likes', '喜欢数'),"
+    },
+    {
+      "file": "lib/src/repository/model/sort_type.dart",
+      "line": 4,
+      "column": 31,
+      "content": "'发布时间'",
+      "context": "publishTime('publish_time', '发布时间');"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 38,
+      "column": 21,
+      "content": "'${widget.packageName} 的评论'",
+      "context": "title: Text('${widget.packageName} 的评论'),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 47,
+      "column": 39,
+      "content": "'加载失败: ${state.message}'",
+      "context": "return Center(child: Text('加载失败: ${state.message}'));"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 63,
+      "column": 47,
+      "content": "'暂无评论'",
+      "context": "child: Center(child: Text('暂无评论')),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 87,
+      "column": 37,
+      "content": "'暂无评论'",
+      "context": "return Center(child: Text('暂无评论'));"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 164,
+      "column": 33,
+      "content": "'回复'",
+      "context": "'回复',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 198,
+      "column": 17,
+      "content": "'查看更多 ${comment.repliesTotal - 2} 条回复'",
+      "context": "'查看更多 ${comment.repliesTotal - 2} 条回复',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 342,
+      "column": 38,
+      "content": "'刚刚'",
+      "context": "if (diff.inMinutes < 1) return '刚刚';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 343,
+      "column": 36,
+      "content": "'${diff.inMinutes}分钟前'",
+      "context": "if (diff.inHours < 1) return '${diff.inMinutes}分钟前';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 344,
+      "column": 35,
+      "content": "'${diff.inHours}小时前'",
+      "context": "if (diff.inDays < 1) return '${diff.inHours}小时前';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 345,
+      "column": 35,
+      "content": "'${diff.inDays}天前'",
+      "context": "if (diff.inDays < 7) return '${diff.inDays}天前';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 346,
+      "column": 36,
+      "content": "'${(diff.inDays / 7).floor()}周前'",
+      "context": "if (diff.inDays < 30) return '${(diff.inDays / 7).floor()}周前';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 378,
+      "column": 21,
+      "content": "'添加评论'",
+      "context": "'添加评论',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 404,
+      "column": 31,
+      "content": "'写下你的评论...'",
+      "context": "hintText: '写下你的评论...',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 425,
+      "column": 35,
+      "content": "'取消'",
+      "context": "child: Text('取消'),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 445,
+      "column": 35,
+      "content": "'发送'",
+      "context": "child: Text('发送'),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 482,
+      "column": 21,
+      "content": "'回复 ${comment.guestName}'",
+      "context": "'回复 ${comment.guestName}',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 508,
+      "column": 31,
+      "content": "'写下你的回复...'",
+      "context": "hintText: '写下你的回复...',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 529,
+      "column": 35,
+      "content": "'取消'",
+      "context": "child: Text('取消'),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_detail_page.dart",
+      "line": 549,
+      "column": 35,
+      "content": "'发送'",
+      "context": "child: Text('发送'),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_empty.dart",
+      "line": 19,
+      "column": 18,
+      "content": "'暂无评论'",
+      "context": "Text('暂无评论', style: TextStyle(color: Colors.grey[600])),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_empty.dart",
+      "line": 20,
+      "column": 18,
+      "content": "'成为第一个评论的人吧'",
+      "context": "Text('成为第一个评论的人吧',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_error.dart",
+      "line": 17,
+      "column": 18,
+      "content": "'加载失败'",
+      "context": "Text('加载失败', style: TextStyle(color: Colors.grey[600])),"
+    },
+    {
+      "file": "lib/src/view/comments/comments_loading.dart",
+      "line": 23,
+      "column": 18,
+      "content": "'加载评论中...'",
+      "context": "Text('加载评论中...',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_top_bar.dart",
+      "line": 31,
+      "column": 16,
+      "content": "'全部评论'",
+      "context": "Text('全部评论',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_top_bar.dart",
+      "line": 65,
+      "column": 21,
+      "content": "'写评论'",
+      "context": "'写评论',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 50,
+      "column": 25,
+      "content": "'查看所有'",
+      "context": "'查看所有',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 119,
+      "column": 31,
+      "content": "'精答'",
+      "context": "'精答',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 151,
+      "column": 29,
+      "content": "'回复'",
+      "context": "'回复',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 245,
+      "column": 17,
+      "content": "'查看更多 ${comment.repliesTotal - 2} 条回复'",
+      "context": "'查看更多 ${comment.repliesTotal - 2} 条回复',"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 329,
+      "column": 38,
+      "content": "'刚刚'",
+      "context": "if (diff.inMinutes < 1) return '刚刚';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 330,
+      "column": 36,
+      "content": "'${diff.inMinutes}分钟前'",
+      "context": "if (diff.inHours < 1) return '${diff.inMinutes}分钟前';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 331,
+      "column": 35,
+      "content": "'${diff.inHours}小时前'",
+      "context": "if (diff.inDays < 1) return '${diff.inHours}小时前';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 332,
+      "column": 35,
+      "content": "'${diff.inDays}天前'",
+      "context": "if (diff.inDays < 7) return '${diff.inDays}天前';"
+    },
+    {
+      "file": "lib/src/view/comments/comments_with_data.dart",
+      "line": 333,
+      "column": 36,
+      "content": "'${(diff.inDays / 7).floor()}周前'",
+      "context": "if (diff.inDays < 30) return '${(diff.inDays / 7).floor()}周前';"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 30,
+      "column": 21,
+      "content": "'回复详情'",
+      "context": "title: Text('回复详情'),"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 43,
+      "column": 45,
+      "content": "'加载失败: ${state.message}'",
+      "context": "return Center(child: Text('加载失败: ${state.message}'));"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 55,
+      "column": 53,
+      "content": "'暂无回复'",
+      "context": "child: Center(child: Text('暂无回复')),"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 80,
+      "column": 43,
+      "content": "'暂无回复'",
+      "context": "return Center(child: Text('暂无回复'));"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 262,
+      "column": 38,
+      "content": "'刚刚'",
+      "context": "if (diff.inMinutes < 1) return '刚刚';"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 263,
+      "column": 36,
+      "content": "'${diff.inMinutes}分钟前'",
+      "context": "if (diff.inHours < 1) return '${diff.inMinutes}分钟前';"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 264,
+      "column": 35,
+      "content": "'${diff.inHours}小时前'",
+      "context": "if (diff.inDays < 1) return '${diff.inHours}小时前';"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 265,
+      "column": 35,
+      "content": "'${diff.inDays}天前'",
+      "context": "if (diff.inDays < 7) return '${diff.inDays}天前';"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 266,
+      "column": 36,
+      "content": "'${(diff.inDays / 7).floor()}周前'",
+      "context": "if (diff.inDays < 30) return '${(diff.inDays / 7).floor()}周前';"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 311,
+      "column": 21,
+      "content": "'回复 @${widget.parentComment.guestName}'",
+      "context": "'回复 @${widget.parentComment.guestName}',"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 337,
+      "column": 31,
+      "content": "'写下你的回复...'",
+      "context": "hintText: '写下你的回复...',"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 358,
+      "column": 35,
+      "content": "'取消'",
+      "context": "child: Text('取消'),"
+    },
+    {
+      "file": "lib/src/view/comments/comment_replies_page.dart",
+      "line": 376,
+      "column": 35,
+      "content": "'发送'",
+      "context": "child: Text('发送'),"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card.dart",
+      "line": 339,
+      "column": 45,
+      "content": "'暂无描述'",
+      "context": "widget.plugin.desc ?? '暂无描述',"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card.dart",
+      "line": 443,
+      "column": 56,
+      "content": "'未知发布者'",
+      "context": "widget.plugin.publisher ?? '未知发布者',"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 22,
+      "column": 21,
+      "content": "'分享卡片'",
+      "context": "title: Text('分享卡片'),"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 57,
+      "column": 28,
+      "content": "'保存图片'",
+      "context": "label: '保存图片',"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 63,
+      "column": 28,
+      "content": "'分享'",
+      "context": "label: '分享',"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 69,
+      "column": 28,
+      "content": "'复制链接'",
+      "context": "label: '复制链接',"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 128,
+      "column": 27,
+      "content": "'需要相册权限才能保存图片'",
+      "context": "content: Text('需要相册权限才能保存图片'),"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 165,
+      "column": 25,
+      "content": "'保存失败: $e'",
+      "context": "content: Text('保存失败: $e'),"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 176,
+      "column": 23,
+      "content": "'分享功能开发中...'",
+      "context": "content: Text('分享功能开发中...'),"
+    },
+    {
+      "file": "lib/src/view/components/card/plugin_card_page.dart",
+      "line": 187,
+      "column": 23,
+      "content": "'链接已复制到剪贴板'",
+      "context": "content: Text('链接已复制到剪贴板'),"
+    },
+    {
+      "file": "lib/src/view/components/dialog/sort_picker.dart",
+      "line": 28,
+      "column": 13,
+      "content": "'排序方式'",
+      "context": "'排序方式',"
+    },
+    {
+      "file": "lib/src/view/home/empty_list.dart",
+      "line": 16,
+      "column": 37,
+      "content": "'暂无数据'",
+      "context": "child: Center(child: Text('暂无数据')),"
+    },
+    {
+      "file": "lib/src/view/home/pkg_list_with_data.dart",
+      "line": 46,
+      "column": 21,
+      "content": "'加载更多(10)'",
+      "context": "'加载更多(10)',"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 63,
+      "column": 40,
+      "content": "'Flutter插件库'",
+      "context": "appBar: AppBar(title: Text('Flutter插件库')),"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 69,
+      "column": 40,
+      "content": "'Flutter插件库'",
+      "context": "appBar: AppBar(title: Text('Flutter插件库')),"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 70,
+      "column": 38,
+      "content": "'加载失败: ${state.message}'",
+      "context": "body: Center(child: Text('加载失败: ${state.message}')),"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 75,
+      "column": 38,
+      "content": "'Flutter插件库'",
+      "context": "appBar: AppBar(title: Text('Flutter插件库')),"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 76,
+      "column": 36,
+      "content": "'暂无数据'",
+      "context": "body: Center(child: Text('暂无数据')),"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 112,
+      "column": 41,
+      "content": "'暂无数据'",
+      "context": "return Center(child: Text('暂无数据'));"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 134,
+      "column": 47,
+      "content": "'暂无数据'",
+      "context": "child: Center(child: Text('暂无数据')),"
+    },
+    {
+      "file": "lib/src/view/home/pkg_player_home_page.dart",
+      "line": 145,
+      "column": 19,
+      "content": "'Flutter插件库'",
+      "context": "title: Text('Flutter插件库'),"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 21,
+      "column": 29,
+      "content": "'今天'",
+      "context": "if (diff == 0) return '今天';"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 22,
+      "column": 29,
+      "content": "'昨天'",
+      "context": "if (diff == 1) return '昨天';"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 23,
+      "column": 29,
+      "content": "'${diff}天前'",
+      "context": "if (diff < 30) return '${diff}天前';"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 24,
+      "column": 30,
+      "content": "'${(diff / 30).floor()}个月前'",
+      "context": "if (diff < 365) return '${(diff / 30).floor()}个月前';"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 25,
+      "column": 14,
+      "content": "'${(diff / 365).floor()}年前'",
+      "context": "return '${(diff / 365).floor()}年前';"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 131,
+      "column": 27,
+      "content": "'喜欢'",
+      "context": "'喜欢',"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 142,
+      "column": 27,
+      "content": "'分数'",
+      "context": "'分数',"
+    },
+    {
+      "file": "lib/src/view/home/plugin_item.dart",
+      "line": 153,
+      "column": 27,
+      "content": "'下载量'",
+      "context": "'下载量',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 18,
+      "column": 21,
+      "content": "'推荐插件'",
+      "context": "title: Text('推荐插件'),"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 42,
+      "column": 27,
+      "content": "'推荐说明'",
+      "context": "'推荐说明',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 52,
+      "column": 23,
+      "content": "'推荐后，经过审核采纳，该包将收录到 FlutterUnit 插件库中，供更多开发者发现和使用。'",
+      "context": "'推荐后，经过审核采纳，该包将收录到 FlutterUnit 插件库中，供更多开发者发现和使用。',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 63,
+      "column": 17,
+      "content": "'包名称'",
+      "context": "'包名称',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 73,
+      "column": 29,
+      "content": "'请输入包名称，如：dio'",
+      "context": "hintText: '请输入包名称，如：dio',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 81,
+      "column": 28,
+      "content": "'请输入包名称'",
+      "context": "return '请输入包名称';"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 88,
+      "column": 17,
+      "content": "'包的特点'",
+      "context": "'包的特点',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 99,
+      "column": 29,
+      "content": "'请描述这个包的主要功能和特点，为什么推荐它...'",
+      "context": "hintText: '请描述这个包的主要功能和特点，为什么推荐它...',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 107,
+      "column": 28,
+      "content": "'请描述包的特点'",
+      "context": "return '请描述包的特点';"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 110,
+      "column": 28,
+      "content": "'请至少输入10个字符的描述'",
+      "context": "return '请至少输入10个字符的描述';"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 129,
+      "column": 21,
+      "content": "'提交推荐'",
+      "context": "'提交推荐',"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 157,
+      "column": 29,
+      "content": "'推荐已提交，感谢您的贡献！'",
+      "context": "content: Text('推荐已提交，感谢您的贡献！'),"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 167,
+      "column": 29,
+      "content": "'提交失败：${result.msg}'",
+      "context": "content: Text('提交失败：${result.msg}'),"
+    },
+    {
+      "file": "lib/src/view/home/recommendation_page.dart",
+      "line": 175,
+      "column": 27,
+      "content": "'提交失败：网络错误'",
+      "context": "content: Text('提交失败：网络错误'),"
+    },
+    {
+      "file": "lib/src/view/package_detail/comments_section.dart",
+      "line": 80,
+      "column": 43,
+      "content": "'插件'",
+      "context": "packageName: packageName ?? '插件',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_dependencies_section.dart",
+      "line": 28,
+      "column": 20,
+      "content": "'依赖关系'",
+      "context": "Text('依赖关系',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_detail_page.dart",
+      "line": 128,
+      "column": 40,
+      "content": "'写下你的评论...'",
+      "context": "String hintText = parentId == -1 ? '写下你的评论...' : '回复评论...';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_detail_page.dart",
+      "line": 128,
+      "column": 54,
+      "content": "'回复评论...'",
+      "context": "String hintText = parentId == -1 ? '写下你的评论...' : '回复评论...';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_detail_page.dart",
+      "line": 200,
+      "column": 22,
+      "content": "'未知用户'",
+      "context": "guestName: '未知用户',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_detail_page.dart",
+      "line": 201,
+      "column": 20,
+      "content": "'评论内容'",
+      "context": "content: '评论内容',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 25,
+      "column": 41,
+      "content": "'发布者'",
+      "context": "_buildInfoRow(Icons.person, '发布者', plugin.publisher!),"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 27,
+      "column": 39,
+      "content": "'主页'",
+      "context": "_buildInfoRow(Icons.home, '主页', plugin.homepage!),"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 31,
+      "column": 31,
+      "content": "'最后发布'",
+      "context": "Icons.schedule, '最后发布', _formatDate(plugin.lastPublish)),"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 39,
+      "column": 19,
+      "content": "'喜欢人数'",
+      "context": "'喜欢人数',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 47,
+      "column": 19,
+      "content": "'插件分数'",
+      "context": "'插件分数',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 55,
+      "column": 19,
+      "content": "'30 日下载量'",
+      "context": "'30 日下载量',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 95,
+      "column": 16,
+      "content": "'仓库:'",
+      "context": "Text('仓库:',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 167,
+      "column": 29,
+      "content": "'今天'",
+      "context": "if (diff == 0) return '今天';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 168,
+      "column": 29,
+      "content": "'昨天'",
+      "context": "if (diff == 1) return '昨天';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 169,
+      "column": 29,
+      "content": "'${diff}天前'",
+      "context": "if (diff < 30) return '${diff}天前';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 170,
+      "column": 30,
+      "content": "'${(diff / 30).floor()}个月前'",
+      "context": "if (diff < 365) return '${(diff / 30).floor()}个月前';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_info_section.dart",
+      "line": 171,
+      "column": 14,
+      "content": "'${(diff / 365).floor()}年前'",
+      "context": "return '${(diff / 365).floor()}年前';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_tags.dart",
+      "line": 25,
+      "column": 18,
+      "content": "'标签一览'",
+      "context": "Text('标签一览',"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_tags.dart",
+      "line": 121,
+      "column": 16,
+      "content": "'平台'",
+      "context": "return '平台';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_tags.dart",
+      "line": 125,
+      "column": 16,
+      "content": "'类型'",
+      "context": "return '类型';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_tags.dart",
+      "line": 127,
+      "column": 16,
+      "content": "'主题'",
+      "context": "return '主题';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_tags.dart",
+      "line": 129,
+      "column": 16,
+      "content": "'许可证'",
+      "context": "return '许可证';"
+    },
+    {
+      "file": "lib/src/view/package_detail/plugin_tags.dart",
+      "line": 131,
+      "column": 16,
+      "content": "'其他'",
+      "context": "return '其他';"
+    },
+    {
+      "file": "test/science_server/test_comments.dart",
+      "line": 30,
+      "column": 16,
+      "content": "'请求成功!'",
+      "context": "'msg': '请求成功!',"
+    }
+  ],
+  "summary": {
+    "total_issues": 120,
+    "affected_files": 24
+  },
+  "unique_strings": [
+    "${(diff / 30).floor()}个月前",
+    "${(diff / 365).floor()}年前",
+    "${(diff.inDays / 7).floor()}周前",
+    "${diff.inDays}天前",
+    "${diff.inHours}小时前",
+    "${diff.inMinutes}分钟前",
+    "${diff}天前",
+    "${widget.packageName} 的评论",
+    "30 日下载量",
+    "Flutter插件库",
+    "下载量",
+    "主页",
+    "主题",
+    "今天",
+    "仓库:",
+    "依赖关系",
+    "保存图片",
+    "保存失败: $e",
+    "全部评论",
+    "其他",
+    "写下你的回复...",
+    "写下你的评论...",
+    "写评论",
+    "分享",
+    "分享功能开发中...",
+    "分享卡片",
+    "分数",
+    "刚刚",
+    "加载失败",
+    "加载失败: ${state.message}",
+    "加载更多(10)",
+    "加载评论中...",
+    "包名称",
+    "包的特点",
+    "发布时间",
+    "发布者",
+    "发送",
+    "取消",
+    "喜欢",
+    "喜欢人数",
+    "喜欢数",
+    "回复",
+    "回复 ${comment.guestName}",
+    "回复 @${widget.parentComment.guestName}",
+    "回复评论...",
+    "回复详情",
+    "复制链接",
+    "平台",
+    "成为第一个评论的人吧",
+    "排序方式",
+    "推荐后，经过审核采纳，该包将收录到 FlutterUnit 插件库中，供更多开发者发现和使用。",
+    "推荐已提交，感谢您的贡献！",
+    "推荐插件",
+    "推荐说明",
+    "提交失败：${result.msg}",
+    "提交失败：网络错误",
+    "提交推荐",
+    "插件",
+    "插件分数",
+    "昨天",
+    "暂无回复",
+    "暂无描述",
+    "暂无数据",
+    "暂无评论",
+    "最后发布",
+    "未知分类",
+    "未知发布者",
+    "未知用户",
+    "查看所有",
+    "查看更多 ${comment.repliesTotal - 2} 条回复",
+    "标签一览",
+    "添加评论",
+    "游客",
+    "类型",
+    "精答",
+    "许可证",
+    "评论内容",
+    "请描述包的特点",
+    "请描述这个包的主要功能和特点，为什么推荐它...",
+    "请求成功!",
+    "请至少输入10个字符的描述",
+    "请输入包名称",
+    "请输入包名称，如：dio",
+    "链接已复制到剪贴板",
+    "需要相册权限才能保存图片"
+  ],
+  "count": 85
+}
