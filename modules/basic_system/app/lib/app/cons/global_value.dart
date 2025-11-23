@@ -6,7 +6,7 @@ import 'package:uuid/uuid.dart';
 
 double px1 = 1 / window.devicePixelRatio;
 
-String get kAppVersion => "3.2.3";
+String get kAppVersion => "3.4.1";
 
 bool kIsDesk =
     kIsWeb || Platform.isMacOS || Platform.isWindows || Platform.isLinux;

@@ -74,7 +74,10 @@ class UpgradeBloc extends Bloc<UpdateEvent, UpdateState> {
       onReceiveProgress: (c, t) => callback(c / t),
     );
     if (rep.statusCode == 200) {
-      await OpenFile.open(filePath);
+      final uri = Uri.file(filePath);
+      if (!await launchUrl(uri)) {
+        // throw '无法打开文件: $path';
+      }
     }
   }
 
