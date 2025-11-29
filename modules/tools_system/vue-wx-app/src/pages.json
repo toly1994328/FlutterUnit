@@ -1,0 +1,55 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Flutter插件库",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/detail/index",
+      "style": {
+        "navigationBarTitleText": "插件详情"
+      }
+    },
+    {
+      "path": "pages/comments/index",
+      "style": {
+        "navigationBarTitleText": "评论"
+      }
+    },
+    {
+      "path": "pages/recommend/index",
+      "style": {
+        "navigationBarTitleText": "推荐插件"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Flutter插件库",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#007aff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/recommend/index",
+        "iconPath": "static/recommend.png",
+        "selectedIconPath": "static/recommend-active.png",
+        "text": "推荐"
+      }
+    ]
+  }
+}

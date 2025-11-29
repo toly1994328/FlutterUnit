@@ -16,8 +16,8 @@ dependencies:
   go_router: ^14.2.0
   utils:
     path: ../utils
-  app_update:
-    path: ../app_update
+  fx_updater:
+    path: ../fx_updater
   app:
     path: ../app
   l10n:

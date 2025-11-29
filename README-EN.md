@@ -35,10 +35,10 @@ FlutterUnit is a cross-platform experience app, Here, you can fully explore the 
 
 ```
 ·]>>  flutter --version
-Flutter 3.35.1 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 20f8274939 (6 days ago) • 2025-08-14 10:53:09 -0700
-Engine • hash 6cd51c08a88e7bbe848a762c20ad3ecb8b063c0e (revision 1e9a811bf8) (7 days ago) • 2025-08-13 23:35:25.000Z
-Tools • Dart 3.9.0 • DevTools 2.48.0
+Flutter 3.38.3 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 19074d12f7 (9 days ago) • 2025-11-20 17:53:13 -0500
+Engine • hash 8bf2090718fea3655f466049a757f823898f0ad1 (revision 13e658725d) (8 days ago) • 2025-11-20 20:19:23.000Z
+Tools • Dart 3.10.1 • DevTools 2.51.1
 ```
 
 #### Build Application
@@ -48,7 +48,7 @@ Tools • Dart 3.9.0 • DevTools 2.48.0
 ·]>>  cd FlutterUnit
 
 Build Android:
-·]>>  flutter build apk --target-platform --split-per-abi
+·]>>  flutter build apk --release --target-platform android-arm64 --split-per-abi -v
 Build iOS:
 ·]>>  flutter build ios
 Build Windows:

@@ -30,3 +30,4 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 build/
 /test/science_server/moke
+/doc/*

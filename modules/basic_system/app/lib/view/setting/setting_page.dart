@@ -1,11 +1,11 @@
 import 'package:app/app.dart';
+import 'package:fx_updater/fx_updater.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'language_setting.dart';
-import 'package:app_update/app_update.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -132,7 +132,8 @@ class VersionTiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color themeColor = Theme.of(context).primaryColor;
-    Widget title = Text(context.l10n.versionInformation, style: TextStyle(fontSize: 16));
+    Widget title =
+        Text(context.l10n.versionInformation, style: TextStyle(fontSize: 16));
 
     UpdateState state = context.watch<UpgradeBloc>().state;
 

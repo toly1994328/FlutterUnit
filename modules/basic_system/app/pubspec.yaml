@@ -13,7 +13,8 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-
+  fx_updater:
+    path: ../../basic_system/fx_updater
 flutter:
 
   # To add assets to your package, add an assets section, like this:

@@ -9,7 +9,6 @@ environment:
   sdk: ">=3.5.0 <4.0.0"
 workspace:
   - modules/basic_system/app
-  - modules/basic_system/app_update
   - modules/basic_system/authentication
   - modules/basic_system/components
   - modules/basic_system/l10n
@@ -38,7 +37,7 @@ dependencies:
 
   # 路由与状态管理
   go_router: ^14.2.0  # 路由管理
-  flutter_bloc: ^8.1.6 # 状态管理
+  flutter_bloc: ^9.1.1 # 状态管理
 
   ## fx 架构
   fx_platform_adapter: 0.0.3 # 平台适配器
@@ -53,7 +52,8 @@ dependencies:
   shared_preferences: ^2.5.3 # xml 固化
   jwt_decoder: ^2.0.1 # jwt 解析
   path_provider: ^2.1.5  # 路径
-
+  fx_updater:
+    path: modules/basic_system/fx_updater
   # 平台功能
 #  connectivity_plus: ^6.1.4 # 网络状态
   url_launcher: ^6.3.1 # url
@@ -91,6 +91,7 @@ dependency_overrides:
   web: ^1.0.0
   intl: 0.20.2
   fx_dio: 0.0.4+3
+  flutter_bloc: ^9.1.1
 
 flutter:
   generate: true

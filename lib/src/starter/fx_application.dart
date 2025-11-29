@@ -2,13 +2,13 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
+import 'package:fx_updater/fx_updater.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import '../flutter_unit.dart';
 import '../navigation/view/app_bloc_provider.dart';
 import 'start_repository.dart';
-import 'package:app_update/app_update.dart';
 import 'package:note/note.dart';
 
 export 'view/splash/Flutter_unit_splash.dart';
