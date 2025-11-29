@@ -2,18 +2,15 @@ import 'dart:io';
 
 import 'package:algorithm/algorithm.dart';
 import 'package:app/app.dart';
-import 'package:app_update/app_update.dart';
 import 'package:artifact/artifact.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/src/navigation/model/app_tab.dart';
+import 'package:fx_updater/fx_updater.dart';
 import 'package:pkg_player/pkg_player.dart';
-import 'package:treasure_tools/treasure_tools.dart';
-import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_module/widget_module.dart';
-import 'package:note/note.dart';
 import 'news.dart';
 import 'pure_bottom_bar.dart';
 

@@ -1,6 +1,6 @@
 import 'package:app/app.dart';
+import 'package:fx_updater/fx_updater.dart';
 import 'package:note/note.dart';
-import 'package:app_update/app_update.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:storage/storage.dart';

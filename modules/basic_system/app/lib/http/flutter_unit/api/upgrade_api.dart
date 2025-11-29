@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:app_update/app_update.dart';
 import 'package:fx_dio/fx_dio.dart';
 import 'package:app/app.dart';
+import 'package:fx_updater/fx_updater.dart';
 
 class UnitUpgradeApi implements UpgradeApi {
   @override

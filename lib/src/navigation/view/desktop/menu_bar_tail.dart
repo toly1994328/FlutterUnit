@@ -10,13 +10,13 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/src/flutter_unit.dart';
+import 'package:fx_updater/fx_updater.dart';
 import 'package:go_router/go_router.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:tolyui/basic/basic.dart';
 
 import 'locale_change_menu.dart';
 import 'theme_model_switch_icon.dart';
-import 'package:app_update/app_update.dart';
 
 enum ActionType {
   settings(path: '/settings'),
@@ -35,10 +35,12 @@ class MenuBarTail extends StatelessWidget {
     return Column(
       children: [
         const Divider(indent: 20, color: Colors.white, height: 1),
-        const SizedBox(height: 8,),
+        const SizedBox(
+          height: 8,
+        ),
         const LocaleChangeMenu(),
         Padding(
-          padding: const EdgeInsets.only(left: 8, right: 8,bottom: 8,top: 2),
+          padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8, top: 2),
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
             spacing: 8,
