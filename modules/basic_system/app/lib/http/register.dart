@@ -7,7 +7,7 @@ import 'http.dart';
 
 void registerHttpClient(bool isZh) {
   FxDio()
-      .register(const ScienceHost(), repInterceptor: ScienceRepInterceptor());
+      .register(const ScienceHost(), interceptors: [ScienceRepInterceptor()]);
   FxDio().register(const Unit3Host());
   FxDio().register(const UnitHost());
   UnitEnv.userName = '游客:${kAppMeta.uuid.substring(0, 6)}';
