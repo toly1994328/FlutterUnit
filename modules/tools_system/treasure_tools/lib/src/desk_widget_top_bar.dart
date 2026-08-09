@@ -2,22 +2,28 @@ import 'package:app/app.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 
-
-
 class DeskCodeGenTopBar extends StatefulWidget {
   final ValueChanged<int> onTabPressed;
   final VoidCallback onTapGen;
 
-  const DeskCodeGenTopBar({Key? key,required this.onTabPressed, required this.onTapGen}) : super(key: key);
+  const DeskCodeGenTopBar(
+      {Key? key, required this.onTabPressed, required this.onTapGen})
+      : super(key: key);
 
   @override
   State<DeskCodeGenTopBar> createState() => _DeskCodeGenTopBarState();
 }
 
-class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>  with SingleTickerProviderStateMixin {
+class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
 
-  static const List<String> _tabs = ['IconFont','Json 解析', '数据类' , '状态管理',];
+  static const List<String> _tabs = <String>[
+    'Json 解析',
+    'Base64 编解码',
+    'URL 编解码',
+    'IconFont',
+  ];
 
   @override
   void initState() {
@@ -34,17 +40,19 @@ class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>  with SingleTicke
     return DragToMoveWrapper(
       child: Container(
         height: 64,
-      color: isDark?Color(0xff2C3036):Colors.white,
+        color: isDark ? Color(0xff2C3036) : Colors.white,
         child: Row(
           children: [
-            const SizedBox(width: 12,),
-            SizedBox(
-              width: 350,
+            const SizedBox(
+              width: 12,
+            ),
+            Expanded(
               child: TabBar(
                 onTap: widget.onTabPressed,
                 indicatorSize: TabBarIndicatorSize.label,
-                labelPadding: const EdgeInsets.symmetric(horizontal: 6),
-                isScrollable: false,
+                labelPadding: const EdgeInsets.symmetric(horizontal: 16),
+                isScrollable: true,
+                tabAlignment: TabAlignment.start,
                 indicator: RoundRectTabIndicator(
                   borderSide: BorderSide(color: themeColor, width: 3),
                 ),
@@ -57,13 +65,12 @@ class _DeskCodeGenTopBarState extends State<DeskCodeGenTopBar>  with SingleTicke
                 indicatorWeight: 3,
                 unselectedLabelColor: Colors.grey,
                 indicatorColor: themeColor,
-                tabs:
-                _tabs.map((String name) => Tab(text: name)).toList(),
+                tabs: _tabs.map((String name) => Tab(text: name)).toList(),
               ),
             ),
-            Spacer(),
-
-            const SizedBox(width: 20,),
+            const SizedBox(
+              width: 20,
+            ),
             WindowButtons(),
           ],
         ),
