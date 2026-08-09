@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="34" y="34" width="60" height="60" rx="4" stroke="#C9D4F4" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M64 37L89 49L84 78L64 91L39 79L43 51L64 37Z" fill="url(#clipPathFill)"/>
+  <path d="M41 76L53 60L62 70L71 57L86 78L64 91L41 79V76Z" fill="white" fill-opacity=".82"/>
+  <defs><linearGradient id="clipPathFill" x1="39" y1="37" x2="89" y2="91"><stop stop-color="#7DB9FC"/><stop offset="1" stop-color="#8B7CFF"/></linearGradient></defs>
+</svg>

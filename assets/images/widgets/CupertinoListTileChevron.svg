@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="38" y="40" width="52" height="48" rx="12" fill="#F7F8FC"/>
+  <path d="M58 50L72 64L58 78" stroke="url(#cupertinoListTileChevronStroke)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="cupertinoListTileChevronStroke" x1="58" y1="50" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A3B8FF"/>
+      <stop offset="1" stop-color="#5F82F6"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,6 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <circle cx="64" cy="64" r="25" fill="#EEF3FF"/>
+  <path d="M64 45L69.5 56.5L82 58L73 67L75.5 79L64 73L52.5 79L55 67L46 58L58.5 56.5L64 45Z" fill="url(#iconThemeFill)"/>
+  <defs><linearGradient id="iconThemeFill" x1="46" y1="45" x2="82" y2="79" gradientUnits="userSpaceOnUse"><stop stop-color="#7DB9FC"/><stop offset="0.5" stop-color="#A3B8FF"/><stop offset="1" stop-color="#8B7CFF"/></linearGradient></defs>
+</svg>

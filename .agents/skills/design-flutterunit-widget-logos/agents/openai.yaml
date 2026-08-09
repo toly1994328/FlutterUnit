@@ -1,0 +1,4 @@
+interface:
+  display_name: "FlutterUnit Widget Logo 设计"
+  short_description: "设计、接入并校验 FlutterUnit 组件 SVG Logo"
+  default_prompt: "使用 $design-flutterunit-widget-logos 为一个 Flutter Widget 设计并接入 SVG Logo。"

@@ -1,0 +1,17 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="34" y="30" width="54" height="68" rx="7" fill="#F7F9FF" stroke="#DCE4F7" stroke-width="2"/>
+  <rect x="41" y="36" width="17" height="17" rx="4" fill="#A3B8FF"/>
+  <rect x="63" y="36" width="17" height="17" rx="4" fill="#DDE5FF"/>
+  <rect x="41" y="58" width="17" height="17" rx="4" fill="#DDE5FF"/>
+  <rect x="65" y="61" width="17" height="17" rx="4" fill="url(#sliverAnimatedGridMovingCell)"/>
+  <path d="M65 57L62 54M70 55L69 51M61 63L57 61" stroke="#7D9AF7" stroke-width="2" stroke-linecap="round"/>
+  <path d="M41 97V88C41 83.582 44.582 80 49 80H58V97M63 97V83H72C76.418 83 80 86.582 80 91V97" fill="#E7ECFF"/>
+  <path d="M96 47V78M92 74L96 78L100 74" stroke="#5F82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="sliverAnimatedGridMovingCell" x1="65" y1="61" x2="82" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DB9FC"/>
+      <stop offset="1" stop-color="#5F82F6"/>
+    </linearGradient>
+  </defs>
+</svg>

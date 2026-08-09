@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="34" y="34" width="60" height="60" rx="4" stroke="#C9D4F4" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M64 37C83 37 91 45 91 64C91 83 83 91 64 91C45 91 37 83 37 64C37 45 45 37 64 37Z" fill="url(#clipRSuperellipseFill)"/>
+  <path d="M38 75L51 60L61 70L71 57L90 78C87 87 79 91 64 91C48 91 40 86 38 75Z" fill="white" fill-opacity=".82"/>
+  <defs><linearGradient id="clipRSuperellipseFill" x1="37" y1="37" x2="91" y2="91"><stop stop-color="#7DB9FC"/><stop offset="1" stop-color="#8B7CFF"/></linearGradient></defs>
+</svg>

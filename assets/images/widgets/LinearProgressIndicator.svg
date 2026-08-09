@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="30" y="58" width="68" height="12" rx="6" fill="#E7ECFF"/>
+  <path d="M36 64H72" stroke="url(#linearProgressIndicatorStroke)" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="72" cy="64" r="6" fill="#5F82F6"/>
+  <defs><linearGradient id="linearProgressIndicatorStroke" x1="36" y1="64" x2="72" y2="64"><stop stop-color="#7DB9FC"/><stop offset="1" stop-color="#5F82F6"/></linearGradient></defs>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="38" y="31" width="52" height="66" rx="7" fill="#F5F8FF" stroke="#DCE4F7" stroke-width="2"/>
+  <path d="M38 38C38 34.134 41.134 31 45 31H83C86.866 31 90 34.134 90 38V46H38V38Z" fill="#A3B8FF"/>
+  <path d="M38 80H90V90C90 93.866 86.866 97 83 97H45C41.134 97 38 93.866 38 90V80Z" fill="#DDE5FF"/>
+  <circle cx="64" cy="63" r="9" fill="url(#gridTileContent)"/>
+  <defs>
+    <linearGradient id="gridTileContent" x1="57" y1="56" x2="71" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DB9FC"/>
+      <stop offset="1" stop-color="#5F82F6"/>
+    </linearGradient>
+  </defs>
+</svg>

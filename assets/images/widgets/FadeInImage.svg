@@ -1,0 +1,16 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="34" y="36" width="60" height="50" rx="8" fill="url(#fadeInImageSurfaceGradient)"/>
+  <circle cx="79" cy="49" r="5" fill="white" fill-opacity="0.95"/>
+  <path d="M41 77L52 61L61 70L69 62L87 77H41Z" fill="white" fill-opacity="0.95"/>
+  <circle cx="52" cy="95" r="4" fill="#5E83E8" fill-opacity="0.2"/>
+  <circle cx="64" cy="95" r="4" fill="#5E83E8" fill-opacity="0.55"/>
+  <circle cx="76" cy="95" r="4" fill="#5E83E8"/>
+  <defs>
+    <linearGradient id="fadeInImageSurfaceGradient" x1="34" y1="61" x2="94" y2="61" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DAE2FF" stop-opacity="0.18"/>
+      <stop offset="0.5" stop-color="#A3B8FF" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#4D77FF"/>
+    </linearGradient>
+  </defs>
+</svg>

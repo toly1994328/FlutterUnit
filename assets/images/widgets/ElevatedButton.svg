@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="31" y="55" width="66" height="28" rx="7" fill="#D7E0FF"/>
+  <rect x="29" y="49" width="70" height="30" rx="8" fill="url(#elevatedButtonFill)"/>
+  <path d="M47 60.5H81M47 67.5H72" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <defs><linearGradient id="elevatedButtonFill" x1="29" y1="49" x2="99" y2="79" gradientUnits="userSpaceOnUse"><stop stop-color="#8DA6FA"/><stop offset="1" stop-color="#5F82F6"/></linearGradient></defs>
+</svg>

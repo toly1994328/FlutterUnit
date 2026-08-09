@@ -1,0 +1,16 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <path d="M32 64C40.5 50.5 51 44 64 44C77 44 87.5 50.5 96 64C87.5 77.5 77 84 64 84C51 84 40.5 77.5 32 64Z" fill="#F8FAFF" stroke="url(#visibilityEyeGradient)" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="53" y="53" width="22" height="22" rx="6" fill="url(#visibilityWidgetGradient)"/>
+  <rect x="58" y="58" width="6" height="6" rx="2" fill="white" fill-opacity="0.9"/>
+  <defs>
+    <linearGradient id="visibilityEyeGradient" x1="32" y1="44" x2="94" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A3B8FF"/>
+      <stop offset="1" stop-color="#7DB9FC"/>
+    </linearGradient>
+    <linearGradient id="visibilityWidgetGradient" x1="53" y1="53" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DB9FC"/>
+      <stop offset="1" stop-color="#4D77FF"/>
+    </linearGradient>
+  </defs>
+</svg>
