@@ -1,186 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-/// 颜色定义
-class FieldColor {
-  static const keyColor = Colors.grey;
-  static const intColor = Colors.deepOrange;
-  static const stringColor = Colors.green;
-  static const nullColor = Colors.blueGrey;
-  static const arrayColor = Colors.blue;
-  static const objectColor = Colors.purple;
-}
+import 'json_tree_view.dart';
 
-/// 基础类型抽象类
-abstract class BaseValue<T> {
-  final String? key;
-  final T value;
-  bool isExpanded;
-
-  BaseValue(this.value, {this.key, this.isExpanded = true});
-
-  Widget buildValue();
-}
-
-/// 整数值
-class IntValue extends BaseValue<int> {
-  IntValue(super.value, {super.key});
-
-  @override
-  Widget buildValue() {
-    return Text(value.toString()+",",
-        style: const TextStyle(color: FieldColor.intColor));
-  }
-}
-
-/// 字符串值
-class StringValue extends BaseValue<String> {
-  StringValue(super.value, {super.key});
-
-  @override
-  Widget buildValue() {
-    return Text('"$value",',
-        style: const TextStyle(color: FieldColor.stringColor));
-  }
-}
-
-/// Null 值
-class NullValue extends BaseValue<Null> {
-  NullValue({super.key}) : super(null);
-
-  @override
-  Widget buildValue() {
-    return const Text('null', style: TextStyle(color: FieldColor.nullColor));
-  }
-}
-
-/// 数组值
-class ArrayValue extends BaseValue<List<dynamic>> {
-  ArrayValue(super.value, {super.key});
-
-  @override
-  Widget buildValue() {
-    return StatefulBuilder(builder: (context, setState) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          InkWell(
-            onTap: () {
-              setState(() {
-                isExpanded = !isExpanded;
-              });
-            },
-            child: Row(
-              children: [
-                Icon(isExpanded ? Icons.arrow_drop_down : Icons.arrow_right,
-                    color: FieldColor.arrayColor),
-                 Text('(Array)${isExpanded?'【':'【...'}',
-                    style: TextStyle(color: FieldColor.arrayColor)),
-
-                if (!isExpanded)
-                  const Text('】',
-                      style: TextStyle(color: FieldColor.arrayColor)),
-              ],
-            ),
-          ),
-          if (isExpanded) ...[
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: value.map((e) => parseJson(e).buildValue()).toList(),
-              ),
-            ),
-            const Text('】', style: TextStyle(color: FieldColor.arrayColor)),
-          ]
-        ],
-      );
-    });
-  }
-}
-
-/// 对象值
-class ObjectValue extends BaseValue<Map<String, dynamic>> {
-  ObjectValue(super.value, {super.key});
-
-  @override
-  Widget buildValue() {
-    return StatefulBuilder(
-      builder: (context, setState) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            InkWell(
-              onTap: () {
-                setState(() {
-                  isExpanded = !isExpanded; // 触发 UI 重新渲染
-                });
-              },
-              child: Row(
-                children: [
-                  Icon(isExpanded ? Icons.arrow_drop_down : Icons.arrow_right,
-                      color: FieldColor.objectColor),
-                   Text('(Object)${isExpanded?'{':'{...'}',
-                      style: TextStyle(color: FieldColor.objectColor)),
-                  if (!isExpanded)
-                    const Text('}',
-                        style: TextStyle(color: FieldColor.objectColor)),
-                ],
-              ),
-            ),
-            if (isExpanded) ...[
-              Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: value.entries
-                      .map((e) =>
-                          KeyBlock(keyText: e.key, value: parseJson(e.value)))
-                      .toList(),
-                ),
-              ),
-              const Text('}', style: TextStyle(color: FieldColor.objectColor)),
-            ]
-          ],
-        );
-      },
-    );
-  }
-}
-
-/// 键值对组件
-class KeyBlock extends StatelessWidget {
-  final String keyText;
-  final BaseValue value;
-
-  const KeyBlock({super.key, required this.keyText, required this.value});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('$keyText: ',
-            style: const TextStyle(
-                color: FieldColor.keyColor, fontWeight: FontWeight.bold)),
-        Expanded(child: value.buildValue()),
-      ],
-    );
-  }
-}
-
-/// 解析 JSON 数据
-BaseValue parseJson(dynamic json, {String? key}) {
-  if (json == null) return NullValue(key: key);
-  if (json is int) return IntValue(json, key: key);
-  if (json is String) return StringValue(json, key: key);
-  if (json is List) return ArrayValue(json, key: key);
-  if (json is Map<String, dynamic>) return ObjectValue(json, key: key);
-  return StringValue(json.toString(), key: key);
-}
-
-/// JSON 解析工具 UI
+/// JSON 解析工具页面。
 class JsonAnalysisTool extends StatefulWidget {
   const JsonAnalysisTool({super.key});
 
@@ -189,81 +14,22 @@ class JsonAnalysisTool extends StatefulWidget {
 }
 
 class _JsonAnalysisToolState extends State<JsonAnalysisTool> {
+  /// JSON 输入控制器。
   final TextEditingController _controller = TextEditingController(
-    text: """
-{
-  "id": 1,
-  "name": "Container",
-  "localName": "容器组件",
-  "info": "用于容纳单个子组件的容器组件。集成了若干个单子组件的功能，如内外边距、形变、装饰、约束等...",
-  "lever": 5,
-  "family": 0,
-  "linkIds": [
-    74,
-    85,
-    80,
-    78,
-    70,
-    123
-  ],
-  "nodes": [
-    {
-      "file": "node1_base.dart",
-      "name": "可用于显示一个指定宽高的区域",
-      "desc": [
-        "【width】 : 宽   【int】",
-        "【height】: 高   【int】",
-        "【color】: 颜色    【Color】"
-      ]
-    },
-    {
-      "file": "node2_child.dart",
-      "name": "可以在区域中放入一个子组件",
-      "desc": [
-        "【padding】 : 内边距   【EdgeInsetsGeometry】",
-        "【margin】: 外边距   【EdgeInsetsGeometry】",
-        "【child】: 子组件    【Widget】"
-      ]
-    },
-    {
-      "file": "node3_alignment.dart",
-      "name": "可对子组件进行对齐定位",
-      "desc": [
-        "【alignment】 : 对齐定位   【AlignmentGeometry】"
-      ]
-    },
-    {
-      "file": "node4_decoration.dart",
-      "name": "可对子组件进行装饰",
-      "desc": [
-        "【decoration】 : 装饰   【Decoration】",
-        "可装饰: 边线、圆弧、颜色、渐变色、阴影、图片等内容"
-      ]
-    },
-    {
-      "file": "node5_transform.dart",
-      "name": "Container还具有变换性",
-      "desc": [
-        "【transform】 : 变换矩阵   【Matrix4】",
-        "基于Matrix4的矩阵变换，变换详情见线性代数"
-      ]
-    },
-    {
-      "file": "node6_constraints.dart",
-      "name": "Container的约束性",
-      "desc": [
-        "【constraints】 : 约束   【BoxConstraints】",
-        "会约束该区域的尺寸，不会小于指定的最小宽高，也不会大于指定的最大宽高。"
-      ]
-    }
-  ]
-}""",
+    text: const JsonEncoder.withIndent('  ').convert(_sampleJson),
   );
-  BaseValue? _parsedData;
-  String? _error;
 
-  final ScrollController _hCtrl = ScrollController();
-  final ScrollController _vCtrl = ScrollController();
+  /// 当前成功解析的数据。
+  Object? _parsedData;
+
+  /// 当前是否存在成功解析的输入，包括合法的 null。
+  bool _hasParsedData = false;
+
+  /// 当前解析错误。
+  String? _errorMessage;
+
+  /// 输入字符数。
+  int _characterCount = 0;
 
   @override
   void initState() {
@@ -271,92 +37,400 @@ class _JsonAnalysisToolState extends State<JsonAnalysisTool> {
     _parseJson();
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  /// 解析输入内容并同步预览状态。
   void _parseJson() {
-    setState(() {
-      _error = null;
+    final String source = _controller.text.trim();
+    Object? parsedData;
+    String? errorMessage;
+    bool hasParsedData = false;
+
+    if (source.isNotEmpty) {
       try {
-        final parsed = jsonDecode(_controller.text);
-        _parsedData = parseJson(parsed);
-      } catch (e) {
-        _error = 'JSON 解析失败: $e';
-        _parsedData = null;
+        parsedData = jsonDecode(source) as Object?;
+        hasParsedData = true;
+      } catch (error) {
+        errorMessage = _readableError(error);
       }
+    }
+
+    setState(() {
+      _characterCount = _controller.text.length;
+      _parsedData = parsedData;
+      _hasParsedData = hasParsedData;
+      _errorMessage = errorMessage;
     });
+  }
+
+  String _readableError(Object error) {
+    if (error is FormatException) {
+      final int? offset = error.offset;
+      return offset == null
+          ? 'JSON 格式有误：${error.message}'
+          : '第 $offset 个字符附近格式有误：${error.message}';
+    }
+    return 'JSON 解析失败：$error';
+  }
+
+  /// 将输入内容格式化为易读的缩进形式。
+  void _formatJson() {
+    if (!_hasParsedData || _errorMessage != null) {
+      _showMessage('请先输入有效的 JSON');
+      return;
+    }
+    _replaceText(const JsonEncoder.withIndent('  ').convert(_parsedData));
+  }
+
+  /// 将输入内容压缩为单行 JSON。
+  void _compactJson() {
+    if (!_hasParsedData || _errorMessage != null) {
+      _showMessage('请先输入有效的 JSON');
+      return;
+    }
+    _replaceText(jsonEncode(_parsedData));
+  }
+
+  void _replaceText(String text) {
+    _controller.value = TextEditingValue(
+      text: text,
+      selection: TextSelection.collapsed(offset: text.length),
+    );
+    _parseJson();
+  }
+
+  Future<void> _copyJson() async {
+    if (_controller.text.isEmpty) {
+      _showMessage('当前没有可复制的内容');
+      return;
+    }
+    await Clipboard.setData(ClipboardData(text: _controller.text));
+    if (mounted) {
+      _showMessage('JSON 已复制');
+    }
+  }
+
+  void _clearJson() {
+    _controller.clear();
+    _parseJson();
+  }
+
+  void _showMessage(String message) {
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    final Color backgroundColor = theme.brightness == Brightness.dark
+        ? const Color(0xff1b1d21)
+        : const Color(0xfff7f8fa);
     return Scaffold(
-      body: Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                style: TextStyle(fontSize: 14,fontFamily: '楷体'),
-                controller: _controller,
-                onChanged: _onChanged,
-                expands: true,
-                maxLines: null,
-                decoration: const InputDecoration(
-                  fillColor: Colors.white,
-                  filled: true,
-                  labelText: '输入 JSON',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
-          ),
-          VerticalDivider(),
-          Expanded(
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4)
-                ),
-                margin: EdgeInsets.all(8),
-                child: Scrollbar( //-> ::tag1::
-    thumbVisibility: true,
-    //-> ::tag6::
-    notificationPredicate: (ScrollNotification notification) => notification.depth == 1,
-    key: const Key('debuggerCodeViewVerticalScrollbarKey'),
-    controller: _vCtrl,
-    child: LayoutBuilder(
-      builder: (context,cts) {
-        final double boxHeight = 800;
-        return Scrollbar( //-> ::tag2::
-        key: const Key('debuggerCodeViewHorizontalScrollbarKey'),
-        thumbVisibility: true,
-        controller: _hCtrl,
-        child: SingleChildScrollView(
-          controller: _hCtrl, //-> ::tag3::
-          child:  SingleChildScrollView(
-            controller: _vCtrl,
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 8,vertical: 6),
-                            child: SizedBox(
-                              width: boxHeight,
-                              child: _error != null
-                                  ? Text(_error!, style: const TextStyle(color: Colors.red))
-                                  : _parsedData?.buildValue() ?? const Text('请输入 JSON'),
-                            ),
-                          ),
-        ),
-        );
-      }
-    ),
-                ),
-              ),
-            ),
-          ),
-        ],
+      backgroundColor: backgroundColor,
+      body: SafeArea(
+        child: _buildWorkspace(context),
       ),
     );
   }
 
-  void _onChanged(String value) {
-    _parseJson();
+  Widget _buildWorkspace(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: _EditorPanel(
+            controller: _controller,
+            characterCount: _characterCount,
+            onChanged: _parseJson,
+            onFormat: _formatJson,
+            onCompact: _compactJson,
+            onCopy: _copyJson,
+            onClear: _clearJson,
+          ),
+        ),
+        VerticalDivider(
+          width: 1,
+          thickness: 1,
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+        Expanded(
+          child: _PreviewPanel(
+            data: _parsedData,
+            hasData: _hasParsedData,
+            errorMessage: _errorMessage,
+          ),
+        ),
+      ],
+    );
   }
 }
+
+class _EditorPanel extends StatelessWidget {
+  const _EditorPanel({
+    required this.controller,
+    required this.characterCount,
+    required this.onChanged,
+    required this.onFormat,
+    required this.onCompact,
+    required this.onCopy,
+    required this.onClear,
+  });
+
+  /// 输入控制器。
+  final TextEditingController controller;
+
+  /// 当前字符数。
+  final int characterCount;
+
+  /// 输入变化回调。
+  final VoidCallback onChanged;
+
+  /// 格式化回调。
+  final VoidCallback onFormat;
+
+  /// 压缩回调。
+  final VoidCallback onCompact;
+
+  /// 复制回调。
+  final VoidCallback onCopy;
+
+  /// 清空回调。
+  final VoidCallback onClear;
+
+  @override
+  Widget build(BuildContext context) {
+    return _PanelShell(
+      title: '原始数据',
+      subtitle: '$characterCount 个字符',
+      actions: <Widget>[
+        _ToolButton(
+            icon: Icons.format_align_left_rounded,
+            tooltip: '格式化',
+            onTap: onFormat),
+        _ToolButton(
+            icon: Icons.compress_rounded, tooltip: '压缩', onTap: onCompact),
+        _ToolButton(icon: Icons.copy_outlined, tooltip: '复制', onTap: onCopy),
+        _ToolButton(
+            icon: Icons.delete_outline_rounded, tooltip: '清空', onTap: onClear),
+      ],
+      child: TextField(
+        controller: controller,
+        onChanged: (String value) => onChanged(),
+        expands: true,
+        maxLines: null,
+        minLines: null,
+        textAlignVertical: TextAlignVertical.top,
+        style: const TextStyle(
+          fontFamily: 'monospace',
+          fontSize: 12,
+          height: 1.45,
+        ),
+        decoration: const InputDecoration(
+          hintText: '在这里粘贴 JSON…',
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.all(16),
+        ),
+      ),
+    );
+  }
+}
+
+class _PreviewPanel extends StatelessWidget {
+  const _PreviewPanel({
+    required this.data,
+    required this.hasData,
+    required this.errorMessage,
+  });
+
+  /// 成功解析的数据。
+  final Object? data;
+
+  /// 是否存在成功解析的数据。
+  final bool hasData;
+
+  /// 解析错误。
+  final String? errorMessage;
+
+  @override
+  Widget build(BuildContext context) {
+    return _PanelShell(
+      title: '结构预览',
+      subtitle: errorMessage == null ? '可折叠数据树' : '等待修复',
+      child: _buildContent(context),
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
+    if (errorMessage != null) {
+      return _EmptyState(
+        icon: Icons.error_outline_rounded,
+        title: '无法解析 JSON',
+        message: errorMessage!,
+        color: Theme.of(context).colorScheme.error,
+      );
+    }
+    if (!hasData) {
+      return const _EmptyState(
+        icon: Icons.data_object_rounded,
+        title: '等待 JSON 数据',
+        message: '输入内容后，这里会展示可折叠的数据结构。',
+      );
+    }
+    return JsonTreeView(data: data);
+  }
+}
+
+class _PanelShell extends StatelessWidget {
+  const _PanelShell({
+    required this.title,
+    required this.subtitle,
+    required this.child,
+    this.actions = const <Widget>[],
+  });
+
+  /// 面板标题。
+  final String title;
+
+  /// 面板辅助说明。
+  final String subtitle;
+
+  /// 面板内容。
+  final Widget child;
+
+  /// 面板工具按钮。
+  final List<Widget> actions;
+
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    final ColorScheme colors = theme.colorScheme;
+    final bool isDark = theme.brightness == Brightness.dark;
+    final Color contentColor =
+        isDark ? const Color(0xff1e2024) : const Color(0xfffbfcfd);
+    final Color toolbarColor =
+        isDark ? const Color(0xff24272c) : const Color(0xfff2f4f7);
+    return ColoredBox(
+      color: contentColor,
+      child: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 42,
+            child: ColoredBox(
+              color: toolbarColor,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 14, right: 6),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: colors.onSurfaceVariant,
+                      ),
+                    ),
+                    const Spacer(),
+                    ...actions,
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Divider(height: 1, color: colors.outlineVariant),
+          Expanded(child: child),
+        ],
+      ),
+    );
+  }
+}
+
+class _ToolButton extends StatelessWidget {
+  const _ToolButton(
+      {required this.icon, required this.tooltip, required this.onTap});
+
+  /// 按钮图标。
+  final IconData icon;
+
+  /// 按钮提示。
+  final String tooltip;
+
+  /// 点击回调。
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      tooltip: tooltip,
+      onPressed: onTap,
+      visualDensity: VisualDensity.compact,
+      icon: Icon(icon, size: 17),
+    );
+  }
+}
+
+class _EmptyState extends StatelessWidget {
+  const _EmptyState({
+    required this.icon,
+    required this.title,
+    required this.message,
+    this.color,
+  });
+
+  /// 状态图标。
+  final IconData icon;
+
+  /// 状态标题。
+  final String title;
+
+  /// 状态说明。
+  final String message;
+
+  /// 状态强调色。
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    final Color resolvedColor = color ?? Theme.of(context).colorScheme.primary;
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Icon(icon, size: 42, color: resolvedColor.withValues(alpha: 0.75)),
+            const SizedBox(height: 12),
+            Text(title, style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 6),
+            Text(
+              message,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+const Map<String, Object> _sampleJson = <String, Object>{
+  'name': 'FlutterUnit',
+  'description': 'Flutter 组件学习与检索应用',
+  'version': 3,
+  'openSource': true,
+  'features': <String>['组件检索', '属性探索', '代码生成'],
+  'author': <String, String>{'name': '张风捷特烈', 'role': 'Developer'},
+};
