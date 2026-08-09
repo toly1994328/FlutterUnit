@@ -1,0 +1,15 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="37" y="36" width="54" height="48" rx="8" fill="url(#imageIconGlyphGradient)"/>
+  <circle cx="76" cy="49" r="5" fill="white"/>
+  <path d="M44 76L55 61L64 70L71 62L84 76H44Z" fill="white"/>
+  <circle cx="54" cy="94" r="4" fill="#DAE2FF"/>
+  <circle cx="64" cy="94" r="5" fill="#5E83E8"/>
+  <circle cx="74" cy="94" r="4" fill="#F27272"/>
+  <defs>
+    <linearGradient id="imageIconGlyphGradient" x1="37" y1="36" x2="91" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DB9FC"/>
+      <stop offset="1" stop-color="#4D77FF"/>
+    </linearGradient>
+  </defs>
+</svg>

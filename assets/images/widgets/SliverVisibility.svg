@@ -1,0 +1,16 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <path d="M32 64C40.5 50.5 51 44 64 44C77 44 87.5 50.5 96 64C87.5 77.5 77 84 64 84C51 84 40.5 77.5 32 64Z" fill="#F8FAFF" stroke="url(#sliverVisibilityEyeGradient)" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="56" y="49" width="16" height="30" rx="5" fill="url(#sliverVisibilitySliverGradient)"/>
+  <path d="M59 58H69M59 64H69M59 70H66" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="sliverVisibilityEyeGradient" x1="32" y1="44" x2="94" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A3B8FF"/>
+      <stop offset="1" stop-color="#7DB9FC"/>
+    </linearGradient>
+    <linearGradient id="sliverVisibilitySliverGradient" x1="56" y1="49" x2="75" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DB9FC"/>
+      <stop offset="1" stop-color="#4D77FF"/>
+    </linearGradient>
+  </defs>
+</svg>

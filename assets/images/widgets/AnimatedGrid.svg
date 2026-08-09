@@ -1,0 +1,14 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="34" y="35" width="22" height="22" rx="5" fill="#A3B8FF"/>
+  <rect x="61" y="35" width="22" height="22" rx="5" fill="#DDE5FF"/>
+  <rect x="34" y="62" width="22" height="22" rx="5" fill="#DDE5FF"/>
+  <rect x="64" y="65" width="22" height="22" rx="5" fill="url(#animatedGridMovingCell)"/>
+  <path d="M64 60L61 56M70 57L69 52M59 66L54 64" stroke="#7D9AF7" stroke-width="2.5" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="animatedGridMovingCell" x1="64" y1="65" x2="86" y2="87" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DB9FC"/>
+      <stop offset="1" stop-color="#5F82F6"/>
+    </linearGradient>
+  </defs>
+</svg>

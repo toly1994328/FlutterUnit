@@ -1,0 +1,14 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <rect x="25" y="44" width="78" height="40" rx="8" fill="#F7F8FC"/>
+  <rect x="32" y="52" width="24" height="24" rx="6" fill="url(#cupertinoListTileLeading)"/>
+  <path d="M64 59.5H85M64 68.5H79" stroke="#8798C8" stroke-width="3.25" stroke-linecap="round"/>
+  <path d="M93 59L98 64L93 69" stroke="#8E9BB8" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 79H98" stroke="#E0E4EE" stroke-width="1.5" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="cupertinoListTileLeading" x1="32" y1="52" x2="56" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78C5FF"/>
+      <stop offset="1" stop-color="#557CF5"/>
+    </linearGradient>
+  </defs>
+</svg>

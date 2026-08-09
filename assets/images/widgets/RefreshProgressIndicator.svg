@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="white" stroke="#E5E9F0" stroke-width="2"/>
+  <circle cx="64" cy="64" r="25" stroke="#E7ECFF" stroke-width="8"/>
+  <path d="M44 49C48.6 42.9 55.9 39 64 39C77.807 39 89 50.193 89 64C89 77.807 77.807 89 64 89C54.2 89 45.7 83.4 41.6 75.2" stroke="url(#refreshProgressIndicatorStroke)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M38 42L44 50L51 43" fill="#7DB9FC" stroke="#7DB9FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs><linearGradient id="refreshProgressIndicatorStroke" x1="40" y1="43" x2="83" y2="87" gradientUnits="userSpaceOnUse"><stop stop-color="#7DB9FC"/><stop offset="1" stop-color="#5F82F6"/></linearGradient></defs>
+</svg>
