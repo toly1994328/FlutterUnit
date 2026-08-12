@@ -97,7 +97,7 @@ Build web:
 
 #### Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=toly1994328/FlutterUnit&type=Date)](https://star-history.com/#toly1994328/FlutterUnit&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=toly1994328/FlutterUnit&type=Date)](https://star-history.dera.page/#toly1994328/FlutterUnit&Date)
 
 ### 一、组件的展示页面
 
