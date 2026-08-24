@@ -1,8 +1,8 @@
 import 'base_layout.dart';
-import 'funny.dart';
 import 'scroll.dart';
 import 'layout.dart';
 import 'multi.dart';
+import 'popable.dart';
 
 Map<String, dynamic> get layoutMenus => {
       'children': [
@@ -10,6 +10,6 @@ Map<String, dynamic> get layoutMenus => {
         baseMenus,
         multiMenus,
         calcMenus,
-        funnyMenus,
+        popableMenus,
       ]
     };

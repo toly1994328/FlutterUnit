@@ -11,6 +11,10 @@ Map<String, dynamic> get baseMenus => {
           'label': '布局尺寸',
         },
         {
+          'path': '/constraints',
+          'label': '约束系统',
+        },
+        {
           'path': '/padding',
           'label': '布局边距',
         },

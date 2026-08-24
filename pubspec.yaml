@@ -22,6 +22,7 @@ workspace:
   - modules/knowledge_system/layout
 
   - modules/painting_system/draw_system
+  - modules/painting_system/elevator_art
 
   - modules/tools_system/treasure_tools
 

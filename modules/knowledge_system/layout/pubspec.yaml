@@ -10,9 +10,13 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^14.2.0
+  tolyui: 0.0.4+10
+  url_launcher: ^6.3.1
 
-
-
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:elevator_art/elevator_art.dart';
 
 import 'anim/bezier3_player/bezier3_palyer.dart';
 import 'anim/circle_halo.dart';
@@ -33,6 +34,7 @@ import 'particle/split/particle_split.dart';
 import 'particle/split_img/split_image.dart';
 import 'picture_frame.dart';
 import 'package:l10n/l10n.dart';
+
 /// create by 张风捷特烈 on 2020/12/5
 /// contact me by email 1981462002@qq.com
 /// 说明:
@@ -41,10 +43,10 @@ import 'package:l10n/l10n.dart';
 enum GalleryType { base, anim, particle, fun, art }
 
 class GalleryFactory {
-  static List<Widget> getGalleryByName(GalleryType type,BuildContext context) {
+  static List<Widget> getGalleryByName(GalleryType type, BuildContext context) {
     switch (type) {
       case GalleryType.base:
-        return  [
+        return [
           FrameShower(
               title: "The Chaos",
               author: "张风捷特烈",
@@ -85,7 +87,7 @@ class GalleryFactory {
               title: "圆中取形",
               author: "张风捷特烈",
               srcUrl: "/base/n_side",
-              info:  context.l10n.drawRegularPolygons,
+              info: context.l10n.drawRegularPolygons,
               content: NSidePage()),
           FrameShower(
               title: "随机对称图",
@@ -101,7 +103,7 @@ class GalleryFactory {
               content: ClockWidget()),
         ];
       case GalleryType.anim:
-        return  [
+        return [
           FrameShower(
               title: "手势弹簧",
               author: "张风捷特烈",
@@ -112,7 +114,7 @@ class GalleryFactory {
               title: "绕定点旋转",
               author: "张风捷特烈",
               srcUrl: '/anim/rotate_by_point',
-              info:  context.l10n.theApplicationOfAnglesInDrawing,
+              info: context.l10n.theApplicationOfAnglesInDrawing,
               content: RotateByPointWidget()),
           FrameShower(
               title: "流光",
@@ -124,19 +126,19 @@ class GalleryFactory {
               title: "曲线路径动画",
               author: "张风捷特烈",
               srcUrl: '/anim/draw_path.dart',
-              info:  context.l10n.pathDrawingFunctionCurve,
+              info: context.l10n.pathDrawingFunctionCurve,
               content: DrawPath()),
           FrameShower(
               title: "冰墩墩线条动画",
               author: "张风捷特烈",
               srcUrl: '/anim/dundun_path.dart',
-              info:  context.l10n.thePathOfBingDwenDwen,
+              info: context.l10n.thePathOfBingDwenDwen,
               content: DunDunPathPage()),
           FrameShower(
               title: "Bezier3 演示",
               author: "张风捷特烈",
               srcUrl: '/anim/bezier3_player',
-              info:  context.l10n.drawCubicBesselCurve,
+              info: context.l10n.drawCubicBesselCurve,
               content: Bezier3Player()),
           FrameShower(
               title: "动画曲线散点图",
@@ -144,10 +146,9 @@ class GalleryFactory {
               srcUrl: '/anim/curve_shower',
               info: context.l10n.theEffectOfAnimationCurve,
               content: CurveAnimShower()),
-
         ];
       case GalleryType.particle:
-        return  [
+        return [
           FrameShower(
               title: "随机粒子生成器",
               author: "张风捷特烈",
@@ -158,7 +159,7 @@ class GalleryFactory {
               title: "粒子分裂",
               author: "张风捷特烈",
               srcUrl: '/particle/split',
-              info:  context.l10n.particleCollision,
+              info: context.l10n.particleCollision,
               content: ParticleSplit()),
           FrameShower(
               title: "图片粒子分裂",
@@ -169,11 +170,17 @@ class GalleryFactory {
         ];
       case GalleryType.fun:
         return [
-           FrameShower(
+          const FrameShower(
+              title: "智能电梯",
+              author: "张风捷特烈",
+              srcUrl: '../../elevator_art/lib/src/view',
+              info: "可选楼层的交互式电梯绘制，包含轿厢运行、门扇开合与楼层灯光动画。",
+              content: ElevatorArtwork()),
+          FrameShower(
               title: "Random Portrait",
               author: "张风捷特烈",
-               srcUrl: '/fun/random_portrait.dart',
-               info: context.l10n.rectangleAndRandomNumbers,
+              srcUrl: '/fun/random_portrait.dart',
+              info: context.l10n.rectangleAndRandomNumbers,
               content: RandomPortrait()),
           FrameShower(
               title: "冰墩墩",
@@ -195,7 +202,7 @@ class GalleryFactory {
               content: StampPaper()),
         ];
       case GalleryType.art:
-        return  [
+        return [
           FrameShower(
             title: "Tiled Line",
             author: "generativeartistry.com",
@@ -214,37 +221,43 @@ class GalleryFactory {
             title: "Cubic Disarray",
             author: "generativeartistry.com",
             srcUrl: '/art/cubic_disarray.dart',
-            info: context.l10n.cubicDisarray,  content: CubicDisarray(),
+            info: context.l10n.cubicDisarray,
+            content: CubicDisarray(),
           ),
           FrameShower(
             title: "Triangular Mesh",
             author: "generativeartistry.com",
             srcUrl: '/art/triangular_mesh.dart',
-            info: context.l10n.triangularMesh, content: TriangularMesh(),
+            info: context.l10n.triangularMesh,
+            content: TriangularMesh(),
           ),
           FrameShower(
             title: "Un Deux Trois",
             srcUrl: '/art/un_deux_trois.dart',
             author: "generativeartistry.com",
-            info: context.l10n.unDeuxTrois,  content: UnDeuxTrois(),
+            info: context.l10n.unDeuxTrois,
+            content: UnDeuxTrois(),
           ),
           FrameShower(
             title: "Circle Packing",
             author: "generativeartistry.com",
             srcUrl: '/art/circle_packing.dart',
-            info: context.l10n.circlePacking, content: CirclePacking(),
+            info: context.l10n.circlePacking,
+            content: CirclePacking(),
           ),
           FrameShower(
             title: "Hypnotic Squares",
             author: "generativeartistry.com",
             srcUrl: '/art/hypnotic_squares.dart',
-            info: context.l10n.hypnoticSquares,    content: HypnoticSquares(),
+            info: context.l10n.hypnoticSquares,
+            content: HypnoticSquares(),
           ),
           FrameShower(
             title: "Piet Mondrian",
             author: "generativeartistry.com",
             srcUrl: '/art/piet_mondrian.dart',
-            info: context.l10n.pietMondrian, content: PietMondrian(),
+            info: context.l10n.pietMondrian,
+            content: PietMondrian(),
           )
         ];
       default:
