@@ -21,6 +21,10 @@ Map<String, dynamic> get multiMenus => {
           'label': 'Flex 适应布局',
         },
         {
+          'path': '/flex-space',
+          'label': 'Flex 空间分配',
+        },
+        {
           'path': '/wrap',
           'label': 'Wrap 包裹布局',
         },

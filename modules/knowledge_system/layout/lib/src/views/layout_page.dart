@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:layout/src/navigation/router/app_router.dart';
 
@@ -9,7 +7,7 @@ import '../bloc/display_state.dart';
 import '../data/display_map/display_map.dart';
 
 class LayoutRouterPage extends StatefulWidget {
-  LayoutRouterPage({super.key});
+  const LayoutRouterPage({super.key});
 
   @override
   State<LayoutRouterPage> createState() => _LayoutRouterPageState();
@@ -17,7 +15,7 @@ class LayoutRouterPage extends StatefulWidget {
 
 class _LayoutRouterPageState extends State<LayoutRouterPage> {
   final GoRouter _router = GoRouter(
-    initialLocation: '/base/size',
+    initialLocation: '/home',
     routes: <RouteBase>[layoutRoutes],
     onException: (BuildContext ctx, GoRouterState state, GoRouter router) {
       router.go('/404', extra: state.uri.toString());
@@ -29,11 +27,18 @@ class _LayoutRouterPageState extends State<LayoutRouterPage> {
   @override
   void initState() {
     logic = DisplayLogic(DisplayState(
-      router: '/base/size',
+      router: '/home',
       activeIndex: 0,
       total: kDisplayMap['/base/size']!.length,
     ));
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    logic.dispose();
+    _router.dispose();
+    super.dispose();
   }
 
   @override
@@ -57,6 +62,6 @@ class LayoutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(color: Colors.white, child: const Center(child: Text("TODO")));
+    return const LayoutRouterPage();
   }
 }

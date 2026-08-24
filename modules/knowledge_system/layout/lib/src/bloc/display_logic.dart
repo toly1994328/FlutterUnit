@@ -24,11 +24,14 @@ class DisplayLogic with ChangeNotifier {
 
   void active(String path) {
     if (path != _state.router) {
-      int length = kDisplayMap[path]!.length;
+      final List<DisplayFrame>? frames = kDisplayMap[path];
+      if (frames == null || frames.isEmpty) {
+        return;
+      }
       _state = DisplayState(
         router: path,
         activeIndex: 0,
-        total: length,
+        total: frames.length,
       );
       notifyListeners();
     }
