@@ -100,5 +100,7 @@ install(FILES "${AOT_LIBRARY}" DESTINATION "${INSTALL_BUNDLE_DATA_DIR}"
   CONFIGURATIONS Profile;Release
   COMPONENT Runtime)
 
-# add libs dll to release
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/libs/ DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/runner/Release)
+# 将应用依赖的动态库部署到当前构建配置的可执行文件目录。
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/libs/"
+  DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
+  COMPONENT Runtime)

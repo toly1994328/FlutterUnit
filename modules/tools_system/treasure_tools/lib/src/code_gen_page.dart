@@ -9,6 +9,7 @@ import 'model/field.dart';
 import 'popable/class_gen_field.dart';
 import 'popable/toly_select.dart';
 import 'view/json_display/json_display.dart';
+import 'view/text_codec/text_codec_tool.dart';
 
 class A {}
 
@@ -20,7 +21,6 @@ class CodeGenPage extends StatefulWidget {
 }
 
 class _CodeGenPageState extends State<CodeGenPage> {
-
   TextEditingController _dirPath = TextEditingController();
   final PageController _ctrl = PageController();
   int selectIndex = 0;
@@ -33,15 +33,13 @@ class _CodeGenPageState extends State<CodeGenPage> {
 
   Class clazz1 = Class(
     name: '',
-    fields: [
-    ],
+    fields: [],
   );
 
   @override
   void initState() {
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -55,53 +53,51 @@ class _CodeGenPageState extends State<CodeGenPage> {
               _ctrl.jumpToPage(value);
             },
           ),
-          Expanded(child: PageView(
-            controller:_ctrl,
+          Expanded(
+              child: PageView(
+            controller: _ctrl,
             children: [
-              IconFontGenPage(),
-              JsonAnalysisTool(),
-              Center(
-                child: Text(
-                    '敬请期待'
-                ),
-              ),
-              Center(
-                child: Text(
-                    '敬请期待'
-                ),
-              )
+              const JsonAnalysisTool(),
+              const Base64CodecTool(),
+              const UrlCodecTool(),
+              const IconFontGenPage(),
             ],
           )),
-          if(false)
-          Padding(
-            padding: const EdgeInsets.only(left: 20,top: 20),
-            child: Row(
-              children:  [
-                GestureDetector(
-                    onTap: () async{
-                      // final String? directoryPath = await getDirectoryPath();
-                      // if (directoryPath != null) {
-                      //   print("====$directoryPath=========");
-                      //   _dirPath.text = directoryPath;
-                      // }
-                    },
-                    child: Icon(Icons.file_copy_outlined)),
-                SizedBox(width: 20,),
-                Expanded(child: TextField(
-                  controller: _dirPath,
-                )),
-                SizedBox(width: 20,),
-              ],
+          if (false)
+            Padding(
+              padding: const EdgeInsets.only(left: 20, top: 20),
+              child: Row(
+                children: [
+                  GestureDetector(
+                      onTap: () async {
+                        // final String? directoryPath = await getDirectoryPath();
+                        // if (directoryPath != null) {
+                        //   print("====$directoryPath=========");
+                        //   _dirPath.text = directoryPath;
+                        // }
+                      },
+                      child: Icon(Icons.file_copy_outlined)),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                      child: TextField(
+                    controller: _dirPath,
+                  )),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
+              ),
             ),
-          ),
-          if(false)
-          Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ClassGenField(
-              clazz: clazz1,
-            ),
-          ))
+          if (false)
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: ClassGenField(
+                clazz: clazz1,
+              ),
+            ))
         ],
       ),
     );
@@ -135,12 +131,10 @@ class _CodeGenPageState extends State<CodeGenPage> {
     //   ],
     // );
     print(clazz1.buildClass());
-    if(_dirPath.text.isNotEmpty){
+    if (_dirPath.text.isNotEmpty) {
       clazz1.write2File(Directory(_dirPath.text));
     }
   }
-
-
 }
 
 class GenInput extends StatelessWidget {
