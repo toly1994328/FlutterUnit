@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../layout.dart';
-import '../../views/base/size/size_tight_constraint.dart';
 import '../../views/base/size/size_display.dart';
-import '../../views/test_show.dart';
-import '../menu/menu_repository_impl.dart';
 import '../view/app_desk_navigation.dart';
 
 RouteBase get deskNavRoute => ShellRoute(
@@ -16,7 +12,7 @@ RouteBase get deskNavRoute => ShellRoute(
           GoRoute(
             path: 'home',
             builder: (BuildContext context, GoRouterState state) {
-              return const LayoutPage();
+              return const FrameDisplayPanel();
             },
           ),
           GoRoute(
@@ -42,46 +38,6 @@ RouteBase get deskNavRoute => ShellRoute(
             builder: (BuildContext context, GoRouterState state) {
               return const FrameDisplayPanel();
             },
-          ),
-          GoRoute(
-            path: 'funny/:name',
-            builder: (BuildContext context, GoRouterState state) {
-              return const FrameDisplayPanel();
-            },
-            // builder: (_,__)=>Text("暂未实现"),
-            // routes: [
-            //   GoRoute(
-            //     path: 'row',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'row',
-            //       );
-            //     },
-            //   ),
-            //   GoRoute(
-            //     path: 'column',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'column',
-            //       );
-            //     },
-            //   ),          GoRoute(
-            //     path: 'expanded',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'expanded',
-            //       );
-            //     },
-            //   ),
-            //   GoRoute(
-            //     path: 'holy',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return TextShow(
-            //         info: 'holy',
-            //       );
-            //     },
-            //   ),
-            // ]
           ),
           // GoRoute(
           //   path: 'text/gen/secret',

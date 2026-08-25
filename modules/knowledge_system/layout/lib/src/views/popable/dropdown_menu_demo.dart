@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// create by 张风捷特烈 on 2020/9/21
@@ -25,34 +24,51 @@ class DropdownMenuNode1 extends StatefulWidget {
 }
 
 class _DropdownMenuNode1State extends State<DropdownMenuNode1> {
-  final List<String> data = ['语文', '数学', '英语', '物理', '化学', '生物', '地理'];
-  late String _dropdownValue = data.first;
+  /// 可选学科。
+  final List<String> _subjects = <String>[
+    '语文',
+    '数学',
+    '英语',
+    '物理',
+    '化学',
+    '生物',
+    '地理',
+  ];
+
+  /// 当前选中的学科。
+  late String _dropdownValue = _subjects.first;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: [
-          TextField(),
-          // DropdownMenu<String>(
-          //   requestFocusOnTap: false,
-          //   menuHeight: 200,
-          //   initialSelection: data.first,
-          //   onSelected: _onSelect,
-          //   dropdownMenuEntries: _buildMenuList(data),
-          // ),
-          const SizedBox(height: 8,),
-          Text('你选择的学科是: $_dropdownValue')
+        children: <Widget>[
+          DropdownMenu<String>(
+            width: 240,
+            requestFocusOnTap: true,
+            enableFilter: true,
+            menuHeight: 240,
+            initialSelection: _subjects.first,
+            label: const Text('选择或搜索学科'),
+            onSelected: _onSelect,
+            dropdownMenuEntries: _buildMenuList(_subjects),
+          ),
+          const SizedBox(height: 16),
+          Text('你选择的学科是：$_dropdownValue'),
         ],
       ),
     );
   }
 
+  /// 更新当前选择结果。
   void _onSelect(String? value) {
-    // setState(() {
-    //   _dropdownValue = value!;
-    // });
+    if (value == null) {
+      return;
+    }
+    setState(() {
+      _dropdownValue = value;
+    });
   }
 
   List<DropdownMenuEntry<String>> _buildMenuList(List<String> data) {
