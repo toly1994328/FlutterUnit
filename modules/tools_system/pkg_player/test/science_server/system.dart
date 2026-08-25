@@ -5,7 +5,7 @@ void main() async {
   late Host host;
 
   setUpAll(() async {
-    host = Unit3Host();
+    host = const FlutterUnitHost();
     FxDio().register(host);
     // initHttp(app);
     // request = HouseDetailRequest();

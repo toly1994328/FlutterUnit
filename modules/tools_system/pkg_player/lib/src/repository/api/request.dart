@@ -2,7 +2,7 @@ import 'package:unit_env/unit_env.dart';
 
 import '../model/model.dart';
 
-class PackageRequest with ScienceHostMixin {
+class PackageRequest with FlutterUnitHostMixin {
   Future<ApiRet<dynamic>> getAllPackages() async {
     return host.get(PkgUrl.listPackages.path, convertor: (e) => e);
   }
@@ -38,7 +38,7 @@ class PackageRequest with ScienceHostMixin {
       'page': page,
       'page_size': pageSize,
     }, convertor: (data) {
-      List<dynamic> list = data['data'] as List<dynamic>;
+      List<dynamic> list = data as List<dynamic>;
       return list.map((json) => PluginModel.fromJson(json)).toList();
     });
   }
@@ -64,7 +64,7 @@ class PackageRequest with ScienceHostMixin {
       'page': 1,
       'page_size': 100,
     }, convertor: (data) {
-      List<dynamic> list = data['data'] as List<dynamic>;
+      List<dynamic> list = data as List<dynamic>;
       dynamic value =
           list.map<Category>((json) => Category.fromJson(json)).toList();
       return value;
@@ -76,12 +76,15 @@ class PackageRequest with ScienceHostMixin {
     int page = 1,
     int pageSize = 10,
   }) async {
-    return host.get('/packages/$packageId/comments',
-        queryParameters: {
-          'page': page,
-          'page_size': pageSize,
-        },
-        convertor: (data) => CommentsResponse.fromJson(data));
+    return host.get('/packages/$packageId/comments', queryParameters: {
+      'page': page,
+      'page_size': pageSize,
+    }, convertor: (data) {
+      final List<dynamic> list = data as List<dynamic>;
+      final List<Comment> comments =
+          list.map((dynamic json) => Comment.fromJson(json)).toList();
+      return CommentsResponse(data: comments, total: comments.length);
+    });
   }
 
   Future<ApiRet<dynamic>> sendComment(
@@ -103,15 +106,13 @@ class PackageRequest with ScienceHostMixin {
     int page = 1,
     int pageSize = 15,
   }) async {
-    return host.get('/comments/$commentId/replies',
-        queryParameters: {
-          'page': page,
-          'page_size': pageSize,
-        },
-        convertor: (data) {
-          List<dynamic> list = data['data'] as List<dynamic>;
-          return list.map((json) => Comment.fromJson(json)).toList();
-        });
+    return host.get('/comments/$commentId/replies', queryParameters: {
+      'page': page,
+      'page_size': pageSize,
+    }, convertor: (data) {
+      List<dynamic> list = data as List<dynamic>;
+      return list.map((json) => Comment.fromJson(json)).toList();
+    });
   }
 
   Future<ApiRet<dynamic>> submitFeedback({

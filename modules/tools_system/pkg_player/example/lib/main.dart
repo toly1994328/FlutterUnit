@@ -15,8 +15,8 @@ class UnitApiAuth extends ApiAuth {
 
 void main() {
   runApp(const MyApp());
-  FxDio().register(Unit3Host());
-  FxDio().auth<Unit3Host>(UnitApiAuth());
+  FxDio().register(const FlutterUnitHost());
+  FxDio().auth<FlutterUnitHost>(UnitApiAuth());
 }
 
 class MyApp extends StatelessWidget {

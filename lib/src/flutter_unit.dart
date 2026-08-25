@@ -75,7 +75,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
 
   void _onLocaleChange(BuildContext context, AppConfig state) {
     context.read<WidgetsBloc>().changeLocale(state.language.locale);
-    FxDio().auth<Unit3Host>(UnitApiAuth(state.language.isZh));
+    FxDio().auth<FlutterUnitHost>(FlutterUnitApiAuth(state.language.isZh));
   }
 
   @override

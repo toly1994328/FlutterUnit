@@ -20,7 +20,7 @@ void main() {
     late PackageRepository repository;
     setUp(() {
       repository = PubPackageRepository();
-      FxDio().register(Unit3Host());
+      FxDio().register(const FlutterUnitHost());
     });
 
     /// 插入所有的分类

@@ -37,7 +37,7 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     if (!kAppEnv.isWeb) await initDb();
     await initWidgetStatistics(); // 加载统计数据
 
-    HttpUtil.instance.rebase(PathUnit.baseUrl);
+    HttpUtil.instance.rebase(FlutterUnitHost.serverUrl);
 
     return state;
   }

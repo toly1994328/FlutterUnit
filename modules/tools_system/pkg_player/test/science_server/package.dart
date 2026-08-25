@@ -18,7 +18,7 @@ void main() async {
   );
 
   setUpAll(() async {
-    FxDio().register(Unit3Host());
+    FxDio().register(const FlutterUnitHost());
   });
 
   Future<void> getAllPackages() async {

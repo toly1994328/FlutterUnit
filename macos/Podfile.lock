@@ -2,6 +2,8 @@ PODS:
   - file_picker (0.0.1):
     - FlutterMacOS
   - FlutterMacOS (1.0.0)
+  - open_file_mac (1.0.3):
+    - FlutterMacOS
   - package_info_plus (0.0.1):
     - FlutterMacOS
   - path_provider_foundation (0.0.1):
@@ -28,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - file_picker (from `Flutter/ephemeral/.symlinks/plugins/file_picker/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
+  - open_file_mac (from `Flutter/ephemeral/.symlinks/plugins/open_file_mac/macos`)
   - package_info_plus (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos`)
   - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
   - screen_retriever_macos (from `Flutter/ephemeral/.symlinks/plugins/screen_retriever_macos/macos`)
@@ -43,6 +46,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/file_picker/macos
   FlutterMacOS:
     :path: Flutter/ephemeral
+  open_file_mac:
+    :path: Flutter/ephemeral/.symlinks/plugins/open_file_mac/macos
   package_info_plus:
     :path: Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos
   path_provider_foundation:
@@ -65,9 +70,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
   FlutterMacOS: d0db08ddef1a9af05a5ec4b724367152bb0500b1
+  open_file_mac: 76f06c8597551249bdb5e8fd8827a98eae0f4585
   package_info_plus: f0052d280d17aa382b932f399edf32507174e870
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
-  screen_retriever_macos: 452e51764a9e1cdb74b3c541238795849f21557f
+  screen_retriever_macos: c5508cc3c66ff0d4db650480cf0ab691e220d933
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0

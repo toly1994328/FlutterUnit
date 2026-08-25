@@ -21,10 +21,11 @@ List<GoRoute> get systemRoutes => [
         path: AppRoute.aboutMe.path,
         builder: (_, __) => const AboutMePage(),
       ),
-      GoRoute(
-        path: AppRoute.supportMe.path,
-        builder: (_, __) => const SupportMe(),
-      ),
+      if (!kAppEnv.isIos)
+        GoRoute(
+          path: AppRoute.supportMe.path,
+          builder: (_, __) => const SupportMe(),
+        ),
       if (kAppEnv.isDesktopUI) ...deskTopRoutes
     ];
 

@@ -67,9 +67,15 @@ class MePageItem extends StatelessWidget {
           Gap.sfl10,
           _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing,
               AppRoute.aboutMe.url),
-          divider,
-          _buildItem(context, Icons.sanitizer, context.l10n.homeAccountSupport,
-              AppRoute.supportMe.url),
+          if (!kAppEnv.isIos) ...[
+            divider,
+            _buildItem(
+              context,
+              Icons.sanitizer,
+              context.l10n.homeAccountSupport,
+              AppRoute.supportMe.url,
+            ),
+          ],
         ],
       ),
     );
