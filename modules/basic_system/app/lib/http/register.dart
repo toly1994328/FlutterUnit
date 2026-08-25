@@ -6,27 +6,23 @@ import 'package:unit_env/unit_env.dart';
 import 'http.dart';
 
 void registerHttpClient(bool isZh) {
-  FxDio()
-      .register(const ScienceHost(), interceptors: [ScienceRepInterceptor()]);
-  FxDio().register(const Unit3Host());
-  FxDio().register(const UnitHost());
+  FxDio().register(
+    const FlutterUnitHost(),
+    repInterceptor: FlutterUnitResponseInterceptor(),
+  );
   UnitEnv.userName = '游客:${kAppMeta.uuid.substring(0, 6)}';
-  FxDio().auth<ScienceHost>(ScienceAuth());
-  FxDio().auth<Unit3Host>(UnitApiAuth(isZh));
+  FxDio().auth<FlutterUnitHost>(FlutterUnitApiAuth(isZh));
 }
 
-class ScienceAuth extends ApiAuth {
-  @override
-  FutureOr<Map<String, dynamic>> get buildHeaders => kAppMeta.toHeaderJson();
-}
-
-class UnitApiAuth extends ApiAuth {
+class FlutterUnitApiAuth extends ApiAuth {
+  /// 当前界面是否使用中文。
   final bool isZh;
 
-  UnitApiAuth(this.isZh);
+  FlutterUnitApiAuth(this.isZh);
 
   @override
   FutureOr<Map<String, dynamic>> get buildHeaders => {
+        ...kAppMeta.toHeaderJson(),
         'locale': isZh ? 'zh-CN' : 'en',
       };
 }

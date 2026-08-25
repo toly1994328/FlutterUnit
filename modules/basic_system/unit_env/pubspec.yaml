@@ -10,18 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  fx_dio:
-    path: /Volumes/Toly1T/Project/toly1994/Flutter/fx/modules/fx_dio
+  fx_dio: 0.0.4+3
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
-
-dependency_overrides:
-  fx_dio:
-    path: /Volumes/Toly1T/Project/toly1994/Flutter/fx/modules/fx_dio
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

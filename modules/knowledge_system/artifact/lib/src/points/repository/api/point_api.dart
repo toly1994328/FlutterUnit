@@ -19,13 +19,16 @@ abstract interface class PointApi {
 }
 
 class PointApiImpl implements PointApi {
-  Host get unit => FxDio()<UnitHost>();
+  Host get unit => FxDio()<FlutterUnitHost>();
 
   @override
   Future<ApiRet<Repository>> getFlutterUnitRepo() async {
     return unit.get<Repository>(UnitApi.repository.path, convertor: (data) {
-      dynamic repoStr = data['data']['repositoryData'];
-      return Repository.fromJson(json.decode(repoStr));
+      final dynamic payload = _catalogPayload(
+        data['data'],
+        legacyKey: 'repositoryData',
+      );
+      return Repository.fromJson(payload as Map<String, dynamic>);
     });
   }
 
@@ -38,18 +41,33 @@ class PointApiImpl implements PointApi {
         "page": page,
         "pageSize": pageSize,
       },
-      convertor: (data) => data['data']
-          .map<Issue>((e) => Issue.fromJson(json.decode(e['pointData'])))
-          .toList(),
+      convertor: (data) => data.map<Issue>((dynamic item) {
+        return Issue.fromJson(
+          _catalogPayload(item['data'], legacyKey: 'pointData'),
+        );
+      }).toList(),
     );
   }
 
   @override
   Future<ApiRet<List<IssueComment>>> getIssuesComment(int pointId) async {
     return unit.get<List<IssueComment>>("${UnitApi.pointComment.path}$pointId",
-        convertor: (data) => data['data']
-            .map<IssueComment>((e) =>
-                IssueComment.fromJson(json.decode(e['pointCommentData'])))
-            .toList());
+        convertor: (data) => data.map<IssueComment>((dynamic item) {
+              return IssueComment.fromJson(
+                _catalogPayload(
+                  item['data'],
+                  legacyKey: 'pointCommentData',
+                ),
+              );
+            }).toList());
   }
+}
+
+/// 兼容迁移后的 JSONB 数据与旧数据中的 JSON 字符串字段。
+dynamic _catalogPayload(dynamic value, {required String legacyKey}) {
+  dynamic payload = value;
+  if (payload is Map<String, dynamic> && payload[legacyKey] != null) {
+    payload = payload[legacyKey];
+  }
+  return payload is String ? json.decode(payload) : payload;
 }

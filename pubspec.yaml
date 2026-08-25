@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.4.1+2009
+version: 3.4.1+2012
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -81,9 +81,13 @@ dependencies:
 
   pkg_player:
     path: modules/tools_system/pkg_player
+  unit_env:
+    path: modules/basic_system/unit_env
   uuid: ^4.5.1
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
   flutter_lints: ^4.0.0
 
@@ -134,11 +138,6 @@ toly:
     src_zip: ''
     assets_dir: 'assets/iconfont'
     file_dist: 'packages/app/lib/app/res/toly_icon.dart'
-
-
-
-
-
 
 
 

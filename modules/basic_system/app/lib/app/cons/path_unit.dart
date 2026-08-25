@@ -3,8 +3,6 @@
 /// 说明:
 
 class PathUnit {
-  static const baseUrl = 'http://82.157.176.209:8080/api/v1';
-
   static const sendEmail = '/sendEmail/';
   static const register = '/register';
 
