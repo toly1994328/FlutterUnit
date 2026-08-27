@@ -1,52 +1,145 @@
-import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_user_session/fx_user_session.dart';
+import 'package:fx_user_ui/fx_user_ui.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+import 'package:unit_env/unit_env.dart';
+import 'package:utils/utils.dart';
 
-import '../register/arc_clipper.dart';
-import 'login_form.dart';
+import 'github_auth_page.dart';
 
-/// create by 张风捷特烈 on 2020/4/24
-/// contact me by email 1981462002@qq.com
-/// 说明:
-
-// class AuthenticScope extends StatelessWidget {
-//   const AuthenticScope({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final AuthRepository repository = context.read<AuthBloc>().repository;
-//     return MultiBlocProvider(providers: [
-//       BlocProvider<RegisterBloc>(create: (_) => RegisterBloc(repository: repository)),
-//     ], child: const LoginPage());
-//   }
-// }
-
+/// FlutterUnit 对 FrameworkX 通用登录界面的宿主组装。
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size winSize = MediaQuery.of(context).size;
+    final bool supportsNativeApple = !kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.macOS);
+    final bool supportsEmbeddedGithub = !kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.android ||
+            defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.macOS);
+    return FxLoginPage(
+      config: FxUserUiConfig(
+        title: 'FLUTTER UNIT',
+        subtitle: '群英荟萃，匠心者也',
+        logo: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            'assets/images/flutter_unit_logo.png',
+            fit: BoxFit.cover,
+          ),
+        ),
+        methods: const {FxLoginMethod.emailCode, FxLoginMethod.password},
+        showGithub: supportsEmbeddedGithub && GitHubAuthPage.isConfigured,
+        showApple: supportsNativeApple,
+        onGithubLogin: () => _loginWithGithub(context),
+        onAppleLogin: () => _loginWithApple(context),
+      ),
+      onLogin: ({
+        required FxLoginMethod method,
+        required String identifier,
+        required String credential,
+      }) {
+        final FxUserSessionCubit session = context.read<FxUserSessionCubit>();
+        if (method == FxLoginMethod.emailCode) {
+          return session.authenticate(
+            VerificationCodeAuth(
+              channel: 'email',
+              identifier: identifier,
+              code: credential,
+            ),
+          );
+        }
+        return session.authenticate(
+          PasswordAuth(identifier: identifier, password: credential),
+        );
+      },
+      onRequestCode: ({
+        required FxLoginMethod method,
+        required String identifier,
+      }) {
+        if (method != FxLoginMethod.emailCode) {
+          throw UnsupportedError('FlutterUnit 当前仅支持邮箱验证码');
+        }
+        return context.read<FxUserSessionCubit>().requestCode(
+              channel: 'email',
+              identifier: identifier,
+            );
+      },
+      onAuthenticated: () => Navigator.of(context).pop(),
+      onClose: () => Navigator.of(context).pop(),
+      onError: (Object error) => _showAuthError(context, error),
+    );
+  }
 
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Wrap(children: [
-        Stack(children: [
-          UnitArcBackground(height: winSize.height * 0.3),
-          const Positioned(top: 24, child: BackButton(color: Colors.white)),
-        ]),
-        Container(
-            // color: Colors.green,
-            height: winSize.height * 0.68,
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
-            child: Stack(
-              alignment: Alignment.center,
-              children: const [
-                LoginFrom(),
-              ],
-            ))
-      ]),
-    ));
+  /// 将认证异常转换成用户提示，并交给宿主 Toast 通道展示。
+  void _showAuthError(BuildContext context, Object error) {
+    Toast.error(context, _friendlyAuthError(error));
+  }
+
+  /// 根据稳定业务码和网络异常特征生成可操作的提示文案。
+  String _friendlyAuthError(Object error) {
+    final String? serverCode =
+        error is RequestException ? error.serverCode : null;
+    switch (serverCode) {
+      case 'AUTH_CODE_INVALID':
+        return '验证码错误，请重新输入';
+      case 'AUTH_CODE_EXPIRED':
+        return '验证码已失效，请重新获取';
+      case 'AUTH_CODE_RATE_LIMITED':
+        return '验证码发送过于频繁，请稍后再试';
+      case 'AUTH_EMAIL_INVALID':
+        return '邮箱格式不正确，请检查后重试';
+      case 'AUTH_CREDENTIAL_INVALID':
+        return '账号或密码错误，请重新输入';
+    }
+    final String message = error.toString();
+    if (message.contains('request exception') ||
+        message.contains('DioException') ||
+        message.contains('SocketException') ||
+        message.contains('Connection failed')) {
+      return '网络连接异常，请检查网络后重试';
+    }
+    return '登录失败，请稍后重试';
+  }
+
+  Future<bool> _loginWithGithub(BuildContext context) async {
+    final String? code = await Navigator.of(context).push<String>(
+      MaterialPageRoute<String>(
+        builder: (BuildContext context) => const GitHubAuthPage(),
+      ),
+    );
+    if (code == null || code.isEmpty || !context.mounted) return false;
+    await context.read<FxUserSessionCubit>().authenticate(
+          OAuthAuth(provider: 'github', code: code),
+        );
+    return true;
+  }
+
+  Future<bool> _loginWithApple(BuildContext context) async {
+    try {
+      final AuthorizationCredentialAppleID credential =
+          await SignInWithApple.getAppleIDCredential(
+        scopes: const <AppleIDAuthorizationScopes>[
+          AppleIDAuthorizationScopes.email,
+          AppleIDAuthorizationScopes.fullName,
+        ],
+      );
+      final String? identityToken = credential.identityToken;
+      if (identityToken == null || identityToken.isEmpty || !context.mounted) {
+        return false;
+      }
+      await context.read<FxUserSessionCubit>().authenticate(
+            OAuthAuth(provider: 'apple', code: identityToken),
+          );
+      return true;
+    } on SignInWithAppleAuthorizationException catch (error) {
+      if (error.code == AuthorizationErrorCode.canceled) return false;
+      rethrow;
+    }
   }
 }

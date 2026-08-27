@@ -12,9 +12,25 @@ import 'standard_home_search.dart';
 import 'widget_page.dart';
 
 class StandardHomePage extends StatefulWidget {
+  /// 首页头部附加内容。
   final Widget? heard;
 
-  const StandardHomePage({super.key, this.heard});
+  /// 点击头像时触发的回调。
+  final VoidCallback? onAvatarTap;
+
+  /// 按下头像时触发的回调。
+  final VoidCallback? onAvatarPointerDown;
+
+  /// 由宿主注入的顶部头像组件。
+  final Widget avatar;
+
+  const StandardHomePage({
+    super.key,
+    this.heard,
+    this.onAvatarTap,
+    this.onAvatarPointerDown,
+    required this.avatar,
+  });
 
   @override
   State<StandardHomePage> createState() => _StandardHomePageState();
@@ -162,9 +178,13 @@ class _StandardHomePageState extends State<StandardHomePage>
 
     return [
       // const SliverSnapHeader(child: StandardHomeSearch()),
-      const SliverFloatingHeader(
+      SliverFloatingHeader(
         snapMode: FloatingHeaderSnapMode.scroll,
-        child: StandardHomeSearch(),
+        child: StandardHomeSearch(
+          avatar: widget.avatar,
+          onAvatarTap: widget.onAvatarTap,
+          onAvatarPointerDown: widget.onAvatarPointerDown,
+        ),
       ),
       if (widget.heard != null)
         SliverToBoxAdapter(

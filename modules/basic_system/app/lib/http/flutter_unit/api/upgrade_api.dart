@@ -6,7 +6,7 @@ import 'package:fx_updater/fx_updater.dart';
 class UnitUpgradeApi implements UpgradeApi {
   @override
   Future<ApiRet<AppInfo>> fetch(int appId, String locale) async {
-    Host host = FxDio()<FlutterUnitHost>();
+    RequestHost<HostEnv> host = FxDio()<FlutterUnitHost>();
     String path = UnitApi.appVersion.path;
     return host.get<AppInfo>(
       path,

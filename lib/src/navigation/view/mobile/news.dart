@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note/note.dart';
 import 'package:tolyui/basic/basic.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../l10n/gen/app_l10n.dart';
 import 'carousel.dart';
@@ -87,58 +88,89 @@ class NewsArticleDisplay extends StatelessWidget {
     required this.article,
   });
 
+  /// 当前轮播展示的文章。
   final ArticlePo article;
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(builder: _buildArticle);
+  }
+
+  /// 根据封面的实际布局宽度请求适配当前设备像素密度的图片变体。
+  Widget _buildArticle(BuildContext context, BoxConstraints constraints) {
+    final double logicalWidth = constraints.maxWidth.isFinite
+        ? constraints.maxWidth
+        : MediaQuery.sizeOf(context).width;
+    final double pixelRatio = MediaQuery.devicePixelRatioOf(context);
+    final int imageWidth =
+        (logicalWidth * pixelRatio).ceil().clamp(1, 4096).toInt();
+    final String cover = article.cover?.trim() ?? '';
+    final String? coverUrl = cover.isEmpty
+        ? null
+        : FlutterUnitHost.resolveImageResource(
+            cover,
+            width: imageWidth,
+          ).toString();
     return GestureDetector(
       onTap: () {
         _launchUrl(article.url);
       },
-      child: Container(
-        // margin: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            image: DecorationImage(
-                image: NetworkImage(article.cover ?? ''), fit: BoxFit.cover)),
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Stack(
+          fit: StackFit.expand,
           children: [
-            Row(
-              children: [
-                Container(
-                  width: 16,
-                  height: 16,
-                  margin: EdgeInsets.only(right: 6),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(4)),
-                  child: Text(
-                    '新',
-                    style:
-                        TextStyle(fontSize: 8, color: Colors.white, height: 1),
+            if (coverUrl != null)
+              ImageRender(
+                source: coverUrl,
+                fit: BoxFit.cover,
+                cacheWidth: imageWidth,
+              ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8.0,
+                vertical: 4,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        width: 16,
+                        height: 16,
+                        margin: EdgeInsets.only(right: 6),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(4)),
+                        child: Text(
+                          '新',
+                          style: TextStyle(
+                              fontSize: 8, color: Colors.white, height: 1),
+                        ),
+                      ),
+                      Flexible(
+                        child: Text(
+                          article.title,
+                          style: TextStyle(
+                              color: Colors.white,
+                              shadows: [
+                                Shadow(
+                                    color: Colors.black,
+                                    offset: Offset(.5, .5),
+                                    blurRadius: 4)
+                              ],
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
+                          softWrap: false,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Flexible(
-                  child: Text(
-                    article.title,
-                    style: TextStyle(
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(
-                              color: Colors.black,
-                              offset: Offset(.5, .5),
-                              blurRadius: 4)
-                        ],
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
-                    softWrap: false,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

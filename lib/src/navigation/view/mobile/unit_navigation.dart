@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_unit/src/navigation/model/app_tab.dart';
 import 'package:fx_updater/fx_updater.dart';
+import 'package:fx_user_session/fx_user_session.dart';
 import 'package:pkg_player/pkg_player.dart';
 import 'package:widget_module/widget_module.dart';
 import 'news.dart';
@@ -59,7 +60,14 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
         physics: _neverScroll,
         controller: _controller,
         children: [
-          StandardHomePage(heard: NewsHeader()),
+          StandardHomePage(
+            heard: const NewsHeader(),
+            avatar: const SessionUserAvatar(size: 32),
+            onAvatarPointerDown: () => debugPrint(
+              '[FlutterUnit.AuthEntry] home.avatar.pointerDown',
+            ),
+            onAvatarTap: () => _openAccountEntry(context),
+          ),
           GalleryUnit(),
           AlgoScope(child: ArtifactPage()),
           PkgPlayerPage(),
@@ -95,5 +103,16 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
     if (index == 3) {
       context.read<LikeWidgetBloc>().loadLikeData();
     }
+  }
+
+  void _openAccountEntry(BuildContext context) {
+    final FxUserSession state = context.read<FxUserSessionCubit>().state;
+    final String target =
+        state is FxAuthed ? AppRoute.account.url : AppRoute.login.url;
+    debugPrint(
+      '[FlutterUnit.AuthEntry] home.avatar.tap '
+      'state=${state.runtimeType} target=$target',
+    );
+    context.push(target);
   }
 }

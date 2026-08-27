@@ -217,10 +217,6 @@ class _ArtifactPageState extends State<ArtifactPage>
             //   // icon: Icon(Icons.account_balance_wallet_outlined),
             //   text:context.l10n.knowledgeTabLayout,
             // ),
-            // Tab(
-            //   // icon: Icon(Icons.account_balance_wallet_outlined),
-            //   text:context.l10n.knowledgeTabPoint,
-            // ),
           ],
         ),
       ), // )

@@ -25,3 +25,6 @@ export 'ti/toly_switch_list_tile.dart';
 export 'markdown/markdown_widget.dart' hide Highlighter;
 
 export 'adapter/platform_view_adapter.dart';
+export 'image/image_render.dart';
+export 'image/identicon.dart';
+export 'image/user_avatar.dart';

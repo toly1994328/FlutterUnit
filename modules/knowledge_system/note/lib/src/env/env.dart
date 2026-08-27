@@ -17,9 +17,9 @@ class NoteEnv with NoteModuleBridge {
   }
 
   @override
-  Host get host => _bridge!.host;
+  RequestHost<HostEnv> get host => _bridge!.host;
 }
 
 mixin NoteModuleBridge {
-  Host get host;
+  RequestHost<HostEnv> get host;
 }

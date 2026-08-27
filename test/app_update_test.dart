@@ -5,7 +5,9 @@ import 'package:fx_updater/fx_updater.dart';
 void main() async {
   FxDio().register(
     const FlutterUnitHost(),
-    repInterceptor: FlutterUnitResponseInterceptor(),
+    options: HostOptions(
+      repInterceptor: FlutterUnitResponseInterceptor(),
+    ),
   );
 
   UpgradeApi api = UnitUpgradeApi();

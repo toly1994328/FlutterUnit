@@ -84,9 +84,9 @@ class Statistics {
 
   factory Statistics.fromJson(Map<String, dynamic> json) {
     return Statistics(
-      likes: json['likes'] ?? '',
-      points: json['points'] ?? '',
-      downloads: json['downloads'] ?? '',
+      likes: (json['likes'] as num?)?.toInt() ?? 0,
+      points: (json['points'] as num?)?.toInt() ?? 0,
+      downloads: (json['downloads'] as num?)?.toInt() ?? 0,
     );
   }
 
