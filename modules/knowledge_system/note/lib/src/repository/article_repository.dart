@@ -30,7 +30,7 @@ abstract class ArticleRepository {
 }
 
 class HttpArticleRepository implements ArticleRepository {
-  Host get host => NoteEnv().host;
+  RequestHost<HostEnv> get host => NoteEnv().host;
 
   @override
   Future<ApiRet<bool>> create(ArticleCreatePayload payload) {

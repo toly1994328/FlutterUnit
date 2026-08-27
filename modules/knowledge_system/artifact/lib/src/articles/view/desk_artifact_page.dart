@@ -70,7 +70,6 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>
                 LayoutRouterPage(),
                 AlgoRouterPage(),
                 TolyArticlesPage(),
-                // DeskPointPage(),
               ],
             ))
           ],

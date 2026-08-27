@@ -5,7 +5,7 @@ void main() {
   test('FlutterUnitHost 使用统一客户端环境配置', () {
     const FlutterUnitHost host = FlutterUnitHost();
 
-    expect(host.url(), FlutterUnitHost.serverUrl);
-    expect(host.url(), FlutterUnitHost.serverUri.toString());
+    expect(host.url, FlutterUnitHost.serverUrl);
+    expect(host.url, FlutterUnitHost.serverUri.toString());
   });
 }

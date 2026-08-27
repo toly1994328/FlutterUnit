@@ -448,8 +448,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get knowledgeTabLayout => 'Layout Treasury';
 
   @override
-  String get knowledgeTabPoint => 'Key Points';
-
   @override
   String get knowledgeConstruction => 'In Construction';
 

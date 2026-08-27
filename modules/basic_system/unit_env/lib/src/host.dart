@@ -3,10 +3,13 @@ import 'package:fx_dio/fx_dio.dart';
 class UnitEnv {
   /// 当前请求使用的访客名称。
   static String? userName;
+
+  /// 当前登录会话使用的 Bearer Token。
+  static String? accessToken;
 }
 
 /// FlutterUnit 所有业务接口使用的唯一服务端 Host。
-class FlutterUnitHost extends Host {
+class FlutterUnitHost extends RequestHost<HostEnv> {
   /// 服务协议，由客户端环境文件注入。
   static const String _scheme = String.fromEnvironment(
     'SERVER_SCHEME',
@@ -27,6 +30,48 @@ class FlutterUnitHost extends Host {
 
   /// 当前客户端唯一使用的服务地址。
   static Uri get serverUri => Uri(scheme: _scheme, host: _host, port: _port);
+
+  /// 将服务端相对资源路径补全为可访问 URI，完整网络地址保持不变。
+  static Uri resolveResource(String location) {
+    final Uri resource = Uri.parse(location);
+    if (resource.hasScheme) {
+      return resource;
+    }
+    final String path =
+        resource.path.startsWith('/') ? resource.path : '/${resource.path}';
+    return serverUri.replace(
+      path: path,
+      queryParameters:
+          resource.queryParameters.isEmpty ? null : resource.queryParameters,
+      fragment: resource.fragment.isEmpty ? null : resource.fragment,
+    );
+  }
+
+  /// 为本机原图追加动态图片参数，外部资源仅完成地址解析。
+  static Uri resolveImageResource(
+    String location, {
+    int? width,
+    int? height,
+    int quality = 80,
+    String format = 'webp',
+  }) {
+    final Uri resource = resolveResource(location);
+    if (!resource.path.startsWith('/uploads/original/')) {
+      return resource;
+    }
+    final Map<String, String> query = Map<String, String>.of(
+      resource.queryParameters,
+    );
+    if (width != null) {
+      query['w'] = '$width';
+    }
+    if (height != null) {
+      query['h'] = '$height';
+    }
+    query['q'] = '$quality';
+    query['format'] = format;
+    return resource.replace(queryParameters: query);
+  }
 
   /// 兼容仍使用字符串地址的旧网络入口。
   static String get serverUrl => serverUri.toString();
@@ -52,5 +97,5 @@ class FlutterUnitHost extends Host {
 /// 为业务 Repository 提供统一 Host。
 mixin FlutterUnitHostMixin {
   /// 当前已注册的 FlutterUnit Host。
-  Host get host => FxDio()<FlutterUnitHost>();
+  RequestHost<HostEnv> get host => FxDio()<FlutterUnitHost>();
 }

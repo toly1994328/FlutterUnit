@@ -1,15 +1,14 @@
-import 'dart:io';
 import 'dart:ui';
 
-import 'package:authentication/blocs/authentic/bloc.dart';
+import 'package:app/app.dart';
 import 'package:authentication/blocs/user/bloc.dart';
+import 'package:fx_user_session/fx_user_session.dart';
 import 'package:toly_ui/toly_ui.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../blocs/authentic/event.dart';
 import '../../../blocs/user/state.dart';
+import '../../user_avatar.dart';
 
 class UserAccountPage extends StatelessWidget {
   const UserAccountPage({Key? key}) : super(key: key);
@@ -22,7 +21,7 @@ class UserAccountPage extends StatelessWidget {
     );
     Color? color = Theme.of(context).listTileTheme.tileColor;
     Color? sbgColor = Theme.of(context).appBarTheme.backgroundColor;
-    Color? bgColor  = Theme.of(context).scaffoldBackgroundColor;
+    Color? bgColor = Theme.of(context).scaffoldBackgroundColor;
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     UserPerformance performance = context.select<UserBloc, UserPerformance>(
@@ -53,10 +52,10 @@ class UserAccountPage extends StatelessWidget {
                       width: 120,
                       child: const Text('头像')),
                   const Spacer(),
-                  // AuthUserAvatar(
-                  //   size: 50,
-                  //   borderSize: 2,
-                  // ),
+                  const SessionUserAvatar(
+                    size: 48,
+                    cornerRadius: 8,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     child: trailing,
@@ -91,7 +90,7 @@ class UserAccountPage extends StatelessWidget {
                       child: const Text('昵称')),
                   const Spacer(),
                   Text(
-                    performance.username ?? '',
+                    performance.username,
                     style: const TextStyle(color: Colors.grey),
                   ),
                   Padding(
@@ -118,7 +117,8 @@ class UserAccountPage extends StatelessWidget {
                 const Spacer(),
                 const Text(
                   // '${performance.userId}',
-                  '海的彼岸，有我未曾见证的风采。', style: TextStyle(color: Colors.grey,fontSize: 12),
+                  '海的彼岸，有我未曾见证的风采。',
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
@@ -206,7 +206,7 @@ class UserAccountPage extends StatelessWidget {
                 const Spacer(),
                 const Text(
                   // '${performance.userId}',
-                  '******', style: TextStyle(color: Colors.grey,fontSize: 12),
+                  '******', style: TextStyle(color: Colors.grey, fontSize: 12),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
@@ -225,9 +225,9 @@ class UserAccountPage extends StatelessWidget {
           ListTile(
             title: const Center(
                 child: Text(
-                  '退出登录',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                )),
+              '退出登录',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            )),
 
             // trailing: _nextIcon(context),
             onTap: () {
@@ -238,21 +238,9 @@ class UserAccountPage extends StatelessWidget {
                       content: "退出后将无法使用用户相关的功能，确定退出登录吗？",
                       conformText: '确定',
                       onConform: () async {
-                        context.read<AuthBloc>().add(const Logout());
-                        // Navigator.of(context).pushAndRemoveUntil(
-                        //   NoAnimRouter(AuthRelation(
-                        //     pushLogin: false,
-                        //     child: MoAILoginPage(
-                        //       model: LoginModel(
-                        //           appName: "蜜蜂AI智能助手",
-                        //           appNameEn:
-                        //           "Bee Chat AI Intelligence Assistant",
-                        //           appIcon: Icons.widgets_outlined,
-                        //           loginBgAssets: "assets/images/login_bg.png"),
-                        //     ),
-                        //   )),
-                        //   ModalRoute.withName('/'),
-                        // );
+                        await context.read<FxUserSessionCubit>().logout();
+                        if (!context.mounted) return false;
+                        context.go(AppRoute.widget.url);
                         return true;
                       }));
             },
@@ -268,12 +256,12 @@ class UserAccountPage extends StatelessWidget {
           ListTile(
             title: const Center(
                 child: Text(
-                  '删除账号',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.redAccent),
-                )),
+              '删除账号',
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.redAccent),
+            )),
 
             // trailing: _nextIcon(context),
             onTap: () {
@@ -282,34 +270,34 @@ class UserAccountPage extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (ctx) => Dialog(
-                    child: MobileMessagePanel(
-                      title: '清空提示',
-                      conformText: '确定',
-                      msg: msg,
-                      task: (_) async {
-                        // await Future.delayed(Duration(seconds: 3));
-                        // await context.read<UserBloc>().repo.unregister();
-                        //
-                        context.read<AuthBloc>().add(const Logout());
+                        child: MobileMessagePanel(
+                          title: '清空提示',
+                          conformText: '确定',
+                          msg: msg,
+                          task: (_) async {
+                            // await Future.delayed(Duration(seconds: 3));
+                            // await context.read<UserBloc>().repo.unregister();
+                            //
+                            await context.read<FxUserSessionCubit>().logout();
 
-                        // Navigator.of(context).pushAndRemoveUntil(
-                        //   NoAnimRouter(AuthRelation(
-                        //     pushLogin: false,
-                        //     child: MoAILoginPage(
-                        //       model: LoginModel(
-                        //           appName: "蜜蜂AI智能助手",
-                        //           appNameEn:
-                        //           "Bee Chat AI Intelligence Assistant",
-                        //           appIcon: Icons.widgets_outlined,
-                        //           loginBgAssets:
-                        //           "assets/images/login_bg.png"),
-                        //     ),
-                        //   )),
-                        //   ModalRoute.withName('/'),
-                        // );
-                      },
-                    ),
-                  ));
+                            // Navigator.of(context).pushAndRemoveUntil(
+                            //   NoAnimRouter(AuthRelation(
+                            //     pushLogin: false,
+                            //     child: MoAILoginPage(
+                            //       model: LoginModel(
+                            //           appName: "蜜蜂AI智能助手",
+                            //           appNameEn:
+                            //           "Bee Chat AI Intelligence Assistant",
+                            //           appIcon: Icons.widgets_outlined,
+                            //           loginBgAssets:
+                            //           "assets/images/login_bg.png"),
+                            //     ),
+                            //   )),
+                            //   ModalRoute.withName('/'),
+                            // );
+                          },
+                        ),
+                      ));
             },
           ),
         ],

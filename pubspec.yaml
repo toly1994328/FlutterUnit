@@ -47,6 +47,14 @@ dependencies:
   fx_dio: 0.0.4+3
   fx_boot_starter: 0.1.1 # app 启动器
   fx_trace: 0.0.5+5 # 异常追踪/监听
+  fx_user_core:
+    path: ../../FrameworkX/client/packages/identity/fx_user_core
+  fx_user_session:
+    path: ../../FrameworkX/client/packages/identity/fx_user_session
+  fx_user_http:
+    path: ../../FrameworkX/client/packages/identity/adapters/fx_user_http
+  fx_user_ui:
+    path: ../../FrameworkX/client/packages/identity/ui/fx_user_ui
 
   # 数据与持久化
   dio: ^5.4.3+1 # 网络请求
@@ -64,6 +72,8 @@ dependencies:
   package_info_plus: 8.1.4
 
   # 视图展示
+  toly_ui:
+    path: modules/basic_system/toly_ui
   tolyui: 0.0.4+10   # tolyui
   tolyui_refresh: 0.0.1+1 # 下拉刷新
 
@@ -73,6 +83,7 @@ dependencies:
   toggle_rotate: ^1.0.1 # 点击旋转
   wrapper: ^1.0.2 # 气泡包裹
   webview_flutter: ^4.2.4 # webview
+  sign_in_with_apple: ^6.1.0 # Apple 登录
   flutter_markdown: ^0.7.2+1 # markdown
   flutter_svg: ^2.0.17 # svg 展示
 
@@ -95,7 +106,14 @@ dev_dependencies:
 dependency_overrides:
   web: ^1.0.0
   intl: 0.20.2
-  fx_dio: 0.0.4+3
+  fx_dio:
+    path: ../../FrameworkX/client/packages/foundation/fx_dio
+  fx_exception:
+    path: ../../FrameworkX/client/packages/foundation/fx_exception
+  fx_user_core:
+    path: ../../FrameworkX/client/packages/identity/fx_user_core
+  fx_user_session:
+    path: ../../FrameworkX/client/packages/identity/fx_user_session
   flutter_bloc: ^9.1.1
 
 flutter:
@@ -139,9 +157,4 @@ toly:
     src_zip: ''
     assets_dir: 'assets/iconfont'
     file_dist: 'packages/app/lib/app/res/toly_icon.dart'
-
-
-
-
-
 

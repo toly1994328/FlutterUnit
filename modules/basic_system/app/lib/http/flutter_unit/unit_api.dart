@@ -1,9 +1,6 @@
-/// FlutterUnit 服务端的知识与版本接口。
+/// FlutterUnit 服务端的应用运行接口。
 enum UnitApi {
   hello('/hello'),
-  repository('/repository/name/FlutterUnit'),
-  point('/point'),
-  pointComment('/pointComment/'),
   appInfo('/appInfo/name/'),
   appVersion('/app_version');
 

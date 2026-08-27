@@ -4,7 +4,7 @@ import 'package:fx_dio/fx_dio.dart';
 
 void sendEvent(int id, {String? extra}) async {
   if (kDebugMode) return;
-  Host host = FxDio()<FlutterUnitHost>();
+  RequestHost<HostEnv> host = FxDio()<FlutterUnitHost>();
   ApiRet<bool> ret = await host.post<bool>(
     '/event',
     data: {"event": id},

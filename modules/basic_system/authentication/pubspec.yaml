@@ -10,6 +10,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  dio: ^5.8.0+1
   flutter_bloc: ^8.1.6 # 状态管理
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.1 # xml 固化
@@ -26,6 +27,18 @@ dependencies:
     path: ../components
   toly_ui:
     path: ../toly_ui
+  unit_env:
+    path: ../unit_env
+  fx_user_core:
+    path: ../../../../../FrameworkX/client/packages/identity/fx_user_core
+  fx_user_session:
+    path: ../../../../../FrameworkX/client/packages/identity/fx_user_session
+  fx_user_http:
+    path: ../../../../../FrameworkX/client/packages/identity/adapters/fx_user_http
+  fx_user_ui:
+    path: ../../../../../FrameworkX/client/packages/identity/ui/fx_user_ui
+  sign_in_with_apple: ^6.1.0
+  webview_flutter: ^4.10.0
 
 
 # For information on the generic Dart part of this file, see the

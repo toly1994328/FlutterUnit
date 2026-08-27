@@ -17,6 +17,8 @@ dependencies:
   flutter_bloc: ^8.1.6 # 状态管理
   two_dimensional_scrollables: ^0.3.3
   flutter_quill: ^11.5.1
+  toly_ui:
+    path: ../../basic_system/toly_ui
 
 dev_dependencies:
   flutter_test:

@@ -1,12 +1,11 @@
 import 'package:app/app.dart';
 import 'package:authentication/views/mobile/user/user_account.dart';
-import 'package:components/project_ui/project_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_user_session/fx_user_session.dart';
 
 import 'package:toly_ui/toly_ui.dart';
-
 
 import '../../../authentication.dart';
 import 'page_item.dart';
@@ -21,12 +20,12 @@ class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    String image = isDark?'anim_draw.webp':'base_draw.webp';
+    String image = isDark ? 'anim_draw.webp' : 'base_draw.webp';
     return Scaffold(
         body: AnnotatedRegion<SystemUiOverlayStyle>(
-          value:Theme.of(context).appBarTheme.systemOverlayStyle!,
-          child: Column(
-      children: [
+      value: Theme.of(context).appBarTheme.systemOverlayStyle!,
+      child: Column(
+        children: [
           Stack(
             children: [
               Container(
@@ -34,7 +33,7 @@ class UserPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.only(bottom: 40),
                 child: Image.asset(
-               'assets/images/$image',
+                  'assets/images/$image',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -42,7 +41,7 @@ class UserPage extends StatelessWidget {
                 top: 50,
                 right: 20,
                 child: Container(
-                  padding: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(4)),
@@ -55,32 +54,32 @@ class UserPage extends StatelessWidget {
               Positioned(
                 bottom: 0,
                 left: 40,
-                child: BlocBuilder<AuthBloc, AuthState>(
-                  builder: _buildAvatarByState,
+                child: FeedbackWidget(
+                  onPressed: () => _openAccountEntry(context),
+                  child: const SessionUserAvatar(
+                    size: 80,
+                    showBorder: true,
+                  ),
                 ),
               ),
               Positioned(
                   bottom: 5,
                   right: 30,
-                  child: BlocBuilder<AuthBloc, AuthState>(
+                  child: BlocBuilder<FxUserSessionCubit, FxUserSession>(
                     builder: _buildByState,
                   ))
             ],
           ),
           const Expanded(child: MePageItem())
-      ],
-    ),
-        ));
+        ],
+      ),
+    ));
   }
 
-  Widget _buildByState(BuildContext context, AuthState state) {
-    if (state is AuthSuccess) {
-      if (state.user.isHonour) {
-        return HonourWrapper(username: state.user.username);
-      }
-
+  Widget _buildByState(BuildContext context, FxUserSession state) {
+    if (state is FxAuthed) {
       return Text(
-        state.user.username,
+        state.user.displayName ?? state.user.id,
         style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
       );
     }
@@ -93,29 +92,12 @@ class UserPage extends StatelessWidget {
     );
   }
 
-  Widget _buildAvatarByState(BuildContext context, AuthState state) {
-    if (state is AuthSuccess) {
-      return FeedbackWidget(
-        onEnd: () {
-          Navigator.of(context).push(SlidePageRoute(child: UserAccountPage()));
-        },
-        child: CircleImage(
-          size: 80,
-          shadowColor: Theme.of(context).primaryColor.withAlpha(33),
-          // image: NetworkImage(state.user.userAvatar),
-          image: const AssetImage("assets/images/icon_head.webp"),
-        ),
-      );
+  void _openAccountEntry(BuildContext context) {
+    final FxUserSession state = context.read<FxUserSessionCubit>().state;
+    if (state is FxAuthed) {
+      Navigator.of(context).push(SlidePageRoute(child: UserAccountPage()));
+      return;
     }
-    return FeedbackWidget(
-      onEnd: () {
-        // Navigator.of(context).pushNamed(UnitRouter.login);
-      },
-      child: CircleImage(
-        size: 80,
-        shadowColor: Theme.of(context).primaryColor.withAlpha(33),
-        image: const AssetImage("assets/images/icon_head.webp"),
-      ),
-    );
+    context.push(AppRoute.login.url);
   }
 }

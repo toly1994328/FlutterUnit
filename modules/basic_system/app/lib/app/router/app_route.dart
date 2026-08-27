@@ -23,6 +23,7 @@ enum AppRoute {
   dataManage('data_manage', url: '/data_manage'),
   aboutMe('about_me', url: '/about_me'),
   supportMe('support_me', url: '/support_me'),
+  login('login', url: '/login'),
 
   /// settings
   settings('settings', url: '/settings'),

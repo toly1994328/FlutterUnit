@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:app/app.dart';
 import 'package:fx_updater/fx_updater.dart';
 import 'package:note/note.dart';
@@ -6,6 +8,7 @@ import 'package:draw_system/draw_system.dart';
 import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_user_session/fx_user_session.dart';
 import 'package:widget_module/widget_module.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
@@ -22,13 +25,21 @@ class AppBlocProvider extends StatefulWidget {
 }
 
 class _AppBlocProviderState extends State<AppBlocProvider> {
+  /// FrameworkX 用户会话是客户端唯一认证状态源。
+  late final FxUserSessionCubit _users = FlutterUnitUserRuntime.create();
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_users.restore());
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         // 全局 bloc : 维护应用存储状态、更新、认证
-        BlocProvider<AuthBloc>(
-            create: (_) => AuthBloc(repository: HttpAuthRepository())),
+        BlocProvider<FxUserSessionCubit>.value(value: _users),
         BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
         BlocProvider<UpgradeBloc>(
             create: (_) => UpgradeBloc(api: UnitUpgradeApi())),
@@ -44,6 +55,7 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
 
   @override
   void dispose() {
+    unawaited(_users.close());
     AppStorage().close();
     super.dispose();
   }

@@ -30,6 +30,7 @@ RouteBase get appRoute {
       path: AppRoute.moreNews.path,
       builder: (ctx, __) => NewsPage(
         title: AppL10n.of(ctx).news,
+        coverResolver: _resolveNewsCover,
       ),
     ),
     ...systemRoutes,
@@ -47,4 +48,9 @@ RouteBase get appRoute {
       if (!kAppEnv.isDesktopUI) ...body,
     ],
   );
+}
+
+/// 为“查看更多”页面解析封面地址并附加目标宽度参数。
+String _resolveNewsCover(String source, int width) {
+  return FlutterUnitHost.resolveImageResource(source, width: width).toString();
 }

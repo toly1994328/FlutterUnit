@@ -977,12 +977,6 @@ abstract class AppLocalizations {
   /// **'布局宝库'**
   String get knowledgeTabLayout;
 
-  /// No description provided for @knowledgeTabPoint.
-  ///
-  /// In zh, this message translates to:
-  /// **'要点宝库'**
-  String get knowledgeTabPoint;
-
   /// No description provided for @knowledgeConstruction.
   ///
   /// In zh, this message translates to:

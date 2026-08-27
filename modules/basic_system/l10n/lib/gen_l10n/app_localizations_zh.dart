@@ -448,8 +448,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get knowledgeTabLayout => '布局宝库';
 
   @override
-  String get knowledgeTabPoint => '要点宝库';
-
   @override
   String get knowledgeConstruction => '正在建设中';
 

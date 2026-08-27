@@ -1,6 +1,5 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:l10n/ext.dart';
 import 'package:toly_ui/toly_ui.dart';
 
@@ -8,7 +7,21 @@ import '../search_page/standard_search_page.dart';
 
 class StandardHomeSearch extends StatelessWidget
     implements PreferredSizeWidget {
-  const StandardHomeSearch({Key? key}) : super(key: key);
+  /// 由宿主注入的顶部头像组件。
+  final Widget avatar;
+
+  /// 点击头像时触发的回调。
+  final VoidCallback? onAvatarTap;
+
+  /// 按下头像时触发的回调。
+  final VoidCallback? onAvatarPointerDown;
+
+  const StandardHomeSearch({
+    super.key,
+    required this.avatar,
+    this.onAvatarTap,
+    this.onAvatarPointerDown,
+  });
 
   @override
   Size get preferredSize => const Size.fromHeight(35 + 8 * 2);
@@ -68,11 +81,12 @@ class StandardHomeSearch extends StatelessWidget
   Widget _buildHead(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      child: FeedbackWidget(
-        onPressed: () => _openDrawer(context),
-        child: const CircleAvatar(
-          radius: 16,
-          backgroundImage: AssetImage('assets/images/icon_head.webp'),
+      child: Listener(
+        behavior: HitTestBehavior.opaque,
+        onPointerDown: (_) => onAvatarPointerDown?.call(),
+        child: FeedbackWidget(
+          onPressed: onAvatarTap,
+          child: avatar,
         ),
       ),
     );
@@ -91,9 +105,5 @@ class StandardHomeSearch extends StatelessWidget
   void _toSearchPage(BuildContext context) {
     Navigator.of(context)
         .push(FadePageRoute(child: const StandardSearchPageProvider()));
-  }
-
-  void _openDrawer(BuildContext context) {
-    // Scaffold.of(context).openDrawer();
   }
 }
