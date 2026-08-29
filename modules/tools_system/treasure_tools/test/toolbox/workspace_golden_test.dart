@@ -24,6 +24,15 @@ void main() {
     );
     await tester.pumpAndSettle();
 
+    await tester.tap(find.text('JSON 解析').first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('URL 编解码').first);
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const ValueKey<String>('tool-tab-jwt-debugger')),
+    );
+    await tester.pumpAndSettle();
+
     await expectLater(
       find.byType(CodeGenPage),
       matchesGoldenFile('goldens/toolbox-workspace.png'),

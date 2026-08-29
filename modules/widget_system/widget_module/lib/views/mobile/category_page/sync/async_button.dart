@@ -13,9 +13,7 @@ import 'package:storage/storage.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:widget_ui/widget_ui.dart';
 
-
 import 'package:toly_ui/toly_ui.dart';
-
 
 /// create by 张风捷特烈 on 2021/2/24
 /// contact me by email 1981462002@qq.com
@@ -77,30 +75,59 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
   void _doSync() async {
     setState(() => state = AsyncType.loading);
     TaskResult<CategoryData> result = await CategoryApi.getCategoryData();
+    if (!mounted) return;
 
     if (result.success) {
       // 说明请求成功
       if (result.data != null) {
         //说明有后台备份数据，进行同步操作
-        CategoryRepository repository = BlocProvider.of<CategoryBloc>(context).repository;
-        await repository.syncCategoryByData(result.data!.data,result.data!.likeData);
+        CategoryRepository repository =
+            BlocProvider.of<CategoryBloc>(context).repository;
+        bool synced = await repository.syncCategoryByData(
+          result.data!.data,
+          result.data!.likeData,
+        );
+        if (!mounted) return;
+        if (!synced) {
+          setState(() => state = AsyncType.error);
+          Toast.error(context, '收藏数据下载后恢复失败');
+          _toDefault();
+          return;
+        }
         BlocProvider.of<CategoryBloc>(context).add(const EventLoadCategory());
         context.read<LikeWidgetBloc>().loadLikeData();
       } else {
         // 说明还没有后台数据，
         // 这里防止有傻孩子没点备份，就点同步，哥哥好心，给备份一下。
-        CategoryRepository rep = BlocProvider.of<CategoryBloc>(context).repository;
+        CategoryRepository rep =
+            BlocProvider.of<CategoryBloc>(context).repository;
         List<CategoryTo> loadCategories = await rep.loadCategoryData();
-        List<int> likeData = await AppStorage().flutter<LikeDao>().likeWidgetIds();
+        List<int> likeData =
+            await AppStorage().flutter<LikeDao>().likeWidgetIds();
 
         String json = jsonEncode(loadCategories);
         String likeJson = jsonEncode(likeData);
-        await CategoryApi.uploadCategoryData(data: json,likeData: likeJson);
+        TaskResult<bool> uploadResult = await CategoryApi.uploadCategoryData(
+          data: json,
+          likeData: likeJson,
+        );
+        if (!mounted) return;
+        if (!uploadResult.success || uploadResult.data != true) {
+          setState(() => state = AsyncType.error);
+          Toast.error(context, '云端暂无备份，当前收藏数据上传失败');
+          _toDefault();
+          return;
+        }
+        Toast.success(context, '云端暂无备份，已上传当前收藏数据');
       }
       setState(() => state = AsyncType.success);
+      if (result.data != null) {
+        Toast.success(context, '收藏数据下载并恢复成功');
+      }
       _toDefault();
     } else {
       setState(() => state = AsyncType.error);
+      Toast.error(context, '收藏数据下载失败：${result.msg}');
       _toDefault();
     }
   }
@@ -113,6 +140,7 @@ class _SyncCategoryButtonState extends State<SyncCategoryButton> {
 
   void _toDefault() async {
     await Future.delayed(const Duration(milliseconds: 800));
+    if (!mounted) return;
     setState(() {
       state = AsyncType.none;
     });

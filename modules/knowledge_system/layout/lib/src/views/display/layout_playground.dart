@@ -8,9 +8,13 @@ class LayoutPlayGround extends StatelessWidget {
   /// 当前路由构建的主体内容。
   final Widget content;
 
+  /// 是否使用移动端详情布局。
+  final bool mobile;
+
   const LayoutPlayGround({
     super.key,
     required this.content,
+    this.mobile = false,
   });
 
   @override
@@ -28,17 +32,41 @@ class LayoutPlayGround extends StatelessWidget {
     return Theme(
       data: neutralTheme,
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const PlaygroundTopBar(),
-            const Divider(),
-            Expanded(child: _buildExampleFrame(context)),
-            const Divider(),
-            const PlaygroundBottomBar(),
-          ],
-        ),
+        body: mobile ? _buildMobileBody(context) : _buildDesktopBody(context),
       ),
+    );
+  }
+
+  Widget _buildDesktopBody(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const PlaygroundTopBar(),
+        const Divider(),
+        Expanded(child: _buildExampleFrame(context)),
+        const Divider(),
+        const PlaygroundBottomBar(),
+      ],
+    );
+  }
+
+  /// 移动端限制案例区高度，避免竖屏时演示画布占满剩余空间。
+  Widget _buildMobileBody(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final double frameHeight = constraints.maxHeight * 0.68;
+        return ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const PlaygroundTopBar(mobile: true),
+            SizedBox(
+              height: frameHeight,
+              child: _buildExampleFrame(context),
+            ),
+            const PlaygroundBottomBar(mobile: true),
+          ],
+        );
+      },
     );
   }
 
@@ -70,14 +98,22 @@ class LayoutPlayGround extends StatelessWidget {
 
   Widget _buildExampleFrame(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(mobile ? 12 : 24),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          border: Border.all(
-            color: Theme.of(context).colorScheme.outlineVariant,
-          ),
+          color:
+              mobile ? Theme.of(context).colorScheme.surfaceContainerLow : null,
+          border: mobile
+              ? null
+              : Border.all(
+                  color: Theme.of(context).colorScheme.outlineVariant,
+                ),
+          borderRadius: mobile ? BorderRadius.circular(14) : null,
         ),
-        child: content,
+        child: ClipRRect(
+          borderRadius: mobile ? BorderRadius.circular(14) : BorderRadius.zero,
+          child: content,
+        ),
       ),
     );
   }

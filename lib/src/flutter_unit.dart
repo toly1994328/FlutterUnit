@@ -2,6 +2,7 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:fx_account/fx_account.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:l10n/gen_l10n/app_localizations.dart';
@@ -13,6 +14,7 @@ import 'package:widget_module/blocs/blocs.dart';
 import 'package:note/note.dart';
 import 'l10n/gen/app_l10n.dart';
 import 'l10n/locale_provider.dart';
+import 'ability/flutter_unit_toast.dart';
 import 'navigation/router/app_route.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
@@ -50,8 +52,9 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
       listenWhen: (p, n) => p.language != n.language,
       listener: _onLocaleChange,
       child: DefaultTextStyle(
-        style: TextStyle(fontFamily: ''),
+        style: const TextStyle(fontFamily: ''),
         child: TolyUiApp.router(
+          scaffoldMessengerKey: flutterUnitScaffoldMessengerKey,
           routerConfig: _router,
           showPerformanceOverlay: state.showPerformanceOverlay,
           title: StrUnit.appName,
@@ -87,6 +90,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
         GlobalWidgetsLocalizations.delegate,
         FlutterQuillLocalizations.delegate,
         PkgL10n.delegate,
+        FxAccountLocalizations.delegate,
       ];
 
   @override

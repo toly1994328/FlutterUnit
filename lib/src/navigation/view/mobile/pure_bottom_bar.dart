@@ -7,7 +7,6 @@ class PureBottomBar extends StatelessWidget {
   final ValueChanged<int>? onTap;
   final AppTab activeTab;
 
-
   const PureBottomBar({
     super.key,
     this.onTap,
@@ -21,7 +20,7 @@ class PureBottomBar extends StatelessWidget {
     AppL10n l10n = AppL10n.of(context);
     return BottomNavigationBar(
         onTap: onTap,
-        currentIndex: activeTab.index,
+        currentIndex: AppTab.mobileTabs.indexOf(activeTab),
         elevation: 3,
         // fixedColor: themeColor.activeColor,
         type: BottomNavigationBarType.fixed,

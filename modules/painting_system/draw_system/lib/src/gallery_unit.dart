@@ -17,21 +17,27 @@ import 'gallery_factory.dart';
 /// 说明:
 
 class GalleryUnit extends StatelessWidget {
-  const GalleryUnit({Key? key}) : super(key: key);
+  /// 是否作为其他页面的内嵌内容展示。
+  final bool embedded;
+
+  const GalleryUnit({super.key, this.embedded = false});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (_,c){
-      if(c.maxWidth>500){
-        return const DeskGalleryUnit();
+    return LayoutBuilder(builder: (_, c) {
+      if (c.maxWidth > 500) {
+        return DeskGalleryUnit(embedded: embedded);
       }
-      return const PhoneGalleryUnit();
+      return PhoneGalleryUnit(embedded: embedded);
     });
   }
 }
 
 class PhoneGalleryUnit extends StatefulWidget {
-  const PhoneGalleryUnit({Key? key}) : super(key: key);
+  /// 是否作为知识集锦的内嵌页面展示。
+  final bool embedded;
+
+  const PhoneGalleryUnit({super.key, this.embedded = false});
 
   @override
   _PhoneGalleryUnitState createState() => _PhoneGalleryUnitState();
@@ -40,7 +46,7 @@ class PhoneGalleryUnit extends StatefulWidget {
 class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
   final ValueNotifier<double> factor = ValueNotifier<double>(0);
 
- late PageController _ctrl;
+  late PageController _ctrl;
 
   final int _firstOffset = 1000; //初始偏移
   int _position = 0; //页面位置
@@ -56,10 +62,10 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
       viewportFraction: 0.9,
       initialPage: _position,
     )..addListener(() {
-      if(_ctrl.page!=null){
-        double value = (_ctrl.page! - _firstOffset + 1) % 5 / 5;
-        factor.value = value == 0 ? 1 : value;
-      }
+        if (_ctrl.page != null) {
+          double value = (_ctrl.page! - _firstOffset + 1) % 5 / 5;
+          factor.value = value == 0 ? 1 : value;
+        }
       });
   }
 
@@ -70,47 +76,59 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
     super.dispose();
   }
 
-
   Color get color => Colors.blue;
 
-  Color get nextColor =>Colors.orangeAccent;
+  Color get nextColor => Colors.orangeAccent;
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
-  BoxDecoration get boxDecoration =>  BoxDecoration(
-        color: isDark?Colors.white.withAlpha(33):Colors.white,
+  BoxDecoration get boxDecoration => BoxDecoration(
+        color: isDark ? Colors.white.withAlpha(33) : Colors.white,
         borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40), topRight: Radius.circular(40)),
       );
 
   @override
   Widget build(BuildContext context) {
+    final Widget body = _buildGalleryBody();
+    if (widget.embedded) {
+      return body;
+    }
     return Scaffold(
       body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value:const SystemUiOverlayStyle(
-            statusBarIconBrightness: Brightness.light
-        ),
-        child:ValueListenableBuilder(
-          child: Column(
-            children: [
-              _buildTitle(context),
-              Expanded(
-                  child: Container(
-                margin: const EdgeInsets.only(left: 8, right: 8),
-                child: _buildContent(StrUnit.galleryDesc(context)),
-                decoration: boxDecoration,
-              ))
-            ],
-          ),
-          valueListenable: factor,
-          builder: (_,double value, child) => Container(
-            color: isDark?null:Color.lerp(
-              color,
-              nextColor,
-              value,
-            ),
-            child: child,
-          ),
-        ),
+        value: const SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.light),
+        child: body,
+      ),
+    );
+  }
+
+  /// 构建可独立展示或嵌入知识集锦的绘制内容。
+  Widget _buildGalleryBody() {
+    return ValueListenableBuilder(
+      child: Column(
+        children: [
+          if (widget.embedded)
+            const SizedBox(height: 88)
+          else
+            _buildTitle(context),
+          Expanded(
+              child: Container(
+            margin: const EdgeInsets.only(left: 8, right: 8),
+            child: _buildContent(StrUnit.galleryDesc(context)),
+            decoration: boxDecoration,
+          ))
+        ],
+      ),
+      valueListenable: factor,
+      builder: (_, double value, child) => Container(
+        color: isDark
+            ? null
+            : Color.lerp(
+                color,
+                nextColor,
+                value,
+              ),
+        child: child,
       ),
     );
   }
@@ -118,11 +136,11 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
   Widget _buildTitle(BuildContext context) {
     return Container(
       alignment: const Alignment(0, 0.3),
-      height: MediaQuery.of(context).size.height * 0.2,
+      height: widget.embedded ? 88 : MediaQuery.of(context).size.height * 0.2,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children:  [
-           FlutterLogo(
+        children: [
+          FlutterLogo(
             size: 40,
           ),
           SizedBox(
@@ -130,7 +148,10 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
           ),
           Text(
             context.l10n.paintCollection,
-            style: TextStyle(fontSize: 26, color: Colors.white),
+            style: TextStyle(
+              fontSize: widget.embedded ? 20 : 26,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
@@ -138,17 +159,17 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
   }
 
   Widget _buildContentByState(BuildContext context, String state) {
-    if(state.isEmpty){
+    if (state.isEmpty) {
       return const LoadingShower();
     }
     return _buildContent(StrUnit.galleryDesc(context));
   }
 
   Widget _buildContent(String galleryInfo) {
-
     final List<Widget> widgets = (json.decode(galleryInfo) as List).map((e) {
       GalleryInfo info = GalleryInfo.fromJson(e);
-      List<Widget> children = GalleryFactory.getGalleryByName(info.type,context);
+      List<Widget> children =
+          GalleryFactory.getGalleryByName(info.type, context);
 
       return FeedbackWidget(
         a: 0.95,
@@ -167,7 +188,10 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
     }).toList();
 
     return Container(
-        padding: const EdgeInsets.only(bottom: 80, top: 40),
+        padding: EdgeInsets.only(
+          bottom: widget.embedded ? 20 : 80,
+          top: widget.embedded ? 16 : 40,
+        ),
         child: Column(
           children: [
             Expanded(
@@ -197,7 +221,7 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
 
   Widget _buildAnimItemByIndex(BuildContext context, Widget? child, int index) {
     double value;
-    if (_ctrl.position.haveDimensions&&_ctrl.page!=null) {
+    if (_ctrl.position.haveDimensions && _ctrl.page != null) {
       value = _ctrl.page! - index;
     } else {
       value = (_position - index).toDouble();
@@ -216,7 +240,7 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
   }
 
   Widget _buildDiver() => Container(
-    margin: const EdgeInsets.only(bottom: 12, left: 48, right: 48, top: 10),
+        margin: const EdgeInsets.only(bottom: 12, left: 48, right: 48, top: 10),
         height: 2,
         child: ValueListenableBuilder(
           valueListenable: factor,
@@ -241,6 +265,4 @@ class _PhoneGalleryUnitState extends State<PhoneGalleryUnit> {
     int result = offset % length;
     return result < 0 ? length + result : result;
   }
-
-
 }

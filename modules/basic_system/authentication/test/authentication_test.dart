@@ -11,7 +11,7 @@ void main() {
       profile: <String, dynamic>{'signature': '一切皆组件'},
     );
 
-    final FxIdentity identity = const FlutterUnitIdentityCodec().decode(source);
+    final FxIdentity identity = const FxUserIdentityCodec().decode(source);
 
     expect(identity.id, '42');
     expect(identity.displayName, 'FlutterUnit');

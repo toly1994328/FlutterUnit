@@ -8,9 +8,6 @@ class ToolLibrarySidebar extends StatefulWidget {
   /// 当前选择的工具。
   final DeveloperTool selectedTool;
 
-  /// 最近使用的工具。
-  final List<DeveloperTool> recentTools;
-
   /// 当前收藏的工具。
   final Set<DeveloperTool> favoriteTools;
 
@@ -24,7 +21,6 @@ class ToolLibrarySidebar extends StatefulWidget {
   const ToolLibrarySidebar({
     super.key,
     required this.selectedTool,
-    required this.recentTools,
     required this.favoriteTools,
     required this.onSelected,
     required this.onFavoriteChanged,
@@ -35,6 +31,9 @@ class ToolLibrarySidebar extends StatefulWidget {
 }
 
 class _ToolLibrarySidebarState extends State<ToolLibrarySidebar> {
+  /// 工具目录在桌面工作台中的固定宽度。
+  static const double _sidebarWidth = 200;
+
   /// 搜索输入控制器。
   final TextEditingController _searchController = TextEditingController();
 
@@ -52,10 +51,10 @@ class _ToolLibrarySidebarState extends State<ToolLibrarySidebar> {
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     final Color background =
         isDark ? const Color(0xff1e2024) : const Color(0xfffbfcfd);
-    return Material(
+    return ColoredBox(
       color: background,
       child: SizedBox(
-        width: 292,
+        width: _sidebarWidth,
         child: Column(
           children: [
             _buildHeading(context),
@@ -68,34 +67,37 @@ class _ToolLibrarySidebarState extends State<ToolLibrarySidebar> {
 
   Widget _buildHeading(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
+      padding: const EdgeInsets.fromLTRB(12, 12, 12, 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             '工具宝箱',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
-          const SizedBox(height: 14),
-          TextField(
-            controller: _searchController,
-            onChanged: _onQueryChanged,
-            style: const TextStyle(fontSize: 13),
-            decoration: InputDecoration(
-              hintText: '搜索工具',
-              prefixIcon: const Icon(Icons.search_rounded, size: 20),
-              suffixIcon: _query.isEmpty
-                  ? null
-                  : IconButton(
-                      tooltip: '清空搜索',
-                      onPressed: _clearSearch,
-                      icon: const Icon(Icons.close_rounded, size: 18),
-                    ),
-              isDense: true,
-              filled: true,
-              fillColor: Theme.of(context).colorScheme.surface,
-              border: _searchBorder(context),
-              enabledBorder: _searchBorder(context),
+          const SizedBox(height: 10),
+          SizedBox(
+            height: 30,
+            child: TextField(
+              controller: _searchController,
+              onChanged: _onQueryChanged,
+              style: const TextStyle(fontSize: 12),
+              decoration: InputDecoration(
+                hintText: '搜索工具',
+                prefixIcon: const Icon(Icons.search_rounded, size: 16),
+                prefixIconConstraints: const BoxConstraints(minWidth: 30),
+                suffixIcon: _query.isEmpty
+                    ? null
+                    : IconButton(
+                        tooltip: '清空搜索',
+                        onPressed: _clearSearch,
+                        icon: const Icon(Icons.close_rounded, size: 15),
+                      ),
+                filled: true,
+                fillColor: Theme.of(context).colorScheme.surface,
+                border: _searchBorder(context),
+                enabledBorder: _searchBorder(context),
+              ),
             ),
           ),
         ],
@@ -105,7 +107,7 @@ class _ToolLibrarySidebarState extends State<ToolLibrarySidebar> {
 
   OutlineInputBorder _searchBorder(BuildContext context) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(7),
+      borderRadius: BorderRadius.circular(3),
       borderSide: BorderSide(
         color: Theme.of(context).colorScheme.outlineVariant,
       ),
@@ -131,15 +133,6 @@ class _ToolLibrarySidebarState extends State<ToolLibrarySidebar> {
     return ListView(
       padding: const EdgeInsets.only(bottom: 16),
       children: [
-        ToolSectionList(
-          title: '最近使用',
-          icon: Icons.history_rounded,
-          tools: widget.recentTools,
-          selectedTool: widget.selectedTool,
-          favoriteTools: widget.favoriteTools,
-          onSelected: widget.onSelected,
-          onFavoriteChanged: widget.onFavoriteChanged,
-        ),
         ToolSectionList(
           title: '收藏',
           icon: Icons.star_rounded,

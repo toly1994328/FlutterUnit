@@ -11,6 +11,7 @@ import 'package:flutter_unit/src/navigation/model/app_tab.dart';
 import 'package:fx_updater/fx_updater.dart';
 import 'package:fx_user_session/fx_user_session.dart';
 import 'package:pkg_player/pkg_player.dart';
+import 'package:treasure_tools/treasure_tools.dart';
 import 'package:widget_module/widget_module.dart';
 import 'news.dart';
 import 'pure_bottom_bar.dart';
@@ -68,9 +69,13 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
             ),
             onAvatarTap: () => _openAccountEntry(context),
           ),
-          GalleryUnit(),
-          AlgoScope(child: ArtifactPage()),
           PkgPlayerPage(),
+          AlgoScope(
+            child: ArtifactPage(
+              drawingPage: const GalleryUnit(embedded: true),
+            ),
+          ),
+          const MobileToolPage(),
           UserPage(),
         ],
       ),
@@ -99,8 +104,9 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   // 点击底部按钮事件，切换页面
   void _onTapBottomNav(int index) {
     _controller.jumpToPage(index);
-    _activeTab.value = AppTab.values[index];
-    if (index == 3) {
+    final AppTab selectedTab = AppTab.mobileTabs[index];
+    _activeTab.value = selectedTab;
+    if (selectedTab == AppTab.packages) {
       context.read<LikeWidgetBloc>().loadLikeData();
     }
   }

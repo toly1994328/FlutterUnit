@@ -32,11 +32,13 @@ List<GoRoute> get systemRoutes => [
 List<GoRoute> get deskTopRoutes => [
       GoRoute(
         path: AppRoute.knowledge.path,
-        builder: (_, __) => const DeskKnowledgePage(),
+        builder: (_, __) => const DeskKnowledgePage(
+          drawingPage: GalleryUnit(embedded: true),
+        ),
       ),
       GoRoute(
         path: AppRoute.painter.path,
-        builder: (_, __) => const GalleryUnit(),
+        redirect: (_, __) => AppRoute.knowledge.url,
       ),
       GoRoute(
         path: AppRoute.tools.path,

@@ -10,6 +10,10 @@ class FlutterUnitResponseInterceptor extends InterceptorsWrapper {
   ) {
     final dynamic body = response.data;
     if (response.statusCode == HttpCode.ok.value && body is Map) {
+      if (body['status'] is bool && !body.containsKey('code')) {
+        handler.next(response);
+        return;
+      }
       final String code = body['code']?.toString() ?? '';
       final String message = body['message']?.toString() ?? '';
       if (code == 'SUCCESS') {

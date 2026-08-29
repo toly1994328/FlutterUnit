@@ -25,12 +25,13 @@ class CategoryDao extends Dao {
   Future<int> insert(CategoryPo category) async {
     String addSql = //插入数据
         "INSERT INTO "
-        "category(id,name,color,info,priority,image,created,updated) "
-        "VALUES (?,?,?,?,?,?,?,?);";
+        "category(id,name,type,color,info,priority,image,created,updated) "
+        "VALUES (?,?,?,?,?,?,?,?,?);";
     return await database
         .transaction((tran) async => await tran.rawInsert(addSql, [
               category.id,
               category.name,
+              category.type,
               category.color,
               category.info,
               category.priority,
@@ -100,7 +101,7 @@ class CategoryDao extends Dao {
 
   Future<List<Map<String, dynamic>>> queryAll() async {
     List<Map<String, dynamic>> data = await database.rawQuery(
-        "SELECT c.id,c.name,c.info,c.color,c.image,c.created,c.updated,c.priority,COUNT(cw.categoryId) as `count`"
+        "SELECT c.id,c.name,c.type,c.info,c.color,c.image,c.created,c.updated,c.priority,COUNT(cw.categoryId) as `count`"
         "FROM category AS c "
         "LEFT JOIN category_widget AS cw "
         "ON c.id = cw.categoryId GROUP BY c.id "
@@ -168,9 +169,9 @@ class CategoryDao extends Dao {
     await toggleCollect(1, widgetId);
   }
 
-  Future<List<Map<String, dynamic>>> loadCollectWidgets(int categoryId, [String locale = 'zh-cn']) async {
-    String querySql =
-        "SELECT w.*, wd.name as localeName, wd.info as info "
+  Future<List<Map<String, dynamic>>> loadCollectWidgets(int categoryId,
+      [String locale = 'zh-cn']) async {
+    String querySql = "SELECT w.*, wd.name as localeName, wd.info as info "
         "FROM widget w "
         "LEFT JOIN widget_desc wd ON w.id = wd.widget_id AND wd.locale = ? "
         "WHERE w.id IN (SELECT widgetId FROM category_widget WHERE categoryId = ?) "
@@ -180,8 +181,7 @@ class CategoryDao extends Dao {
   }
 
   Future<List<int>> loadCollectWidgetIds(int categoryId) async {
-    String querySql =
-        "SELECT id FROM widget "
+    String querySql = "SELECT id FROM widget "
         "WHERE id IN (SELECT widgetId FROM category_widget WHERE categoryId = ?) "
         "ORDER BY lever DESC";
 

@@ -5,6 +5,9 @@ import 'package:layout/src/bloc/display_state.dart';
 import 'package:layout/src/data/display_map/display_map.dart';
 import 'package:layout/src/data/model/display_frame.dart';
 import 'package:layout/src/navigation/menu/menu_repository_impl.dart';
+import 'package:layout/src/navigation/view/app_menu_tree.dart';
+import 'package:layout/src/views/layout_page.dart';
+import 'package:layout/src/views/mobile/mobile_layout_knowledge_page.dart';
 
 void main() {
   test('所有叶子菜单都有演示帧映射', () {
@@ -51,6 +54,26 @@ void main() {
   });
 
   testWidgets('新增约束与 Flex 案例可在窄窗口渲染', _testNewLayoutFrames);
+
+  testWidgets('移动布局入口展示单列总览且不渲染桌面菜单', (WidgetTester tester) async {
+    await tester.binding.setSurfaceSize(const Size(390, 844));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
+    await tester.pumpWidget(
+      const MaterialApp(home: LayoutRouterPage(compact: true)),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('基本布局'), findsOneWidget);
+    expect(find.byType(AppMenuTree), findsNothing);
+
+    await tester.tap(find.text('Size'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(MobileLayoutTopicPage), findsOneWidget);
+    expect(find.byType(BackButton), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 }
 
 Future<void> _testNewLayoutFrames(WidgetTester tester) async {

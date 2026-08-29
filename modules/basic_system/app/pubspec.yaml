@@ -18,6 +18,7 @@ dependencies:
   fx_trace: 0.0.5+5
   fx_updater:
     path: ../../basic_system/fx_updater
+  tolyui_message: ^0.2.6+1
   unit_env:
     path: ../../basic_system/unit_env
 flutter:

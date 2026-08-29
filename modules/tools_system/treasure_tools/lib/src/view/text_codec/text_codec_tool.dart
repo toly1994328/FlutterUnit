@@ -143,60 +143,81 @@ class _TextCodecWorkbenchState extends State<_TextCodecWorkbench> {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            child: _CodecPanel(
-              title: '原文',
-              hintText: widget.sourceHint,
-              controller: _sourceController,
-              actions: <Widget>[
-                _ActionButton(
-                  icon: Icons.arrow_forward_rounded,
-                  tooltip: '编码',
-                  onPressed: _encode,
-                ),
-                _ActionButton(
-                  icon: Icons.subdirectory_arrow_left_rounded,
-                  tooltip: '解码',
-                  onPressed: _decode,
-                ),
-                _ActionButton(
-                  icon: Icons.swap_horiz_rounded,
-                  tooltip: '交换',
-                  onPressed: _swap,
-                ),
-                _ActionButton(
-                  icon: Icons.delete_outline_rounded,
-                  tooltip: '清空',
-                  onPressed: _clear,
-                ),
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          final Widget sourcePanel = _buildSourcePanel();
+          final Widget resultPanel = _buildResultPanel();
+          if (constraints.maxWidth < 720) {
+            return Column(
+              children: <Widget>[
+                Expanded(child: sourcePanel),
+                Divider(height: 1, color: theme.colorScheme.outlineVariant),
+                Expanded(child: resultPanel),
               ],
-            ),
-          ),
-          VerticalDivider(
-            width: 1,
-            thickness: 1,
-            color: theme.colorScheme.outlineVariant,
-          ),
-          Expanded(
-            child: _CodecPanel(
-              title: '结果',
-              hintText: widget.resultHint,
-              controller: _resultController,
-              readOnly: true,
-              errorMessage: _errorMessage,
-              actions: <Widget>[
-                _ActionButton(
-                  icon: Icons.copy_outlined,
-                  tooltip: '复制结果',
-                  onPressed: _copyResult,
-                ),
-              ],
-            ),
-          ),
-        ],
+            );
+          }
+          return Row(
+            children: <Widget>[
+              Expanded(child: sourcePanel),
+              VerticalDivider(
+                width: 1,
+                thickness: 1,
+                color: theme.colorScheme.outlineVariant,
+              ),
+              Expanded(child: resultPanel),
+            ],
+          );
+        },
       ),
+    );
+  }
+
+  /// 构建原文输入与转换操作面板。
+  Widget _buildSourcePanel() {
+    return _CodecPanel(
+      title: '原文',
+      hintText: widget.sourceHint,
+      controller: _sourceController,
+      actions: <Widget>[
+        _ActionButton(
+          icon: Icons.arrow_forward_rounded,
+          tooltip: '编码',
+          onPressed: _encode,
+        ),
+        _ActionButton(
+          icon: Icons.subdirectory_arrow_left_rounded,
+          tooltip: '解码',
+          onPressed: _decode,
+        ),
+        _ActionButton(
+          icon: Icons.swap_horiz_rounded,
+          tooltip: '交换',
+          onPressed: _swap,
+        ),
+        _ActionButton(
+          icon: Icons.delete_outline_rounded,
+          tooltip: '清空',
+          onPressed: _clear,
+        ),
+      ],
+    );
+  }
+
+  /// 构建只读结果与复制操作面板。
+  Widget _buildResultPanel() {
+    return _CodecPanel(
+      title: '结果',
+      hintText: widget.resultHint,
+      controller: _resultController,
+      readOnly: true,
+      errorMessage: _errorMessage,
+      actions: <Widget>[
+        _ActionButton(
+          icon: Icons.copy_outlined,
+          tooltip: '复制结果',
+          onPressed: _copyResult,
+        ),
+      ],
     );
   }
 }

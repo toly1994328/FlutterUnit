@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../icon_font_gen/icon_font_gen_page.dart';
 import '../jwt_debugger/view.dart';
+import '../view/aes/aes_tool.dart';
 import '../view/json_display/json_display.dart';
 import '../view/text_codec/text_codec_tool.dart';
 
@@ -43,6 +44,13 @@ enum DeveloperTool {
     icon: Icons.link_rounded,
     category: ToolCategory.codec,
   ),
+  aesCipher(
+    id: 'aes-cipher',
+    label: 'AES 加解密',
+    description: '支持 GCM 与 CBC/PKCS7 的数据加解密',
+    icon: Icons.lock_outline_rounded,
+    category: ToolCategory.codec,
+  ),
   jwtDebugger(
     id: 'jwt-debugger',
     label: 'JWT 调试器',
@@ -56,6 +64,7 @@ enum DeveloperTool {
     description: '从 IconFont 压缩包生成 Flutter 资源',
     icon: Icons.font_download_outlined,
     category: ToolCategory.generator,
+    supportsMobile: false,
   );
 
   /// 稳定工具标识。
@@ -73,12 +82,16 @@ enum DeveloperTool {
   /// 所属目录分类。
   final ToolCategory category;
 
+  /// 是否允许在移动端工具目录中展示。
+  final bool supportsMobile;
+
   const DeveloperTool({
     required this.id,
     required this.label,
     required this.description,
     required this.icon,
     required this.category,
+    this.supportsMobile = true,
   });
 
   /// 创建工具对应的工作区视图。
@@ -87,6 +100,7 @@ enum DeveloperTool {
       DeveloperTool.jsonParser => const JsonAnalysisTool(),
       DeveloperTool.base64Codec => const Base64CodecTool(),
       DeveloperTool.urlCodec => const UrlCodecTool(),
+      DeveloperTool.aesCipher => const AesCipherTool(),
       DeveloperTool.jwtDebugger => const JwtDebuggerTool(),
       DeveloperTool.iconFont => const IconFontGenPage(),
     };

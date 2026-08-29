@@ -121,6 +121,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.7"
+  cryptography:
+    dependency: transitive
+    description:
+      name: cryptography
+      sha256: "3eda3029d34ec9095a27a198ac9785630fe525c0eb6a49f3d575272f8e792ef0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.9.0"
   csslib:
     dependency: transitive
     description:
@@ -415,6 +423,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fx_ability:
+    dependency: "direct main"
+    description:
+      path: "../../FrameworkX/client/packages/foundation/fx_ability"
+      relative: true
+    source: path
+    version: "0.1.0"
+  fx_account:
+    dependency: "direct main"
+    description:
+      path: "../../FrameworkX/client/packages/identity/ui/fx_account"
+      relative: true
+    source: path
+    version: "0.1.0"
   fx_boot_starter:
     dependency: "direct main"
     description:
@@ -511,6 +533,13 @@ packages:
     dependency: "direct main"
     description:
       path: "../../FrameworkX/client/packages/identity/adapters/fx_user_http"
+      relative: true
+    source: path
+    version: "0.1.0"
+  fx_user_preferences:
+    dependency: transitive
+    description:
+      path: "../../FrameworkX/client/packages/identity/adapters/fx_user_preferences"
       relative: true
     source: path
     version: "0.1.0"
@@ -1337,14 +1366,29 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  toly_check_box:
+    dependency: transitive
+    description:
+      name: toly_check_box
+      sha256: "559b60ddf0d7adedcd5e46ebfa7babc127623e69c74207f08a6cced526402608"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   tolyui:
     dependency: "direct main"
     description:
-      name: tolyui
-      sha256: "800e95b470fd013adb1d8f84944b5498cbca59307cd50ff2b3affc98c57af51e"
+      path: "../../ViewX/client/docs/ref/toly_ui/modules/tolyui"
+      relative: true
+    source: path
+    version: "0.0.4+16"
+  tolyui_collapse:
+    dependency: transitive
+    description:
+      name: tolyui_collapse
+      sha256: "35266de0e5928621dc65b144eb06cdf390017132996f6a2509d1ae621012c2d1"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4+10"
+    version: "0.0.1"
   tolyui_color:
     dependency: transitive
     description:
@@ -1362,7 +1406,7 @@ packages:
     source: hosted
     version: "0.3.6+6"
   tolyui_message:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: tolyui_message
       sha256: "3811b9666d90d0088c35cacfe77ef990ed6019f801000d0e39ed8f500817b3bf"
@@ -1401,6 +1445,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2+1"
+  tolyui_statistic:
+    dependency: transitive
+    description:
+      name: tolyui_statistic
+      sha256: "4134a3fa7b79e891ff475cff2f2f8bd01ce85bde0469a3d355c78aadef7c824c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
+  tolyui_tag:
+    dependency: transitive
+    description:
+      name: tolyui_tag
+      sha256: acdb68dfaed02bba314eaab1b23c72d7ad7f7c8dee5203cd724950ba81f273a8
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   tolyui_text:
     dependency: transitive
     description:
@@ -1409,6 +1469,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.1+5"
+  tolyui_tree:
+    dependency: transitive
+    description:
+      name: tolyui_tree
+      sha256: "7a372d5240125ce6291f84fbdb406d838e73f2d471173e61c62abc1dcf98ee1d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   two_dimensional_scrollables:
     dependency: transitive
     description:

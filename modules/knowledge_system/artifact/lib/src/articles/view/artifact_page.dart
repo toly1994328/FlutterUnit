@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
+import 'package:layout/layout.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../bloc/columnize/bloc.dart';
 import '../bloc/exp.dart';
@@ -17,7 +18,10 @@ import 'dart:ui' as ui;
 import 'building/building_panel.dart';
 
 class ArtifactPage extends StatefulWidget {
-  const ArtifactPage({Key? key}) : super(key: key);
+  /// 绘制集录页面，由应用组装层注入。
+  final Widget drawingPage;
+
+  const ArtifactPage({super.key, required this.drawingPage});
 
   @override
   State<ArtifactPage> createState() => _ArtifactPageState();
@@ -33,10 +37,10 @@ class ArtifactPage extends StatefulWidget {
 //  |--- SliverAppBar#snap: true
 
 const List<String> kArtifactInfo = [
+  '收录布局知识与交互案例',
+  '收录 Flutter 绘制案例与作品',
   '分类收录张风捷特烈的博客文章',
   '可视化排序算法',
-  '收录布局方案，提供界面样板',
-  'Flutter 知识小要点，一网打尽',
 ];
 
 class _ArtifactPageState extends State<ArtifactPage>
@@ -47,7 +51,7 @@ class _ArtifactPageState extends State<ArtifactPage>
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 2, vsync: this);
+    controller = TabController(length: 4, vsync: this);
     controller.addListener(_listen);
     data = List.generate(5, (index) => 'Init $index');
   }
@@ -80,11 +84,18 @@ class _ArtifactPageState extends State<ArtifactPage>
         backgroundColor: const Color(0xffF2F3F5),
         bottomNavigationBar: Container(height: bottom),
         body: NestedScrollView(
+          physics: _curIndex == 1 ? const NeverScrollableScrollPhysics() : null,
           headerSliverBuilder: _buildAppBar,
           floatHeaderSlivers: true,
           body: TabBarView(
             controller: controller,
             children: [
+              const LayoutRouterPage(compact: true),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onVerticalDragUpdate: (DragUpdateDetails details) {},
+                child: widget.drawingPage,
+              ),
               TolyArticleScrollPage(),
               Column(
                 children: [
@@ -142,7 +153,7 @@ class _ArtifactPageState extends State<ArtifactPage>
         snap: true,
         pinned: true,
         backgroundColor: Colors.white,
-        leading: _curIndex == 1 ? SortButton() : null,
+        leading: _curIndex == 3 ? SortButton() : null,
 
         // flexibleSpace: Image.network(
         //   'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/448d4eb270f44edab0192a1281141954~tplv-k3u1fbpfcp-watermark.image?',
@@ -189,13 +200,13 @@ class _ArtifactPageState extends State<ArtifactPage>
           ],
         ),
         actions: [
-          if (_curIndex == 1)
+          if (_curIndex == 3)
             IconButton(
                 onPressed: () {
                   Scaffold.of(context).openEndDrawer();
                 },
                 icon: Icon(Icons.settings)),
-          if (_curIndex != 1)
+          if (_curIndex == 2)
             IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded))
         ],
         // title: Padding(
@@ -206,6 +217,10 @@ class _ArtifactPageState extends State<ArtifactPage>
           controller: controller,
           tabs: [
             Tab(
+              text: context.l10n.knowledgeTabLayout,
+            ),
+            Tab(text: context.l10n.paintCollection),
+            Tab(
               // icon: Icon(Icons.account_balance_wallet_outlined),
               text: context.l10n.knowledgeTabToly,
             ),
@@ -213,10 +228,6 @@ class _ArtifactPageState extends State<ArtifactPage>
               // icon: Icon(Icons.account_balance_wallet_outlined),
               text: context.l10n.knowledgeTabAlgo,
             ),
-            // Tab(
-            //   // icon: Icon(Icons.account_balance_wallet_outlined),
-            //   text:context.l10n.knowledgeTabLayout,
-            // ),
           ],
         ),
       ), // )

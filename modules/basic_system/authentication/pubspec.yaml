@@ -12,9 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^5.8.0+1
-  crypto: ^3.0.6
   file_picker: ^10.1.9
-  uuid: ^4.5.1
   flutter_bloc: ^8.1.6 # 状态管理
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.2.1 # xml 固化
@@ -37,10 +35,16 @@ dependencies:
     path: ../../../../../FrameworkX/client/packages/identity/fx_user_core
   fx_user_session:
     path: ../../../../../FrameworkX/client/packages/identity/fx_user_session
+  fx_user_preferences:
+    path: ../../../../../FrameworkX/client/packages/identity/adapters/fx_user_preferences
   fx_user_http:
     path: ../../../../../FrameworkX/client/packages/identity/adapters/fx_user_http
   fx_user_ui:
     path: ../../../../../FrameworkX/client/packages/identity/ui/fx_user_ui
+  fx_account:
+    path: ../../../../../FrameworkX/client/packages/identity/ui/fx_account
+  fx_exception:
+    path: ../../../../../FrameworkX/client/packages/foundation/fx_exception
   sign_in_with_apple: ^6.1.0
   webview_flutter: ^4.10.0
 

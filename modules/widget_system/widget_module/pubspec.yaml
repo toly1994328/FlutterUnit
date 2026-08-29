@@ -16,6 +16,10 @@ dependencies:
     path: ../widget_ui
   widget_repository:
     path: ../widget_repository
+  unit_env:
+    path: ../../basic_system/unit_env
+  utils:
+    path: ../../basic_system/utils
 
 #dependency_overrides:
 #  intl: 0.19.0
