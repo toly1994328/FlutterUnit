@@ -10,7 +10,6 @@ import 'package:pkg_player/pkg_player.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
-import 'package:utils/utils.dart';
 import 'package:path/path.dart' as p;
 import 'bridge/unit_bridge.dart';
 import 'package:widget_module/widget_module.dart';
@@ -33,8 +32,6 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
     NoteEnv().attachBridge(UnitNoteBridge());
     if (!kAppEnv.isWeb) await initDb();
     await initWidgetStatistics(); // 加载统计数据
-
-    HttpUtil.instance.rebase(FlutterUnitHost.serverUrl);
 
     return state;
   }

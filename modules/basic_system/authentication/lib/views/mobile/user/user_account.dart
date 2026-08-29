@@ -2,6 +2,9 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_account/fx_account.dart';
+import 'package:fx_exception/fx_exception.dart';
+import 'package:fx_user_core/fx_user_core.dart';
 import 'package:fx_user_session/fx_user_session.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
@@ -20,117 +23,183 @@ class UserAccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = Theme.of(context).brightness == Brightness.dark;
-    final Color backgroundColor =
-        isDark ? Colors.black : const Color(0xffF5F5F5);
-    final Color textColor = isDark ? Colors.white : const Color(0xff333333);
-    final Color appBarColor = isDark ? const Color(0xff121318) : Colors.white;
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        surfaceTintColor: appBarColor,
-        elevation: 0.5,
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back_ios, size: 18, color: textColor),
-        ),
-        title: Text(
-          '账号管理',
-          style: TextStyle(
-            color: textColor,
-            fontSize: 17,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ),
-      body: DefaultTextStyle(
-        style: TextStyle(fontSize: 16, color: textColor),
-        child: BlocBuilder<FxUserSessionCubit, FxUserSession>(
-          builder: _buildSession,
-        ),
-      ),
+    return BlocBuilder<FxUserSessionCubit, FxUserSession>(
+      builder: _buildSession,
     );
   }
 
   Widget _buildSession(BuildContext context, FxUserSession session) {
     if (session is! FxAuthed) {
-      return const Center(child: Text('未登录'));
+      return const Scaffold(body: Center(child: Text('未登录')));
     }
-    return _buildContent(context, session.user);
-  }
-
-  Widget _buildContent(BuildContext context, FxIdentity user) {
-    final Color? tileColor = Theme.of(context).listTileTheme.tileColor;
+    final FxIdentity user = session.user;
     final String signature = user.read(FxIdentityFields.signature) ?? '';
-    return ListView(
-      children: <Widget>[
-        const SizedBox(height: 8),
-        _ProfileGroup(
-          tileColor: tileColor,
-          children: <Widget>[
-            _ProfileRow(
-              label: '头像',
-              onTap: () => _pickAvatar(context),
-              value: const Align(
-                alignment: Alignment.centerRight,
-                child: SizedBox.square(
-                  dimension: 48,
-                  child: SessionUserAvatar(size: 48, cornerRadius: 6),
-                ),
-              ),
-              verticalPadding: 12,
-            ),
-            _ProfileRow(
-              label: '用户名',
-              onTap: () => _openNameEditor(context, user.displayName ?? ''),
-              value: _ValueText(user.displayName ?? ''),
-            ),
-            _ProfileRow(
-              label: '个性签名',
-              onTap: () => _openSignatureEditor(context, signature),
-              value: _ValueText(
-                signature.isEmpty ? '未设置' : signature,
-                placeholder: signature.isEmpty,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        _ProfileGroup(
-          tileColor: tileColor,
-          children: <Widget>[
-            _ProfileRow(
-              label: 'FlutterUnit ID',
-              value: _ValueText(user.id),
-              trailing: IconButton(
-                visualDensity: VisualDensity.compact,
-                onPressed: () => _copyId(context, user.id),
-                icon: const Icon(
-                  Icons.copy,
-                  size: 18,
-                  color: Color(0xffBDBDBD),
-                ),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 24),
-        InkWell(
-          onTap: () => _confirmLogout(context),
-          child: Container(
-            height: 54,
-            color: tileColor,
-            alignment: Alignment.center,
-            child: const Text(
-              '退出登录',
-              style: TextStyle(fontSize: 16, color: Colors.red),
-            ),
+    final String? email = user.read(FxIdentityFields.email);
+    final bool hasPassword = user.read(FxIdentityFields.hasPassword) ?? false;
+    return AccountManagementPage(
+      data: AccountManagementData(
+        title: '账号管理',
+        avatar: const Align(
+          alignment: Alignment.centerRight,
+          child: SizedBox.square(
+            dimension: 48,
+            child: SessionUserAvatar(size: 48, cornerRadius: 6),
           ),
         ),
-      ],
+        username: user.displayName ?? '',
+        signature: signature,
+        userId: user.id,
+        userIdLabel: '匠心Id',
+        contactItems: <AccountManagementItem>[
+          AccountManagementItem(
+            label: '邮箱',
+            value: email?.isNotEmpty == true ? email! : '去绑定',
+            valueColor:
+                email?.isNotEmpty == true ? null : const Color(0xFFFF7A00),
+            onTap: () => _openBindEmailPage(context, email),
+          ),
+        ],
+        hasPassword: hasPassword,
+        onSetPassword: () => _openSetPasswordPage(context),
+        onChangePassword: () => _openChangePasswordPage(context),
+        onAvatarTap: () => _pickAvatar(context),
+        onUsernameTap: () => _openNameEditor(context, user.displayName ?? ''),
+        onSignatureTap: () => _openSignatureEditor(context, signature),
+        onCopyUserId: () async => _copyId(context, user.id),
+        onDeleteAccount: () => _openDeleteAccountPage(context),
+        onLogout: () => _confirmLogout(context),
+      ),
     );
+  }
+
+  /// 打开公共邮箱绑定页并接入统一会话能力。
+  Future<void> _openBindEmailPage(
+    BuildContext context,
+    String? currentEmail,
+  ) {
+    return Navigator.of(context).push<void>(
+      MaterialPageRoute<void>(
+        builder: (BuildContext pageContext) => BindEmailPage(
+          currentEmail: currentEmail,
+          onValidateEmail: (String email) => _checkEmail(context, email),
+          onRequestCode: (String email) =>
+              context.read<FxUserSessionCubit>().requestCode(
+                    channel: 'email',
+                    identifier: email,
+                    scene: FxVerificationCodeScene.bindEmail,
+                  ),
+          onSubmit: (String email, String code) =>
+              _bindEmail(pageContext, email, code),
+          onMessage: (String message) => Toast.warning(context, message),
+        ),
+      ),
+    );
+  }
+
+  /// 检查邮箱是否可以绑定到当前账号。
+  Future<bool> _checkEmail(BuildContext context, String email) async {
+    final FxAccountCheckResult result = await context
+        .read<FxUserSessionCubit>()
+        .checkAccount(type: 'email', identifier: email);
+    if (!result.available && context.mounted) {
+      Toast.warning(context, '该邮箱已被其他账号绑定');
+    }
+    return result.available;
+  }
+
+  /// 绑定邮箱并返回账号管理页。
+  Future<void> _bindEmail(
+    BuildContext context,
+    String email,
+    String code,
+  ) async {
+    await context
+        .read<FxUserSessionCubit>()
+        .bindEmail(email: email, code: code);
+    if (!context.mounted) return;
+    Toast.success(context, '邮箱绑定成功');
+    Navigator.of(context).pop();
+  }
+
+  /// 打开公共修改密码页。
+  Future<void> _openChangePasswordPage(BuildContext context) {
+    return Navigator.of(context).push<void>(
+      MaterialPageRoute<void>(
+        builder: (BuildContext pageContext) => ChangePasswordPage(
+          onForgotPassword: () => _openForgotPasswordPage(pageContext),
+          onSubmit: (String oldPassword, String newPassword) =>
+              _changePassword(pageContext, oldPassword, newPassword),
+        ),
+      ),
+    );
+  }
+
+  /// 为尚未拥有密码的账号打开首次设置页。
+  Future<void> _openSetPasswordPage(BuildContext context) {
+    return Navigator.of(context).push<void>(
+      MaterialPageRoute<void>(
+        builder: (BuildContext pageContext) => SetPasswordPage(
+          onSubmit: context.read<FxUserSessionCubit>().setPassword,
+          onMessage: (String message) => Toast.warning(context, message),
+        ),
+      ),
+    );
+  }
+
+  /// 修改当前账号密码并返回账号管理页。
+  Future<void> _changePassword(
+    BuildContext context,
+    String oldPassword,
+    String newPassword,
+  ) async {
+    final bool changed =
+        await context.read<FxUserSessionCubit>().changePassword(
+              oldPassword: oldPassword,
+              newPassword: newPassword,
+            );
+    if (!context.mounted) return;
+    if (!changed) {
+      Toast.error(context, '密码修改失败');
+      return;
+    }
+    Toast.success(context, '密码修改成功');
+    Navigator.of(context).pop();
+  }
+
+  /// 打开公共邮箱验证码找回密码页。
+  Future<void> _openForgotPasswordPage(BuildContext context) {
+    return Navigator.of(context).push<void>(
+      MaterialPageRoute<void>(
+        builder: (BuildContext pageContext) => ForgotPasswordPage(
+          onRequestCode: (String email) =>
+              context.read<FxUserSessionCubit>().requestCode(
+                    channel: 'email',
+                    identifier: email,
+                    scene: FxVerificationCodeScene.resetPassword,
+                  ),
+          onSubmit: (String email, String code, String newPassword) =>
+              _resetPassword(pageContext, email, code, newPassword),
+          onMessage: (String message) => Toast.warning(context, message),
+        ),
+      ),
+    );
+  }
+
+  /// 通过邮箱验证码重置密码。
+  Future<void> _resetPassword(
+    BuildContext context,
+    String email,
+    String code,
+    String newPassword,
+  ) async {
+    await context.read<FxUserSessionCubit>().resetPassword(
+          email: email,
+          code: code,
+          newPassword: newPassword,
+        );
+    if (!context.mounted) return;
+    Toast.success(context, '密码重置成功');
+    Navigator.of(context).pop();
   }
 
   /// 选择头像、校验文件并进入与 ViewX 一致的拖拽缩放裁剪页。
@@ -196,6 +265,34 @@ class UserAccountPage extends StatelessWidget {
     Toast.success(context, '已复制');
   }
 
+  /// 打开 FrameworkX 提供的风险确认与密码验证页面。
+  Future<void> _openDeleteAccountPage(BuildContext context) {
+    return Navigator.of(context).push<void>(
+      MaterialPageRoute<void>(
+        builder: (BuildContext pageContext) => DeleteAccountPage(
+          onMessage: (String message) => Toast.warning(context, message),
+          onSubmit: (String password) => _deleteAccount(context, password),
+        ),
+      ),
+    );
+  }
+
+  /// 注销远端账号、清理本地会话，并返回应用首页。
+  Future<void> _deleteAccount(BuildContext context, String password) async {
+    try {
+      await context.read<FxUserSessionCubit>().deleteAccount(password);
+      if (!context.mounted) return;
+      Toast.success(context, '账号已注销');
+      Navigator.of(context).popUntil((Route<dynamic> route) => route.isFirst);
+    } on RequestException catch (error) {
+      if (!context.mounted) return;
+      Toast.error(context, error.message ?? '账号注销失败，请稍后重试');
+    } catch (_) {
+      if (!context.mounted) return;
+      Toast.error(context, '账号注销失败，请稍后重试');
+    }
+  }
+
   /// 二次确认后退出登录并回到应用首页。
   Future<void> _confirmLogout(BuildContext context) async {
     await showDialog<void>(
@@ -209,124 +306,6 @@ class UserAccountPage extends StatelessWidget {
           await context.read<FxUserSessionCubit>().logout();
           if (context.mounted) Navigator.of(context).pop();
         },
-      ),
-    );
-  }
-}
-
-/// ViewX 风格的白底资料分组。
-class _ProfileGroup extends StatelessWidget {
-  /// 分组背景色。
-  final Color? tileColor;
-
-  /// 分组内的资料行。
-  final List<Widget> children;
-
-  const _ProfileGroup({required this.tileColor, required this.children});
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Widget> separated = <Widget>[];
-    for (int index = 0; index < children.length; index++) {
-      separated.add(children[index]);
-      if (index < children.length - 1) {
-        separated.add(
-          const Divider(
-            height: 0.5,
-            thickness: 0.5,
-            indent: 16,
-            color: Color(0xffEEEEEE),
-          ),
-        );
-      }
-    }
-    return Container(color: tileColor, child: Column(children: separated));
-  }
-}
-
-/// ViewX 风格的账户资料行。
-class _ProfileRow extends StatelessWidget {
-  /// 左侧字段名称。
-  final String label;
-
-  /// 右侧字段内容。
-  final Widget value;
-
-  /// 点击行为；为空时不显示箭头。
-  final VoidCallback? onTap;
-
-  /// 自定义尾部组件。
-  final Widget? trailing;
-
-  /// 行的垂直内边距。
-  final double verticalPadding;
-
-  const _ProfileRow({
-    required this.label,
-    required this.value,
-    this.onTap,
-    this.trailing,
-    this.verticalPadding = 16,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final Widget? end = trailing ??
-        (onTap == null
-            ? null
-            : const Icon(
-                Icons.chevron_right,
-                size: 20,
-                color: Color(0xffBDBDBD),
-              ));
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: verticalPadding,
-        ),
-        child: Row(
-          children: <Widget>[
-            SizedBox(
-              width: 104,
-              child: Text(
-                label,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Expanded(child: value),
-            if (end != null) ...<Widget>[const SizedBox(width: 4), end],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/// 资料行右侧的统一文本样式。
-class _ValueText extends StatelessWidget {
-  /// 展示文本。
-  final String text;
-
-  /// 是否使用未设置占位色。
-  final bool placeholder;
-
-  const _ValueText(this.text, {this.placeholder = false});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-      textAlign: TextAlign.right,
-      style: TextStyle(
-        color: placeholder ? Colors.grey[400] : Colors.grey[600],
-        fontSize: 16,
       ),
     );
   }

@@ -81,12 +81,15 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
 
     TaskResult<bool> result =
         await CategoryApi.uploadCategoryData(data: json, likeData: likeJson);
+    if (!mounted) return;
 
-    if (result.success) {
+    if (result.success && result.data == true) {
       setState(() => state = AsyncType.success);
+      Toast.success(context, '收藏数据上传成功');
       _toDefault();
     } else {
       setState(() => state = AsyncType.error);
+      Toast.error(context, '收藏数据上传失败：${result.msg}');
       _toDefault();
     }
   }
@@ -101,6 +104,7 @@ class _UploadCategoryButtonState extends State<UploadCategoryButton> {
 
   void _toDefault() async {
     await Future.delayed(const Duration(milliseconds: 800));
+    if (!mounted) return;
     setState(() {
       state = AsyncType.none;
     });

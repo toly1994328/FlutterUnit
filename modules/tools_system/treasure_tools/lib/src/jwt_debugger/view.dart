@@ -16,6 +16,12 @@ class JwtDebuggerTool extends StatefulWidget {
 }
 
 class _JwtDebuggerToolState extends State<JwtDebuggerTool> {
+  /// 输入区在宽窗口下允许占用的最大宽度。
+  static const double _maximumInputPanelWidth = 328;
+
+  /// 输入区在工作区内所占的宽度比例。
+  static const double _inputPanelWidthFactor = 0.42;
+
   /// 用于展示页面能力的标准 JWT 示例。
   static const String _sampleToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.'
       'eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.'
@@ -87,33 +93,51 @@ class _JwtDebuggerToolState extends State<JwtDebuggerTool> {
         isDark ? const Color(0xff1e2024) : const Color(0xfffbfcfd);
     return ColoredBox(
       color: background,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(14, 12, 24, 18),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: theme.colorScheme.surface,
-            border: Border.all(color: theme.colorScheme.outlineVariant),
-            borderRadius: BorderRadius.circular(9),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(9),
-            child: Row(
-              children: [
-                SizedBox(width: 328, child: _buildInputPanel(context)),
-                VerticalDivider(
-                    width: 1, color: theme.colorScheme.outlineVariant),
-                Expanded(child: _buildResultPanel(context)),
-              ],
-            ),
-          ),
-        ),
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth < 720) {
+            return _buildVerticalWorkspace(context);
+          }
+          return _buildHorizontalWorkspace(context, constraints.maxWidth);
+        },
       ),
+    );
+  }
+
+  /// 在移动端按上下结构组织输入区和结果区。
+  Widget _buildVerticalWorkspace(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Expanded(flex: 5, child: _buildInputPanel(context)),
+        Divider(
+          height: 1,
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+        Expanded(flex: 6, child: _buildResultPanel(context)),
+      ],
+    );
+  }
+
+  /// 始终按桌面工作台的左右结构组织输入区和结果区。
+  Widget _buildHorizontalWorkspace(BuildContext context, double width) {
+    final double inputPanelWidth = (width * _inputPanelWidthFactor)
+        .clamp(0, _maximumInputPanelWidth)
+        .toDouble();
+    return Row(
+      children: <Widget>[
+        SizedBox(width: inputPanelWidth, child: _buildInputPanel(context)),
+        VerticalDivider(
+          width: 1,
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+        Expanded(child: _buildResultPanel(context)),
+      ],
     );
   }
 
   Widget _buildInputPanel(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(22, 24, 22, 20),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -138,7 +162,7 @@ class _JwtDebuggerToolState extends State<JwtDebuggerTool> {
               decoration: BoxDecoration(
                 border: Border.all(
                     color: Theme.of(context).colorScheme.outlineVariant),
-                borderRadius: BorderRadius.circular(7),
+                borderRadius: BorderRadius.circular(3),
               ),
               child: TextField(
                 controller: _tokenController,
@@ -158,10 +182,10 @@ class _JwtDebuggerToolState extends State<JwtDebuggerTool> {
           const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
-            height: 48,
+            height: 34,
             child: FilledButton.icon(
               onPressed: _decode,
-              icon: const Icon(Icons.play_arrow_rounded, size: 21),
+              icon: const Icon(Icons.play_arrow_rounded, size: 17),
               label: const Text('解码 JWT',
                   style: TextStyle(fontWeight: FontWeight.w700)),
             ),
@@ -191,10 +215,9 @@ class _JwtDebuggerToolState extends State<JwtDebuggerTool> {
 
     return Column(
       children: [
-        const _ResultTabs(),
         Expanded(
           child: ListView(
-            padding: const EdgeInsets.fromLTRB(28, 22, 28, 18),
+            padding: const EdgeInsets.fromLTRB(18, 16, 18, 18),
             children: [
               _JsonSection(title: '头部信息（Header）', data: result.header),
               const SizedBox(height: 20),
@@ -207,58 +230,6 @@ class _JwtDebuggerToolState extends State<JwtDebuggerTool> {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _ResultTabs extends StatelessWidget {
-  /// 创建结果区域标签栏。
-  const _ResultTabs();
-
-  @override
-  Widget build(BuildContext context) {
-    final Color primaryColor = Theme.of(context).primaryColor;
-    return SizedBox(
-      height: 62,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _ResultTab(label: 'Header', selected: true, color: primaryColor),
-          const _ResultTab(label: 'Payload'),
-          const _ResultTab(label: '验证结果'),
-        ],
-      ),
-    );
-  }
-}
-
-class _ResultTab extends StatelessWidget {
-  /// 标签文字。
-  final String label;
-
-  /// 是否选中。
-  final bool selected;
-
-  /// 选中颜色。
-  final Color? color;
-
-  /// 创建结果标签。
-  const _ResultTab({required this.label, this.selected = false, this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 106,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        border: selected
-            ? Border(bottom: BorderSide(color: color!, width: 2))
-            : null,
-      ),
-      child: Text(label,
-          style: TextStyle(
-              color: selected ? color : null,
-              fontWeight: selected ? FontWeight.w600 : FontWeight.w400)),
     );
   }
 }
@@ -277,14 +248,19 @@ class _SignatureHint extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 13),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.08),
-        borderRadius: BorderRadius.circular(7),
       ),
       child: Row(
         children: [
           Icon(Icons.info_outline_rounded, size: 18, color: primaryColor),
           const SizedBox(width: 9),
-          const Text('如需验证签名，请提供密钥或公钥', style: TextStyle(fontSize: 12)),
-          const Spacer(),
+          const Expanded(
+            child: Text(
+              '如需验证签名，请提供密钥或公钥',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
           Icon(Icons.chevron_right_rounded, size: 18, color: primaryColor),
         ],
       ),
@@ -359,29 +335,36 @@ class _ResultSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text(title,
-                    style: const TextStyle(fontWeight: FontWeight.w600)),
-                const Spacer(),
-                if (trailing != null) trailing!,
-              ],
-            ),
-            const Divider(),
-            child,
-          ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(
+          height: 32,
+          child: Row(
+            children: <Widget>[
+              Text(
+                title,
+                style:
+                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+              ),
+              const Spacer(),
+              if (trailing != null) trailing!,
+            ],
+          ),
         ),
-      ),
+        Divider(
+          height: 1,
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: child,
+        ),
+        Divider(
+          height: 1,
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+      ],
     );
   }
 }
@@ -405,11 +388,16 @@ class _JwtActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      tooltip: tooltip,
-      onPressed: onPressed,
-      visualDensity: VisualDensity.compact,
-      icon: Icon(icon, size: 17),
+    return SizedBox.square(
+      dimension: 28,
+      child: IconButton(
+        tooltip: tooltip,
+        onPressed: onPressed,
+        padding: EdgeInsets.zero,
+        constraints: const BoxConstraints.tightFor(width: 28, height: 28),
+        visualDensity: VisualDensity.compact,
+        icon: Icon(icon, size: 17),
+      ),
     );
   }
 }

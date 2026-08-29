@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+typedef LayoutTopicSelected = void Function(String path);
+
 /// 布局宝库总览页面。
 class LayoutOverview extends StatelessWidget {
-  const LayoutOverview({super.key});
+  /// 点击布局主题时由宿主处理跳转；为空时使用布局模块内部路由。
+  final LayoutTopicSelected? onTopicSelected;
+
+  /// 是否使用移动端知识首页样式。
+  final bool mobile;
+
+  const LayoutOverview({
+    super.key,
+    this.onTopicSelected,
+    this.mobile = false,
+  });
 
   /// 按能力域组织的布局主题。
   static const List<_OverviewSection> _sections = <_OverviewSection>[
@@ -60,6 +72,7 @@ class LayoutOverview extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints constraints) {
         final int columnCount = _resolveColumnCount(constraints.maxWidth);
         return CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: _buildSections(context, columnCount),
         );
       },
@@ -67,6 +80,9 @@ class LayoutOverview extends StatelessWidget {
   }
 
   int _resolveColumnCount(double width) {
+    if (mobile) {
+      return width >= 340 ? 2 : 1;
+    }
     if (width >= 1000) {
       return 4;
     }
@@ -82,10 +98,13 @@ class LayoutOverview extends StatelessWidget {
   /// 将分组数据转换为连续的标题和网格 Sliver。
   List<Widget> _buildSections(BuildContext context, int columnCount) {
     final List<Widget> slivers = <Widget>[
-      const SliverPadding(padding: EdgeInsets.only(top: 8)),
+      SliverPadding(padding: EdgeInsets.only(top: mobile ? 0 : 8)),
     ];
-    for (final _OverviewSection section in _sections) {
-      slivers.add(_buildSectionHeader(context, section));
+    for (int index = 0; index < _sections.length; index++) {
+      final _OverviewSection section = _sections[index];
+      slivers.add(
+        _buildSectionHeader(context, section, isFirst: index == 0),
+      );
       slivers.add(_buildSectionGrid(section, columnCount));
     }
     slivers.add(const SliverPadding(padding: EdgeInsets.only(bottom: 24)));
@@ -94,18 +113,21 @@ class LayoutOverview extends StatelessWidget {
 
   Widget _buildSectionHeader(
     BuildContext context,
-    _OverviewSection section,
-  ) {
+    _OverviewSection section, {
+    required bool isFirst,
+  }) {
     final ColorScheme colors = Theme.of(context).colorScheme;
     return SliverToBoxAdapter(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+        padding: mobile
+            ? EdgeInsets.fromLTRB(18, isFirst ? 12 : 22, 18, 12)
+            : const EdgeInsets.fromLTRB(20, 20, 20, 10),
         child: Row(
           children: <Widget>[
             Text(
               section.title,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
+                    fontWeight: mobile ? FontWeight.w700 : FontWeight.w600,
                   ),
             ),
             const SizedBox(width: 8),
@@ -124,17 +146,21 @@ class LayoutOverview extends StatelessWidget {
 
   Widget _buildSectionGrid(_OverviewSection section, int columnCount) {
     return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: mobile ? 16 : 20),
       sliver: SliverGrid.builder(
         itemCount: section.items.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: columnCount,
-          mainAxisSpacing: 4,
-          crossAxisSpacing: 8,
-          mainAxisExtent: 64,
+          mainAxisSpacing: mobile ? 10 : 4,
+          crossAxisSpacing: mobile ? 10 : 8,
+          mainAxisExtent: mobile ? 108 : 64,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return _OverviewTile(item: section.items[index]);
+          return _OverviewTile(
+            item: section.items[index],
+            onTopicSelected: onTopicSelected,
+            mobile: mobile,
+          );
         },
       ),
     );
@@ -142,7 +168,11 @@ class LayoutOverview extends StatelessWidget {
 }
 
 class _OverviewTile extends StatelessWidget {
-  const _OverviewTile({required this.item});
+  const _OverviewTile({
+    required this.item,
+    required this.mobile,
+    this.onTopicSelected,
+  });
 
   /// 总览条目的统一强调色。
   static const Color _accentColor = Color(0xff1677ff);
@@ -150,8 +180,17 @@ class _OverviewTile extends StatelessWidget {
   /// 当前布局主题。
   final _OverviewItem item;
 
+  /// 当前宿主提供的主题跳转回调。
+  final LayoutTopicSelected? onTopicSelected;
+
+  /// 是否使用移动端知识卡片样式。
+  final bool mobile;
+
   @override
   Widget build(BuildContext context) {
+    if (mobile) {
+      return _buildMobileCard(context);
+    }
     final ColorScheme colors = Theme.of(context).colorScheme;
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Material(
@@ -159,7 +198,7 @@ class _OverviewTile extends StatelessWidget {
       borderRadius: BorderRadius.circular(4),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () => context.go(item.path),
+        onTap: () => _openTopic(context),
         hoverColor: isDark ? const Color(0xff292c31) : const Color(0xfff5f6f8),
         highlightColor:
             isDark ? const Color(0xff30343a) : const Color(0xffeef0f3),
@@ -200,6 +239,78 @@ class _OverviewTile extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildMobileCard(BuildContext context) {
+    final ColorScheme colors = Theme.of(context).colorScheme;
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
+    return Material(
+      color: isDark ? colors.surfaceContainer : const Color(0xfff7f8fa),
+      elevation: 0,
+      borderRadius: BorderRadius.circular(16),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: () => _openTopic(context),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(14, 13, 12, 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Container(
+                    width: 34,
+                    height: 34,
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? colors.surfaceContainerHighest
+                          : Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Icon(item.icon, size: 19, color: _accentColor),
+                  ),
+                  const Spacer(),
+                  Icon(
+                    Icons.arrow_outward_rounded,
+                    size: 16,
+                    color: colors.onSurfaceVariant,
+                  ),
+                ],
+              ),
+              const Spacer(),
+              Text(
+                item.name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                item.localName,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 11,
+                  color: colors.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _openTopic(BuildContext context) {
+    final LayoutTopicSelected? handler = onTopicSelected;
+    if (handler != null) {
+      handler(item.path);
+      return;
+    }
+    context.go(item.path);
   }
 }
 

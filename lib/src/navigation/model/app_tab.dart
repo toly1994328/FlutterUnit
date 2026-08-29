@@ -8,7 +8,6 @@ enum AppTab {
   widgets('/widget', TolyIcon.icon_layout),
   packages('/packages', Icons.batch_prediction_rounded),
   knowledge('/knowledge', TolyIcon.icon_artifact),
-  painter('/painter', TolyIcon.dingzhi1),
   tools('/tools', TolyIcon.icon_fast),
   mine('/account', TolyIcon.yonghu);
 
@@ -16,7 +15,7 @@ enum AppTab {
   final String path;
 
   static List<AppTab> get mobileTabs =>
-      [widgets, painter, knowledge, packages, mine];
+      [widgets, packages, knowledge, tools, mine];
 
   const AppTab(this.path, this.icon);
 
@@ -24,7 +23,6 @@ enum AppTab {
     if (kAppEnv.isDesktopUI) {
       return switch (this) {
         AppTab.widgets => l10n.deskTabWidgets,
-        AppTab.painter => l10n.deskTabPainter,
         AppTab.knowledge => l10n.deskTabKnowledge,
         AppTab.tools => l10n.deskTabTools,
         AppTab.mine => l10n.deskTabMine,
@@ -33,7 +31,6 @@ enum AppTab {
     }
     return switch (this) {
       AppTab.widgets => l10n.mobileTabWidgets,
-      AppTab.painter => l10n.mobileTabPainter,
       AppTab.knowledge => l10n.mobileTabKnowledge,
       AppTab.tools => l10n.mobileTabTools,
       AppTab.mine => l10n.mobileTabMine,

@@ -15,4 +15,13 @@ void main() {
       expect(ToolCategory.values, contains(tool.category));
     }
   });
+
+  test('移动端工具目录屏蔽 IconFont 生成器', () {
+    final List<DeveloperTool> mobileTools = DeveloperTool.values
+        .where((DeveloperTool tool) => tool.supportsMobile)
+        .toList(growable: false);
+
+    expect(mobileTools, isNot(contains(DeveloperTool.iconFont)));
+    expect(mobileTools, contains(DeveloperTool.aesCipher));
+  });
 }

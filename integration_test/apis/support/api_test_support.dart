@@ -120,9 +120,9 @@ final class ApiTestClient {
           BaseOptions(
             baseUrl: baseUrl,
             headers: headers,
-            connectTimeout: const Duration(seconds: 10),
-            sendTimeout: const Duration(seconds: 10),
-            receiveTimeout: const Duration(seconds: 10),
+            connectTimeout: const Duration(seconds: 30),
+            sendTimeout: const Duration(seconds: 30),
+            receiveTimeout: const Duration(seconds: 30),
             validateStatus: (int? status) => status != null,
           ),
         );

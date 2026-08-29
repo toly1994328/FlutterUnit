@@ -120,6 +120,8 @@ class ImageRender extends StatelessWidget {
       height: height,
       fit: fit,
       alignment: alignment,
+      fadeInDuration: Duration.zero,
+      fadeOutDuration: Duration.zero,
       memCacheWidth: cacheWidth,
       memCacheHeight: cacheHeight,
       placeholder: _buildPlaceholder,

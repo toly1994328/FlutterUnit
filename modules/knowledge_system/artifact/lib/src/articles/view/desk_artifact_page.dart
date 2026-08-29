@@ -14,7 +14,10 @@ import 'building/building_panel.dart';
 import 'package:l10n/l10n.dart';
 
 class DeskKnowledgePage extends StatefulWidget {
-  const DeskKnowledgePage({super.key});
+  /// 绘制集录页面，由应用组装层注入。
+  final Widget drawingPage;
+
+  const DeskKnowledgePage({super.key, required this.drawingPage});
 
   @override
   State<DeskKnowledgePage> createState() => _DeskKnowledgePageState();
@@ -29,7 +32,7 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 3, vsync: this);
+    controller = TabController(length: 4, vsync: this);
     controller.addListener(_listen);
     data = List.generate(5, (index) => 'Init $index');
   }
@@ -59,6 +62,7 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>
               },
               tabs: [
                 l10n.knowledgeTabLayout,
+                l10n.paintCollection,
                 l10n.knowledgeTabAlgo,
                 l10n.knowledgeTabToly,
               ],
@@ -68,6 +72,7 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>
               controller: controller,
               children: [
                 LayoutRouterPage(),
+                widget.drawingPage,
                 AlgoRouterPage(),
                 TolyArticlesPage(),
               ],

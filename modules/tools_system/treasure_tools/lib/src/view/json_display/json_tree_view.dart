@@ -27,22 +27,33 @@ class _JsonTreeViewState extends State<JsonTreeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      controller: _verticalController,
-      child: SingleChildScrollView(
-        controller: _verticalController,
-        primary: false,
-        padding: const EdgeInsets.all(12),
-        child: Scrollbar(
-          controller: _horizontalController,
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final double contentWidth =
+            constraints.maxWidth > 24 ? constraints.maxWidth - 24 : 0;
+        return Scrollbar(
+          controller: _verticalController,
           child: SingleChildScrollView(
-            controller: _horizontalController,
+            controller: _verticalController,
             primary: false,
-            scrollDirection: Axis.horizontal,
-            child: _JsonNode(value: widget.data, depth: 0, isLast: true),
+            padding: const EdgeInsets.all(12),
+            child: Scrollbar(
+              controller: _horizontalController,
+              child: SingleChildScrollView(
+                controller: _horizontalController,
+                primary: false,
+                scrollDirection: Axis.horizontal,
+                child: _JsonNode(
+                  value: widget.data,
+                  depth: 0,
+                  isLast: true,
+                  minimumWidth: contentWidth,
+                ),
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
@@ -53,6 +64,7 @@ class _JsonNode extends StatefulWidget {
     required this.depth,
     required this.isLast,
     this.name,
+    this.minimumWidth,
   });
 
   /// 节点名称。
@@ -66,6 +78,9 @@ class _JsonNode extends StatefulWidget {
 
   /// 是否为父节点的最后一个子节点。
   final bool isLast;
+
+  /// 根节点需要占据的最小可视宽度。
+  final double? minimumWidth;
 
   @override
   State<_JsonNode> createState() => _JsonNodeState();
@@ -86,15 +101,18 @@ class _JsonNodeState extends State<_JsonNode> {
   }
 
   Widget _buildLeaf(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3),
-      child: Row(
-        children: <Widget>[
-          const SizedBox(width: 26),
-          if (widget.name != null) _KeyLabel(name: widget.name!),
-          _ValueLabel(value: widget.value),
-          if (!widget.isLast) const _PunctuationLabel(','),
-        ],
+    return ConstrainedBox(
+      constraints: BoxConstraints(minWidth: widget.minimumWidth ?? 0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 3),
+        child: Row(
+          children: <Widget>[
+            const SizedBox(width: 26),
+            if (widget.name != null) _KeyLabel(name: widget.name!),
+            _ValueLabel(value: widget.value),
+            if (!widget.isLast) const _PunctuationLabel(','),
+          ],
+        ),
       ),
     );
   }
@@ -108,38 +126,41 @@ class _JsonNodeState extends State<_JsonNode> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        InkWell(
-          borderRadius: BorderRadius.circular(6),
-          onTap: () => setState(() => _isExpanded = !_isExpanded),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 3),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  _isExpanded
-                      ? Icons.expand_more_rounded
-                      : Icons.chevron_right_rounded,
-                  size: 20,
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                ),
-                const SizedBox(width: 6),
-                if (widget.name != null) _KeyLabel(name: widget.name!),
-                _PunctuationLabel(opening),
-                const SizedBox(width: 8),
-                Text(
-                  '${entries.length} 项',
-                  style: TextStyle(
-                    fontFamily: 'monospace',
-                    fontSize: 10,
+        ConstrainedBox(
+          constraints: BoxConstraints(minWidth: widget.minimumWidth ?? 0),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(6),
+            onTap: () => setState(() => _isExpanded = !_isExpanded),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 3),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    _isExpanded
+                        ? Icons.expand_more_rounded
+                        : Icons.chevron_right_rounded,
+                    size: 20,
                     color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
-                ),
-                if (!_isExpanded) ...<Widget>[
+                  const SizedBox(width: 6),
+                  if (widget.name != null) _KeyLabel(name: widget.name!),
+                  _PunctuationLabel(opening),
                   const SizedBox(width: 8),
-                  _PunctuationLabel(closing),
-                  if (!widget.isLast) const _PunctuationLabel(','),
+                  Text(
+                    '${entries.length} 项',
+                    style: TextStyle(
+                      fontFamily: 'monospace',
+                      fontSize: 10,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  if (!_isExpanded) ...<Widget>[
+                    const SizedBox(width: 8),
+                    _PunctuationLabel(closing),
+                    if (!widget.isLast) const _PunctuationLabel(','),
+                  ],
                 ],
-              ],
+              ),
             ),
           ),
         ),

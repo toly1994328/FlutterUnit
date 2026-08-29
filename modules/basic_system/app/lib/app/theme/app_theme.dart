@@ -1,6 +1,16 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tolyui_message/tolyui_message.dart';
+
+/// 全局消息展示参数：移动端从底部出现，桌面端保持顶部出现。
+TolyMessageShowTheme get messageShowTheme => TolyMessageShowTheme(
+      duration: const Duration(seconds: 3),
+      animaDuration: const Duration(milliseconds: 250),
+      messagePosition: kIsDesk ? MessagePosition.top : MessagePosition.bottom,
+      offset: const Offset(0, 16),
+      gap: 12,
+    );
 
 ThemeData darkTheme(AppConfig state) {
   const Color scaffoldBackgroundColor = Color(0xff010201);
@@ -12,6 +22,7 @@ ThemeData darkTheme(AppConfig state) {
       systemNavigationBarColor: Color(0xff181818));
 
   return ThemeData(
+    extensions: [messageShowTheme],
     scaffoldBackgroundColor: scaffoldBackgroundColor,
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.android: SlidePageTransitionsBuilder(),
@@ -79,6 +90,7 @@ ThemeData lightTheme(AppConfig state) {
   }
 
   return ThemeData(
+    extensions: [messageShowTheme],
     fontFamily: '',
     primaryColor: state.themeColor.color,
     scaffoldBackgroundColor: const Color(0xffF3F4F6),

@@ -51,18 +51,24 @@ class ToolSectionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 8, 10, 4),
+      padding: const EdgeInsets.fromLTRB(8, 6, 8, 3),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 5),
             child: Row(
               children: [
-                Icon(icon, size: 18, color: iconColor),
-                const SizedBox(width: 8),
-                Text(title,
-                    style: const TextStyle(fontWeight: FontWeight.w700)),
+                Icon(icon, size: 14, color: iconColor),
+                const SizedBox(width: 6),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
               ],
             ),
           ),
@@ -128,20 +134,40 @@ class ToolCategorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ExpansionTile(
-      initiallyExpanded: tools.contains(selectedTool),
-      tilePadding: const EdgeInsets.symmetric(horizontal: 18),
-      childrenPadding: const EdgeInsets.symmetric(horizontal: 10),
-      leading: Icon(category.icon, size: 18),
-      title: Text(category.label, style: const TextStyle(fontSize: 13)),
-      trailing: Text(
-        '${tools.length}',
-        style: TextStyle(
-          fontSize: 11,
-          color: Theme.of(context).colorScheme.onSurfaceVariant,
-        ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 3, 8, 4),
+      child: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 28,
+            child: Row(
+              children: <Widget>[
+                const SizedBox(width: 6),
+                Icon(category.icon, size: 14),
+                const SizedBox(width: 7),
+                Expanded(
+                  child: Text(
+                    category.label,
+                    style: const TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                Text(
+                  '${tools.length}',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(width: 6),
+              ],
+            ),
+          ),
+          ...tools.map(_buildToolTile),
+        ],
       ),
-      children: tools.map(_buildToolTile).toList(growable: false),
     );
   }
 
@@ -185,59 +211,73 @@ class ToolDirectoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color primaryColor = Theme.of(context).primaryColor;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Material(
-        color: selected
-            ? primaryColor.withValues(alpha: 0.11)
-            : Colors.transparent,
-        borderRadius: BorderRadius.circular(7),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(7),
-          onTap: () => onSelected(tool),
-          child: SizedBox(
-            height: 42,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10, right: 2),
-              child: Row(
-                children: [
-                  Icon(
-                    tool.icon,
-                    size: 18,
-                    color: selected ? primaryColor : null,
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color accentColor =
+        isDark ? const Color(0xff69a7ff) : const Color(0xff2468b4);
+    final Color normalTextColor = Theme.of(context).colorScheme.onSurface;
+    final Color background = selected
+        ? isDark
+            ? const Color(0xff243142)
+            : const Color(0xffeef4fb)
+        : Colors.transparent;
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => onSelected(tool),
+        child: Container(
+          height: 32,
+          decoration: BoxDecoration(
+            color: background,
+            border: selected
+                ? Border(left: BorderSide(color: accentColor, width: 2))
+                : null,
+          ),
+          padding: EdgeInsets.only(left: selected ? 8 : 10, right: 4),
+          child: Row(
+            children: <Widget>[
+              Icon(
+                tool.icon,
+                size: 15,
+                color: selected ? accentColor : normalTextColor,
+              ),
+              const SizedBox(width: 7),
+              Expanded(
+                child: Text(
+                  tool.label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+                    color: normalTextColor,
                   ),
-                  const SizedBox(width: 9),
-                  Expanded(
-                    child: Text(
-                      tool.label,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight:
-                            selected ? FontWeight.w600 : FontWeight.w400,
-                        color: selected ? primaryColor : null,
+                ),
+              ),
+              Tooltip(
+                message: favorite ? '取消收藏' : '收藏工具',
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () => onFavoriteChanged(tool),
+                    child: SizedBox(
+                      width: 24,
+                      height: 28,
+                      child: Icon(
+                        favorite
+                            ? Icons.push_pin_rounded
+                            : Icons.push_pin_outlined,
+                        size: 14,
+                        color: favorite
+                            ? accentColor
+                            : Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ),
-                  IconButton(
-                    tooltip: favorite ? '取消收藏' : '收藏工具',
-                    onPressed: () => onFavoriteChanged(tool),
-                    visualDensity: VisualDensity.compact,
-                    icon: Icon(
-                      favorite
-                          ? Icons.push_pin_rounded
-                          : Icons.push_pin_outlined,
-                      size: 16,
-                      color: favorite
-                          ? primaryColor
-                          : Theme.of(context).colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),
@@ -256,9 +296,10 @@ class ToolDirectoryLabel extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(18, 10, 18, 6),
       child: Row(
         children: [
-          Icon(Icons.tune_rounded, size: 18),
-          SizedBox(width: 8),
-          Text('分类', style: TextStyle(fontWeight: FontWeight.w700)),
+          Icon(Icons.tune_rounded, size: 14),
+          SizedBox(width: 6),
+          Text('工具目录',
+              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600)),
         ],
       ),
     );

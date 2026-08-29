@@ -16,7 +16,10 @@ import '../gallery_factory.dart';
 /// 说明:
 
 class DeskGalleryUnit extends StatefulWidget {
-  const DeskGalleryUnit({Key? key}) : super(key: key);
+  /// 是否作为知识集锦的内嵌页面展示。
+  final bool embedded;
+
+  const DeskGalleryUnit({super.key, this.embedded = false});
 
   @override
   _DeskGalleryUnitState createState() => _DeskGalleryUnitState();
@@ -35,7 +38,7 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
 
   Color get color => Colors.blue;
 
-  Color get nextColor =>Colors.orangeAccent;
+  Color get nextColor => Colors.orangeAccent;
 
   BoxDecoration get boxDecoration => const BoxDecoration(
         color: Colors.white,
@@ -47,6 +50,12 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.embedded) {
+      return ColoredBox(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        child: _buildContent(),
+      );
+    }
     return Scaffold(
       body: Column(
         children: [
@@ -66,7 +75,8 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
     final List<Widget> widgets =
         (json.decode(StrUnit.galleryDesc(context)) as List).map((e) {
       GalleryInfo info = GalleryInfo.fromJson(e);
-      List<Widget> children = GalleryFactory.getGalleryByName(info.type,context);
+      List<Widget> children =
+          GalleryFactory.getGalleryByName(info.type, context);
 
       return FeedbackWidget(
         a: 0.95,
@@ -85,7 +95,7 @@ class _DeskGalleryUnitState extends State<DeskGalleryUnit> {
     }).toList();
 
     SliverGridDelegate gridDelegate =
-    const SliverGridDelegateWithMaxCrossAxisExtent(
+        const SliverGridDelegateWithMaxCrossAxisExtent(
       maxCrossAxisExtent: 320,
       mainAxisSpacing: 8,
       mainAxisExtent: 340,

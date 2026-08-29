@@ -140,32 +140,46 @@ class _JsonAnalysisToolState extends State<JsonAnalysisTool> {
   }
 
   Widget _buildWorkspace(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: _EditorPanel(
-            controller: _controller,
-            characterCount: _characterCount,
-            onChanged: _parseJson,
-            onFormat: _formatJson,
-            onCompact: _compactJson,
-            onCopy: _copyJson,
-            onClear: _clearJson,
-          ),
-        ),
-        VerticalDivider(
-          width: 1,
-          thickness: 1,
-          color: Theme.of(context).colorScheme.outlineVariant,
-        ),
-        Expanded(
-          child: _PreviewPanel(
-            data: _parsedData,
-            hasData: _hasParsedData,
-            errorMessage: _errorMessage,
-          ),
-        ),
-      ],
+    final Widget editor = _EditorPanel(
+      controller: _controller,
+      characterCount: _characterCount,
+      onChanged: _parseJson,
+      onFormat: _formatJson,
+      onCompact: _compactJson,
+      onCopy: _copyJson,
+      onClear: _clearJson,
+    );
+    final Widget preview = _PreviewPanel(
+      data: _parsedData,
+      hasData: _hasParsedData,
+      errorMessage: _errorMessage,
+    );
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth < 720) {
+          return Column(
+            children: <Widget>[
+              Expanded(child: editor),
+              Divider(
+                height: 1,
+                color: Theme.of(context).colorScheme.outlineVariant,
+              ),
+              Expanded(child: preview),
+            ],
+          );
+        }
+        return Row(
+          children: <Widget>[
+            Expanded(child: editor),
+            VerticalDivider(
+              width: 1,
+              thickness: 1,
+              color: Theme.of(context).colorScheme.outlineVariant,
+            ),
+            Expanded(child: preview),
+          ],
+        );
+      },
     );
   }
 }

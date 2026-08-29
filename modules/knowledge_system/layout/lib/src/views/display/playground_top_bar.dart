@@ -8,7 +8,10 @@ import '../../bloc/display_state.dart';
 import '../../data/model/display_frame.dart';
 
 class PlaygroundTopBar extends StatelessWidget {
-  const PlaygroundTopBar({super.key});
+  /// 是否使用移动端紧凑控制栏。
+  final bool mobile;
+
+  const PlaygroundTopBar({super.key, this.mobile = false});
 
   /// GitHub 仓库源码基础地址。
   static const String _repositorySourceUrl =
@@ -18,6 +21,9 @@ class PlaygroundTopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     DisplayState state = DisplayScope.of(context).state;
     DisplayFrame frame = state.frame;
+    if (mobile) {
+      return _buildMobileBar(context, state, frame);
+    }
     const ActionStyle style =
         ActionStyle.light(backgroundColor: Color(0xffd5d5d5));
     return Container(
@@ -60,6 +66,53 @@ class PlaygroundTopBar extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildMobileBar(
+    BuildContext context,
+    DisplayState state,
+    DisplayFrame frame,
+  ) {
+    final DisplayLogic logic = DisplayScope.of(context);
+    return Container(
+      height: 48,
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      color: Theme.of(context).colorScheme.surface,
+      child: Row(
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surfaceContainerLow,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Text(
+              '${state.activeIndex + 1} / ${state.total}',
+              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+            ),
+          ),
+          const Spacer(),
+          IconButton(
+            tooltip: '上一个案例',
+            visualDensity: VisualDensity.compact,
+            onPressed: logic.enablePrev ? logic.prevPage : null,
+            icon: const Icon(Icons.chevron_left_rounded),
+          ),
+          IconButton(
+            tooltip: '下一个案例',
+            visualDensity: VisualDensity.compact,
+            onPressed: logic.enableNext ? logic.nextPage : null,
+            icon: const Icon(Icons.chevron_right_rounded),
+          ),
+          IconButton(
+            tooltip: '查看源码',
+            visualDensity: VisualDensity.compact,
+            onPressed: () => _openSource(context, frame),
+            icon: const Icon(Icons.code_rounded, size: 21),
+          ),
+        ],
       ),
     );
   }
