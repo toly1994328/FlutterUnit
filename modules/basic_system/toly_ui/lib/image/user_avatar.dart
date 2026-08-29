@@ -14,6 +14,8 @@ class UserAvatar extends StatelessWidget {
     this.cornerRadius,
     this.showBorder = false,
     this.borderWidth = 2,
+    this.borderColor,
+    this.showShadow = true,
   });
 
   /// 用于无图占位的公开显示名称。
@@ -36,6 +38,12 @@ class UserAvatar extends StatelessWidget {
 
   /// 头像边框宽度。
   final double borderWidth;
+
+  /// 头像边框颜色；为空时跟随当前主题。
+  final Color? borderColor;
+
+  /// 是否显示头像阴影。
+  final bool showShadow;
 
   @override
   Widget build(BuildContext context) {
@@ -102,21 +110,24 @@ class UserAvatar extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.2)
-              : theme.colorScheme.primary.withValues(alpha: 0.15),
+          color: borderColor ??
+              (isDark
+                  ? Colors.white.withValues(alpha: 0.2)
+                  : theme.colorScheme.primary.withValues(alpha: 0.15)),
           width: borderWidth,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.5)
-                : theme.colorScheme.primary.withValues(alpha: 0.18),
-            blurRadius: 12,
-            spreadRadius: 1,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        boxShadow: showShadow
+            ? <BoxShadow>[
+                BoxShadow(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.5)
+                      : theme.colorScheme.primary.withValues(alpha: 0.18),
+                  blurRadius: 12,
+                  spreadRadius: 1,
+                  offset: const Offset(0, 3),
+                ),
+              ]
+            : null,
       ),
       child: avatar,
     );

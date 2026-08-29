@@ -11,6 +11,8 @@ class SessionUserAvatar extends StatelessWidget {
     required this.size,
     this.guestSource = 'assets/images/guest_avatar.webp',
     this.showBorder = false,
+    this.borderColor,
+    this.showShadow = true,
     this.cornerRadius,
   });
 
@@ -22,6 +24,12 @@ class SessionUserAvatar extends StatelessWidget {
 
   /// 是否显示与 ViewX 一致的头像边框和阴影。
   final bool showBorder;
+
+  /// 自定义头像边框颜色。
+  final Color? borderColor;
+
+  /// 是否显示头像阴影。
+  final bool showShadow;
 
   /// 头像圆角，为空时保持圆形。
   final double? cornerRadius;
@@ -43,6 +51,8 @@ class SessionUserAvatar extends StatelessWidget {
         radius: size / 2,
         cornerRadius: cornerRadius,
         showBorder: showBorder,
+        borderColor: borderColor,
+        showShadow: showShadow,
       );
     }
     return UserAvatar(
@@ -51,6 +61,8 @@ class SessionUserAvatar extends StatelessWidget {
       radius: size / 2,
       cornerRadius: cornerRadius,
       showBorder: showBorder,
+      borderColor: borderColor,
+      showShadow: showShadow,
     );
   }
 

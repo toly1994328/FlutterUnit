@@ -8,14 +8,13 @@ import 'package:fx_user_session/fx_user_session.dart';
 import 'package:toly_ui/toly_ui.dart';
 
 import '../../../authentication.dart';
-import 'page_item.dart';
 
 /// create by 张风捷特烈 on 2020/4/26
 /// contact me by email 1981462002@qq.com
 /// 说明:
 
 class UserPage extends StatelessWidget {
-  const UserPage({Key? key}) : super(key: key);
+  const UserPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +42,7 @@ class UserPage extends StatelessWidget {
                 child: Container(
                     padding: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.5),
+                        color: Colors.black.withValues(alpha: 0.5),
                         borderRadius: BorderRadius.circular(4)),
                     child: const Icon(
                       Icons.color_lens_outlined,
@@ -54,20 +53,34 @@ class UserPage extends StatelessWidget {
               Positioned(
                 bottom: 0,
                 left: 40,
-                child: FeedbackWidget(
-                  onPressed: () => _openAccountEntry(context),
-                  child: const SessionUserAvatar(
-                    size: 80,
-                    showBorder: true,
-                  ),
+                right: 20,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    FeedbackWidget(
+                      onPressed: () => _openAccountEntry(context),
+                      child: const SessionUserAvatar(
+                        size: 80,
+                        showBorder: true,
+                        borderColor: Colors.white,
+                        showShadow: false,
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 6),
+                        child: FeedbackWidget(
+                          onPressed: () => _openAccountEntry(context),
+                          child: BlocBuilder<FxUserSessionCubit, FxUserSession>(
+                            builder: _buildByState,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Positioned(
-                  bottom: 5,
-                  right: 30,
-                  child: BlocBuilder<FxUserSessionCubit, FxUserSession>(
-                    builder: _buildByState,
-                  ))
             ],
           ),
           const Expanded(child: MePageItem())
@@ -80,11 +93,13 @@ class UserPage extends StatelessWidget {
     if (state is FxAuthed) {
       return Text(
         state.user.displayName ?? state.user.id,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
         style: TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
       );
     }
     return Text(
-      '张风捷特烈',
+      '登录/注册',
       style: TextStyle(
           fontSize: 18,
           color: Theme.of(context).primaryColor,
@@ -95,7 +110,9 @@ class UserPage extends StatelessWidget {
   void _openAccountEntry(BuildContext context) {
     final FxUserSession state = context.read<FxUserSessionCubit>().state;
     if (state is FxAuthed) {
-      Navigator.of(context).push(SlidePageRoute(child: UserAccountPage()));
+      Navigator.of(context).push(
+        SlidePageRoute(child: const UserAccountPage()),
+      );
       return;
     }
     context.push(AppRoute.login.url);

@@ -7,6 +7,7 @@ import 'package:fx_user_session/fx_user_session.dart';
 import 'package:unit_env/unit_env.dart';
 
 import 'session_store.dart';
+import 'storage_avatar_upload_task.dart';
 
 /// FlutterUnit 用户公开身份投影。
 final class FlutterUnitIdentity implements FxIdentity {
@@ -20,17 +21,17 @@ final class FlutterUnitIdentity implements FxIdentity {
   final Uri? avatar;
 
   /// 用户资料扩展字段。
-  final Map<String, dynamic> profile;
+  final Map<Object, Object?> fields;
 
   const FlutterUnitIdentity({
     required this.id,
     required this.displayName,
     required this.avatar,
-    required this.profile,
+    required this.fields,
   });
 
   @override
-  T? read<T>(FxIdentityField<T> field) => profile[field.name] as T?;
+  T? read<T>(FxIdentityField<T> field) => fields[field] as T?;
 }
 
 /// 将 FrameworkX 用户模型投影为 FlutterUnit 可公开消费的身份。
@@ -42,7 +43,9 @@ final class FlutterUnitIdentityCodec implements FxIdentityCodec<FxUser> {
         id: user.id,
         displayName: user.displayName,
         avatar: user.avatar,
-        profile: user.profile,
+        fields: <Object, Object?>{
+          FxIdentityFields.signature: user.profile['signature'],
+        },
       );
 }
 
@@ -55,6 +58,7 @@ abstract final class FlutterUnitUserRuntime {
       credentialStore: FlutterUnitCredentialStore(),
       snapshotStore: FlutterUnitUserSnapshotStore(),
       identityCodec: const FlutterUnitIdentityCodec(),
+      avatarUploadTask: FlutterUnitStorageAvatarUploadTask(host),
       onCredentialChanged: _onCredentialChanged,
     );
     FxDio()[host].interceptors.add(

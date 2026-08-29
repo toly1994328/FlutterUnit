@@ -25,11 +25,16 @@ class FlutterUnitHost extends RequestHost<HostEnv> {
   /// 服务端口，由客户端环境文件注入。
   static const int _port = int.fromEnvironment(
     'SERVER_PORT',
-    defaultValue: 9602,
+    defaultValue: 0,
+  );
+
+  static const String _apiNest = String.fromEnvironment(
+    'API_NEST',
+    defaultValue: '',
   );
 
   /// 当前客户端唯一使用的服务地址。
-  static Uri get serverUri => Uri(scheme: _scheme, host: _host, port: _port);
+  static Uri get serverUri => Uri(scheme: _scheme, host: _host, port: _port==0?null:_port);
 
   /// 将服务端相对资源路径补全为可访问 URI，完整网络地址保持不变。
   static Uri resolveResource(String location) {
@@ -40,7 +45,7 @@ class FlutterUnitHost extends RequestHost<HostEnv> {
     final String path =
         resource.path.startsWith('/') ? resource.path : '/${resource.path}';
     return serverUri.replace(
-      path: path,
+      path: _apiNest+path,
       queryParameters:
           resource.queryParameters.isEmpty ? null : resource.queryParameters,
       fragment: resource.fragment.isEmpty ? null : resource.fragment,
@@ -87,7 +92,8 @@ class FlutterUnitHost extends RequestHost<HostEnv> {
   @override
   HostConfig get config => const HostConfig(
         scheme: _scheme,
-        port: _port,
+        port: _port == 0 ? null : _port,
+        apiNest: _apiNest,
       );
 
   @override
