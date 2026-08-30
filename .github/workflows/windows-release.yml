@@ -105,6 +105,23 @@ jobs:
             throw "Inno Setup compiler was not installed: $iscc"
           }
 
+          $translationDirectory = Join-Path `
+            $env:GITHUB_WORKSPACE `
+            "windows\installer\languages"
+          $translationFile = Join-Path `
+            $translationDirectory `
+            "ChineseSimplified.isl"
+          $translationUrl = `
+            "https://raw.githubusercontent.com/kira-96/Inno-Setup-Chinese-Simplified-Translation/1ff90acc4ed4aee82b1cda43253243deee3daed4/ChineseSimplified.isl"
+          New-Item `
+            -ItemType Directory `
+            -Force `
+            -Path $translationDirectory | Out-Null
+          Invoke-WebRequest -Uri $translationUrl -OutFile $translationFile
+          if (-not (Test-Path $translationFile)) {
+            throw "Chinese Inno Setup translation was not downloaded."
+          }
+
       - name: Build Windows installer
         id: installer
         shell: pwsh
@@ -113,6 +130,9 @@ jobs:
           & $iscc `
             "/DVersion=${{ steps.package.outputs.version }}" `
             "windows\installer\flutter_unit.iss"
+          if ($LASTEXITCODE -ne 0) {
+            throw "Inno Setup compilation failed with exit code $LASTEXITCODE."
+          }
 
           $installer = Join-Path `
             $env:GITHUB_WORKSPACE `
