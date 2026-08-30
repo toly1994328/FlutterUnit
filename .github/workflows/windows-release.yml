@@ -2,9 +2,12 @@ name: Build Windows Release
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - "v*"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-windows:
@@ -65,7 +68,7 @@ jobs:
             --split-debug-info="$debugInfoDirectory" `
             --dart-define-from-file="$environmentFile"
 
-      - name: Package artifacts
+      - name: Read release metadata
         id: package
         shell: pwsh
         run: |
@@ -75,25 +78,55 @@ jobs:
           }
 
           $version = $versionLine.Matches[0].Groups[1].Value.Trim()
-          $artifactBaseName = "flutter-unit-windows-x64-$version"
-          $releaseDirectory = Join-Path $env:GITHUB_WORKSPACE "build\windows\x64\runner\Release"
-          $packageDirectory = Join-Path $env:RUNNER_TEMP $artifactBaseName
-          $archivePath = Join-Path $env:RUNNER_TEMP "$artifactBaseName.zip"
+          if ($env:GITHUB_REF_TYPE -eq "tag") {
+            $expectedTag = "v$version"
+            if ($env:GITHUB_REF_NAME -ne $expectedTag) {
+              throw "Tag $env:GITHUB_REF_NAME does not match pubspec version $expectedTag."
+            }
+          }
 
+          $artifactBaseName = "FlutterUnit-$version-windows-x64-setup"
+          $releaseDirectory = Join-Path $env:GITHUB_WORKSPACE "build\windows\x64\runner\Release"
           if (-not (Test-Path $releaseDirectory)) {
             throw "Windows release directory was not generated: $releaseDirectory"
           }
 
-          Copy-Item -Path $releaseDirectory -Destination $packageDirectory -Recurse
-          Compress-Archive -Path "$packageDirectory\*" -DestinationPath $archivePath
           "artifact_name=$artifactBaseName" >> $env:GITHUB_OUTPUT
-          "archive_path=$archivePath" >> $env:GITHUB_OUTPUT
+          "version=$version" >> $env:GITHUB_OUTPUT
 
-      - name: Upload Windows package
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) {
+            choco install innosetup --no-progress --yes
+          }
+          if (-not (Test-Path $iscc)) {
+            throw "Inno Setup compiler was not installed: $iscc"
+          }
+
+      - name: Build Windows installer
+        id: installer
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          & $iscc `
+            "/DVersion=${{ steps.package.outputs.version }}" `
+            "windows\installer\flutter_unit.iss"
+
+          $installer = Join-Path `
+            $env:GITHUB_WORKSPACE `
+            "build\windows\installer\${{ steps.package.outputs.artifact_name }}.exe"
+          if (-not (Test-Path $installer)) {
+            throw "Windows installer was not generated: $installer"
+          }
+          "installer_path=$installer" >> $env:GITHUB_OUTPUT
+
+      - name: Upload Windows installer
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.package.outputs.artifact_name }}
-          path: ${{ steps.package.outputs.archive_path }}
+          path: ${{ steps.installer.outputs.installer_path }}
           if-no-files-found: error
           retention-days: 14
 
@@ -104,3 +137,10 @@ jobs:
           path: build/windows-symbols/
           if-no-files-found: error
           retention-days: 30
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: ${{ steps.installer.outputs.installer_path }}
