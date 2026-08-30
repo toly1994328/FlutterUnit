@@ -1,0 +1,104 @@
+name: Build Windows Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    name: Build Windows x64
+    runs-on: windows-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.44.0
+          channel: stable
+          cache: true
+
+      - name: Verify Flutter environment
+        shell: pwsh
+        run: flutter doctor -v
+
+      - name: Create release environment
+        shell: pwsh
+        env:
+          FLUTTER_UNIT_CLIENT_RELEASE_ENV: ${{ secrets.FLUTTER_UNIT_CLIENT_RELEASE_ENV }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:FLUTTER_UNIT_CLIENT_RELEASE_ENV)) {
+            throw "GitHub Secret FLUTTER_UNIT_CLIENT_RELEASE_ENV is required."
+          }
+
+          $environmentDirectory = Join-Path $env:GITHUB_WORKSPACE "..\.fx\.env"
+          $environmentFile = Join-Path $environmentDirectory ".client.release"
+          New-Item -ItemType Directory -Force -Path $environmentDirectory | Out-Null
+          [System.IO.File]::WriteAllText(
+            $environmentFile,
+            $env:FLUTTER_UNIT_CLIENT_RELEASE_ENV,
+            [System.Text.UTF8Encoding]::new($false)
+          )
+
+      - name: Resolve dependencies
+        shell: pwsh
+        run: |
+          flutter clean
+          flutter config --enable-windows-desktop
+          flutter pub get
+
+      - name: Build Windows release
+        shell: pwsh
+        run: |
+          $environmentFile = Join-Path $env:GITHUB_WORKSPACE "..\.fx\.env\.client.release"
+          $debugInfoDirectory = Join-Path $env:GITHUB_WORKSPACE "build\windows-symbols"
+          flutter build windows `
+            --release `
+            --obfuscate `
+            --split-debug-info="$debugInfoDirectory" `
+            --dart-define-from-file="$environmentFile"
+
+      - name: Package artifacts
+        id: package
+        shell: pwsh
+        run: |
+          $versionLine = Select-String -Path "pubspec.yaml" -Pattern "^version:\s*(.+)$"
+          if ($null -eq $versionLine) {
+            throw "Unable to read version from pubspec.yaml."
+          }
+
+          $version = $versionLine.Matches[0].Groups[1].Value.Trim()
+          $artifactBaseName = "flutter-unit-windows-x64-$version"
+          $releaseDirectory = Join-Path $env:GITHUB_WORKSPACE "build\windows\x64\runner\Release"
+          $packageDirectory = Join-Path $env:RUNNER_TEMP $artifactBaseName
+          $archivePath = Join-Path $env:RUNNER_TEMP "$artifactBaseName.zip"
+
+          if (-not (Test-Path $releaseDirectory)) {
+            throw "Windows release directory was not generated: $releaseDirectory"
+          }
+
+          Copy-Item -Path $releaseDirectory -Destination $packageDirectory -Recurse
+          Compress-Archive -Path "$packageDirectory\*" -DestinationPath $archivePath
+          "artifact_name=$artifactBaseName" >> $env:GITHUB_OUTPUT
+          "archive_path=$archivePath" >> $env:GITHUB_OUTPUT
+
+      - name: Upload Windows package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.package.outputs.artifact_name }}
+          path: ${{ steps.package.outputs.archive_path }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload obfuscation symbols
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.package.outputs.artifact_name }}-symbols
+          path: build/windows-symbols/
+          if-no-files-found: error
+          retention-days: 30
