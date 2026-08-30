@@ -10,8 +10,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  fx_ability:
-    path: ../../../../../FrameworkX/client/packages/foundation/fx_ability
+  fx_ability: 0.1.0
 
 
 
