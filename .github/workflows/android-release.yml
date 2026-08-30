@@ -1,0 +1,199 @@
+name: Build Android Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-android:
+    name: Build Android APK and AAB
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.44.0
+          channel: stable
+          cache: true
+
+      - name: Verify build environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter doctor -v
+          java -version
+
+      - name: Create release environment
+        shell: bash
+        env:
+          FLUTTER_UNIT_CLIENT_RELEASE_ENV: ${{ secrets.FLUTTER_UNIT_CLIENT_RELEASE_ENV }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" ]]; then
+            echo "GitHub Secret FLUTTER_UNIT_CLIENT_RELEASE_ENV is required." >&2
+            exit 1
+          fi
+          environment_directory="$GITHUB_WORKSPACE/../.fx/.env"
+          environment_file="$environment_directory/.client.release"
+          mkdir -p "$environment_directory"
+          printf '%s' "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" > "$environment_file"
+          chmod 600 "$environment_file"
+          echo "release_env_path=$environment_file" >> "$GITHUB_ENV"
+
+      - name: Create Android signing files
+        shell: bash
+        env:
+          KEYSTORE_BASE64: ${{ secrets.FLUTTER_UNIT_ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.FLUTTER_UNIT_ANDROID_STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.FLUTTER_UNIT_ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.FLUTTER_UNIT_ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$KEYSTORE_BASE64" || -z "$STORE_PASSWORD" || -z "$KEY_ALIAS" || -z "$KEY_PASSWORD" ]]; then
+            echo "All Android signing Secrets are required." >&2
+            exit 1
+          fi
+
+          keystore_path="$GITHUB_WORKSPACE/android/toly.jks"
+          properties_path="$GITHUB_WORKSPACE/android/key.properties"
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > "$keystore_path"
+          chmod 600 "$keystore_path"
+          {
+            printf 'storePassword=%s\n' "$STORE_PASSWORD"
+            printf 'keyPassword=%s\n' "$KEY_PASSWORD"
+            printf 'keyAlias=%s\n' "$KEY_ALIAS"
+            printf 'storeFile=../toly.jks\n'
+          } > "$properties_path"
+          chmod 600 "$properties_path"
+          keytool -list -keystore "$keystore_path" -storepass "$STORE_PASSWORD" -alias "$KEY_ALIAS" >/dev/null
+          echo "android_keystore_path=$keystore_path" >> "$GITHUB_ENV"
+          echo "android_properties_path=$properties_path" >> "$GITHUB_ENV"
+
+      - name: Validate release metadata
+        id: metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(sed -nE 's/^version:[[:space:]]*([^[:space:]]+).*/\1/p' pubspec.yaml | head -n 1)"
+          if [[ -z "$version" ]]; then
+            echo "Unable to read version from pubspec.yaml." >&2
+            exit 1
+          fi
+          if [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v$version" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match pubspec version v$version." >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=FlutterUnit-$version" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter clean
+          flutter pub get
+
+      - name: Build China APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter build apk \
+            --release \
+            --flavor=china \
+            --target-platform=android-arm64 \
+            --split-per-abi \
+            --obfuscate \
+            --split-debug-info="build/android-symbols/china/${{ steps.metadata.outputs.version }}" \
+            --dart-define-from-file="$release_env_path" \
+            --dart-define=APP_FLAVOR=china
+
+      - name: Build Google AAB
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter build appbundle \
+            --release \
+            --flavor=google \
+            --obfuscate \
+            --split-debug-info="build/android-symbols/google/${{ steps.metadata.outputs.version }}" \
+            --dart-define-from-file="$release_env_path" \
+            --dart-define=APP_FLAVOR=google
+
+      - name: Package and verify artifacts
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          output_directory="$GITHUB_WORKSPACE/build/distribution/android"
+          apk_source="$GITHUB_WORKSPACE/build/app/outputs/flutter-apk/app-arm64-v8a-china-release.apk"
+          aab_source="$GITHUB_WORKSPACE/build/app/outputs/bundle/googleRelease/app-google-release.aab"
+          apk_output="$output_directory/${{ steps.metadata.outputs.artifact_name }}.apk"
+          aab_output="$output_directory/${{ steps.metadata.outputs.artifact_name }}-google.aab"
+          mkdir -p "$output_directory"
+          test -f "$apk_source"
+          test -f "$aab_source"
+          cp "$apk_source" "$apk_output"
+          cp "$aab_source" "$aab_output"
+
+          build_tools_directory="$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n 1)"
+          "$build_tools_directory/apksigner" verify --verbose --print-certs "$apk_output"
+          jarsigner -verify -strict -certs "$aab_output"
+          echo "apk_path=$apk_output" >> "$GITHUB_OUTPUT"
+          echo "aab_path=$aab_output" >> "$GITHUB_OUTPUT"
+
+      - name: Upload China APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}-android
+          path: ${{ steps.package.outputs.apk_path }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload Google AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}-google
+          path: ${{ steps.package.outputs.aab_path }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload obfuscation symbols
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}-android-symbols
+          path: build/android-symbols/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: ${{ steps.package.outputs.apk_path }}
+
+      - name: Remove temporary signing materials
+        if: always()
+        shell: bash
+        run: |
+          rm -f \
+            "${android_keystore_path:-}" \
+            "${android_properties_path:-}" \
+            "${release_env_path:-}"
