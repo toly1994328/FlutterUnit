@@ -10,10 +10,20 @@ permissions:
   contents: write
 
 jobs:
-  build-android:
-    name: Build Android APK and AAB
+  build-channel:
+    name: Build ${{ matrix.display_name }}
     runs-on: ubuntu-24.04
     timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - flavor: china
+            display_name: China APK
+            artifact_suffix: android
+          - flavor: google
+            display_name: Google AAB
+            artifact_suffix: google
 
     steps:
       - name: Checkout source
@@ -112,6 +122,7 @@ jobs:
           flutter pub get
 
       - name: Build China APK
+        if: matrix.flavor == 'china'
         shell: bash
         run: |
           set -euo pipefail
@@ -126,6 +137,7 @@ jobs:
             --dart-define=APP_FLAVOR=china
 
       - name: Build Google AAB
+        if: matrix.flavor == 'google'
         shell: bash
         run: |
           set -euo pipefail
@@ -137,59 +149,56 @@ jobs:
             --dart-define-from-file="$release_env_path" \
             --dart-define=APP_FLAVOR=google
 
-      - name: Package and verify artifacts
+      - name: Package and verify artifact
         id: package
         shell: bash
+        env:
+          FLAVOR: ${{ matrix.flavor }}
         run: |
           set -euo pipefail
           output_directory="$GITHUB_WORKSPACE/build/distribution/android"
-          apk_source="$GITHUB_WORKSPACE/build/app/outputs/flutter-apk/app-arm64-v8a-china-release.apk"
-          aab_source="$GITHUB_WORKSPACE/build/app/outputs/bundle/googleRelease/app-google-release.aab"
-          apk_output="$output_directory/${{ steps.metadata.outputs.artifact_name }}.apk"
-          aab_output="$output_directory/${{ steps.metadata.outputs.artifact_name }}-google.aab"
           mkdir -p "$output_directory"
-          test -f "$apk_source"
-          test -f "$aab_source"
-          cp "$apk_source" "$apk_output"
-          cp "$aab_source" "$aab_output"
 
-          build_tools_directory="$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n 1)"
-          "$build_tools_directory/apksigner" verify --verbose --print-certs "$apk_output"
-          # Android 发布证书通常是自签名证书；校验包内签名完整性，不要求公共 CA 信任链。
-          jarsigner -verify -certs "$aab_output"
-          echo "apk_path=$apk_output" >> "$GITHUB_OUTPUT"
-          echo "aab_path=$aab_output" >> "$GITHUB_OUTPUT"
+          if [[ "$FLAVOR" == "china" ]]; then
+            source_path="$GITHUB_WORKSPACE/build/app/outputs/flutter-apk/app-arm64-v8a-china-release.apk"
+            output_path="$output_directory/${{ steps.metadata.outputs.artifact_name }}.apk"
+            test -f "$source_path"
+            cp "$source_path" "$output_path"
+            build_tools_directory="$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n 1)"
+            "$build_tools_directory/apksigner" verify --verbose --print-certs "$output_path"
+          else
+            source_path="$GITHUB_WORKSPACE/build/app/outputs/bundle/googleRelease/app-google-release.aab"
+            output_path="$output_directory/${{ steps.metadata.outputs.artifact_name }}-google.aab"
+            test -f "$source_path"
+            cp "$source_path" "$output_path"
+            # Android 发布证书通常是自签名证书；校验包内签名完整性，不要求公共 CA 信任链。
+            jarsigner -verify -certs "$output_path"
+          fi
 
-      - name: Upload China APK
+          echo "package_path=$output_path" >> "$GITHUB_OUTPUT"
+
+      - name: Upload channel package
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.metadata.outputs.artifact_name }}-android
-          path: ${{ steps.package.outputs.apk_path }}
+          name: ${{ steps.metadata.outputs.artifact_name }}-${{ matrix.artifact_suffix }}
+          path: ${{ steps.package.outputs.package_path }}
           if-no-files-found: error
           retention-days: 14
 
-      - name: Upload Google AAB
+      - name: Upload channel symbols
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.metadata.outputs.artifact_name }}-google
-          path: ${{ steps.package.outputs.aab_path }}
-          if-no-files-found: error
-          retention-days: 14
-
-      - name: Upload obfuscation symbols
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ steps.metadata.outputs.artifact_name }}-android-symbols
-          path: build/android-symbols/
+          name: ${{ steps.metadata.outputs.artifact_name }}-${{ matrix.artifact_suffix }}-symbols
+          path: build/android-symbols/${{ matrix.flavor }}/
           if-no-files-found: error
           retention-days: 30
 
-      - name: Publish GitHub release
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Publish China APK to GitHub release
+        if: matrix.flavor == 'china' && startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: ${{ steps.package.outputs.apk_path }}
+          files: ${{ steps.package.outputs.package_path }}
 
       - name: Remove temporary signing materials
         if: always()
