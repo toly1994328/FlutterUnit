@@ -1,0 +1,336 @@
+name: Publish Release to FlutterUnitServer
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag, for example v3.4.2+2014
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: flutter-unit-server-release-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish ${{ inputs.tag }} to FlutterUnitServer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout release tag
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+
+      - name: Validate release metadata
+        id: metadata
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+
+          if [[ ! "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+\+[0-9]+$ ]]; then
+            echo "Release tag must use vX.Y.Z+BUILD format: $RELEASE_TAG" >&2
+            exit 1
+          fi
+
+          full_version="${RELEASE_TAG#v}"
+          release_version="${full_version%%+*}"
+          pubspec_version="$(sed -nE 's/^version:[[:space:]]*([^[:space:]]+).*/\1/p' pubspec.yaml | head -n 1)"
+          if [[ "$pubspec_version" != "$full_version" ]]; then
+            echo "Tag $RELEASE_TAG does not match pubspec version v$pubspec_version." >&2
+            exit 1
+          fi
+
+          notes_path="doc/version/$release_version.md"
+          if [[ ! -s "$notes_path" ]]; then
+            echo "Release notes are missing or empty: $notes_path" >&2
+            exit 1
+          fi
+
+          tag_sha="$(git rev-list -n 1 "$RELEASE_TAG")"
+          if [[ -z "$tag_sha" ]]; then
+            echo "Unable to resolve release tag: $RELEASE_TAG" >&2
+            exit 1
+          fi
+
+          echo "full_version=$full_version" >> "$GITHUB_OUTPUT"
+          echo "release_version=$release_version" >> "$GITHUB_OUTPUT"
+          echo "notes_path=$notes_path" >> "$GITHUB_OUTPUT"
+          echo "tag_sha=$tag_sha" >> "$GITHUB_OUTPUT"
+
+      - name: Validate server publishing Secrets
+        shell: bash
+        env:
+          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
+          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$RELEASE_API_BASE_URL" ]]; then
+            echo "Repository Secret FLUTTER_UNIT_RELEASE_API_BASE_URL is required." >&2
+            exit 1
+          fi
+          if [[ -z "$ADMIN_API_KEY" ]]; then
+            echo "Repository Secret FLUTTER_UNIT_ADMIN_API_KEY is required." >&2
+            exit 1
+          fi
+
+      - name: Locate successful platform builds
+        id: builds
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_SHA: ${{ steps.metadata.outputs.tag_sha }}
+        run: |
+          set -euo pipefail
+
+          find_run() {
+            local workflow=$1
+            local run_id
+            run_id="$(
+              gh api \
+                --method GET \
+                "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/runs" \
+                -f head_sha="$TAG_SHA" \
+                -f event=push \
+                -f status=completed \
+                -f per_page=20 \
+                --jq '[.workflow_runs[] | select(.conclusion == "success")] | sort_by(.run_number) | last | .id // empty'
+            )"
+            if [[ -z "$run_id" ]]; then
+              echo "No successful $workflow run found for commit $TAG_SHA." >&2
+              exit 1
+            fi
+            printf '%s' "$run_id"
+          }
+
+          echo "android_run_id=$(find_run android-release.yml)" >> "$GITHUB_OUTPUT"
+          echo "windows_run_id=$(find_run windows-release.yml)" >> "$GITHUB_OUTPUT"
+          echo "macos_run_id=$(find_run macos-release.yml)" >> "$GITHUB_OUTPUT"
+
+      - name: Download platform artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FULL_VERSION: ${{ steps.metadata.outputs.full_version }}
+          ANDROID_RUN_ID: ${{ steps.builds.outputs.android_run_id }}
+          WINDOWS_RUN_ID: ${{ steps.builds.outputs.windows_run_id }}
+          MACOS_RUN_ID: ${{ steps.builds.outputs.macos_run_id }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/android artifacts/windows artifacts/macos distribution
+
+          gh run download "$ANDROID_RUN_ID" \
+            --name "FlutterUnit-$FULL_VERSION-android" \
+            --dir artifacts/android
+          gh run download "$WINDOWS_RUN_ID" \
+            --name "FlutterUnit-$FULL_VERSION" \
+            --dir artifacts/windows
+          gh run download "$MACOS_RUN_ID" \
+            --name "FlutterUnit-$FULL_VERSION-macOS" \
+            --dir artifacts/macos
+
+          resolve_single_file() {
+            local directory=$1
+            local extension=$2
+            local target=$3
+            mapfile -t matches < <(find "$directory" -type f -iname "*.$extension" -print)
+            if [[ "${#matches[@]}" -ne 1 ]]; then
+              echo "Expected exactly one .$extension file in $directory, found ${#matches[@]}." >&2
+              exit 1
+            fi
+            if [[ ! -s "${matches[0]}" ]]; then
+              echo "Downloaded artifact is empty: ${matches[0]}" >&2
+              exit 1
+            fi
+            cp "${matches[0]}" "$target"
+          }
+
+          resolve_single_file artifacts/android apk distribution/FlutterUnit.apk
+          resolve_single_file artifacts/windows exe distribution/FlutterUnit.exe
+          resolve_single_file artifacts/macos dmg distribution/FlutterUnit.dmg
+
+          sha256sum distribution/FlutterUnit.apk \
+            distribution/FlutterUnit.exe \
+            distribution/FlutterUnit.dmg
+
+      - name: Upload release artifacts
+        id: upload
+        shell: bash
+        env:
+          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
+          RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
+        run: |
+          set -euo pipefail
+          api_base="${RELEASE_API_BASE_URL%/}"
+          mkdir -p "$RUNNER_TEMP/flutter-unit-release-responses"
+
+          upload_artifact() {
+            local platform=$1
+            local file_path=$2
+            local response_path="$RUNNER_TEMP/flutter-unit-release-responses/$platform-upload.json"
+            local sha256
+            sha256="$(sha256sum "$file_path" | awk '{print $1}')"
+
+            echo "Uploading $platform artifact ($(stat -c '%s' "$file_path") bytes)."
+            curl \
+              --fail-with-body \
+              --retry 3 \
+              --retry-all-errors \
+              --connect-timeout 15 \
+              --max-time 900 \
+              --silent \
+              --show-error \
+              -X POST \
+              "$api_base/admin/api/v1/flutter-unit/releases/artifacts?version=$RELEASE_VERSION&platform=$platform&sha256=$sha256" \
+              -H "Authorization: Bearer $ADMIN_API_KEY" \
+              -F "file=@$file_path" \
+              --output "$response_path"
+
+            jq -e \
+              --arg platform "$platform" \
+              --arg version "$RELEASE_VERSION" \
+              --arg sha256 "$sha256" \
+              '.code == "SUCCESS" and .data.platform == $platform and .data.version == $version and .data.sha256 == $sha256' \
+              "$response_path" >/dev/null
+            echo "$platform artifact uploaded and verified."
+          }
+
+          upload_artifact android distribution/FlutterUnit.apk
+          upload_artifact windows distribution/FlutterUnit.exe
+          upload_artifact macos distribution/FlutterUnit.dmg
+
+      - name: Publish version metadata
+        id: publish
+        shell: bash
+        env:
+          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
+          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
+          RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
+          NOTES_PATH: ${{ steps.metadata.outputs.notes_path }}
+        run: |
+          set -euo pipefail
+          api_base="${RELEASE_API_BASE_URL%/}"
+          request_path="$RUNNER_TEMP/flutter-unit-release-request.json"
+          response_path="$RUNNER_TEMP/flutter-unit-release-response.json"
+
+          jq -n \
+            --arg version "$RELEASE_VERSION" \
+            --rawfile description "$NOTES_PATH" \
+            '{version: $version, description: $description}' \
+            > "$request_path"
+
+          curl \
+            --fail-with-body \
+            --retry 3 \
+            --retry-all-errors \
+            --connect-timeout 15 \
+            --max-time 60 \
+            --silent \
+            --show-error \
+            -X POST \
+            "$api_base/admin/api/v1/flutter-unit/releases" \
+            -H "Authorization: Bearer $ADMIN_API_KEY" \
+            -H "Content-Type: application/json" \
+            --data-binary "@$request_path" \
+            --output "$response_path"
+
+          jq -e \
+            --arg version "$RELEASE_VERSION" \
+            '.code == "SUCCESS"
+              and .data.version == $version
+              and ([.data.artifacts[].platform] | sort) == ["android", "macos", "windows"]' \
+            "$response_path" >/dev/null
+
+          jq -r '.data.artifacts[] | "Published \(.platform): \(.download_url) (\(.size_bytes) bytes)"' \
+            "$response_path"
+
+      - name: Verify public artifacts and version records
+        shell: bash
+        env:
+          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
+          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
+          RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
+        run: |
+          set -euo pipefail
+          api_base="${RELEASE_API_BASE_URL%/}"
+          response_path="$RUNNER_TEMP/flutter-unit-release-response.json"
+
+          while IFS=$'\t' read -r platform download_url size_bytes; do
+            if [[ "$download_url" != "$api_base/uploads/"* ]]; then
+              echo "Unexpected $platform download URL: $download_url" >&2
+              exit 1
+            fi
+            headers_path="$RUNNER_TEMP/$platform-artifact-headers.txt"
+            curl \
+              --fail \
+              --silent \
+              --show-error \
+              --location \
+              --head \
+              --connect-timeout 15 \
+              --max-time 30 \
+              --dump-header "$headers_path" \
+              --output /dev/null \
+              "$download_url"
+            public_size="$(awk 'BEGIN {IGNORECASE=1} /^content-length:/ {gsub("\\r", "", $2); value=$2} END {print value}' "$headers_path")"
+            if [[ -z "$public_size" || "$public_size" != "$size_bytes" ]]; then
+              echo "Public $platform artifact size mismatch: expected $size_bytes, got ${public_size:-missing}." >&2
+              exit 1
+            fi
+            echo "Public $platform artifact is reachable ($size_bytes bytes)."
+          done < <(jq -r '.data.artifacts[] | [.platform, .download_url, (.size_bytes | tostring)] | @tsv' "$response_path")
+
+          for platform in android windows macos; do
+            version_response="$(
+              curl \
+                --fail-with-body \
+                --retry 3 \
+                --retry-all-errors \
+                --connect-timeout 15 \
+                --max-time 30 \
+                --silent \
+                --show-error \
+                "$api_base/app_version?app_id=1&os=$platform"
+            )"
+            jq -e \
+              --arg version "$RELEASE_VERSION" \
+              '.code == "SUCCESS" and .data.version == $version' \
+              <<< "$version_response" >/dev/null
+            echo "$platform version record verified: $RELEASE_VERSION."
+          done
+
+          server_version="$(
+            curl \
+              --fail \
+              --silent \
+              --show-error \
+              --connect-timeout 15 \
+              --max-time 30 \
+              "$api_base/v"
+          )"
+          echo "FlutterUnitServer deployment: $(jq -c '.data' <<< "$server_version")"
+
+      - name: Write release summary
+        if: success()
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+          RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
+        run: |
+          {
+            echo "## FlutterUnitServer release published"
+            echo
+            echo "- Tag: \`$RELEASE_TAG\`"
+            echo "- Version: \`$RELEASE_VERSION\`"
+            echo "- Platforms: Android China APK, Windows EXE, macOS notarized DMG"
+            echo "- Google AAB and symbols: not uploaded"
+          } >> "$GITHUB_STEP_SUMMARY"
