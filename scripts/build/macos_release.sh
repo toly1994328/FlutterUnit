@@ -203,8 +203,8 @@ main() {
 
   cd "$PROJECT_ROOT"
   version="$(read_version)"
-  mkdir -p "$OUTPUT_DIR" "$SYMBOLS_ROOT/$version"
   build_app "$version"
+  mkdir -p "$OUTPUT_DIR"
   app_path="$(find_built_app)"
   verify_universal_binary "$app_path"
   sign_app "$app_path"
