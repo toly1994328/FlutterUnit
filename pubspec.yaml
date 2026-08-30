@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.4.1+2012
+version: 3.4.2+2014
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -44,21 +44,15 @@ dependencies:
   fx_platform_adapter: 0.0.3 # 平台适配器
   fx_go_router_ext: 0.0.6+1 # 路由
   fx_dao: 0.0.3+4
-  fx_dio: 0.0.4+3
+  fx_dio: 0.0.6
   fx_boot_starter: 0.1.1 # app 启动器
   fx_trace: 0.0.5+5 # 异常追踪/监听
-  fx_ability:
-    path: ../../FrameworkX/client/packages/foundation/fx_ability
-  fx_user_core:
-    path: ../../FrameworkX/client/packages/identity/fx_user_core
-  fx_user_session:
-    path: ../../FrameworkX/client/packages/identity/fx_user_session
-  fx_user_http:
-    path: ../../FrameworkX/client/packages/identity/adapters/fx_user_http
-  fx_user_ui:
-    path: ../../FrameworkX/client/packages/identity/ui/fx_user_ui
-  fx_account:
-    path: ../../FrameworkX/client/packages/identity/ui/fx_account
+  fx_ability: 0.1.0
+  fx_user_core: 0.0.1
+  fx_user_session: 0.0.1
+  fx_user_http: 0.1.0
+  fx_user_ui: 0.0.1
+  fx_account: 0.1.0
 
   # 数据与持久化
   dio: ^5.4.3+1 # 网络请求
@@ -78,7 +72,7 @@ dependencies:
   # 视图展示
   toly_ui:
     path: modules/basic_system/toly_ui
-  tolyui: 0.0.4+10   # tolyui
+  tolyui: 0.0.4+18   # tolyui
   tolyui_message: ^0.2.6+1
   tolyui_refresh: 0.0.1+1 # 下拉刷新
 
@@ -111,16 +105,6 @@ dev_dependencies:
 dependency_overrides:
   web: ^1.0.0
   intl: 0.20.2
-  tolyui:
-    path: ../../ViewX/client/docs/ref/toly_ui/modules/tolyui
-  fx_dio:
-    path: ../../FrameworkX/client/packages/foundation/fx_dio
-  fx_exception:
-    path: ../../FrameworkX/client/packages/foundation/fx_exception
-  fx_user_core:
-    path: ../../FrameworkX/client/packages/identity/fx_user_core
-  fx_user_session:
-    path: ../../FrameworkX/client/packages/identity/fx_user_session
   flutter_bloc: ^9.1.1
 
 flutter:

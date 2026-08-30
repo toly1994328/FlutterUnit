@@ -426,16 +426,18 @@ packages:
   fx_ability:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/foundation/fx_ability"
-      relative: true
-    source: path
+      name: fx_ability
+      sha256: "7c96c246725061ed8ce052de97fb6e53620722c2e915824c61ea3b7a3c664784"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   fx_account:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/identity/ui/fx_account"
-      relative: true
-    source: path
+      name: fx_account
+      sha256: a7d5741362fc2d0b25598a19db4619e4ee860ea888d3d6a47db8cce21083c54c
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   fx_boot_starter:
     dependency: "direct main"
@@ -456,10 +458,11 @@ packages:
   fx_dio:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/foundation/fx_dio"
-      relative: true
-    source: path
-    version: "0.0.5+2"
+      name: fx_dio
+      sha256: "3e67a422f69a919f9448e006e034b30cb462d18cf18a8cfe2c4e7660d483e88c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   fx_env:
     dependency: transitive
     description:
@@ -469,11 +472,12 @@ packages:
     source: hosted
     version: "0.0.1"
   fx_exception:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
-      path: "../../FrameworkX/client/packages/foundation/fx_exception"
-      relative: true
-    source: path
+      name: fx_exception
+      sha256: a8392db68544bd68cd909fc7ff735a25327ef4cbc84187eb6dd257b19d367707
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1+4"
   fx_go_router_ext:
     dependency: "direct main"
@@ -525,37 +529,42 @@ packages:
   fx_user_core:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/identity/fx_user_core"
-      relative: true
-    source: path
+      name: fx_user_core
+      sha256: "5e042a637e2986ac4a3321c318ab151f48ea03a5989a1f9ae730ad23eaa0782e"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1"
   fx_user_http:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/identity/adapters/fx_user_http"
-      relative: true
-    source: path
+      name: fx_user_http
+      sha256: "2638064b30cedfee3bbba28d330223cc97141388b546d1a0a3f70ad7bdc3a568"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   fx_user_preferences:
     dependency: transitive
     description:
-      path: "../../FrameworkX/client/packages/identity/adapters/fx_user_preferences"
-      relative: true
-    source: path
+      name: fx_user_preferences
+      sha256: a0965b97b6f50e1843ce8c1fd9478f8aeca4ed03f65c35fcf0059a7c9c3890ce
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   fx_user_session:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/identity/fx_user_session"
-      relative: true
-    source: path
+      name: fx_user_session
+      sha256: c815d299bde5a84b89e588ef8038de0790dc159aa5b6b58b872d092504905a86
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1"
   fx_user_ui:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/identity/ui/fx_user_ui"
-      relative: true
-    source: path
+      name: fx_user_ui
+      sha256: "546b0eb0273cc7e16af719f40fe9eec153ab98d6598078076a7bdda47b377908"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1"
   go_router:
     dependency: "direct main"
@@ -1374,13 +1383,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.1"
+  toly_menu:
+    dependency: transitive
+    description:
+      name: toly_menu
+      sha256: "56f1d863f05c8aa45e8831fb675915ee9d1227c0cf14f8f731e1173c28a55db3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   tolyui:
     dependency: "direct main"
     description:
-      path: "../../ViewX/client/docs/ref/toly_ui/modules/tolyui"
-      relative: true
-    source: path
-    version: "0.0.4+16"
+      name: tolyui
+      sha256: "57ce4a6e7d0435c31a84ecc62a9dc7b01c0208244f65e3b4ce7bb33cb3292c80"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4+18"
   tolyui_collapse:
     dependency: transitive
     description:

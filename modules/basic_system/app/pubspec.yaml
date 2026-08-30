@@ -14,7 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^5.4.3+1
-  fx_dio: 0.0.4+3
+  fx_dio: 0.0.6
   fx_trace: 0.0.5+5
   fx_updater:
     path: ../../basic_system/fx_updater
