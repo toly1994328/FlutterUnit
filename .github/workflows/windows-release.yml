@@ -9,7 +9,9 @@ permissions:
 jobs:
   build-windows:
     name: Build Windows x64
-    runs-on: windows-latest
+    # 固定 VS 2022，避免 windows-latest 升级到 MSVC 14.51 后，
+    # permission_handler_windows 的 experimental/coroutine 兼容性构建失败。
+    runs-on: windows-2022
     timeout-minutes: 45
 
     steps:
