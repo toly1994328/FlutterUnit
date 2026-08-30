@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
 
 import 'package:toly_ui/toly_ui.dart';
+import 'package:unit_env/unit_env.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// create by 张风捷特烈 on 2020/6/16
@@ -86,8 +87,10 @@ class VersionInfo extends StatelessWidget {
               onTap: () => context.push('/about_app'),
             ),
             const Divider(height: 1, indent: 10),
-            const AppUpdatePanel(),
-            const Divider(height: 1, indent: 10),
+            if (UnitEnv.supportsInAppUpdate) ...[
+              const AppUpdatePanel(),
+              const Divider(height: 1, indent: 10),
+            ],
             ListTile(
               title:
                   Text(context.l10n.checkDatabaseNewVersion, style: labelStyle),

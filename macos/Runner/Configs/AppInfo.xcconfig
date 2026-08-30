@@ -8,7 +8,7 @@
 PRODUCT_NAME = flutter_unit
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.toly1994.flutterUnit
+PRODUCT_BUNDLE_IDENTIFIER = com.toly1994.unit
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2022 com.toly1994. All rights reserved.

@@ -5,6 +5,7 @@ import 'package:fx_user_session/fx_user_session.dart';
 import 'package:fx_user_ui/fx_user_ui.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:unit_env/unit_env.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:utils/utils.dart';
 
 import 'github_auth_page.dart';
@@ -29,11 +30,19 @@ class LoginPage extends StatelessWidget {
         logo: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.asset(
-            'assets/images/flutter_unit_logo.png',
+            'assets/images/flutter_unit_logo.webp',
             fit: BoxFit.cover,
           ),
         ),
         methods: const {FxLoginMethod.emailCode, FxLoginMethod.password},
+        onUserAgreement: () => _openLegalDocument(
+          context,
+          _agreementUrl,
+        ),
+        onPrivacyPolicy: () => _openLegalDocument(
+          context,
+          _privacyUrl,
+        ),
         showGithub: supportsEmbeddedGithub && GitHubAuthPage.isConfigured,
         showApple: supportsNativeApple,
         onGithubLogin: () => _loginWithGithub(context),
@@ -142,4 +151,36 @@ class LoginPage extends StatelessWidget {
       rethrow;
     }
   }
+
+  /// 使用系统浏览器打开用户协议或隐私政策。
+  Future<void> _openLegalDocument(BuildContext context, Uri? uri) async {
+    if (uri == null) {
+      Toast.error(context, '协议地址配置异常');
+      return;
+    }
+    final bool opened = await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    );
+    if (!opened && context.mounted) {
+      Toast.error(context, '暂时无法打开该页面，请稍后重试');
+    }
+  }
+}
+
+/// FlutterUnit 用户协议地址，由客户端环境文件注入。
+final Uri? _agreementUrl = _parseLegalUrl(
+  const String.fromEnvironment('AGREEMENT_URL'),
+);
+
+/// FlutterUnit 隐私政策地址，由客户端环境文件注入。
+final Uri? _privacyUrl = _parseLegalUrl(
+  const String.fromEnvironment('PRIVACY_URL'),
+);
+
+Uri? _parseLegalUrl(String rawUrl) {
+  final Uri? uri = Uri.tryParse(rawUrl.trim());
+  if (uri == null || !uri.hasAuthority) return null;
+  if (uri.scheme != 'http' && uri.scheme != 'https') return null;
+  return uri;
 }

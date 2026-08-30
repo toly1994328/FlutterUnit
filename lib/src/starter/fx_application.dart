@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_boot_starter/fx_boot_starter.dart';
 import 'package:fx_updater/fx_updater.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unit_env/unit_env.dart';
 import 'package:widget_module/widget_module.dart';
 import 'package:widget_module/blocs/blocs.dart';
 import '../flutter_unit.dart';
@@ -37,8 +38,13 @@ class FxApplication with FxStarter<AppConfig> {
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
-    CheckUpdate event = CheckUpdate(appId: 1, locale: state.localeValue);
-    context.read<UpgradeBloc>().add(event);
+    if (UnitEnv.supportsInAppUpdate) {
+      final CheckUpdate event = CheckUpdate(
+        appId: 1,
+        locale: state.localeValue,
+      );
+      context.read<UpgradeBloc>().add(event);
+    }
     context.go(AppRoute.widget.url);
     sendEvent(1);
   }

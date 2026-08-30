@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -5,10 +8,17 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace = "com.toly1994.flutter_unit"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
+    flavorDimensions += "distribution"
     packagingOptions {
         jniLibs {
             useLegacyPackaging = true
@@ -36,11 +46,35 @@ android {
         versionName = flutter.versionName
     }
 
+    productFlavors {
+        create("china") {
+            dimension = "distribution"
+            applicationId = "com.toly1994.flutter_unit"
+        }
+        create("google") {
+            dimension = "distribution"
+            applicationId = "com.toly1994.flutterunit"
+        }
+    }
+
+    signingConfigs {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                keyAlias = keystoreProperties["keyAlias"] as String
+                keyPassword = keystoreProperties["keyPassword"] as String
+                storeFile = file(keystoreProperties["storeFile"] as String)
+                storePassword = keystoreProperties["storePassword"] as String
+            }
+        }
+    }
+
     buildTypes {
         getByName("release") {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = if (keystorePropertiesFile.exists()) {
+                signingConfigs.getByName("release")
+            } else {
+                null
+            }
             isShrinkResources = true  // 移除未使用的资源
             isMinifyEnabled = true    // 启用 R8 代码压缩
             proguardFiles(
@@ -48,7 +82,7 @@ android {
                 "proguard-rules.pro"
             )
             ndk {
-                debugSymbolLevel = "none"
+                debugSymbolLevel = "symbol_table"
             }
         }
     }

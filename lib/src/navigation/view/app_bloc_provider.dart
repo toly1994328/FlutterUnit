@@ -9,6 +9,7 @@ import 'package:storage/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:unit_env/unit_env.dart';
 import 'package:widget_module/widget_module.dart';
 
 /// create by 张风捷特烈 on 2020/4/28
@@ -41,8 +42,10 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
         // 全局 bloc : 维护应用存储状态、更新、认证
         BlocProvider<FxUserSessionCubit>.value(value: _users),
         BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
-        BlocProvider<UpgradeBloc>(
-            create: (_) => UpgradeBloc(api: UnitUpgradeApi())),
+        if (UnitEnv.supportsInAppUpdate)
+          BlocProvider<UpgradeBloc>(
+            create: (_) => UpgradeBloc(api: UnitUpgradeApi()),
+          ),
         BlocProvider<UserBloc>(create: (_) => UserBloc()),
         BlocProvider<NewsBloc>(create: (_) => NewsBloc()..initByCache()),
 

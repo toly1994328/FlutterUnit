@@ -1,11 +1,35 @@
 import 'package:fx_dio/fx_dio.dart';
 
+/// FlutterUnit 的发行渠道。
+enum UnitDistribution {
+  /// 国内渠道，允许应用内检测并安装更新。
+  china,
+
+  /// Google Play 渠道，更新完全交由应用商店管理。
+  google,
+}
+
 class UnitEnv {
+  /// 构建时通过 `APP_FLAVOR` 注入的发行渠道名称。
+  static const String _distributionName = String.fromEnvironment(
+    'APP_FLAVOR',
+    defaultValue: 'china',
+  );
+
   /// 当前请求使用的访客名称。
   static String? userName;
 
   /// 当前登录会话使用的 Bearer Token。
   static String? accessToken;
+
+  /// 当前应用的发行渠道。
+  static const UnitDistribution distribution = _distributionName == 'google'
+      ? UnitDistribution.google
+      : UnitDistribution.china;
+
+  /// 是否允许使用应用内更新能力。
+  static const bool supportsInAppUpdate =
+      distribution == UnitDistribution.china;
 }
 
 /// FlutterUnit 所有业务接口使用的唯一服务端 Host。
@@ -34,18 +58,22 @@ class FlutterUnitHost extends RequestHost<HostEnv> {
   );
 
   /// 当前客户端唯一使用的服务地址。
-  static Uri get serverUri => Uri(scheme: _scheme, host: _host, port: _port==0?null:_port);
+  static Uri get serverUri => Uri(
+        scheme: _scheme,
+        host: _host,
+        port: _port == 0 ? null : _port,
+      );
 
   /// 将服务端相对资源路径补全为可访问 URI，完整网络地址保持不变。
   static Uri resolveResource(String location) {
     final Uri resource = Uri.parse(location);
     if (resource.hasScheme) {
-      return resource;
+      return _resolveCurrentServerUpload(resource);
     }
     final String path =
         resource.path.startsWith('/') ? resource.path : '/${resource.path}';
     return serverUri.replace(
-      path: _apiNest+path,
+      path: _apiNest + path,
       queryParameters:
           resource.queryParameters.isEmpty ? null : resource.queryParameters,
       fragment: resource.fragment.isEmpty ? null : resource.fragment,
@@ -60,8 +88,9 @@ class FlutterUnitHost extends RequestHost<HostEnv> {
     int quality = 80,
     String format = 'webp',
   }) {
+    final Uri source = Uri.parse(location);
     final Uri resource = resolveResource(location);
-    if (!resource.path.startsWith('/uploads/original/')) {
+    if (!_isOriginalUploadPath(source.path)) {
       return resource;
     }
     final Map<String, String> query = Map<String, String>.of(
@@ -76,6 +105,31 @@ class FlutterUnitHost extends RequestHost<HostEnv> {
     query['q'] = '$quality';
     query['format'] = format;
     return resource.replace(queryParameters: query);
+  }
+
+  static bool _isOriginalUploadPath(String path) {
+    final String normalizedPath = path.startsWith('/') ? path : '/$path';
+    final String resourcePath =
+        _apiNest.isNotEmpty && normalizedPath.startsWith('$_apiNest/')
+            ? normalizedPath.substring(_apiNest.length)
+            : normalizedPath;
+    return resourcePath.startsWith('/uploads/original/');
+  }
+
+  static Uri _resolveCurrentServerUpload(Uri resource) {
+    final bool isCurrentServer = resource.host == _host;
+    final bool hasApiNest = _apiNest.isNotEmpty &&
+        (resource.path == _apiNest || resource.path.startsWith('$_apiNest/'));
+    if (!isCurrentServer ||
+        hasApiNest ||
+        !_isOriginalUploadPath(resource.path)) {
+      return resource;
+    }
+    return serverUri.replace(
+      path: '$_apiNest${resource.path}',
+      query: resource.hasQuery ? resource.query : null,
+      fragment: resource.hasFragment ? resource.fragment : null,
+    );
   }
 
   /// 兼容仍使用字符串地址的旧网络入口。
