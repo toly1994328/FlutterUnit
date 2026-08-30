@@ -32,10 +32,17 @@ CloseApplications=yes
 RestartApplications=no
 
 [Languages]
+Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "chinesesimp"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 
+[CustomMessages]
+english.AdditionalOptions=Additional options:
+english.CreateDesktopIcon=Create a desktop shortcut
+chinesesimp.AdditionalOptions=附加选项：
+chinesesimp.CreateDesktopIcon=创建桌面快捷方式
+
 [Tasks]
-Name: "desktopicon"; Description: "创建桌面快捷方式"; GroupDescription: "附加选项："; Flags: unchecked
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalOptions}"; Flags: unchecked
 
 [Files]
 Source: "{#ReleaseDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
