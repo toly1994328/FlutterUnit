@@ -85,7 +85,7 @@ jobs:
             }
           }
 
-          $artifactBaseName = "FlutterUnit-$version-windows-x64-setup"
+          $artifactBaseName = "FlutterUnit-$version"
           $releaseDirectory = Join-Path $env:GITHUB_WORKSPACE "build\windows\x64\runner\Release"
           if (-not (Test-Path $releaseDirectory)) {
             throw "Windows release directory was not generated: $releaseDirectory"
