@@ -14,6 +14,7 @@ import 'package:fx_updater/fx_updater.dart';
 import 'package:go_router/go_router.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:tolyui/basic/basic.dart';
+import 'package:unit_env/unit_env.dart';
 
 import 'locale_change_menu.dart';
 import 'theme_model_switch_icon.dart';
@@ -69,16 +70,24 @@ class SettingIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!UnitEnv.supportsInAppUpdate) {
+      return _buildSettingAction(context);
+    }
     UpdateState state = context.watch<UpgradeBloc>().state;
-    Color tipColor = Colors.redAccent;
-    Widget child = TolyAction(
-      style: const ActionStyle.dark(),
-      onTap: () => context.push(ActionType.settings.path),
-      child: const Icon(Icons.settings, color: Colors.white, size: 22),
-    );
+    const Color tipColor = Colors.redAccent;
+    final Widget child = _buildSettingAction(context);
     return switch (state) {
       ShouldUpdateState() => Badge(backgroundColor: tipColor, child: child),
       _ => child,
     };
+  }
+
+  /// 构建不包含更新状态的设置入口。
+  Widget _buildSettingAction(BuildContext context) {
+    return TolyAction(
+      style: const ActionStyle.dark(),
+      onTap: () => context.push(ActionType.settings.path),
+      child: const Icon(Icons.settings, color: Colors.white, size: 22),
+    );
   }
 }

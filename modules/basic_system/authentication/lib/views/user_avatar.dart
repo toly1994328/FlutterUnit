@@ -74,8 +74,11 @@ class SessionUserAvatar extends StatelessWidget {
     }
     final String source = session.user.avatar.toString();
     if (Identicon.isIdenticon(source)) return source;
-    return FlutterUnitHost.resolveResource(
+    final int imageSize = (size * 2).round();
+    return FlutterUnitHost.resolveImageResource(
       source,
+      width: imageSize,
+      height: imageSize,
     ).toString();
   }
 

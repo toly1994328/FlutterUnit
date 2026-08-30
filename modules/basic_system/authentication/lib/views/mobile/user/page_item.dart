@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fx_updater/views/update_red_point.dart';
 import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
+import 'package:unit_env/unit_env.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -58,7 +59,8 @@ class MePageItem extends StatelessWidget {
                 context.l10n.versionInformation,
                 AppRoute.version.url,
               ),
-              const Positioned(left: 40, top: 10, child: UpdateRedPoint())
+              if (UnitEnv.supportsInAppUpdate)
+                const Positioned(left: 40, top: 10, child: UpdateRedPoint()),
             ],
           ),
           divider,

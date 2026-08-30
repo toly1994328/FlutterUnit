@@ -29,6 +29,7 @@
 .pub-cache/
 .pub/
 /build/
+/ios/.env.publish
 /android/app/.cxx/
 /lib/tools/
 /lib/res/constant/github_client_config.dart

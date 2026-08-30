@@ -12,6 +12,7 @@ import 'package:fx_updater/fx_updater.dart';
 import 'package:fx_user_session/fx_user_session.dart';
 import 'package:pkg_player/pkg_player.dart';
 import 'package:treasure_tools/treasure_tools.dart';
+import 'package:unit_env/unit_env.dart';
 import 'package:widget_module/widget_module.dart';
 import 'news.dart';
 import 'pure_bottom_bar.dart';
@@ -39,9 +40,11 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   void initState() {
     super.initState();
     if (Platform.isAndroid || Platform.isIOS) {}
-    String locale =
-        context.read<AppConfigBloc>().state.language.locale.toString();
-    context.read<UpgradeBloc>().add(CheckUpdate(appId: 1, locale: locale));
+    if (UnitEnv.supportsInAppUpdate) {
+      final String locale =
+          context.read<AppConfigBloc>().state.language.locale.toString();
+      context.read<UpgradeBloc>().add(CheckUpdate(appId: 1, locale: locale));
+    }
   }
 
   @override
@@ -96,7 +99,8 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
                   onTap: _onTapBottomNav,
                   activeTab: value,
                 )),
-        const Positioned(right: 22, top: 8, child: UpdateRedPoint())
+        if (UnitEnv.supportsInAppUpdate)
+          const Positioned(right: 22, top: 8, child: UpdateRedPoint()),
       ],
     );
   }

@@ -1,6 +1,7 @@
 # Flutter-related
 **/Flutter/ephemeral/
 **/Pods/
+.env.publish
 
 # Xcode-related
 **/dgph

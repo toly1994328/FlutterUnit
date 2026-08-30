@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="360" viewBox="0 0 780 360" fill="none">
+  <rect width="780" height="360" fill="#F7F9FC"/>
+
+  <!-- 后景色条 -->
+  <g opacity="0.96">
+    <rect x="48" y="52" width="28" height="150" rx="14" fill="#22CDE7"/>
+    <rect x="152" y="198" width="34" height="144" rx="17" fill="#20C9E4"/>
+    <rect x="244" y="20" width="18" height="176" rx="9" fill="#26D0E7"/>
+    <rect x="382" y="96" width="24" height="146" rx="12" fill="#FFF58B"/>
+    <rect x="492" y="8" width="18" height="172" rx="9" fill="#FFF88E"/>
+    <rect x="552" y="190" width="30" height="128" rx="15" fill="#20C9E4"/>
+    <rect x="666" y="100" width="38" height="176" rx="19" fill="#FFF593"/>
+  </g>
+
+  <!-- 前景色条的投影，使遮挡方向清晰 -->
+  <g fill="#27445D" opacity="0.14">
+    <rect x="145" y="122" width="26" height="116" rx="13"/>
+    <rect x="327" y="208" width="28" height="104" rx="14"/>
+    <circle cx="384" cy="116" r="25"/>
+    <rect x="718" y="230" width="18" height="108" rx="9"/>
+  </g>
+
+  <!-- 前景色条，覆盖后景并保留柔和阴影 -->
+  <g opacity="0.98">
+    <rect x="136" y="116" width="26" height="116" rx="13" fill="#FF8D94"/>
+    <rect x="318" y="202" width="28" height="104" rx="14" fill="#FF8991"/>
+    <circle cx="376" cy="108" r="25" fill="#22CDE7"/>
+    <rect x="710" y="224" width="18" height="108" rx="9" fill="#FF8B92"/>
+  </g>
+
+  <!-- 零散圆点 -->
+  <g opacity="0.92">
+    <circle cx="88" cy="276" r="22" fill="#FFF58B"/>
+    <circle cx="206" cy="78" r="7" fill="#FF8991"/>
+    <circle cx="342" cy="304" r="24" fill="#20C9E4"/>
+    <circle cx="450" cy="72" r="9" fill="#FF8991"/>
+    <circle cx="570" cy="154" r="17" fill="#20C9E4"/>
+    <circle cx="626" cy="292" r="15" fill="#FFF58B"/>
+  </g>
+</svg>
