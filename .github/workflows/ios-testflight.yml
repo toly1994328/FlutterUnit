@@ -2,9 +2,6 @@ name: Build iOS and Upload to TestFlight
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - "v*"
 
 permissions:
   contents: read
@@ -47,11 +44,6 @@ jobs:
             echo "pubspec version must use X.Y.Z+BUILD format: $full_version" >&2
             exit 1
           fi
-          if [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v$full_version" ]]; then
-            echo "Tag $GITHUB_REF_NAME does not match pubspec version v$full_version." >&2
-            exit 1
-          fi
-
           version="${full_version%%+*}"
           build_number="${full_version##*+}"
           echo "full_version=$full_version" >> "$GITHUB_OUTPUT"
