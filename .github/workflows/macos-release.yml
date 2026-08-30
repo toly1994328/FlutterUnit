@@ -1,0 +1,162 @@
+name: Build macOS Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-macos:
+    name: Build macOS universal DMG
+    runs-on: macos-15
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.44.0
+          channel: stable
+          cache: true
+
+      - name: Verify build environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter doctor -v
+          xcodebuild -version
+
+      - name: Install DMG tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          brew install create-dmg
+
+      - name: Create release environment
+        shell: bash
+        env:
+          FLUTTER_UNIT_CLIENT_RELEASE_ENV: ${{ secrets.FLUTTER_UNIT_CLIENT_RELEASE_ENV }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" ]]; then
+            echo "GitHub Secret FLUTTER_UNIT_CLIENT_RELEASE_ENV is required." >&2
+            exit 1
+          fi
+          environment_directory="$GITHUB_WORKSPACE/../.fx/.env"
+          environment_file="$environment_directory/.client.release"
+          mkdir -p "$environment_directory"
+          printf '%s' "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" > "$environment_file"
+          chmod 600 "$environment_file"
+          echo "release_env_path=$environment_file" >> "$GITHUB_ENV"
+
+      - name: Import Developer ID certificate
+        id: signing
+        shell: bash
+        env:
+          CERTIFICATE_BASE64: ${{ secrets.FLUTTER_UNIT_MACOS_CERTIFICATE_BASE64 }}
+          CERTIFICATE_PASSWORD: ${{ secrets.FLUTTER_UNIT_MACOS_CERTIFICATE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$CERTIFICATE_BASE64" || -z "$CERTIFICATE_PASSWORD" ]]; then
+            echo "macOS certificate Secrets are required." >&2
+            exit 1
+          fi
+
+          certificate_path="$RUNNER_TEMP/developer-id-application.p12"
+          keychain_path="$RUNNER_TEMP/flutter-unit-signing.keychain-db"
+          keychain_password="$(uuidgen)$(uuidgen)"
+          printf '%s' "$CERTIFICATE_BASE64" | /usr/bin/base64 -D > "$certificate_path"
+          chmod 600 "$certificate_path"
+
+          security create-keychain -p "$keychain_password" "$keychain_path"
+          security set-keychain-settings -lut 21600 "$keychain_path"
+          security unlock-keychain -p "$keychain_password" "$keychain_path"
+          security import "$certificate_path" \
+            -k "$keychain_path" \
+            -P "$CERTIFICATE_PASSWORD" \
+            -T /usr/bin/codesign \
+            -T /usr/bin/security
+          security set-key-partition-list \
+            -S apple-tool:,apple:,codesign: \
+            -s \
+            -k "$keychain_password" \
+            "$keychain_path"
+          security list-keychains -d user -s "$keychain_path"
+
+          identity="$(security find-identity -v -p codesigning "$keychain_path" | awk -F'"' '/Developer ID Application/ {print $2; exit}')"
+          if [[ -z "$identity" ]]; then
+            echo "Imported P12 does not contain a Developer ID Application identity." >&2
+            exit 1
+          fi
+          echo "Signing identity imported."
+          echo "identity=$identity" >> "$GITHUB_OUTPUT"
+          echo "temporary_keychain=$keychain_path" >> "$GITHUB_ENV"
+          echo "temporary_certificate=$certificate_path" >> "$GITHUB_ENV"
+
+      - name: Validate release metadata
+        id: metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(sed -nE 's/^version:[[:space:]]*([^[:space:]]+).*/\1/p' pubspec.yaml | head -n 1)"
+          if [[ -z "$version" ]]; then
+            echo "Unable to read version from pubspec.yaml." >&2
+            exit 1
+          fi
+          if [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v$version" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match pubspec version v$version." >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=FlutterUnit-$version-macOS" >> "$GITHUB_OUTPUT"
+
+      - name: Build, sign and notarize DMG
+        shell: bash
+        env:
+          FLUTTER_UNIT_RELEASE_ENV_PATH: ${{ env.release_env_path }}
+          DEVELOPER_ID_SIGN_IDENTITY: ${{ steps.signing.outputs.identity }}
+          APPLE_ID: ${{ secrets.FLUTTER_UNIT_APPLE_ID }}
+          TEAM_ID: ${{ secrets.FLUTTER_UNIT_APPLE_TEAM_ID }}
+          APP_SPECIFIC_PASSWORD: ${{ secrets.FLUTTER_UNIT_APP_SPECIFIC_PASSWORD }}
+        run: bash scripts/build/macos_release.sh
+
+      - name: Upload notarized DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}
+          path: build/distribution/macos/FlutterUnit-${{ steps.metadata.outputs.version }}.dmg
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload obfuscation symbols
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}-symbols
+          path: build/macos-symbols/${{ steps.metadata.outputs.version }}/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: build/distribution/macos/FlutterUnit-${{ steps.metadata.outputs.version }}.dmg
+
+      - name: Remove temporary signing materials
+        if: always()
+        shell: bash
+        run: |
+          if [[ -n "${temporary_keychain:-}" ]]; then
+            security delete-keychain "$temporary_keychain" || true
+          fi
+          rm -f \
+            "${temporary_certificate:-}" \
+            "${release_env_path:-}"
