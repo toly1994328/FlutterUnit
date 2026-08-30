@@ -23,10 +23,9 @@ jobs:
     timeout-minutes: 45
 
     steps:
-      - name: Checkout release tag
+      - name: Checkout repository and tags
         uses: actions/checkout@v5
         with:
-          ref: ${{ inputs.tag }}
           fetch-depth: 0
 
       - name: Validate release metadata
@@ -44,7 +43,11 @@ jobs:
 
           full_version="${RELEASE_TAG#v}"
           release_version="${full_version%%+*}"
-          pubspec_version="$(sed -nE 's/^version:[[:space:]]*([^[:space:]]+).*/\1/p' pubspec.yaml | head -n 1)"
+          pubspec_version="$(
+            git show "$RELEASE_TAG:pubspec.yaml" \
+              | sed -nE 's/^version:[[:space:]]*([^[:space:]]+).*/\1/p' \
+              | head -n 1
+          )"
           if [[ "$pubspec_version" != "$full_version" ]]; then
             echo "Tag $RELEASE_TAG does not match pubspec version v$pubspec_version." >&2
             exit 1
