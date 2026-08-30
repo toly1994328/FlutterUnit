@@ -170,6 +170,7 @@ jobs:
         shell: bash
         env:
           RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
+          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
           RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
         run: |
           set -euo pipefail
