@@ -142,6 +142,30 @@ jobs:
           echo "issuer_id=$API_ISSUER_ID" >> "$GITHUB_OUTPUT"
           echo "temporary_api_key=$key_path" >> "$GITHUB_ENV"
 
+      - name: Install App Store provisioning profile
+        shell: bash
+        env:
+          PROFILE_BASE64: ${{ secrets.FLUTTER_UNIT_IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          set -euo pipefail
+          encoded_profile="$RUNNER_TEMP/flutter-unit.mobileprovision"
+          decoded_profile="$RUNNER_TEMP/flutter-unit-profile.plist"
+          printf '%s' "$PROFILE_BASE64" | /usr/bin/base64 -D > "$encoded_profile"
+          security cms -D -i "$encoded_profile" > "$decoded_profile"
+          profile_uuid="$(/usr/libexec/PlistBuddy -c 'Print :UUID' "$decoded_profile")"
+          profile_name="$(/usr/libexec/PlistBuddy -c 'Print :Name' "$decoded_profile")"
+          if [[ "$profile_name" != "FlutterUnit AppStore" ]]; then
+            echo "Unexpected provisioning profile: $profile_name" >&2
+            exit 1
+          fi
+          profiles_directory="$HOME/Library/MobileDevice/Provisioning Profiles"
+          installed_profile="$profiles_directory/$profile_uuid.mobileprovision"
+          mkdir -p "$profiles_directory"
+          cp "$encoded_profile" "$installed_profile"
+          echo "temporary_profile=$installed_profile" >> "$GITHUB_ENV"
+          echo "temporary_profile_source=$encoded_profile" >> "$GITHUB_ENV"
+          echo "temporary_profile_plist=$decoded_profile" >> "$GITHUB_ENV"
+
       - name: Create App Store export options
         shell: bash
         run: |
@@ -150,10 +174,12 @@ jobs:
           /usr/libexec/PlistBuddy -c 'Clear dict' "$export_options"
           /usr/libexec/PlistBuddy -c 'Add :method string app-store-connect' "$export_options"
           /usr/libexec/PlistBuddy -c 'Add :destination string export' "$export_options"
-          /usr/libexec/PlistBuddy -c 'Add :signingStyle string automatic' "$export_options"
+          /usr/libexec/PlistBuddy -c 'Add :signingStyle string manual' "$export_options"
           /usr/libexec/PlistBuddy -c 'Add :signingCertificate string Apple Distribution' "$export_options"
           /usr/libexec/PlistBuddy -c 'Add :teamID string V6P5QXUH55' "$export_options"
           /usr/libexec/PlistBuddy -c 'Add :manageAppVersionAndBuildNumber bool false' "$export_options"
+          /usr/libexec/PlistBuddy -c 'Add :provisioningProfiles dict' "$export_options"
+          /usr/libexec/PlistBuddy -c 'Add :provisioningProfiles:com.toly1994.unit string FlutterUnit AppStore' "$export_options"
           plutil -lint "$export_options"
           echo "export_options_path=$export_options" >> "$GITHUB_ENV"
 
@@ -169,7 +195,6 @@ jobs:
         env:
           API_KEY_ID: ${{ steps.api-key.outputs.key_id }}
           API_ISSUER_ID: ${{ steps.api-key.outputs.issuer_id }}
-          SIGNING_IDENTITY: ${{ steps.certificate.outputs.identity }}
         run: |
           set -euo pipefail
           flutter build ios \
@@ -187,13 +212,6 @@ jobs:
             -configuration Release \
             -destination 'generic/platform=iOS' \
             -archivePath "$archive_path" \
-            -allowProvisioningUpdates \
-            -authenticationKeyPath "$temporary_api_key" \
-            -authenticationKeyID "$API_KEY_ID" \
-            -authenticationKeyIssuerID "$API_ISSUER_ID" \
-            CODE_SIGN_STYLE=Automatic \
-            CODE_SIGN_IDENTITY="$SIGNING_IDENTITY" \
-            DEVELOPMENT_TEAM=V6P5QXUH55 \
             archive
 
           mkdir -p "$export_path"
