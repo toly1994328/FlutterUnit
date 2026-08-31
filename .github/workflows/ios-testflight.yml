@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build-and-upload:
     name: Build signed IPA and upload to TestFlight
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 90
 
     steps:
@@ -33,6 +33,13 @@ jobs:
           set -euo pipefail
           flutter doctor -v
           xcodebuild -version
+          ios_sdk_version="$(xcrun --sdk iphoneos --show-sdk-version)"
+          ios_sdk_major="${ios_sdk_version%%.*}"
+          echo "Selected iOS SDK: $ios_sdk_version"
+          if (( ios_sdk_major < 26 )); then
+            echo "App Store Connect requires iOS SDK 26 or later; selected SDK is $ios_sdk_version." >&2
+            exit 1
+          fi
 
       - name: Validate release metadata
         id: metadata
