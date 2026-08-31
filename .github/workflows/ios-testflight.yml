@@ -245,8 +245,13 @@ jobs:
           inspect_directory="$RUNNER_TEMP/flutter-unit-ipa-inspect"
           mkdir -p "$output_directory" "$inspect_directory"
           cp "$ipa_path" "$output_path"
-          unzip -q "$output_path" 'Payload/*.app/Info.plist' -d "$inspect_directory"
-          info_plist="$(find "$inspect_directory/Payload" -maxdepth 2 -name Info.plist -print -quit)"
+          unzip -q "$output_path" -d "$inspect_directory"
+          app_path="$(find "$inspect_directory/Payload" -maxdepth 1 -type d -name '*.app' -print -quit)"
+          if [[ -z "$app_path" ]]; then
+            echo "The IPA does not contain an application bundle." >&2
+            exit 1
+          fi
+          info_plist="$app_path/Info.plist"
 
           bundle_identifier="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$info_plist")"
           version="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$info_plist")"
@@ -256,7 +261,7 @@ jobs:
             exit 1
           fi
 
-          codesign --verify --deep --strict --verbose=2 "$inspect_directory/Payload/Runner.app"
+          codesign --verify --deep --strict --verbose=2 "$app_path"
           shasum -a 256 "$output_path"
           echo "ipa_path=$output_path" >> "$GITHUB_OUTPUT"
 
