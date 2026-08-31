@@ -212,6 +212,36 @@ jobs:
           flutter clean
           flutter pub get
 
+      - name: Repair fx_install_plugin iOS podspec
+        shell: bash
+        run: |
+          set -euo pipefail
+          ruby -rjson -ruri <<'RUBY'
+          package_config = JSON.parse(File.read('.dart_tool/package_config.json'))
+          package = package_config.fetch('packages').find do |entry|
+            entry['name'] == 'fx_install_plugin'
+          end
+          abort 'fx_install_plugin is missing from package_config.json' if package.nil?
+
+          package_root = URI.parse(package.fetch('rootUri')).path
+          source = File.join(package_root, 'ios', 'install_plugin.podspec')
+          target = File.join(package_root, 'ios', 'fx_install_plugin.podspec')
+          if File.exist?(target)
+            puts 'fx_install_plugin iOS podspec already exists.'
+            exit 0
+          end
+          abort "Source podspec is missing: #{source}" unless File.file?(source)
+
+          content = File.read(source)
+          replaced = content.sub(
+            /s\.name\s*=\s*['"]install_plugin['"]/,
+            "s.name             = 'fx_install_plugin'",
+          )
+          abort 'Unable to normalize fx_install_plugin podspec name.' if replaced == content
+          File.write(target, replaced)
+          puts "Generated compatible podspec: #{target}"
+          RUBY
+
       - name: Build signed IPA
         shell: bash
         run: |
