@@ -169,6 +169,7 @@ jobs:
         env:
           API_KEY_ID: ${{ steps.api-key.outputs.key_id }}
           API_ISSUER_ID: ${{ steps.api-key.outputs.issuer_id }}
+          SIGNING_IDENTITY: ${{ steps.certificate.outputs.identity }}
         run: |
           set -euo pipefail
           flutter build ios \
@@ -191,6 +192,7 @@ jobs:
             -authenticationKeyID "$API_KEY_ID" \
             -authenticationKeyIssuerID "$API_ISSUER_ID" \
             CODE_SIGN_STYLE=Automatic \
+            CODE_SIGN_IDENTITY="$SIGNING_IDENTITY" \
             DEVELOPMENT_TEAM=V6P5QXUH55 \
             archive
 
