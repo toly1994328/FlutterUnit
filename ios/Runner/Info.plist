@@ -28,6 +28,8 @@
 	<true/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>FlutterUnit 申请访问相机，以支持您拍摄头像及需要上传的图片</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>FlutterUnit 申请访问相册，以支持您保存图片到相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
