@@ -491,10 +491,10 @@ packages:
     dependency: transitive
     description:
       name: fx_install_plugin
-      sha256: "362e2ef37fd172a9297f6849ae3c5e36140e769fb131bb0e24a9e970268b0929"
+      sha256: faefd77359d8b7d327f176448c268f1be310b9d3bca0102788f5d098a394394d
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   fx_platform_adapter:
     dependency: "direct main"
     description:

@@ -16,7 +16,7 @@ dependencies:
   equatable: ^2.0.5 # 相等辅助
   shared_preferences: ^2.5.1 # xml 固化
 
-  fx_install_plugin: 2.1.1
+  fx_install_plugin: 2.1.2
   open_file: ^3.5.9 # 打开文件
   url_launcher: ^6.3.0 # url
   package_info_plus: ^8.1.4
