@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toly_ui/toly_ui.dart';
 import 'package:unit_env/unit_env.dart';
 
 class CommentAvatar extends StatelessWidget {
@@ -23,6 +24,11 @@ class CommentAvatar extends StatelessWidget {
     final String? source = avatar?.trim();
     if (source == null || source.isEmpty) {
       return _buildFallback();
+    }
+    if (Identicon.isIdenticon(source)) {
+      return ClipOval(
+        child: Identicon.tryParse(source, size: size) ?? _buildFallback(),
+      );
     }
     final String imageUrl = FlutterUnitHost.resolveImageResource(
       source,

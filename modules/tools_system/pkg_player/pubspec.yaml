@@ -21,6 +21,8 @@ dependencies:
 #  image_gallery_saver: ^2.0.3
   unit_env:
     path: ../../basic_system/unit_env
+  toly_ui:
+    path: ../../basic_system/toly_ui
   provider: ^6.1.2
 
 dev_dependencies:

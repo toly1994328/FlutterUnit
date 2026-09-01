@@ -6,6 +6,8 @@ import 'package:tolyui_refresh/tolyui_refresh.dart';
 import '../../bloc/comments/comment_replies_cubit.dart';
 import '../../bloc/comments/comment_replies_state.dart';
 import '../home/plugin_item.dart';
+import 'comment_avatar.dart';
+import 'comment_moderation_sheet.dart';
 
 class CommentRepliesPage extends StatefulWidget {
   final Comment parentComment;
@@ -161,39 +163,38 @@ class _CommentRepliesPageState extends State<CommentRepliesPage> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 32,
-            height: 32,
-            decoration: BoxDecoration(
-              color: _getAvatarColor(reply.guestName).withOpacity(0.2),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Center(
-              child: Text(
-                reply.guestName.isNotEmpty
-                    ? reply.guestName[0].toUpperCase()
-                    : 'U',
-                style: TextStyle(
-                  color: _getAvatarColor(reply.guestName),
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => _openReplyAuthor(reply),
+            child: Padding(
+              padding: const EdgeInsets.all(4),
+              child: CommentAvatar(
+                avatar: reply.avatar,
+                name: reply.guestName,
+                size: 32,
               ),
             ),
           ),
-          SizedBox(width: 12),
+          SizedBox(width: 8),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Text(
-                      reply.guestName,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13,
-                        color: Colors.grey[700],
+                    GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () => _openReplyAuthor(reply),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: Text(
+                          reply.guestName,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: Colors.grey[700],
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(width: 8),
@@ -220,6 +221,16 @@ class _CommentRepliesPageState extends State<CommentRepliesPage> {
           ),
         ],
       ),
+    );
+  }
+
+  /// 打开回复作者信息及管理面板。
+  Future<void> _openReplyAuthor(Comment reply) {
+    return showCommentModerationSheet(
+      context,
+      reply,
+      onChanged: () =>
+          context.read<CommentRepliesCubit>().loadReplies(isRefresh: true),
     );
   }
 

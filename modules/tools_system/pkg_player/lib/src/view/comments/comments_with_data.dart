@@ -185,7 +185,7 @@ class CommentItemView extends StatelessWidget {
         ),
         if (comment.replies.isNotEmpty) ...[
           SizedBox(height: 12),
-          _buildReplies(comment, tileColor),
+          _buildReplies(context, comment, tileColor),
         ],
       ],
     );
@@ -200,9 +200,13 @@ class CommentItemView extends StatelessWidget {
     );
   }
 
-  Widget _buildReplies(Comment comment, Color? tileColor) {
-    final displayReplies = comment.replies.take(2).toList();
-    final hasMore = comment.repliesTotal > 2;
+  Widget _buildReplies(
+    BuildContext context,
+    Comment comment,
+    Color? tileColor,
+  ) {
+    final List<Comment> displayReplies = comment.replies.take(2).toList();
+    final bool hasMore = comment.repliesTotal > 2;
 
     return Container(
       margin: EdgeInsets.only(left: 36),
@@ -216,11 +220,11 @@ class CommentItemView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ...displayReplies.asMap().entries.map((entry) {
-            final index = entry.key;
-            final reply = entry.value;
+            final int index = entry.key;
+            final Comment reply = entry.value;
             return Column(
               children: [
-                _buildReplyItem(reply),
+                _buildReplyItem(context, reply),
                 if (index < displayReplies.length - 1) SizedBox(height: 8),
               ],
             );
@@ -245,28 +249,42 @@ class CommentItemView extends StatelessWidget {
     );
   }
 
-  Widget _buildReplyItem(Comment reply) {
+  Widget _buildReplyItem(BuildContext context, Comment reply) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CommentAvatar(
-          avatar: reply.avatar,
-          name: reply.guestName,
-          size: 24,
+        GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => _openReplyAuthor(context, reply),
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: CommentAvatar(
+              avatar: reply.avatar,
+              name: reply.guestName,
+              size: 24,
+            ),
+          ),
         ),
-        SizedBox(width: 8),
+        SizedBox(width: 4),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  Text(
-                    reply.guestName,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12,
-                      color: Colors.grey[700],
+                  GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () => _openReplyAuthor(context, reply),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        reply.guestName,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: Colors.grey[700],
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(width: 6),
@@ -292,6 +310,16 @@ class CommentItemView extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  /// 打开回复作者信息及管理面板。
+  Future<void> _openReplyAuthor(BuildContext context, Comment reply) {
+    return showCommentModerationSheet(
+      context,
+      reply,
+      onChanged: () =>
+          context.read<CommentsCubit>().loadComments(isRefresh: true),
     );
   }
 }
