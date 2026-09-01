@@ -1,0 +1,150 @@
+name: Build Linux Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-linux:
+    name: Build Linux x64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+
+      - name: Install Linux build dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install --yes \
+            clang \
+            cmake \
+            libgtk-3-dev \
+            liblzma-dev \
+            ninja-build \
+            pkg-config
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.44.0
+          channel: stable
+          cache: true
+
+      - name: Verify Flutter environment
+        shell: bash
+        run: flutter doctor -v
+
+      - name: Create release environment
+        shell: bash
+        env:
+          UNITX_CLIENT_ENV: ${{ secrets.UNITX_CLIENT_ENV }}
+        run: |
+          set -euo pipefail
+          [[ -n "$UNITX_CLIENT_ENV" ]] || { echo "GitHub Secret UNITX_CLIENT_ENV is required." >&2; exit 1; }
+          bundle_path="$RUNNER_TEMP/unitx-client.env"
+          printf '%s\n' "$UNITX_CLIENT_ENV" > "$bundle_path"
+          source "$bundle_path"
+          [[ -n "${CLIENT_ENV_BASE64:-}" ]] || { echo "UNITX_CLIENT_ENV is invalid." >&2; exit 1; }
+
+          environment_directory="$GITHUB_WORKSPACE/../.fx/.env"
+          environment_file="$environment_directory/.client.release"
+          mkdir -p "$environment_directory"
+          printf '%s' "$CLIENT_ENV_BASE64" | base64 --decode > "$environment_file"
+          chmod 600 "$environment_file"
+          echo "release_env_path=$environment_file" >> "$GITHUB_ENV"
+
+      - name: Read release metadata
+        id: metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(sed -nE 's/^version:[[:space:]]*([^[:space:]]+).*/\1/p' pubspec.yaml | head -n 1)"
+          [[ -n "$version" ]] || { echo "Unable to read version from pubspec.yaml." >&2; exit 1; }
+          if [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v$version" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match pubspec version v$version." >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=FlutterUnit-$version-linux-x64" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter clean
+          flutter config --enable-linux-desktop
+          flutter pub get
+
+      - name: Build Linux release
+        shell: bash
+        run: |
+          set -euo pipefail
+          flutter build linux \
+            --release \
+            --obfuscate \
+            --split-debug-info="build/linux-symbols/${{ steps.metadata.outputs.version }}" \
+            --dart-define-from-file="$release_env_path"
+
+      - name: Package and verify Linux bundle
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_directory="$GITHUB_WORKSPACE/build/linux/x64/release/bundle"
+          executable="$source_directory/flutter_unit"
+          [[ -x "$executable" ]] || { echo "Linux executable was not generated: $executable" >&2; exit 1; }
+          file "$executable" | grep -Eq 'ELF 64-bit.*x86-64'
+          if ldd "$executable" | grep -q 'not found'; then
+            ldd "$executable" >&2
+            echo "Linux bundle has unresolved shared libraries." >&2
+            exit 1
+          fi
+
+          distribution_directory="$GITHUB_WORKSPACE/build/distribution/linux"
+          package_directory="$distribution_directory/${{ steps.metadata.outputs.artifact_name }}"
+          archive_path="$distribution_directory/${{ steps.metadata.outputs.artifact_name }}.tar.gz"
+          mkdir -p "$distribution_directory"
+          cp -a "$source_directory" "$package_directory"
+          tar -C "$distribution_directory" -czf "$archive_path" "${{ steps.metadata.outputs.artifact_name }}"
+          tar -tzf "$archive_path" >/dev/null
+          sha256sum "$archive_path"
+          echo "archive_path=$archive_path" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Linux package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}
+          path: ${{ steps.package.outputs.archive_path }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload obfuscation symbols
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}-symbols
+          path: build/linux-symbols/${{ steps.metadata.outputs.version }}/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: ${{ steps.package.outputs.archive_path }}
+
+      - name: Remove temporary environment
+        if: always()
+        shell: bash
+        run: |
+          find "$RUNNER_TEMP" -maxdepth 1 -type f -name 'unitx-client.env' -delete
+          find "$GITHUB_WORKSPACE/../.fx/.env" -maxdepth 1 -type f -name '.client.release' -delete 2>/dev/null || true
