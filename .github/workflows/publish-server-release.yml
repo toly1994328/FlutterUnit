@@ -73,18 +73,20 @@ jobs:
       - name: Validate server publishing Secrets
         shell: bash
         env:
-          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
-          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
+          UNITX_RELEASE_DISTRIBUTION: ${{ secrets.UNITX_RELEASE_DISTRIBUTION }}
         run: |
           set -euo pipefail
-          if [[ -z "$RELEASE_API_BASE_URL" ]]; then
-            echo "Repository Secret FLUTTER_UNIT_RELEASE_API_BASE_URL is required." >&2
-            exit 1
-          fi
-          if [[ -z "$ADMIN_API_KEY" ]]; then
-            echo "Repository Secret FLUTTER_UNIT_ADMIN_API_KEY is required." >&2
-            exit 1
-          fi
+          [[ -n "$UNITX_RELEASE_DISTRIBUTION" ]] || { echo "Repository Secret UNITX_RELEASE_DISTRIBUTION is required." >&2; exit 1; }
+          printf '%s\n' "$UNITX_RELEASE_DISTRIBUTION" > "$RUNNER_TEMP/unitx-release.env"
+          source "$RUNNER_TEMP/unitx-release.env"
+          [[ -n "${API_BASE_URL_BASE64:-}" && -n "${ADMIN_API_KEY_BASE64:-}" ]] || { echo "UNITX_RELEASE_DISTRIBUTION is invalid." >&2; exit 1; }
+          RELEASE_API_BASE_URL="$(printf '%s' "$API_BASE_URL_BASE64" | base64 --decode)"
+          ADMIN_API_KEY="$(printf '%s' "$ADMIN_API_KEY_BASE64" | base64 --decode)"
+          echo "::add-mask::$ADMIN_API_KEY"
+          {
+            echo "RELEASE_API_BASE_URL=$RELEASE_API_BASE_URL"
+            echo "ADMIN_API_KEY=$ADMIN_API_KEY"
+          } >> "$GITHUB_ENV"
 
       - name: Locate successful platform builds
         id: builds
@@ -169,8 +171,8 @@ jobs:
         id: upload
         shell: bash
         env:
-          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
-          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
+          RELEASE_API_BASE_URL: ${{ env.RELEASE_API_BASE_URL }}
+          ADMIN_API_KEY: ${{ env.ADMIN_API_KEY }}
           RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
         run: |
           set -euo pipefail
@@ -216,8 +218,8 @@ jobs:
         id: publish
         shell: bash
         env:
-          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
-          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
+          RELEASE_API_BASE_URL: ${{ env.RELEASE_API_BASE_URL }}
+          ADMIN_API_KEY: ${{ env.ADMIN_API_KEY }}
           RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
           NOTES_PATH: ${{ steps.metadata.outputs.notes_path }}
         run: |
@@ -260,8 +262,8 @@ jobs:
       - name: Verify public artifacts and version records
         shell: bash
         env:
-          RELEASE_API_BASE_URL: ${{ secrets.FLUTTER_UNIT_RELEASE_API_BASE_URL }}
-          ADMIN_API_KEY: ${{ secrets.FLUTTER_UNIT_ADMIN_API_KEY }}
+          RELEASE_API_BASE_URL: ${{ env.RELEASE_API_BASE_URL }}
+          ADMIN_API_KEY: ${{ env.ADMIN_API_KEY }}
           RELEASE_VERSION: ${{ steps.metadata.outputs.release_version }}
         run: |
           set -euo pipefail

@@ -54,33 +54,39 @@ jobs:
       - name: Create release environment
         shell: bash
         env:
-          FLUTTER_UNIT_CLIENT_RELEASE_ENV: ${{ secrets.FLUTTER_UNIT_CLIENT_RELEASE_ENV }}
+          UNITX_CLIENT_ENV: ${{ secrets.UNITX_CLIENT_ENV }}
         run: |
           set -euo pipefail
-          if [[ -z "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" ]]; then
-            echo "GitHub Secret FLUTTER_UNIT_CLIENT_RELEASE_ENV is required." >&2
-            exit 1
-          fi
+          [[ -n "$UNITX_CLIENT_ENV" ]] || { echo "GitHub Secret UNITX_CLIENT_ENV is required." >&2; exit 1; }
+          client_bundle="$RUNNER_TEMP/unitx-client.env"
+          printf '%s\n' "$UNITX_CLIENT_ENV" > "$client_bundle"
+          source "$client_bundle"
+          [[ -n "${CLIENT_ENV_BASE64:-}" ]] || { echo "UNITX_CLIENT_ENV is invalid." >&2; exit 1; }
           environment_directory="$GITHUB_WORKSPACE/../.fx/.env"
           environment_file="$environment_directory/.client.release"
           mkdir -p "$environment_directory"
-          printf '%s' "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" > "$environment_file"
+          printf '%s' "$CLIENT_ENV_BASE64" | base64 --decode > "$environment_file"
           chmod 600 "$environment_file"
           echo "release_env_path=$environment_file" >> "$GITHUB_ENV"
 
       - name: Create Android signing files
         shell: bash
         env:
-          KEYSTORE_BASE64: ${{ secrets.FLUTTER_UNIT_ANDROID_KEYSTORE_BASE64 }}
-          STORE_PASSWORD: ${{ secrets.FLUTTER_UNIT_ANDROID_STORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.FLUTTER_UNIT_ANDROID_KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.FLUTTER_UNIT_ANDROID_KEY_PASSWORD }}
+          UNITX_ANDROID_SIGNING: ${{ secrets.UNITX_ANDROID_SIGNING }}
         run: |
           set -euo pipefail
-          if [[ -z "$KEYSTORE_BASE64" || -z "$STORE_PASSWORD" || -z "$KEY_ALIAS" || -z "$KEY_PASSWORD" ]]; then
-            echo "All Android signing Secrets are required." >&2
-            exit 1
-          fi
+          [[ -n "$UNITX_ANDROID_SIGNING" ]] || { echo "GitHub Secret UNITX_ANDROID_SIGNING is required." >&2; exit 1; }
+          signing_bundle="$RUNNER_TEMP/unitx-android.env"
+          printf '%s\n' "$UNITX_ANDROID_SIGNING" > "$signing_bundle"
+          source "$signing_bundle"
+          for key in KEYSTORE_BASE64 STORE_PASSWORD_BASE64 KEY_ALIAS_BASE64 KEY_PASSWORD_BASE64; do
+            [[ -n "${!key:-}" ]] || { echo "UNITX_ANDROID_SIGNING is missing $key." >&2; exit 1; }
+          done
+          STORE_PASSWORD="$(printf '%s' "$STORE_PASSWORD_BASE64" | base64 --decode)"
+          KEY_ALIAS="$(printf '%s' "$KEY_ALIAS_BASE64" | base64 --decode)"
+          KEY_PASSWORD="$(printf '%s' "$KEY_PASSWORD_BASE64" | base64 --decode)"
+          echo "::add-mask::$STORE_PASSWORD"
+          echo "::add-mask::$KEY_PASSWORD"
 
           keystore_path="$GITHUB_WORKSPACE/android/toly.jks"
           properties_path="$GITHUB_WORKSPACE/android/key.properties"
@@ -207,4 +213,6 @@ jobs:
           rm -f \
             "${android_keystore_path:-}" \
             "${android_properties_path:-}" \
-            "${release_env_path:-}"
+            "${release_env_path:-}" \
+            "$RUNNER_TEMP/unitx-client.env" \
+            "$RUNNER_TEMP/unitx-android.env"
