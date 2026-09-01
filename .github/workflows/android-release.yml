@@ -73,6 +73,10 @@ jobs:
         shell: bash
         env:
           UNITX_ANDROID_SIGNING: ${{ secrets.UNITX_ANDROID_SIGNING }}
+          LEGACY_KEYSTORE_BASE64: ${{ secrets.FLUTTER_UNIT_ANDROID_KEYSTORE_BASE64 }}
+          LEGACY_STORE_PASSWORD: ${{ secrets.FLUTTER_UNIT_ANDROID_STORE_PASSWORD }}
+          LEGACY_KEY_ALIAS: ${{ secrets.FLUTTER_UNIT_ANDROID_KEY_ALIAS }}
+          LEGACY_KEY_PASSWORD: ${{ secrets.FLUTTER_UNIT_ANDROID_KEY_PASSWORD }}
         run: |
           set -euo pipefail
           [[ -n "$UNITX_ANDROID_SIGNING" ]] || { echo "GitHub Secret UNITX_ANDROID_SIGNING is required." >&2; exit 1; }
@@ -99,6 +103,25 @@ jobs:
             printf 'storeFile=../toly.jks\n'
           } > "$properties_path"
           chmod 600 "$properties_path"
+          if ! keytool -list -keystore "$keystore_path" -storepass "$STORE_PASSWORD" -alias "$KEY_ALIAS" >/dev/null 2>&1; then
+            echo "UNITX_ANDROID_SIGNING does not match the release keystore; falling back to legacy Android signing Secrets." >&2
+            if [[ -z "$LEGACY_KEYSTORE_BASE64" || -z "$LEGACY_STORE_PASSWORD" || -z "$LEGACY_KEY_ALIAS" || -z "$LEGACY_KEY_PASSWORD" ]]; then
+              echo "Legacy Android signing Secrets are incomplete." >&2
+              exit 1
+            fi
+            STORE_PASSWORD="$LEGACY_STORE_PASSWORD"
+            KEY_ALIAS="$LEGACY_KEY_ALIAS"
+            KEY_PASSWORD="$LEGACY_KEY_PASSWORD"
+            echo "::add-mask::$STORE_PASSWORD"
+            echo "::add-mask::$KEY_PASSWORD"
+            printf '%s' "$LEGACY_KEYSTORE_BASE64" | base64 --decode > "$keystore_path"
+            {
+              printf 'storePassword=%s\n' "$STORE_PASSWORD"
+              printf 'keyPassword=%s\n' "$KEY_PASSWORD"
+              printf 'keyAlias=%s\n' "$KEY_ALIAS"
+              printf 'storeFile=../toly.jks\n'
+            } > "$properties_path"
+          fi
           keytool -list -keystore "$keystore_path" -storepass "$STORE_PASSWORD" -alias "$KEY_ALIAS" >/dev/null
           echo "android_keystore_path=$keystore_path" >> "$GITHUB_ENV"
           echo "android_properties_path=$properties_path" >> "$GITHUB_ENV"
