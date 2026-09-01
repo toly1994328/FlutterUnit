@@ -149,6 +149,12 @@ abstract class AppLocalizations {
   /// **'留言板'**
   String get messageBoard;
 
+  /// No description provided for @blacklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Blocked Users'**
+  String get blacklist;
+
   /// No description provided for @homeAccountTabMe.
   ///
   /// In zh, this message translates to:

@@ -3,8 +3,13 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 class DetailFlexibleBar extends StatefulWidget {
+  /// 插件名称。
   final String name;
+
+  /// 插件简介。
   final String desc;
+
+  /// 当前最新版本。
   final String version;
 
   const DetailFlexibleBar(
@@ -19,14 +24,17 @@ class DetailFlexibleBar extends StatefulWidget {
 
 class _DetailFlexibleBarState extends State<DetailFlexibleBar>
     with TickerProviderStateMixin {
+  /// 背景装饰的旋转动画。
   late Animation<double> _rotationAnimation;
+
+  /// 驱动背景装饰持续旋转的控制器。
   late AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 20),
+      duration: const Duration(seconds: 20),
       vsync: this,
     )..repeat();
 
@@ -44,38 +52,27 @@ class _DetailFlexibleBarState extends State<DetailFlexibleBar>
   Widget build(BuildContext context) {
     return FlexibleSpaceBar(
       centerTitle: true,
-      titlePadding: EdgeInsets.only(bottom: 8),
+      titlePadding: const EdgeInsets.only(bottom: 12),
       title: ShaderMask(
-        shaderCallback: (bounds) => LinearGradient(
-          colors: [Colors.white, Colors.white70],
+        shaderCallback: (Rect bounds) => const LinearGradient(
+          colors: <Color>[Colors.white, Colors.white70],
         ).createShader(bounds),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          spacing: 4,
-          children: [
-            Text(
-              widget.name,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    color: Colors.black.withOpacity(0.3),
-                    offset: Offset(1, 1),
-                    blurRadius: 3,
-                  ),
-                ],
+        child: Text(
+          widget.name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+            shadows: <Shadow>[
+              Shadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                offset: const Offset(1, 1),
+                blurRadius: 3,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Text(
-                widget.desc,
-                style: TextStyle(fontSize: 8, color: Colors.white),
-              ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
       background: AnimatedBuilder(
@@ -241,7 +238,24 @@ class _DetailFlexibleBarState extends State<DetailFlexibleBar>
                         ),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    if (widget.desc.trim().isNotEmpty) ...<Widget>[
+                      const SizedBox(height: 8),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 36),
+                        child: Text(
+                          widget.desc,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 10,
+                            height: 1.25,
+                          ),
+                        ),
+                      ),
+                    ],
+                    const SizedBox(height: 28),
                   ],
                 ),
               ),

@@ -29,7 +29,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: lightTheme(),
-      home: PkgPlayerPage(),
+      home: PkgPlayerPage(
+        config: PkgPlayerConfig(
+          isAuthenticated: false,
+          onLoginRequired: (BuildContext context) async {},
+        ),
+      ),
     );
   }
 }

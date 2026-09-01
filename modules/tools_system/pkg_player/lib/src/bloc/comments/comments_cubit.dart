@@ -69,78 +69,26 @@ class CommentsCubit extends Cubit<CommentsState> {
     return true;
   }
 
-  Future<void> sendComment(String content,
-      {String? username, int? parentId}) async {
+  Future<void> sendComment(String content, {int? parentId}) async {
     final currentState = state;
-    String guestName = username ?? UnitEnv.userName ?? '游客';
+    if (UnitEnv.accessToken == null) {
+      emit(CommentsError('请先登录后再发布评论'));
+      return;
+    }
     if (currentState is CommentsLoaded) {
       emit(CommentSending(currentState.comments));
 
       final result = await _request.sendComment(
         packageId,
         content,
-        guestName,
         parentId: parentId,
       );
       if (result.success) {
-        _updateCommentsInMemory(result.data, content, guestName, parentId);
+        await loadComments(isRefresh: true);
       } else {
         emit(CommentsError(result.msg));
       }
     }
-  }
-
-  void _updateCommentsInMemory(
-      dynamic responseData, String content, String guestName, int? parentId) {
-    final newComment = Comment(
-      id: responseData['data'] ?? DateTime.now().millisecondsSinceEpoch,
-      packageId: packageId,
-      parentId: parentId,
-      userId: responseData['user_id'],
-      guestName: guestName,
-      content: content,
-      contentType: 'text',
-      rating: null,
-      createAt: responseData['create_at'] ?? DateTime.now().toString(),
-      replies: [],
-      repliesTotal: 0,
-    );
-
-    if (parentId == null || parentId == -1) {
-      // 新的一级评论，添加到列表开头
-      _allComments.insert(0, newComment);
-      _totalComments++;
-    } else {
-      // 回复评论，找到父评论并添加回复
-      for (int i = 0; i < _allComments.length; i++) {
-        if (_allComments[i].id == parentId) {
-          final parentComment = _allComments[i];
-          final updatedReplies = [...parentComment.replies, newComment];
-          _allComments[i] = Comment(
-            id: parentComment.id,
-            packageId: parentComment.packageId,
-            parentId: parentComment.parentId,
-            userId: parentComment.userId,
-            guestName: parentComment.guestName,
-            content: parentComment.content,
-            contentType: parentComment.contentType,
-            rating: parentComment.rating,
-            createAt: parentComment.createAt,
-            replies: updatedReplies.length > 2
-                ? updatedReplies.sublist(0, 2)
-                : updatedReplies,
-            repliesTotal: parentComment.repliesTotal + 1,
-          );
-          break;
-        }
-      }
-    }
-
-    final commentsResponse = CommentsResponse(
-      data: _allComments,
-      total: _totalComments,
-    );
-    emit(CommentsLoaded(commentsResponse));
   }
 
   void slice() {

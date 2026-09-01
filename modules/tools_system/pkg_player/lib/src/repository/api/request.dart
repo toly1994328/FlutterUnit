@@ -87,18 +87,63 @@ class PackageRequest with FlutterUnitHostMixin {
     });
   }
 
-  Future<ApiRet<dynamic>> sendComment(
-      int packageId, String content, String guestName,
+  Future<ApiRet<dynamic>> sendComment(int packageId, String content,
       {int? parentId}) async {
     Map<String, dynamic> data = {
       'content': content,
-      'guest_name': guestName,
     };
     if (parentId != null && parentId != -1) {
       data['parent_id'] = parentId;
     }
     return host.post('/packages/$packageId/comments',
         data: data, convertor: (e) => e);
+  }
+
+  Future<ApiRet<PublicUserProfile>> getPublicUserProfile(int userId) async {
+    return host.get(
+      '/users/$userId/public-profile',
+      convertor: (dynamic data) =>
+          PublicUserProfile.fromJson(data as Map<String, dynamic>),
+    );
+  }
+
+  /// 提交不依赖具体业务模块的通用举报工单。
+  Future<ApiRet<dynamic>> submitReport({
+    required String resourceType,
+    required String resourceId,
+    int? targetUserId,
+    required String reason,
+    String? detail,
+    Map<String, dynamic> metadata = const <String, dynamic>{},
+  }) async {
+    return host.post(
+      '/moderation/reports',
+      data: <String, dynamic>{
+        'resource_type': resourceType,
+        'resource_id': resourceId,
+        'target_user_id': targetUserId,
+        'reason': reason,
+        'detail': detail,
+        'metadata': metadata,
+      },
+      convertor: (dynamic data) => data,
+    );
+  }
+
+  Future<ApiRet<dynamic>> blockCommentAuthor(
+    int commentId, {
+    required String reason,
+  }) async {
+    return host.post(
+      '/comments/$commentId/block-author',
+      data: <String, dynamic>{
+        'resource_type': 'package_comment',
+        'resource_id': '$commentId',
+        'reason': reason,
+        'metadata': const <String, dynamic>{'source': 'block_user'},
+      },
+      convertor: (dynamic data) => data,
+    );
   }
 
   Future<ApiRet<List<Comment>>> getCommentReplies(

@@ -4,6 +4,7 @@ class Comment {
   final int? parentId;
   final int? userId;
   final String guestName;
+  final String? avatar;
   final String content;
   final String contentType;
   final int? rating;
@@ -17,6 +18,7 @@ class Comment {
     this.parentId,
     required this.userId,
     required this.guestName,
+    this.avatar,
     required this.content,
     required this.contentType,
     this.rating,
@@ -32,6 +34,7 @@ class Comment {
       parentId: json['parent_id'],
       userId: json['user_id'],
       guestName: json['guest_name'],
+      avatar: json['avatar'] as String?,
       content: json['content'],
       contentType: json['content_type'],
       rating: json['rating'],
@@ -51,6 +54,7 @@ class Comment {
       'parent_id': parentId,
       'user_id': userId,
       'guest_name': guestName,
+      'avatar': avatar,
       'content': content,
       'content_type': contentType,
       'rating': rating,

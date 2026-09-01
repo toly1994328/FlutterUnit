@@ -1379,10 +1379,10 @@ packages:
     dependency: transitive
     description:
       name: toly_check_box
-      sha256: "559b60ddf0d7adedcd5e46ebfa7babc127623e69c74207f08a6cced526402608"
+      sha256: e22ded54db0b4d319f8153b2f40bd527d1097f1e6f7f1793a4f2e382b209c01a
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.1+1"
   toly_menu:
     dependency: transitive
     description:
@@ -1395,10 +1395,10 @@ packages:
     dependency: "direct main"
     description:
       name: tolyui
-      sha256: "57ce4a6e7d0435c31a84ecc62a9dc7b01c0208244f65e3b4ce7bb33cb3292c80"
+      sha256: c2f1dba31b5e3bc0b0ddb8157c273558f7f22a6120a151fe5cf967597dc72646
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4+18"
+    version: "0.0.5+2"
   tolyui_collapse:
     dependency: transitive
     description:
@@ -1411,18 +1411,18 @@ packages:
     dependency: transitive
     description:
       name: tolyui_color
-      sha256: e79eed0a525a584dc51df9ee5445bee190d9a9b5f14690038800c4983b2c744a
+      sha256: f911fd09e19b74ee41ab4de00181165caa00f49b1f1b7339e268158721c3a179
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.2+1"
   tolyui_feedback:
     dependency: transitive
     description:
       name: tolyui_feedback
-      sha256: b6d67fd448a8d39762fd14266c706fc8da7671eaaaeb81f42a12e467ff4dfbf7
+      sha256: c1531f30a56c0a9255ff82056f844010346f3e289c0c40931ae4307906d7d1be
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.6+6"
+    version: "0.3.6+17"
   tolyui_message:
     dependency: "direct main"
     description:
@@ -1432,21 +1432,21 @@ packages:
     source: hosted
     version: "0.2.6+1"
   tolyui_meta:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: tolyui_meta
-      sha256: "449bca06271d6c5d2a6b49192fd9176fa14b86fcd57c7317c4466a9d0b334674"
+      sha256: efe278e13863e07e24f46923010bf3a0e5f956ba89d7e3b5833c8116d00c58c9
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.2+1"
+    version: "0.0.2+2"
   tolyui_navigation:
     dependency: transitive
     description:
       name: tolyui_navigation
-      sha256: "9fe5eddb1b8f9c178f81a507937815e9e7e7b4872ac70dd567428cd41c84e2e1"
+      sha256: "8208c58c82c8da822750e304c806be1314468bdb2577e629ef8f54ef06d2db82"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0+3"
+    version: "0.2.1+1"
   tolyui_refresh:
     dependency: "direct main"
     description:
@@ -1491,10 +1491,10 @@ packages:
     dependency: transitive
     description:
       name: tolyui_tree
-      sha256: "7a372d5240125ce6291f84fbdb406d838e73f2d471173e61c62abc1dcf98ee1d"
+      sha256: "99d14982a5e133cd55d1f523de6880809935fb9e56916d9f33f9253b43b153c1"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.1+1"
   two_dimensional_scrollables:
     dependency: transitive
     description:

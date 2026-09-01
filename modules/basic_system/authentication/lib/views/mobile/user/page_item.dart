@@ -50,6 +50,13 @@ class MePageItem extends StatelessWidget {
             context.l10n.messageBoard,
             AppRoute.note.url,
           ),
+          divider,
+          _buildItem(
+            context,
+            Icons.person_off_outlined,
+            context.l10n.blacklist,
+            AppRoute.blacklist.url,
+          ),
           Gap.sfl10,
           Stack(
             children: [

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pkg_player/pkg_player.dart';
 
+import '../../bloc/comments/comments_cubit.dart';
+
 import '../home/plugin_item.dart';
+import 'comment_avatar.dart';
+import 'comment_moderation_sheet.dart';
 
 typedef OnReplay = void Function(int commentId);
 
@@ -28,10 +33,11 @@ class SliverCommentsWithData extends StatelessWidget {
     int length = comments.length;
     Color? tileColor = Theme.of(context).listTileTheme.tileColor;
     PkgL10n l10n = context.pkgL10n;
+    final double bottomInset = MediaQuery.paddingOf(context).bottom;
     return DecoratedSliver(
       decoration: BoxDecoration(color: tileColor),
       sliver: SliverPadding(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        padding: EdgeInsets.fromLTRB(12, 10, 12, 10 + bottomInset),
         sliver: SliverList.separated(
             separatorBuilder: (_, __) => SizedBox(height: 10),
             itemCount: hasMore ? length + 1 : length,
@@ -94,7 +100,14 @@ class CommentItemView extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildAvatar(comment.guestName),
+            GestureDetector(
+              onTap: () => _openAuthor(context),
+              child: CommentAvatar(
+                avatar: comment.avatar,
+                name: comment.guestName,
+                size: 32,
+              ),
+            ),
             SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -103,12 +116,15 @@ class CommentItemView extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Text(
-                          comment.guestName,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                            color: Colors.grey[600],
+                        child: GestureDetector(
+                          onTap: () => _openAuthor(context),
+                          child: Text(
+                            comment.guestName,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                              color: Colors.grey[600],
+                            ),
                           ),
                         ),
                       ),
@@ -175,43 +191,13 @@ class CommentItemView extends StatelessWidget {
     );
   }
 
-  Widget _buildAvatar(String name) {
-    return Container(
-      width: 32,
-      height: 32,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            _getAvatarColor(name).withOpacity(0.8),
-            _getAvatarColor(name),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(18),
-      ),
-      child: Center(
-        child: Text(
-          name.isNotEmpty ? name[0].toUpperCase() : 'U',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+  Future<void> _openAuthor(BuildContext context) {
+    return showCommentModerationSheet(
+      context,
+      comment,
+      onChanged: () =>
+          context.read<CommentsCubit>().loadComments(isRefresh: true),
     );
-  }
-
-  Color _getAvatarColor(String name) {
-    final colors = [
-      Colors.blue,
-      Colors.green,
-      Colors.orange,
-      Colors.purple,
-      Colors.teal,
-      Colors.pink,
-      Colors.indigo,
-    ];
-    return colors[name.hashCode % colors.length];
   }
 
   Widget _buildReplies(Comment comment, Color? tileColor) {
@@ -263,25 +249,10 @@ class CommentItemView extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          width: 24,
-          height: 24,
-          decoration: BoxDecoration(
-            color: _getAvatarColor(reply.guestName).withOpacity(0.2),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Center(
-            child: Text(
-              reply.guestName.isNotEmpty
-                  ? reply.guestName[0].toUpperCase()
-                  : 'U',
-              style: TextStyle(
-                color: _getAvatarColor(reply.guestName),
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+        CommentAvatar(
+          avatar: reply.avatar,
+          name: reply.guestName,
+          size: 24,
         ),
         SizedBox(width: 8),
         Expanded(

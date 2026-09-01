@@ -29,6 +29,7 @@
 .pub-cache/
 .pub/
 /build/
+/output/
 /ios/.env.publish
 /android/app/.cxx/
 /lib/tools/

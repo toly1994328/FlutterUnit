@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pkg_player/pkg_player.dart';
+import 'package:provider/provider.dart';
 
 import '../../bloc/comments/comments_cubit.dart';
 import 'pkg_list_with_data.dart';
 
 class PluginItem extends StatelessWidget {
+  /// 当前展示的插件。
   final PluginModel plugin;
+
+  /// 插件模块的本地化文案。
   final PkgL10n l10n;
+
+  /// 列表项背景色。
   final Color? tiledColor;
 
   const PluginItem({
@@ -39,17 +45,7 @@ class PluginItem extends StatelessWidget {
       letterSpacing: 0,
     );
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                create: (context) =>
-                    CommentsCubit(PackageRequest(), plugin.id!)..loadComments(),
-                child: PluginDetailPage(plugin: plugin)),
-          ),
-        );
-      },
+      onTap: () => _openDetail(context),
       child: Container(
         padding: EdgeInsets.symmetric(
             horizontal: kIsDeskTop ? 46 : 12, vertical: 10),
@@ -156,13 +152,6 @@ class PluginItem extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
                 if (plugin.tags.isNotEmpty) ...[
-                  PackageTagsView(
-                    type: 'Platform',
-                    platforms: plugin.platforms
-                        .map((e) => e.replaceAll('platform:', ''))
-                        .toList(),
-                  ),
-                  SizedBox(height: 4),
                   Wrap(
                     spacing: 4,
                     children: [
@@ -191,6 +180,24 @@ class PluginItem extends StatelessWidget {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  /// 打开插件详情，并将宿主配置显式传递到新路由作用域。
+  void _openDetail(BuildContext context) {
+    final PkgPlayerConfig config = context.read<PkgPlayerConfig>();
+    Navigator.push<void>(
+      context,
+      MaterialPageRoute<void>(
+        builder: (BuildContext routeContext) => Provider<PkgPlayerConfig>.value(
+          value: config,
+          child: BlocProvider<CommentsCubit>(
+            create: (BuildContext context) =>
+                CommentsCubit(PackageRequest(), plugin.id!)..loadComments(),
+            child: PluginDetailPage(plugin: plugin, config: config),
+          ),
         ),
       ),
     );

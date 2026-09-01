@@ -2,6 +2,8 @@ import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/src/l10n/gen/app_l10n.dart';
 import 'package:pkg_player/pkg_player.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_user_session/fx_user_session.dart';
 import '../view/desktop/flutter_unit_desk_navigation.dart';
 
 import 'system/app.dart';
@@ -18,8 +20,16 @@ RouteBase get appRoute {
     collectRoute,
     GoRoute(
       path: AppRoute.packages.path,
-      builder: (_, __) {
-        return PkgPlayerPage();
+      builder: (BuildContext context, __) {
+        return BlocBuilder<FxUserSessionCubit, FxUserSession>(
+          builder: (BuildContext context, FxUserSession session) =>
+              PkgPlayerPage(
+            config: PkgPlayerConfig(
+              isAuthenticated: session is FxAuthed,
+              onLoginRequired: _openLogin,
+            ),
+          ),
+        );
       },
       // routes: [
       //   GoRoute(path: AppRoute.collectionDetail.path, builder: collectionDetailBuilder),
@@ -48,6 +58,10 @@ RouteBase get appRoute {
       if (!kAppEnv.isDesktopUI) ...body,
     ],
   );
+}
+
+Future<void> _openLogin(BuildContext context) {
+  return context.push<void>(AppRoute.login.url);
 }
 
 /// 为“查看更多”页面解析封面地址并附加目标宽度参数。

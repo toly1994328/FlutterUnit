@@ -16,18 +16,23 @@ import 'pkg_list_with_data.dart';
 import 'recommendation_page.dart';
 
 class PkgPlayerPage extends StatelessWidget {
-  const PkgPlayerPage({super.key});
+  final PkgPlayerConfig config;
+
+  const PkgPlayerPage({super.key, required this.config});
 
   @override
   Widget build(BuildContext context) {
     final request = PackageRequest();
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-            create: (context) => CategoryCubit(request)..loadCategories()),
-        BlocProvider(create: (context) => PackageCubit(request)),
-      ],
-      child: _PkgPlayerView(),
+    return Provider<PkgPlayerConfig>.value(
+      value: config,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+              create: (context) => CategoryCubit(request)..loadCategories()),
+          BlocProvider(create: (context) => PackageCubit(request)),
+        ],
+        child: _PkgPlayerView(),
+      ),
     );
   }
 }
