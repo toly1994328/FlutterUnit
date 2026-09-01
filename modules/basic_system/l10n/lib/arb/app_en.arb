@@ -5,6 +5,7 @@
 
   "homeAccount": "Application",
   "messageBoard": "Message Board",
+  "blacklist": "Blocked Users",
 
   "homeAccountTabInfo": "About App",
   "homeAccountTabMe": "Contact Me",

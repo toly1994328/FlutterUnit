@@ -21,6 +21,7 @@ enum AppRoute {
   aboutApp('about_app', url: '/about_app'),
   account('account', url: '/account'),
   dataManage('data_manage', url: '/data_manage'),
+  blacklist('blacklist', url: '/blacklist'),
   aboutMe('about_me', url: '/about_me'),
   supportMe('support_me', url: '/support_me'),
   login('login', url: '/login'),

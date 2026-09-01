@@ -21,6 +21,17 @@ void main() {
           ),
         ),
       );
+
+      final BuildContext outerOverlayContext =
+          tester.element(find.byType(Overlay).first);
+      expect(
+        Localizations.of<WidgetsLocalizations>(
+          outerOverlayContext,
+          WidgetsLocalizations,
+        ),
+        isNotNull,
+      );
+
       await tester.longPress(find.byType(TextField));
       await tester.pumpAndSettle();
 

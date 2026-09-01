@@ -34,6 +34,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get messageBoard => '留言板';
 
   @override
+  String get blacklist => '黑名单';
+
+  @override
   String get homeAccountTabMe => '联系本王';
 
   @override

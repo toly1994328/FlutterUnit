@@ -10,6 +10,10 @@ List<GoRoute> get systemRoutes => [
         builder: (_, __) => const DataManagePage(),
       ),
       GoRoute(
+        path: AppRoute.blacklist.path,
+        builder: (_, __) => const BlacklistPage(),
+      ),
+      GoRoute(
         path: AppRoute.account.path,
         builder: (_, __) => const DeskAccountPage(),
       ),

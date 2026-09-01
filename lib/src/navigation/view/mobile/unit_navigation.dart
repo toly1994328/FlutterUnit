@@ -72,7 +72,15 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
             ),
             onAvatarTap: () => _openAccountEntry(context),
           ),
-          PkgPlayerPage(),
+          BlocBuilder<FxUserSessionCubit, FxUserSession>(
+            builder: (BuildContext context, FxUserSession session) =>
+                PkgPlayerPage(
+              config: PkgPlayerConfig(
+                isAuthenticated: session is FxAuthed,
+                onLoginRequired: _openPackageLogin,
+              ),
+            ),
+          ),
           AlgoScope(
             child: ArtifactPage(
               drawingPage: const GalleryUnit(embedded: true),
@@ -124,5 +132,9 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
       'state=${state.runtimeType} target=$target',
     );
     context.push(target);
+  }
+
+  Future<void> _openPackageLogin(BuildContext context) {
+    return context.push<void>(AppRoute.login.url);
   }
 }

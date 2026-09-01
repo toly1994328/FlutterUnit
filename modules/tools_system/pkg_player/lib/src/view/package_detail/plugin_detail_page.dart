@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pkg_player/pkg_player.dart';
+import 'package:provider/provider.dart';
 
 import '../../bloc/comments/comment_replies_cubit.dart';
 import '../../bloc/comments/comments_cubit.dart';
@@ -14,9 +15,17 @@ import 'plugin_dependencies_section.dart';
 import 'plugin_tags.dart';
 
 class PluginDetailPage extends StatefulWidget {
+  /// 当前展示的插件。
   final PluginModel plugin;
 
-  const PluginDetailPage({Key? key, required this.plugin}) : super(key: key);
+  /// 宿主注入的登录状态与登录跳转能力。
+  final PkgPlayerConfig config;
+
+  const PluginDetailPage({
+    super.key,
+    required this.plugin,
+    required this.config,
+  });
 
   @override
   _PluginDetailPageState createState() => _PluginDetailPageState();
@@ -29,13 +38,13 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200,
+            expandedHeight: 156,
             pinned: true,
             centerTitle: true,
             backgroundColor: getDetailGradientColors(widget.plugin.name)[0],
             elevation: 0,
-            iconTheme: IconThemeData(color: Colors.white),
-            actions: [
+            iconTheme: const IconThemeData(color: Colors.white),
+            actions: const <Widget>[
               // Container(
               //   margin: EdgeInsets.only(right: 16, top: 8),
               //   padding: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
@@ -127,6 +136,11 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
   PkgL10n get l10n => context.pkgL10n;
 
   void _showReplyInput(int parentId) {
+    final PkgPlayerConfig config = widget.config;
+    if (!config.isAuthenticated) {
+      config.onLoginRequired(context);
+      return;
+    }
     String hintText =
         parentId == -1 ? l10n.writeCommentHint : l10n.replyCommentHint;
     Color? tileColor = Theme.of(context).listTileTheme.tileColor;
@@ -212,12 +226,16 @@ class _PluginDetailPageState extends State<PluginDetailPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) =>
-                CommentRepliesCubit(PackageRequest(), comment.id)
-                  ..loadReplies(),
-            child: CommentRepliesPage(
-              parentComment: comment,
+          builder: (BuildContext routeContext) =>
+              Provider<PkgPlayerConfig>.value(
+            value: widget.config,
+            child: BlocProvider<CommentRepliesCubit>(
+              create: (BuildContext context) =>
+                  CommentRepliesCubit(PackageRequest(), comment.id)
+                    ..loadReplies(),
+              child: CommentRepliesPage(
+                parentComment: comment,
+              ),
             ),
           ),
         ),
