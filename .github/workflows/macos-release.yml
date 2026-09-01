@@ -42,17 +42,17 @@ jobs:
       - name: Create release environment
         shell: bash
         env:
-          FLUTTER_UNIT_CLIENT_RELEASE_ENV: ${{ secrets.FLUTTER_UNIT_CLIENT_RELEASE_ENV }}
+          UNITX_CLIENT_ENV: ${{ secrets.UNITX_CLIENT_ENV }}
         run: |
           set -euo pipefail
-          if [[ -z "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" ]]; then
-            echo "GitHub Secret FLUTTER_UNIT_CLIENT_RELEASE_ENV is required." >&2
-            exit 1
-          fi
+          [[ -n "$UNITX_CLIENT_ENV" ]] || { echo "GitHub Secret UNITX_CLIENT_ENV is required." >&2; exit 1; }
+          printf '%s\n' "$UNITX_CLIENT_ENV" > "$RUNNER_TEMP/unitx-client.env"
+          source "$RUNNER_TEMP/unitx-client.env"
+          [[ -n "${CLIENT_ENV_BASE64:-}" ]] || { echo "UNITX_CLIENT_ENV is invalid." >&2; exit 1; }
           environment_directory="$GITHUB_WORKSPACE/../.fx/.env"
           environment_file="$environment_directory/.client.release"
           mkdir -p "$environment_directory"
-          printf '%s' "$FLUTTER_UNIT_CLIENT_RELEASE_ENV" > "$environment_file"
+          printf '%s' "$CLIENT_ENV_BASE64" | /usr/bin/base64 -D > "$environment_file"
           chmod 600 "$environment_file"
           echo "release_env_path=$environment_file" >> "$GITHUB_ENV"
 
@@ -60,14 +60,17 @@ jobs:
         id: signing
         shell: bash
         env:
-          CERTIFICATE_BASE64: ${{ secrets.FLUTTER_UNIT_MACOS_CERTIFICATE_BASE64 }}
-          CERTIFICATE_PASSWORD: ${{ secrets.FLUTTER_UNIT_MACOS_CERTIFICATE_PASSWORD }}
+          UNITX_MACOS_SIGNING: ${{ secrets.UNITX_MACOS_SIGNING }}
         run: |
           set -euo pipefail
-          if [[ -z "$CERTIFICATE_BASE64" || -z "$CERTIFICATE_PASSWORD" ]]; then
-            echo "macOS certificate Secrets are required." >&2
-            exit 1
-          fi
+          [[ -n "$UNITX_MACOS_SIGNING" ]] || { echo "GitHub Secret UNITX_MACOS_SIGNING is required." >&2; exit 1; }
+          printf '%s\n' "$UNITX_MACOS_SIGNING" > "$RUNNER_TEMP/unitx-macos.env"
+          source "$RUNNER_TEMP/unitx-macos.env"
+          for key in CERTIFICATE_BASE64 CERTIFICATE_PASSWORD_BASE64 APPLE_ID_BASE64 APPLE_TEAM_ID_BASE64 APP_SPECIFIC_PASSWORD_BASE64; do
+            [[ -n "${!key:-}" ]] || { echo "UNITX_MACOS_SIGNING is missing $key." >&2; exit 1; }
+          done
+          CERTIFICATE_PASSWORD="$(printf '%s' "$CERTIFICATE_PASSWORD_BASE64" | /usr/bin/base64 -D)"
+          echo "::add-mask::$CERTIFICATE_PASSWORD"
 
           certificate_path="$RUNNER_TEMP/developer-id-application.p12"
           keychain_path="$RUNNER_TEMP/flutter-unit-signing.keychain-db"
@@ -122,10 +125,17 @@ jobs:
         env:
           FLUTTER_UNIT_RELEASE_ENV_PATH: ${{ env.release_env_path }}
           DEVELOPER_ID_SIGN_IDENTITY: ${{ steps.signing.outputs.identity }}
-          APPLE_ID: ${{ secrets.FLUTTER_UNIT_APPLE_ID }}
-          TEAM_ID: ${{ secrets.FLUTTER_UNIT_APPLE_TEAM_ID }}
-          APP_SPECIFIC_PASSWORD: ${{ secrets.FLUTTER_UNIT_APP_SPECIFIC_PASSWORD }}
-        run: bash scripts/build/macos_release.sh
+          UNITX_MACOS_SIGNING: ${{ secrets.UNITX_MACOS_SIGNING }}
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$UNITX_MACOS_SIGNING" > "$RUNNER_TEMP/unitx-macos.env"
+          source "$RUNNER_TEMP/unitx-macos.env"
+          export APPLE_ID="$(printf '%s' "$APPLE_ID_BASE64" | /usr/bin/base64 -D)"
+          export TEAM_ID="$(printf '%s' "$APPLE_TEAM_ID_BASE64" | /usr/bin/base64 -D)"
+          export APP_SPECIFIC_PASSWORD="$(printf '%s' "$APP_SPECIFIC_PASSWORD_BASE64" | /usr/bin/base64 -D)"
+          echo "::add-mask::$APPLE_ID"
+          echo "::add-mask::$APP_SPECIFIC_PASSWORD"
+          bash scripts/build/macos_release.sh
 
       - name: Upload notarized DMG
         uses: actions/upload-artifact@v4
@@ -159,4 +169,6 @@ jobs:
           fi
           rm -f \
             "${temporary_certificate:-}" \
-            "${release_env_path:-}"
+            "${release_env_path:-}" \
+            "$RUNNER_TEMP/unitx-client.env" \
+            "$RUNNER_TEMP/unitx-macos.env"

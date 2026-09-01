@@ -35,18 +35,22 @@ jobs:
       - name: Create release environment
         shell: pwsh
         env:
-          FLUTTER_UNIT_CLIENT_RELEASE_ENV: ${{ secrets.FLUTTER_UNIT_CLIENT_RELEASE_ENV }}
+          UNITX_CLIENT_ENV: ${{ secrets.UNITX_CLIENT_ENV }}
         run: |
-          if ([string]::IsNullOrWhiteSpace($env:FLUTTER_UNIT_CLIENT_RELEASE_ENV)) {
-            throw "GitHub Secret FLUTTER_UNIT_CLIENT_RELEASE_ENV is required."
+          if ([string]::IsNullOrWhiteSpace($env:UNITX_CLIENT_ENV)) {
+            throw "GitHub Secret UNITX_CLIENT_ENV is required."
           }
+          $entry = $env:UNITX_CLIENT_ENV -split "`n" | Where-Object { $_ -like "CLIENT_ENV_BASE64=*" } | Select-Object -First 1
+          if ([string]::IsNullOrWhiteSpace($entry)) { throw "UNITX_CLIENT_ENV is invalid." }
+          $encodedEnvironment = $entry.Substring("CLIENT_ENV_BASE64=".Length).Trim()
+          $environmentContent = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($encodedEnvironment))
 
           $environmentDirectory = Join-Path $env:GITHUB_WORKSPACE "..\.fx\.env"
           $environmentFile = Join-Path $environmentDirectory ".client.release"
           New-Item -ItemType Directory -Force -Path $environmentDirectory | Out-Null
           [System.IO.File]::WriteAllText(
             $environmentFile,
-            $env:FLUTTER_UNIT_CLIENT_RELEASE_ENV,
+            $environmentContent,
             [System.Text.UTF8Encoding]::new($false)
           )
 
