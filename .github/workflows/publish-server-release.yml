@@ -117,7 +117,7 @@ jobs:
             printf '%s' "$run_id"
           }
 
-          echo "android_run_id=$(find_run android-release.yml)" >> "$GITHUB_OUTPUT"
+          echo "android_run_id=$(find_run android-china-release.yml)" >> "$GITHUB_OUTPUT"
           echo "windows_run_id=$(find_run windows-release.yml)" >> "$GITHUB_OUTPUT"
           echo "macos_run_id=$(find_run macos-release.yml)" >> "$GITHUB_OUTPUT"
 
