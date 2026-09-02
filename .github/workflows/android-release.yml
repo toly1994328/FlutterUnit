@@ -58,6 +58,12 @@ jobs:
           flutter doctor -v
           java -version
 
+      - name: Install Android 16 SDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
       - name: Create release environment
         shell: bash
         env:
@@ -186,6 +192,12 @@ jobs:
             cp "$source_path" "$output_path"
             # Android 发布证书通常是自签名证书；校验包内签名完整性，不要求公共 CA 信任链。
             jarsigner -verify -certs "$output_path"
+            manifest_path="$GITHUB_WORKSPACE/build/app/intermediates/packaged_manifests/googleRelease/processGoogleReleaseManifestForPackage/AndroidManifest.xml"
+            test -f "$manifest_path"
+            if ! grep -Eq 'android:targetSdkVersion="36"' "$manifest_path"; then
+              echo "Google AAB source manifest must target Android API 36." >&2
+              exit 1
+            fi
           fi
 
           echo "package_path=$output_path" >> "$GITHUB_OUTPUT"
