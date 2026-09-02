@@ -2,11 +2,6 @@ name: Build Android Release
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        description: "可选：输入 vX.Y.Z+BUILD 时只构建 China APK，并更新对应 Release"
-        required: false
-        type: string
   push:
     tags:
       - "v*"
@@ -22,13 +17,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJSON(github.event_name == 'workflow_dispatch' && inputs.tag != '' && '[{"flavor":"china","display_name":"China APK","artifact_suffix":"android"}]' || '[{"flavor":"china","display_name":"China APK","artifact_suffix":"android"},{"flavor":"google","display_name":"Google AAB","artifact_suffix":"google"}]') }}
+        include:
+          - flavor: china
+            display_name: China APK
+            artifact_suffix: android
+          - flavor: google
+            display_name: Google AAB
+            artifact_suffix: google
 
     steps:
       - name: Checkout source
         uses: actions/checkout@v5
-        with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
 
       - name: Set up Java
         uses: actions/setup-java@v5
@@ -107,8 +106,6 @@ jobs:
       - name: Validate release metadata
         id: metadata
         shell: bash
-        env:
-          REQUESTED_TAG: ${{ inputs.tag }}
         run: |
           set -euo pipefail
           version="$(sed -nE 's/^version:[[:space:]]*([^[:space:]]+).*/\1/p' pubspec.yaml | head -n 1)"
@@ -116,22 +113,12 @@ jobs:
             echo "Unable to read version from pubspec.yaml." >&2
             exit 1
           fi
-          release_tag=""
-          if [[ -n "$REQUESTED_TAG" ]]; then
-            if [[ "$REQUESTED_TAG" != "v$version" ]]; then
-              echo "Requested tag $REQUESTED_TAG does not match pubspec version v$version." >&2
-              exit 1
-            fi
-            release_tag="$REQUESTED_TAG"
-          elif [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v$version" ]]; then
+          if [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v$version" ]]; then
             echo "Tag $GITHUB_REF_NAME does not match pubspec version v$version." >&2
             exit 1
-          elif [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
-            release_tag="$GITHUB_REF_NAME"
           fi
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "artifact_name=FlutterUnit-$version" >> "$GITHUB_OUTPUT"
-          echo "release_tag=$release_tag" >> "$GITHUB_OUTPUT"
 
       - name: Resolve dependencies
         shell: bash
@@ -213,11 +200,10 @@ jobs:
           retention-days: 30
 
       - name: Publish China APK to GitHub release
-        if: matrix.flavor == 'china' && steps.metadata.outputs.release_tag != ''
+        if: matrix.flavor == 'china' && startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          tag_name: ${{ steps.metadata.outputs.release_tag }}
           files: ${{ steps.package.outputs.package_path }}
 
       - name: Remove temporary signing materials
