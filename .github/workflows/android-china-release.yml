@@ -1,0 +1,20 @@
+name: Build Android China APK
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: ./.github/workflows/android-release.yml
+    with:
+      flavor: china
+      display_name: China APK
+      artifact_suffix: android
+      publish_to_release: true
+    secrets: inherit

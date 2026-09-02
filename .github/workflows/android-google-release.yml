@@ -1,0 +1,20 @@
+name: Build Android Google AAB
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: ./.github/workflows/android-release.yml
+    with:
+      flavor: google
+      display_name: Google AAB
+      artifact_suffix: google
+      publish_to_release: false
+    secrets: inherit

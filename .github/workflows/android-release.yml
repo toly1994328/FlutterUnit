@@ -1,29 +1,34 @@
-name: Build Android Release
+name: Android Build Core
 
 on:
-  workflow_dispatch:
-  push:
-    tags:
-      - "v*"
+  workflow_call:
+    inputs:
+      flavor:
+        required: true
+        type: string
+      display_name:
+        required: true
+        type: string
+      artifact_suffix:
+        required: true
+        type: string
+      publish_to_release:
+        required: true
+        type: boolean
+    secrets:
+      UNITX_CLIENT_ENV:
+        required: true
+      UNITX_ANDROID_SIGNING:
+        required: true
 
 permissions:
   contents: write
 
 jobs:
   build-channel:
-    name: Build ${{ matrix.display_name }}
+    name: Build ${{ inputs.display_name }}
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - flavor: china
-            display_name: China APK
-            artifact_suffix: android
-          - flavor: google
-            display_name: Google AAB
-            artifact_suffix: google
 
     steps:
       - name: Checkout source
@@ -128,7 +133,7 @@ jobs:
           flutter pub get
 
       - name: Build China APK
-        if: matrix.flavor == 'china'
+        if: inputs.flavor == 'china'
         shell: bash
         run: |
           set -euo pipefail
@@ -143,7 +148,7 @@ jobs:
             --dart-define=APP_FLAVOR=china
 
       - name: Build Google AAB
-        if: matrix.flavor == 'google'
+        if: inputs.flavor == 'google'
         shell: bash
         run: |
           set -euo pipefail
@@ -159,7 +164,7 @@ jobs:
         id: package
         shell: bash
         env:
-          FLAVOR: ${{ matrix.flavor }}
+          FLAVOR: ${{ inputs.flavor }}
         run: |
           set -euo pipefail
           output_directory="$GITHUB_WORKSPACE/build/distribution/android"
@@ -186,7 +191,7 @@ jobs:
       - name: Upload channel package
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.metadata.outputs.artifact_name }}-${{ matrix.artifact_suffix }}
+          name: ${{ steps.metadata.outputs.artifact_name }}-${{ inputs.artifact_suffix }}
           path: ${{ steps.package.outputs.package_path }}
           if-no-files-found: error
           retention-days: 14
@@ -194,13 +199,13 @@ jobs:
       - name: Upload channel symbols
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.metadata.outputs.artifact_name }}-${{ matrix.artifact_suffix }}-symbols
-          path: build/android-symbols/${{ matrix.flavor }}/
+          name: ${{ steps.metadata.outputs.artifact_name }}-${{ inputs.artifact_suffix }}-symbols
+          path: build/android-symbols/${{ inputs.flavor }}/
           if-no-files-found: error
           retention-days: 30
 
       - name: Publish China APK to GitHub release
-        if: matrix.flavor == 'china' && startsWith(github.ref, 'refs/tags/')
+        if: inputs.publish_to_release && startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
