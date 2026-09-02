@@ -8,6 +8,7 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val androidApiLevel = 36
 val keystoreProperties = Properties()
 val keystorePropertiesFile = rootProject.file("key.properties")
 if (keystorePropertiesFile.exists()) {
@@ -16,7 +17,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "com.toly1994.flutter_unit"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = androidApiLevel
     ndkVersion = flutter.ndkVersion
     flavorDimensions += "distribution"
     packagingOptions {
@@ -41,7 +42,7 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        targetSdk = androidApiLevel
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
