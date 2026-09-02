@@ -15,11 +15,16 @@ on:
       publish_to_release:
         required: true
         type: boolean
+      upload_to_google_play:
+        required: true
+        type: boolean
     secrets:
       UNITX_CLIENT_ENV:
         required: true
       UNITX_ANDROID_SIGNING:
         required: true
+      UNITX_GOOGLE_PLAY_DISTRIBUTION:
+        required: false
 
 permissions:
   contents: write
@@ -204,6 +209,47 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+      - name: Prepare Google Play credentials
+        if: inputs.flavor == 'google' && inputs.upload_to_google_play
+        shell: bash
+        env:
+          UNITX_GOOGLE_PLAY_DISTRIBUTION: ${{ secrets.UNITX_GOOGLE_PLAY_DISTRIBUTION }}
+        run: |
+          set -euo pipefail
+          [[ -n "$UNITX_GOOGLE_PLAY_DISTRIBUTION" ]] || { echo "GitHub Secret UNITX_GOOGLE_PLAY_DISTRIBUTION is required." >&2; exit 1; }
+          google_bundle="$RUNNER_TEMP/unitx-google-play.env"
+          printf '%s\n' "$UNITX_GOOGLE_PLAY_DISTRIBUTION" > "$google_bundle"
+          source "$google_bundle"
+          for key in SERVICE_ACCOUNT_JSON_BASE64 PACKAGE_NAME_BASE64 TRACK_BASE64; do
+            [[ -n "${!key:-}" ]] || { echo "UNITX_GOOGLE_PLAY_DISTRIBUTION is missing $key." >&2; exit 1; }
+          done
+
+          credentials_path="$RUNNER_TEMP/google-play-service-account.json"
+          package_name="$(printf '%s' "$PACKAGE_NAME_BASE64" | base64 --decode)"
+          track="$(printf '%s' "$TRACK_BASE64" | base64 --decode)"
+          printf '%s' "$SERVICE_ACCOUNT_JSON_BASE64" | base64 --decode > "$credentials_path"
+          chmod 600 "$credentials_path"
+          jq -e '.type == "service_account" and (.private_key | contains("BEGIN PRIVATE KEY"))' "$credentials_path" >/dev/null
+          [[ "$package_name" == "com.toly1994.flutterunit" ]] || { echo "Unexpected Google Play package: $package_name" >&2; exit 1; }
+          [[ "$track" == "production" ]] || { echo "Unexpected Google Play track: $track" >&2; exit 1; }
+          {
+            echo "google_play_credentials_path=$credentials_path"
+            echo "google_play_package_name=$package_name"
+            echo "google_play_track=$track"
+          } >> "$GITHUB_ENV"
+
+      - name: Upload Google AAB and submit for review
+        if: inputs.flavor == 'google' && inputs.upload_to_google_play
+        uses: r0adkll/upload-google-play@v1.1.5
+        with:
+          serviceAccountJson: ${{ env.google_play_credentials_path }}
+          packageName: ${{ env.google_play_package_name }}
+          releaseFiles: ${{ steps.package.outputs.package_path }}
+          tracks: ${{ env.google_play_track }}
+          releaseName: ${{ steps.metadata.outputs.version }}
+          status: completed
+          changesNotSentForReview: false
+
       - name: Publish China APK to GitHub release
         if: inputs.publish_to_release && startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
@@ -220,4 +266,6 @@ jobs:
             "${android_properties_path:-}" \
             "${release_env_path:-}" \
             "$RUNNER_TEMP/unitx-client.env" \
-            "$RUNNER_TEMP/unitx-android.env"
+            "$RUNNER_TEMP/unitx-android.env" \
+            "$RUNNER_TEMP/unitx-google-play.env" \
+            "${google_play_credentials_path:-}"

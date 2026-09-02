@@ -2,6 +2,12 @@ name: Build Android Google AAB
 
 on:
   workflow_dispatch:
+    inputs:
+      submit_for_review:
+        description: Upload production AAB to Google Play and submit it for review
+        required: true
+        default: false
+        type: boolean
   push:
     tags:
       - "v*"
@@ -17,4 +23,5 @@ jobs:
       display_name: Google AAB
       artifact_suffix: google
       publish_to_release: false
+      upload_to_google_play: ${{ github.event_name == 'push' || inputs.submit_for_review }}
     secrets: inherit
