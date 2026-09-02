@@ -62,7 +62,16 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+          android_sdk_root="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
+          [[ -n "$android_sdk_root" ]] || { echo "ANDROID_SDK_ROOT or ANDROID_HOME is required." >&2; exit 1; }
+
+          sdkmanager_path="$android_sdk_root/cmdline-tools/latest/bin/sdkmanager"
+          if [[ ! -x "$sdkmanager_path" ]]; then
+            sdkmanager_path="$(find "$android_sdk_root/cmdline-tools" -path '*/bin/sdkmanager' -type f -perm -u+x 2>/dev/null | sort -V | tail -n 1 || true)"
+          fi
+          [[ -x "$sdkmanager_path" ]] || { echo "sdkmanager was not found under $android_sdk_root." >&2; exit 1; }
+
+          "$sdkmanager_path" "platforms;android-36" "build-tools;36.0.0"
 
       - name: Create release environment
         shell: bash
