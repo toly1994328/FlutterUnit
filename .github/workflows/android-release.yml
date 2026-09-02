@@ -26,9 +26,6 @@ on:
       UNITX_GOOGLE_PLAY_DISTRIBUTION:
         required: false
 
-permissions:
-  contents: write
-
 jobs:
   build-channel:
     name: Build ${{ inputs.display_name }}
