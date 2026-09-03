@@ -1,0 +1,32 @@
+# FlutterUnit Star 历史图自动生成工作流。
+#
+# 职责：使用仓库内置 GITHUB_TOKEN 读取本仓库的加星时间线，将亮色和暗色 SVG
+# 发布到独立的 star-history 分支，避免依赖外部托管图表服务。
+name: Update Star History
+
+on:
+  schedule:
+    - cron: "30 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: star-history
+  cancel-in-progress: true
+
+jobs:
+  update:
+    name: Generate charts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+
+      - name: Generate and publish charts
+        uses: xpzouying/star-history@8b1f26dc5e9a17caa75da9351b688509ef312811
+        with:
+          branch: star-history
