@@ -1,6 +1,6 @@
 <h1 align="center" style="border-bottom: none">
     <b>
-        <a href="https://github.com/toly1994328/FlutterUnit">FlutterUnit</a><br>
+        <a href="https://github.com/toly1994328/FlutterUnit">FlutterUnit v3.4.2</a><br>
     </b>
     ⭐️  全平台 Flutter 探索应用  ⭐️ <br>
 </h1>
@@ -17,10 +17,10 @@ FlutterUnit 是一个全平台体验应用，你可以在这里尽情体验 Flut
 
 <p align="center">
     <b> 下载 App: </b>
-    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.2.0/FlutterUnit.apk"><b> [Android] </b></a> •
-    <a href="https://apps.apple.com/cn/app/flutter-unit/id6450545123"><b>[iOS]</b></a> •
-    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.2.0/FlutterUnit.dmg"><b>[MacOS]</b></a> •
-    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.2.0/FlutterUnit.exe"><b>[Windows]</b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.4.2%2B2014/FlutterUnit-3.4.2%2B2014.apk"><b> [Android] </b></a> •
+    <a href="https://apps.apple.com/cn/app/flutterunit-%E5%8C%A0%E5%BF%83%E8%80%85%E4%B9%9F/id6799574537"><b>[iOS]</b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.4.2%2B2014/FlutterUnit-3.4.2%2B2014.dmg"><b>[MacOS]</b></a> •
+    <a href="https://github.com/toly1994328/FlutterUnit/releases/download/v3.4.2%2B2014/FlutterUnit-3.4.2%2B2014.exe"><b>[Windows]</b></a> •
     <a href="http://toly1994.com/flutter/"><b>[Web]</b></a>
 </p>
 
@@ -97,11 +97,11 @@ Build web:
 
 ### 一、组件的展示页面
 
-#### 1. `300+组件收录`
+#### 1. `500+组件收录`
 
-> Flutter源码中的可用的组件一共350个左右，纷繁复杂，也没有明确的分类标准
+> Flutter 生态中的组件与相关能力纷繁复杂，也没有统一的分类标准
 FlutterUnit 对`大大小小，常用不常用`的组件能收的尽量收录。并`根据个人感觉进行评星 `
-`目前收录组件306个`，每个都有至少一个演示展现和代码展示。
+`目前收录组件500+个`，每个都有至少一个演示展现和代码展示。
 
 | . | . | . |
 |------|------------|------------|
