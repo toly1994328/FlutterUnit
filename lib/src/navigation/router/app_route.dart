@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unit/src/l10n/gen/app_l10n.dart';
 import 'package:pkg_player/pkg_player.dart';
@@ -61,7 +62,7 @@ RouteBase get appRoute {
 }
 
 Future<void> _openLogin(BuildContext context) {
-  return context.push<void>(AppRoute.login.url);
+  return openUserLogin(context);
 }
 
 /// 为“查看更多”页面解析封面地址并附加目标宽度参数。
