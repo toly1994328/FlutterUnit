@@ -90,10 +90,15 @@ Build web:
 ![](./doc/ewm/coffee1.png)
 
 
-
 #### Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=toly1994328/FlutterUnit&type=Date)](https://star-history.com/#toly1994328/FlutterUnit&Date)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/toly1994328/FlutterUnit/star-history/assets/star-history-dark.svg">
+    <img alt="FlutterUnit Star History" src="https://raw.githubusercontent.com/toly1994328/FlutterUnit/star-history/assets/star-history.svg">
+  </picture>
+</p>
+
 
 ### 一、组件的展示页面
 
