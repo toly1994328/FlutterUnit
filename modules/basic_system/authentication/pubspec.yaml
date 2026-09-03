@@ -44,6 +44,9 @@ dependencies:
   url_launcher: ^6.3.1
   webview_flutter: ^4.10.0
 
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -7,8 +7,10 @@
 // Contact Me:  1981462002@qq.com
 
 import 'package:app/app.dart';
+import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
-import 'package:toly_ui/toly_ui.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_user_session/fx_user_session.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,29 +19,54 @@ class MenuBarLeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocBuilder<FxUserSessionCubit, FxUserSession>(
+      buildWhen: _shouldRebuildUserSummary,
+      builder: _buildLeading,
+    );
+  }
+
+  Widget _buildLeading(BuildContext context, FxUserSession session) {
     return Padding(
       padding: const EdgeInsets.only(top: 20, bottom: 8),
       child: Column(
-        children: [
-          Wrap(
-            direction: Axis.vertical,
-            spacing: 8,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              GestureDetector(
-                onDoubleTap: () {
-                  sendEvent(1);
-                },
-                child: const CircleImage(
-                  image: AssetImage('assets/images/icon_head.webp'),
-                  size: 60,
-                ),
+        children: <Widget>[
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => _openUserEntry(context, session),
+            onDoubleTap: _sendAvatarEvent,
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Wrap(
+                direction: Axis.vertical,
+                spacing: 8,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: <Widget>[
+                  const DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(3),
+                      child: SessionUserAvatar(
+                        size: 54,
+                        showShadow: false,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 116,
+                    child: Text(
+                      _displayName(session),
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(color: Colors.white70),
+                    ),
+                  )
+                ],
               ),
-              const Text(
-                '张风捷特烈',
-                style: TextStyle(color: Colors.white70),
-              )
-            ],
+            ),
           ),
           _buildIcons(),
           const Divider(color: Colors.white, height: 1, endIndent: 20),
@@ -49,6 +76,7 @@ class MenuBarLeading extends StatelessWidget {
     );
   }
 
+  /// 导航栏中展示的外部链接入口。
   final List<LinkIconMenu> menus = const [
     LinkIconMenu(
         TolyIcon.icon_github, "https://github.com/toly1994328/FlutterUnit"),
@@ -62,27 +90,58 @@ class MenuBarLeading extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8, top: 8),
       child: Wrap(
         spacing: 8,
-        children: menus
-            .map((menu) => TolyAction(
-                  style: const ActionStyle.dark(),
-                  onTap: menu.launch,
-                  child: Icon(menu.icon, color: Colors.white, size: 22),
-                ))
-            .toList(),
+        children: menus.map(_buildLinkAction).toList(),
       ),
     );
+  }
+
+  Widget _buildLinkAction(LinkIconMenu menu) {
+    return TolyAction(
+      style: const ActionStyle.dark(),
+      onTap: menu.launch,
+      child: Icon(menu.icon, color: Colors.white, size: 22),
+    );
+  }
+
+  /// 根据登录状态进入用户中心或打开桌面登录弹框。
+  void _openUserEntry(BuildContext context, FxUserSession session) {
+    if (session is FxAuthed) {
+      context.go(AppRoute.account.url);
+      return;
+    }
+    openUserLogin(context);
+  }
+
+  void _sendAvatarEvent() {
+    sendEvent(1);
+  }
+
+  bool _shouldRebuildUserSummary(
+    FxUserSession previous,
+    FxUserSession current,
+  ) {
+    return previous.runtimeType != current.runtimeType ||
+        _displayName(previous) != _displayName(current);
+  }
+
+  String _displayName(FxUserSession session) {
+    if (session is! FxAuthed) return '登录/注册';
+    return session.user.displayName ?? session.user.id;
   }
 }
 
 class LinkIconMenu {
+  /// 外部链接对应的图标。
   final IconData icon;
+
+  /// 点击后打开的外部地址。
   final String url;
 
   const LinkIconMenu(this.icon, this.url);
 
   void launch() => _launchUrl(url);
 
-  void _launchUrl(String url) async {
-    if (!await launchUrl(Uri.parse(url))) {}
+  Future<void> _launchUrl(String url) async {
+    await launchUrl(Uri.parse(url));
   }
 }

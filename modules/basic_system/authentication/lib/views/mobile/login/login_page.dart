@@ -1,3 +1,4 @@
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,13 @@ import 'github_auth_page.dart';
 
 /// FlutterUnit 对 FrameworkX 通用登录界面的宿主组装。
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  const LoginPage({
+    super.key,
+    this.presentation = FxLoginPresentation.page,
+  });
+
+  /// 当前登录界面的承载方式。
+  final FxLoginPresentation presentation;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +31,7 @@ class LoginPage extends StatelessWidget {
             defaultTargetPlatform == TargetPlatform.iOS ||
             defaultTargetPlatform == TargetPlatform.macOS);
     return FxLoginPage(
+      presentation: presentation,
       config: FxUserUiConfig(
         title: 'FLUTTER UNIT',
         subtitle: '群英荟萃，匠心者也',
@@ -166,6 +174,21 @@ class LoginPage extends StatelessWidget {
       Toast.error(context, '暂时无法打开该页面，请稍后重试');
     }
   }
+}
+
+/// 根据当前界面形态打开登录入口：桌面使用弹框，移动端使用完整页面。
+Future<void> openUserLogin(BuildContext context) {
+  if (kAppEnv.isDesktopUI) {
+    return showDialog<void>(
+      context: context,
+      builder: _buildDesktopLoginDialog,
+    );
+  }
+  return context.push<void>(AppRoute.login.url);
+}
+
+Widget _buildDesktopLoginDialog(BuildContext context) {
+  return const LoginPage(presentation: FxLoginPresentation.dialog);
 }
 
 /// FlutterUnit 用户协议地址，由客户端环境文件注入。

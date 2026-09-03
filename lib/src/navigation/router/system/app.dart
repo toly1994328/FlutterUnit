@@ -15,7 +15,7 @@ List<GoRoute> get systemRoutes => [
       ),
       GoRoute(
         path: AppRoute.account.path,
-        builder: (_, __) => const DeskAccountPage(),
+        builder: (_, __) => const DesktopUserPage(),
       ),
       GoRoute(
         path: AppRoute.aboutApp.path,

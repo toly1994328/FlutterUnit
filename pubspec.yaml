@@ -106,6 +106,8 @@ dependency_overrides:
   web: ^1.0.0
   intl: 0.20.2
   flutter_bloc: ^9.1.1
+  fx_user_ui:
+    path: ../../FrameworkX/client/packages/identity/ui/fx_user_ui
   # 统一 tolyui_navigation 与 fx_go_router_ext 的同一补丁线依赖。
   tolyui_meta: 0.0.2+2
 

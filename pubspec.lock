@@ -561,10 +561,9 @@ packages:
   fx_user_ui:
     dependency: "direct main"
     description:
-      name: fx_user_ui
-      sha256: "546b0eb0273cc7e16af719f40fe9eec153ab98d6598078076a7bdda47b377908"
-      url: "https://pub.dev"
-    source: hosted
+      path: "../../FrameworkX/client/packages/identity/ui/fx_user_ui"
+      relative: true
+    source: path
     version: "0.0.1"
   go_router:
     dependency: "direct main"

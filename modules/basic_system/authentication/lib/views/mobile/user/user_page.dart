@@ -299,6 +299,6 @@ class _UserPageState extends State<UserPage> {
       );
       return;
     }
-    context.push(AppRoute.login.url);
+    openUserLogin(context);
   }
 }
