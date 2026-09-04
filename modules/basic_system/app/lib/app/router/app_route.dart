@@ -20,6 +20,7 @@ enum AppRoute {
   /// user/app
   aboutApp('about_app', url: '/about_app'),
   account('account', url: '/account'),
+  honors('honors', url: '/honors'),
   dataManage('data_manage', url: '/data_manage'),
   blacklist('blacklist', url: '/blacklist'),
   aboutMe('about_me', url: '/about_me'),

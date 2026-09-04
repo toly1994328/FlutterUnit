@@ -13,7 +13,10 @@ TolyMessageShowTheme get messageShowTheme => TolyMessageShowTheme(
     );
 
 ThemeData darkTheme(AppConfig state) {
-  const Color scaffoldBackgroundColor = Color(0xff010201);
+  final ColorScheme colors = unitColorScheme(
+    activeColor: state.themeColor.color,
+    brightness: Brightness.dark,
+  );
 
   SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -23,7 +26,8 @@ ThemeData darkTheme(AppConfig state) {
 
   return ThemeData(
     extensions: [messageShowTheme],
-    scaffoldBackgroundColor: scaffoldBackgroundColor,
+    colorScheme: colors,
+    scaffoldBackgroundColor: colors.surfaceContainer,
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.android: SlidePageTransitionsBuilder(),
       TargetPlatform.iOS: SlidePageTransitionsBuilder(),
@@ -37,36 +41,39 @@ ThemeData darkTheme(AppConfig state) {
     fontFamily: state.fontFamily,
     useMaterial3: true,
     brightness: Brightness.dark,
-    primaryColor: const Color(0xff4699FB),
-    listTileTheme: const ListTileThemeData(
-      tileColor: Color(0xff181818),
-      textColor: Color(0xffD6D6D6),
+    primaryColor: colors.primary,
+    listTileTheme: ListTileThemeData(
+      tileColor: colors.surface,
+      textColor: colors.onSurface,
     ),
 
     ///设置选中的文本颜色
     textSelectionTheme: TextSelectionThemeData(
-      selectionColor: Colors.blue.withOpacity(0.3),
+      selectionColor: colors.primary.withValues(alpha: 0.3),
     ),
     appBarTheme: AppBarTheme(
         systemOverlayStyle: overlayStyle,
         elevation: 0,
         centerTitle: true,
-        backgroundColor: const Color(0xff181818),
-        iconTheme: const IconThemeData(color: Color(0xffCCCCCC)),
-        titleTextStyle: const TextStyle(
+        backgroundColor: colors.surface,
+        iconTheme: IconThemeData(color: colors.onSurfaceVariant),
+        titleTextStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: Color(0xffCCCCCC))),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: Colors.white, backgroundColor: Color(0xff4699FB)),
+            color: colors.onSurface)),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      foregroundColor: colors.onPrimary,
+      backgroundColor: colors.primary,
+    ),
     dividerTheme: DividerThemeData(
-      color: const Color(0xff2F2F2F),
+      color: colors.outlineVariant,
       space: px1,
       thickness: divHeight,
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: Color(0xff181818),
-        selectedItemColor: Color(0xff4699FB)),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: colors.surface,
+      selectedItemColor: colors.primary,
+    ),
   );
 }
 
@@ -78,6 +85,10 @@ double get divHeight {
 }
 
 ThemeData lightTheme(AppConfig state) {
+  final ColorScheme colors = unitColorScheme(
+    activeColor: state.themeColor.color,
+    brightness: Brightness.light,
+  );
   SystemUiOverlayStyle overlayStyle = const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.light,
@@ -91,22 +102,25 @@ ThemeData lightTheme(AppConfig state) {
 
   return ThemeData(
     extensions: [messageShowTheme],
+    colorScheme: colors,
     fontFamily: '',
-    primaryColor: state.themeColor.color,
-    scaffoldBackgroundColor: const Color(0xffF3F4F6),
+    primaryColor: colors.primary,
+    scaffoldBackgroundColor: colors.surfaceContainer,
     useMaterial3: true,
     // Android 使用 Material3
     chipTheme:
         const ChipThemeData(padding: EdgeInsets.symmetric(horizontal: 10)),
-    listTileTheme: const ListTileThemeData(
-        tileColor: Colors.white, textColor: Color(0xff333333)),
+    listTileTheme: ListTileThemeData(
+      tileColor: colors.surface,
+      textColor: colors.onSurface,
+    ),
 
     ///设置选中的文本颜色
     textSelectionTheme: TextSelectionThemeData(
-      selectionColor: Colors.blue.withOpacity(0.3),
+      selectionColor: colors.primary.withValues(alpha: 0.3),
     ),
     dividerTheme: DividerThemeData(
-      color: const Color(0xffDEE0E2),
+      color: colors.outlineVariant,
       space: px1,
       thickness: divHeight,
     ),
@@ -131,17 +145,20 @@ ThemeData lightTheme(AppConfig state) {
         },
       ),
     ),
-    bottomNavigationBarTheme:
-        const BottomNavigationBarThemeData(backgroundColor: Colors.white),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: colors.surface,
+      selectedItemColor: colors.primary,
+    ),
     appBarTheme: AppBarTheme(
       systemOverlayStyle: overlayStyle,
       elevation: 0,
       centerTitle: true,
-      backgroundColor: Colors.white,
+      backgroundColor: colors.surface,
+      foregroundColor: colors.onSurface,
       titleTextStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
-        color: Colors.black,
+        color: colors.onSurface,
         fontFamily: fontFamily,
       ),
     ),

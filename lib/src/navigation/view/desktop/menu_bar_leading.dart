@@ -56,12 +56,19 @@ class MenuBarLeading extends StatelessWidget {
                   ),
                   SizedBox(
                     width: 116,
-                    child: Text(
-                      _displayName(session),
-                      textAlign: TextAlign.center,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(color: Colors.white70),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Flexible(
+                          child: Text(
+                            _displayName(session),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(color: Colors.white70),
+                          ),
+                        ),
+                        const EquippedBadges(size: 14),
+                      ],
                     ),
                   )
                 ],
@@ -106,7 +113,7 @@ class MenuBarLeading extends StatelessWidget {
   /// 根据登录状态进入用户中心或打开桌面登录弹框。
   void _openUserEntry(BuildContext context, FxUserSession session) {
     if (session is FxAuthed) {
-      context.go(AppRoute.account.url);
+      context.go(AppRoute.honors.url);
       return;
     }
     openUserLogin(context);

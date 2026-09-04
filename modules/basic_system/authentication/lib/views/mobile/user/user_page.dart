@@ -271,22 +271,30 @@ class _UserPageState extends State<UserPage> {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2
       ..color = Colors.white;
-    return Stack(
+    return Row(
+      mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        ExcludeSemantics(
-          child: Text(
-            name,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: style.copyWith(foreground: outlinePaint),
+        Flexible(
+          child: Stack(
+            children: <Widget>[
+              ExcludeSemantics(
+                child: Text(
+                  name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: style.copyWith(foreground: outlinePaint),
+                ),
+              ),
+              Text(
+                name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: style,
+              ),
+            ],
           ),
         ),
-        Text(
-          name,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: style,
-        ),
+        const EquippedBadges(size: 19),
       ],
     );
   }

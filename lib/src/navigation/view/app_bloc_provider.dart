@@ -29,6 +29,10 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
   /// FrameworkX 用户会话是客户端唯一认证状态源。
   late final FxUserSessionCubit _users = FlutterUnitUserRuntime.create();
 
+  /// 当前登录用户的头像框与徽章装配状态。
+  late final AvatarFrameCubit _avatarFrame =
+      AvatarFrameCubit(HonorRepository());
+
   @override
   void initState() {
     super.initState();
@@ -41,6 +45,7 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
       providers: [
         // 全局 bloc : 维护应用存储状态、更新、认证
         BlocProvider<FxUserSessionCubit>.value(value: _users),
+        BlocProvider<AvatarFrameCubit>.value(value: _avatarFrame),
         BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
         if (UnitEnv.supportsInAppUpdate)
           BlocProvider<UpgradeBloc>(
@@ -52,14 +57,30 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
         BlocProvider<GalleryUnitBloc>(
             create: (_) => GalleryUnitBloc()..loadGalleryInfo()),
       ],
-      child: WidgetsBlocProvider(child: widget.child),
+      child: BlocListener<FxUserSessionCubit, FxUserSession>(
+        listener: _onUserSessionChanged,
+        child: WidgetsBlocProvider(child: widget.child),
+      ),
     );
   }
 
   @override
   void dispose() {
     unawaited(_users.close());
+    unawaited(_avatarFrame.close());
     AppStorage().close();
     super.dispose();
+  }
+
+  /// 会话变化时同步或清除 FlutterUnit 用户荣誉装配状态。
+  void _onUserSessionChanged(
+    BuildContext context,
+    FxUserSession session,
+  ) {
+    if (session is FxAuthed) {
+      unawaited(_avatarFrame.load());
+      return;
+    }
+    _avatarFrame.clear();
   }
 }
