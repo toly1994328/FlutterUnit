@@ -1,12 +1,10 @@
 import 'package:app/app.dart';
 import 'package:fx_updater/fx_updater.dart';
-import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:unit_env/unit_env.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'language_setting.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -101,7 +99,33 @@ class SettingPage extends StatelessWidget {
             // _buildShowTool(context),
             divider,
             // Container( height: 10),
-            VersionTiled(),
+            const VersionTiled(),
+            divider,
+            ListTile(
+              leading: Icon(
+                Icons.info_outline,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text(
+                context.l10n.aboutApplications,
+                style: const TextStyle(fontSize: 16),
+              ),
+              trailing: _nextIcon(context),
+              onTap: () => context.push(AppRoute.aboutApp.url),
+            ),
+            divider,
+            ListTile(
+              leading: Icon(
+                TolyIcon.icon_kafei,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text(
+                context.l10n.contactThisKing,
+                style: const TextStyle(fontSize: 16),
+              ),
+              trailing: _nextIcon(context),
+              onTap: () => context.push(AppRoute.aboutMe.url),
+            ),
           ],
         ),
       ),

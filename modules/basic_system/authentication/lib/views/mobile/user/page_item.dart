@@ -1,9 +1,6 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-import 'package:fx_updater/views/update_red_point.dart';
-import 'package:go_router/go_router.dart';
 import 'package:l10n/l10n.dart';
-import 'package:unit_env/unit_env.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -46,6 +43,13 @@ class MePageItem extends StatelessWidget {
           divider,
           _buildItem(
             context,
+            Icons.workspace_premium_outlined,
+            context.l10n.avatarAchievements,
+            AppRoute.honors.url,
+          ),
+          Gap.sfl10,
+          _buildItem(
+            context,
             Icons.note_alt,
             context.l10n.messageBoard,
             AppRoute.note.url,
@@ -57,27 +61,8 @@ class MePageItem extends StatelessWidget {
             context.l10n.blacklist,
             AppRoute.blacklist.url,
           ),
-          Gap.sfl10,
-          Stack(
-            children: [
-              _buildItem(
-                context,
-                Icons.update,
-                context.l10n.versionInformation,
-                AppRoute.version.url,
-              ),
-              if (UnitEnv.supportsInAppUpdate)
-                const Positioned(left: 40, top: 10, child: UpdateRedPoint()),
-            ],
-          ),
-          divider,
-          _buildItem(context, Icons.info, context.l10n.aboutApplications,
-              AppRoute.aboutApp.url),
-          Gap.sfl10,
-          _buildItem(context, TolyIcon.icon_kafei, context.l10n.contactThisKing,
-              AppRoute.aboutMe.url),
           if (!kAppEnv.isIos) ...[
-            divider,
+            Gap.sfl10,
             _buildItem(
               context,
               Icons.sanitizer,

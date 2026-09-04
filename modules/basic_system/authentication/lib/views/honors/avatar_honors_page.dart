@@ -229,19 +229,21 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
             colors.primary.withValues(alpha: 0.08),
           ),
           onTap: state.loading ? null : () => _toggleHonor(honor, selected),
-          child: Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              children: <Widget>[
-                Expanded(child: _HonorImage(honor: honor)),
-                const SizedBox(height: 10),
-                Row(
+          child: Stack(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
                   children: <Widget>[
-                    Expanded(
+                    Expanded(child: _HonorImage(honor: honor)),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      width: double.infinity,
                       child: Text(
                         honor.name,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           color: selected ? colors.primary : colors.onSurface,
                           fontSize: 14,
@@ -249,16 +251,20 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
                         ),
                       ),
                     ),
-                    if (selected)
-                      Icon(
-                        Icons.check_circle,
-                        color: colors.primary,
-                        size: 18,
-                      ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              if (selected)
+                Positioned(
+                  top: 6,
+                  right: 6,
+                  child: Icon(
+                    Icons.check_circle,
+                    color: colors.primary,
+                    size: 18,
+                  ),
+                ),
+            ],
           ),
         ),
       ),
@@ -281,34 +287,21 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
   /// 切换单枚徽章的装配状态。
   Future<void> _toggleBadge(UserHonor badge, bool selected) async {
     final AvatarFrameCubit cubit = context.read<AvatarFrameCubit>();
-    final bool success = selected
-        ? await cubit.unequipBadge(badge.code)
-        : await cubit.equipBadge(badge.code);
-    if (!mounted || !success) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-          content:
-              Text(selected ? '已取消「${badge.name}」' : '已装配「${badge.name}」')),
-    );
+    if (selected) {
+      await cubit.unequipBadge(badge.code);
+      return;
+    }
+    await cubit.equipBadge(badge.code);
   }
 
-  /// 佩戴所选头像框，成功后全局头像会同步刷新。
+  /// 佩戴所选头像框，全局头像会随状态同步刷新。
   Future<void> _equip(UserHonor frame) async {
-    final bool success =
-        await context.read<AvatarFrameCubit>().equip(frame.code);
-    if (!mounted || !success) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已佩戴「${frame.name}」')),
-    );
+    await context.read<AvatarFrameCubit>().equip(frame.code);
   }
 
   /// 卸下当前头像框。
   Future<void> _unequip() async {
-    final bool success = await context.read<AvatarFrameCubit>().unequip();
-    if (!mounted || !success) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('已卸下头像框')),
-    );
+    await context.read<AvatarFrameCubit>().unequip();
   }
 }
 

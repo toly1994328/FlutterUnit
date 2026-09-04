@@ -7,10 +7,13 @@ import '../../honors/model/user_honor.dart';
 
 /// 展示当前用户已经装配的徽章，最多展示三枚。
 class EquippedBadges extends StatelessWidget {
-  const EquippedBadges({super.key, this.size = 18});
+  const EquippedBadges({super.key, this.size = 18, this.onTap});
 
   /// 单枚徽章的显示尺寸。
   final double size;
+
+  /// 点击整组徽章时触发的操作；为空时仅展示徽章。
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -37,26 +40,32 @@ class EquippedBadges extends StatelessWidget {
         .take(3)
         .toList();
     if (badges.isEmpty) return const SizedBox.shrink();
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: badges.map<Widget>(_buildBadge).toList(),
+    final Widget badgesView = Padding(
+      padding: const EdgeInsets.only(left: 4),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: badges.map<Widget>(_buildBadge).toList(),
+      ),
+    );
+    if (onTap == null) return badgesView;
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: onTap,
+      child: badgesView,
     );
   }
 
   Widget _buildBadge(UserHonor badge) {
     final String source =
         FlutterUnitHost.resolveImageResource(badge.assetUrl).toString();
-    return Padding(
-      padding: const EdgeInsets.only(left: 3),
-      child: Tooltip(
-        message: badge.name,
-        child: Image.network(
-          source,
-          width: size,
-          height: size,
-          fit: BoxFit.contain,
-          errorBuilder: _buildError,
-        ),
+    return Tooltip(
+      message: badge.name,
+      child: Image.network(
+        source,
+        width: size,
+        height: size,
+        fit: BoxFit.contain,
+        errorBuilder: _buildError,
       ),
     );
   }
