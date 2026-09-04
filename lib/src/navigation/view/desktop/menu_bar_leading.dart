@@ -67,7 +67,10 @@ class MenuBarLeading extends StatelessWidget {
                             style: const TextStyle(color: Colors.white70),
                           ),
                         ),
-                        const EquippedBadges(size: 14),
+                        EquippedBadges(
+                          size: 14,
+                          onTap: () => context.go(AppRoute.honors.url),
+                        ),
                       ],
                     ),
                   )

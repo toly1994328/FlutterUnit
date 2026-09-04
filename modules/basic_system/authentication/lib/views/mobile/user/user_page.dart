@@ -250,6 +250,7 @@ class _UserPageState extends State<UserPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             _buildOutlinedName(
+              context,
               name,
               nameStyle ?? TextStyle(fontSize: 18, color: theme.primaryColor),
             ),
@@ -266,7 +267,11 @@ class _UserPageState extends State<UserPage> {
   }
 
   /// 叠加白色描边和主题色填充，保证用户名在图片上清晰可见。
-  Widget _buildOutlinedName(String name, TextStyle style) {
+  Widget _buildOutlinedName(
+    BuildContext context,
+    String name,
+    TextStyle style,
+  ) {
     final Paint outlinePaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2
@@ -294,7 +299,10 @@ class _UserPageState extends State<UserPage> {
             ],
           ),
         ),
-        const EquippedBadges(size: 19),
+        EquippedBadges(
+          size: 19,
+          onTap: () => context.push(AppRoute.honors.url),
+        ),
       ],
     );
   }
