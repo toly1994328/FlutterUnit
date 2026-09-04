@@ -4,6 +4,8 @@ import 'package:fx_user_session/fx_user_session.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:unit_env/unit_env.dart';
 
+import '../honors/bloc/avatar_frame_cubit.dart';
+
 /// 订阅当前用户会话并渲染头像的统一入口。
 class SessionUserAvatar extends StatelessWidget {
   const SessionUserAvatar({
@@ -55,7 +57,20 @@ class SessionUserAvatar extends StatelessWidget {
         showShadow: showShadow,
       );
     }
-    return UserAvatar(
+    return BlocBuilder<AvatarFrameCubit, AvatarFrameState>(
+      buildWhen: (AvatarFrameState previous, AvatarFrameState current) =>
+          previous.frame?.assetUrl != current.frame?.assetUrl,
+      builder: (BuildContext context, AvatarFrameState frameState) {
+        return _buildFramedAvatar(session, frameState);
+      },
+    );
+  }
+
+  Widget _buildFramedAvatar(
+    FxAuthed session,
+    AvatarFrameState frameState,
+  ) {
+    final Widget avatar = UserAvatar(
       displayName: session.user.displayName ?? session.user.id,
       source: _resolveAvatar(session),
       radius: size / 2,
@@ -64,6 +79,43 @@ class SessionUserAvatar extends StatelessWidget {
       borderColor: borderColor,
       showShadow: showShadow,
     );
+    final String? frameUrl = _resolveFrameUrl(frameState.frame?.assetUrl);
+    if (frameUrl == null) return avatar;
+    return SizedBox.square(
+      dimension: size,
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: <Widget>[
+          avatar,
+          IgnorePointer(
+            child: Transform.scale(
+              scale: 1.32,
+              child: Image.network(
+                frameUrl,
+                width: size,
+                height: size,
+                fit: BoxFit.contain,
+                errorBuilder: _buildFrameError,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFrameError(
+    BuildContext context,
+    Object error,
+    StackTrace? stackTrace,
+  ) {
+    return const SizedBox.shrink();
+  }
+
+  String? _resolveFrameUrl(String? source) {
+    if (source == null || source.trim().isEmpty) return null;
+    return FlutterUnitHost.resolveImageResource(source).toString();
   }
 
   String _resolveAvatar(FxUserSession session) {

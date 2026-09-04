@@ -126,7 +126,7 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   void _openAccountEntry(BuildContext context) {
     final FxUserSession state = context.read<FxUserSessionCubit>().state;
     final String target =
-        state is FxAuthed ? AppRoute.account.url : AppRoute.login.url;
+        state is FxAuthed ? AppRoute.honors.url : AppRoute.login.url;
     debugPrint(
       '[FlutterUnit.AuthEntry] home.avatar.tap '
       'state=${state.runtimeType} target=$target',

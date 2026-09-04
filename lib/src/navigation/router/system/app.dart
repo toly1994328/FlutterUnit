@@ -18,6 +18,10 @@ List<GoRoute> get systemRoutes => [
         builder: (_, __) => const DesktopUserPage(),
       ),
       GoRoute(
+        path: AppRoute.honors.path,
+        builder: (_, __) => const AvatarHonorsPage(),
+      ),
+      GoRoute(
         path: AppRoute.aboutApp.path,
         builder: (_, __) => const AboutAppPage(),
       ),
