@@ -22,6 +22,10 @@ List<GoRoute> get systemRoutes => [
         builder: (_, __) => const AvatarHonorsPage(),
       ),
       GoRoute(
+        path: AppRoute.progression.path,
+        builder: (_, __) => const TaskAchievementPage(),
+      ),
+      GoRoute(
         path: AppRoute.aboutApp.path,
         builder: (_, __) => const AboutAppPage(),
       ),

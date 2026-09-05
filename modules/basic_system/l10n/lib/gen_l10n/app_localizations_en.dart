@@ -88,7 +88,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get userCollection => 'Collection';
 
   @override
-  String get avatarAchievements => 'Honors & Achievements';
+  String get avatarAchievements => 'Avatar & Badges';
+
+  @override
+  String get taskAchievements => 'Tasks & Achievements';
 
   @override
   String get aboutApplications => 'About Applications';

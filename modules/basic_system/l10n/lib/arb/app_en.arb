@@ -30,7 +30,8 @@
   "favorite":"Collected",
 
   "userCollection":"Collection",
-  "avatarAchievements":"Honors & Achievements",
+  "avatarAchievements":"Avatar & Badges",
+  "taskAchievements":"Tasks & Achievements",
 
 
   "appSettings":"Application Setting",

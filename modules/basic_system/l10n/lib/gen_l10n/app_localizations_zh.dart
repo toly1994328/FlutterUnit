@@ -88,7 +88,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get userCollection => '我的收藏';
 
   @override
-  String get avatarAchievements => '荣誉成就';
+  String get avatarAchievements => '头像徽章';
+
+  @override
+  String get taskAchievements => '任务成就';
 
   @override
   String get aboutApplications => '关于应用';
