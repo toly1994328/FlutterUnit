@@ -40,6 +40,13 @@ class MePageItem extends StatelessWidget {
             context.l10n.userCollection,
             AppRoute.collection.url,
           ),
+          Gap.sfl10,
+          _buildItem(
+            context,
+            Icons.task_alt_outlined,
+            context.l10n.taskAchievements,
+            AppRoute.progression.url,
+          ),
           divider,
           _buildItem(
             context,

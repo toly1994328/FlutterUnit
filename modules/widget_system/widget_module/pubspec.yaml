@@ -18,6 +18,8 @@ dependencies:
     path: ../widget_repository
   unit_env:
     path: ../../basic_system/unit_env
+  authentication:
+    path: ../../basic_system/authentication
   utils:
     path: ../../basic_system/utils
 

@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:app/app.dart';
+import 'package:authentication/authentication.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:widget_module/widget_module.dart';
 
@@ -27,6 +31,9 @@ Widget widgetDetailBuilder(BuildContext context, GoRouterState state) {
   WidgetModel? model;
   if (extra is WidgetModel) {
     model = extra;
+  }
+  if (model != null) {
+    unawaited(context.read<ProgressionCubit>().recordWidgetView(model.id));
   }
   if (kAppEnv.isDesktopUI) {
     return DeskWidgetDetailPageScope(

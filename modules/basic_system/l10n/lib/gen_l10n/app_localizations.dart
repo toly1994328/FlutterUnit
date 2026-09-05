@@ -263,8 +263,14 @@ abstract class AppLocalizations {
   /// No description provided for @avatarAchievements.
   ///
   /// In zh, this message translates to:
-  /// **'荣誉成就'**
+  /// **'头像徽章'**
   String get avatarAchievements;
+
+  /// No description provided for @taskAchievements.
+  ///
+  /// In zh, this message translates to:
+  /// **'任务成就'**
+  String get taskAchievements;
 
   /// No description provided for @aboutApplications.
   ///

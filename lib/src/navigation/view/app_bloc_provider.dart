@@ -33,6 +33,10 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
   late final AvatarFrameCubit _avatarFrame =
       AvatarFrameCubit(HonorRepository());
 
+  /// 当前登录用户的每日任务与长期成就状态。
+  late final ProgressionCubit _progression =
+      ProgressionCubit(ProgressionRepository());
+
   @override
   void initState() {
     super.initState();
@@ -46,6 +50,7 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
         // 全局 bloc : 维护应用存储状态、更新、认证
         BlocProvider<FxUserSessionCubit>.value(value: _users),
         BlocProvider<AvatarFrameCubit>.value(value: _avatarFrame),
+        BlocProvider<ProgressionCubit>.value(value: _progression),
         BlocProvider<AppConfigBloc>(create: (_) => AppConfigBloc()),
         if (UnitEnv.supportsInAppUpdate)
           BlocProvider<UpgradeBloc>(
@@ -68,6 +73,7 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
   void dispose() {
     unawaited(_users.close());
     unawaited(_avatarFrame.close());
+    unawaited(_progression.close());
     AppStorage().close();
     super.dispose();
   }
@@ -79,8 +85,10 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
   ) {
     if (session is FxAuthed) {
       unawaited(_avatarFrame.load());
+      unawaited(_progression.load());
       return;
     }
     _avatarFrame.clear();
+    _progression.clear();
   }
 }

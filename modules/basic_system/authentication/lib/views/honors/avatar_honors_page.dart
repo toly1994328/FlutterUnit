@@ -8,7 +8,7 @@ import '../../honors/model/user_honor.dart';
 import '../user_avatar.dart';
 import 'equipped_badges.dart';
 
-enum _HonorKind { avatarFrame, badge }
+enum _HonorSection { avatarFrame, badge }
 
 /// 当前用户查看并选择头像框的页面。
 class AvatarHonorsPage extends StatefulWidget {
@@ -20,7 +20,7 @@ class AvatarHonorsPage extends StatefulWidget {
 
 class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
   /// 当前展示的荣誉类型。
-  _HonorKind _selectedKind = _HonorKind.avatarFrame;
+  _HonorSection _selectedSection = _HonorSection.avatarFrame;
 
   @override
   void initState() {
@@ -36,7 +36,7 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
       child: Scaffold(
         backgroundColor: colors.surfaceContainer,
         appBar: AppBar(
-          title: const Text('头像与荣誉'),
+          title: const Text('头像徽章'),
           centerTitle: true,
           elevation: 0,
           scrolledUnderElevation: 0,
@@ -56,14 +56,14 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
   }
 
   void _selectKind(int index) {
-    final _HonorKind selectedKind = _HonorKind.values[index];
-    if (_selectedKind == selectedKind) return;
-    setState(() => _selectedKind = selectedKind);
+    final _HonorSection selectedSection = _HonorSection.values[index];
+    if (_selectedSection == selectedSection) return;
+    setState(() => _selectedSection = selectedSection);
   }
 
   Widget _buildBySession(BuildContext context, FxUserSession session) {
     if (session is! FxAuthed) {
-      return const Center(child: Text('登录后查看头像与荣誉'));
+      return const Center(child: Text('登录后查看头像徽章'));
     }
     return BlocConsumer<AvatarFrameCubit, AvatarFrameState>(
       listenWhen: _shouldShowError,
@@ -91,7 +91,7 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
     final bool isMobile = viewportSize.shortestSide < 600;
     final int columnCount = _frameColumnCount(viewportSize.width, isMobile);
     final double cardHeight = isMobile ? 136 : 180;
-    final bool showAvatarFrames = _selectedKind == _HonorKind.avatarFrame;
+    final bool showAvatarFrames = _selectedSection == _HonorSection.avatarFrame;
     final String kind = showAvatarFrames ? 'avatar_frame' : 'badge';
     final List<UserHonor> honors =
         state.honors.where((UserHonor honor) => honor.kind == kind).toList();
@@ -118,40 +118,42 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: _SectionTitle(showAvatarFrames: showAvatarFrames),
-          ),
-          if (state.loading && honors.isEmpty)
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Center(
-                child: CircularProgressIndicator(color: colors.primary),
-              ),
-            )
-          else if (honors.isEmpty)
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Center(
-                child: Text(showAvatarFrames ? '还没有获得头像框' : '还没有获得徽章'),
-              ),
-            )
-          else
-            SliverPadding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 12, 32),
-              sliver: SliverGrid(
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) =>
-                      _buildHonorCard(context, honors[index], state),
-                  childCount: honors.length,
-                ),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: columnCount,
-                  mainAxisExtent: cardHeight,
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8,
-                ),
-              ),
+          ...<Widget>[
+            SliverToBoxAdapter(
+              child: _SectionTitle(showAvatarFrames: showAvatarFrames),
             ),
+            if (state.loading && honors.isEmpty)
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Center(
+                  child: CircularProgressIndicator(color: colors.primary),
+                ),
+              )
+            else if (honors.isEmpty)
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Center(
+                  child: Text(showAvatarFrames ? '还没有获得头像框' : '还没有获得徽章'),
+                ),
+              )
+            else
+              SliverPadding(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 32),
+                sliver: SliverGrid(
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) =>
+                        _buildHonorCard(context, honors[index], state),
+                    childCount: honors.length,
+                  ),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: columnCount,
+                    mainAxisExtent: cardHeight,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8,
+                  ),
+                ),
+              ),
+          ],
         ],
       ),
     );

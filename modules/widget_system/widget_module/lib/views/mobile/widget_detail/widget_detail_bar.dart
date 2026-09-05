@@ -1,13 +1,14 @@
 import 'dart:math';
+import 'dart:async';
 
 import 'package:app/app.dart';
+import 'package:authentication/authentication.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/action/widget_action.dart';
-import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 import 'package:widget_ui/widget_ui.dart';
 
@@ -24,14 +25,14 @@ class SliverWidgetDetailBar extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     Color? appBarColor = Theme.of(context).appBarTheme.backgroundColor;
-    Color? appBarTextColor = Theme.of(context).appBarTheme.titleTextStyle?.color;
-
+    Color? appBarTextColor =
+        Theme.of(context).appBarTheme.titleTextStyle?.color;
 
     return SliverAppBar(
       pinned: true,
-      backgroundColor: isDark? appBarColor:backgroundColor,
-      titleTextStyle:  TextStyle(color:isDark?appBarTextColor: textColor),
-      iconTheme:  isDark? null:const IconThemeData(color: textColor),
+      backgroundColor: isDark ? appBarColor : backgroundColor,
+      titleTextStyle: TextStyle(color: isDark ? appBarTextColor : textColor),
+      iconTheme: isDark ? null : const IconThemeData(color: textColor),
       centerTitle: false,
       expandedHeight: 120.0,
       scrolledUnderElevation: 0.5,
@@ -44,13 +45,16 @@ class SliverWidgetDetailBar extends StatelessWidget {
         ),
         fixedSubtitle: Text(
           model.name,
-          style:  TextStyle(color: isDark?appBarTextColor:Color(0xff696969), fontSize: 12),
+          style: TextStyle(
+              color: isDark ? appBarTextColor : Color(0xff696969),
+              fontSize: 12),
         ),
         title: Padding(
           padding: const EdgeInsets.only(bottom: 3),
           child: Text(
             model.nameCN,
-            style:  TextStyle( fontSize: 16,color:isDark?appBarTextColor: textColor),
+            style: TextStyle(
+                fontSize: 16, color: isDark ? appBarTextColor : textColor),
           ),
         ),
         //伸展处布局
@@ -72,10 +76,14 @@ class SliverWidgetDetailBar extends StatelessWidget {
     );
   }
 
-
   // 监听 LikeWidgetBloc 伺机弹出 toast
   void _listenLikeStateChange(BuildContext context, List<WidgetModel> state) {
     bool collected = state.contains(model);
+    if (collected) {
+      unawaited(
+        context.read<ProgressionCubit>().recordWidgetCollection(model.id),
+      );
+    }
     String msg =
         collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
     Toast.toast(
@@ -92,7 +100,7 @@ class SliverWidgetDetailBar extends StatelessWidget {
   }
 
   // 根据 [LikeWidgetState ] 构建图标
-  Widget _buildByLikeState(BuildContext context,  List<WidgetModel> state) {
+  Widget _buildByLikeState(BuildContext context, List<WidgetModel> state) {
     bool liked = state.contains(model);
     return Padding(
       padding: const EdgeInsets.only(right: 20.0),
