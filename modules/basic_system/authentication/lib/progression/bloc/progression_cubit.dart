@@ -28,6 +28,13 @@ class ProgressionState {
 
   /// 最近一次请求错误。
   final String? error;
+
+  /// 当前已完成但尚未领取奖励的每日任务数量。
+  int get claimableTaskCount =>
+      overview?.dailyTasks
+          .where((ProgressionItem item) => item.claimable)
+          .length ??
+      0;
 }
 
 /// 维护当前用户的每日任务、签到和长期成就状态。

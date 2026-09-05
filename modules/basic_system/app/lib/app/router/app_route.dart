@@ -22,6 +22,7 @@ enum AppRoute {
   account('account', url: '/account'),
   honors('honors', url: '/honors'),
   progression('progression', url: '/progression'),
+  workshop('workshop', url: '/workshop'),
   dataManage('data_manage', url: '/data_manage'),
   blacklist('blacklist', url: '/blacklist'),
   aboutMe('about_me', url: '/about_me'),

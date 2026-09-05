@@ -21,7 +21,7 @@ class AppL10nEn extends AppL10n {
   String get deskTabTools => 'Treasure';
 
   @override
-  String get deskTabMine => 'About';
+  String get deskTabMine => 'My Account';
 
   @override
   String get messageBoard => 'Message Board';

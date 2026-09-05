@@ -1,6 +1,6 @@
+import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:unit_env/unit_env.dart';
 
 import '../../progression/bloc/progression_cubit.dart';
 import '../../progression/model/progression_item.dart';
@@ -41,17 +41,39 @@ class ProgressionPanel extends StatelessWidget {
     }
     final List<ProgressionItem> items =
         achievements ? overview.achievements : overview.dailyTasks;
+    final Widget content = kAppEnv.isDesktopUI
+        ? SliverGrid.builder(
+            itemCount: items.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 8,
+              crossAxisSpacing: 8,
+              mainAxisExtent: 126,
+            ),
+            itemBuilder: (BuildContext context, int index) =>
+                _buildCard(items, overview.currency, index),
+          )
+        : SliverList.separated(
+            itemCount: items.length,
+            itemBuilder: (BuildContext context, int index) =>
+                _buildCard(items, overview.currency, index),
+            separatorBuilder: (_, __) => const SizedBox(height: 8),
+          );
     return SliverPadding(
       padding: const EdgeInsets.fromLTRB(12, 12, 12, 32),
-      sliver: SliverList.separated(
-        itemCount: items.length,
-        itemBuilder: (_, int index) => _ProgressionCard(
-          item: items[index],
-          achievement: achievements,
-          currency: overview.currency,
-        ),
-        separatorBuilder: (_, __) => const SizedBox(height: 10),
-      ),
+      sliver: content,
+    );
+  }
+
+  Widget _buildCard(
+    List<ProgressionItem> items,
+    ProgressionCurrency currency,
+    int index,
+  ) {
+    return _ProgressionCard(
+      item: items[index],
+      achievement: achievements,
+      currency: currency,
     );
   }
 }
@@ -73,11 +95,11 @@ class _ProgressionCard extends StatelessWidget {
     final ColorScheme colors = Theme.of(context).colorScheme;
     final double progress = (item.progress / item.target).clamp(0, 1);
     return Container(
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
         color: colors.surface,
         border: Border.all(color: colors.outlineVariant),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,19 +125,38 @@ class _ProgressionCard extends StatelessWidget {
                   ],
                 ),
               ),
-              if (achievement && item.rewards.isNotEmpty) ...<Widget>[
+              if (achievement &&
+                  (item.rewards.isNotEmpty ||
+                      item.rewardPoints > 0)) ...<Widget>[
                 const SizedBox(width: 10),
                 SizedBox(
-                  width: 132,
-                  child: _HonorRewardLogos(rewards: item.rewards),
+                  width: 150,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      if (item.rewards.isNotEmpty)
+                        Expanded(
+                          child: _HonorRewardLogos(
+                            rewards: item.rewards,
+                            maxCount: item.rewardPoints > 0 ? 2 : 3,
+                          ),
+                        ),
+                      if (item.rewardPoints > 0)
+                        _DustRewardMark(
+                          points: item.rewardPoints,
+                          currency: currency,
+                          stacked: true,
+                        ),
+                    ],
+                  ),
                 ),
-              ] else if (!achievement && item.rewardPoints > 0) ...<Widget>[
+              ] else if (item.rewardPoints > 0) ...<Widget>[
                 const SizedBox(width: 10),
                 _DustRewardMark(points: item.rewardPoints, currency: currency),
               ],
             ],
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 8),
           LinearProgressIndicator(
             value: progress,
             minHeight: 5,
@@ -123,7 +164,7 @@ class _ProgressionCard extends StatelessWidget {
             backgroundColor: colors.surfaceContainerHighest,
             color: colors.primary,
           ),
-          const SizedBox(height: 9),
+          const SizedBox(height: 6),
           Row(
             children: <Widget>[
               Text('${item.progress.clamp(0, item.target)} / ${item.target}',
@@ -133,7 +174,7 @@ class _ProgressionCard extends StatelessWidget {
                 const SizedBox(width: 8),
                 Expanded(child: _HonorRewardNames(rewards: item.rewards)),
               ],
-              if (!achievement || item.rewards.isEmpty) const Spacer(),
+              if (item.rewards.isEmpty) const Spacer(),
               _TaskAction(item: item, achievement: achievement),
             ],
           ),
@@ -144,13 +185,16 @@ class _ProgressionCard extends StatelessWidget {
 }
 
 class _HonorRewardLogos extends StatelessWidget {
-  const _HonorRewardLogos({required this.rewards});
+  const _HonorRewardLogos({required this.rewards, this.maxCount = 3});
 
   final List<ProgressionReward> rewards;
 
+  final int maxCount;
+
   @override
   Widget build(BuildContext context) {
-    final List<ProgressionReward> visibleRewards = rewards.take(3).toList();
+    final List<ProgressionReward> visibleRewards =
+        rewards.take(maxCount).toList();
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: visibleRewards.map(_buildRewardLogo).toList(),
@@ -226,38 +270,67 @@ class _TaskIcon extends StatelessWidget {
 }
 
 class _DustRewardMark extends StatelessWidget {
-  const _DustRewardMark({required this.points, required this.currency});
+  const _DustRewardMark({
+    required this.points,
+    required this.currency,
+    this.stacked = false,
+  });
 
+  /// 奖励的匠尘数量。
   final int points;
 
+  /// 匠尘的名称和图片资源。
   final ProgressionCurrency currency;
+
+  /// 是否将匠尘图标与数量上下排列。
+  final bool stacked;
 
   @override
   Widget build(BuildContext context) {
     final ColorScheme colors = Theme.of(context).colorScheme;
     return SizedBox(
       height: 40,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image.network(
-            FlutterUnitHost.resolveImageResource(currency.assetUrl).toString(),
-            width: 30,
-            height: 30,
-            errorBuilder: (_, __, ___) => Icon(Icons.auto_awesome_rounded,
-                color: colors.primary, size: 27),
-          ),
-          const SizedBox(width: 3),
-          Text(
-            '+$points',
-            style: TextStyle(
-              color: colors.primary,
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
+      child: stacked
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _buildLogo(colors, size: 26),
+                _buildAmount(colors, fontSize: 10),
+              ],
+            )
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _buildLogo(colors, size: 30),
+                const SizedBox(width: 3),
+                _buildAmount(colors, fontSize: 12),
+              ],
             ),
-          ),
-        ],
+    );
+  }
+
+  Widget _buildLogo(ColorScheme colors, {required double size}) {
+    return Image.network(
+      FlutterUnitHost.resolveImageResource(currency.assetUrl).toString(),
+      width: size,
+      height: size,
+      errorBuilder: (_, __, ___) => Icon(
+        Icons.auto_awesome_rounded,
+        color: colors.primary,
+        size: size,
+      ),
+    );
+  }
+
+  Widget _buildAmount(ColorScheme colors, {required double fontSize}) {
+    return Text(
+      '+$points',
+      style: TextStyle(
+        color: colors.primary,
+        fontSize: fontSize,
+        height: 1,
+        fontWeight: FontWeight.w600,
       ),
     );
   }

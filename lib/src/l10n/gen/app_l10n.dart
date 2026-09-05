@@ -124,7 +124,7 @@ abstract class AppL10n {
   /// No description provided for @deskTabMine.
   ///
   /// In zh, this message translates to:
-  /// **'应用信息'**
+  /// **'我的账号'**
   String get deskTabMine;
 
   /// No description provided for @messageBoard.

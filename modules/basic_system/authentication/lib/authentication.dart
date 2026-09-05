@@ -19,3 +19,6 @@ export 'honors/model/user_honor.dart';
 export 'honors/repository/honor_repository.dart';
 export 'progression/bloc/progression_cubit.dart';
 export 'progression/repository/progression_repository.dart';
+export 'workshop/bloc/workshop_cubit.dart';
+export 'workshop/repository/workshop_repository.dart';
+export 'views/workshop/workshop_page.dart';

@@ -1,6 +1,8 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:app/app.dart';
+import 'package:authentication/authentication.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,14 +11,12 @@ import 'package:utils/utils.dart';
 import 'package:widget_module/blocs/action/widget_action.dart';
 import 'package:widget_ui/widget_ui.dart';
 
-import 'package:widget_module/blocs/blocs.dart';
 import 'package:widget_repository/widget_repository.dart';
 
 class DeskSliverWidgetDetailBar extends StatelessWidget {
   final WidgetModel model;
 
-  const DeskSliverWidgetDetailBar({Key? key, required this.model})
-      : super(key: key);
+  const DeskSliverWidgetDetailBar({super.key, required this.model});
 
   final Color backgroundColor = const Color(0xffFAFAFA);
   static const Color textColor = Color(0xff262626);
@@ -85,8 +85,13 @@ class DeskSliverWidgetDetailBar extends StatelessWidget {
 
   // 监听 LikeWidgetBloc 伺机弹出 toast
   void _listenLikeStateChange(BuildContext context, List<WidgetModel> state) {
-    bool collected = state.contains(model);
-    String msg =
+    final bool collected = state.contains(model);
+    if (collected) {
+      unawaited(
+        context.read<ProgressionCubit>().recordWidgetCollection(model.id),
+      );
+    }
+    final String msg =
         collected ? "收藏【${model.name}】组件成功!" : "已取消【${model.name}】组件收藏!";
     Toast.toast(
       context,

@@ -40,6 +40,7 @@ dependencies:
   fx_user_ui: 0.0.1
   fx_account: 0.1.0
   fx_exception: 0.0.1+4
+  fx_ability: 0.1.0
   sign_in_with_apple: ^6.1.0
   url_launcher: ^6.3.1
   webview_flutter: ^4.10.0
