@@ -41,15 +41,11 @@ class MenuBarLeading extends StatelessWidget {
                 spacing: 8,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: <Widget>[
-                  const DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(3),
+                  const SizedBox.square(
+                    dimension: 80,
+                    child: Center(
                       child: SessionUserAvatar(
-                        size: 54,
+                        size: 60,
                         showShadow: false,
                       ),
                     ),

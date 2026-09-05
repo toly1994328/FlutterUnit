@@ -1,4 +1,3 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,15 +9,12 @@ import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
 
 import '../../user_avatar.dart';
-import 'avatar/avatar_crop_page.dart';
+import 'avatar/avatar_update_flow.dart';
 import 'user_edit_name_page.dart';
 import 'user_edit_signature_page.dart';
 
 /// 当前登录用户的账户资料页，布局与交互对齐 ViewX 移动端账号管理页。
 class UserAccountPage extends StatelessWidget {
-  /// 头像原图大小上限。
-  static const int _maxAvatarBytes = 2 * 1024 * 1024;
-
   const UserAccountPage({super.key});
 
   @override
@@ -62,7 +58,7 @@ class UserAccountPage extends StatelessWidget {
         hasPassword: hasPassword,
         onSetPassword: () => _openSetPasswordPage(context),
         onChangePassword: () => _openChangePasswordPage(context),
-        onAvatarTap: () => _pickAvatar(context),
+        onAvatarTap: () => AvatarUpdateFlow.start(context),
         onUsernameTap: () => _openNameEditor(context, user.displayName ?? ''),
         onSignatureTap: () => _openSignatureEditor(context, signature),
         onCopyUserId: () async => _copyId(context, user.id),
@@ -200,43 +196,6 @@ class UserAccountPage extends StatelessWidget {
     if (!context.mounted) return;
     Toast.success(context, '密码重置成功');
     Navigator.of(context).pop();
-  }
-
-  /// 选择头像、校验文件并进入与 ViewX 一致的拖拽缩放裁剪页。
-  Future<void> _pickAvatar(BuildContext context) async {
-    try {
-      final FilePickerResult? result = await FilePicker.platform.pickFiles(
-        type: FileType.image,
-        allowMultiple: false,
-        withData: true,
-      );
-      if (result == null || result.files.isEmpty) return;
-      final PlatformFile file = result.files.single;
-      if (file.size > _maxAvatarBytes) {
-        if (context.mounted) Toast.warning(context, '图片大小不能超过 2MB');
-        return;
-      }
-      final String extension = file.extension?.toLowerCase() ?? '';
-      if (!<String>{'jpg', 'jpeg', 'png'}.contains(extension)) {
-        if (context.mounted) Toast.warning(context, '仅支持 JPG、JPEG、PNG 图片');
-        return;
-      }
-      final Uint8List? sourceBytes = file.bytes;
-      if (sourceBytes == null || sourceBytes.isEmpty || !context.mounted) {
-        return;
-      }
-      final Uint8List? croppedBytes = await AvatarCropPage.open(
-        context,
-        imageBytes: sourceBytes,
-      );
-      if (croppedBytes == null || croppedBytes.isEmpty || !context.mounted) {
-        return;
-      }
-      await context.read<FxUserSessionCubit>().updateAvatar(croppedBytes);
-      if (context.mounted) Toast.success(context, '头像修改成功');
-    } catch (_) {
-      if (context.mounted) Toast.error(context, '头像上传失败，请稍后重试');
-    }
   }
 
   Future<void> _openNameEditor(BuildContext context, String name) {

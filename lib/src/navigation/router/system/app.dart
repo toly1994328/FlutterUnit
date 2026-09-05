@@ -2,6 +2,7 @@ import 'package:app/app.dart';
 import 'package:artifact/artifact.dart';
 import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:treasure_tools/treasure_tools.dart';
 
 List<GoRoute> get systemRoutes => [
@@ -19,11 +20,20 @@ List<GoRoute> get systemRoutes => [
       ),
       GoRoute(
         path: AppRoute.honors.path,
-        builder: (_, __) => const AvatarHonorsPage(),
+        builder: (_, GoRouterState state) => AvatarHonorsPage(
+          initialKind: state.uri.queryParameters['tab'] ?? 'avatar_frame',
+        ),
       ),
       GoRoute(
         path: AppRoute.progression.path,
         builder: (_, __) => const TaskAchievementPage(),
+      ),
+      GoRoute(
+        path: AppRoute.workshop.path,
+        builder: (_, __) => BlocProvider<WorkshopCubit>(
+          create: (_) => WorkshopCubit(WorkshopRepository())..load(),
+          child: const WorkshopPage(),
+        ),
       ),
       GoRoute(
         path: AppRoute.aboutApp.path,

@@ -1,6 +1,9 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n/l10n.dart';
+
+import '../../../progression/bloc/progression_cubit.dart';
 
 /// create by 张风捷特烈 on 2020-03-26
 /// contact me by email 1981462002@qq.com
@@ -9,7 +12,7 @@ import 'package:l10n/l10n.dart';
 class MePageItem extends StatelessWidget {
   final Color color;
 
-  const MePageItem({Key? key, this.color = Colors.white}) : super(key: key);
+  const MePageItem({super.key, this.color = Colors.white});
 
   @override
   Widget build(BuildContext context) {
@@ -41,18 +44,20 @@ class MePageItem extends StatelessWidget {
             AppRoute.collection.url,
           ),
           Gap.sfl10,
-          _buildItem(
-            context,
-            Icons.task_alt_outlined,
-            context.l10n.taskAchievements,
-            AppRoute.progression.url,
-          ),
+          _buildProgressionItem(context),
           divider,
           _buildItem(
             context,
             Icons.workspace_premium_outlined,
             context.l10n.avatarAchievements,
             AppRoute.honors.url,
+          ),
+          divider,
+          _buildItem(
+            context,
+            Icons.storefront_outlined,
+            '匠心工坊',
+            AppRoute.workshop.url,
           ),
           Gap.sfl10,
           _buildItem(
@@ -84,15 +89,21 @@ class MePageItem extends StatelessWidget {
 
   Widget _buildItem(
           BuildContext context, IconData icon, String title, String linkTo,
-          {VoidCallback? onTap}) =>
+          {VoidCallback? onTap, int badgeCount = 0}) =>
       ListTile(
         leading: Icon(
           icon,
           color: Theme.of(context).primaryColor,
         ),
         title: Text(title, style: const TextStyle(fontSize: 16)),
-        trailing:
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            if (badgeCount > 0) _buildBadge(badgeCount),
+            if (badgeCount > 0) const SizedBox(width: 8),
             Icon(Icons.chevron_right, color: Theme.of(context).primaryColor),
+          ],
+        ),
         onTap: () {
           if (linkTo.isNotEmpty) {
             context.push(linkTo);
@@ -100,4 +111,43 @@ class MePageItem extends StatelessWidget {
           }
         },
       );
+
+  Widget _buildProgressionItem(BuildContext context) {
+    return BlocSelector<ProgressionCubit, ProgressionState, int>(
+      selector: (ProgressionState state) => state.claimableTaskCount,
+      builder: (BuildContext context, int count) => _buildItem(
+        context,
+        Icons.task_alt_outlined,
+        context.l10n.taskAchievements,
+        AppRoute.progression.url,
+        badgeCount: count,
+      ),
+    );
+  }
+
+  Widget _buildBadge(int count) {
+    return Align(
+      widthFactor: 1,
+      heightFactor: 1,
+      child: Container(
+        height: 16,
+        constraints: const BoxConstraints(minWidth: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 4),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          count > 99 ? '99+' : '$count',
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 10,
+            fontWeight: FontWeight.w600,
+            height: 1,
+          ),
+        ),
+      ),
+    );
+  }
 }

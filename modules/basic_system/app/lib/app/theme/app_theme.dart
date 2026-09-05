@@ -46,6 +46,11 @@ ThemeData darkTheme(AppConfig state) {
       tileColor: colors.surface,
       textColor: colors.onSurface,
     ),
+    dialogTheme: const DialogThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+      ),
+    ),
 
     ///设置选中的文本颜色
     textSelectionTheme: TextSelectionThemeData(
@@ -113,6 +118,11 @@ ThemeData lightTheme(AppConfig state) {
     listTileTheme: ListTileThemeData(
       tileColor: colors.surface,
       textColor: colors.onSurface,
+    ),
+    dialogTheme: const DialogThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+      ),
     ),
 
     ///设置选中的文本颜色

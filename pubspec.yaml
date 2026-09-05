@@ -72,7 +72,10 @@ dependencies:
   # 视图展示
   toly_ui:
     path: modules/basic_system/toly_ui
+  authentication:
+    path: modules/basic_system/authentication
   tolyui: 0.0.5+2   # tolyui
+  tolyui_navigation: 0.2.1+1
   tolyui_message: ^0.2.6+1
   tolyui_refresh: 0.0.1+1 # 下拉刷新
 

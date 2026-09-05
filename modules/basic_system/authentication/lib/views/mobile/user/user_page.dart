@@ -122,7 +122,7 @@ class _UserPageState extends State<UserPage> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     FeedbackWidget(
-                      onPressed: () => _openAccountEntry(context),
+                      onPressed: () => _openAvatarHonors(context),
                       child: const SessionUserAvatar(
                         size: 80,
                         showBorder: true,
@@ -313,6 +313,16 @@ class _UserPageState extends State<UserPage> {
       Navigator.of(context).push(
         SlidePageRoute(child: const UserAccountPage()),
       );
+      return;
+    }
+    openUserLogin(context);
+  }
+
+  /// 登录用户点击头像时进入头像徽章佩戴页，游客仍先进入登录流程。
+  void _openAvatarHonors(BuildContext context) {
+    final FxUserSession state = context.read<FxUserSessionCubit>().state;
+    if (state is FxAuthed) {
+      context.push(AppRoute.honors.url);
       return;
     }
     openUserLogin(context);

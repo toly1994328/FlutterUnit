@@ -104,9 +104,12 @@ class _IdenticonPainter extends CustomPainter {
   /// 网格边长。
   final int gridSize;
 
+  /// 格点图案相对画布单边的留白比例。
+  static const double _paddingFactor = 0.24;
+
   @override
   void paint(Canvas canvas, Size size) {
-    final double padding = size.width * 0.15;
+    final double padding = size.width * _paddingFactor;
     final double cellSize = (size.width - padding * 2) / gridSize;
     final List<List<bool>> pattern = _generatePattern();
     canvas.drawRect(Offset.zero & size, Paint()..color = backgroundColor);

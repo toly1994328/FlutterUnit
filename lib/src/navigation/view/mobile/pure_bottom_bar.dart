@@ -1,4 +1,6 @@
+import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../l10n/gen/app_l10n.dart';
 import '../../model/app_tab.dart';
@@ -33,7 +35,7 @@ class PureBottomBar extends StatelessWidget {
         items: AppTab.mobileTabs
             .map((AppTab tab) => BottomNavigationBarItem(
                   label: tab.label(l10n),
-                  icon: Icon(tab.icon),
+                  icon: _buildIcon(tab),
                 ))
             .toList()
 
@@ -44,5 +46,44 @@ class PureBottomBar extends StatelessWidget {
         //
         //     .toList(),
         );
+  }
+
+  Widget _buildIcon(AppTab tab) {
+    final Widget icon = Icon(tab.icon);
+    if (tab != AppTab.mine) return icon;
+    return BlocSelector<ProgressionCubit, ProgressionState, int>(
+      selector: (ProgressionState state) => state.claimableTaskCount,
+      builder: (BuildContext context, int count) {
+        if (count == 0) return icon;
+        return Stack(
+          clipBehavior: Clip.none,
+          children: <Widget>[
+            icon,
+            Positioned(
+              top: -7,
+              right: -12,
+              child: Container(
+                constraints: const BoxConstraints(minWidth: 16, minHeight: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 4),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  count > 99 ? '99+' : '$count',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w600,
+                    height: 1,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 }

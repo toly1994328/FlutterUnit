@@ -1439,7 +1439,7 @@ packages:
     source: hosted
     version: "0.0.2+2"
   tolyui_navigation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: tolyui_navigation
       sha256: "8208c58c82c8da822750e304c806be1314468bdb2577e629ef8f54ef06d2db82"

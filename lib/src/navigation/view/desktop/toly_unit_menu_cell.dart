@@ -6,7 +6,9 @@
 // CreateTime:  2024-05-13
 // Contact Me:  1981462002@qq.com
 
+import 'package:authentication/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tolyui/tolyui.dart';
 import 'package:tolyui_navigation/tolyui_navigation.dart';
 
@@ -45,7 +47,7 @@ class FlutterUnitMenuCell extends StatelessWidget {
     Radius radius = Radius.circular(height / 2);
     BorderRadius br = BorderRadius.only(topRight: radius, bottomRight: radius);
     Widget child = Container(
-      padding: EdgeInsets.only(left: 12),
+      padding: const EdgeInsets.only(left: 12),
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(color: color, borderRadius: br),
       width: _widthTween.transform(anim) * 140,
@@ -63,6 +65,7 @@ class FlutterUnitMenuCell extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
+          if (menu.route == '/account') _buildProgressionBadge(),
           const SizedBox(
             width: 2,
           )
@@ -81,6 +84,38 @@ class FlutterUnitMenuCell extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: child,
+    );
+  }
+
+  Widget _buildProgressionBadge() {
+    return BlocSelector<ProgressionCubit, ProgressionState, int>(
+      selector: (ProgressionState state) => state.claimableTaskCount,
+      builder: (BuildContext context, int count) {
+        if (count == 0) return const SizedBox.shrink();
+        return Align(
+          widthFactor: 1,
+          heightFactor: 1,
+          child: Container(
+            height: 16,
+            constraints: const BoxConstraints(minWidth: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              count > 99 ? '99+' : '$count',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 10,
+                fontWeight: FontWeight.w600,
+                height: 1,
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

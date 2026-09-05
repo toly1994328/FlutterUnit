@@ -21,7 +21,7 @@ class AppL10nZh extends AppL10n {
   String get deskTabTools => '工具宝箱';
 
   @override
-  String get deskTabMine => '应用信息';
+  String get deskTabMine => '我的账号';
 
   @override
   String get messageBoard => '留言板';

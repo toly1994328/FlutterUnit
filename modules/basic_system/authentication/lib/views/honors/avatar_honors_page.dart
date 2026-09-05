@@ -5,6 +5,7 @@ import 'package:unit_env/unit_env.dart';
 
 import '../../honors/bloc/avatar_frame_cubit.dart';
 import '../../honors/model/user_honor.dart';
+import '../mobile/user/avatar/avatar_update_flow.dart';
 import '../user_avatar.dart';
 import 'equipped_badges.dart';
 
@@ -12,7 +13,10 @@ enum _HonorSection { avatarFrame, badge }
 
 /// 当前用户查看并选择头像框的页面。
 class AvatarHonorsPage extends StatefulWidget {
-  const AvatarHonorsPage({super.key});
+  const AvatarHonorsPage({super.key, this.initialKind = 'avatar_frame'});
+
+  /// 首次打开时激活的荣誉类型，支持 avatar_frame 与 badge。
+  final String initialKind;
 
   @override
   State<AvatarHonorsPage> createState() => _AvatarHonorsPageState();
@@ -20,11 +24,14 @@ class AvatarHonorsPage extends StatefulWidget {
 
 class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
   /// 当前展示的荣誉类型。
-  _HonorSection _selectedSection = _HonorSection.avatarFrame;
+  late _HonorSection _selectedSection;
 
   @override
   void initState() {
     super.initState();
+    _selectedSection = widget.initialKind == 'badge'
+        ? _HonorSection.badge
+        : _HonorSection.avatarFrame;
     context.read<AvatarFrameCubit>().load();
   }
 
@@ -33,6 +40,7 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
     final ColorScheme colors = Theme.of(context).colorScheme;
     return DefaultTabController(
       length: 2,
+      initialIndex: _selectedSection.index,
       child: Scaffold(
         backgroundColor: colors.surfaceContainer,
         appBar: AppBar(
@@ -177,7 +185,34 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
       color: colors.surface,
       child: Column(
         children: <Widget>[
-          const SessionUserAvatar(size: 104, showShadow: false),
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => AvatarUpdateFlow.start(context),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: <Widget>[
+                const SessionUserAvatar(size: 104, showShadow: false),
+                Positioned(
+                  right: -2,
+                  bottom: -2,
+                  child: Container(
+                    width: 28,
+                    height: 28,
+                    decoration: BoxDecoration(
+                      color: colors.primary,
+                      shape: BoxShape.circle,
+                      border: Border.all(color: colors.surface, width: 2),
+                    ),
+                    child: Icon(
+                      Icons.camera_alt_outlined,
+                      color: colors.onPrimary,
+                      size: 15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: 18),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
