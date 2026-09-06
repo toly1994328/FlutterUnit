@@ -1,7 +1,7 @@
 name: flutter_unit
 description: All Platform Flutter Experience App.
 publish_to: none
-version: 3.4.2+2017
+version: 3.4.2+2018
 author: 张风捷特烈 <1981462002@qq.com>
 homepage: https://juejin.cn/user/149189281194766/posts
 
@@ -51,8 +51,8 @@ dependencies:
   fx_user_core: 0.0.1
   fx_user_session: 0.0.1
   fx_user_http: 0.1.0
-  fx_user_ui: 0.0.1
-  fx_account: 0.1.0
+  fx_user_ui: 0.0.2
+  fx_account: 0.1.1
 
   # 数据与持久化
   dio: ^5.4.3+1 # 网络请求
@@ -109,8 +109,6 @@ dependency_overrides:
   web: ^1.0.0
   intl: 0.20.2
   flutter_bloc: ^9.1.1
-  fx_user_ui:
-    path: ../../FrameworkX/client/packages/identity/ui/fx_user_ui
   # 统一 tolyui_navigation 与 fx_go_router_ext 的同一补丁线依赖。
   tolyui_meta: 0.0.2+2
 

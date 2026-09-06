@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_user_session/fx_user_session.dart';
 import 'package:fx_user_ui/fx_user_ui.dart';
+import 'package:l10n/l10n.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:unit_env/unit_env.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,7 +35,7 @@ class LoginPage extends StatelessWidget {
       presentation: presentation,
       config: FxUserUiConfig(
         title: 'FLUTTER UNIT',
-        subtitle: '群英荟萃，匠心者也',
+        subtitle: context.l10n.loginSubtitle,
         logo: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.asset(
@@ -95,33 +96,33 @@ class LoginPage extends StatelessWidget {
 
   /// 将认证异常转换成用户提示，并交给宿主 Toast 通道展示。
   void _showAuthError(BuildContext context, Object error) {
-    Toast.error(context, _friendlyAuthError(error));
+    Toast.error(context, _friendlyAuthError(context, error));
   }
 
   /// 根据稳定业务码和网络异常特征生成可操作的提示文案。
-  String _friendlyAuthError(Object error) {
+  String _friendlyAuthError(BuildContext context, Object error) {
     final String? serverCode =
         error is RequestException ? error.serverCode : null;
     switch (serverCode) {
       case 'AUTH_CODE_INVALID':
-        return '验证码错误，请重新输入';
+        return context.l10n.authCodeInvalid;
       case 'AUTH_CODE_EXPIRED':
-        return '验证码已失效，请重新获取';
+        return context.l10n.authCodeExpired;
       case 'AUTH_CODE_RATE_LIMITED':
-        return '验证码发送过于频繁，请稍后再试';
+        return context.l10n.authCodeRateLimited;
       case 'AUTH_EMAIL_INVALID':
-        return '邮箱格式不正确，请检查后重试';
+        return context.l10n.authEmailInvalid;
       case 'AUTH_CREDENTIAL_INVALID':
-        return '账号或密码错误，请重新输入';
+        return context.l10n.authCredentialInvalid;
     }
     final String message = error.toString();
     if (message.contains('request exception') ||
         message.contains('DioException') ||
         message.contains('SocketException') ||
         message.contains('Connection failed')) {
-      return '网络连接异常，请检查网络后重试';
+      return context.l10n.networkError;
     }
-    return '登录失败，请稍后重试';
+    return context.l10n.loginFailed;
   }
 
   Future<bool> _loginWithGithub(BuildContext context) async {
@@ -163,7 +164,7 @@ class LoginPage extends StatelessWidget {
   /// 使用系统浏览器打开用户协议或隐私政策。
   Future<void> _openLegalDocument(BuildContext context, Uri? uri) async {
     if (uri == null) {
-      Toast.error(context, '协议地址配置异常');
+      Toast.error(context, context.l10n.agreementUrlInvalid);
       return;
     }
     final bool opened = await launchUrl(
@@ -171,7 +172,7 @@ class LoginPage extends StatelessWidget {
       mode: LaunchMode.externalApplication,
     );
     if (!opened && context.mounted) {
-      Toast.error(context, '暂时无法打开该页面，请稍后重试');
+      Toast.error(context, context.l10n.openPageFailed);
     }
   }
 }

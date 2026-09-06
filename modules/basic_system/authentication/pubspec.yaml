@@ -37,8 +37,8 @@ dependencies:
   fx_user_session: 0.0.1
   fx_user_preferences: 0.1.0
   fx_user_http: 0.1.0
-  fx_user_ui: 0.0.1
-  fx_account: 0.1.0
+  fx_user_ui: 0.0.2
+  fx_account: 0.1.1
   fx_exception: 0.0.1+4
   fx_ability: 0.1.0
   sign_in_with_apple: ^6.1.0

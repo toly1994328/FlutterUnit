@@ -435,10 +435,10 @@ packages:
     dependency: "direct main"
     description:
       name: fx_account
-      sha256: a7d5741362fc2d0b25598a19db4619e4ee860ea888d3d6a47db8cce21083c54c
+      sha256: e0bf5fb506625b5f1ce31cc0aec8d880c32b615879b108201996be2115ffd708
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.1"
   fx_boot_starter:
     dependency: "direct main"
     description:
@@ -561,10 +561,11 @@ packages:
   fx_user_ui:
     dependency: "direct main"
     description:
-      path: "../../FrameworkX/client/packages/identity/ui/fx_user_ui"
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: fx_user_ui
+      sha256: "1b47f0b482b6884947b98c8c9784c097a3bb148c1a48f00ed119a1e04bf31003"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   go_router:
     dependency: "direct main"
     description:

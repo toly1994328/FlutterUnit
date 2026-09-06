@@ -218,6 +218,178 @@ class AppLocalizationsEn extends AppLocalizations {
   String get avatarUploadFailed => 'Avatar upload failed';
 
   @override
+  String get loginSubtitle => 'Built with craft';
+
+  @override
+  String get githubLogin => 'GitHub Login';
+
+  @override
+  String get authCodeInvalid => 'Invalid code';
+
+  @override
+  String get authCodeExpired => 'Code expired';
+
+  @override
+  String get authCodeRateLimited => 'Try again later';
+
+  @override
+  String get authEmailInvalid => 'Invalid email';
+
+  @override
+  String get authCredentialInvalid => 'Invalid account or password';
+
+  @override
+  String get networkError => 'Network error';
+
+  @override
+  String get loginFailed => 'Login failed';
+
+  @override
+  String get agreementUrlInvalid => 'Invalid agreement URL';
+
+  @override
+  String get openPageFailed => 'Could not open page';
+
+  @override
+  String get notSignedIn => 'Not signed in';
+
+  @override
+  String get accountManagement => 'Account';
+
+  @override
+  String get craftId => 'Craft ID';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get bind => 'Bind';
+
+  @override
+  String get emailAlreadyBound => 'Email already in use';
+
+  @override
+  String get emailBound => 'Email bound';
+
+  @override
+  String get passwordChangeFailed => 'Password change failed';
+
+  @override
+  String get passwordChanged => 'Password changed';
+
+  @override
+  String get passwordReset => 'Password reset';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get accountDeleted => 'Account deleted';
+
+  @override
+  String get accountDeleteFailed => 'Account deletion failed';
+
+  @override
+  String get logout => 'Log Out';
+
+  @override
+  String get logoutConfirm => 'Log out now?';
+
+  @override
+  String get editUsername => 'Edit Username';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get usernameHint => 'Enter username';
+
+  @override
+  String get usernameLimit => 'Up to 50 characters';
+
+  @override
+  String get nicknameRequired => 'Name is required';
+
+  @override
+  String get nicknameUpdated => 'Name updated';
+
+  @override
+  String get nicknameUpdateFailed => 'Name update failed';
+
+  @override
+  String get editSignature => 'Edit Bio';
+
+  @override
+  String get signatureHint => 'Enter bio';
+
+  @override
+  String get signatureLimit => 'Up to 100 characters';
+
+  @override
+  String get signatureUpdated => 'Bio updated';
+
+  @override
+  String get signatureUpdateFailed => 'Bio update failed';
+
+  @override
+  String get skinTooLarge => 'Image must be under 10 MB';
+
+  @override
+  String get imageReadFailed => 'Could not read image';
+
+  @override
+  String skinUpdated(String mode) {
+    return '$mode theme updated';
+  }
+
+  @override
+  String get skinUpdateFailed => 'Theme image update failed';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get dark => 'Dark';
+
+  @override
+  String get noBio => 'No bio';
+
+  @override
+  String get loginOrRegister => 'Log In / Sign Up';
+
+  @override
+  String get loginSyncHint => 'Sync favorites and profile';
+
+  @override
+  String userUnblocked(String name) {
+    return 'Unblocked $name';
+  }
+
+  @override
+  String get reload => 'Reload';
+
+  @override
+  String get noBlockedUsers => 'No blocked users';
+
+  @override
+  String get userHasNoBio => 'No bio';
+
+  @override
+  String get unblock => 'Unblock';
+
+  @override
+  String get supportPrompt => 'Support this open-source project';
+
+  @override
+  String get alipay => 'Alipay';
+
+  @override
+  String get wechatOne => 'WeChat 1';
+
+  @override
+  String get wechatTwo => 'WeChat 2';
+
+  @override
   String get aboutApplications => 'About Applications';
 
   @override

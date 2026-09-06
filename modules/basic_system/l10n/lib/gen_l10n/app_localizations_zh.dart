@@ -217,6 +217,178 @@ class AppLocalizationsZh extends AppLocalizations {
   String get avatarUploadFailed => '头像上传失败，请稍后重试';
 
   @override
+  String get loginSubtitle => '群英荟萃，匠心者也';
+
+  @override
+  String get githubLogin => 'GitHub 登录';
+
+  @override
+  String get authCodeInvalid => '验证码错误，请重新输入';
+
+  @override
+  String get authCodeExpired => '验证码已失效，请重新获取';
+
+  @override
+  String get authCodeRateLimited => '验证码发送过于频繁，请稍后再试';
+
+  @override
+  String get authEmailInvalid => '邮箱格式不正确，请检查后重试';
+
+  @override
+  String get authCredentialInvalid => '账号或密码错误，请重新输入';
+
+  @override
+  String get networkError => '网络连接异常，请检查网络后重试';
+
+  @override
+  String get loginFailed => '登录失败，请稍后重试';
+
+  @override
+  String get agreementUrlInvalid => '协议地址配置异常';
+
+  @override
+  String get openPageFailed => '暂时无法打开该页面，请稍后重试';
+
+  @override
+  String get notSignedIn => '未登录';
+
+  @override
+  String get accountManagement => '账号管理';
+
+  @override
+  String get craftId => '匠心 ID';
+
+  @override
+  String get email => '邮箱';
+
+  @override
+  String get bind => '去绑定';
+
+  @override
+  String get emailAlreadyBound => '该邮箱已被其他账号绑定';
+
+  @override
+  String get emailBound => '邮箱绑定成功';
+
+  @override
+  String get passwordChangeFailed => '密码修改失败';
+
+  @override
+  String get passwordChanged => '密码修改成功';
+
+  @override
+  String get passwordReset => '密码重置成功';
+
+  @override
+  String get copied => '已复制';
+
+  @override
+  String get accountDeleted => '账号已注销';
+
+  @override
+  String get accountDeleteFailed => '账号注销失败，请稍后重试';
+
+  @override
+  String get logout => '退出登录';
+
+  @override
+  String get logoutConfirm => '确定要退出当前账号吗？';
+
+  @override
+  String get editUsername => '修改用户名';
+
+  @override
+  String get save => '保存';
+
+  @override
+  String get usernameHint => '请输入用户名';
+
+  @override
+  String get usernameLimit => '用户名最多 50 个字符';
+
+  @override
+  String get nicknameRequired => '昵称不能为空';
+
+  @override
+  String get nicknameUpdated => '昵称修改成功';
+
+  @override
+  String get nicknameUpdateFailed => '昵称修改失败，请稍后重试';
+
+  @override
+  String get editSignature => '修改个性签名';
+
+  @override
+  String get signatureHint => '请输入个性签名';
+
+  @override
+  String get signatureLimit => '个性签名最多 100 个字符';
+
+  @override
+  String get signatureUpdated => '签名修改成功';
+
+  @override
+  String get signatureUpdateFailed => '签名修改失败，请稍后重试';
+
+  @override
+  String get skinTooLarge => '皮肤图片不能超过 10 MB';
+
+  @override
+  String get imageReadFailed => '无法读取所选图片';
+
+  @override
+  String skinUpdated(String mode) {
+    return '$mode皮肤已更新';
+  }
+
+  @override
+  String get skinUpdateFailed => '皮肤图片设置失败';
+
+  @override
+  String get light => '亮色';
+
+  @override
+  String get dark => '暗色';
+
+  @override
+  String get noBio => '暂未填写个人简介';
+
+  @override
+  String get loginOrRegister => '登录/注册';
+
+  @override
+  String get loginSyncHint => '登录后同步收藏与个人资料';
+
+  @override
+  String userUnblocked(String name) {
+    return '已解除对 $name 的拉黑';
+  }
+
+  @override
+  String get reload => '重新加载';
+
+  @override
+  String get noBlockedUsers => '暂无拉黑用户';
+
+  @override
+  String get userHasNoBio => '该用户暂无简介';
+
+  @override
+  String get unblock => '解除拉黑';
+
+  @override
+  String get supportPrompt => '开源不易，请我喝咖啡~';
+
+  @override
+  String get alipay => '支付宝';
+
+  @override
+  String get wechatOne => '微信 1';
+
+  @override
+  String get wechatTwo => '微信 2';
+
+  @override
   String get aboutApplications => '关于应用';
 
   @override

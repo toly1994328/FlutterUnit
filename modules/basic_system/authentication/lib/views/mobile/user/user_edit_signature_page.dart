@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_user_core/fx_user_core.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:l10n/l10n.dart';
 import 'package:utils/utils.dart';
 
 /// 用户签名编辑页。
@@ -40,7 +41,10 @@ class _UserEditSignaturePageState extends State<UserEditSignaturePage> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: backgroundColor,
-        title: const Text('修改个性签名', style: TextStyle(fontSize: 16)),
+        title: Text(
+          context.l10n.editSignature,
+          style: const TextStyle(fontSize: 16),
+        ),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 8, top: 10, bottom: 10),
@@ -49,7 +53,7 @@ class _UserEditSignaturePageState extends State<UserEditSignaturePage> {
               onPressed: _saving ? null : _save,
               child: _saving
                   ? const CupertinoActivityIndicator()
-                  : const Text('保存'),
+                  : Text(context.l10n.save),
             ),
           ),
         ],
@@ -67,8 +71,8 @@ class _UserEditSignaturePageState extends State<UserEditSignaturePage> {
               maxLength: 100,
               maxLines: 1,
               style: const TextStyle(fontSize: 15),
-              decoration: const InputDecoration(
-                hintText: '请输入个性签名',
+              decoration: InputDecoration(
+                hintText: context.l10n.signatureHint,
                 border: InputBorder.none,
               ),
             ),
@@ -76,7 +80,7 @@ class _UserEditSignaturePageState extends State<UserEditSignaturePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Text(
-              '个性签名最多 100 个字符',
+              context.l10n.signatureLimit,
               style: TextStyle(fontSize: 12, color: Colors.grey[500]),
             ),
           ),
@@ -98,12 +102,12 @@ class _UserEditSignaturePageState extends State<UserEditSignaturePage> {
             UserProfilePatch(fields: <String, dynamic>{'signature': value}),
           );
       if (!mounted) return;
-      Toast.success(context, '签名修改成功');
+      Toast.success(context, context.l10n.signatureUpdated);
       Navigator.of(context).pop();
     } catch (_) {
       if (!mounted) return;
       setState(() => _saving = false);
-      Toast.error(context, '签名修改失败，请稍后重试');
+      Toast.error(context, context.l10n.signatureUpdateFailed);
     }
   }
 }

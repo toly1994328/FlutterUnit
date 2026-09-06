@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fx_account/fx_account.dart';
+import 'package:fx_user_ui/fx_user_ui.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:l10n/gen_l10n/app_localizations.dart';
@@ -91,6 +92,7 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
         FlutterQuillLocalizations.delegate,
         PkgL10n.delegate,
         FxAccountLocalizations.delegate,
+        FxUserUiLocalizations.delegate,
       ];
 
   @override

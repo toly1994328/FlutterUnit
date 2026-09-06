@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:l10n/l10n.dart';
 
 /// create by 张风捷特烈 on 2020-04-22
 /// contact me by email 1981462002@qq.com
-/// 说明: 
+/// 说明:
 
 class UnitDrawerHeader extends StatelessWidget {
   final Color color;
-
 
   const UnitDrawerHeader({Key? key, required this.color}) : super(key: key);
 
@@ -16,8 +16,7 @@ class UnitDrawerHeader extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10, left: 15),
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/login_bg.png'),
-            fit: BoxFit.cover),
+            image: AssetImage('assets/images/login_bg.png'), fit: BoxFit.cover),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,9 +33,7 @@ class UnitDrawerHeader extends StatelessWidget {
                 'Flutter Unit',
                 style: TextStyle(fontSize: 24, color: Colors.white, shadows: [
                   Shadow(
-                      color: Colors.black,
-                      offset: Offset(1, 1),
-                      blurRadius: 3)
+                      color: Colors.black, offset: Offset(1, 1), blurRadius: 3)
                 ]),
               ),
             ],
@@ -45,16 +42,7 @@ class UnitDrawerHeader extends StatelessWidget {
             height: 15,
           ),
           Text(
-            'The Unity Of Flutter, The Unity Of Coder.',
-            style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
-              Shadow(color: color, offset: const Offset(.5, .5), blurRadius: 1)
-            ]),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Flutter的联合，编程者的联合。',
+            context.l10n.slogan,
             style: TextStyle(fontSize: 15, color: Colors.white, shadows: [
               Shadow(color: color, offset: const Offset(.5, .5), blurRadius: 1)
             ]),

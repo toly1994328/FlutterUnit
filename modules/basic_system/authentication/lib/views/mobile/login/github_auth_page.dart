@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:l10n/l10n.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 const String _githubClientId = String.fromEnvironment('GITHUB_CLIENT_ID');
@@ -66,7 +67,7 @@ class _GitHubAuthPageState extends State<GitHubAuthPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GitHub 登录'),
+        title: Text(context.l10n.githubLogin),
         elevation: 0,
         scrolledUnderElevation: 0,
       ),

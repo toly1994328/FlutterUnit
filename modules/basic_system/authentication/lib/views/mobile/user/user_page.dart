@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:l10n/l10n.dart';
 
 import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
@@ -179,13 +180,13 @@ class _UserPageState extends State<UserPage> {
       if (result == null || result.files.isEmpty) return;
       final PlatformFile image = result.files.single;
       if (image.size > _maxSkinBytes) {
-        if (mounted) Toast.warning(context, '皮肤图片不能超过 10MB');
+        if (mounted) Toast.warning(context, context.l10n.skinTooLarge);
         return;
       }
       final Uint8List? bytes = image.bytes;
       final String extension = image.extension?.toLowerCase() ?? 'jpg';
       if (bytes == null || bytes.isEmpty) {
-        if (mounted) Toast.error(context, '无法读取所选图片');
+        if (mounted) Toast.error(context, context.l10n.imageReadFailed);
         return;
       }
       final String path = await _skinRepository.save(mode, bytes, extension);
@@ -197,14 +198,17 @@ class _UserPageState extends State<UserPage> {
           _darkSkinPath = path;
         }
       });
-      Toast.success(context, '${_modeLabel(mode)}皮肤已更新');
+      Toast.success(
+        context,
+        context.l10n.skinUpdated(_modeLabel(context, mode)),
+      );
     } catch (_) {
-      if (mounted) Toast.error(context, '皮肤图片设置失败');
+      if (mounted) Toast.error(context, context.l10n.skinUpdateFailed);
     }
   }
 
-  String _modeLabel(UserSkinMode mode) {
-    return mode == UserSkinMode.light ? '亮色' : '暗色';
+  String _modeLabel(BuildContext context, UserSkinMode mode) {
+    return mode == UserSkinMode.light ? context.l10n.light : context.l10n.dark;
   }
 
   Widget _buildByState(BuildContext context, FxUserSession state) {
@@ -215,13 +219,13 @@ class _UserPageState extends State<UserPage> {
       return _buildUserSummary(
         context,
         name: state.user.displayName ?? state.user.id,
-        signature: signature.isEmpty ? '暂未填写个人简介' : signature,
+        signature: signature.isEmpty ? context.l10n.noBio : signature,
       );
     }
     return _buildUserSummary(
       context,
-      name: '登录/注册',
-      signature: '登录后同步收藏与个人资料',
+      name: context.l10n.loginOrRegister,
+      signature: context.l10n.loginSyncHint,
       nameStyle: TextStyle(
         fontSize: 18,
         color: theme.primaryColor,

@@ -63,7 +63,7 @@ class _BlacklistPageState extends State<BlacklistPage> {
           .toList();
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已解除对 ${user.nickname} 的拉黑')),
+      SnackBar(content: Text(context.l10n.userUnblocked(user.nickname))),
     );
   }
 
@@ -84,13 +84,16 @@ class _BlacklistPageState extends State<BlacklistPage> {
           children: <Widget>[
             Text(_error!),
             const SizedBox(height: 12),
-            OutlinedButton(onPressed: _load, child: const Text('重新加载')),
+            OutlinedButton(
+              onPressed: _load,
+              child: Text(context.l10n.reload),
+            ),
           ],
         ),
       );
     }
     if (_users.isEmpty) {
-      return const Center(child: Text('暂无拉黑用户'));
+      return Center(child: Text(context.l10n.noBlockedUsers));
     }
     return RefreshIndicator(
       onRefresh: _load,
@@ -115,7 +118,9 @@ class _BlacklistPageState extends State<BlacklistPage> {
       ),
       title: Text(user.nickname),
       subtitle: Text(
-        user.signature?.trim().isNotEmpty == true ? user.signature! : '该用户暂无简介',
+        user.signature?.trim().isNotEmpty == true
+            ? user.signature!
+            : context.l10n.userHasNoBio,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
@@ -126,7 +131,7 @@ class _BlacklistPageState extends State<BlacklistPage> {
                 dimension: 16,
                 child: CircularProgressIndicator(strokeWidth: 2),
               )
-            : const Text('解除拉黑'),
+            : Text(context.l10n.unblock),
       ),
     );
   }

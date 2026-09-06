@@ -5,6 +5,7 @@ import 'package:fx_account/fx_account.dart';
 import 'package:fx_exception/fx_exception.dart';
 import 'package:fx_user_core/fx_user_core.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:l10n/l10n.dart';
 import 'package:toly_ui/toly_ui.dart';
 import 'package:utils/utils.dart';
 
@@ -26,7 +27,7 @@ class UserAccountPage extends StatelessWidget {
 
   Widget _buildSession(BuildContext context, FxUserSession session) {
     if (session is! FxAuthed) {
-      return const Scaffold(body: Center(child: Text('未登录')));
+      return Scaffold(body: Center(child: Text(context.l10n.notSignedIn)));
     }
     final FxIdentity user = session.user;
     final String signature = user.read(FxIdentityFields.signature) ?? '';
@@ -34,7 +35,7 @@ class UserAccountPage extends StatelessWidget {
     final bool hasPassword = user.read(FxIdentityFields.hasPassword) ?? false;
     return AccountManagementPage(
       data: AccountManagementData(
-        title: '账号管理',
+        title: context.l10n.accountManagement,
         avatar: const Align(
           alignment: Alignment.centerRight,
           child: SizedBox.square(
@@ -45,11 +46,11 @@ class UserAccountPage extends StatelessWidget {
         username: user.displayName ?? '',
         signature: signature,
         userId: user.id,
-        userIdLabel: '匠心Id',
+        userIdLabel: context.l10n.craftId,
         contactItems: <AccountManagementItem>[
           AccountManagementItem(
-            label: '邮箱',
-            value: email?.isNotEmpty == true ? email! : '去绑定',
+            label: context.l10n.email,
+            value: email?.isNotEmpty == true ? email! : context.l10n.bind,
             valueColor:
                 email?.isNotEmpty == true ? null : const Color(0xFFFF7A00),
             onTap: () => _openBindEmailPage(context, email),
@@ -98,7 +99,7 @@ class UserAccountPage extends StatelessWidget {
         .read<FxUserSessionCubit>()
         .checkAccount(type: 'email', identifier: email);
     if (!result.available && context.mounted) {
-      Toast.warning(context, '该邮箱已被其他账号绑定');
+      Toast.warning(context, context.l10n.emailAlreadyBound);
     }
     return result.available;
   }
@@ -113,7 +114,7 @@ class UserAccountPage extends StatelessWidget {
         .read<FxUserSessionCubit>()
         .bindEmail(email: email, code: code);
     if (!context.mounted) return;
-    Toast.success(context, '邮箱绑定成功');
+    Toast.success(context, context.l10n.emailBound);
     Navigator.of(context).pop();
   }
 
@@ -155,10 +156,10 @@ class UserAccountPage extends StatelessWidget {
             );
     if (!context.mounted) return;
     if (!changed) {
-      Toast.error(context, '密码修改失败');
+      Toast.error(context, context.l10n.passwordChangeFailed);
       return;
     }
-    Toast.success(context, '密码修改成功');
+    Toast.success(context, context.l10n.passwordChanged);
     Navigator.of(context).pop();
   }
 
@@ -194,7 +195,7 @@ class UserAccountPage extends StatelessWidget {
           newPassword: newPassword,
         );
     if (!context.mounted) return;
-    Toast.success(context, '密码重置成功');
+    Toast.success(context, context.l10n.passwordReset);
     Navigator.of(context).pop();
   }
 
@@ -221,7 +222,7 @@ class UserAccountPage extends StatelessWidget {
   /// 复制用户 ID 并通过统一 Toast 反馈。
   void _copyId(BuildContext context, String id) {
     Clipboard.setData(ClipboardData(text: id));
-    Toast.success(context, '已复制');
+    Toast.success(context, context.l10n.copied);
   }
 
   /// 打开 FrameworkX 提供的风险确认与密码验证页面。
@@ -241,14 +242,14 @@ class UserAccountPage extends StatelessWidget {
     try {
       await context.read<FxUserSessionCubit>().deleteAccount(password);
       if (!context.mounted) return;
-      Toast.success(context, '账号已注销');
+      Toast.success(context, context.l10n.accountDeleted);
       Navigator.of(context).popUntil((Route<dynamic> route) => route.isFirst);
-    } on RequestException catch (error) {
+    } on RequestException {
       if (!context.mounted) return;
-      Toast.error(context, error.message ?? '账号注销失败，请稍后重试');
+      Toast.error(context, context.l10n.accountDeleteFailed);
     } catch (_) {
       if (!context.mounted) return;
-      Toast.error(context, '账号注销失败，请稍后重试');
+      Toast.error(context, context.l10n.accountDeleteFailed);
     }
   }
 
@@ -257,9 +258,9 @@ class UserAccountPage extends StatelessWidget {
     await showDialog<void>(
       context: context,
       builder: (BuildContext dialogContext) => AlertConformDialog(
-        title: '退出登录',
-        content: '确定要退出当前账号吗？',
-        conformText: '退出',
+        title: context.l10n.logout,
+        content: context.l10n.logoutConfirm,
+        conformText: context.l10n.logout,
         conformTextColor: Colors.red,
         onConform: () async {
           await context.read<FxUserSessionCubit>().logout();

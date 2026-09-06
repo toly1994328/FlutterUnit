@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_user_core/fx_user_core.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:l10n/l10n.dart';
 import 'package:utils/utils.dart';
 
 /// 用户昵称编辑页。
@@ -40,7 +41,10 @@ class _UserEditNamePageState extends State<UserEditNamePage> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: backgroundColor,
-        title: const Text('修改用户名', style: TextStyle(fontSize: 16)),
+        title: Text(
+          context.l10n.editUsername,
+          style: const TextStyle(fontSize: 16),
+        ),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 8, top: 10, bottom: 10),
@@ -49,7 +53,7 @@ class _UserEditNamePageState extends State<UserEditNamePage> {
               onPressed: _saving ? null : _save,
               child: _saving
                   ? const CupertinoActivityIndicator()
-                  : const Text('保存'),
+                  : Text(context.l10n.save),
             ),
           ),
         ],
@@ -66,8 +70,8 @@ class _UserEditNamePageState extends State<UserEditNamePage> {
               autofocus: true,
               maxLength: 50,
               style: const TextStyle(fontSize: 15),
-              decoration: const InputDecoration(
-                hintText: '请输入用户名',
+              decoration: InputDecoration(
+                hintText: context.l10n.usernameHint,
                 border: InputBorder.none,
                 counterText: '',
               ),
@@ -76,7 +80,7 @@ class _UserEditNamePageState extends State<UserEditNamePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Text(
-              '用户名最多 50 个字符',
+              context.l10n.usernameLimit,
               style: TextStyle(fontSize: 12, color: Colors.grey[500]),
             ),
           ),
@@ -89,7 +93,7 @@ class _UserEditNamePageState extends State<UserEditNamePage> {
   Future<void> _save() async {
     final String value = _controller.text.trim();
     if (value.isEmpty) {
-      Toast.warning(context, '昵称不能为空');
+      Toast.warning(context, context.l10n.nicknameRequired);
       return;
     }
     if (value == widget.name) {
@@ -102,12 +106,12 @@ class _UserEditNamePageState extends State<UserEditNamePage> {
           .read<FxUserSessionCubit>()
           .updateProfile(UserProfilePatch(displayName: value));
       if (!mounted) return;
-      Toast.success(context, '昵称修改成功');
+      Toast.success(context, context.l10n.nicknameUpdated);
       Navigator.of(context).pop();
     } catch (_) {
       if (!mounted) return;
       setState(() => _saving = false);
-      Toast.error(context, '昵称修改失败，请稍后重试');
+      Toast.error(context, context.l10n.nicknameUpdateFailed);
     }
   }
 }
