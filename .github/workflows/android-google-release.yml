@@ -8,9 +8,6 @@ on:
         required: true
         default: false
         type: boolean
-  push:
-    tags:
-      - "v*"
 
 permissions:
   contents: read
@@ -23,5 +20,5 @@ jobs:
       display_name: Google AAB
       artifact_suffix: google
       publish_to_release: false
-      upload_to_google_play: ${{ github.event_name == 'push' || inputs.submit_for_review }}
+      upload_to_google_play: ${{ inputs.submit_for_review }}
     secrets: inherit
