@@ -37,6 +37,7 @@ class AppConfigBloc extends Cubit<AppConfig> {
   void switchLanguage(Language language) async {
     AppConfig newState = state.copyWith(language: language);
     cao.write(newState.toAppConfigPo());
+    setFlutterUnitLocale(language.isZh);
     emit(newState);
   }
 

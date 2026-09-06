@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:l10n/l10n.dart';
 
 import '../../progression/bloc/progression_cubit.dart';
 import '../../progression/model/progression_item.dart';
@@ -34,7 +35,7 @@ class ProgressionPanel extends StatelessWidget {
         child: Center(
           child: TextButton(
             onPressed: context.read<ProgressionCubit>().load,
-            child: const Text('加载失败，点击重试'),
+            child: Text(context.l10n.loadFailedTapToRetry),
           ),
         ),
       );
@@ -226,7 +227,11 @@ class _HonorRewardNames extends StatelessWidget {
   Widget build(BuildContext context) {
     final ColorScheme colors = Theme.of(context).colorScheme;
     return Text(
-      '徽章 · ${rewards.map((ProgressionReward reward) => reward.name).join('、')}',
+      context.l10n.honorRewardNames(
+        rewards
+            .map((ProgressionReward reward) => reward.name)
+            .join(context.l10n.listSeparator),
+      ),
       textAlign: TextAlign.right,
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
@@ -348,15 +353,15 @@ class _TaskAction extends StatelessWidget {
     final ProgressionCubit cubit = context.read<ProgressionCubit>();
     if (achievement) {
       return item.completed
-          ? const _CompletedLabel(text: '已解锁')
+          ? _CompletedLabel(text: context.l10n.unlocked)
           : const SizedBox.shrink();
     }
     if (item.status == 'claimed') {
-      return const _CompletedLabel(text: '已领取');
+      return _CompletedLabel(text: context.l10n.claimed);
     }
     if (item.claimable) {
       return _CompactAction(
-        label: '领取',
+        label: context.l10n.claim,
         loading: state.claimingCode == item.code,
         onTap: state.claimingCode == null
             ? () => cubit.claimDailyTask(item.code)
@@ -365,12 +370,12 @@ class _TaskAction extends StatelessWidget {
     }
     if (item.code == 'daily_check_in') {
       return _CompactAction(
-        label: '签到',
+        label: context.l10n.checkIn,
         loading: state.checkingIn,
         onTap: state.checkingIn ? null : cubit.checkIn,
       );
     }
-    return const _PendingLabel();
+    return _PendingLabel(text: context.l10n.pending);
   }
 }
 
@@ -454,7 +459,9 @@ class _CompletedLabel extends StatelessWidget {
 }
 
 class _PendingLabel extends StatelessWidget {
-  const _PendingLabel();
+  const _PendingLabel({required this.text});
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -463,7 +470,7 @@ class _PendingLabel extends StatelessWidget {
       width: _actionSlotWidth,
       height: _actionSlotHeight,
       child: Center(
-        child: Text('待完成', style: TextStyle(color: color, fontSize: 11.5)),
+        child: Text(text, style: TextStyle(color: color, fontSize: 11.5)),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:l10n/l10n.dart';
 import 'package:utils/utils.dart';
 
 import 'avatar_crop_page.dart';
@@ -33,7 +34,7 @@ abstract final class AvatarUpdateFlow {
       final String extension = file.extension?.toLowerCase() ?? '';
       if (!_allowedExtensions.contains(extension)) {
         if (context.mounted) {
-          Toast.warning(context, '仅支持 JPG、JPEG、PNG、HEIC、HEIF 图片');
+          Toast.warning(context, context.l10n.unsupportedAvatarFormat);
         }
         return false;
       }
@@ -49,10 +50,12 @@ abstract final class AvatarUpdateFlow {
         return false;
       }
       await context.read<FxUserSessionCubit>().updateAvatar(croppedBytes);
-      if (context.mounted) Toast.success(context, '头像修改成功');
+      if (context.mounted) Toast.success(context, context.l10n.avatarUpdated);
       return true;
     } catch (_) {
-      if (context.mounted) Toast.error(context, '头像上传失败，请稍后重试');
+      if (context.mounted) {
+        Toast.error(context, context.l10n.avatarUploadFailed);
+      }
       return false;
     }
   }

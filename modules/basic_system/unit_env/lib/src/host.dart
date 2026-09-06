@@ -22,6 +22,9 @@ class UnitEnv {
   /// 当前登录会话使用的 Bearer Token。
   static String? accessToken;
 
+  /// 当前业务请求使用的标准语言标签。
+  static String locale = 'zh-CN';
+
   /// 当前应用的发行渠道。
   static const UnitDistribution distribution = _distributionName == 'google'
       ? UnitDistribution.google

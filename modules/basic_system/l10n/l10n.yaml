@@ -3,7 +3,6 @@ template-arb-file: app_zh.arb
 output-localization-file: app_localizations.dart
 
 
-synthetic-package: false
 output-dir: lib/gen_l10n
 output-class: AppLocalizations
 nullable-getter: false

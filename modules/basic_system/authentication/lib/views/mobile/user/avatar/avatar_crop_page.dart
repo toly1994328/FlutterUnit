@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:l10n/l10n.dart';
 
 import 'avatar_crop_view.dart';
 
@@ -50,7 +51,7 @@ class _AvatarCropPageState extends State<AvatarCropPage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        title: const Text('裁剪头像'),
+        title: Text(context.l10n.cropAvatar),
         actions: <Widget>[_buildConfirmButton()],
       ),
       body: AvatarCropView(

@@ -1,3 +1,5 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -92,6 +94,127 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get taskAchievements => '任务成就';
+
+  @override
+  String get workshop => '匠心工坊';
+
+  @override
+  String get exchangeHistory => '兑换记录';
+
+  @override
+  String get noExchangeHistory => '暂无兑换记录';
+
+  @override
+  String get noWorkshopProducts => '暂无上架商品';
+
+  @override
+  String get myCraftDust => '我的匠尘';
+
+  @override
+  String get avatarFrames => '头像框';
+
+  @override
+  String get badges => '徽章';
+
+  @override
+  String get owned => '已拥有';
+
+  @override
+  String get goEquip => '去佩戴';
+
+  @override
+  String get exchange => '兑换';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get confirmExchange => '确认兑换';
+
+  @override
+  String exchangeWithCraftDust(int amount) {
+    return '使用 $amount 匠尘兑换？';
+  }
+
+  @override
+  String get insufficientCraftDust => '匠尘不足';
+
+  @override
+  String get earnCraftDustHint => '完成每日任务可以获得更多匠尘。';
+
+  @override
+  String get goToTasks => '去做任务';
+
+  @override
+  String get signInToViewTasks => '登录后查看任务成就';
+
+  @override
+  String get dailyTasks => '每日任务';
+
+  @override
+  String get careerAchievements => '生涯成就';
+
+  @override
+  String get completedToday => '今日\n完成';
+
+  @override
+  String get loadFailedTapToRetry => '加载失败，点击重试';
+
+  @override
+  String honorRewardNames(String names) {
+    return '徽章 · $names';
+  }
+
+  @override
+  String get listSeparator => '、';
+
+  @override
+  String get unlocked => '已解锁';
+
+  @override
+  String get claimed => '已领取';
+
+  @override
+  String get claim => '领取';
+
+  @override
+  String get checkIn => '签到';
+
+  @override
+  String get pending => '待完成';
+
+  @override
+  String get signInToViewHonors => '登录后查看头像徽章';
+
+  @override
+  String get operationFailed => '操作失败';
+
+  @override
+  String get noAvatarFrames => '还没有获得头像框';
+
+  @override
+  String get noBadges => '还没有获得徽章';
+
+  @override
+  String get noAvatarFrameEquipped => '未佩戴头像框';
+
+  @override
+  String get myAvatarFrames => '我的头像框';
+
+  @override
+  String get myBadges => '我的徽章';
+
+  @override
+  String get cropAvatar => '裁剪头像';
+
+  @override
+  String get unsupportedAvatarFormat => '仅支持 JPG、JPEG、PNG、HEIC、HEIF 图片';
+
+  @override
+  String get avatarUpdated => '头像修改成功';
+
+  @override
+  String get avatarUploadFailed => '头像上传失败，请稍后重试';
 
   @override
   String get aboutApplications => '关于应用';
@@ -492,7 +615,6 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get knowledgeTabLayout => '布局宝库';
 
-  @override
   @override
   String get knowledgeConstruction => '正在建设中';
 

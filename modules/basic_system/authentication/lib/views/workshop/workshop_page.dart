@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_ability/fx_ability.dart';
+import 'package:l10n/l10n.dart';
 import '../../honors/bloc/avatar_frame_cubit.dart';
 import '../../progression/bloc/progression_cubit.dart';
 import '../../workshop/bloc/workshop_cubit.dart';
@@ -19,11 +20,11 @@ class WorkshopPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: colors.surfaceContainer,
       appBar: AppBar(
-        title: const Text('匠心工坊'),
+        title: Text(context.l10n.workshop),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
-            tooltip: '兑换记录',
+            tooltip: context.l10n.exchangeHistory,
             onPressed: () => Navigator.of(context).push<void>(
               MaterialPageRoute<void>(
                 builder: (_) => BlocProvider<WorkshopCubit>.value(
@@ -55,7 +56,10 @@ class WorkshopPage extends StatelessWidget {
       return const Center(child: CircularProgressIndicator());
     }
     if (state.products.isEmpty) {
-      return Center(child: Text(state.error ?? '暂无上架商品'));
+      final String message = state.error == null
+          ? context.l10n.noWorkshopProducts
+          : context.l10n.operationFailed;
+      return Center(child: Text(message));
     }
     return GridView.builder(
       padding: const EdgeInsets.fromLTRB(12, 2, 12, 32),
@@ -96,7 +100,7 @@ class _BalanceHeader extends StatelessWidget {
               const Icon(Icons.auto_awesome, size: 32),
         ),
         const SizedBox(width: 10),
-        const Text('我的匠尘'),
+        Text(context.l10n.myCraftDust),
         const Spacer(),
         Text('$balance',
             style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
@@ -121,18 +125,18 @@ class _KindFilter extends StatelessWidget {
         child: CupertinoSlidingSegmentedControl<String>(
           groupValue: selectedKey,
           padding: const EdgeInsets.all(3),
-          children: const <String, Widget>{
+          children: <String, Widget>{
             'avatar_frame': Padding(
-              padding: EdgeInsets.symmetric(vertical: 4),
-              child: Text('头像框'),
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Text(context.l10n.avatarFrames),
             ),
             'badge': Padding(
-              padding: EdgeInsets.symmetric(vertical: 4),
-              child: Text('徽章'),
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Text(context.l10n.badges),
             ),
             'owned': Padding(
-              padding: EdgeInsets.symmetric(vertical: 4),
-              child: Text('已拥有'),
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Text(context.l10n.owned),
             ),
           },
           onValueChanged: (String? value) => _select(cubit, value),
@@ -166,67 +170,95 @@ class _ProductCard extends StatelessWidget {
               ? () => context.push(_honorsLocation(product.honorKind))
               : () => _confirm(context),
       child: Container(
-        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
             color: colors.surface,
             border: Border.all(color: colors.outlineVariant),
             borderRadius: BorderRadius.circular(12)),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Expanded(
-                  child: Center(
+        child: Stack(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    child: Center(
                       child: Image.network(
-                          FlutterUnitHost.resolveImageResource(
-                                  product.honorAssetUrl)
-                              .toString(),
-                          fit: BoxFit.contain))),
-              SizedBox(
-                width: double.infinity,
-                child: Text(
-                  product.honorName,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontWeight: FontWeight.w600),
+                        FlutterUnitHost.resolveImageResource(
+                          product.honorAssetUrl,
+                        ).toString(),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      product.honorName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Center(
+                    child: product.owned
+                        ? Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Text(
+                                context.l10n.goEquip,
+                                style: TextStyle(
+                                  color: colors.primary,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Icon(
+                                Icons.chevron_right_rounded,
+                                color: colors.primary,
+                                size: 14,
+                              ),
+                            ],
+                          )
+                        : buying
+                            ? const SizedBox.square(
+                                dimension: 14,
+                                child:
+                                    CircularProgressIndicator(strokeWidth: 1.5),
+                              )
+                            : Text(
+                                context.l10n.exchange,
+                                style: TextStyle(
+                                  color: colors.primary,
+                                  fontSize: 12,
+                                ),
+                              ),
+                  ),
+                ],
+              ),
+            ),
+            if (!product.owned)
+              Positioned(
+                left: 4,
+                top: 4,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    _CurrencyLogo(assetUrl: currencyAssetUrl),
+                    const SizedBox(width: 3),
+                    Text(
+                      '${product.pricePoints}',
+                      style: TextStyle(
+                        color: colors.primary,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 6),
-              Row(children: <Widget>[
-                if (product.owned)
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          '去佩戴',
-                          style: TextStyle(color: colors.primary, fontSize: 12),
-                        ),
-                        Icon(
-                          Icons.chevron_right_rounded,
-                          color: colors.primary,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  )
-                else ...<Widget>[
-                  _CurrencyLogo(assetUrl: currencyAssetUrl),
-                  const SizedBox(width: 3),
-                  Text('${product.pricePoints}',
-                      style: TextStyle(
-                          color: colors.primary, fontWeight: FontWeight.w600)),
-                  const Spacer(),
-                  if (buying)
-                    const SizedBox.square(
-                        dimension: 14,
-                        child: CircularProgressIndicator(strokeWidth: 1.5))
-                  else
-                    Text('兑换',
-                        style: TextStyle(color: colors.primary, fontSize: 12)),
-                ]
-              ]),
-            ]),
+          ],
+        ),
       ),
     );
   }
@@ -236,14 +268,16 @@ class _ProductCard extends StatelessWidget {
         context: context,
         builder: (BuildContext dialogContext) => AlertDialog(
                 title: Text(product.honorName, textAlign: TextAlign.center),
-                content: Text('使用 ${product.pricePoints} 匠尘兑换？'),
+                content: Text(
+                  context.l10n.exchangeWithCraftDust(product.pricePoints),
+                ),
                 actions: <Widget>[
                   TextButton(
                       onPressed: () => Navigator.pop(dialogContext, false),
-                      child: const Text('取消')),
+                      child: Text(context.l10n.cancel)),
                   TextButton(
                       onPressed: () => Navigator.pop(dialogContext, true),
-                      child: const Text('确认兑换'))
+                      child: Text(context.l10n.confirmExchange))
                 ]));
     if (accepted != true || !context.mounted) return;
     final String? error = await context.read<WorkshopCubit>().purchase(product);
@@ -252,7 +286,9 @@ class _ProductCard extends StatelessWidget {
         await _showInsufficientBalanceDialog(context);
         return;
       }
-      FxAbility().toast.error(error);
+      if (context.mounted) {
+        FxAbility().toast.error(context.l10n.operationFailed);
+      }
       return;
     }
     if (context.mounted) {
@@ -266,16 +302,19 @@ class _ProductCard extends StatelessWidget {
     final bool? goToTasks = await showDialog<bool>(
       context: context,
       builder: (BuildContext dialogContext) => AlertDialog(
-        title: const Text('匠尘不足', textAlign: TextAlign.center),
-        content: const Text('完成每日任务可以获得更多匠尘。'),
+        title: Text(
+          context.l10n.insufficientCraftDust,
+          textAlign: TextAlign.center,
+        ),
+        content: Text(context.l10n.earnCraftDustHint),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.pop(dialogContext, false),
-            child: const Text('取消'),
+            child: Text(context.l10n.cancel),
           ),
           TextButton(
             onPressed: () => Navigator.pop(dialogContext, true),
-            child: const Text('去做任务'),
+            child: Text(context.l10n.goToTasks),
           ),
         ],
       ),

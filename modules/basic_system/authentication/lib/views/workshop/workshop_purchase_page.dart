@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:l10n/l10n.dart';
 import 'package:unit_env/unit_env.dart';
 
 import '../../progression/bloc/progression_cubit.dart';
@@ -27,7 +28,7 @@ class _WorkshopPurchasePageState extends State<WorkshopPurchasePage> {
     return Scaffold(
         backgroundColor: colors.surfaceContainer,
         appBar: AppBar(
-          title: const Text('兑换记录'),
+          title: Text(context.l10n.exchangeHistory),
           centerTitle: true,
           backgroundColor: colors.surfaceContainer,
           scrolledUnderElevation: 0,
@@ -35,7 +36,7 @@ class _WorkshopPurchasePageState extends State<WorkshopPurchasePage> {
         body: BlocBuilder<WorkshopCubit, WorkshopState>(
             builder: (BuildContext context, WorkshopState state) {
           if (state.purchases.isEmpty) {
-            return const Center(child: Text('暂无兑换记录'));
+            return Center(child: Text(context.l10n.noExchangeHistory));
           }
           return ListView.separated(
               padding: const EdgeInsets.all(12),

@@ -1,3 +1,5 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -92,6 +94,128 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get taskAchievements => 'Tasks & Achievements';
+
+  @override
+  String get workshop => 'Craft Workshop';
+
+  @override
+  String get exchangeHistory => 'Exchange History';
+
+  @override
+  String get noExchangeHistory => 'No exchanges yet';
+
+  @override
+  String get noWorkshopProducts => 'No products available';
+
+  @override
+  String get myCraftDust => 'My Craft Dust';
+
+  @override
+  String get avatarFrames => 'Avatar Frames';
+
+  @override
+  String get badges => 'Badges';
+
+  @override
+  String get owned => 'Owned';
+
+  @override
+  String get goEquip => 'Equip';
+
+  @override
+  String get exchange => 'Exchange';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get confirmExchange => 'Confirm';
+
+  @override
+  String exchangeWithCraftDust(int amount) {
+    return 'Exchange for $amount Craft Dust?';
+  }
+
+  @override
+  String get insufficientCraftDust => 'Not Enough Craft Dust';
+
+  @override
+  String get earnCraftDustHint => 'Earn Craft Dust from daily tasks.';
+
+  @override
+  String get goToTasks => 'View Tasks';
+
+  @override
+  String get signInToViewTasks => 'Sign in to view tasks';
+
+  @override
+  String get dailyTasks => 'Daily Tasks';
+
+  @override
+  String get careerAchievements => 'Achievements';
+
+  @override
+  String get completedToday => 'Done';
+
+  @override
+  String get loadFailedTapToRetry => 'Load failed. Tap to retry';
+
+  @override
+  String honorRewardNames(String names) {
+    return 'Badge · $names';
+  }
+
+  @override
+  String get listSeparator => ', ';
+
+  @override
+  String get unlocked => 'Unlocked';
+
+  @override
+  String get claimed => 'Done';
+
+  @override
+  String get claim => 'Done';
+
+  @override
+  String get checkIn => 'Check In';
+
+  @override
+  String get pending => 'Pending';
+
+  @override
+  String get signInToViewHonors => 'Sign in to view honors';
+
+  @override
+  String get operationFailed => 'Operation failed';
+
+  @override
+  String get noAvatarFrames => 'No avatar frames yet';
+
+  @override
+  String get noBadges => 'No badges yet';
+
+  @override
+  String get noAvatarFrameEquipped => 'No avatar frame equipped';
+
+  @override
+  String get myAvatarFrames => 'My Avatar Frames';
+
+  @override
+  String get myBadges => 'My Badges';
+
+  @override
+  String get cropAvatar => 'Crop Avatar';
+
+  @override
+  String get unsupportedAvatarFormat =>
+      'Only JPG, JPEG, PNG, HEIC, and HEIF images are supported';
+
+  @override
+  String get avatarUpdated => 'Avatar updated';
+
+  @override
+  String get avatarUploadFailed => 'Avatar upload failed';
 
   @override
   String get aboutApplications => 'About Applications';
@@ -500,7 +624,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get knowledgeTabLayout => 'Layout Treasury';
 
-  @override
   @override
   String get knowledgeConstruction => 'In Construction';
 

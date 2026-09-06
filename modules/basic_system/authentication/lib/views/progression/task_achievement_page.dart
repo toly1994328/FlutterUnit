@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:l10n/l10n.dart';
 import 'package:unit_env/unit_env.dart';
 
 import '../../progression/bloc/progression_cubit.dart';
@@ -30,7 +31,7 @@ class _TaskAchievementPageState extends State<TaskAchievementPage> {
       child: Scaffold(
         backgroundColor: colors.surfaceContainer,
         appBar: AppBar(
-          title: const Text('任务成就'),
+          title: Text(context.l10n.taskAchievements),
           centerTitle: true,
           elevation: 0,
           scrolledUnderElevation: 0,
@@ -39,7 +40,7 @@ class _TaskAchievementPageState extends State<TaskAchievementPage> {
         body: BlocBuilder<FxUserSessionCubit, FxUserSession>(
           builder: (BuildContext context, FxUserSession session) {
             if (session is! FxAuthed) {
-              return const Center(child: Text('登录后查看任务成就'));
+              return Center(child: Text(context.l10n.signInToViewTasks));
             }
             return const _ProgressionContent();
           },
@@ -76,7 +77,10 @@ class _ProgressionContent extends StatelessWidget {
             unselectedLabelStyle: const TextStyle(fontSize: 15),
             dividerColor: colors.outlineVariant,
             padding: const EdgeInsets.symmetric(horizontal: 24),
-            tabs: const <Tab>[Tab(text: '每日任务'), Tab(text: '生涯成就')],
+            tabs: <Tab>[
+              Tab(text: context.l10n.dailyTasks),
+              Tab(text: context.l10n.careerAchievements),
+            ],
           ),
         ),
         const Expanded(
@@ -123,7 +127,7 @@ class _ProgressionSummary extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('我的匠尘',
+                Text(context.l10n.myCraftDust,
                     style: TextStyle(
                         color: colors.onSurfaceVariant, fontSize: 13)),
                 const SizedBox(height: 2),
@@ -158,7 +162,7 @@ class _ProgressionSummary extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 9),
-          Text('今日\n完成',
+          Text(context.l10n.completedToday,
               style: TextStyle(
                   color: colors.onSurfaceVariant, fontSize: 12, height: 1.45)),
         ],

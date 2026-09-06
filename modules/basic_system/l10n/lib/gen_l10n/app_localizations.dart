@@ -154,8 +154,8 @@ abstract class AppLocalizations {
 
   /// No description provided for @blacklist.
   ///
-  /// In en, this message translates to:
-  /// **'Blocked Users'**
+  /// In zh, this message translates to:
+  /// **'黑名单'**
   String get blacklist;
 
   /// No description provided for @homeAccountTabMe.
@@ -271,6 +271,240 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'任务成就'**
   String get taskAchievements;
+
+  /// No description provided for @workshop.
+  ///
+  /// In zh, this message translates to:
+  /// **'匠心工坊'**
+  String get workshop;
+
+  /// No description provided for @exchangeHistory.
+  ///
+  /// In zh, this message translates to:
+  /// **'兑换记录'**
+  String get exchangeHistory;
+
+  /// No description provided for @noExchangeHistory.
+  ///
+  /// In zh, this message translates to:
+  /// **'暂无兑换记录'**
+  String get noExchangeHistory;
+
+  /// No description provided for @noWorkshopProducts.
+  ///
+  /// In zh, this message translates to:
+  /// **'暂无上架商品'**
+  String get noWorkshopProducts;
+
+  /// No description provided for @myCraftDust.
+  ///
+  /// In zh, this message translates to:
+  /// **'我的匠尘'**
+  String get myCraftDust;
+
+  /// No description provided for @avatarFrames.
+  ///
+  /// In zh, this message translates to:
+  /// **'头像框'**
+  String get avatarFrames;
+
+  /// No description provided for @badges.
+  ///
+  /// In zh, this message translates to:
+  /// **'徽章'**
+  String get badges;
+
+  /// No description provided for @owned.
+  ///
+  /// In zh, this message translates to:
+  /// **'已拥有'**
+  String get owned;
+
+  /// No description provided for @goEquip.
+  ///
+  /// In zh, this message translates to:
+  /// **'去佩戴'**
+  String get goEquip;
+
+  /// No description provided for @exchange.
+  ///
+  /// In zh, this message translates to:
+  /// **'兑换'**
+  String get exchange;
+
+  /// No description provided for @cancel.
+  ///
+  /// In zh, this message translates to:
+  /// **'取消'**
+  String get cancel;
+
+  /// No description provided for @confirmExchange.
+  ///
+  /// In zh, this message translates to:
+  /// **'确认兑换'**
+  String get confirmExchange;
+
+  /// No description provided for @exchangeWithCraftDust.
+  ///
+  /// In zh, this message translates to:
+  /// **'使用 {amount} 匠尘兑换？'**
+  String exchangeWithCraftDust(int amount);
+
+  /// No description provided for @insufficientCraftDust.
+  ///
+  /// In zh, this message translates to:
+  /// **'匠尘不足'**
+  String get insufficientCraftDust;
+
+  /// No description provided for @earnCraftDustHint.
+  ///
+  /// In zh, this message translates to:
+  /// **'完成每日任务可以获得更多匠尘。'**
+  String get earnCraftDustHint;
+
+  /// No description provided for @goToTasks.
+  ///
+  /// In zh, this message translates to:
+  /// **'去做任务'**
+  String get goToTasks;
+
+  /// No description provided for @signInToViewTasks.
+  ///
+  /// In zh, this message translates to:
+  /// **'登录后查看任务成就'**
+  String get signInToViewTasks;
+
+  /// No description provided for @dailyTasks.
+  ///
+  /// In zh, this message translates to:
+  /// **'每日任务'**
+  String get dailyTasks;
+
+  /// No description provided for @careerAchievements.
+  ///
+  /// In zh, this message translates to:
+  /// **'生涯成就'**
+  String get careerAchievements;
+
+  /// No description provided for @completedToday.
+  ///
+  /// In zh, this message translates to:
+  /// **'今日\n完成'**
+  String get completedToday;
+
+  /// No description provided for @loadFailedTapToRetry.
+  ///
+  /// In zh, this message translates to:
+  /// **'加载失败，点击重试'**
+  String get loadFailedTapToRetry;
+
+  /// No description provided for @honorRewardNames.
+  ///
+  /// In zh, this message translates to:
+  /// **'徽章 · {names}'**
+  String honorRewardNames(String names);
+
+  /// No description provided for @listSeparator.
+  ///
+  /// In zh, this message translates to:
+  /// **'、'**
+  String get listSeparator;
+
+  /// No description provided for @unlocked.
+  ///
+  /// In zh, this message translates to:
+  /// **'已解锁'**
+  String get unlocked;
+
+  /// No description provided for @claimed.
+  ///
+  /// In zh, this message translates to:
+  /// **'已领取'**
+  String get claimed;
+
+  /// No description provided for @claim.
+  ///
+  /// In zh, this message translates to:
+  /// **'领取'**
+  String get claim;
+
+  /// No description provided for @checkIn.
+  ///
+  /// In zh, this message translates to:
+  /// **'签到'**
+  String get checkIn;
+
+  /// No description provided for @pending.
+  ///
+  /// In zh, this message translates to:
+  /// **'待完成'**
+  String get pending;
+
+  /// No description provided for @signInToViewHonors.
+  ///
+  /// In zh, this message translates to:
+  /// **'登录后查看头像徽章'**
+  String get signInToViewHonors;
+
+  /// No description provided for @operationFailed.
+  ///
+  /// In zh, this message translates to:
+  /// **'操作失败'**
+  String get operationFailed;
+
+  /// No description provided for @noAvatarFrames.
+  ///
+  /// In zh, this message translates to:
+  /// **'还没有获得头像框'**
+  String get noAvatarFrames;
+
+  /// No description provided for @noBadges.
+  ///
+  /// In zh, this message translates to:
+  /// **'还没有获得徽章'**
+  String get noBadges;
+
+  /// No description provided for @noAvatarFrameEquipped.
+  ///
+  /// In zh, this message translates to:
+  /// **'未佩戴头像框'**
+  String get noAvatarFrameEquipped;
+
+  /// No description provided for @myAvatarFrames.
+  ///
+  /// In zh, this message translates to:
+  /// **'我的头像框'**
+  String get myAvatarFrames;
+
+  /// No description provided for @myBadges.
+  ///
+  /// In zh, this message translates to:
+  /// **'我的徽章'**
+  String get myBadges;
+
+  /// No description provided for @cropAvatar.
+  ///
+  /// In zh, this message translates to:
+  /// **'裁剪头像'**
+  String get cropAvatar;
+
+  /// No description provided for @unsupportedAvatarFormat.
+  ///
+  /// In zh, this message translates to:
+  /// **'仅支持 JPG、JPEG、PNG、HEIC、HEIF 图片'**
+  String get unsupportedAvatarFormat;
+
+  /// No description provided for @avatarUpdated.
+  ///
+  /// In zh, this message translates to:
+  /// **'头像修改成功'**
+  String get avatarUpdated;
+
+  /// No description provided for @avatarUploadFailed.
+  ///
+  /// In zh, this message translates to:
+  /// **'头像上传失败，请稍后重试'**
+  String get avatarUploadFailed;
 
   /// No description provided for @aboutApplications.
   ///

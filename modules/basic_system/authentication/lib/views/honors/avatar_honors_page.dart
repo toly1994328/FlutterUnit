@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fx_user_session/fx_user_session.dart';
+import 'package:l10n/l10n.dart';
 import 'package:unit_env/unit_env.dart';
 
 import '../../honors/bloc/avatar_frame_cubit.dart';
@@ -44,7 +45,7 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
       child: Scaffold(
         backgroundColor: colors.surfaceContainer,
         appBar: AppBar(
-          title: const Text('头像徽章'),
+          title: Text(context.l10n.avatarAchievements),
           centerTitle: true,
           elevation: 0,
           scrolledUnderElevation: 0,
@@ -71,7 +72,7 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
 
   Widget _buildBySession(BuildContext context, FxUserSession session) {
     if (session is! FxAuthed) {
-      return const Center(child: Text('登录后查看头像徽章'));
+      return Center(child: Text(context.l10n.signInToViewHonors));
     }
     return BlocConsumer<AvatarFrameCubit, AvatarFrameState>(
       listenWhen: _shouldShowError,
@@ -89,7 +90,7 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
 
   void _showError(BuildContext context, AvatarFrameState state) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(state.error ?? '操作失败')),
+      SnackBar(content: Text(context.l10n.operationFailed)),
     );
   }
 
@@ -119,9 +120,9 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
                 unselectedLabelColor: colors.onSurfaceVariant,
                 dividerColor: colors.outlineVariant,
                 onTap: _selectKind,
-                tabs: const <Tab>[
-                  Tab(text: '头像框'),
-                  Tab(text: '徽章'),
+                tabs: <Tab>[
+                  Tab(text: context.l10n.avatarFrames),
+                  Tab(text: context.l10n.badges),
                 ],
               ),
             ),
@@ -141,7 +142,11 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Center(
-                  child: Text(showAvatarFrames ? '还没有获得头像框' : '还没有获得徽章'),
+                  child: Text(
+                    showAvatarFrames
+                        ? context.l10n.noAvatarFrames
+                        : context.l10n.noBadges,
+                  ),
                 ),
               )
             else
@@ -219,7 +224,7 @@ class _AvatarHonorsPageState extends State<AvatarHonorsPage> {
             children: <Widget>[
               Flexible(
                 child: Text(
-                  state.frame?.name ?? '未佩戴头像框',
+                  state.frame?.name ?? context.l10n.noAvatarFrameEquipped,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -353,7 +358,7 @@ class _SectionTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
       child: Text(
-        showAvatarFrames ? '我的头像框' : '我的徽章',
+        showAvatarFrames ? context.l10n.myAvatarFrames : context.l10n.myBadges,
         style: TextStyle(
           color: Theme.of(context).colorScheme.onSurfaceVariant,
           fontSize: 13,

@@ -56,7 +56,7 @@ class MePageItem extends StatelessWidget {
           _buildItem(
             context,
             Icons.storefront_outlined,
-            '匠心工坊',
+            context.l10n.workshop,
             AppRoute.workshop.url,
           ),
           Gap.sfl10,
