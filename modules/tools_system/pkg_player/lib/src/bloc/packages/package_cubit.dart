@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pkg_player/src/bloc/packages/package_state.dart';
+import 'package:unit_env/unit_env.dart';
+
 import '../../repository/api/request.dart';
 import '../../repository/model/model.dart';
 
@@ -7,6 +9,9 @@ class PackageCubit extends Cubit<PackageState> {
   final PackageRequest _request;
   final Map<String, PackageResult> _categoryPackages = {};
   final Set<String> _loadingCategories = {};
+
+  /// 正在执行上拉分页请求的分类，避免滚动回调并发加载同一页。
+  final Set<String> _loadingMoreCategories = {};
 
   PackageCubit(this._request) : super(PackageInitial());
 
@@ -51,44 +56,53 @@ class PackageCubit extends Cubit<PackageState> {
     } catch (e) {
       _loadingCategories.remove(categoryKey);
       _categoryPackages[categoryKey] = PackageResult.empty;
-      ;
       emit(PackageLoaded(_categoryPackages,
           loadingCategories: _loadingCategories));
     }
   }
 
   Future<bool> loadMore(String key) async {
-    PackageResult? lastResult = _categoryPackages[key];
-    List<PluginModel> current = lastResult?.data ?? [];
-    if (current.length == lastResult?.total) {
+    final PackageResult? lastResult = _categoryPackages[key];
+    final List<PluginModel> current = lastResult?.data ?? [];
+    if (lastResult == null || current.length >= lastResult.total) {
       return true;
     }
-    int page = current.length ~/ 10 + 1;
-    final result = await _request.getCategoriesPackage(
-      key: key,
-      page: page,
-      pageSize: 10,
-    );
-    bool noData = false;
-    if (result.success) {
-      int total = result.paginate?.total ?? 0;
-      List<PluginModel> newModels = [...current, ...result.data];
-      noData = total == newModels.length;
+    if (!_loadingMoreCategories.add(key)) {
+      return false;
+    }
+
+    try {
+      const int pageSize = 10;
+      final int page = current.length ~/ pageSize + 1;
+      final ApiRet<List<PluginModel>> result =
+          await _request.getCategoriesPackage(
+        key: key,
+        page: page,
+        pageSize: pageSize,
+      );
+      if (!result.success) {
+        return false;
+      }
+
+      final int total = result.paginate?.total ?? lastResult.total;
+      final List<PluginModel> newModels = [...current, ...result.data];
       _categoryPackages[key] = PackageResult(total: total, data: newModels);
       emit(
         PackageLoaded(
-          Map.from(_categoryPackages),
-          loadingCategories: Set.from(_loadingCategories),
+          Map<String, PackageResult>.from(_categoryPackages),
+          loadingCategories: Set<String>.from(_loadingCategories),
         ),
       );
-    } else {}
-
-    return noData;
+      return result.data.isEmpty || newModels.length >= total;
+    } finally {
+      _loadingMoreCategories.remove(key);
+    }
   }
 
   void clearPackages() {
     _categoryPackages.clear();
     _loadingCategories.clear();
+    _loadingMoreCategories.clear();
     emit(PackageLoaded({}));
   }
 }

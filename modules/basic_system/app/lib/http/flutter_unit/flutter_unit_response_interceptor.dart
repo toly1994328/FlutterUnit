@@ -17,7 +17,13 @@ class FlutterUnitResponseInterceptor extends InterceptorsWrapper {
       final String code = body['code']?.toString() ?? '';
       final String message = body['message']?.toString() ?? '';
       if (code == 'SUCCESS') {
-        response.data = body['data'];
+        final dynamic paginate = body['paginate'];
+        response.data = paginate is Map
+            ? <String, dynamic>{
+                'data': body['data'],
+                'paginate': Map<String, dynamic>.from(paginate),
+              }
+            : body['data'];
         response.statusMessage = message;
         handler.next(response);
         return;

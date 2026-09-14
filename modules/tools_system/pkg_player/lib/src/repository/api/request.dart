@@ -33,14 +33,13 @@ class PackageRequest with FlutterUnitHostMixin {
     int pageSize = 10,
     String? sortBy,
   }) async {
-    return host.get('/categories/$key/export', queryParameters: {
-      'sort_by': sortBy ?? 'downloads',
-      'page': page,
-      'page_size': pageSize,
-    }, convertor: (data) {
-      List<dynamic> list = data as List<dynamic>;
-      return list.map((json) => PluginModel.fromJson(json)).toList();
-    });
+    return host.get('/categories/$key/export',
+        queryParameters: {
+          'sort_by': sortBy ?? 'downloads',
+          'page': page,
+          'page_size': pageSize,
+        },
+        convertor: _convertPackagePage);
   }
 
   Future<ApiRet<dynamic>> addCategoriesRaw(Map<String, dynamic> data) async {
@@ -186,6 +185,14 @@ class PackageRequest with FlutterUnitHostMixin {
       print(ret.data);
     }
   }
+}
+
+List<PluginModel> _convertPackagePage(dynamic data) {
+  final Map<String, dynamic> page = data as Map<String, dynamic>;
+  final List<dynamic> list = page['data'] as List<dynamic>;
+  return list
+      .map((dynamic json) => PluginModel.fromJson(json as Map<String, dynamic>))
+      .toList();
 }
 
 enum PkgUrl {
