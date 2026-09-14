@@ -30,6 +30,28 @@ void main() {
 
     expect(response.data, {'id': 1});
   });
+
+  test('分页响应在解包时保留分页元数据', () async {
+    final Dio dio = _createDio({
+      'code': 'SUCCESS',
+      'message': 'ok',
+      'data': [
+        {'name': 'flutter_bloc'},
+      ],
+      'paginate': {'total': 12},
+    });
+
+    final Response<dynamic> response = await dio.get<dynamic>(
+      '/unit/categories/state_management/export',
+    );
+
+    expect(response.data, {
+      'data': [
+        {'name': 'flutter_bloc'},
+      ],
+      'paginate': {'total': 12},
+    });
+  });
 }
 
 Dio _createDio(Map<String, dynamic> body) {
