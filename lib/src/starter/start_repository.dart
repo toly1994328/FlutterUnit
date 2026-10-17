@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:artifact/artifact.dart';
 import 'package:note/note.dart';
 import 'package:app/app.dart';
 import 'package:flutter/foundation.dart';
@@ -10,7 +11,6 @@ import 'package:pkg_player/pkg_player.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storage/storage.dart';
 import 'package:path/path.dart' as path;
-import 'package:path/path.dart' as p;
 import 'bridge/unit_bridge.dart';
 import 'package:widget_module/widget_module.dart';
 
@@ -22,14 +22,26 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
   @override
   Future<AppConfig> initApp() async {
     WidgetsFlutterBinding.ensureInitialized();
-    WindowSizeAdapter.setSize();
+    // 沿用当前桌面窗口尺寸；Windows 150% 缩放下正文视口约为 1102 × 823。
+    await WindowSizeAdapter.setSize(size: const Size(1113, 829.5));
     await SpStorage().initSp();
+    // 清除旧版本持久化的首页文章，后续只从服务端读取。
+    await SpStorage().spf.remove('flutter.unit.news');
     await initAppMeta();
     AppConfigPo po = await SpStorage().appConfig.read();
 
     AppConfig state = AppConfig.fromPo(po);
+    // Windows 首次升级自动选择在线文楷，后续尊重用户的字体切换。
+    if (!kIsWeb &&
+        Platform.isWindows &&
+        SpStorage().spf.getBool('windows-wenkai-font-v1') != true) {
+      state = state.copyWith(fontFamily: wenKaiLitePackage.family);
+      await SpStorage().appConfig.write(state.toAppConfigPo());
+      await SpStorage().spf.setBool('windows-wenkai-font-v1', true);
+    }
     configureFlutterUnitHttp(state.language.isZh);
     NoteEnv().attachBridge(UnitNoteBridge());
+    ArtifactEnv().attachBridge(UnitArtifactBridge());
     if (!kAppEnv.isWeb) await initDb();
     await initWidgetStatistics(); // 加载统计数据
 
@@ -39,6 +51,7 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
   Future<void> initDb() async {
     //数据库不存在，执行拷贝
     String dbPath = await AppStorage().flutter.dbpath;
+    await _removeLegacyArticleDb(path.dirname(dbPath));
     bool shouldCopy = await _checkShouldCopy(dbPath, SpStorage().spf);
     if (shouldCopy) {
       await _doCopyAssetsDb(dbPath);
@@ -62,22 +75,15 @@ class FlutterUnitStartRepo implements AppStartRepository<AppConfig> {
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(dbPath).writeAsBytes(bytes, flush: true);
     }
-    {
-      ByteData data = await rootBundle.load("assets/article.db");
-      List<int> bytes =
-          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-      await File(p.join(dir.path, 'article.db'))
-          .writeAsBytes(bytes, flush: true);
-    }
-    // {
-    //   ByteData data = await rootBundle.load("assets/packages.db");
-    //   List<int> bytes =
-    //       data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-    //
-    //   await File(p.join(dir.path, 'packages.db'))
-    //       .writeAsBytes(bytes, flush: true);
-    // }
     print("=====flutter.db==== assets ======拷贝完成====");
+  }
+
+  /// 旧文章目录已迁到服务端，升级时移除遗留的数据库文件。
+  Future<void> _removeLegacyArticleDb(String directory) async {
+    for (final String suffix in <String>['', '-wal', '-shm', '-journal']) {
+      final File legacy = File(path.join(directory, 'article.db$suffix'));
+      if (await legacy.exists()) await legacy.delete();
+    }
   }
 
   Future<bool> _checkShouldCopy(String dbPath, SharedPreferences prefs) async {

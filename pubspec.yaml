@@ -30,6 +30,12 @@ workspace:
   - modules/knowledge_system/note
 
 dependencies:
+  app:
+    path: modules/basic_system/app
+  artifact:
+    path: modules/knowledge_system/artifact
+  components:
+    path: modules/basic_system/components
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -99,6 +105,7 @@ dependencies:
     path: modules/basic_system/unit_env
   uuid: ^4.5.1
 dev_dependencies:
+  crypto: ^3.0.7
   flutter_test:
     sdk: flutter
   integration_test:
@@ -122,7 +129,6 @@ flutter:
     - assets/images/head_icon/
     - assets/images/widgets/
     - assets/flutter.db
-    - assets/article.db
     - assets/version.json
 
   fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源

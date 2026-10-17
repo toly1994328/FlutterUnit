@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,6 +44,20 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
   void initState() {
     super.initState();
     _initWeb();
+    WindowsFontController.instance.addListener(_onFontChanged);
+    unawaited(WindowsFontController.instance.ensureLoaded());
+  }
+
+  /// 字体注册完成后重建主题，下载进度由设置页单独展示。
+  void _onFontChanged() {
+    if (mounted && WindowsFontController.instance.ready) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    WindowsFontController.instance.removeListener(_onFontChanged);
+    _router.dispose();
+    super.dispose();
   }
 
   @override
@@ -53,7 +69,11 @@ class _FlutterUnit3State extends State<FlutterUnit3> with LocalProvider {
       listenWhen: (p, n) => p.language != n.language,
       listener: _onLocaleChange,
       child: DefaultTextStyle(
-        style: const TextStyle(fontFamily: ''),
+        style: TextStyle(
+            letterSpacing: 0,
+            fontFamily: WindowsFontController.instance.supported
+                ? light.textTheme.bodyMedium?.fontFamily
+                : ''),
         child: TolyUiApp.router(
           scaffoldMessengerKey: flutterUnitScaffoldMessengerKey,
           routerConfig: _router,

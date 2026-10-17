@@ -1,60 +1,40 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fx_dao/src/table/dao.dart';
 import 'package:note/note.dart';
 import 'package:fx_dio/fx_dio.dart';
-import 'package:app/app.dart';
 
-class NewsBloc extends Cubit<NewsState>
-    with Cacheable<List<ArticlePo>>, TimeoutCache<List<ArticlePo>> {
-  NewsBloc() : super(NewsState(headerNews: []));
+/// 首页文章始终由服务端获取，仅在当前进程内保留列表。
+class NewsBloc extends Cubit<NewsState> {
+  NewsBloc() : super(NewsState(headerNews: const <ArticlePo>[]));
 
+  /// 线上文章仓储。
   final ArticleRepository _repository = HttpArticleRepository();
 
-  void initByCache() async {
-    List<ArticlePo>? retCache = await find(shouldRemove: false);
-    if (retCache != null) {
-      emit(NewsState(headerNews: retCache));
-      return;
-    }
-  }
+  /// 防止同时触发重复加载。
+  bool _fetching = false;
 
-  @override
-  String get cacheKey => 'flutter.unit.news';
+  void load() => refreshFromNet();
 
-  void load() async {
-    List<ArticlePo>? retCache = await find();
-    if (retCache != null) {
-      print("=====load in cache=========");
-      emit(NewsState(headerNews: retCache));
-      return;
-    }
-    refreshFromNet();
-  }
-
+  /// 刷新文章推荐，不使用 SharedPreferences 文章缓存。
   Future<void> refreshFromNet() async {
-    SizeFilter filter = const SizeFilter(
-      page: 1,
-      pageSize: 8,
-    );
-    ApiRet<List<ArticlePo>> ret =
-        await _repository.getArticlesByTag(1, filter: filter);
-    print("=====load in net=========");
-    if (ret.success) {
-      save(ret.data);
-      emit(NewsState(headerNews: ret.data));
+    if (_fetching) return;
+    _fetching = true;
+    try {
+      final ApiRet<List<ArticlePo>> result = await _repository.getArticlesByTag(
+        1,
+        filter: const SizeFilter(page: 1, pageSize: 8),
+      );
+      if (!isClosed && result.success) {
+        emit(NewsState(headerNews: result.data));
+      }
+    } finally {
+      _fetching = false;
     }
   }
-
-  @override
-  ConvertorList<List<ArticlePo>> get convertor => (e) {
-        return e.map<ArticlePo>(ArticlePo.fromCache).toList();
-      };
 }
 
 class NewsState {
+  /// 当前进程已取得的推荐文章。
   final List<ArticlePo> headerNews;
 
-  NewsState({
-    required this.headerNews,
-  });
+  NewsState({required this.headerNews});
 }

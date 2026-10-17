@@ -49,7 +49,8 @@ class PureBottomBar extends StatelessWidget {
   }
 
   Widget _buildIcon(AppTab tab) {
-    final Widget icon = Icon(tab.icon);
+    final Widget icon =
+        Icon(tab == AppTab.knowledge ? Icons.menu_book_rounded : tab.icon);
     if (tab != AppTab.mine) return icon;
     return BlocSelector<ProgressionCubit, ProgressionState, int>(
       selector: (ProgressionState state) => state.claimableTaskCount,

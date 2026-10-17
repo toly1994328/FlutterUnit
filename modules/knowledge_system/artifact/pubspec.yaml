@@ -8,10 +8,41 @@ environment:
   flutter: ">=2.17.0"
 resolution: workspace
 dependencies:
+  cached_network_image: ^3.4.1
+  re_highlight: ^0.0.3
+  dio: ^5.4.3+1
+  file_picker: ^10.1.9
+  mime: ^2.0.0
+  flutter_markdown: ^0.7.7+1
+  markdown: ^7.3.0
+  scrollable_positioned_list: ^0.3.8
+  toly_ui:
+    path: ../../basic_system/toly_ui
+  flutter_bloc: ^9.1.1
+  intl: ^0.20.2
+  url_launcher: ^6.3.1
+  webview_flutter: ^4.2.4
+  tolyui_refresh: 0.0.1+1
+  tolyui_feedback: ^0.3.6+17
+  app:
+    path: ../../basic_system/app
+  components:
+    path: ../../basic_system/components
+  l10n:
+    path: ../../basic_system/l10n
+  algorithm:
+    path: ../algorithm
+  fx_dio: 0.0.6
   flutter:
     sdk: flutter
   layout:
     path: ../layout
+
+dev_dependencies:
+  flutter_cache_manager: ^3.4.1
+  file: ^7.0.0
+  flutter_test:
+    sdk: flutter
 
 
 # For information on the generic Dart part of this file, see the

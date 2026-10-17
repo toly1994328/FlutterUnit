@@ -14,8 +14,18 @@ enum AppTab {
   final IconData icon;
   final String path;
 
+  /// 手机端知识入口紧随组件，页面顺序与底部导航保持一致。
   static List<AppTab> get mobileTabs =>
-      [widgets, packages, knowledge, tools, mine];
+      const <AppTab>[widgets, knowledge, packages, tools, mine];
+
+  /// 桌面端导航顺序，知识集锦紧随组件集录。
+  static const List<AppTab> desktopTabs = <AppTab>[
+    widgets,
+    knowledge,
+    packages,
+    tools,
+    mine,
+  ];
 
   const AppTab(this.path, this.icon);
 

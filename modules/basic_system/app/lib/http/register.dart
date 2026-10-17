@@ -1,15 +1,16 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 
 import 'package:app/app.dart';
-import 'package:fx_dio/fx_dio.dart';
 import 'package:unit_env/unit_env.dart';
-import 'http.dart';
 
 /// 在任何用户会话或业务 Provider 构造前注册唯一服务 Host。
 void registerFlutterUnitHost() {
   FxDio().register(
     const FlutterUnitHost(),
     options: HostOptions(
+      // 当前 fx_dio 的终端日志使用 dart:io，Web 关闭它以避免请求被日志异常中断。
+      enableLog: kDebugMode && !kIsWeb,
       repInterceptor: FlutterUnitResponseInterceptor(),
     ),
   );

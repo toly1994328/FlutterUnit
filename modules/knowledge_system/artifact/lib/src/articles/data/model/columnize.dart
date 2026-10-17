@@ -1,71 +1,55 @@
-
+/// 服务端专栏元数据，不承担本地持久化。
 class Columnize {
-  final String? username;
-  final String title;
-  final String subtitle;
-  final String? url;
-  final String? cover;
-  final int create;
-  final int update;
-  final int count;
-  final int userId;
-  final int id;
+  /// 服务端专栏主键。
+  final String id;
 
-  Columnize({
-    this.username = '',
+  /// 作者名称。
+  final String username;
+
+  /// 专栏标题。
+  final String title;
+
+  /// 专栏简介。
+  final String subtitle;
+
+  /// 来源链接；未提供时为空。
+  final String url;
+
+  /// 封面地址。
+  final String cover;
+
+  /// 创建时间，毫秒时间戳。
+  final int create;
+
+  /// 更新时间，毫秒时间戳。
+  final int update;
+
+  /// 服务端统计的可见文章数量。
+  final int count;
+
+  const Columnize({
+    required this.id,
     required this.title,
+    this.username = '',
     this.subtitle = '',
-    required this.url,
+    this.url = '',
     this.cover = '',
-    this.update = 0,
     this.create = 0,
+    this.update = 0,
     this.count = 0,
-    this.id = -1,
-    this.userId = -1,
   });
 
-  Map<String, dynamic> toJson() => {
-        "username": username,
-        "id": id,
-        "title": title,
-        "createAt": create,
-        "subtitle": subtitle,
-        "userId": userId,
-        "url": url,
-        "cover": cover,
-        "updateAt": update,
-        "count": count,
-      };
-
-  factory Columnize.fromMap(dynamic map) => Columnize(
-        username: map['userName'] ?? '',
-        title: map['title'] ?? '',
-        create: DateTime.parse(map['createAt']).millisecondsSinceEpoch,
-        update: DateTime.parse(map['updateAt']).millisecondsSinceEpoch,
-        subtitle: map['subtitle'] ?? '',
-        url: map['url'] ?? '',
-        cover: map['caver'] ?? '',
-        count: map['count'] ?? 0,
-        userId: map['userId'] ?? 0,
-        id: map['columnizeId'] ?? -1,
+  factory Columnize.fromApi(dynamic data) => Columnize(
+        id: data['id'] as String,
+        title: data['title'] as String,
+        username: data['author_name'] as String,
+        subtitle: data['subtitle'] as String,
+        url: data['source_url'] as String,
+        cover: data['cover_url'] as String,
+        count: data['article_count'] as int,
+        create:
+            DateTime.parse(data['created_at'] as String).millisecondsSinceEpoch,
+        update:
+            DateTime.parse(data['updated_at'] as String).millisecondsSinceEpoch,
       );
-
-  factory Columnize.fromDb(dynamic map)=>
-      Columnize(
-        id: map['id'] ?? '',
-        username: map['username'] ?? '',
-        userId: map['userId'] ?? '',
-        title: map['title'] ?? '',
-        create: map['createAt'] ?? 0 ,
-        count: map['count'] ?? 0 ,
-        update: map['updateAt'] ?? 0,
-        subtitle: map['subtitle'] ?? '',
-        url: map['url'] ?? '',
-        cover: map['cover'] ?? '',
-      );
-
-  @override
-  String toString() {
-    return 'Columnize{username: $username, title: $title, subtitle: $subtitle, url: $url, cover: $cover, create: $create, update: $update, count: $count}';
-  }
 }

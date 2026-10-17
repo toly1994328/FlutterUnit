@@ -8,9 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../bloc/exp.dart';
 import '../data/exp.dart';
-import 'article/sliver_article.dart';
-import 'article/sliver_columnize.dart';
-import 'building/building_panel.dart';
+import 'library/library_page.dart';
 import 'package:l10n/l10n.dart';
 
 class DeskKnowledgePage extends StatefulWidget {
@@ -25,20 +23,26 @@ class DeskKnowledgePage extends StatefulWidget {
 
 class _DeskKnowledgePageState extends State<DeskKnowledgePage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+  /// 知识库四个入口的页面切换控制器。
   late TabController controller;
-  List<String> data = [];
-  int _curIndex = 0;
 
   @override
   void initState() {
     super.initState();
     controller = TabController(length: 4, vsync: this);
-    controller.addListener(_listen);
-    data = List.generate(5, (index) => 'Init $index');
   }
 
-  ArticleRepository aRepository = const ArticleRepository();
-  ColumnizeRepository cRepository = const ColumnizeRepository();
+  /// 在线文章仓储。
+  final ArticleRepository aRepository = const ArticleRepository();
+
+  /// 在线专栏仓储。
+  final ColumnizeRepository cRepository = const ColumnizeRepository();
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +54,7 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>
         BlocProvider<ColumnizeBloc>(
             create: (_) => ColumnizeBloc(cRepository)..init()),
         BlocProvider<ArticleBloc>(
-            create: (_) => ArticleBloc(aRepository, pageSize: 1000)..init()),
+            create: (_) => ArticleBloc(aRepository, pageSize: 40)..init()),
       ],
       child: Scaffold(
         endDrawer: SortSettings(),
@@ -58,38 +62,39 @@ class _DeskKnowledgePageState extends State<DeskKnowledgePage>
           children: [
             DeskKnowledgeTabTopBar(
               onTabPressed: (int value) {
-                controller.index = value;
+                controller.animateTo(value);
               },
               tabs: [
+                l10n.knowledgeTabToly,
                 l10n.knowledgeTabLayout,
                 l10n.paintCollection,
                 l10n.knowledgeTabAlgo,
-                l10n.knowledgeTabToly,
               ],
             ),
             Expanded(
-                child: TabBarView(
-              controller: controller,
-              children: [
-                LayoutRouterPage(),
-                widget.drawingPage,
-                AlgoRouterPage(),
-                TolyArticlesPage(),
-              ],
-            ))
+                child:
+                    ListenableBuilder(listenable: controller, builder: _pages))
           ],
         ),
       ),
     );
   }
 
-  void _listen() {
-    print('${controller.index}');
-    if (_curIndex != controller.index) {
-      setState(() {
-        _curIndex = controller.index;
-      });
-    }
+  /// 桌面二级标签同样保留页面，并让隐藏入口停止动画。
+  Widget _pages(BuildContext context, Widget? child) {
+    final List<Widget> pages = <Widget>[
+      const TolyArticlesPage(),
+      LayoutRouterPage(),
+      widget.drawingPage,
+      AlgoRouterPage(),
+    ];
+    return TabBarView(controller: controller, children: <Widget>[
+      for (int index = 0; index < pages.length; index++)
+        RetainedPage(
+            key: ValueKey<int>(index),
+            active: controller.index == index,
+            child: pages[index]),
+    ]);
   }
 
   @override
@@ -101,20 +106,7 @@ class TolyArticlesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverPadding(
-          padding: EdgeInsets.only(top: 10, bottom: 10, right: 36, left: 36),
-          sliver: const SliverToBoxAdapter(
-            child: ColumnizeViewPage(),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.only(right: 36, left: 36),
-          sliver: SliverArticlePanel(),
-        ),
-      ],
-    );
+    return const ArticleLibraryPage();
   }
 }
 

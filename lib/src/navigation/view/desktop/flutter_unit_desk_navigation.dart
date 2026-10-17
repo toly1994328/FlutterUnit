@@ -60,7 +60,8 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     AppL10n l10n = AppL10n.of(context);
-    deskNavBarMenus = AppTab.values.map((e)=>e.menu(l10n)).toList();
+    deskNavBarMenus =
+        AppTab.desktopTabs.map((AppTab tab) => tab.menu(l10n)).toList();
   }
 
   final RegExp _segReg = RegExp(r'/\w+');

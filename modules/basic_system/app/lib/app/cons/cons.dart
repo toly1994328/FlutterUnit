@@ -27,7 +27,8 @@ class Cons {
     'IndieFlower',
     'BalooBhai2',
     'Inconsolata',
-    'Neucha'
+    'Neucha',
+    'LXGW WenKai Lite',
   ];
 
   static const Map<WidgetFamily,String> kWidgetFamilyLabelMap = {

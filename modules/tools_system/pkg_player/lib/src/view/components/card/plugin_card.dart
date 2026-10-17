@@ -318,7 +318,7 @@ class _PluginCardState extends State<PluginCard> with TickerProviderStateMixin {
                           fontSize: 28,
                           fontWeight: FontWeight.w900,
                           height: 1.2,
-                          letterSpacing: -0.5,
+                          letterSpacing: 0,
                           shadows: [
                             Shadow(
                               color: Colors.black.withOpacity(0.3),

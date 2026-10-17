@@ -3,12 +3,14 @@ import 'package:toly_ui/toly_ui.dart';
 import 'package:flutter/material.dart';
 
 class DeskKnowledgeTabTopBar extends StatefulWidget {
+  /// 知识库各入口的标题。
   final List<String> tabs;
+
+  /// 主页面同步切换入口。
   final ValueChanged<int> onTabPressed;
 
   const DeskKnowledgeTabTopBar(
-      {Key? key, required this.onTabPressed, required this.tabs})
-      : super(key: key);
+      {super.key, required this.onTabPressed, required this.tabs});
 
   @override
   State<DeskKnowledgeTabTopBar> createState() => _DeskKnowledgeTabTopBarState();
@@ -16,6 +18,7 @@ class DeskKnowledgeTabTopBar extends StatefulWidget {
 
 class _DeskKnowledgeTabTopBarState extends State<DeskKnowledgeTabTopBar>
     with TickerProviderStateMixin {
+  /// 顶部标签的选中状态与动画。
   late TabController tabController;
 
   @override
@@ -34,16 +37,22 @@ class _DeskKnowledgeTabTopBarState extends State<DeskKnowledgeTabTopBar>
   }
 
   @override
-  Widget build(BuildContext context) {
-    Color themeColor = Theme.of(context).primaryColor;
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
 
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
+  @override
+  Widget build(BuildContext context) {
+    final Color themeColor = Theme.of(context).primaryColor;
+
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return DragToMoveWrapper(
       child: Stack(
         children: [
           Container(
-            height: 64,
+            height: 56,
             color: isDark ? const Color(0xff2C3036) : Colors.white,
             child: Row(
               children: [

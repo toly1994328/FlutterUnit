@@ -33,8 +33,7 @@ class FlutterUnitMenuCell extends StatelessWidget {
 
     double anim = display.rate;
     Color? color = ColorTween(
-            begin: Colors.white.withAlpha(33),
-            end: Theme.of(context).primaryColor)
+            begin: Colors.transparent, end: Theme.of(context).primaryColor)
         .transform(anim);
 
     double iconSize = _sizeTween.transform(anim);

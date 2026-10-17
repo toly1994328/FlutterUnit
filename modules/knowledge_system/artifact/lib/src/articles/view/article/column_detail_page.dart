@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-
 import '../../data/exp.dart';
-import 'sliver_article.dart';
+import '../library/article_browser.dart';
 
 class ColumnDetailPage extends StatelessWidget {
+  /// 当前专栏标题、简介和计数。
   final Columnize columnize;
 
-  const ColumnDetailPage({Key? key, required this.columnize}) : super(key: key);
+  const ColumnDetailPage({super.key, required this.columnize});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,7 @@ class ColumnDetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(columnize.title),
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverPadding(
-              padding: EdgeInsets.only(top: 8),
-          sliver: SliverArticlePanel())
-          // SliverAppBar(
-          //   title: Text(columnize.title),
-          // ),
-        ],
-      ),
+      body: ArticleBrowser(collection: columnize),
     );
   }
 }

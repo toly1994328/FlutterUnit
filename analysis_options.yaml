@@ -15,6 +15,14 @@ linter:
      file_names: false
 
 analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
 #  exclude:
 #    - modules/widget_system/widgets/**
 

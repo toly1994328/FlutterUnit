@@ -11,6 +11,8 @@ export 'app/cons/str_unit.dart';
 export 'app/res/toly_icon.dart';
 export 'app/theme/size_unit.dart';
 export 'app/theme/app_theme.dart';
+export 'app/typography/windows_font_controller.dart';
+export 'app/typography/remote_font_package.dart';
 export 'app/theme/unit_color_scheme.dart';
 export 'app/style/unit_text_style.dart';
 export 'app/style/unit_color.dart';

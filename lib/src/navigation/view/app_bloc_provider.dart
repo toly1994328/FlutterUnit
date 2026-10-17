@@ -57,7 +57,7 @@ class _AppBlocProviderState extends State<AppBlocProvider> {
             create: (_) => UpgradeBloc(api: UnitUpgradeApi()),
           ),
         BlocProvider<UserBloc>(create: (_) => UserBloc()),
-        BlocProvider<NewsBloc>(create: (_) => NewsBloc()..initByCache()),
+        BlocProvider<NewsBloc>(create: (_) => NewsBloc()),
 
         BlocProvider<GalleryUnitBloc>(
             create: (_) => GalleryUnitBloc()..loadGalleryInfo()),

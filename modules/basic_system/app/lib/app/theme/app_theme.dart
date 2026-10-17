@@ -24,7 +24,7 @@ ThemeData darkTheme(AppConfig state) {
       statusBarIconBrightness: Brightness.light,
       systemNavigationBarColor: Color(0xff181818));
 
-  return ThemeData(
+  final ThemeData theme = ThemeData(
     extensions: [messageShowTheme],
     colorScheme: colors,
     scaffoldBackgroundColor: colors.surfaceContainer,
@@ -38,7 +38,9 @@ ThemeData darkTheme(AppConfig state) {
     tabBarTheme: const TabBarThemeData(
       dividerColor: Colors.transparent,
     ),
-    fontFamily: state.fontFamily,
+    fontFamily: kAppEnv.isWindows
+        ? WindowsFontController.instance.resolveFamily(state.fontFamily)
+        : state.fontFamily,
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: colors.primary,
@@ -80,6 +82,7 @@ ThemeData darkTheme(AppConfig state) {
       selectedItemColor: colors.primary,
     ),
   );
+  return _zeroLetterSpacing(theme);
 }
 
 double get divHeight {
@@ -100,15 +103,13 @@ ThemeData lightTheme(AppConfig state) {
       statusBarIconBrightness: Brightness.dark,
       systemNavigationBarColor: Colors.transparent);
 
-  String fontFamily = state.fontFamily;
-  if (kAppEnv.isWindows) {
-    fontFamily = '宋体';
-  }
+  final String fontFamily =
+      WindowsFontController.instance.resolveFamily(state.fontFamily);
 
-  return ThemeData(
+  final ThemeData theme = ThemeData(
     extensions: [messageShowTheme],
     colorScheme: colors,
-    fontFamily: '',
+    fontFamily: kAppEnv.isWindows ? fontFamily : '',
     primaryColor: colors.primary,
     scaffoldBackgroundColor: colors.surfaceContainer,
     useMaterial3: true,
@@ -173,4 +174,30 @@ ThemeData lightTheme(AppConfig state) {
       ),
     ),
   );
+  return _zeroLetterSpacing(theme);
+}
+
+/// 统一深浅主题的正文、标题、按钮和强调文字字间距。
+ThemeData _zeroLetterSpacing(ThemeData theme) {
+  // 直接覆盖字距，避免未本地化的基础样式中 letterSpacing 为空时触发断言。
+  const TextStyle style = TextStyle(letterSpacing: 0);
+  const TextTheme spacing = TextTheme(
+      displayLarge: style,
+      displayMedium: style,
+      displaySmall: style,
+      headlineLarge: style,
+      headlineMedium: style,
+      headlineSmall: style,
+      titleLarge: style,
+      titleMedium: style,
+      titleSmall: style,
+      bodyLarge: style,
+      bodyMedium: style,
+      bodySmall: style,
+      labelLarge: style,
+      labelMedium: style,
+      labelSmall: style);
+  return theme.copyWith(
+      textTheme: theme.textTheme.merge(spacing),
+      primaryTextTheme: theme.primaryTextTheme.merge(spacing));
 }

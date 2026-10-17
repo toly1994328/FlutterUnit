@@ -4,6 +4,7 @@ import 'package:algorithm/algorithm.dart';
 import 'package:app/app.dart';
 import 'package:artifact/artifact.dart';
 import 'package:authentication/authentication.dart';
+import 'package:components/components.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +32,10 @@ class UnitPhoneNavigation extends StatefulWidget {
 class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   //页面控制器，初始 0
   final PageController _controller = PageController();
-  final ValueNotifier<AppTab> _activeTab = ValueNotifier(AppTab.widgets);
+
+  /// 当前选中的底部入口，也用于暂停隐藏页面的动画。
+  final ValueNotifier<AppTab> _activeTab =
+      ValueNotifier<AppTab>(AppTab.widgets);
 
   // 禁止 PageView 滑动
   final ScrollPhysics _neverScroll = const NeverScrollableScrollPhysics();
@@ -58,38 +62,49 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: const HomeRightDrawer(),
-      body: PageView(
-        physics: _neverScroll,
-        controller: _controller,
-        children: [
-          StandardHomePage(
-            heard: const NewsHeader(),
-            avatar: const SessionUserAvatar(size: 32),
-            onAvatarPointerDown: () => debugPrint(
-              '[FlutterUnit.AuthEntry] home.avatar.pointerDown',
-            ),
-            onAvatarTap: () => _openAccountEntry(context),
-          ),
-          BlocBuilder<FxUserSessionCubit, FxUserSession>(
-            builder: (BuildContext context, FxUserSession session) =>
-                PkgPlayerPage(
-              config: PkgPlayerConfig(
-                isAuthenticated: session is FxAuthed,
-                onLoginRequired: _openPackageLogin,
-              ),
-            ),
-          ),
-          AlgoScope(
-            child: ArtifactPage(
-              drawingPage: const GalleryUnit(embedded: true),
-            ),
-          ),
-          const MobileToolPage(),
-          UserPage(),
-        ],
-      ),
+      body: ValueListenableBuilder<AppTab>(
+          valueListenable: _activeTab, builder: _buildPages),
       bottomNavigationBar: _buildBottomNav(context),
     );
+  }
+
+  /// 首次访问才挂载入口页面，切走后保留其状态与数据仓储。
+  Widget _buildPages(BuildContext context, AppTab active, Widget? child) {
+    final List<Widget> pages = <Widget>[
+      StandardHomePage(
+        heard: const NewsHeader(),
+        avatar: const SessionUserAvatar(size: 32),
+        onAvatarPointerDown: () => debugPrint(
+          '[FlutterUnit.AuthEntry] home.avatar.pointerDown',
+        ),
+        onAvatarTap: () => _openAccountEntry(context),
+      ),
+      AlgoScope(
+        child: ArtifactPage(
+          drawingPage: const GalleryUnit(embedded: true),
+        ),
+      ),
+      BlocBuilder<FxUserSessionCubit, FxUserSession>(
+        builder: (BuildContext context, FxUserSession session) => PkgPlayerPage(
+          config: PkgPlayerConfig(
+            isAuthenticated: session is FxAuthed,
+            onLoginRequired: _openPackageLogin,
+          ),
+        ),
+      ),
+      const MobileToolPage(),
+      UserPage(),
+    ];
+    return PageView(
+        physics: _neverScroll,
+        controller: _controller,
+        children: <Widget>[
+          for (int index = 0; index < pages.length; index++)
+            RetainedPage(
+                key: ValueKey<AppTab>(AppTab.mobileTabs[index]),
+                active: active == AppTab.mobileTabs[index],
+                child: pages[index]),
+        ]);
   }
 
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
@@ -113,8 +128,9 @@ class _UnitPhoneNavigationState extends State<UnitPhoneNavigation> {
 
   // 点击底部按钮事件，切换页面
   void _onTapBottomNav(int index) {
-    _controller.jumpToPage(index);
     final AppTab selectedTab = AppTab.mobileTabs[index];
+    if (_activeTab.value == selectedTab) return;
+    _controller.jumpToPage(index);
     _activeTab.value = selectedTab;
     if (selectedTab == AppTab.packages) {
       context.read<LikeWidgetBloc>().loadLikeData();

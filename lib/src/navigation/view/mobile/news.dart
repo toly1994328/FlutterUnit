@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../l10n/gen/app_l10n.dart';
 import 'carousel.dart';
 import 'package:app/app.dart';
+import 'package:artifact/artifact.dart' as artifact;
 
 class NewsHeader extends StatefulWidget {
   const NewsHeader({super.key});
@@ -112,9 +113,7 @@ class NewsArticleDisplay extends StatelessWidget {
             width: imageWidth,
           ).toString();
     return GestureDetector(
-      onTap: () {
-        _launchUrl(article.url);
-      },
+      onTap: () => _openArticle(context),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: Stack(
@@ -177,4 +176,22 @@ class NewsArticleDisplay extends StatelessWidget {
       ),
     );
   }
+
+  /// 本站内容在客户端阅读，外链文章继续打开原文。
+  void _openArticle(BuildContext context) {
+    if (article.type == 2) {
+      Navigator.of(context)
+          .push(MaterialPageRoute<void>(builder: _buildMarkdown));
+      return;
+    }
+    _launchUrl(article.url);
+  }
+
+  Widget _buildMarkdown(BuildContext context) => artifact.MarkdownArticlePage(
+        article: artifact.Article(
+            id: article.id.toString(),
+            title: article.title,
+            url: article.url,
+            type: 2),
+      );
 }
