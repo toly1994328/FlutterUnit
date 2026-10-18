@@ -30,6 +30,9 @@
 .pub/
 /build/
 /output/
+# 子模块的构建产物；保留 scripts/build 等源码目录。
+/modules/**/build/
+/android/build/
 /ios/.env.publish
 /android/app/.cxx/
 /lib/tools/
@@ -41,3 +44,6 @@
 /libs
 /pubspec_overrides.yaml
 modules/game_system
+
+# 作者文章的本地归档和原始图片，不随客户端源码提交。
+/doc/articles/
