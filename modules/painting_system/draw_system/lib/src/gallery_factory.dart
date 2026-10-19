@@ -31,7 +31,6 @@ import 'fun/random_portrait.dart';
 import 'fun/stemp/stamp_paper.dart';
 import 'particle/random/random_particle.dart';
 import 'particle/split/particle_split.dart';
-import 'particle/split_img/split_image.dart';
 import 'picture_frame.dart';
 import 'package:l10n/l10n.dart';
 
@@ -161,12 +160,6 @@ class GalleryFactory {
               srcUrl: '/particle/split',
               info: context.l10n.particleCollision,
               content: ParticleSplit()),
-          FrameShower(
-              title: "图片粒子分裂",
-              author: "张风捷特烈",
-              srcUrl: '/particle/split_img',
-              info: context.l10n.particle,
-              content: SplitImage()),
         ];
       case GalleryType.fun:
         return [

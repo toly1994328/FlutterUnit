@@ -620,10 +620,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'This example introduces how to perform collision detection on a particle and split multiple particles, which is an interesting case. \n Special operation: Click Reset';
 
   @override
-  String get particle =>
-      'This example introduces using particles to represent images and animating them to achieve explosive effects. \nSpecial operation: Click to run';
-
-  @override
   String get rectangleAndRandomNumbers =>
       'This example introduces drawing rectangles and handling random numbers. Determine the rectangular position information through a set of points and draw it. Can practice the ability to control data. \nSpecial operation: Click to randomly generate';
 

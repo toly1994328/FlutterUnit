@@ -615,9 +615,6 @@ class AppLocalizationsZh extends AppLocalizations {
       '本样例介绍如何对个粒子进行碰撞检测，并分裂处多个粒子，是一个比较有趣的案例。\n特殊操作：单击重置';
 
   @override
-  String get particle => '本样例介绍将图片使用粒子表示，并对粒子进行动画处理，达到爆炸的效果。\n特殊操作：单击运行';
-
-  @override
   String get rectangleAndRandomNumbers =>
       '本样例介绍绘制矩形及随机数处理。通过点位集合确定矩形位置信息，将其绘制出来。可以练习对数据的控制能力。\n特殊操作：点击随机生成';
 

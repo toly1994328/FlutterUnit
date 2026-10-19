@@ -1250,12 +1250,6 @@ abstract class AppLocalizations {
   /// **'本样例介绍如何对个粒子进行碰撞检测，并分裂处多个粒子，是一个比较有趣的案例。\n特殊操作：单击重置'**
   String get particleCollision;
 
-  /// No description provided for @particle.
-  ///
-  /// In zh, this message translates to:
-  /// **'本样例介绍将图片使用粒子表示，并对粒子进行动画处理，达到爆炸的效果。\n特殊操作：单击运行'**
-  String get particle;
-
   /// No description provided for @rectangleAndRandomNumbers.
   ///
   /// In zh, this message translates to:

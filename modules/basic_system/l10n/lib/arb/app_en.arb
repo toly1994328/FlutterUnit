@@ -197,7 +197,6 @@
   "theEffectOfAnimationCurve":"This example provides an intuitive way to examine the effect of animation curves, allowing everyone to have a deeper understanding of animation. \n Special operation: Click to run",
   "randomParticlesAndBoundaryBouncing":"This example introduces how to create random particles and handle boundary bounce logic, which is a great starting point for learning particle motion. Special operation: click to stop running ",
   "particleCollision":"This example introduces how to perform collision detection on a particle and split multiple particles, which is an interesting case. \n Special operation: Click Reset",
-  "particle":"This example introduces using particles to represent images and animating them to achieve explosive effects. \nSpecial operation: Click to run",
   "rectangleAndRandomNumbers":"This example introduces drawing rectangles and handling random numbers. Determine the rectangular position information through a set of points and draw it. Can practice the ability to control data. \nSpecial operation: Click to randomly generate",
   "bingDwenDwen":"This example is to draw the shape of the mascot Bing Dwen Dwen for the 2022 Beijing Winter Olympics, from which you can learn knowledge such as path drawing and gradient colors.",
   "pufengInjectionTest":"This sample implements the testing process of the Pufeng needle injection test, estimating pi based on probability. You can learn some drawing tips and logical processing of data.",

@@ -15,6 +15,7 @@ dependencies:
   mime: ^2.0.0
   flutter_markdown: ^0.7.7+1
   markdown: ^7.3.0
+  mermaid_flutter: 0.3.0
   scrollable_positioned_list: ^0.3.8
   toly_ui:
     path: ../../basic_system/toly_ui

@@ -1,37 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:markdown/markdown.dart' as md;
 import 'reading_code_highlight.dart';
-
-/// 围栏代码使用独立组件，行内代码继续沿用 Markdown 的文本样式。
-class ReadingCodeBuilder extends MarkdownElementBuilder {
-  /// 代码字号随正文阅读字号变化。
-  final double fontSize;
-  ReadingCodeBuilder({required this.fontSize});
-
-  @override
-  bool isBlockElement() => true;
-
-  /// 让默认解析器闭合代码的行内栈，避免格式延续到下一段正文。
-  @override
-  Widget visitText(md.Text text, TextStyle? preferredStyle) =>
-      const SizedBox.shrink();
-
-  @override
-  Widget visitElementAfterWithContext(BuildContext context, md.Element element,
-      TextStyle? preferredStyle, TextStyle? parentStyle) {
-    final Iterable<md.Element> children =
-        (element.children ?? <md.Node>[]).whereType<md.Element>();
-    final String classes =
-        children.isEmpty ? '' : children.first.attributes['class'] ?? '';
-    final RegExpMatch? match = RegExp(r'language-([^\s]+)').firstMatch(classes);
-    return ReadingCode(
-        source: element.textContent,
-        language: match?.group(1)?.toLowerCase() ?? '',
-        fontSize: fontSize);
-  }
-}
 
 /// 带语言标识、复制入口和横向滚动的代码块，保留原代码字节对应的文本。
 class ReadingCode extends StatefulWidget {

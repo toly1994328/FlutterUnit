@@ -6,7 +6,7 @@ import '../../data/exp.dart';
 import '../../env/artifact_env.dart';
 import 'reading/document_markdown.dart';
 import 'reading/reading_image.dart';
-import 'reading/reading_code.dart';
+import 'reading/reading_code_builder.dart';
 import 'reading/reading_inline_code.dart';
 import 'reading/reading_content.dart';
 import 'reading/reading_header.dart';

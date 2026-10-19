@@ -1,0 +1,32 @@
+[
+  {
+    "title": "状态管理大乱斗#01 | GetX 源码全面评析",
+    "source": "sequenceDiagram\n    participant App as 你的代码\n    participant Get as Get 静态类\n    participant GC as GetMaterialController\n    participant GK as GlobalKey\n    participant NS as NavigatorState\n\n    App->>Get: Get.to(SomePage())\n    Get->>GC: rootController.key\n    GC-->>Get: _key (GlobalKey)\n    Get->>GK: _key.currentState\n    GK-->>Get: NavigatorState 实例\n    Get->>NS: push(GetPageRoute(...))\n    Note over NS: 页面切换完成，全程不需要 context\n",
+    "type": "sequenceDiagram",
+    "path": "doc\\articles\\exported\\7628535637260959770\\article.md"
+  },
+  {
+    "title": "状态管理大乱斗#01 | GetX 源码全面评析",
+    "source": "stateDiagram-v2\n    [*] --> 入队: show() 调用\n    入队 --> 等待: 队列中有其他 SnackBar\n    等待 --> 创建Overlay: 轮到自己\n    创建Overlay --> OPENING: _controller.forward()\n    OPENING --> OPEN: 动画完成\n    OPEN --> CLOSING: 超时 / 手动关闭 / 滑动消除\n    CLOSING --> CLOSED: 动画完成\n    CLOSED --> 移除Overlay: _removeOverlay()\n    移除Overlay --> [*]\n\n    note right of 入队\n        _SnackBarQueue._addJob()\n        保证同时只显示一个\n    end note\n\n    note right of 创建Overlay\n        Get.key.currentState?.overlay\n        直接操作全局 Overlay\n    end note\n",
+    "type": "stateDiagram-v2",
+    "path": "doc\\articles\\exported\\7628535637260959770\\article.md"
+  },
+  {
+    "title": "状态管理大乱斗#01 | GetX 源码全面评析",
+    "source": "flowchart TD\n    A[\"Get.put(instance)\"] --> B[\"_insert(isSingleton: true)\"]\n    C[\"Get.lazyPut(() => Instance())\"] --> B\n    D[\"Get.create(() => Instance())\"] --> E[\"_insert(isSingleton: false)\"]\n\n    B --> F[\"_singl[key] = _InstanceBuilderFactory\"]\n    E --> F\n\n    G[\"Get.find&lt;T&gt;()\"] --> H{\"_singl 中有 key?\"}\n    H -- 有 --> I{\"isSingleton?\"}\n    H -- 没有 --> J[\"抛异常\"]\n    I -- 是 --> K{\"dependency == null?\"}\n    I -- 否 --> L[\"builderFunc() 每次创建新实例\"]\n    K -- 是 --> M[\"builderFunc() 创建并缓存\"]\n    K -- 否 --> N[\"返回已缓存的实例\"]\n",
+    "type": "flowchart",
+    "path": "doc\\articles\\exported\\7628535637260959770\\article.md"
+  },
+  {
+    "title": "状态管理大乱斗#01 | GetX 源码全面评析",
+    "source": "graph BT\n    GM[GetLifeCycleBase<br/><i>mixin</i><br/>onInit / onReady / onClose]\n    GL[GetLifeCycle<br/><i>abstract class</i><br/>构造函数调用 $configureLifeCycle]\n    DI[DisposableInterface]\n    GC[GetxController<br/><i>with ListenableMixin, ListNotifierMixin</i><br/>update / refresh / refreshGroup]\n    FLC[FullLifeCycleController<br/><i>with WidgetsBindingObserver</i>]\n    SC[SuperController<br/><i>with FullLifeCycleMixin, StateMixin</i><br/>onResumed / onPaused / onInactive]\n\n    GM --> GL\n    GL --> DI\n    DI --> GC\n    GC --> FLC\n    FLC --> SC\n\n    style GC fill:#ffd,stroke:#333\n    style SC fill:#dff,stroke:#333\n",
+    "type": "graph",
+    "path": "doc\\articles\\exported\\7628535637260959770\\article.md"
+  },
+  {
+    "title": "Flutter UI 解耦 - 天下大势，合久必分， 分久必合",
+    "source": "timeline\n    title Flutter 与设计语言的发展\n    2014 : Google 发布 Material Design\n    2015 : Flutter 项目启动（代号 &#34;Sky&#34;，仅 Android）\n    2016 : Flutter 改名，不再叫 Sky\n    2017 : Flutter alpha 发布，捆绑 Material Design\n    2018 : Flutter 1.0 发布，Cupertino 加入成为 first-class citizen\n    2021 : Material You / Material 3 发布\n    2024 : Material 3 Expressive + iOS 26 Liquid Glass 预告\n    2025 : Flutter 正式宣布 UI 解耦路线图\n    2026 : material_ui 0.0.2 和 cupertino_ui 0.0.2 发布\n",
+    "type": "timeline",
+    "path": "doc\\articles\\exported\\7667440437864300544\\article.md"
+  }
+]
