@@ -149,18 +149,28 @@ class UserAccountPage extends StatelessWidget {
     String oldPassword,
     String newPassword,
   ) async {
-    final bool changed =
-        await context.read<FxUserSessionCubit>().changePassword(
-              oldPassword: oldPassword,
-              newPassword: newPassword,
-            );
-    if (!context.mounted) return;
-    if (!changed) {
+    try {
+      final bool changed =
+          await context.read<FxUserSessionCubit>().changePassword(
+                oldPassword: oldPassword,
+                newPassword: newPassword,
+              );
+      if (!context.mounted) return;
+      if (!changed) {
+        Toast.error(context, context.l10n.passwordChangeFailed);
+        return;
+      }
+      Toast.success(context, context.l10n.passwordChanged);
+      Navigator.of(context).pop();
+    } on RequestException catch (error) {
+      if (!context.mounted) return;
+      final String message = error.message?.trim() ?? '';
+      Toast.error(context,
+          message.isEmpty ? context.l10n.passwordChangeFailed : message);
+    } catch (_) {
+      if (!context.mounted) return;
       Toast.error(context, context.l10n.passwordChangeFailed);
-      return;
     }
-    Toast.success(context, context.l10n.passwordChanged);
-    Navigator.of(context).pop();
   }
 
   /// 打开公共邮箱验证码找回密码页。

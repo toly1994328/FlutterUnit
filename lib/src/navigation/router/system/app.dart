@@ -4,6 +4,7 @@ import 'package:authentication/authentication.dart';
 import 'package:draw_system/draw_system.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:treasure_tools/treasure_tools.dart';
+import '../../view/desktop/account/desktop_account_page.dart';
 
 List<GoRoute> get systemRoutes => [
       GoRoute(
@@ -16,7 +17,8 @@ List<GoRoute> get systemRoutes => [
       ),
       GoRoute(
         path: AppRoute.account.path,
-        builder: (_, __) => const DesktopUserPage(),
+        builder: (_, __) =>
+            kAppEnv.isDesktopUI ? const DesktopAccountPage() : const UserPage(),
       ),
       GoRoute(
         path: AppRoute.honors.path,

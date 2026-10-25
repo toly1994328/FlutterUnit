@@ -9,6 +9,48 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
+  String get accountOverviewTitle => '我的账号';
+
+  @override
+  String get accountOverviewSubtitle => '管理你的个人空间。';
+
+  @override
+  String get accountEditProfile => '编辑资料';
+
+  @override
+  String get accountViewAll => '查看全部';
+
+  @override
+  String get accountFavoritesHint => '把常用组件留在手边，随时继续探索。';
+
+  @override
+  String get accountSavedWidgets => '收藏组件';
+
+  @override
+  String get accountEarnedBadges => '获得徽章';
+
+  @override
+  String get accountCommonActions => '常用入口';
+
+  @override
+  String get accountNoFavorites => '还没有收藏组件。浏览组件时点击收藏，即可加入这里。';
+
+  @override
+  String get accountHonorsHint => '管理头像框与徽章';
+
+  @override
+  String get accountWorkshopHint => '兑换你的专属装扮';
+
+  @override
+  String get accountTodayTasks => '今日任务';
+
+  @override
+  String get accountMyHonors => '我的荣誉';
+
+  @override
+  String get accountHonorSubtitle => '记录每一次探索与成长。';
+
+  @override
   String get widgetCollection => '组件集录';
 
   @override
@@ -783,6 +825,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get knowledgeTabLayout => '布局宝库';
+
+  @override
+  String get knowledgeLayoutSubtitle => '从布局约束，到界面构建';
+
+  @override
+  String get knowledgePaintSubtitle => '用画笔与动画，表达创意';
+
+  @override
+  String get knowledgeAlgoSubtitle => '让每一步算法，都清晰可见';
 
   @override
   String get knowledgeConstruction => '正在建设中';

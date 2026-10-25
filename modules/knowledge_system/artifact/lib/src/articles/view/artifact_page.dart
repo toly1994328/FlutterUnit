@@ -165,23 +165,26 @@ class _ArtifactPageState extends State<ArtifactPage>
           pinned: true,
           elevation: 0,
           scrolledUnderElevation: 0,
-          toolbarHeight: _curIndex == 0 ? 60 : 0,
+          // 各入口都保留文库工具栏的高度，切换时导航和正文位置保持稳定。
+          toolbarHeight: 60,
           titleSpacing: 16,
           centerTitle: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           surfaceTintColor: Colors.transparent,
           title: _curIndex == 0
               ? LibraryControls(controller: _library, compact: true)
+              : MobileKnowledgeTitle(index: _curIndex),
+          actions: _curIndex == 3
+              ? <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(right: 12),
+                    child: IconButton(
+                        onPressed: () => Scaffold.of(context).openEndDrawer(),
+                        icon: const Icon(Icons.settings_outlined)),
+                  ),
+                ]
               : null,
-          bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(48),
-              child: Row(children: <Widget>[
-                Expanded(child: MobileKnowledgeTabs(controller: controller)),
-                if (_curIndex == 3)
-                  IconButton(
-                      onPressed: () => Scaffold.of(context).openEndDrawer(),
-                      icon: const Icon(Icons.settings)),
-              ])),
+          bottom: MobileKnowledgeTabs(controller: controller),
         ),
       ];
 

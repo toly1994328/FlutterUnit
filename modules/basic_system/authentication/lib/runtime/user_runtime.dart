@@ -1,42 +1,33 @@
-import 'dart:async';
-
-import 'package:dio/dio.dart';
 import 'package:fx_user_core/fx_user_core.dart';
 import 'package:fx_user_http/fx_user_http.dart';
 import 'package:fx_user_preferences/fx_user_preferences.dart';
 import 'package:fx_user_session/fx_user_session.dart';
 import 'package:unit_env/unit_env.dart';
 
+import 'credential_interceptor.dart';
+import 'session_interceptor.dart';
+import 'user_repository.dart';
+
 /// FlutterUnit 对 FrameworkX 用户 SDK 的宿主组装入口。
 abstract final class FlutterUnitUserRuntime {
+  /// 组装会话存储、用户接口和启动阶段可用的认证拦截器。
   static FxUserSessionCubit create() {
     final FlutterUnitHost host = FxDio()<FlutterUnitHost>();
     final FxPreferencesUserStore userStore = FxPreferencesUserStore(
       namespace: 'flutter_unit',
     );
     final FxUserSessionCubit users = FxUserSessionCubit(
-      repository: HttpFxUserRepository(host: host),
+      repository: FlutterUnitUserRepository(host: host),
       credentialStore: userStore,
       snapshotStore: userStore,
       identityCodec: const FxUserIdentityCodec(),
       avatarUploadTask: HttpFxAvatarUploadTask(host: host),
       onCredentialChanged: _onCredentialChanged,
     );
-    FxDio()[host].interceptors.add(
-      InterceptorsWrapper(
-        onError: (DioException error, ErrorInterceptorHandler handler) {
-          final String? failedAuthorization =
-              error.requestOptions.headers['Authorization']?.toString();
-          final UserCredential? credential = users.credential;
-          final bool currentCredentialFailed = credential is BearerCredential &&
-              failedAuthorization == 'Bearer ${credential.accessToken}';
-          if (error.response?.statusCode == 401 && currentCredentialFailed) {
-            unawaited(users.handleUnauthorized());
-          }
-          handler.next(error);
-        },
-      ),
-    );
+    FxDio()[host].interceptors.add(FlutterUnitCredentialInterceptor());
+    FxDio()[host]
+        .interceptors
+        .add(FlutterUnitSessionInterceptor(users: users, host: host));
     return users;
   }
 

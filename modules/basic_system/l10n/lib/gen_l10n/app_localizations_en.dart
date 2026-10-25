@@ -9,6 +9,50 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get accountOverviewTitle => 'My account';
+
+  @override
+  String get accountOverviewSubtitle => 'Your personal space, at a glance.';
+
+  @override
+  String get accountEditProfile => 'Edit profile';
+
+  @override
+  String get accountViewAll => 'View all';
+
+  @override
+  String get accountFavoritesHint =>
+      'Keep your favorite widgets close and continue exploring.';
+
+  @override
+  String get accountSavedWidgets => 'Saved widgets';
+
+  @override
+  String get accountEarnedBadges => 'Badges earned';
+
+  @override
+  String get accountCommonActions => 'Quick access';
+
+  @override
+  String get accountNoFavorites =>
+      'No saved widgets yet. Save widgets while browsing to see them here.';
+
+  @override
+  String get accountHonorsHint => 'Manage frames and badges';
+
+  @override
+  String get accountWorkshopHint => 'Discover your next reward';
+
+  @override
+  String get accountTodayTasks => 'Today’s tasks';
+
+  @override
+  String get accountMyHonors => 'My honors';
+
+  @override
+  String get accountHonorSubtitle => 'A record of your progress.';
+
+  @override
   String get widgetCollection => 'Widgets';
 
   @override
@@ -791,6 +835,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get knowledgeTabLayout => 'Layout Treasury';
+
+  @override
+  String get knowledgeLayoutSubtitle => 'From constraints to interfaces';
+
+  @override
+  String get knowledgePaintSubtitle => 'Ideas in canvas and motion';
+
+  @override
+  String get knowledgeAlgoSubtitle => 'See algorithms, step by step';
 
   @override
   String get knowledgeConstruction => 'In Construction';

@@ -80,6 +80,8 @@ dependencies:
     path: modules/basic_system/toly_ui
   authentication:
     path: modules/basic_system/authentication
+  widget_module:
+    path: modules/widget_system/widget_module
   tolyui: 0.0.5+2   # tolyui
   tolyui_navigation: 0.2.1+1
   tolyui_message: ^0.2.6+1

@@ -9,9 +9,18 @@ class FlutterUnitResponseInterceptor extends InterceptorsWrapper {
     ResponseInterceptorHandler handler,
   ) {
     final dynamic body = response.data;
-    if (response.statusCode == HttpCode.ok.value && body is Map) {
+    final int status = response.statusCode ?? 0;
+    if (status < 200 || status >= 300) {
+      _reject(response, handler);
+      return;
+    }
+    if (body is Map) {
       if (body['status'] is bool && !body.containsKey('code')) {
-        handler.next(response);
+        if (body['status'] == false) {
+          _reject(response, handler);
+        } else {
+          handler.next(response);
+        }
         return;
       }
       final String code = body['code']?.toString() ?? '';
@@ -28,16 +37,31 @@ class FlutterUnitResponseInterceptor extends InterceptorsWrapper {
         handler.next(response);
         return;
       }
-      handler.reject(
-        DioException(
-          requestOptions: response.requestOptions,
-          response: response,
-          error: FlutterUnitApiTrace(message: message, error: body),
-        ),
-      );
+      _reject(response, handler);
       return;
     }
     handler.next(response);
+  }
+
+  /// fx_dio 接收所有 HTTP 状态，宿主必须在 void 转换器之前拒绝失败响应。
+  void _reject(Response<dynamic> response, ResponseInterceptorHandler handler) {
+    final dynamic body = response.data;
+    final String message = body is Map
+        ? (body['message'] ?? body['msg'] ?? response.statusMessage ?? '请求失败')
+            .toString()
+        : response.statusMessage ?? '请求失败';
+    handler.reject(
+        DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          type: DioExceptionType.badResponse,
+          error: FlutterUnitApiTrace(
+            value: response.statusCode,
+            message: message,
+            error: body ?? <String, dynamic>{},
+          ),
+        ),
+        true);
   }
 }
 

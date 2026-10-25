@@ -1,6 +1,7 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fx_user_session/fx_user_session.dart';
 import 'package:l10n/l10n.dart';
 
 import '../../../progression/bloc/progression_cubit.dart';
@@ -16,14 +17,18 @@ class MePageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildChild(context);
+    return BlocSelector<FxUserSessionCubit, FxUserSession, bool>(
+      selector: (FxUserSession session) => session is FxAuthed,
+      builder: _buildChild,
+    );
   }
 
   Widget get divider {
     return const Divider();
   }
 
-  Widget _buildChild(BuildContext context) {
+  /// 登录专属入口随会话切换显示，游客不保留分隔线和占位间距。
+  Widget _buildChild(BuildContext context, bool isAuthenticated) {
     return ScrollConfiguration(
       behavior: NoScrollBehavior(),
       child: ListView(
@@ -43,22 +48,24 @@ class MePageItem extends StatelessWidget {
             context.l10n.userCollection,
             AppRoute.collection.url,
           ),
-          Gap.sfl10,
-          _buildProgressionItem(context),
-          divider,
-          _buildItem(
-            context,
-            Icons.workspace_premium_outlined,
-            context.l10n.avatarAchievements,
-            AppRoute.honors.url,
-          ),
-          divider,
-          _buildItem(
-            context,
-            Icons.storefront_outlined,
-            context.l10n.workshop,
-            AppRoute.workshop.url,
-          ),
+          if (isAuthenticated) ...<Widget>[
+            Gap.sfl10,
+            _buildProgressionItem(context),
+            divider,
+            _buildItem(
+              context,
+              Icons.workspace_premium_outlined,
+              context.l10n.avatarAchievements,
+              AppRoute.honors.url,
+            ),
+            divider,
+            _buildItem(
+              context,
+              Icons.storefront_outlined,
+              context.l10n.workshop,
+              AppRoute.workshop.url,
+            ),
+          ],
           Gap.sfl10,
           _buildItem(
             context,

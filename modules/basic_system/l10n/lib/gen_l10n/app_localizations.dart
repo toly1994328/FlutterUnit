@@ -98,6 +98,90 @@ abstract class AppLocalizations {
     Locale('zh')
   ];
 
+  /// No description provided for @accountOverviewTitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'我的账号'**
+  String get accountOverviewTitle;
+
+  /// No description provided for @accountOverviewSubtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'管理你的个人空间。'**
+  String get accountOverviewSubtitle;
+
+  /// No description provided for @accountEditProfile.
+  ///
+  /// In zh, this message translates to:
+  /// **'编辑资料'**
+  String get accountEditProfile;
+
+  /// No description provided for @accountViewAll.
+  ///
+  /// In zh, this message translates to:
+  /// **'查看全部'**
+  String get accountViewAll;
+
+  /// No description provided for @accountFavoritesHint.
+  ///
+  /// In zh, this message translates to:
+  /// **'把常用组件留在手边，随时继续探索。'**
+  String get accountFavoritesHint;
+
+  /// No description provided for @accountSavedWidgets.
+  ///
+  /// In zh, this message translates to:
+  /// **'收藏组件'**
+  String get accountSavedWidgets;
+
+  /// No description provided for @accountEarnedBadges.
+  ///
+  /// In zh, this message translates to:
+  /// **'获得徽章'**
+  String get accountEarnedBadges;
+
+  /// No description provided for @accountCommonActions.
+  ///
+  /// In zh, this message translates to:
+  /// **'常用入口'**
+  String get accountCommonActions;
+
+  /// No description provided for @accountNoFavorites.
+  ///
+  /// In zh, this message translates to:
+  /// **'还没有收藏组件。浏览组件时点击收藏，即可加入这里。'**
+  String get accountNoFavorites;
+
+  /// No description provided for @accountHonorsHint.
+  ///
+  /// In zh, this message translates to:
+  /// **'管理头像框与徽章'**
+  String get accountHonorsHint;
+
+  /// No description provided for @accountWorkshopHint.
+  ///
+  /// In zh, this message translates to:
+  /// **'兑换你的专属装扮'**
+  String get accountWorkshopHint;
+
+  /// No description provided for @accountTodayTasks.
+  ///
+  /// In zh, this message translates to:
+  /// **'今日任务'**
+  String get accountTodayTasks;
+
+  /// No description provided for @accountMyHonors.
+  ///
+  /// In zh, this message translates to:
+  /// **'我的荣誉'**
+  String get accountMyHonors;
+
+  /// No description provided for @accountHonorSubtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'记录每一次探索与成长。'**
+  String get accountHonorSubtitle;
+
   /// No description provided for @widgetCollection.
   ///
   /// In zh, this message translates to:
@@ -1561,6 +1645,24 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'布局宝库'**
   String get knowledgeTabLayout;
+
+  /// No description provided for @knowledgeLayoutSubtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'从布局约束，到界面构建'**
+  String get knowledgeLayoutSubtitle;
+
+  /// No description provided for @knowledgePaintSubtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'用画笔与动画，表达创意'**
+  String get knowledgePaintSubtitle;
+
+  /// No description provided for @knowledgeAlgoSubtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'让每一步算法，都清晰可见'**
+  String get knowledgeAlgoSubtitle;
 
   /// No description provided for @knowledgeConstruction.
   ///
